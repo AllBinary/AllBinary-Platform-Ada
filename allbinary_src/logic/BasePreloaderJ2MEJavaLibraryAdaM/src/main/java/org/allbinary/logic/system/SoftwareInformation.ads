@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.SoftwareInformation_Package;
+package org.allbinary.logic.system.SoftwareInformation_Package_References is
+   type SoftwareInformation_Access is access all org.allbinary.logic.system.SoftwareInformation_Package.SoftwareInformation'Class;
+   type SoftwareInformation_Access_Array is array (Natural range <>) of SoftwareInformation_Access;
+   type SoftwareInformation_Access_Array_Access is access all SoftwareInformation_Access_Array;
+   type SoftwareInformation_Access_Array_Access_Array is array (Natural range <>) of SoftwareInformation_Access_Array_Access;
+   type SoftwareInformation_Access_Array_Access_Array_Access is access all SoftwareInformation_Access_Array_Access_Array;
+end org.allbinary.logic.system.SoftwareInformation_Package_References;
+
+with org.allbinary.logic.system.SoftwareInformation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.system.SoftwareInformation_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SoftwareInformation is tagged;
-   type SoftwareInformation_Access is access all SoftwareInformation'Class;
-   type SoftwareInformation_Access_Array is array (Natural range <>) of SoftwareInformation_Access;
-   type SoftwareInformation_Access_Array_Access is access all SoftwareInformation_Access_Array;
-   type SoftwareInformation_Access_Array_Access_Array is array (Natural range <>) of SoftwareInformation_Access_Array_Access;
-   type SoftwareInformation_Access_Array_Access_Array_Access is access all SoftwareInformation_Access_Array_Access_Array;
+
+   subtype SoftwareInformation_Access is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access;
+   function "=" (Left, Right : SoftwareInformation_Access) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
+   subtype SoftwareInformation_Access_Array is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array;
+   function "=" (Left, Right : SoftwareInformation_Access_Array) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
+   subtype SoftwareInformation_Access_Array_Access is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array_Access;
+   function "=" (Left, Right : SoftwareInformation_Access_Array_Access) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
+   subtype SoftwareInformation_Access_Array_Access_Array is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array_Access_Array;
+   function "=" (Left, Right : SoftwareInformation_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
+   subtype SoftwareInformation_Access_Array_Access_Array_Access is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SoftwareInformation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
 
    type SoftwareInformation is new Java_Object with record
       name : Unbounded_String;

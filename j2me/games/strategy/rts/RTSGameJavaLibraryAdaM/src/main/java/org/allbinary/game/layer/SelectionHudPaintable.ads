@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.SelectionHudPaintable_Package;
+package org.allbinary.game.layer.SelectionHudPaintable_Package_References is
+   type SelectionHudPaintable_Access is access all org.allbinary.game.layer.SelectionHudPaintable_Package.SelectionHudPaintable'Class;
+   type SelectionHudPaintable_Access_Array is array (Natural range <>) of SelectionHudPaintable_Access;
+   type SelectionHudPaintable_Access_Array_Access is access all SelectionHudPaintable_Access_Array;
+   type SelectionHudPaintable_Access_Array_Access_Array is array (Natural range <>) of SelectionHudPaintable_Access_Array_Access;
+   type SelectionHudPaintable_Access_Array_Access_Array_Access is access all SelectionHudPaintable_Access_Array_Access_Array;
+end org.allbinary.game.layer.SelectionHudPaintable_Package_References;
+
+with org.allbinary.game.layer.SelectionHudPaintable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+limited with org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary.graphics.paint.InitUpdatePaintable_Package;
-with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
+limited with org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
 
 package org.allbinary.game.layer.SelectionHudPaintable_Package is
 
@@ -37,13 +52,71 @@ package org.allbinary.game.layer.SelectionHudPaintable_Package is
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
    package InitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.InitUpdatePaintable_Package;
    package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype MyFontProcessor_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access;
+   use type MyFontProcessor_Access;
+   subtype MyFontProcessor_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array;
+   use type MyFontProcessor_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access;
+   subtype MyFontProcessor_Access_Array_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array;
+   use type MyFontProcessor_Access_Array_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access_Array_Access;
+   subtype PrimitiveLongUtil_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access;
+   use type PrimitiveLongUtil_Access;
+   subtype PrimitiveLongUtil_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array;
+   use type PrimitiveLongUtil_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array;
+   use type PrimitiveLongUtil_Access_Array_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SelectionHudPaintable is tagged;
-   type SelectionHudPaintable_Access is access all SelectionHudPaintable'Class;
-   type SelectionHudPaintable_Access_Array is array (Natural range <>) of SelectionHudPaintable_Access;
-   type SelectionHudPaintable_Access_Array_Access is access all SelectionHudPaintable_Access_Array;
-   type SelectionHudPaintable_Access_Array_Access_Array is array (Natural range <>) of SelectionHudPaintable_Access_Array_Access;
-   type SelectionHudPaintable_Access_Array_Access_Array_Access is access all SelectionHudPaintable_Access_Array_Access_Array;
+
+   subtype SelectionHudPaintable_Access is org.allbinary.game.layer.SelectionHudPaintable_Package_References.SelectionHudPaintable_Access;
+   function "=" (Left, Right : SelectionHudPaintable_Access) return Boolean renames org.allbinary.game.layer.SelectionHudPaintable_Package_References."=";
+   subtype SelectionHudPaintable_Access_Array is org.allbinary.game.layer.SelectionHudPaintable_Package_References.SelectionHudPaintable_Access_Array;
+   function "=" (Left, Right : SelectionHudPaintable_Access_Array) return Boolean renames org.allbinary.game.layer.SelectionHudPaintable_Package_References."=";
+   subtype SelectionHudPaintable_Access_Array_Access is org.allbinary.game.layer.SelectionHudPaintable_Package_References.SelectionHudPaintable_Access_Array_Access;
+   function "=" (Left, Right : SelectionHudPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SelectionHudPaintable_Package_References."=";
+   subtype SelectionHudPaintable_Access_Array_Access_Array is org.allbinary.game.layer.SelectionHudPaintable_Package_References.SelectionHudPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : SelectionHudPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.SelectionHudPaintable_Package_References."=";
+   subtype SelectionHudPaintable_Access_Array_Access_Array_Access is org.allbinary.game.layer.SelectionHudPaintable_Package_References.SelectionHudPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SelectionHudPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SelectionHudPaintable_Package_References."=";
 
    type SelectionHudPaintable is new InitUpdatePaintable and UpdateMyFontInterface with record
       y : Integer;

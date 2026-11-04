@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.ImageProcessorInput_Package;
+package org.allbinary.media.image.ImageProcessorInput_Package_References is
+   type ImageProcessorInput_Access is access all org.allbinary.media.image.ImageProcessorInput_Package.ImageProcessorInput'Class;
+   type ImageProcessorInput_Access_Array is array (Natural range <>) of ImageProcessorInput_Access;
+   type ImageProcessorInput_Access_Array_Access is access all ImageProcessorInput_Access_Array;
+   type ImageProcessorInput_Access_Array_Access_Array is array (Natural range <>) of ImageProcessorInput_Access_Array_Access;
+   type ImageProcessorInput_Access_Array_Access_Array_Access is access all ImageProcessorInput_Access_Array_Access_Array;
+end org.allbinary.media.image.ImageProcessorInput_Package_References;
+
+with org.allbinary.media.image.ImageProcessorInput_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with java.io.File_Package; use java.io.File_Package;
 package org.allbinary.media.image.ImageProcessorInput_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageProcessorInput is tagged;
-   type ImageProcessorInput_Access is access all ImageProcessorInput'Class;
-   type ImageProcessorInput_Access_Array is array (Natural range <>) of ImageProcessorInput_Access;
-   type ImageProcessorInput_Access_Array_Access is access all ImageProcessorInput_Access_Array;
-   type ImageProcessorInput_Access_Array_Access_Array is array (Natural range <>) of ImageProcessorInput_Access_Array_Access;
-   type ImageProcessorInput_Access_Array_Access_Array_Access is access all ImageProcessorInput_Access_Array_Access_Array;
+
+   subtype ImageProcessorInput_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access;
+   function "=" (Left, Right : ImageProcessorInput_Access) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
+   subtype ImageProcessorInput_Access_Array is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array;
+   function "=" (Left, Right : ImageProcessorInput_Access_Array) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
+   subtype ImageProcessorInput_Access_Array_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access;
+   function "=" (Left, Right : ImageProcessorInput_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
+   subtype ImageProcessorInput_Access_Array_Access_Array is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageProcessorInput_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
+   subtype ImageProcessorInput_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageProcessorInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
 
    type ImageProcessorInput is new Java_Object with record
       bufferedImageArray : BufferedImage_Access_Array_Access;

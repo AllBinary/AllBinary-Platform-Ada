@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.BasicOptionItemsHelperFactory_Package;
+package admin.taghelpers.BasicOptionItemsHelperFactory_Package_References is
+   type BasicOptionItemsHelperFactory_Access is access all admin.taghelpers.BasicOptionItemsHelperFactory_Package.BasicOptionItemsHelperFactory'Class;
+   type BasicOptionItemsHelperFactory_Access_Array is array (Natural range <>) of BasicOptionItemsHelperFactory_Access;
+   type BasicOptionItemsHelperFactory_Access_Array_Access is access all BasicOptionItemsHelperFactory_Access_Array;
+   type BasicOptionItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemsHelperFactory_Access_Array_Access;
+   type BasicOptionItemsHelperFactory_Access_Array_Access_Array_Access is access all BasicOptionItemsHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.BasicOptionItemsHelperFactory_Package_References;
+
+with admin.taghelpers.BasicOptionItemsHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.BasicOptionItemsHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicOptionItemsHelperFactory is tagged;
-   type BasicOptionItemsHelperFactory_Access is access all BasicOptionItemsHelperFactory'Class;
-   type BasicOptionItemsHelperFactory_Access_Array is array (Natural range <>) of BasicOptionItemsHelperFactory_Access;
-   type BasicOptionItemsHelperFactory_Access_Array_Access is access all BasicOptionItemsHelperFactory_Access_Array;
-   type BasicOptionItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemsHelperFactory_Access_Array_Access;
-   type BasicOptionItemsHelperFactory_Access_Array_Access_Array_Access is access all BasicOptionItemsHelperFactory_Access_Array_Access_Array;
+
+   subtype BasicOptionItemsHelperFactory_Access is admin.taghelpers.BasicOptionItemsHelperFactory_Package_References.BasicOptionItemsHelperFactory_Access;
+   function "=" (Left, Right : BasicOptionItemsHelperFactory_Access) return Boolean renames admin.taghelpers.BasicOptionItemsHelperFactory_Package_References."=";
+   subtype BasicOptionItemsHelperFactory_Access_Array is admin.taghelpers.BasicOptionItemsHelperFactory_Package_References.BasicOptionItemsHelperFactory_Access_Array;
+   function "=" (Left, Right : BasicOptionItemsHelperFactory_Access_Array) return Boolean renames admin.taghelpers.BasicOptionItemsHelperFactory_Package_References."=";
+   subtype BasicOptionItemsHelperFactory_Access_Array_Access is admin.taghelpers.BasicOptionItemsHelperFactory_Package_References.BasicOptionItemsHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : BasicOptionItemsHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.BasicOptionItemsHelperFactory_Package_References."=";
+   subtype BasicOptionItemsHelperFactory_Access_Array_Access_Array is admin.taghelpers.BasicOptionItemsHelperFactory_Package_References.BasicOptionItemsHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicOptionItemsHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.BasicOptionItemsHelperFactory_Package_References."=";
+   subtype BasicOptionItemsHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.BasicOptionItemsHelperFactory_Package_References.BasicOptionItemsHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicOptionItemsHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.BasicOptionItemsHelperFactory_Package_References."=";
 
    type BasicOptionItemsHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

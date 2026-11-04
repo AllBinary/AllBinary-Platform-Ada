@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.transform.info.TransformInfoTag_Package;
+package tags.transform.info.TransformInfoTag_Package_References is
+   type TransformInfoTag_Access is access all tags.transform.info.TransformInfoTag_Package.TransformInfoTag'Class;
+   type TransformInfoTag_Access_Array is array (Natural range <>) of TransformInfoTag_Access;
+   type TransformInfoTag_Access_Array_Access is access all TransformInfoTag_Access_Array;
+   type TransformInfoTag_Access_Array_Access_Array is array (Natural range <>) of TransformInfoTag_Access_Array_Access;
+   type TransformInfoTag_Access_Array_Access_Array_Access is access all TransformInfoTag_Access_Array_Access_Array;
+end tags.transform.info.TransformInfoTag_Package_References;
+
+with tags.transform.info.TransformInfoTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,8 +31,10 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.TagHelperFactoryInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with admin.taghelpers.TagHelperFactoryInterface_Package;
+with admin.taghelpers.TagHelperFactoryInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with tags.ModifyTag_Package; use tags.ModifyTag_Package;
 
 package tags.transform.info.TransformInfoTag_Package is
@@ -30,13 +42,41 @@ package tags.transform.info.TransformInfoTag_Package is
    package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ModifyTag_Package renames Standard.tags.ModifyTag_Package;
+   package Reference_Types is
+   subtype TagHelperFactoryInterface_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access;
+   use type TagHelperFactoryInterface_Access;
+   subtype TagHelperFactoryInterface_Access_Array is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array;
+   use type TagHelperFactoryInterface_Access_Array;
+   subtype TagHelperFactoryInterface_Access_Array_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array_Access;
+   use type TagHelperFactoryInterface_Access_Array_Access;
+   subtype TagHelperFactoryInterface_Access_Array_Access_Array is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array_Access_Array;
+   use type TagHelperFactoryInterface_Access_Array_Access_Array;
+   subtype TagHelperFactoryInterface_Access_Array_Access_Array_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array_Access_Array_Access;
+   use type TagHelperFactoryInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransformInfoTag is tagged;
-   type TransformInfoTag_Access is access all TransformInfoTag'Class;
-   type TransformInfoTag_Access_Array is array (Natural range <>) of TransformInfoTag_Access;
-   type TransformInfoTag_Access_Array_Access is access all TransformInfoTag_Access_Array;
-   type TransformInfoTag_Access_Array_Access_Array is array (Natural range <>) of TransformInfoTag_Access_Array_Access;
-   type TransformInfoTag_Access_Array_Access_Array_Access is access all TransformInfoTag_Access_Array_Access_Array;
+
+   subtype TransformInfoTag_Access is tags.transform.info.TransformInfoTag_Package_References.TransformInfoTag_Access;
+   function "=" (Left, Right : TransformInfoTag_Access) return Boolean renames tags.transform.info.TransformInfoTag_Package_References."=";
+   subtype TransformInfoTag_Access_Array is tags.transform.info.TransformInfoTag_Package_References.TransformInfoTag_Access_Array;
+   function "=" (Left, Right : TransformInfoTag_Access_Array) return Boolean renames tags.transform.info.TransformInfoTag_Package_References."=";
+   subtype TransformInfoTag_Access_Array_Access is tags.transform.info.TransformInfoTag_Package_References.TransformInfoTag_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoTag_Access_Array_Access) return Boolean renames tags.transform.info.TransformInfoTag_Package_References."=";
+   subtype TransformInfoTag_Access_Array_Access_Array is tags.transform.info.TransformInfoTag_Package_References.TransformInfoTag_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoTag_Access_Array_Access_Array) return Boolean renames tags.transform.info.TransformInfoTag_Package_References."=";
+   subtype TransformInfoTag_Access_Array_Access_Array_Access is tags.transform.info.TransformInfoTag_Package_References.TransformInfoTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoTag_Access_Array_Access_Array_Access) return Boolean renames tags.transform.info.TransformInfoTag_Package_References."=";
 
    type TransformInfoTag is new ModifyTag with record
       logUtil : LogUtil_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package;
+package org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References is
+   type XmlRpcRemoteHighScoresClient_Access is access all org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package.XmlRpcRemoteHighScoresClient'Class;
+   type XmlRpcRemoteHighScoresClient_Access_Array is array (Natural range <>) of XmlRpcRemoteHighScoresClient_Access;
+   type XmlRpcRemoteHighScoresClient_Access_Array_Access is access all XmlRpcRemoteHighScoresClient_Access_Array;
+   type XmlRpcRemoteHighScoresClient_Access_Array_Access_Array is array (Natural range <>) of XmlRpcRemoteHighScoresClient_Access_Array_Access;
+   type XmlRpcRemoteHighScoresClient_Access_Array_Access_Array_Access is access all XmlRpcRemoteHighScoresClient_Access_Array_Access_Array;
+end org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References;
+
+with org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,10 +31,13 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
-with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+with org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package; use org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 
 package org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package is
 
@@ -32,13 +45,51 @@ package org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package XmlRpcAbeClient_Package renames Standard.org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype CryptInterface_Access is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access;
+   use type CryptInterface_Access;
+   subtype CryptInterface_Access_Array is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access_Array;
+   use type CryptInterface_Access_Array;
+   subtype CryptInterface_Access_Array_Access is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access_Array_Access;
+   use type CryptInterface_Access_Array_Access;
+   subtype CryptInterface_Access_Array_Access_Array is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access_Array_Access_Array;
+   use type CryptInterface_Access_Array_Access_Array;
+   subtype CryptInterface_Access_Array_Access_Array_Access is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access_Array_Access_Array_Access;
+   use type CryptInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type XmlRpcRemoteHighScoresClient is tagged;
-   type XmlRpcRemoteHighScoresClient_Access is access all XmlRpcRemoteHighScoresClient'Class;
-   type XmlRpcRemoteHighScoresClient_Access_Array is array (Natural range <>) of XmlRpcRemoteHighScoresClient_Access;
-   type XmlRpcRemoteHighScoresClient_Access_Array_Access is access all XmlRpcRemoteHighScoresClient_Access_Array;
-   type XmlRpcRemoteHighScoresClient_Access_Array_Access_Array is array (Natural range <>) of XmlRpcRemoteHighScoresClient_Access_Array_Access;
-   type XmlRpcRemoteHighScoresClient_Access_Array_Access_Array_Access is access all XmlRpcRemoteHighScoresClient_Access_Array_Access_Array;
+
+   subtype XmlRpcRemoteHighScoresClient_Access is org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References.XmlRpcRemoteHighScoresClient_Access;
+   function "=" (Left, Right : XmlRpcRemoteHighScoresClient_Access) return Boolean renames org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References."=";
+   subtype XmlRpcRemoteHighScoresClient_Access_Array is org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References.XmlRpcRemoteHighScoresClient_Access_Array;
+   function "=" (Left, Right : XmlRpcRemoteHighScoresClient_Access_Array) return Boolean renames org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References."=";
+   subtype XmlRpcRemoteHighScoresClient_Access_Array_Access is org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References.XmlRpcRemoteHighScoresClient_Access_Array_Access;
+   function "=" (Left, Right : XmlRpcRemoteHighScoresClient_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References."=";
+   subtype XmlRpcRemoteHighScoresClient_Access_Array_Access_Array is org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References.XmlRpcRemoteHighScoresClient_Access_Array_Access_Array;
+   function "=" (Left, Right : XmlRpcRemoteHighScoresClient_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References."=";
+   subtype XmlRpcRemoteHighScoresClient_Access_Array_Access_Array_Access is org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References.XmlRpcRemoteHighScoresClient_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : XmlRpcRemoteHighScoresClient_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package_References."=";
 
    type XmlRpcRemoteHighScoresClient is new XmlRpcAbeClient with record
       logUtil : LogUtil_Access;

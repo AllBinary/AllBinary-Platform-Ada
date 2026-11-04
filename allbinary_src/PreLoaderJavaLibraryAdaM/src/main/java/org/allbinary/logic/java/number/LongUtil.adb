@@ -16,6 +16,7 @@
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.logic.java.number.LongData_Package; use org.allbinary.logic.java.number.LongData_Package;
+with org.allbinary.logic.java.number.LongData_Package;
 
 package body org.allbinary.logic.java.number.LongUtil_Package is
 

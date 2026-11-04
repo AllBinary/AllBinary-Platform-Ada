@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 
 package body org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package is
 

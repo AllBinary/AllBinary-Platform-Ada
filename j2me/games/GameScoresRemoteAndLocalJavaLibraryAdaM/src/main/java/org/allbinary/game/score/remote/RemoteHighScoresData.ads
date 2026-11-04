@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.score.remote.RemoteHighScoresData_Package;
+package org.allbinary.game.score.remote.RemoteHighScoresData_Package_References is
+   type RemoteHighScoresData_Access is access all org.allbinary.game.score.remote.RemoteHighScoresData_Package.RemoteHighScoresData'Class;
+   type RemoteHighScoresData_Access_Array is array (Natural range <>) of RemoteHighScoresData_Access;
+   type RemoteHighScoresData_Access_Array_Access is access all RemoteHighScoresData_Access_Array;
+   type RemoteHighScoresData_Access_Array_Access_Array is array (Natural range <>) of RemoteHighScoresData_Access_Array_Access;
+   type RemoteHighScoresData_Access_Array_Access_Array_Access is access all RemoteHighScoresData_Access_Array_Access_Array;
+end org.allbinary.game.score.remote.RemoteHighScoresData_Package_References;
+
+with org.allbinary.game.score.remote.RemoteHighScoresData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.score.remote.RemoteHighScoresData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type RemoteHighScoresData is tagged;
-   type RemoteHighScoresData_Access is access all RemoteHighScoresData'Class;
-   type RemoteHighScoresData_Access_Array is array (Natural range <>) of RemoteHighScoresData_Access;
-   type RemoteHighScoresData_Access_Array_Access is access all RemoteHighScoresData_Access_Array;
-   type RemoteHighScoresData_Access_Array_Access_Array is array (Natural range <>) of RemoteHighScoresData_Access_Array_Access;
-   type RemoteHighScoresData_Access_Array_Access_Array_Access is access all RemoteHighScoresData_Access_Array_Access_Array;
+
+   subtype RemoteHighScoresData_Access is org.allbinary.game.score.remote.RemoteHighScoresData_Package_References.RemoteHighScoresData_Access;
+   function "=" (Left, Right : RemoteHighScoresData_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresData_Package_References."=";
+   subtype RemoteHighScoresData_Access_Array is org.allbinary.game.score.remote.RemoteHighScoresData_Package_References.RemoteHighScoresData_Access_Array;
+   function "=" (Left, Right : RemoteHighScoresData_Access_Array) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresData_Package_References."=";
+   subtype RemoteHighScoresData_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScoresData_Package_References.RemoteHighScoresData_Access_Array_Access;
+   function "=" (Left, Right : RemoteHighScoresData_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresData_Package_References."=";
+   subtype RemoteHighScoresData_Access_Array_Access_Array is org.allbinary.game.score.remote.RemoteHighScoresData_Package_References.RemoteHighScoresData_Access_Array_Access_Array;
+   function "=" (Left, Right : RemoteHighScoresData_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresData_Package_References."=";
+   subtype RemoteHighScoresData_Access_Array_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScoresData_Package_References.RemoteHighScoresData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RemoteHighScoresData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresData_Package_References."=";
 
    type RemoteHighScoresData is new Java_Object with record
       HIGH_SCORES : Unbounded_String;

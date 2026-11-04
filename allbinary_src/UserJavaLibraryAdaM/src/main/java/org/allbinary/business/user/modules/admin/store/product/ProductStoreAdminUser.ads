@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package;
+package org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References is
+   type ProductStoreAdminUser_Access is access all org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package.ProductStoreAdminUser'Class;
+   type ProductStoreAdminUser_Access_Array is array (Natural range <>) of ProductStoreAdminUser_Access;
+   type ProductStoreAdminUser_Access_Array_Access is access all ProductStoreAdminUser_Access_Array;
+   type ProductStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of ProductStoreAdminUser_Access_Array_Access;
+   type ProductStoreAdminUser_Access_Array_Access_Array_Access is access all ProductStoreAdminUser_Access_Array_Access_Array;
+end org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References;
+
+with org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,20 +32,39 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+limited with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References;
 
 package org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
    package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package Reference_Types is
+   subtype WeblisketSessionInterface_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access;
+   use type WeblisketSessionInterface_Access;
+   subtype WeblisketSessionInterface_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array;
+   use type WeblisketSessionInterface_Access_Array;
+   subtype WeblisketSessionInterface_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access;
+   use type WeblisketSessionInterface_Access_Array_Access;
+   subtype WeblisketSessionInterface_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array;
+   use type WeblisketSessionInterface_Access_Array_Access_Array;
+   subtype WeblisketSessionInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array_Access;
+   use type WeblisketSessionInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ProductStoreAdminUser is tagged;
-   type ProductStoreAdminUser_Access is access all ProductStoreAdminUser'Class;
-   type ProductStoreAdminUser_Access_Array is array (Natural range <>) of ProductStoreAdminUser_Access;
-   type ProductStoreAdminUser_Access_Array_Access is access all ProductStoreAdminUser_Access_Array;
-   type ProductStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of ProductStoreAdminUser_Access_Array_Access;
-   type ProductStoreAdminUser_Access_Array_Access_Array_Access is access all ProductStoreAdminUser_Access_Array_Access_Array;
+
+   subtype ProductStoreAdminUser_Access is org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References.ProductStoreAdminUser_Access;
+   function "=" (Left, Right : ProductStoreAdminUser_Access) return Boolean renames org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References."=";
+   subtype ProductStoreAdminUser_Access_Array is org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References.ProductStoreAdminUser_Access_Array;
+   function "=" (Left, Right : ProductStoreAdminUser_Access_Array) return Boolean renames org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References."=";
+   subtype ProductStoreAdminUser_Access_Array_Access is org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References.ProductStoreAdminUser_Access_Array_Access;
+   function "=" (Left, Right : ProductStoreAdminUser_Access_Array_Access) return Boolean renames org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References."=";
+   subtype ProductStoreAdminUser_Access_Array_Access_Array is org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References.ProductStoreAdminUser_Access_Array_Access_Array;
+   function "=" (Left, Right : ProductStoreAdminUser_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References."=";
+   subtype ProductStoreAdminUser_Access_Array_Access_Array_Access is org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References.ProductStoreAdminUser_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ProductStoreAdminUser_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package_References."=";
 
    type ProductStoreAdminUser is new User_Package.User with null record;
 

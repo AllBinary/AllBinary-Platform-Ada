@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
+package org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References is
+   type GroupLayerManagerListener_Access is access all org.allbinary.game.layer.identification.GroupLayerManagerListener_Package.GroupLayerManagerListener'Class;
+   type GroupLayerManagerListener_Access_Array is array (Natural range <>) of GroupLayerManagerListener_Access;
+   type GroupLayerManagerListener_Access_Array_Access is access all GroupLayerManagerListener_Access_Array;
+   type GroupLayerManagerListener_Access_Array_Access_Array is array (Natural range <>) of GroupLayerManagerListener_Access_Array_Access;
+   type GroupLayerManagerListener_Access_Array_Access_Array_Access is access all GroupLayerManagerListener_Access_Array_Access_Array;
+end org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References;
+
+with org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
-with org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package; use org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package;
-with org.allbinary.layer.event.LayerManagerEvent_Package; use org.allbinary.layer.event.LayerManagerEvent_Package;
+limited with org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
+limited with org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package;
+with org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package_References;
+limited with org.allbinary.layer.event.LayerManagerEvent_Package;
+with org.allbinary.layer.event.LayerManagerEvent_Package_References;
 with org.allbinary.layer.event.LayerManagerEventListener_Package; use org.allbinary.layer.event.LayerManagerEventListener_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.game.layer.identification.GroupLayerManagerListener_Package is
 
@@ -37,13 +53,81 @@ package org.allbinary.game.layer.identification.GroupLayerManagerListener_Packag
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype Group_Access is org.allbinary.game.identification.Group_Package_References.Group_Access;
+   use type Group_Access;
+   subtype Group_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array;
+   use type Group_Access_Array;
+   subtype Group_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access;
+   use type Group_Access_Array_Access;
+   subtype Group_Access_Array_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array;
+   use type Group_Access_Array_Access_Array;
+   subtype Group_Access_Array_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array_Access;
+   use type Group_Access_Array_Access_Array_Access;
+   subtype GroupInterfaceCompositeInterface_Access is org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package_References.GroupInterfaceCompositeInterface_Access;
+   use type GroupInterfaceCompositeInterface_Access;
+   subtype GroupInterfaceCompositeInterface_Access_Array is org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package_References.GroupInterfaceCompositeInterface_Access_Array;
+   use type GroupInterfaceCompositeInterface_Access_Array;
+   subtype GroupInterfaceCompositeInterface_Access_Array_Access is org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package_References.GroupInterfaceCompositeInterface_Access_Array_Access;
+   use type GroupInterfaceCompositeInterface_Access_Array_Access;
+   subtype GroupInterfaceCompositeInterface_Access_Array_Access_Array is org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package_References.GroupInterfaceCompositeInterface_Access_Array_Access_Array;
+   use type GroupInterfaceCompositeInterface_Access_Array_Access_Array;
+   subtype GroupInterfaceCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package_References.GroupInterfaceCompositeInterface_Access_Array_Access_Array_Access;
+   use type GroupInterfaceCompositeInterface_Access_Array_Access_Array_Access;
+   subtype LayerManagerEvent_Access is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access;
+   use type LayerManagerEvent_Access;
+   subtype LayerManagerEvent_Access_Array is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access_Array;
+   use type LayerManagerEvent_Access_Array;
+   subtype LayerManagerEvent_Access_Array_Access is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access_Array_Access;
+   use type LayerManagerEvent_Access_Array_Access;
+   subtype LayerManagerEvent_Access_Array_Access_Array is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access_Array_Access_Array;
+   use type LayerManagerEvent_Access_Array_Access_Array;
+   subtype LayerManagerEvent_Access_Array_Access_Array_Access is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access_Array_Access_Array_Access;
+   use type LayerManagerEvent_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GroupLayerManagerListener is tagged;
-   type GroupLayerManagerListener_Access is access all GroupLayerManagerListener'Class;
-   type GroupLayerManagerListener_Access_Array is array (Natural range <>) of GroupLayerManagerListener_Access;
-   type GroupLayerManagerListener_Access_Array_Access is access all GroupLayerManagerListener_Access_Array;
-   type GroupLayerManagerListener_Access_Array_Access_Array is array (Natural range <>) of GroupLayerManagerListener_Access_Array_Access;
-   type GroupLayerManagerListener_Access_Array_Access_Array_Access is access all GroupLayerManagerListener_Access_Array_Access_Array;
+
+   subtype GroupLayerManagerListener_Access is org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References.GroupLayerManagerListener_Access;
+   function "=" (Left, Right : GroupLayerManagerListener_Access) return Boolean renames org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References."=";
+   subtype GroupLayerManagerListener_Access_Array is org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References.GroupLayerManagerListener_Access_Array;
+   function "=" (Left, Right : GroupLayerManagerListener_Access_Array) return Boolean renames org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References."=";
+   subtype GroupLayerManagerListener_Access_Array_Access is org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References.GroupLayerManagerListener_Access_Array_Access;
+   function "=" (Left, Right : GroupLayerManagerListener_Access_Array_Access) return Boolean renames org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References."=";
+   subtype GroupLayerManagerListener_Access_Array_Access_Array is org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References.GroupLayerManagerListener_Access_Array_Access_Array;
+   function "=" (Left, Right : GroupLayerManagerListener_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References."=";
+   subtype GroupLayerManagerListener_Access_Array_Access_Array_Access is org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References.GroupLayerManagerListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GroupLayerManagerListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.identification.GroupLayerManagerListener_Package_References."=";
 
    type GroupLayerManagerListener is new LayerManagerEventListener with record
       logUtil : LogUtil_Access;

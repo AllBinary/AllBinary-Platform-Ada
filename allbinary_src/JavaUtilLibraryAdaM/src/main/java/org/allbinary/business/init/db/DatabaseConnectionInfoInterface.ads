@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
+package org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References is
+   type DatabaseConnectionInfoInterface_Access is access all org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class;
+   type DatabaseConnectionInfoInterface_Access_Array is array (Natural range <>) of DatabaseConnectionInfoInterface_Access;
+   type DatabaseConnectionInfoInterface_Access_Array_Access is access all DatabaseConnectionInfoInterface_Access_Array;
+   type DatabaseConnectionInfoInterface_Access_Array_Access_Array is array (Natural range <>) of DatabaseConnectionInfoInterface_Access_Array_Access;
+   type DatabaseConnectionInfoInterface_Access_Array_Access_Array_Access is access all DatabaseConnectionInfoInterface_Access_Array_Access_Array;
+end org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References;
+
+with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type DatabaseConnectionInfoInterface is interface;
-   type DatabaseConnectionInfoInterface_Access is access all DatabaseConnectionInfoInterface'Class;
-   type DatabaseConnectionInfoInterface_Access_Array is array (Natural range <>) of DatabaseConnectionInfoInterface_Access;
-   type DatabaseConnectionInfoInterface_Access_Array_Access is access all DatabaseConnectionInfoInterface_Access_Array;
-   type DatabaseConnectionInfoInterface_Access_Array_Access_Array is array (Natural range <>) of DatabaseConnectionInfoInterface_Access_Array_Access;
-   type DatabaseConnectionInfoInterface_Access_Array_Access_Array_Access is access all DatabaseConnectionInfoInterface_Access_Array_Access_Array;
+   subtype DatabaseConnectionInfoInterface_Access is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access;
+   function "=" (Left, Right : DatabaseConnectionInfoInterface_Access) return Boolean renames org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References."=";
+   subtype DatabaseConnectionInfoInterface_Access_Array is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access_Array;
+   function "=" (Left, Right : DatabaseConnectionInfoInterface_Access_Array) return Boolean renames org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References."=";
+   subtype DatabaseConnectionInfoInterface_Access_Array_Access is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access_Array_Access;
+   function "=" (Left, Right : DatabaseConnectionInfoInterface_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References."=";
+   subtype DatabaseConnectionInfoInterface_Access_Array_Access_Array is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : DatabaseConnectionInfoInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References."=";
+   subtype DatabaseConnectionInfoInterface_Access_Array_Access_Array_Access is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DatabaseConnectionInfoInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References."=";
+   function Java_Object_Access_From_DatabaseConnectionInfoInterface (Value : DatabaseConnectionInfoInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getUrl (This : in out DatabaseConnectionInfoInterface) return Unbounded_String is abstract;
    function getJdbcDriver (This : in out DatabaseConnectionInfoInterface) return Unbounded_String is abstract;
    function getName (This : in out DatabaseConnectionInfoInterface) return Unbounded_String is abstract;

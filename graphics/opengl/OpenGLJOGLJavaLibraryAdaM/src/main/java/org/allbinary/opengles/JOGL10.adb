@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with com.jogamp.opengl.glu.GLU_Package; use com.jogamp.opengl.glu.GLU_Package;
 
 package body org.allbinary.opengles.JOGL10_Package is
 
+   subtype GLU_Access is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access;
+   function "=" (Left, Right : GLU_Access) return Boolean renames com.jogamp.opengl.glu.GLU_Package_References."=";
+   subtype GLU_Access_Array is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array;
+   function "=" (Left, Right : GLU_Access_Array) return Boolean renames com.jogamp.opengl.glu.GLU_Package_References."=";
+   subtype GLU_Access_Array_Access is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array_Access;
+   function "=" (Left, Right : GLU_Access_Array_Access) return Boolean renames com.jogamp.opengl.glu.GLU_Package_References."=";
+   subtype GLU_Access_Array_Access_Array is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array_Access_Array;
+   function "=" (Left, Right : GLU_Access_Array_Access_Array) return Boolean renames com.jogamp.opengl.glu.GLU_Package_References."=";
+   subtype GLU_Access_Array_Access_Array_Access is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GLU_Access_Array_Access_Array_Access) return Boolean renames com.jogamp.opengl.glu.GLU_Package_References."=";
    procedure Initialize_Fields (This : in out JOGL10'Class) is
    begin
       null;

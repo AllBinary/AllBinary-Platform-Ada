@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package;
+package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References is
+   type FontFamilyData_Access is access all org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package.FontFamilyData'Class;
+   type FontFamilyData_Access_Array is array (Natural range <>) of FontFamilyData_Access;
+   type FontFamilyData_Access_Array_Access is access all FontFamilyData_Access_Array;
+   type FontFamilyData_Access_Array_Access_Array is array (Natural range <>) of FontFamilyData_Access_Array_Access;
+   type FontFamilyData_Access_Array_Access_Array_Access is access all FontFamilyData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References;
+
+with org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type FontFamilyData is tagged;
-   type FontFamilyData_Access is access all FontFamilyData'Class;
-   type FontFamilyData_Access_Array is array (Natural range <>) of FontFamilyData_Access;
-   type FontFamilyData_Access_Array_Access is access all FontFamilyData_Access_Array;
-   type FontFamilyData_Access_Array_Access_Array is array (Natural range <>) of FontFamilyData_Access_Array_Access;
-   type FontFamilyData_Access_Array_Access_Array_Access is access all FontFamilyData_Access_Array_Access_Array;
+
+   subtype FontFamilyData_Access is org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References.FontFamilyData_Access;
+   function "=" (Left, Right : FontFamilyData_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References."=";
+   subtype FontFamilyData_Access_Array is org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References.FontFamilyData_Access_Array;
+   function "=" (Left, Right : FontFamilyData_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References."=";
+   subtype FontFamilyData_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References.FontFamilyData_Access_Array_Access;
+   function "=" (Left, Right : FontFamilyData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References."=";
+   subtype FontFamilyData_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References.FontFamilyData_Access_Array_Access_Array;
+   function "=" (Left, Right : FontFamilyData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References."=";
+   subtype FontFamilyData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References.FontFamilyData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FontFamilyData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package_References."=";
 
    type FontFamilyData is new Java_Object with record
       NAME : Unbounded_String;

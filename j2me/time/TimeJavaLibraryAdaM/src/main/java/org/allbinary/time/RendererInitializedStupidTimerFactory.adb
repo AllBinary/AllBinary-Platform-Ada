@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.time.StupidTimer_Package; use org.allbinary.time.StupidTimer_Package;
+with org.allbinary.time.StupidTimer_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
 
 package body org.allbinary.time.RendererInitializedStupidTimerFactory_Package is
 
+   subtype StupidTimer_Access is org.allbinary.time.StupidTimer_Package_References.StupidTimer_Access;
+   function "=" (Left, Right : StupidTimer_Access) return Boolean renames org.allbinary.time.StupidTimer_Package_References."=";
+   subtype StupidTimer_Access_Array is org.allbinary.time.StupidTimer_Package_References.StupidTimer_Access_Array;
+   function "=" (Left, Right : StupidTimer_Access_Array) return Boolean renames org.allbinary.time.StupidTimer_Package_References."=";
+   subtype StupidTimer_Access_Array_Access is org.allbinary.time.StupidTimer_Package_References.StupidTimer_Access_Array_Access;
+   function "=" (Left, Right : StupidTimer_Access_Array_Access) return Boolean renames org.allbinary.time.StupidTimer_Package_References."=";
+   subtype StupidTimer_Access_Array_Access_Array is org.allbinary.time.StupidTimer_Package_References.StupidTimer_Access_Array_Access_Array;
+   function "=" (Left, Right : StupidTimer_Access_Array_Access_Array) return Boolean renames org.allbinary.time.StupidTimer_Package_References."=";
+   subtype StupidTimer_Access_Array_Access_Array_Access is org.allbinary.time.StupidTimer_Package_References.StupidTimer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StupidTimer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.time.StupidTimer_Package_References."=";
    procedure Initialize_Fields (This : in out RendererInitializedStupidTimerFactory'Class) is
    begin
       null;
@@ -36,7 +49,7 @@ package body org.allbinary.time.RendererInitializedStupidTimerFactory_Package is
 
    function getInstance return StupidTimer_Access is
    begin
-        return RendererInitializedStupidTimerFactory_Package.instance;
+        return StupidTimer_Access (RendererInitializedStupidTimerFactory_Package.instance);
    end getInstance;
 
 begin

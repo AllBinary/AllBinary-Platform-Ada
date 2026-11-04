@@ -13,9 +13,67 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.game.input.RTSPlayerGameInput_Package; use org.allbinary.game.input.RTSPlayerGameInput_Package;
+with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
+with org.allbinary.game.layer.capital.Capital_Package;
+with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
+with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
+with org.allbinary.game.input.LayerPositionFinderInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
+with org.allbinary.game.input.form.RTSFormInput_Package;
+with org.allbinary.game.layer.RTSInterface_Package;
+with org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
+with org.allbinary.game.layer.RTSLayerInfoPaintable_Package;
+with org.allbinary.game.layer.RTSLayerUtil_Package;
+with org.allbinary.game.input.RTSPlayerGameInput_Package;
+with org.allbinary.game.input.RTSPlayerGameInputProcessor_Package;
+with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
+with org.allbinary.game.layer.SelectionHudPaintable_Package;
+with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
+with org.allbinary.game.layer.waypoint.WaypointBase_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
+with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
+with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package body org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package is
 
+   subtype GameKeyEvent_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access;
+   function "=" (Left, Right : GameKeyEvent_Access) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array;
+   function "=" (Left, Right : GameKeyEvent_Access_Array) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEvent_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : GameKeyEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   function "=" (Left, Right : AllBinaryLayerManager_Access) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   function "=" (Left, Right : AllBinaryLayerManager_Access_Array) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryLayerManager_Access_Array_Access) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryLayerManager_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryLayerManager_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
+   subtype RTSPlayerGameInput_Access is org.allbinary.game.input.RTSPlayerGameInput_Package_References.RTSPlayerGameInput_Access;
+   function "=" (Left, Right : RTSPlayerGameInput_Access) return Boolean renames org.allbinary.game.input.RTSPlayerGameInput_Package_References."=";
+   subtype RTSPlayerGameInput_Access_Array is org.allbinary.game.input.RTSPlayerGameInput_Package_References.RTSPlayerGameInput_Access_Array;
+   function "=" (Left, Right : RTSPlayerGameInput_Access_Array) return Boolean renames org.allbinary.game.input.RTSPlayerGameInput_Package_References."=";
+   subtype RTSPlayerGameInput_Access_Array_Access is org.allbinary.game.input.RTSPlayerGameInput_Package_References.RTSPlayerGameInput_Access_Array_Access;
+   function "=" (Left, Right : RTSPlayerGameInput_Access_Array_Access) return Boolean renames org.allbinary.game.input.RTSPlayerGameInput_Package_References."=";
+   subtype RTSPlayerGameInput_Access_Array_Access_Array is org.allbinary.game.input.RTSPlayerGameInput_Package_References.RTSPlayerGameInput_Access_Array_Access_Array;
+   function "=" (Left, Right : RTSPlayerGameInput_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.RTSPlayerGameInput_Package_References."=";
+   subtype RTSPlayerGameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.RTSPlayerGameInput_Package_References.RTSPlayerGameInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RTSPlayerGameInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.RTSPlayerGameInput_Package_References."=";
    procedure Initialize_Fields (This : in out RTSPlayerFireGameInputProcessor'Class) is
    begin
       null;

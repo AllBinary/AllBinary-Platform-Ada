@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.math.NamedAngle_Package;
+package org.allbinary.math.NamedAngle_Package_References is
+   type NamedAngle_Access is access all org.allbinary.math.NamedAngle_Package.NamedAngle'Class;
+   type NamedAngle_Access_Array is array (Natural range <>) of NamedAngle_Access;
+   type NamedAngle_Access_Array_Access is access all NamedAngle_Access_Array;
+   type NamedAngle_Access_Array_Access_Array is array (Natural range <>) of NamedAngle_Access_Array_Access;
+   type NamedAngle_Access_Array_Access_Array_Access is access all NamedAngle_Access_Array_Access_Array;
+end org.allbinary.math.NamedAngle_Package_References;
+
+with org.allbinary.math.NamedAngle_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 
 package org.allbinary.math.NamedAngle_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NamedAngle is tagged;
-   type NamedAngle_Access is access all NamedAngle'Class;
-   type NamedAngle_Access_Array is array (Natural range <>) of NamedAngle_Access;
-   type NamedAngle_Access_Array_Access is access all NamedAngle_Access_Array;
-   type NamedAngle_Access_Array_Access_Array is array (Natural range <>) of NamedAngle_Access_Array_Access;
-   type NamedAngle_Access_Array_Access_Array_Access is access all NamedAngle_Access_Array_Access_Array;
+
+   subtype NamedAngle_Access is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access;
+   function "=" (Left, Right : NamedAngle_Access) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
+   subtype NamedAngle_Access_Array is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access_Array;
+   function "=" (Left, Right : NamedAngle_Access_Array) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
+   subtype NamedAngle_Access_Array_Access is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access_Array_Access;
+   function "=" (Left, Right : NamedAngle_Access_Array_Access) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
+   subtype NamedAngle_Access_Array_Access_Array is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access_Array_Access_Array;
+   function "=" (Left, Right : NamedAngle_Access_Array_Access_Array) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
+   subtype NamedAngle_Access_Array_Access_Array_Access is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NamedAngle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
 
    type NamedAngle is new Angle with record
       name : Unbounded_String;

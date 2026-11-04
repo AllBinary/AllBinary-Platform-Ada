@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;
 
 package body org.allbinary.game.configuration.persistance.NullRecordComparator_Package is
 

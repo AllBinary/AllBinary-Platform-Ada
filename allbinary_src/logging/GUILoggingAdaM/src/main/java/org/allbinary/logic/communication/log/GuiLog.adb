@@ -13,12 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.JDialog_Package; use org.allbinary.logic.communication.log.JDialog_Package;
 with org.allbinary.logic.communication.log.GridLayout_Package; use org.allbinary.logic.communication.log.GridLayout_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 
 package body org.allbinary.logic.communication.log.GuiLog_Package is
 
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype LogFormatUtil_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access;
+   function "=" (Left, Right : LogFormatUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
+   subtype LogFormatUtil_Access_Array is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array;
+   function "=" (Left, Right : LogFormatUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
+   subtype LogFormatUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access;
+   function "=" (Left, Right : LogFormatUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
+   subtype LogFormatUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogFormatUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
+   subtype LogFormatUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogFormatUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
    procedure Initialize_Fields (This : in out GuiLog'Class) is
    begin
       null;
@@ -29,7 +51,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
 
    function getInstance return GuiLog_Access is
    begin
-        return GuiLog_Package.instance;
+        return GuiLog_Access (GuiLog_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out GuiLog'Class) is

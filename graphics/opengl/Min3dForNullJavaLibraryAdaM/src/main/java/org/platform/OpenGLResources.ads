@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.platform.OpenGLResources_Package;
+package org.platform.OpenGLResources_Package_References is
+   type OpenGLResources_Access is access all org.platform.OpenGLResources_Package.OpenGLResources'Class;
+   type OpenGLResources_Access_Array is array (Natural range <>) of OpenGLResources_Access;
+   type OpenGLResources_Access_Array_Access is access all OpenGLResources_Access_Array;
+   type OpenGLResources_Access_Array_Access_Array is array (Natural range <>) of OpenGLResources_Access_Array_Access;
+   type OpenGLResources_Access_Array_Access_Array_Access is access all OpenGLResources_Access_Array_Access_Array;
+end org.platform.OpenGLResources_Package_References;
+
+with org.platform.OpenGLResources_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -13,13 +23,21 @@ with java.io.InputStream_Package; use java.io.InputStream_Package;
 package org.platform.OpenGLResources_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLResources is tagged;
-   type OpenGLResources_Access is access all OpenGLResources'Class;
-   type OpenGLResources_Access_Array is array (Natural range <>) of OpenGLResources_Access;
-   type OpenGLResources_Access_Array_Access is access all OpenGLResources_Access_Array;
-   type OpenGLResources_Access_Array_Access_Array is array (Natural range <>) of OpenGLResources_Access_Array_Access;
-   type OpenGLResources_Access_Array_Access_Array_Access is access all OpenGLResources_Access_Array_Access_Array;
+
+   subtype OpenGLResources_Access is org.platform.OpenGLResources_Package_References.OpenGLResources_Access;
+   function "=" (Left, Right : OpenGLResources_Access) return Boolean renames org.platform.OpenGLResources_Package_References."=";
+   subtype OpenGLResources_Access_Array is org.platform.OpenGLResources_Package_References.OpenGLResources_Access_Array;
+   function "=" (Left, Right : OpenGLResources_Access_Array) return Boolean renames org.platform.OpenGLResources_Package_References."=";
+   subtype OpenGLResources_Access_Array_Access is org.platform.OpenGLResources_Package_References.OpenGLResources_Access_Array_Access;
+   function "=" (Left, Right : OpenGLResources_Access_Array_Access) return Boolean renames org.platform.OpenGLResources_Package_References."=";
+   subtype OpenGLResources_Access_Array_Access_Array is org.platform.OpenGLResources_Package_References.OpenGLResources_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLResources_Access_Array_Access_Array) return Boolean renames org.platform.OpenGLResources_Package_References."=";
+   subtype OpenGLResources_Access_Array_Access_Array_Access is org.platform.OpenGLResources_Package_References.OpenGLResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLResources_Access_Array_Access_Array_Access) return Boolean renames org.platform.OpenGLResources_Package_References."=";
 
    type OpenGLResources is new Java_Object with null record;
    instance : OpenGLResources_Access;

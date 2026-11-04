@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.ShapeType_Package;
+with org.allbinary.animation.ShapeType_Package;
 
 package body org.allbinary.animation.ShapeTypeFactory_Package is
 
+   subtype ShapeType_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access;
+   function "=" (Left, Right : ShapeType_Access) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array;
+   function "=" (Left, Right : ShapeType_Access_Array) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access;
+   function "=" (Left, Right : ShapeType_Access_Array_Access) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array_Access_Array is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access_Array;
+   function "=" (Left, Right : ShapeType_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array_Access_Array_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShapeType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
    procedure Initialize_Fields (This : in out ShapeTypeFactory'Class) is
    begin
       null;
@@ -43,7 +55,7 @@ package body org.allbinary.animation.ShapeTypeFactory_Package is
 
    function getInstance return ShapeTypeFactory_Access is
    begin
-        return ShapeTypeFactory_Package.instance;
+        return ShapeTypeFactory_Access (ShapeTypeFactory_Package.instance);
    end getInstance;
 
 begin

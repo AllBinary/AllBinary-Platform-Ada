@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.RendererStateFactory_Package;
+package org.allbinary.graphics.RendererStateFactory_Package_References is
+   type RendererStateFactory_Access is access all org.allbinary.graphics.RendererStateFactory_Package.RendererStateFactory'Class;
+   type RendererStateFactory_Access_Array is array (Natural range <>) of RendererStateFactory_Access;
+   type RendererStateFactory_Access_Array_Access is access all RendererStateFactory_Access_Array;
+   type RendererStateFactory_Access_Array_Access_Array is array (Natural range <>) of RendererStateFactory_Access_Array_Access;
+   type RendererStateFactory_Access_Array_Access_Array_Access is access all RendererStateFactory_Access_Array_Access_Array;
+end org.allbinary.graphics.RendererStateFactory_Package_References;
+
+with org.allbinary.graphics.RendererStateFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.RendererStateFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type RendererStateFactory is tagged;
-   type RendererStateFactory_Access is access all RendererStateFactory'Class;
-   type RendererStateFactory_Access_Array is array (Natural range <>) of RendererStateFactory_Access;
-   type RendererStateFactory_Access_Array_Access is access all RendererStateFactory_Access_Array;
-   type RendererStateFactory_Access_Array_Access_Array is array (Natural range <>) of RendererStateFactory_Access_Array_Access;
-   type RendererStateFactory_Access_Array_Access_Array_Access is access all RendererStateFactory_Access_Array_Access_Array;
+
+   subtype RendererStateFactory_Access is org.allbinary.graphics.RendererStateFactory_Package_References.RendererStateFactory_Access;
+   function "=" (Left, Right : RendererStateFactory_Access) return Boolean renames org.allbinary.graphics.RendererStateFactory_Package_References."=";
+   subtype RendererStateFactory_Access_Array is org.allbinary.graphics.RendererStateFactory_Package_References.RendererStateFactory_Access_Array;
+   function "=" (Left, Right : RendererStateFactory_Access_Array) return Boolean renames org.allbinary.graphics.RendererStateFactory_Package_References."=";
+   subtype RendererStateFactory_Access_Array_Access is org.allbinary.graphics.RendererStateFactory_Package_References.RendererStateFactory_Access_Array_Access;
+   function "=" (Left, Right : RendererStateFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.RendererStateFactory_Package_References."=";
+   subtype RendererStateFactory_Access_Array_Access_Array is org.allbinary.graphics.RendererStateFactory_Package_References.RendererStateFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : RendererStateFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.RendererStateFactory_Package_References."=";
+   subtype RendererStateFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.RendererStateFactory_Package_References.RendererStateFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RendererStateFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.RendererStateFactory_Package_References."=";
 
    type RendererStateFactory is new Java_Object with record
       loaded : Boolean;

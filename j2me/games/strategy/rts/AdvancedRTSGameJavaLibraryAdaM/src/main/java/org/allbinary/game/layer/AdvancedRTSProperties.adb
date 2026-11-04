@@ -14,10 +14,13 @@
 
 
 with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
+with org.allbinary.animation.transition.shake.ShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
 with org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package; use org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.game.tick.TickableInterface_Package; use org.allbinary.game.tick.TickableInterface_Package;
 with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
 with org.allbinary.media.AllBinaryVibration_Package; use org.allbinary.media.AllBinaryVibration_Package;
+with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.AllBinaryVibrationME_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package body org.allbinary.game.layer.AdvancedRTSProperties_Package is
@@ -27,6 +30,36 @@ package body org.allbinary.game.layer.AdvancedRTSProperties_Package is
    package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
    package AllBinaryNoVibration_Package renames Standard.org.allbinary.media.AllBinaryNoVibration_Package;
    package AllBinaryVibration_Package renames Standard.org.allbinary.media.AllBinaryVibration_Package;
+   subtype ShakeAnimationListener_Access is org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References.ShakeAnimationListener_Access;
+   function "=" (Left, Right : ShakeAnimationListener_Access) return Boolean renames org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References."=";
+   subtype ShakeAnimationListener_Access_Array is org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References.ShakeAnimationListener_Access_Array;
+   function "=" (Left, Right : ShakeAnimationListener_Access_Array) return Boolean renames org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References."=";
+   subtype ShakeAnimationListener_Access_Array_Access is org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References.ShakeAnimationListener_Access_Array_Access;
+   function "=" (Left, Right : ShakeAnimationListener_Access_Array_Access) return Boolean renames org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References."=";
+   subtype ShakeAnimationListener_Access_Array_Access_Array is org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References.ShakeAnimationListener_Access_Array_Access_Array;
+   function "=" (Left, Right : ShakeAnimationListener_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References."=";
+   subtype ShakeAnimationListener_Access_Array_Access_Array_Access is org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References.ShakeAnimationListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShakeAnimationListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References."=";
+   subtype TickableInterface_Access is org.allbinary.game.tick.TickableInterface_Package_References.TickableInterface_Access;
+   function "=" (Left, Right : TickableInterface_Access) return Boolean renames org.allbinary.game.tick.TickableInterface_Package_References."=";
+   subtype TickableInterface_Access_Array is org.allbinary.game.tick.TickableInterface_Package_References.TickableInterface_Access_Array;
+   function "=" (Left, Right : TickableInterface_Access_Array) return Boolean renames org.allbinary.game.tick.TickableInterface_Package_References."=";
+   subtype TickableInterface_Access_Array_Access is org.allbinary.game.tick.TickableInterface_Package_References.TickableInterface_Access_Array_Access;
+   function "=" (Left, Right : TickableInterface_Access_Array_Access) return Boolean renames org.allbinary.game.tick.TickableInterface_Package_References."=";
+   subtype TickableInterface_Access_Array_Access_Array is org.allbinary.game.tick.TickableInterface_Package_References.TickableInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TickableInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.tick.TickableInterface_Package_References."=";
+   subtype TickableInterface_Access_Array_Access_Array_Access is org.allbinary.game.tick.TickableInterface_Package_References.TickableInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TickableInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.tick.TickableInterface_Package_References."=";
+   subtype AllBinaryVibrationME_Access is org.allbinary.media.AllBinaryVibrationME_Package_References.AllBinaryVibrationME_Access;
+   function "=" (Left, Right : AllBinaryVibrationME_Access) return Boolean renames org.allbinary.media.AllBinaryVibrationME_Package_References."=";
+   subtype AllBinaryVibrationME_Access_Array is org.allbinary.media.AllBinaryVibrationME_Package_References.AllBinaryVibrationME_Access_Array;
+   function "=" (Left, Right : AllBinaryVibrationME_Access_Array) return Boolean renames org.allbinary.media.AllBinaryVibrationME_Package_References."=";
+   subtype AllBinaryVibrationME_Access_Array_Access is org.allbinary.media.AllBinaryVibrationME_Package_References.AllBinaryVibrationME_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryVibrationME_Access_Array_Access) return Boolean renames org.allbinary.media.AllBinaryVibrationME_Package_References."=";
+   subtype AllBinaryVibrationME_Access_Array_Access_Array is org.allbinary.media.AllBinaryVibrationME_Package_References.AllBinaryVibrationME_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryVibrationME_Access_Array_Access_Array) return Boolean renames org.allbinary.media.AllBinaryVibrationME_Package_References."=";
+   subtype AllBinaryVibrationME_Access_Array_Access_Array_Access is org.allbinary.media.AllBinaryVibrationME_Package_References.AllBinaryVibrationME_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryVibrationME_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.AllBinaryVibrationME_Package_References."=";
    procedure Initialize_Fields (This : in out AdvancedRTSProperties'Class) is
    begin
       null;

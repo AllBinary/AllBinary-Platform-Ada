@@ -13,10 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.audio.NullJ2SEControl_Package; use org.allbinary.media.audio.NullJ2SEControl_Package;
 with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
+with org.allbinary.media.audio.NullAudioFormat_Package;
+with org.allbinary.media.audio.NullJ2SEControl_Package;
 
 package body org.allbinary.media.audio.NullClip_Package is
 
+   subtype NullJ2SEControl_Access is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access;
+   function "=" (Left, Right : NullJ2SEControl_Access) return Boolean renames org.allbinary.media.audio.NullJ2SEControl_Package_References."=";
+   subtype NullJ2SEControl_Access_Array is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access_Array;
+   function "=" (Left, Right : NullJ2SEControl_Access_Array) return Boolean renames org.allbinary.media.audio.NullJ2SEControl_Package_References."=";
+   subtype NullJ2SEControl_Access_Array_Access is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access_Array_Access;
+   function "=" (Left, Right : NullJ2SEControl_Access_Array_Access) return Boolean renames org.allbinary.media.audio.NullJ2SEControl_Package_References."=";
+   subtype NullJ2SEControl_Access_Array_Access_Array is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access_Array_Access_Array;
+   function "=" (Left, Right : NullJ2SEControl_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.NullJ2SEControl_Package_References."=";
+   subtype NullJ2SEControl_Access_Array_Access_Array_Access is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullJ2SEControl_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.NullJ2SEControl_Package_References."=";
    procedure Initialize_Fields (This : in out NullClip'Class) is
    begin
       null;
@@ -111,7 +124,7 @@ package body org.allbinary.media.audio.NullClip_Package is
 
    function getFormat (This : in out NullClip) return AudioFormat_Access is
    begin
-        return NullAudioFormat_Package.NULL_AUDIO_FORMAT;
+        return AudioFormat_Access (NullAudioFormat_Package.NULL_AUDIO_FORMAT);
    end getFormat;
 
    function getBufferSize (This : in out NullClip) return Integer is
@@ -179,7 +192,7 @@ package body org.allbinary.media.audio.NullClip_Package is
    function getControl (This : in out NullClip; control_Param : access Type_Package.Type'Class) return Control_Access is
       control : constant Type_Access := Type_Access (control_Param);
    begin
-        return NullClip_Package.NULL_CONTROL;
+        return Control_Access (NullClip_Package.NULL_CONTROL);
    end getControl;
 
    procedure addLineListener (This : in out NullClip; listener_Param : access LineListener_Package.LineListener'Class) is

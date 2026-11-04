@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.linux.Media_Package;
+package org.allbinary.logic.system.hardware.components.linux.Media_Package_References is
+   type Media_Access is access all org.allbinary.logic.system.hardware.components.linux.Media_Package.Media'Class;
+   type Media_Access_Array is array (Natural range <>) of Media_Access;
+   type Media_Access_Array_Access is access all Media_Access_Array;
+   type Media_Access_Array_Access_Array is array (Natural range <>) of Media_Access_Array_Access;
+   type Media_Access_Array_Access_Array_Access is access all Media_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.linux.Media_Package_References;
+
+with org.allbinary.logic.system.hardware.components.linux.Media_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ package org.allbinary.logic.system.hardware.components.linux.Media_Package is
 
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
    package MediaInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Media is tagged;
-   type Media_Access is access all Media'Class;
-   type Media_Access_Array is array (Natural range <>) of Media_Access;
-   type Media_Access_Array_Access is access all Media_Access_Array;
-   type Media_Access_Array_Access_Array is array (Natural range <>) of Media_Access_Array_Access;
-   type Media_Access_Array_Access_Array_Access is access all Media_Access_Array_Access_Array;
+
+   subtype Media_Access is org.allbinary.logic.system.hardware.components.linux.Media_Package_References.Media_Access;
+   function "=" (Left, Right : Media_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Media_Package_References."=";
+   subtype Media_Access_Array is org.allbinary.logic.system.hardware.components.linux.Media_Package_References.Media_Access_Array;
+   function "=" (Left, Right : Media_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Media_Package_References."=";
+   subtype Media_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Media_Package_References.Media_Access_Array_Access;
+   function "=" (Left, Right : Media_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Media_Package_References."=";
+   subtype Media_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.Media_Package_References.Media_Access_Array_Access_Array;
+   function "=" (Left, Right : Media_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Media_Package_References."=";
+   subtype Media_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Media_Package_References.Media_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Media_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Media_Package_References."=";
 
    type Media is new Java_Object and HardwareComponentInterface and MediaInterface with record
       data : Unbounded_String;

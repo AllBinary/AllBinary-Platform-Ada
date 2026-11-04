@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package;
+package org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References is
+   type NoZBasicConstantVelocityMovement_Access is access all org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package.NoZBasicConstantVelocityMovement'Class;
+   type NoZBasicConstantVelocityMovement_Access_Array is array (Natural range <>) of NoZBasicConstantVelocityMovement_Access;
+   type NoZBasicConstantVelocityMovement_Access_Array_Access is access all NoZBasicConstantVelocityMovement_Access_Array;
+   type NoZBasicConstantVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of NoZBasicConstantVelocityMovement_Access_Array_Access;
+   type NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access is access all NoZBasicConstantVelocityMovement_Access_Array_Access_Array;
+end org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References;
+
+with org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
-with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+limited with org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
+limited with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
 with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
-with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package; use org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
+limited with org.allbinary.logic.math.BasicDecimal_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
+limited with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
+with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References;
 with org.allbinary.physics.movement.Movement_Package; use org.allbinary.physics.movement.Movement_Package;
 
 package org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package is
@@ -36,13 +51,71 @@ package org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package 
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
    package AxisMathVectorUtil_Package renames Standard.org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
+   package Reference_Types is
+   subtype AllBinaryGameLayer_Access is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access;
+   use type AllBinaryGameLayer_Access;
+   subtype AllBinaryGameLayer_Access_Array is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array;
+   use type AllBinaryGameLayer_Access_Array;
+   subtype AllBinaryGameLayer_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array_Access;
+   use type AllBinaryGameLayer_Access_Array_Access;
+   subtype AllBinaryGameLayer_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array_Access_Array;
+   use type AllBinaryGameLayer_Access_Array_Access_Array;
+   subtype AllBinaryGameLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryGameLayer_Access_Array_Access_Array_Access;
+   subtype BasicVelocityProperties_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access;
+   use type BasicVelocityProperties_Access;
+   subtype BasicVelocityProperties_Access_Array is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array;
+   use type BasicVelocityProperties_Access_Array;
+   subtype BasicVelocityProperties_Access_Array_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access;
+   use type BasicVelocityProperties_Access_Array_Access;
+   subtype BasicVelocityProperties_Access_Array_Access_Array is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access_Array;
+   use type BasicVelocityProperties_Access_Array_Access_Array;
+   subtype BasicVelocityProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access_Array_Access;
+   use type BasicVelocityProperties_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   subtype BasicDecimal_Access is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access;
+   use type BasicDecimal_Access;
+   subtype BasicDecimal_Access_Array is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array;
+   use type BasicDecimal_Access_Array;
+   subtype BasicDecimal_Access_Array_Access is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array_Access;
+   use type BasicDecimal_Access_Array_Access;
+   subtype BasicDecimal_Access_Array_Access_Array is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array_Access_Array;
+   use type BasicDecimal_Access_Array_Access_Array;
+   subtype BasicDecimal_Access_Array_Access_Array_Access is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array_Access_Array_Access;
+   use type BasicDecimal_Access_Array_Access_Array_Access;
+   subtype AxisMathVectorUtil_Access is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access;
+   use type AxisMathVectorUtil_Access;
+   subtype AxisMathVectorUtil_Access_Array is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access_Array;
+   use type AxisMathVectorUtil_Access_Array;
+   subtype AxisMathVectorUtil_Access_Array_Access is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access_Array_Access;
+   use type AxisMathVectorUtil_Access_Array_Access;
+   subtype AxisMathVectorUtil_Access_Array_Access_Array is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access_Array_Access_Array;
+   use type AxisMathVectorUtil_Access_Array_Access_Array;
+   subtype AxisMathVectorUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access_Array_Access_Array_Access;
+   use type AxisMathVectorUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoZBasicConstantVelocityMovement is tagged;
-   type NoZBasicConstantVelocityMovement_Access is access all NoZBasicConstantVelocityMovement'Class;
-   type NoZBasicConstantVelocityMovement_Access_Array is array (Natural range <>) of NoZBasicConstantVelocityMovement_Access;
-   type NoZBasicConstantVelocityMovement_Access_Array_Access is access all NoZBasicConstantVelocityMovement_Access_Array;
-   type NoZBasicConstantVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of NoZBasicConstantVelocityMovement_Access_Array_Access;
-   type NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access is access all NoZBasicConstantVelocityMovement_Access_Array_Access_Array;
+
+   subtype NoZBasicConstantVelocityMovement_Access is org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.NoZBasicConstantVelocityMovement_Access;
+   function "=" (Left, Right : NoZBasicConstantVelocityMovement_Access) return Boolean renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References."=";
+   subtype NoZBasicConstantVelocityMovement_Access_Array is org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.NoZBasicConstantVelocityMovement_Access_Array;
+   function "=" (Left, Right : NoZBasicConstantVelocityMovement_Access_Array) return Boolean renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References."=";
+   subtype NoZBasicConstantVelocityMovement_Access_Array_Access is org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.NoZBasicConstantVelocityMovement_Access_Array_Access;
+   function "=" (Left, Right : NoZBasicConstantVelocityMovement_Access_Array_Access) return Boolean renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References."=";
+   subtype NoZBasicConstantVelocityMovement_Access_Array_Access_Array is org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.NoZBasicConstantVelocityMovement_Access_Array_Access_Array;
+   function "=" (Left, Right : NoZBasicConstantVelocityMovement_Access_Array_Access_Array) return Boolean renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References."=";
+   subtype NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access is org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References."=";
 
    type NoZBasicConstantVelocityMovement is new Movement_Package.Movement and VelocityInterfaceCompositeInterface with record
       velocityProperties : BasicVelocityProperties_Access;

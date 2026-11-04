@@ -14,11 +14,49 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
 with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allbinary.media.image.comparison.motion.Rectangle_Package;
+with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   subtype ImageComparisonResult_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access;
+   function "=" (Left, Right : ImageComparisonResult_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   subtype ImageComparisonResult_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array;
+   function "=" (Left, Right : ImageComparisonResult_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   subtype ImageComparisonResult_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonResult_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   subtype ImageComparisonResult_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageComparisonResult_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   subtype ImageComparisonResult_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonResult_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   subtype PixelDelta_Access is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access;
+   function "=" (Left, Right : PixelDelta_Access) return Boolean renames org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References."=";
+   subtype PixelDelta_Access_Array is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access_Array;
+   function "=" (Left, Right : PixelDelta_Access_Array) return Boolean renames org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References."=";
+   subtype PixelDelta_Access_Array_Access is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access_Array_Access;
+   function "=" (Left, Right : PixelDelta_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References."=";
+   subtype PixelDelta_Access_Array_Access_Array is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access_Array_Access_Array;
+   function "=" (Left, Right : PixelDelta_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References."=";
+   subtype PixelDelta_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PixelDelta_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References."=";
+   subtype MotionRectangle_Access is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access;
+   function "=" (Left, Right : MotionRectangle_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
+   subtype MotionRectangle_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array;
+   function "=" (Left, Right : MotionRectangle_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
+   subtype MotionRectangle_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array_Access;
+   function "=" (Left, Right : MotionRectangle_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
+   subtype MotionRectangle_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionRectangle_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
+   subtype MotionRectangle_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionRectangle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
    procedure Initialize_Fields (This : in out AllMotionRectangles'Class) is
    begin
       null;

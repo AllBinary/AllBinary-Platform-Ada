@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.layer.capital.event.CapitalEventHandler_Package; use org.allbinary.game.layer.capital.event.CapitalEventHandler_Package;
+with org.allbinary.game.layer.capital.event.CapitalEventHandler_Package;
 
 package body org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Package is
 
+   subtype Group_Access is org.allbinary.game.identification.Group_Package_References.Group_Access;
+   function "=" (Left, Right : Group_Access) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype Group_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array;
+   function "=" (Left, Right : Group_Access_Array) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype Group_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access;
+   function "=" (Left, Right : Group_Access_Array_Access) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype Group_Access_Array_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array;
+   function "=" (Left, Right : Group_Access_Array_Access_Array) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype Group_Access_Array_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Group_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype CapitalEventHandler_Access is org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References.CapitalEventHandler_Access;
+   function "=" (Left, Right : CapitalEventHandler_Access) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References."=";
+   subtype CapitalEventHandler_Access_Array is org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References.CapitalEventHandler_Access_Array;
+   function "=" (Left, Right : CapitalEventHandler_Access_Array) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References."=";
+   subtype CapitalEventHandler_Access_Array_Access is org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References.CapitalEventHandler_Access_Array_Access;
+   function "=" (Left, Right : CapitalEventHandler_Access_Array_Access) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References."=";
+   subtype CapitalEventHandler_Access_Array_Access_Array is org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References.CapitalEventHandler_Access_Array_Access_Array;
+   function "=" (Left, Right : CapitalEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References."=";
+   subtype CapitalEventHandler_Access_Array_Access_Array_Access is org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References.CapitalEventHandler_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CapitalEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEventHandler_Package_References."=";
    procedure Initialize_Fields (This : in out CapitalEventHandlerFactory'Class) is
    begin
       null;
@@ -38,7 +61,6 @@ package body org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_P
    procedure Initializer is
       index : Integer;
    begin
-        capitalEventHandlerArray := new CapitalEventHandler_Access_Array'(0 .. (10) - 1 => null);
         for index in reverse 0 .. (CapitalEventHandlerFactory_Package.capitalEventHandlerArray'Length) - (1) loop
             CapitalEventHandlerFactory_Package.capitalEventHandlerArray (index) := CapitalEventHandler_Package.Create;
         end loop;
@@ -46,8 +68,10 @@ package body org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_P
 
    function getInstance (groupInterface_Param : access Group_Package.Group'Class) return CapitalEventHandler_Access is
       groupInterface : constant Group_Access := Group_Access (groupInterface_Param);
+      groupId : Integer;
    begin
-        return CapitalEventHandlerFactory_Package.capitalEventHandlerArray (Integer (groupInterface.getGroupId));
+        groupId := Integer (groupInterface.getGroupId);
+        return CapitalEventHandlerFactory_Package.capitalEventHandlerArray (groupId);
    end getInstance;
 
    procedure removeAll is
@@ -67,7 +91,7 @@ package body org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_P
 
 begin
    null;
-   capitalEventHandlerArray := null;
+   capitalEventHandlerArray := new CapitalEventHandler_Access_Array'(0 .. (10) - 1 => null);
 
 end org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Package;
 

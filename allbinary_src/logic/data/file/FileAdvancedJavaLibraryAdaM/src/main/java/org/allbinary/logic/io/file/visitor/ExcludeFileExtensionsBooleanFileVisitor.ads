@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package;
+package org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References is
+   type ExcludeFileExtensionsBooleanFileVisitor_Access is access all org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package.ExcludeFileExtensionsBooleanFileVisitor'Class;
+   type ExcludeFileExtensionsBooleanFileVisitor_Access_Array is array (Natural range <>) of ExcludeFileExtensionsBooleanFileVisitor_Access;
+   type ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access is access all ExcludeFileExtensionsBooleanFileVisitor_Access_Array;
+   type ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array is array (Natural range <>) of ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access;
+   type ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array_Access is access all ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array;
+end org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References;
+
+with org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,51 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.AbFile_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package; use org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package;
 
 package org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package is
 
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   use type AbFile_Access;
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   use type AbFile_Access_Array;
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   use type AbFile_Access_Array_Access;
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   use type AbFile_Access_Array_Access_Array;
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   use type AbFile_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ExcludeFileExtensionsBooleanFileVisitor is tagged;
-   type ExcludeFileExtensionsBooleanFileVisitor_Access is access all ExcludeFileExtensionsBooleanFileVisitor'Class;
-   type ExcludeFileExtensionsBooleanFileVisitor_Access_Array is array (Natural range <>) of ExcludeFileExtensionsBooleanFileVisitor_Access;
-   type ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access is access all ExcludeFileExtensionsBooleanFileVisitor_Access_Array;
-   type ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array is array (Natural range <>) of ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access;
-   type ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array_Access is access all ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array;
+
+   subtype ExcludeFileExtensionsBooleanFileVisitor_Access is org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References.ExcludeFileExtensionsBooleanFileVisitor_Access;
+   function "=" (Left, Right : ExcludeFileExtensionsBooleanFileVisitor_Access) return Boolean renames org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References."=";
+   subtype ExcludeFileExtensionsBooleanFileVisitor_Access_Array is org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References.ExcludeFileExtensionsBooleanFileVisitor_Access_Array;
+   function "=" (Left, Right : ExcludeFileExtensionsBooleanFileVisitor_Access_Array) return Boolean renames org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References."=";
+   subtype ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access is org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References.ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access;
+   function "=" (Left, Right : ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References."=";
+   subtype ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array is org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References.ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References."=";
+   subtype ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References.ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ExcludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package_References."=";
 
    type ExcludeFileExtensionsBooleanFileVisitor is new BooleanFileVisitor with null record;
 

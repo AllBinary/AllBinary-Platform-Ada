@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.view.event.ViewPositionEventHandler_Package;
+package org.allbinary.view.event.ViewPositionEventHandler_Package_References is
+   type ViewPositionEventHandler_Access is access all org.allbinary.view.event.ViewPositionEventHandler_Package.ViewPositionEventHandler'Class;
+   type ViewPositionEventHandler_Access_Array is array (Natural range <>) of ViewPositionEventHandler_Access;
+   type ViewPositionEventHandler_Access_Array_Access is access all ViewPositionEventHandler_Access_Array;
+   type ViewPositionEventHandler_Access_Array_Access_Array is array (Natural range <>) of ViewPositionEventHandler_Access_Array_Access;
+   type ViewPositionEventHandler_Access_Array_Access_Array_Access is access all ViewPositionEventHandler_Access_Array_Access_Array;
+end org.allbinary.view.event.ViewPositionEventHandler_Package_References;
+
+with org.allbinary.view.event.ViewPositionEventHandler_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
+limited with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package_References;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.view.event.ViewPositionEventHandler_Package is
 
@@ -33,13 +47,61 @@ package org.allbinary.view.event.ViewPositionEventHandler_Package is
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
+   subtype EventListenerInterface_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access;
+   use type EventListenerInterface_Access;
+   subtype EventListenerInterface_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array;
+   use type EventListenerInterface_Access_Array;
+   subtype EventListenerInterface_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access;
+   use type EventListenerInterface_Access_Array_Access;
+   subtype EventListenerInterface_Access_Array_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array;
+   use type EventListenerInterface_Access_Array_Access_Array;
+   subtype EventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array_Access;
+   use type EventListenerInterface_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ViewPositionEventHandler is tagged;
-   type ViewPositionEventHandler_Access is access all ViewPositionEventHandler'Class;
-   type ViewPositionEventHandler_Access_Array is array (Natural range <>) of ViewPositionEventHandler_Access;
-   type ViewPositionEventHandler_Access_Array_Access is access all ViewPositionEventHandler_Access_Array;
-   type ViewPositionEventHandler_Access_Array_Access_Array is array (Natural range <>) of ViewPositionEventHandler_Access_Array_Access;
-   type ViewPositionEventHandler_Access_Array_Access_Array_Access is access all ViewPositionEventHandler_Access_Array_Access_Array;
+
+   subtype ViewPositionEventHandler_Access is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access;
+   function "=" (Left, Right : ViewPositionEventHandler_Access) return Boolean renames org.allbinary.view.event.ViewPositionEventHandler_Package_References."=";
+   subtype ViewPositionEventHandler_Access_Array is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access_Array;
+   function "=" (Left, Right : ViewPositionEventHandler_Access_Array) return Boolean renames org.allbinary.view.event.ViewPositionEventHandler_Package_References."=";
+   subtype ViewPositionEventHandler_Access_Array_Access is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access_Array_Access;
+   function "=" (Left, Right : ViewPositionEventHandler_Access_Array_Access) return Boolean renames org.allbinary.view.event.ViewPositionEventHandler_Package_References."=";
+   subtype ViewPositionEventHandler_Access_Array_Access_Array is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access_Array_Access_Array;
+   function "=" (Left, Right : ViewPositionEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.view.event.ViewPositionEventHandler_Package_References."=";
+   subtype ViewPositionEventHandler_Access_Array_Access_Array_Access is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ViewPositionEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.view.event.ViewPositionEventHandler_Package_References."=";
 
    type ViewPositionEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;

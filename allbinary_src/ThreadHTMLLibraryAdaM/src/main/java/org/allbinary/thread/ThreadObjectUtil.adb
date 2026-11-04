@@ -2,9 +2,22 @@
 
 
 with org.allbinary.thread.NullPriorityRunnable_Package; use org.allbinary.thread.NullPriorityRunnable_Package;
+with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
+with org.allbinary.thread.NullPriorityRunnable_Package;
+with org.allbinary.thread.PriorityRunnable_Package;
 
 package body org.allbinary.thread.ThreadObjectUtil_Package is
 
+   subtype PriorityRunnable_Access is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access;
+   function "=" (Left, Right : PriorityRunnable_Access) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
+   subtype PriorityRunnable_Access_Array is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access_Array;
+   function "=" (Left, Right : PriorityRunnable_Access_Array) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
+   subtype PriorityRunnable_Access_Array_Access is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access_Array_Access;
+   function "=" (Left, Right : PriorityRunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
+   subtype PriorityRunnable_Access_Array_Access_Array is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : PriorityRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
+   subtype PriorityRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PriorityRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out ThreadObjectUtil'Class) is
    begin
       null;
@@ -26,7 +39,7 @@ package body org.allbinary.thread.ThreadObjectUtil_Package is
 
    function getInstance return ThreadObjectUtil_Access is
    begin
-        return ThreadObjectUtil_Package.instance;
+        return ThreadObjectUtil_Access (ThreadObjectUtil_Package.instance);
    end getInstance;
 
    procedure notifyObject (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class) is

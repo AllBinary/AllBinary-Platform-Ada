@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.ImageUtil_Package;
+package org.allbinary.media.image.ImageUtil_Package_References is
+   type ImageUtil_Access is access all org.allbinary.media.image.ImageUtil_Package.ImageUtil'Class;
+   type ImageUtil_Access_Array is array (Natural range <>) of ImageUtil_Access;
+   type ImageUtil_Access_Array_Access is access all ImageUtil_Access_Array;
+   type ImageUtil_Access_Array_Access_Array is array (Natural range <>) of ImageUtil_Access_Array_Access;
+   type ImageUtil_Access_Array_Access_Array_Access is access all ImageUtil_Access_Array_Access_Array;
+end org.allbinary.media.image.ImageUtil_Package_References;
+
+with org.allbinary.media.image.ImageUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.eclipse.swt.widgets.Canvas_Package; use org.eclipse.swt.widgets.Canvas_Package;
-with org.eclipse.swt.widgets.Composite_Package; use org.eclipse.swt.widgets.Composite_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.eclipse.swt.widgets.Canvas_Package;
+with org.eclipse.swt.widgets.Canvas_Package_References;
+limited with org.eclipse.swt.widgets.Composite_Package;
+with org.eclipse.swt.widgets.Composite_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package org.allbinary.media.image.ImageUtil_Package is
 
@@ -33,13 +48,71 @@ package org.allbinary.media.image.ImageUtil_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype Canvas_Access is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access;
+   use type Canvas_Access;
+   subtype Canvas_Access_Array is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access_Array;
+   use type Canvas_Access_Array;
+   subtype Canvas_Access_Array_Access is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access_Array_Access;
+   use type Canvas_Access_Array_Access;
+   subtype Canvas_Access_Array_Access_Array is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access_Array_Access_Array;
+   use type Canvas_Access_Array_Access_Array;
+   subtype Canvas_Access_Array_Access_Array_Access is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access_Array_Access_Array_Access;
+   use type Canvas_Access_Array_Access_Array_Access;
+   subtype Composite_Access is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access;
+   use type Composite_Access;
+   subtype Composite_Access_Array is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access_Array;
+   use type Composite_Access_Array;
+   subtype Composite_Access_Array_Access is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access_Array_Access;
+   use type Composite_Access_Array_Access;
+   subtype Composite_Access_Array_Access_Array is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access_Array_Access_Array;
+   use type Composite_Access_Array_Access_Array;
+   subtype Composite_Access_Array_Access_Array_Access is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access_Array_Access_Array_Access;
+   use type Composite_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   use type CommonSeps_Access;
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   use type CommonSeps_Access_Array;
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access;
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   use type CommonSeps_Access_Array_Access_Array;
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageUtil is tagged;
-   type ImageUtil_Access is access all ImageUtil'Class;
-   type ImageUtil_Access_Array is array (Natural range <>) of ImageUtil_Access;
-   type ImageUtil_Access_Array_Access is access all ImageUtil_Access_Array;
-   type ImageUtil_Access_Array_Access_Array is array (Natural range <>) of ImageUtil_Access_Array_Access;
-   type ImageUtil_Access_Array_Access_Array_Access is access all ImageUtil_Access_Array_Access_Array;
+
+   subtype ImageUtil_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access;
+   function "=" (Left, Right : ImageUtil_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array;
+   function "=" (Left, Right : ImageUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
 
    type ImageUtil is new Java_Object with record
       logUtil : LogUtil_Access;

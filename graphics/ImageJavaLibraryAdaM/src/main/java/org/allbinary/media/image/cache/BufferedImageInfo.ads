@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.cache.BufferedImageInfo_Package;
+package org.allbinary.media.image.cache.BufferedImageInfo_Package_References is
+   type BufferedImageInfo_Access is access all org.allbinary.media.image.cache.BufferedImageInfo_Package.BufferedImageInfo'Class;
+   type BufferedImageInfo_Access_Array is array (Natural range <>) of BufferedImageInfo_Access;
+   type BufferedImageInfo_Access_Array_Access is access all BufferedImageInfo_Access_Array;
+   type BufferedImageInfo_Access_Array_Access_Array is array (Natural range <>) of BufferedImageInfo_Access_Array_Access;
+   type BufferedImageInfo_Access_Array_Access_Array_Access is access all BufferedImageInfo_Access_Array_Access_Array;
+end org.allbinary.media.image.cache.BufferedImageInfo_Package_References;
+
+with org.allbinary.media.image.cache.BufferedImageInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.media.image.cache.BufferedImageInfo_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BufferedImageInfo is tagged;
-   type BufferedImageInfo_Access is access all BufferedImageInfo'Class;
-   type BufferedImageInfo_Access_Array is array (Natural range <>) of BufferedImageInfo_Access;
-   type BufferedImageInfo_Access_Array_Access is access all BufferedImageInfo_Access_Array;
-   type BufferedImageInfo_Access_Array_Access_Array is array (Natural range <>) of BufferedImageInfo_Access_Array_Access;
-   type BufferedImageInfo_Access_Array_Access_Array_Access is access all BufferedImageInfo_Access_Array_Access_Array;
+
+   subtype BufferedImageInfo_Access is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access;
+   function "=" (Left, Right : BufferedImageInfo_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
+   subtype BufferedImageInfo_Access_Array is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array;
+   function "=" (Left, Right : BufferedImageInfo_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
+   subtype BufferedImageInfo_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageInfo_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
+   subtype BufferedImageInfo_Access_Array_Access_Array is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : BufferedImageInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
+   subtype BufferedImageInfo_Access_Array_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
 
    type BufferedImageInfo is new Java_Object with record
       width : Integer;

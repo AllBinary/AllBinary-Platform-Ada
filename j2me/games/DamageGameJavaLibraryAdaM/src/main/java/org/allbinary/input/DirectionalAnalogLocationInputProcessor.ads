@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package;
+package org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References is
+   type DirectionalAnalogLocationInputProcessor_Access is access all org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package.DirectionalAnalogLocationInputProcessor'Class;
+   type DirectionalAnalogLocationInputProcessor_Access_Array is array (Natural range <>) of DirectionalAnalogLocationInputProcessor_Access;
+   type DirectionalAnalogLocationInputProcessor_Access_Array_Access is access all DirectionalAnalogLocationInputProcessor_Access_Array;
+   type DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array is array (Natural range <>) of DirectionalAnalogLocationInputProcessor_Access_Array_Access;
+   type DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array_Access is access all DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array;
+end org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References;
+
+with org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,13 +31,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package; use org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
-with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
+limited with org.allbinary.game.input.GameInputProcessor_Package;
+with org.allbinary.game.input.GameInputProcessor_Package_References;
 with org.allbinary.game.input.GameKeyEventSourceInterface_Package; use org.allbinary.game.input.GameKeyEventSourceInterface_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
-with org.allbinary.game.input.analog.AnalogLocationInput_Package; use org.allbinary.game.input.analog.AnalogLocationInput_Package;
-with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.GameKeyFactory_Package_References;
+limited with org.allbinary.game.input.analog.AnalogLocationInput_Package;
+with org.allbinary.game.input.analog.AnalogLocationInput_Package_References;
+limited with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package is
 
@@ -39,13 +55,81 @@ package org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package is
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype GameInputProcessor_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access;
+   use type GameInputProcessor_Access;
+   subtype GameInputProcessor_Access_Array is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array;
+   use type GameInputProcessor_Access_Array;
+   subtype GameInputProcessor_Access_Array_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access;
+   use type GameInputProcessor_Access_Array_Access;
+   subtype GameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access_Array;
+   use type GameInputProcessor_Access_Array_Access_Array;
+   subtype GameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access_Array_Access;
+   use type GameInputProcessor_Access_Array_Access_Array_Access;
+   subtype GameKeyFactory_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access;
+   use type GameKeyFactory_Access;
+   subtype GameKeyFactory_Access_Array is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array;
+   use type GameKeyFactory_Access_Array;
+   subtype GameKeyFactory_Access_Array_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access;
+   use type GameKeyFactory_Access_Array_Access;
+   subtype GameKeyFactory_Access_Array_Access_Array is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access_Array;
+   use type GameKeyFactory_Access_Array_Access_Array;
+   subtype GameKeyFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access_Array_Access;
+   use type GameKeyFactory_Access_Array_Access_Array_Access;
+   subtype AnalogLocationInput_Access is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access;
+   use type AnalogLocationInput_Access;
+   subtype AnalogLocationInput_Access_Array is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access_Array;
+   use type AnalogLocationInput_Access_Array;
+   subtype AnalogLocationInput_Access_Array_Access is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access_Array_Access;
+   use type AnalogLocationInput_Access_Array_Access;
+   subtype AnalogLocationInput_Access_Array_Access_Array is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access_Array_Access_Array;
+   use type AnalogLocationInput_Access_Array_Access_Array;
+   subtype AnalogLocationInput_Access_Array_Access_Array_Access is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access_Array_Access_Array_Access;
+   use type AnalogLocationInput_Access_Array_Access_Array_Access;
+   subtype GameKeyEvent_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access;
+   use type GameKeyEvent_Access;
+   subtype GameKeyEvent_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array;
+   use type GameKeyEvent_Access_Array;
+   subtype GameKeyEvent_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access;
+   use type GameKeyEvent_Access_Array_Access;
+   subtype GameKeyEvent_Access_Array_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array;
+   use type GameKeyEvent_Access_Array_Access_Array;
+   subtype GameKeyEvent_Access_Array_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array_Access;
+   use type GameKeyEvent_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DirectionalAnalogLocationInputProcessor is tagged;
-   type DirectionalAnalogLocationInputProcessor_Access is access all DirectionalAnalogLocationInputProcessor'Class;
-   type DirectionalAnalogLocationInputProcessor_Access_Array is array (Natural range <>) of DirectionalAnalogLocationInputProcessor_Access;
-   type DirectionalAnalogLocationInputProcessor_Access_Array_Access is access all DirectionalAnalogLocationInputProcessor_Access_Array;
-   type DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array is array (Natural range <>) of DirectionalAnalogLocationInputProcessor_Access_Array_Access;
-   type DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array_Access is access all DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array;
+
+   subtype DirectionalAnalogLocationInputProcessor_Access is org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References.DirectionalAnalogLocationInputProcessor_Access;
+   function "=" (Left, Right : DirectionalAnalogLocationInputProcessor_Access) return Boolean renames org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References."=";
+   subtype DirectionalAnalogLocationInputProcessor_Access_Array is org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References.DirectionalAnalogLocationInputProcessor_Access_Array;
+   function "=" (Left, Right : DirectionalAnalogLocationInputProcessor_Access_Array) return Boolean renames org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References."=";
+   subtype DirectionalAnalogLocationInputProcessor_Access_Array_Access is org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References.DirectionalAnalogLocationInputProcessor_Access_Array_Access;
+   function "=" (Left, Right : DirectionalAnalogLocationInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References."=";
+   subtype DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array is org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References.DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References."=";
+   subtype DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array_Access is org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References.DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package_References."=";
 
    type DirectionalAnalogLocationInputProcessor is new AnalogLocationInputProcessor and GameKeyEventSourceInterface with record
       logUtil : LogUtil_Access;

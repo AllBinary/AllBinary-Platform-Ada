@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package;
+package org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References is
+   type TouchButtonsMappingPaintable_Access is access all org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package.TouchButtonsMappingPaintable'Class;
+   type TouchButtonsMappingPaintable_Access_Array is array (Natural range <>) of TouchButtonsMappingPaintable_Access;
+   type TouchButtonsMappingPaintable_Access_Array_Access is access all TouchButtonsMappingPaintable_Access_Array;
+   type TouchButtonsMappingPaintable_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsMappingPaintable_Access_Array_Access;
+   type TouchButtonsMappingPaintable_Access_Array_Access_Array_Access is access all TouchButtonsMappingPaintable_Access_Array_Access_Array;
+end org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References;
+
+with org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package_References;
 
 package org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package is
 
@@ -32,13 +46,61 @@ package org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package i
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype TouchButtonLocationHelper_Access is org.allbinary.input.motion.button.TouchButtonLocationHelper_Package_References.TouchButtonLocationHelper_Access;
+   use type TouchButtonLocationHelper_Access;
+   subtype TouchButtonLocationHelper_Access_Array is org.allbinary.input.motion.button.TouchButtonLocationHelper_Package_References.TouchButtonLocationHelper_Access_Array;
+   use type TouchButtonLocationHelper_Access_Array;
+   subtype TouchButtonLocationHelper_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonLocationHelper_Package_References.TouchButtonLocationHelper_Access_Array_Access;
+   use type TouchButtonLocationHelper_Access_Array_Access;
+   subtype TouchButtonLocationHelper_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonLocationHelper_Package_References.TouchButtonLocationHelper_Access_Array_Access_Array;
+   use type TouchButtonLocationHelper_Access_Array_Access_Array;
+   subtype TouchButtonLocationHelper_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonLocationHelper_Package_References.TouchButtonLocationHelper_Access_Array_Access_Array_Access;
+   use type TouchButtonLocationHelper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TouchButtonsMappingPaintable is tagged;
-   type TouchButtonsMappingPaintable_Access is access all TouchButtonsMappingPaintable'Class;
-   type TouchButtonsMappingPaintable_Access_Array is array (Natural range <>) of TouchButtonsMappingPaintable_Access;
-   type TouchButtonsMappingPaintable_Access_Array_Access is access all TouchButtonsMappingPaintable_Access_Array;
-   type TouchButtonsMappingPaintable_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsMappingPaintable_Access_Array_Access;
-   type TouchButtonsMappingPaintable_Access_Array_Access_Array_Access is access all TouchButtonsMappingPaintable_Access_Array_Access_Array;
+
+   subtype TouchButtonsMappingPaintable_Access is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access;
+   function "=" (Left, Right : TouchButtonsMappingPaintable_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References."=";
+   subtype TouchButtonsMappingPaintable_Access_Array is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access_Array;
+   function "=" (Left, Right : TouchButtonsMappingPaintable_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References."=";
+   subtype TouchButtonsMappingPaintable_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access_Array_Access;
+   function "=" (Left, Right : TouchButtonsMappingPaintable_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References."=";
+   subtype TouchButtonsMappingPaintable_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : TouchButtonsMappingPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References."=";
+   subtype TouchButtonsMappingPaintable_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TouchButtonsMappingPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References."=";
 
    type TouchButtonsMappingPaintable is new Paintable with record
       logUtil : LogUtil_Access;

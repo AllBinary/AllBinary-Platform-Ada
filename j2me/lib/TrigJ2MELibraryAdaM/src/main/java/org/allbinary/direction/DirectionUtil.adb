@@ -13,12 +13,36 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionFactory_Package;
 
 package body org.allbinary.direction.DirectionUtil_Package is
 
    package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   subtype Angle_Access is org.allbinary.math.Angle_Package_References.Angle_Access;
+   function "=" (Left, Right : Angle_Access) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype Angle_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array;
+   function "=" (Left, Right : Angle_Access_Array) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype Angle_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access;
+   function "=" (Left, Right : Angle_Access_Array_Access) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype Angle_Access_Array_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array;
+   function "=" (Left, Right : Angle_Access_Array_Access_Array) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype Angle_Access_Array_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Angle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype Direction_Access is org.allbinary.direction.Direction_Package_References.Direction_Access;
+   function "=" (Left, Right : Direction_Access) return Boolean renames org.allbinary.direction.Direction_Package_References."=";
+   subtype Direction_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array;
+   function "=" (Left, Right : Direction_Access_Array) return Boolean renames org.allbinary.direction.Direction_Package_References."=";
+   subtype Direction_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access;
+   function "=" (Left, Right : Direction_Access_Array_Access) return Boolean renames org.allbinary.direction.Direction_Package_References."=";
+   subtype Direction_Access_Array_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array;
+   function "=" (Left, Right : Direction_Access_Array_Access_Array) return Boolean renames org.allbinary.direction.Direction_Package_References."=";
+   subtype Direction_Access_Array_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Direction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.direction.Direction_Package_References."=";
    procedure Initialize_Fields (This : in out DirectionUtil'Class) is
    begin
       null;
@@ -29,7 +53,7 @@ package body org.allbinary.direction.DirectionUtil_Package is
 
    function getInstance return DirectionUtil_Access is
    begin
-        return DirectionUtil_Package.instance;
+        return DirectionUtil_Access (DirectionUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out DirectionUtil'Class) is
@@ -39,14 +63,14 @@ package body org.allbinary.direction.DirectionUtil_Package is
       Initialize_Fields (This);
         angleFactory := AngleFactory_Package.getInstance;
         directionFactory := DirectionFactory_Package.getInstance;
-        This.directionArray (directionFactory.LEFT.getValue) := angleFactory.LEFT;
-        This.directionArray (directionFactory.RIGHT.getValue) := angleFactory.RIGHT;
-        This.directionArray (directionFactory.UP.getValue) := angleFactory.UP;
-        This.directionArray (directionFactory.DOWN.getValue) := angleFactory.DOWN;
-        This.directionArray2 (directionFactory.LEFT.getValue) := angleFactory.LEFT;
-        This.directionArray2 (directionFactory.RIGHT.getValue) := angleFactory.RIGHT;
-        This.directionArray2 (directionFactory.UP.getValue) := angleFactory.UP;
-        This.directionArray2 (directionFactory.DOWN.getValue) := angleFactory.DOWN;
+        This.directionArray (directionFactory.LEFT.getValue) := Angle_Access (angleFactory.LEFT);
+        This.directionArray (directionFactory.RIGHT.getValue) := Angle_Access (angleFactory.RIGHT);
+        This.directionArray (directionFactory.UP.getValue) := Angle_Access (angleFactory.UP);
+        This.directionArray (directionFactory.DOWN.getValue) := Angle_Access (angleFactory.DOWN);
+        This.directionArray2 (directionFactory.LEFT.getValue) := Angle_Access (angleFactory.LEFT);
+        This.directionArray2 (directionFactory.RIGHT.getValue) := Angle_Access (angleFactory.RIGHT);
+        This.directionArray2 (directionFactory.UP.getValue) := Angle_Access (angleFactory.UP);
+        This.directionArray2 (directionFactory.DOWN.getValue) := Angle_Access (angleFactory.DOWN);
    end Initialize;
 
    function Create return DirectionUtil_Access is

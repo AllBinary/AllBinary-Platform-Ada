@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package;
+package org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References is
+   type StoreAdminUser_Access is access all org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package.StoreAdminUser'Class;
+   type StoreAdminUser_Access_Array is array (Natural range <>) of StoreAdminUser_Access;
+   type StoreAdminUser_Access_Array_Access is access all StoreAdminUser_Access_Array;
+   type StoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of StoreAdminUser_Access_Array_Access;
+   type StoreAdminUser_Access_Array_Access_Array_Access is access all StoreAdminUser_Access_Array_Access_Array;
+end org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References;
+
+with org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,20 +32,39 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+limited with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References;
 
 package org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
    package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package Reference_Types is
+   subtype WeblisketSessionInterface_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access;
+   use type WeblisketSessionInterface_Access;
+   subtype WeblisketSessionInterface_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array;
+   use type WeblisketSessionInterface_Access_Array;
+   subtype WeblisketSessionInterface_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access;
+   use type WeblisketSessionInterface_Access_Array_Access;
+   subtype WeblisketSessionInterface_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array;
+   use type WeblisketSessionInterface_Access_Array_Access_Array;
+   subtype WeblisketSessionInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array_Access;
+   use type WeblisketSessionInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreAdminUser is tagged;
-   type StoreAdminUser_Access is access all StoreAdminUser'Class;
-   type StoreAdminUser_Access_Array is array (Natural range <>) of StoreAdminUser_Access;
-   type StoreAdminUser_Access_Array_Access is access all StoreAdminUser_Access_Array;
-   type StoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of StoreAdminUser_Access_Array_Access;
-   type StoreAdminUser_Access_Array_Access_Array_Access is access all StoreAdminUser_Access_Array_Access_Array;
+
+   subtype StoreAdminUser_Access is org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References.StoreAdminUser_Access;
+   function "=" (Left, Right : StoreAdminUser_Access) return Boolean renames org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References."=";
+   subtype StoreAdminUser_Access_Array is org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References.StoreAdminUser_Access_Array;
+   function "=" (Left, Right : StoreAdminUser_Access_Array) return Boolean renames org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References."=";
+   subtype StoreAdminUser_Access_Array_Access is org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References.StoreAdminUser_Access_Array_Access;
+   function "=" (Left, Right : StoreAdminUser_Access_Array_Access) return Boolean renames org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References."=";
+   subtype StoreAdminUser_Access_Array_Access_Array is org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References.StoreAdminUser_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreAdminUser_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References."=";
+   subtype StoreAdminUser_Access_Array_Access_Array_Access is org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References.StoreAdminUser_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreAdminUser_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package_References."=";
 
    type StoreAdminUser is new User_Package.User with null record;
 

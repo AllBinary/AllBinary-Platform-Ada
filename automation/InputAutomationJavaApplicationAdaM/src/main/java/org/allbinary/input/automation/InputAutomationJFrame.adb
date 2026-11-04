@@ -14,19 +14,34 @@
 
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package; use bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
+with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package; use bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
+with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package; use bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
 with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.gui.dialog.BasicTextJDialog_Package; use org.allbinary.gui.dialog.BasicTextJDialog_Package;
 with org.allbinary.gui.swing.workers.JListSwingWorker_Package; use org.allbinary.gui.swing.workers.JListSwingWorker_Package;
 with org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package; use org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
+with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
 with org.allbinary.input.automation.osgi.DesktopBundle_Package; use org.allbinary.input.automation.osgi.DesktopBundle_Package;
 with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
 with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
 with org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package; use org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.input.automation.osgi.DesktopBundle_Package;
+with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
+with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
+with org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
 
 package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 
@@ -44,6 +59,96 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
    package JavaHelpUtil_Package renames Standard.org.allbinary.logic.java.help.JavaHelpUtil_Package;
    package WebappClassLoaderInfo_Package renames Standard.org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
    package InputAutomationClientInformationFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
+   subtype InputAutomationBundleActivatorListenerInterface_Access is bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References.InputAutomationBundleActivatorListenerInterface_Access;
+   function "=" (Left, Right : InputAutomationBundleActivatorListenerInterface_Access) return Boolean renames bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References."=";
+   subtype InputAutomationBundleActivatorListenerInterface_Access_Array is bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References.InputAutomationBundleActivatorListenerInterface_Access_Array;
+   function "=" (Left, Right : InputAutomationBundleActivatorListenerInterface_Access_Array) return Boolean renames bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References."=";
+   subtype InputAutomationBundleActivatorListenerInterface_Access_Array_Access is bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References.InputAutomationBundleActivatorListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationBundleActivatorListenerInterface_Access_Array_Access) return Boolean renames bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References."=";
+   subtype InputAutomationBundleActivatorListenerInterface_Access_Array_Access_Array is bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References.InputAutomationBundleActivatorListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationBundleActivatorListenerInterface_Access_Array_Access_Array) return Boolean renames bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References."=";
+   subtype InputAutomationBundleActivatorListenerInterface_Access_Array_Access_Array_Access is bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References.InputAutomationBundleActivatorListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationBundleActivatorListenerInterface_Access_Array_Access_Array_Access) return Boolean renames bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeEvent_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeEvent_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeEvent_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeEvent_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeEvent_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References."=";
+   subtype InputAutomationModuleFactoryFactory_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References.InputAutomationModuleFactoryFactory_Access;
+   function "=" (Left, Right : InputAutomationModuleFactoryFactory_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References."=";
+   subtype InputAutomationModuleFactoryFactory_Access_Array is org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References.InputAutomationModuleFactoryFactory_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleFactoryFactory_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References."=";
+   subtype InputAutomationModuleFactoryFactory_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References.InputAutomationModuleFactoryFactory_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleFactoryFactory_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References."=";
+   subtype InputAutomationModuleFactoryFactory_Access_Array_Access_Array is org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References.InputAutomationModuleFactoryFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleFactoryFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References."=";
+   subtype InputAutomationModuleFactoryFactory_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References.InputAutomationModuleFactoryFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleFactoryFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access_Array is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access_Array_Access_Array is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype InputAutomationModuleConfigurations_Access is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References.InputAutomationModuleConfigurations_Access;
+   function "=" (Left, Right : InputAutomationModuleConfigurations_Access) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References."=";
+   subtype InputAutomationModuleConfigurations_Access_Array is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References.InputAutomationModuleConfigurations_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleConfigurations_Access_Array) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References."=";
+   subtype InputAutomationModuleConfigurations_Access_Array_Access is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References.InputAutomationModuleConfigurations_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleConfigurations_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References."=";
+   subtype InputAutomationModuleConfigurations_Access_Array_Access_Array is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References.InputAutomationModuleConfigurations_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleConfigurations_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References."=";
+   subtype InputAutomationModuleConfigurations_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References.InputAutomationModuleConfigurations_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleConfigurations_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package_References."=";
+   subtype InputAutomationRobotChangeEvent_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References.InputAutomationRobotChangeEvent_Access;
+   function "=" (Left, Right : InputAutomationRobotChangeEvent_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References."=";
+   subtype InputAutomationRobotChangeEvent_Access_Array is org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References.InputAutomationRobotChangeEvent_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotChangeEvent_Access_Array) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References."=";
+   subtype InputAutomationRobotChangeEvent_Access_Array_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References.InputAutomationRobotChangeEvent_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotChangeEvent_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References."=";
+   subtype InputAutomationRobotChangeEvent_Access_Array_Access_Array is org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References.InputAutomationRobotChangeEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotChangeEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References."=";
+   subtype InputAutomationRobotChangeEvent_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References.InputAutomationRobotChangeEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotChangeEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype RunnableInterface_Access is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access;
+   function "=" (Left, Right : RunnableInterface_Access) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array;
+   function "=" (Left, Right : RunnableInterface_Access_Array) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array_Access is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array_Access;
+   function "=" (Left, Right : RunnableInterface_Access_Array_Access) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array_Access_Array is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : RunnableInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array_Access_Array_Access is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RunnableInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationJFrame'Class) is
    begin
       null;
@@ -494,7 +599,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 
    function getInstance return InputAutomationJFrame_Access is
    begin
-        return InputAutomationJFrame_Package.INPUTAUTOMATION_JFRAME;
+        return InputAutomationJFrame_Access (InputAutomationJFrame_Package.INPUTAUTOMATION_JFRAME);
    end getInstance;
 
    procedure destroy is
@@ -616,7 +721,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onRemove"));
-            inputAutomationConfiguration := InputAutomationConfigurationFactory_Package.getInstance.inputAutomationConfiguration;
+            inputAutomationConfiguration := InputAutomationConfiguration_Access (InputAutomationConfigurationFactory_Package.getInstance.inputAutomationConfiguration);
             inputAutomationModuleConfigurationList := inputAutomationConfiguration.getInputAutomationModuleConfigurationList;
             if (inputAutomationModuleConfigurationList) = (null) then
                 logUtil := LogUtil_Package.getInstance;

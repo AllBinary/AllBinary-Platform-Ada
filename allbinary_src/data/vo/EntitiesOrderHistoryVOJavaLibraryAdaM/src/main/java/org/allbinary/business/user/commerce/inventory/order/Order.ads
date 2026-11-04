@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.inventory.order.Order_Package;
+package org.allbinary.business.user.commerce.inventory.order.Order_Package_References is
+   type Order_Access is access all org.allbinary.business.user.commerce.inventory.order.Order_Package.Order'Class;
+   type Order_Access_Array is array (Natural range <>) of Order_Access;
+   type Order_Access_Array_Access is access all Order_Access_Array;
+   type Order_Access_Array_Access_Array is array (Natural range <>) of Order_Access_Array_Access;
+   type Order_Access_Array_Access_Array_Access is access all Order_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.inventory.order.Order_Package_References;
+
+with org.allbinary.business.user.commerce.inventory.order.Order_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,10 +33,14 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Serializable_Package; use java.io.Serializable_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
+limited with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package; use org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
 
 package org.allbinary.business.user.commerce.inventory.order.Order_Package is
@@ -36,13 +50,61 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package is
    package BasketInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
+   use type StoreFrontInterface_Access;
+   subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
+   use type StoreFrontInterface_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access;
+   subtype StoreFrontInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array;
+   use type StoreFrontInterface_Access_Array_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access_Array_Access;
+   subtype BasketInterface_Access is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access;
+   use type BasketInterface_Access;
+   subtype BasketInterface_Access_Array is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access_Array;
+   use type BasketInterface_Access_Array;
+   subtype BasketInterface_Access_Array_Access is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access_Array_Access;
+   use type BasketInterface_Access_Array_Access;
+   subtype BasketInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access_Array_Access_Array;
+   use type BasketInterface_Access_Array_Access_Array;
+   subtype BasketInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access_Array_Access_Array_Access;
+   use type BasketInterface_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type Order is tagged;
-   type Order_Access is access all Order'Class;
-   type Order_Access_Array is array (Natural range <>) of Order_Access;
-   type Order_Access_Array_Access is access all Order_Access_Array;
-   type Order_Access_Array_Access_Array is array (Natural range <>) of Order_Access_Array_Access;
-   type Order_Access_Array_Access_Array_Access is access all Order_Access_Array_Access_Array;
+
+   subtype Order_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access;
+   function "=" (Left, Right : Order_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   subtype Order_Access_Array is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array;
+   function "=" (Left, Right : Order_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   subtype Order_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access;
+   function "=" (Left, Right : Order_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   subtype Order_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access_Array;
+   function "=" (Left, Right : Order_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   subtype Order_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Order_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
 
    type Order is new Java_Object and OrderInterface with record
       basket : BasketInterface_Access;

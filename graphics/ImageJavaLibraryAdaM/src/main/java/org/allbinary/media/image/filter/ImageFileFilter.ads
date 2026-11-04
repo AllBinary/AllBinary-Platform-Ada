@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.filter.ImageFileFilter_Package;
+package org.allbinary.media.image.filter.ImageFileFilter_Package_References is
+   type ImageFileFilter_Access is access all org.allbinary.media.image.filter.ImageFileFilter_Package.ImageFileFilter'Class;
+   type ImageFileFilter_Access_Array is array (Natural range <>) of ImageFileFilter_Access;
+   type ImageFileFilter_Access_Array_Access is access all ImageFileFilter_Access_Array;
+   type ImageFileFilter_Access_Array_Access_Array is array (Natural range <>) of ImageFileFilter_Access_Array_Access;
+   type ImageFileFilter_Access_Array_Access_Array_Access is access all ImageFileFilter_Access_Array_Access_Array;
+end org.allbinary.media.image.filter.ImageFileFilter_Package_References;
+
+with org.allbinary.media.image.filter.ImageFileFilter_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with java.io.File_Package; use java.io.File_Package;
 package org.allbinary.media.image.filter.ImageFileFilter_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageFileFilter is tagged;
-   type ImageFileFilter_Access is access all ImageFileFilter'Class;
-   type ImageFileFilter_Access_Array is array (Natural range <>) of ImageFileFilter_Access;
-   type ImageFileFilter_Access_Array_Access is access all ImageFileFilter_Access_Array;
-   type ImageFileFilter_Access_Array_Access_Array is array (Natural range <>) of ImageFileFilter_Access_Array_Access;
-   type ImageFileFilter_Access_Array_Access_Array_Access is access all ImageFileFilter_Access_Array_Access_Array;
+
+   subtype ImageFileFilter_Access is org.allbinary.media.image.filter.ImageFileFilter_Package_References.ImageFileFilter_Access;
+   function "=" (Left, Right : ImageFileFilter_Access) return Boolean renames org.allbinary.media.image.filter.ImageFileFilter_Package_References."=";
+   subtype ImageFileFilter_Access_Array is org.allbinary.media.image.filter.ImageFileFilter_Package_References.ImageFileFilter_Access_Array;
+   function "=" (Left, Right : ImageFileFilter_Access_Array) return Boolean renames org.allbinary.media.image.filter.ImageFileFilter_Package_References."=";
+   subtype ImageFileFilter_Access_Array_Access is org.allbinary.media.image.filter.ImageFileFilter_Package_References.ImageFileFilter_Access_Array_Access;
+   function "=" (Left, Right : ImageFileFilter_Access_Array_Access) return Boolean renames org.allbinary.media.image.filter.ImageFileFilter_Package_References."=";
+   subtype ImageFileFilter_Access_Array_Access_Array is org.allbinary.media.image.filter.ImageFileFilter_Package_References.ImageFileFilter_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageFileFilter_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.filter.ImageFileFilter_Package_References."=";
+   subtype ImageFileFilter_Access_Array_Access_Array_Access is org.allbinary.media.image.filter.ImageFileFilter_Package_References.ImageFileFilter_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageFileFilter_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.filter.ImageFileFilter_Package_References."=";
 
    type ImageFileFilter is new Java_Object with null record;
 

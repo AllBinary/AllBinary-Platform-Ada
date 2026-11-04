@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package;
+package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References is
+   type CurrentlyPressedTouchButtonSingletonDebug_Access is access all org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package.CurrentlyPressedTouchButtonSingletonDebug'Class;
+   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array is array (Natural range <>) of CurrentlyPressedTouchButtonSingletonDebug_Access;
+   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access is access all CurrentlyPressedTouchButtonSingletonDebug_Access_Array;
+   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array is array (Natural range <>) of CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access;
+   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array_Access is access all CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array;
+end org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References;
+
+with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,17 +31,36 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package; use org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
-with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+limited with org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 
 package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package is
 
+   package Reference_Types is
+   subtype TouchButtonInput_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access;
+   use type TouchButtonInput_Access;
+   subtype TouchButtonInput_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array;
+   use type TouchButtonInput_Access_Array;
+   subtype TouchButtonInput_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access;
+   use type TouchButtonInput_Access_Array_Access;
+   subtype TouchButtonInput_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array;
+   use type TouchButtonInput_Access_Array_Access_Array;
+   subtype TouchButtonInput_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array_Access;
+   use type TouchButtonInput_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CurrentlyPressedTouchButtonSingletonDebug is tagged;
-   type CurrentlyPressedTouchButtonSingletonDebug_Access is access all CurrentlyPressedTouchButtonSingletonDebug'Class;
-   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array is array (Natural range <>) of CurrentlyPressedTouchButtonSingletonDebug_Access;
-   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access is access all CurrentlyPressedTouchButtonSingletonDebug_Access_Array;
-   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array is array (Natural range <>) of CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access;
-   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array_Access is access all CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array;
+
+   subtype CurrentlyPressedTouchButtonSingletonDebug_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References.CurrentlyPressedTouchButtonSingletonDebug_Access;
+   function "=" (Left, Right : CurrentlyPressedTouchButtonSingletonDebug_Access) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References."=";
+   subtype CurrentlyPressedTouchButtonSingletonDebug_Access_Array is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References.CurrentlyPressedTouchButtonSingletonDebug_Access_Array;
+   function "=" (Left, Right : CurrentlyPressedTouchButtonSingletonDebug_Access_Array) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References."=";
+   subtype CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References.CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access;
+   function "=" (Left, Right : CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References."=";
+   subtype CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References.CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array;
+   function "=" (Left, Right : CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References."=";
+   subtype CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References.CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package_References."=";
 
    type CurrentlyPressedTouchButtonSingletonDebug is new CurrentlyPressedTouchButtonSingleton with record
       string_Id : Unbounded_String;

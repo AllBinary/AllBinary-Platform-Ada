@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
+package org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References is
+   type ComponentFactory_Access is access all org.allbinary.logic.system.hardware.components.ComponentFactory_Package.ComponentFactory'Class;
+   type ComponentFactory_Access_Array is array (Natural range <>) of ComponentFactory_Access;
+   type ComponentFactory_Access_Array_Access is access all ComponentFactory_Access_Array;
+   type ComponentFactory_Access_Array_Access_Array is array (Natural range <>) of ComponentFactory_Access_Array_Access;
+   type ComponentFactory_Access_Array_Access_Array_Access is access all ComponentFactory_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References;
+
+with org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.hardware.components.Component_Package; use org.allbinary.logic.system.hardware.components.Component_Package;
+limited with org.allbinary.logic.system.hardware.components.Component_Package;
+with org.allbinary.logic.system.hardware.components.Component_Package_References;
 
 package org.allbinary.logic.system.hardware.components.ComponentFactory_Package is
 
+   package Reference_Types is
+   subtype Component_Access is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access;
+   use type Component_Access;
+   subtype Component_Access_Array is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array;
+   use type Component_Access_Array;
+   subtype Component_Access_Array_Access is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array_Access;
+   use type Component_Access_Array_Access;
+   subtype Component_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array_Access_Array;
+   use type Component_Access_Array_Access_Array;
+   subtype Component_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array_Access_Array_Access;
+   use type Component_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ComponentFactory is tagged;
-   type ComponentFactory_Access is access all ComponentFactory'Class;
-   type ComponentFactory_Access_Array is array (Natural range <>) of ComponentFactory_Access;
-   type ComponentFactory_Access_Array_Access is access all ComponentFactory_Access_Array;
-   type ComponentFactory_Access_Array_Access_Array is array (Natural range <>) of ComponentFactory_Access_Array_Access;
-   type ComponentFactory_Access_Array_Access_Array_Access is access all ComponentFactory_Access_Array_Access_Array;
+
+   subtype ComponentFactory_Access is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access;
+   function "=" (Left, Right : ComponentFactory_Access) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
+   subtype ComponentFactory_Access_Array is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access_Array;
+   function "=" (Left, Right : ComponentFactory_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
+   subtype ComponentFactory_Access_Array_Access is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access_Array_Access;
+   function "=" (Left, Right : ComponentFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
+   subtype ComponentFactory_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ComponentFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
+   subtype ComponentFactory_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ComponentFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
 
    type ComponentFactory is new Java_Object with record
       VGA : Component_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+package org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References is
+   type BasicTouchInputFactory_Access is access all org.allbinary.input.motion.button.BasicTouchInputFactory_Package.BasicTouchInputFactory'Class;
+   type BasicTouchInputFactory_Access_Array is array (Natural range <>) of BasicTouchInputFactory_Access;
+   type BasicTouchInputFactory_Access_Array_Access is access all BasicTouchInputFactory_Access_Array;
+   type BasicTouchInputFactory_Access_Array_Access_Array is array (Natural range <>) of BasicTouchInputFactory_Access_Array_Access;
+   type BasicTouchInputFactory_Access_Array_Access_Array_Access is access all BasicTouchInputFactory_Access_Array_Access_Array;
+end org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References;
+
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,23 +30,75 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+limited with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 
 package org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
 
    package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype InputToGameKeyMapping_Access is org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References.InputToGameKeyMapping_Access;
+   use type InputToGameKeyMapping_Access;
+   subtype InputToGameKeyMapping_Access_Array is org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References.InputToGameKeyMapping_Access_Array;
+   use type InputToGameKeyMapping_Access_Array;
+   subtype InputToGameKeyMapping_Access_Array_Access is org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References.InputToGameKeyMapping_Access_Array_Access;
+   use type InputToGameKeyMapping_Access_Array_Access;
+   subtype InputToGameKeyMapping_Access_Array_Access_Array is org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References.InputToGameKeyMapping_Access_Array_Access_Array;
+   use type InputToGameKeyMapping_Access_Array_Access_Array;
+   subtype InputToGameKeyMapping_Access_Array_Access_Array_Access is org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References.InputToGameKeyMapping_Access_Array_Access_Array_Access;
+   use type InputToGameKeyMapping_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype TouchButtonInput_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access;
+   use type TouchButtonInput_Access;
+   subtype TouchButtonInput_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array;
+   use type TouchButtonInput_Access_Array;
+   subtype TouchButtonInput_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access;
+   use type TouchButtonInput_Access_Array_Access;
+   subtype TouchButtonInput_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array;
+   use type TouchButtonInput_Access_Array_Access_Array;
+   subtype TouchButtonInput_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array_Access;
+   use type TouchButtonInput_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicTouchInputFactory is tagged;
-   type BasicTouchInputFactory_Access is access all BasicTouchInputFactory'Class;
-   type BasicTouchInputFactory_Access_Array is array (Natural range <>) of BasicTouchInputFactory_Access;
-   type BasicTouchInputFactory_Access_Array_Access is access all BasicTouchInputFactory_Access_Array;
-   type BasicTouchInputFactory_Access_Array_Access_Array is array (Natural range <>) of BasicTouchInputFactory_Access_Array_Access;
-   type BasicTouchInputFactory_Access_Array_Access_Array_Access is access all BasicTouchInputFactory_Access_Array_Access_Array;
+
+   subtype BasicTouchInputFactory_Access is org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References.BasicTouchInputFactory_Access;
+   function "=" (Left, Right : BasicTouchInputFactory_Access) return Boolean renames org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References."=";
+   subtype BasicTouchInputFactory_Access_Array is org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References.BasicTouchInputFactory_Access_Array;
+   function "=" (Left, Right : BasicTouchInputFactory_Access_Array) return Boolean renames org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References."=";
+   subtype BasicTouchInputFactory_Access_Array_Access is org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References.BasicTouchInputFactory_Access_Array_Access;
+   function "=" (Left, Right : BasicTouchInputFactory_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References."=";
+   subtype BasicTouchInputFactory_Access_Array_Access_Array is org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References.BasicTouchInputFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicTouchInputFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References."=";
+   subtype BasicTouchInputFactory_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References.BasicTouchInputFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicTouchInputFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.BasicTouchInputFactory_Package_References."=";
 
    type BasicTouchInputFactory is new Java_Object with record
       logUtil : LogUtil_Access;

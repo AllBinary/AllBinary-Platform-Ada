@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.init.db.InventoryDbInitInfo_Package;
+package org.allbinary.business.init.db.InventoryDbInitInfo_Package_References is
+   type InventoryDbInitInfo_Access is access all org.allbinary.business.init.db.InventoryDbInitInfo_Package.InventoryDbInitInfo'Class;
+   type InventoryDbInitInfo_Access_Array is array (Natural range <>) of InventoryDbInitInfo_Access;
+   type InventoryDbInitInfo_Access_Array_Access is access all InventoryDbInitInfo_Access_Array;
+   type InventoryDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of InventoryDbInitInfo_Access_Array_Access;
+   type InventoryDbInitInfo_Access_Array_Access_Array_Access is access all InventoryDbInitInfo_Access_Array_Access_Array;
+end org.allbinary.business.init.db.InventoryDbInitInfo_Package_References;
+
+with org.allbinary.business.init.db.InventoryDbInitInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.business.init.db.DbInitInfo_Package; use org.allbinary.busine
 
 package org.allbinary.business.init.db.InventoryDbInitInfo_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InventoryDbInitInfo is tagged;
-   type InventoryDbInitInfo_Access is access all InventoryDbInitInfo'Class;
-   type InventoryDbInitInfo_Access_Array is array (Natural range <>) of InventoryDbInitInfo_Access;
-   type InventoryDbInitInfo_Access_Array_Access is access all InventoryDbInitInfo_Access_Array;
-   type InventoryDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of InventoryDbInitInfo_Access_Array_Access;
-   type InventoryDbInitInfo_Access_Array_Access_Array_Access is access all InventoryDbInitInfo_Access_Array_Access_Array;
+
+   subtype InventoryDbInitInfo_Access is org.allbinary.business.init.db.InventoryDbInitInfo_Package_References.InventoryDbInitInfo_Access;
+   function "=" (Left, Right : InventoryDbInitInfo_Access) return Boolean renames org.allbinary.business.init.db.InventoryDbInitInfo_Package_References."=";
+   subtype InventoryDbInitInfo_Access_Array is org.allbinary.business.init.db.InventoryDbInitInfo_Package_References.InventoryDbInitInfo_Access_Array;
+   function "=" (Left, Right : InventoryDbInitInfo_Access_Array) return Boolean renames org.allbinary.business.init.db.InventoryDbInitInfo_Package_References."=";
+   subtype InventoryDbInitInfo_Access_Array_Access is org.allbinary.business.init.db.InventoryDbInitInfo_Package_References.InventoryDbInitInfo_Access_Array_Access;
+   function "=" (Left, Right : InventoryDbInitInfo_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.InventoryDbInitInfo_Package_References."=";
+   subtype InventoryDbInitInfo_Access_Array_Access_Array is org.allbinary.business.init.db.InventoryDbInitInfo_Package_References.InventoryDbInitInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : InventoryDbInitInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.db.InventoryDbInitInfo_Package_References."=";
+   subtype InventoryDbInitInfo_Access_Array_Access_Array_Access is org.allbinary.business.init.db.InventoryDbInitInfo_Package_References.InventoryDbInitInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InventoryDbInitInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.InventoryDbInitInfo_Package_References."=";
 
    type InventoryDbInitInfo is new DbInitInfo with null record;
    INITFILE : Unbounded_String;

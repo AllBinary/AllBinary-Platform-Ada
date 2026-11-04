@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.ErrorSound_Package;
+package org.allbinary.media.audio.ErrorSound_Package_References is
+   type ErrorSound_Access is access all org.allbinary.media.audio.ErrorSound_Package.ErrorSound'Class;
+   type ErrorSound_Access_Array is array (Natural range <>) of ErrorSound_Access;
+   type ErrorSound_Access_Array_Access is access all ErrorSound_Access_Array;
+   type ErrorSound_Access_Array_Access_Array is array (Natural range <>) of ErrorSound_Access_Array_Access;
+   type ErrorSound_Access_Array_Access_Array_Access is access all ErrorSound_Access_Array_Access_Array;
+end org.allbinary.media.audio.ErrorSound_Package_References;
+
+with org.allbinary.media.audio.ErrorSound_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,17 +31,36 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.CompositeSound_Package; use org.allbinary.media.audio.CompositeSound_Package;
-with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+limited with org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 
 package org.allbinary.media.audio.ErrorSound_Package is
 
+   package Reference_Types is
+   subtype Sound_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access;
+   use type Sound_Access;
+   subtype Sound_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array;
+   use type Sound_Access_Array;
+   subtype Sound_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access;
+   use type Sound_Access_Array_Access;
+   subtype Sound_Access_Array_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array;
+   use type Sound_Access_Array_Access_Array;
+   subtype Sound_Access_Array_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array_Access;
+   use type Sound_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ErrorSound is tagged;
-   type ErrorSound_Access is access all ErrorSound'Class;
-   type ErrorSound_Access_Array is array (Natural range <>) of ErrorSound_Access;
-   type ErrorSound_Access_Array_Access is access all ErrorSound_Access_Array;
-   type ErrorSound_Access_Array_Access_Array is array (Natural range <>) of ErrorSound_Access_Array_Access;
-   type ErrorSound_Access_Array_Access_Array_Access is access all ErrorSound_Access_Array_Access_Array;
+
+   subtype ErrorSound_Access is org.allbinary.media.audio.ErrorSound_Package_References.ErrorSound_Access;
+   function "=" (Left, Right : ErrorSound_Access) return Boolean renames org.allbinary.media.audio.ErrorSound_Package_References."=";
+   subtype ErrorSound_Access_Array is org.allbinary.media.audio.ErrorSound_Package_References.ErrorSound_Access_Array;
+   function "=" (Left, Right : ErrorSound_Access_Array) return Boolean renames org.allbinary.media.audio.ErrorSound_Package_References."=";
+   subtype ErrorSound_Access_Array_Access is org.allbinary.media.audio.ErrorSound_Package_References.ErrorSound_Access_Array_Access;
+   function "=" (Left, Right : ErrorSound_Access_Array_Access) return Boolean renames org.allbinary.media.audio.ErrorSound_Package_References."=";
+   subtype ErrorSound_Access_Array_Access_Array is org.allbinary.media.audio.ErrorSound_Package_References.ErrorSound_Access_Array_Access_Array;
+   function "=" (Left, Right : ErrorSound_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.ErrorSound_Package_References."=";
+   subtype ErrorSound_Access_Array_Access_Array_Access is org.allbinary.media.audio.ErrorSound_Package_References.ErrorSound_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ErrorSound_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.ErrorSound_Package_References."=";
 
    type ErrorSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

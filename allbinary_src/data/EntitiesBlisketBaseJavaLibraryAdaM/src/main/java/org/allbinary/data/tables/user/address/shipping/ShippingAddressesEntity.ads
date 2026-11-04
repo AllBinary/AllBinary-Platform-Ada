@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
+package org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References is
+   type ShippingAddressesEntity_Access is access all org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package.ShippingAddressesEntity'Class;
+   type ShippingAddressesEntity_Access_Array is array (Natural range <>) of ShippingAddressesEntity_Access;
+   type ShippingAddressesEntity_Access_Array_Access is access all ShippingAddressesEntity_Access_Array;
+   type ShippingAddressesEntity_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressesEntity_Access_Array_Access;
+   type ShippingAddressesEntity_Access_Array_Access_Array_Access is access all ShippingAddressesEntity_Access_Array_Access_Array;
+end org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References;
+
+with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package; use o
 package org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package is
 
    package StreetAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ShippingAddressesEntity is tagged;
-   type ShippingAddressesEntity_Access is access all ShippingAddressesEntity'Class;
-   type ShippingAddressesEntity_Access_Array is array (Natural range <>) of ShippingAddressesEntity_Access;
-   type ShippingAddressesEntity_Access_Array_Access is access all ShippingAddressesEntity_Access_Array;
-   type ShippingAddressesEntity_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressesEntity_Access_Array_Access;
-   type ShippingAddressesEntity_Access_Array_Access_Array_Access is access all ShippingAddressesEntity_Access_Array_Access_Array;
+
+   subtype ShippingAddressesEntity_Access is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References.ShippingAddressesEntity_Access;
+   function "=" (Left, Right : ShippingAddressesEntity_Access) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References."=";
+   subtype ShippingAddressesEntity_Access_Array is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References.ShippingAddressesEntity_Access_Array;
+   function "=" (Left, Right : ShippingAddressesEntity_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References."=";
+   subtype ShippingAddressesEntity_Access_Array_Access is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References.ShippingAddressesEntity_Access_Array_Access;
+   function "=" (Left, Right : ShippingAddressesEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References."=";
+   subtype ShippingAddressesEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References.ShippingAddressesEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : ShippingAddressesEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References."=";
+   subtype ShippingAddressesEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References.ShippingAddressesEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShippingAddressesEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package_References."=";
 
    type ShippingAddressesEntity is new StreetAddressesEntity with record
       TABLENAME : Unbounded_String;

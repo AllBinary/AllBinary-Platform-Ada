@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.FileStreamFactory_Package;
+package org.allbinary.logic.io.FileStreamFactory_Package_References is
+   type FileStreamFactory_Access is access all org.allbinary.logic.io.FileStreamFactory_Package.FileStreamFactory'Class;
+   type FileStreamFactory_Access_Array is array (Natural range <>) of FileStreamFactory_Access;
+   type FileStreamFactory_Access_Array_Access is access all FileStreamFactory_Access_Array;
+   type FileStreamFactory_Access_Array_Access_Array is array (Natural range <>) of FileStreamFactory_Access_Array_Access;
+   type FileStreamFactory_Access_Array_Access_Array_Access is access all FileStreamFactory_Access_Array_Access_Array;
+end org.allbinary.logic.io.FileStreamFactory_Package_References;
+
+with org.allbinary.logic.io.FileStreamFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,48 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
-with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
+limited with org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package_References;
+limited with org.allbinary.logic.io.AbFileOutputStream_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package_References;
 
 package org.allbinary.logic.io.FileStreamFactory_Package is
 
+   package Reference_Types is
+   subtype AbFileInputStream_Access is org.allbinary.logic.io.AbFileInputStream_Package_References.AbFileInputStream_Access;
+   use type AbFileInputStream_Access;
+   subtype AbFileInputStream_Access_Array is org.allbinary.logic.io.AbFileInputStream_Package_References.AbFileInputStream_Access_Array;
+   use type AbFileInputStream_Access_Array;
+   subtype AbFileInputStream_Access_Array_Access is org.allbinary.logic.io.AbFileInputStream_Package_References.AbFileInputStream_Access_Array_Access;
+   use type AbFileInputStream_Access_Array_Access;
+   subtype AbFileInputStream_Access_Array_Access_Array is org.allbinary.logic.io.AbFileInputStream_Package_References.AbFileInputStream_Access_Array_Access_Array;
+   use type AbFileInputStream_Access_Array_Access_Array;
+   subtype AbFileInputStream_Access_Array_Access_Array_Access is org.allbinary.logic.io.AbFileInputStream_Package_References.AbFileInputStream_Access_Array_Access_Array_Access;
+   use type AbFileInputStream_Access_Array_Access_Array_Access;
+   subtype AbFileOutputStream_Access is org.allbinary.logic.io.AbFileOutputStream_Package_References.AbFileOutputStream_Access;
+   use type AbFileOutputStream_Access;
+   subtype AbFileOutputStream_Access_Array is org.allbinary.logic.io.AbFileOutputStream_Package_References.AbFileOutputStream_Access_Array;
+   use type AbFileOutputStream_Access_Array;
+   subtype AbFileOutputStream_Access_Array_Access is org.allbinary.logic.io.AbFileOutputStream_Package_References.AbFileOutputStream_Access_Array_Access;
+   use type AbFileOutputStream_Access_Array_Access;
+   subtype AbFileOutputStream_Access_Array_Access_Array is org.allbinary.logic.io.AbFileOutputStream_Package_References.AbFileOutputStream_Access_Array_Access_Array;
+   use type AbFileOutputStream_Access_Array_Access_Array;
+   subtype AbFileOutputStream_Access_Array_Access_Array_Access is org.allbinary.logic.io.AbFileOutputStream_Package_References.AbFileOutputStream_Access_Array_Access_Array_Access;
+   use type AbFileOutputStream_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type FileStreamFactory is tagged;
-   type FileStreamFactory_Access is access all FileStreamFactory'Class;
-   type FileStreamFactory_Access_Array is array (Natural range <>) of FileStreamFactory_Access;
-   type FileStreamFactory_Access_Array_Access is access all FileStreamFactory_Access_Array;
-   type FileStreamFactory_Access_Array_Access_Array is array (Natural range <>) of FileStreamFactory_Access_Array_Access;
-   type FileStreamFactory_Access_Array_Access_Array_Access is access all FileStreamFactory_Access_Array_Access_Array;
+
+   subtype FileStreamFactory_Access is org.allbinary.logic.io.FileStreamFactory_Package_References.FileStreamFactory_Access;
+   function "=" (Left, Right : FileStreamFactory_Access) return Boolean renames org.allbinary.logic.io.FileStreamFactory_Package_References."=";
+   subtype FileStreamFactory_Access_Array is org.allbinary.logic.io.FileStreamFactory_Package_References.FileStreamFactory_Access_Array;
+   function "=" (Left, Right : FileStreamFactory_Access_Array) return Boolean renames org.allbinary.logic.io.FileStreamFactory_Package_References."=";
+   subtype FileStreamFactory_Access_Array_Access is org.allbinary.logic.io.FileStreamFactory_Package_References.FileStreamFactory_Access_Array_Access;
+   function "=" (Left, Right : FileStreamFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.io.FileStreamFactory_Package_References."=";
+   subtype FileStreamFactory_Access_Array_Access_Array is org.allbinary.logic.io.FileStreamFactory_Package_References.FileStreamFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : FileStreamFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.FileStreamFactory_Package_References."=";
+   subtype FileStreamFactory_Access_Array_Access_Array_Access is org.allbinary.logic.io.FileStreamFactory_Package_References.FileStreamFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileStreamFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.FileStreamFactory_Package_References."=";
 
    type FileStreamFactory is new Java_Object with null record;
    SINGLETON : Java_Object_Access;

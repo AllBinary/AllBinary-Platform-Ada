@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
+package org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References is
+   type DemoGameBehavior_Access is access all org.allbinary.game.displayable.canvas.DemoGameBehavior_Package.DemoGameBehavior'Class;
+   type DemoGameBehavior_Access_Array is array (Natural range <>) of DemoGameBehavior_Access;
+   type DemoGameBehavior_Access_Array_Access is access all DemoGameBehavior_Access_Array;
+   type DemoGameBehavior_Access_Array_Access_Array is array (Natural range <>) of DemoGameBehavior_Access_Array_Access;
+   type DemoGameBehavior_Access_Array_Access_Array_Access is access all DemoGameBehavior_Access_Array_Access_Array;
+end org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References;
+
+with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,62 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References;
 
 package org.allbinary.game.displayable.canvas.DemoGameBehavior_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype AllBinaryGameCanvas_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access;
+   use type AllBinaryGameCanvas_Access;
+   subtype AllBinaryGameCanvas_Access_Array is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array;
+   use type AllBinaryGameCanvas_Access_Array;
+   subtype AllBinaryGameCanvas_Access_Array_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access;
+   use type AllBinaryGameCanvas_Access_Array_Access;
+   subtype AllBinaryGameCanvas_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access_Array;
+   use type AllBinaryGameCanvas_Access_Array_Access_Array;
+   subtype AllBinaryGameCanvas_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access_Array_Access;
+   use type AllBinaryGameCanvas_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DemoGameBehavior is tagged;
-   type DemoGameBehavior_Access is access all DemoGameBehavior'Class;
-   type DemoGameBehavior_Access_Array is array (Natural range <>) of DemoGameBehavior_Access;
-   type DemoGameBehavior_Access_Array_Access is access all DemoGameBehavior_Access_Array;
-   type DemoGameBehavior_Access_Array_Access_Array is array (Natural range <>) of DemoGameBehavior_Access_Array_Access;
-   type DemoGameBehavior_Access_Array_Access_Array_Access is access all DemoGameBehavior_Access_Array_Access_Array;
+
+   subtype DemoGameBehavior_Access is org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References.DemoGameBehavior_Access;
+   function "=" (Left, Right : DemoGameBehavior_Access) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References."=";
+   subtype DemoGameBehavior_Access_Array is org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References.DemoGameBehavior_Access_Array;
+   function "=" (Left, Right : DemoGameBehavior_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References."=";
+   subtype DemoGameBehavior_Access_Array_Access is org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References.DemoGameBehavior_Access_Array_Access;
+   function "=" (Left, Right : DemoGameBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References."=";
+   subtype DemoGameBehavior_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References.DemoGameBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : DemoGameBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References."=";
+   subtype DemoGameBehavior_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References.DemoGameBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DemoGameBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameBehavior_Package_References."=";
 
    type DemoGameBehavior is new Java_Object with record
       logUtil : LogUtil_Access;

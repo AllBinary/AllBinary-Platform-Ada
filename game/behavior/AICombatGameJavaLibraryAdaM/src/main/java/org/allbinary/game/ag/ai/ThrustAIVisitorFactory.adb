@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.ai.ThrustAIVisitor_Package; use org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
+with org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
 
 package body org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
 
+   subtype ThrustAIVisitor_Access is org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References.ThrustAIVisitor_Access;
+   function "=" (Left, Right : ThrustAIVisitor_Access) return Boolean renames org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References."=";
+   subtype ThrustAIVisitor_Access_Array is org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References.ThrustAIVisitor_Access_Array;
+   function "=" (Left, Right : ThrustAIVisitor_Access_Array) return Boolean renames org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References."=";
+   subtype ThrustAIVisitor_Access_Array_Access is org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References.ThrustAIVisitor_Access_Array_Access;
+   function "=" (Left, Right : ThrustAIVisitor_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References."=";
+   subtype ThrustAIVisitor_Access_Array_Access_Array is org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References.ThrustAIVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : ThrustAIVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References."=";
+   subtype ThrustAIVisitor_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References.ThrustAIVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ThrustAIVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References."=";
    procedure Initialize_Fields (This : in out ThrustAIVisitorFactory'Class) is
    begin
       null;
@@ -36,7 +48,7 @@ package body org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
 
    function getInstance return ThrustAIVisitor_Access is
    begin
-        return ThrustAIVisitorFactory_Package.instance;
+        return ThrustAIVisitor_Access (ThrustAIVisitorFactory_Package.instance);
    end getInstance;
 
 begin

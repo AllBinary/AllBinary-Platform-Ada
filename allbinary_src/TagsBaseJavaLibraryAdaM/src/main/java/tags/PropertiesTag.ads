@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.PropertiesTag_Package;
+package tags.PropertiesTag_Package_References is
+   type PropertiesTag_Access is access all tags.PropertiesTag_Package.PropertiesTag'Class;
+   type PropertiesTag_Access_Array is array (Natural range <>) of PropertiesTag_Access;
+   type PropertiesTag_Access_Array_Access is access all PropertiesTag_Access_Array;
+   type PropertiesTag_Access_Array_Access_Array is array (Natural range <>) of PropertiesTag_Access_Array_Access;
+   type PropertiesTag_Access_Array_Access_Array_Access is access all PropertiesTag_Access_Array_Access_Array;
+end tags.PropertiesTag_Package_References;
+
+with tags.PropertiesTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,20 +31,39 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with tags.CommandTag_Package; use tags.CommandTag_Package;
 
 package tags.PropertiesTag_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PropertiesTag is tagged;
-   type PropertiesTag_Access is access all PropertiesTag'Class;
-   type PropertiesTag_Access_Array is array (Natural range <>) of PropertiesTag_Access;
-   type PropertiesTag_Access_Array_Access is access all PropertiesTag_Access_Array;
-   type PropertiesTag_Access_Array_Access_Array is array (Natural range <>) of PropertiesTag_Access_Array_Access;
-   type PropertiesTag_Access_Array_Access_Array_Access is access all PropertiesTag_Access_Array_Access_Array;
+
+   subtype PropertiesTag_Access is tags.PropertiesTag_Package_References.PropertiesTag_Access;
+   function "=" (Left, Right : PropertiesTag_Access) return Boolean renames tags.PropertiesTag_Package_References."=";
+   subtype PropertiesTag_Access_Array is tags.PropertiesTag_Package_References.PropertiesTag_Access_Array;
+   function "=" (Left, Right : PropertiesTag_Access_Array) return Boolean renames tags.PropertiesTag_Package_References."=";
+   subtype PropertiesTag_Access_Array_Access is tags.PropertiesTag_Package_References.PropertiesTag_Access_Array_Access;
+   function "=" (Left, Right : PropertiesTag_Access_Array_Access) return Boolean renames tags.PropertiesTag_Package_References."=";
+   subtype PropertiesTag_Access_Array_Access_Array is tags.PropertiesTag_Package_References.PropertiesTag_Access_Array_Access_Array;
+   function "=" (Left, Right : PropertiesTag_Access_Array_Access_Array) return Boolean renames tags.PropertiesTag_Package_References."=";
+   subtype PropertiesTag_Access_Array_Access_Array_Access is tags.PropertiesTag_Package_References.PropertiesTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PropertiesTag_Access_Array_Access_Array_Access) return Boolean renames tags.PropertiesTag_Package_References."=";
 
    type PropertiesTag is new CommandTag with record
       logUtil : LogUtil_Access;

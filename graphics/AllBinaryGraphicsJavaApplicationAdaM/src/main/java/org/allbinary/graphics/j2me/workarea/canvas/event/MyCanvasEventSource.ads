@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
+package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References is
+   type MyCanvasEventSource_Access is access all org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package.MyCanvasEventSource'Class;
+   type MyCanvasEventSource_Access_Array is array (Natural range <>) of MyCanvasEventSource_Access;
+   type MyCanvasEventSource_Access_Array_Access is access all MyCanvasEventSource_Access_Array;
+   type MyCanvasEventSource_Access_Array_Access_Array is array (Natural range <>) of MyCanvasEventSource_Access_Array_Access;
+   type MyCanvasEventSource_Access_Array_Access_Array_Access is access all MyCanvasEventSource_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type MyCanvasEventSource is tagged;
-   type MyCanvasEventSource_Access is access all MyCanvasEventSource'Class;
-   type MyCanvasEventSource_Access_Array is array (Natural range <>) of MyCanvasEventSource_Access;
-   type MyCanvasEventSource_Access_Array_Access is access all MyCanvasEventSource_Access_Array;
-   type MyCanvasEventSource_Access_Array_Access_Array is array (Natural range <>) of MyCanvasEventSource_Access_Array_Access;
-   type MyCanvasEventSource_Access_Array_Access_Array_Access is access all MyCanvasEventSource_Access_Array_Access_Array;
+
+   subtype MyCanvasEventSource_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References.MyCanvasEventSource_Access;
+   function "=" (Left, Right : MyCanvasEventSource_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References."=";
+   subtype MyCanvasEventSource_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References.MyCanvasEventSource_Access_Array;
+   function "=" (Left, Right : MyCanvasEventSource_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References."=";
+   subtype MyCanvasEventSource_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References.MyCanvasEventSource_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEventSource_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References."=";
+   subtype MyCanvasEventSource_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References.MyCanvasEventSource_Access_Array_Access_Array;
+   function "=" (Left, Right : MyCanvasEventSource_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References."=";
+   subtype MyCanvasEventSource_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References.MyCanvasEventSource_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEventSource_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package_References."=";
 
    type MyCanvasEventSource is new Java_Object with record
       command : Unbounded_String;

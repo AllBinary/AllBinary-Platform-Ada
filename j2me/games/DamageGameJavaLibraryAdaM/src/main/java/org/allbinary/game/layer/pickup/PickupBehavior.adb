@@ -14,14 +14,31 @@
 
 
 with org.allbinary.game.health.HealthInterfaceCompositeInterface_Package; use org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package; use org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
 with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
+with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.combat.damage.DamageableInterface_Package;
+with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.game.health.Health_Package;
+with org.allbinary.game.health.HealthInterface_Package;
+with org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
+with org.allbinary.game.health.HealthListenerInterface_Package;
+with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
+with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
 
 package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
 
@@ -31,6 +48,76 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype CollidableCompositeLayer_Access is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access;
+   function "=" (Left, Right : CollidableCompositeLayer_Access) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
+   subtype CollidableCompositeLayer_Access_Array is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array;
+   function "=" (Left, Right : CollidableCompositeLayer_Access_Array) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
+   subtype CollidableCompositeLayer_Access_Array_Access is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array_Access;
+   function "=" (Left, Right : CollidableCompositeLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
+   subtype CollidableCompositeLayer_Access_Array_Access_Array is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : CollidableCompositeLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
+   subtype CollidableCompositeLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollidableCompositeLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
+   subtype CountedLayerInterfaceFactoryPart_Access is org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References.CountedLayerInterfaceFactoryPart_Access;
+   function "=" (Left, Right : CountedLayerInterfaceFactoryPart_Access) return Boolean renames org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References."=";
+   subtype CountedLayerInterfaceFactoryPart_Access_Array is org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References.CountedLayerInterfaceFactoryPart_Access_Array;
+   function "=" (Left, Right : CountedLayerInterfaceFactoryPart_Access_Array) return Boolean renames org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References."=";
+   subtype CountedLayerInterfaceFactoryPart_Access_Array_Access is org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References.CountedLayerInterfaceFactoryPart_Access_Array_Access;
+   function "=" (Left, Right : CountedLayerInterfaceFactoryPart_Access_Array_Access) return Boolean renames org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References."=";
+   subtype CountedLayerInterfaceFactoryPart_Access_Array_Access_Array is org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References.CountedLayerInterfaceFactoryPart_Access_Array_Access_Array;
+   function "=" (Left, Right : CountedLayerInterfaceFactoryPart_Access_Array_Access_Array) return Boolean renames org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References."=";
+   subtype CountedLayerInterfaceFactoryPart_Access_Array_Access_Array_Access is org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References.CountedLayerInterfaceFactoryPart_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CountedLayerInterfaceFactoryPart_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype PickupProcessorInterface_Access is org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References.PickupProcessorInterface_Access;
+   function "=" (Left, Right : PickupProcessorInterface_Access) return Boolean renames org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References."=";
+   subtype PickupProcessorInterface_Access_Array is org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References.PickupProcessorInterface_Access_Array;
+   function "=" (Left, Right : PickupProcessorInterface_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References."=";
+   subtype PickupProcessorInterface_Access_Array_Access is org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References.PickupProcessorInterface_Access_Array_Access;
+   function "=" (Left, Right : PickupProcessorInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References."=";
+   subtype PickupProcessorInterface_Access_Array_Access_Array is org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References.PickupProcessorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : PickupProcessorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References."=";
+   subtype PickupProcessorInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References.PickupProcessorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PickupProcessorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickupProcessorInterface_Package_References."=";
+   subtype PickedUpLayerType_Access is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access;
+   function "=" (Left, Right : PickedUpLayerType_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
+   subtype PickedUpLayerType_Access_Array is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access_Array;
+   function "=" (Left, Right : PickedUpLayerType_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
+   subtype PickedUpLayerType_Access_Array_Access is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access_Array_Access;
+   function "=" (Left, Right : PickedUpLayerType_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
+   subtype PickedUpLayerType_Access_Array_Access_Array is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access_Array_Access_Array;
+   function "=" (Left, Right : PickedUpLayerType_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
+   subtype PickedUpLayerType_Access_Array_Access_Array_Access is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PickedUpLayerType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
+   subtype CountedPickedUpLayerInterfaceFactoryInterface_Access is org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References.CountedPickedUpLayerInterfaceFactoryInterface_Access;
+   function "=" (Left, Right : CountedPickedUpLayerInterfaceFactoryInterface_Access) return Boolean renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References."=";
+   subtype CountedPickedUpLayerInterfaceFactoryInterface_Access_Array is org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References.CountedPickedUpLayerInterfaceFactoryInterface_Access_Array;
+   function "=" (Left, Right : CountedPickedUpLayerInterfaceFactoryInterface_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References."=";
+   subtype CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access is org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References.CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References."=";
+   subtype CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References.CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References."=";
+   subtype CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References.CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package_References."=";
+   subtype PickedUpLayerInterface_Access is org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References.PickedUpLayerInterface_Access;
+   function "=" (Left, Right : PickedUpLayerInterface_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References."=";
+   subtype PickedUpLayerInterface_Access_Array is org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References.PickedUpLayerInterface_Access_Array;
+   function "=" (Left, Right : PickedUpLayerInterface_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References."=";
+   subtype PickedUpLayerInterface_Access_Array_Access is org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References.PickedUpLayerInterface_Access_Array_Access;
+   function "=" (Left, Right : PickedUpLayerInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References."=";
+   subtype PickedUpLayerInterface_Access_Array_Access_Array is org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References.PickedUpLayerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : PickedUpLayerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References."=";
+   subtype PickedUpLayerInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References.PickedUpLayerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PickedUpLayerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References."=";
    procedure Initialize_Fields (This : in out PickupBehavior'Class) is
    begin
       null;
@@ -164,7 +251,7 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
                 end if;
             end loop;
         end loop;
-        return CountedLayerInterfaceFactoryPart_Package.NULL_COUNTED_LAYER_INTERFACE_FACTORY;
+        return CountedLayerInterfaceFactoryPart_Access (CountedLayerInterfaceFactoryPart_Package.NULL_COUNTED_LAYER_INTERFACE_FACTORY);
    end getFirstAvailableCountedLayerInterfaceFactory;
 
    --  throws Exception
@@ -191,7 +278,7 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
                 end if;
             end if;
         end loop;
-        return CountedLayerInterfaceFactoryPart_Package.NULL_COUNTED_LAYER_INTERFACE_FACTORY;
+        return CountedLayerInterfaceFactoryPart_Access (CountedLayerInterfaceFactoryPart_Package.NULL_COUNTED_LAYER_INTERFACE_FACTORY);
    end getCountedLayerInterfaceFactoryForSlot;
 
    function getCountedIndex (This : in out PickupBehavior) return Integer is

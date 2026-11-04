@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package;
+package org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References is
+   type PaymentProcessorInterface_Access is access all org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package.PaymentProcessorInterface'Class;
+   type PaymentProcessorInterface_Access_Array is array (Natural range <>) of PaymentProcessorInterface_Access;
+   type PaymentProcessorInterface_Access_Array_Access is access all PaymentProcessorInterface_Access_Array;
+   type PaymentProcessorInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentProcessorInterface_Access_Array_Access;
+   type PaymentProcessorInterface_Access_Array_Access_Array_Access is access all PaymentProcessorInterface_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,23 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 package org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package is
 
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type PaymentProcessorInterface is interface and DomNodeInterface;
-   type PaymentProcessorInterface_Access is access all PaymentProcessorInterface'Class;
-   type PaymentProcessorInterface_Access_Array is array (Natural range <>) of PaymentProcessorInterface_Access;
-   type PaymentProcessorInterface_Access_Array_Access is access all PaymentProcessorInterface_Access_Array;
-   type PaymentProcessorInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentProcessorInterface_Access_Array_Access;
-   type PaymentProcessorInterface_Access_Array_Access_Array_Access is access all PaymentProcessorInterface_Access_Array_Access_Array;
+   subtype PaymentProcessorInterface_Access is org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References.PaymentProcessorInterface_Access;
+   function "=" (Left, Right : PaymentProcessorInterface_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References."=";
+   subtype PaymentProcessorInterface_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References.PaymentProcessorInterface_Access_Array;
+   function "=" (Left, Right : PaymentProcessorInterface_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References."=";
+   subtype PaymentProcessorInterface_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References.PaymentProcessorInterface_Access_Array_Access;
+   function "=" (Left, Right : PaymentProcessorInterface_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References."=";
+   subtype PaymentProcessorInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References.PaymentProcessorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentProcessorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References."=";
+   subtype PaymentProcessorInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References.PaymentProcessorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentProcessorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References."=";
+   function Java_Object_Access_From_PaymentProcessorInterface (Value : PaymentProcessorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure process (This : in out PaymentProcessorInterface) is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package;

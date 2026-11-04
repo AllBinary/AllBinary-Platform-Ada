@@ -14,19 +14,28 @@
 
 
 with java.util.Date_Package; use java.util.Date_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.business.user.address.BillingAddressData_Package; use org.allbinary.business.user.address.BillingAddressData_Package;
 with org.allbinary.business.user.address.ShippingAddressData_Package; use org.allbinary.business.user.address.ShippingAddressData_Package;
+with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
 with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
+with org.allbinary.business.user.commerce.money.payment.Payment_Package; use org.allbinary.business.user.commerce.money.payment.Payment_Package;
 with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
 with org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+with org.allbinary.business.user.commerce.inventory.order.Order_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterface_Package;
 
 package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package is
 
@@ -42,6 +51,66 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype StreetAddress_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access;
+   function "=" (Left, Right : StreetAddress_Access) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
+   subtype StreetAddress_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array;
+   function "=" (Left, Right : StreetAddress_Access_Array) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
+   subtype StreetAddress_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access;
+   function "=" (Left, Right : StreetAddress_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
+   subtype StreetAddress_Access_Array_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array;
+   function "=" (Left, Right : StreetAddress_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
+   subtype StreetAddress_Access_Array_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StreetAddress_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
+   subtype BasketInterface_Access is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access;
+   function "=" (Left, Right : BasketInterface_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References."=";
+   subtype BasketInterface_Access_Array is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access_Array;
+   function "=" (Left, Right : BasketInterface_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References."=";
+   subtype BasketInterface_Access_Array_Access is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access_Array_Access;
+   function "=" (Left, Right : BasketInterface_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References."=";
+   subtype BasketInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : BasketInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References."=";
+   subtype BasketInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References.BasketInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasketInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package_References."=";
+   subtype Money_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access;
+   function "=" (Left, Right : Money_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array;
+   function "=" (Left, Right : Money_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access;
+   function "=" (Left, Right : Money_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array;
+   function "=" (Left, Right : Money_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Money_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Payment_Access is org.allbinary.business.user.commerce.money.payment.Payment_Package_References.Payment_Access;
+   function "=" (Left, Right : Payment_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.Payment_Package_References."=";
+   subtype Payment_Access_Array is org.allbinary.business.user.commerce.money.payment.Payment_Package_References.Payment_Access_Array;
+   function "=" (Left, Right : Payment_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.Payment_Package_References."=";
+   subtype Payment_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.Payment_Package_References.Payment_Access_Array_Access;
+   function "=" (Left, Right : Payment_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.Payment_Package_References."=";
+   subtype Payment_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.Payment_Package_References.Payment_Access_Array_Access_Array;
+   function "=" (Left, Right : Payment_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.Payment_Package_References."=";
+   subtype Payment_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.Payment_Package_References.Payment_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Payment_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.Payment_Package_References."=";
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   function "=" (Left, Right : Document_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   function "=" (Left, Right : Node_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   function "=" (Left, Right : Node_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   function "=" (Left, Right : Node_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
    procedure Initialize_Fields (This : in out OrderHistory'Class) is
    begin
       null;
@@ -301,7 +370,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    function toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
-      keySet : Set_Access;
+      keySet : Java_Object_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       node : Node_Access;

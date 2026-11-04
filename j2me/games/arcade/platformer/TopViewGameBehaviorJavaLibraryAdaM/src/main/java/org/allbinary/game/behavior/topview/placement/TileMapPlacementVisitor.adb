@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.mapeditor.core.TiledMap_Package; use org.mapeditor.core.TiledMap_Package;
 
 package body org.allbinary.game.behavior.topview.placement.TileMapPlacementVisitor_Package is
 
+   subtype TiledMap_Access is org.mapeditor.core.TiledMap_Package_References.TiledMap_Access;
+   function "=" (Left, Right : TiledMap_Access) return Boolean renames org.mapeditor.core.TiledMap_Package_References."=";
+   subtype TiledMap_Access_Array is org.mapeditor.core.TiledMap_Package_References.TiledMap_Access_Array;
+   function "=" (Left, Right : TiledMap_Access_Array) return Boolean renames org.mapeditor.core.TiledMap_Package_References."=";
+   subtype TiledMap_Access_Array_Access is org.mapeditor.core.TiledMap_Package_References.TiledMap_Access_Array_Access;
+   function "=" (Left, Right : TiledMap_Access_Array_Access) return Boolean renames org.mapeditor.core.TiledMap_Package_References."=";
+   subtype TiledMap_Access_Array_Access_Array is org.mapeditor.core.TiledMap_Package_References.TiledMap_Access_Array_Access_Array;
+   function "=" (Left, Right : TiledMap_Access_Array_Access_Array) return Boolean renames org.mapeditor.core.TiledMap_Package_References."=";
+   subtype TiledMap_Access_Array_Access_Array_Access is org.mapeditor.core.TiledMap_Package_References.TiledMap_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TiledMap_Access_Array_Access_Array_Access) return Boolean renames org.mapeditor.core.TiledMap_Package_References."=";
    procedure Initialize_Fields (This : in out TileMapPlacementVisitor'Class) is
    begin
       null;

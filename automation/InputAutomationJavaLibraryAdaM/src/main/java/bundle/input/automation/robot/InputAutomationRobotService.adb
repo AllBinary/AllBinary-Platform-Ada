@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
 package body bundle.input.automation.robot.InputAutomationRobotService_Package is
 
+   subtype InputRobotInterface_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access;
+   function "=" (Left, Right : InputRobotInterface_Access) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
+   subtype InputRobotInterface_Access_Array is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array;
+   function "=" (Left, Right : InputRobotInterface_Access_Array) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
+   subtype InputRobotInterface_Access_Array_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access;
+   function "=" (Left, Right : InputRobotInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
+   subtype InputRobotInterface_Access_Array_Access_Array is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : InputRobotInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
+   subtype InputRobotInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputRobotInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationRobotService'Class) is
    begin
       null;

@@ -13,9 +13,35 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.combat.damage.DamageableBaseBehavior_Package; use org.allbinary.game.combat.damage.DamageableBaseBehavior_Package;
+with org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package; use org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package;
+with org.allbinary.game.combat.damage.DamageableBaseBehavior_Package;
+with org.allbinary.game.combat.damage.DamageableInterface_Package;
+with org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package;
+with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
 
 package body org.allbinary.game.combat.CombatBaseBehavior_Package is
 
+   subtype DamageableBaseBehavior_Access is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access;
+   function "=" (Left, Right : DamageableBaseBehavior_Access) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
+   subtype DamageableBaseBehavior_Access_Array is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access_Array;
+   function "=" (Left, Right : DamageableBaseBehavior_Access_Array) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
+   subtype DamageableBaseBehavior_Access_Array_Access is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access_Array_Access;
+   function "=" (Left, Right : DamageableBaseBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
+   subtype DamageableBaseBehavior_Access_Array_Access_Array is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : DamageableBaseBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
+   subtype DamageableBaseBehavior_Access_Array_Access_Array_Access is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DamageableBaseBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
+   subtype DestroyableBaseBehavior_Access is org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References.DestroyableBaseBehavior_Access;
+   function "=" (Left, Right : DestroyableBaseBehavior_Access) return Boolean renames org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References."=";
+   subtype DestroyableBaseBehavior_Access_Array is org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References.DestroyableBaseBehavior_Access_Array;
+   function "=" (Left, Right : DestroyableBaseBehavior_Access_Array) return Boolean renames org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References."=";
+   subtype DestroyableBaseBehavior_Access_Array_Access is org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References.DestroyableBaseBehavior_Access_Array_Access;
+   function "=" (Left, Right : DestroyableBaseBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References."=";
+   subtype DestroyableBaseBehavior_Access_Array_Access_Array is org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References.DestroyableBaseBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : DestroyableBaseBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References."=";
+   subtype DestroyableBaseBehavior_Access_Array_Access_Array_Access is org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References.DestroyableBaseBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DestroyableBaseBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References."=";
    procedure Initialize_Fields (This : in out CombatBaseBehavior'Class) is
    begin
       null;

@@ -1,9 +1,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 
 package body org.allbinary.game.input.analog.AnalogLocationInput_Package is
 
+   subtype CustomGPoint_Access is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access;
+   function "=" (Left, Right : CustomGPoint_Access) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
+   subtype CustomGPoint_Access_Array is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array;
+   function "=" (Left, Right : CustomGPoint_Access_Array) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
+   subtype CustomGPoint_Access_Array_Access is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array_Access;
+   function "=" (Left, Right : CustomGPoint_Access_Array_Access) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
+   subtype CustomGPoint_Access_Array_Access_Array is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array_Access_Array;
+   function "=" (Left, Right : CustomGPoint_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
+   subtype CustomGPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CustomGPoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
    procedure Initialize_Fields (This : in out AnalogLocationInput'Class) is
    begin
       null;

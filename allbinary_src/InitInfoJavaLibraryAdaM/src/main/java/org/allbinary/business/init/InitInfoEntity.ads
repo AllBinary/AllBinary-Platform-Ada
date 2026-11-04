@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.init.InitInfoEntity_Package;
+package org.allbinary.business.init.InitInfoEntity_Package_References is
+   type InitInfoEntity_Access is access all org.allbinary.business.init.InitInfoEntity_Package.InitInfoEntity'Class;
+   type InitInfoEntity_Access_Array is array (Natural range <>) of InitInfoEntity_Access;
+   type InitInfoEntity_Access_Array_Access is access all InitInfoEntity_Access_Array;
+   type InitInfoEntity_Access_Array_Access_Array is array (Natural range <>) of InitInfoEntity_Access_Array_Access;
+   type InitInfoEntity_Access_Array_Access_Array_Access is access all InitInfoEntity_Access_Array_Access_Array;
+end org.allbinary.business.init.InitInfoEntity_Package_References;
+
+with org.allbinary.business.init.InitInfoEntity_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.business.init.InitSql_Package; use org.allbinary.business.ini
 
 package org.allbinary.business.init.InitInfoEntity_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InitInfoEntity is tagged;
-   type InitInfoEntity_Access is access all InitInfoEntity'Class;
-   type InitInfoEntity_Access_Array is array (Natural range <>) of InitInfoEntity_Access;
-   type InitInfoEntity_Access_Array_Access is access all InitInfoEntity_Access_Array;
-   type InitInfoEntity_Access_Array_Access_Array is array (Natural range <>) of InitInfoEntity_Access_Array_Access;
-   type InitInfoEntity_Access_Array_Access_Array_Access is access all InitInfoEntity_Access_Array_Access_Array;
+
+   subtype InitInfoEntity_Access is org.allbinary.business.init.InitInfoEntity_Package_References.InitInfoEntity_Access;
+   function "=" (Left, Right : InitInfoEntity_Access) return Boolean renames org.allbinary.business.init.InitInfoEntity_Package_References."=";
+   subtype InitInfoEntity_Access_Array is org.allbinary.business.init.InitInfoEntity_Package_References.InitInfoEntity_Access_Array;
+   function "=" (Left, Right : InitInfoEntity_Access_Array) return Boolean renames org.allbinary.business.init.InitInfoEntity_Package_References."=";
+   subtype InitInfoEntity_Access_Array_Access is org.allbinary.business.init.InitInfoEntity_Package_References.InitInfoEntity_Access_Array_Access;
+   function "=" (Left, Right : InitInfoEntity_Access_Array_Access) return Boolean renames org.allbinary.business.init.InitInfoEntity_Package_References."=";
+   subtype InitInfoEntity_Access_Array_Access_Array is org.allbinary.business.init.InitInfoEntity_Package_References.InitInfoEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : InitInfoEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.InitInfoEntity_Package_References."=";
+   subtype InitInfoEntity_Access_Array_Access_Array_Access is org.allbinary.business.init.InitInfoEntity_Package_References.InitInfoEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InitInfoEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.InitInfoEntity_Package_References."=";
 
    type InitInfoEntity is new InitSql with record
       NAME : Unbounded_String;

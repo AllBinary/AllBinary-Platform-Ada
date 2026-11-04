@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.file.AbFileInterface_Package;
+package org.allbinary.logic.io.file.AbFileInterface_Package_References is
+   type AbFileInterface_Access is access all org.allbinary.logic.io.file.AbFileInterface_Package.AbFileInterface'Class;
+   type AbFileInterface_Access_Array is array (Natural range <>) of AbFileInterface_Access;
+   type AbFileInterface_Access_Array_Access is access all AbFileInterface_Access_Array;
+   type AbFileInterface_Access_Array_Access_Array is array (Natural range <>) of AbFileInterface_Access_Array_Access;
+   type AbFileInterface_Access_Array_Access_Array_Access is access all AbFileInterface_Access_Array_Access_Array;
+end org.allbinary.logic.io.file.AbFileInterface_Package_References;
+
+with org.allbinary.logic.io.file.AbFileInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.io.file.AbFileInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type AbFileInterface is interface;
-   type AbFileInterface_Access is access all AbFileInterface'Class;
-   type AbFileInterface_Access_Array is array (Natural range <>) of AbFileInterface_Access;
-   type AbFileInterface_Access_Array_Access is access all AbFileInterface_Access_Array;
-   type AbFileInterface_Access_Array_Access_Array is array (Natural range <>) of AbFileInterface_Access_Array_Access;
-   type AbFileInterface_Access_Array_Access_Array_Access is access all AbFileInterface_Access_Array_Access_Array;
+   subtype AbFileInterface_Access is org.allbinary.logic.io.file.AbFileInterface_Package_References.AbFileInterface_Access;
+   function "=" (Left, Right : AbFileInterface_Access) return Boolean renames org.allbinary.logic.io.file.AbFileInterface_Package_References."=";
+   subtype AbFileInterface_Access_Array is org.allbinary.logic.io.file.AbFileInterface_Package_References.AbFileInterface_Access_Array;
+   function "=" (Left, Right : AbFileInterface_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFileInterface_Package_References."=";
+   subtype AbFileInterface_Access_Array_Access is org.allbinary.logic.io.file.AbFileInterface_Package_References.AbFileInterface_Access_Array_Access;
+   function "=" (Left, Right : AbFileInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFileInterface_Package_References."=";
+   subtype AbFileInterface_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFileInterface_Package_References.AbFileInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AbFileInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFileInterface_Package_References."=";
+   subtype AbFileInterface_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFileInterface_Package_References.AbFileInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbFileInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFileInterface_Package_References."=";
+   function Java_Object_Access_From_AbFileInterface (Value : AbFileInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function canRead (This : in out AbFileInterface) return Boolean is abstract;
    function canWrite (This : in out AbFileInterface) return Boolean is abstract;
    function createNewFile (This : in out AbFileInterface) return Boolean is abstract;

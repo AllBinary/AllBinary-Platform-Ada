@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.NullRotationAnimationFactory_Package;
+package org.allbinary.animation.NullRotationAnimationFactory_Package_References is
+   type NullRotationAnimationFactory_Access is access all org.allbinary.animation.NullRotationAnimationFactory_Package.NullRotationAnimationFactory'Class;
+   type NullRotationAnimationFactory_Access_Array is array (Natural range <>) of NullRotationAnimationFactory_Access;
+   type NullRotationAnimationFactory_Access_Array_Access is access all NullRotationAnimationFactory_Access_Array;
+   type NullRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of NullRotationAnimationFactory_Access_Array_Access;
+   type NullRotationAnimationFactory_Access_Array_Access_Array_Access is access all NullRotationAnimationFactory_Access_Array_Access_Array;
+end org.allbinary.animation.NullRotationAnimationFactory_Package_References;
+
+with org.allbinary.animation.NullRotationAnimationFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,25 +30,88 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
-with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+limited with org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.RotationAnimation_Package_References;
+limited with org.allbinary.animation.NullRotationAnimation_Package;
+with org.allbinary.animation.NullRotationAnimation_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 
 package org.allbinary.animation.NullRotationAnimationFactory_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype ScaleProperties_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access;
+   use type ScaleProperties_Access;
+   subtype ScaleProperties_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array;
+   use type ScaleProperties_Access_Array;
+   subtype ScaleProperties_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access;
+   subtype ScaleProperties_Access_Array_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array;
+   use type ScaleProperties_Access_Array_Access_Array;
+   subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access_Array_Access;
+   subtype RotationAnimation_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access;
+   use type RotationAnimation_Access;
+   subtype RotationAnimation_Access_Array is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array;
+   use type RotationAnimation_Access_Array;
+   subtype RotationAnimation_Access_Array_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access;
+   use type RotationAnimation_Access_Array_Access;
+   subtype RotationAnimation_Access_Array_Access_Array is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access_Array;
+   use type RotationAnimation_Access_Array_Access_Array;
+   subtype RotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access_Array_Access;
+   use type RotationAnimation_Access_Array_Access_Array_Access;
+   subtype NullRotationAnimation_Access is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access;
+   use type NullRotationAnimation_Access;
+   subtype NullRotationAnimation_Access_Array is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access_Array;
+   use type NullRotationAnimation_Access_Array;
+   subtype NullRotationAnimation_Access_Array_Access is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access_Array_Access;
+   use type NullRotationAnimation_Access_Array_Access;
+   subtype NullRotationAnimation_Access_Array_Access_Array is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access_Array_Access_Array;
+   use type NullRotationAnimation_Access_Array_Access_Array;
+   subtype NullRotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access_Array_Access_Array_Access;
+   use type NullRotationAnimation_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullRotationAnimationFactory is tagged;
-   type NullRotationAnimationFactory_Access is access all NullRotationAnimationFactory'Class;
-   type NullRotationAnimationFactory_Access_Array is array (Natural range <>) of NullRotationAnimationFactory_Access;
-   type NullRotationAnimationFactory_Access_Array_Access is access all NullRotationAnimationFactory_Access_Array;
-   type NullRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of NullRotationAnimationFactory_Access_Array_Access;
-   type NullRotationAnimationFactory_Access_Array_Access_Array_Access is access all NullRotationAnimationFactory_Access_Array_Access_Array;
+
+   subtype NullRotationAnimationFactory_Access is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
+   subtype NullRotationAnimationFactory_Access_Array is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access_Array;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
+   subtype NullRotationAnimationFactory_Access_Array_Access is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access_Array_Access;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
+   subtype NullRotationAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
+   subtype NullRotationAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
 
    type NullRotationAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
       NULL_ROTATION_ANIMATION_ARRAY : RotationAnimation_Access_Array_Access;
@@ -57,6 +130,16 @@ package org.allbinary.animation.NullRotationAnimationFactory_Package is
 
 end org.allbinary.animation.NullRotationAnimationFactory_Package;
 
+limited with org.allbinary.animation.NullRotationAnimation2_Package;
+package org.allbinary.animation.NullRotationAnimation2_Package_References is
+   type NullRotationAnimation2_Access is access all org.allbinary.animation.NullRotationAnimation2_Package.NullRotationAnimation2'Class;
+   type NullRotationAnimation2_Access_Array is array (Natural range <>) of NullRotationAnimation2_Access;
+   type NullRotationAnimation2_Access_Array_Access is access all NullRotationAnimation2_Access_Array;
+   type NullRotationAnimation2_Access_Array_Access_Array is array (Natural range <>) of NullRotationAnimation2_Access_Array_Access;
+   type NullRotationAnimation2_Access_Array_Access_Array_Access is access all NullRotationAnimation2_Access_Array_Access_Array;
+end org.allbinary.animation.NullRotationAnimation2_Package_References;
+
+with org.allbinary.animation.NullRotationAnimation2_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -65,25 +148,88 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
-with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+limited with org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.RotationAnimation_Package_References;
+limited with org.allbinary.animation.NullRotationAnimation_Package;
+with org.allbinary.animation.NullRotationAnimation_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 
 package org.allbinary.animation.NullRotationAnimation2_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype ScaleProperties_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access;
+   use type ScaleProperties_Access;
+   subtype ScaleProperties_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array;
+   use type ScaleProperties_Access_Array;
+   subtype ScaleProperties_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access;
+   subtype ScaleProperties_Access_Array_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array;
+   use type ScaleProperties_Access_Array_Access_Array;
+   subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access_Array_Access;
+   subtype RotationAnimation_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access;
+   use type RotationAnimation_Access;
+   subtype RotationAnimation_Access_Array is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array;
+   use type RotationAnimation_Access_Array;
+   subtype RotationAnimation_Access_Array_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access;
+   use type RotationAnimation_Access_Array_Access;
+   subtype RotationAnimation_Access_Array_Access_Array is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access_Array;
+   use type RotationAnimation_Access_Array_Access_Array;
+   subtype RotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access_Array_Access;
+   use type RotationAnimation_Access_Array_Access_Array_Access;
+   subtype NullRotationAnimation_Access is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access;
+   use type NullRotationAnimation_Access;
+   subtype NullRotationAnimation_Access_Array is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access_Array;
+   use type NullRotationAnimation_Access_Array;
+   subtype NullRotationAnimation_Access_Array_Access is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access_Array_Access;
+   use type NullRotationAnimation_Access_Array_Access;
+   subtype NullRotationAnimation_Access_Array_Access_Array is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access_Array_Access_Array;
+   use type NullRotationAnimation_Access_Array_Access_Array;
+   subtype NullRotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.NullRotationAnimation_Package_References.NullRotationAnimation_Access_Array_Access_Array_Access;
+   use type NullRotationAnimation_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullRotationAnimation2 is tagged;
-   type NullRotationAnimation2_Access is access all NullRotationAnimation2'Class;
-   type NullRotationAnimation2_Access_Array is array (Natural range <>) of NullRotationAnimation2_Access;
-   type NullRotationAnimation2_Access_Array_Access is access all NullRotationAnimation2_Access_Array;
-   type NullRotationAnimation2_Access_Array_Access_Array is array (Natural range <>) of NullRotationAnimation2_Access_Array_Access;
-   type NullRotationAnimation2_Access_Array_Access_Array_Access is access all NullRotationAnimation2_Access_Array_Access_Array;
+
+   subtype NullRotationAnimation2_Access is org.allbinary.animation.NullRotationAnimation2_Package_References.NullRotationAnimation2_Access;
+   function "=" (Left, Right : NullRotationAnimation2_Access) return Boolean renames org.allbinary.animation.NullRotationAnimation2_Package_References."=";
+   subtype NullRotationAnimation2_Access_Array is org.allbinary.animation.NullRotationAnimation2_Package_References.NullRotationAnimation2_Access_Array;
+   function "=" (Left, Right : NullRotationAnimation2_Access_Array) return Boolean renames org.allbinary.animation.NullRotationAnimation2_Package_References."=";
+   subtype NullRotationAnimation2_Access_Array_Access is org.allbinary.animation.NullRotationAnimation2_Package_References.NullRotationAnimation2_Access_Array_Access;
+   function "=" (Left, Right : NullRotationAnimation2_Access_Array_Access) return Boolean renames org.allbinary.animation.NullRotationAnimation2_Package_References."=";
+   subtype NullRotationAnimation2_Access_Array_Access_Array is org.allbinary.animation.NullRotationAnimation2_Package_References.NullRotationAnimation2_Access_Array_Access_Array;
+   function "=" (Left, Right : NullRotationAnimation2_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.NullRotationAnimation2_Package_References."=";
+   subtype NullRotationAnimation2_Access_Array_Access_Array_Access is org.allbinary.animation.NullRotationAnimation2_Package_References.NullRotationAnimation2_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullRotationAnimation2_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.NullRotationAnimation2_Package_References."=";
 
    type NullRotationAnimation2 is new NullRotationAnimation with null record;
 

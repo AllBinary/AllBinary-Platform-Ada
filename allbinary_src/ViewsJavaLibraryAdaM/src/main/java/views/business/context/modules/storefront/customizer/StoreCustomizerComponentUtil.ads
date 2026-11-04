@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package;
+package views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References is
+   type StoreCustomizerComponentUtil_Access is access all views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package.StoreCustomizerComponentUtil'Class;
+   type StoreCustomizerComponentUtil_Access_Array is array (Natural range <>) of StoreCustomizerComponentUtil_Access;
+   type StoreCustomizerComponentUtil_Access_Array_Access is access all StoreCustomizerComponentUtil_Access_Array;
+   type StoreCustomizerComponentUtil_Access_Array_Access_Array is array (Natural range <>) of StoreCustomizerComponentUtil_Access_Array_Access;
+   type StoreCustomizerComponentUtil_Access_Array_Access_Array_Access is access all StoreCustomizerComponentUtil_Access_Array_Access_Array;
+end views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References;
+
+with views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 
 package views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package is
 
@@ -31,13 +45,61 @@ package views.business.context.modules.storefront.customizer.StoreCustomizerComp
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreCustomizerComponentUtil is tagged;
-   type StoreCustomizerComponentUtil_Access is access all StoreCustomizerComponentUtil'Class;
-   type StoreCustomizerComponentUtil_Access_Array is array (Natural range <>) of StoreCustomizerComponentUtil_Access;
-   type StoreCustomizerComponentUtil_Access_Array_Access is access all StoreCustomizerComponentUtil_Access_Array;
-   type StoreCustomizerComponentUtil_Access_Array_Access_Array is array (Natural range <>) of StoreCustomizerComponentUtil_Access_Array_Access;
-   type StoreCustomizerComponentUtil_Access_Array_Access_Array_Access is access all StoreCustomizerComponentUtil_Access_Array_Access_Array;
+
+   subtype StoreCustomizerComponentUtil_Access is views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References.StoreCustomizerComponentUtil_Access;
+   function "=" (Left, Right : StoreCustomizerComponentUtil_Access) return Boolean renames views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References."=";
+   subtype StoreCustomizerComponentUtil_Access_Array is views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References.StoreCustomizerComponentUtil_Access_Array;
+   function "=" (Left, Right : StoreCustomizerComponentUtil_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References."=";
+   subtype StoreCustomizerComponentUtil_Access_Array_Access is views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References.StoreCustomizerComponentUtil_Access_Array_Access;
+   function "=" (Left, Right : StoreCustomizerComponentUtil_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References."=";
+   subtype StoreCustomizerComponentUtil_Access_Array_Access_Array is views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References.StoreCustomizerComponentUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreCustomizerComponentUtil_Access_Array_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References."=";
+   subtype StoreCustomizerComponentUtil_Access_Array_Access_Array_Access is views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References.StoreCustomizerComponentUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreCustomizerComponentUtil_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package_References."=";
 
    type StoreCustomizerComponentUtil is new Java_Object with record
       logUtil : LogUtil_Access;

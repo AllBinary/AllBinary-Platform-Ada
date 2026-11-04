@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.java.help.JavaHelpUtil_Package;
+package org.allbinary.logic.java.help.JavaHelpUtil_Package_References is
+   type JavaHelpUtil_Access is access all org.allbinary.logic.java.help.JavaHelpUtil_Package.JavaHelpUtil'Class;
+   type JavaHelpUtil_Access_Array is array (Natural range <>) of JavaHelpUtil_Access;
+   type JavaHelpUtil_Access_Array_Access is access all JavaHelpUtil_Access_Array;
+   type JavaHelpUtil_Access_Array_Access_Array is array (Natural range <>) of JavaHelpUtil_Access_Array_Access;
+   type JavaHelpUtil_Access_Array_Access_Array_Access is access all JavaHelpUtil_Access_Array_Access_Array;
+end org.allbinary.logic.java.help.JavaHelpUtil_Package_References;
+
+with org.allbinary.logic.java.help.JavaHelpUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,22 +36,74 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.help.CSH_Package; use javax.help.CSH_Package;
 --  with javax.help.HelpBroker_Package; use javax.help.HelpBroker_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.java.help.Point_Package; use org.allbinary.logic.java.help.Point_Package;
-with org.allbinary.logic.java.help.Dimension_Package; use org.allbinary.logic.java.help.Dimension_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.allbinary.logic.java.help.Point_Package;
+with org.allbinary.logic.java.help.Point_Package_References;
+limited with org.allbinary.logic.java.help.Dimension_Package;
+with org.allbinary.logic.java.help.Dimension_Package_References;
 
 package org.allbinary.logic.java.help.JavaHelpUtil_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype Point_Access is org.allbinary.logic.java.help.Point_Package_References.Point_Access;
+   use type Point_Access;
+   subtype Point_Access_Array is org.allbinary.logic.java.help.Point_Package_References.Point_Access_Array;
+   use type Point_Access_Array;
+   subtype Point_Access_Array_Access is org.allbinary.logic.java.help.Point_Package_References.Point_Access_Array_Access;
+   use type Point_Access_Array_Access;
+   subtype Point_Access_Array_Access_Array is org.allbinary.logic.java.help.Point_Package_References.Point_Access_Array_Access_Array;
+   use type Point_Access_Array_Access_Array;
+   subtype Point_Access_Array_Access_Array_Access is org.allbinary.logic.java.help.Point_Package_References.Point_Access_Array_Access_Array_Access;
+   use type Point_Access_Array_Access_Array_Access;
+   subtype Dimension_Access is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access;
+   use type Dimension_Access;
+   subtype Dimension_Access_Array is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access_Array;
+   use type Dimension_Access_Array;
+   subtype Dimension_Access_Array_Access is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access_Array_Access;
+   use type Dimension_Access_Array_Access;
+   subtype Dimension_Access_Array_Access_Array is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access_Array_Access_Array;
+   use type Dimension_Access_Array_Access_Array;
+   subtype Dimension_Access_Array_Access_Array_Access is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access_Array_Access_Array_Access;
+   use type Dimension_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type JavaHelpUtil is tagged;
-   type JavaHelpUtil_Access is access all JavaHelpUtil'Class;
-   type JavaHelpUtil_Access_Array is array (Natural range <>) of JavaHelpUtil_Access;
-   type JavaHelpUtil_Access_Array_Access is access all JavaHelpUtil_Access_Array;
-   type JavaHelpUtil_Access_Array_Access_Array is array (Natural range <>) of JavaHelpUtil_Access_Array_Access;
-   type JavaHelpUtil_Access_Array_Access_Array_Access is access all JavaHelpUtil_Access_Array_Access_Array;
+
+   subtype JavaHelpUtil_Access is org.allbinary.logic.java.help.JavaHelpUtil_Package_References.JavaHelpUtil_Access;
+   function "=" (Left, Right : JavaHelpUtil_Access) return Boolean renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References."=";
+   subtype JavaHelpUtil_Access_Array is org.allbinary.logic.java.help.JavaHelpUtil_Package_References.JavaHelpUtil_Access_Array;
+   function "=" (Left, Right : JavaHelpUtil_Access_Array) return Boolean renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References."=";
+   subtype JavaHelpUtil_Access_Array_Access is org.allbinary.logic.java.help.JavaHelpUtil_Package_References.JavaHelpUtil_Access_Array_Access;
+   function "=" (Left, Right : JavaHelpUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References."=";
+   subtype JavaHelpUtil_Access_Array_Access_Array is org.allbinary.logic.java.help.JavaHelpUtil_Package_References.JavaHelpUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : JavaHelpUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References."=";
+   subtype JavaHelpUtil_Access_Array_Access_Array_Access is org.allbinary.logic.java.help.JavaHelpUtil_Package_References.JavaHelpUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JavaHelpUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References."=";
 
    type JavaHelpUtil is new Java_Object with record
       logUtil : LogUtil_Access;

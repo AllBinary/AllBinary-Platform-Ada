@@ -14,15 +14,24 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
 with org.osgi.framework.Constants_Package; use org.osgi.framework.Constants_Package;
+with bundle.input.automation.InputAutomationBundleActivator_Package; use bundle.input.automation.InputAutomationBundleActivator_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
 with org.allbinary.logic.io.file.directory.SubDirectory_Package; use org.allbinary.logic.io.file.directory.SubDirectory_Package;
 with org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package; use org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with bundle.input.automation.InputAutomationBundleActivator_Package;
+with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
 
 package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
 
@@ -36,6 +45,56 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype Bundle_Access is org.osgi.framework.Bundle_Package_References.Bundle_Access;
+   function "=" (Left, Right : Bundle_Access) return Boolean renames org.osgi.framework.Bundle_Package_References."=";
+   subtype Bundle_Access_Array is org.osgi.framework.Bundle_Package_References.Bundle_Access_Array;
+   function "=" (Left, Right : Bundle_Access_Array) return Boolean renames org.osgi.framework.Bundle_Package_References."=";
+   subtype Bundle_Access_Array_Access is org.osgi.framework.Bundle_Package_References.Bundle_Access_Array_Access;
+   function "=" (Left, Right : Bundle_Access_Array_Access) return Boolean renames org.osgi.framework.Bundle_Package_References."=";
+   subtype Bundle_Access_Array_Access_Array is org.osgi.framework.Bundle_Package_References.Bundle_Access_Array_Access_Array;
+   function "=" (Left, Right : Bundle_Access_Array_Access_Array) return Boolean renames org.osgi.framework.Bundle_Package_References."=";
+   subtype Bundle_Access_Array_Access_Array_Access is org.osgi.framework.Bundle_Package_References.Bundle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Bundle_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.Bundle_Package_References."=";
+   subtype InputAutomationBundleActivator_Access is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access;
+   function "=" (Left, Right : InputAutomationBundleActivator_Access) return Boolean renames bundle.input.automation.InputAutomationBundleActivator_Package_References."=";
+   subtype InputAutomationBundleActivator_Access_Array is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access_Array;
+   function "=" (Left, Right : InputAutomationBundleActivator_Access_Array) return Boolean renames bundle.input.automation.InputAutomationBundleActivator_Package_References."=";
+   subtype InputAutomationBundleActivator_Access_Array_Access is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationBundleActivator_Access_Array_Access) return Boolean renames bundle.input.automation.InputAutomationBundleActivator_Package_References."=";
+   subtype InputAutomationBundleActivator_Access_Array_Access_Array is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationBundleActivator_Access_Array_Access_Array) return Boolean renames bundle.input.automation.InputAutomationBundleActivator_Package_References."=";
+   subtype InputAutomationBundleActivator_Access_Array_Access_Array_Access is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationBundleActivator_Access_Array_Access_Array_Access) return Boolean renames bundle.input.automation.InputAutomationBundleActivator_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationNewBundleRunnable'Class) is
    begin
       null;
@@ -200,7 +259,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    function findNewModules (This : in out InputAutomationNewBundleRunnable) return BasicArrayList_Access is
       vector : BasicArrayList_Access;
       hashMap : HashMap_Access;
-      set : Set_Access;
+      set : Java_Object_Access;
       symbolicNameArray : Java_Object_Access_Array_Access;
       size : Integer;
       symbolicName : Unbounded_String;

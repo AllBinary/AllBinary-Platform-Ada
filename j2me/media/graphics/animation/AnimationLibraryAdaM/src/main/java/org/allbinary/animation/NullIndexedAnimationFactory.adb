@@ -13,10 +13,77 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.NullIndexedAnimation_Package; use org.allbinary.animation.NullIndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationInterface_Package;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.animation.IndexedAnimationInterface_Package;
+with org.allbinary.animation.NullIndexedAnimation_Package;
+with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.SequenceInterface_Package;
+with org.allbinary.animation.SequentialAnimationInterface_Package;
 
 package body org.allbinary.animation.NullIndexedAnimationFactory_Package is
 
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   function "=" (Left, Right : Graphics_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   function "=" (Left, Right : Graphics_Access_Array) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   function "=" (Left, Right : Graphics_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   function "=" (Left, Right : Graphics_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Graphics_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype ScaleProperties_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access;
+   function "=" (Left, Right : ScaleProperties_Access) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype ScaleProperties_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array;
+   function "=" (Left, Right : ScaleProperties_Access_Array) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype ScaleProperties_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access;
+   function "=" (Left, Right : ScaleProperties_Access_Array_Access) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype ScaleProperties_Access_Array_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : ScaleProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScaleProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype IndexedAnimation_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access;
+   function "=" (Left, Right : IndexedAnimation_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype IndexedAnimation_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array;
+   function "=" (Left, Right : IndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype IndexedAnimation_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access;
+   function "=" (Left, Right : IndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype IndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : IndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype IndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access;
+   function "=" (Left, Right : NullIndexedAnimation_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access_Array is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access_Array;
+   function "=" (Left, Right : NullIndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access_Array_Access is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access_Array_Access;
+   function "=" (Left, Right : NullIndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : NullIndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullIndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   function "=" (Left, Right : Animation_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   function "=" (Left, Right : Animation_Access_Array) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   function "=" (Left, Right : Animation_Access_Array_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   function "=" (Left, Right : Animation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Animation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
    procedure Initialize_Fields (This : in out NullIndexedAnimationFactory'Class) is
    begin
       null;
@@ -39,7 +106,7 @@ package body org.allbinary.animation.NullIndexedAnimationFactory_Package is
 
    function getFactoryInstance return NullIndexedAnimationFactory_Access is
    begin
-        return NullIndexedAnimationFactory_Package.NULL_INDEXED_ANIMATION_FACTORY;
+        return NullIndexedAnimationFactory_Access (NullIndexedAnimationFactory_Package.NULL_INDEXED_ANIMATION_FACTORY);
    end getFactoryInstance;
 
    --  throws Exception
@@ -83,10 +150,78 @@ begin
 end org.allbinary.animation.NullIndexedAnimationFactory_Package;
 
 
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.NullIndexedAnimation_Package; use org.allbinary.animation.NullIndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationInterface_Package;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.animation.IndexedAnimationInterface_Package;
+with org.allbinary.animation.NullIndexedAnimation_Package;
+with org.allbinary.animation.NullIndexedAnimationFactory_Package;
+with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.animation.SequenceInterface_Package;
+with org.allbinary.animation.SequentialAnimationInterface_Package;
 
 package body org.allbinary.animation.NullIndexedAnimationInner_Package is
 
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   function "=" (Left, Right : Graphics_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   function "=" (Left, Right : Graphics_Access_Array) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   function "=" (Left, Right : Graphics_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   function "=" (Left, Right : Graphics_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Graphics_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype ScaleProperties_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access;
+   function "=" (Left, Right : ScaleProperties_Access) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype ScaleProperties_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array;
+   function "=" (Left, Right : ScaleProperties_Access_Array) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype ScaleProperties_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access;
+   function "=" (Left, Right : ScaleProperties_Access_Array_Access) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype ScaleProperties_Access_Array_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : ScaleProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScaleProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.ScaleProperties_Package_References."=";
+   subtype IndexedAnimation_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access;
+   function "=" (Left, Right : IndexedAnimation_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype IndexedAnimation_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array;
+   function "=" (Left, Right : IndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype IndexedAnimation_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access;
+   function "=" (Left, Right : IndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype IndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : IndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype IndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access;
+   function "=" (Left, Right : NullIndexedAnimation_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access_Array is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access_Array;
+   function "=" (Left, Right : NullIndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access_Array_Access is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access_Array_Access;
+   function "=" (Left, Right : NullIndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : NullIndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.NullIndexedAnimation_Package_References.NullIndexedAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullIndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimation_Package_References."=";
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   function "=" (Left, Right : Animation_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   function "=" (Left, Right : Animation_Access_Array) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   function "=" (Left, Right : Animation_Access_Array_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   function "=" (Left, Right : Animation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Animation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
    procedure Initialize_Fields (This : in out NullIndexedAnimationInner'Class) is
    begin
       null;

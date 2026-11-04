@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.displayable.canvas.GameRunnable_Package;
+package org.allbinary.game.displayable.canvas.GameRunnable_Package_References is
+   type GameRunnable_Access is access all org.allbinary.game.displayable.canvas.GameRunnable_Package.GameRunnable'Class;
+   type GameRunnable_Access_Array is array (Natural range <>) of GameRunnable_Access;
+   type GameRunnable_Access_Array_Access is access all GameRunnable_Access_Array;
+   type GameRunnable_Access_Array_Access_Array is array (Natural range <>) of GameRunnable_Access_Array_Access;
+   type GameRunnable_Access_Array_Access_Array_Access is access all GameRunnable_Access_Array_Access_Array;
+end org.allbinary.game.displayable.canvas.GameRunnable_Package_References;
+
+with org.allbinary.game.displayable.canvas.GameRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.game.displayable.canvas.GameRunnable_Package is
 
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameRunnable is tagged;
-   type GameRunnable_Access is access all GameRunnable'Class;
-   type GameRunnable_Access_Array is array (Natural range <>) of GameRunnable_Access;
-   type GameRunnable_Access_Array_Access is access all GameRunnable_Access_Array;
-   type GameRunnable_Access_Array_Access_Array is array (Natural range <>) of GameRunnable_Access_Array_Access;
-   type GameRunnable_Access_Array_Access_Array_Access is access all GameRunnable_Access_Array_Access_Array;
+
+   subtype GameRunnable_Access is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access;
+   function "=" (Left, Right : GameRunnable_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameRunnable_Package_References."=";
+   subtype GameRunnable_Access_Array is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access_Array;
+   function "=" (Left, Right : GameRunnable_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.GameRunnable_Package_References."=";
+   subtype GameRunnable_Access_Array_Access is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access_Array_Access;
+   function "=" (Left, Right : GameRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameRunnable_Package_References."=";
+   subtype GameRunnable_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : GameRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.GameRunnable_Package_References."=";
+   subtype GameRunnable_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameRunnable_Package_References."=";
 
    type GameRunnable is new Java_Object and Runnable with record
       WAIT : Integer;

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package;
+package org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References is
+   type AdvertisementCampaignInternalEntity_Access is access all org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package.AdvertisementCampaignInternalEntity'Class;
+   type AdvertisementCampaignInternalEntity_Access_Array is array (Natural range <>) of AdvertisementCampaignInternalEntity_Access;
+   type AdvertisementCampaignInternalEntity_Access_Array_Access is access all AdvertisementCampaignInternalEntity_Access_Array;
+   type AdvertisementCampaignInternalEntity_Access_Array_Access_Array is array (Natural range <>) of AdvertisementCampaignInternalEntity_Access_Array_Access;
+   type AdvertisementCampaignInternalEntity_Access_Array_Access_Array_Access is access all AdvertisementCampaignInternalEntity_Access_Array_Access_Array;
+end org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References;
+
+with org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,9 +31,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
-with org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
+with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References;
+limited with org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package;
+with org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntityInterface_Package; use org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntityInterface_Package;
 
@@ -34,13 +47,51 @@ package org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementC
    package AdvertisementCampaignsInterface_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
+   package Reference_Types is
+   subtype AdvertisementCampaignInterface_Access is org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References.AdvertisementCampaignInterface_Access;
+   use type AdvertisementCampaignInterface_Access;
+   subtype AdvertisementCampaignInterface_Access_Array is org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References.AdvertisementCampaignInterface_Access_Array;
+   use type AdvertisementCampaignInterface_Access_Array;
+   subtype AdvertisementCampaignInterface_Access_Array_Access is org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References.AdvertisementCampaignInterface_Access_Array_Access;
+   use type AdvertisementCampaignInterface_Access_Array_Access;
+   subtype AdvertisementCampaignInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References.AdvertisementCampaignInterface_Access_Array_Access_Array;
+   use type AdvertisementCampaignInterface_Access_Array_Access_Array;
+   subtype AdvertisementCampaignInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References.AdvertisementCampaignInterface_Access_Array_Access_Array_Access;
+   use type AdvertisementCampaignInterface_Access_Array_Access_Array_Access;
+   subtype AdvertisementCampaignsInterface_Access is org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package_References.AdvertisementCampaignsInterface_Access;
+   use type AdvertisementCampaignsInterface_Access;
+   subtype AdvertisementCampaignsInterface_Access_Array is org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package_References.AdvertisementCampaignsInterface_Access_Array;
+   use type AdvertisementCampaignsInterface_Access_Array;
+   subtype AdvertisementCampaignsInterface_Access_Array_Access is org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package_References.AdvertisementCampaignsInterface_Access_Array_Access;
+   use type AdvertisementCampaignsInterface_Access_Array_Access;
+   subtype AdvertisementCampaignsInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package_References.AdvertisementCampaignsInterface_Access_Array_Access_Array;
+   use type AdvertisementCampaignsInterface_Access_Array_Access_Array;
+   subtype AdvertisementCampaignsInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package_References.AdvertisementCampaignsInterface_Access_Array_Access_Array_Access;
+   use type AdvertisementCampaignsInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AdvertisementCampaignInternalEntity is tagged;
-   type AdvertisementCampaignInternalEntity_Access is access all AdvertisementCampaignInternalEntity'Class;
-   type AdvertisementCampaignInternalEntity_Access_Array is array (Natural range <>) of AdvertisementCampaignInternalEntity_Access;
-   type AdvertisementCampaignInternalEntity_Access_Array_Access is access all AdvertisementCampaignInternalEntity_Access_Array;
-   type AdvertisementCampaignInternalEntity_Access_Array_Access_Array is array (Natural range <>) of AdvertisementCampaignInternalEntity_Access_Array_Access;
-   type AdvertisementCampaignInternalEntity_Access_Array_Access_Array_Access is access all AdvertisementCampaignInternalEntity_Access_Array_Access_Array;
+
+   subtype AdvertisementCampaignInternalEntity_Access is org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References.AdvertisementCampaignInternalEntity_Access;
+   function "=" (Left, Right : AdvertisementCampaignInternalEntity_Access) return Boolean renames org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References."=";
+   subtype AdvertisementCampaignInternalEntity_Access_Array is org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References.AdvertisementCampaignInternalEntity_Access_Array;
+   function "=" (Left, Right : AdvertisementCampaignInternalEntity_Access_Array) return Boolean renames org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References."=";
+   subtype AdvertisementCampaignInternalEntity_Access_Array_Access is org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References.AdvertisementCampaignInternalEntity_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementCampaignInternalEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References."=";
+   subtype AdvertisementCampaignInternalEntity_Access_Array_Access_Array is org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References.AdvertisementCampaignInternalEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementCampaignInternalEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References."=";
+   subtype AdvertisementCampaignInternalEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References.AdvertisementCampaignInternalEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementCampaignInternalEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package_References."=";
 
    type AdvertisementCampaignInternalEntity is new AbSqlBean and AdvertisementCampaignInternalEntityInterface with record
       logUtil : LogUtil_Access;

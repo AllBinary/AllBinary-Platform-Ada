@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with views.admin.payment.gateways.SelectExistingView_Package;
+package views.admin.payment.gateways.SelectExistingView_Package_References is
+   type SelectExistingView_Access is access all views.admin.payment.gateways.SelectExistingView_Package.SelectExistingView'Class;
+   type SelectExistingView_Access_Array is array (Natural range <>) of SelectExistingView_Access;
+   type SelectExistingView_Access_Array_Access is access all SelectExistingView_Access_Array;
+   type SelectExistingView_Access_Array_Access_Array is array (Natural range <>) of SelectExistingView_Access_Array_Access;
+   type SelectExistingView_Access_Array_Access_Array_Access is access all SelectExistingView_Access_Array_Access_Array;
+end views.admin.payment.gateways.SelectExistingView_Package_References;
+
+with views.admin.payment.gateways.SelectExistingView_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,8 +30,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with views.admin.payment.gateway.PaymentGatewayViewAbstract_Package; use views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;
 
 package views.admin.payment.gateways.SelectExistingView_Package is
@@ -29,13 +41,41 @@ package views.admin.payment.gateways.SelectExistingView_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package PaymentGatewayViewAbstract_Package renames Standard.views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SelectExistingView is tagged;
-   type SelectExistingView_Access is access all SelectExistingView'Class;
-   type SelectExistingView_Access_Array is array (Natural range <>) of SelectExistingView_Access;
-   type SelectExistingView_Access_Array_Access is access all SelectExistingView_Access_Array;
-   type SelectExistingView_Access_Array_Access_Array is array (Natural range <>) of SelectExistingView_Access_Array_Access;
-   type SelectExistingView_Access_Array_Access_Array_Access is access all SelectExistingView_Access_Array_Access_Array;
+
+   subtype SelectExistingView_Access is views.admin.payment.gateways.SelectExistingView_Package_References.SelectExistingView_Access;
+   function "=" (Left, Right : SelectExistingView_Access) return Boolean renames views.admin.payment.gateways.SelectExistingView_Package_References."=";
+   subtype SelectExistingView_Access_Array is views.admin.payment.gateways.SelectExistingView_Package_References.SelectExistingView_Access_Array;
+   function "=" (Left, Right : SelectExistingView_Access_Array) return Boolean renames views.admin.payment.gateways.SelectExistingView_Package_References."=";
+   subtype SelectExistingView_Access_Array_Access is views.admin.payment.gateways.SelectExistingView_Package_References.SelectExistingView_Access_Array_Access;
+   function "=" (Left, Right : SelectExistingView_Access_Array_Access) return Boolean renames views.admin.payment.gateways.SelectExistingView_Package_References."=";
+   subtype SelectExistingView_Access_Array_Access_Array is views.admin.payment.gateways.SelectExistingView_Package_References.SelectExistingView_Access_Array_Access_Array;
+   function "=" (Left, Right : SelectExistingView_Access_Array_Access_Array) return Boolean renames views.admin.payment.gateways.SelectExistingView_Package_References."=";
+   subtype SelectExistingView_Access_Array_Access_Array_Access is views.admin.payment.gateways.SelectExistingView_Package_References.SelectExistingView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SelectExistingView_Access_Array_Access_Array_Access) return Boolean renames views.admin.payment.gateways.SelectExistingView_Package_References."=";
 
    type SelectExistingView is new PaymentGatewayViewAbstract with record
       logUtil : LogUtil_Access;

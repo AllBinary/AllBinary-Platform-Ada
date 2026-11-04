@@ -13,9 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
 
 package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package is
 
+   subtype MyCanvasEventListener_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access;
+   function "=" (Left, Right : MyCanvasEventListener_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References."=";
+   subtype MyCanvasEventListener_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access_Array;
+   function "=" (Left, Right : MyCanvasEventListener_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References."=";
+   subtype MyCanvasEventListener_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEventListener_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References."=";
+   subtype MyCanvasEventListener_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access_Array_Access_Array;
+   function "=" (Left, Right : MyCanvasEventListener_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References."=";
+   subtype MyCanvasEventListener_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEventListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References."=";
+   subtype MyCanvasEvent_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access;
+   function "=" (Left, Right : MyCanvasEvent_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
+   subtype MyCanvasEvent_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array;
+   function "=" (Left, Right : MyCanvasEvent_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
+   subtype MyCanvasEvent_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEvent_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
+   subtype MyCanvasEvent_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : MyCanvasEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
+   subtype MyCanvasEvent_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
    procedure Initialize_Fields (This : in out MyCanvasEventService'Class) is
    begin
       null;

@@ -40,7 +40,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
    begin
         OpenGLESImage_Package.Initialize (This, image, bitmapFactory, textureFactory);
         Initialize_Fields (This);
-        OpenGLESGL11ExtImage'Class (This).onDisplayChangeEvent (null);
+        OpenGLESGL11ExtImage'Class (This).onDisplayChangeEvent (DisplayInfoSingleton_Package.getInstance.displayChangeEvent);
         This.rectangle := new Integer_Array'(0, OpenGLESGL11ExtImage'Class (This).getHeight, OpenGLESGL11ExtImage'Class (This).getWidth, -(OpenGLESGL11ExtImage'Class (This).getHeight));
    end Initialize;
 
@@ -71,7 +71,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
       gl : constant GL_Access := GL_Access (gl_Param);
       gl11 : GL11_Access;
    begin
-        OpenGLESGL11ExtImage'Class (This).onDisplayChangeEvent (null);
+        OpenGLESGL11ExtImage'Class (This).onDisplayChangeEvent (DisplayInfoSingleton_Package.getInstance.displayChangeEvent);
         gl11 := GL11_Access (gl);
         if OpenGLESImage (This).initTexture (gl11) then
             This.textureFactory.load (gl11, GL10_Package.GL_TEXTURE_2D, 0, OpenGLESGL11ExtImage_Access'(This'Unchecked_Access), 0, True);
@@ -83,10 +83,12 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
 
    procedure draw (This : in out OpenGLESGL11ExtImage; gl_Param : access GL10_Package.GL10'Class; x : Integer; y : Integer; z : Integer) is
       gl : constant GL10_Access := GL10_Access (gl_Param);
+      gl11Ext : GL11Ext_Access;
    begin
         gl.glEnable (GL10_Package.GL_TEXTURE_2D);
         gl.glBindTexture (GL10_Package.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
-        GL11Ext_Access (gl).glDrawTexfOES (x, (This.a) - (y), z, OpenGLESGL11ExtImage'Class (This).getWidth, OpenGLESGL11ExtImage'Class (This).getHeight);
+        gl11Ext := GL11Ext_Access (gl);
+        gl11Ext.glDrawTexfOES (Float (x), Float (((This.a) - (y))), Float (z), Float (OpenGLESGL11ExtImage'Class (This).getWidth), Float (OpenGLESGL11ExtImage'Class (This).getHeight));
         gl.glDisable (GL10_Package.GL_TEXTURE_2D);
    end draw;
 

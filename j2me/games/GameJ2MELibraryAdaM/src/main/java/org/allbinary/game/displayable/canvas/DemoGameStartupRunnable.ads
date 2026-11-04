@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package;
+package org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References is
+   type DemoGameStartupRunnable_Access is access all org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package.DemoGameStartupRunnable'Class;
+   type DemoGameStartupRunnable_Access_Array is array (Natural range <>) of DemoGameStartupRunnable_Access;
+   type DemoGameStartupRunnable_Access_Array_Access is access all DemoGameStartupRunnable_Access_Array;
+   type DemoGameStartupRunnable_Access_Array_Access_Array is array (Natural range <>) of DemoGameStartupRunnable_Access_Array_Access;
+   type DemoGameStartupRunnable_Access_Array_Access_Array_Access is access all DemoGameStartupRunnable_Access_Array_Access_Array;
+end org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References;
+
+with org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,51 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
-with org.allbinary.game.displayable.canvas.DemoCanvas_Package; use org.allbinary.game.displayable.canvas.DemoCanvas_Package;
+limited with org.allbinary.game.displayable.canvas.DemoCanvas_Package;
+with org.allbinary.game.displayable.canvas.DemoCanvas_Package_References;
 
 package org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ABRunnable_Package renames Standard.org.allbinary.thread.ABRunnable_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype DemoCanvas_Access is org.allbinary.game.displayable.canvas.DemoCanvas_Package_References.DemoCanvas_Access;
+   use type DemoCanvas_Access;
+   subtype DemoCanvas_Access_Array is org.allbinary.game.displayable.canvas.DemoCanvas_Package_References.DemoCanvas_Access_Array;
+   use type DemoCanvas_Access_Array;
+   subtype DemoCanvas_Access_Array_Access is org.allbinary.game.displayable.canvas.DemoCanvas_Package_References.DemoCanvas_Access_Array_Access;
+   use type DemoCanvas_Access_Array_Access;
+   subtype DemoCanvas_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.DemoCanvas_Package_References.DemoCanvas_Access_Array_Access_Array;
+   use type DemoCanvas_Access_Array_Access_Array;
+   subtype DemoCanvas_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.DemoCanvas_Package_References.DemoCanvas_Access_Array_Access_Array_Access;
+   use type DemoCanvas_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DemoGameStartupRunnable is tagged;
-   type DemoGameStartupRunnable_Access is access all DemoGameStartupRunnable'Class;
-   type DemoGameStartupRunnable_Access_Array is array (Natural range <>) of DemoGameStartupRunnable_Access;
-   type DemoGameStartupRunnable_Access_Array_Access is access all DemoGameStartupRunnable_Access_Array;
-   type DemoGameStartupRunnable_Access_Array_Access_Array is array (Natural range <>) of DemoGameStartupRunnable_Access_Array_Access;
-   type DemoGameStartupRunnable_Access_Array_Access_Array_Access is access all DemoGameStartupRunnable_Access_Array_Access_Array;
+
+   subtype DemoGameStartupRunnable_Access is org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References.DemoGameStartupRunnable_Access;
+   function "=" (Left, Right : DemoGameStartupRunnable_Access) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References."=";
+   subtype DemoGameStartupRunnable_Access_Array is org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References.DemoGameStartupRunnable_Access_Array;
+   function "=" (Left, Right : DemoGameStartupRunnable_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References."=";
+   subtype DemoGameStartupRunnable_Access_Array_Access is org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References.DemoGameStartupRunnable_Access_Array_Access;
+   function "=" (Left, Right : DemoGameStartupRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References."=";
+   subtype DemoGameStartupRunnable_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References.DemoGameStartupRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : DemoGameStartupRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References."=";
+   subtype DemoGameStartupRunnable_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References.DemoGameStartupRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DemoGameStartupRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package_References."=";
 
    type DemoGameStartupRunnable is new ABRunnable with record
       logUtil : LogUtil_Access;

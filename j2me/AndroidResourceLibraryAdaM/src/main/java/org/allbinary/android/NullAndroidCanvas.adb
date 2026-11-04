@@ -13,9 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
+with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 
 package body org.allbinary.android.NullAndroidCanvas_Package is
 
+   subtype Canvas_Access is android.graphics.Canvas_Package_References.Canvas_Access;
+   function "=" (Left, Right : Canvas_Access) return Boolean renames android.graphics.Canvas_Package_References."=";
+   subtype Canvas_Access_Array is android.graphics.Canvas_Package_References.Canvas_Access_Array;
+   function "=" (Left, Right : Canvas_Access_Array) return Boolean renames android.graphics.Canvas_Package_References."=";
+   subtype Canvas_Access_Array_Access is android.graphics.Canvas_Package_References.Canvas_Access_Array_Access;
+   function "=" (Left, Right : Canvas_Access_Array_Access) return Boolean renames android.graphics.Canvas_Package_References."=";
+   subtype Canvas_Access_Array_Access_Array is android.graphics.Canvas_Package_References.Canvas_Access_Array_Access_Array;
+   function "=" (Left, Right : Canvas_Access_Array_Access_Array) return Boolean renames android.graphics.Canvas_Package_References."=";
+   subtype Canvas_Access_Array_Access_Array_Access is android.graphics.Canvas_Package_References.Canvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Canvas_Access_Array_Access_Array_Access) return Boolean renames android.graphics.Canvas_Package_References."=";
+   subtype MediaPlayer_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access;
+   function "=" (Left, Right : MediaPlayer_Access) return Boolean renames android.media.MediaPlayer_Package_References."=";
+   subtype MediaPlayer_Access_Array is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array;
+   function "=" (Left, Right : MediaPlayer_Access_Array) return Boolean renames android.media.MediaPlayer_Package_References."=";
+   subtype MediaPlayer_Access_Array_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access;
+   function "=" (Left, Right : MediaPlayer_Access_Array_Access) return Boolean renames android.media.MediaPlayer_Package_References."=";
+   subtype MediaPlayer_Access_Array_Access_Array is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access_Array;
+   function "=" (Left, Right : MediaPlayer_Access_Array_Access_Array) return Boolean renames android.media.MediaPlayer_Package_References."=";
+   subtype MediaPlayer_Access_Array_Access_Array_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MediaPlayer_Access_Array_Access_Array_Access) return Boolean renames android.media.MediaPlayer_Package_References."=";
    procedure Initialize_Fields (This : in out NullAndroidCanvas'Class) is
    begin
       null;

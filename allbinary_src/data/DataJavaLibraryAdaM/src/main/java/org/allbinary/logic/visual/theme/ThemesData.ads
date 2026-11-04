@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.theme.ThemesData_Package;
+package org.allbinary.logic.visual.theme.ThemesData_Package_References is
+   type ThemesData_Access is access all org.allbinary.logic.visual.theme.ThemesData_Package.ThemesData'Class;
+   type ThemesData_Access_Array is array (Natural range <>) of ThemesData_Access;
+   type ThemesData_Access_Array_Access is access all ThemesData_Access_Array;
+   type ThemesData_Access_Array_Access_Array is array (Natural range <>) of ThemesData_Access_Array_Access;
+   type ThemesData_Access_Array_Access_Array_Access is access all ThemesData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.theme.ThemesData_Package_References;
+
+with org.allbinary.logic.visual.theme.ThemesData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.theme.ThemesData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ThemesData is tagged;
-   type ThemesData_Access is access all ThemesData'Class;
-   type ThemesData_Access_Array is array (Natural range <>) of ThemesData_Access;
-   type ThemesData_Access_Array_Access is access all ThemesData_Access_Array;
-   type ThemesData_Access_Array_Access_Array is array (Natural range <>) of ThemesData_Access_Array_Access;
-   type ThemesData_Access_Array_Access_Array_Access is access all ThemesData_Access_Array_Access_Array;
+
+   subtype ThemesData_Access is org.allbinary.logic.visual.theme.ThemesData_Package_References.ThemesData_Access;
+   function "=" (Left, Right : ThemesData_Access) return Boolean renames org.allbinary.logic.visual.theme.ThemesData_Package_References."=";
+   subtype ThemesData_Access_Array is org.allbinary.logic.visual.theme.ThemesData_Package_References.ThemesData_Access_Array;
+   function "=" (Left, Right : ThemesData_Access_Array) return Boolean renames org.allbinary.logic.visual.theme.ThemesData_Package_References."=";
+   subtype ThemesData_Access_Array_Access is org.allbinary.logic.visual.theme.ThemesData_Package_References.ThemesData_Access_Array_Access;
+   function "=" (Left, Right : ThemesData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.theme.ThemesData_Package_References."=";
+   subtype ThemesData_Access_Array_Access_Array is org.allbinary.logic.visual.theme.ThemesData_Package_References.ThemesData_Access_Array_Access_Array;
+   function "=" (Left, Right : ThemesData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.theme.ThemesData_Package_References."=";
+   subtype ThemesData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.theme.ThemesData_Package_References.ThemesData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ThemesData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.theme.ThemesData_Package_References."=";
 
    type ThemesData is new Java_Object with record
       NAME : Unbounded_String;

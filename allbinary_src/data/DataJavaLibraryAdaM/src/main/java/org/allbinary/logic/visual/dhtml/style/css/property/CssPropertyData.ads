@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
+package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References is
+   type CssPropertyData_Access is access all org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package.CssPropertyData'Class;
+   type CssPropertyData_Access_Array is array (Natural range <>) of CssPropertyData_Access;
+   type CssPropertyData_Access_Array_Access is access all CssPropertyData_Access_Array;
+   type CssPropertyData_Access_Array_Access_Array is array (Natural range <>) of CssPropertyData_Access_Array_Access;
+   type CssPropertyData_Access_Array_Access_Array_Access is access all CssPropertyData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References;
+
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CssPropertyData is tagged;
-   type CssPropertyData_Access is access all CssPropertyData'Class;
-   type CssPropertyData_Access_Array is array (Natural range <>) of CssPropertyData_Access;
-   type CssPropertyData_Access_Array_Access is access all CssPropertyData_Access_Array;
-   type CssPropertyData_Access_Array_Access_Array is array (Natural range <>) of CssPropertyData_Access_Array_Access;
-   type CssPropertyData_Access_Array_Access_Array_Access is access all CssPropertyData_Access_Array_Access_Array;
+
+   subtype CssPropertyData_Access is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References.CssPropertyData_Access;
+   function "=" (Left, Right : CssPropertyData_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References."=";
+   subtype CssPropertyData_Access_Array is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References.CssPropertyData_Access_Array;
+   function "=" (Left, Right : CssPropertyData_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References."=";
+   subtype CssPropertyData_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References.CssPropertyData_Access_Array_Access;
+   function "=" (Left, Right : CssPropertyData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References."=";
+   subtype CssPropertyData_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References.CssPropertyData_Access_Array_Access_Array;
+   function "=" (Left, Right : CssPropertyData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References."=";
+   subtype CssPropertyData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References.CssPropertyData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CssPropertyData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package_References."=";
 
    type CssPropertyData is new Java_Object with record
       NAME : Unbounded_String;

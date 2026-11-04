@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.transition.RunAtEndAnimationListener_Package;
+package org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References is
+   type RunAtEndAnimationListener_Access is access all org.allbinary.animation.transition.RunAtEndAnimationListener_Package.RunAtEndAnimationListener'Class;
+   type RunAtEndAnimationListener_Access_Array is array (Natural range <>) of RunAtEndAnimationListener_Access;
+   type RunAtEndAnimationListener_Access_Array_Access is access all RunAtEndAnimationListener_Access_Array;
+   type RunAtEndAnimationListener_Access_Array_Access_Array is array (Natural range <>) of RunAtEndAnimationListener_Access_Array_Access;
+   type RunAtEndAnimationListener_Access_Array_Access_Array_Access is access all RunAtEndAnimationListener_Access_Array_Access_Array;
+end org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References;
+
+with org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.animation.transition.RunAtEndAnimationListener_Package is
 
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type RunAtEndAnimationListener is tagged;
-   type RunAtEndAnimationListener_Access is access all RunAtEndAnimationListener'Class;
-   type RunAtEndAnimationListener_Access_Array is array (Natural range <>) of RunAtEndAnimationListener_Access;
-   type RunAtEndAnimationListener_Access_Array_Access is access all RunAtEndAnimationListener_Access_Array;
-   type RunAtEndAnimationListener_Access_Array_Access_Array is array (Natural range <>) of RunAtEndAnimationListener_Access_Array_Access;
-   type RunAtEndAnimationListener_Access_Array_Access_Array_Access is access all RunAtEndAnimationListener_Access_Array_Access_Array;
+
+   subtype RunAtEndAnimationListener_Access is org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References.RunAtEndAnimationListener_Access;
+   function "=" (Left, Right : RunAtEndAnimationListener_Access) return Boolean renames org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References."=";
+   subtype RunAtEndAnimationListener_Access_Array is org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References.RunAtEndAnimationListener_Access_Array;
+   function "=" (Left, Right : RunAtEndAnimationListener_Access_Array) return Boolean renames org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References."=";
+   subtype RunAtEndAnimationListener_Access_Array_Access is org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References.RunAtEndAnimationListener_Access_Array_Access;
+   function "=" (Left, Right : RunAtEndAnimationListener_Access_Array_Access) return Boolean renames org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References."=";
+   subtype RunAtEndAnimationListener_Access_Array_Access_Array is org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References.RunAtEndAnimationListener_Access_Array_Access_Array;
+   function "=" (Left, Right : RunAtEndAnimationListener_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References."=";
+   subtype RunAtEndAnimationListener_Access_Array_Access_Array_Access is org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References.RunAtEndAnimationListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RunAtEndAnimationListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.transition.RunAtEndAnimationListener_Package_References."=";
 
    type RunAtEndAnimationListener is new Java_Object and AnimationListenerInterface with record
       runnable : Runnable_Access;

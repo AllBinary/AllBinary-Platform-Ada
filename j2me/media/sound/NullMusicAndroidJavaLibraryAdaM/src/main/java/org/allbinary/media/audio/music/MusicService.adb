@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.audio.music.BaseMusicService_Package; use org.allbinary.media.audio.music.BaseMusicService_Package;
 
 package body org.allbinary.media.audio.music.MusicService_Package is
 

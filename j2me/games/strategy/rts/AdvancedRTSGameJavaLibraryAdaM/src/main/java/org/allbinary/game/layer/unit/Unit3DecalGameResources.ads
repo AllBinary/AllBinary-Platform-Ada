@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.unit.Unit3DecalGameResources_Package;
+package org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References is
+   type Unit3DecalGameResources_Access is access all org.allbinary.game.layer.unit.Unit3DecalGameResources_Package.Unit3DecalGameResources'Class;
+   type Unit3DecalGameResources_Access_Array is array (Natural range <>) of Unit3DecalGameResources_Access;
+   type Unit3DecalGameResources_Access_Array_Access is access all Unit3DecalGameResources_Access_Array;
+   type Unit3DecalGameResources_Access_Array_Access_Array is array (Natural range <>) of Unit3DecalGameResources_Access_Array_Access;
+   type Unit3DecalGameResources_Access_Array_Access_Array_Access is access all Unit3DecalGameResources_Access_Array_Access_Array;
+end org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References;
+
+with org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,22 +35,30 @@ with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allb
 package org.allbinary.game.layer.unit.Unit3DecalGameResources_Package is
 
    package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Unit3DecalGameResources is tagged;
-   type Unit3DecalGameResources_Access is access all Unit3DecalGameResources'Class;
-   type Unit3DecalGameResources_Access_Array is array (Natural range <>) of Unit3DecalGameResources_Access;
-   type Unit3DecalGameResources_Access_Array_Access is access all Unit3DecalGameResources_Access_Array;
-   type Unit3DecalGameResources_Access_Array_Access_Array is array (Natural range <>) of Unit3DecalGameResources_Access_Array_Access;
-   type Unit3DecalGameResources_Access_Array_Access_Array_Access is access all Unit3DecalGameResources_Access_Array_Access_Array;
+
+   subtype Unit3DecalGameResources_Access is org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References.Unit3DecalGameResources_Access;
+   function "=" (Left, Right : Unit3DecalGameResources_Access) return Boolean renames org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References."=";
+   subtype Unit3DecalGameResources_Access_Array is org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References.Unit3DecalGameResources_Access_Array;
+   function "=" (Left, Right : Unit3DecalGameResources_Access_Array) return Boolean renames org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References."=";
+   subtype Unit3DecalGameResources_Access_Array_Access is org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References.Unit3DecalGameResources_Access_Array_Access;
+   function "=" (Left, Right : Unit3DecalGameResources_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References."=";
+   subtype Unit3DecalGameResources_Access_Array_Access_Array is org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References.Unit3DecalGameResources_Access_Array_Access_Array;
+   function "=" (Left, Right : Unit3DecalGameResources_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References."=";
+   subtype Unit3DecalGameResources_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References.Unit3DecalGameResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Unit3DecalGameResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.Unit3DecalGameResources_Package_References."=";
 
    type Unit3DecalGameResources is new BasicGameResources with null record;
-   instance : Unit3DecalGameResources_Access;
+   instance : Java_Object_Access;
 
    procedure Initialize (This : in out Unit3DecalGameResources'Class);
    function Create return Unit3DecalGameResources_Access;
+   function getInstance return BasicGameResources_Access;
    procedure append (This : in out Unit3DecalGameResources; ROOT : Unbounded_String; sizeString : Unbounded_String);
    function getString (This : in out Unit3DecalGameResources) return Unbounded_String;
-   function getInstance return BasicGameResources_Access;
 
 end org.allbinary.game.layer.unit.Unit3DecalGameResources_Package;
 

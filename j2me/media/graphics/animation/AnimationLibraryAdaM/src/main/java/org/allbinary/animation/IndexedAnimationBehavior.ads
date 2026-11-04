@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.IndexedAnimationBehavior_Package;
+package org.allbinary.animation.IndexedAnimationBehavior_Package_References is
+   type IndexedAnimationBehavior_Access is access all org.allbinary.animation.IndexedAnimationBehavior_Package.IndexedAnimationBehavior'Class;
+   type IndexedAnimationBehavior_Access_Array is array (Natural range <>) of IndexedAnimationBehavior_Access;
+   type IndexedAnimationBehavior_Access_Array_Access is access all IndexedAnimationBehavior_Access_Array;
+   type IndexedAnimationBehavior_Access_Array_Access_Array is array (Natural range <>) of IndexedAnimationBehavior_Access_Array_Access;
+   type IndexedAnimationBehavior_Access_Array_Access_Array_Access is access all IndexedAnimationBehavior_Access_Array_Access_Array;
+end org.allbinary.animation.IndexedAnimationBehavior_Package_References;
+
+with org.allbinary.animation.IndexedAnimationBehavior_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animat
 
 package org.allbinary.animation.IndexedAnimationBehavior_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type IndexedAnimationBehavior is tagged;
-   type IndexedAnimationBehavior_Access is access all IndexedAnimationBehavior'Class;
-   type IndexedAnimationBehavior_Access_Array is array (Natural range <>) of IndexedAnimationBehavior_Access;
-   type IndexedAnimationBehavior_Access_Array_Access is access all IndexedAnimationBehavior_Access_Array;
-   type IndexedAnimationBehavior_Access_Array_Access_Array is array (Natural range <>) of IndexedAnimationBehavior_Access_Array_Access;
-   type IndexedAnimationBehavior_Access_Array_Access_Array_Access is access all IndexedAnimationBehavior_Access_Array_Access_Array;
+
+   subtype IndexedAnimationBehavior_Access is org.allbinary.animation.IndexedAnimationBehavior_Package_References.IndexedAnimationBehavior_Access;
+   function "=" (Left, Right : IndexedAnimationBehavior_Access) return Boolean renames org.allbinary.animation.IndexedAnimationBehavior_Package_References."=";
+   subtype IndexedAnimationBehavior_Access_Array is org.allbinary.animation.IndexedAnimationBehavior_Package_References.IndexedAnimationBehavior_Access_Array;
+   function "=" (Left, Right : IndexedAnimationBehavior_Access_Array) return Boolean renames org.allbinary.animation.IndexedAnimationBehavior_Package_References."=";
+   subtype IndexedAnimationBehavior_Access_Array_Access is org.allbinary.animation.IndexedAnimationBehavior_Package_References.IndexedAnimationBehavior_Access_Array_Access;
+   function "=" (Left, Right : IndexedAnimationBehavior_Access_Array_Access) return Boolean renames org.allbinary.animation.IndexedAnimationBehavior_Package_References."=";
+   subtype IndexedAnimationBehavior_Access_Array_Access_Array is org.allbinary.animation.IndexedAnimationBehavior_Package_References.IndexedAnimationBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : IndexedAnimationBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.IndexedAnimationBehavior_Package_References."=";
+   subtype IndexedAnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimationBehavior_Package_References.IndexedAnimationBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IndexedAnimationBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.IndexedAnimationBehavior_Package_References."=";
 
    type IndexedAnimationBehavior is new AnimationBehavior with record
       frameDelayTime : Long_Long_Integer;

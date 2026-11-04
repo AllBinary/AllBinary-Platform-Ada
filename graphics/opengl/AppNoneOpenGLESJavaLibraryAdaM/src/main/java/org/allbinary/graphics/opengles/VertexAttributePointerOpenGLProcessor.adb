@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package; use org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package;
 
 package body org.allbinary.graphics.opengles.VertexAttributePointerOpenGLProcessor_Package is
 
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   function "=" (Left, Right : GL10_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   function "=" (Left, Right : GL10_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   function "=" (Left, Right : GL10_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   function "=" (Left, Right : GL10_Access_Array_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GL10_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
    procedure Initialize_Fields (This : in out VertexAttributePointerOpenGLProcessor'Class) is
    begin
       null;
@@ -24,7 +36,7 @@ package body org.allbinary.graphics.opengles.VertexAttributePointerOpenGLProcess
 
    function getInstance return VertexAttributePointerOpenGLProcessor_Access is
    begin
-        return VertexAttributePointerOpenGLProcessor_Package.instance;
+        return VertexAttributePointerOpenGLProcessor_Access (VertexAttributePointerOpenGLProcessor_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out VertexAttributePointerOpenGLProcessor'Class) is

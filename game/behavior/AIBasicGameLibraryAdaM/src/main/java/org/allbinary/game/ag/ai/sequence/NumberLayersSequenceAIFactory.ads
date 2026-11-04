@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package;
+package org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References is
+   type NumberLayersSequenceAIFactory_Access is access all org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package.NumberLayersSequenceAIFactory'Class;
+   type NumberLayersSequenceAIFactory_Access_Array is array (Natural range <>) of NumberLayersSequenceAIFactory_Access;
+   type NumberLayersSequenceAIFactory_Access_Array_Access is access all NumberLayersSequenceAIFactory_Access_Array;
+   type NumberLayersSequenceAIFactory_Access_Array_Access_Array is array (Natural range <>) of NumberLayersSequenceAIFactory_Access_Array_Access;
+   type NumberLayersSequenceAIFactory_Access_Array_Access_Array_Access is access all NumberLayersSequenceAIFactory_Access_Array_Access_Array;
+end org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References;
+
+with org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
-with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+limited with org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package_References;
+limited with org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 
 package org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package is
 
    package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package Reference_Types is
+   subtype ArtificialIntelligenceInterface_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access;
+   use type ArtificialIntelligenceInterface_Access;
+   subtype ArtificialIntelligenceInterface_Access_Array is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array;
+   use type ArtificialIntelligenceInterface_Access_Array;
+   subtype ArtificialIntelligenceInterface_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access;
+   use type ArtificialIntelligenceInterface_Access_Array_Access;
+   subtype ArtificialIntelligenceInterface_Access_Array_Access_Array is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access_Array;
+   use type ArtificialIntelligenceInterface_Access_Array_Access_Array;
+   subtype ArtificialIntelligenceInterface_Access_Array_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access_Array_Access;
+   use type ArtificialIntelligenceInterface_Access_Array_Access_Array_Access;
+   subtype GameInput_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access;
+   use type GameInput_Access;
+   subtype GameInput_Access_Array is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array;
+   use type GameInput_Access_Array;
+   subtype GameInput_Access_Array_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array_Access;
+   use type GameInput_Access_Array_Access;
+   subtype GameInput_Access_Array_Access_Array is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array_Access_Array;
+   use type GameInput_Access_Array_Access_Array;
+   subtype GameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array_Access_Array_Access;
+   use type GameInput_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NumberLayersSequenceAIFactory is tagged;
-   type NumberLayersSequenceAIFactory_Access is access all NumberLayersSequenceAIFactory'Class;
-   type NumberLayersSequenceAIFactory_Access_Array is array (Natural range <>) of NumberLayersSequenceAIFactory_Access;
-   type NumberLayersSequenceAIFactory_Access_Array_Access is access all NumberLayersSequenceAIFactory_Access_Array;
-   type NumberLayersSequenceAIFactory_Access_Array_Access_Array is array (Natural range <>) of NumberLayersSequenceAIFactory_Access_Array_Access;
-   type NumberLayersSequenceAIFactory_Access_Array_Access_Array_Access is access all NumberLayersSequenceAIFactory_Access_Array_Access_Array;
+
+   subtype NumberLayersSequenceAIFactory_Access is org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References.NumberLayersSequenceAIFactory_Access;
+   function "=" (Left, Right : NumberLayersSequenceAIFactory_Access) return Boolean renames org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References."=";
+   subtype NumberLayersSequenceAIFactory_Access_Array is org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References.NumberLayersSequenceAIFactory_Access_Array;
+   function "=" (Left, Right : NumberLayersSequenceAIFactory_Access_Array) return Boolean renames org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References."=";
+   subtype NumberLayersSequenceAIFactory_Access_Array_Access is org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References.NumberLayersSequenceAIFactory_Access_Array_Access;
+   function "=" (Left, Right : NumberLayersSequenceAIFactory_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References."=";
+   subtype NumberLayersSequenceAIFactory_Access_Array_Access_Array is org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References.NumberLayersSequenceAIFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : NumberLayersSequenceAIFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References."=";
+   subtype NumberLayersSequenceAIFactory_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References.NumberLayersSequenceAIFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NumberLayersSequenceAIFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package_References."=";
 
    type NumberLayersSequenceAIFactory is new Java_Object with null record;
 

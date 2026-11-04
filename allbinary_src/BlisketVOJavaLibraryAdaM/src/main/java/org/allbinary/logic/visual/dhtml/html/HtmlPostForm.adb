@@ -13,6 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package;
+with org.allbinary.logic.visual.dhtml.html.HtmlForm_Package;
+with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;
+with org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package;
+with org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package;
+with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
 
 package body org.allbinary.logic.visual.dhtml.html.HtmlPostForm_Package is
 

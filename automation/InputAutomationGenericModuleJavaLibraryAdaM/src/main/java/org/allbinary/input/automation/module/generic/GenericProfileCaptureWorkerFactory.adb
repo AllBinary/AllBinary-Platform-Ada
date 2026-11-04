@@ -14,10 +14,23 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;
+with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package; use org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
 with org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package; use org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package;
 with org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorker_Package; use org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorker_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;
+with org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorker_Package;
 
 package body org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package is
 
@@ -25,6 +38,26 @@ package body org.allbinary.input.automation.module.generic_Id.GenericProfileCapt
    package GenericProfileDataWorkerType_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
    package SavedCaptureGenericProfileDataWorkerType_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;
    package ScreenCaptureImagesWorker_Package renames Standard.org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package;
+   subtype GenericProfile_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access;
+   function "=" (Left, Right : GenericProfile_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References."=";
+   subtype GenericProfile_Access_Array is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access_Array;
+   function "=" (Left, Right : GenericProfile_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References."=";
+   subtype GenericProfile_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access_Array_Access;
+   function "=" (Left, Right : GenericProfile_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References."=";
+   subtype GenericProfile_Access_Array_Access_Array is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access_Array_Access_Array;
+   function "=" (Left, Right : GenericProfile_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References."=";
+   subtype GenericProfile_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GenericProfile_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References."=";
+   subtype CaptureWorkerInterface_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access;
+   function "=" (Left, Right : CaptureWorkerInterface_Access) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array_Access_Array is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array_Access_Array_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
    procedure Initialize_Fields (This : in out GenericProfileCaptureWorkerFactory'Class) is
    begin
       null;

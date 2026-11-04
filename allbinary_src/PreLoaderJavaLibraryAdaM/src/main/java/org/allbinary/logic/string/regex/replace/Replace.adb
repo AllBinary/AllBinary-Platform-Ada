@@ -13,9 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.J2SEUtil_Package; use org.allbinary.J2SEUtil_Package;
 with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
@@ -28,6 +31,26 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   subtype J2SEUtil_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access;
+   function "=" (Left, Right : J2SEUtil_Access) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
+   subtype J2SEUtil_Access_Array is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array;
+   function "=" (Left, Right : J2SEUtil_Access_Array) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
+   subtype J2SEUtil_Access_Array_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array_Access;
+   function "=" (Left, Right : J2SEUtil_Access_Array_Access) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
+   subtype J2SEUtil_Access_Array_Access_Array is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : J2SEUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
+   subtype J2SEUtil_Access_Array_Access_Array_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : J2SEUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out Replace'Class) is
    begin
       null;

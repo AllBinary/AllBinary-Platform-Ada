@@ -16,12 +16,23 @@
 with org.allbinary.data.generator.OrderIdGenerator_Package; use org.allbinary.data.generator.OrderIdGenerator_Package;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
+with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
 
 package body org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package is
 
    package OrderIdGenerator_Package renames Standard.org.allbinary.data.generator.OrderIdGenerator_Package;
    package OrderHistoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
    package OrderItemsEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
+   subtype Order_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access;
+   function "=" (Left, Right : Order_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   subtype Order_Access_Array is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array;
+   function "=" (Left, Right : Order_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   subtype Order_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access;
+   function "=" (Left, Right : Order_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   subtype Order_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access_Array;
+   function "=" (Left, Right : Order_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   subtype Order_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Order_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
    procedure Initialize_Fields (This : in out OrderProcessorUtil'Class) is
    begin
       null;
@@ -43,7 +54,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderProcessor
 
    function getInstance return OrderProcessorUtil_Access is
    begin
-        return OrderProcessorUtil_Package.instance;
+        return OrderProcessorUtil_Access (OrderProcessorUtil_Package.instance);
    end getInstance;
 
    --  throws Exception

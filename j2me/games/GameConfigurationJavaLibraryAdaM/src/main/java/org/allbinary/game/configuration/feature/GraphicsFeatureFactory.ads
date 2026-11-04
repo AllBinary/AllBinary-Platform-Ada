@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
+package org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References is
+   type GraphicsFeatureFactory_Access is access all org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package.GraphicsFeatureFactory'Class;
+   type GraphicsFeatureFactory_Access_Array is array (Natural range <>) of GraphicsFeatureFactory_Access;
+   type GraphicsFeatureFactory_Access_Array_Access is access all GraphicsFeatureFactory_Access_Array;
+   type GraphicsFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of GraphicsFeatureFactory_Access_Array_Access;
+   type GraphicsFeatureFactory_Access_Array_Access_Array_Access is access all GraphicsFeatureFactory_Access_Array_Access_Array;
+end org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References;
+
+with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.feature.GraphicsFeature_Package; use org.allbinary.game.configuration.feature.GraphicsFeature_Package;
+limited with org.allbinary.game.configuration.feature.GraphicsFeature_Package;
+with org.allbinary.game.configuration.feature.GraphicsFeature_Package_References;
 
 package org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package is
 
+   package Reference_Types is
+   subtype GraphicsFeature_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access;
+   use type GraphicsFeature_Access;
+   subtype GraphicsFeature_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array;
+   use type GraphicsFeature_Access_Array;
+   subtype GraphicsFeature_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access;
+   use type GraphicsFeature_Access_Array_Access;
+   subtype GraphicsFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access_Array;
+   use type GraphicsFeature_Access_Array_Access_Array;
+   subtype GraphicsFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access_Array_Access;
+   use type GraphicsFeature_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GraphicsFeatureFactory is tagged;
-   type GraphicsFeatureFactory_Access is access all GraphicsFeatureFactory'Class;
-   type GraphicsFeatureFactory_Access_Array is array (Natural range <>) of GraphicsFeatureFactory_Access;
-   type GraphicsFeatureFactory_Access_Array_Access is access all GraphicsFeatureFactory_Access_Array;
-   type GraphicsFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of GraphicsFeatureFactory_Access_Array_Access;
-   type GraphicsFeatureFactory_Access_Array_Access_Array_Access is access all GraphicsFeatureFactory_Access_Array_Access_Array;
+
+   subtype GraphicsFeatureFactory_Access is org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References.GraphicsFeatureFactory_Access;
+   function "=" (Left, Right : GraphicsFeatureFactory_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References."=";
+   subtype GraphicsFeatureFactory_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References.GraphicsFeatureFactory_Access_Array;
+   function "=" (Left, Right : GraphicsFeatureFactory_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References."=";
+   subtype GraphicsFeatureFactory_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References.GraphicsFeatureFactory_Access_Array_Access;
+   function "=" (Left, Right : GraphicsFeatureFactory_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References."=";
+   subtype GraphicsFeatureFactory_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References.GraphicsFeatureFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : GraphicsFeatureFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References."=";
+   subtype GraphicsFeatureFactory_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References.GraphicsFeatureFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GraphicsFeatureFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package_References."=";
 
    type GraphicsFeatureFactory is new Java_Object with record
       NONE : GraphicsFeature_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.canvas.Processor_Package;
+package org.allbinary.canvas.Processor_Package_References is
+   type Processor_Access is access all org.allbinary.canvas.Processor_Package.Processor'Class;
+   type Processor_Access_Array is array (Natural range <>) of Processor_Access;
+   type Processor_Access_Array_Access is access all Processor_Access_Array;
+   type Processor_Access_Array_Access_Array is array (Natural range <>) of Processor_Access_Array_Access;
+   type Processor_Access_Array_Access_Array_Access is access all Processor_Access_Array_Access_Array;
+end org.allbinary.canvas.Processor_Package_References;
+
+with org.allbinary.canvas.Processor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.canvas.Processor_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Processor is tagged;
-   type Processor_Access is access all Processor'Class;
-   type Processor_Access_Array is array (Natural range <>) of Processor_Access;
-   type Processor_Access_Array_Access is access all Processor_Access_Array;
-   type Processor_Access_Array_Access_Array is array (Natural range <>) of Processor_Access_Array_Access;
-   type Processor_Access_Array_Access_Array_Access is access all Processor_Access_Array_Access_Array;
+
+   subtype Processor_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access;
+   function "=" (Left, Right : Processor_Access) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
+   subtype Processor_Access_Array is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array;
+   function "=" (Left, Right : Processor_Access_Array) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
+   subtype Processor_Access_Array_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access;
+   function "=" (Left, Right : Processor_Access_Array_Access) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
+   subtype Processor_Access_Array_Access_Array is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access_Array;
+   function "=" (Left, Right : Processor_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
+   subtype Processor_Access_Array_Access_Array_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Processor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
 
    type Processor is new Java_Object with null record;
    SINGLETON : Processor_Access;

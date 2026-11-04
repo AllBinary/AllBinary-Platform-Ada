@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package;
 
 package body org.allbinary.globals.AppUrlGlobals_Package is
 

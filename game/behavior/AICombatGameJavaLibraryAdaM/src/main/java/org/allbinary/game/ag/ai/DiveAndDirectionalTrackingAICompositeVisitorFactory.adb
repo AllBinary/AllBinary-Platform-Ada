@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package; use org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package;
+with org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package;
 
 package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAICompositeVisitorFactory_Package is
 
+   subtype Visitor_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access;
+   function "=" (Left, Right : Visitor_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array;
+   function "=" (Left, Right : Visitor_Access_Array) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access;
+   function "=" (Left, Right : Visitor_Access_Array_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array_Access_Array is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access_Array;
+   function "=" (Left, Right : Visitor_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array_Access_Array_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Visitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype DiveAndDirectionalTrackingAI_Access is org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References.DiveAndDirectionalTrackingAI_Access;
+   function "=" (Left, Right : DiveAndDirectionalTrackingAI_Access) return Boolean renames org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References."=";
+   subtype DiveAndDirectionalTrackingAI_Access_Array is org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References.DiveAndDirectionalTrackingAI_Access_Array;
+   function "=" (Left, Right : DiveAndDirectionalTrackingAI_Access_Array) return Boolean renames org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References."=";
+   subtype DiveAndDirectionalTrackingAI_Access_Array_Access is org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References.DiveAndDirectionalTrackingAI_Access_Array_Access;
+   function "=" (Left, Right : DiveAndDirectionalTrackingAI_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References."=";
+   subtype DiveAndDirectionalTrackingAI_Access_Array_Access_Array is org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References.DiveAndDirectionalTrackingAI_Access_Array_Access_Array;
+   function "=" (Left, Right : DiveAndDirectionalTrackingAI_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References."=";
+   subtype DiveAndDirectionalTrackingAI_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References.DiveAndDirectionalTrackingAI_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DiveAndDirectionalTrackingAI_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References."=";
    procedure Initialize_Fields (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory'Class) is
    begin
       null;

@@ -13,15 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.Line_Package; use org.allbinary.graphics.Line_Package;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package; use org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 with org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
 with org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.J2SEMath_Package; use org.allbinary.logic.math.J2SEMath_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
+with org.allbinary.graphics.Line_Package;
+with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
+with org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 
 package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
 
@@ -32,12 +51,82 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
    package MovedMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
    package ScrolledMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   function "=" (Left, Right : GPoint_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype Line_Access is org.allbinary.graphics.Line_Package_References.Line_Access;
+   function "=" (Left, Right : Line_Access) return Boolean renames org.allbinary.graphics.Line_Package_References."=";
+   subtype Line_Access_Array is org.allbinary.graphics.Line_Package_References.Line_Access_Array;
+   function "=" (Left, Right : Line_Access_Array) return Boolean renames org.allbinary.graphics.Line_Package_References."=";
+   subtype Line_Access_Array_Access is org.allbinary.graphics.Line_Package_References.Line_Access_Array_Access;
+   function "=" (Left, Right : Line_Access_Array_Access) return Boolean renames org.allbinary.graphics.Line_Package_References."=";
+   subtype Line_Access_Array_Access_Array is org.allbinary.graphics.Line_Package_References.Line_Access_Array_Access_Array;
+   function "=" (Left, Right : Line_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.Line_Package_References."=";
+   subtype Line_Access_Array_Access_Array_Access is org.allbinary.graphics.Line_Package_References.Line_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Line_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.Line_Package_References."=";
+   subtype BasicMotionGesturesHandler_Access is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access;
+   function "=" (Left, Right : BasicMotionGesturesHandler_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References."=";
+   subtype BasicMotionGesturesHandler_Access_Array is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access_Array;
+   function "=" (Left, Right : BasicMotionGesturesHandler_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References."=";
+   subtype BasicMotionGesturesHandler_Access_Array_Access is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access_Array_Access;
+   function "=" (Left, Right : BasicMotionGesturesHandler_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References."=";
+   subtype BasicMotionGesturesHandler_Access_Array_Access_Array is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicMotionGesturesHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References."=";
+   subtype BasicMotionGesturesHandler_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicMotionGesturesHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References."=";
+   subtype MotionEventCircularPool_Access is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access;
+   function "=" (Left, Right : MotionEventCircularPool_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References."=";
+   subtype MotionEventCircularPool_Access_Array is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array;
+   function "=" (Left, Right : MotionEventCircularPool_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References."=";
+   subtype MotionEventCircularPool_Access_Array_Access is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array_Access;
+   function "=" (Left, Right : MotionEventCircularPool_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References."=";
+   subtype MotionEventCircularPool_Access_Array_Access_Array is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionEventCircularPool_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References."=";
+   subtype MotionEventCircularPool_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionEventCircularPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype J2SEMath_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access;
+   function "=" (Left, Right : J2SEMath_Access) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype J2SEMath_Access_Array is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array;
+   function "=" (Left, Right : J2SEMath_Access_Array) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype J2SEMath_Access_Array_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access;
+   function "=" (Left, Right : J2SEMath_Access_Array_Access) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype J2SEMath_Access_Array_Access_Array is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access_Array;
+   function "=" (Left, Right : J2SEMath_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype J2SEMath_Access_Array_Access_Array_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : J2SEMath_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype BasicEventHandler_Access is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access;
+   function "=" (Left, Right : BasicEventHandler_Access) return Boolean renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References."=";
+   subtype BasicEventHandler_Access_Array is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access_Array;
+   function "=" (Left, Right : BasicEventHandler_Access_Array) return Boolean renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References."=";
+   subtype BasicEventHandler_Access_Array_Access is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access_Array_Access;
+   function "=" (Left, Right : BasicEventHandler_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References."=";
+   subtype BasicEventHandler_Access_Array_Access_Array is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References."=";
+   subtype BasicEventHandler_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References."=";
    procedure Initialize_Fields (This : in out MotionGestureRecognizer'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.j2seMath := J2SEMath_Package.getInstance;
-      This.origin := PointFactory_Package.getInstance.ZERO_ZERO;
+      This.origin := GPoint_Access (PointFactory_Package.getInstance.ZERO_ZERO);
       This.previous := This.origin;
       This.intermediate := This.origin;
       This.line := Line_Package.Create (This.origin, This.origin);
@@ -139,7 +228,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
         absGradient := Long_Float (This.j2seMath.abs_Id (Float (gradient)));
         conf := MotionGestureConfigurationFactory_Package.getInstance;
         touchMotionGestureFactory := TouchMotionGestureFactory_Package.getInstance;
-        newMotionGesture := touchMotionGestureFactory.NO_MOTION;
+        newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.NO_MOTION);
         diagonalToleranceHigher := 12.0;
         diagonalToleranceLower := 12.0;
         if conf.isDiagonalMotionGestureAllowed then
@@ -148,29 +237,29 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
         end if;
         if (absGradient) > (Ada.Numerics.Long_Elementary_Functions.Tan (Ada.Numerics.Long_Elementary_Functions.ToRadians (diagonalToleranceHigher))) then
             if (This.line.getDeltaY) > (0) then
-                newMotionGesture := touchMotionGestureFactory.UP;
+                newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.UP);
             else
-                newMotionGesture := touchMotionGestureFactory.DOWN;
+                newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DOWN);
             end if;
         else
             if (absGradient) < (Ada.Numerics.Long_Elementary_Functions.Tan (Ada.Numerics.Long_Elementary_Functions.ToRadians (diagonalToleranceLower))) then
                 if (This.line.getDeltaX) > (0) then
-                    newMotionGesture := touchMotionGestureFactory.LEFT;
+                    newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.LEFT);
                 else
-                    newMotionGesture := touchMotionGestureFactory.RIGHT;
+                    newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.RIGHT);
                 end if;
             else
                 if (gradient) > (0.0) then
                     if (This.line.getDeltaX) > (0) then
-                        newMotionGesture := touchMotionGestureFactory.DIAGONAL_UP_LEFT;
+                        newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DIAGONAL_UP_LEFT);
                     else
-                        newMotionGesture := touchMotionGestureFactory.DIAGONAL_DOWN_RIGHT;
+                        newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DIAGONAL_DOWN_RIGHT);
                     end if;
                 else
                     if (This.line.getDeltaX) > (0) then
-                        newMotionGesture := touchMotionGestureFactory.DIAGONAL_DOWN_LEFT;
+                        newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DIAGONAL_DOWN_LEFT);
                     else
-                        newMotionGesture := touchMotionGestureFactory.DIAGONAL_UP_RIGHT;
+                        newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DIAGONAL_UP_RIGHT);
                     end if;
                 end if;
             end if;
@@ -204,11 +293,11 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
       event : MotionGestureEvent_Access;
    begin
         touchMotionGestureFactory := TouchMotionGestureFactory_Package.getInstance;
-        newMotionGesture := touchMotionGestureFactory.NO_MOTION;
+        newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.NO_MOTION);
         if (button) > (0) then
-            newMotionGesture := touchMotionGestureFactory.SCROLL_UP;
+            newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.SCROLL_UP);
         elsif (button) < (0) then
-            newMotionGesture := touchMotionGestureFactory.SCROLL_DOWN;
+            newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.SCROLL_DOWN);
         end if;
         event := This.motionEventCircularPool.getInstance (newMotionGesture);
         event.setPreviousPoint (This.previous);

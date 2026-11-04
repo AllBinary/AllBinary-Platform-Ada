@@ -13,10 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.input.automation.module.game.skill.GameSkillType_Package; use org.allbinary.input.automation.module.game.skill.GameSkillType_Package;
+with org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package; use org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package;
+with org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package;
+with org.allbinary.input.automation.module.game.skill.GameSkillType_Package;
 
 package body org.allbinary.input.automation.module.game.skill.GameSkill_Package is
 
@@ -24,6 +30,36 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype GameSkillType_Access is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access;
+   function "=" (Left, Right : GameSkillType_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
+   subtype GameSkillType_Access_Array is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access_Array;
+   function "=" (Left, Right : GameSkillType_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
+   subtype GameSkillType_Access_Array_Access is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access_Array_Access;
+   function "=" (Left, Right : GameSkillType_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
+   subtype GameSkillType_Access_Array_Access_Array is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access_Array_Access_Array;
+   function "=" (Left, Right : GameSkillType_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
+   subtype GameSkillType_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameSkillType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
+   subtype GameSkillPropertyInterface_Access is org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References.GameSkillPropertyInterface_Access;
+   function "=" (Left, Right : GameSkillPropertyInterface_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References."=";
+   subtype GameSkillPropertyInterface_Access_Array is org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References.GameSkillPropertyInterface_Access_Array;
+   function "=" (Left, Right : GameSkillPropertyInterface_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References."=";
+   subtype GameSkillPropertyInterface_Access_Array_Access is org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References.GameSkillPropertyInterface_Access_Array_Access;
+   function "=" (Left, Right : GameSkillPropertyInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References."=";
+   subtype GameSkillPropertyInterface_Access_Array_Access_Array is org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References.GameSkillPropertyInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : GameSkillPropertyInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References."=";
+   subtype GameSkillPropertyInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References.GameSkillPropertyInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameSkillPropertyInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References."=";
    procedure Initialize_Fields (This : in out GameSkill'Class) is
    begin
       null;
@@ -89,7 +125,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
    procedure addProperty (This : in out GameSkill; gameSkillPropertyInterface_Param : access GameSkillPropertyInterface_Package.GameSkillPropertyInterface'Class) is
       gameSkillPropertyInterface : constant GameSkillPropertyInterface_Access := GameSkillPropertyInterface_Access (gameSkillPropertyInterface_Param);
    begin
-        This.vector.add (Java_Object_Access (gameSkillPropertyInterface));
+        This.vector.add (GameSkillPropertyInterface_Package.Java_Object_Access_From_GameSkillPropertyInterface (gameSkillPropertyInterface));
    end addProperty;
 
    function getProperties (This : in out GameSkill) return BasicArrayList_Access is

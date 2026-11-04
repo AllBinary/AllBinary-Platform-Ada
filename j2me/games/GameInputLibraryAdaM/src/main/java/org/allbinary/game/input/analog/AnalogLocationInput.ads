@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.analog.AnalogLocationInput_Package;
+package org.allbinary.game.input.analog.AnalogLocationInput_Package_References is
+   type AnalogLocationInput_Access is access all org.allbinary.game.input.analog.AnalogLocationInput_Package.AnalogLocationInput'Class;
+   type AnalogLocationInput_Access_Array is array (Natural range <>) of AnalogLocationInput_Access;
+   type AnalogLocationInput_Access_Array_Access is access all AnalogLocationInput_Access_Array;
+   type AnalogLocationInput_Access_Array_Access_Array is array (Natural range <>) of AnalogLocationInput_Access_Array_Access;
+   type AnalogLocationInput_Access_Array_Access_Array_Access is access all AnalogLocationInput_Access_Array_Access_Array;
+end org.allbinary.game.input.analog.AnalogLocationInput_Package_References;
+
+with org.allbinary.game.input.analog.AnalogLocationInput_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,18 +18,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
+limited with org.allbinary.graphics.CustomGPoint_Package;
+with org.allbinary.graphics.CustomGPoint_Package_References;
 
 package org.allbinary.game.input.analog.AnalogLocationInput_Package is
 
    package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
+   package Reference_Types is
+   subtype CustomGPoint_Access is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access;
+   use type CustomGPoint_Access;
+   subtype CustomGPoint_Access_Array is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array;
+   use type CustomGPoint_Access_Array;
+   subtype CustomGPoint_Access_Array_Access is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array_Access;
+   use type CustomGPoint_Access_Array_Access;
+   subtype CustomGPoint_Access_Array_Access_Array is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array_Access_Array;
+   use type CustomGPoint_Access_Array_Access_Array;
+   subtype CustomGPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array_Access_Array_Access;
+   use type CustomGPoint_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AnalogLocationInput is tagged;
-   type AnalogLocationInput_Access is access all AnalogLocationInput'Class;
-   type AnalogLocationInput_Access_Array is array (Natural range <>) of AnalogLocationInput_Access;
-   type AnalogLocationInput_Access_Array_Access is access all AnalogLocationInput_Access_Array;
-   type AnalogLocationInput_Access_Array_Access_Array is array (Natural range <>) of AnalogLocationInput_Access_Array_Access;
-   type AnalogLocationInput_Access_Array_Access_Array_Access is access all AnalogLocationInput_Access_Array_Access_Array;
+
+   subtype AnalogLocationInput_Access is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access;
+   function "=" (Left, Right : AnalogLocationInput_Access) return Boolean renames org.allbinary.game.input.analog.AnalogLocationInput_Package_References."=";
+   subtype AnalogLocationInput_Access_Array is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access_Array;
+   function "=" (Left, Right : AnalogLocationInput_Access_Array) return Boolean renames org.allbinary.game.input.analog.AnalogLocationInput_Package_References."=";
+   subtype AnalogLocationInput_Access_Array_Access is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access_Array_Access;
+   function "=" (Left, Right : AnalogLocationInput_Access_Array_Access) return Boolean renames org.allbinary.game.input.analog.AnalogLocationInput_Package_References."=";
+   subtype AnalogLocationInput_Access_Array_Access_Array is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access_Array_Access_Array;
+   function "=" (Left, Right : AnalogLocationInput_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.analog.AnalogLocationInput_Package_References."=";
+   subtype AnalogLocationInput_Access_Array_Access_Array_Access is org.allbinary.game.input.analog.AnalogLocationInput_Package_References.AnalogLocationInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AnalogLocationInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.analog.AnalogLocationInput_Package_References."=";
 
    type AnalogLocationInput is new Java_Object with record
       playerId : Integer;

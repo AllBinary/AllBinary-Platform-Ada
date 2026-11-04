@@ -4,6 +4,16 @@
 -- and open the template in the editor.  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.ImagePersistanceUtil_Package;
+package org.allbinary.media.image.ImagePersistanceUtil_Package_References is
+   type ImagePersistanceUtil_Access is access all org.allbinary.media.image.ImagePersistanceUtil_Package.ImagePersistanceUtil'Class;
+   type ImagePersistanceUtil_Access_Array is array (Natural range <>) of ImagePersistanceUtil_Access;
+   type ImagePersistanceUtil_Access_Array_Access is access all ImagePersistanceUtil_Access_Array;
+   type ImagePersistanceUtil_Access_Array_Access_Array is array (Natural range <>) of ImagePersistanceUtil_Access_Array_Access;
+   type ImagePersistanceUtil_Access_Array_Access_Array_Access is access all ImagePersistanceUtil_Access_Array_Access_Array;
+end org.allbinary.media.image.ImagePersistanceUtil_Package_References;
+
+with org.allbinary.media.image.ImagePersistanceUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,9 +31,12 @@ with java.io.File_Package; use java.io.File_Package;
 --  with javax.imageio.ImageWriteParam_Package; use javax.imageio.ImageWriteParam_Package;
 --  with javax.imageio.ImageWriter_Package; use javax.imageio.ImageWriter_Package;
 --  with javax.imageio.stream.ImageOutputStream_Package; use javax.imageio.stream.ImageOutputStream_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.AbFile_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package org.allbinary.media.image.ImagePersistanceUtil_Package is
 
@@ -31,13 +44,51 @@ package org.allbinary.media.image.ImagePersistanceUtil_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   use type AbFile_Access;
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   use type AbFile_Access_Array;
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   use type AbFile_Access_Array_Access;
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   use type AbFile_Access_Array_Access_Array;
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   use type AbFile_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImagePersistanceUtil is tagged;
-   type ImagePersistanceUtil_Access is access all ImagePersistanceUtil'Class;
-   type ImagePersistanceUtil_Access_Array is array (Natural range <>) of ImagePersistanceUtil_Access;
-   type ImagePersistanceUtil_Access_Array_Access is access all ImagePersistanceUtil_Access_Array;
-   type ImagePersistanceUtil_Access_Array_Access_Array is array (Natural range <>) of ImagePersistanceUtil_Access_Array_Access;
-   type ImagePersistanceUtil_Access_Array_Access_Array_Access is access all ImagePersistanceUtil_Access_Array_Access_Array;
+
+   subtype ImagePersistanceUtil_Access is org.allbinary.media.image.ImagePersistanceUtil_Package_References.ImagePersistanceUtil_Access;
+   function "=" (Left, Right : ImagePersistanceUtil_Access) return Boolean renames org.allbinary.media.image.ImagePersistanceUtil_Package_References."=";
+   subtype ImagePersistanceUtil_Access_Array is org.allbinary.media.image.ImagePersistanceUtil_Package_References.ImagePersistanceUtil_Access_Array;
+   function "=" (Left, Right : ImagePersistanceUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImagePersistanceUtil_Package_References."=";
+   subtype ImagePersistanceUtil_Access_Array_Access is org.allbinary.media.image.ImagePersistanceUtil_Package_References.ImagePersistanceUtil_Access_Array_Access;
+   function "=" (Left, Right : ImagePersistanceUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImagePersistanceUtil_Package_References."=";
+   subtype ImagePersistanceUtil_Access_Array_Access_Array is org.allbinary.media.image.ImagePersistanceUtil_Package_References.ImagePersistanceUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImagePersistanceUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImagePersistanceUtil_Package_References."=";
+   subtype ImagePersistanceUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImagePersistanceUtil_Package_References.ImagePersistanceUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImagePersistanceUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImagePersistanceUtil_Package_References."=";
 
    type ImagePersistanceUtil is new Java_Object with record
       logUtil : LogUtil_Access;

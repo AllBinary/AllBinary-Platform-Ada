@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.string_Id.StringUtil_Package;
+package org.allbinary.logic.string_Id.StringUtil_Package_References is
+   type StringUtil_Access is access all org.allbinary.logic.string_Id.StringUtil_Package.StringUtil'Class;
+   type StringUtil_Access_Array is array (Natural range <>) of StringUtil_Access;
+   type StringUtil_Access_Array_Access is access all StringUtil_Access_Array;
+   type StringUtil_Access_Array_Access_Array is array (Natural range <>) of StringUtil_Access_Array_Access;
+   type StringUtil_Access_Array_Access_Array_Access is access all StringUtil_Access_Array_Access_Array;
+end org.allbinary.logic.string_Id.StringUtil_Package_References;
+
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,19 +33,28 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.string_Id.StringUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type StringUtil is tagged;
-   type StringUtil_Access is access all StringUtil'Class;
-   type StringUtil_Access_Array is array (Natural range <>) of StringUtil_Access;
-   type StringUtil_Access_Array_Access is access all StringUtil_Access_Array;
-   type StringUtil_Access_Array_Access_Array is array (Natural range <>) of StringUtil_Access_Array_Access;
-   type StringUtil_Access_Array_Access_Array_Access is access all StringUtil_Access_Array_Access_Array;
+
+   subtype StringUtil_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access;
+   function "=" (Left, Right : StringUtil_Access) return Boolean renames org.allbinary.logic.string_Id.StringUtil_Package_References."=";
+   subtype StringUtil_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array;
+   function "=" (Left, Right : StringUtil_Access_Array) return Boolean renames org.allbinary.logic.string_Id.StringUtil_Package_References."=";
+   subtype StringUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access;
+   function "=" (Left, Right : StringUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.StringUtil_Package_References."=";
+   subtype StringUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : StringUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.string_Id.StringUtil_Package_References."=";
+   subtype StringUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StringUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.StringUtil_Package_References."=";
 
    type StringUtil is new Java_Object with record
       INIT_STRING : Unbounded_String;
       NULL_STRING : Unbounded_String;
       EMPTY_STRING : Unbounded_String;
       ONE_EMPTY_STRING_ARRAY : Unbounded_String_Array_Access;
+      ONE_EMPTY_STRING_ARRAY_OF_ARRAYS : Unbounded_String_Array_Access_Array_Access;
       stringArray : Unbounded_String_Array_Access;
    end record;
    instance : StringUtil_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with views.admin.orderhistory.DateRangeOrderHistoryView_Package;
+package views.admin.orderhistory.DateRangeOrderHistoryView_Package_References is
+   type DateRangeOrderHistoryView_Access is access all views.admin.orderhistory.DateRangeOrderHistoryView_Package.DateRangeOrderHistoryView'Class;
+   type DateRangeOrderHistoryView_Access_Array is array (Natural range <>) of DateRangeOrderHistoryView_Access;
+   type DateRangeOrderHistoryView_Access_Array_Access is access all DateRangeOrderHistoryView_Access_Array;
+   type DateRangeOrderHistoryView_Access_Array_Access_Array is array (Natural range <>) of DateRangeOrderHistoryView_Access_Array_Access;
+   type DateRangeOrderHistoryView_Access_Array_Access_Array_Access is access all DateRangeOrderHistoryView_Access_Array_Access_Array;
+end views.admin.orderhistory.DateRangeOrderHistoryView_Package_References;
+
+with views.admin.orderhistory.DateRangeOrderHistoryView_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,11 +32,15 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
 package views.admin.orderhistory.DateRangeOrderHistoryView_Package is
@@ -38,13 +52,61 @@ package views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DateRangeOrderHistoryView is tagged;
-   type DateRangeOrderHistoryView_Access is access all DateRangeOrderHistoryView'Class;
-   type DateRangeOrderHistoryView_Access_Array is array (Natural range <>) of DateRangeOrderHistoryView_Access;
-   type DateRangeOrderHistoryView_Access_Array_Access is access all DateRangeOrderHistoryView_Access_Array;
-   type DateRangeOrderHistoryView_Access_Array_Access_Array is array (Natural range <>) of DateRangeOrderHistoryView_Access_Array_Access;
-   type DateRangeOrderHistoryView_Access_Array_Access_Array_Access is access all DateRangeOrderHistoryView_Access_Array_Access_Array;
+
+   subtype DateRangeOrderHistoryView_Access is views.admin.orderhistory.DateRangeOrderHistoryView_Package_References.DateRangeOrderHistoryView_Access;
+   function "=" (Left, Right : DateRangeOrderHistoryView_Access) return Boolean renames views.admin.orderhistory.DateRangeOrderHistoryView_Package_References."=";
+   subtype DateRangeOrderHistoryView_Access_Array is views.admin.orderhistory.DateRangeOrderHistoryView_Package_References.DateRangeOrderHistoryView_Access_Array;
+   function "=" (Left, Right : DateRangeOrderHistoryView_Access_Array) return Boolean renames views.admin.orderhistory.DateRangeOrderHistoryView_Package_References."=";
+   subtype DateRangeOrderHistoryView_Access_Array_Access is views.admin.orderhistory.DateRangeOrderHistoryView_Package_References.DateRangeOrderHistoryView_Access_Array_Access;
+   function "=" (Left, Right : DateRangeOrderHistoryView_Access_Array_Access) return Boolean renames views.admin.orderhistory.DateRangeOrderHistoryView_Package_References."=";
+   subtype DateRangeOrderHistoryView_Access_Array_Access_Array is views.admin.orderhistory.DateRangeOrderHistoryView_Package_References.DateRangeOrderHistoryView_Access_Array_Access_Array;
+   function "=" (Left, Right : DateRangeOrderHistoryView_Access_Array_Access_Array) return Boolean renames views.admin.orderhistory.DateRangeOrderHistoryView_Package_References."=";
+   subtype DateRangeOrderHistoryView_Access_Array_Access_Array_Access is views.admin.orderhistory.DateRangeOrderHistoryView_Package_References.DateRangeOrderHistoryView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DateRangeOrderHistoryView_Access_Array_Access_Array_Access) return Boolean renames views.admin.orderhistory.DateRangeOrderHistoryView_Package_References."=";
 
    type DateRangeOrderHistoryView is new HttpStoreComponentView and ValidationComponentInterface and DomNodeInterface with record
       logUtil : LogUtil_Access;

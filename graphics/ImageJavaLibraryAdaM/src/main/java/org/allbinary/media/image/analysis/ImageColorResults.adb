@@ -13,9 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
+with org.allbinary.media.image.analysis.ColorAverage_Package; use org.allbinary.media.image.analysis.ColorAverage_Package;
+with org.allbinary.media.image.analysis.ColorAverage_Package;
+with org.allbinary.media.image.analysis.ColorRange_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package;
 
 package body org.allbinary.media.image.analysis.ImageColorResults_Package is
 
+   subtype ColorRange_Access is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access;
+   function "=" (Left, Right : ColorRange_Access) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
+   subtype ColorRange_Access_Array is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access_Array;
+   function "=" (Left, Right : ColorRange_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
+   subtype ColorRange_Access_Array_Access is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access_Array_Access;
+   function "=" (Left, Right : ColorRange_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
+   subtype ColorRange_Access_Array_Access_Array is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access_Array_Access_Array;
+   function "=" (Left, Right : ColorRange_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
+   subtype ColorRange_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ColorRange_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
+   subtype ColorAverage_Access is org.allbinary.media.image.analysis.ColorAverage_Package_References.ColorAverage_Access;
+   function "=" (Left, Right : ColorAverage_Access) return Boolean renames org.allbinary.media.image.analysis.ColorAverage_Package_References."=";
+   subtype ColorAverage_Access_Array is org.allbinary.media.image.analysis.ColorAverage_Package_References.ColorAverage_Access_Array;
+   function "=" (Left, Right : ColorAverage_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ColorAverage_Package_References."=";
+   subtype ColorAverage_Access_Array_Access is org.allbinary.media.image.analysis.ColorAverage_Package_References.ColorAverage_Access_Array_Access;
+   function "=" (Left, Right : ColorAverage_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ColorAverage_Package_References."=";
+   subtype ColorAverage_Access_Array_Access_Array is org.allbinary.media.image.analysis.ColorAverage_Package_References.ColorAverage_Access_Array_Access_Array;
+   function "=" (Left, Right : ColorAverage_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ColorAverage_Package_References."=";
+   subtype ColorAverage_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ColorAverage_Package_References.ColorAverage_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ColorAverage_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ColorAverage_Package_References."=";
    procedure Initialize_Fields (This : in out ImageColorResults'Class) is
    begin
       null;

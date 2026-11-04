@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.logic.util.visitor.VisitorInterface_Package; use org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
 package body org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package is
 

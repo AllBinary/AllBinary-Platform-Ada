@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;
 
 package body org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
 

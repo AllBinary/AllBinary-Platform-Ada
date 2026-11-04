@@ -5,6 +5,16 @@
 -- should not be modified by hand.  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.testgamedemo.R_Package;
+package org.allbinary.game.testgamedemo.R_Package_References is
+   type R_Access is access all org.allbinary.game.testgamedemo.R_Package.R'Class;
+   type R_Access_Array is array (Natural range <>) of R_Access;
+   type R_Access_Array_Access is access all R_Access_Array;
+   type R_Access_Array_Access_Array is array (Natural range <>) of R_Access_Array_Access;
+   type R_Access_Array_Access_Array_Access is access all R_Access_Array_Access_Array;
+end org.allbinary.game.testgamedemo.R_Package_References;
+
+with org.allbinary.game.testgamedemo.R_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -16,13 +26,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.testgamedemo.R_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type R is tagged;
-   type R_Access is access all R'Class;
-   type R_Access_Array is array (Natural range <>) of R_Access;
-   type R_Access_Array_Access is access all R_Access_Array;
-   type R_Access_Array_Access_Array is array (Natural range <>) of R_Access_Array_Access;
-   type R_Access_Array_Access_Array_Access is access all R_Access_Array_Access_Array;
+
+   subtype R_Access is org.allbinary.game.testgamedemo.R_Package_References.R_Access;
+   function "=" (Left, Right : R_Access) return Boolean renames org.allbinary.game.testgamedemo.R_Package_References."=";
+   subtype R_Access_Array is org.allbinary.game.testgamedemo.R_Package_References.R_Access_Array;
+   function "=" (Left, Right : R_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.R_Package_References."=";
+   subtype R_Access_Array_Access is org.allbinary.game.testgamedemo.R_Package_References.R_Access_Array_Access;
+   function "=" (Left, Right : R_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.R_Package_References."=";
+   subtype R_Access_Array_Access_Array is org.allbinary.game.testgamedemo.R_Package_References.R_Access_Array_Access_Array;
+   function "=" (Left, Right : R_Access_Array_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.R_Package_References."=";
+   subtype R_Access_Array_Access_Array_Access is org.allbinary.game.testgamedemo.R_Package_References.R_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : R_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.R_Package_References."=";
 
    type R is new Java_Object with null record;
 
@@ -31,6 +49,16 @@ package org.allbinary.game.testgamedemo.R_Package is
 
 end org.allbinary.game.testgamedemo.R_Package;
 
+limited with org.allbinary.game.testgamedemo.attr_Package;
+package org.allbinary.game.testgamedemo.attr_Package_References is
+   type attr_Access is access all org.allbinary.game.testgamedemo.attr_Package.attr'Class;
+   type attr_Access_Array is array (Natural range <>) of attr_Access;
+   type attr_Access_Array_Access is access all attr_Access_Array;
+   type attr_Access_Array_Access_Array is array (Natural range <>) of attr_Access_Array_Access;
+   type attr_Access_Array_Access_Array_Access is access all attr_Access_Array_Access_Array;
+end org.allbinary.game.testgamedemo.attr_Package_References;
+
+with org.allbinary.game.testgamedemo.attr_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -42,13 +70,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.testgamedemo.attr_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type attr is tagged;
-   type attr_Access is access all attr'Class;
-   type attr_Access_Array is array (Natural range <>) of attr_Access;
-   type attr_Access_Array_Access is access all attr_Access_Array;
-   type attr_Access_Array_Access_Array is array (Natural range <>) of attr_Access_Array_Access;
-   type attr_Access_Array_Access_Array_Access is access all attr_Access_Array_Access_Array;
+
+   subtype attr_Access is org.allbinary.game.testgamedemo.attr_Package_References.attr_Access;
+   function "=" (Left, Right : attr_Access) return Boolean renames org.allbinary.game.testgamedemo.attr_Package_References."=";
+   subtype attr_Access_Array is org.allbinary.game.testgamedemo.attr_Package_References.attr_Access_Array;
+   function "=" (Left, Right : attr_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.attr_Package_References."=";
+   subtype attr_Access_Array_Access is org.allbinary.game.testgamedemo.attr_Package_References.attr_Access_Array_Access;
+   function "=" (Left, Right : attr_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.attr_Package_References."=";
+   subtype attr_Access_Array_Access_Array is org.allbinary.game.testgamedemo.attr_Package_References.attr_Access_Array_Access_Array;
+   function "=" (Left, Right : attr_Access_Array_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.attr_Package_References."=";
+   subtype attr_Access_Array_Access_Array_Access is org.allbinary.game.testgamedemo.attr_Package_References.attr_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : attr_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.attr_Package_References."=";
 
    type attr is new Java_Object with null record;
 
@@ -57,6 +93,16 @@ package org.allbinary.game.testgamedemo.attr_Package is
 
 end org.allbinary.game.testgamedemo.attr_Package;
 
+limited with org.allbinary.game.testgamedemo.drawable_Package;
+package org.allbinary.game.testgamedemo.drawable_Package_References is
+   type drawable_Access is access all org.allbinary.game.testgamedemo.drawable_Package.drawable'Class;
+   type drawable_Access_Array is array (Natural range <>) of drawable_Access;
+   type drawable_Access_Array_Access is access all drawable_Access_Array;
+   type drawable_Access_Array_Access_Array is array (Natural range <>) of drawable_Access_Array_Access;
+   type drawable_Access_Array_Access_Array_Access is access all drawable_Access_Array_Access_Array;
+end org.allbinary.game.testgamedemo.drawable_Package_References;
+
+with org.allbinary.game.testgamedemo.drawable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -68,13 +114,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.testgamedemo.drawable_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type drawable is tagged;
-   type drawable_Access is access all drawable'Class;
-   type drawable_Access_Array is array (Natural range <>) of drawable_Access;
-   type drawable_Access_Array_Access is access all drawable_Access_Array;
-   type drawable_Access_Array_Access_Array is array (Natural range <>) of drawable_Access_Array_Access;
-   type drawable_Access_Array_Access_Array_Access is access all drawable_Access_Array_Access_Array;
+
+   subtype drawable_Access is org.allbinary.game.testgamedemo.drawable_Package_References.drawable_Access;
+   function "=" (Left, Right : drawable_Access) return Boolean renames org.allbinary.game.testgamedemo.drawable_Package_References."=";
+   subtype drawable_Access_Array is org.allbinary.game.testgamedemo.drawable_Package_References.drawable_Access_Array;
+   function "=" (Left, Right : drawable_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.drawable_Package_References."=";
+   subtype drawable_Access_Array_Access is org.allbinary.game.testgamedemo.drawable_Package_References.drawable_Access_Array_Access;
+   function "=" (Left, Right : drawable_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.drawable_Package_References."=";
+   subtype drawable_Access_Array_Access_Array is org.allbinary.game.testgamedemo.drawable_Package_References.drawable_Access_Array_Access_Array;
+   function "=" (Left, Right : drawable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.drawable_Package_References."=";
+   subtype drawable_Access_Array_Access_Array_Access is org.allbinary.game.testgamedemo.drawable_Package_References.drawable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : drawable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.drawable_Package_References."=";
 
    type drawable is new Java_Object with null record;
    testgamedemo_icon : Integer;
@@ -85,6 +139,16 @@ package org.allbinary.game.testgamedemo.drawable_Package is
 
 end org.allbinary.game.testgamedemo.drawable_Package;
 
+limited with org.allbinary.game.testgamedemo.id_Package;
+package org.allbinary.game.testgamedemo.id_Package_References is
+   type id_Access is access all org.allbinary.game.testgamedemo.id_Package.id'Class;
+   type id_Access_Array is array (Natural range <>) of id_Access;
+   type id_Access_Array_Access is access all id_Access_Array;
+   type id_Access_Array_Access_Array is array (Natural range <>) of id_Access_Array_Access;
+   type id_Access_Array_Access_Array_Access is access all id_Access_Array_Access_Array;
+end org.allbinary.game.testgamedemo.id_Package_References;
+
+with org.allbinary.game.testgamedemo.id_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -96,13 +160,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.testgamedemo.id_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type id is tagged;
-   type id_Access is access all id'Class;
-   type id_Access_Array is array (Natural range <>) of id_Access;
-   type id_Access_Array_Access is access all id_Access_Array;
-   type id_Access_Array_Access_Array is array (Natural range <>) of id_Access_Array_Access;
-   type id_Access_Array_Access_Array_Access is access all id_Access_Array_Access_Array;
+
+   subtype id_Access is org.allbinary.game.testgamedemo.id_Package_References.id_Access;
+   function "=" (Left, Right : id_Access) return Boolean renames org.allbinary.game.testgamedemo.id_Package_References."=";
+   subtype id_Access_Array is org.allbinary.game.testgamedemo.id_Package_References.id_Access_Array;
+   function "=" (Left, Right : id_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.id_Package_References."=";
+   subtype id_Access_Array_Access is org.allbinary.game.testgamedemo.id_Package_References.id_Access_Array_Access;
+   function "=" (Left, Right : id_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.id_Package_References."=";
+   subtype id_Access_Array_Access_Array is org.allbinary.game.testgamedemo.id_Package_References.id_Access_Array_Access_Array;
+   function "=" (Left, Right : id_Access_Array_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.id_Package_References."=";
+   subtype id_Access_Array_Access_Array_Access is org.allbinary.game.testgamedemo.id_Package_References.id_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : id_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.id_Package_References."=";
 
    type id is new Java_Object with null record;
    ad_area_bottom : Integer;
@@ -117,6 +189,16 @@ package org.allbinary.game.testgamedemo.id_Package is
 
 end org.allbinary.game.testgamedemo.id_Package;
 
+limited with org.allbinary.game.testgamedemo.layout_Package;
+package org.allbinary.game.testgamedemo.layout_Package_References is
+   type layout_Access is access all org.allbinary.game.testgamedemo.layout_Package.layout'Class;
+   type layout_Access_Array is array (Natural range <>) of layout_Access;
+   type layout_Access_Array_Access is access all layout_Access_Array;
+   type layout_Access_Array_Access_Array is array (Natural range <>) of layout_Access_Array_Access;
+   type layout_Access_Array_Access_Array_Access is access all layout_Access_Array_Access_Array;
+end org.allbinary.game.testgamedemo.layout_Package_References;
+
+with org.allbinary.game.testgamedemo.layout_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -128,13 +210,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.testgamedemo.layout_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type layout is tagged;
-   type layout_Access is access all layout'Class;
-   type layout_Access_Array is array (Natural range <>) of layout_Access;
-   type layout_Access_Array_Access is access all layout_Access_Array;
-   type layout_Access_Array_Access_Array is array (Natural range <>) of layout_Access_Array_Access;
-   type layout_Access_Array_Access_Array_Access is access all layout_Access_Array_Access_Array;
+
+   subtype layout_Access is org.allbinary.game.testgamedemo.layout_Package_References.layout_Access;
+   function "=" (Left, Right : layout_Access) return Boolean renames org.allbinary.game.testgamedemo.layout_Package_References."=";
+   subtype layout_Access_Array is org.allbinary.game.testgamedemo.layout_Package_References.layout_Access_Array;
+   function "=" (Left, Right : layout_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.layout_Package_References."=";
+   subtype layout_Access_Array_Access is org.allbinary.game.testgamedemo.layout_Package_References.layout_Access_Array_Access;
+   function "=" (Left, Right : layout_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.layout_Package_References."=";
+   subtype layout_Access_Array_Access_Array is org.allbinary.game.testgamedemo.layout_Package_References.layout_Access_Array_Access_Array;
+   function "=" (Left, Right : layout_Access_Array_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.layout_Package_References."=";
+   subtype layout_Access_Array_Access_Array_Access is org.allbinary.game.testgamedemo.layout_Package_References.layout_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : layout_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.layout_Package_References."=";
 
    type layout is new Java_Object with null record;
    testgamedemo_ad_overlay_layout : Integer;
@@ -146,6 +236,16 @@ package org.allbinary.game.testgamedemo.layout_Package is
 
 end org.allbinary.game.testgamedemo.layout_Package;
 
+limited with org.allbinary.game.testgamedemo.raw_Package;
+package org.allbinary.game.testgamedemo.raw_Package_References is
+   type raw_Access is access all org.allbinary.game.testgamedemo.raw_Package.raw'Class;
+   type raw_Access_Array is array (Natural range <>) of raw_Access;
+   type raw_Access_Array_Access is access all raw_Access_Array;
+   type raw_Access_Array_Access_Array is array (Natural range <>) of raw_Access_Array_Access;
+   type raw_Access_Array_Access_Array_Access is access all raw_Access_Array_Access_Array;
+end org.allbinary.game.testgamedemo.raw_Package_References;
+
+with org.allbinary.game.testgamedemo.raw_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -157,13 +257,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.testgamedemo.raw_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type raw is tagged;
-   type raw_Access is access all raw'Class;
-   type raw_Access_Array is array (Natural range <>) of raw_Access;
-   type raw_Access_Array_Access is access all raw_Access_Array;
-   type raw_Access_Array_Access_Array is array (Natural range <>) of raw_Access_Array_Access;
-   type raw_Access_Array_Access_Array_Access is access all raw_Access_Array_Access_Array;
+
+   subtype raw_Access is org.allbinary.game.testgamedemo.raw_Package_References.raw_Access;
+   function "=" (Left, Right : raw_Access) return Boolean renames org.allbinary.game.testgamedemo.raw_Package_References."=";
+   subtype raw_Access_Array is org.allbinary.game.testgamedemo.raw_Package_References.raw_Access_Array;
+   function "=" (Left, Right : raw_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.raw_Package_References."=";
+   subtype raw_Access_Array_Access is org.allbinary.game.testgamedemo.raw_Package_References.raw_Access_Array_Access;
+   function "=" (Left, Right : raw_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.raw_Package_References."=";
+   subtype raw_Access_Array_Access_Array is org.allbinary.game.testgamedemo.raw_Package_References.raw_Access_Array_Access_Array;
+   function "=" (Left, Right : raw_Access_Array_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.raw_Package_References."=";
+   subtype raw_Access_Array_Access_Array_Access is org.allbinary.game.testgamedemo.raw_Package_References.raw_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : raw_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.raw_Package_References."=";
 
    type raw is new Java_Object with null record;
    error : Integer;
@@ -216,6 +324,16 @@ package org.allbinary.game.testgamedemo.raw_Package is
 
 end org.allbinary.game.testgamedemo.raw_Package;
 
+limited with org.allbinary.game.testgamedemo.string_Package;
+package org.allbinary.game.testgamedemo.string_Package_References is
+   type string_Access is access all org.allbinary.game.testgamedemo.string_Package.string'Class;
+   type string_Access_Array is array (Natural range <>) of string_Access;
+   type string_Access_Array_Access is access all string_Access_Array;
+   type string_Access_Array_Access_Array is array (Natural range <>) of string_Access_Array_Access;
+   type string_Access_Array_Access_Array_Access is access all string_Access_Array_Access_Array;
+end org.allbinary.game.testgamedemo.string_Package_References;
+
+with org.allbinary.game.testgamedemo.string_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -227,13 +345,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.testgamedemo.string_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type string is tagged;
-   type string_Access is access all string'Class;
-   type string_Access_Array is array (Natural range <>) of string_Access;
-   type string_Access_Array_Access is access all string_Access_Array;
-   type string_Access_Array_Access_Array is array (Natural range <>) of string_Access_Array_Access;
-   type string_Access_Array_Access_Array_Access is access all string_Access_Array_Access_Array;
+
+   subtype string_Access is org.allbinary.game.testgamedemo.string_Package_References.string_Access;
+   function "=" (Left, Right : string_Access) return Boolean renames org.allbinary.game.testgamedemo.string_Package_References."=";
+   subtype string_Access_Array is org.allbinary.game.testgamedemo.string_Package_References.string_Access_Array;
+   function "=" (Left, Right : string_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.string_Package_References."=";
+   subtype string_Access_Array_Access is org.allbinary.game.testgamedemo.string_Package_References.string_Access_Array_Access;
+   function "=" (Left, Right : string_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.string_Package_References."=";
+   subtype string_Access_Array_Access_Array is org.allbinary.game.testgamedemo.string_Package_References.string_Access_Array_Access_Array;
+   function "=" (Left, Right : string_Access_Array_Access_Array) return Boolean renames org.allbinary.game.testgamedemo.string_Package_References."=";
+   subtype string_Access_Array_Access_Array_Access is org.allbinary.game.testgamedemo.string_Package_References.string_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : string_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.testgamedemo.string_Package_References."=";
 
    type string is new Java_Object with null record;
    progressbar_in_title_string : Integer;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package;
+package org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References is
+   type ShippingAddressesEntityFactory_Access is access all org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package.ShippingAddressesEntityFactory'Class;
+   type ShippingAddressesEntityFactory_Access_Array is array (Natural range <>) of ShippingAddressesEntityFactory_Access;
+   type ShippingAddressesEntityFactory_Access_Array_Access is access all ShippingAddressesEntityFactory_Access_Array;
+   type ShippingAddressesEntityFactory_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressesEntityFactory_Access_Array_Access;
+   type ShippingAddressesEntityFactory_Access_Array_Access_Array_Access is access all ShippingAddressesEntityFactory_Access_Array_Access_Array;
+end org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References;
+
+with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package; use org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
+with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package is
 
    package StreetAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype StreetAddressesEntity_Access is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access;
+   use type StreetAddressesEntity_Access;
+   subtype StreetAddressesEntity_Access_Array is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access_Array;
+   use type StreetAddressesEntity_Access_Array;
+   subtype StreetAddressesEntity_Access_Array_Access is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access_Array_Access;
+   use type StreetAddressesEntity_Access_Array_Access;
+   subtype StreetAddressesEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access_Array_Access_Array;
+   use type StreetAddressesEntity_Access_Array_Access_Array;
+   subtype StreetAddressesEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access_Array_Access_Array_Access;
+   use type StreetAddressesEntity_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ShippingAddressesEntityFactory is tagged;
-   type ShippingAddressesEntityFactory_Access is access all ShippingAddressesEntityFactory'Class;
-   type ShippingAddressesEntityFactory_Access_Array is array (Natural range <>) of ShippingAddressesEntityFactory_Access;
-   type ShippingAddressesEntityFactory_Access_Array_Access is access all ShippingAddressesEntityFactory_Access_Array;
-   type ShippingAddressesEntityFactory_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressesEntityFactory_Access_Array_Access;
-   type ShippingAddressesEntityFactory_Access_Array_Access_Array_Access is access all ShippingAddressesEntityFactory_Access_Array_Access_Array;
+
+   subtype ShippingAddressesEntityFactory_Access is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References.ShippingAddressesEntityFactory_Access;
+   function "=" (Left, Right : ShippingAddressesEntityFactory_Access) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References."=";
+   subtype ShippingAddressesEntityFactory_Access_Array is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References.ShippingAddressesEntityFactory_Access_Array;
+   function "=" (Left, Right : ShippingAddressesEntityFactory_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References."=";
+   subtype ShippingAddressesEntityFactory_Access_Array_Access is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References.ShippingAddressesEntityFactory_Access_Array_Access;
+   function "=" (Left, Right : ShippingAddressesEntityFactory_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References."=";
+   subtype ShippingAddressesEntityFactory_Access_Array_Access_Array is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References.ShippingAddressesEntityFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ShippingAddressesEntityFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References."=";
+   subtype ShippingAddressesEntityFactory_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References.ShippingAddressesEntityFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShippingAddressesEntityFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package_References."=";
 
    type ShippingAddressesEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

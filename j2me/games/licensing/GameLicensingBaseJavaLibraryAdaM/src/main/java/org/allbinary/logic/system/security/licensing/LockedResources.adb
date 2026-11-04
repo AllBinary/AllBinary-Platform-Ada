@@ -37,7 +37,7 @@ package body org.allbinary.logic.system.security.licensing.LockedResources_Packa
 
    function getInstance return LockedResources_Access is
    begin
-        return LockedResources_Package.instance;
+        return LockedResources_Access (LockedResources_Package.instance);
    end getInstance;
 
 begin

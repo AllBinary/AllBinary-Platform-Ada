@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package;
+package org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References is
+   type TransactionResultEntityFactory_Access is access all org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package.TransactionResultEntityFactory'Class;
+   type TransactionResultEntityFactory_Access_Array is array (Natural range <>) of TransactionResultEntityFactory_Access;
+   type TransactionResultEntityFactory_Access_Array_Access is access all TransactionResultEntityFactory_Access_Array;
+   type TransactionResultEntityFactory_Access_Array_Access_Array is array (Natural range <>) of TransactionResultEntityFactory_Access_Array_Access;
+   type TransactionResultEntityFactory_Access_Array_Access_Array_Access is access all TransactionResultEntityFactory_Access_Array_Access_Array;
+end org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References;
+
+with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package;
+with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References;
 
 package org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype TransactionResultEntity_Access is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.TransactionResultEntity_Access;
+   use type TransactionResultEntity_Access;
+   subtype TransactionResultEntity_Access_Array is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.TransactionResultEntity_Access_Array;
+   use type TransactionResultEntity_Access_Array;
+   subtype TransactionResultEntity_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.TransactionResultEntity_Access_Array_Access;
+   use type TransactionResultEntity_Access_Array_Access;
+   subtype TransactionResultEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.TransactionResultEntity_Access_Array_Access_Array;
+   use type TransactionResultEntity_Access_Array_Access_Array;
+   subtype TransactionResultEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.TransactionResultEntity_Access_Array_Access_Array_Access;
+   use type TransactionResultEntity_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransactionResultEntityFactory is tagged;
-   type TransactionResultEntityFactory_Access is access all TransactionResultEntityFactory'Class;
-   type TransactionResultEntityFactory_Access_Array is array (Natural range <>) of TransactionResultEntityFactory_Access;
-   type TransactionResultEntityFactory_Access_Array_Access is access all TransactionResultEntityFactory_Access_Array;
-   type TransactionResultEntityFactory_Access_Array_Access_Array is array (Natural range <>) of TransactionResultEntityFactory_Access_Array_Access;
-   type TransactionResultEntityFactory_Access_Array_Access_Array_Access is access all TransactionResultEntityFactory_Access_Array_Access_Array;
+
+   subtype TransactionResultEntityFactory_Access is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References.TransactionResultEntityFactory_Access;
+   function "=" (Left, Right : TransactionResultEntityFactory_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References."=";
+   subtype TransactionResultEntityFactory_Access_Array is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References.TransactionResultEntityFactory_Access_Array;
+   function "=" (Left, Right : TransactionResultEntityFactory_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References."=";
+   subtype TransactionResultEntityFactory_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References.TransactionResultEntityFactory_Access_Array_Access;
+   function "=" (Left, Right : TransactionResultEntityFactory_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References."=";
+   subtype TransactionResultEntityFactory_Access_Array_Access_Array is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References.TransactionResultEntityFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : TransactionResultEntityFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References."=";
+   subtype TransactionResultEntityFactory_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References.TransactionResultEntityFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransactionResultEntityFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityFactory_Package_References."=";
 
    type TransactionResultEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

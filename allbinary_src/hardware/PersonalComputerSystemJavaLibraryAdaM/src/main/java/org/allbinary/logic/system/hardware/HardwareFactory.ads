@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.HardwareFactory_Package;
+package org.allbinary.logic.system.hardware.HardwareFactory_Package_References is
+   type HardwareFactory_Access is access all org.allbinary.logic.system.hardware.HardwareFactory_Package.HardwareFactory'Class;
+   type HardwareFactory_Access_Array is array (Natural range <>) of HardwareFactory_Access;
+   type HardwareFactory_Access_Array_Access is access all HardwareFactory_Access_Array;
+   type HardwareFactory_Access_Array_Access_Array is array (Natural range <>) of HardwareFactory_Access_Array_Access;
+   type HardwareFactory_Access_Array_Access_Array_Access is access all HardwareFactory_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.HardwareFactory_Package_References;
+
+with org.allbinary.logic.system.hardware.HardwareFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
+limited with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package_References;
+limited with org.allbinary.logic.system.hardware.HardwareInterface_Package;
+with org.allbinary.logic.system.hardware.HardwareInterface_Package_References;
 
 package org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package Reference_Types is
+   subtype GenericOperatingSystem_Access is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access;
+   use type GenericOperatingSystem_Access;
+   subtype GenericOperatingSystem_Access_Array is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array;
+   use type GenericOperatingSystem_Access_Array;
+   subtype GenericOperatingSystem_Access_Array_Access is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array_Access;
+   use type GenericOperatingSystem_Access_Array_Access;
+   subtype GenericOperatingSystem_Access_Array_Access_Array is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array_Access_Array;
+   use type GenericOperatingSystem_Access_Array_Access_Array;
+   subtype GenericOperatingSystem_Access_Array_Access_Array_Access is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array_Access_Array_Access;
+   use type GenericOperatingSystem_Access_Array_Access_Array_Access;
+   subtype HardwareInterface_Access is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access;
+   use type HardwareInterface_Access;
+   subtype HardwareInterface_Access_Array is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access_Array;
+   use type HardwareInterface_Access_Array;
+   subtype HardwareInterface_Access_Array_Access is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access_Array_Access;
+   use type HardwareInterface_Access_Array_Access;
+   subtype HardwareInterface_Access_Array_Access_Array is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access_Array_Access_Array;
+   use type HardwareInterface_Access_Array_Access_Array;
+   subtype HardwareInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access_Array_Access_Array_Access;
+   use type HardwareInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type HardwareFactory is tagged;
-   type HardwareFactory_Access is access all HardwareFactory'Class;
-   type HardwareFactory_Access_Array is array (Natural range <>) of HardwareFactory_Access;
-   type HardwareFactory_Access_Array_Access is access all HardwareFactory_Access_Array;
-   type HardwareFactory_Access_Array_Access_Array is array (Natural range <>) of HardwareFactory_Access_Array_Access;
-   type HardwareFactory_Access_Array_Access_Array_Access is access all HardwareFactory_Access_Array_Access_Array;
+
+   subtype HardwareFactory_Access is org.allbinary.logic.system.hardware.HardwareFactory_Package_References.HardwareFactory_Access;
+   function "=" (Left, Right : HardwareFactory_Access) return Boolean renames org.allbinary.logic.system.hardware.HardwareFactory_Package_References."=";
+   subtype HardwareFactory_Access_Array is org.allbinary.logic.system.hardware.HardwareFactory_Package_References.HardwareFactory_Access_Array;
+   function "=" (Left, Right : HardwareFactory_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.HardwareFactory_Package_References."=";
+   subtype HardwareFactory_Access_Array_Access is org.allbinary.logic.system.hardware.HardwareFactory_Package_References.HardwareFactory_Access_Array_Access;
+   function "=" (Left, Right : HardwareFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.HardwareFactory_Package_References."=";
+   subtype HardwareFactory_Access_Array_Access_Array is org.allbinary.logic.system.hardware.HardwareFactory_Package_References.HardwareFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : HardwareFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.HardwareFactory_Package_References."=";
+   subtype HardwareFactory_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.HardwareFactory_Package_References.HardwareFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HardwareFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.HardwareFactory_Package_References."=";
 
    type HardwareFactory is new Java_Object with null record;
    instance : HardwareFactory_Access;

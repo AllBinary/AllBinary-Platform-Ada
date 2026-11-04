@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package;
+package org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References is
+   type TouchButtonTurnRightResource_Access is access all org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package.TouchButtonTurnRightResource'Class;
+   type TouchButtonTurnRightResource_Access_Array is array (Natural range <>) of TouchButtonTurnRightResource_Access;
+   type TouchButtonTurnRightResource_Access_Array_Access is access all TouchButtonTurnRightResource_Access_Array;
+   type TouchButtonTurnRightResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonTurnRightResource_Access_Array_Access;
+   type TouchButtonTurnRightResource_Access_Array_Access_Array_Access is access all TouchButtonTurnRightResource_Access_Array_Access_Array;
+end org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References;
+
+with org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.input.motion.button.TouchButtonResource_Package; use org.allb
 
 package org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TouchButtonTurnRightResource is tagged;
-   type TouchButtonTurnRightResource_Access is access all TouchButtonTurnRightResource'Class;
-   type TouchButtonTurnRightResource_Access_Array is array (Natural range <>) of TouchButtonTurnRightResource_Access;
-   type TouchButtonTurnRightResource_Access_Array_Access is access all TouchButtonTurnRightResource_Access_Array;
-   type TouchButtonTurnRightResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonTurnRightResource_Access_Array_Access;
-   type TouchButtonTurnRightResource_Access_Array_Access_Array_Access is access all TouchButtonTurnRightResource_Access_Array_Access_Array;
+
+   subtype TouchButtonTurnRightResource_Access is org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References.TouchButtonTurnRightResource_Access;
+   function "=" (Left, Right : TouchButtonTurnRightResource_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References."=";
+   subtype TouchButtonTurnRightResource_Access_Array is org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References.TouchButtonTurnRightResource_Access_Array;
+   function "=" (Left, Right : TouchButtonTurnRightResource_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References."=";
+   subtype TouchButtonTurnRightResource_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References.TouchButtonTurnRightResource_Access_Array_Access;
+   function "=" (Left, Right : TouchButtonTurnRightResource_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References."=";
+   subtype TouchButtonTurnRightResource_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References.TouchButtonTurnRightResource_Access_Array_Access_Array;
+   function "=" (Left, Right : TouchButtonTurnRightResource_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References."=";
+   subtype TouchButtonTurnRightResource_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References.TouchButtonTurnRightResource_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TouchButtonTurnRightResource_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package_References."=";
 
    type TouchButtonTurnRightResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

@@ -18,6 +18,12 @@ with org.allbinary.logic.io.file.FilePathUtil_Package; use org.allbinary.logic.i
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.file.FilePathUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 
 package body org.allbinary.logic.io.path.AbPath_Package is
 
@@ -26,6 +32,36 @@ package body org.allbinary.logic.io.path.AbPath_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   function "=" (Left, Right : CommonSeps_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype AbPathData_Access is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access;
+   function "=" (Left, Right : AbPathData_Access) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
+   subtype AbPathData_Access_Array is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array;
+   function "=" (Left, Right : AbPathData_Access_Array) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
+   subtype AbPathData_Access_Array_Access is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array_Access;
+   function "=" (Left, Right : AbPathData_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
+   subtype AbPathData_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array_Access_Array;
+   function "=" (Left, Right : AbPathData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
+   subtype AbPathData_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbPathData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
+   subtype PathUtil_Access is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access;
+   function "=" (Left, Right : PathUtil_Access) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   subtype PathUtil_Access_Array is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array;
+   function "=" (Left, Right : PathUtil_Access_Array) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   subtype PathUtil_Access_Array_Access is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array_Access;
+   function "=" (Left, Right : PathUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   subtype PathUtil_Access_Array_Access_Array is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : PathUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   subtype PathUtil_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PathUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
    procedure Initialize_Fields (This : in out AbPath'Class) is
    begin
       null;

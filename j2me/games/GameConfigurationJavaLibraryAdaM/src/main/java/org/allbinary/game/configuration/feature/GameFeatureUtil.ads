@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
+package org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References is
+   type GameFeatureUtil_Access is access all org.allbinary.game.configuration.feature.GameFeatureUtil_Package.GameFeatureUtil'Class;
+   type GameFeatureUtil_Access_Array is array (Natural range <>) of GameFeatureUtil_Access;
+   type GameFeatureUtil_Access_Array_Access is access all GameFeatureUtil_Access_Array;
+   type GameFeatureUtil_Access_Array_Access_Array is array (Natural range <>) of GameFeatureUtil_Access_Array_Access;
+   type GameFeatureUtil_Access_Array_Access_Array_Access is access all GameFeatureUtil_Access_Array_Access_Array;
+end org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References;
+
+with org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.ChoiceGroup_Package; use javax.microedition.lcdui.ChoiceGroup_Package;
+limited with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package_References;
 --  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
-with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.util.EnumerationUtil_Package_References;
+limited with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package_References;
 
 package org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
 
@@ -33,13 +48,71 @@ package org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
+   package Reference_Types is
+   subtype ChoiceGroup_Access is javax.microedition.lcdui.ChoiceGroup_Package_References.ChoiceGroup_Access;
+   use type ChoiceGroup_Access;
+   subtype ChoiceGroup_Access_Array is javax.microedition.lcdui.ChoiceGroup_Package_References.ChoiceGroup_Access_Array;
+   use type ChoiceGroup_Access_Array;
+   subtype ChoiceGroup_Access_Array_Access is javax.microedition.lcdui.ChoiceGroup_Package_References.ChoiceGroup_Access_Array_Access;
+   use type ChoiceGroup_Access_Array_Access;
+   subtype ChoiceGroup_Access_Array_Access_Array is javax.microedition.lcdui.ChoiceGroup_Package_References.ChoiceGroup_Access_Array_Access_Array;
+   use type ChoiceGroup_Access_Array_Access_Array;
+   subtype ChoiceGroup_Access_Array_Access_Array_Access is javax.microedition.lcdui.ChoiceGroup_Package_References.ChoiceGroup_Access_Array_Access_Array_Access;
+   use type ChoiceGroup_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype EnumerationUtil_Access is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access;
+   use type EnumerationUtil_Access;
+   subtype EnumerationUtil_Access_Array is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array;
+   use type EnumerationUtil_Access_Array;
+   subtype EnumerationUtil_Access_Array_Access is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array_Access;
+   use type EnumerationUtil_Access_Array_Access;
+   subtype EnumerationUtil_Access_Array_Access_Array is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array_Access_Array;
+   use type EnumerationUtil_Access_Array_Access_Array;
+   subtype EnumerationUtil_Access_Array_Access_Array_Access is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array_Access_Array_Access;
+   use type EnumerationUtil_Access_Array_Access_Array_Access;
+   subtype Feature_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access;
+   use type Feature_Access;
+   subtype Feature_Access_Array is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array;
+   use type Feature_Access_Array;
+   subtype Feature_Access_Array_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access;
+   use type Feature_Access_Array_Access;
+   subtype Feature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access_Array;
+   use type Feature_Access_Array_Access_Array;
+   subtype Feature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access_Array_Access;
+   use type Feature_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameFeatureUtil is tagged;
-   type GameFeatureUtil_Access is access all GameFeatureUtil'Class;
-   type GameFeatureUtil_Access_Array is array (Natural range <>) of GameFeatureUtil_Access;
-   type GameFeatureUtil_Access_Array_Access is access all GameFeatureUtil_Access_Array;
-   type GameFeatureUtil_Access_Array_Access_Array is array (Natural range <>) of GameFeatureUtil_Access_Array_Access;
-   type GameFeatureUtil_Access_Array_Access_Array_Access is access all GameFeatureUtil_Access_Array_Access_Array;
+
+   subtype GameFeatureUtil_Access is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access;
+   function "=" (Left, Right : GameFeatureUtil_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References."=";
+   subtype GameFeatureUtil_Access_Array is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access_Array;
+   function "=" (Left, Right : GameFeatureUtil_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References."=";
+   subtype GameFeatureUtil_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access_Array_Access;
+   function "=" (Left, Right : GameFeatureUtil_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References."=";
+   subtype GameFeatureUtil_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : GameFeatureUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References."=";
+   subtype GameFeatureUtil_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameFeatureUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References."=";
 
    type GameFeatureUtil is new Java_Object with record
       logUtil : LogUtil_Access;

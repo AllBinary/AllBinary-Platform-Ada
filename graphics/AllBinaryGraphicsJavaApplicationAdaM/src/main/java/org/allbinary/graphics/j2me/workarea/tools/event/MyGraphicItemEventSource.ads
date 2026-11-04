@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
+package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References is
+   type MyGraphicItemEventSource_Access is access all org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package.MyGraphicItemEventSource'Class;
+   type MyGraphicItemEventSource_Access_Array is array (Natural range <>) of MyGraphicItemEventSource_Access;
+   type MyGraphicItemEventSource_Access_Array_Access is access all MyGraphicItemEventSource_Access_Array;
+   type MyGraphicItemEventSource_Access_Array_Access_Array is array (Natural range <>) of MyGraphicItemEventSource_Access_Array_Access;
+   type MyGraphicItemEventSource_Access_Array_Access_Array_Access is access all MyGraphicItemEventSource_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type MyGraphicItemEventSource is tagged;
-   type MyGraphicItemEventSource_Access is access all MyGraphicItemEventSource'Class;
-   type MyGraphicItemEventSource_Access_Array is array (Natural range <>) of MyGraphicItemEventSource_Access;
-   type MyGraphicItemEventSource_Access_Array_Access is access all MyGraphicItemEventSource_Access_Array;
-   type MyGraphicItemEventSource_Access_Array_Access_Array is array (Natural range <>) of MyGraphicItemEventSource_Access_Array_Access;
-   type MyGraphicItemEventSource_Access_Array_Access_Array_Access is access all MyGraphicItemEventSource_Access_Array_Access_Array;
+
+   subtype MyGraphicItemEventSource_Access is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References.MyGraphicItemEventSource_Access;
+   function "=" (Left, Right : MyGraphicItemEventSource_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References."=";
+   subtype MyGraphicItemEventSource_Access_Array is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References.MyGraphicItemEventSource_Access_Array;
+   function "=" (Left, Right : MyGraphicItemEventSource_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References."=";
+   subtype MyGraphicItemEventSource_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References.MyGraphicItemEventSource_Access_Array_Access;
+   function "=" (Left, Right : MyGraphicItemEventSource_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References."=";
+   subtype MyGraphicItemEventSource_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References.MyGraphicItemEventSource_Access_Array_Access_Array;
+   function "=" (Left, Right : MyGraphicItemEventSource_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References."=";
+   subtype MyGraphicItemEventSource_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References.MyGraphicItemEventSource_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyGraphicItemEventSource_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package_References."=";
 
    type MyGraphicItemEventSource is new Java_Object with record
       command : Unbounded_String;

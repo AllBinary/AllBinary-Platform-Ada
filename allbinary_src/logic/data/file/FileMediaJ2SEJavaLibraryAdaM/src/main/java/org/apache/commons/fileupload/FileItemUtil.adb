@@ -3,9 +3,13 @@
 
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.apache.commons.fileupload.FileItemStream_Package; use org.apache.commons.fileupload.FileItemStream_Package;
+with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
 
 package body org.apache.commons.fileupload.FileItemUtil_Package is
 
@@ -14,6 +18,46 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
    package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
    package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   function "=" (Left, Right : AbFile_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype FileItemStream_Access is org.apache.commons.fileupload.FileItemStream_Package_References.FileItemStream_Access;
+   function "=" (Left, Right : FileItemStream_Access) return Boolean renames org.apache.commons.fileupload.FileItemStream_Package_References."=";
+   subtype FileItemStream_Access_Array is org.apache.commons.fileupload.FileItemStream_Package_References.FileItemStream_Access_Array;
+   function "=" (Left, Right : FileItemStream_Access_Array) return Boolean renames org.apache.commons.fileupload.FileItemStream_Package_References."=";
+   subtype FileItemStream_Access_Array_Access is org.apache.commons.fileupload.FileItemStream_Package_References.FileItemStream_Access_Array_Access;
+   function "=" (Left, Right : FileItemStream_Access_Array_Access) return Boolean renames org.apache.commons.fileupload.FileItemStream_Package_References."=";
+   subtype FileItemStream_Access_Array_Access_Array is org.apache.commons.fileupload.FileItemStream_Package_References.FileItemStream_Access_Array_Access_Array;
+   function "=" (Left, Right : FileItemStream_Access_Array_Access_Array) return Boolean renames org.apache.commons.fileupload.FileItemStream_Package_References."=";
+   subtype FileItemStream_Access_Array_Access_Array_Access is org.apache.commons.fileupload.FileItemStream_Package_References.FileItemStream_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileItemStream_Access_Array_Access_Array_Access) return Boolean renames org.apache.commons.fileupload.FileItemStream_Package_References."=";
+   subtype FileItem_Access is org.apache.commons.fileupload.FileItem_Package_References.FileItem_Access;
+   function "=" (Left, Right : FileItem_Access) return Boolean renames org.apache.commons.fileupload.FileItem_Package_References."=";
+   subtype FileItem_Access_Array is org.apache.commons.fileupload.FileItem_Package_References.FileItem_Access_Array;
+   function "=" (Left, Right : FileItem_Access_Array) return Boolean renames org.apache.commons.fileupload.FileItem_Package_References."=";
+   subtype FileItem_Access_Array_Access is org.apache.commons.fileupload.FileItem_Package_References.FileItem_Access_Array_Access;
+   function "=" (Left, Right : FileItem_Access_Array_Access) return Boolean renames org.apache.commons.fileupload.FileItem_Package_References."=";
+   subtype FileItem_Access_Array_Access_Array is org.apache.commons.fileupload.FileItem_Package_References.FileItem_Access_Array_Access_Array;
+   function "=" (Left, Right : FileItem_Access_Array_Access_Array) return Boolean renames org.apache.commons.fileupload.FileItem_Package_References."=";
+   subtype FileItem_Access_Array_Access_Array_Access is org.apache.commons.fileupload.FileItem_Package_References.FileItem_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileItem_Access_Array_Access_Array_Access) return Boolean renames org.apache.commons.fileupload.FileItem_Package_References."=";
    procedure Initialize_Fields (This : in out FileItemUtil'Class) is
    begin
       null;
@@ -36,7 +80,7 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
 
    function getInstance return FileItemUtil_Access is
    begin
-        return FileItemUtil_Package.instance;
+        return FileItemUtil_Access (FileItemUtil_Package.instance);
    end getInstance;
 
    --  throws Exception

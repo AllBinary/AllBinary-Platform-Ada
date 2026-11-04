@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
+package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References is
+   type DisplayInBrowserContraints_Access is access all org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package.DisplayInBrowserContraints'Class;
+   type DisplayInBrowserContraints_Access_Array is array (Natural range <>) of DisplayInBrowserContraints_Access;
+   type DisplayInBrowserContraints_Access_Array_Access is access all DisplayInBrowserContraints_Access_Array;
+   type DisplayInBrowserContraints_Access_Array_Access_Array is array (Natural range <>) of DisplayInBrowserContraints_Access_Array_Access;
+   type DisplayInBrowserContraints_Access_Array_Access_Array_Access is access all DisplayInBrowserContraints_Access_Array_Access_Array;
+end org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References;
+
+with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package; use org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
 
 package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package is
 
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DisplayInBrowserContraints is tagged;
-   type DisplayInBrowserContraints_Access is access all DisplayInBrowserContraints'Class;
-   type DisplayInBrowserContraints_Access_Array is array (Natural range <>) of DisplayInBrowserContraints_Access;
-   type DisplayInBrowserContraints_Access_Array_Access is access all DisplayInBrowserContraints_Access_Array;
-   type DisplayInBrowserContraints_Access_Array_Access_Array is array (Natural range <>) of DisplayInBrowserContraints_Access_Array_Access;
-   type DisplayInBrowserContraints_Access_Array_Access_Array_Access is access all DisplayInBrowserContraints_Access_Array_Access_Array;
+
+   subtype DisplayInBrowserContraints_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.DisplayInBrowserContraints_Access;
+   function "=" (Left, Right : DisplayInBrowserContraints_Access) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References."=";
+   subtype DisplayInBrowserContraints_Access_Array is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.DisplayInBrowserContraints_Access_Array;
+   function "=" (Left, Right : DisplayInBrowserContraints_Access_Array) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References."=";
+   subtype DisplayInBrowserContraints_Access_Array_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.DisplayInBrowserContraints_Access_Array_Access;
+   function "=" (Left, Right : DisplayInBrowserContraints_Access_Array_Access) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References."=";
+   subtype DisplayInBrowserContraints_Access_Array_Access_Array is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.DisplayInBrowserContraints_Access_Array_Access_Array;
+   function "=" (Left, Right : DisplayInBrowserContraints_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References."=";
+   subtype DisplayInBrowserContraints_Access_Array_Access_Array_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.DisplayInBrowserContraints_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DisplayInBrowserContraints_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References."=";
 
    type DisplayInBrowserContraints is new Java_Object and DisplayInBrowserContraintsInterface with record
       frameable : Boolean;

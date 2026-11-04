@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.resource.ResourceUtil_Package;
+package org.allbinary.data.resource.ResourceUtil_Package_References is
+   type ResourceUtil_Access is access all org.allbinary.data.resource.ResourceUtil_Package.ResourceUtil'Class;
+   type ResourceUtil_Access_Array is array (Natural range <>) of ResourceUtil_Access;
+   type ResourceUtil_Access_Array_Access is access all ResourceUtil_Access_Array;
+   type ResourceUtil_Access_Array_Access_Array is array (Natural range <>) of ResourceUtil_Access_Array_Access;
+   type ResourceUtil_Access_Array_Access_Array_Access is access all ResourceUtil_Access_Array_Access_Array;
+end org.allbinary.data.resource.ResourceUtil_Package_References;
+
+with org.allbinary.data.resource.ResourceUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,20 +33,50 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.data.resource.ClassLoader_Package; use org.allbinary.data.resource.ClassLoader_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.data.resource.ClassLoader_Package;
+with org.allbinary.data.resource.ClassLoader_Package_References;
 
 package org.allbinary.data.resource.ResourceUtil_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype ClassLoader_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access;
+   use type ClassLoader_Access;
+   subtype ClassLoader_Access_Array is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array;
+   use type ClassLoader_Access_Array;
+   subtype ClassLoader_Access_Array_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
+   use type ClassLoader_Access_Array_Access;
+   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
+   use type ClassLoader_Access_Array_Access_Array;
+   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
+   use type ClassLoader_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ResourceUtil is tagged;
-   type ResourceUtil_Access is access all ResourceUtil'Class;
-   type ResourceUtil_Access_Array is array (Natural range <>) of ResourceUtil_Access;
-   type ResourceUtil_Access_Array_Access is access all ResourceUtil_Access_Array;
-   type ResourceUtil_Access_Array_Access_Array is array (Natural range <>) of ResourceUtil_Access_Array_Access;
-   type ResourceUtil_Access_Array_Access_Array_Access is access all ResourceUtil_Access_Array_Access_Array;
+
+   subtype ResourceUtil_Access is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access;
+   function "=" (Left, Right : ResourceUtil_Access) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
+   subtype ResourceUtil_Access_Array is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access_Array;
+   function "=" (Left, Right : ResourceUtil_Access_Array) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
+   subtype ResourceUtil_Access_Array_Access is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access_Array_Access;
+   function "=" (Left, Right : ResourceUtil_Access_Array_Access) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
+   subtype ResourceUtil_Access_Array_Access_Array is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ResourceUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
+   subtype ResourceUtil_Access_Array_Access_Array_Access is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ResourceUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
 
    type ResourceUtil is new Java_Object with record
       logUtil : LogUtil_Access;

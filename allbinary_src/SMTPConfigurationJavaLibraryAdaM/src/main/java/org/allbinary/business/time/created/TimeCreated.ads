@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.time.created.TimeCreated_Package;
+package org.allbinary.business.time.created.TimeCreated_Package_References is
+   type TimeCreated_Access is access all org.allbinary.business.time.created.TimeCreated_Package.TimeCreated'Class;
+   type TimeCreated_Access_Array is array (Natural range <>) of TimeCreated_Access;
+   type TimeCreated_Access_Array_Access is access all TimeCreated_Access_Array;
+   type TimeCreated_Access_Array_Access_Array is array (Natural range <>) of TimeCreated_Access_Array_Access;
+   type TimeCreated_Access_Array_Access_Array_Access is access all TimeCreated_Access_Array_Access_Array;
+end org.allbinary.business.time.created.TimeCreated_Package_References;
+
+with org.allbinary.business.time.created.TimeCreated_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.business.time.Time_Package; use org.allbinary.business.time.T
 package org.allbinary.business.time.created.TimeCreated_Package is
 
    package Time_Package renames Standard.org.allbinary.business.time.Time_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TimeCreated is tagged;
-   type TimeCreated_Access is access all TimeCreated'Class;
-   type TimeCreated_Access_Array is array (Natural range <>) of TimeCreated_Access;
-   type TimeCreated_Access_Array_Access is access all TimeCreated_Access_Array;
-   type TimeCreated_Access_Array_Access_Array is array (Natural range <>) of TimeCreated_Access_Array_Access;
-   type TimeCreated_Access_Array_Access_Array_Access is access all TimeCreated_Access_Array_Access_Array;
+
+   subtype TimeCreated_Access is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access;
+   function "=" (Left, Right : TimeCreated_Access) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   subtype TimeCreated_Access_Array is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array;
+   function "=" (Left, Right : TimeCreated_Access_Array) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   subtype TimeCreated_Access_Array_Access is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array_Access;
+   function "=" (Left, Right : TimeCreated_Access_Array_Access) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   subtype TimeCreated_Access_Array_Access_Array is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array_Access_Array;
+   function "=" (Left, Right : TimeCreated_Access_Array_Access_Array) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   subtype TimeCreated_Access_Array_Access_Array_Access is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TimeCreated_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
 
    type TimeCreated is new Time_Package.Time with null record;
 

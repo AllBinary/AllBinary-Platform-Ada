@@ -42,7 +42,7 @@ package body org.allbinary.logic.java.bool.BooleanFactory_Package is
 
    function getInstance return BooleanFactory_Access is
    begin
-        return BooleanFactory_Package.instance;
+        return BooleanFactory_Access (BooleanFactory_Package.instance);
    end getInstance;
 
    function toStringb (This : in out BooleanFactory; bool : Boolean) return Unbounded_String is

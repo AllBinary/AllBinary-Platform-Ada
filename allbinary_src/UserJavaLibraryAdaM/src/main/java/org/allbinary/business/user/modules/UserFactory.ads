@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.modules.UserFactory_Package;
+package org.allbinary.business.user.modules.UserFactory_Package_References is
+   type UserFactory_Access is access all org.allbinary.business.user.modules.UserFactory_Package.UserFactory'Class;
+   type UserFactory_Access_Array is array (Natural range <>) of UserFactory_Access;
+   type UserFactory_Access_Array_Access is access all UserFactory_Access_Array;
+   type UserFactory_Access_Array_Access_Array is array (Natural range <>) of UserFactory_Access_Array_Access;
+   type UserFactory_Access_Array_Access_Array_Access is access all UserFactory_Access_Array_Access_Array;
+end org.allbinary.business.user.modules.UserFactory_Package_References;
+
+with org.allbinary.business.user.modules.UserFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,20 +32,39 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
-with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+limited with org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.UserInterface_Package_References;
 
 package org.allbinary.business.user.modules.UserFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package UserFactoryInterface_Package renames Standard.org.allbinary.business.user.UserFactoryInterface_Package;
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package Reference_Types is
+   subtype UserInterface_Access is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access;
+   use type UserInterface_Access;
+   subtype UserInterface_Access_Array is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array;
+   use type UserInterface_Access_Array;
+   subtype UserInterface_Access_Array_Access is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array_Access;
+   use type UserInterface_Access_Array_Access;
+   subtype UserInterface_Access_Array_Access_Array is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array_Access_Array;
+   use type UserInterface_Access_Array_Access_Array;
+   subtype UserInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array_Access_Array_Access;
+   use type UserInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type UserFactory is tagged;
-   type UserFactory_Access is access all UserFactory'Class;
-   type UserFactory_Access_Array is array (Natural range <>) of UserFactory_Access;
-   type UserFactory_Access_Array_Access is access all UserFactory_Access_Array;
-   type UserFactory_Access_Array_Access_Array is array (Natural range <>) of UserFactory_Access_Array_Access;
-   type UserFactory_Access_Array_Access_Array_Access is access all UserFactory_Access_Array_Access_Array;
+
+   subtype UserFactory_Access is org.allbinary.business.user.modules.UserFactory_Package_References.UserFactory_Access;
+   function "=" (Left, Right : UserFactory_Access) return Boolean renames org.allbinary.business.user.modules.UserFactory_Package_References."=";
+   subtype UserFactory_Access_Array is org.allbinary.business.user.modules.UserFactory_Package_References.UserFactory_Access_Array;
+   function "=" (Left, Right : UserFactory_Access_Array) return Boolean renames org.allbinary.business.user.modules.UserFactory_Package_References."=";
+   subtype UserFactory_Access_Array_Access is org.allbinary.business.user.modules.UserFactory_Package_References.UserFactory_Access_Array_Access;
+   function "=" (Left, Right : UserFactory_Access_Array_Access) return Boolean renames org.allbinary.business.user.modules.UserFactory_Package_References."=";
+   subtype UserFactory_Access_Array_Access_Array is org.allbinary.business.user.modules.UserFactory_Package_References.UserFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : UserFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.modules.UserFactory_Package_References."=";
+   subtype UserFactory_Access_Array_Access_Array_Access is org.allbinary.business.user.modules.UserFactory_Package_References.UserFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.modules.UserFactory_Package_References."=";
 
    type UserFactory is new Java_Object and UserFactoryInterface with null record;
 

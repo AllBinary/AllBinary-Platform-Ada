@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
+package org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References is
+   type OpenGLESImageExclusionUtil_Access is access all org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package.OpenGLESImageExclusionUtil'Class;
+   type OpenGLESImageExclusionUtil_Access_Array is array (Natural range <>) of OpenGLESImageExclusionUtil_Access;
+   type OpenGLESImageExclusionUtil_Access_Array_Access is access all OpenGLESImageExclusionUtil_Access_Array;
+   type OpenGLESImageExclusionUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImageExclusionUtil_Access_Array_Access;
+   type OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access is access all OpenGLESImageExclusionUtil_Access_Array_Access_Array;
+end org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References;
+
+with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLESImageExclusionUtil is tagged;
-   type OpenGLESImageExclusionUtil_Access is access all OpenGLESImageExclusionUtil'Class;
-   type OpenGLESImageExclusionUtil_Access_Array is array (Natural range <>) of OpenGLESImageExclusionUtil_Access;
-   type OpenGLESImageExclusionUtil_Access_Array_Access is access all OpenGLESImageExclusionUtil_Access_Array;
-   type OpenGLESImageExclusionUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImageExclusionUtil_Access_Array_Access;
-   type OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access is access all OpenGLESImageExclusionUtil_Access_Array_Access_Array;
+
+   subtype OpenGLESImageExclusionUtil_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access_Array is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
 
    type OpenGLESImageExclusionUtil is new Java_Object with record
       list : BasicArrayList_Access;

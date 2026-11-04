@@ -13,11 +13,44 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.input.automation.module.DefaultListModel_Package; use org.allbinary.input.automation.module.DefaultListModel_Package;
+with org.allbinary.input.automation.module.ListModel_Package; use org.allbinary.input.automation.module.ListModel_Package;
 
 package body org.allbinary.input.automation.module.DefaultListModelHelper_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype DefaultListModel_Access is org.allbinary.input.automation.module.DefaultListModel_Package_References.DefaultListModel_Access;
+   function "=" (Left, Right : DefaultListModel_Access) return Boolean renames org.allbinary.input.automation.module.DefaultListModel_Package_References."=";
+   subtype DefaultListModel_Access_Array is org.allbinary.input.automation.module.DefaultListModel_Package_References.DefaultListModel_Access_Array;
+   function "=" (Left, Right : DefaultListModel_Access_Array) return Boolean renames org.allbinary.input.automation.module.DefaultListModel_Package_References."=";
+   subtype DefaultListModel_Access_Array_Access is org.allbinary.input.automation.module.DefaultListModel_Package_References.DefaultListModel_Access_Array_Access;
+   function "=" (Left, Right : DefaultListModel_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.DefaultListModel_Package_References."=";
+   subtype DefaultListModel_Access_Array_Access_Array is org.allbinary.input.automation.module.DefaultListModel_Package_References.DefaultListModel_Access_Array_Access_Array;
+   function "=" (Left, Right : DefaultListModel_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.DefaultListModel_Package_References."=";
+   subtype DefaultListModel_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.DefaultListModel_Package_References.DefaultListModel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DefaultListModel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.DefaultListModel_Package_References."=";
+   subtype ListModel_Access is org.allbinary.input.automation.module.ListModel_Package_References.ListModel_Access;
+   function "=" (Left, Right : ListModel_Access) return Boolean renames org.allbinary.input.automation.module.ListModel_Package_References."=";
+   subtype ListModel_Access_Array is org.allbinary.input.automation.module.ListModel_Package_References.ListModel_Access_Array;
+   function "=" (Left, Right : ListModel_Access_Array) return Boolean renames org.allbinary.input.automation.module.ListModel_Package_References."=";
+   subtype ListModel_Access_Array_Access is org.allbinary.input.automation.module.ListModel_Package_References.ListModel_Access_Array_Access;
+   function "=" (Left, Right : ListModel_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.ListModel_Package_References."=";
+   subtype ListModel_Access_Array_Access_Array is org.allbinary.input.automation.module.ListModel_Package_References.ListModel_Access_Array_Access_Array;
+   function "=" (Left, Right : ListModel_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.ListModel_Package_References."=";
+   subtype ListModel_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.ListModel_Package_References.ListModel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ListModel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.ListModel_Package_References."=";
    procedure Initialize_Fields (This : in out DefaultListModelHelper'Class) is
    begin
       null;

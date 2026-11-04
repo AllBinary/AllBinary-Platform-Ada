@@ -13,6 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.init.InitInterface_Package;
+with org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+with org.allbinary.graphics.paint.InitUpdatePaintableInterface_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.init.UpdateInterface_Package;
 
 package body org.allbinary.graphics.paint.NullInitUpdatePaintable_Package is
 
@@ -38,7 +44,7 @@ package body org.allbinary.graphics.paint.NullInitUpdatePaintable_Package is
 
    function getInstance return InitUpdatePaintable_Access is
    begin
-        return NullInitUpdatePaintable_Package.SINGLETON;
+        return InitUpdatePaintable_Access (NullInitUpdatePaintable_Package.SINGLETON);
    end getInstance;
 
 begin

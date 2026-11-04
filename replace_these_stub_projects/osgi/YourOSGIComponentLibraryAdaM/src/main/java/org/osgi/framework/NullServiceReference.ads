@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.osgi.framework.NullServiceReference_Package;
+package org.osgi.framework.NullServiceReference_Package_References is
+   type NullServiceReference_Access is access all org.osgi.framework.NullServiceReference_Package.NullServiceReference'Class;
+   type NullServiceReference_Access_Array is array (Natural range <>) of NullServiceReference_Access;
+   type NullServiceReference_Access_Array_Access is access all NullServiceReference_Access_Array;
+   type NullServiceReference_Access_Array_Access_Array is array (Natural range <>) of NullServiceReference_Access_Array_Access;
+   type NullServiceReference_Access_Array_Access_Array_Access is access all NullServiceReference_Access_Array_Access_Array;
+end org.osgi.framework.NullServiceReference_Package_References;
+
+with org.osgi.framework.NullServiceReference_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.osgi.framework.NullServiceReference_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullServiceReference is tagged;
-   type NullServiceReference_Access is access all NullServiceReference'Class;
-   type NullServiceReference_Access_Array is array (Natural range <>) of NullServiceReference_Access;
-   type NullServiceReference_Access_Array_Access is access all NullServiceReference_Access_Array;
-   type NullServiceReference_Access_Array_Access_Array is array (Natural range <>) of NullServiceReference_Access_Array_Access;
-   type NullServiceReference_Access_Array_Access_Array_Access is access all NullServiceReference_Access_Array_Access_Array;
+
+   subtype NullServiceReference_Access is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access;
+   function "=" (Left, Right : NullServiceReference_Access) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
+   subtype NullServiceReference_Access_Array is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access_Array;
+   function "=" (Left, Right : NullServiceReference_Access_Array) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
+   subtype NullServiceReference_Access_Array_Access is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access_Array_Access;
+   function "=" (Left, Right : NullServiceReference_Access_Array_Access) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
+   subtype NullServiceReference_Access_Array_Access_Array is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access_Array_Access_Array;
+   function "=" (Left, Right : NullServiceReference_Access_Array_Access_Array) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
+   subtype NullServiceReference_Access_Array_Access_Array_Access is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullServiceReference_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
 
    type NullServiceReference is new Java_Object with null record;
 

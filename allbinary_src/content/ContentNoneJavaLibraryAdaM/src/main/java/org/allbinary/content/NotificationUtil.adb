@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 
 package body org.allbinary.content.NotificationUtil_Package is
 
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   function "=" (Left, Right : Command_Access) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   function "=" (Left, Right : Command_Access_Array) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   function "=" (Left, Right : Command_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   function "=" (Left, Right : Command_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Command_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
    procedure Initialize_Fields (This : in out NotificationUtil'Class) is
    begin
       null;
@@ -36,7 +47,7 @@ package body org.allbinary.content.NotificationUtil_Package is
 
    function getInstance return NotificationUtil_Access is
    begin
-        return NotificationUtil_Package.SINGLETON;
+        return NotificationUtil_Access (NotificationUtil_Package.SINGLETON);
    end getInstance;
 
    procedure notify (This : in out NotificationUtil; command_Param : access Command_Package.Command'Class; resource : Unbounded_String; message : Unbounded_String) is

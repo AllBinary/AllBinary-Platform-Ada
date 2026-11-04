@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
 with org.allbinary.media.image.analysis.ImageColorRangeResults_Package; use org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
 with org.allbinary.media.image.analysis.ImageColorResults_Package; use org.allbinary.media.image.analysis.ImageColorResults_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
@@ -22,6 +23,16 @@ package body org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package is
    package ImageColorRangeResults_Package renames Standard.org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
    package ImageColorResults_Package renames Standard.org.allbinary.media.image.analysis.ImageColorResults_Package;
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   subtype ImageAnalysisResults_Access is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access;
+   function "=" (Left, Right : ImageAnalysisResults_Access) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References."=";
+   subtype ImageAnalysisResults_Access_Array is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array;
+   function "=" (Left, Right : ImageAnalysisResults_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References."=";
+   subtype ImageAnalysisResults_Access_Array_Access is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array_Access;
+   function "=" (Left, Right : ImageAnalysisResults_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References."=";
+   subtype ImageAnalysisResults_Access_Array_Access_Array is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageAnalysisResults_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References."=";
+   subtype ImageAnalysisResults_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageAnalysisResults_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References."=";
    procedure Initialize_Fields (This : in out ImageAnalysisResultsJPanel'Class) is
    begin
       null;

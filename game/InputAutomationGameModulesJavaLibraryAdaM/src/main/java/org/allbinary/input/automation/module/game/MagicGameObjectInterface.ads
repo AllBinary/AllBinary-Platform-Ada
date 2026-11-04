@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package;
+package org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References is
+   type MagicGameObjectInterface_Access is access all org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package.MagicGameObjectInterface'Class;
+   type MagicGameObjectInterface_Access_Array is array (Natural range <>) of MagicGameObjectInterface_Access;
+   type MagicGameObjectInterface_Access_Array_Access is access all MagicGameObjectInterface_Access_Array;
+   type MagicGameObjectInterface_Access_Array_Access_Array is array (Natural range <>) of MagicGameObjectInterface_Access_Array_Access;
+   type MagicGameObjectInterface_Access_Array_Access_Array_Access is access all MagicGameObjectInterface_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References;
+
+with org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,23 @@ with org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Packa
 
 package org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type MagicGameObjectInterface is interface and MeteredGameObjectInterface;
-   type MagicGameObjectInterface_Access is access all MagicGameObjectInterface'Class;
-   type MagicGameObjectInterface_Access_Array is array (Natural range <>) of MagicGameObjectInterface_Access;
-   type MagicGameObjectInterface_Access_Array_Access is access all MagicGameObjectInterface_Access_Array;
-   type MagicGameObjectInterface_Access_Array_Access_Array is array (Natural range <>) of MagicGameObjectInterface_Access_Array_Access;
-   type MagicGameObjectInterface_Access_Array_Access_Array_Access is access all MagicGameObjectInterface_Access_Array_Access_Array;
+   subtype MagicGameObjectInterface_Access is org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References.MagicGameObjectInterface_Access;
+   function "=" (Left, Right : MagicGameObjectInterface_Access) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References."=";
+   subtype MagicGameObjectInterface_Access_Array is org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References.MagicGameObjectInterface_Access_Array;
+   function "=" (Left, Right : MagicGameObjectInterface_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References."=";
+   subtype MagicGameObjectInterface_Access_Array_Access is org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References.MagicGameObjectInterface_Access_Array_Access;
+   function "=" (Left, Right : MagicGameObjectInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References."=";
+   subtype MagicGameObjectInterface_Access_Array_Access_Array is org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References.MagicGameObjectInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : MagicGameObjectInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References."=";
+   subtype MagicGameObjectInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References.MagicGameObjectInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MagicGameObjectInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package_References."=";
+   function Java_Object_Access_From_MagicGameObjectInterface (Value : MagicGameObjectInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
 
 end org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package;
 

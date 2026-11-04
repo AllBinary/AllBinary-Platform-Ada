@@ -12,6 +12,16 @@
 -- 
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.AndroidImageUtil_Package;
+package org.allbinary.media.image.AndroidImageUtil_Package_References is
+   type AndroidImageUtil_Access is access all org.allbinary.media.image.AndroidImageUtil_Package.AndroidImageUtil'Class;
+   type AndroidImageUtil_Access_Array is array (Natural range <>) of AndroidImageUtil_Access;
+   type AndroidImageUtil_Access_Array_Access is access all AndroidImageUtil_Access_Array;
+   type AndroidImageUtil_Access_Array_Access_Array is array (Natural range <>) of AndroidImageUtil_Access_Array_Access;
+   type AndroidImageUtil_Access_Array_Access_Array_Access is access all AndroidImageUtil_Access_Array_Access_Array;
+end org.allbinary.media.image.AndroidImageUtil_Package_References;
+
+with org.allbinary.media.image.AndroidImageUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
-with android.graphics.Matrix_Package; use android.graphics.Matrix_Package;
-with android.graphics.Paint_Package; use android.graphics.Paint_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+limited with android.graphics.Bitmap_Package;
+with android.graphics.Bitmap_Package_References;
+limited with android.graphics.Matrix_Package;
+with android.graphics.Matrix_Package_References;
+limited with android.graphics.Paint_Package;
+with android.graphics.Paint_Package_References;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 
 package org.allbinary.media.image.AndroidImageUtil_Package is
 
@@ -31,13 +45,61 @@ package org.allbinary.media.image.AndroidImageUtil_Package is
    package Matrix_Package renames Standard.android.graphics.Matrix_Package;
    package Paint_Package renames Standard.android.graphics.Paint_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package Reference_Types is
+   subtype Bitmap_Access is android.graphics.Bitmap_Package_References.Bitmap_Access;
+   use type Bitmap_Access;
+   subtype Bitmap_Access_Array is android.graphics.Bitmap_Package_References.Bitmap_Access_Array;
+   use type Bitmap_Access_Array;
+   subtype Bitmap_Access_Array_Access is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access;
+   use type Bitmap_Access_Array_Access;
+   subtype Bitmap_Access_Array_Access_Array is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access_Array;
+   use type Bitmap_Access_Array_Access_Array;
+   subtype Bitmap_Access_Array_Access_Array_Access is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access_Array_Access;
+   use type Bitmap_Access_Array_Access_Array_Access;
+   subtype Matrix_Access is android.graphics.Matrix_Package_References.Matrix_Access;
+   use type Matrix_Access;
+   subtype Matrix_Access_Array is android.graphics.Matrix_Package_References.Matrix_Access_Array;
+   use type Matrix_Access_Array;
+   subtype Matrix_Access_Array_Access is android.graphics.Matrix_Package_References.Matrix_Access_Array_Access;
+   use type Matrix_Access_Array_Access;
+   subtype Matrix_Access_Array_Access_Array is android.graphics.Matrix_Package_References.Matrix_Access_Array_Access_Array;
+   use type Matrix_Access_Array_Access_Array;
+   subtype Matrix_Access_Array_Access_Array_Access is android.graphics.Matrix_Package_References.Matrix_Access_Array_Access_Array_Access;
+   use type Matrix_Access_Array_Access_Array_Access;
+   subtype Paint_Access is android.graphics.Paint_Package_References.Paint_Access;
+   use type Paint_Access;
+   subtype Paint_Access_Array is android.graphics.Paint_Package_References.Paint_Access_Array;
+   use type Paint_Access_Array;
+   subtype Paint_Access_Array_Access is android.graphics.Paint_Package_References.Paint_Access_Array_Access;
+   use type Paint_Access_Array_Access;
+   subtype Paint_Access_Array_Access_Array is android.graphics.Paint_Package_References.Paint_Access_Array_Access_Array;
+   use type Paint_Access_Array_Access_Array;
+   subtype Paint_Access_Array_Access_Array_Access is android.graphics.Paint_Package_References.Paint_Access_Array_Access_Array_Access;
+   use type Paint_Access_Array_Access_Array_Access;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidImageUtil is tagged;
-   type AndroidImageUtil_Access is access all AndroidImageUtil'Class;
-   type AndroidImageUtil_Access_Array is array (Natural range <>) of AndroidImageUtil_Access;
-   type AndroidImageUtil_Access_Array_Access is access all AndroidImageUtil_Access_Array;
-   type AndroidImageUtil_Access_Array_Access_Array is array (Natural range <>) of AndroidImageUtil_Access_Array_Access;
-   type AndroidImageUtil_Access_Array_Access_Array_Access is access all AndroidImageUtil_Access_Array_Access_Array;
+
+   subtype AndroidImageUtil_Access is org.allbinary.media.image.AndroidImageUtil_Package_References.AndroidImageUtil_Access;
+   function "=" (Left, Right : AndroidImageUtil_Access) return Boolean renames org.allbinary.media.image.AndroidImageUtil_Package_References."=";
+   subtype AndroidImageUtil_Access_Array is org.allbinary.media.image.AndroidImageUtil_Package_References.AndroidImageUtil_Access_Array;
+   function "=" (Left, Right : AndroidImageUtil_Access_Array) return Boolean renames org.allbinary.media.image.AndroidImageUtil_Package_References."=";
+   subtype AndroidImageUtil_Access_Array_Access is org.allbinary.media.image.AndroidImageUtil_Package_References.AndroidImageUtil_Access_Array_Access;
+   function "=" (Left, Right : AndroidImageUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.AndroidImageUtil_Package_References."=";
+   subtype AndroidImageUtil_Access_Array_Access_Array is org.allbinary.media.image.AndroidImageUtil_Package_References.AndroidImageUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidImageUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.AndroidImageUtil_Package_References."=";
+   subtype AndroidImageUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.AndroidImageUtil_Package_References.AndroidImageUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidImageUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.AndroidImageUtil_Package_References."=";
 
    type AndroidImageUtil is new Java_Object with null record;
    instance : AndroidImageUtil_Access;

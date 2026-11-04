@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.unit.UnitGameInputProcessor_Package;
+package org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References is
+   type UnitGameInputProcessor_Access is access all org.allbinary.game.layer.unit.UnitGameInputProcessor_Package.UnitGameInputProcessor'Class;
+   type UnitGameInputProcessor_Access_Array is array (Natural range <>) of UnitGameInputProcessor_Access;
+   type UnitGameInputProcessor_Access_Array_Access is access all UnitGameInputProcessor_Access_Array;
+   type UnitGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of UnitGameInputProcessor_Access_Array_Access;
+   type UnitGameInputProcessor_Access_Array_Access_Array_Access is access all UnitGameInputProcessor_Access_Array_Access_Array;
+end org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References;
+
+with org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,37 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
-with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
+limited with org.allbinary.game.layer.unit.UnitLayer_Package;
+with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 
 package org.allbinary.game.layer.unit.UnitGameInputProcessor_Package is
 
    package GameInputProcessor_Package renames Standard.org.allbinary.game.input.GameInputProcessor_Package;
+   package Reference_Types is
+   subtype UnitLayer_Access is org.allbinary.game.layer.unit.UnitLayer_Package_References.UnitLayer_Access;
+   use type UnitLayer_Access;
+   subtype UnitLayer_Access_Array is org.allbinary.game.layer.unit.UnitLayer_Package_References.UnitLayer_Access_Array;
+   use type UnitLayer_Access_Array;
+   subtype UnitLayer_Access_Array_Access is org.allbinary.game.layer.unit.UnitLayer_Package_References.UnitLayer_Access_Array_Access;
+   use type UnitLayer_Access_Array_Access;
+   subtype UnitLayer_Access_Array_Access_Array is org.allbinary.game.layer.unit.UnitLayer_Package_References.UnitLayer_Access_Array_Access_Array;
+   use type UnitLayer_Access_Array_Access_Array;
+   subtype UnitLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.UnitLayer_Package_References.UnitLayer_Access_Array_Access_Array_Access;
+   use type UnitLayer_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type UnitGameInputProcessor is tagged;
-   type UnitGameInputProcessor_Access is access all UnitGameInputProcessor'Class;
-   type UnitGameInputProcessor_Access_Array is array (Natural range <>) of UnitGameInputProcessor_Access;
-   type UnitGameInputProcessor_Access_Array_Access is access all UnitGameInputProcessor_Access_Array;
-   type UnitGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of UnitGameInputProcessor_Access_Array_Access;
-   type UnitGameInputProcessor_Access_Array_Access_Array_Access is access all UnitGameInputProcessor_Access_Array_Access_Array;
+
+   subtype UnitGameInputProcessor_Access is org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References.UnitGameInputProcessor_Access;
+   function "=" (Left, Right : UnitGameInputProcessor_Access) return Boolean renames org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References."=";
+   subtype UnitGameInputProcessor_Access_Array is org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References.UnitGameInputProcessor_Access_Array;
+   function "=" (Left, Right : UnitGameInputProcessor_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References."=";
+   subtype UnitGameInputProcessor_Access_Array_Access is org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References.UnitGameInputProcessor_Access_Array_Access;
+   function "=" (Left, Right : UnitGameInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References."=";
+   subtype UnitGameInputProcessor_Access_Array_Access_Array is org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References.UnitGameInputProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : UnitGameInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References."=";
+   subtype UnitGameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References.UnitGameInputProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UnitGameInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitGameInputProcessor_Package_References."=";
 
    type UnitGameInputProcessor is new GameInputProcessor with record
       unitLayer : UnitLayer_Access;

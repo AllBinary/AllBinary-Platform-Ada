@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.sql.SqlStrings_Package;
+package org.allbinary.logic.communication.sql.SqlStrings_Package_References is
+   type SqlStrings_Access is access all org.allbinary.logic.communication.sql.SqlStrings_Package.SqlStrings'Class;
+   type SqlStrings_Access_Array is array (Natural range <>) of SqlStrings_Access;
+   type SqlStrings_Access_Array_Access is access all SqlStrings_Access_Array;
+   type SqlStrings_Access_Array_Access_Array is array (Natural range <>) of SqlStrings_Access_Array_Access;
+   type SqlStrings_Access_Array_Access_Array_Access is access all SqlStrings_Access_Array_Access_Array;
+end org.allbinary.logic.communication.sql.SqlStrings_Package_References;
+
+with org.allbinary.logic.communication.sql.SqlStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -11,13 +21,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.communication.sql.SqlStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SqlStrings is tagged;
-   type SqlStrings_Access is access all SqlStrings'Class;
-   type SqlStrings_Access_Array is array (Natural range <>) of SqlStrings_Access;
-   type SqlStrings_Access_Array_Access is access all SqlStrings_Access_Array;
-   type SqlStrings_Access_Array_Access_Array is array (Natural range <>) of SqlStrings_Access_Array_Access;
-   type SqlStrings_Access_Array_Access_Array_Access is access all SqlStrings_Access_Array_Access_Array;
+
+   subtype SqlStrings_Access is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access;
+   function "=" (Left, Right : SqlStrings_Access) return Boolean renames org.allbinary.logic.communication.sql.SqlStrings_Package_References."=";
+   subtype SqlStrings_Access_Array is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access_Array;
+   function "=" (Left, Right : SqlStrings_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.SqlStrings_Package_References."=";
+   subtype SqlStrings_Access_Array_Access is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access_Array_Access;
+   function "=" (Left, Right : SqlStrings_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.SqlStrings_Package_References."=";
+   subtype SqlStrings_Access_Array_Access_Array is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : SqlStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.SqlStrings_Package_References."=";
+   subtype SqlStrings_Access_Array_Access_Array_Access is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SqlStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.SqlStrings_Package_References."=";
 
    type SqlStrings is new Java_Object with record
       CREATE_DATABASE : Unbounded_String;

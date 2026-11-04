@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
+package org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References is
+   type BasicDirectionAIHelper_Access is access all org.allbinary.game.ai.path.BasicDirectionAIHelper_Package.BasicDirectionAIHelper'Class;
+   type BasicDirectionAIHelper_Access_Array is array (Natural range <>) of BasicDirectionAIHelper_Access;
+   type BasicDirectionAIHelper_Access_Array_Access is access all BasicDirectionAIHelper_Access_Array;
+   type BasicDirectionAIHelper_Access_Array_Access_Array is array (Natural range <>) of BasicDirectionAIHelper_Access_Array_Access;
+   type BasicDirectionAIHelper_Access_Array_Access_Array_Access is access all BasicDirectionAIHelper_Access_Array_Access_Array;
+end org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References;
+
+with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+limited with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
+limited with org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 
 package org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
 
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package Reference_Types is
+   subtype Direction_Access is org.allbinary.direction.Direction_Package_References.Direction_Access;
+   use type Direction_Access;
+   subtype Direction_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array;
+   use type Direction_Access_Array;
+   subtype Direction_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access;
+   use type Direction_Access_Array_Access;
+   subtype Direction_Access_Array_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array;
+   use type Direction_Access_Array_Access_Array;
+   subtype Direction_Access_Array_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array_Access;
+   use type Direction_Access_Array_Access_Array_Access;
+   subtype AngleInfo_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access;
+   use type AngleInfo_Access;
+   subtype AngleInfo_Access_Array is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array;
+   use type AngleInfo_Access_Array;
+   subtype AngleInfo_Access_Array_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access;
+   use type AngleInfo_Access_Array_Access;
+   subtype AngleInfo_Access_Array_Access_Array is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access_Array;
+   use type AngleInfo_Access_Array_Access_Array;
+   subtype AngleInfo_Access_Array_Access_Array_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access_Array_Access;
+   use type AngleInfo_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicDirectionAIHelper is tagged;
-   type BasicDirectionAIHelper_Access is access all BasicDirectionAIHelper'Class;
-   type BasicDirectionAIHelper_Access_Array is array (Natural range <>) of BasicDirectionAIHelper_Access;
-   type BasicDirectionAIHelper_Access_Array_Access is access all BasicDirectionAIHelper_Access_Array;
-   type BasicDirectionAIHelper_Access_Array_Access_Array is array (Natural range <>) of BasicDirectionAIHelper_Access_Array_Access;
-   type BasicDirectionAIHelper_Access_Array_Access_Array_Access is access all BasicDirectionAIHelper_Access_Array_Access_Array;
+
+   subtype BasicDirectionAIHelper_Access is org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.BasicDirectionAIHelper_Access;
+   function "=" (Left, Right : BasicDirectionAIHelper_Access) return Boolean renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References."=";
+   subtype BasicDirectionAIHelper_Access_Array is org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.BasicDirectionAIHelper_Access_Array;
+   function "=" (Left, Right : BasicDirectionAIHelper_Access_Array) return Boolean renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References."=";
+   subtype BasicDirectionAIHelper_Access_Array_Access is org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.BasicDirectionAIHelper_Access_Array_Access;
+   function "=" (Left, Right : BasicDirectionAIHelper_Access_Array_Access) return Boolean renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References."=";
+   subtype BasicDirectionAIHelper_Access_Array_Access_Array is org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.BasicDirectionAIHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicDirectionAIHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References."=";
+   subtype BasicDirectionAIHelper_Access_Array_Access_Array_Access is org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.BasicDirectionAIHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicDirectionAIHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References."=";
 
    type BasicDirectionAIHelper is new Java_Object with record
       name : Unbounded_String;

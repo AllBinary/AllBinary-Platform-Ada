@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package;
+package org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References is
+   type ReleaseTouchInputToGameKeyEventAction_Access is access all org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package.ReleaseTouchInputToGameKeyEventAction'Class;
+   type ReleaseTouchInputToGameKeyEventAction_Access_Array is array (Natural range <>) of ReleaseTouchInputToGameKeyEventAction_Access;
+   type ReleaseTouchInputToGameKeyEventAction_Access_Array_Access is access all ReleaseTouchInputToGameKeyEventAction_Access_Array;
+   type ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of ReleaseTouchInputToGameKeyEventAction_Access_Array_Access;
+   type ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+end org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References;
+
+with org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+limited with org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
 
 package org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package is
 
    package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
    package GameKeyCompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
+   package Reference_Types is
+   subtype GameKey_Access is org.allbinary.game.input.GameKey_Package_References.GameKey_Access;
+   use type GameKey_Access;
+   subtype GameKey_Access_Array is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array;
+   use type GameKey_Access_Array;
+   subtype GameKey_Access_Array_Access is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array_Access;
+   use type GameKey_Access_Array_Access;
+   subtype GameKey_Access_Array_Access_Array is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array_Access_Array;
+   use type GameKey_Access_Array_Access_Array;
+   subtype GameKey_Access_Array_Access_Array_Access is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array_Access_Array_Access;
+   use type GameKey_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ReleaseTouchInputToGameKeyEventAction is tagged;
-   type ReleaseTouchInputToGameKeyEventAction_Access is access all ReleaseTouchInputToGameKeyEventAction'Class;
-   type ReleaseTouchInputToGameKeyEventAction_Access_Array is array (Natural range <>) of ReleaseTouchInputToGameKeyEventAction_Access;
-   type ReleaseTouchInputToGameKeyEventAction_Access_Array_Access is access all ReleaseTouchInputToGameKeyEventAction_Access_Array;
-   type ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of ReleaseTouchInputToGameKeyEventAction_Access_Array_Access;
-   type ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+
+   subtype ReleaseTouchInputToGameKeyEventAction_Access is org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References.ReleaseTouchInputToGameKeyEventAction_Access;
+   function "=" (Left, Right : ReleaseTouchInputToGameKeyEventAction_Access) return Boolean renames org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References."=";
+   subtype ReleaseTouchInputToGameKeyEventAction_Access_Array is org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References.ReleaseTouchInputToGameKeyEventAction_Access_Array;
+   function "=" (Left, Right : ReleaseTouchInputToGameKeyEventAction_Access_Array) return Boolean renames org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References."=";
+   subtype ReleaseTouchInputToGameKeyEventAction_Access_Array_Access is org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References.ReleaseTouchInputToGameKeyEventAction_Access_Array_Access;
+   function "=" (Left, Right : ReleaseTouchInputToGameKeyEventAction_Access_Array_Access) return Boolean renames org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References."=";
+   subtype ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array is org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References.ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+   function "=" (Left, Right : ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References."=";
+   subtype ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References.ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package_References."=";
 
    type ReleaseTouchInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with record
       NONE : GameKey_Access;

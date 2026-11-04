@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with javax.microedition.lcdui.PlatformImage_Package;
+package javax.microedition.lcdui.PlatformImage_Package_References is
+   type PlatformImage_Access is access all javax.microedition.lcdui.PlatformImage_Package.PlatformImage'Class;
+   type PlatformImage_Access_Array is array (Natural range <>) of PlatformImage_Access;
+   type PlatformImage_Access_Array_Access is access all PlatformImage_Access_Array;
+   type PlatformImage_Access_Array_Access_Array is array (Natural range <>) of PlatformImage_Access_Array_Access;
+   type PlatformImage_Access_Array_Access_Array_Access is access all PlatformImage_Access_Array_Access_Array;
+end javax.microedition.lcdui.PlatformImage_Package_References;
+
+with javax.microedition.lcdui.PlatformImage_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 
 package javax.microedition.lcdui.PlatformImage_Package is
 
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PlatformImage is tagged;
-   type PlatformImage_Access is access all PlatformImage'Class;
-   type PlatformImage_Access_Array is array (Natural range <>) of PlatformImage_Access;
-   type PlatformImage_Access_Array_Access is access all PlatformImage_Access_Array;
-   type PlatformImage_Access_Array_Access_Array is array (Natural range <>) of PlatformImage_Access_Array_Access;
-   type PlatformImage_Access_Array_Access_Array_Access is access all PlatformImage_Access_Array_Access_Array;
+
+   subtype PlatformImage_Access is javax.microedition.lcdui.PlatformImage_Package_References.PlatformImage_Access;
+   function "=" (Left, Right : PlatformImage_Access) return Boolean renames javax.microedition.lcdui.PlatformImage_Package_References."=";
+   subtype PlatformImage_Access_Array is javax.microedition.lcdui.PlatformImage_Package_References.PlatformImage_Access_Array;
+   function "=" (Left, Right : PlatformImage_Access_Array) return Boolean renames javax.microedition.lcdui.PlatformImage_Package_References."=";
+   subtype PlatformImage_Access_Array_Access is javax.microedition.lcdui.PlatformImage_Package_References.PlatformImage_Access_Array_Access;
+   function "=" (Left, Right : PlatformImage_Access_Array_Access) return Boolean renames javax.microedition.lcdui.PlatformImage_Package_References."=";
+   subtype PlatformImage_Access_Array_Access_Array is javax.microedition.lcdui.PlatformImage_Package_References.PlatformImage_Access_Array_Access_Array;
+   function "=" (Left, Right : PlatformImage_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.PlatformImage_Package_References."=";
+   subtype PlatformImage_Access_Array_Access_Array_Access is javax.microedition.lcdui.PlatformImage_Package_References.PlatformImage_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlatformImage_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.PlatformImage_Package_References."=";
 
    type PlatformImage is new Java_Object with null record;
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.canvas.BaseGameStatistics_Package;
+package org.allbinary.canvas.BaseGameStatistics_Package_References is
+   type BaseGameStatistics_Access is access all org.allbinary.canvas.BaseGameStatistics_Package.BaseGameStatistics'Class;
+   type BaseGameStatistics_Access_Array is array (Natural range <>) of BaseGameStatistics_Access;
+   type BaseGameStatistics_Access_Array_Access is access all BaseGameStatistics_Access_Array;
+   type BaseGameStatistics_Access_Array_Access_Array is array (Natural range <>) of BaseGameStatistics_Access_Array_Access;
+   type BaseGameStatistics_Access_Array_Access_Array_Access is access all BaseGameStatistics_Access_Array_Access_Array;
+end org.allbinary.canvas.BaseGameStatistics_Package_References;
+
+with org.allbinary.canvas.BaseGameStatistics_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.logic.math.PrimitiveLongSingleton_Package;
-with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+limited with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package_References;
+limited with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
+limited with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 
 package org.allbinary.canvas.BaseGameStatistics_Package is
 
    package PrimitiveLongSingleton_Package renames Standard.org.allbinary.logic.math.PrimitiveLongSingleton_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package Reference_Types is
+   subtype PrimitiveLongSingleton_Access is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access;
+   use type PrimitiveLongSingleton_Access;
+   subtype PrimitiveLongSingleton_Access_Array is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array;
+   use type PrimitiveLongSingleton_Access_Array;
+   subtype PrimitiveLongSingleton_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array_Access;
+   use type PrimitiveLongSingleton_Access_Array_Access;
+   subtype PrimitiveLongSingleton_Access_Array_Access_Array is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array_Access_Array;
+   use type PrimitiveLongSingleton_Access_Array_Access_Array;
+   subtype PrimitiveLongSingleton_Access_Array_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array_Access_Array_Access;
+   use type PrimitiveLongSingleton_Access_Array_Access_Array_Access;
+   subtype GameTickTimeDelayHelper_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access;
+   use type GameTickTimeDelayHelper_Access;
+   subtype GameTickTimeDelayHelper_Access_Array is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array;
+   use type GameTickTimeDelayHelper_Access_Array;
+   subtype GameTickTimeDelayHelper_Access_Array_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access;
+   use type GameTickTimeDelayHelper_Access_Array_Access;
+   subtype GameTickTimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access_Array;
+   use type GameTickTimeDelayHelper_Access_Array_Access_Array;
+   subtype GameTickTimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access_Array_Access;
+   use type GameTickTimeDelayHelper_Access_Array_Access_Array_Access;
+   subtype TimeDelayHelper_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access;
+   use type TimeDelayHelper_Access;
+   subtype TimeDelayHelper_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array;
+   use type TimeDelayHelper_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access;
+   subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
+   use type TimeDelayHelper_Access_Array_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BaseGameStatistics is tagged;
-   type BaseGameStatistics_Access is access all BaseGameStatistics'Class;
-   type BaseGameStatistics_Access_Array is array (Natural range <>) of BaseGameStatistics_Access;
-   type BaseGameStatistics_Access_Array_Access is access all BaseGameStatistics_Access_Array;
-   type BaseGameStatistics_Access_Array_Access_Array is array (Natural range <>) of BaseGameStatistics_Access_Array_Access;
-   type BaseGameStatistics_Access_Array_Access_Array_Access is access all BaseGameStatistics_Access_Array_Access_Array;
+
+   subtype BaseGameStatistics_Access is org.allbinary.canvas.BaseGameStatistics_Package_References.BaseGameStatistics_Access;
+   function "=" (Left, Right : BaseGameStatistics_Access) return Boolean renames org.allbinary.canvas.BaseGameStatistics_Package_References."=";
+   subtype BaseGameStatistics_Access_Array is org.allbinary.canvas.BaseGameStatistics_Package_References.BaseGameStatistics_Access_Array;
+   function "=" (Left, Right : BaseGameStatistics_Access_Array) return Boolean renames org.allbinary.canvas.BaseGameStatistics_Package_References."=";
+   subtype BaseGameStatistics_Access_Array_Access is org.allbinary.canvas.BaseGameStatistics_Package_References.BaseGameStatistics_Access_Array_Access;
+   function "=" (Left, Right : BaseGameStatistics_Access_Array_Access) return Boolean renames org.allbinary.canvas.BaseGameStatistics_Package_References."=";
+   subtype BaseGameStatistics_Access_Array_Access_Array is org.allbinary.canvas.BaseGameStatistics_Package_References.BaseGameStatistics_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseGameStatistics_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.BaseGameStatistics_Package_References."=";
+   subtype BaseGameStatistics_Access_Array_Access_Array_Access is org.allbinary.canvas.BaseGameStatistics_Package_References.BaseGameStatistics_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseGameStatistics_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.BaseGameStatistics_Package_References."=";
 
    type BaseGameStatistics is new Java_Object with record
       timeDelayHelper : TimeDelayHelper_Access;

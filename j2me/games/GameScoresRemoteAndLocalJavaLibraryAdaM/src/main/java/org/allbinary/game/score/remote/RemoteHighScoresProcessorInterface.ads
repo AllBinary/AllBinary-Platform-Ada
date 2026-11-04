@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package;
+package org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References is
+   type RemoteHighScoresProcessorInterface_Access is access all org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package.RemoteHighScoresProcessorInterface'Class;
+   type RemoteHighScoresProcessorInterface_Access_Array is array (Natural range <>) of RemoteHighScoresProcessorInterface_Access;
+   type RemoteHighScoresProcessorInterface_Access_Array_Access is access all RemoteHighScoresProcessorInterface_Access_Array;
+   type RemoteHighScoresProcessorInterface_Access_Array_Access_Array is array (Natural range <>) of RemoteHighScoresProcessorInterface_Access_Array_Access;
+   type RemoteHighScoresProcessorInterface_Access_Array_Access_Array_Access is access all RemoteHighScoresProcessorInterface_Access_Array_Access_Array;
+end org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References;
+
+with org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,64 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.game.score.remote.RemoteHighScores_Package; use org.allbinary.game.score.remote.RemoteHighScores_Package;
+limited with org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.GameInfo_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.game.score.remote.RemoteHighScores_Package;
+with org.allbinary.game.score.remote.RemoteHighScores_Package_References;
 
 package org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package is
 
    package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype GameInfo_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access;
+   use type GameInfo_Access;
+   subtype GameInfo_Access_Array is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array;
+   use type GameInfo_Access_Array;
+   subtype GameInfo_Access_Array_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access;
+   use type GameInfo_Access_Array_Access;
+   subtype GameInfo_Access_Array_Access_Array is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access_Array;
+   use type GameInfo_Access_Array_Access_Array;
+   subtype GameInfo_Access_Array_Access_Array_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access_Array_Access;
+   use type GameInfo_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype RemoteHighScores_Access is org.allbinary.game.score.remote.RemoteHighScores_Package_References.RemoteHighScores_Access;
+   use type RemoteHighScores_Access;
+   subtype RemoteHighScores_Access_Array is org.allbinary.game.score.remote.RemoteHighScores_Package_References.RemoteHighScores_Access_Array;
+   use type RemoteHighScores_Access_Array;
+   subtype RemoteHighScores_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScores_Package_References.RemoteHighScores_Access_Array_Access;
+   use type RemoteHighScores_Access_Array_Access;
+   subtype RemoteHighScores_Access_Array_Access_Array is org.allbinary.game.score.remote.RemoteHighScores_Package_References.RemoteHighScores_Access_Array_Access_Array;
+   use type RemoteHighScores_Access_Array_Access_Array;
+   subtype RemoteHighScores_Access_Array_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScores_Package_References.RemoteHighScores_Access_Array_Access_Array_Access;
+   use type RemoteHighScores_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type RemoteHighScoresProcessorInterface is interface;
-   type RemoteHighScoresProcessorInterface_Access is access all RemoteHighScoresProcessorInterface'Class;
-   type RemoteHighScoresProcessorInterface_Access_Array is array (Natural range <>) of RemoteHighScoresProcessorInterface_Access;
-   type RemoteHighScoresProcessorInterface_Access_Array_Access is access all RemoteHighScoresProcessorInterface_Access_Array;
-   type RemoteHighScoresProcessorInterface_Access_Array_Access_Array is array (Natural range <>) of RemoteHighScoresProcessorInterface_Access_Array_Access;
-   type RemoteHighScoresProcessorInterface_Access_Array_Access_Array_Access is access all RemoteHighScoresProcessorInterface_Access_Array_Access_Array;
+   subtype RemoteHighScoresProcessorInterface_Access is org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References.RemoteHighScoresProcessorInterface_Access;
+   function "=" (Left, Right : RemoteHighScoresProcessorInterface_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References."=";
+   subtype RemoteHighScoresProcessorInterface_Access_Array is org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References.RemoteHighScoresProcessorInterface_Access_Array;
+   function "=" (Left, Right : RemoteHighScoresProcessorInterface_Access_Array) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References."=";
+   subtype RemoteHighScoresProcessorInterface_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References.RemoteHighScoresProcessorInterface_Access_Array_Access;
+   function "=" (Left, Right : RemoteHighScoresProcessorInterface_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References."=";
+   subtype RemoteHighScoresProcessorInterface_Access_Array_Access_Array is org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References.RemoteHighScoresProcessorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : RemoteHighScoresProcessorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References."=";
+   subtype RemoteHighScoresProcessorInterface_Access_Array_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References.RemoteHighScoresProcessorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RemoteHighScoresProcessorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package_References."=";
+   function Java_Object_Access_From_RemoteHighScoresProcessorInterface (Value : RemoteHighScoresProcessorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure process (This : in out RemoteHighScoresProcessorInterface; remoteHighScores_Param : access RemoteHighScores_Package.RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class) is abstract;
 
 end org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package;

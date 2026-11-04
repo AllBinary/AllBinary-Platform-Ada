@@ -17,11 +17,30 @@ with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration
 with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
 with org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package; use org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package;
 with org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package; use org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package;
+with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package; use org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
+with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package;
+with org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package;
 
 package body org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package is
 
    package MotionGestureConfiguration_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
    package MotionGestureConfigurationFactory_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+   subtype CompleteMotionGestureListenerInterface_Access is org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References.CompleteMotionGestureListenerInterface_Access;
+   function "=" (Left, Right : CompleteMotionGestureListenerInterface_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References."=";
+   subtype CompleteMotionGestureListenerInterface_Access_Array is org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References.CompleteMotionGestureListenerInterface_Access_Array;
+   function "=" (Left, Right : CompleteMotionGestureListenerInterface_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References."=";
+   subtype CompleteMotionGestureListenerInterface_Access_Array_Access is org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References.CompleteMotionGestureListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : CompleteMotionGestureListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References."=";
+   subtype CompleteMotionGestureListenerInterface_Access_Array_Access_Array is org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References.CompleteMotionGestureListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CompleteMotionGestureListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References."=";
+   subtype CompleteMotionGestureListenerInterface_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References.CompleteMotionGestureListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CompleteMotionGestureListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References."=";
    procedure Initialize_Fields (This : in out MotionGestureReceiveInterfaceFactory'Class) is
    begin
       null;

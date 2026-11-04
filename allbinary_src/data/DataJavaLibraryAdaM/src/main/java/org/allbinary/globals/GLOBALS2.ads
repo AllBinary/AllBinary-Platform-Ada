@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.globals.GLOBALS2_Package;
+package org.allbinary.globals.GLOBALS2_Package_References is
+   type GLOBALS2_Access is access all org.allbinary.globals.GLOBALS2_Package.GLOBALS2'Class;
+   type GLOBALS2_Access_Array is array (Natural range <>) of GLOBALS2_Access;
+   type GLOBALS2_Access_Array_Access is access all GLOBALS2_Access_Array;
+   type GLOBALS2_Access_Array_Access_Array is array (Natural range <>) of GLOBALS2_Access_Array_Access;
+   type GLOBALS2_Access_Array_Access_Array_Access is access all GLOBALS2_Access_Array_Access_Array;
+end org.allbinary.globals.GLOBALS2_Package_References;
+
+with org.allbinary.globals.GLOBALS2_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.globals.GLOBALS2_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GLOBALS2 is tagged;
-   type GLOBALS2_Access is access all GLOBALS2'Class;
-   type GLOBALS2_Access_Array is array (Natural range <>) of GLOBALS2_Access;
-   type GLOBALS2_Access_Array_Access is access all GLOBALS2_Access_Array;
-   type GLOBALS2_Access_Array_Access_Array is array (Natural range <>) of GLOBALS2_Access_Array_Access;
-   type GLOBALS2_Access_Array_Access_Array_Access is access all GLOBALS2_Access_Array_Access_Array;
+
+   subtype GLOBALS2_Access is org.allbinary.globals.GLOBALS2_Package_References.GLOBALS2_Access;
+   function "=" (Left, Right : GLOBALS2_Access) return Boolean renames org.allbinary.globals.GLOBALS2_Package_References."=";
+   subtype GLOBALS2_Access_Array is org.allbinary.globals.GLOBALS2_Package_References.GLOBALS2_Access_Array;
+   function "=" (Left, Right : GLOBALS2_Access_Array) return Boolean renames org.allbinary.globals.GLOBALS2_Package_References."=";
+   subtype GLOBALS2_Access_Array_Access is org.allbinary.globals.GLOBALS2_Package_References.GLOBALS2_Access_Array_Access;
+   function "=" (Left, Right : GLOBALS2_Access_Array_Access) return Boolean renames org.allbinary.globals.GLOBALS2_Package_References."=";
+   subtype GLOBALS2_Access_Array_Access_Array is org.allbinary.globals.GLOBALS2_Package_References.GLOBALS2_Access_Array_Access_Array;
+   function "=" (Left, Right : GLOBALS2_Access_Array_Access_Array) return Boolean renames org.allbinary.globals.GLOBALS2_Package_References."=";
+   subtype GLOBALS2_Access_Array_Access_Array_Access is org.allbinary.globals.GLOBALS2_Package_References.GLOBALS2_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GLOBALS2_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.globals.GLOBALS2_Package_References."=";
 
    type GLOBALS2 is new Java_Object with null record;
    GETCURRENTLOCATION : Unbounded_String;

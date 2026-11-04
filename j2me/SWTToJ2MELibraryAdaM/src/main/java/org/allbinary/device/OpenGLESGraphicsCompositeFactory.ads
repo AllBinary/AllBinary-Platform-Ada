@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package;
+package org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References is
+   type OpenGLESGraphicsCompositeFactory_Access is access all org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package.OpenGLESGraphicsCompositeFactory'Class;
+   type OpenGLESGraphicsCompositeFactory_Access_Array is array (Natural range <>) of OpenGLESGraphicsCompositeFactory_Access;
+   type OpenGLESGraphicsCompositeFactory_Access_Array_Access is access all OpenGLESGraphicsCompositeFactory_Access_Array;
+   type OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGraphicsCompositeFactory_Access_Array_Access;
+   type OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access is access all OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array;
+end org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References;
+
+with org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.device.OpenGLESGraphicsFactory_Package; use org.allbinary.device.OpenGLESGraphicsFactory_Package;
+limited with org.allbinary.device.OpenGLESGraphicsFactory_Package;
+with org.allbinary.device.OpenGLESGraphicsFactory_Package_References;
 
 package org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
 
+   package Reference_Types is
+   subtype OpenGLESGraphicsFactory_Access is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access;
+   use type OpenGLESGraphicsFactory_Access;
+   subtype OpenGLESGraphicsFactory_Access_Array is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access_Array;
+   use type OpenGLESGraphicsFactory_Access_Array;
+   subtype OpenGLESGraphicsFactory_Access_Array_Access is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access_Array_Access;
+   use type OpenGLESGraphicsFactory_Access_Array_Access;
+   subtype OpenGLESGraphicsFactory_Access_Array_Access_Array is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access_Array_Access_Array;
+   use type OpenGLESGraphicsFactory_Access_Array_Access_Array;
+   subtype OpenGLESGraphicsFactory_Access_Array_Access_Array_Access is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access_Array_Access_Array_Access;
+   use type OpenGLESGraphicsFactory_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLESGraphicsCompositeFactory is tagged;
-   type OpenGLESGraphicsCompositeFactory_Access is access all OpenGLESGraphicsCompositeFactory'Class;
-   type OpenGLESGraphicsCompositeFactory_Access_Array is array (Natural range <>) of OpenGLESGraphicsCompositeFactory_Access;
-   type OpenGLESGraphicsCompositeFactory_Access_Array_Access is access all OpenGLESGraphicsCompositeFactory_Access_Array;
-   type OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGraphicsCompositeFactory_Access_Array_Access;
-   type OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access is access all OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array;
+
+   subtype OpenGLESGraphicsCompositeFactory_Access is org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.OpenGLESGraphicsCompositeFactory_Access;
+   function "=" (Left, Right : OpenGLESGraphicsCompositeFactory_Access) return Boolean renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References."=";
+   subtype OpenGLESGraphicsCompositeFactory_Access_Array is org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.OpenGLESGraphicsCompositeFactory_Access_Array;
+   function "=" (Left, Right : OpenGLESGraphicsCompositeFactory_Access_Array) return Boolean renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References."=";
+   subtype OpenGLESGraphicsCompositeFactory_Access_Array_Access is org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.OpenGLESGraphicsCompositeFactory_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESGraphicsCompositeFactory_Access_Array_Access) return Boolean renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References."=";
+   subtype OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array is org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References."=";
+   subtype OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access is org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References."=";
 
    type OpenGLESGraphicsCompositeFactory is new Java_Object with record
       openGLESGraphicsFactory : OpenGLESGraphicsFactory_Access;

@@ -44,7 +44,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
 
    function getInstance return BasicTopViewGeographicMapStrings_Access is
    begin
-        return BasicTopViewGeographicMapStrings_Package.instance;
+        return BasicTopViewGeographicMapStrings_Access (BasicTopViewGeographicMapStrings_Package.instance);
    end getInstance;
 
 begin

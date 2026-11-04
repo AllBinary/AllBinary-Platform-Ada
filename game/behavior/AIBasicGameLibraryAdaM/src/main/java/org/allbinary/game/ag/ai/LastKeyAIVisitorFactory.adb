@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.ai.LastKeyAIVisitor_Package; use org.allbinary.game.ag.ai.LastKeyAIVisitor_Package;
+with org.allbinary.game.ag.ai.LastKeyAIVisitor_Package;
 
 package body org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is
 
+   subtype LastKeyAIVisitor_Access is org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References.LastKeyAIVisitor_Access;
+   function "=" (Left, Right : LastKeyAIVisitor_Access) return Boolean renames org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References."=";
+   subtype LastKeyAIVisitor_Access_Array is org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References.LastKeyAIVisitor_Access_Array;
+   function "=" (Left, Right : LastKeyAIVisitor_Access_Array) return Boolean renames org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References."=";
+   subtype LastKeyAIVisitor_Access_Array_Access is org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References.LastKeyAIVisitor_Access_Array_Access;
+   function "=" (Left, Right : LastKeyAIVisitor_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References."=";
+   subtype LastKeyAIVisitor_Access_Array_Access_Array is org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References.LastKeyAIVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : LastKeyAIVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References."=";
+   subtype LastKeyAIVisitor_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References.LastKeyAIVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LastKeyAIVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References."=";
    procedure Initialize_Fields (This : in out LastKeyAIVisitorFactory'Class) is
    begin
       null;
@@ -36,7 +48,7 @@ package body org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is
 
    function getInstance return LastKeyAIVisitor_Access is
    begin
-        return LastKeyAIVisitorFactory_Package.instance;
+        return LastKeyAIVisitor_Access (LastKeyAIVisitorFactory_Package.instance);
    end getInstance;
 
 begin

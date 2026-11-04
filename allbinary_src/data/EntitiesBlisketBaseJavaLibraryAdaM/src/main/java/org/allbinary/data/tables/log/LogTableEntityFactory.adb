@@ -13,11 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.log.LogTableEntity_Package; use org.allbinary.data.tables.log.LogTableEntity_Package;
+with org.allbinary.data.tables.log.LogTableEntity_Package;
 
 package body org.allbinary.data.tables.log.LogTableEntityFactory_Package is
 
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogTableEntity_Access is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access;
+   function "=" (Left, Right : LogTableEntity_Access) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   subtype LogTableEntity_Access_Array is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array;
+   function "=" (Left, Right : LogTableEntity_Access_Array) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   subtype LogTableEntity_Access_Array_Access is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array_Access;
+   function "=" (Left, Right : LogTableEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   subtype LogTableEntity_Access_Array_Access_Array is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : LogTableEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   subtype LogTableEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogTableEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
    procedure Initialize_Fields (This : in out LogTableEntityFactory'Class) is
    begin
       null;
@@ -27,7 +50,7 @@ package body org.allbinary.data.tables.log.LogTableEntityFactory_Package is
 
    function getInstance return LogTableEntityFactory_Access is
    begin
-        return LogTableEntityFactory_Package.instance;
+        return LogTableEntityFactory_Access (LogTableEntityFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out LogTableEntityFactory'Class) is

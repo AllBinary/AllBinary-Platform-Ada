@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.ImageComparatorConstraints_Package;
+package org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References is
+   type ImageComparatorConstraints_Access is access all org.allbinary.input.automation.module.ImageComparatorConstraints_Package.ImageComparatorConstraints'Class;
+   type ImageComparatorConstraints_Access_Array is array (Natural range <>) of ImageComparatorConstraints_Access;
+   type ImageComparatorConstraints_Access_Array_Access is access all ImageComparatorConstraints_Access_Array;
+   type ImageComparatorConstraints_Access_Array_Access_Array is array (Natural range <>) of ImageComparatorConstraints_Access_Array_Access;
+   type ImageComparatorConstraints_Access_Array_Access_Array_Access is access all ImageComparatorConstraints_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References;
+
+with org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,9 +33,12 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Color_Package; use java.awt.Color_Package;
 --  with java.awt.Rectangle_Package; use java.awt.Rectangle_Package;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package; use org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
 
 package org.allbinary.input.automation.module.ImageComparatorConstraints_Package is
@@ -34,13 +47,51 @@ package org.allbinary.input.automation.module.ImageComparatorConstraints_Package
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ImageComparatorConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   use type GPoint_Access;
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   use type GPoint_Access_Array;
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   use type GPoint_Access_Array_Access;
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   use type GPoint_Access_Array_Access_Array;
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   use type GPoint_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageComparatorConstraints is tagged;
-   type ImageComparatorConstraints_Access is access all ImageComparatorConstraints'Class;
-   type ImageComparatorConstraints_Access_Array is array (Natural range <>) of ImageComparatorConstraints_Access;
-   type ImageComparatorConstraints_Access_Array_Access is access all ImageComparatorConstraints_Access_Array;
-   type ImageComparatorConstraints_Access_Array_Access_Array is array (Natural range <>) of ImageComparatorConstraints_Access_Array_Access;
-   type ImageComparatorConstraints_Access_Array_Access_Array_Access is access all ImageComparatorConstraints_Access_Array_Access_Array;
+
+   subtype ImageComparatorConstraints_Access is org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References.ImageComparatorConstraints_Access;
+   function "=" (Left, Right : ImageComparatorConstraints_Access) return Boolean renames org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References."=";
+   subtype ImageComparatorConstraints_Access_Array is org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References.ImageComparatorConstraints_Access_Array;
+   function "=" (Left, Right : ImageComparatorConstraints_Access_Array) return Boolean renames org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References."=";
+   subtype ImageComparatorConstraints_Access_Array_Access is org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References.ImageComparatorConstraints_Access_Array_Access;
+   function "=" (Left, Right : ImageComparatorConstraints_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References."=";
+   subtype ImageComparatorConstraints_Access_Array_Access_Array is org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References.ImageComparatorConstraints_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageComparatorConstraints_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References."=";
+   subtype ImageComparatorConstraints_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References.ImageComparatorConstraints_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageComparatorConstraints_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.ImageComparatorConstraints_Package_References."=";
 
    type ImageComparatorConstraints is new Java_Object and ImageComparatorConstraintsInterface with record
       logUtil : LogUtil_Access;

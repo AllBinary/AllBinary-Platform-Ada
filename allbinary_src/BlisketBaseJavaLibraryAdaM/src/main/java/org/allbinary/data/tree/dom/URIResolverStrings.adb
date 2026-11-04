@@ -44,7 +44,7 @@ package body org.allbinary.data.tree.dom.URIResolverStrings_Package is
 
    function getInstance return URIResolverStrings_Access is
    begin
-        return URIResolverStrings_Package.instance;
+        return URIResolverStrings_Access (URIResolverStrings_Package.instance);
    end getInstance;
 
 begin

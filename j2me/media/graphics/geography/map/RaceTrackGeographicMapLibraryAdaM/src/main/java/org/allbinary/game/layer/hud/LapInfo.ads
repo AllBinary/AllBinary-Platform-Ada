@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.hud.LapInfo_Package;
+package org.allbinary.game.layer.hud.LapInfo_Package_References is
+   type LapInfo_Access is access all org.allbinary.game.layer.hud.LapInfo_Package.LapInfo'Class;
+   type LapInfo_Access_Array is array (Natural range <>) of LapInfo_Access;
+   type LapInfo_Access_Array_Access is access all LapInfo_Access_Array;
+   type LapInfo_Access_Array_Access_Array is array (Natural range <>) of LapInfo_Access_Array_Access;
+   type LapInfo_Access_Array_Access_Array_Access is access all LapInfo_Access_Array_Access_Array;
+end org.allbinary.game.layer.hud.LapInfo_Package_References;
+
+with org.allbinary.game.layer.hud.LapInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.layer.hud.LapInfo_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type LapInfo is tagged;
-   type LapInfo_Access is access all LapInfo'Class;
-   type LapInfo_Access_Array is array (Natural range <>) of LapInfo_Access;
-   type LapInfo_Access_Array_Access is access all LapInfo_Access_Array;
-   type LapInfo_Access_Array_Access_Array is array (Natural range <>) of LapInfo_Access_Array_Access;
-   type LapInfo_Access_Array_Access_Array_Access is access all LapInfo_Access_Array_Access_Array;
+
+   subtype LapInfo_Access is org.allbinary.game.layer.hud.LapInfo_Package_References.LapInfo_Access;
+   function "=" (Left, Right : LapInfo_Access) return Boolean renames org.allbinary.game.layer.hud.LapInfo_Package_References."=";
+   subtype LapInfo_Access_Array is org.allbinary.game.layer.hud.LapInfo_Package_References.LapInfo_Access_Array;
+   function "=" (Left, Right : LapInfo_Access_Array) return Boolean renames org.allbinary.game.layer.hud.LapInfo_Package_References."=";
+   subtype LapInfo_Access_Array_Access is org.allbinary.game.layer.hud.LapInfo_Package_References.LapInfo_Access_Array_Access;
+   function "=" (Left, Right : LapInfo_Access_Array_Access) return Boolean renames org.allbinary.game.layer.hud.LapInfo_Package_References."=";
+   subtype LapInfo_Access_Array_Access_Array is org.allbinary.game.layer.hud.LapInfo_Package_References.LapInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : LapInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.hud.LapInfo_Package_References."=";
+   subtype LapInfo_Access_Array_Access_Array_Access is org.allbinary.game.layer.hud.LapInfo_Package_References.LapInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LapInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.hud.LapInfo_Package_References."=";
 
    type LapInfo is new Java_Object with record
       numberOfLaps : Integer;

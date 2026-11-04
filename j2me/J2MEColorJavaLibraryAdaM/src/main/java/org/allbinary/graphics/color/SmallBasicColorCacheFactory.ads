@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package;
+package org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References is
+   type SmallBasicColorCacheFactory_Access is access all org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package.SmallBasicColorCacheFactory'Class;
+   type SmallBasicColorCacheFactory_Access_Array is array (Natural range <>) of SmallBasicColorCacheFactory_Access;
+   type SmallBasicColorCacheFactory_Access_Array_Access is access all SmallBasicColorCacheFactory_Access_Array;
+   type SmallBasicColorCacheFactory_Access_Array_Access_Array is array (Natural range <>) of SmallBasicColorCacheFactory_Access_Array_Access;
+   type SmallBasicColorCacheFactory_Access_Array_Access_Array_Access is access all SmallBasicColorCacheFactory_Access_Array_Access_Array;
+end org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References;
+
+with org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 
 package org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
 
+   package Reference_Types is
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SmallBasicColorCacheFactory is tagged;
-   type SmallBasicColorCacheFactory_Access is access all SmallBasicColorCacheFactory'Class;
-   type SmallBasicColorCacheFactory_Access_Array is array (Natural range <>) of SmallBasicColorCacheFactory_Access;
-   type SmallBasicColorCacheFactory_Access_Array_Access is access all SmallBasicColorCacheFactory_Access_Array;
-   type SmallBasicColorCacheFactory_Access_Array_Access_Array is array (Natural range <>) of SmallBasicColorCacheFactory_Access_Array_Access;
-   type SmallBasicColorCacheFactory_Access_Array_Access_Array_Access is access all SmallBasicColorCacheFactory_Access_Array_Access_Array;
+
+   subtype SmallBasicColorCacheFactory_Access is org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References.SmallBasicColorCacheFactory_Access;
+   function "=" (Left, Right : SmallBasicColorCacheFactory_Access) return Boolean renames org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References."=";
+   subtype SmallBasicColorCacheFactory_Access_Array is org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References.SmallBasicColorCacheFactory_Access_Array;
+   function "=" (Left, Right : SmallBasicColorCacheFactory_Access_Array) return Boolean renames org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References."=";
+   subtype SmallBasicColorCacheFactory_Access_Array_Access is org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References.SmallBasicColorCacheFactory_Access_Array_Access;
+   function "=" (Left, Right : SmallBasicColorCacheFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References."=";
+   subtype SmallBasicColorCacheFactory_Access_Array_Access_Array is org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References.SmallBasicColorCacheFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : SmallBasicColorCacheFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References."=";
+   subtype SmallBasicColorCacheFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References.SmallBasicColorCacheFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SmallBasicColorCacheFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package_References."=";
 
    type SmallBasicColorCacheFactory is new Java_Object with record
       SIZE : Integer;

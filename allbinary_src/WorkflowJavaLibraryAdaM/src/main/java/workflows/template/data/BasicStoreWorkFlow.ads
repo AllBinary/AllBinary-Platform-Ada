@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with workflows.template.data.BasicStoreWorkFlow_Package;
+package workflows.template.data.BasicStoreWorkFlow_Package_References is
+   type BasicStoreWorkFlow_Access is access all workflows.template.data.BasicStoreWorkFlow_Package.BasicStoreWorkFlow'Class;
+   type BasicStoreWorkFlow_Access_Array is array (Natural range <>) of BasicStoreWorkFlow_Access;
+   type BasicStoreWorkFlow_Access_Array_Access is access all BasicStoreWorkFlow_Access_Array;
+   type BasicStoreWorkFlow_Access_Array_Access_Array is array (Natural range <>) of BasicStoreWorkFlow_Access_Array_Access;
+   type BasicStoreWorkFlow_Access_Array_Access_Array_Access is access all BasicStoreWorkFlow_Access_Array_Access_Array;
+end workflows.template.data.BasicStoreWorkFlow_Package_References;
+
+with workflows.template.data.BasicStoreWorkFlow_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -29,13 +39,21 @@ package workflows.template.data.BasicStoreWorkFlow_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package StoreWorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicStoreWorkFlow is tagged;
-   type BasicStoreWorkFlow_Access is access all BasicStoreWorkFlow'Class;
-   type BasicStoreWorkFlow_Access_Array is array (Natural range <>) of BasicStoreWorkFlow_Access;
-   type BasicStoreWorkFlow_Access_Array_Access is access all BasicStoreWorkFlow_Access_Array;
-   type BasicStoreWorkFlow_Access_Array_Access_Array is array (Natural range <>) of BasicStoreWorkFlow_Access_Array_Access;
-   type BasicStoreWorkFlow_Access_Array_Access_Array_Access is access all BasicStoreWorkFlow_Access_Array_Access_Array;
+
+   subtype BasicStoreWorkFlow_Access is workflows.template.data.BasicStoreWorkFlow_Package_References.BasicStoreWorkFlow_Access;
+   function "=" (Left, Right : BasicStoreWorkFlow_Access) return Boolean renames workflows.template.data.BasicStoreWorkFlow_Package_References."=";
+   subtype BasicStoreWorkFlow_Access_Array is workflows.template.data.BasicStoreWorkFlow_Package_References.BasicStoreWorkFlow_Access_Array;
+   function "=" (Left, Right : BasicStoreWorkFlow_Access_Array) return Boolean renames workflows.template.data.BasicStoreWorkFlow_Package_References."=";
+   subtype BasicStoreWorkFlow_Access_Array_Access is workflows.template.data.BasicStoreWorkFlow_Package_References.BasicStoreWorkFlow_Access_Array_Access;
+   function "=" (Left, Right : BasicStoreWorkFlow_Access_Array_Access) return Boolean renames workflows.template.data.BasicStoreWorkFlow_Package_References."=";
+   subtype BasicStoreWorkFlow_Access_Array_Access_Array is workflows.template.data.BasicStoreWorkFlow_Package_References.BasicStoreWorkFlow_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicStoreWorkFlow_Access_Array_Access_Array) return Boolean renames workflows.template.data.BasicStoreWorkFlow_Package_References."=";
+   subtype BasicStoreWorkFlow_Access_Array_Access_Array_Access is workflows.template.data.BasicStoreWorkFlow_Package_References.BasicStoreWorkFlow_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicStoreWorkFlow_Access_Array_Access_Array_Access) return Boolean renames workflows.template.data.BasicStoreWorkFlow_Package_References."=";
 
    type BasicStoreWorkFlow is new BasicWorkFlow and StoreWorkFlowInterface with null record;
 

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
 
 package body org.allbinary.time.TimeUtil_Package is
 
@@ -36,7 +37,7 @@ package body org.allbinary.time.TimeUtil_Package is
 
    function getInstance return TimeUtil_Access is
    begin
-        return TimeUtil_Package.instance;
+        return TimeUtil_Access (TimeUtil_Package.instance);
    end getInstance;
 
    procedure setCalendar (This : in out TimeUtil; calendar_Param : access Calendar_Package.Calendar'Class; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String) is

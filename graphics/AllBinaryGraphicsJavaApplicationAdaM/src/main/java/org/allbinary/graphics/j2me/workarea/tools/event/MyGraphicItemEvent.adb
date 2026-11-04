@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
 
 package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package is
 

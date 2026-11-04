@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.TagHelperInterface_Package;
+package admin.taghelpers.TagHelperInterface_Package_References is
+   type TagHelperInterface_Access is access all admin.taghelpers.TagHelperInterface_Package.TagHelperInterface'Class;
+   type TagHelperInterface_Access_Array is array (Natural range <>) of TagHelperInterface_Access;
+   type TagHelperInterface_Access_Array_Access is access all TagHelperInterface_Access_Array;
+   type TagHelperInterface_Access_Array_Access_Array is array (Natural range <>) of TagHelperInterface_Access_Array_Access;
+   type TagHelperInterface_Access_Array_Access_Array_Access is access all TagHelperInterface_Access_Array_Access_Array;
+end admin.taghelpers.TagHelperInterface_Package_References;
+
+with admin.taghelpers.TagHelperInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package admin.taghelpers.TagHelperInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type TagHelperInterface is interface;
-   type TagHelperInterface_Access is access all TagHelperInterface'Class;
-   type TagHelperInterface_Access_Array is array (Natural range <>) of TagHelperInterface_Access;
-   type TagHelperInterface_Access_Array_Access is access all TagHelperInterface_Access_Array;
-   type TagHelperInterface_Access_Array_Access_Array is array (Natural range <>) of TagHelperInterface_Access_Array_Access;
-   type TagHelperInterface_Access_Array_Access_Array_Access is access all TagHelperInterface_Access_Array_Access_Array;
+   subtype TagHelperInterface_Access is admin.taghelpers.TagHelperInterface_Package_References.TagHelperInterface_Access;
+   function "=" (Left, Right : TagHelperInterface_Access) return Boolean renames admin.taghelpers.TagHelperInterface_Package_References."=";
+   subtype TagHelperInterface_Access_Array is admin.taghelpers.TagHelperInterface_Package_References.TagHelperInterface_Access_Array;
+   function "=" (Left, Right : TagHelperInterface_Access_Array) return Boolean renames admin.taghelpers.TagHelperInterface_Package_References."=";
+   subtype TagHelperInterface_Access_Array_Access is admin.taghelpers.TagHelperInterface_Package_References.TagHelperInterface_Access_Array_Access;
+   function "=" (Left, Right : TagHelperInterface_Access_Array_Access) return Boolean renames admin.taghelpers.TagHelperInterface_Package_References."=";
+   subtype TagHelperInterface_Access_Array_Access_Array is admin.taghelpers.TagHelperInterface_Package_References.TagHelperInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TagHelperInterface_Access_Array_Access_Array) return Boolean renames admin.taghelpers.TagHelperInterface_Package_References."=";
+   subtype TagHelperInterface_Access_Array_Access_Array_Access is admin.taghelpers.TagHelperInterface_Package_References.TagHelperInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TagHelperInterface_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.TagHelperInterface_Package_References."=";
+   function Java_Object_Access_From_TagHelperInterface (Value : TagHelperInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
 
 end admin.taghelpers.TagHelperInterface_Package;
 

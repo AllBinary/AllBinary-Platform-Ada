@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 
 package body org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package is
 
+   subtype InputAutomationModuleConfiguration_Access is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References.InputAutomationModuleConfiguration_Access;
+   function "=" (Left, Right : InputAutomationModuleConfiguration_Access) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References."=";
+   subtype InputAutomationModuleConfiguration_Access_Array is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References.InputAutomationModuleConfiguration_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleConfiguration_Access_Array) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References."=";
+   subtype InputAutomationModuleConfiguration_Access_Array_Access is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References.InputAutomationModuleConfiguration_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleConfiguration_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References."=";
+   subtype InputAutomationModuleConfiguration_Access_Array_Access_Array is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References.InputAutomationModuleConfiguration_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleConfiguration_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References."=";
+   subtype InputAutomationModuleConfiguration_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References.InputAutomationModuleConfiguration_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleConfiguration_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationConfigurationModuleChangeEvent'Class) is
    begin
       null;

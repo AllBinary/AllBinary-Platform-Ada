@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.feature.GameFeature_Package;
+package org.allbinary.game.configuration.feature.GameFeature_Package_References is
+   type GameFeature_Access is access all org.allbinary.game.configuration.feature.GameFeature_Package.GameFeature'Class;
+   type GameFeature_Access_Array is array (Natural range <>) of GameFeature_Access;
+   type GameFeature_Access_Array_Access is access all GameFeature_Access_Array;
+   type GameFeature_Access_Array_Access_Array is array (Natural range <>) of GameFeature_Access_Array_Access;
+   type GameFeature_Access_Array_Access_Array_Access is access all GameFeature_Access_Array_Access_Array;
+end org.allbinary.game.configuration.feature.GameFeature_Package_References;
+
+with org.allbinary.game.configuration.feature.GameFeature_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary
 
 package org.allbinary.game.configuration.feature.GameFeature_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameFeature is tagged;
-   type GameFeature_Access is access all GameFeature'Class;
-   type GameFeature_Access_Array is array (Natural range <>) of GameFeature_Access;
-   type GameFeature_Access_Array_Access is access all GameFeature_Access_Array;
-   type GameFeature_Access_Array_Access_Array is array (Natural range <>) of GameFeature_Access_Array_Access;
-   type GameFeature_Access_Array_Access_Array_Access is access all GameFeature_Access_Array_Access_Array;
+
+   subtype GameFeature_Access is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access;
+   function "=" (Left, Right : GameFeature_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
+   subtype GameFeature_Access_Array is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access_Array;
+   function "=" (Left, Right : GameFeature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
+   subtype GameFeature_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access_Array_Access;
+   function "=" (Left, Right : GameFeature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
+   subtype GameFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : GameFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
+   subtype GameFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
 
    type GameFeature is new Feature_Package.Feature with null record;
 

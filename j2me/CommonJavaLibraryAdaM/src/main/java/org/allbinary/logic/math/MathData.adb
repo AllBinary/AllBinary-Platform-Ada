@@ -15,6 +15,8 @@
 
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 
 package body org.allbinary.logic.math.MathData_Package is
 
@@ -34,7 +36,7 @@ package body org.allbinary.logic.math.MathData_Package is
 
    function getInstance return MathData_Access is
    begin
-        return MathData_Package.instance;
+        return MathData_Access (MathData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out MathData'Class) is

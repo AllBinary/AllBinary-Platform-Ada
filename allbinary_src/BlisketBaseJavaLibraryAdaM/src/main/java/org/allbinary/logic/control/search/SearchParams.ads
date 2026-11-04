@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.control.search.SearchParams_Package;
+package org.allbinary.logic.control.search.SearchParams_Package_References is
+   type SearchParams_Access is access all org.allbinary.logic.control.search.SearchParams_Package.SearchParams'Class;
+   type SearchParams_Access_Array is array (Natural range <>) of SearchParams_Access;
+   type SearchParams_Access_Array_Access is access all SearchParams_Access_Array;
+   type SearchParams_Access_Array_Access_Array is array (Natural range <>) of SearchParams_Access_Array_Access;
+   type SearchParams_Access_Array_Access_Array_Access is access all SearchParams_Access_Array_Access_Array;
+end org.allbinary.logic.control.search.SearchParams_Package_References;
+
+with org.allbinary.logic.control.search.SearchParams_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,21 +33,51 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 
 package org.allbinary.logic.control.search.SearchParams_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SearchParams is tagged;
-   type SearchParams_Access is access all SearchParams'Class;
-   type SearchParams_Access_Array is array (Natural range <>) of SearchParams_Access;
-   type SearchParams_Access_Array_Access is access all SearchParams_Access_Array;
-   type SearchParams_Access_Array_Access_Array is array (Natural range <>) of SearchParams_Access_Array_Access;
-   type SearchParams_Access_Array_Access_Array_Access is access all SearchParams_Access_Array_Access_Array;
+
+   subtype SearchParams_Access is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access;
+   function "=" (Left, Right : SearchParams_Access) return Boolean renames org.allbinary.logic.control.search.SearchParams_Package_References."=";
+   subtype SearchParams_Access_Array is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array;
+   function "=" (Left, Right : SearchParams_Access_Array) return Boolean renames org.allbinary.logic.control.search.SearchParams_Package_References."=";
+   subtype SearchParams_Access_Array_Access is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array_Access;
+   function "=" (Left, Right : SearchParams_Access_Array_Access) return Boolean renames org.allbinary.logic.control.search.SearchParams_Package_References."=";
+   subtype SearchParams_Access_Array_Access_Array is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array_Access_Array;
+   function "=" (Left, Right : SearchParams_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.search.SearchParams_Package_References."=";
+   subtype SearchParams_Access_Array_Access_Array_Access is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SearchParams_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.search.SearchParams_Package_References."=";
 
    type SearchParams is new Java_Object with record
       columnsAndSearchValues : HashMap_Access;

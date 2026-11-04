@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.osgi.framework.BaseServiceReference_Package;
+package org.osgi.framework.BaseServiceReference_Package_References is
+   type BaseServiceReference_Access is access all org.osgi.framework.BaseServiceReference_Package.BaseServiceReference'Class;
+   type BaseServiceReference_Access_Array is array (Natural range <>) of BaseServiceReference_Access;
+   type BaseServiceReference_Access_Array_Access is access all BaseServiceReference_Access_Array;
+   type BaseServiceReference_Access_Array_Access_Array is array (Natural range <>) of BaseServiceReference_Access_Array_Access;
+   type BaseServiceReference_Access_Array_Access_Array_Access is access all BaseServiceReference_Access_Array_Access_Array;
+end org.osgi.framework.BaseServiceReference_Package_References;
+
+with org.osgi.framework.BaseServiceReference_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.Service
 
 package org.osgi.framework.BaseServiceReference_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BaseServiceReference is tagged;
-   type BaseServiceReference_Access is access all BaseServiceReference'Class;
-   type BaseServiceReference_Access_Array is array (Natural range <>) of BaseServiceReference_Access;
-   type BaseServiceReference_Access_Array_Access is access all BaseServiceReference_Access_Array;
-   type BaseServiceReference_Access_Array_Access_Array is array (Natural range <>) of BaseServiceReference_Access_Array_Access;
-   type BaseServiceReference_Access_Array_Access_Array_Access is access all BaseServiceReference_Access_Array_Access_Array;
+
+   subtype BaseServiceReference_Access is org.osgi.framework.BaseServiceReference_Package_References.BaseServiceReference_Access;
+   function "=" (Left, Right : BaseServiceReference_Access) return Boolean renames org.osgi.framework.BaseServiceReference_Package_References."=";
+   subtype BaseServiceReference_Access_Array is org.osgi.framework.BaseServiceReference_Package_References.BaseServiceReference_Access_Array;
+   function "=" (Left, Right : BaseServiceReference_Access_Array) return Boolean renames org.osgi.framework.BaseServiceReference_Package_References."=";
+   subtype BaseServiceReference_Access_Array_Access is org.osgi.framework.BaseServiceReference_Package_References.BaseServiceReference_Access_Array_Access;
+   function "=" (Left, Right : BaseServiceReference_Access_Array_Access) return Boolean renames org.osgi.framework.BaseServiceReference_Package_References."=";
+   subtype BaseServiceReference_Access_Array_Access_Array is org.osgi.framework.BaseServiceReference_Package_References.BaseServiceReference_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseServiceReference_Access_Array_Access_Array) return Boolean renames org.osgi.framework.BaseServiceReference_Package_References."=";
+   subtype BaseServiceReference_Access_Array_Access_Array_Access is org.osgi.framework.BaseServiceReference_Package_References.BaseServiceReference_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseServiceReference_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.BaseServiceReference_Package_References."=";
 
    type BaseServiceReference is new Java_Object and ServiceReference with null record;
 

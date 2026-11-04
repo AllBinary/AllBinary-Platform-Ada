@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package; use org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
@@ -30,6 +31,16 @@ package body org.allbinary.game.input.TextNotificationUtil_Package is
    package ErrorSound_Package renames Standard.org.allbinary.media.audio.ErrorSound_Package;
    package PrimaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
    package SelectSound_Package renames Standard.org.allbinary.media.audio.SelectSound_Package;
+   subtype GameNotificationEventHandler_Access is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access;
+   function "=" (Left, Right : GameNotificationEventHandler_Access) return Boolean renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References."=";
+   subtype GameNotificationEventHandler_Access_Array is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access_Array;
+   function "=" (Left, Right : GameNotificationEventHandler_Access_Array) return Boolean renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References."=";
+   subtype GameNotificationEventHandler_Access_Array_Access is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access_Array_Access;
+   function "=" (Left, Right : GameNotificationEventHandler_Access_Array_Access) return Boolean renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References."=";
+   subtype GameNotificationEventHandler_Access_Array_Access_Array is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access_Array_Access_Array;
+   function "=" (Left, Right : GameNotificationEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References."=";
+   subtype GameNotificationEventHandler_Access_Array_Access_Array_Access is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameNotificationEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References."=";
    procedure Initialize_Fields (This : in out TextNotificationUtil'Class) is
    begin
       null;
@@ -53,7 +64,7 @@ package body org.allbinary.game.input.TextNotificationUtil_Package is
 
    function getInstance return TextNotificationUtil_Access is
    begin
-        return TextNotificationUtil_Package.instance;
+        return TextNotificationUtil_Access (TextNotificationUtil_Package.instance);
    end getInstance;
 
    --  throws Exception

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package;
+package org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References is
+   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access is access all org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package.DemoLockedWithCostLayerInterfaceFactoryInterface'Class;
+   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array is array (Natural range <>) of DemoLockedWithCostLayerInterfaceFactoryInterface_Access;
+   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access is access all DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array;
+   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access;
+   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
+end org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References;
+
+with org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,23 @@ with org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package; use or
 
 package org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type DemoLockedWithCostLayerInterfaceFactoryInterface is interface and CostLayerInterfaceFactoryInterface;
-   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access is access all DemoLockedWithCostLayerInterfaceFactoryInterface'Class;
-   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array is array (Natural range <>) of DemoLockedWithCostLayerInterfaceFactoryInterface_Access;
-   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access is access all DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array;
-   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access;
-   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
+   subtype DemoLockedWithCostLayerInterfaceFactoryInterface_Access is org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References.DemoLockedWithCostLayerInterfaceFactoryInterface_Access;
+   function "=" (Left, Right : DemoLockedWithCostLayerInterfaceFactoryInterface_Access) return Boolean renames org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References."=";
+   subtype DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array is org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References.DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array;
+   function "=" (Left, Right : DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array) return Boolean renames org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References."=";
+   subtype DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access is org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References.DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References."=";
+   subtype DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References.DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References."=";
+   subtype DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References.DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package_References."=";
+   function Java_Object_Access_From_DemoLockedWithCostLayerInterfaceFactoryInterface (Value : DemoLockedWithCostLayerInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function isDemoLocked (This : in out DemoLockedWithCostLayerInterfaceFactoryInterface) return Boolean is abstract;
 
 end org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package;

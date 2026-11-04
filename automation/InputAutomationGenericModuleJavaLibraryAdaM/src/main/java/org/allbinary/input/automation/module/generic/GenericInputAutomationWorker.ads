@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package;
+package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References is
+   type GenericInputAutomationWorker_Access is access all org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package.GenericInputAutomationWorker'Class;
+   type GenericInputAutomationWorker_Access_Array is array (Natural range <>) of GenericInputAutomationWorker_Access;
+   type GenericInputAutomationWorker_Access_Array_Access is access all GenericInputAutomationWorker_Access_Array;
+   type GenericInputAutomationWorker_Access_Array_Access_Array is array (Natural range <>) of GenericInputAutomationWorker_Access_Array_Access;
+   type GenericInputAutomationWorker_Access_Array_Access_Array_Access is access all GenericInputAutomationWorker_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References;
+
+with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,11 +32,16 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package; use org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
-with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
-with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package; use org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+limited with org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References;
+limited with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
+with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References;
+limited with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References;
 
 package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package is
 
@@ -36,13 +51,71 @@ package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationW
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ImageComparatorConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
    package MotionRectangleConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+   package Reference_Types is
+   subtype InputAutomationActionInterface_Access is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access;
+   use type InputAutomationActionInterface_Access;
+   subtype InputAutomationActionInterface_Access_Array is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array;
+   use type InputAutomationActionInterface_Access_Array;
+   subtype InputAutomationActionInterface_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array_Access;
+   use type InputAutomationActionInterface_Access_Array_Access;
+   subtype InputAutomationActionInterface_Access_Array_Access_Array is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array_Access_Array;
+   use type InputAutomationActionInterface_Access_Array_Access_Array;
+   subtype InputAutomationActionInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array_Access_Array_Access;
+   use type InputAutomationActionInterface_Access_Array_Access_Array_Access;
+   subtype GenericProfile_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access;
+   use type GenericProfile_Access;
+   subtype GenericProfile_Access_Array is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access_Array;
+   use type GenericProfile_Access_Array;
+   subtype GenericProfile_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access_Array_Access;
+   use type GenericProfile_Access_Array_Access;
+   subtype GenericProfile_Access_Array_Access_Array is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access_Array_Access_Array;
+   use type GenericProfile_Access_Array_Access_Array;
+   subtype GenericProfile_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References.GenericProfile_Access_Array_Access_Array_Access;
+   use type GenericProfile_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype ImageComparatorConstraintsInterface_Access is org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.ImageComparatorConstraintsInterface_Access;
+   use type ImageComparatorConstraintsInterface_Access;
+   subtype ImageComparatorConstraintsInterface_Access_Array is org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.ImageComparatorConstraintsInterface_Access_Array;
+   use type ImageComparatorConstraintsInterface_Access_Array;
+   subtype ImageComparatorConstraintsInterface_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.ImageComparatorConstraintsInterface_Access_Array_Access;
+   use type ImageComparatorConstraintsInterface_Access_Array_Access;
+   subtype ImageComparatorConstraintsInterface_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.ImageComparatorConstraintsInterface_Access_Array_Access_Array;
+   use type ImageComparatorConstraintsInterface_Access_Array_Access_Array;
+   subtype ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access;
+   use type ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access;
+   subtype MotionRectangleConstraintsInterface_Access is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access;
+   use type MotionRectangleConstraintsInterface_Access;
+   subtype MotionRectangleConstraintsInterface_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access_Array;
+   use type MotionRectangleConstraintsInterface_Access_Array;
+   subtype MotionRectangleConstraintsInterface_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access_Array_Access;
+   use type MotionRectangleConstraintsInterface_Access_Array_Access;
+   subtype MotionRectangleConstraintsInterface_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access_Array_Access_Array;
+   use type MotionRectangleConstraintsInterface_Access_Array_Access_Array;
+   subtype MotionRectangleConstraintsInterface_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access_Array_Access_Array_Access;
+   use type MotionRectangleConstraintsInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GenericInputAutomationWorker is tagged;
-   type GenericInputAutomationWorker_Access is access all GenericInputAutomationWorker'Class;
-   type GenericInputAutomationWorker_Access_Array is array (Natural range <>) of GenericInputAutomationWorker_Access;
-   type GenericInputAutomationWorker_Access_Array_Access is access all GenericInputAutomationWorker_Access_Array;
-   type GenericInputAutomationWorker_Access_Array_Access_Array is array (Natural range <>) of GenericInputAutomationWorker_Access_Array_Access;
-   type GenericInputAutomationWorker_Access_Array_Access_Array_Access is access all GenericInputAutomationWorker_Access_Array_Access_Array;
+
+   subtype GenericInputAutomationWorker_Access is org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References.GenericInputAutomationWorker_Access;
+   function "=" (Left, Right : GenericInputAutomationWorker_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References."=";
+   subtype GenericInputAutomationWorker_Access_Array is org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References.GenericInputAutomationWorker_Access_Array;
+   function "=" (Left, Right : GenericInputAutomationWorker_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References."=";
+   subtype GenericInputAutomationWorker_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References.GenericInputAutomationWorker_Access_Array_Access;
+   function "=" (Left, Right : GenericInputAutomationWorker_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References."=";
+   subtype GenericInputAutomationWorker_Access_Array_Access_Array is org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References.GenericInputAutomationWorker_Access_Array_Access_Array;
+   function "=" (Left, Right : GenericInputAutomationWorker_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References."=";
+   subtype GenericInputAutomationWorker_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References.GenericInputAutomationWorker_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GenericInputAutomationWorker_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package_References."=";
 
    type GenericInputAutomationWorker is new AbstractInputAutomationWorker with record
       logUtil : LogUtil_Access;

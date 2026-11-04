@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.control.search.SearchData_Package;
+package org.allbinary.logic.control.search.SearchData_Package_References is
+   type SearchData_Access is access all org.allbinary.logic.control.search.SearchData_Package.SearchData'Class;
+   type SearchData_Access_Array is array (Natural range <>) of SearchData_Access;
+   type SearchData_Access_Array_Access is access all SearchData_Access_Array;
+   type SearchData_Access_Array_Access_Array is array (Natural range <>) of SearchData_Access_Array_Access;
+   type SearchData_Access_Array_Access_Array_Access is access all SearchData_Access_Array_Access_Array;
+end org.allbinary.logic.control.search.SearchData_Package_References;
+
+with org.allbinary.logic.control.search.SearchData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.control.search.SearchData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SearchData is tagged;
-   type SearchData_Access is access all SearchData'Class;
-   type SearchData_Access_Array is array (Natural range <>) of SearchData_Access;
-   type SearchData_Access_Array_Access is access all SearchData_Access_Array;
-   type SearchData_Access_Array_Access_Array is array (Natural range <>) of SearchData_Access_Array_Access;
-   type SearchData_Access_Array_Access_Array_Access is access all SearchData_Access_Array_Access_Array;
+
+   subtype SearchData_Access is org.allbinary.logic.control.search.SearchData_Package_References.SearchData_Access;
+   function "=" (Left, Right : SearchData_Access) return Boolean renames org.allbinary.logic.control.search.SearchData_Package_References."=";
+   subtype SearchData_Access_Array is org.allbinary.logic.control.search.SearchData_Package_References.SearchData_Access_Array;
+   function "=" (Left, Right : SearchData_Access_Array) return Boolean renames org.allbinary.logic.control.search.SearchData_Package_References."=";
+   subtype SearchData_Access_Array_Access is org.allbinary.logic.control.search.SearchData_Package_References.SearchData_Access_Array_Access;
+   function "=" (Left, Right : SearchData_Access_Array_Access) return Boolean renames org.allbinary.logic.control.search.SearchData_Package_References."=";
+   subtype SearchData_Access_Array_Access_Array is org.allbinary.logic.control.search.SearchData_Package_References.SearchData_Access_Array_Access_Array;
+   function "=" (Left, Right : SearchData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.search.SearchData_Package_References."=";
+   subtype SearchData_Access_Array_Access_Array_Access is org.allbinary.logic.control.search.SearchData_Package_References.SearchData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SearchData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.search.SearchData_Package_References."=";
 
    type SearchData is new Java_Object with null record;
    TOTAL_NUMBER_PAGES : Unbounded_String;

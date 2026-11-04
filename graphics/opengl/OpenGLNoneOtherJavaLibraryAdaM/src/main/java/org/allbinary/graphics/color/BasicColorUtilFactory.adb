@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 
 package body org.allbinary.graphics.color.BasicColorUtilFactory_Package is
 
+   subtype BasicColorUtil_Access is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access;
+   function "=" (Left, Right : BasicColorUtil_Access) return Boolean renames org.allbinary.graphics.color.BasicColorUtil_Package_References."=";
+   subtype BasicColorUtil_Access_Array is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access_Array;
+   function "=" (Left, Right : BasicColorUtil_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColorUtil_Package_References."=";
+   subtype BasicColorUtil_Access_Array_Access is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access_Array_Access;
+   function "=" (Left, Right : BasicColorUtil_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColorUtil_Package_References."=";
+   subtype BasicColorUtil_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicColorUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColorUtil_Package_References."=";
+   subtype BasicColorUtil_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicColorUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColorUtil_Package_References."=";
    procedure Initialize_Fields (This : in out BasicColorUtilFactory'Class) is
    begin
       null;

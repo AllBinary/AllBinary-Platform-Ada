@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with taghelpers.OrderHistoryHelper_Package;
+package taghelpers.OrderHistoryHelper_Package_References is
+   type OrderHistoryHelper_Access is access all taghelpers.OrderHistoryHelper_Package.OrderHistoryHelper'Class;
+   type OrderHistoryHelper_Access_Array is array (Natural range <>) of OrderHistoryHelper_Access;
+   type OrderHistoryHelper_Access_Array_Access is access all OrderHistoryHelper_Access_Array;
+   type OrderHistoryHelper_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryHelper_Access_Array_Access;
+   type OrderHistoryHelper_Access_Array_Access_Array_Access is access all OrderHistoryHelper_Access_Array_Access_Array;
+end taghelpers.OrderHistoryHelper_Package_References;
+
+with taghelpers.OrderHistoryHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,10 +34,14 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
+limited with org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.address.StreetAddress_Package_References;
+limited with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package taghelpers.OrderHistoryHelper_Package is
 
@@ -37,13 +51,61 @@ package taghelpers.OrderHistoryHelper_Package is
    package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
+   use type StoreFrontInterface_Access;
+   subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
+   use type StoreFrontInterface_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access;
+   subtype StoreFrontInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array;
+   use type StoreFrontInterface_Access_Array_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access_Array_Access;
+   subtype StreetAddress_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access;
+   use type StreetAddress_Access;
+   subtype StreetAddress_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array;
+   use type StreetAddress_Access_Array;
+   subtype StreetAddress_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access;
+   use type StreetAddress_Access_Array_Access;
+   subtype StreetAddress_Access_Array_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array;
+   use type StreetAddress_Access_Array_Access_Array;
+   subtype StreetAddress_Access_Array_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array_Access;
+   use type StreetAddress_Access_Array_Access_Array_Access;
+   subtype WeblisketSession_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access;
+   use type WeblisketSession_Access;
+   subtype WeblisketSession_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array;
+   use type WeblisketSession_Access_Array;
+   subtype WeblisketSession_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array_Access;
+   use type WeblisketSession_Access_Array_Access;
+   subtype WeblisketSession_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array_Access_Array;
+   use type WeblisketSession_Access_Array_Access_Array;
+   subtype WeblisketSession_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array_Access_Array_Access;
+   use type WeblisketSession_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OrderHistoryHelper is tagged;
-   type OrderHistoryHelper_Access is access all OrderHistoryHelper'Class;
-   type OrderHistoryHelper_Access_Array is array (Natural range <>) of OrderHistoryHelper_Access;
-   type OrderHistoryHelper_Access_Array_Access is access all OrderHistoryHelper_Access_Array;
-   type OrderHistoryHelper_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryHelper_Access_Array_Access;
-   type OrderHistoryHelper_Access_Array_Access_Array_Access is access all OrderHistoryHelper_Access_Array_Access_Array;
+
+   subtype OrderHistoryHelper_Access is taghelpers.OrderHistoryHelper_Package_References.OrderHistoryHelper_Access;
+   function "=" (Left, Right : OrderHistoryHelper_Access) return Boolean renames taghelpers.OrderHistoryHelper_Package_References."=";
+   subtype OrderHistoryHelper_Access_Array is taghelpers.OrderHistoryHelper_Package_References.OrderHistoryHelper_Access_Array;
+   function "=" (Left, Right : OrderHistoryHelper_Access_Array) return Boolean renames taghelpers.OrderHistoryHelper_Package_References."=";
+   subtype OrderHistoryHelper_Access_Array_Access is taghelpers.OrderHistoryHelper_Package_References.OrderHistoryHelper_Access_Array_Access;
+   function "=" (Left, Right : OrderHistoryHelper_Access_Array_Access) return Boolean renames taghelpers.OrderHistoryHelper_Package_References."=";
+   subtype OrderHistoryHelper_Access_Array_Access_Array is taghelpers.OrderHistoryHelper_Package_References.OrderHistoryHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderHistoryHelper_Access_Array_Access_Array) return Boolean renames taghelpers.OrderHistoryHelper_Package_References."=";
+   subtype OrderHistoryHelper_Access_Array_Access_Array_Access is taghelpers.OrderHistoryHelper_Package_References.OrderHistoryHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderHistoryHelper_Access_Array_Access_Array_Access) return Boolean renames taghelpers.OrderHistoryHelper_Package_References."=";
 
    type OrderHistoryHelper is new TagHelper with record
       logUtil : LogUtil_Access;

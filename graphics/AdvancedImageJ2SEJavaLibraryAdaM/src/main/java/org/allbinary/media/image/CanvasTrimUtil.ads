@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.CanvasTrimUtil_Package;
+package org.allbinary.media.image.CanvasTrimUtil_Package_References is
+   type CanvasTrimUtil_Access is access all org.allbinary.media.image.CanvasTrimUtil_Package.CanvasTrimUtil'Class;
+   type CanvasTrimUtil_Access_Array is array (Natural range <>) of CanvasTrimUtil_Access;
+   type CanvasTrimUtil_Access_Array_Access is access all CanvasTrimUtil_Access_Array;
+   type CanvasTrimUtil_Access_Array_Access_Array is array (Natural range <>) of CanvasTrimUtil_Access_Array_Access;
+   type CanvasTrimUtil_Access_Array_Access_Array_Access is access all CanvasTrimUtil_Access_Array_Access_Array;
+end org.allbinary.media.image.CanvasTrimUtil_Package_References;
+
+with org.allbinary.media.image.CanvasTrimUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,22 +32,74 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
-with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
+limited with org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package_References;
+limited with org.allbinary.media.image.ImageProcessedVisitor_Package;
+with org.allbinary.media.image.ImageProcessedVisitor_Package_References;
 
 package org.allbinary.media.image.CanvasTrimUtil_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype StringUtil_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access;
+   use type StringUtil_Access;
+   subtype StringUtil_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array;
+   use type StringUtil_Access_Array;
+   subtype StringUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access;
+   use type StringUtil_Access_Array_Access;
+   subtype StringUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array;
+   use type StringUtil_Access_Array_Access_Array;
+   subtype StringUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array_Access;
+   use type StringUtil_Access_Array_Access_Array_Access;
+   subtype ImageProcessorInput_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access;
+   use type ImageProcessorInput_Access;
+   subtype ImageProcessorInput_Access_Array is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array;
+   use type ImageProcessorInput_Access_Array;
+   subtype ImageProcessorInput_Access_Array_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access;
+   use type ImageProcessorInput_Access_Array_Access;
+   subtype ImageProcessorInput_Access_Array_Access_Array is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access_Array;
+   use type ImageProcessorInput_Access_Array_Access_Array;
+   subtype ImageProcessorInput_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access_Array_Access;
+   use type ImageProcessorInput_Access_Array_Access_Array_Access;
+   subtype ImageProcessedVisitor_Access is org.allbinary.media.image.ImageProcessedVisitor_Package_References.ImageProcessedVisitor_Access;
+   use type ImageProcessedVisitor_Access;
+   subtype ImageProcessedVisitor_Access_Array is org.allbinary.media.image.ImageProcessedVisitor_Package_References.ImageProcessedVisitor_Access_Array;
+   use type ImageProcessedVisitor_Access_Array;
+   subtype ImageProcessedVisitor_Access_Array_Access is org.allbinary.media.image.ImageProcessedVisitor_Package_References.ImageProcessedVisitor_Access_Array_Access;
+   use type ImageProcessedVisitor_Access_Array_Access;
+   subtype ImageProcessedVisitor_Access_Array_Access_Array is org.allbinary.media.image.ImageProcessedVisitor_Package_References.ImageProcessedVisitor_Access_Array_Access_Array;
+   use type ImageProcessedVisitor_Access_Array_Access_Array;
+   subtype ImageProcessedVisitor_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageProcessedVisitor_Package_References.ImageProcessedVisitor_Access_Array_Access_Array_Access;
+   use type ImageProcessedVisitor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CanvasTrimUtil is tagged;
-   type CanvasTrimUtil_Access is access all CanvasTrimUtil'Class;
-   type CanvasTrimUtil_Access_Array is array (Natural range <>) of CanvasTrimUtil_Access;
-   type CanvasTrimUtil_Access_Array_Access is access all CanvasTrimUtil_Access_Array;
-   type CanvasTrimUtil_Access_Array_Access_Array is array (Natural range <>) of CanvasTrimUtil_Access_Array_Access;
-   type CanvasTrimUtil_Access_Array_Access_Array_Access is access all CanvasTrimUtil_Access_Array_Access_Array;
+
+   subtype CanvasTrimUtil_Access is org.allbinary.media.image.CanvasTrimUtil_Package_References.CanvasTrimUtil_Access;
+   function "=" (Left, Right : CanvasTrimUtil_Access) return Boolean renames org.allbinary.media.image.CanvasTrimUtil_Package_References."=";
+   subtype CanvasTrimUtil_Access_Array is org.allbinary.media.image.CanvasTrimUtil_Package_References.CanvasTrimUtil_Access_Array;
+   function "=" (Left, Right : CanvasTrimUtil_Access_Array) return Boolean renames org.allbinary.media.image.CanvasTrimUtil_Package_References."=";
+   subtype CanvasTrimUtil_Access_Array_Access is org.allbinary.media.image.CanvasTrimUtil_Package_References.CanvasTrimUtil_Access_Array_Access;
+   function "=" (Left, Right : CanvasTrimUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.CanvasTrimUtil_Package_References."=";
+   subtype CanvasTrimUtil_Access_Array_Access_Array is org.allbinary.media.image.CanvasTrimUtil_Package_References.CanvasTrimUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : CanvasTrimUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.CanvasTrimUtil_Package_References."=";
+   subtype CanvasTrimUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.CanvasTrimUtil_Package_References.CanvasTrimUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CanvasTrimUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.CanvasTrimUtil_Package_References."=";
 
    type CanvasTrimUtil is new Java_Object with record
       logUtil : LogUtil_Access;

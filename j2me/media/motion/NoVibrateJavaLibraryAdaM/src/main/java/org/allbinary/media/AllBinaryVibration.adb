@@ -41,7 +41,7 @@ package body org.allbinary.media.AllBinaryVibration_Package is
 
    function getInstance return AllBinaryVibrationME_Access is
    begin
-        return AllBinaryVibration_Package.VIBRATION;
+        return AllBinaryVibrationME_Access (AllBinaryVibration_Package.VIBRATION);
    end getInstance;
 
    procedure init is
@@ -60,7 +60,7 @@ package body org.allbinary.media.AllBinaryVibration_Package is
 
 begin
    null;
-   VIBRATION := AllBinaryNoVibration_Package.NO_VIBRATION;
+   VIBRATION := AllBinaryVibrationME_Access (AllBinaryNoVibration_Package.NO_VIBRATION);
 
 end org.allbinary.media.AllBinaryVibration_Package;
 

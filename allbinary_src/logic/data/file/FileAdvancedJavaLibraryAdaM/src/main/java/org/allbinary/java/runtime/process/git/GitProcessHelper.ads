@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.java.runtime.process.git.GitProcessHelper_Package;
+package org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References is
+   type GitProcessHelper_Access is access all org.allbinary.java.runtime.process.git.GitProcessHelper_Package.GitProcessHelper'Class;
+   type GitProcessHelper_Access_Array is array (Natural range <>) of GitProcessHelper_Access;
+   type GitProcessHelper_Access_Array_Access is access all GitProcessHelper_Access_Array;
+   type GitProcessHelper_Access_Array_Access_Array is array (Natural range <>) of GitProcessHelper_Access_Array_Access;
+   type GitProcessHelper_Access_Array_Access_Array_Access is access all GitProcessHelper_Access_Array_Access_Array;
+end org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References;
+
+with org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,20 +34,50 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.nio.charset.StandardCharsets_Package; use java.nio.charset.StandardCharsets_Package;
 --  with java.util.ArrayList_Package; use java.util.ArrayList_Package;
 --  with java.util.List_Package; use java.util.List_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.directory.TrackedStrings_Package; use org.allbinary.logic.io.file.directory.TrackedStrings_Package;
+limited with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.AbFile_Package_References;
+limited with org.allbinary.logic.io.file.directory.TrackedStrings_Package;
+with org.allbinary.logic.io.file.directory.TrackedStrings_Package_References;
 
 package org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
 
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package TrackedStrings_Package renames Standard.org.allbinary.logic.io.file.directory.TrackedStrings_Package;
+   package Reference_Types is
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   use type AbFile_Access;
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   use type AbFile_Access_Array;
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   use type AbFile_Access_Array_Access;
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   use type AbFile_Access_Array_Access_Array;
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   use type AbFile_Access_Array_Access_Array_Access;
+   subtype TrackedStrings_Access is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access;
+   use type TrackedStrings_Access;
+   subtype TrackedStrings_Access_Array is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array;
+   use type TrackedStrings_Access_Array;
+   subtype TrackedStrings_Access_Array_Access is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array_Access;
+   use type TrackedStrings_Access_Array_Access;
+   subtype TrackedStrings_Access_Array_Access_Array is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array_Access_Array;
+   use type TrackedStrings_Access_Array_Access_Array;
+   subtype TrackedStrings_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array_Access_Array_Access;
+   use type TrackedStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GitProcessHelper is tagged;
-   type GitProcessHelper_Access is access all GitProcessHelper'Class;
-   type GitProcessHelper_Access_Array is array (Natural range <>) of GitProcessHelper_Access;
-   type GitProcessHelper_Access_Array_Access is access all GitProcessHelper_Access_Array;
-   type GitProcessHelper_Access_Array_Access_Array is array (Natural range <>) of GitProcessHelper_Access_Array_Access;
-   type GitProcessHelper_Access_Array_Access_Array_Access is access all GitProcessHelper_Access_Array_Access_Array;
+
+   subtype GitProcessHelper_Access is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access;
+   function "=" (Left, Right : GitProcessHelper_Access) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
+   subtype GitProcessHelper_Access_Array is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access_Array;
+   function "=" (Left, Right : GitProcessHelper_Access_Array) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
+   subtype GitProcessHelper_Access_Array_Access is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access_Array_Access;
+   function "=" (Left, Right : GitProcessHelper_Access_Array_Access) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
+   subtype GitProcessHelper_Access_Array_Access_Array is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : GitProcessHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
+   subtype GitProcessHelper_Access_Array_Access_Array_Access is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GitProcessHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
 
    type GitProcessHelper is new Java_Object with record
       trackedStrings : TrackedStrings_Access;

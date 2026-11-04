@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.PermissionItemsHelperFactory_Package;
+package admin.taghelpers.PermissionItemsHelperFactory_Package_References is
+   type PermissionItemsHelperFactory_Access is access all admin.taghelpers.PermissionItemsHelperFactory_Package.PermissionItemsHelperFactory'Class;
+   type PermissionItemsHelperFactory_Access_Array is array (Natural range <>) of PermissionItemsHelperFactory_Access;
+   type PermissionItemsHelperFactory_Access_Array_Access is access all PermissionItemsHelperFactory_Access_Array;
+   type PermissionItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of PermissionItemsHelperFactory_Access_Array_Access;
+   type PermissionItemsHelperFactory_Access_Array_Access_Array_Access is access all PermissionItemsHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.PermissionItemsHelperFactory_Package_References;
+
+with admin.taghelpers.PermissionItemsHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,20 +32,39 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with admin.taghelpers.TagHelperFactory_Package; use admin.taghelpers.TagHelperFactory_Package;
 
 package admin.taghelpers.PermissionItemsHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PermissionItemsHelperFactory is tagged;
-   type PermissionItemsHelperFactory_Access is access all PermissionItemsHelperFactory'Class;
-   type PermissionItemsHelperFactory_Access_Array is array (Natural range <>) of PermissionItemsHelperFactory_Access;
-   type PermissionItemsHelperFactory_Access_Array_Access is access all PermissionItemsHelperFactory_Access_Array;
-   type PermissionItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of PermissionItemsHelperFactory_Access_Array_Access;
-   type PermissionItemsHelperFactory_Access_Array_Access_Array_Access is access all PermissionItemsHelperFactory_Access_Array_Access_Array;
+
+   subtype PermissionItemsHelperFactory_Access is admin.taghelpers.PermissionItemsHelperFactory_Package_References.PermissionItemsHelperFactory_Access;
+   function "=" (Left, Right : PermissionItemsHelperFactory_Access) return Boolean renames admin.taghelpers.PermissionItemsHelperFactory_Package_References."=";
+   subtype PermissionItemsHelperFactory_Access_Array is admin.taghelpers.PermissionItemsHelperFactory_Package_References.PermissionItemsHelperFactory_Access_Array;
+   function "=" (Left, Right : PermissionItemsHelperFactory_Access_Array) return Boolean renames admin.taghelpers.PermissionItemsHelperFactory_Package_References."=";
+   subtype PermissionItemsHelperFactory_Access_Array_Access is admin.taghelpers.PermissionItemsHelperFactory_Package_References.PermissionItemsHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : PermissionItemsHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.PermissionItemsHelperFactory_Package_References."=";
+   subtype PermissionItemsHelperFactory_Access_Array_Access_Array is admin.taghelpers.PermissionItemsHelperFactory_Package_References.PermissionItemsHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PermissionItemsHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PermissionItemsHelperFactory_Package_References."=";
+   subtype PermissionItemsHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.PermissionItemsHelperFactory_Package_References.PermissionItemsHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PermissionItemsHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PermissionItemsHelperFactory_Package_References."=";
 
    type PermissionItemsHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

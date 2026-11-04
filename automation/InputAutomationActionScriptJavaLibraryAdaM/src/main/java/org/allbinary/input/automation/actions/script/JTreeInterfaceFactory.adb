@@ -5,9 +5,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.actions.script.JTreeInterface_Package; use org.allbinary.input.automation.actions.script.JTreeInterface_Package;
+with org.allbinary.input.automation.actions.script.JTreeInterface_Package;
 
 package body org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package is
 
+   subtype JTreeInterface_Access is org.allbinary.input.automation.actions.script.JTreeInterface_Package_References.JTreeInterface_Access;
+   function "=" (Left, Right : JTreeInterface_Access) return Boolean renames org.allbinary.input.automation.actions.script.JTreeInterface_Package_References."=";
+   subtype JTreeInterface_Access_Array is org.allbinary.input.automation.actions.script.JTreeInterface_Package_References.JTreeInterface_Access_Array;
+   function "=" (Left, Right : JTreeInterface_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.JTreeInterface_Package_References."=";
+   subtype JTreeInterface_Access_Array_Access is org.allbinary.input.automation.actions.script.JTreeInterface_Package_References.JTreeInterface_Access_Array_Access;
+   function "=" (Left, Right : JTreeInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.JTreeInterface_Package_References."=";
+   subtype JTreeInterface_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.JTreeInterface_Package_References.JTreeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : JTreeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.JTreeInterface_Package_References."=";
+   subtype JTreeInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.JTreeInterface_Package_References.JTreeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JTreeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.JTreeInterface_Package_References."=";
    procedure Initialize_Fields (This : in out JTreeInterfaceFactory'Class) is
    begin
       null;
@@ -29,7 +41,7 @@ package body org.allbinary.input.automation.actions.script.JTreeInterfaceFactory
 
    function getInstance return JTreeInterfaceFactory_Access is
    begin
-        return JTreeInterfaceFactory_Package.instance;
+        return JTreeInterfaceFactory_Access (JTreeInterfaceFactory_Package.instance);
    end getInstance;
 
    procedure set (This : in out JTreeInterfaceFactory; jTreeInterface_Param : access JTreeInterface_Package.JTreeInterface'Class) is

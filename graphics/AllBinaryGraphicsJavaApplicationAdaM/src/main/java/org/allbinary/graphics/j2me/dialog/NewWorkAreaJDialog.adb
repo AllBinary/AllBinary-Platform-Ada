@@ -14,17 +14,70 @@
 
 
 with org.allbinary.graphics.j2me.GraphicsException_Package; use org.allbinary.graphics.j2me.GraphicsException_Package;
+with org.allbinary.graphics.j2me.MyFrame_Package; use org.allbinary.graphics.j2me.MyFrame_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
+with org.allbinary.graphics.j2me.dialog.Dimension_Package; use org.allbinary.graphics.j2me.dialog.Dimension_Package;
+with org.allbinary.graphics.j2me.dialog.JTextField_Package; use org.allbinary.graphics.j2me.dialog.JTextField_Package;
 with org.allbinary.graphics.j2me.dialog.JButton_Package; use org.allbinary.graphics.j2me.dialog.JButton_Package;
 with org.allbinary.graphics.j2me.dialog.GridLayout_Package; use org.allbinary.graphics.j2me.dialog.GridLayout_Package;
 with org.allbinary.graphics.j2me.dialog.JLabel_Package; use org.allbinary.graphics.j2me.dialog.JLabel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+with org.allbinary.graphics.j2me.GraphicsException_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
+with org.allbinary.graphics.j2me.MyFrame_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
+with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
+with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
+with org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 
 package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
 
    package GraphicsException_Package renames Standard.org.allbinary.graphics.j2me.GraphicsException_Package;
    package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
    package WorkAreaJPanelInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
+   subtype MyFrame_Access is org.allbinary.graphics.j2me.MyFrame_Package_References.MyFrame_Access;
+   function "=" (Left, Right : MyFrame_Access) return Boolean renames org.allbinary.graphics.j2me.MyFrame_Package_References."=";
+   subtype MyFrame_Access_Array is org.allbinary.graphics.j2me.MyFrame_Package_References.MyFrame_Access_Array;
+   function "=" (Left, Right : MyFrame_Access_Array) return Boolean renames org.allbinary.graphics.j2me.MyFrame_Package_References."=";
+   subtype MyFrame_Access_Array_Access is org.allbinary.graphics.j2me.MyFrame_Package_References.MyFrame_Access_Array_Access;
+   function "=" (Left, Right : MyFrame_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.MyFrame_Package_References."=";
+   subtype MyFrame_Access_Array_Access_Array is org.allbinary.graphics.j2me.MyFrame_Package_References.MyFrame_Access_Array_Access_Array;
+   function "=" (Left, Right : MyFrame_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.MyFrame_Package_References."=";
+   subtype MyFrame_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.MyFrame_Package_References.MyFrame_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyFrame_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.MyFrame_Package_References."=";
+   subtype Dimension_Access is org.allbinary.graphics.j2me.dialog.Dimension_Package_References.Dimension_Access;
+   function "=" (Left, Right : Dimension_Access) return Boolean renames org.allbinary.graphics.j2me.dialog.Dimension_Package_References."=";
+   subtype Dimension_Access_Array is org.allbinary.graphics.j2me.dialog.Dimension_Package_References.Dimension_Access_Array;
+   function "=" (Left, Right : Dimension_Access_Array) return Boolean renames org.allbinary.graphics.j2me.dialog.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access is org.allbinary.graphics.j2me.dialog.Dimension_Package_References.Dimension_Access_Array_Access;
+   function "=" (Left, Right : Dimension_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.dialog.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access_Array is org.allbinary.graphics.j2me.dialog.Dimension_Package_References.Dimension_Access_Array_Access_Array;
+   function "=" (Left, Right : Dimension_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.dialog.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.dialog.Dimension_Package_References.Dimension_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Dimension_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.dialog.Dimension_Package_References."=";
+   subtype JTextField_Access is org.allbinary.graphics.j2me.dialog.JTextField_Package_References.JTextField_Access;
+   function "=" (Left, Right : JTextField_Access) return Boolean renames org.allbinary.graphics.j2me.dialog.JTextField_Package_References."=";
+   subtype JTextField_Access_Array is org.allbinary.graphics.j2me.dialog.JTextField_Package_References.JTextField_Access_Array;
+   function "=" (Left, Right : JTextField_Access_Array) return Boolean renames org.allbinary.graphics.j2me.dialog.JTextField_Package_References."=";
+   subtype JTextField_Access_Array_Access is org.allbinary.graphics.j2me.dialog.JTextField_Package_References.JTextField_Access_Array_Access;
+   function "=" (Left, Right : JTextField_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.dialog.JTextField_Package_References."=";
+   subtype JTextField_Access_Array_Access_Array is org.allbinary.graphics.j2me.dialog.JTextField_Package_References.JTextField_Access_Array_Access_Array;
+   function "=" (Left, Right : JTextField_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.dialog.JTextField_Package_References."=";
+   subtype JTextField_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.dialog.JTextField_Package_References.JTextField_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JTextField_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.dialog.JTextField_Package_References."=";
    procedure Initialize_Fields (This : in out NewWorkAreaJDialog'Class) is
    begin
       null;

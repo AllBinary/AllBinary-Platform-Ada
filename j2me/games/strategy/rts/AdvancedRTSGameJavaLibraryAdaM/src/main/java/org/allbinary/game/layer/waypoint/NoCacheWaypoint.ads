@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package;
+package org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References is
+   type NoCacheWaypoint_Access is access all org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package.NoCacheWaypoint'Class;
+   type NoCacheWaypoint_Access_Array is array (Natural range <>) of NoCacheWaypoint_Access;
+   type NoCacheWaypoint_Access_Array_Access is access all NoCacheWaypoint_Access_Array;
+   type NoCacheWaypoint_Access_Array_Access_Array is array (Natural range <>) of NoCacheWaypoint_Access_Array_Access;
+   type NoCacheWaypoint_Access_Array_Access_Array_Access is access all NoCacheWaypoint_Access_Array_Access_Array;
+end org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References;
+
+with org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,14 +30,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
-with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.layer.RTSLayerEvent_Package;
+limited with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
+limited with org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
+limited with org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.game.layer.RTSLayerEvent_Package_References;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package; use org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
-with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
+limited with org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package; use org.allbinary.game.layer.waypoint.WaypointBase_Package;
 
 package org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
@@ -40,13 +57,91 @@ package org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
    package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype AllBinaryGameLayerManager_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access;
+   use type AllBinaryGameLayerManager_Access;
+   subtype AllBinaryGameLayerManager_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   subtype PathFindingLayerInterface_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access;
+   use type PathFindingLayerInterface_Access;
+   subtype PathFindingLayerInterface_Access_Array is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array;
+   use type PathFindingLayerInterface_Access_Array;
+   subtype PathFindingLayerInterface_Access_Array_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access;
+   use type PathFindingLayerInterface_Access_Array_Access;
+   subtype PathFindingLayerInterface_Access_Array_Access_Array is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access_Array;
+   use type PathFindingLayerInterface_Access_Array_Access_Array;
+   subtype PathFindingLayerInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access_Array_Access;
+   use type PathFindingLayerInterface_Access_Array_Access_Array_Access;
+   subtype RTSLayerEvent_Access is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access;
+   use type RTSLayerEvent_Access;
+   subtype RTSLayerEvent_Access_Array is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access_Array;
+   use type RTSLayerEvent_Access_Array;
+   subtype RTSLayerEvent_Access_Array_Access is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access_Array_Access;
+   use type RTSLayerEvent_Access_Array_Access;
+   subtype RTSLayerEvent_Access_Array_Access_Array is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access_Array_Access_Array;
+   use type RTSLayerEvent_Access_Array_Access_Array;
+   subtype RTSLayerEvent_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access_Array_Access_Array_Access;
+   use type RTSLayerEvent_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
+   subtype Sound_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access;
+   use type Sound_Access;
+   subtype Sound_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array;
+   use type Sound_Access_Array;
+   subtype Sound_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access;
+   use type Sound_Access_Array_Access;
+   subtype Sound_Access_Array_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array;
+   use type Sound_Access_Array_Access_Array;
+   subtype Sound_Access_Array_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array_Access;
+   use type Sound_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access;
+   use type GeographicMapCellPosition_Access;
+   subtype GeographicMapCellPosition_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array;
+   use type GeographicMapCellPosition_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
+   use type GeographicMapCellPosition_Access_Array_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoCacheWaypoint is tagged;
-   type NoCacheWaypoint_Access is access all NoCacheWaypoint'Class;
-   type NoCacheWaypoint_Access_Array is array (Natural range <>) of NoCacheWaypoint_Access;
-   type NoCacheWaypoint_Access_Array_Access is access all NoCacheWaypoint_Access_Array;
-   type NoCacheWaypoint_Access_Array_Access_Array is array (Natural range <>) of NoCacheWaypoint_Access_Array_Access;
-   type NoCacheWaypoint_Access_Array_Access_Array_Access is access all NoCacheWaypoint_Access_Array_Access_Array;
+
+   subtype NoCacheWaypoint_Access is org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References.NoCacheWaypoint_Access;
+   function "=" (Left, Right : NoCacheWaypoint_Access) return Boolean renames org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References."=";
+   subtype NoCacheWaypoint_Access_Array is org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References.NoCacheWaypoint_Access_Array;
+   function "=" (Left, Right : NoCacheWaypoint_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References."=";
+   subtype NoCacheWaypoint_Access_Array_Access is org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References.NoCacheWaypoint_Access_Array_Access;
+   function "=" (Left, Right : NoCacheWaypoint_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References."=";
+   subtype NoCacheWaypoint_Access_Array_Access_Array is org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References.NoCacheWaypoint_Access_Array_Access_Array;
+   function "=" (Left, Right : NoCacheWaypoint_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References."=";
+   subtype NoCacheWaypoint_Access_Array_Access_Array_Access is org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References.NoCacheWaypoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoCacheWaypoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package_References."=";
 
    type NoCacheWaypoint is new WaypointBase and BuildingEventListenerInterface with record
       ownerLayer : PathFindingLayerInterface_Access;

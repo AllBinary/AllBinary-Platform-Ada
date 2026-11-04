@@ -13,10 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 
 package body org.allbinary.graphics.Line_Package is
 
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   function "=" (Left, Right : GPoint_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
    procedure Initialize_Fields (This : in out Line'Class) is
    begin
       null;
@@ -32,7 +43,7 @@ package body org.allbinary.graphics.Line_Package is
       p2 : constant GPoint_Access := GPoint_Access (p2_Param);
    begin
       Initialize_Fields (This);
-        This.p1 := PointFactory_Package.getInstance.ZERO_ZERO;
+        This.p1 := GPoint_Access (PointFactory_Package.getInstance.ZERO_ZERO);
         This.p2 := This.p1;
         Line'Class (This).setP1 (p1);
         Line'Class (This).setP2 (p2);

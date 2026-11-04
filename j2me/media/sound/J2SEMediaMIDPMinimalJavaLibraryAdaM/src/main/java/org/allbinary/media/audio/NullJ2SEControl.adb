@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.audio.Type_Package; use org.allbinary.media.audio.Type_Package;
 
 package body org.allbinary.media.audio.NullJ2SEControl_Package is
 
+   subtype Type_Access is org.allbinary.media.audio.Type_Package_References.Type_Access;
+   function "=" (Left, Right : Type_Access) return Boolean renames org.allbinary.media.audio.Type_Package_References."=";
+   subtype Type_Access_Array is org.allbinary.media.audio.Type_Package_References.Type_Access_Array;
+   function "=" (Left, Right : Type_Access_Array) return Boolean renames org.allbinary.media.audio.Type_Package_References."=";
+   subtype Type_Access_Array_Access is org.allbinary.media.audio.Type_Package_References.Type_Access_Array_Access;
+   function "=" (Left, Right : Type_Access_Array_Access) return Boolean renames org.allbinary.media.audio.Type_Package_References."=";
+   subtype Type_Access_Array_Access_Array is org.allbinary.media.audio.Type_Package_References.Type_Access_Array_Access_Array;
+   function "=" (Left, Right : Type_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.Type_Package_References."=";
+   subtype Type_Access_Array_Access_Array_Access is org.allbinary.media.audio.Type_Package_References.Type_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Type_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.Type_Package_References."=";
    procedure Initialize_Fields (This : in out NullJ2SEControl'Class) is
    begin
       null;
@@ -25,7 +36,7 @@ package body org.allbinary.media.audio.NullJ2SEControl_Package is
    procedure Initialize (This : in out NullJ2SEControl'Class; type_Id_Param : access Type_Package.Type'Class) is
       type_Id : constant Type_Access := Type_Access (type_Id_Param);
    begin
-        Control_Package.Initialize (This, type_Id);
+        null;
    end Initialize;
 
    function Create (type_Id_Param : access Type_Package.Type'Class) return NullJ2SEControl_Access is

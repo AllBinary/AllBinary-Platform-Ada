@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.input.automation.module.ImageComparatorConstraints_Package; use org.allbinary.input.automation.module.ImageComparatorConstraints_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.Color_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Color_Package;
 
 package body org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package is
 
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   function "=" (Left, Right : GPoint_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype Color_Access is org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References.Color_Access;
+   function "=" (Left, Right : Color_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References."=";
+   subtype Color_Access_Array is org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References.Color_Access_Array;
+   function "=" (Left, Right : Color_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References."=";
+   subtype Color_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References.Color_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array is org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References.Color_Access_Array_Access_Array;
+   function "=" (Left, Right : Color_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References.Color_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.constraints.Color_Package_References."=";
    procedure Initialize_Fields (This : in out NoImageComparatorConstraints'Class) is
    begin
       null;

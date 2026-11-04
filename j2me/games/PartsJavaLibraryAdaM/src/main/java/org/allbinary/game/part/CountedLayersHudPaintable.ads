@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.part.CountedLayersHudPaintable_Package;
+package org.allbinary.game.part.CountedLayersHudPaintable_Package_References is
+   type CountedLayersHudPaintable_Access is access all org.allbinary.game.part.CountedLayersHudPaintable_Package.CountedLayersHudPaintable'Class;
+   type CountedLayersHudPaintable_Access_Array is array (Natural range <>) of CountedLayersHudPaintable_Access;
+   type CountedLayersHudPaintable_Access_Array_Access is access all CountedLayersHudPaintable_Access_Array;
+   type CountedLayersHudPaintable_Access_Array_Access_Array is array (Natural range <>) of CountedLayersHudPaintable_Access_Array_Access;
+   type CountedLayersHudPaintable_Access_Array_Access_Array_Access is access all CountedLayersHudPaintable_Access_Array_Access_Array;
+end org.allbinary.game.part.CountedLayersHudPaintable_Package_References;
+
+with org.allbinary.game.part.CountedLayersHudPaintable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References;
+limited with org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
-with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
+limited with org.allbinary.game.part.PartInterface_Package;
+with org.allbinary.game.part.PartInterface_Package_References;
 
 package org.allbinary.game.part.CountedLayersHudPaintable_Package is
 
@@ -34,13 +48,61 @@ package org.allbinary.game.part.CountedLayersHudPaintable_Package is
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype DisplayInfoSingleton_Access is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access;
+   use type DisplayInfoSingleton_Access;
+   subtype DisplayInfoSingleton_Access_Array is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array;
+   use type DisplayInfoSingleton_Access_Array;
+   subtype DisplayInfoSingleton_Access_Array_Access is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array_Access;
+   use type DisplayInfoSingleton_Access_Array_Access;
+   subtype DisplayInfoSingleton_Access_Array_Access_Array is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array_Access_Array;
+   use type DisplayInfoSingleton_Access_Array_Access_Array;
+   subtype DisplayInfoSingleton_Access_Array_Access_Array_Access is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array_Access_Array_Access;
+   use type DisplayInfoSingleton_Access_Array_Access_Array_Access;
+   subtype MyFontProcessor_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access;
+   use type MyFontProcessor_Access;
+   subtype MyFontProcessor_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array;
+   use type MyFontProcessor_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access;
+   subtype MyFontProcessor_Access_Array_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array;
+   use type MyFontProcessor_Access_Array_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access_Array_Access;
+   subtype PartInterface_Access is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access;
+   use type PartInterface_Access;
+   subtype PartInterface_Access_Array is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access_Array;
+   use type PartInterface_Access_Array;
+   subtype PartInterface_Access_Array_Access is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access_Array_Access;
+   use type PartInterface_Access_Array_Access;
+   subtype PartInterface_Access_Array_Access_Array is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access_Array_Access_Array;
+   use type PartInterface_Access_Array_Access_Array;
+   subtype PartInterface_Access_Array_Access_Array_Access is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access_Array_Access_Array_Access;
+   use type PartInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CountedLayersHudPaintable is tagged;
-   type CountedLayersHudPaintable_Access is access all CountedLayersHudPaintable'Class;
-   type CountedLayersHudPaintable_Access_Array is array (Natural range <>) of CountedLayersHudPaintable_Access;
-   type CountedLayersHudPaintable_Access_Array_Access is access all CountedLayersHudPaintable_Access_Array;
-   type CountedLayersHudPaintable_Access_Array_Access_Array is array (Natural range <>) of CountedLayersHudPaintable_Access_Array_Access;
-   type CountedLayersHudPaintable_Access_Array_Access_Array_Access is access all CountedLayersHudPaintable_Access_Array_Access_Array;
+
+   subtype CountedLayersHudPaintable_Access is org.allbinary.game.part.CountedLayersHudPaintable_Package_References.CountedLayersHudPaintable_Access;
+   function "=" (Left, Right : CountedLayersHudPaintable_Access) return Boolean renames org.allbinary.game.part.CountedLayersHudPaintable_Package_References."=";
+   subtype CountedLayersHudPaintable_Access_Array is org.allbinary.game.part.CountedLayersHudPaintable_Package_References.CountedLayersHudPaintable_Access_Array;
+   function "=" (Left, Right : CountedLayersHudPaintable_Access_Array) return Boolean renames org.allbinary.game.part.CountedLayersHudPaintable_Package_References."=";
+   subtype CountedLayersHudPaintable_Access_Array_Access is org.allbinary.game.part.CountedLayersHudPaintable_Package_References.CountedLayersHudPaintable_Access_Array_Access;
+   function "=" (Left, Right : CountedLayersHudPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.part.CountedLayersHudPaintable_Package_References."=";
+   subtype CountedLayersHudPaintable_Access_Array_Access_Array is org.allbinary.game.part.CountedLayersHudPaintable_Package_References.CountedLayersHudPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : CountedLayersHudPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.part.CountedLayersHudPaintable_Package_References."=";
+   subtype CountedLayersHudPaintable_Access_Array_Access_Array_Access is org.allbinary.game.part.CountedLayersHudPaintable_Package_References.CountedLayersHudPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CountedLayersHudPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.part.CountedLayersHudPaintable_Package_References."=";
 
    type CountedLayersHudPaintable is new Java_Object and PaintableInterface and UpdateMyFontInterface with record
       displayInfoSingleton : DisplayInfoSingleton_Access;

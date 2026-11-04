@@ -13,9 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package body org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package is
 
+   subtype MotionRectangles_Access is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access;
+   function "=" (Left, Right : MotionRectangles_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References."=";
+   subtype MotionRectangles_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access_Array;
+   function "=" (Left, Right : MotionRectangles_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References."=";
+   subtype MotionRectangles_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access_Array_Access;
+   function "=" (Left, Right : MotionRectangles_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References."=";
+   subtype MotionRectangles_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionRectangles_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References."=";
+   subtype MotionRectangles_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionRectangles_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References."=";
    procedure Initialize_Fields (This : in out MotionRectanglesResultsEvent'Class) is
    begin
       null;

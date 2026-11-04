@@ -16,12 +16,32 @@
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.GameInputProcessorInterface_Package; use org.allbinary.game.input.GameInputProcessorInterface_Package;
+with org.allbinary.game.input.event.DownGameKeyEventListenerInterface_Package;
+with org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInputProcessorInterface_Package;
+with org.allbinary.game.input.GameInputStrings_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEventListenerInterface_Package;
+with org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package;
+with org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package;
 
 package body org.allbinary.game.input.GameInputProcessorComposite_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype GameInputProcessorInterface_Access is org.allbinary.game.input.GameInputProcessorInterface_Package_References.GameInputProcessorInterface_Access;
+   function "=" (Left, Right : GameInputProcessorInterface_Access) return Boolean renames org.allbinary.game.input.GameInputProcessorInterface_Package_References."=";
+   subtype GameInputProcessorInterface_Access_Array is org.allbinary.game.input.GameInputProcessorInterface_Package_References.GameInputProcessorInterface_Access_Array;
+   function "=" (Left, Right : GameInputProcessorInterface_Access_Array) return Boolean renames org.allbinary.game.input.GameInputProcessorInterface_Package_References."=";
+   subtype GameInputProcessorInterface_Access_Array_Access is org.allbinary.game.input.GameInputProcessorInterface_Package_References.GameInputProcessorInterface_Access_Array_Access;
+   function "=" (Left, Right : GameInputProcessorInterface_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputProcessorInterface_Package_References."=";
+   subtype GameInputProcessorInterface_Access_Array_Access_Array is org.allbinary.game.input.GameInputProcessorInterface_Package_References.GameInputProcessorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInputProcessorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameInputProcessorInterface_Package_References."=";
+   subtype GameInputProcessorInterface_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInputProcessorInterface_Package_References.GameInputProcessorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInputProcessorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputProcessorInterface_Package_References."=";
    procedure Initialize_Fields (This : in out GameInputProcessorComposite'Class) is
    begin
       null;

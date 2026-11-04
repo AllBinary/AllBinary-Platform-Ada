@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.midlet.AllBinaryMidlet_Package;
+package org.allbinary.midlet.AllBinaryMidlet_Package_References is
+   type AllBinaryMidlet_Access is access all org.allbinary.midlet.AllBinaryMidlet_Package.AllBinaryMidlet'Class;
+   type AllBinaryMidlet_Access_Array is array (Natural range <>) of AllBinaryMidlet_Access;
+   type AllBinaryMidlet_Access_Array_Access is access all AllBinaryMidlet_Access_Array;
+   type AllBinaryMidlet_Access_Array_Access_Array is array (Natural range <>) of AllBinaryMidlet_Access_Array_Access;
+   type AllBinaryMidlet_Access_Array_Access_Array_Access is access all AllBinaryMidlet_Access_Array_Access_Array;
+end org.allbinary.midlet.AllBinaryMidlet_Package_References;
+
+with org.allbinary.midlet.AllBinaryMidlet_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,14 +30,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+limited with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with javax.microedition.lcdui.Display_Package; use javax.microedition.lcdui.Display_Package;
-with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+limited with javax.microedition.lcdui.Display_Package;
+with javax.microedition.lcdui.Display_Package_References;
+limited with javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package_References;
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 
 package org.allbinary.midlet.AllBinaryMidlet_Package is
 
@@ -39,13 +55,81 @@ package org.allbinary.midlet.AllBinaryMidlet_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Reference_Types is
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   use type Command_Access;
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   use type Command_Access_Array;
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   use type Command_Access_Array_Access;
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   use type Command_Access_Array_Access_Array;
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   use type Command_Access_Array_Access_Array_Access;
+   subtype Display_Access is javax.microedition.lcdui.Display_Package_References.Display_Access;
+   use type Display_Access;
+   subtype Display_Access_Array is javax.microedition.lcdui.Display_Package_References.Display_Access_Array;
+   use type Display_Access_Array;
+   subtype Display_Access_Array_Access is javax.microedition.lcdui.Display_Package_References.Display_Access_Array_Access;
+   use type Display_Access_Array_Access;
+   subtype Display_Access_Array_Access_Array is javax.microedition.lcdui.Display_Package_References.Display_Access_Array_Access_Array;
+   use type Display_Access_Array_Access_Array;
+   subtype Display_Access_Array_Access_Array_Access is javax.microedition.lcdui.Display_Package_References.Display_Access_Array_Access_Array_Access;
+   use type Display_Access_Array_Access_Array_Access;
+   subtype Displayable_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access;
+   use type Displayable_Access;
+   subtype Displayable_Access_Array is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array;
+   use type Displayable_Access_Array;
+   subtype Displayable_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access;
+   use type Displayable_Access_Array_Access;
+   subtype Displayable_Access_Array_Access_Array is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array;
+   use type Displayable_Access_Array_Access_Array;
+   subtype Displayable_Access_Array_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array_Access;
+   use type Displayable_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   use type ABHashtable_Access;
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   use type ABHashtable_Access_Array;
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access;
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   use type ABHashtable_Access_Array_Access_Array;
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AllBinaryMidlet is tagged;
-   type AllBinaryMidlet_Access is access all AllBinaryMidlet'Class;
-   type AllBinaryMidlet_Access_Array is array (Natural range <>) of AllBinaryMidlet_Access;
-   type AllBinaryMidlet_Access_Array_Access is access all AllBinaryMidlet_Access_Array;
-   type AllBinaryMidlet_Access_Array_Access_Array is array (Natural range <>) of AllBinaryMidlet_Access_Array_Access;
-   type AllBinaryMidlet_Access_Array_Access_Array_Access is access all AllBinaryMidlet_Access_Array_Access_Array;
+
+   subtype AllBinaryMidlet_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access;
+   function "=" (Left, Right : AllBinaryMidlet_Access) return Boolean renames org.allbinary.midlet.AllBinaryMidlet_Package_References."=";
+   subtype AllBinaryMidlet_Access_Array is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array;
+   function "=" (Left, Right : AllBinaryMidlet_Access_Array) return Boolean renames org.allbinary.midlet.AllBinaryMidlet_Package_References."=";
+   subtype AllBinaryMidlet_Access_Array_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryMidlet_Access_Array_Access) return Boolean renames org.allbinary.midlet.AllBinaryMidlet_Package_References."=";
+   subtype AllBinaryMidlet_Access_Array_Access_Array is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryMidlet_Access_Array_Access_Array) return Boolean renames org.allbinary.midlet.AllBinaryMidlet_Package_References."=";
+   subtype AllBinaryMidlet_Access_Array_Access_Array_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryMidlet_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.midlet.AllBinaryMidlet_Package_References."=";
 
    type AllBinaryMidlet is new MIDlet_Package.MIDlet and CommandListener with record
       logUtil : LogUtil_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package;
+package org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References is
+   type SingleSensorGameUpdateProcessor_Access is access all org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package.SingleSensorGameUpdateProcessor'Class;
+   type SingleSensorGameUpdateProcessor_Access_Array is array (Natural range <>) of SingleSensorGameUpdateProcessor_Access;
+   type SingleSensorGameUpdateProcessor_Access_Array_Access is access all SingleSensorGameUpdateProcessor_Access_Array;
+   type SingleSensorGameUpdateProcessor_Access_Array_Access_Array is array (Natural range <>) of SingleSensorGameUpdateProcessor_Access_Array_Access;
+   type SingleSensorGameUpdateProcessor_Access_Array_Access_Array_Access is access all SingleSensorGameUpdateProcessor_Access_Array_Access_Array;
+end org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References;
+
+with org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.input.gyro.SensorGameUpdateProcessor_Package; use org.allbina
 
 package org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SingleSensorGameUpdateProcessor is tagged;
-   type SingleSensorGameUpdateProcessor_Access is access all SingleSensorGameUpdateProcessor'Class;
-   type SingleSensorGameUpdateProcessor_Access_Array is array (Natural range <>) of SingleSensorGameUpdateProcessor_Access;
-   type SingleSensorGameUpdateProcessor_Access_Array_Access is access all SingleSensorGameUpdateProcessor_Access_Array;
-   type SingleSensorGameUpdateProcessor_Access_Array_Access_Array is array (Natural range <>) of SingleSensorGameUpdateProcessor_Access_Array_Access;
-   type SingleSensorGameUpdateProcessor_Access_Array_Access_Array_Access is access all SingleSensorGameUpdateProcessor_Access_Array_Access_Array;
+
+   subtype SingleSensorGameUpdateProcessor_Access is org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References.SingleSensorGameUpdateProcessor_Access;
+   function "=" (Left, Right : SingleSensorGameUpdateProcessor_Access) return Boolean renames org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References."=";
+   subtype SingleSensorGameUpdateProcessor_Access_Array is org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References.SingleSensorGameUpdateProcessor_Access_Array;
+   function "=" (Left, Right : SingleSensorGameUpdateProcessor_Access_Array) return Boolean renames org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References."=";
+   subtype SingleSensorGameUpdateProcessor_Access_Array_Access is org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References.SingleSensorGameUpdateProcessor_Access_Array_Access;
+   function "=" (Left, Right : SingleSensorGameUpdateProcessor_Access_Array_Access) return Boolean renames org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References."=";
+   subtype SingleSensorGameUpdateProcessor_Access_Array_Access_Array is org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References.SingleSensorGameUpdateProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : SingleSensorGameUpdateProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References."=";
+   subtype SingleSensorGameUpdateProcessor_Access_Array_Access_Array_Access is org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References.SingleSensorGameUpdateProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SingleSensorGameUpdateProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package_References."=";
 
    type SingleSensorGameUpdateProcessor is new SensorGameUpdateProcessor with null record;
 

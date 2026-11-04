@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.displayable.canvas.GameRunnable_Package;
 
 package body org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package is
 
@@ -37,7 +38,7 @@ package body org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package 
 
    function getInstance return GameRunnable_Access is
    begin
-        return NullWaitGameRunnable_Package.instance;
+        return GameRunnable_Access (NullWaitGameRunnable_Package.instance);
    end getInstance;
 
 begin

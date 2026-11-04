@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package;
+package org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References is
+   type ThirdPartyInApplicationPurchase_Access is access all org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package.ThirdPartyInApplicationPurchase'Class;
+   type ThirdPartyInApplicationPurchase_Access_Array is array (Natural range <>) of ThirdPartyInApplicationPurchase_Access;
+   type ThirdPartyInApplicationPurchase_Access_Array_Access is access all ThirdPartyInApplicationPurchase_Access_Array;
+   type ThirdPartyInApplicationPurchase_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyInApplicationPurchase_Access_Array_Access;
+   type ThirdPartyInApplicationPurchase_Access_Array_Access_Array_Access is access all ThirdPartyInApplicationPurchase_Access_Array_Access_Array;
+end org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References;
+
+with org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,17 +31,36 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchaseInterface_Package; use org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchaseInterface_Package;
-with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
+limited with org.allbinary.logic.system.security.licensing.LockableFeature_Package;
+with org.allbinary.logic.system.security.licensing.LockableFeature_Package_References;
 
 package org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package is
 
+   package Reference_Types is
+   subtype LockableFeature_Access is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access;
+   use type LockableFeature_Access;
+   subtype LockableFeature_Access_Array is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array;
+   use type LockableFeature_Access_Array;
+   subtype LockableFeature_Access_Array_Access is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array_Access;
+   use type LockableFeature_Access_Array_Access;
+   subtype LockableFeature_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array_Access_Array;
+   use type LockableFeature_Access_Array_Access_Array;
+   subtype LockableFeature_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array_Access_Array_Access;
+   use type LockableFeature_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ThirdPartyInApplicationPurchase is tagged;
-   type ThirdPartyInApplicationPurchase_Access is access all ThirdPartyInApplicationPurchase'Class;
-   type ThirdPartyInApplicationPurchase_Access_Array is array (Natural range <>) of ThirdPartyInApplicationPurchase_Access;
-   type ThirdPartyInApplicationPurchase_Access_Array_Access is access all ThirdPartyInApplicationPurchase_Access_Array;
-   type ThirdPartyInApplicationPurchase_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyInApplicationPurchase_Access_Array_Access;
-   type ThirdPartyInApplicationPurchase_Access_Array_Access_Array_Access is access all ThirdPartyInApplicationPurchase_Access_Array_Access_Array;
+
+   subtype ThirdPartyInApplicationPurchase_Access is org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References.ThirdPartyInApplicationPurchase_Access;
+   function "=" (Left, Right : ThirdPartyInApplicationPurchase_Access) return Boolean renames org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References."=";
+   subtype ThirdPartyInApplicationPurchase_Access_Array is org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References.ThirdPartyInApplicationPurchase_Access_Array;
+   function "=" (Left, Right : ThirdPartyInApplicationPurchase_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References."=";
+   subtype ThirdPartyInApplicationPurchase_Access_Array_Access is org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References.ThirdPartyInApplicationPurchase_Access_Array_Access;
+   function "=" (Left, Right : ThirdPartyInApplicationPurchase_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References."=";
+   subtype ThirdPartyInApplicationPurchase_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References.ThirdPartyInApplicationPurchase_Access_Array_Access_Array;
+   function "=" (Left, Right : ThirdPartyInApplicationPurchase_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References."=";
+   subtype ThirdPartyInApplicationPurchase_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References.ThirdPartyInApplicationPurchase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ThirdPartyInApplicationPurchase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package_References."=";
 
    type ThirdPartyInApplicationPurchase is new Java_Object and ThirdPartyInApplicationPurchaseInterface with null record;
 

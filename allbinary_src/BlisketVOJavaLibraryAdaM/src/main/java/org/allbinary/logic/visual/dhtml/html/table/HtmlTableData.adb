@@ -50,7 +50,7 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlTableData_Package i
 
    function getInstance return HtmlTableData_Access is
    begin
-        return HtmlTableData_Package.instance;
+        return HtmlTableData_Access (HtmlTableData_Package.instance);
    end getInstance;
 
 begin

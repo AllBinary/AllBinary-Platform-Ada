@@ -14,9 +14,32 @@
 
 
 with org.allbinary.input.automation.PointFactory_Package; use org.allbinary.input.automation.PointFactory_Package;
+with org.allbinary.input.automation.Point_Package; use org.allbinary.input.automation.Point_Package;
+with org.allbinary.input.automation.Rectangle_Package; use org.allbinary.input.automation.Rectangle_Package;
+with org.allbinary.input.automation.PointFactory_Package;
 
 package body org.allbinary.input.automation.PointHelper_Package is
 
+   subtype Point_Access is org.allbinary.input.automation.Point_Package_References.Point_Access;
+   function "=" (Left, Right : Point_Access) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
+   subtype Point_Access_Array is org.allbinary.input.automation.Point_Package_References.Point_Access_Array;
+   function "=" (Left, Right : Point_Access_Array) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
+   subtype Point_Access_Array_Access is org.allbinary.input.automation.Point_Package_References.Point_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array is org.allbinary.input.automation.Point_Package_References.Point_Access_Array_Access_Array;
+   function "=" (Left, Right : Point_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array_Access is org.allbinary.input.automation.Point_Package_References.Point_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
+   subtype Rectangle_Access is org.allbinary.input.automation.Rectangle_Package_References.Rectangle_Access;
+   function "=" (Left, Right : Rectangle_Access) return Boolean renames org.allbinary.input.automation.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array is org.allbinary.input.automation.Rectangle_Package_References.Rectangle_Access_Array;
+   function "=" (Left, Right : Rectangle_Access_Array) return Boolean renames org.allbinary.input.automation.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access is org.allbinary.input.automation.Rectangle_Package_References.Rectangle_Access_Array_Access;
+   function "=" (Left, Right : Rectangle_Access_Array_Access) return Boolean renames org.allbinary.input.automation.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access_Array is org.allbinary.input.automation.Rectangle_Package_References.Rectangle_Access_Array_Access_Array;
+   function "=" (Left, Right : Rectangle_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access_Array_Access is org.allbinary.input.automation.Rectangle_Package_References.Rectangle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Rectangle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.Rectangle_Package_References."=";
    procedure Initialize_Fields (This : in out PointHelper'Class) is
    begin
       null;

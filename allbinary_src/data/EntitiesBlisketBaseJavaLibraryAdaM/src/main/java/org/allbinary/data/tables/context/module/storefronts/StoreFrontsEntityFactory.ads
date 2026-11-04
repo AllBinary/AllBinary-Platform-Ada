@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
+package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References is
+   type StoreFrontsEntityFactory_Access is access all org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package.StoreFrontsEntityFactory'Class;
+   type StoreFrontsEntityFactory_Access_Array is array (Natural range <>) of StoreFrontsEntityFactory_Access;
+   type StoreFrontsEntityFactory_Access_Array_Access is access all StoreFrontsEntityFactory_Access_Array;
+   type StoreFrontsEntityFactory_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsEntityFactory_Access_Array_Access;
+   type StoreFrontsEntityFactory_Access_Array_Access_Array_Access is access all StoreFrontsEntityFactory_Access_Array_Access_Array;
+end org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References;
+
+with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
+with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package_References;
 
 package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype StoreFrontsEntity_Access is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package_References.StoreFrontsEntity_Access;
+   use type StoreFrontsEntity_Access;
+   subtype StoreFrontsEntity_Access_Array is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package_References.StoreFrontsEntity_Access_Array;
+   use type StoreFrontsEntity_Access_Array;
+   subtype StoreFrontsEntity_Access_Array_Access is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package_References.StoreFrontsEntity_Access_Array_Access;
+   use type StoreFrontsEntity_Access_Array_Access;
+   subtype StoreFrontsEntity_Access_Array_Access_Array is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package_References.StoreFrontsEntity_Access_Array_Access_Array;
+   use type StoreFrontsEntity_Access_Array_Access_Array;
+   subtype StoreFrontsEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package_References.StoreFrontsEntity_Access_Array_Access_Array_Access;
+   use type StoreFrontsEntity_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreFrontsEntityFactory is tagged;
-   type StoreFrontsEntityFactory_Access is access all StoreFrontsEntityFactory'Class;
-   type StoreFrontsEntityFactory_Access_Array is array (Natural range <>) of StoreFrontsEntityFactory_Access;
-   type StoreFrontsEntityFactory_Access_Array_Access is access all StoreFrontsEntityFactory_Access_Array;
-   type StoreFrontsEntityFactory_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsEntityFactory_Access_Array_Access;
-   type StoreFrontsEntityFactory_Access_Array_Access_Array_Access is access all StoreFrontsEntityFactory_Access_Array_Access_Array;
+
+   subtype StoreFrontsEntityFactory_Access is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References.StoreFrontsEntityFactory_Access;
+   function "=" (Left, Right : StoreFrontsEntityFactory_Access) return Boolean renames org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References."=";
+   subtype StoreFrontsEntityFactory_Access_Array is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References.StoreFrontsEntityFactory_Access_Array;
+   function "=" (Left, Right : StoreFrontsEntityFactory_Access_Array) return Boolean renames org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References."=";
+   subtype StoreFrontsEntityFactory_Access_Array_Access is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References.StoreFrontsEntityFactory_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontsEntityFactory_Access_Array_Access) return Boolean renames org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References."=";
+   subtype StoreFrontsEntityFactory_Access_Array_Access_Array is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References.StoreFrontsEntityFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontsEntityFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References."=";
+   subtype StoreFrontsEntityFactory_Access_Array_Access_Array_Access is org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References.StoreFrontsEntityFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontsEntityFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package_References."=";
 
    type StoreFrontsEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

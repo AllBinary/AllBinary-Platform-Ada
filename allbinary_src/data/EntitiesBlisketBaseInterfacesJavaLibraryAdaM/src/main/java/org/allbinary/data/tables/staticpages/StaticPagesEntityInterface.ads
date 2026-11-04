@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package;
+package org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References is
+   type StaticPagesEntityInterface_Access is access all org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package.StaticPagesEntityInterface'Class;
+   type StaticPagesEntityInterface_Access_Array is array (Natural range <>) of StaticPagesEntityInterface_Access;
+   type StaticPagesEntityInterface_Access_Array_Access is access all StaticPagesEntityInterface_Access_Array;
+   type StaticPagesEntityInterface_Access_Array_Access_Array is array (Natural range <>) of StaticPagesEntityInterface_Access_Array_Access;
+   type StaticPagesEntityInterface_Access_Array_Access_Array_Access is access all StaticPagesEntityInterface_Access_Array_Access_Array;
+end org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References;
+
+with org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,7 +31,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
 package org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package is
@@ -29,13 +40,33 @@ package org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type StaticPagesEntityInterface is interface and BasicDataTableInterface;
-   type StaticPagesEntityInterface_Access is access all StaticPagesEntityInterface'Class;
-   type StaticPagesEntityInterface_Access_Array is array (Natural range <>) of StaticPagesEntityInterface_Access;
-   type StaticPagesEntityInterface_Access_Array_Access is access all StaticPagesEntityInterface_Access_Array;
-   type StaticPagesEntityInterface_Access_Array_Access_Array is array (Natural range <>) of StaticPagesEntityInterface_Access_Array_Access;
-   type StaticPagesEntityInterface_Access_Array_Access_Array_Access is access all StaticPagesEntityInterface_Access_Array_Access_Array;
+   subtype StaticPagesEntityInterface_Access is org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References.StaticPagesEntityInterface_Access;
+   function "=" (Left, Right : StaticPagesEntityInterface_Access) return Boolean renames org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References."=";
+   subtype StaticPagesEntityInterface_Access_Array is org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References.StaticPagesEntityInterface_Access_Array;
+   function "=" (Left, Right : StaticPagesEntityInterface_Access_Array) return Boolean renames org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References."=";
+   subtype StaticPagesEntityInterface_Access_Array_Access is org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References.StaticPagesEntityInterface_Access_Array_Access;
+   function "=" (Left, Right : StaticPagesEntityInterface_Access_Array_Access) return Boolean renames org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References."=";
+   subtype StaticPagesEntityInterface_Access_Array_Access_Array is org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References.StaticPagesEntityInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : StaticPagesEntityInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References."=";
+   subtype StaticPagesEntityInterface_Access_Array_Access_Array_Access is org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References.StaticPagesEntityInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StaticPagesEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References."=";
+   function Java_Object_Access_From_StaticPagesEntityInterface (Value : StaticPagesEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getFile (This : in out StaticPagesEntityInterface; store : Unbounded_String; keywords : Unbounded_String) return Unbounded_String is abstract;
    procedure delete (This : in out StaticPagesEntityInterface; value : Unbounded_String) is abstract;
    procedure insert (This : in out StaticPagesEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;

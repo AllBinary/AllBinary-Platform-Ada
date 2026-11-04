@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with android.view.View_Package; use android.view.View_Package;
+with org.allbinary.android.view.BaseViewWrapper_Package;
 
 package body org.allbinary.android.view.ViewWrapper_Package is
 
+   subtype View_Access is android.view.View_Package_References.View_Access;
+   function "=" (Left, Right : View_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array is android.view.View_Package_References.View_Access_Array;
+   function "=" (Left, Right : View_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array is android.view.View_Package_References.View_Access_Array_Access_Array;
+   function "=" (Left, Right : View_Access_Array_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
    procedure Initialize_Fields (This : in out ViewWrapper'Class) is
    begin
       null;

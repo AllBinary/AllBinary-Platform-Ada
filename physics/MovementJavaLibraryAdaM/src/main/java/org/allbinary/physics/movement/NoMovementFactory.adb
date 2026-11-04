@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.physics.movement.Movement_Package; use org.allbinary.physics.movement.Movement_Package;
+with org.allbinary.physics.movement.Movement_Package;
+with org.allbinary.physics.movement.MovementInterface_Package;
 
 package body org.allbinary.physics.movement.NoMovementFactory_Package is
 
+   subtype Movement_Access is org.allbinary.physics.movement.Movement_Package_References.Movement_Access;
+   function "=" (Left, Right : Movement_Access) return Boolean renames org.allbinary.physics.movement.Movement_Package_References."=";
+   subtype Movement_Access_Array is org.allbinary.physics.movement.Movement_Package_References.Movement_Access_Array;
+   function "=" (Left, Right : Movement_Access_Array) return Boolean renames org.allbinary.physics.movement.Movement_Package_References."=";
+   subtype Movement_Access_Array_Access is org.allbinary.physics.movement.Movement_Package_References.Movement_Access_Array_Access;
+   function "=" (Left, Right : Movement_Access_Array_Access) return Boolean renames org.allbinary.physics.movement.Movement_Package_References."=";
+   subtype Movement_Access_Array_Access_Array is org.allbinary.physics.movement.Movement_Package_References.Movement_Access_Array_Access_Array;
+   function "=" (Left, Right : Movement_Access_Array_Access_Array) return Boolean renames org.allbinary.physics.movement.Movement_Package_References."=";
+   subtype Movement_Access_Array_Access_Array_Access is org.allbinary.physics.movement.Movement_Package_References.Movement_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Movement_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.physics.movement.Movement_Package_References."=";
    procedure Initialize_Fields (This : in out NoMovementFactory'Class) is
    begin
       null;
@@ -37,7 +50,7 @@ package body org.allbinary.physics.movement.NoMovementFactory_Package is
 
    function getInstance return NoMovementFactory_Access is
    begin
-        return NoMovementFactory_Package.instance;
+        return NoMovementFactory_Access (NoMovementFactory_Package.instance);
    end getInstance;
 
    function getMovmentInstance (This : in out NoMovementFactory) return Movement_Access is

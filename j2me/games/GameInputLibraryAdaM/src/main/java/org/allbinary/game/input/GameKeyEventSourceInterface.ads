@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+package org.allbinary.game.input.GameKeyEventSourceInterface_Package_References is
+   type GameKeyEventSourceInterface_Access is access all org.allbinary.game.input.GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class;
+   type GameKeyEventSourceInterface_Access_Array is array (Natural range <>) of GameKeyEventSourceInterface_Access;
+   type GameKeyEventSourceInterface_Access_Array_Access is access all GameKeyEventSourceInterface_Access_Array;
+   type GameKeyEventSourceInterface_Access_Array_Access_Array is array (Natural range <>) of GameKeyEventSourceInterface_Access_Array_Access;
+   type GameKeyEventSourceInterface_Access_Array_Access_Array_Access is access all GameKeyEventSourceInterface_Access_Array_Access_Array;
+end org.allbinary.game.input.GameKeyEventSourceInterface_Package_References;
+
+with org.allbinary.game.input.GameKeyEventSourceInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.input.GameKeyEventSourceInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type GameKeyEventSourceInterface is interface;
-   type GameKeyEventSourceInterface_Access is access all GameKeyEventSourceInterface'Class;
-   type GameKeyEventSourceInterface_Access_Array is array (Natural range <>) of GameKeyEventSourceInterface_Access;
-   type GameKeyEventSourceInterface_Access_Array_Access is access all GameKeyEventSourceInterface_Access_Array;
-   type GameKeyEventSourceInterface_Access_Array_Access_Array is array (Natural range <>) of GameKeyEventSourceInterface_Access_Array_Access;
-   type GameKeyEventSourceInterface_Access_Array_Access_Array_Access is access all GameKeyEventSourceInterface_Access_Array_Access_Array;
+   subtype GameKeyEventSourceInterface_Access is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   subtype GameKeyEventSourceInterface_Access_Array is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access_Array;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access_Array) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   subtype GameKeyEventSourceInterface_Access_Array_Access is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   subtype GameKeyEventSourceInterface_Access_Array_Access_Array is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   subtype GameKeyEventSourceInterface_Access_Array_Access_Array_Access is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   function Java_Object_Access_From_GameKeyEventSourceInterface (Value : GameKeyEventSourceInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getSourceId (This : in out GameKeyEventSourceInterface) return Integer is abstract;
 
 end org.allbinary.game.input.GameKeyEventSourceInterface_Package;

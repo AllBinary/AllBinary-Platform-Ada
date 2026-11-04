@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.path.AbPathData_Package;
+package org.allbinary.logic.io.path.AbPathData_Package_References is
+   type AbPathData_Access is access all org.allbinary.logic.io.path.AbPathData_Package.AbPathData'Class;
+   type AbPathData_Access_Array is array (Natural range <>) of AbPathData_Access;
+   type AbPathData_Access_Array_Access is access all AbPathData_Access_Array;
+   type AbPathData_Access_Array_Access_Array is array (Natural range <>) of AbPathData_Access_Array_Access;
+   type AbPathData_Access_Array_Access_Array_Access is access all AbPathData_Access_Array_Access_Array;
+end org.allbinary.logic.io.path.AbPathData_Package_References;
+
+with org.allbinary.logic.io.path.AbPathData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.io.path.AbPathData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbPathData is tagged;
-   type AbPathData_Access is access all AbPathData'Class;
-   type AbPathData_Access_Array is array (Natural range <>) of AbPathData_Access;
-   type AbPathData_Access_Array_Access is access all AbPathData_Access_Array;
-   type AbPathData_Access_Array_Access_Array is array (Natural range <>) of AbPathData_Access_Array_Access;
-   type AbPathData_Access_Array_Access_Array_Access is access all AbPathData_Access_Array_Access_Array;
+
+   subtype AbPathData_Access is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access;
+   function "=" (Left, Right : AbPathData_Access) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
+   subtype AbPathData_Access_Array is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array;
+   function "=" (Left, Right : AbPathData_Access_Array) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
+   subtype AbPathData_Access_Array_Access is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array_Access;
+   function "=" (Left, Right : AbPathData_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
+   subtype AbPathData_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array_Access_Array;
+   function "=" (Left, Right : AbPathData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
+   subtype AbPathData_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbPathData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.AbPathData_Package_References."=";
 
    type AbPathData is new Java_Object with record
       EXTENSION_SEP : Unbounded_String;

@@ -13,10 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.Activity_Package; use android.app.Activity_Package;
 with android.view.Window_Package; use android.view.Window_Package;
 with androidx.core.view.WindowCompat_Package; use androidx.core.view.WindowCompat_Package;
 with androidx.core.view.WindowInsetsCompat_Package; use androidx.core.view.WindowInsetsCompat_Package;
 with androidx.core.view.WindowInsetsControllerCompat_Package; use androidx.core.view.WindowInsetsControllerCompat_Package;
+with org.allbinary.android.api5.ActivityFractureUtilAPI5_Package; use org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
 
 package body org.allbinary.android.api30.ActivityFractureUtilAPI30_Package is
 
@@ -24,6 +26,16 @@ package body org.allbinary.android.api30.ActivityFractureUtilAPI30_Package is
    package WindowCompat_Package renames Standard.androidx.core.view.WindowCompat_Package;
    package WindowInsetsCompat_Package renames Standard.androidx.core.view.WindowInsetsCompat_Package;
    package WindowInsetsControllerCompat_Package renames Standard.androidx.core.view.WindowInsetsControllerCompat_Package;
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   function "=" (Left, Right : Activity_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
    procedure Initialize_Fields (This : in out ActivityFractureUtilAPI30'Class) is
    begin
       null;
@@ -45,7 +57,7 @@ package body org.allbinary.android.api30.ActivityFractureUtilAPI30_Package is
 
    function getInstance return ActivityFractureUtilAPI30_Access is
    begin
-        return ActivityFractureUtilAPI30_Package.instance30;
+        return ActivityFractureUtilAPI30_Access (ActivityFractureUtilAPI30_Package.instance30);
    end getInstance;
 
    procedure setFullScreen (This : in out ActivityFractureUtilAPI30; activity_Param : access Activity_Package.Activity'Class) is

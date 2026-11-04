@@ -13,14 +13,60 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.media.image.GraphicsEnvironment_Package; use org.allbinary.media.image.GraphicsEnvironment_Package;
 with org.allbinary.media.image.GraphicsDevice_Package; use org.allbinary.media.image.GraphicsDevice_Package;
+with org.allbinary.media.image.GraphicsConfiguration_Package; use org.allbinary.media.image.GraphicsConfiguration_Package;
 with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
+with org.allbinary.media.image.ImageUnifierProperties_Package; use org.allbinary.media.image.ImageUnifierProperties_Package;
+with org.allbinary.media.image.ImageUnifierCell_Package;
+with org.allbinary.media.image.ImageUnifierProperties_Package;
 
 package body org.allbinary.media.image.ImageUnifierUtil_Package is
 
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype ImageUtil_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access;
+   function "=" (Left, Right : ImageUtil_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array;
+   function "=" (Left, Right : ImageUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype GraphicsConfiguration_Access is org.allbinary.media.image.GraphicsConfiguration_Package_References.GraphicsConfiguration_Access;
+   function "=" (Left, Right : GraphicsConfiguration_Access) return Boolean renames org.allbinary.media.image.GraphicsConfiguration_Package_References."=";
+   subtype GraphicsConfiguration_Access_Array is org.allbinary.media.image.GraphicsConfiguration_Package_References.GraphicsConfiguration_Access_Array;
+   function "=" (Left, Right : GraphicsConfiguration_Access_Array) return Boolean renames org.allbinary.media.image.GraphicsConfiguration_Package_References."=";
+   subtype GraphicsConfiguration_Access_Array_Access is org.allbinary.media.image.GraphicsConfiguration_Package_References.GraphicsConfiguration_Access_Array_Access;
+   function "=" (Left, Right : GraphicsConfiguration_Access_Array_Access) return Boolean renames org.allbinary.media.image.GraphicsConfiguration_Package_References."=";
+   subtype GraphicsConfiguration_Access_Array_Access_Array is org.allbinary.media.image.GraphicsConfiguration_Package_References.GraphicsConfiguration_Access_Array_Access_Array;
+   function "=" (Left, Right : GraphicsConfiguration_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.GraphicsConfiguration_Package_References."=";
+   subtype GraphicsConfiguration_Access_Array_Access_Array_Access is org.allbinary.media.image.GraphicsConfiguration_Package_References.GraphicsConfiguration_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GraphicsConfiguration_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.GraphicsConfiguration_Package_References."=";
+   subtype ImageUnifierProperties_Access is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access;
+   function "=" (Left, Right : ImageUnifierProperties_Access) return Boolean renames org.allbinary.media.image.ImageUnifierProperties_Package_References."=";
+   subtype ImageUnifierProperties_Access_Array is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access_Array;
+   function "=" (Left, Right : ImageUnifierProperties_Access_Array) return Boolean renames org.allbinary.media.image.ImageUnifierProperties_Package_References."=";
+   subtype ImageUnifierProperties_Access_Array_Access is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access_Array_Access;
+   function "=" (Left, Right : ImageUnifierProperties_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUnifierProperties_Package_References."=";
+   subtype ImageUnifierProperties_Access_Array_Access_Array is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageUnifierProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageUnifierProperties_Package_References."=";
+   subtype ImageUnifierProperties_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageUnifierProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUnifierProperties_Package_References."=";
    procedure Initialize_Fields (This : in out ImageUnifierUtil'Class) is
    begin
       null;
@@ -31,7 +77,7 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
 
    function getInstance return ImageUnifierUtil_Access is
    begin
-        return ImageUnifierUtil_Package.instance;
+        return ImageUnifierUtil_Access (ImageUnifierUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ImageUnifierUtil'Class) is

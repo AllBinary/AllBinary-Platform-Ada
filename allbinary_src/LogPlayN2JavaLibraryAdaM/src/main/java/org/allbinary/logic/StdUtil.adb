@@ -16,12 +16,60 @@
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with org.allbinary.util.ABHashMap_Package; use org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package; use org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.logic.StdUtil_Package is
 
    package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
    package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   subtype ABHashMap_Access is org.allbinary.util.ABHashMap_Package_References.ABHashMap_Access;
+   function "=" (Left, Right : ABHashMap_Access) return Boolean renames org.allbinary.util.ABHashMap_Package_References."=";
+   subtype ABHashMap_Access_Array is org.allbinary.util.ABHashMap_Package_References.ABHashMap_Access_Array;
+   function "=" (Left, Right : ABHashMap_Access_Array) return Boolean renames org.allbinary.util.ABHashMap_Package_References."=";
+   subtype ABHashMap_Access_Array_Access is org.allbinary.util.ABHashMap_Package_References.ABHashMap_Access_Array_Access;
+   function "=" (Left, Right : ABHashMap_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashMap_Package_References."=";
+   subtype ABHashMap_Access_Array_Access_Array is org.allbinary.util.ABHashMap_Package_References.ABHashMap_Access_Array_Access_Array;
+   function "=" (Left, Right : ABHashMap_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ABHashMap_Package_References."=";
+   subtype ABHashMap_Access_Array_Access_Array_Access is org.allbinary.util.ABHashMap_Package_References.ABHashMap_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABHashMap_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashMap_Package_References."=";
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   function "=" (Left, Right : ABHashtable_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABStack_Access is org.allbinary.util.ABStack_Package_References.ABStack_Access;
+   function "=" (Left, Right : ABStack_Access) return Boolean renames org.allbinary.util.ABStack_Package_References."=";
+   subtype ABStack_Access_Array is org.allbinary.util.ABStack_Package_References.ABStack_Access_Array;
+   function "=" (Left, Right : ABStack_Access_Array) return Boolean renames org.allbinary.util.ABStack_Package_References."=";
+   subtype ABStack_Access_Array_Access is org.allbinary.util.ABStack_Package_References.ABStack_Access_Array_Access;
+   function "=" (Left, Right : ABStack_Access_Array_Access) return Boolean renames org.allbinary.util.ABStack_Package_References."=";
+   subtype ABStack_Access_Array_Access_Array is org.allbinary.util.ABStack_Package_References.ABStack_Access_Array_Access_Array;
+   function "=" (Left, Right : ABStack_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ABStack_Package_References."=";
+   subtype ABStack_Access_Array_Access_Array_Access is org.allbinary.util.ABStack_Package_References.ABStack_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABStack_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ABStack_Package_References."=";
+   subtype ABVector_Access is org.allbinary.util.ABVector_Package_References.ABVector_Access;
+   function "=" (Left, Right : ABVector_Access) return Boolean renames org.allbinary.util.ABVector_Package_References."=";
+   subtype ABVector_Access_Array is org.allbinary.util.ABVector_Package_References.ABVector_Access_Array;
+   function "=" (Left, Right : ABVector_Access_Array) return Boolean renames org.allbinary.util.ABVector_Package_References."=";
+   subtype ABVector_Access_Array_Access is org.allbinary.util.ABVector_Package_References.ABVector_Access_Array_Access;
+   function "=" (Left, Right : ABVector_Access_Array_Access) return Boolean renames org.allbinary.util.ABVector_Package_References."=";
+   subtype ABVector_Access_Array_Access_Array is org.allbinary.util.ABVector_Package_References.ABVector_Access_Array_Access_Array;
+   function "=" (Left, Right : ABVector_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ABVector_Package_References."=";
+   subtype ABVector_Access_Array_Access_Array_Access is org.allbinary.util.ABVector_Package_References.ABVector_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABVector_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ABVector_Package_References."=";
    procedure Initialize_Fields (This : in out StdUtil'Class) is
    begin
       null;
@@ -45,7 +93,7 @@ package body org.allbinary.logic.StdUtil_Package is
 
    function getInstance return StdUtil_Access is
    begin
-        return StdUtil_Package.instance;
+        return StdUtil_Access (StdUtil_Package.instance);
    end getInstance;
 
    function createStack (This : in out StdUtil) return ABStack_Access is

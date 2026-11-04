@@ -13,14 +13,60 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.commerce.inventory.item.Item_Package; use org.allbinary.business.user.commerce.inventory.item.Item_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemView_Package; use org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.user.commerce.inventory.basket.BasketData_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
+with org.allbinary.business.user.commerce.inventory.item.Item_Package;
+with org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
 
 package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype Item_Access is org.allbinary.business.user.commerce.inventory.item.Item_Package_References.Item_Access;
+   function "=" (Left, Right : Item_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.Item_Package_References."=";
+   subtype Item_Access_Array is org.allbinary.business.user.commerce.inventory.item.Item_Package_References.Item_Access_Array;
+   function "=" (Left, Right : Item_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.Item_Package_References."=";
+   subtype Item_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.Item_Package_References.Item_Access_Array_Access;
+   function "=" (Left, Right : Item_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.Item_Package_References."=";
+   subtype Item_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.item.Item_Package_References.Item_Access_Array_Access_Array;
+   function "=" (Left, Right : Item_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.Item_Package_References."=";
+   subtype Item_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.Item_Package_References.Item_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Item_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.Item_Package_References."=";
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   function "=" (Left, Right : Document_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   function "=" (Left, Right : Node_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   function "=" (Left, Right : Node_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   function "=" (Left, Right : Node_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
    procedure Initialize_Fields (This : in out BasketReview'Class) is
    begin
       null;
@@ -111,7 +157,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
         return This.items.size;
    end getNumberOfItems;
 
-   function getIds (This : in out BasketReview) return Set_Access is
+   function getIds (This : in out BasketReview) return Java_Object_Access is
       idSet : HashSet_Access;
       itemArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -125,7 +171,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
             item := Item_Access (itemArray (index));
             idSet.add (item.getId);
         end loop;
-        return Set_Access (idSet);
+        return Java_Object_Access (idSet);
    end getIds;
 
    function getNumberOf (This : in out BasketReview; id : Unbounded_String) return Integer is

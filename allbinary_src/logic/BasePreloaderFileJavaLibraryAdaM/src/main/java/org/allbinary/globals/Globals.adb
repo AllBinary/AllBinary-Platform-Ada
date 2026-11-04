@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
@@ -20,6 +21,11 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.globals.ClassLoader_Package; use org.allbinary.globals.ClassLoader_Package;
+with org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package;
+with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
 
 package body org.allbinary.globals.Globals_Package is
 
@@ -28,6 +34,26 @@ package body org.allbinary.globals.Globals_Package is
    package WebappClassLoaderInfo_Package renames Standard.org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype ClassLoader_Access is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access;
+   function "=" (Left, Right : ClassLoader_Access) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
+   subtype ClassLoader_Access_Array is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access_Array;
+   function "=" (Left, Right : ClassLoader_Access_Array) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
+   subtype ClassLoader_Access_Array_Access is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
+   function "=" (Left, Right : ClassLoader_Access_Array_Access) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
+   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
+   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
+   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
    procedure Initialize_Fields (This : in out Globals'Class) is
    begin
       null;
@@ -37,7 +63,7 @@ package body org.allbinary.globals.Globals_Package is
 
    function getInstance return Globals_Access is
    begin
-        return Globals_Package.instance;
+        return Globals_Access (Globals_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out Globals'Class) is

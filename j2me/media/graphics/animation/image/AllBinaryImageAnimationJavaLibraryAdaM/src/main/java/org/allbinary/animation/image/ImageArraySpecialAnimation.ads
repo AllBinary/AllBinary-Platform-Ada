@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.image.ImageArraySpecialAnimation_Package;
+package org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References is
+   type ImageArraySpecialAnimation_Access is access all org.allbinary.animation.image.ImageArraySpecialAnimation_Package.ImageArraySpecialAnimation'Class;
+   type ImageArraySpecialAnimation_Access_Array is array (Natural range <>) of ImageArraySpecialAnimation_Access;
+   type ImageArraySpecialAnimation_Access_Array_Access is access all ImageArraySpecialAnimation_Access_Array;
+   type ImageArraySpecialAnimation_Access_Array_Access_Array is array (Natural range <>) of ImageArraySpecialAnimation_Access_Array_Access;
+   type ImageArraySpecialAnimation_Access_Array_Access_Array_Access is access all ImageArraySpecialAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References;
+
+with org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.special.SpecialAnimationInterface_Package; use org.allbinary.animation.special.SpecialAnimationInterface_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+limited with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.animation.image.ImageArrayAnimation_Package; use org.allbinary.animation.image.ImageArrayAnimation_Package;
 
 package org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
@@ -34,13 +48,61 @@ package org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package SpecialAnimationInterface_Package renames Standard.org.allbinary.animation.special.SpecialAnimationInterface_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype AnimationBehavior_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access;
+   use type AnimationBehavior_Access;
+   subtype AnimationBehavior_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array;
+   use type AnimationBehavior_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access;
+   subtype AnimationBehavior_Access_Array_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array;
+   use type AnimationBehavior_Access_Array_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access_Array_Access;
+   subtype TimeDelayHelper_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access;
+   use type TimeDelayHelper_Access;
+   subtype TimeDelayHelper_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array;
+   use type TimeDelayHelper_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access;
+   subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
+   use type TimeDelayHelper_Access_Array_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageArraySpecialAnimation is tagged;
-   type ImageArraySpecialAnimation_Access is access all ImageArraySpecialAnimation'Class;
-   type ImageArraySpecialAnimation_Access_Array is array (Natural range <>) of ImageArraySpecialAnimation_Access;
-   type ImageArraySpecialAnimation_Access_Array_Access is access all ImageArraySpecialAnimation_Access_Array;
-   type ImageArraySpecialAnimation_Access_Array_Access_Array is array (Natural range <>) of ImageArraySpecialAnimation_Access_Array_Access;
-   type ImageArraySpecialAnimation_Access_Array_Access_Array_Access is access all ImageArraySpecialAnimation_Access_Array_Access_Array;
+
+   subtype ImageArraySpecialAnimation_Access is org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References.ImageArraySpecialAnimation_Access;
+   function "=" (Left, Right : ImageArraySpecialAnimation_Access) return Boolean renames org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References."=";
+   subtype ImageArraySpecialAnimation_Access_Array is org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References.ImageArraySpecialAnimation_Access_Array;
+   function "=" (Left, Right : ImageArraySpecialAnimation_Access_Array) return Boolean renames org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References."=";
+   subtype ImageArraySpecialAnimation_Access_Array_Access is org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References.ImageArraySpecialAnimation_Access_Array_Access;
+   function "=" (Left, Right : ImageArraySpecialAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References."=";
+   subtype ImageArraySpecialAnimation_Access_Array_Access_Array is org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References.ImageArraySpecialAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageArraySpecialAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References."=";
+   subtype ImageArraySpecialAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References.ImageArraySpecialAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageArraySpecialAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.ImageArraySpecialAnimation_Package_References."=";
 
    type ImageArraySpecialAnimation is new ImageArrayAnimation and SpecialAnimationInterface with record
       timeDelayHelper : TimeDelayHelper_Access;

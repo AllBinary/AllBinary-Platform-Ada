@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.util.ABHashtable_Package;
+package org.allbinary.util.ABHashtable_Package_References is
+   type ABHashtable_Access is access all org.allbinary.util.ABHashtable_Package.ABHashtable'Class;
+   type ABHashtable_Access_Array is array (Natural range <>) of ABHashtable_Access;
+   type ABHashtable_Access_Array_Access is access all ABHashtable_Access_Array;
+   type ABHashtable_Access_Array_Access_Array is array (Natural range <>) of ABHashtable_Access_Array_Access;
+   type ABHashtable_Access_Array_Access_Array_Access is access all ABHashtable_Access_Array_Access_Array;
+end org.allbinary.util.ABHashtable_Package_References;
+
+with org.allbinary.util.ABHashtable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,19 +32,26 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.Enumeration_Package; use java.util.Enumeration_Package;
 with java.util.Hashtable_Package; use java.util.Hashtable_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
 
 package org.allbinary.util.ABHashtable_Package is
 
    package Enumeration_Package renames Standard.java.util.Enumeration_Package;
    package Hashtable_Package renames Standard.java.util.Hashtable_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ABHashtable is tagged;
-   type ABHashtable_Access is access all ABHashtable'Class;
-   type ABHashtable_Access_Array is array (Natural range <>) of ABHashtable_Access;
-   type ABHashtable_Access_Array_Access is access all ABHashtable_Access_Array;
-   type ABHashtable_Access_Array_Access_Array is array (Natural range <>) of ABHashtable_Access_Array_Access;
-   type ABHashtable_Access_Array_Access_Array_Access is access all ABHashtable_Access_Array_Access_Array;
+
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   function "=" (Left, Right : ABHashtable_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
 
    type ABHashtable is new Hashtable with null record;
 

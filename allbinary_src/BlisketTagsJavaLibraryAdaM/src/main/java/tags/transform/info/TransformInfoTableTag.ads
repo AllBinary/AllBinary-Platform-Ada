@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.transform.info.TransformInfoTableTag_Package;
+package tags.transform.info.TransformInfoTableTag_Package_References is
+   type TransformInfoTableTag_Access is access all tags.transform.info.TransformInfoTableTag_Package.TransformInfoTableTag'Class;
+   type TransformInfoTableTag_Access_Array is array (Natural range <>) of TransformInfoTableTag_Access;
+   type TransformInfoTableTag_Access_Array_Access is access all TransformInfoTableTag_Access_Array;
+   type TransformInfoTableTag_Access_Array_Access_Array is array (Natural range <>) of TransformInfoTableTag_Access_Array_Access;
+   type TransformInfoTableTag_Access_Array_Access_Array_Access is access all TransformInfoTableTag_Access_Array_Access_Array;
+end tags.transform.info.TransformInfoTableTag_Package_References;
+
+with tags.transform.info.TransformInfoTableTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 package tags.transform.info.TransformInfoTableTag_Package is
 
    package TableTag_Package renames Standard.admin.tags.TableTag_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransformInfoTableTag is tagged;
-   type TransformInfoTableTag_Access is access all TransformInfoTableTag'Class;
-   type TransformInfoTableTag_Access_Array is array (Natural range <>) of TransformInfoTableTag_Access;
-   type TransformInfoTableTag_Access_Array_Access is access all TransformInfoTableTag_Access_Array;
-   type TransformInfoTableTag_Access_Array_Access_Array is array (Natural range <>) of TransformInfoTableTag_Access_Array_Access;
-   type TransformInfoTableTag_Access_Array_Access_Array_Access is access all TransformInfoTableTag_Access_Array_Access_Array;
+
+   subtype TransformInfoTableTag_Access is tags.transform.info.TransformInfoTableTag_Package_References.TransformInfoTableTag_Access;
+   function "=" (Left, Right : TransformInfoTableTag_Access) return Boolean renames tags.transform.info.TransformInfoTableTag_Package_References."=";
+   subtype TransformInfoTableTag_Access_Array is tags.transform.info.TransformInfoTableTag_Package_References.TransformInfoTableTag_Access_Array;
+   function "=" (Left, Right : TransformInfoTableTag_Access_Array) return Boolean renames tags.transform.info.TransformInfoTableTag_Package_References."=";
+   subtype TransformInfoTableTag_Access_Array_Access is tags.transform.info.TransformInfoTableTag_Package_References.TransformInfoTableTag_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoTableTag_Access_Array_Access) return Boolean renames tags.transform.info.TransformInfoTableTag_Package_References."=";
+   subtype TransformInfoTableTag_Access_Array_Access_Array is tags.transform.info.TransformInfoTableTag_Package_References.TransformInfoTableTag_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoTableTag_Access_Array_Access_Array) return Boolean renames tags.transform.info.TransformInfoTableTag_Package_References."=";
+   subtype TransformInfoTableTag_Access_Array_Access_Array_Access is tags.transform.info.TransformInfoTableTag_Package_References.TransformInfoTableTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoTableTag_Access_Array_Access_Array_Access) return Boolean renames tags.transform.info.TransformInfoTableTag_Package_References."=";
 
    type TransformInfoTableTag is new TableTag with null record;
 

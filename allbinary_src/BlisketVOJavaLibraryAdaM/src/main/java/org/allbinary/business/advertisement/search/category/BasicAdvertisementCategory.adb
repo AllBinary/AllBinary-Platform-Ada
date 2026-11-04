@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.advertisement.search.category.AdvertisementCategoryInterface_Package;
 
 package body org.allbinary.business.advertisement.search.category.BasicAdvertisementCategory_Package is
 

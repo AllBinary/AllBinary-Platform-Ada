@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.commands.GameCommandsFactory_Package;
+package org.allbinary.game.commands.GameCommandsFactory_Package_References is
+   type GameCommandsFactory_Access is access all org.allbinary.game.commands.GameCommandsFactory_Package.GameCommandsFactory'Class;
+   type GameCommandsFactory_Access_Array is array (Natural range <>) of GameCommandsFactory_Access;
+   type GameCommandsFactory_Access_Array_Access is access all GameCommandsFactory_Access_Array;
+   type GameCommandsFactory_Access_Array_Access_Array is array (Natural range <>) of GameCommandsFactory_Access_Array_Access;
+   type GameCommandsFactory_Access_Array_Access_Array_Access is access all GameCommandsFactory_Access_Array_Access_Array;
+end org.allbinary.game.commands.GameCommandsFactory_Package_References;
+
+with org.allbinary.game.commands.GameCommandsFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+limited with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 
 package org.allbinary.game.commands.GameCommandsFactory_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package Reference_Types is
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   use type Command_Access;
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   use type Command_Access_Array;
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   use type Command_Access_Array_Access;
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   use type Command_Access_Array_Access_Array;
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   use type Command_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameCommandsFactory is tagged;
-   type GameCommandsFactory_Access is access all GameCommandsFactory'Class;
-   type GameCommandsFactory_Access_Array is array (Natural range <>) of GameCommandsFactory_Access;
-   type GameCommandsFactory_Access_Array_Access is access all GameCommandsFactory_Access_Array;
-   type GameCommandsFactory_Access_Array_Access_Array is array (Natural range <>) of GameCommandsFactory_Access_Array_Access;
-   type GameCommandsFactory_Access_Array_Access_Array_Access is access all GameCommandsFactory_Access_Array_Access_Array;
+
+   subtype GameCommandsFactory_Access is org.allbinary.game.commands.GameCommandsFactory_Package_References.GameCommandsFactory_Access;
+   function "=" (Left, Right : GameCommandsFactory_Access) return Boolean renames org.allbinary.game.commands.GameCommandsFactory_Package_References."=";
+   subtype GameCommandsFactory_Access_Array is org.allbinary.game.commands.GameCommandsFactory_Package_References.GameCommandsFactory_Access_Array;
+   function "=" (Left, Right : GameCommandsFactory_Access_Array) return Boolean renames org.allbinary.game.commands.GameCommandsFactory_Package_References."=";
+   subtype GameCommandsFactory_Access_Array_Access is org.allbinary.game.commands.GameCommandsFactory_Package_References.GameCommandsFactory_Access_Array_Access;
+   function "=" (Left, Right : GameCommandsFactory_Access_Array_Access) return Boolean renames org.allbinary.game.commands.GameCommandsFactory_Package_References."=";
+   subtype GameCommandsFactory_Access_Array_Access_Array is org.allbinary.game.commands.GameCommandsFactory_Package_References.GameCommandsFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : GameCommandsFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.commands.GameCommandsFactory_Package_References."=";
+   subtype GameCommandsFactory_Access_Array_Access_Array_Access is org.allbinary.game.commands.GameCommandsFactory_Package_References.GameCommandsFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameCommandsFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.commands.GameCommandsFactory_Package_References."=";
 
    type GameCommandsFactory is new Java_Object with record
       TOGGLE_FULLSCREEN : Command_Access;

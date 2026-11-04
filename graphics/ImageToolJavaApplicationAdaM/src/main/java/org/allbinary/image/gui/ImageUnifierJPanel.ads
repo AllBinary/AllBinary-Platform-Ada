@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.gui.ImageUnifierJPanel_Package;
+package org.allbinary.image.gui.ImageUnifierJPanel_Package_References is
+   type ImageUnifierJPanel_Access is access all org.allbinary.image.gui.ImageUnifierJPanel_Package.ImageUnifierJPanel'Class;
+   type ImageUnifierJPanel_Access_Array is array (Natural range <>) of ImageUnifierJPanel_Access;
+   type ImageUnifierJPanel_Access_Array_Access is access all ImageUnifierJPanel_Access_Array;
+   type ImageUnifierJPanel_Access_Array_Access_Array is array (Natural range <>) of ImageUnifierJPanel_Access_Array_Access;
+   type ImageUnifierJPanel_Access_Array_Access_Array_Access is access all ImageUnifierJPanel_Access_Array_Access_Array;
+end org.allbinary.image.gui.ImageUnifierJPanel_Package_References;
+
+with org.allbinary.image.gui.ImageUnifierJPanel_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,16 +31,24 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package_References;
 with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package; use org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
-with org.allbinary.media.image.ImageStrings_Package; use org.allbinary.media.image.ImageStrings_Package;
-with org.allbinary.media.image.ImageUnifierProperties_Package; use org.allbinary.media.image.ImageUnifierProperties_Package;
-with org.allbinary.media.image.ImagesRatioUtil_Package; use org.allbinary.media.image.ImagesRatioUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.allbinary.media.image.ImageStrings_Package;
+with org.allbinary.media.image.ImageStrings_Package_References;
+limited with org.allbinary.media.image.ImageUnifierProperties_Package;
+with org.allbinary.media.image.ImageUnifierProperties_Package_References;
+limited with org.allbinary.media.image.ImagesRatioUtil_Package;
+with org.allbinary.media.image.ImagesRatioUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
-with org.allbinary.image.gui.ImageIconUnique_Package; use org.allbinary.image.gui.ImageIconUnique_Package;
-with org.allbinary.image.gui.JLabel_Package; use org.allbinary.image.gui.JLabel_Package;
+limited with org.allbinary.image.gui.ImageIconUnique_Package;
+with org.allbinary.image.gui.ImageIconUnique_Package_References;
+limited with org.allbinary.image.gui.JLabel_Package;
+with org.allbinary.image.gui.JLabel_Package_References;
 
 package org.allbinary.image.gui.ImageUnifierJPanel_Package is
 
@@ -41,13 +59,101 @@ package org.allbinary.image.gui.ImageUnifierJPanel_Package is
    package ImageUnifierProperties_Package renames Standard.org.allbinary.media.image.ImageUnifierProperties_Package;
    package ImagesRatioUtil_Package renames Standard.org.allbinary.media.image.ImagesRatioUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype ImageProcessorInput_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access;
+   use type ImageProcessorInput_Access;
+   subtype ImageProcessorInput_Access_Array is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array;
+   use type ImageProcessorInput_Access_Array;
+   subtype ImageProcessorInput_Access_Array_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access;
+   use type ImageProcessorInput_Access_Array_Access;
+   subtype ImageProcessorInput_Access_Array_Access_Array is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access_Array;
+   use type ImageProcessorInput_Access_Array_Access_Array;
+   subtype ImageProcessorInput_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access_Array_Access;
+   use type ImageProcessorInput_Access_Array_Access_Array_Access;
+   subtype ImageStrings_Access is org.allbinary.media.image.ImageStrings_Package_References.ImageStrings_Access;
+   use type ImageStrings_Access;
+   subtype ImageStrings_Access_Array is org.allbinary.media.image.ImageStrings_Package_References.ImageStrings_Access_Array;
+   use type ImageStrings_Access_Array;
+   subtype ImageStrings_Access_Array_Access is org.allbinary.media.image.ImageStrings_Package_References.ImageStrings_Access_Array_Access;
+   use type ImageStrings_Access_Array_Access;
+   subtype ImageStrings_Access_Array_Access_Array is org.allbinary.media.image.ImageStrings_Package_References.ImageStrings_Access_Array_Access_Array;
+   use type ImageStrings_Access_Array_Access_Array;
+   subtype ImageStrings_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageStrings_Package_References.ImageStrings_Access_Array_Access_Array_Access;
+   use type ImageStrings_Access_Array_Access_Array_Access;
+   subtype ImageUnifierProperties_Access is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access;
+   use type ImageUnifierProperties_Access;
+   subtype ImageUnifierProperties_Access_Array is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access_Array;
+   use type ImageUnifierProperties_Access_Array;
+   subtype ImageUnifierProperties_Access_Array_Access is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access_Array_Access;
+   use type ImageUnifierProperties_Access_Array_Access;
+   subtype ImageUnifierProperties_Access_Array_Access_Array is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access_Array_Access_Array;
+   use type ImageUnifierProperties_Access_Array_Access_Array;
+   subtype ImageUnifierProperties_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageUnifierProperties_Package_References.ImageUnifierProperties_Access_Array_Access_Array_Access;
+   use type ImageUnifierProperties_Access_Array_Access_Array_Access;
+   subtype ImagesRatioUtil_Access is org.allbinary.media.image.ImagesRatioUtil_Package_References.ImagesRatioUtil_Access;
+   use type ImagesRatioUtil_Access;
+   subtype ImagesRatioUtil_Access_Array is org.allbinary.media.image.ImagesRatioUtil_Package_References.ImagesRatioUtil_Access_Array;
+   use type ImagesRatioUtil_Access_Array;
+   subtype ImagesRatioUtil_Access_Array_Access is org.allbinary.media.image.ImagesRatioUtil_Package_References.ImagesRatioUtil_Access_Array_Access;
+   use type ImagesRatioUtil_Access_Array_Access;
+   subtype ImagesRatioUtil_Access_Array_Access_Array is org.allbinary.media.image.ImagesRatioUtil_Package_References.ImagesRatioUtil_Access_Array_Access_Array;
+   use type ImagesRatioUtil_Access_Array_Access_Array;
+   subtype ImagesRatioUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImagesRatioUtil_Package_References.ImagesRatioUtil_Access_Array_Access_Array_Access;
+   use type ImagesRatioUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype ImageIconUnique_Access is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access;
+   use type ImageIconUnique_Access;
+   subtype ImageIconUnique_Access_Array is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access_Array;
+   use type ImageIconUnique_Access_Array;
+   subtype ImageIconUnique_Access_Array_Access is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access_Array_Access;
+   use type ImageIconUnique_Access_Array_Access;
+   subtype ImageIconUnique_Access_Array_Access_Array is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access_Array_Access_Array;
+   use type ImageIconUnique_Access_Array_Access_Array;
+   subtype ImageIconUnique_Access_Array_Access_Array_Access is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access_Array_Access_Array_Access;
+   use type ImageIconUnique_Access_Array_Access_Array_Access;
+   subtype JLabel_Access is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access;
+   use type JLabel_Access;
+   subtype JLabel_Access_Array is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access_Array;
+   use type JLabel_Access_Array;
+   subtype JLabel_Access_Array_Access is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access_Array_Access;
+   use type JLabel_Access_Array_Access;
+   subtype JLabel_Access_Array_Access_Array is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access_Array_Access_Array;
+   use type JLabel_Access_Array_Access_Array;
+   subtype JLabel_Access_Array_Access_Array_Access is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access_Array_Access_Array_Access;
+   use type JLabel_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageUnifierJPanel is tagged;
-   type ImageUnifierJPanel_Access is access all ImageUnifierJPanel'Class;
-   type ImageUnifierJPanel_Access_Array is array (Natural range <>) of ImageUnifierJPanel_Access;
-   type ImageUnifierJPanel_Access_Array_Access is access all ImageUnifierJPanel_Access_Array;
-   type ImageUnifierJPanel_Access_Array_Access_Array is array (Natural range <>) of ImageUnifierJPanel_Access_Array_Access;
-   type ImageUnifierJPanel_Access_Array_Access_Array_Access is access all ImageUnifierJPanel_Access_Array_Access_Array;
+
+   subtype ImageUnifierJPanel_Access is org.allbinary.image.gui.ImageUnifierJPanel_Package_References.ImageUnifierJPanel_Access;
+   function "=" (Left, Right : ImageUnifierJPanel_Access) return Boolean renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References."=";
+   subtype ImageUnifierJPanel_Access_Array is org.allbinary.image.gui.ImageUnifierJPanel_Package_References.ImageUnifierJPanel_Access_Array;
+   function "=" (Left, Right : ImageUnifierJPanel_Access_Array) return Boolean renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References."=";
+   subtype ImageUnifierJPanel_Access_Array_Access is org.allbinary.image.gui.ImageUnifierJPanel_Package_References.ImageUnifierJPanel_Access_Array_Access;
+   function "=" (Left, Right : ImageUnifierJPanel_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References."=";
+   subtype ImageUnifierJPanel_Access_Array_Access_Array is org.allbinary.image.gui.ImageUnifierJPanel_Package_References.ImageUnifierJPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageUnifierJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References."=";
+   subtype ImageUnifierJPanel_Access_Array_Access_Array_Access is org.allbinary.image.gui.ImageUnifierJPanel_Package_References.ImageUnifierJPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageUnifierJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References."=";
 
    type ImageUnifierJPanel is new JPanel and ImageProcessorInputCompositeInterface with record
       logUtil : LogUtil_Access;

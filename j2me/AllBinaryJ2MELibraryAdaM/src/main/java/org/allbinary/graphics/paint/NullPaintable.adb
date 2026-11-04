@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
 
 package body org.allbinary.graphics.paint.NullPaintable_Package is
 
@@ -38,7 +40,7 @@ package body org.allbinary.graphics.paint.NullPaintable_Package is
 
    function getInstance return Paintable_Access is
    begin
-        return NullPaintable_Package.SINGLETON;
+        return Paintable_Access (NullPaintable_Package.SINGLETON);
    end getInstance;
 
 begin

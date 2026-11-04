@@ -13,20 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
 with org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package; use org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
 with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
 with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package; use org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 
 package body org.allbinary.game.layer.unit.Unit2DecalGameResources_Package is
 
    package GameGraphicsResourceUtil_Package renames Standard.org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
    package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
    package GraphicsFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out Unit2DecalGameResources'Class) is
    begin
       null;
    end Initialize_Fields;
 
+
+   function getInstance return BasicGameResources_Access is
+   begin
+        if (Unit2DecalGameResources_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+            Unit2DecalGameResources_Package.instance := Unit2DecalGameResources_Package.Create;
+        end if;
+        return Unit2DecalGameResources_Access (Unit2DecalGameResources_Package.instance);
+   end getInstance;
 
    procedure Initialize (This : in out Unit2DecalGameResources'Class) is
       ROOT : Unbounded_String;
@@ -72,14 +83,9 @@ package body org.allbinary.game.layer.unit.Unit2DecalGameResources_Package is
         end if;
    end getString;
 
-   function getInstance return BasicGameResources_Access is
-   begin
-        return Unit2DecalGameResources_Package.instance;
-   end getInstance;
-
 begin
    null;
-   instance := Unit2DecalGameResources_Package.Create;
+   instance := NullUtil_Package.getInstance.NULL_OBJECT;
 
 end org.allbinary.game.layer.unit.Unit2DecalGameResources_Package;
 

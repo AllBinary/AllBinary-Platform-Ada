@@ -13,11 +13,11 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.role.BasicUserRoles_Package; use org.allbinary.business.user.role.BasicUserRoles_Package;
+with org.allbinary.business.user.role.BasicUserRoles_Package;
 
 package body org.allbinary.business.user.role.BasicUserRole_Package is
 
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicUserRole'Class) is
    begin
       null;
@@ -49,7 +49,7 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
         This.displayValue := aDisplayValue;
         This.sessionTimeout := aSessionTimeout;
         This.sessionInactivityTimeout := aSessionInactivityTimeout;
-        BasicUserRole_Package.roleVector.add (BasicUserRole_Access'(This'Unchecked_Access));
+        BasicUserRoles_Package.getInstance.roleVector.add (BasicUserRole_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (aRole : Unbounded_String; aDisplayValue : Unbounded_String; a_int_RoleId : Integer; aSessionTimeout : Long_Long_Integer; aSessionInactivityTimeout : Long_Long_Integer) return BasicUserRole_Access is
@@ -93,46 +93,12 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
         return BasicUserRole'Class (This).getRole;
    end toString;
 
-   --  throws Exception
-   function getRole (role : Unbounded_String) return BasicUserRole_Access is
-      roleVector : BasicArrayList_Access;
-      size : Integer;
-      userRole : BasicUserRole_Access;
-      index : Integer;
-   begin
-        roleVector := BasicUserRole_Package.getAll;
-        size := roleVector.size;
-        for index in 0 .. (size) - 1 loop
-            userRole := BasicUserRole_Access (roleVector.get (index));
-            if (Java_Compare_To (role, userRole.toString)) = (0) then
-                return userRole;
-            end if;
-        end loop;
-        Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Unable to get role - Unknown Role")));
-   end getRole;
-
-   function getAll return BasicArrayList_Access is
-   begin
-        return BasicUserRole_Package.roleVector;
-   end getAll;
-
    procedure equals (This : in out BasicUserRole; basicUserRole_Var_Param : access BasicUserRole_Package.BasicUserRole'Class) is
       Java_Result : constant Boolean := BasicUserRole'Class (This).equals (basicUserRole_Var_Param => basicUserRole_Var_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end equals;
-
-   procedure getRole (role : Unbounded_String) is
-      Java_Result : constant BasicUserRole_Access := getRole (role => role);
-      pragma Unreferenced (Java_Result);
-   begin
-      null;
-   end getRole;
-
-begin
-   null;
-   roleVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
 
 end org.allbinary.business.user.role.BasicUserRole_Package;
 

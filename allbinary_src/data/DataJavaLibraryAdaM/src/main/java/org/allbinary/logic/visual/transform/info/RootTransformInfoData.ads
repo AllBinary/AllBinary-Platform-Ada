@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package;
+package org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References is
+   type RootTransformInfoData_Access is access all org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package.RootTransformInfoData'Class;
+   type RootTransformInfoData_Access_Array is array (Natural range <>) of RootTransformInfoData_Access;
+   type RootTransformInfoData_Access_Array_Access is access all RootTransformInfoData_Access_Array;
+   type RootTransformInfoData_Access_Array_Access_Array is array (Natural range <>) of RootTransformInfoData_Access_Array_Access;
+   type RootTransformInfoData_Access_Array_Access_Array_Access is access all RootTransformInfoData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References;
+
+with org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type RootTransformInfoData is tagged;
-   type RootTransformInfoData_Access is access all RootTransformInfoData'Class;
-   type RootTransformInfoData_Access_Array is array (Natural range <>) of RootTransformInfoData_Access;
-   type RootTransformInfoData_Access_Array_Access is access all RootTransformInfoData_Access_Array;
-   type RootTransformInfoData_Access_Array_Access_Array is array (Natural range <>) of RootTransformInfoData_Access_Array_Access;
-   type RootTransformInfoData_Access_Array_Access_Array_Access is access all RootTransformInfoData_Access_Array_Access_Array;
+
+   subtype RootTransformInfoData_Access is org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References.RootTransformInfoData_Access;
+   function "=" (Left, Right : RootTransformInfoData_Access) return Boolean renames org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References."=";
+   subtype RootTransformInfoData_Access_Array is org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References.RootTransformInfoData_Access_Array;
+   function "=" (Left, Right : RootTransformInfoData_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References."=";
+   subtype RootTransformInfoData_Access_Array_Access is org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References.RootTransformInfoData_Access_Array_Access;
+   function "=" (Left, Right : RootTransformInfoData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References."=";
+   subtype RootTransformInfoData_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References.RootTransformInfoData_Access_Array_Access_Array;
+   function "=" (Left, Right : RootTransformInfoData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References."=";
+   subtype RootTransformInfoData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References.RootTransformInfoData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RootTransformInfoData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package_References."=";
 
    type RootTransformInfoData is new Java_Object with null record;
    NAME : Unbounded_String;

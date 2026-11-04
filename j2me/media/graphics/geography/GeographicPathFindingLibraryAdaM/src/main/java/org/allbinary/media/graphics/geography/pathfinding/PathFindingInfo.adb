@@ -13,15 +13,64 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package;
+with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package; use org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfoInterface_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBaseInterface_Package;
 
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package is
 
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype PathFindingNodeCostInfoFactoryBase_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References.PathFindingNodeCostInfoFactoryBase_Access;
+   function "=" (Left, Right : PathFindingNodeCostInfoFactoryBase_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References."=";
+   subtype PathFindingNodeCostInfoFactoryBase_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References.PathFindingNodeCostInfoFactoryBase_Access_Array;
+   function "=" (Left, Right : PathFindingNodeCostInfoFactoryBase_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References."=";
+   subtype PathFindingNodeCostInfoFactoryBase_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References.PathFindingNodeCostInfoFactoryBase_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNodeCostInfoFactoryBase_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References."=";
+   subtype PathFindingNodeCostInfoFactoryBase_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References.PathFindingNodeCostInfoFactoryBase_Access_Array_Access_Array;
+   function "=" (Left, Right : PathFindingNodeCostInfoFactoryBase_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References."=";
+   subtype PathFindingNodeCostInfoFactoryBase_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References.PathFindingNodeCostInfoFactoryBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNodeCostInfoFactoryBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package_References."=";
+   subtype GeographicPathFinderBase_Access is org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References.GeographicPathFinderBase_Access;
+   function "=" (Left, Right : GeographicPathFinderBase_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References."=";
+   subtype GeographicPathFinderBase_Access_Array is org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References.GeographicPathFinderBase_Access_Array;
+   function "=" (Left, Right : GeographicPathFinderBase_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References."=";
+   subtype GeographicPathFinderBase_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References.GeographicPathFinderBase_Access_Array_Access;
+   function "=" (Left, Right : GeographicPathFinderBase_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References."=";
+   subtype GeographicPathFinderBase_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References.GeographicPathFinderBase_Access_Array_Access_Array;
+   function "=" (Left, Right : GeographicPathFinderBase_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References."=";
+   subtype GeographicPathFinderBase_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References.GeographicPathFinderBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GeographicPathFinderBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References."=";
+   subtype PathFindingNode_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References.PathFindingNode_Access;
+   function "=" (Left, Right : PathFindingNode_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References."=";
+   subtype PathFindingNode_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References.PathFindingNode_Access_Array;
+   function "=" (Left, Right : PathFindingNode_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References."=";
+   subtype PathFindingNode_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References.PathFindingNode_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNode_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References."=";
+   subtype PathFindingNode_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References.PathFindingNode_Access_Array_Access_Array;
+   function "=" (Left, Right : PathFindingNode_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References."=";
+   subtype PathFindingNode_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References.PathFindingNode_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNode_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References."=";
    procedure Initialize_Fields (This : in out PathFindingInfo'Class) is
    begin
       null;
-      This.pathFinder := GeographicPathFinderBase_Package.NULL_GEOGRAPHIC_PATH_FINDER_BASE;
+      This.pathFinder := GeographicPathFinderBase_Access (GeographicPathFinderBase_Package.NULL_GEOGRAPHIC_PATH_FINDER_BASE);
       
       
       

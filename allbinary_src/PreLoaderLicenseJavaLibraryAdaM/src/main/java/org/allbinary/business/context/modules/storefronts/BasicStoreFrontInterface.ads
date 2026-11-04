@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
+package org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References is
+   type BasicStoreFrontInterface_Access is access all org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package.BasicStoreFrontInterface'Class;
+   type BasicStoreFrontInterface_Access_Array is array (Natural range <>) of BasicStoreFrontInterface_Access;
+   type BasicStoreFrontInterface_Access_Array_Access is access all BasicStoreFrontInterface_Access_Array;
+   type BasicStoreFrontInterface_Access_Array_Access_Array is array (Natural range <>) of BasicStoreFrontInterface_Access_Array_Access;
+   type BasicStoreFrontInterface_Access_Array_Access_Array_Access is access all BasicStoreFrontInterface_Access_Array_Access_Array;
+end org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References;
+
+with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type BasicStoreFrontInterface is interface;
-   type BasicStoreFrontInterface_Access is access all BasicStoreFrontInterface'Class;
-   type BasicStoreFrontInterface_Access_Array is array (Natural range <>) of BasicStoreFrontInterface_Access;
-   type BasicStoreFrontInterface_Access_Array_Access is access all BasicStoreFrontInterface_Access_Array;
-   type BasicStoreFrontInterface_Access_Array_Access_Array is array (Natural range <>) of BasicStoreFrontInterface_Access_Array_Access;
-   type BasicStoreFrontInterface_Access_Array_Access_Array_Access is access all BasicStoreFrontInterface_Access_Array_Access_Array;
+   subtype BasicStoreFrontInterface_Access is org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.BasicStoreFrontInterface_Access;
+   function "=" (Left, Right : BasicStoreFrontInterface_Access) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References."=";
+   subtype BasicStoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.BasicStoreFrontInterface_Access_Array;
+   function "=" (Left, Right : BasicStoreFrontInterface_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References."=";
+   subtype BasicStoreFrontInterface_Access_Array_Access is org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.BasicStoreFrontInterface_Access_Array_Access;
+   function "=" (Left, Right : BasicStoreFrontInterface_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References."=";
+   subtype BasicStoreFrontInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.BasicStoreFrontInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicStoreFrontInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References."=";
+   subtype BasicStoreFrontInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.BasicStoreFrontInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicStoreFrontInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References."=";
+   function Java_Object_Access_From_BasicStoreFrontInterface (Value : BasicStoreFrontInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getTestHtmlPath (This : in out BasicStoreFrontInterface) return Unbounded_String is abstract;
    function getCurrentHostName (This : in out BasicStoreFrontInterface) return Unbounded_String is abstract;
    function getCurrentHostNamePath (This : in out BasicStoreFrontInterface) return Unbounded_String is abstract;

@@ -47,7 +47,7 @@ package body org.allbinary.logic.io.file.directory.TrackedStrings_Package is
 
    function getInstance return TrackedStrings_Access is
    begin
-        return TrackedStrings_Package.instance;
+        return TrackedStrings_Access (TrackedStrings_Package.instance);
    end getInstance;
 
 begin

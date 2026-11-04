@@ -13,10 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package; use org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
+with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
 
 package body org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Package is
 
+   subtype Visitor_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access;
+   function "=" (Left, Right : Visitor_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array;
+   function "=" (Left, Right : Visitor_Access_Array) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access;
+   function "=" (Left, Right : Visitor_Access_Array_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array_Access_Array is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access_Array;
+   function "=" (Left, Right : Visitor_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array_Access_Array_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Visitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
    procedure Initialize_Fields (This : in out OrderedIntArrayPermutationUtil'Class) is
    begin
       null;
@@ -27,7 +39,7 @@ package body org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUti
 
    function getInstance return OrderedIntArrayPermutationUtil_Access is
    begin
-        return OrderedIntArrayPermutationUtil_Package.instance;
+        return OrderedIntArrayPermutationUtil_Access (OrderedIntArrayPermutationUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out OrderedIntArrayPermutationUtil'Class) is

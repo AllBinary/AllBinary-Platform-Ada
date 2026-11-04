@@ -43,7 +43,7 @@ package body org.allbinary.logic.math.PrimitiveLongSingleton_Package is
 
    function getInstance return PrimitiveLongSingleton_Access is
    begin
-        return PrimitiveLongSingleton_Package.instance;
+        return PrimitiveLongSingleton_Access (PrimitiveLongSingleton_Package.instance);
    end getInstance;
 
    --  throws Exception

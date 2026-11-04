@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;
+with org.allbinary.emulator.swt.SWTProcessor_Package;
 
 package body org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
 
+   subtype Display_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access;
+   function "=" (Left, Right : Display_Access) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array;
+   function "=" (Left, Right : Display_Access_Array) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access;
+   function "=" (Left, Right : Display_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array_Access_Array is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access_Array;
+   function "=" (Left, Right : Display_Access_Array_Access_Array) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array_Access_Array_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Display_Access_Array_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
    procedure Initialize_Fields (This : in out SWTRunnableProcessor'Class) is
    begin
       null;
@@ -24,7 +36,7 @@ package body org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
 
    function getInstance return SWTRunnableProcessor_Access is
    begin
-        return SWTRunnableProcessor_Package.instanceR;
+        return SWTRunnableProcessor_Access (SWTRunnableProcessor_Package.instanceR);
    end getInstance;
 
    procedure Initialize (This : in out SWTRunnableProcessor'Class) is

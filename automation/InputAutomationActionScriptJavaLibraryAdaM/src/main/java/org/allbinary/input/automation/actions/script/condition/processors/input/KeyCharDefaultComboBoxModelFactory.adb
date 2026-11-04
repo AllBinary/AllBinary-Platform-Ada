@@ -15,12 +15,23 @@
 
 with abbot.tester.KeyStrokeMap_Package; use abbot.tester.KeyStrokeMap_Package;
 with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package;
 
 package body org.allbinary.input.automation.actions.script.condition.processors.input.KeyCharDefaultComboBoxModelFactory_Package is
 
    package KeyStrokeMap_Package renames Standard.abbot.tester.KeyStrokeMap_Package;
    package KeySingletonFactory_Package renames Standard.org.allbinary.input.KeySingletonFactory_Package;
+   subtype DefaultComboBoxModel_Access is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access;
+   function "=" (Left, Right : DefaultComboBoxModel_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
+   subtype DefaultComboBoxModel_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access_Array;
+   function "=" (Left, Right : DefaultComboBoxModel_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
+   subtype DefaultComboBoxModel_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access_Array_Access;
+   function "=" (Left, Right : DefaultComboBoxModel_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
+   subtype DefaultComboBoxModel_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access_Array_Access_Array;
+   function "=" (Left, Right : DefaultComboBoxModel_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
+   subtype DefaultComboBoxModel_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DefaultComboBoxModel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
    procedure Initialize_Fields (This : in out KeyCharDefaultComboBoxModelFactory'Class) is
    begin
       null;

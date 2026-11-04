@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package;
+package org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References is
+   type HealthBarAnimationInterfaceFactory_Access is access all org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package.HealthBarAnimationInterfaceFactory'Class;
+   type HealthBarAnimationInterfaceFactory_Access_Array is array (Natural range <>) of HealthBarAnimationInterfaceFactory_Access;
+   type HealthBarAnimationInterfaceFactory_Access_Array_Access is access all HealthBarAnimationInterfaceFactory_Access_Array;
+   type HealthBarAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of HealthBarAnimationInterfaceFactory_Access_Array_Access;
+   type HealthBarAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all HealthBarAnimationInterfaceFactory_Access_Array_Access_Array;
+end org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References;
+
+with org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.game.health.HealthBarAnimation_Package; use org.allbinary.game.health.HealthBarAnimation_Package;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
+limited with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
+limited with org.allbinary.game.health.HealthBarAnimation_Package;
+with org.allbinary.game.health.HealthBarAnimation_Package_References;
 
 package org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package is
 
@@ -34,13 +48,61 @@ package org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package is
    package ProceduralAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package Reference_Types is
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   subtype ScaleProperties_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access;
+   use type ScaleProperties_Access;
+   subtype ScaleProperties_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array;
+   use type ScaleProperties_Access_Array;
+   subtype ScaleProperties_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access;
+   subtype ScaleProperties_Access_Array_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array;
+   use type ScaleProperties_Access_Array_Access_Array;
+   subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access_Array_Access;
+   subtype HealthBarAnimation_Access is org.allbinary.game.health.HealthBarAnimation_Package_References.HealthBarAnimation_Access;
+   use type HealthBarAnimation_Access;
+   subtype HealthBarAnimation_Access_Array is org.allbinary.game.health.HealthBarAnimation_Package_References.HealthBarAnimation_Access_Array;
+   use type HealthBarAnimation_Access_Array;
+   subtype HealthBarAnimation_Access_Array_Access is org.allbinary.game.health.HealthBarAnimation_Package_References.HealthBarAnimation_Access_Array_Access;
+   use type HealthBarAnimation_Access_Array_Access;
+   subtype HealthBarAnimation_Access_Array_Access_Array is org.allbinary.game.health.HealthBarAnimation_Package_References.HealthBarAnimation_Access_Array_Access_Array;
+   use type HealthBarAnimation_Access_Array_Access_Array;
+   subtype HealthBarAnimation_Access_Array_Access_Array_Access is org.allbinary.game.health.HealthBarAnimation_Package_References.HealthBarAnimation_Access_Array_Access_Array_Access;
+   use type HealthBarAnimation_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type HealthBarAnimationInterfaceFactory is tagged;
-   type HealthBarAnimationInterfaceFactory_Access is access all HealthBarAnimationInterfaceFactory'Class;
-   type HealthBarAnimationInterfaceFactory_Access_Array is array (Natural range <>) of HealthBarAnimationInterfaceFactory_Access;
-   type HealthBarAnimationInterfaceFactory_Access_Array_Access is access all HealthBarAnimationInterfaceFactory_Access_Array;
-   type HealthBarAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of HealthBarAnimationInterfaceFactory_Access_Array_Access;
-   type HealthBarAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all HealthBarAnimationInterfaceFactory_Access_Array_Access_Array;
+
+   subtype HealthBarAnimationInterfaceFactory_Access is org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References.HealthBarAnimationInterfaceFactory_Access;
+   function "=" (Left, Right : HealthBarAnimationInterfaceFactory_Access) return Boolean renames org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References."=";
+   subtype HealthBarAnimationInterfaceFactory_Access_Array is org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References.HealthBarAnimationInterfaceFactory_Access_Array;
+   function "=" (Left, Right : HealthBarAnimationInterfaceFactory_Access_Array) return Boolean renames org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References."=";
+   subtype HealthBarAnimationInterfaceFactory_Access_Array_Access is org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References.HealthBarAnimationInterfaceFactory_Access_Array_Access;
+   function "=" (Left, Right : HealthBarAnimationInterfaceFactory_Access_Array_Access) return Boolean renames org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References."=";
+   subtype HealthBarAnimationInterfaceFactory_Access_Array_Access_Array is org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References.HealthBarAnimationInterfaceFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : HealthBarAnimationInterfaceFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References."=";
+   subtype HealthBarAnimationInterfaceFactory_Access_Array_Access_Array_Access is org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References.HealthBarAnimationInterfaceFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HealthBarAnimationInterfaceFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package_References."=";
 
    type HealthBarAnimationInterfaceFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with null record;
 

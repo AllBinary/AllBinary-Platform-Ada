@@ -13,13 +13,58 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with android.app.Notification_Package; use android.app.Notification_Package;
 with android.app.Notification.Builder_Package; use android.app.Notification.Builder_Package;
+with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
+with android.content.Context_Package; use android.content.Context_Package;
+with android.os.Parcelable_Package; use android.os.Parcelable_Package;
+with org.allbinary.content.NotificationBuilder_Package;
 
 package body org.allbinary.content.NotificationBuilderAPI23_Package is
 
    package Notification_Package renames Standard.android.app.Notification_Package;
    package Builder_Package renames Standard.android.app.Notification.Builder_Package;
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   function "=" (Left, Right : Command_Access) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   function "=" (Left, Right : Command_Access_Array) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   function "=" (Left, Right : Command_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   function "=" (Left, Right : Command_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Command_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype PendingIntent_Access is android.app.PendingIntent_Package_References.PendingIntent_Access;
+   function "=" (Left, Right : PendingIntent_Access) return Boolean renames android.app.PendingIntent_Package_References."=";
+   subtype PendingIntent_Access_Array is android.app.PendingIntent_Package_References.PendingIntent_Access_Array;
+   function "=" (Left, Right : PendingIntent_Access_Array) return Boolean renames android.app.PendingIntent_Package_References."=";
+   subtype PendingIntent_Access_Array_Access is android.app.PendingIntent_Package_References.PendingIntent_Access_Array_Access;
+   function "=" (Left, Right : PendingIntent_Access_Array_Access) return Boolean renames android.app.PendingIntent_Package_References."=";
+   subtype PendingIntent_Access_Array_Access_Array is android.app.PendingIntent_Package_References.PendingIntent_Access_Array_Access_Array;
+   function "=" (Left, Right : PendingIntent_Access_Array_Access_Array) return Boolean renames android.app.PendingIntent_Package_References."=";
+   subtype PendingIntent_Access_Array_Access_Array_Access is android.app.PendingIntent_Package_References.PendingIntent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PendingIntent_Access_Array_Access_Array_Access) return Boolean renames android.app.PendingIntent_Package_References."=";
+   subtype Context_Access is android.content.Context_Package_References.Context_Access;
+   function "=" (Left, Right : Context_Access) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array is android.content.Context_Package_References.Context_Access_Array;
+   function "=" (Left, Right : Context_Access_Array) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access;
+   function "=" (Left, Right : Context_Access_Array_Access) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array_Access_Array is android.content.Context_Package_References.Context_Access_Array_Access_Array;
+   function "=" (Left, Right : Context_Access_Array_Access_Array) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Context_Access_Array_Access_Array_Access) return Boolean renames android.content.Context_Package_References."=";
+   subtype Parcelable_Access is android.os.Parcelable_Package_References.Parcelable_Access;
+   function "=" (Left, Right : Parcelable_Access) return Boolean renames android.os.Parcelable_Package_References."=";
+   subtype Parcelable_Access_Array is android.os.Parcelable_Package_References.Parcelable_Access_Array;
+   function "=" (Left, Right : Parcelable_Access_Array) return Boolean renames android.os.Parcelable_Package_References."=";
+   subtype Parcelable_Access_Array_Access is android.os.Parcelable_Package_References.Parcelable_Access_Array_Access;
+   function "=" (Left, Right : Parcelable_Access_Array_Access) return Boolean renames android.os.Parcelable_Package_References."=";
+   subtype Parcelable_Access_Array_Access_Array is android.os.Parcelable_Package_References.Parcelable_Access_Array_Access_Array;
+   function "=" (Left, Right : Parcelable_Access_Array_Access_Array) return Boolean renames android.os.Parcelable_Package_References."=";
+   subtype Parcelable_Access_Array_Access_Array_Access is android.os.Parcelable_Package_References.Parcelable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Parcelable_Access_Array_Access_Array_Access) return Boolean renames android.os.Parcelable_Package_References."=";
    procedure Initialize_Fields (This : in out NotificationBuilderAPI23'Class) is
    begin
       null;

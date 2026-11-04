@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package body org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package is
 
+   subtype GeologicalResourceInfoHudPaintable_Access is org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References.GeologicalResourceInfoHudPaintable_Access;
+   function "=" (Left, Right : GeologicalResourceInfoHudPaintable_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References."=";
+   subtype GeologicalResourceInfoHudPaintable_Access_Array is org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References.GeologicalResourceInfoHudPaintable_Access_Array;
+   function "=" (Left, Right : GeologicalResourceInfoHudPaintable_Access_Array) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References."=";
+   subtype GeologicalResourceInfoHudPaintable_Access_Array_Access is org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References.GeologicalResourceInfoHudPaintable_Access_Array_Access;
+   function "=" (Left, Right : GeologicalResourceInfoHudPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References."=";
+   subtype GeologicalResourceInfoHudPaintable_Access_Array_Access_Array is org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References.GeologicalResourceInfoHudPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : GeologicalResourceInfoHudPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References."=";
+   subtype GeologicalResourceInfoHudPaintable_Access_Array_Access_Array_Access is org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References.GeologicalResourceInfoHudPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GeologicalResourceInfoHudPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References."=";
    procedure Initialize_Fields (This : in out GeologicalResourceInfoHudPaintableSingleton'Class) is
    begin
       null;
@@ -36,7 +49,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
 
    function getInstance return GeologicalResourceInfoHudPaintable_Access is
    begin
-        return GeologicalResourceInfoHudPaintableSingleton_Package.instance;
+        return GeologicalResourceInfoHudPaintable_Access (GeologicalResourceInfoHudPaintableSingleton_Package.instance);
    end getInstance;
 
 begin

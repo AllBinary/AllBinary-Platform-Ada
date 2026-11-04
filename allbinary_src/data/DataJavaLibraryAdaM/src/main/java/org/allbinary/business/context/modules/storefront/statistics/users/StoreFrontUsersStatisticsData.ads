@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package;
+package org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References is
+   type StoreFrontUsersStatisticsData_Access is access all org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package.StoreFrontUsersStatisticsData'Class;
+   type StoreFrontUsersStatisticsData_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsData_Access;
+   type StoreFrontUsersStatisticsData_Access_Array_Access is access all StoreFrontUsersStatisticsData_Access_Array;
+   type StoreFrontUsersStatisticsData_Access_Array_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsData_Access_Array_Access;
+   type StoreFrontUsersStatisticsData_Access_Array_Access_Array_Access is access all StoreFrontUsersStatisticsData_Access_Array_Access_Array;
+end org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References;
+
+with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreFrontUsersStatisticsData is tagged;
-   type StoreFrontUsersStatisticsData_Access is access all StoreFrontUsersStatisticsData'Class;
-   type StoreFrontUsersStatisticsData_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsData_Access;
-   type StoreFrontUsersStatisticsData_Access_Array_Access is access all StoreFrontUsersStatisticsData_Access_Array;
-   type StoreFrontUsersStatisticsData_Access_Array_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsData_Access_Array_Access;
-   type StoreFrontUsersStatisticsData_Access_Array_Access_Array_Access is access all StoreFrontUsersStatisticsData_Access_Array_Access_Array;
+
+   subtype StoreFrontUsersStatisticsData_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References.StoreFrontUsersStatisticsData_Access;
+   function "=" (Left, Right : StoreFrontUsersStatisticsData_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References."=";
+   subtype StoreFrontUsersStatisticsData_Access_Array is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References.StoreFrontUsersStatisticsData_Access_Array;
+   function "=" (Left, Right : StoreFrontUsersStatisticsData_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References."=";
+   subtype StoreFrontUsersStatisticsData_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References.StoreFrontUsersStatisticsData_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontUsersStatisticsData_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References."=";
+   subtype StoreFrontUsersStatisticsData_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References.StoreFrontUsersStatisticsData_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontUsersStatisticsData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References."=";
+   subtype StoreFrontUsersStatisticsData_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References.StoreFrontUsersStatisticsData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontUsersStatisticsData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package_References."=";
 
    type StoreFrontUsersStatisticsData is new Java_Object with record
       NAME : Unbounded_String;

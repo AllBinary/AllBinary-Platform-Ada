@@ -36,7 +36,7 @@ package body org.allbinary.animation.text.TextChangeListener_Package is
 
    function getInstance return TextChangeListener_Access is
    begin
-        return TextChangeListener_Package.instance;
+        return TextChangeListener_Access (TextChangeListener_Package.instance);
    end getInstance;
 
    procedure onMeasure (This : in out TextChangeListener) is

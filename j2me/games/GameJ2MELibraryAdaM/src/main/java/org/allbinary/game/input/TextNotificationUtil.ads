@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.TextNotificationUtil_Package;
+package org.allbinary.game.input.TextNotificationUtil_Package_References is
+   type TextNotificationUtil_Access is access all org.allbinary.game.input.TextNotificationUtil_Package.TextNotificationUtil'Class;
+   type TextNotificationUtil_Access_Array is array (Natural range <>) of TextNotificationUtil_Access;
+   type TextNotificationUtil_Access_Array_Access is access all TextNotificationUtil_Access_Array;
+   type TextNotificationUtil_Access_Array_Access_Array is array (Natural range <>) of TextNotificationUtil_Access_Array_Access;
+   type TextNotificationUtil_Access_Array_Access_Array_Access is access all TextNotificationUtil_Access_Array_Access_Array;
+end org.allbinary.game.input.TextNotificationUtil_Package_References;
+
+with org.allbinary.game.input.TextNotificationUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+limited with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References;
 
 package org.allbinary.game.input.TextNotificationUtil_Package is
 
    package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package Reference_Types is
+   subtype GameNotificationEventHandler_Access is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access;
+   use type GameNotificationEventHandler_Access;
+   subtype GameNotificationEventHandler_Access_Array is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access_Array;
+   use type GameNotificationEventHandler_Access_Array;
+   subtype GameNotificationEventHandler_Access_Array_Access is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access_Array_Access;
+   use type GameNotificationEventHandler_Access_Array_Access;
+   subtype GameNotificationEventHandler_Access_Array_Access_Array is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access_Array_Access_Array;
+   use type GameNotificationEventHandler_Access_Array_Access_Array;
+   subtype GameNotificationEventHandler_Access_Array_Access_Array_Access is org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package_References.GameNotificationEventHandler_Access_Array_Access_Array_Access;
+   use type GameNotificationEventHandler_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TextNotificationUtil is tagged;
-   type TextNotificationUtil_Access is access all TextNotificationUtil'Class;
-   type TextNotificationUtil_Access_Array is array (Natural range <>) of TextNotificationUtil_Access;
-   type TextNotificationUtil_Access_Array_Access is access all TextNotificationUtil_Access_Array;
-   type TextNotificationUtil_Access_Array_Access_Array is array (Natural range <>) of TextNotificationUtil_Access_Array_Access;
-   type TextNotificationUtil_Access_Array_Access_Array_Access is access all TextNotificationUtil_Access_Array_Access_Array;
+
+   subtype TextNotificationUtil_Access is org.allbinary.game.input.TextNotificationUtil_Package_References.TextNotificationUtil_Access;
+   function "=" (Left, Right : TextNotificationUtil_Access) return Boolean renames org.allbinary.game.input.TextNotificationUtil_Package_References."=";
+   subtype TextNotificationUtil_Access_Array is org.allbinary.game.input.TextNotificationUtil_Package_References.TextNotificationUtil_Access_Array;
+   function "=" (Left, Right : TextNotificationUtil_Access_Array) return Boolean renames org.allbinary.game.input.TextNotificationUtil_Package_References."=";
+   subtype TextNotificationUtil_Access_Array_Access is org.allbinary.game.input.TextNotificationUtil_Package_References.TextNotificationUtil_Access_Array_Access;
+   function "=" (Left, Right : TextNotificationUtil_Access_Array_Access) return Boolean renames org.allbinary.game.input.TextNotificationUtil_Package_References."=";
+   subtype TextNotificationUtil_Access_Array_Access_Array is org.allbinary.game.input.TextNotificationUtil_Package_References.TextNotificationUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : TextNotificationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.TextNotificationUtil_Package_References."=";
+   subtype TextNotificationUtil_Access_Array_Access_Array_Access is org.allbinary.game.input.TextNotificationUtil_Package_References.TextNotificationUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TextNotificationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.TextNotificationUtil_Package_References."=";
 
    type TextNotificationUtil is new Java_Object with record
       TWO : Integer;

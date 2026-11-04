@@ -13,10 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.gui.dialog.FileJDialog_Package; use org.allbinary.gui.dialog.FileJDialog_Package;
+with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
+with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package; use org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
 with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
 with org.allbinary.media.image.analysis.ImageAnalysis_Package; use org.allbinary.media.image.analysis.ImageAnalysis_Package;
 with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.ImageUnifierJPanel_Package; use org.allbinary.image.gui.ImageUnifierJPanel_Package;
 with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package; use org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;
 with org.allbinary.image.gui.RotationSpriteImageJPanel_Package; use org.allbinary.image.gui.RotationSpriteImageJPanel_Package;
@@ -27,6 +35,17 @@ with org.allbinary.image.gui.CreateIconImagesJPanel_Package; use org.allbinary.i
 with org.allbinary.image.gui.CanvasImageJPanel_Package; use org.allbinary.image.gui.CanvasImageJPanel_Package;
 with org.allbinary.image.gui.MirrorSpriteImageJPanel_Package; use org.allbinary.image.gui.MirrorSpriteImageJPanel_Package;
 with org.allbinary.image.gui.MirrorImageJPanel_Package; use org.allbinary.image.gui.MirrorImageJPanel_Package;
+with org.allbinary.image.gui.CanvasImageJPanel_Package;
+with org.allbinary.image.gui.CreateIconImagesJPanel_Package;
+with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;
+with org.allbinary.image.gui.ImageIconUnique_Package;
+with org.allbinary.image.gui.ImageUnifierJPanel_Package;
+with org.allbinary.image.gui.MirrorImageJPanel_Package;
+with org.allbinary.image.gui.MirrorSpriteImageJPanel_Package;
+with org.allbinary.image.gui.ResizeImageJPanel_Package;
+with org.allbinary.image.gui.RotationImageJPanel_Package;
+with org.allbinary.image.gui.RotationSpriteImageJPanel_Package;
+with org.allbinary.image.gui.SpriteSplitterImageJPanel_Package;
 
 package body org.allbinary.image.gui.ImageToolJFrame_Package is
 
@@ -34,6 +53,66 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
    package ImageAnalysis_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysis_Package;
    package ImageAnalysisResults_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   subtype FileJDialog_Access is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access;
+   function "=" (Left, Right : FileJDialog_Access) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
+   subtype FileJDialog_Access_Array is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access_Array;
+   function "=" (Left, Right : FileJDialog_Access_Array) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
+   subtype FileJDialog_Access_Array_Access is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access_Array_Access;
+   function "=" (Left, Right : FileJDialog_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
+   subtype FileJDialog_Access_Array_Access_Array is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access_Array_Access_Array;
+   function "=" (Left, Right : FileJDialog_Access_Array_Access_Array) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
+   subtype FileJDialog_Access_Array_Access_Array_Access is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileJDialog_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype ImageProcessorInput_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access;
+   function "=" (Left, Right : ImageProcessorInput_Access) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
+   subtype ImageProcessorInput_Access_Array is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array;
+   function "=" (Left, Right : ImageProcessorInput_Access_Array) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
+   subtype ImageProcessorInput_Access_Array_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access;
+   function "=" (Left, Right : ImageProcessorInput_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
+   subtype ImageProcessorInput_Access_Array_Access_Array is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageProcessorInput_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
+   subtype ImageProcessorInput_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageProcessorInput_Package_References.ImageProcessorInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageProcessorInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageProcessorInput_Package_References."=";
+   subtype ImageProcessorInputCompositeInterface_Access is org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References.ImageProcessorInputCompositeInterface_Access;
+   function "=" (Left, Right : ImageProcessorInputCompositeInterface_Access) return Boolean renames org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References."=";
+   subtype ImageProcessorInputCompositeInterface_Access_Array is org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References.ImageProcessorInputCompositeInterface_Access_Array;
+   function "=" (Left, Right : ImageProcessorInputCompositeInterface_Access_Array) return Boolean renames org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References."=";
+   subtype ImageProcessorInputCompositeInterface_Access_Array_Access is org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References.ImageProcessorInputCompositeInterface_Access_Array_Access;
+   function "=" (Left, Right : ImageProcessorInputCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References."=";
+   subtype ImageProcessorInputCompositeInterface_Access_Array_Access_Array is org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References.ImageProcessorInputCompositeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageProcessorInputCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References."=";
+   subtype ImageProcessorInputCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References.ImageProcessorInputCompositeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageProcessorInputCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package_References."=";
+   subtype ColorRangeInterface_Access is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access;
+   function "=" (Left, Right : ColorRangeInterface_Access) return Boolean renames org.allbinary.media.image.analysis.ColorRangeInterface_Package_References."=";
+   subtype ColorRangeInterface_Access_Array is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array;
+   function "=" (Left, Right : ColorRangeInterface_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ColorRangeInterface_Package_References."=";
+   subtype ColorRangeInterface_Access_Array_Access is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array_Access;
+   function "=" (Left, Right : ColorRangeInterface_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ColorRangeInterface_Package_References."=";
+   subtype ColorRangeInterface_Access_Array_Access_Array is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ColorRangeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ColorRangeInterface_Package_References."=";
+   subtype ColorRangeInterface_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ColorRangeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ColorRangeInterface_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    procedure Initialize_Fields (This : in out ImageToolJFrame'Class) is
    begin
       null;

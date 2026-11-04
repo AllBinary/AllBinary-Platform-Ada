@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.InputAutomationModulesData_Package;
+package org.allbinary.input.automation.module.InputAutomationModulesData_Package_References is
+   type InputAutomationModulesData_Access is access all org.allbinary.input.automation.module.InputAutomationModulesData_Package.InputAutomationModulesData'Class;
+   type InputAutomationModulesData_Access_Array is array (Natural range <>) of InputAutomationModulesData_Access;
+   type InputAutomationModulesData_Access_Array_Access is access all InputAutomationModulesData_Access_Array;
+   type InputAutomationModulesData_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModulesData_Access_Array_Access;
+   type InputAutomationModulesData_Access_Array_Access_Array_Access is access all InputAutomationModulesData_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.InputAutomationModulesData_Package_References;
+
+with org.allbinary.input.automation.module.InputAutomationModulesData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.input.automation.module.InputAutomationModulesData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputAutomationModulesData is tagged;
-   type InputAutomationModulesData_Access is access all InputAutomationModulesData'Class;
-   type InputAutomationModulesData_Access_Array is array (Natural range <>) of InputAutomationModulesData_Access;
-   type InputAutomationModulesData_Access_Array_Access is access all InputAutomationModulesData_Access_Array;
-   type InputAutomationModulesData_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModulesData_Access_Array_Access;
-   type InputAutomationModulesData_Access_Array_Access_Array_Access is access all InputAutomationModulesData_Access_Array_Access_Array;
+
+   subtype InputAutomationModulesData_Access is org.allbinary.input.automation.module.InputAutomationModulesData_Package_References.InputAutomationModulesData_Access;
+   function "=" (Left, Right : InputAutomationModulesData_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModulesData_Package_References."=";
+   subtype InputAutomationModulesData_Access_Array is org.allbinary.input.automation.module.InputAutomationModulesData_Package_References.InputAutomationModulesData_Access_Array;
+   function "=" (Left, Right : InputAutomationModulesData_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationModulesData_Package_References."=";
+   subtype InputAutomationModulesData_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModulesData_Package_References.InputAutomationModulesData_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModulesData_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModulesData_Package_References."=";
+   subtype InputAutomationModulesData_Access_Array_Access_Array is org.allbinary.input.automation.module.InputAutomationModulesData_Package_References.InputAutomationModulesData_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationModulesData_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationModulesData_Package_References."=";
+   subtype InputAutomationModulesData_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModulesData_Package_References.InputAutomationModulesData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModulesData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModulesData_Package_References."=";
 
    type InputAutomationModulesData is new Java_Object with null record;
    NAME : Unbounded_String;

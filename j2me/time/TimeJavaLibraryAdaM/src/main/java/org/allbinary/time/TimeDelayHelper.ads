@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.time.TimeDelayHelper_Package;
+package org.allbinary.time.TimeDelayHelper_Package_References is
+   type TimeDelayHelper_Access is access all org.allbinary.time.TimeDelayHelper_Package.TimeDelayHelper'Class;
+   type TimeDelayHelper_Access_Array is array (Natural range <>) of TimeDelayHelper_Access;
+   type TimeDelayHelper_Access_Array_Access is access all TimeDelayHelper_Access_Array;
+   type TimeDelayHelper_Access_Array_Access_Array is array (Natural range <>) of TimeDelayHelper_Access_Array_Access;
+   type TimeDelayHelper_Access_Array_Access_Array_Access is access all TimeDelayHelper_Access_Array_Access_Array;
+end org.allbinary.time.TimeDelayHelper_Package_References;
+
+with org.allbinary.time.TimeDelayHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.time.TimeDelayHelper_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TimeDelayHelper is tagged;
-   type TimeDelayHelper_Access is access all TimeDelayHelper'Class;
-   type TimeDelayHelper_Access_Array is array (Natural range <>) of TimeDelayHelper_Access;
-   type TimeDelayHelper_Access_Array_Access is access all TimeDelayHelper_Access_Array;
-   type TimeDelayHelper_Access_Array_Access_Array is array (Natural range <>) of TimeDelayHelper_Access_Array_Access;
-   type TimeDelayHelper_Access_Array_Access_Array_Access is access all TimeDelayHelper_Access_Array_Access_Array;
+
+   subtype TimeDelayHelper_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access;
+   function "=" (Left, Right : TimeDelayHelper_Access) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   subtype TimeDelayHelper_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array;
+   function "=" (Left, Right : TimeDelayHelper_Access_Array) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
+   function "=" (Left, Right : TimeDelayHelper_Access_Array_Access) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : TimeDelayHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TimeDelayHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
 
    type TimeDelayHelper is new Java_Object with record
       startTime : Long_Long_Integer;

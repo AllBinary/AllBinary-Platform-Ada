@@ -15,11 +15,22 @@
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
 
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   subtype PathFindingNodeCostInfoData_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
+   subtype PathFindingNodeCostInfoData_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access_Array;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
+   subtype PathFindingNodeCostInfoData_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
+   subtype PathFindingNodeCostInfoData_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access_Array_Access_Array;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
+   subtype PathFindingNodeCostInfoData_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
    procedure Initialize_Fields (This : in out PathFindingNodeCostInfo'Class) is
    begin
       null;
@@ -77,7 +88,12 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    function compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo_Var_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) return Integer is
       pathFindingNodeCostInfo_Var : constant PathFindingNodeCostInfo_Access := PathFindingNodeCostInfo_Access (pathFindingNodeCostInfo_Var_Param);
    begin
-        return java_Package.lang.Long.compare (This.totalCostP, pathFindingNodeCostInfo_Var.totalCostP);
+        if (This.totalCostP) < (pathFindingNodeCostInfo_Var.totalCostP) then
+            return -(1);
+        elsif (This.totalCostP) > (pathFindingNodeCostInfo_Var.totalCostP) then
+            return 1;
+        end if;
+        return 0;
    end compareTo;
 
    function toString (This : in out PathFindingNodeCostInfo) return Unbounded_String is

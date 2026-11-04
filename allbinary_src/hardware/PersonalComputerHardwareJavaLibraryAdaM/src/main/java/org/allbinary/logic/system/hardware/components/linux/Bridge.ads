@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.linux.Bridge_Package;
+package org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References is
+   type Bridge_Access is access all org.allbinary.logic.system.hardware.components.linux.Bridge_Package.Bridge'Class;
+   type Bridge_Access_Array is array (Natural range <>) of Bridge_Access;
+   type Bridge_Access_Array_Access is access all Bridge_Access_Array;
+   type Bridge_Access_Array_Access_Array is array (Natural range <>) of Bridge_Access_Array_Access;
+   type Bridge_Access_Array_Access_Array_Access is access all Bridge_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References;
+
+with org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ package org.allbinary.logic.system.hardware.components.linux.Bridge_Package is
 
    package BridgeInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Bridge is tagged;
-   type Bridge_Access is access all Bridge'Class;
-   type Bridge_Access_Array is array (Natural range <>) of Bridge_Access;
-   type Bridge_Access_Array_Access is access all Bridge_Access_Array;
-   type Bridge_Access_Array_Access_Array is array (Natural range <>) of Bridge_Access_Array_Access;
-   type Bridge_Access_Array_Access_Array_Access is access all Bridge_Access_Array_Access_Array;
+
+   subtype Bridge_Access is org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References.Bridge_Access;
+   function "=" (Left, Right : Bridge_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References."=";
+   subtype Bridge_Access_Array is org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References.Bridge_Access_Array;
+   function "=" (Left, Right : Bridge_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References."=";
+   subtype Bridge_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References.Bridge_Access_Array_Access;
+   function "=" (Left, Right : Bridge_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References."=";
+   subtype Bridge_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References.Bridge_Access_Array_Access_Array;
+   function "=" (Left, Right : Bridge_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References."=";
+   subtype Bridge_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References.Bridge_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Bridge_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Bridge_Package_References."=";
 
    type Bridge is new Java_Object and HardwareComponentInterface and BridgeInterface with record
       data : Unbounded_String;

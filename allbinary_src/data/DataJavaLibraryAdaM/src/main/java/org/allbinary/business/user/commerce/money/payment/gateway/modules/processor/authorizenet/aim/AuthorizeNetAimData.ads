@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package;
+package org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References is
+   type AuthorizeNetAimData_Access is access all org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package.AuthorizeNetAimData'Class;
+   type AuthorizeNetAimData_Access_Array is array (Natural range <>) of AuthorizeNetAimData_Access;
+   type AuthorizeNetAimData_Access_Array_Access is access all AuthorizeNetAimData_Access_Array;
+   type AuthorizeNetAimData_Access_Array_Access_Array is array (Natural range <>) of AuthorizeNetAimData_Access_Array_Access;
+   type AuthorizeNetAimData_Access_Array_Access_Array_Access is access all AuthorizeNetAimData_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AuthorizeNetAimData is tagged;
-   type AuthorizeNetAimData_Access is access all AuthorizeNetAimData'Class;
-   type AuthorizeNetAimData_Access_Array is array (Natural range <>) of AuthorizeNetAimData_Access;
-   type AuthorizeNetAimData_Access_Array_Access is access all AuthorizeNetAimData_Access_Array;
-   type AuthorizeNetAimData_Access_Array_Access_Array is array (Natural range <>) of AuthorizeNetAimData_Access_Array_Access;
-   type AuthorizeNetAimData_Access_Array_Access_Array_Access is access all AuthorizeNetAimData_Access_Array_Access_Array;
+
+   subtype AuthorizeNetAimData_Access is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References.AuthorizeNetAimData_Access;
+   function "=" (Left, Right : AuthorizeNetAimData_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References."=";
+   subtype AuthorizeNetAimData_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References.AuthorizeNetAimData_Access_Array;
+   function "=" (Left, Right : AuthorizeNetAimData_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References."=";
+   subtype AuthorizeNetAimData_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References.AuthorizeNetAimData_Access_Array_Access;
+   function "=" (Left, Right : AuthorizeNetAimData_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References."=";
+   subtype AuthorizeNetAimData_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References.AuthorizeNetAimData_Access_Array_Access_Array;
+   function "=" (Left, Right : AuthorizeNetAimData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References."=";
+   subtype AuthorizeNetAimData_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References.AuthorizeNetAimData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AuthorizeNetAimData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.aim.AuthorizeNetAimData_Package_References."=";
 
    type AuthorizeNetAimData is new Java_Object with null record;
    X_DELIM_DATA : Unbounded_String;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;
+package org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References is
+   type HardDriveController_Access is access all org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package.HardDriveController'Class;
+   type HardDriveController_Access_Array is array (Natural range <>) of HardDriveController_Access;
+   type HardDriveController_Access_Array_Access is access all HardDriveController_Access_Array;
+   type HardDriveController_Access_Array_Access_Array is array (Natural range <>) of HardDriveController_Access_Array_Access;
+   type HardDriveController_Access_Array_Access_Array_Access is access all HardDriveController_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References;
+
+with org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ package org.allbinary.logic.system.hardware.components.linux.HardDriveController
 
    package HardDriveControllerInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package;
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HardDriveController is tagged;
-   type HardDriveController_Access is access all HardDriveController'Class;
-   type HardDriveController_Access_Array is array (Natural range <>) of HardDriveController_Access;
-   type HardDriveController_Access_Array_Access is access all HardDriveController_Access_Array;
-   type HardDriveController_Access_Array_Access_Array is array (Natural range <>) of HardDriveController_Access_Array_Access;
-   type HardDriveController_Access_Array_Access_Array_Access is access all HardDriveController_Access_Array_Access_Array;
+
+   subtype HardDriveController_Access is org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References.HardDriveController_Access;
+   function "=" (Left, Right : HardDriveController_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References."=";
+   subtype HardDriveController_Access_Array is org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References.HardDriveController_Access_Array;
+   function "=" (Left, Right : HardDriveController_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References."=";
+   subtype HardDriveController_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References.HardDriveController_Access_Array_Access;
+   function "=" (Left, Right : HardDriveController_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References."=";
+   subtype HardDriveController_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References.HardDriveController_Access_Array_Access_Array;
+   function "=" (Left, Right : HardDriveController_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References."=";
+   subtype HardDriveController_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References.HardDriveController_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HardDriveController_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package_References."=";
 
    type HardDriveController is new Java_Object and HardwareComponentInterface and HardDriveControllerInterface with record
       data : Unbounded_String;

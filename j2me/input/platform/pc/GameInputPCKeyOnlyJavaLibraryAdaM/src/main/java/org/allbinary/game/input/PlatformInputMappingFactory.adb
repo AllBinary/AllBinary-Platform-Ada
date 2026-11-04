@@ -13,12 +13,36 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.input.LaptopGameInputMapping_Package; use org.allbinary.game.input.LaptopGameInputMapping_Package;
+with org.allbinary.game.input.LaptopGameInputMapping_Package;
+with org.allbinary.game.input.PCGameInputMapping_Package;
 
 package body org.allbinary.game.input.PlatformInputMappingFactory_Package is
 
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype PersistentInputMapping_Access is org.allbinary.game.input.mapping.PersistentInputMapping_Package_References.PersistentInputMapping_Access;
+   function "=" (Left, Right : PersistentInputMapping_Access) return Boolean renames org.allbinary.game.input.mapping.PersistentInputMapping_Package_References."=";
+   subtype PersistentInputMapping_Access_Array is org.allbinary.game.input.mapping.PersistentInputMapping_Package_References.PersistentInputMapping_Access_Array;
+   function "=" (Left, Right : PersistentInputMapping_Access_Array) return Boolean renames org.allbinary.game.input.mapping.PersistentInputMapping_Package_References."=";
+   subtype PersistentInputMapping_Access_Array_Access is org.allbinary.game.input.mapping.PersistentInputMapping_Package_References.PersistentInputMapping_Access_Array_Access;
+   function "=" (Left, Right : PersistentInputMapping_Access_Array_Access) return Boolean renames org.allbinary.game.input.mapping.PersistentInputMapping_Package_References."=";
+   subtype PersistentInputMapping_Access_Array_Access_Array is org.allbinary.game.input.mapping.PersistentInputMapping_Package_References.PersistentInputMapping_Access_Array_Access_Array;
+   function "=" (Left, Right : PersistentInputMapping_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.mapping.PersistentInputMapping_Package_References."=";
+   subtype PersistentInputMapping_Access_Array_Access_Array_Access is org.allbinary.game.input.mapping.PersistentInputMapping_Package_References.PersistentInputMapping_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PersistentInputMapping_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.mapping.PersistentInputMapping_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out PlatformInputMappingFactory'Class) is
    begin
       null;
@@ -41,7 +65,7 @@ package body org.allbinary.game.input.PlatformInputMappingFactory_Package is
 
    function getInstance return PlatformInputMappingFactory_Access is
    begin
-        return PlatformInputMappingFactory_Package.instance;
+        return PlatformInputMappingFactory_Access (PlatformInputMappingFactory_Package.instance);
    end getInstance;
 
    function getPersistentInputMappingInstance (This : in out PlatformInputMappingFactory) return PersistentInputMapping_Access is

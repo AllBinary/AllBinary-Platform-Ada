@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
+package org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References is
+   type CustomTreeNodeInterface_Access is access all org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package.CustomTreeNodeInterface'Class;
+   type CustomTreeNodeInterface_Access_Array is array (Natural range <>) of CustomTreeNodeInterface_Access;
+   type CustomTreeNodeInterface_Access_Array_Access is access all CustomTreeNodeInterface_Access_Array;
+   type CustomTreeNodeInterface_Access_Array_Access_Array is array (Natural range <>) of CustomTreeNodeInterface_Access_Array_Access;
+   type CustomTreeNodeInterface_Access_Array_Access_Array_Access is access all CustomTreeNodeInterface_Access_Array_Access_Array;
+end org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References;
+
+with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,17 +31,38 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
-with org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package; use org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package;
+limited with org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package;
+with org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package_References;
 
 package org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package is
 
+   package Reference_Types is
+   subtype JPopupMenu_Access is org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package_References.JPopupMenu_Access;
+   use type JPopupMenu_Access;
+   subtype JPopupMenu_Access_Array is org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package_References.JPopupMenu_Access_Array;
+   use type JPopupMenu_Access_Array;
+   subtype JPopupMenu_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package_References.JPopupMenu_Access_Array_Access;
+   use type JPopupMenu_Access_Array_Access;
+   subtype JPopupMenu_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package_References.JPopupMenu_Access_Array_Access_Array;
+   use type JPopupMenu_Access_Array_Access_Array;
+   subtype JPopupMenu_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package_References.JPopupMenu_Access_Array_Access_Array_Access;
+   use type JPopupMenu_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type CustomTreeNodeInterface is interface;
-   type CustomTreeNodeInterface_Access is access all CustomTreeNodeInterface'Class;
-   type CustomTreeNodeInterface_Access_Array is array (Natural range <>) of CustomTreeNodeInterface_Access;
-   type CustomTreeNodeInterface_Access_Array_Access is access all CustomTreeNodeInterface_Access_Array;
-   type CustomTreeNodeInterface_Access_Array_Access_Array is array (Natural range <>) of CustomTreeNodeInterface_Access_Array_Access;
-   type CustomTreeNodeInterface_Access_Array_Access_Array_Access is access all CustomTreeNodeInterface_Access_Array_Access_Array;
+   subtype CustomTreeNodeInterface_Access is org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References.CustomTreeNodeInterface_Access;
+   function "=" (Left, Right : CustomTreeNodeInterface_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References."=";
+   subtype CustomTreeNodeInterface_Access_Array is org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References.CustomTreeNodeInterface_Access_Array;
+   function "=" (Left, Right : CustomTreeNodeInterface_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References."=";
+   subtype CustomTreeNodeInterface_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References.CustomTreeNodeInterface_Access_Array_Access;
+   function "=" (Left, Right : CustomTreeNodeInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References."=";
+   subtype CustomTreeNodeInterface_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References.CustomTreeNodeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CustomTreeNodeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References."=";
+   subtype CustomTreeNodeInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References.CustomTreeNodeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CustomTreeNodeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package_References."=";
+   function Java_Object_Access_From_CustomTreeNodeInterface (Value : CustomTreeNodeInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getJPopupMenu (This : in out CustomTreeNodeInterface) return JPopupMenu_Access is abstract;
 
 end org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;

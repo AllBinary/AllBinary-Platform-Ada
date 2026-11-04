@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
+package org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References is
+   type ActivityFractureUtilAPI5_Access is access all org.allbinary.android.api5.ActivityFractureUtilAPI5_Package.ActivityFractureUtilAPI5'Class;
+   type ActivityFractureUtilAPI5_Access_Array is array (Natural range <>) of ActivityFractureUtilAPI5_Access;
+   type ActivityFractureUtilAPI5_Access_Array_Access is access all ActivityFractureUtilAPI5_Access_Array;
+   type ActivityFractureUtilAPI5_Access_Array_Access_Array is array (Natural range <>) of ActivityFractureUtilAPI5_Access_Array_Access;
+   type ActivityFractureUtilAPI5_Access_Array_Access_Array_Access is access all ActivityFractureUtilAPI5_Access_Array_Access_Array;
+end org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References;
+
+with org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.app.Activity_Package; use android.app.Activity_Package;
+limited with android.app.Activity_Package;
+with android.app.Activity_Package_References;
 with org.allbinary.android.api1.ActivityFractureUtilAPI1_Package; use org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
 
 package org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
    package ActivityFractureUtilAPI1_Package renames Standard.org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
+   package Reference_Types is
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   use type Activity_Access;
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   use type Activity_Access_Array;
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   use type Activity_Access_Array_Access;
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   use type Activity_Access_Array_Access_Array;
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   use type Activity_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ActivityFractureUtilAPI5 is tagged;
-   type ActivityFractureUtilAPI5_Access is access all ActivityFractureUtilAPI5'Class;
-   type ActivityFractureUtilAPI5_Access_Array is array (Natural range <>) of ActivityFractureUtilAPI5_Access;
-   type ActivityFractureUtilAPI5_Access_Array_Access is access all ActivityFractureUtilAPI5_Access_Array;
-   type ActivityFractureUtilAPI5_Access_Array_Access_Array is array (Natural range <>) of ActivityFractureUtilAPI5_Access_Array_Access;
-   type ActivityFractureUtilAPI5_Access_Array_Access_Array_Access is access all ActivityFractureUtilAPI5_Access_Array_Access_Array;
+
+   subtype ActivityFractureUtilAPI5_Access is org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References.ActivityFractureUtilAPI5_Access;
+   function "=" (Left, Right : ActivityFractureUtilAPI5_Access) return Boolean renames org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References."=";
+   subtype ActivityFractureUtilAPI5_Access_Array is org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References.ActivityFractureUtilAPI5_Access_Array;
+   function "=" (Left, Right : ActivityFractureUtilAPI5_Access_Array) return Boolean renames org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References."=";
+   subtype ActivityFractureUtilAPI5_Access_Array_Access is org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References.ActivityFractureUtilAPI5_Access_Array_Access;
+   function "=" (Left, Right : ActivityFractureUtilAPI5_Access_Array_Access) return Boolean renames org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References."=";
+   subtype ActivityFractureUtilAPI5_Access_Array_Access_Array is org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References.ActivityFractureUtilAPI5_Access_Array_Access_Array;
+   function "=" (Left, Right : ActivityFractureUtilAPI5_Access_Array_Access_Array) return Boolean renames org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References."=";
+   subtype ActivityFractureUtilAPI5_Access_Array_Access_Array_Access is org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References.ActivityFractureUtilAPI5_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ActivityFractureUtilAPI5_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.api5.ActivityFractureUtilAPI5_Package_References."=";
 
    type ActivityFractureUtilAPI5 is new ActivityFractureUtilAPI1 with record
       FEATURE_TOUCHSCREEN_MULTITOUCH : Unbounded_String;

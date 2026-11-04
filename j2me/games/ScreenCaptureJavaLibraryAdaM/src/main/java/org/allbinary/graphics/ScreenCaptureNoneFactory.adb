@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.ScreenCapture_Package; use org.allbinary.graphics.ScreenCapture_Package;
+with org.allbinary.graphics.ScreenCapture_Package;
 
 package body org.allbinary.graphics.ScreenCaptureNoneFactory_Package is
 
+   subtype ScreenCapture_Access is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access;
+   function "=" (Left, Right : ScreenCapture_Access) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
+   subtype ScreenCapture_Access_Array is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access_Array;
+   function "=" (Left, Right : ScreenCapture_Access_Array) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
+   subtype ScreenCapture_Access_Array_Access is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access_Array_Access;
+   function "=" (Left, Right : ScreenCapture_Access_Array_Access) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
+   subtype ScreenCapture_Access_Array_Access_Array is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access_Array_Access_Array;
+   function "=" (Left, Right : ScreenCapture_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
+   subtype ScreenCapture_Access_Array_Access_Array_Access is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScreenCapture_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
    procedure Initialize_Fields (This : in out ScreenCaptureNoneFactory'Class) is
    begin
       null;
@@ -36,7 +48,7 @@ package body org.allbinary.graphics.ScreenCaptureNoneFactory_Package is
 
    function getInstance return ScreenCapture_Access is
    begin
-        return ScreenCaptureNoneFactory_Package.instance;
+        return ScreenCapture_Access (ScreenCaptureNoneFactory_Package.instance);
    end getInstance;
 
 begin

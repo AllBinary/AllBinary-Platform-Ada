@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.form.item.CustomTextBox_Package;
+package org.allbinary.graphics.form.item.CustomTextBox_Package_References is
+   type CustomTextBox_Access is access all org.allbinary.graphics.form.item.CustomTextBox_Package.CustomTextBox'Class;
+   type CustomTextBox_Access_Array is array (Natural range <>) of CustomTextBox_Access;
+   type CustomTextBox_Access_Array_Access is access all CustomTextBox_Access_Array;
+   type CustomTextBox_Access_Array_Access_Array is array (Natural range <>) of CustomTextBox_Access_Array_Access;
+   type CustomTextBox_Access_Array_Access_Array_Access is access all CustomTextBox_Access_Array_Access_Array;
+end org.allbinary.graphics.form.item.CustomTextBox_Package_References;
+
+with org.allbinary.graphics.form.item.CustomTextBox_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,14 +30,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+limited with javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
+limited with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+limited with org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.InputFactory_Package_References;
 with org.allbinary.game.input.event.RawKeyEventListener_Package; use org.allbinary.game.input.event.RawKeyEventListener_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.form.item.ABTextFieldItem_Package; use org.allbinary.graphics.form.item.ABTextFieldItem_Package;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+limited with org.allbinary.graphics.form.item.ABTextFieldItem_Package;
+with org.allbinary.graphics.form.item.ABTextFieldItem_Package_References;
 
 package org.allbinary.graphics.form.item.CustomTextBox_Package is
 
@@ -38,13 +54,81 @@ package org.allbinary.graphics.form.item.CustomTextBox_Package is
    package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
    package RawKeyEventListener_Package renames Standard.org.allbinary.game.input.event.RawKeyEventListener_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Reference_Types is
+   subtype CommandListener_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access;
+   use type CommandListener_Access;
+   subtype CommandListener_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array;
+   use type CommandListener_Access_Array;
+   subtype CommandListener_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access;
+   use type CommandListener_Access_Array_Access;
+   subtype CommandListener_Access_Array_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array;
+   use type CommandListener_Access_Array_Access_Array;
+   subtype CommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array_Access;
+   use type CommandListener_Access_Array_Access_Array_Access;
+   subtype Font_Access is javax.microedition.lcdui.Font_Package_References.Font_Access;
+   use type Font_Access;
+   subtype Font_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array;
+   use type Font_Access_Array;
+   subtype Font_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access;
+   use type Font_Access_Array_Access;
+   subtype Font_Access_Array_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array;
+   use type Font_Access_Array_Access_Array;
+   subtype Font_Access_Array_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array_Access;
+   use type Font_Access_Array_Access_Array_Access;
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype InputFactory_Access is org.allbinary.game.input.InputFactory_Package_References.InputFactory_Access;
+   use type InputFactory_Access;
+   subtype InputFactory_Access_Array is org.allbinary.game.input.InputFactory_Package_References.InputFactory_Access_Array;
+   use type InputFactory_Access_Array;
+   subtype InputFactory_Access_Array_Access is org.allbinary.game.input.InputFactory_Package_References.InputFactory_Access_Array_Access;
+   use type InputFactory_Access_Array_Access;
+   subtype InputFactory_Access_Array_Access_Array is org.allbinary.game.input.InputFactory_Package_References.InputFactory_Access_Array_Access_Array;
+   use type InputFactory_Access_Array_Access_Array;
+   subtype InputFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.InputFactory_Package_References.InputFactory_Access_Array_Access_Array_Access;
+   use type InputFactory_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype ABTextFieldItem_Access is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access;
+   use type ABTextFieldItem_Access;
+   subtype ABTextFieldItem_Access_Array is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access_Array;
+   use type ABTextFieldItem_Access_Array;
+   subtype ABTextFieldItem_Access_Array_Access is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access_Array_Access;
+   use type ABTextFieldItem_Access_Array_Access;
+   subtype ABTextFieldItem_Access_Array_Access_Array is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access_Array_Access_Array;
+   use type ABTextFieldItem_Access_Array_Access_Array;
+   subtype ABTextFieldItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access_Array_Access_Array_Access;
+   use type ABTextFieldItem_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CustomTextBox is tagged;
-   type CustomTextBox_Access is access all CustomTextBox'Class;
-   type CustomTextBox_Access_Array is array (Natural range <>) of CustomTextBox_Access;
-   type CustomTextBox_Access_Array_Access is access all CustomTextBox_Access_Array;
-   type CustomTextBox_Access_Array_Access_Array is array (Natural range <>) of CustomTextBox_Access_Array_Access;
-   type CustomTextBox_Access_Array_Access_Array_Access is access all CustomTextBox_Access_Array_Access_Array;
+
+   subtype CustomTextBox_Access is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access;
+   function "=" (Left, Right : CustomTextBox_Access) return Boolean renames org.allbinary.graphics.form.item.CustomTextBox_Package_References."=";
+   subtype CustomTextBox_Access_Array is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access_Array;
+   function "=" (Left, Right : CustomTextBox_Access_Array) return Boolean renames org.allbinary.graphics.form.item.CustomTextBox_Package_References."=";
+   subtype CustomTextBox_Access_Array_Access is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access_Array_Access;
+   function "=" (Left, Right : CustomTextBox_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.CustomTextBox_Package_References."=";
+   subtype CustomTextBox_Access_Array_Access_Array is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access_Array_Access_Array;
+   function "=" (Left, Right : CustomTextBox_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.CustomTextBox_Package_References."=";
+   subtype CustomTextBox_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CustomTextBox_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.CustomTextBox_Package_References."=";
 
    type CustomTextBox is new GameCommandCanvas and RawKeyEventListener with record
       textFieldItem : ABTextFieldItem_Access;

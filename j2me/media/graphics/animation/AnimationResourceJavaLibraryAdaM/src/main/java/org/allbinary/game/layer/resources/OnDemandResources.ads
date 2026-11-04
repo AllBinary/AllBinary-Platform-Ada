@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.resources.OnDemandResources_Package;
+package org.allbinary.game.layer.resources.OnDemandResources_Package_References is
+   type OnDemandResources_Access is access all org.allbinary.game.layer.resources.OnDemandResources_Package.OnDemandResources'Class;
+   type OnDemandResources_Access_Array is array (Natural range <>) of OnDemandResources_Access;
+   type OnDemandResources_Access_Array_Access is access all OnDemandResources_Access_Array;
+   type OnDemandResources_Access_Array_Access_Array is array (Natural range <>) of OnDemandResources_Access_Array_Access;
+   type OnDemandResources_Access_Array_Access_Array_Access is access all OnDemandResources_Access_Array_Access_Array;
+end org.allbinary.game.layer.resources.OnDemandResources_Package_References;
+
+with org.allbinary.game.layer.resources.OnDemandResources_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
-with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package_References;
+limited with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.game.layer.resources.OnDemandResources_Package is
 
    package BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
    package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access is org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package_References.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access;
+   use type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access;
+   subtype BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array is org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package_References.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array;
+   use type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array;
+   subtype BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access is org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package_References.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access;
+   use type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access;
+   subtype BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array is org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package_References.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array;
+   use type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array;
+   subtype BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array_Access is org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package_References.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array_Access;
+   use type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array_Access;
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   use type ImageCache_Access;
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   use type ImageCache_Access_Array;
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   use type ImageCache_Access_Array_Access;
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   use type ImageCache_Access_Array_Access_Array;
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   use type ImageCache_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OnDemandResources is tagged;
-   type OnDemandResources_Access is access all OnDemandResources'Class;
-   type OnDemandResources_Access_Array is array (Natural range <>) of OnDemandResources_Access;
-   type OnDemandResources_Access_Array_Access is access all OnDemandResources_Access_Array;
-   type OnDemandResources_Access_Array_Access_Array is array (Natural range <>) of OnDemandResources_Access_Array_Access;
-   type OnDemandResources_Access_Array_Access_Array_Access is access all OnDemandResources_Access_Array_Access_Array;
+
+   subtype OnDemandResources_Access is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access;
+   function "=" (Left, Right : OnDemandResources_Access) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
+   subtype OnDemandResources_Access_Array is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access_Array;
+   function "=" (Left, Right : OnDemandResources_Access_Array) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
+   subtype OnDemandResources_Access_Array_Access is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access_Array_Access;
+   function "=" (Left, Right : OnDemandResources_Access_Array_Access) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
+   subtype OnDemandResources_Access_Array_Access_Array is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access_Array_Access_Array;
+   function "=" (Left, Right : OnDemandResources_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
+   subtype OnDemandResources_Access_Array_Access_Array_Access is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OnDemandResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
 
    type OnDemandResources is new Java_Object with record
       logUtil : LogUtil_Access;

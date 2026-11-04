@@ -13,13 +13,47 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.logic.system.security.licensing.LockedUtil_Package; use org.allbinary.logic.system.security.licensing.LockedUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package; use org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
+with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
 
 package body org.allbinary.business.advertisement.Advertisements_Package is
 
    package LockedUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedUtil_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype MyRandomFactory_Access is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access;
+   function "=" (Left, Right : MyRandomFactory_Access) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype MyRandomFactory_Access_Array is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access_Array;
+   function "=" (Left, Right : MyRandomFactory_Access_Array) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype MyRandomFactory_Access_Array_Access is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access_Array_Access;
+   function "=" (Left, Right : MyRandomFactory_Access_Array_Access) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype MyRandomFactory_Access_Array_Access_Array is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : MyRandomFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype MyRandomFactory_Access_Array_Access_Array_Access is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyRandomFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype AdvertisementProcessorInterface_Access is org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References.AdvertisementProcessorInterface_Access;
+   function "=" (Left, Right : AdvertisementProcessorInterface_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References."=";
+   subtype AdvertisementProcessorInterface_Access_Array is org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References.AdvertisementProcessorInterface_Access_Array;
+   function "=" (Left, Right : AdvertisementProcessorInterface_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References."=";
+   subtype AdvertisementProcessorInterface_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References.AdvertisementProcessorInterface_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementProcessorInterface_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References."=";
+   subtype AdvertisementProcessorInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References.AdvertisementProcessorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementProcessorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References."=";
+   subtype AdvertisementProcessorInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References.AdvertisementProcessorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementProcessorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References."=";
    procedure Initialize_Fields (This : in out Advertisements'Class) is
    begin
       null;
@@ -44,8 +78,8 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
    procedure addPage (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class) is
       advertisementProcessorInterface : constant AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
    begin
-        if not (This.pageList.contains (Java_Object_Access (advertisementProcessorInterface))) then
-            This.pageList.add (Java_Object_Access (advertisementProcessorInterface));
+        if not (This.pageList.contains (AdvertisementProcessorInterface_Package.Java_Object_Access_From_AdvertisementProcessorInterface (advertisementProcessorInterface))) then
+            This.pageList.add (AdvertisementProcessorInterface_Package.Java_Object_Access_From_AdvertisementProcessorInterface (advertisementProcessorInterface));
         end if;
    end addPage;
 
@@ -91,8 +125,8 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
    procedure addBanner (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class) is
       advertisementProcessorInterface : constant AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
    begin
-        if not (This.bannerList.contains (Java_Object_Access (advertisementProcessorInterface))) then
-            This.bannerList.add (Java_Object_Access (advertisementProcessorInterface));
+        if not (This.bannerList.contains (AdvertisementProcessorInterface_Package.Java_Object_Access_From_AdvertisementProcessorInterface (advertisementProcessorInterface))) then
+            This.bannerList.add (AdvertisementProcessorInterface_Package.Java_Object_Access_From_AdvertisementProcessorInterface (advertisementProcessorInterface));
         end if;
    end addBanner;
 

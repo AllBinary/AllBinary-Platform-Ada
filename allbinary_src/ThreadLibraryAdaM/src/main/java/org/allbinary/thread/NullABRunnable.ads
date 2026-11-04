@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.thread.NullABRunnable_Package;
+package org.allbinary.thread.NullABRunnable_Package_References is
+   type NullABRunnable_Access is access all org.allbinary.thread.NullABRunnable_Package.NullABRunnable'Class;
+   type NullABRunnable_Access_Array is array (Natural range <>) of NullABRunnable_Access;
+   type NullABRunnable_Access_Array_Access is access all NullABRunnable_Access_Array;
+   type NullABRunnable_Access_Array_Access_Array is array (Natural range <>) of NullABRunnable_Access_Array_Access;
+   type NullABRunnable_Access_Array_Access_Array_Access is access all NullABRunnable_Access_Array_Access_Array;
+end org.allbinary.thread.NullABRunnable_Package_References;
+
+with org.allbinary.thread.NullABRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnabl
 
 package org.allbinary.thread.NullABRunnable_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullABRunnable is tagged;
-   type NullABRunnable_Access is access all NullABRunnable'Class;
-   type NullABRunnable_Access_Array is array (Natural range <>) of NullABRunnable_Access;
-   type NullABRunnable_Access_Array_Access is access all NullABRunnable_Access_Array;
-   type NullABRunnable_Access_Array_Access_Array is array (Natural range <>) of NullABRunnable_Access_Array_Access;
-   type NullABRunnable_Access_Array_Access_Array_Access is access all NullABRunnable_Access_Array_Access_Array;
+
+   subtype NullABRunnable_Access is org.allbinary.thread.NullABRunnable_Package_References.NullABRunnable_Access;
+   function "=" (Left, Right : NullABRunnable_Access) return Boolean renames org.allbinary.thread.NullABRunnable_Package_References."=";
+   subtype NullABRunnable_Access_Array is org.allbinary.thread.NullABRunnable_Package_References.NullABRunnable_Access_Array;
+   function "=" (Left, Right : NullABRunnable_Access_Array) return Boolean renames org.allbinary.thread.NullABRunnable_Package_References."=";
+   subtype NullABRunnable_Access_Array_Access is org.allbinary.thread.NullABRunnable_Package_References.NullABRunnable_Access_Array_Access;
+   function "=" (Left, Right : NullABRunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.NullABRunnable_Package_References."=";
+   subtype NullABRunnable_Access_Array_Access_Array is org.allbinary.thread.NullABRunnable_Package_References.NullABRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : NullABRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.NullABRunnable_Package_References."=";
+   subtype NullABRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.NullABRunnable_Package_References.NullABRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullABRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.NullABRunnable_Package_References."=";
 
    type NullABRunnable is new ABRunnable with null record;
    instance : NullABRunnable_Access;

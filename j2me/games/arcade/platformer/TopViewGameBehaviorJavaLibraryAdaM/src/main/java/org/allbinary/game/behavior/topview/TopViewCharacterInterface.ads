@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package;
+package org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References is
+   type TopViewCharacterInterface_Access is access all org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package.TopViewCharacterInterface'Class;
+   type TopViewCharacterInterface_Access_Array is array (Natural range <>) of TopViewCharacterInterface_Access;
+   type TopViewCharacterInterface_Access_Array_Access is access all TopViewCharacterInterface_Access_Array;
+   type TopViewCharacterInterface_Access_Array_Access_Array is array (Natural range <>) of TopViewCharacterInterface_Access_Array_Access;
+   type TopViewCharacterInterface_Access_Array_Access_Array_Access is access all TopViewCharacterInterface_Access_Array_Access_Array;
+end org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References;
+
+with org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,65 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+limited with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References;
 
 package org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package is
 
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package Reference_Types is
+   subtype BasicGeographicMap_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access;
+   use type BasicGeographicMap_Access;
+   subtype BasicGeographicMap_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array;
+   use type BasicGeographicMap_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access;
+   subtype BasicGeographicMap_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array;
+   use type BasicGeographicMap_Access_Array_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access;
+   use type GeographicMapCellPosition_Access;
+   subtype GeographicMapCellPosition_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array;
+   use type GeographicMapCellPosition_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
+   use type GeographicMapCellPosition_Access_Array_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellType_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access;
+   use type GeographicMapCellType_Access;
+   subtype GeographicMapCellType_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array;
+   use type GeographicMapCellType_Access_Array;
+   subtype GeographicMapCellType_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array_Access;
+   use type GeographicMapCellType_Access_Array_Access;
+   subtype GeographicMapCellType_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array_Access_Array;
+   use type GeographicMapCellType_Access_Array_Access_Array;
+   subtype GeographicMapCellType_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array_Access_Array_Access;
+   use type GeographicMapCellType_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type TopViewCharacterInterface is interface;
-   type TopViewCharacterInterface_Access is access all TopViewCharacterInterface'Class;
-   type TopViewCharacterInterface_Access_Array is array (Natural range <>) of TopViewCharacterInterface_Access;
-   type TopViewCharacterInterface_Access_Array_Access is access all TopViewCharacterInterface_Access_Array;
-   type TopViewCharacterInterface_Access_Array_Access_Array is array (Natural range <>) of TopViewCharacterInterface_Access_Array_Access;
-   type TopViewCharacterInterface_Access_Array_Access_Array_Access is access all TopViewCharacterInterface_Access_Array_Access_Array;
+   subtype TopViewCharacterInterface_Access is org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References.TopViewCharacterInterface_Access;
+   function "=" (Left, Right : TopViewCharacterInterface_Access) return Boolean renames org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References."=";
+   subtype TopViewCharacterInterface_Access_Array is org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References.TopViewCharacterInterface_Access_Array;
+   function "=" (Left, Right : TopViewCharacterInterface_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References."=";
+   subtype TopViewCharacterInterface_Access_Array_Access is org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References.TopViewCharacterInterface_Access_Array_Access;
+   function "=" (Left, Right : TopViewCharacterInterface_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References."=";
+   subtype TopViewCharacterInterface_Access_Array_Access_Array is org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References.TopViewCharacterInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TopViewCharacterInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References."=";
+   subtype TopViewCharacterInterface_Access_Array_Access_Array_Access is org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References.TopViewCharacterInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TopViewCharacterInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package_References."=";
+   function Java_Object_Access_From_TopViewCharacterInterface (Value : TopViewCharacterInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure terrainMove (This : in out TopViewCharacterInterface; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; x : Integer; y : Integer) is abstract;
    procedure terrainEvent (This : in out TopViewCharacterInterface; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is abstract;
    procedure move (This : in out TopViewCharacterInterface) is abstract;

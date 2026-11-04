@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.util.BasicArrayList_Package;
+package org.allbinary.util.BasicArrayList_Package_References is
+   type BasicArrayList_Access is access all org.allbinary.util.BasicArrayList_Package.BasicArrayList'Class;
+   type BasicArrayList_Access_Array is array (Natural range <>) of BasicArrayList_Access;
+   type BasicArrayList_Access_Array_Access is access all BasicArrayList_Access_Array;
+   type BasicArrayList_Access_Array_Access_Array is array (Natural range <>) of BasicArrayList_Access_Array_Access;
+   type BasicArrayList_Access_Array_Access_Array_Access is access all BasicArrayList_Access_Array_Access_Array;
+end org.allbinary.util.BasicArrayList_Package_References;
+
+with org.allbinary.util.BasicArrayList_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,17 +18,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.ArrayUtil_Package; use org.allbinary.util.ArrayUtil_Package;
+limited with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.ArrayUtil_Package_References;
 
 package org.allbinary.util.BasicArrayList_Package is
 
+   package Reference_Types is
+   subtype ArrayUtil_Access is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access;
+   use type ArrayUtil_Access;
+   subtype ArrayUtil_Access_Array is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array;
+   use type ArrayUtil_Access_Array;
+   subtype ArrayUtil_Access_Array_Access is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array_Access;
+   use type ArrayUtil_Access_Array_Access;
+   subtype ArrayUtil_Access_Array_Access_Array is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array_Access_Array;
+   use type ArrayUtil_Access_Array_Access_Array;
+   subtype ArrayUtil_Access_Array_Access_Array_Access is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array_Access_Array_Access;
+   use type ArrayUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicArrayList is tagged;
-   type BasicArrayList_Access is access all BasicArrayList'Class;
-   type BasicArrayList_Access_Array is array (Natural range <>) of BasicArrayList_Access;
-   type BasicArrayList_Access_Array_Access is access all BasicArrayList_Access_Array;
-   type BasicArrayList_Access_Array_Access_Array is array (Natural range <>) of BasicArrayList_Access_Array_Access;
-   type BasicArrayList_Access_Array_Access_Array_Access is access all BasicArrayList_Access_Array_Access_Array;
+
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
 
    type BasicArrayList is new Java_Object with record
       arrayUtil : ArrayUtil_Access;

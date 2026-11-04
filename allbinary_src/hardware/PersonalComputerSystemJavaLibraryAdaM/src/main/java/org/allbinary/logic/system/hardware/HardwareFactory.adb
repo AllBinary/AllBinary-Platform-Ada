@@ -13,15 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.logic.system.hardware.linux.LinuxHardware_Package; use org.allbinary.logic.system.hardware.linux.LinuxHardware_Package;
 with org.allbinary.logic.system.hardware.windows.WindowsHardware_Package; use org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
+with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 
 package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
    package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
    package LinuxHardware_Package renames Standard.org.allbinary.logic.system.hardware.linux.LinuxHardware_Package;
    package WindowsHardware_Package renames Standard.org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
+   subtype GenericOperatingSystem_Access is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access;
+   function "=" (Left, Right : GenericOperatingSystem_Access) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
+   subtype GenericOperatingSystem_Access_Array is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array;
+   function "=" (Left, Right : GenericOperatingSystem_Access_Array) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
+   subtype GenericOperatingSystem_Access_Array_Access is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array_Access;
+   function "=" (Left, Right : GenericOperatingSystem_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
+   subtype GenericOperatingSystem_Access_Array_Access_Array is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array_Access_Array;
+   function "=" (Left, Right : GenericOperatingSystem_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
+   subtype GenericOperatingSystem_Access_Array_Access_Array_Access is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GenericOperatingSystem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
+   subtype HardwareInterface_Access is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access;
+   function "=" (Left, Right : HardwareInterface_Access) return Boolean renames org.allbinary.logic.system.hardware.HardwareInterface_Package_References."=";
+   subtype HardwareInterface_Access_Array is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access_Array;
+   function "=" (Left, Right : HardwareInterface_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.HardwareInterface_Package_References."=";
+   subtype HardwareInterface_Access_Array_Access is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access_Array_Access;
+   function "=" (Left, Right : HardwareInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.HardwareInterface_Package_References."=";
+   subtype HardwareInterface_Access_Array_Access_Array is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : HardwareInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.HardwareInterface_Package_References."=";
+   subtype HardwareInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.HardwareInterface_Package_References.HardwareInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HardwareInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.HardwareInterface_Package_References."=";
    procedure Initialize_Fields (This : in out HardwareFactory'Class) is
    begin
       null;
@@ -30,7 +52,7 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
    function getInstance return HardwareFactory_Access is
    begin
-        return HardwareFactory_Package.instance;
+        return HardwareFactory_Access (HardwareFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out HardwareFactory'Class) is

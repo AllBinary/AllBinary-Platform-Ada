@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package;
+package org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References is
+   type StoreFrontInventoryStatisticsData_Access is access all org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package.StoreFrontInventoryStatisticsData'Class;
+   type StoreFrontInventoryStatisticsData_Access_Array is array (Natural range <>) of StoreFrontInventoryStatisticsData_Access;
+   type StoreFrontInventoryStatisticsData_Access_Array_Access is access all StoreFrontInventoryStatisticsData_Access_Array;
+   type StoreFrontInventoryStatisticsData_Access_Array_Access_Array is array (Natural range <>) of StoreFrontInventoryStatisticsData_Access_Array_Access;
+   type StoreFrontInventoryStatisticsData_Access_Array_Access_Array_Access is access all StoreFrontInventoryStatisticsData_Access_Array_Access_Array;
+end org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References;
+
+with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreFrontInventoryStatisticsData is tagged;
-   type StoreFrontInventoryStatisticsData_Access is access all StoreFrontInventoryStatisticsData'Class;
-   type StoreFrontInventoryStatisticsData_Access_Array is array (Natural range <>) of StoreFrontInventoryStatisticsData_Access;
-   type StoreFrontInventoryStatisticsData_Access_Array_Access is access all StoreFrontInventoryStatisticsData_Access_Array;
-   type StoreFrontInventoryStatisticsData_Access_Array_Access_Array is array (Natural range <>) of StoreFrontInventoryStatisticsData_Access_Array_Access;
-   type StoreFrontInventoryStatisticsData_Access_Array_Access_Array_Access is access all StoreFrontInventoryStatisticsData_Access_Array_Access_Array;
+
+   subtype StoreFrontInventoryStatisticsData_Access is org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References.StoreFrontInventoryStatisticsData_Access;
+   function "=" (Left, Right : StoreFrontInventoryStatisticsData_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References."=";
+   subtype StoreFrontInventoryStatisticsData_Access_Array is org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References.StoreFrontInventoryStatisticsData_Access_Array;
+   function "=" (Left, Right : StoreFrontInventoryStatisticsData_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References."=";
+   subtype StoreFrontInventoryStatisticsData_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References.StoreFrontInventoryStatisticsData_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontInventoryStatisticsData_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References."=";
+   subtype StoreFrontInventoryStatisticsData_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References.StoreFrontInventoryStatisticsData_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontInventoryStatisticsData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References."=";
+   subtype StoreFrontInventoryStatisticsData_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References.StoreFrontInventoryStatisticsData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontInventoryStatisticsData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package_References."=";
 
    type StoreFrontInventoryStatisticsData is new Java_Object with record
       NAME : Unbounded_String;

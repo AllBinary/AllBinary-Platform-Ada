@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.configuration.ApplicationConfiguration_Package;
+package org.allbinary.configuration.ApplicationConfiguration_Package_References is
+   type ApplicationConfiguration_Access is access all org.allbinary.configuration.ApplicationConfiguration_Package.ApplicationConfiguration'Class;
+   type ApplicationConfiguration_Access_Array is array (Natural range <>) of ApplicationConfiguration_Access;
+   type ApplicationConfiguration_Access_Array_Access is access all ApplicationConfiguration_Access_Array;
+   type ApplicationConfiguration_Access_Array_Access_Array is array (Natural range <>) of ApplicationConfiguration_Access_Array_Access;
+   type ApplicationConfiguration_Access_Array_Access_Array_Access is access all ApplicationConfiguration_Access_Array_Access_Array;
+end org.allbinary.configuration.ApplicationConfiguration_Package_References;
+
+with org.allbinary.configuration.ApplicationConfiguration_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -9,20 +19,50 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Closeable_Package; use java.io.Closeable_Package;
-with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.configuration.ApplicationConfiguration_Package is
 
    package Feature_Package renames Standard.org.allbinary.game.configuration.feature.Feature_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype Feature_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access;
+   use type Feature_Access;
+   subtype Feature_Access_Array is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array;
+   use type Feature_Access_Array;
+   subtype Feature_Access_Array_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access;
+   use type Feature_Access_Array_Access;
+   subtype Feature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access_Array;
+   use type Feature_Access_Array_Access_Array;
+   subtype Feature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access_Array_Access;
+   use type Feature_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ApplicationConfiguration is tagged;
-   type ApplicationConfiguration_Access is access all ApplicationConfiguration'Class;
-   type ApplicationConfiguration_Access_Array is array (Natural range <>) of ApplicationConfiguration_Access;
-   type ApplicationConfiguration_Access_Array_Access is access all ApplicationConfiguration_Access_Array;
-   type ApplicationConfiguration_Access_Array_Access_Array is array (Natural range <>) of ApplicationConfiguration_Access_Array_Access;
-   type ApplicationConfiguration_Access_Array_Access_Array_Access is access all ApplicationConfiguration_Access_Array_Access_Array;
+
+   subtype ApplicationConfiguration_Access is org.allbinary.configuration.ApplicationConfiguration_Package_References.ApplicationConfiguration_Access;
+   function "=" (Left, Right : ApplicationConfiguration_Access) return Boolean renames org.allbinary.configuration.ApplicationConfiguration_Package_References."=";
+   subtype ApplicationConfiguration_Access_Array is org.allbinary.configuration.ApplicationConfiguration_Package_References.ApplicationConfiguration_Access_Array;
+   function "=" (Left, Right : ApplicationConfiguration_Access_Array) return Boolean renames org.allbinary.configuration.ApplicationConfiguration_Package_References."=";
+   subtype ApplicationConfiguration_Access_Array_Access is org.allbinary.configuration.ApplicationConfiguration_Package_References.ApplicationConfiguration_Access_Array_Access;
+   function "=" (Left, Right : ApplicationConfiguration_Access_Array_Access) return Boolean renames org.allbinary.configuration.ApplicationConfiguration_Package_References."=";
+   subtype ApplicationConfiguration_Access_Array_Access_Array is org.allbinary.configuration.ApplicationConfiguration_Package_References.ApplicationConfiguration_Access_Array_Access_Array;
+   function "=" (Left, Right : ApplicationConfiguration_Access_Array_Access_Array) return Boolean renames org.allbinary.configuration.ApplicationConfiguration_Package_References."=";
+   subtype ApplicationConfiguration_Access_Array_Access_Array_Access is org.allbinary.configuration.ApplicationConfiguration_Package_References.ApplicationConfiguration_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ApplicationConfiguration_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.configuration.ApplicationConfiguration_Package_References."=";
 
    type ApplicationConfiguration is new Java_Object with record
       logUtil : LogUtil_Access;

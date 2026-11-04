@@ -28,7 +28,7 @@ package body org.allbinary.game.combat.damage.ExplosionResources_Package is
 
    function getInstance return ExplosionResources_Access is
    begin
-        return ExplosionResources_Package.instance;
+        return ExplosionResources_Access (ExplosionResources_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ExplosionResources'Class) is

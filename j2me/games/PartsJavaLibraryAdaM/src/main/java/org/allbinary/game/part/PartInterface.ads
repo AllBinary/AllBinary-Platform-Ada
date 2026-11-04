@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.part.PartInterface_Package;
+package org.allbinary.game.part.PartInterface_Package_References is
+   type PartInterface_Access is access all org.allbinary.game.part.PartInterface_Package.PartInterface'Class;
+   type PartInterface_Access_Array is array (Natural range <>) of PartInterface_Access;
+   type PartInterface_Access_Array_Access is access all PartInterface_Access_Array;
+   type PartInterface_Access_Array_Access_Array is array (Natural range <>) of PartInterface_Access_Array_Access;
+   type PartInterface_Access_Array_Access_Array_Access is access all PartInterface_Access_Array_Access_Array;
+end org.allbinary.game.part.PartInterface_Package_References;
+
+with org.allbinary.game.part.PartInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,23 @@ package org.allbinary.game.part.PartInterface_Package is
 
    package AnimationInterfaceCompositeInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceCompositeInterface_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type PartInterface is interface and PaintableInterface and AnimationInterfaceCompositeInterface;
-   type PartInterface_Access is access all PartInterface'Class;
-   type PartInterface_Access_Array is array (Natural range <>) of PartInterface_Access;
-   type PartInterface_Access_Array_Access is access all PartInterface_Access_Array;
-   type PartInterface_Access_Array_Access_Array is array (Natural range <>) of PartInterface_Access_Array_Access;
-   type PartInterface_Access_Array_Access_Array_Access is access all PartInterface_Access_Array_Access_Array;
+   subtype PartInterface_Access is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access;
+   function "=" (Left, Right : PartInterface_Access) return Boolean renames org.allbinary.game.part.PartInterface_Package_References."=";
+   subtype PartInterface_Access_Array is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access_Array;
+   function "=" (Left, Right : PartInterface_Access_Array) return Boolean renames org.allbinary.game.part.PartInterface_Package_References."=";
+   subtype PartInterface_Access_Array_Access is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access_Array_Access;
+   function "=" (Left, Right : PartInterface_Access_Array_Access) return Boolean renames org.allbinary.game.part.PartInterface_Package_References."=";
+   subtype PartInterface_Access_Array_Access_Array is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : PartInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.part.PartInterface_Package_References."=";
+   subtype PartInterface_Access_Array_Access_Array_Access is org.allbinary.game.part.PartInterface_Package_References.PartInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PartInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.part.PartInterface_Package_References."=";
+   function Java_Object_Access_From_PartInterface (Value : PartInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
 
 end org.allbinary.game.part.PartInterface_Package;
 

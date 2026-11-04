@@ -21,8 +21,17 @@ with org.allbinary.business.context.modules.storefront.statistics.orders.history
 with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package; use org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package;
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
+with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
 with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package;
 with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsData_Package;
+with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsView_Package;
+with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package;
+with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
 
 package body org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package is
 
@@ -35,6 +44,46 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
    package StoreFrontUsersStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
    package StoreFrontUsersStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
    package UserRoleFactory_Package renames Standard.org.allbinary.business.user.role.UserRoleFactory_Package;
+   subtype UserRole_Access is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access;
+   function "=" (Left, Right : UserRole_Access) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
+   subtype UserRole_Access_Array is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array;
+   function "=" (Left, Right : UserRole_Access_Array) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
+   subtype UserRole_Access_Array_Access is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array_Access;
+   function "=" (Left, Right : UserRole_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
+   subtype UserRole_Access_Array_Access_Array is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array_Access_Array;
+   function "=" (Left, Right : UserRole_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
+   subtype UserRole_Access_Array_Access_Array_Access is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserRole_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   function "=" (Left, Right : Document_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   function "=" (Left, Right : Node_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   function "=" (Left, Right : Node_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   function "=" (Left, Right : Node_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype StoreFrontStatisticsInterface_Access is org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.StoreFrontStatisticsInterface_Access;
+   function "=" (Left, Right : StoreFrontStatisticsInterface_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References."=";
+   subtype StoreFrontStatisticsInterface_Access_Array is org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.StoreFrontStatisticsInterface_Access_Array;
+   function "=" (Left, Right : StoreFrontStatisticsInterface_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References."=";
+   subtype StoreFrontStatisticsInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.StoreFrontStatisticsInterface_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontStatisticsInterface_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References."=";
+   subtype StoreFrontStatisticsInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.StoreFrontStatisticsInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontStatisticsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References."=";
+   subtype StoreFrontStatisticsInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.StoreFrontStatisticsInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontStatisticsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References."=";
    procedure Initialize_Fields (This : in out RealTimeStoreFrontStatisticsView'Class) is
    begin
       null;

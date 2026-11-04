@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package;
+package org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References is
+   type SimpleWeaponProperties_Access is access all org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package.SimpleWeaponProperties'Class;
+   type SimpleWeaponProperties_Access_Array is array (Natural range <>) of SimpleWeaponProperties_Access;
+   type SimpleWeaponProperties_Access_Array_Access is access all SimpleWeaponProperties_Access_Array;
+   type SimpleWeaponProperties_Access_Array_Access_Array is array (Natural range <>) of SimpleWeaponProperties_Access_Array_Access;
+   type SimpleWeaponProperties_Access_Array_Access_Array_Access is access all SimpleWeaponProperties_Access_Array_Access_Array;
+end org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References;
+
+with org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SimpleWeaponProperties is tagged;
-   type SimpleWeaponProperties_Access is access all SimpleWeaponProperties'Class;
-   type SimpleWeaponProperties_Access_Array is array (Natural range <>) of SimpleWeaponProperties_Access;
-   type SimpleWeaponProperties_Access_Array_Access is access all SimpleWeaponProperties_Access_Array;
-   type SimpleWeaponProperties_Access_Array_Access_Array is array (Natural range <>) of SimpleWeaponProperties_Access_Array_Access;
-   type SimpleWeaponProperties_Access_Array_Access_Array_Access is access all SimpleWeaponProperties_Access_Array_Access_Array;
+
+   subtype SimpleWeaponProperties_Access is org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References.SimpleWeaponProperties_Access;
+   function "=" (Left, Right : SimpleWeaponProperties_Access) return Boolean renames org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References."=";
+   subtype SimpleWeaponProperties_Access_Array is org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References.SimpleWeaponProperties_Access_Array;
+   function "=" (Left, Right : SimpleWeaponProperties_Access_Array) return Boolean renames org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References."=";
+   subtype SimpleWeaponProperties_Access_Array_Access is org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References.SimpleWeaponProperties_Access_Array_Access;
+   function "=" (Left, Right : SimpleWeaponProperties_Access_Array_Access) return Boolean renames org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References."=";
+   subtype SimpleWeaponProperties_Access_Array_Access_Array is org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References.SimpleWeaponProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : SimpleWeaponProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References."=";
+   subtype SimpleWeaponProperties_Access_Array_Access_Array_Access is org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References.SimpleWeaponProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SimpleWeaponProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package_References."=";
 
    type SimpleWeaponProperties is new Java_Object with record
       damage : Integer;

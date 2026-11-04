@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.generator.IdGeneratorInterface_Package;
+package org.allbinary.data.generator.IdGeneratorInterface_Package_References is
+   type IdGeneratorInterface_Access is access all org.allbinary.data.generator.IdGeneratorInterface_Package.IdGeneratorInterface'Class;
+   type IdGeneratorInterface_Access_Array is array (Natural range <>) of IdGeneratorInterface_Access;
+   type IdGeneratorInterface_Access_Array_Access is access all IdGeneratorInterface_Access_Array;
+   type IdGeneratorInterface_Access_Array_Access_Array is array (Natural range <>) of IdGeneratorInterface_Access_Array_Access;
+   type IdGeneratorInterface_Access_Array_Access_Array_Access is access all IdGeneratorInterface_Access_Array_Access_Array;
+end org.allbinary.data.generator.IdGeneratorInterface_Package_References;
+
+with org.allbinary.data.generator.IdGeneratorInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.data.generator.IdGeneratorInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type IdGeneratorInterface is interface;
-   type IdGeneratorInterface_Access is access all IdGeneratorInterface'Class;
-   type IdGeneratorInterface_Access_Array is array (Natural range <>) of IdGeneratorInterface_Access;
-   type IdGeneratorInterface_Access_Array_Access is access all IdGeneratorInterface_Access_Array;
-   type IdGeneratorInterface_Access_Array_Access_Array is array (Natural range <>) of IdGeneratorInterface_Access_Array_Access;
-   type IdGeneratorInterface_Access_Array_Access_Array_Access is access all IdGeneratorInterface_Access_Array_Access_Array;
+   subtype IdGeneratorInterface_Access is org.allbinary.data.generator.IdGeneratorInterface_Package_References.IdGeneratorInterface_Access;
+   function "=" (Left, Right : IdGeneratorInterface_Access) return Boolean renames org.allbinary.data.generator.IdGeneratorInterface_Package_References."=";
+   subtype IdGeneratorInterface_Access_Array is org.allbinary.data.generator.IdGeneratorInterface_Package_References.IdGeneratorInterface_Access_Array;
+   function "=" (Left, Right : IdGeneratorInterface_Access_Array) return Boolean renames org.allbinary.data.generator.IdGeneratorInterface_Package_References."=";
+   subtype IdGeneratorInterface_Access_Array_Access is org.allbinary.data.generator.IdGeneratorInterface_Package_References.IdGeneratorInterface_Access_Array_Access;
+   function "=" (Left, Right : IdGeneratorInterface_Access_Array_Access) return Boolean renames org.allbinary.data.generator.IdGeneratorInterface_Package_References."=";
+   subtype IdGeneratorInterface_Access_Array_Access_Array is org.allbinary.data.generator.IdGeneratorInterface_Package_References.IdGeneratorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : IdGeneratorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.data.generator.IdGeneratorInterface_Package_References."=";
+   subtype IdGeneratorInterface_Access_Array_Access_Array_Access is org.allbinary.data.generator.IdGeneratorInterface_Package_References.IdGeneratorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IdGeneratorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.generator.IdGeneratorInterface_Package_References."=";
+   function Java_Object_Access_From_IdGeneratorInterface (Value : IdGeneratorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getNext (This : in out IdGeneratorInterface) return Unbounded_String is abstract;
 
 end org.allbinary.data.generator.IdGeneratorInterface_Package;

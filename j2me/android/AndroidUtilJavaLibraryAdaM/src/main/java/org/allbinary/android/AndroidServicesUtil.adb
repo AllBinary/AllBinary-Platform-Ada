@@ -17,6 +17,8 @@ with android.app.ActivityManager_Package; use android.app.ActivityManager_Packag
 with android.app.ActivityManager.RunningServiceInfo_Package; use android.app.ActivityManager.RunningServiceInfo_Package;
 with android.content.ComponentName_Package; use android.content.ComponentName_Package;
 with android.content.Context_Package; use android.content.Context_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 
 package body org.allbinary.android.AndroidServicesUtil_Package is
 
@@ -24,6 +26,26 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
    package RunningServiceInfo_Package renames Standard.android.app.ActivityManager.RunningServiceInfo_Package;
    package ComponentName_Package renames Standard.android.content.ComponentName_Package;
    package Context_Package renames Standard.android.content.Context_Package;
+   subtype ResourceUtil_Access is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access;
+   function "=" (Left, Right : ResourceUtil_Access) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
+   subtype ResourceUtil_Access_Array is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access_Array;
+   function "=" (Left, Right : ResourceUtil_Access_Array) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
+   subtype ResourceUtil_Access_Array_Access is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access_Array_Access;
+   function "=" (Left, Right : ResourceUtil_Access_Array_Access) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
+   subtype ResourceUtil_Access_Array_Access_Array is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ResourceUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
+   subtype ResourceUtil_Access_Array_Access_Array_Access is org.allbinary.data.resource.ResourceUtil_Package_References.ResourceUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ResourceUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.resource.ResourceUtil_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out AndroidServicesUtil'Class) is
    begin
       null;
@@ -49,7 +71,7 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
 
    function getInstance return AndroidServicesUtil_Access is
    begin
-        return AndroidServicesUtil_Package.instance;
+        return AndroidServicesUtil_Access (AndroidServicesUtil_Package.instance);
    end getInstance;
 
    function isServiceRunning (This : in out AndroidServicesUtil; name : Unbounded_String) return Boolean is
@@ -69,7 +91,7 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
         size := runningServicesList.size;
         for index in 0 .. (size) - 1 loop
             runningServiceInfo := runningServicesList.get (index);
-            serviceComponent := runningServiceInfo.service;
+            serviceComponent := ComponentName_Access (runningServiceInfo.service);
             serviceName := serviceComponent.toString;
             if (Java_Index_Of (serviceName, Java_Image (name))) >= (0) then
                 return True;

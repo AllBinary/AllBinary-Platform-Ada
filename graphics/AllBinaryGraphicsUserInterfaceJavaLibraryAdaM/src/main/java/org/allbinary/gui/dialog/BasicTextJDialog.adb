@@ -14,10 +14,22 @@
 
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package; use org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package;
+with org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package;
 
 package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
 
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   subtype CloseJDialogListenerInterface_Access is org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References.CloseJDialogListenerInterface_Access;
+   function "=" (Left, Right : CloseJDialogListenerInterface_Access) return Boolean renames org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References."=";
+   subtype CloseJDialogListenerInterface_Access_Array is org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References.CloseJDialogListenerInterface_Access_Array;
+   function "=" (Left, Right : CloseJDialogListenerInterface_Access_Array) return Boolean renames org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References."=";
+   subtype CloseJDialogListenerInterface_Access_Array_Access is org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References.CloseJDialogListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : CloseJDialogListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References."=";
+   subtype CloseJDialogListenerInterface_Access_Array_Access_Array is org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References.CloseJDialogListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CloseJDialogListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References."=";
+   subtype CloseJDialogListenerInterface_Access_Array_Access_Array_Access is org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References.CloseJDialogListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CloseJDialogListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package_References."=";
    procedure Initialize_Fields (This : in out BasicTextJDialog'Class) is
    begin
       null;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.AbTransformer_Package;
+package org.allbinary.logic.visual.transform.AbTransformer_Package_References is
+   type AbTransformer_Access is access all org.allbinary.logic.visual.transform.AbTransformer_Package.AbTransformer'Class;
+   type AbTransformer_Access_Array is array (Natural range <>) of AbTransformer_Access;
+   type AbTransformer_Access_Array_Access is access all AbTransformer_Access_Array;
+   type AbTransformer_Access_Array_Access_Array is array (Natural range <>) of AbTransformer_Access_Array_Access;
+   type AbTransformer_Access_Array_Access_Array_Access is access all AbTransformer_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.AbTransformer_Package_References;
+
+with org.allbinary.logic.visual.transform.AbTransformer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,9 +34,12 @@ with java.io.InputStream_Package; use java.io.InputStream_Package;
 --  with java.io.StringBufferInputStream_Package; use java.io.StringBufferInputStream_Package;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
 --  with javax.xml.transform.stream.StreamSource_Package; use javax.xml.transform.stream.StreamSource_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.visual.transform.BasicTransformerInterface_Package; use org.allbinary.logic.visual.transform.BasicTransformerInterface_Package;
 
 package org.allbinary.logic.visual.transform.AbTransformer_Package is
@@ -35,13 +48,51 @@ package org.allbinary.logic.visual.transform.AbTransformer_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbTransformer is tagged;
-   type AbTransformer_Access is access all AbTransformer'Class;
-   type AbTransformer_Access_Array is array (Natural range <>) of AbTransformer_Access;
-   type AbTransformer_Access_Array_Access is access all AbTransformer_Access_Array;
-   type AbTransformer_Access_Array_Access_Array is array (Natural range <>) of AbTransformer_Access_Array_Access;
-   type AbTransformer_Access_Array_Access_Array_Access is access all AbTransformer_Access_Array_Access_Array;
+
+   subtype AbTransformer_Access is org.allbinary.logic.visual.transform.AbTransformer_Package_References.AbTransformer_Access;
+   function "=" (Left, Right : AbTransformer_Access) return Boolean renames org.allbinary.logic.visual.transform.AbTransformer_Package_References."=";
+   subtype AbTransformer_Access_Array is org.allbinary.logic.visual.transform.AbTransformer_Package_References.AbTransformer_Access_Array;
+   function "=" (Left, Right : AbTransformer_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.AbTransformer_Package_References."=";
+   subtype AbTransformer_Access_Array_Access is org.allbinary.logic.visual.transform.AbTransformer_Package_References.AbTransformer_Access_Array_Access;
+   function "=" (Left, Right : AbTransformer_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.AbTransformer_Package_References."=";
+   subtype AbTransformer_Access_Array_Access_Array is org.allbinary.logic.visual.transform.AbTransformer_Package_References.AbTransformer_Access_Array_Access_Array;
+   function "=" (Left, Right : AbTransformer_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.AbTransformer_Package_References."=";
+   subtype AbTransformer_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.AbTransformer_Package_References.AbTransformer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbTransformer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.AbTransformer_Package_References."=";
 
    type AbTransformer is new Java_Object and BasicTransformerInterface with record
       logUtil : LogUtil_Access;

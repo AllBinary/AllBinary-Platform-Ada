@@ -13,11 +13,59 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package; use org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
 with org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package; use org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
+with org.allbinary.game.midlet.LicenseLoadingType_Package; use org.allbinary.game.midlet.LicenseLoadingType_Package;
+with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package; use org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;
+with org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package; use org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package;
+with org.allbinary.game.midlet.DemoSetup_Package;
+with org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package;
+with org.allbinary.game.midlet.LicenseLoadingType_Package;
+with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;
 
 package body org.allbinary.game.midlet.SpecialDemoGameMidlet_Package is
 
    package LicenseServerInitFileUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
+   subtype ClientInformationFactory_Access is org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References.ClientInformationFactory_Access;
+   function "=" (Left, Right : ClientInformationFactory_Access) return Boolean renames org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References."=";
+   subtype ClientInformationFactory_Access_Array is org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References.ClientInformationFactory_Access_Array;
+   function "=" (Left, Right : ClientInformationFactory_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References."=";
+   subtype ClientInformationFactory_Access_Array_Access is org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References.ClientInformationFactory_Access_Array_Access;
+   function "=" (Left, Right : ClientInformationFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References."=";
+   subtype ClientInformationFactory_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References.ClientInformationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ClientInformationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References."=";
+   subtype ClientInformationFactory_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References.ClientInformationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ClientInformationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package_References."=";
+   subtype LicenseLoadingType_Access is org.allbinary.game.midlet.LicenseLoadingType_Package_References.LicenseLoadingType_Access;
+   function "=" (Left, Right : LicenseLoadingType_Access) return Boolean renames org.allbinary.game.midlet.LicenseLoadingType_Package_References."=";
+   subtype LicenseLoadingType_Access_Array is org.allbinary.game.midlet.LicenseLoadingType_Package_References.LicenseLoadingType_Access_Array;
+   function "=" (Left, Right : LicenseLoadingType_Access_Array) return Boolean renames org.allbinary.game.midlet.LicenseLoadingType_Package_References."=";
+   subtype LicenseLoadingType_Access_Array_Access is org.allbinary.game.midlet.LicenseLoadingType_Package_References.LicenseLoadingType_Access_Array_Access;
+   function "=" (Left, Right : LicenseLoadingType_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.LicenseLoadingType_Package_References."=";
+   subtype LicenseLoadingType_Access_Array_Access_Array is org.allbinary.game.midlet.LicenseLoadingType_Package_References.LicenseLoadingType_Access_Array_Access_Array;
+   function "=" (Left, Right : LicenseLoadingType_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.LicenseLoadingType_Package_References."=";
+   subtype LicenseLoadingType_Access_Array_Access_Array_Access is org.allbinary.game.midlet.LicenseLoadingType_Package_References.LicenseLoadingType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LicenseLoadingType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.LicenseLoadingType_Package_References."=";
+   subtype LicensedDemoSetupFactory_Access is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
+   subtype LicensedDemoSetupFactory_Access_Array is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access_Array;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access_Array) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
+   subtype LicensedDemoSetupFactory_Access_Array_Access is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access_Array_Access;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
+   subtype LicensedDemoSetupFactory_Access_Array_Access_Array is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
+   subtype LicensedDemoSetupFactory_Access_Array_Access_Array_Access is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
+   subtype LicenseCheckRunnableFactory_Access is org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References.LicenseCheckRunnableFactory_Access;
+   function "=" (Left, Right : LicenseCheckRunnableFactory_Access) return Boolean renames org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References."=";
+   subtype LicenseCheckRunnableFactory_Access_Array is org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References.LicenseCheckRunnableFactory_Access_Array;
+   function "=" (Left, Right : LicenseCheckRunnableFactory_Access_Array) return Boolean renames org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References."=";
+   subtype LicenseCheckRunnableFactory_Access_Array_Access is org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References.LicenseCheckRunnableFactory_Access_Array_Access;
+   function "=" (Left, Right : LicenseCheckRunnableFactory_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References."=";
+   subtype LicenseCheckRunnableFactory_Access_Array_Access_Array is org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References.LicenseCheckRunnableFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : LicenseCheckRunnableFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References."=";
+   subtype LicenseCheckRunnableFactory_Access_Array_Access_Array_Access is org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References.LicenseCheckRunnableFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LicenseCheckRunnableFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References."=";
    procedure Initialize_Fields (This : in out SpecialDemoGameMidlet'Class) is
    begin
       null;

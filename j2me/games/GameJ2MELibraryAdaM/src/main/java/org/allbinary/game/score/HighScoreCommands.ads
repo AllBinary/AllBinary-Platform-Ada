@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.score.HighScoreCommands_Package;
+package org.allbinary.game.score.HighScoreCommands_Package_References is
+   type HighScoreCommands_Access is access all org.allbinary.game.score.HighScoreCommands_Package.HighScoreCommands'Class;
+   type HighScoreCommands_Access_Array is array (Natural range <>) of HighScoreCommands_Access;
+   type HighScoreCommands_Access_Array_Access is access all HighScoreCommands_Access_Array;
+   type HighScoreCommands_Access_Array_Access_Array is array (Natural range <>) of HighScoreCommands_Access_Array_Access;
+   type HighScoreCommands_Access_Array_Access_Array_Access is access all HighScoreCommands_Access_Array_Access_Array;
+end org.allbinary.game.score.HighScoreCommands_Package_References;
+
+with org.allbinary.game.score.HighScoreCommands_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+limited with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
 
 package org.allbinary.game.score.HighScoreCommands_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package Reference_Types is
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   use type Command_Access;
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   use type Command_Access_Array;
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   use type Command_Access_Array_Access;
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   use type Command_Access_Array_Access_Array;
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   use type Command_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type HighScoreCommands is tagged;
-   type HighScoreCommands_Access is access all HighScoreCommands'Class;
-   type HighScoreCommands_Access_Array is array (Natural range <>) of HighScoreCommands_Access;
-   type HighScoreCommands_Access_Array_Access is access all HighScoreCommands_Access_Array;
-   type HighScoreCommands_Access_Array_Access_Array is array (Natural range <>) of HighScoreCommands_Access_Array_Access;
-   type HighScoreCommands_Access_Array_Access_Array_Access is access all HighScoreCommands_Access_Array_Access_Array;
+
+   subtype HighScoreCommands_Access is org.allbinary.game.score.HighScoreCommands_Package_References.HighScoreCommands_Access;
+   function "=" (Left, Right : HighScoreCommands_Access) return Boolean renames org.allbinary.game.score.HighScoreCommands_Package_References."=";
+   subtype HighScoreCommands_Access_Array is org.allbinary.game.score.HighScoreCommands_Package_References.HighScoreCommands_Access_Array;
+   function "=" (Left, Right : HighScoreCommands_Access_Array) return Boolean renames org.allbinary.game.score.HighScoreCommands_Package_References."=";
+   subtype HighScoreCommands_Access_Array_Access is org.allbinary.game.score.HighScoreCommands_Package_References.HighScoreCommands_Access_Array_Access;
+   function "=" (Left, Right : HighScoreCommands_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScoreCommands_Package_References."=";
+   subtype HighScoreCommands_Access_Array_Access_Array is org.allbinary.game.score.HighScoreCommands_Package_References.HighScoreCommands_Access_Array_Access_Array;
+   function "=" (Left, Right : HighScoreCommands_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.HighScoreCommands_Package_References."=";
+   subtype HighScoreCommands_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoreCommands_Package_References.HighScoreCommands_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HighScoreCommands_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScoreCommands_Package_References."=";
 
    type HighScoreCommands is new Java_Object with record
       DISPLAY : Command_Access;

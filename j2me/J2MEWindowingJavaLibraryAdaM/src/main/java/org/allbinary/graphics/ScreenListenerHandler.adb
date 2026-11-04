@@ -14,9 +14,22 @@
 
 
 with org.allbinary.graphics.ScreenEmptyListener_Package; use org.allbinary.graphics.ScreenEmptyListener_Package;
+with org.allbinary.graphics.ScreenListenerInterface_Package; use org.allbinary.graphics.ScreenListenerInterface_Package;
+with org.allbinary.graphics.ScreenEmptyListener_Package;
+with org.allbinary.graphics.ScreenListenerInterface_Package;
 
 package body org.allbinary.graphics.ScreenListenerHandler_Package is
 
+   subtype ScreenListenerInterface_Access is org.allbinary.graphics.ScreenListenerInterface_Package_References.ScreenListenerInterface_Access;
+   function "=" (Left, Right : ScreenListenerInterface_Access) return Boolean renames org.allbinary.graphics.ScreenListenerInterface_Package_References."=";
+   subtype ScreenListenerInterface_Access_Array is org.allbinary.graphics.ScreenListenerInterface_Package_References.ScreenListenerInterface_Access_Array;
+   function "=" (Left, Right : ScreenListenerInterface_Access_Array) return Boolean renames org.allbinary.graphics.ScreenListenerInterface_Package_References."=";
+   subtype ScreenListenerInterface_Access_Array_Access is org.allbinary.graphics.ScreenListenerInterface_Package_References.ScreenListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : ScreenListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.graphics.ScreenListenerInterface_Package_References."=";
+   subtype ScreenListenerInterface_Access_Array_Access_Array is org.allbinary.graphics.ScreenListenerInterface_Package_References.ScreenListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ScreenListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.ScreenListenerInterface_Package_References."=";
+   subtype ScreenListenerInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.ScreenListenerInterface_Package_References.ScreenListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScreenListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.ScreenListenerInterface_Package_References."=";
    procedure Initialize_Fields (This : in out ScreenListenerHandler'Class) is
    begin
       null;
@@ -38,7 +51,7 @@ package body org.allbinary.graphics.ScreenListenerHandler_Package is
 
    function getInstance return ScreenListenerHandler_Access is
    begin
-        return ScreenListenerHandler_Package.instance;
+        return ScreenListenerHandler_Access (ScreenListenerHandler_Package.instance);
    end getInstance;
 
    procedure setListener (This : in out ScreenListenerHandler; screenListenerInterface_Param : access ScreenListenerInterface_Package.ScreenListenerInterface'Class) is

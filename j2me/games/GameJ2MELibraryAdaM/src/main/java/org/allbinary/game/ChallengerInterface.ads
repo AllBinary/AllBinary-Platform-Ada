@@ -4,6 +4,16 @@
 -- and open the template in the editor.  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ChallengerInterface_Package;
+package org.allbinary.game.ChallengerInterface_Package_References is
+   type ChallengerInterface_Access is access all org.allbinary.game.ChallengerInterface_Package.ChallengerInterface'Class;
+   type ChallengerInterface_Access_Array is array (Natural range <>) of ChallengerInterface_Access;
+   type ChallengerInterface_Access_Array_Access is access all ChallengerInterface_Access_Array;
+   type ChallengerInterface_Access_Array_Access_Array is array (Natural range <>) of ChallengerInterface_Access_Array_Access;
+   type ChallengerInterface_Access_Array_Access_Array_Access is access all ChallengerInterface_Access_Array_Access_Array;
+end org.allbinary.game.ChallengerInterface_Package_References;
+
+with org.allbinary.game.ChallengerInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -15,13 +25,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.ChallengerInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type ChallengerInterface is interface;
-   type ChallengerInterface_Access is access all ChallengerInterface'Class;
-   type ChallengerInterface_Access_Array is array (Natural range <>) of ChallengerInterface_Access;
-   type ChallengerInterface_Access_Array_Access is access all ChallengerInterface_Access_Array;
-   type ChallengerInterface_Access_Array_Access_Array is array (Natural range <>) of ChallengerInterface_Access_Array_Access;
-   type ChallengerInterface_Access_Array_Access_Array_Access is access all ChallengerInterface_Access_Array_Access_Array;
+   subtype ChallengerInterface_Access is org.allbinary.game.ChallengerInterface_Package_References.ChallengerInterface_Access;
+   function "=" (Left, Right : ChallengerInterface_Access) return Boolean renames org.allbinary.game.ChallengerInterface_Package_References."=";
+   subtype ChallengerInterface_Access_Array is org.allbinary.game.ChallengerInterface_Package_References.ChallengerInterface_Access_Array;
+   function "=" (Left, Right : ChallengerInterface_Access_Array) return Boolean renames org.allbinary.game.ChallengerInterface_Package_References."=";
+   subtype ChallengerInterface_Access_Array_Access is org.allbinary.game.ChallengerInterface_Package_References.ChallengerInterface_Access_Array_Access;
+   function "=" (Left, Right : ChallengerInterface_Access_Array_Access) return Boolean renames org.allbinary.game.ChallengerInterface_Package_References."=";
+   subtype ChallengerInterface_Access_Array_Access_Array is org.allbinary.game.ChallengerInterface_Package_References.ChallengerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ChallengerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ChallengerInterface_Package_References."=";
+   subtype ChallengerInterface_Access_Array_Access_Array_Access is org.allbinary.game.ChallengerInterface_Package_References.ChallengerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ChallengerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ChallengerInterface_Package_References."=";
+   function Java_Object_Access_From_ChallengerInterface (Value : ChallengerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setWinner (This : in out ChallengerInterface; isWinner : Boolean) is abstract;
 
 end org.allbinary.game.ChallengerInterface_Package;

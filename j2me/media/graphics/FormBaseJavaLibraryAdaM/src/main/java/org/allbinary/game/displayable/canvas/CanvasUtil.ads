@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.displayable.canvas.CanvasUtil_Package;
+package org.allbinary.game.displayable.canvas.CanvasUtil_Package_References is
+   type CanvasUtil_Access is access all org.allbinary.game.displayable.canvas.CanvasUtil_Package.CanvasUtil'Class;
+   type CanvasUtil_Access_Array is array (Natural range <>) of CanvasUtil_Access;
+   type CanvasUtil_Access_Array_Access is access all CanvasUtil_Access_Array;
+   type CanvasUtil_Access_Array_Access_Array is array (Natural range <>) of CanvasUtil_Access_Array_Access;
+   type CanvasUtil_Access_Array_Access_Array_Access is access all CanvasUtil_Access_Array_Access_Array;
+end org.allbinary.game.displayable.canvas.CanvasUtil_Package_References;
+
+with org.allbinary.game.displayable.canvas.CanvasUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.displayable.canvas.CanvasUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CanvasUtil is tagged;
-   type CanvasUtil_Access is access all CanvasUtil'Class;
-   type CanvasUtil_Access_Array is array (Natural range <>) of CanvasUtil_Access;
-   type CanvasUtil_Access_Array_Access is access all CanvasUtil_Access_Array;
-   type CanvasUtil_Access_Array_Access_Array is array (Natural range <>) of CanvasUtil_Access_Array_Access;
-   type CanvasUtil_Access_Array_Access_Array_Access is access all CanvasUtil_Access_Array_Access_Array;
+
+   subtype CanvasUtil_Access is org.allbinary.game.displayable.canvas.CanvasUtil_Package_References.CanvasUtil_Access;
+   function "=" (Left, Right : CanvasUtil_Access) return Boolean renames org.allbinary.game.displayable.canvas.CanvasUtil_Package_References."=";
+   subtype CanvasUtil_Access_Array is org.allbinary.game.displayable.canvas.CanvasUtil_Package_References.CanvasUtil_Access_Array;
+   function "=" (Left, Right : CanvasUtil_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.CanvasUtil_Package_References."=";
+   subtype CanvasUtil_Access_Array_Access is org.allbinary.game.displayable.canvas.CanvasUtil_Package_References.CanvasUtil_Access_Array_Access;
+   function "=" (Left, Right : CanvasUtil_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.CanvasUtil_Package_References."=";
+   subtype CanvasUtil_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.CanvasUtil_Package_References.CanvasUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : CanvasUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.CanvasUtil_Package_References."=";
+   subtype CanvasUtil_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.CanvasUtil_Package_References.CanvasUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CanvasUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.CanvasUtil_Package_References."=";
 
    type CanvasUtil is new Java_Object with null record;
 

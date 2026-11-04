@@ -14,9 +14,14 @@
 
 
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 
 package body org.allbinary.util.EnumerationUtil_Package is
 
@@ -42,7 +47,7 @@ package body org.allbinary.util.EnumerationUtil_Package is
 
    function getInstance return EnumerationUtil_Access is
    begin
-        return EnumerationUtil_Package.instance;
+        return EnumerationUtil_Access (EnumerationUtil_Package.instance);
    end getInstance;
 
    function hasMoreElements (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) return Boolean is

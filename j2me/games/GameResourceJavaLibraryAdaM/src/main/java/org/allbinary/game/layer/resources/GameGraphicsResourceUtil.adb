@@ -14,10 +14,12 @@
 
 
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GraphicsFeature_Package; use org.allbinary.game.configuration.feature.GraphicsFeature_Package;
 with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package; use org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
 with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -32,6 +34,26 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype GraphicsFeature_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access;
+   function "=" (Left, Right : GraphicsFeature_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array;
+   function "=" (Left, Right : GraphicsFeature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access;
+   function "=" (Left, Right : GraphicsFeature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : GraphicsFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GraphicsFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out GameGraphicsResourceUtil'Class) is
    begin
       null;
@@ -81,16 +103,16 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
       features : Features_Access;
    begin
         graphicsFeatureFactory := GraphicsFeatureFactory_Package.getInstance;
-        graphicsFeature := graphicsFeatureFactory.NONE;
+        graphicsFeature := GraphicsFeature_Access (graphicsFeatureFactory.NONE);
         features := Features_Package.getInstance;
         if features.isFeature (graphicsFeatureFactory.IMAGE_TO_ARRAY_GRAPHICS) then
-            graphicsFeature := graphicsFeatureFactory.IMAGE_TO_ARRAY_GRAPHICS;
+            graphicsFeature := GraphicsFeature_Access (graphicsFeatureFactory.IMAGE_TO_ARRAY_GRAPHICS);
         elsif features.isFeature (graphicsFeatureFactory.SPRITE_FULL_GRAPHICS) then
-            graphicsFeature := graphicsFeatureFactory.SPRITE_FULL_GRAPHICS;
+            graphicsFeature := GraphicsFeature_Access (graphicsFeatureFactory.SPRITE_FULL_GRAPHICS);
         elsif features.isFeature (graphicsFeatureFactory.SPRITE_QUARTER_ROTATION_GRAPHICS) then
-            graphicsFeature := graphicsFeatureFactory.SPRITE_QUARTER_ROTATION_GRAPHICS;
+            graphicsFeature := GraphicsFeature_Access (graphicsFeatureFactory.SPRITE_QUARTER_ROTATION_GRAPHICS);
         elsif features.isFeature (graphicsFeatureFactory.IMAGE_ROTATION_ON_THE_FLY) then
-            graphicsFeature := graphicsFeatureFactory.IMAGE_ROTATION_ON_THE_FLY;
+            graphicsFeature := GraphicsFeature_Access (graphicsFeatureFactory.IMAGE_ROTATION_ON_THE_FLY);
         end if;
         return GameGraphicsResourceUtil'Class (This).getStringForFeature (graphicsFeature);
    end getString;

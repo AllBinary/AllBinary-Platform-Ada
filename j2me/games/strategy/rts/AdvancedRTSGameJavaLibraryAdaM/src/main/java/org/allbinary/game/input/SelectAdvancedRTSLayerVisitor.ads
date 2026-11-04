@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package;
+package org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References is
+   type SelectAdvancedRTSLayerVisitor_Access is access all org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package.SelectAdvancedRTSLayerVisitor'Class;
+   type SelectAdvancedRTSLayerVisitor_Access_Array is array (Natural range <>) of SelectAdvancedRTSLayerVisitor_Access;
+   type SelectAdvancedRTSLayerVisitor_Access_Array_Access is access all SelectAdvancedRTSLayerVisitor_Access_Array;
+   type SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array is array (Natural range <>) of SelectAdvancedRTSLayerVisitor_Access_Array_Access;
+   type SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access is access all SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array;
+end org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References;
+
+with org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,37 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
-with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
+limited with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References;
 
 package org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
 
    package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
+   package Reference_Types is
+   subtype SelectedRTSLayersPlayerGameInput_Access is org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References.SelectedRTSLayersPlayerGameInput_Access;
+   use type SelectedRTSLayersPlayerGameInput_Access;
+   subtype SelectedRTSLayersPlayerGameInput_Access_Array is org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References.SelectedRTSLayersPlayerGameInput_Access_Array;
+   use type SelectedRTSLayersPlayerGameInput_Access_Array;
+   subtype SelectedRTSLayersPlayerGameInput_Access_Array_Access is org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References.SelectedRTSLayersPlayerGameInput_Access_Array_Access;
+   use type SelectedRTSLayersPlayerGameInput_Access_Array_Access;
+   subtype SelectedRTSLayersPlayerGameInput_Access_Array_Access_Array is org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References.SelectedRTSLayersPlayerGameInput_Access_Array_Access_Array;
+   use type SelectedRTSLayersPlayerGameInput_Access_Array_Access_Array;
+   subtype SelectedRTSLayersPlayerGameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References.SelectedRTSLayersPlayerGameInput_Access_Array_Access_Array_Access;
+   use type SelectedRTSLayersPlayerGameInput_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SelectAdvancedRTSLayerVisitor is tagged;
-   type SelectAdvancedRTSLayerVisitor_Access is access all SelectAdvancedRTSLayerVisitor'Class;
-   type SelectAdvancedRTSLayerVisitor_Access_Array is array (Natural range <>) of SelectAdvancedRTSLayerVisitor_Access;
-   type SelectAdvancedRTSLayerVisitor_Access_Array_Access is access all SelectAdvancedRTSLayerVisitor_Access_Array;
-   type SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array is array (Natural range <>) of SelectAdvancedRTSLayerVisitor_Access_Array_Access;
-   type SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access is access all SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array;
+
+   subtype SelectAdvancedRTSLayerVisitor_Access is org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.SelectAdvancedRTSLayerVisitor_Access;
+   function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
+   subtype SelectAdvancedRTSLayerVisitor_Access_Array is org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.SelectAdvancedRTSLayerVisitor_Access_Array;
+   function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access_Array) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
+   subtype SelectAdvancedRTSLayerVisitor_Access_Array_Access is org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.SelectAdvancedRTSLayerVisitor_Access_Array_Access;
+   function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access_Array_Access) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
+   subtype SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array is org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
+   subtype SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access is org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
 
    type SelectAdvancedRTSLayerVisitor is new Visitor with record
       selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access;

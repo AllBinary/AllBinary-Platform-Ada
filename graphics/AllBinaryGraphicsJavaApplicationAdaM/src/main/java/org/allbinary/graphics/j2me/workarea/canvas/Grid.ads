@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
+package org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References is
+   type Grid_Access is access all org.allbinary.graphics.j2me.workarea.canvas.Grid_Package.Grid'Class;
+   type Grid_Access_Array is array (Natural range <>) of Grid_Access;
+   type Grid_Access_Array_Access is access all Grid_Access_Array;
+   type Grid_Access_Array_Access_Array is array (Natural range <>) of Grid_Access_Array_Access;
+   type Grid_Access_Array_Access_Array_Access is access all Grid_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+limited with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 
 package org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Reference_Types is
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   use type GPoint_Access;
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   use type GPoint_Access_Array;
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   use type GPoint_Access_Array_Access;
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   use type GPoint_Access_Array_Access_Array;
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   use type GPoint_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type Grid is tagged;
-   type Grid_Access is access all Grid'Class;
-   type Grid_Access_Array is array (Natural range <>) of Grid_Access;
-   type Grid_Access_Array_Access is access all Grid_Access_Array;
-   type Grid_Access_Array_Access_Array is array (Natural range <>) of Grid_Access_Array_Access;
-   type Grid_Access_Array_Access_Array_Access is access all Grid_Access_Array_Access_Array;
+
+   subtype Grid_Access is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access;
+   function "=" (Left, Right : Grid_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References."=";
+   subtype Grid_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access_Array;
+   function "=" (Left, Right : Grid_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References."=";
+   subtype Grid_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access_Array_Access;
+   function "=" (Left, Right : Grid_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References."=";
+   subtype Grid_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access_Array_Access_Array;
+   function "=" (Left, Right : Grid_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References."=";
+   subtype Grid_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Grid_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References."=";
 
    type Grid is new Java_Object with record
       grid_Var : GPoint_Access;

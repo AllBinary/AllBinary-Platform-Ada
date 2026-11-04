@@ -14,11 +14,26 @@
 
 
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
+with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
 
 package body org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package is
 
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   subtype CacheableInterface_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access;
+   function "=" (Left, Right : CacheableInterface_Access) return Boolean renames org.allbinary.logic.util.cache.CacheableInterface_Package_References."=";
+   subtype CacheableInterface_Access_Array is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array;
+   function "=" (Left, Right : CacheableInterface_Access_Array) return Boolean renames org.allbinary.logic.util.cache.CacheableInterface_Package_References."=";
+   subtype CacheableInterface_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access;
+   function "=" (Left, Right : CacheableInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CacheableInterface_Package_References."=";
+   subtype CacheableInterface_Access_Array_Access_Array is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CacheableInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.CacheableInterface_Package_References."=";
+   subtype CacheableInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CacheableInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CacheableInterface_Package_References."=";
    procedure Initialize_Fields (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory'Class) is
    begin
       null;

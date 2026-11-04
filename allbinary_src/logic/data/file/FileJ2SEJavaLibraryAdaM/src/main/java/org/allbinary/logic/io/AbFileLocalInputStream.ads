@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.AbFileLocalInputStream_Package;
+package org.allbinary.logic.io.AbFileLocalInputStream_Package_References is
+   type AbFileLocalInputStream_Access is access all org.allbinary.logic.io.AbFileLocalInputStream_Package.AbFileLocalInputStream'Class;
+   type AbFileLocalInputStream_Access_Array is array (Natural range <>) of AbFileLocalInputStream_Access;
+   type AbFileLocalInputStream_Access_Array_Access is access all AbFileLocalInputStream_Access_Array;
+   type AbFileLocalInputStream_Access_Array_Access_Array is array (Natural range <>) of AbFileLocalInputStream_Access_Array_Access;
+   type AbFileLocalInputStream_Access_Array_Access_Array_Access is access all AbFileLocalInputStream_Access_Array_Access_Array;
+end org.allbinary.logic.io.AbFileLocalInputStream_Package_References;
+
+with org.allbinary.logic.io.AbFileLocalInputStream_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,19 +31,38 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+limited with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
 
 package org.allbinary.logic.io.AbFileLocalInputStream_Package is
 
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package Reference_Types is
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   use type AbFile_Access;
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   use type AbFile_Access_Array;
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   use type AbFile_Access_Array_Access;
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   use type AbFile_Access_Array_Access_Array;
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   use type AbFile_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbFileLocalInputStream is tagged;
-   type AbFileLocalInputStream_Access is access all AbFileLocalInputStream'Class;
-   type AbFileLocalInputStream_Access_Array is array (Natural range <>) of AbFileLocalInputStream_Access;
-   type AbFileLocalInputStream_Access_Array_Access is access all AbFileLocalInputStream_Access_Array;
-   type AbFileLocalInputStream_Access_Array_Access_Array is array (Natural range <>) of AbFileLocalInputStream_Access_Array_Access;
-   type AbFileLocalInputStream_Access_Array_Access_Array_Access is access all AbFileLocalInputStream_Access_Array_Access_Array;
+
+   subtype AbFileLocalInputStream_Access is org.allbinary.logic.io.AbFileLocalInputStream_Package_References.AbFileLocalInputStream_Access;
+   function "=" (Left, Right : AbFileLocalInputStream_Access) return Boolean renames org.allbinary.logic.io.AbFileLocalInputStream_Package_References."=";
+   subtype AbFileLocalInputStream_Access_Array is org.allbinary.logic.io.AbFileLocalInputStream_Package_References.AbFileLocalInputStream_Access_Array;
+   function "=" (Left, Right : AbFileLocalInputStream_Access_Array) return Boolean renames org.allbinary.logic.io.AbFileLocalInputStream_Package_References."=";
+   subtype AbFileLocalInputStream_Access_Array_Access is org.allbinary.logic.io.AbFileLocalInputStream_Package_References.AbFileLocalInputStream_Access_Array_Access;
+   function "=" (Left, Right : AbFileLocalInputStream_Access_Array_Access) return Boolean renames org.allbinary.logic.io.AbFileLocalInputStream_Package_References."=";
+   subtype AbFileLocalInputStream_Access_Array_Access_Array is org.allbinary.logic.io.AbFileLocalInputStream_Package_References.AbFileLocalInputStream_Access_Array_Access_Array;
+   function "=" (Left, Right : AbFileLocalInputStream_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.AbFileLocalInputStream_Package_References."=";
+   subtype AbFileLocalInputStream_Access_Array_Access_Array_Access is org.allbinary.logic.io.AbFileLocalInputStream_Package_References.AbFileLocalInputStream_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbFileLocalInputStream_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.AbFileLocalInputStream_Package_References."=";
 
    type AbFileLocalInputStream is new AbFileInputStream with null record;
 

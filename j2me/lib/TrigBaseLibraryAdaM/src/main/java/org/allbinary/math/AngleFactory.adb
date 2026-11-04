@@ -14,6 +14,7 @@
 
 
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
@@ -21,6 +22,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.NamedAngle_Package; use org.allbinary.math.NamedAngle_Package;
+with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.math.NamedAngle_Package;
 
 package body org.allbinary.math.AngleFactory_Package is
 
@@ -32,6 +39,46 @@ package body org.allbinary.math.AngleFactory_Package is
    package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
    package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
    package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype Angle_Access is org.allbinary.math.Angle_Package_References.Angle_Access;
+   function "=" (Left, Right : Angle_Access) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype Angle_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array;
+   function "=" (Left, Right : Angle_Access_Array) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype Angle_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access;
+   function "=" (Left, Right : Angle_Access_Array_Access) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype Angle_Access_Array_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array;
+   function "=" (Left, Right : Angle_Access_Array_Access_Array) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype Angle_Access_Array_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Angle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.Angle_Package_References."=";
+   subtype NamedAngle_Access is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access;
+   function "=" (Left, Right : NamedAngle_Access) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
+   subtype NamedAngle_Access_Array is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access_Array;
+   function "=" (Left, Right : NamedAngle_Access_Array) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
+   subtype NamedAngle_Access_Array_Access is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access_Array_Access;
+   function "=" (Left, Right : NamedAngle_Access_Array_Access) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
+   subtype NamedAngle_Access_Array_Access_Array is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access_Array_Access_Array;
+   function "=" (Left, Right : NamedAngle_Access_Array_Access_Array) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
+   subtype NamedAngle_Access_Array_Access_Array_Access is org.allbinary.math.NamedAngle_Package_References.NamedAngle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NamedAngle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.NamedAngle_Package_References."=";
+   subtype FrameUtil_Access is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access;
+   function "=" (Left, Right : FrameUtil_Access) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   subtype FrameUtil_Access_Array is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array;
+   function "=" (Left, Right : FrameUtil_Access_Array) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   subtype FrameUtil_Access_Array_Access is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array_Access;
+   function "=" (Left, Right : FrameUtil_Access_Array_Access) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   subtype FrameUtil_Access_Array_Access_Array is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : FrameUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   subtype FrameUtil_Access_Array_Access_Array_Access is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FrameUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
    procedure Initialize_Fields (This : in out AngleFactory'Class) is
    begin
       null;
@@ -51,7 +98,7 @@ package body org.allbinary.math.AngleFactory_Package is
 
    function getInstance return AngleFactory_Access is
    begin
-        return AngleFactory_Package.instance;
+        return AngleFactory_Access (AngleFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out AngleFactory'Class) is

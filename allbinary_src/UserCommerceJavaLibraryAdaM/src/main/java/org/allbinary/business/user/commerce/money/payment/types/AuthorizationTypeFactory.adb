@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package; use org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package is
 
+   subtype AuthorizationType_Access is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access;
+   function "=" (Left, Right : AuthorizationType_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References."=";
+   subtype AuthorizationType_Access_Array is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access_Array;
+   function "=" (Left, Right : AuthorizationType_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References."=";
+   subtype AuthorizationType_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access_Array_Access;
+   function "=" (Left, Right : AuthorizationType_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References."=";
+   subtype AuthorizationType_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access_Array_Access_Array;
+   function "=" (Left, Right : AuthorizationType_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References."=";
+   subtype AuthorizationType_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AuthorizationType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References."=";
    procedure Initialize_Fields (This : in out AuthorizationTypeFactory'Class) is
    begin
       null;
@@ -43,7 +55,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.Authorizat
 
    function getInstance return AuthorizationTypeFactory_Access is
    begin
-        return AuthorizationTypeFactory_Package.instance;
+        return AuthorizationTypeFactory_Access (AuthorizationTypeFactory_Package.instance);
    end getInstance;
 
 begin

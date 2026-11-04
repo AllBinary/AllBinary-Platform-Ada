@@ -13,9 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
+with org.allbinary.logic.util.queue.BasicQueue_Package; use org.allbinary.logic.util.queue.BasicQueue_Package;
+with org.allbinary.logic.communication.smtp.EmailInterface_Package;
+with org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package;
 
 package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package is
 
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype EmailInterface_Access is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access;
+   function "=" (Left, Right : EmailInterface_Access) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
+   subtype EmailInterface_Access_Array is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access_Array;
+   function "=" (Left, Right : EmailInterface_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
+   subtype EmailInterface_Access_Array_Access is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access_Array_Access;
+   function "=" (Left, Right : EmailInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
+   subtype EmailInterface_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : EmailInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
+   subtype EmailInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EmailInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
    procedure Initialize_Fields (This : in out BasicEmailQueue'Class) is
    begin
       null;
@@ -42,7 +67,7 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
         if (BasicEmailQueue_Package.basicEmailQueue_Var) = (null) then
             BasicEmailQueue_Package.basicEmailQueue_Var := BasicEmailQueue_Package.Create;
         end if;
-        return BasicEmailQueue_Package.basicEmailQueue_Var;
+        return BasicEmailQueue_Access (BasicEmailQueue_Package.basicEmailQueue_Var);
    end getInstance;
 
    --  throws Exception

@@ -13,10 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.event.RawKeyEventListener_Package; use org.allbinary.game.input.event.RawKeyEventListener_Package;
+with org.allbinary.game.input.event.RawKeyEventListener_Package;
 
 package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
 
@@ -24,6 +28,36 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
    package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype RawKeyEventListener_Access is org.allbinary.game.input.event.RawKeyEventListener_Package_References.RawKeyEventListener_Access;
+   function "=" (Left, Right : RawKeyEventListener_Access) return Boolean renames org.allbinary.game.input.event.RawKeyEventListener_Package_References."=";
+   subtype RawKeyEventListener_Access_Array is org.allbinary.game.input.event.RawKeyEventListener_Package_References.RawKeyEventListener_Access_Array;
+   function "=" (Left, Right : RawKeyEventListener_Access_Array) return Boolean renames org.allbinary.game.input.event.RawKeyEventListener_Package_References."=";
+   subtype RawKeyEventListener_Access_Array_Access is org.allbinary.game.input.event.RawKeyEventListener_Package_References.RawKeyEventListener_Access_Array_Access;
+   function "=" (Left, Right : RawKeyEventListener_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.RawKeyEventListener_Package_References."=";
+   subtype RawKeyEventListener_Access_Array_Access_Array is org.allbinary.game.input.event.RawKeyEventListener_Package_References.RawKeyEventListener_Access_Array_Access_Array;
+   function "=" (Left, Right : RawKeyEventListener_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.event.RawKeyEventListener_Package_References."=";
+   subtype RawKeyEventListener_Access_Array_Access_Array_Access is org.allbinary.game.input.event.RawKeyEventListener_Package_References.RawKeyEventListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RawKeyEventListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.RawKeyEventListener_Package_References."=";
    procedure Initialize_Fields (This : in out RawKeyEventHandler'Class) is
    begin
       null;
@@ -34,7 +68,7 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
 
    function getInstance return RawKeyEventHandler_Access is
    begin
-        return RawKeyEventHandler_Package.instance;
+        return RawKeyEventHandler_Access (RawKeyEventHandler_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out RawKeyEventHandler'Class) is

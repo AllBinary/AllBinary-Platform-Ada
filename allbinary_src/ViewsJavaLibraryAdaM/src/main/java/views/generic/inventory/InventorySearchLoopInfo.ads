@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with views.generic_Id.inventory.InventorySearchLoopInfo_Package;
+package views.generic_Id.inventory.InventorySearchLoopInfo_Package_References is
+   type InventorySearchLoopInfo_Access is access all views.generic_Id.inventory.InventorySearchLoopInfo_Package.InventorySearchLoopInfo'Class;
+   type InventorySearchLoopInfo_Access_Array is array (Natural range <>) of InventorySearchLoopInfo_Access;
+   type InventorySearchLoopInfo_Access_Array_Access is access all InventorySearchLoopInfo_Access_Array;
+   type InventorySearchLoopInfo_Access_Array_Access_Array is array (Natural range <>) of InventorySearchLoopInfo_Access_Array_Access;
+   type InventorySearchLoopInfo_Access_Array_Access_Array_Access is access all InventorySearchLoopInfo_Access_Array_Access_Array;
+end views.generic_Id.inventory.InventorySearchLoopInfo_Package_References;
+
+with views.generic_Id.inventory.InventorySearchLoopInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package views.generic_Id.inventory.InventorySearchLoopInfo_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InventorySearchLoopInfo is tagged;
-   type InventorySearchLoopInfo_Access is access all InventorySearchLoopInfo'Class;
-   type InventorySearchLoopInfo_Access_Array is array (Natural range <>) of InventorySearchLoopInfo_Access;
-   type InventorySearchLoopInfo_Access_Array_Access is access all InventorySearchLoopInfo_Access_Array;
-   type InventorySearchLoopInfo_Access_Array_Access_Array is array (Natural range <>) of InventorySearchLoopInfo_Access_Array_Access;
-   type InventorySearchLoopInfo_Access_Array_Access_Array_Access is access all InventorySearchLoopInfo_Access_Array_Access_Array;
+
+   subtype InventorySearchLoopInfo_Access is views.generic_Id.inventory.InventorySearchLoopInfo_Package_References.InventorySearchLoopInfo_Access;
+   function "=" (Left, Right : InventorySearchLoopInfo_Access) return Boolean renames views.generic_Id.inventory.InventorySearchLoopInfo_Package_References."=";
+   subtype InventorySearchLoopInfo_Access_Array is views.generic_Id.inventory.InventorySearchLoopInfo_Package_References.InventorySearchLoopInfo_Access_Array;
+   function "=" (Left, Right : InventorySearchLoopInfo_Access_Array) return Boolean renames views.generic_Id.inventory.InventorySearchLoopInfo_Package_References."=";
+   subtype InventorySearchLoopInfo_Access_Array_Access is views.generic_Id.inventory.InventorySearchLoopInfo_Package_References.InventorySearchLoopInfo_Access_Array_Access;
+   function "=" (Left, Right : InventorySearchLoopInfo_Access_Array_Access) return Boolean renames views.generic_Id.inventory.InventorySearchLoopInfo_Package_References."=";
+   subtype InventorySearchLoopInfo_Access_Array_Access_Array is views.generic_Id.inventory.InventorySearchLoopInfo_Package_References.InventorySearchLoopInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : InventorySearchLoopInfo_Access_Array_Access_Array) return Boolean renames views.generic_Id.inventory.InventorySearchLoopInfo_Package_References."=";
+   subtype InventorySearchLoopInfo_Access_Array_Access_Array_Access is views.generic_Id.inventory.InventorySearchLoopInfo_Package_References.InventorySearchLoopInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InventorySearchLoopInfo_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.inventory.InventorySearchLoopInfo_Package_References."=";
 
    type InventorySearchLoopInfo is new Java_Object with record
       lastPage : Integer;

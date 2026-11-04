@@ -13,10 +13,35 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package is
 
+   subtype GeographicMapCellType_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access;
+   function "=" (Left, Right : GeographicMapCellType_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References."=";
+   subtype GeographicMapCellType_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array;
+   function "=" (Left, Right : GeographicMapCellType_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References."=";
+   subtype GeographicMapCellType_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapCellType_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References."=";
+   subtype GeographicMapCellType_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array_Access_Array;
+   function "=" (Left, Right : GeographicMapCellType_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References."=";
+   subtype GeographicMapCellType_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapCellType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References."=";
+   subtype RaceTrackGeographicMapCellType_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
+   subtype RaceTrackGeographicMapCellType_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
+   subtype RaceTrackGeographicMapCellType_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
+   subtype RaceTrackGeographicMapCellType_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array_Access_Array;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
+   subtype RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
    procedure Initialize_Fields (This : in out RaceTrackGeographicMapCellTypeFactory'Class) is
    begin
       null;
@@ -30,13 +55,13 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
       
       
       
-      This.FINISH_LINE_ROAD_CELL_TYPE := GeographicMapCellType_Package.NULL_GEOGRAPHIC_MAP_CELL_TYPE;
+      This.FINISH_LINE_ROAD_CELL_TYPE := GeographicMapCellType_Access (GeographicMapCellType_Package.NULL_GEOGRAPHIC_MAP_CELL_TYPE);
    end Initialize_Fields;
 
 
    function getInstance return RaceTrackGeographicMapCellTypeFactory_Access is
    begin
-        return RaceTrackGeographicMapCellTypeFactory_Package.instanceC;
+        return RaceTrackGeographicMapCellTypeFactory_Access (RaceTrackGeographicMapCellTypeFactory_Package.instanceC);
    end getInstance;
 
    procedure Initialize (This : in out RaceTrackGeographicMapCellTypeFactory'Class) is
@@ -45,14 +70,14 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
       GeographicMapCellTypeFactory_Package.Initialize (This);
       Initialize_Fields (This);
         raceTrackGeographicMapCellTypes := RaceTrackGeographicMapCellTypes_Package.getInstance;
-        This.BOTTOM_LEFT_TURN_ROAD_CELL_TYPE := raceTrackGeographicMapCellTypes.BOTTOM_LEFT_TURN_ROAD_CELL_TYPE;
-        This.BOTTOM_RIGHT_TURN_ROAD_CELL_TYPE := raceTrackGeographicMapCellTypes.BOTTOM_RIGHT_TURN_ROAD_CELL_TYPE;
-        This.TOP_LEFT_TURN_ROAD_CELL_TYPE := raceTrackGeographicMapCellTypes.TOP_LEFT_TURN_ROAD_CELL_TYPE;
-        This.TOP_RIGHT_TURN_ROAD_CELL_TYPE := raceTrackGeographicMapCellTypes.TOP_RIGHT_TURN_ROAD_CELL_TYPE;
-        This.HORIZONTAL_STRAIGHT_ROAD_CELL_TYPE := raceTrackGeographicMapCellTypes.HORIZONTAL_STRAIGHT_ROAD_CELL_TYPE;
-        This.VERTICAL_STRAIGHT_ROAD_CELL_TYPE := raceTrackGeographicMapCellTypes.VERTICAL_STRAIGHT_ROAD_CELL_TYPE;
-        This.START_LINE_ROAD_CELL_TYPE := raceTrackGeographicMapCellTypes.START_LINE_ROAD_CELL_TYPE;
-        This.DEFAULT_FINISH_LINE_ROAD_CELL_TYPE := raceTrackGeographicMapCellTypes.DEFAULT_FINISH_LINE_ROAD_CELL_TYPE;
+        This.BOTTOM_LEFT_TURN_ROAD_CELL_TYPE := RaceTrackGeographicMapCellType_Access (raceTrackGeographicMapCellTypes.BOTTOM_LEFT_TURN_ROAD_CELL_TYPE);
+        This.BOTTOM_RIGHT_TURN_ROAD_CELL_TYPE := RaceTrackGeographicMapCellType_Access (raceTrackGeographicMapCellTypes.BOTTOM_RIGHT_TURN_ROAD_CELL_TYPE);
+        This.TOP_LEFT_TURN_ROAD_CELL_TYPE := RaceTrackGeographicMapCellType_Access (raceTrackGeographicMapCellTypes.TOP_LEFT_TURN_ROAD_CELL_TYPE);
+        This.TOP_RIGHT_TURN_ROAD_CELL_TYPE := RaceTrackGeographicMapCellType_Access (raceTrackGeographicMapCellTypes.TOP_RIGHT_TURN_ROAD_CELL_TYPE);
+        This.HORIZONTAL_STRAIGHT_ROAD_CELL_TYPE := RaceTrackGeographicMapCellType_Access (raceTrackGeographicMapCellTypes.HORIZONTAL_STRAIGHT_ROAD_CELL_TYPE);
+        This.VERTICAL_STRAIGHT_ROAD_CELL_TYPE := RaceTrackGeographicMapCellType_Access (raceTrackGeographicMapCellTypes.VERTICAL_STRAIGHT_ROAD_CELL_TYPE);
+        This.START_LINE_ROAD_CELL_TYPE := RaceTrackGeographicMapCellType_Access (raceTrackGeographicMapCellTypes.START_LINE_ROAD_CELL_TYPE);
+        This.DEFAULT_FINISH_LINE_ROAD_CELL_TYPE := RaceTrackGeographicMapCellType_Access (raceTrackGeographicMapCellTypes.DEFAULT_FINISH_LINE_ROAD_CELL_TYPE);
    end Initialize;
 
    function Create return RaceTrackGeographicMapCellTypeFactory_Access is

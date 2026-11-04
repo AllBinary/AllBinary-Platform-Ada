@@ -13,9 +13,55 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+with org.allbinary.graphics.threed.GLHolder_Package; use org.allbinary.graphics.threed.GLHolder_Package;
+with org.allbinary.graphics.threed.RatioProcessor_Package; use org.allbinary.graphics.threed.RatioProcessor_Package;
+with org.allbinary.graphics.threed.GLHolder_Package;
+with org.allbinary.graphics.threed.RatioProcessor_Package;
 
 package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
 
+   subtype Font_Access is javax.microedition.lcdui.Font_Package_References.Font_Access;
+   function "=" (Left, Right : Font_Access) return Boolean renames javax.microedition.lcdui.Font_Package_References."=";
+   subtype Font_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array;
+   function "=" (Left, Right : Font_Access_Array) return Boolean renames javax.microedition.lcdui.Font_Package_References."=";
+   subtype Font_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access;
+   function "=" (Left, Right : Font_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Font_Package_References."=";
+   subtype Font_Access_Array_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array;
+   function "=" (Left, Right : Font_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Font_Package_References."=";
+   subtype Font_Access_Array_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Font_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Font_Package_References."=";
+   subtype MIDlet_Access is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access;
+   function "=" (Left, Right : MIDlet_Access) return Boolean renames javax.microedition.midlet.MIDlet_Package_References."=";
+   subtype MIDlet_Access_Array is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access_Array;
+   function "=" (Left, Right : MIDlet_Access_Array) return Boolean renames javax.microedition.midlet.MIDlet_Package_References."=";
+   subtype MIDlet_Access_Array_Access is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access_Array_Access;
+   function "=" (Left, Right : MIDlet_Access_Array_Access) return Boolean renames javax.microedition.midlet.MIDlet_Package_References."=";
+   subtype MIDlet_Access_Array_Access_Array is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access_Array_Access_Array;
+   function "=" (Left, Right : MIDlet_Access_Array_Access_Array) return Boolean renames javax.microedition.midlet.MIDlet_Package_References."=";
+   subtype MIDlet_Access_Array_Access_Array_Access is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MIDlet_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.midlet.MIDlet_Package_References."=";
+   subtype GLHolder_Access is org.allbinary.graphics.threed.GLHolder_Package_References.GLHolder_Access;
+   function "=" (Left, Right : GLHolder_Access) return Boolean renames org.allbinary.graphics.threed.GLHolder_Package_References."=";
+   subtype GLHolder_Access_Array is org.allbinary.graphics.threed.GLHolder_Package_References.GLHolder_Access_Array;
+   function "=" (Left, Right : GLHolder_Access_Array) return Boolean renames org.allbinary.graphics.threed.GLHolder_Package_References."=";
+   subtype GLHolder_Access_Array_Access is org.allbinary.graphics.threed.GLHolder_Package_References.GLHolder_Access_Array_Access;
+   function "=" (Left, Right : GLHolder_Access_Array_Access) return Boolean renames org.allbinary.graphics.threed.GLHolder_Package_References."=";
+   subtype GLHolder_Access_Array_Access_Array is org.allbinary.graphics.threed.GLHolder_Package_References.GLHolder_Access_Array_Access_Array;
+   function "=" (Left, Right : GLHolder_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.threed.GLHolder_Package_References."=";
+   subtype GLHolder_Access_Array_Access_Array_Access is org.allbinary.graphics.threed.GLHolder_Package_References.GLHolder_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GLHolder_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.threed.GLHolder_Package_References."=";
+   subtype RatioProcessor_Access is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access;
+   function "=" (Left, Right : RatioProcessor_Access) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
+   subtype RatioProcessor_Access_Array is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array;
+   function "=" (Left, Right : RatioProcessor_Access_Array) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
+   subtype RatioProcessor_Access_Array_Access is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array_Access;
+   function "=" (Left, Right : RatioProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
+   subtype RatioProcessor_Access_Array_Access_Array is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : RatioProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
+   subtype RatioProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RatioProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out SWTJOGLProcessor'Class) is
    begin
       null;
@@ -44,7 +90,7 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
 
    function getInstance return SWTJOGLProcessor_Access is
    begin
-        return SWTJOGLProcessor_Package.instance;
+        return SWTJOGLProcessor_Access (SWTJOGLProcessor_Package.instance);
    end getInstance;
 
    procedure init (This : in out SWTJOGLProcessor; display_Param : access Java_Object'Class; comp_Param : access Java_Object'Class) is

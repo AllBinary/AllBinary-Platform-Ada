@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package;
 
 package body org.allbinary.game.input.event.GameKeyEventUtil_Package is
 

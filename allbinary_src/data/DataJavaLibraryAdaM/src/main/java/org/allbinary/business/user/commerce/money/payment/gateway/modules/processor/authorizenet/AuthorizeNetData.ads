@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package;
+package org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References is
+   type AuthorizeNetData_Access is access all org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package.AuthorizeNetData'Class;
+   type AuthorizeNetData_Access_Array is array (Natural range <>) of AuthorizeNetData_Access;
+   type AuthorizeNetData_Access_Array_Access is access all AuthorizeNetData_Access_Array;
+   type AuthorizeNetData_Access_Array_Access_Array is array (Natural range <>) of AuthorizeNetData_Access_Array_Access;
+   type AuthorizeNetData_Access_Array_Access_Array_Access is access all AuthorizeNetData_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AuthorizeNetData is tagged;
-   type AuthorizeNetData_Access is access all AuthorizeNetData'Class;
-   type AuthorizeNetData_Access_Array is array (Natural range <>) of AuthorizeNetData_Access;
-   type AuthorizeNetData_Access_Array_Access is access all AuthorizeNetData_Access_Array;
-   type AuthorizeNetData_Access_Array_Access_Array is array (Natural range <>) of AuthorizeNetData_Access_Array_Access;
-   type AuthorizeNetData_Access_Array_Access_Array_Access is access all AuthorizeNetData_Access_Array_Access_Array;
+
+   subtype AuthorizeNetData_Access is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References.AuthorizeNetData_Access;
+   function "=" (Left, Right : AuthorizeNetData_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References."=";
+   subtype AuthorizeNetData_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References.AuthorizeNetData_Access_Array;
+   function "=" (Left, Right : AuthorizeNetData_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References."=";
+   subtype AuthorizeNetData_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References.AuthorizeNetData_Access_Array_Access;
+   function "=" (Left, Right : AuthorizeNetData_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References."=";
+   subtype AuthorizeNetData_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References.AuthorizeNetData_Access_Array_Access_Array;
+   function "=" (Left, Right : AuthorizeNetData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References."=";
+   subtype AuthorizeNetData_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References.AuthorizeNetData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AuthorizeNetData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.AuthorizeNetData_Package_References."=";
 
    type AuthorizeNetData is new Java_Object with null record;
    X_LOGIN : Unbounded_String;

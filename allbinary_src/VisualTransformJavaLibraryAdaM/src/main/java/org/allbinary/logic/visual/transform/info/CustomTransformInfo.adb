@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.transform.info.TransformInfo_Package;
 
 package body org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package is
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package;
+package org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References is
+   type AndroidMediaPlayerWrapper_Access is access all org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package.AndroidMediaPlayerWrapper'Class;
+   type AndroidMediaPlayerWrapper_Access_Array is array (Natural range <>) of AndroidMediaPlayerWrapper_Access;
+   type AndroidMediaPlayerWrapper_Access_Array_Access is access all AndroidMediaPlayerWrapper_Access_Array;
+   type AndroidMediaPlayerWrapper_Access_Array_Access_Array is array (Natural range <>) of AndroidMediaPlayerWrapper_Access_Array_Access;
+   type AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access is access all AndroidMediaPlayerWrapper_Access_Array_Access_Array;
+end org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
+
+with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,9 +30,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
-with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package_References;
+limited with android.media.MediaPlayer_Package;
+with android.media.MediaPlayer_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.audio.BasicPlayer_Package; use org.allbinary.media.audio.BasicPlayer_Package;
 
 package org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
@@ -30,13 +43,51 @@ package org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
    package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype PlayerListener_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access;
+   use type PlayerListener_Access;
+   subtype PlayerListener_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array;
+   use type PlayerListener_Access_Array;
+   subtype PlayerListener_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access;
+   use type PlayerListener_Access_Array_Access;
+   subtype PlayerListener_Access_Array_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array;
+   use type PlayerListener_Access_Array_Access_Array;
+   subtype PlayerListener_Access_Array_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array_Access;
+   use type PlayerListener_Access_Array_Access_Array_Access;
+   subtype MediaPlayer_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access;
+   use type MediaPlayer_Access;
+   subtype MediaPlayer_Access_Array is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array;
+   use type MediaPlayer_Access_Array;
+   subtype MediaPlayer_Access_Array_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access;
+   use type MediaPlayer_Access_Array_Access;
+   subtype MediaPlayer_Access_Array_Access_Array is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access_Array;
+   use type MediaPlayer_Access_Array_Access_Array;
+   subtype MediaPlayer_Access_Array_Access_Array_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access_Array_Access;
+   use type MediaPlayer_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidMediaPlayerWrapper is tagged;
-   type AndroidMediaPlayerWrapper_Access is access all AndroidMediaPlayerWrapper'Class;
-   type AndroidMediaPlayerWrapper_Access_Array is array (Natural range <>) of AndroidMediaPlayerWrapper_Access;
-   type AndroidMediaPlayerWrapper_Access_Array_Access is access all AndroidMediaPlayerWrapper_Access_Array;
-   type AndroidMediaPlayerWrapper_Access_Array_Access_Array is array (Natural range <>) of AndroidMediaPlayerWrapper_Access_Array_Access;
-   type AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access is access all AndroidMediaPlayerWrapper_Access_Array_Access_Array;
+
+   subtype AndroidMediaPlayerWrapper_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References.AndroidMediaPlayerWrapper_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapper_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References."=";
+   subtype AndroidMediaPlayerWrapper_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References.AndroidMediaPlayerWrapper_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapper_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References."=";
+   subtype AndroidMediaPlayerWrapper_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References.AndroidMediaPlayerWrapper_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapper_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References."=";
+   subtype AndroidMediaPlayerWrapper_Access_Array_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References.AndroidMediaPlayerWrapper_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References."=";
+   subtype AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References.AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References."=";
 
    type AndroidMediaPlayerWrapper is new BasicPlayer with record
       logUtil : LogUtil_Access;

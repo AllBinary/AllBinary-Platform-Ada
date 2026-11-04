@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.math.RectangleCollisionPointUtil_Package;
+package org.allbinary.math.RectangleCollisionPointUtil_Package_References is
+   type RectangleCollisionPointUtil_Access is access all org.allbinary.math.RectangleCollisionPointUtil_Package.RectangleCollisionPointUtil'Class;
+   type RectangleCollisionPointUtil_Access_Array is array (Natural range <>) of RectangleCollisionPointUtil_Access;
+   type RectangleCollisionPointUtil_Access_Array_Access is access all RectangleCollisionPointUtil_Access_Array;
+   type RectangleCollisionPointUtil_Access_Array_Access_Array is array (Natural range <>) of RectangleCollisionPointUtil_Access_Array_Access;
+   type RectangleCollisionPointUtil_Access_Array_Access_Array_Access is access all RectangleCollisionPointUtil_Access_Array_Access_Array;
+end org.allbinary.math.RectangleCollisionPointUtil_Package_References;
+
+with org.allbinary.math.RectangleCollisionPointUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.math.RectangleCollisionPointUtil_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type RectangleCollisionPointUtil is tagged;
-   type RectangleCollisionPointUtil_Access is access all RectangleCollisionPointUtil'Class;
-   type RectangleCollisionPointUtil_Access_Array is array (Natural range <>) of RectangleCollisionPointUtil_Access;
-   type RectangleCollisionPointUtil_Access_Array_Access is access all RectangleCollisionPointUtil_Access_Array;
-   type RectangleCollisionPointUtil_Access_Array_Access_Array is array (Natural range <>) of RectangleCollisionPointUtil_Access_Array_Access;
-   type RectangleCollisionPointUtil_Access_Array_Access_Array_Access is access all RectangleCollisionPointUtil_Access_Array_Access_Array;
+
+   subtype RectangleCollisionPointUtil_Access is org.allbinary.math.RectangleCollisionPointUtil_Package_References.RectangleCollisionPointUtil_Access;
+   function "=" (Left, Right : RectangleCollisionPointUtil_Access) return Boolean renames org.allbinary.math.RectangleCollisionPointUtil_Package_References."=";
+   subtype RectangleCollisionPointUtil_Access_Array is org.allbinary.math.RectangleCollisionPointUtil_Package_References.RectangleCollisionPointUtil_Access_Array;
+   function "=" (Left, Right : RectangleCollisionPointUtil_Access_Array) return Boolean renames org.allbinary.math.RectangleCollisionPointUtil_Package_References."=";
+   subtype RectangleCollisionPointUtil_Access_Array_Access is org.allbinary.math.RectangleCollisionPointUtil_Package_References.RectangleCollisionPointUtil_Access_Array_Access;
+   function "=" (Left, Right : RectangleCollisionPointUtil_Access_Array_Access) return Boolean renames org.allbinary.math.RectangleCollisionPointUtil_Package_References."=";
+   subtype RectangleCollisionPointUtil_Access_Array_Access_Array is org.allbinary.math.RectangleCollisionPointUtil_Package_References.RectangleCollisionPointUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : RectangleCollisionPointUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.math.RectangleCollisionPointUtil_Package_References."=";
+   subtype RectangleCollisionPointUtil_Access_Array_Access_Array_Access is org.allbinary.math.RectangleCollisionPointUtil_Package_References.RectangleCollisionPointUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RectangleCollisionPointUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.RectangleCollisionPointUtil_Package_References."=";
 
    type RectangleCollisionPointUtil is new Java_Object with null record;
 

@@ -13,12 +13,36 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 with org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package; use org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;
+with org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;
 
 package body org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableFactory_Package is
 
    package ScrollCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+   subtype ItemPaintable_Access is org.allbinary.graphics.form.ItemPaintable_Package_References.ItemPaintable_Access;
+   function "=" (Left, Right : ItemPaintable_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintable_Package_References."=";
+   subtype ItemPaintable_Access_Array is org.allbinary.graphics.form.ItemPaintable_Package_References.ItemPaintable_Access_Array;
+   function "=" (Left, Right : ItemPaintable_Access_Array) return Boolean renames org.allbinary.graphics.form.ItemPaintable_Package_References."=";
+   subtype ItemPaintable_Access_Array_Access is org.allbinary.graphics.form.ItemPaintable_Package_References.ItemPaintable_Access_Array_Access;
+   function "=" (Left, Right : ItemPaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintable_Package_References."=";
+   subtype ItemPaintable_Access_Array_Access_Array is org.allbinary.graphics.form.ItemPaintable_Package_References.ItemPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : ItemPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ItemPaintable_Package_References."=";
+   subtype ItemPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ItemPaintable_Package_References.ItemPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ItemPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintable_Package_References."=";
+   subtype PaintableForm_Access is org.allbinary.graphics.form.PaintableForm_Package_References.PaintableForm_Access;
+   function "=" (Left, Right : PaintableForm_Access) return Boolean renames org.allbinary.graphics.form.PaintableForm_Package_References."=";
+   subtype PaintableForm_Access_Array is org.allbinary.graphics.form.PaintableForm_Package_References.PaintableForm_Access_Array;
+   function "=" (Left, Right : PaintableForm_Access_Array) return Boolean renames org.allbinary.graphics.form.PaintableForm_Package_References."=";
+   subtype PaintableForm_Access_Array_Access is org.allbinary.graphics.form.PaintableForm_Package_References.PaintableForm_Access_Array_Access;
+   function "=" (Left, Right : PaintableForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.PaintableForm_Package_References."=";
+   subtype PaintableForm_Access_Array_Access_Array is org.allbinary.graphics.form.PaintableForm_Package_References.PaintableForm_Access_Array_Access_Array;
+   function "=" (Left, Right : PaintableForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.PaintableForm_Package_References."=";
+   subtype PaintableForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.PaintableForm_Package_References.PaintableForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaintableForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.PaintableForm_Package_References."=";
    procedure Initialize_Fields (This : in out PreGameLockableFormPaintableFactory'Class) is
    begin
       null;

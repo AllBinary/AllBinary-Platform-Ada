@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package;
+package org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References is
+   type HtmlImageInput_Access is access all org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package.HtmlImageInput'Class;
+   type HtmlImageInput_Access_Array is array (Natural range <>) of HtmlImageInput_Access;
+   type HtmlImageInput_Access_Array_Access is access all HtmlImageInput_Access_Array;
+   type HtmlImageInput_Access_Array_Access_Array is array (Natural range <>) of HtmlImageInput_Access_Array_Access;
+   type HtmlImageInput_Access_Array_Access_Array_Access is access all HtmlImageInput_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References;
+
+with org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HtmlImageInput is tagged;
-   type HtmlImageInput_Access is access all HtmlImageInput'Class;
-   type HtmlImageInput_Access_Array is array (Natural range <>) of HtmlImageInput_Access;
-   type HtmlImageInput_Access_Array_Access is access all HtmlImageInput_Access_Array;
-   type HtmlImageInput_Access_Array_Access_Array is array (Natural range <>) of HtmlImageInput_Access_Array_Access;
-   type HtmlImageInput_Access_Array_Access_Array_Access is access all HtmlImageInput_Access_Array_Access_Array;
+
+   subtype HtmlImageInput_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.HtmlImageInput_Access;
+   function "=" (Left, Right : HtmlImageInput_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References."=";
+   subtype HtmlImageInput_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.HtmlImageInput_Access_Array;
+   function "=" (Left, Right : HtmlImageInput_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References."=";
+   subtype HtmlImageInput_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.HtmlImageInput_Access_Array_Access;
+   function "=" (Left, Right : HtmlImageInput_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References."=";
+   subtype HtmlImageInput_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.HtmlImageInput_Access_Array_Access_Array;
+   function "=" (Left, Right : HtmlImageInput_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References."=";
+   subtype HtmlImageInput_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.HtmlImageInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HtmlImageInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References."=";
 
    type HtmlImageInput is new Java_Object with null record;
 

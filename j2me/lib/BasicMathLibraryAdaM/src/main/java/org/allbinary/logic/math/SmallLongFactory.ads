@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.math.SmallLongFactory_Package;
+package org.allbinary.logic.math.SmallLongFactory_Package_References is
+   type SmallLongFactory_Access is access all org.allbinary.logic.math.SmallLongFactory_Package.SmallLongFactory'Class;
+   type SmallLongFactory_Access_Array is array (Natural range <>) of SmallLongFactory_Access;
+   type SmallLongFactory_Access_Array_Access is access all SmallLongFactory_Access_Array;
+   type SmallLongFactory_Access_Array_Access_Array is array (Natural range <>) of SmallLongFactory_Access_Array_Access;
+   type SmallLongFactory_Access_Array_Access_Array_Access is access all SmallLongFactory_Access_Array_Access_Array;
+end org.allbinary.logic.math.SmallLongFactory_Package_References;
+
+with org.allbinary.logic.math.SmallLongFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.math.SmallLongFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SmallLongFactory is tagged;
-   type SmallLongFactory_Access is access all SmallLongFactory'Class;
-   type SmallLongFactory_Access_Array is array (Natural range <>) of SmallLongFactory_Access;
-   type SmallLongFactory_Access_Array_Access is access all SmallLongFactory_Access_Array;
-   type SmallLongFactory_Access_Array_Access_Array is array (Natural range <>) of SmallLongFactory_Access_Array_Access;
-   type SmallLongFactory_Access_Array_Access_Array_Access is access all SmallLongFactory_Access_Array_Access_Array;
+
+   subtype SmallLongFactory_Access is org.allbinary.logic.math.SmallLongFactory_Package_References.SmallLongFactory_Access;
+   function "=" (Left, Right : SmallLongFactory_Access) return Boolean renames org.allbinary.logic.math.SmallLongFactory_Package_References."=";
+   subtype SmallLongFactory_Access_Array is org.allbinary.logic.math.SmallLongFactory_Package_References.SmallLongFactory_Access_Array;
+   function "=" (Left, Right : SmallLongFactory_Access_Array) return Boolean renames org.allbinary.logic.math.SmallLongFactory_Package_References."=";
+   subtype SmallLongFactory_Access_Array_Access is org.allbinary.logic.math.SmallLongFactory_Package_References.SmallLongFactory_Access_Array_Access;
+   function "=" (Left, Right : SmallLongFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.math.SmallLongFactory_Package_References."=";
+   subtype SmallLongFactory_Access_Array_Access_Array is org.allbinary.logic.math.SmallLongFactory_Package_References.SmallLongFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : SmallLongFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.SmallLongFactory_Package_References."=";
+   subtype SmallLongFactory_Access_Array_Access_Array_Access is org.allbinary.logic.math.SmallLongFactory_Package_References.SmallLongFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SmallLongFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.SmallLongFactory_Package_References."=";
 
    type SmallLongFactory is new Java_Object with record
       NEGATIVE_MAX : Integer;

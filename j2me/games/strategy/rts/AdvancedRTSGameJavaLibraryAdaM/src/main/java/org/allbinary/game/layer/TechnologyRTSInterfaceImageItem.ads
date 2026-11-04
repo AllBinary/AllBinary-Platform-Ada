@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package;
+package org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References is
+   type TechnologyRTSInterfaceImageItem_Access is access all org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package.TechnologyRTSInterfaceImageItem'Class;
+   type TechnologyRTSInterfaceImageItem_Access_Array is array (Natural range <>) of TechnologyRTSInterfaceImageItem_Access;
+   type TechnologyRTSInterfaceImageItem_Access_Array_Access is access all TechnologyRTSInterfaceImageItem_Access_Array;
+   type TechnologyRTSInterfaceImageItem_Access_Array_Access_Array is array (Natural range <>) of TechnologyRTSInterfaceImageItem_Access_Array_Access;
+   type TechnologyRTSInterfaceImageItem_Access_Array_Access_Array_Access is access all TechnologyRTSInterfaceImageItem_Access_Array_Access_Array;
+end org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References;
+
+with org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,14 +30,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.graphics.form.item.ABCustomImageItem_Package; use org.allbinary.graphics.form.item.ABCustomImageItem_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+limited with org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
-with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
+limited with org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
+limited with org.allbinary.game.layer.RTSInterface_Package;
+with org.allbinary.game.layer.RTSInterface_Package_References;
 
 package org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
 
@@ -38,13 +54,81 @@ package org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
    package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype MyFontProcessor_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access;
+   use type MyFontProcessor_Access;
+   subtype MyFontProcessor_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array;
+   use type MyFontProcessor_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access;
+   subtype MyFontProcessor_Access_Array_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array;
+   use type MyFontProcessor_Access_Array_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access_Array_Access;
+   subtype PrimitiveLongUtil_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access;
+   use type PrimitiveLongUtil_Access;
+   subtype PrimitiveLongUtil_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array;
+   use type PrimitiveLongUtil_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array;
+   use type PrimitiveLongUtil_Access_Array_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   subtype RTSInterface_Access is org.allbinary.game.layer.RTSInterface_Package_References.RTSInterface_Access;
+   use type RTSInterface_Access;
+   subtype RTSInterface_Access_Array is org.allbinary.game.layer.RTSInterface_Package_References.RTSInterface_Access_Array;
+   use type RTSInterface_Access_Array;
+   subtype RTSInterface_Access_Array_Access is org.allbinary.game.layer.RTSInterface_Package_References.RTSInterface_Access_Array_Access;
+   use type RTSInterface_Access_Array_Access;
+   subtype RTSInterface_Access_Array_Access_Array is org.allbinary.game.layer.RTSInterface_Package_References.RTSInterface_Access_Array_Access_Array;
+   use type RTSInterface_Access_Array_Access_Array;
+   subtype RTSInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSInterface_Package_References.RTSInterface_Access_Array_Access_Array_Access;
+   use type RTSInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TechnologyRTSInterfaceImageItem is tagged;
-   type TechnologyRTSInterfaceImageItem_Access is access all TechnologyRTSInterfaceImageItem'Class;
-   type TechnologyRTSInterfaceImageItem_Access_Array is array (Natural range <>) of TechnologyRTSInterfaceImageItem_Access;
-   type TechnologyRTSInterfaceImageItem_Access_Array_Access is access all TechnologyRTSInterfaceImageItem_Access_Array;
-   type TechnologyRTSInterfaceImageItem_Access_Array_Access_Array is array (Natural range <>) of TechnologyRTSInterfaceImageItem_Access_Array_Access;
-   type TechnologyRTSInterfaceImageItem_Access_Array_Access_Array_Access is access all TechnologyRTSInterfaceImageItem_Access_Array_Access_Array;
+
+   subtype TechnologyRTSInterfaceImageItem_Access is org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References.TechnologyRTSInterfaceImageItem_Access;
+   function "=" (Left, Right : TechnologyRTSInterfaceImageItem_Access) return Boolean renames org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References."=";
+   subtype TechnologyRTSInterfaceImageItem_Access_Array is org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References.TechnologyRTSInterfaceImageItem_Access_Array;
+   function "=" (Left, Right : TechnologyRTSInterfaceImageItem_Access_Array) return Boolean renames org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References."=";
+   subtype TechnologyRTSInterfaceImageItem_Access_Array_Access is org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References.TechnologyRTSInterfaceImageItem_Access_Array_Access;
+   function "=" (Left, Right : TechnologyRTSInterfaceImageItem_Access_Array_Access) return Boolean renames org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References."=";
+   subtype TechnologyRTSInterfaceImageItem_Access_Array_Access_Array is org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References.TechnologyRTSInterfaceImageItem_Access_Array_Access_Array;
+   function "=" (Left, Right : TechnologyRTSInterfaceImageItem_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References."=";
+   subtype TechnologyRTSInterfaceImageItem_Access_Array_Access_Array_Access is org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References.TechnologyRTSInterfaceImageItem_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TechnologyRTSInterfaceImageItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package_References."=";
 
    type TechnologyRTSInterfaceImageItem is new ABCustomImageItem and UpdateMyFontInterface with record
       rtsInterface : RTSInterface_Access;

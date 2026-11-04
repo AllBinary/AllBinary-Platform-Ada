@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package;
+package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References is
+   type CustomTextBoxIndexedAnimation_Access is access all org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package.CustomTextBoxIndexedAnimation'Class;
+   type CustomTextBoxIndexedAnimation_Access_Array is array (Natural range <>) of CustomTextBoxIndexedAnimation_Access;
+   type CustomTextBoxIndexedAnimation_Access_Array_Access is access all CustomTextBoxIndexedAnimation_Access_Array;
+   type CustomTextBoxIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of CustomTextBoxIndexedAnimation_Access_Array_Access;
+   type CustomTextBoxIndexedAnimation_Access_Array_Access_Array_Access is access all CustomTextBoxIndexedAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References;
+
+with org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,14 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.game.input.event.RawKeyEventListener_Package; use org.allbinary.game.input.event.RawKeyEventListener_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.form.item.CustomTextBox_Package; use org.allbinary.graphics.form.item.CustomTextBox_Package;
+limited with org.allbinary.graphics.form.item.CustomTextBox_Package;
+with org.allbinary.graphics.form.item.CustomTextBox_Package_References;
 with org.allbinary.animation.text.TextInterface_Package; use org.allbinary.animation.text.TextInterface_Package;
-with org.allbinary.animation.text.TextChangeListener_Package; use org.allbinary.animation.text.TextChangeListener_Package;
+limited with org.allbinary.animation.text.TextChangeListener_Package;
+with org.allbinary.animation.text.TextChangeListener_Package_References;
 
 package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package is
 
@@ -37,13 +51,61 @@ package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
    package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype CustomTextBox_Access is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access;
+   use type CustomTextBox_Access;
+   subtype CustomTextBox_Access_Array is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access_Array;
+   use type CustomTextBox_Access_Array;
+   subtype CustomTextBox_Access_Array_Access is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access_Array_Access;
+   use type CustomTextBox_Access_Array_Access;
+   subtype CustomTextBox_Access_Array_Access_Array is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access_Array_Access_Array;
+   use type CustomTextBox_Access_Array_Access_Array;
+   subtype CustomTextBox_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.CustomTextBox_Package_References.CustomTextBox_Access_Array_Access_Array_Access;
+   use type CustomTextBox_Access_Array_Access_Array_Access;
+   subtype TextChangeListener_Access is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access;
+   use type TextChangeListener_Access;
+   subtype TextChangeListener_Access_Array is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access_Array;
+   use type TextChangeListener_Access_Array;
+   subtype TextChangeListener_Access_Array_Access is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access_Array_Access;
+   use type TextChangeListener_Access_Array_Access;
+   subtype TextChangeListener_Access_Array_Access_Array is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access_Array_Access_Array;
+   use type TextChangeListener_Access_Array_Access_Array;
+   subtype TextChangeListener_Access_Array_Access_Array_Access is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access_Array_Access_Array_Access;
+   use type TextChangeListener_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CustomTextBoxIndexedAnimation is tagged;
-   type CustomTextBoxIndexedAnimation_Access is access all CustomTextBoxIndexedAnimation'Class;
-   type CustomTextBoxIndexedAnimation_Access_Array is array (Natural range <>) of CustomTextBoxIndexedAnimation_Access;
-   type CustomTextBoxIndexedAnimation_Access_Array_Access is access all CustomTextBoxIndexedAnimation_Access_Array;
-   type CustomTextBoxIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of CustomTextBoxIndexedAnimation_Access_Array_Access;
-   type CustomTextBoxIndexedAnimation_Access_Array_Access_Array_Access is access all CustomTextBoxIndexedAnimation_Access_Array_Access_Array;
+
+   subtype CustomTextBoxIndexedAnimation_Access is org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References.CustomTextBoxIndexedAnimation_Access;
+   function "=" (Left, Right : CustomTextBoxIndexedAnimation_Access) return Boolean renames org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References."=";
+   subtype CustomTextBoxIndexedAnimation_Access_Array is org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References.CustomTextBoxIndexedAnimation_Access_Array;
+   function "=" (Left, Right : CustomTextBoxIndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References."=";
+   subtype CustomTextBoxIndexedAnimation_Access_Array_Access is org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References.CustomTextBoxIndexedAnimation_Access_Array_Access;
+   function "=" (Left, Right : CustomTextBoxIndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References."=";
+   subtype CustomTextBoxIndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References.CustomTextBoxIndexedAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : CustomTextBoxIndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References."=";
+   subtype CustomTextBoxIndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References.CustomTextBoxIndexedAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CustomTextBoxIndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package_References."=";
 
    type CustomTextBoxIndexedAnimation is new IndexedAnimation and RawKeyEventListener and UpdateMyFontInterface and TextInterface with record
       customTextBox : CustomTextBox_Access;

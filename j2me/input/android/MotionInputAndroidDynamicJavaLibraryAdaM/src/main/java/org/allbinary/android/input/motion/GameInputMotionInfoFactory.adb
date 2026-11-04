@@ -16,12 +16,23 @@
 with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
 with org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package; use org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package;
 with org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package; use org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
+with org.allbinary.android.input.motion.GameInputMotionInfo_Package; use org.allbinary.android.input.motion.GameInputMotionInfo_Package;
 
 package body org.allbinary.android.input.motion.GameInputMotionInfoFactory_Package is
 
    package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
    package GameInputMotionInfoAPI1_Package renames Standard.org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package;
    package GameInputMotionInfoAPI5_Package renames Standard.org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
+   subtype GameInputMotionInfo_Access is org.allbinary.android.input.motion.GameInputMotionInfo_Package_References.GameInputMotionInfo_Access;
+   function "=" (Left, Right : GameInputMotionInfo_Access) return Boolean renames org.allbinary.android.input.motion.GameInputMotionInfo_Package_References."=";
+   subtype GameInputMotionInfo_Access_Array is org.allbinary.android.input.motion.GameInputMotionInfo_Package_References.GameInputMotionInfo_Access_Array;
+   function "=" (Left, Right : GameInputMotionInfo_Access_Array) return Boolean renames org.allbinary.android.input.motion.GameInputMotionInfo_Package_References."=";
+   subtype GameInputMotionInfo_Access_Array_Access is org.allbinary.android.input.motion.GameInputMotionInfo_Package_References.GameInputMotionInfo_Access_Array_Access;
+   function "=" (Left, Right : GameInputMotionInfo_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.GameInputMotionInfo_Package_References."=";
+   subtype GameInputMotionInfo_Access_Array_Access_Array is org.allbinary.android.input.motion.GameInputMotionInfo_Package_References.GameInputMotionInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInputMotionInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.android.input.motion.GameInputMotionInfo_Package_References."=";
+   subtype GameInputMotionInfo_Access_Array_Access_Array_Access is org.allbinary.android.input.motion.GameInputMotionInfo_Package_References.GameInputMotionInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInputMotionInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.GameInputMotionInfo_Package_References."=";
    procedure Initialize_Fields (This : in out GameInputMotionInfoFactory'Class) is
    begin
       null;

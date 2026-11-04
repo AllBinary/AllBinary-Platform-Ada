@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.address.StreetAddressData_Package;
+package org.allbinary.business.user.address.StreetAddressData_Package_References is
+   type StreetAddressData_Access is access all org.allbinary.business.user.address.StreetAddressData_Package.StreetAddressData'Class;
+   type StreetAddressData_Access_Array is array (Natural range <>) of StreetAddressData_Access;
+   type StreetAddressData_Access_Array_Access is access all StreetAddressData_Access_Array;
+   type StreetAddressData_Access_Array_Access_Array is array (Natural range <>) of StreetAddressData_Access_Array_Access;
+   type StreetAddressData_Access_Array_Access_Array_Access is access all StreetAddressData_Access_Array_Access_Array;
+end org.allbinary.business.user.address.StreetAddressData_Package_References;
+
+with org.allbinary.business.user.address.StreetAddressData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.address.StreetAddressData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type StreetAddressData is tagged;
-   type StreetAddressData_Access is access all StreetAddressData'Class;
-   type StreetAddressData_Access_Array is array (Natural range <>) of StreetAddressData_Access;
-   type StreetAddressData_Access_Array_Access is access all StreetAddressData_Access_Array;
-   type StreetAddressData_Access_Array_Access_Array is array (Natural range <>) of StreetAddressData_Access_Array_Access;
-   type StreetAddressData_Access_Array_Access_Array_Access is access all StreetAddressData_Access_Array_Access_Array;
+
+   subtype StreetAddressData_Access is org.allbinary.business.user.address.StreetAddressData_Package_References.StreetAddressData_Access;
+   function "=" (Left, Right : StreetAddressData_Access) return Boolean renames org.allbinary.business.user.address.StreetAddressData_Package_References."=";
+   subtype StreetAddressData_Access_Array is org.allbinary.business.user.address.StreetAddressData_Package_References.StreetAddressData_Access_Array;
+   function "=" (Left, Right : StreetAddressData_Access_Array) return Boolean renames org.allbinary.business.user.address.StreetAddressData_Package_References."=";
+   subtype StreetAddressData_Access_Array_Access is org.allbinary.business.user.address.StreetAddressData_Package_References.StreetAddressData_Access_Array_Access;
+   function "=" (Left, Right : StreetAddressData_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.StreetAddressData_Package_References."=";
+   subtype StreetAddressData_Access_Array_Access_Array is org.allbinary.business.user.address.StreetAddressData_Package_References.StreetAddressData_Access_Array_Access_Array;
+   function "=" (Left, Right : StreetAddressData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.address.StreetAddressData_Package_References."=";
+   subtype StreetAddressData_Access_Array_Access_Array_Access is org.allbinary.business.user.address.StreetAddressData_Package_References.StreetAddressData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StreetAddressData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.StreetAddressData_Package_References."=";
 
    type StreetAddressData is new Java_Object with null record;
    MAX : Integer;

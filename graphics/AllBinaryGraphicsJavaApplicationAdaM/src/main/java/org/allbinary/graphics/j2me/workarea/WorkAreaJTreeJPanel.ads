@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
+package org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References is
+   type WorkAreaJTreeJPanel_Access is access all org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package.WorkAreaJTreeJPanel'Class;
+   type WorkAreaJTreeJPanel_Access_Array is array (Natural range <>) of WorkAreaJTreeJPanel_Access;
+   type WorkAreaJTreeJPanel_Access_Array_Access is access all WorkAreaJTreeJPanel_Access_Array;
+   type WorkAreaJTreeJPanel_Access_Array_Access_Array is array (Natural range <>) of WorkAreaJTreeJPanel_Access_Array_Access;
+   type WorkAreaJTreeJPanel_Access_Array_Access_Array_Access is access all WorkAreaJTreeJPanel_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,24 +33,76 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.swing.tree.DefaultMutableTreeNode_Package; use javax.swing.tree.DefaultMutableTreeNode_Package;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 --  with javax.swing.tree.TreePath_Package; use javax.swing.tree.TreePath_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.graphics.j2me.workarea.JPanel_Package; use org.allbinary.graphics.j2me.workarea.JPanel_Package;
-with org.allbinary.graphics.j2me.workarea.JTree_Package; use org.allbinary.graphics.j2me.workarea.JTree_Package;
+limited with org.allbinary.graphics.j2me.workarea.JTree_Package;
+with org.allbinary.graphics.j2me.workarea.JTree_Package_References;
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype JTree_Access is org.allbinary.graphics.j2me.workarea.JTree_Package_References.JTree_Access;
+   use type JTree_Access;
+   subtype JTree_Access_Array is org.allbinary.graphics.j2me.workarea.JTree_Package_References.JTree_Access_Array;
+   use type JTree_Access_Array;
+   subtype JTree_Access_Array_Access is org.allbinary.graphics.j2me.workarea.JTree_Package_References.JTree_Access_Array_Access;
+   use type JTree_Access_Array_Access;
+   subtype JTree_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.JTree_Package_References.JTree_Access_Array_Access_Array;
+   use type JTree_Access_Array_Access_Array;
+   subtype JTree_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.JTree_Package_References.JTree_Access_Array_Access_Array_Access;
+   use type JTree_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type WorkAreaJTreeJPanel is tagged;
-   type WorkAreaJTreeJPanel_Access is access all WorkAreaJTreeJPanel'Class;
-   type WorkAreaJTreeJPanel_Access_Array is array (Natural range <>) of WorkAreaJTreeJPanel_Access;
-   type WorkAreaJTreeJPanel_Access_Array_Access is access all WorkAreaJTreeJPanel_Access_Array;
-   type WorkAreaJTreeJPanel_Access_Array_Access_Array is array (Natural range <>) of WorkAreaJTreeJPanel_Access_Array_Access;
-   type WorkAreaJTreeJPanel_Access_Array_Access_Array_Access is access all WorkAreaJTreeJPanel_Access_Array_Access_Array;
+
+   subtype WorkAreaJTreeJPanel_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
+   subtype WorkAreaJTreeJPanel_Access_Array is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access_Array;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
+   subtype WorkAreaJTreeJPanel_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access_Array_Access;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
+   subtype WorkAreaJTreeJPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
+   subtype WorkAreaJTreeJPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
 
    type WorkAreaJTreeJPanel is new JPanel with record
       logUtil : LogUtil_Access;

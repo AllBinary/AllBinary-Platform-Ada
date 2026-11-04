@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
+package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References is
+   type CurrentDisplayableFactory_Access is access all org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package.CurrentDisplayableFactory'Class;
+   type CurrentDisplayableFactory_Access_Array is array (Natural range <>) of CurrentDisplayableFactory_Access;
+   type CurrentDisplayableFactory_Access_Array_Access is access all CurrentDisplayableFactory_Access_Array;
+   type CurrentDisplayableFactory_Access_Array_Access_Array is array (Natural range <>) of CurrentDisplayableFactory_Access_Array_Access;
+   type CurrentDisplayableFactory_Access_Array_Access_Array_Access is access all CurrentDisplayableFactory_Access_Array_Access_Array;
+end org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References;
+
+with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
-with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
-with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
-with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package_References;
+limited with org.allbinary.game.displayable.canvas.GameRunnable_Package;
+with org.allbinary.game.displayable.canvas.GameRunnable_Package_References;
+limited with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package_References;
+limited with org.allbinary.graphics.displayable.MyCanvas_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package_References;
+limited with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
 
@@ -37,13 +54,91 @@ package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype Displayable_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access;
+   use type Displayable_Access;
+   subtype Displayable_Access_Array is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array;
+   use type Displayable_Access_Array;
+   subtype Displayable_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access;
+   use type Displayable_Access_Array_Access;
+   subtype Displayable_Access_Array_Access_Array is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array;
+   use type Displayable_Access_Array_Access_Array;
+   subtype Displayable_Access_Array_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array_Access;
+   use type Displayable_Access_Array_Access_Array_Access;
+   subtype GameRunnable_Access is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access;
+   use type GameRunnable_Access;
+   subtype GameRunnable_Access_Array is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access_Array;
+   use type GameRunnable_Access_Array;
+   subtype GameRunnable_Access_Array_Access is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access_Array_Access;
+   use type GameRunnable_Access_Array_Access;
+   subtype GameRunnable_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access_Array_Access_Array;
+   use type GameRunnable_Access_Array_Access_Array;
+   subtype GameRunnable_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.GameRunnable_Package_References.GameRunnable_Access_Array_Access_Array_Access;
+   use type GameRunnable_Access_Array_Access_Array_Access;
+   subtype CanvasStrings_Access is org.allbinary.graphics.displayable.CanvasStrings_Package_References.CanvasStrings_Access;
+   use type CanvasStrings_Access;
+   subtype CanvasStrings_Access_Array is org.allbinary.graphics.displayable.CanvasStrings_Package_References.CanvasStrings_Access_Array;
+   use type CanvasStrings_Access_Array;
+   subtype CanvasStrings_Access_Array_Access is org.allbinary.graphics.displayable.CanvasStrings_Package_References.CanvasStrings_Access_Array_Access;
+   use type CanvasStrings_Access_Array_Access;
+   subtype CanvasStrings_Access_Array_Access_Array is org.allbinary.graphics.displayable.CanvasStrings_Package_References.CanvasStrings_Access_Array_Access_Array;
+   use type CanvasStrings_Access_Array_Access_Array;
+   subtype CanvasStrings_Access_Array_Access_Array_Access is org.allbinary.graphics.displayable.CanvasStrings_Package_References.CanvasStrings_Access_Array_Access_Array_Access;
+   use type CanvasStrings_Access_Array_Access_Array_Access;
+   subtype MyCanvas_Access is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access;
+   use type MyCanvas_Access;
+   subtype MyCanvas_Access_Array is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access_Array;
+   use type MyCanvas_Access_Array;
+   subtype MyCanvas_Access_Array_Access is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access_Array_Access;
+   use type MyCanvas_Access_Array_Access;
+   subtype MyCanvas_Access_Array_Access_Array is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access_Array_Access_Array;
+   use type MyCanvas_Access_Array_Access_Array;
+   subtype MyCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access_Array_Access_Array_Access;
+   use type MyCanvas_Access_Array_Access_Array_Access;
+   subtype StringUtil_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access;
+   use type StringUtil_Access;
+   subtype StringUtil_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array;
+   use type StringUtil_Access_Array;
+   subtype StringUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access;
+   use type StringUtil_Access_Array_Access;
+   subtype StringUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array;
+   use type StringUtil_Access_Array_Access_Array;
+   subtype StringUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array_Access;
+   use type StringUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CurrentDisplayableFactory is tagged;
-   type CurrentDisplayableFactory_Access is access all CurrentDisplayableFactory'Class;
-   type CurrentDisplayableFactory_Access_Array is array (Natural range <>) of CurrentDisplayableFactory_Access;
-   type CurrentDisplayableFactory_Access_Array_Access is access all CurrentDisplayableFactory_Access_Array;
-   type CurrentDisplayableFactory_Access_Array_Access_Array is array (Natural range <>) of CurrentDisplayableFactory_Access_Array_Access;
-   type CurrentDisplayableFactory_Access_Array_Access_Array_Access is access all CurrentDisplayableFactory_Access_Array_Access_Array;
+
+   subtype CurrentDisplayableFactory_Access is org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.CurrentDisplayableFactory_Access;
+   function "=" (Left, Right : CurrentDisplayableFactory_Access) return Boolean renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References."=";
+   subtype CurrentDisplayableFactory_Access_Array is org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.CurrentDisplayableFactory_Access_Array;
+   function "=" (Left, Right : CurrentDisplayableFactory_Access_Array) return Boolean renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References."=";
+   subtype CurrentDisplayableFactory_Access_Array_Access is org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.CurrentDisplayableFactory_Access_Array_Access;
+   function "=" (Left, Right : CurrentDisplayableFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References."=";
+   subtype CurrentDisplayableFactory_Access_Array_Access_Array is org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.CurrentDisplayableFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : CurrentDisplayableFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References."=";
+   subtype CurrentDisplayableFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.CurrentDisplayableFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CurrentDisplayableFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References."=";
 
    type CurrentDisplayableFactory is new Java_Object with record
       commonStrings : CommonStrings_Access;

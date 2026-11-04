@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.opengles.shader.ShaderStrings_Package;
+package org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References is
+   type ShaderStrings_Access is access all org.allbinary.graphics.opengles.shader.ShaderStrings_Package.ShaderStrings'Class;
+   type ShaderStrings_Access_Array is array (Natural range <>) of ShaderStrings_Access;
+   type ShaderStrings_Access_Array_Access is access all ShaderStrings_Access_Array;
+   type ShaderStrings_Access_Array_Access_Array is array (Natural range <>) of ShaderStrings_Access_Array_Access;
+   type ShaderStrings_Access_Array_Access_Array_Access is access all ShaderStrings_Access_Array_Access_Array;
+end org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References;
+
+with org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.opengles.shader.ShaderStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ShaderStrings is tagged;
-   type ShaderStrings_Access is access all ShaderStrings'Class;
-   type ShaderStrings_Access_Array is array (Natural range <>) of ShaderStrings_Access;
-   type ShaderStrings_Access_Array_Access is access all ShaderStrings_Access_Array;
-   type ShaderStrings_Access_Array_Access_Array is array (Natural range <>) of ShaderStrings_Access_Array_Access;
-   type ShaderStrings_Access_Array_Access_Array_Access is access all ShaderStrings_Access_Array_Access_Array;
+
+   subtype ShaderStrings_Access is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access;
+   function "=" (Left, Right : ShaderStrings_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
+   subtype ShaderStrings_Access_Array is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access_Array;
+   function "=" (Left, Right : ShaderStrings_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
+   subtype ShaderStrings_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access_Array_Access;
+   function "=" (Left, Right : ShaderStrings_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
+   subtype ShaderStrings_Access_Array_Access_Array is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : ShaderStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
+   subtype ShaderStrings_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References.ShaderStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShaderStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References."=";
 
    type ShaderStrings is new Java_Object with record
       NO_PROGRAM_HANDLE : Unbounded_String;

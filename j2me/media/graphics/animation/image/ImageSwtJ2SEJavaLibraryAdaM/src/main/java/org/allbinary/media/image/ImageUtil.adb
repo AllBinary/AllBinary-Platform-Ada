@@ -14,8 +14,13 @@
 
 
 with org.eclipse.swt.SWT_Package; use org.eclipse.swt.SWT_Package;
+with org.eclipse.swt.widgets.Canvas_Package; use org.eclipse.swt.widgets.Canvas_Package;
+with org.eclipse.swt.widgets.Composite_Package; use org.eclipse.swt.widgets.Composite_Package;
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.eclipse.swt.events.PaintListener_Package; use org.eclipse.swt.events.PaintListener_Package;
@@ -34,6 +39,56 @@ package body org.allbinary.media.image.ImageUtil_Package is
    package Transform_Package renames Standard.org.eclipse.swt.graphics.Transform_Package;
    package Display_Package renames Standard.org.eclipse.swt.widgets.Display_Package;
    package BareMain_Package renames Standard.org.microemu.app.BareMain_Package;
+   subtype Canvas_Access is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access;
+   function "=" (Left, Right : Canvas_Access) return Boolean renames org.eclipse.swt.widgets.Canvas_Package_References."=";
+   subtype Canvas_Access_Array is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access_Array;
+   function "=" (Left, Right : Canvas_Access_Array) return Boolean renames org.eclipse.swt.widgets.Canvas_Package_References."=";
+   subtype Canvas_Access_Array_Access is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access_Array_Access;
+   function "=" (Left, Right : Canvas_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Canvas_Package_References."=";
+   subtype Canvas_Access_Array_Access_Array is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access_Array_Access_Array;
+   function "=" (Left, Right : Canvas_Access_Array_Access_Array) return Boolean renames org.eclipse.swt.widgets.Canvas_Package_References."=";
+   subtype Canvas_Access_Array_Access_Array_Access is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Canvas_Access_Array_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Canvas_Package_References."=";
+   subtype Composite_Access is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access;
+   function "=" (Left, Right : Composite_Access) return Boolean renames org.eclipse.swt.widgets.Composite_Package_References."=";
+   subtype Composite_Access_Array is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access_Array;
+   function "=" (Left, Right : Composite_Access_Array) return Boolean renames org.eclipse.swt.widgets.Composite_Package_References."=";
+   subtype Composite_Access_Array_Access is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access_Array_Access;
+   function "=" (Left, Right : Composite_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Composite_Package_References."=";
+   subtype Composite_Access_Array_Access_Array is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access_Array_Access_Array;
+   function "=" (Left, Right : Composite_Access_Array_Access_Array) return Boolean renames org.eclipse.swt.widgets.Composite_Package_References."=";
+   subtype Composite_Access_Array_Access_Array_Access is org.eclipse.swt.widgets.Composite_Package_References.Composite_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Composite_Access_Array_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Composite_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   function "=" (Left, Right : CommonSeps_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    procedure Initialize_Fields (This : in out ImageUtil'Class) is
    begin
       null;
@@ -47,7 +102,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
 
    function getInstance return ImageUtil_Access is
    begin
-        return ImageUtil_Package.instance;
+        return ImageUtil_Access (ImageUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ImageUtil'Class) is
@@ -220,7 +275,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
 --        gc : GC_Access;
 --        affineTransform : Transform_Access;
 --     begin
---                  gc := event.gc;
+--                  gc := GC_Access (event.gc);
 --                  affineTransform := Transform_Package.Create (gc.getDevice);
 --                  affineTransform.translate (dx, dy);
 --                  gc.setAntialias (SWT_Package.ON);

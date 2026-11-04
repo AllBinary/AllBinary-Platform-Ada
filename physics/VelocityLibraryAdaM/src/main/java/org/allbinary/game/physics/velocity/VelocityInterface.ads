@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.physics.velocity.VelocityInterface_Package;
+package org.allbinary.game.physics.velocity.VelocityInterface_Package_References is
+   type VelocityInterface_Access is access all org.allbinary.game.physics.velocity.VelocityInterface_Package.VelocityInterface'Class;
+   type VelocityInterface_Access_Array is array (Natural range <>) of VelocityInterface_Access;
+   type VelocityInterface_Access_Array_Access is access all VelocityInterface_Access_Array;
+   type VelocityInterface_Access_Array_Access_Array is array (Natural range <>) of VelocityInterface_Access_Array_Access;
+   type VelocityInterface_Access_Array_Access_Array_Access is access all VelocityInterface_Access_Array_Access_Array;
+end org.allbinary.game.physics.velocity.VelocityInterface_Package_References;
+
+with org.allbinary.game.physics.velocity.VelocityInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,23 @@ with org.allbinary.game.physics.velocity.BasicVelocityInterface_Package; use org
 
 package org.allbinary.game.physics.velocity.VelocityInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type VelocityInterface is interface and BasicVelocityInterface;
-   type VelocityInterface_Access is access all VelocityInterface'Class;
-   type VelocityInterface_Access_Array is array (Natural range <>) of VelocityInterface_Access;
-   type VelocityInterface_Access_Array_Access is access all VelocityInterface_Access_Array;
-   type VelocityInterface_Access_Array_Access_Array is array (Natural range <>) of VelocityInterface_Access_Array_Access;
-   type VelocityInterface_Access_Array_Access_Array_Access is access all VelocityInterface_Access_Array_Access_Array;
+   subtype VelocityInterface_Access is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access;
+   function "=" (Left, Right : VelocityInterface_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   subtype VelocityInterface_Access_Array is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array;
+   function "=" (Left, Right : VelocityInterface_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   subtype VelocityInterface_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array_Access;
+   function "=" (Left, Right : VelocityInterface_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   subtype VelocityInterface_Access_Array_Access_Array is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : VelocityInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   subtype VelocityInterface_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VelocityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   function Java_Object_Access_From_VelocityInterface (Value : VelocityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getMaxForwardVelocity (This : in out VelocityInterface) return Integer is abstract;
    function getMaxReverseVelocity (This : in out VelocityInterface) return Integer is abstract;
    procedure limitMaxXYForwardVelocity (This : in out VelocityInterface) is abstract;

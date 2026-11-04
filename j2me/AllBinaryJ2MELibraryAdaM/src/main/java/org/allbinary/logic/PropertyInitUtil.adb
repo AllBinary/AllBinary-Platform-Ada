@@ -47,7 +47,7 @@ package body org.allbinary.logic.PropertyInitUtil_Package is
         commonStrings := CommonStrings_Package.getInstance;
         logUtil := LogUtil_Package.getInstance;
         logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("PropertyInitUtil: ")).appendint (value).toString, logUtil, commonStrings.CONSTRUCTOR);
-        return PropertyInitUtil_Package.instance;
+        return PropertyInitUtil_Access (PropertyInitUtil_Package.instance);
    end getInstance;
 
    procedure getInstance (value : Integer) is

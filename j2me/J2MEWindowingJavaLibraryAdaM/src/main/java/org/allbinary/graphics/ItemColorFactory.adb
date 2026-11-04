@@ -39,7 +39,7 @@ package body org.allbinary.graphics.ItemColorFactory_Package is
 
    function getInstance return ItemColorFactory_Access is
    begin
-        return ItemColorFactory_Package.instance;
+        return ItemColorFactory_Access (ItemColorFactory_Package.instance);
    end getInstance;
 
 begin

@@ -39,7 +39,7 @@ package body org.allbinary.input.gyro.OrientationData_Package is
 
    function getInstance return OrientationData_Access is
    begin
-        return OrientationData_Package.SINGLETON;
+        return OrientationData_Access (OrientationData_Package.SINGLETON);
    end getInstance;
 
 begin

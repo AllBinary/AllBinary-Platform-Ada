@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.special.TitleAnimation_Package;
+package org.allbinary.animation.special.TitleAnimation_Package_References is
+   type TitleAnimation_Access is access all org.allbinary.animation.special.TitleAnimation_Package.TitleAnimation'Class;
+   type TitleAnimation_Access_Array is array (Natural range <>) of TitleAnimation_Access;
+   type TitleAnimation_Access_Array_Access is access all TitleAnimation_Access_Array;
+   type TitleAnimation_Access_Array_Access_Array is array (Natural range <>) of TitleAnimation_Access_Array_Access;
+   type TitleAnimation_Access_Array_Access_Array_Access is access all TitleAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.special.TitleAnimation_Package_References;
+
+with org.allbinary.animation.special.TitleAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
+limited with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimation_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+limited with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References;
+limited with org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.logic.ABSystemWrapper_Package_References;
 with org.allbinary.animation.special.SpecialAnimation_Package; use org.allbinary.animation.special.SpecialAnimation_Package;
 
 package org.allbinary.animation.special.TitleAnimation_Package is
@@ -36,13 +52,81 @@ package org.allbinary.animation.special.TitleAnimation_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype AnimationBehavior_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access;
+   use type AnimationBehavior_Access;
+   subtype AnimationBehavior_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array;
+   use type AnimationBehavior_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access;
+   subtype AnimationBehavior_Access_Array_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array;
+   use type AnimationBehavior_Access_Array_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access_Array_Access;
+   subtype IndexedAnimation_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access;
+   use type IndexedAnimation_Access;
+   subtype IndexedAnimation_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array;
+   use type IndexedAnimation_Access_Array;
+   subtype IndexedAnimation_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access;
+   use type IndexedAnimation_Access_Array_Access;
+   subtype IndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array;
+   use type IndexedAnimation_Access_Array_Access_Array;
+   subtype IndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array_Access;
+   use type IndexedAnimation_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype DisplayInfoSingleton_Access is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access;
+   use type DisplayInfoSingleton_Access;
+   subtype DisplayInfoSingleton_Access_Array is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array;
+   use type DisplayInfoSingleton_Access_Array;
+   subtype DisplayInfoSingleton_Access_Array_Access is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array_Access;
+   use type DisplayInfoSingleton_Access_Array_Access;
+   subtype DisplayInfoSingleton_Access_Array_Access_Array is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array_Access_Array;
+   use type DisplayInfoSingleton_Access_Array_Access_Array;
+   subtype DisplayInfoSingleton_Access_Array_Access_Array_Access is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array_Access_Array_Access;
+   use type DisplayInfoSingleton_Access_Array_Access_Array_Access;
+   subtype ABSystemWrapper_Access is org.allbinary.logic.ABSystemWrapper_Package_References.ABSystemWrapper_Access;
+   use type ABSystemWrapper_Access;
+   subtype ABSystemWrapper_Access_Array is org.allbinary.logic.ABSystemWrapper_Package_References.ABSystemWrapper_Access_Array;
+   use type ABSystemWrapper_Access_Array;
+   subtype ABSystemWrapper_Access_Array_Access is org.allbinary.logic.ABSystemWrapper_Package_References.ABSystemWrapper_Access_Array_Access;
+   use type ABSystemWrapper_Access_Array_Access;
+   subtype ABSystemWrapper_Access_Array_Access_Array is org.allbinary.logic.ABSystemWrapper_Package_References.ABSystemWrapper_Access_Array_Access_Array;
+   use type ABSystemWrapper_Access_Array_Access_Array;
+   subtype ABSystemWrapper_Access_Array_Access_Array_Access is org.allbinary.logic.ABSystemWrapper_Package_References.ABSystemWrapper_Access_Array_Access_Array_Access;
+   use type ABSystemWrapper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TitleAnimation is tagged;
-   type TitleAnimation_Access is access all TitleAnimation'Class;
-   type TitleAnimation_Access_Array is array (Natural range <>) of TitleAnimation_Access;
-   type TitleAnimation_Access_Array_Access is access all TitleAnimation_Access_Array;
-   type TitleAnimation_Access_Array_Access_Array is array (Natural range <>) of TitleAnimation_Access_Array_Access;
-   type TitleAnimation_Access_Array_Access_Array_Access is access all TitleAnimation_Access_Array_Access_Array;
+
+   subtype TitleAnimation_Access is org.allbinary.animation.special.TitleAnimation_Package_References.TitleAnimation_Access;
+   function "=" (Left, Right : TitleAnimation_Access) return Boolean renames org.allbinary.animation.special.TitleAnimation_Package_References."=";
+   subtype TitleAnimation_Access_Array is org.allbinary.animation.special.TitleAnimation_Package_References.TitleAnimation_Access_Array;
+   function "=" (Left, Right : TitleAnimation_Access_Array) return Boolean renames org.allbinary.animation.special.TitleAnimation_Package_References."=";
+   subtype TitleAnimation_Access_Array_Access is org.allbinary.animation.special.TitleAnimation_Package_References.TitleAnimation_Access_Array_Access;
+   function "=" (Left, Right : TitleAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.special.TitleAnimation_Package_References."=";
+   subtype TitleAnimation_Access_Array_Access_Array is org.allbinary.animation.special.TitleAnimation_Package_References.TitleAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.special.TitleAnimation_Package_References."=";
+   subtype TitleAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.special.TitleAnimation_Package_References.TitleAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.special.TitleAnimation_Package_References."=";
 
    type TitleAnimation is new SpecialAnimation with record
       systemWrapper : ABSystemWrapper_Access;

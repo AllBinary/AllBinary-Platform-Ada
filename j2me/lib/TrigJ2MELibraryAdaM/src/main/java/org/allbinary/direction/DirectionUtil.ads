@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.direction.DirectionUtil_Package;
+package org.allbinary.direction.DirectionUtil_Package_References is
+   type DirectionUtil_Access is access all org.allbinary.direction.DirectionUtil_Package.DirectionUtil'Class;
+   type DirectionUtil_Access_Array is array (Natural range <>) of DirectionUtil_Access;
+   type DirectionUtil_Access_Array_Access is access all DirectionUtil_Access_Array;
+   type DirectionUtil_Access_Array_Access_Array is array (Natural range <>) of DirectionUtil_Access_Array_Access;
+   type DirectionUtil_Access_Array_Access_Array_Access is access all DirectionUtil_Access_Array_Access_Array;
+end org.allbinary.direction.DirectionUtil_Package_References;
+
+with org.allbinary.direction.DirectionUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
-with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+limited with org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
+limited with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
 
 package org.allbinary.direction.DirectionUtil_Package is
 
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
+   package Reference_Types is
+   subtype Angle_Access is org.allbinary.math.Angle_Package_References.Angle_Access;
+   use type Angle_Access;
+   subtype Angle_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array;
+   use type Angle_Access_Array;
+   subtype Angle_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access;
+   use type Angle_Access_Array_Access;
+   subtype Angle_Access_Array_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array;
+   use type Angle_Access_Array_Access_Array;
+   subtype Angle_Access_Array_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array_Access;
+   use type Angle_Access_Array_Access_Array_Access;
+   subtype Direction_Access is org.allbinary.direction.Direction_Package_References.Direction_Access;
+   use type Direction_Access;
+   subtype Direction_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array;
+   use type Direction_Access_Array;
+   subtype Direction_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access;
+   use type Direction_Access_Array_Access;
+   subtype Direction_Access_Array_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array;
+   use type Direction_Access_Array_Access_Array;
+   subtype Direction_Access_Array_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array_Access;
+   use type Direction_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DirectionUtil is tagged;
-   type DirectionUtil_Access is access all DirectionUtil'Class;
-   type DirectionUtil_Access_Array is array (Natural range <>) of DirectionUtil_Access;
-   type DirectionUtil_Access_Array_Access is access all DirectionUtil_Access_Array;
-   type DirectionUtil_Access_Array_Access_Array is array (Natural range <>) of DirectionUtil_Access_Array_Access;
-   type DirectionUtil_Access_Array_Access_Array_Access is access all DirectionUtil_Access_Array_Access_Array;
+
+   subtype DirectionUtil_Access is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access;
+   function "=" (Left, Right : DirectionUtil_Access) return Boolean renames org.allbinary.direction.DirectionUtil_Package_References."=";
+   subtype DirectionUtil_Access_Array is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access_Array;
+   function "=" (Left, Right : DirectionUtil_Access_Array) return Boolean renames org.allbinary.direction.DirectionUtil_Package_References."=";
+   subtype DirectionUtil_Access_Array_Access is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access_Array_Access;
+   function "=" (Left, Right : DirectionUtil_Access_Array_Access) return Boolean renames org.allbinary.direction.DirectionUtil_Package_References."=";
+   subtype DirectionUtil_Access_Array_Access_Array is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : DirectionUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.direction.DirectionUtil_Package_References."=";
+   subtype DirectionUtil_Access_Array_Access_Array_Access is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DirectionUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.direction.DirectionUtil_Package_References."=";
 
    type DirectionUtil is new Java_Object with record
       directionArray : Angle_Access_Array_Access;

@@ -55,7 +55,6 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
 
    procedure Initialize (This : in out DownloadFileServlet'Class) is
    begin
-      HttpServlet_Package.Initialize (This);
       Initialize_Fields (This);
    end Initialize;
 

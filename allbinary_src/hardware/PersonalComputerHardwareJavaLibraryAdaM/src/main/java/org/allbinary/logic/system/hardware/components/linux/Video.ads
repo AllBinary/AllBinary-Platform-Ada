@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.linux.Video_Package;
+package org.allbinary.logic.system.hardware.components.linux.Video_Package_References is
+   type Video_Access is access all org.allbinary.logic.system.hardware.components.linux.Video_Package.Video'Class;
+   type Video_Access_Array is array (Natural range <>) of Video_Access;
+   type Video_Access_Array_Access is access all Video_Access_Array;
+   type Video_Access_Array_Access_Array is array (Natural range <>) of Video_Access_Array_Access;
+   type Video_Access_Array_Access_Array_Access is access all Video_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.linux.Video_Package_References;
+
+with org.allbinary.logic.system.hardware.components.linux.Video_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ package org.allbinary.logic.system.hardware.components.linux.Video_Package is
 
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
    package VideoInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Video is tagged;
-   type Video_Access is access all Video'Class;
-   type Video_Access_Array is array (Natural range <>) of Video_Access;
-   type Video_Access_Array_Access is access all Video_Access_Array;
-   type Video_Access_Array_Access_Array is array (Natural range <>) of Video_Access_Array_Access;
-   type Video_Access_Array_Access_Array_Access is access all Video_Access_Array_Access_Array;
+
+   subtype Video_Access is org.allbinary.logic.system.hardware.components.linux.Video_Package_References.Video_Access;
+   function "=" (Left, Right : Video_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Video_Package_References."=";
+   subtype Video_Access_Array is org.allbinary.logic.system.hardware.components.linux.Video_Package_References.Video_Access_Array;
+   function "=" (Left, Right : Video_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Video_Package_References."=";
+   subtype Video_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Video_Package_References.Video_Access_Array_Access;
+   function "=" (Left, Right : Video_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Video_Package_References."=";
+   subtype Video_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.Video_Package_References.Video_Access_Array_Access_Array;
+   function "=" (Left, Right : Video_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Video_Package_References."=";
+   subtype Video_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Video_Package_References.Video_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Video_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Video_Package_References."=";
 
    type Video is new Java_Object and HardwareComponentInterface and VideoInterface with record
       data : Unbounded_String;

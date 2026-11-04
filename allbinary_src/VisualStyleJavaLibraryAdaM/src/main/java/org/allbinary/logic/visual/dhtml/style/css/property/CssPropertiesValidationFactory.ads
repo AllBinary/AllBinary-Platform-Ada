@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package;
+package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References is
+   type CssPropertiesValidationFactory_Access is access all org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package.CssPropertiesValidationFactory'Class;
+   type CssPropertiesValidationFactory_Access_Array is array (Natural range <>) of CssPropertiesValidationFactory_Access;
+   type CssPropertiesValidationFactory_Access_Array_Access is access all CssPropertiesValidationFactory_Access_Array;
+   type CssPropertiesValidationFactory_Access_Array_Access_Array is array (Natural range <>) of CssPropertiesValidationFactory_Access_Array_Access;
+   type CssPropertiesValidationFactory_Access_Array_Access_Array_Access is access all CssPropertiesValidationFactory_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References;
+
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,21 +31,51 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.w3c.dom.NodeList_Package;
+with org.w3c.dom.NodeList_Package_References;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype NodeList_Access is org.w3c.dom.NodeList_Package_References.NodeList_Access;
+   use type NodeList_Access;
+   subtype NodeList_Access_Array is org.w3c.dom.NodeList_Package_References.NodeList_Access_Array;
+   use type NodeList_Access_Array;
+   subtype NodeList_Access_Array_Access is org.w3c.dom.NodeList_Package_References.NodeList_Access_Array_Access;
+   use type NodeList_Access_Array_Access;
+   subtype NodeList_Access_Array_Access_Array is org.w3c.dom.NodeList_Package_References.NodeList_Access_Array_Access_Array;
+   use type NodeList_Access_Array_Access_Array;
+   subtype NodeList_Access_Array_Access_Array_Access is org.w3c.dom.NodeList_Package_References.NodeList_Access_Array_Access_Array_Access;
+   use type NodeList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CssPropertiesValidationFactory is tagged;
-   type CssPropertiesValidationFactory_Access is access all CssPropertiesValidationFactory'Class;
-   type CssPropertiesValidationFactory_Access_Array is array (Natural range <>) of CssPropertiesValidationFactory_Access;
-   type CssPropertiesValidationFactory_Access_Array_Access is access all CssPropertiesValidationFactory_Access_Array;
-   type CssPropertiesValidationFactory_Access_Array_Access_Array is array (Natural range <>) of CssPropertiesValidationFactory_Access_Array_Access;
-   type CssPropertiesValidationFactory_Access_Array_Access_Array_Access is access all CssPropertiesValidationFactory_Access_Array_Access_Array;
+
+   subtype CssPropertiesValidationFactory_Access is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References.CssPropertiesValidationFactory_Access;
+   function "=" (Left, Right : CssPropertiesValidationFactory_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References."=";
+   subtype CssPropertiesValidationFactory_Access_Array is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References.CssPropertiesValidationFactory_Access_Array;
+   function "=" (Left, Right : CssPropertiesValidationFactory_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References."=";
+   subtype CssPropertiesValidationFactory_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References.CssPropertiesValidationFactory_Access_Array_Access;
+   function "=" (Left, Right : CssPropertiesValidationFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References."=";
+   subtype CssPropertiesValidationFactory_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References.CssPropertiesValidationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : CssPropertiesValidationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References."=";
+   subtype CssPropertiesValidationFactory_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References.CssPropertiesValidationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CssPropertiesValidationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package_References."=";
 
    type CssPropertiesValidationFactory is new Java_Object with null record;
 

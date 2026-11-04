@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
+package org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References is
+   type GamePersistanceStrings_Access is access all org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package.GamePersistanceStrings'Class;
+   type GamePersistanceStrings_Access_Array is array (Natural range <>) of GamePersistanceStrings_Access;
+   type GamePersistanceStrings_Access_Array_Access is access all GamePersistanceStrings_Access_Array;
+   type GamePersistanceStrings_Access_Array_Access_Array is array (Natural range <>) of GamePersistanceStrings_Access_Array_Access;
+   type GamePersistanceStrings_Access_Array_Access_Array_Access is access all GamePersistanceStrings_Access_Array_Access_Array;
+end org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References;
+
+with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GamePersistanceStrings is tagged;
-   type GamePersistanceStrings_Access is access all GamePersistanceStrings'Class;
-   type GamePersistanceStrings_Access_Array is array (Natural range <>) of GamePersistanceStrings_Access;
-   type GamePersistanceStrings_Access_Array_Access is access all GamePersistanceStrings_Access_Array;
-   type GamePersistanceStrings_Access_Array_Access_Array is array (Natural range <>) of GamePersistanceStrings_Access_Array_Access;
-   type GamePersistanceStrings_Access_Array_Access_Array_Access is access all GamePersistanceStrings_Access_Array_Access_Array;
+
+   subtype GamePersistanceStrings_Access is org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References.GamePersistanceStrings_Access;
+   function "=" (Left, Right : GamePersistanceStrings_Access) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References."=";
+   subtype GamePersistanceStrings_Access_Array is org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References.GamePersistanceStrings_Access_Array;
+   function "=" (Left, Right : GamePersistanceStrings_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References."=";
+   subtype GamePersistanceStrings_Access_Array_Access is org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References.GamePersistanceStrings_Access_Array_Access;
+   function "=" (Left, Right : GamePersistanceStrings_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References."=";
+   subtype GamePersistanceStrings_Access_Array_Access_Array is org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References.GamePersistanceStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : GamePersistanceStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References."=";
+   subtype GamePersistanceStrings_Access_Array_Access_Array_Access is org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References.GamePersistanceStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GamePersistanceStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package_References."=";
 
    type GamePersistanceStrings is new Java_Object with record
       SAVED_GAME_RECORD_ID : Unbounded_String;

@@ -14,22 +14,64 @@
 
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package;
 with org.allbinary.game.layer.special.Special1GameInputProcessor_Package; use org.allbinary.game.layer.special.Special1GameInputProcessor_Package;
 with org.allbinary.game.layer.special.Special3GameInputProcessor_Package; use org.allbinary.game.layer.special.Special3GameInputProcessor_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.game.layer.special.SpecialAnalogUpGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogUpGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialAnalogDownGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogDownGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialAnalogRightGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogRightGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialAnalogLeftGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogLeftGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialAnalogLeftTriggerGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogLeftTriggerGameInputProcessor_Package;
 with org.allbinary.game.layer.special.SpecialAnalogRightTriggerGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogRightTriggerGameInputProcessor_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.combat.damage.DamageableInterface_Package;
+with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.game.layer.pickup.PickupBehavior_Package;
+with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
+with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
+with org.allbinary.game.layer.special.Special1GameInputProcessor_Package;
+with org.allbinary.game.layer.special.Special3GameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialAnalogDownGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialAnalogLeftGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialAnalogLeftTriggerGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialAnalogRightGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialAnalogRightTriggerGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialAnalogUpGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package;
 
 package body org.allbinary.game.layer.special.AnalogInputBuilder_Package is
 
    package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   subtype GameInputProcessor_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access;
+   function "=" (Left, Right : GameInputProcessor_Access) return Boolean renames org.allbinary.game.input.GameInputProcessor_Package_References."=";
+   subtype GameInputProcessor_Access_Array is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array;
+   function "=" (Left, Right : GameInputProcessor_Access_Array) return Boolean renames org.allbinary.game.input.GameInputProcessor_Package_References."=";
+   subtype GameInputProcessor_Access_Array_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access;
+   function "=" (Left, Right : GameInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputProcessor_Package_References."=";
+   subtype GameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameInputProcessor_Package_References."=";
+   subtype GameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputProcessor_Package_References."=";
+   subtype CollidableDestroyableDamageableLayer_Access is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access;
+   function "=" (Left, Right : CollidableDestroyableDamageableLayer_Access) return Boolean renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References."=";
+   subtype CollidableDestroyableDamageableLayer_Access_Array is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array;
+   function "=" (Left, Right : CollidableDestroyableDamageableLayer_Access_Array) return Boolean renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References."=";
+   subtype CollidableDestroyableDamageableLayer_Access_Array_Access is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array_Access;
+   function "=" (Left, Right : CollidableDestroyableDamageableLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References."=";
+   subtype CollidableDestroyableDamageableLayer_Access_Array_Access_Array is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : CollidableDestroyableDamageableLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References."=";
+   subtype CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References."=";
    procedure Initialize_Fields (This : in out AnalogInputBuilder'Class) is
    begin
       null;
@@ -50,7 +92,7 @@ package body org.allbinary.game.layer.special.AnalogInputBuilder_Package is
 
    function getInstance return AnalogInputBuilder_Access is
    begin
-        return AnalogInputBuilder_Package.instance;
+        return AnalogInputBuilder_Access (AnalogInputBuilder_Package.instance);
    end getInstance;
 
    procedure disable (This : in out AnalogInputBuilder; inputProcessorArray : GameInputProcessor_Access_Array_Access; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is

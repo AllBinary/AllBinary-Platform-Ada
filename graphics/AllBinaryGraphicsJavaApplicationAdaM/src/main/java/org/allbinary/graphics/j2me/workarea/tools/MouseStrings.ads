@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package;
+package org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References is
+   type MouseStrings_Access is access all org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package.MouseStrings'Class;
+   type MouseStrings_Access_Array is array (Natural range <>) of MouseStrings_Access;
+   type MouseStrings_Access_Array_Access is access all MouseStrings_Access_Array;
+   type MouseStrings_Access_Array_Access_Array is array (Natural range <>) of MouseStrings_Access_Array_Access;
+   type MouseStrings_Access_Array_Access_Array_Access is access all MouseStrings_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type MouseStrings is tagged;
-   type MouseStrings_Access is access all MouseStrings'Class;
-   type MouseStrings_Access_Array is array (Natural range <>) of MouseStrings_Access;
-   type MouseStrings_Access_Array_Access is access all MouseStrings_Access_Array;
-   type MouseStrings_Access_Array_Access_Array is array (Natural range <>) of MouseStrings_Access_Array_Access;
-   type MouseStrings_Access_Array_Access_Array_Access is access all MouseStrings_Access_Array_Access_Array;
+
+   subtype MouseStrings_Access is org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References.MouseStrings_Access;
+   function "=" (Left, Right : MouseStrings_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References."=";
+   subtype MouseStrings_Access_Array is org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References.MouseStrings_Access_Array;
+   function "=" (Left, Right : MouseStrings_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References."=";
+   subtype MouseStrings_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References.MouseStrings_Access_Array_Access;
+   function "=" (Left, Right : MouseStrings_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References."=";
+   subtype MouseStrings_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References.MouseStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : MouseStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References."=";
+   subtype MouseStrings_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References.MouseStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MouseStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package_References."=";
 
    type MouseStrings is new Java_Object with record
       MOUSE_PRESSED : Unbounded_String;

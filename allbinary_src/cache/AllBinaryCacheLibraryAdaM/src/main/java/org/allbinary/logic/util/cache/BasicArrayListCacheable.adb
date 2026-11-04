@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package body org.allbinary.logic.util.cache.BasicArrayListCacheable_Package is
 
@@ -39,7 +40,7 @@ package body org.allbinary.logic.util.cache.BasicArrayListCacheable_Package is
 
    function getKey (This : in out BasicArrayListCacheable) return Java_Object_Access is
    begin
-        return StringUtil_Package.getInstance.EMPTY_STRING;
+        return Java_Box (StringUtil_Package.getInstance.EMPTY_STRING);
    end getKey;
 
 end org.allbinary.logic.util.cache.BasicArrayListCacheable_Package;

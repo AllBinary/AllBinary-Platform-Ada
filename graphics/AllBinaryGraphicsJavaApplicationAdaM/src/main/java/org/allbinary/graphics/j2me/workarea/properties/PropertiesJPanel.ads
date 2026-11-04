@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
+package org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References is
+   type PropertiesJPanel_Access is access all org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package.PropertiesJPanel'Class;
+   type PropertiesJPanel_Access_Array is array (Natural range <>) of PropertiesJPanel_Access;
+   type PropertiesJPanel_Access_Array_Access is access all PropertiesJPanel_Access_Array;
+   type PropertiesJPanel_Access_Array_Access_Array is array (Natural range <>) of PropertiesJPanel_Access_Array_Access;
+   type PropertiesJPanel_Access_Array_Access_Array_Access is access all PropertiesJPanel_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.graphics.j2me.workarea.properties.JPanel_Package; use org.all
 
 package org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PropertiesJPanel is tagged;
-   type PropertiesJPanel_Access is access all PropertiesJPanel'Class;
-   type PropertiesJPanel_Access_Array is array (Natural range <>) of PropertiesJPanel_Access;
-   type PropertiesJPanel_Access_Array_Access is access all PropertiesJPanel_Access_Array;
-   type PropertiesJPanel_Access_Array_Access_Array is array (Natural range <>) of PropertiesJPanel_Access_Array_Access;
-   type PropertiesJPanel_Access_Array_Access_Array_Access is access all PropertiesJPanel_Access_Array_Access_Array;
+
+   subtype PropertiesJPanel_Access is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access;
+   function "=" (Left, Right : PropertiesJPanel_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
+   subtype PropertiesJPanel_Access_Array is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access_Array;
+   function "=" (Left, Right : PropertiesJPanel_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
+   subtype PropertiesJPanel_Access_Array_Access is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access_Array_Access;
+   function "=" (Left, Right : PropertiesJPanel_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
+   subtype PropertiesJPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : PropertiesJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
+   subtype PropertiesJPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PropertiesJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
 
    type PropertiesJPanel is new JPanel with record
       rotateJButton : JButton_Access;

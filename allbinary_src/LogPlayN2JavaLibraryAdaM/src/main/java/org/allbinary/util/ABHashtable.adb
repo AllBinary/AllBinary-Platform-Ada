@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with java.util.Hashtable_Package; use java.util.Hashtable_Package;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package body org.allbinary.util.ABHashtable_Package is

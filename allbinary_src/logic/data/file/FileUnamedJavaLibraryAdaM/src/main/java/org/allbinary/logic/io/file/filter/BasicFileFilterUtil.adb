@@ -17,6 +17,7 @@ with org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package; use org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
+with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
 
 package body org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package is
 

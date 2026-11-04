@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.smtp.AbEmail_Package;
+package org.allbinary.logic.communication.smtp.AbEmail_Package_References is
+   type AbEmail_Access is access all org.allbinary.logic.communication.smtp.AbEmail_Package.AbEmail'Class;
+   type AbEmail_Access_Array is array (Natural range <>) of AbEmail_Access;
+   type AbEmail_Access_Array_Access is access all AbEmail_Access_Array;
+   type AbEmail_Access_Array_Access_Array is array (Natural range <>) of AbEmail_Access_Array_Access;
+   type AbEmail_Access_Array_Access_Array_Access is access all AbEmail_Access_Array_Access_Array;
+end org.allbinary.logic.communication.smtp.AbEmail_Package_References;
+
+with org.allbinary.logic.communication.smtp.AbEmail_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,23 +32,64 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.mail.internet.MimeMessage_Package; use javax.mail.internet.MimeMessage_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
-with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.logic.communication.smtp.Email_Package;
+limited with org.allbinary.logic.communication.smtp.Email_Package;
+with org.allbinary.logic.communication.smtp.Email_Package_References;
 
 package org.allbinary.logic.communication.smtp.AbEmail_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   subtype Email_Access is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access;
+   use type Email_Access;
+   subtype Email_Access_Array is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access_Array;
+   use type Email_Access_Array;
+   subtype Email_Access_Array_Access is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access_Array_Access;
+   use type Email_Access_Array_Access;
+   subtype Email_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access_Array_Access_Array;
+   use type Email_Access_Array_Access_Array;
+   subtype Email_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access_Array_Access_Array_Access;
+   use type Email_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbEmail is tagged;
-   type AbEmail_Access is access all AbEmail'Class;
-   type AbEmail_Access_Array is array (Natural range <>) of AbEmail_Access;
-   type AbEmail_Access_Array_Access is access all AbEmail_Access_Array;
-   type AbEmail_Access_Array_Access_Array is array (Natural range <>) of AbEmail_Access_Array_Access;
-   type AbEmail_Access_Array_Access_Array_Access is access all AbEmail_Access_Array_Access_Array;
+
+   subtype AbEmail_Access is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access;
+   function "=" (Left, Right : AbEmail_Access) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
+   subtype AbEmail_Access_Array is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access_Array;
+   function "=" (Left, Right : AbEmail_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
+   subtype AbEmail_Access_Array_Access is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access_Array_Access;
+   function "=" (Left, Right : AbEmail_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
+   subtype AbEmail_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access_Array_Access_Array;
+   function "=" (Left, Right : AbEmail_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
+   subtype AbEmail_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbEmail_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
 
    type AbEmail is new Java_Object and EmailInterface with record
       email : Email_Access;

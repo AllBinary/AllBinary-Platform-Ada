@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
+package org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References is
+   type TitleData_Access is access all org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package.TitleData'Class;
+   type TitleData_Access_Array is array (Natural range <>) of TitleData_Access;
+   type TitleData_Access_Array_Access is access all TitleData_Access_Array;
+   type TitleData_Access_Array_Access_Array is array (Natural range <>) of TitleData_Access_Array_Access;
+   type TitleData_Access_Array_Access_Array_Access is access all TitleData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References;
+
+with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TitleData is tagged;
-   type TitleData_Access is access all TitleData'Class;
-   type TitleData_Access_Array is array (Natural range <>) of TitleData_Access;
-   type TitleData_Access_Array_Access is access all TitleData_Access_Array;
-   type TitleData_Access_Array_Access_Array is array (Natural range <>) of TitleData_Access_Array_Access;
-   type TitleData_Access_Array_Access_Array_Access is access all TitleData_Access_Array_Access_Array;
+
+   subtype TitleData_Access is org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References.TitleData_Access;
+   function "=" (Left, Right : TitleData_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References."=";
+   subtype TitleData_Access_Array is org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References.TitleData_Access_Array;
+   function "=" (Left, Right : TitleData_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References."=";
+   subtype TitleData_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References.TitleData_Access_Array_Access;
+   function "=" (Left, Right : TitleData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References."=";
+   subtype TitleData_Access_Array_Access_Array is org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References.TitleData_Access_Array_Access_Array;
+   function "=" (Left, Right : TitleData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References."=";
+   subtype TitleData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References.TitleData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TitleData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package_References."=";
 
    type TitleData is new Java_Object with record
       NAME : Unbounded_String;

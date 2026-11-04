@@ -15,6 +15,8 @@
 
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.GameConfigurationCentral_Package;
 
 package body org.allbinary.game.configuration.GameSpeed_Package is
 
@@ -39,20 +41,20 @@ package body org.allbinary.game.configuration.GameSpeed_Package is
    function getSpeed (This : in out GameSpeed) return Integer is
       speedGameConfiguration : GameConfiguration_Access;
    begin
-        speedGameConfiguration := GameConfigurationCentral_Package.getInstance.SPEED;
+        speedGameConfiguration := GameConfiguration_Access (GameConfigurationCentral_Package.getInstance.SPEED);
         return (((speedGameConfiguration.getMaxValue.intValue) - (speedGameConfiguration.getValue.intValue)) + (1));
    end getSpeed;
 
    function getDelay (This : in out GameSpeed) return Integer is
       speedGameConfiguration : GameConfiguration_Access;
    begin
-        speedGameConfiguration := GameConfigurationCentral_Package.getInstance.SPEED;
+        speedGameConfiguration := GameConfiguration_Access (GameConfigurationCentral_Package.getInstance.SPEED);
         return (19) * (((speedGameConfiguration.getMaxValue.intValue) - (speedGameConfiguration.getValue.intValue)));
    end getDelay;
 
    function getInstance return GameSpeed_Access is
    begin
-        return GameSpeed_Package.instance;
+        return GameSpeed_Access (GameSpeed_Package.instance);
    end getInstance;
 
 begin

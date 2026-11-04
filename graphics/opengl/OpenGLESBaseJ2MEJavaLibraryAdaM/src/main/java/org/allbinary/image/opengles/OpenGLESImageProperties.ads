@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+package org.allbinary.image.opengles.OpenGLESImageProperties_Package_References is
+   type OpenGLESImageProperties_Access is access all org.allbinary.image.opengles.OpenGLESImageProperties_Package.OpenGLESImageProperties'Class;
+   type OpenGLESImageProperties_Access_Array is array (Natural range <>) of OpenGLESImageProperties_Access;
+   type OpenGLESImageProperties_Access_Array_Access is access all OpenGLESImageProperties_Access_Array;
+   type OpenGLESImageProperties_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImageProperties_Access_Array_Access;
+   type OpenGLESImageProperties_Access_Array_Access_Array_Access is access all OpenGLESImageProperties_Access_Array_Access_Array;
+end org.allbinary.image.opengles.OpenGLESImageProperties_Package_References;
+
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.image.opengles.OpenGLESImageProperties_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLESImageProperties is tagged;
-   type OpenGLESImageProperties_Access is access all OpenGLESImageProperties'Class;
-   type OpenGLESImageProperties_Access_Array is array (Natural range <>) of OpenGLESImageProperties_Access;
-   type OpenGLESImageProperties_Access_Array_Access is access all OpenGLESImageProperties_Access_Array;
-   type OpenGLESImageProperties_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImageProperties_Access_Array_Access;
-   type OpenGLESImageProperties_Access_Array_Access_Array_Access is access all OpenGLESImageProperties_Access_Array_Access_Array;
+
+   subtype OpenGLESImageProperties_Access is org.allbinary.image.opengles.OpenGLESImageProperties_Package_References.OpenGLESImageProperties_Access;
+   function "=" (Left, Right : OpenGLESImageProperties_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageProperties_Package_References."=";
+   subtype OpenGLESImageProperties_Access_Array is org.allbinary.image.opengles.OpenGLESImageProperties_Package_References.OpenGLESImageProperties_Access_Array;
+   function "=" (Left, Right : OpenGLESImageProperties_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageProperties_Package_References."=";
+   subtype OpenGLESImageProperties_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageProperties_Package_References.OpenGLESImageProperties_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageProperties_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageProperties_Package_References."=";
+   subtype OpenGLESImageProperties_Access_Array_Access_Array is org.allbinary.image.opengles.OpenGLESImageProperties_Package_References.OpenGLESImageProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLESImageProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageProperties_Package_References."=";
+   subtype OpenGLESImageProperties_Access_Array_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageProperties_Package_References.OpenGLESImageProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageProperties_Package_References."=";
 
    type OpenGLESImageProperties is new Java_Object with record
       textureID : Integer;

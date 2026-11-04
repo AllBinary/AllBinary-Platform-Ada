@@ -13,10 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.resource.ClassLoader_Package; use org.allbinary.data.resource.ClassLoader_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.data.resource.ResourceUtil_Package is
@@ -26,6 +29,26 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype ClassLoader_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access;
+   function "=" (Left, Right : ClassLoader_Access) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
+   subtype ClassLoader_Access_Array is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array;
+   function "=" (Left, Right : ClassLoader_Access_Array) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
+   subtype ClassLoader_Access_Array_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
+   function "=" (Left, Right : ClassLoader_Access_Array_Access) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
+   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
+   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
+   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
    procedure Initialize_Fields (This : in out ResourceUtil'Class) is
    begin
       null;
@@ -35,7 +58,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
 
    function getInstance return ResourceUtil_Access is
    begin
-        return ResourceUtil_Package.instance;
+        return ResourceUtil_Access (ResourceUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ResourceUtil'Class) is

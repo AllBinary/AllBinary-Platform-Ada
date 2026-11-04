@@ -14,10 +14,22 @@
 
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
+with org.allbinary.game.GameType_Package;
 
 package body org.allbinary.game.GameTypeFactory_Package is
 
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype GameType_Access is org.allbinary.game.GameType_Package_References.GameType_Access;
+   function "=" (Left, Right : GameType_Access) return Boolean renames org.allbinary.game.GameType_Package_References."=";
+   subtype GameType_Access_Array is org.allbinary.game.GameType_Package_References.GameType_Access_Array;
+   function "=" (Left, Right : GameType_Access_Array) return Boolean renames org.allbinary.game.GameType_Package_References."=";
+   subtype GameType_Access_Array_Access is org.allbinary.game.GameType_Package_References.GameType_Access_Array_Access;
+   function "=" (Left, Right : GameType_Access_Array_Access) return Boolean renames org.allbinary.game.GameType_Package_References."=";
+   subtype GameType_Access_Array_Access_Array is org.allbinary.game.GameType_Package_References.GameType_Access_Array_Access_Array;
+   function "=" (Left, Right : GameType_Access_Array_Access_Array) return Boolean renames org.allbinary.game.GameType_Package_References."=";
+   subtype GameType_Access_Array_Access_Array_Access is org.allbinary.game.GameType_Package_References.GameType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.GameType_Package_References."=";
    procedure Initialize_Fields (This : in out GameTypeFactory'Class) is
    begin
       null;
@@ -43,7 +55,7 @@ package body org.allbinary.game.GameTypeFactory_Package is
 
    function getInstance return GameTypeFactory_Access is
    begin
-        return GameTypeFactory_Package.instance;
+        return GameTypeFactory_Access (GameTypeFactory_Package.instance);
    end getInstance;
 
 begin

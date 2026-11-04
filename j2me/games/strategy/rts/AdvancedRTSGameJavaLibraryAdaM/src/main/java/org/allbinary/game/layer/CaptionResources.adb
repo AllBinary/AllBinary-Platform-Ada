@@ -25,7 +25,7 @@ package body org.allbinary.game.layer.CaptionResources_Package is
 
    function getInstance return CaptionResources_Access is
    begin
-        return CaptionResources_Package.instance;
+        return CaptionResources_Access (CaptionResources_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out CaptionResources'Class) is

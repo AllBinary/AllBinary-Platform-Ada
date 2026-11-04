@@ -14,6 +14,7 @@
 
 
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
 
 package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package is
 

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.communication.http.AbFileItemFactory_Package; use org.allbinary.logic.communication.http.AbFileItemFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.apache.commons.fileupload.FileItemIterator_Package; use org.apache.commons.fileupload.FileItemIterator_Package;
 with org.apache.commons.fileupload.FileItemStream_Package; use org.apache.commons.fileupload.FileItemStream_Package;
@@ -21,6 +22,9 @@ with org.apache.commons.fileupload.FileItemUtil_Package; use org.apache.commons.
 with org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package; use org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package;
 with org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package; use org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
 with org.allbinary.logic.communication.http.file.upload.AbFileItem_Package; use org.allbinary.logic.communication.http.file.upload.AbFileItem_Package;
+with org.allbinary.logic.communication.http.file.upload.AbFileItem_Package;
+with org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package;
+with org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
 
 package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package is
 
@@ -29,6 +33,16 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
    package FileItemIterator_Package renames Standard.org.apache.commons.fileupload.FileItemIterator_Package;
    package FileItemStream_Package renames Standard.org.apache.commons.fileupload.FileItemStream_Package;
    package FileItemUtil_Package renames Standard.org.apache.commons.fileupload.FileItemUtil_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out AbFileUploadFactory'Class) is
    begin
       null;
@@ -38,7 +52,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
 
    function getInstance return AbFileUploadFactory_Access is
    begin
-        return AbFileUploadFactory_Package.instance;
+        return AbFileUploadFactory_Access (AbFileUploadFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out AbFileUploadFactory'Class) is

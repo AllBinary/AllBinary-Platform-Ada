@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.tags.BasicGroupItemsTag_Package;
+package admin.tags.BasicGroupItemsTag_Package_References is
+   type BasicGroupItemsTag_Access is access all admin.tags.BasicGroupItemsTag_Package.BasicGroupItemsTag'Class;
+   type BasicGroupItemsTag_Access_Array is array (Natural range <>) of BasicGroupItemsTag_Access;
+   type BasicGroupItemsTag_Access_Array_Access is access all BasicGroupItemsTag_Access_Array;
+   type BasicGroupItemsTag_Access_Array_Access_Array is array (Natural range <>) of BasicGroupItemsTag_Access_Array_Access;
+   type BasicGroupItemsTag_Access_Array_Access_Array_Access is access all BasicGroupItemsTag_Access_Array_Access_Array;
+end admin.tags.BasicGroupItemsTag_Package_References;
+
+with admin.tags.BasicGroupItemsTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 package admin.tags.BasicGroupItemsTag_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicGroupItemsTag is tagged;
-   type BasicGroupItemsTag_Access is access all BasicGroupItemsTag'Class;
-   type BasicGroupItemsTag_Access_Array is array (Natural range <>) of BasicGroupItemsTag_Access;
-   type BasicGroupItemsTag_Access_Array_Access is access all BasicGroupItemsTag_Access_Array;
-   type BasicGroupItemsTag_Access_Array_Access_Array is array (Natural range <>) of BasicGroupItemsTag_Access_Array_Access;
-   type BasicGroupItemsTag_Access_Array_Access_Array_Access is access all BasicGroupItemsTag_Access_Array_Access_Array;
+
+   subtype BasicGroupItemsTag_Access is admin.tags.BasicGroupItemsTag_Package_References.BasicGroupItemsTag_Access;
+   function "=" (Left, Right : BasicGroupItemsTag_Access) return Boolean renames admin.tags.BasicGroupItemsTag_Package_References."=";
+   subtype BasicGroupItemsTag_Access_Array is admin.tags.BasicGroupItemsTag_Package_References.BasicGroupItemsTag_Access_Array;
+   function "=" (Left, Right : BasicGroupItemsTag_Access_Array) return Boolean renames admin.tags.BasicGroupItemsTag_Package_References."=";
+   subtype BasicGroupItemsTag_Access_Array_Access is admin.tags.BasicGroupItemsTag_Package_References.BasicGroupItemsTag_Access_Array_Access;
+   function "=" (Left, Right : BasicGroupItemsTag_Access_Array_Access) return Boolean renames admin.tags.BasicGroupItemsTag_Package_References."=";
+   subtype BasicGroupItemsTag_Access_Array_Access_Array is admin.tags.BasicGroupItemsTag_Package_References.BasicGroupItemsTag_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicGroupItemsTag_Access_Array_Access_Array) return Boolean renames admin.tags.BasicGroupItemsTag_Package_References."=";
+   subtype BasicGroupItemsTag_Access_Array_Access_Array_Access is admin.tags.BasicGroupItemsTag_Package_References.BasicGroupItemsTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicGroupItemsTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.BasicGroupItemsTag_Package_References."=";
 
    type BasicGroupItemsTag is new TableTag with record
       propertiesHashMap : HashMap_Access;

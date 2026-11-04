@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.activity.ProgressActivityInterface_Package;
 
 package body org.allbinary.android.activity.NullProgressActivity_Package is
 

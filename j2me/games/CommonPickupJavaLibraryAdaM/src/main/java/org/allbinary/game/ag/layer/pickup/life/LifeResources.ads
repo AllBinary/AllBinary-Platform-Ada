@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.layer.pickup.life.LifeResources_Package;
+package org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References is
+   type LifeResources_Access is access all org.allbinary.game.ag.layer.pickup.life.LifeResources_Package.LifeResources'Class;
+   type LifeResources_Access_Array is array (Natural range <>) of LifeResources_Access;
+   type LifeResources_Access_Array_Access is access all LifeResources_Access_Array;
+   type LifeResources_Access_Array_Access_Array is array (Natural range <>) of LifeResources_Access_Array_Access;
+   type LifeResources_Access_Array_Access_Array_Access is access all LifeResources_Access_Array_Access_Array;
+end org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References;
+
+with org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.ag.layer.pickup.life.LifeResources_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type LifeResources is tagged;
-   type LifeResources_Access is access all LifeResources'Class;
-   type LifeResources_Access_Array is array (Natural range <>) of LifeResources_Access;
-   type LifeResources_Access_Array_Access is access all LifeResources_Access_Array;
-   type LifeResources_Access_Array_Access_Array is array (Natural range <>) of LifeResources_Access_Array_Access;
-   type LifeResources_Access_Array_Access_Array_Access is access all LifeResources_Access_Array_Access_Array;
+
+   subtype LifeResources_Access is org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References.LifeResources_Access;
+   function "=" (Left, Right : LifeResources_Access) return Boolean renames org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References."=";
+   subtype LifeResources_Access_Array is org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References.LifeResources_Access_Array;
+   function "=" (Left, Right : LifeResources_Access_Array) return Boolean renames org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References."=";
+   subtype LifeResources_Access_Array_Access is org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References.LifeResources_Access_Array_Access;
+   function "=" (Left, Right : LifeResources_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References."=";
+   subtype LifeResources_Access_Array_Access_Array is org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References.LifeResources_Access_Array_Access_Array;
+   function "=" (Left, Right : LifeResources_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References."=";
+   subtype LifeResources_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References.LifeResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LifeResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.pickup.life.LifeResources_Package_References."=";
 
    type LifeResources is new Java_Object with record
       RESOURCE : Unbounded_String;

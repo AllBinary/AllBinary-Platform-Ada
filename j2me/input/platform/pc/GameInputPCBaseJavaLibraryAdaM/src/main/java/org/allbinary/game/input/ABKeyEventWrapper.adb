@@ -227,7 +227,7 @@ package body org.allbinary.game.input.ABKeyEventWrapper_Package is
 
    function getInstance return ABKeyEventWrapper_Access is
    begin
-        return ABKeyEventWrapper_Package.instance;
+        return ABKeyEventWrapper_Access (ABKeyEventWrapper_Package.instance);
    end getInstance;
 
 begin

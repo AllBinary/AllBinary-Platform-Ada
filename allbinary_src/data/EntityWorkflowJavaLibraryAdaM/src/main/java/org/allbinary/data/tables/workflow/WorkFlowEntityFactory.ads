@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
+package org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References is
+   type WorkFlowEntityFactory_Access is access all org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package.WorkFlowEntityFactory'Class;
+   type WorkFlowEntityFactory_Access_Array is array (Natural range <>) of WorkFlowEntityFactory_Access;
+   type WorkFlowEntityFactory_Access_Array_Access is access all WorkFlowEntityFactory_Access_Array;
+   type WorkFlowEntityFactory_Access_Array_Access_Array is array (Natural range <>) of WorkFlowEntityFactory_Access_Array_Access;
+   type WorkFlowEntityFactory_Access_Array_Access_Array_Access is access all WorkFlowEntityFactory_Access_Array_Access_Array;
+end org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References;
+
+with org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.data.tables.workflow.WorkFlowEntity_Package; use org.allbinary.data.tables.workflow.WorkFlowEntity_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.data.tables.workflow.WorkFlowEntity_Package;
+with org.allbinary.data.tables.workflow.WorkFlowEntity_Package_References;
 
 package org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype WorkFlowEntity_Access is org.allbinary.data.tables.workflow.WorkFlowEntity_Package_References.WorkFlowEntity_Access;
+   use type WorkFlowEntity_Access;
+   subtype WorkFlowEntity_Access_Array is org.allbinary.data.tables.workflow.WorkFlowEntity_Package_References.WorkFlowEntity_Access_Array;
+   use type WorkFlowEntity_Access_Array;
+   subtype WorkFlowEntity_Access_Array_Access is org.allbinary.data.tables.workflow.WorkFlowEntity_Package_References.WorkFlowEntity_Access_Array_Access;
+   use type WorkFlowEntity_Access_Array_Access;
+   subtype WorkFlowEntity_Access_Array_Access_Array is org.allbinary.data.tables.workflow.WorkFlowEntity_Package_References.WorkFlowEntity_Access_Array_Access_Array;
+   use type WorkFlowEntity_Access_Array_Access_Array;
+   subtype WorkFlowEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.workflow.WorkFlowEntity_Package_References.WorkFlowEntity_Access_Array_Access_Array_Access;
+   use type WorkFlowEntity_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type WorkFlowEntityFactory is tagged;
-   type WorkFlowEntityFactory_Access is access all WorkFlowEntityFactory'Class;
-   type WorkFlowEntityFactory_Access_Array is array (Natural range <>) of WorkFlowEntityFactory_Access;
-   type WorkFlowEntityFactory_Access_Array_Access is access all WorkFlowEntityFactory_Access_Array;
-   type WorkFlowEntityFactory_Access_Array_Access_Array is array (Natural range <>) of WorkFlowEntityFactory_Access_Array_Access;
-   type WorkFlowEntityFactory_Access_Array_Access_Array_Access is access all WorkFlowEntityFactory_Access_Array_Access_Array;
+
+   subtype WorkFlowEntityFactory_Access is org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References.WorkFlowEntityFactory_Access;
+   function "=" (Left, Right : WorkFlowEntityFactory_Access) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References."=";
+   subtype WorkFlowEntityFactory_Access_Array is org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References.WorkFlowEntityFactory_Access_Array;
+   function "=" (Left, Right : WorkFlowEntityFactory_Access_Array) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References."=";
+   subtype WorkFlowEntityFactory_Access_Array_Access is org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References.WorkFlowEntityFactory_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowEntityFactory_Access_Array_Access) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References."=";
+   subtype WorkFlowEntityFactory_Access_Array_Access_Array is org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References.WorkFlowEntityFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : WorkFlowEntityFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References."=";
+   subtype WorkFlowEntityFactory_Access_Array_Access_Array_Access is org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References.WorkFlowEntityFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowEntityFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package_References."=";
 
    type WorkFlowEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

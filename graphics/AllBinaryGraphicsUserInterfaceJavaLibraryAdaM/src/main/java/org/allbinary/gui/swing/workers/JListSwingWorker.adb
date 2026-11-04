@@ -13,9 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.gui.swing.workers.JList_Package; use org.allbinary.gui.swing.workers.JList_Package;
+with org.allbinary.gui.swing.workers.ListModel_Package; use org.allbinary.gui.swing.workers.ListModel_Package;
 
 package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
 
+   subtype JList_Access is org.allbinary.gui.swing.workers.JList_Package_References.JList_Access;
+   function "=" (Left, Right : JList_Access) return Boolean renames org.allbinary.gui.swing.workers.JList_Package_References."=";
+   subtype JList_Access_Array is org.allbinary.gui.swing.workers.JList_Package_References.JList_Access_Array;
+   function "=" (Left, Right : JList_Access_Array) return Boolean renames org.allbinary.gui.swing.workers.JList_Package_References."=";
+   subtype JList_Access_Array_Access is org.allbinary.gui.swing.workers.JList_Package_References.JList_Access_Array_Access;
+   function "=" (Left, Right : JList_Access_Array_Access) return Boolean renames org.allbinary.gui.swing.workers.JList_Package_References."=";
+   subtype JList_Access_Array_Access_Array is org.allbinary.gui.swing.workers.JList_Package_References.JList_Access_Array_Access_Array;
+   function "=" (Left, Right : JList_Access_Array_Access_Array) return Boolean renames org.allbinary.gui.swing.workers.JList_Package_References."=";
+   subtype JList_Access_Array_Access_Array_Access is org.allbinary.gui.swing.workers.JList_Package_References.JList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.gui.swing.workers.JList_Package_References."=";
+   subtype ListModel_Access is org.allbinary.gui.swing.workers.ListModel_Package_References.ListModel_Access;
+   function "=" (Left, Right : ListModel_Access) return Boolean renames org.allbinary.gui.swing.workers.ListModel_Package_References."=";
+   subtype ListModel_Access_Array is org.allbinary.gui.swing.workers.ListModel_Package_References.ListModel_Access_Array;
+   function "=" (Left, Right : ListModel_Access_Array) return Boolean renames org.allbinary.gui.swing.workers.ListModel_Package_References."=";
+   subtype ListModel_Access_Array_Access is org.allbinary.gui.swing.workers.ListModel_Package_References.ListModel_Access_Array_Access;
+   function "=" (Left, Right : ListModel_Access_Array_Access) return Boolean renames org.allbinary.gui.swing.workers.ListModel_Package_References."=";
+   subtype ListModel_Access_Array_Access_Array is org.allbinary.gui.swing.workers.ListModel_Package_References.ListModel_Access_Array_Access_Array;
+   function "=" (Left, Right : ListModel_Access_Array_Access_Array) return Boolean renames org.allbinary.gui.swing.workers.ListModel_Package_References."=";
+   subtype ListModel_Access_Array_Access_Array_Access is org.allbinary.gui.swing.workers.ListModel_Package_References.ListModel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ListModel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.gui.swing.workers.ListModel_Package_References."=";
    procedure Initialize_Fields (This : in out JListSwingWorker'Class) is
    begin
       null;

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.content.NotificationBuilderAPI23_Package;
+package org.allbinary.content.NotificationBuilderAPI23_Package_References is
+   type NotificationBuilderAPI23_Access is access all org.allbinary.content.NotificationBuilderAPI23_Package.NotificationBuilderAPI23'Class;
+   type NotificationBuilderAPI23_Access_Array is array (Natural range <>) of NotificationBuilderAPI23_Access;
+   type NotificationBuilderAPI23_Access_Array_Access is access all NotificationBuilderAPI23_Access_Array;
+   type NotificationBuilderAPI23_Access_Array_Access_Array is array (Natural range <>) of NotificationBuilderAPI23_Access_Array_Access;
+   type NotificationBuilderAPI23_Access_Array_Access_Array_Access is access all NotificationBuilderAPI23_Access_Array_Access_Array;
+end org.allbinary.content.NotificationBuilderAPI23_Package_References;
+
+with org.allbinary.content.NotificationBuilderAPI23_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
-with android.content.Context_Package; use android.content.Context_Package;
-with android.os.Parcelable_Package; use android.os.Parcelable_Package;
+limited with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
+limited with android.app.PendingIntent_Package;
+with android.app.PendingIntent_Package_References;
+limited with android.content.Context_Package;
+with android.content.Context_Package_References;
+limited with android.os.Parcelable_Package;
+with android.os.Parcelable_Package_References;
 with org.allbinary.content.NotificationBuilder_Package; use org.allbinary.content.NotificationBuilder_Package;
 
 package org.allbinary.content.NotificationBuilderAPI23_Package is
@@ -32,13 +46,61 @@ package org.allbinary.content.NotificationBuilderAPI23_Package is
    package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;
    package Context_Package renames Standard.android.content.Context_Package;
    package Parcelable_Package renames Standard.android.os.Parcelable_Package;
+   package Reference_Types is
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   use type Command_Access;
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   use type Command_Access_Array;
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   use type Command_Access_Array_Access;
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   use type Command_Access_Array_Access_Array;
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   use type Command_Access_Array_Access_Array_Access;
+   subtype PendingIntent_Access is android.app.PendingIntent_Package_References.PendingIntent_Access;
+   use type PendingIntent_Access;
+   subtype PendingIntent_Access_Array is android.app.PendingIntent_Package_References.PendingIntent_Access_Array;
+   use type PendingIntent_Access_Array;
+   subtype PendingIntent_Access_Array_Access is android.app.PendingIntent_Package_References.PendingIntent_Access_Array_Access;
+   use type PendingIntent_Access_Array_Access;
+   subtype PendingIntent_Access_Array_Access_Array is android.app.PendingIntent_Package_References.PendingIntent_Access_Array_Access_Array;
+   use type PendingIntent_Access_Array_Access_Array;
+   subtype PendingIntent_Access_Array_Access_Array_Access is android.app.PendingIntent_Package_References.PendingIntent_Access_Array_Access_Array_Access;
+   use type PendingIntent_Access_Array_Access_Array_Access;
+   subtype Context_Access is android.content.Context_Package_References.Context_Access;
+   use type Context_Access;
+   subtype Context_Access_Array is android.content.Context_Package_References.Context_Access_Array;
+   use type Context_Access_Array;
+   subtype Context_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access;
+   use type Context_Access_Array_Access;
+   subtype Context_Access_Array_Access_Array is android.content.Context_Package_References.Context_Access_Array_Access_Array;
+   use type Context_Access_Array_Access_Array;
+   subtype Context_Access_Array_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access_Array_Access;
+   use type Context_Access_Array_Access_Array_Access;
+   subtype Parcelable_Access is android.os.Parcelable_Package_References.Parcelable_Access;
+   use type Parcelable_Access;
+   subtype Parcelable_Access_Array is android.os.Parcelable_Package_References.Parcelable_Access_Array;
+   use type Parcelable_Access_Array;
+   subtype Parcelable_Access_Array_Access is android.os.Parcelable_Package_References.Parcelable_Access_Array_Access;
+   use type Parcelable_Access_Array_Access;
+   subtype Parcelable_Access_Array_Access_Array is android.os.Parcelable_Package_References.Parcelable_Access_Array_Access_Array;
+   use type Parcelable_Access_Array_Access_Array;
+   subtype Parcelable_Access_Array_Access_Array_Access is android.os.Parcelable_Package_References.Parcelable_Access_Array_Access_Array_Access;
+   use type Parcelable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NotificationBuilderAPI23 is tagged;
-   type NotificationBuilderAPI23_Access is access all NotificationBuilderAPI23'Class;
-   type NotificationBuilderAPI23_Access_Array is array (Natural range <>) of NotificationBuilderAPI23_Access;
-   type NotificationBuilderAPI23_Access_Array_Access is access all NotificationBuilderAPI23_Access_Array;
-   type NotificationBuilderAPI23_Access_Array_Access_Array is array (Natural range <>) of NotificationBuilderAPI23_Access_Array_Access;
-   type NotificationBuilderAPI23_Access_Array_Access_Array_Access is access all NotificationBuilderAPI23_Access_Array_Access_Array;
+
+   subtype NotificationBuilderAPI23_Access is org.allbinary.content.NotificationBuilderAPI23_Package_References.NotificationBuilderAPI23_Access;
+   function "=" (Left, Right : NotificationBuilderAPI23_Access) return Boolean renames org.allbinary.content.NotificationBuilderAPI23_Package_References."=";
+   subtype NotificationBuilderAPI23_Access_Array is org.allbinary.content.NotificationBuilderAPI23_Package_References.NotificationBuilderAPI23_Access_Array;
+   function "=" (Left, Right : NotificationBuilderAPI23_Access_Array) return Boolean renames org.allbinary.content.NotificationBuilderAPI23_Package_References."=";
+   subtype NotificationBuilderAPI23_Access_Array_Access is org.allbinary.content.NotificationBuilderAPI23_Package_References.NotificationBuilderAPI23_Access_Array_Access;
+   function "=" (Left, Right : NotificationBuilderAPI23_Access_Array_Access) return Boolean renames org.allbinary.content.NotificationBuilderAPI23_Package_References."=";
+   subtype NotificationBuilderAPI23_Access_Array_Access_Array is org.allbinary.content.NotificationBuilderAPI23_Package_References.NotificationBuilderAPI23_Access_Array_Access_Array;
+   function "=" (Left, Right : NotificationBuilderAPI23_Access_Array_Access_Array) return Boolean renames org.allbinary.content.NotificationBuilderAPI23_Package_References."=";
+   subtype NotificationBuilderAPI23_Access_Array_Access_Array_Access is org.allbinary.content.NotificationBuilderAPI23_Package_References.NotificationBuilderAPI23_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NotificationBuilderAPI23_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.content.NotificationBuilderAPI23_Package_References."=";
 
    type NotificationBuilderAPI23 is new NotificationBuilder with null record;
 

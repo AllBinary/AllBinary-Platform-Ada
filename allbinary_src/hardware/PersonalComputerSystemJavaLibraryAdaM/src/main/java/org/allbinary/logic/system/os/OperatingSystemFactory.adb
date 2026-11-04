@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFactory_Package; use org.allbinary.logic.communication.log.LogFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -22,7 +23,9 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package; use org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package;
 with org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package; use org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package;
 with org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package; use org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.logic.system.os.NoOperatingSystem_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
 with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
 
@@ -37,19 +40,49 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
    package LinuxOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package;
    package SolarisOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package;
    package WindowsOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype GenericOperatingSystem_Access is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access;
+   function "=" (Left, Right : GenericOperatingSystem_Access) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
+   subtype GenericOperatingSystem_Access_Array is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array;
+   function "=" (Left, Right : GenericOperatingSystem_Access_Array) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
+   subtype GenericOperatingSystem_Access_Array_Access is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array_Access;
+   function "=" (Left, Right : GenericOperatingSystem_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
+   subtype GenericOperatingSystem_Access_Array_Access_Array is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array_Access_Array;
+   function "=" (Left, Right : GenericOperatingSystem_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
+   subtype GenericOperatingSystem_Access_Array_Access_Array_Access is org.allbinary.logic.system.os.GenericOperatingSystem_Package_References.GenericOperatingSystem_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GenericOperatingSystem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.GenericOperatingSystem_Package_References."=";
    procedure Initialize_Fields (This : in out OperatingSystemFactory'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.genericOperatingSystem := NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
+      This.genericOperatingSystem := GenericOperatingSystem_Access (NoOperatingSystem_Package.NO_OPERATING_SYSTEM);
       This.hasDetected := False;
    end Initialize_Fields;
 
 
    function getInstance return OperatingSystemFactory_Access is
    begin
-        return OperatingSystemFactory_Package.instance;
+        return OperatingSystemFactory_Access (OperatingSystemFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out OperatingSystemFactory'Class) is
@@ -113,7 +146,7 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE, e);
             end if;
-            return NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
+            return GenericOperatingSystem_Access (NoOperatingSystem_Package.NO_OPERATING_SYSTEM);
                 end;
         end;
    end getOperatingSystemInstance;

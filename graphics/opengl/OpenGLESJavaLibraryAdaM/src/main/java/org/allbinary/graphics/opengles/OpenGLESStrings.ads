@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.opengles.OpenGLESStrings_Package;
+package org.allbinary.graphics.opengles.OpenGLESStrings_Package_References is
+   type OpenGLESStrings_Access is access all org.allbinary.graphics.opengles.OpenGLESStrings_Package.OpenGLESStrings'Class;
+   type OpenGLESStrings_Access_Array is array (Natural range <>) of OpenGLESStrings_Access;
+   type OpenGLESStrings_Access_Array_Access is access all OpenGLESStrings_Access_Array;
+   type OpenGLESStrings_Access_Array_Access_Array is array (Natural range <>) of OpenGLESStrings_Access_Array_Access;
+   type OpenGLESStrings_Access_Array_Access_Array_Access is access all OpenGLESStrings_Access_Array_Access_Array;
+end org.allbinary.graphics.opengles.OpenGLESStrings_Package_References;
+
+with org.allbinary.graphics.opengles.OpenGLESStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+limited with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 
 package org.allbinary.graphics.opengles.OpenGLESStrings_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package Reference_Types is
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   use type GL10_Access;
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   use type GL10_Access_Array;
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   use type GL10_Access_Array_Access;
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   use type GL10_Access_Array_Access_Array;
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   use type GL10_Access_Array_Access_Array_Access;
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLESStrings is tagged;
-   type OpenGLESStrings_Access is access all OpenGLESStrings'Class;
-   type OpenGLESStrings_Access_Array is array (Natural range <>) of OpenGLESStrings_Access;
-   type OpenGLESStrings_Access_Array_Access is access all OpenGLESStrings_Access_Array;
-   type OpenGLESStrings_Access_Array_Access_Array is array (Natural range <>) of OpenGLESStrings_Access_Array_Access;
-   type OpenGLESStrings_Access_Array_Access_Array_Access is access all OpenGLESStrings_Access_Array_Access_Array;
+
+   subtype OpenGLESStrings_Access is org.allbinary.graphics.opengles.OpenGLESStrings_Package_References.OpenGLESStrings_Access;
+   function "=" (Left, Right : OpenGLESStrings_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLESStrings_Package_References."=";
+   subtype OpenGLESStrings_Access_Array is org.allbinary.graphics.opengles.OpenGLESStrings_Package_References.OpenGLESStrings_Access_Array;
+   function "=" (Left, Right : OpenGLESStrings_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLESStrings_Package_References."=";
+   subtype OpenGLESStrings_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLESStrings_Package_References.OpenGLESStrings_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESStrings_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLESStrings_Package_References."=";
+   subtype OpenGLESStrings_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLESStrings_Package_References.OpenGLESStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLESStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLESStrings_Package_References."=";
+   subtype OpenGLESStrings_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLESStrings_Package_References.OpenGLESStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLESStrings_Package_References."=";
 
    type OpenGLESStrings is new Java_Object with null record;
 

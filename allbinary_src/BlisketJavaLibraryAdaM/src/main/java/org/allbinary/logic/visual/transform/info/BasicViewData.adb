@@ -66,7 +66,7 @@ package body org.allbinary.logic.visual.transform.info.BasicViewData_Package is
 
    function getInstance return BasicViewData_Access is
    begin
-        return BasicViewData_Package.instance;
+        return BasicViewData_Access (BasicViewData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out BasicViewData'Class) is

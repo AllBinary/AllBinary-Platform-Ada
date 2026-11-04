@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.TsUtil_Package;
+package org.allbinary.TsUtil_Package_References is
+   type TsUtil_Access is access all org.allbinary.TsUtil_Package.TsUtil'Class;
+   type TsUtil_Access_Array is array (Natural range <>) of TsUtil_Access;
+   type TsUtil_Access_Array_Access is access all TsUtil_Access_Array;
+   type TsUtil_Access_Array_Access_Array is array (Natural range <>) of TsUtil_Access_Array_Access;
+   type TsUtil_Access_Array_Access_Array_Access is access all TsUtil_Access_Array_Access_Array;
+end org.allbinary.TsUtil_Package_References;
+
+with org.allbinary.TsUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.TsUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TsUtil is tagged;
-   type TsUtil_Access is access all TsUtil'Class;
-   type TsUtil_Access_Array is array (Natural range <>) of TsUtil_Access;
-   type TsUtil_Access_Array_Access is access all TsUtil_Access_Array;
-   type TsUtil_Access_Array_Access_Array is array (Natural range <>) of TsUtil_Access_Array_Access;
-   type TsUtil_Access_Array_Access_Array_Access is access all TsUtil_Access_Array_Access_Array;
+
+   subtype TsUtil_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access;
+   function "=" (Left, Right : TsUtil_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array;
+   function "=" (Left, Right : TsUtil_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
+   function "=" (Left, Right : TsUtil_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : TsUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TsUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
 
    type TsUtil is new Java_Object with null record;
    instance : TsUtil_Access;
@@ -37,6 +55,10 @@ package org.allbinary.TsUtil_Package is
    procedure Initialize (This : in out TsUtil'Class);
    function Create return TsUtil_Access;
    function getInstance return TsUtil_Access;
+   function longBitsToDouble (This : in out TsUtil; bits : Long_Long_Integer) return Long_Float;
+   procedure longBitsToDouble (This : in out TsUtil; bits : Long_Long_Integer);
+   function intBitsToFloat (This : in out TsUtil; bits : Integer) return Float;
+   procedure intBitsToFloat (This : in out TsUtil; bits : Integer);
    function hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) return Integer;
    procedure hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class);
    procedure waitFor (This : in out TsUtil; any_Param : access Java_Object'Class; timeoutMillis : Long_Long_Integer);

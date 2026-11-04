@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package; use org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package;
 
 package body org.allbinary.logic.communication.smtp.queue.FileEmailQueue_Package is
 
+   subtype DomDocumentQueueInterface_Access is org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References.DomDocumentQueueInterface_Access;
+   function "=" (Left, Right : DomDocumentQueueInterface_Access) return Boolean renames org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References."=";
+   subtype DomDocumentQueueInterface_Access_Array is org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References.DomDocumentQueueInterface_Access_Array;
+   function "=" (Left, Right : DomDocumentQueueInterface_Access_Array) return Boolean renames org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References."=";
+   subtype DomDocumentQueueInterface_Access_Array_Access is org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References.DomDocumentQueueInterface_Access_Array_Access;
+   function "=" (Left, Right : DomDocumentQueueInterface_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References."=";
+   subtype DomDocumentQueueInterface_Access_Array_Access_Array is org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References.DomDocumentQueueInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : DomDocumentQueueInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References."=";
+   subtype DomDocumentQueueInterface_Access_Array_Access_Array_Access is org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References.DomDocumentQueueInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DomDocumentQueueInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References."=";
    procedure Initialize_Fields (This : in out FileEmailQueue'Class) is
    begin
       null;

@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.ResizableListenerInterface_Package; use org.allbinary.graphics.ResizableListenerInterface_Package;
+with org.allbinary.graphics.ResizableListenerInterface_Package;
 
 package body org.allbinary.graphics.ResizableListenerHandler_Package is
 
+   subtype ResizableListenerInterface_Access is org.allbinary.graphics.ResizableListenerInterface_Package_References.ResizableListenerInterface_Access;
+   function "=" (Left, Right : ResizableListenerInterface_Access) return Boolean renames org.allbinary.graphics.ResizableListenerInterface_Package_References."=";
+   subtype ResizableListenerInterface_Access_Array is org.allbinary.graphics.ResizableListenerInterface_Package_References.ResizableListenerInterface_Access_Array;
+   function "=" (Left, Right : ResizableListenerInterface_Access_Array) return Boolean renames org.allbinary.graphics.ResizableListenerInterface_Package_References."=";
+   subtype ResizableListenerInterface_Access_Array_Access is org.allbinary.graphics.ResizableListenerInterface_Package_References.ResizableListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : ResizableListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.graphics.ResizableListenerInterface_Package_References."=";
+   subtype ResizableListenerInterface_Access_Array_Access_Array is org.allbinary.graphics.ResizableListenerInterface_Package_References.ResizableListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ResizableListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.ResizableListenerInterface_Package_References."=";
+   subtype ResizableListenerInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.ResizableListenerInterface_Package_References.ResizableListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ResizableListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.ResizableListenerInterface_Package_References."=";
    procedure Initialize_Fields (This : in out ResizableListenerHandler'Class) is
    begin
       null;
@@ -36,7 +48,7 @@ package body org.allbinary.graphics.ResizableListenerHandler_Package is
 
    function getInstance return ResizableListenerHandler_Access is
    begin
-        return ResizableListenerHandler_Package.instance;
+        return ResizableListenerHandler_Access (ResizableListenerHandler_Package.instance);
    end getInstance;
 
    procedure setListener (This : in out ResizableListenerHandler; resizableListenerInterface_Param : access ResizableListenerInterface_Package.ResizableListenerInterface'Class) is

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.score.ScoreComparator_Package;
+package org.allbinary.game.score.ScoreComparator_Package_References is
+   type ScoreComparator_Access is access all org.allbinary.game.score.ScoreComparator_Package.ScoreComparator'Class;
+   type ScoreComparator_Access_Array is array (Natural range <>) of ScoreComparator_Access;
+   type ScoreComparator_Access_Array_Access is access all ScoreComparator_Access_Array;
+   type ScoreComparator_Access_Array_Access_Array is array (Natural range <>) of ScoreComparator_Access_Array_Access;
+   type ScoreComparator_Access_Array_Access_Array_Access is access all ScoreComparator_Access_Array_Access_Array;
+end org.allbinary.game.score.ScoreComparator_Package_References;
+
+with org.allbinary.game.score.ScoreComparator_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,19 +34,38 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.EOFException_Package; use java.io.EOFException_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.game.score.ScoreComparator_Package is
 
    package RecordComparator_Package renames Standard.javax.microedition.rms.RecordComparator_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ScoreComparator is tagged;
-   type ScoreComparator_Access is access all ScoreComparator'Class;
-   type ScoreComparator_Access_Array is array (Natural range <>) of ScoreComparator_Access;
-   type ScoreComparator_Access_Array_Access is access all ScoreComparator_Access_Array;
-   type ScoreComparator_Access_Array_Access_Array is array (Natural range <>) of ScoreComparator_Access_Array_Access;
-   type ScoreComparator_Access_Array_Access_Array_Access is access all ScoreComparator_Access_Array_Access_Array;
+
+   subtype ScoreComparator_Access is org.allbinary.game.score.ScoreComparator_Package_References.ScoreComparator_Access;
+   function "=" (Left, Right : ScoreComparator_Access) return Boolean renames org.allbinary.game.score.ScoreComparator_Package_References."=";
+   subtype ScoreComparator_Access_Array is org.allbinary.game.score.ScoreComparator_Package_References.ScoreComparator_Access_Array;
+   function "=" (Left, Right : ScoreComparator_Access_Array) return Boolean renames org.allbinary.game.score.ScoreComparator_Package_References."=";
+   subtype ScoreComparator_Access_Array_Access is org.allbinary.game.score.ScoreComparator_Package_References.ScoreComparator_Access_Array_Access;
+   function "=" (Left, Right : ScoreComparator_Access_Array_Access) return Boolean renames org.allbinary.game.score.ScoreComparator_Package_References."=";
+   subtype ScoreComparator_Access_Array_Access_Array is org.allbinary.game.score.ScoreComparator_Package_References.ScoreComparator_Access_Array_Access_Array;
+   function "=" (Left, Right : ScoreComparator_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.ScoreComparator_Package_References."=";
+   subtype ScoreComparator_Access_Array_Access_Array_Access is org.allbinary.game.score.ScoreComparator_Package_References.ScoreComparator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScoreComparator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.ScoreComparator_Package_References."=";
 
    type ScoreComparator is new Java_Object and RecordComparator with record
       logUtil : LogUtil_Access;

@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package; use org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package is
 
+   subtype CreditCardType_Access is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access;
+   function "=" (Left, Right : CreditCardType_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References."=";
+   subtype CreditCardType_Access_Array is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access_Array;
+   function "=" (Left, Right : CreditCardType_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References."=";
+   subtype CreditCardType_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access_Array_Access;
+   function "=" (Left, Right : CreditCardType_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References."=";
+   subtype CreditCardType_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access_Array_Access_Array;
+   function "=" (Left, Right : CreditCardType_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References."=";
+   subtype CreditCardType_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CreditCardType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References."=";
    procedure Initialize_Fields (This : in out CreditCardTypeFactory'Class) is
    begin
       null;
@@ -40,7 +52,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.CreditCard
 
    function getInstance return CreditCardTypeFactory_Access is
    begin
-        return CreditCardTypeFactory_Package.instance;
+        return CreditCardTypeFactory_Access (CreditCardTypeFactory_Package.instance);
    end getInstance;
 
 begin

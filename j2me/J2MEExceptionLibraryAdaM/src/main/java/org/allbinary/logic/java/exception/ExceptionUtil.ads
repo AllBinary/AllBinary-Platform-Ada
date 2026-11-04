@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References is
+   type ExceptionUtil_Access is access all org.allbinary.logic.java.exception_Id.ExceptionUtil_Package.ExceptionUtil'Class;
+   type ExceptionUtil_Access_Array is array (Natural range <>) of ExceptionUtil_Access;
+   type ExceptionUtil_Access_Array_Access is access all ExceptionUtil_Access_Array;
+   type ExceptionUtil_Access_Array_Access_Array is array (Natural range <>) of ExceptionUtil_Access_Array_Access;
+   type ExceptionUtil_Access_Array_Access_Array_Access is access all ExceptionUtil_Access_Array_Access_Array;
+end org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References;
+
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ExceptionUtil is tagged;
-   type ExceptionUtil_Access is access all ExceptionUtil'Class;
-   type ExceptionUtil_Access_Array is array (Natural range <>) of ExceptionUtil_Access;
-   type ExceptionUtil_Access_Array_Access is access all ExceptionUtil_Access_Array;
-   type ExceptionUtil_Access_Array_Access_Array is array (Natural range <>) of ExceptionUtil_Access_Array_Access;
-   type ExceptionUtil_Access_Array_Access_Array_Access is access all ExceptionUtil_Access_Array_Access_Array;
+
+   subtype ExceptionUtil_Access is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access;
+   function "=" (Left, Right : ExceptionUtil_Access) return Boolean renames org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References."=";
+   subtype ExceptionUtil_Access_Array is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access_Array;
+   function "=" (Left, Right : ExceptionUtil_Access_Array) return Boolean renames org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References."=";
+   subtype ExceptionUtil_Access_Array_Access is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access_Array_Access;
+   function "=" (Left, Right : ExceptionUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References."=";
+   subtype ExceptionUtil_Access_Array_Access_Array is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ExceptionUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References."=";
+   subtype ExceptionUtil_Access_Array_Access_Array_Access is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ExceptionUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References."=";
 
    type ExceptionUtil is new Java_Object with record
       PRETEND_EXCEPTION : Java_Throwable;

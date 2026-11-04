@@ -13,10 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
 with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package; use org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package;
+with org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package; use org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package;
 
 package body org.allbinary.logic.visual.transform.template.TransformTemplateFactory_Package is
 
@@ -24,6 +30,36 @@ package body org.allbinary.logic.visual.transform.template.TransformTemplateFact
    package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package TransformInfoObjectFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   function "=" (Left, Right : AbeClientInformationInterface_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   function "=" (Left, Right : AbeClientInformationInterface_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   function "=" (Left, Right : AbeClientInformationInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AbeClientInformationInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbeClientInformationInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype TransformTemplateInterface_Access is org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References.TransformTemplateInterface_Access;
+   function "=" (Left, Right : TransformTemplateInterface_Access) return Boolean renames org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References."=";
+   subtype TransformTemplateInterface_Access_Array is org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References.TransformTemplateInterface_Access_Array;
+   function "=" (Left, Right : TransformTemplateInterface_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References."=";
+   subtype TransformTemplateInterface_Access_Array_Access is org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References.TransformTemplateInterface_Access_Array_Access;
+   function "=" (Left, Right : TransformTemplateInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References."=";
+   subtype TransformTemplateInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References.TransformTemplateInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformTemplateInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References."=";
+   subtype TransformTemplateInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References.TransformTemplateInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformTemplateInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package_References."=";
    procedure Initialize_Fields (This : in out TransformTemplateFactory'Class) is
    begin
       null;
@@ -33,7 +69,7 @@ package body org.allbinary.logic.visual.transform.template.TransformTemplateFact
 
    function getInstance return TransformTemplateFactory_Access is
    begin
-        return TransformTemplateFactory_Package.instance;
+        return TransformTemplateFactory_Access (TransformTemplateFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out TransformTemplateFactory'Class) is

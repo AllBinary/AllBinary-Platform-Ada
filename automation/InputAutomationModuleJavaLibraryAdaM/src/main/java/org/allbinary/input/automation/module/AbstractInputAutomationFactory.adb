@@ -14,10 +14,22 @@
 
 
 with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
+with org.allbinary.input.automation.module.JPanel_Package; use org.allbinary.input.automation.module.JPanel_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 
 package body org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package is
 
    package JavaHelpUtil_Package renames Standard.org.allbinary.logic.java.help.JavaHelpUtil_Package;
+   subtype JPanel_Access is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access;
+   function "=" (Left, Right : JPanel_Access) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
+   subtype JPanel_Access_Array is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access_Array;
+   function "=" (Left, Right : JPanel_Access_Array) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
+   subtype JPanel_Access_Array_Access is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access_Array_Access;
+   function "=" (Left, Right : JPanel_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
+   subtype JPanel_Access_Array_Access_Array is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : JPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
+   subtype JPanel_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
    procedure Initialize_Fields (This : in out AbstractInputAutomationFactory'Class) is
    begin
       null;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package;
+package org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References is
+   type InputAutomationTypeJPanel_Access is access all org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package.InputAutomationTypeJPanel'Class;
+   type InputAutomationTypeJPanel_Access_Array is array (Natural range <>) of InputAutomationTypeJPanel_Access;
+   type InputAutomationTypeJPanel_Access_Array_Access is access all InputAutomationTypeJPanel_Access_Array;
+   type InputAutomationTypeJPanel_Access_Array_Access_Array is array (Natural range <>) of InputAutomationTypeJPanel_Access_Array_Access;
+   type InputAutomationTypeJPanel_Access_Array_Access_Array_Access is access all InputAutomationTypeJPanel_Access_Array_Access_Array;
+end org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References;
+
+with org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.input.automation.actions.script.condition.processors.input.JP
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputAutomationTypeJPanel is tagged;
-   type InputAutomationTypeJPanel_Access is access all InputAutomationTypeJPanel'Class;
-   type InputAutomationTypeJPanel_Access_Array is array (Natural range <>) of InputAutomationTypeJPanel_Access;
-   type InputAutomationTypeJPanel_Access_Array_Access is access all InputAutomationTypeJPanel_Access_Array;
-   type InputAutomationTypeJPanel_Access_Array_Access_Array is array (Natural range <>) of InputAutomationTypeJPanel_Access_Array_Access;
-   type InputAutomationTypeJPanel_Access_Array_Access_Array_Access is access all InputAutomationTypeJPanel_Access_Array_Access_Array;
+
+   subtype InputAutomationTypeJPanel_Access is org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References.InputAutomationTypeJPanel_Access;
+   function "=" (Left, Right : InputAutomationTypeJPanel_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References."=";
+   subtype InputAutomationTypeJPanel_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References.InputAutomationTypeJPanel_Access_Array;
+   function "=" (Left, Right : InputAutomationTypeJPanel_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References."=";
+   subtype InputAutomationTypeJPanel_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References.InputAutomationTypeJPanel_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationTypeJPanel_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References."=";
+   subtype InputAutomationTypeJPanel_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References.InputAutomationTypeJPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationTypeJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References."=";
+   subtype InputAutomationTypeJPanel_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References.InputAutomationTypeJPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationTypeJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package_References."=";
 
    type InputAutomationTypeJPanel is new JPanel with record
       inputAutomationTypeJComboBox : JComboBox_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.PermissionItemsRequestHelperFactory_Package;
+package admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References is
+   type PermissionItemsRequestHelperFactory_Access is access all admin.taghelpers.PermissionItemsRequestHelperFactory_Package.PermissionItemsRequestHelperFactory'Class;
+   type PermissionItemsRequestHelperFactory_Access_Array is array (Natural range <>) of PermissionItemsRequestHelperFactory_Access;
+   type PermissionItemsRequestHelperFactory_Access_Array_Access is access all PermissionItemsRequestHelperFactory_Access_Array;
+   type PermissionItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of PermissionItemsRequestHelperFactory_Access_Array_Access;
+   type PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all PermissionItemsRequestHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References;
+
+with admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.PermissionItemsRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PermissionItemsRequestHelperFactory is tagged;
-   type PermissionItemsRequestHelperFactory_Access is access all PermissionItemsRequestHelperFactory'Class;
-   type PermissionItemsRequestHelperFactory_Access_Array is array (Natural range <>) of PermissionItemsRequestHelperFactory_Access;
-   type PermissionItemsRequestHelperFactory_Access_Array_Access is access all PermissionItemsRequestHelperFactory_Access_Array;
-   type PermissionItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of PermissionItemsRequestHelperFactory_Access_Array_Access;
-   type PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all PermissionItemsRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype PermissionItemsRequestHelperFactory_Access is admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.PermissionItemsRequestHelperFactory_Access;
+   function "=" (Left, Right : PermissionItemsRequestHelperFactory_Access) return Boolean renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References."=";
+   subtype PermissionItemsRequestHelperFactory_Access_Array is admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.PermissionItemsRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : PermissionItemsRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References."=";
+   subtype PermissionItemsRequestHelperFactory_Access_Array_Access is admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.PermissionItemsRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : PermissionItemsRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References."=";
+   subtype PermissionItemsRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.PermissionItemsRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PermissionItemsRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References."=";
+   subtype PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References."=";
 
    type PermissionItemsRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

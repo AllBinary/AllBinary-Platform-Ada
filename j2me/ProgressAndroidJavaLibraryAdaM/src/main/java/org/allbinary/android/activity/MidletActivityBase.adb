@@ -13,9 +13,68 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.Activity_Package; use android.app.Activity_Package;
+with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
+with android.view.View_Package; use android.view.View_Package;
+with org.allbinary.android.GenericMotionEventVerifyInterface_Package; use org.allbinary.android.GenericMotionEventVerifyInterface_Package;
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package; use org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package; use org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
+with org.allbinary.game.configuration.event.GameInitializedEvent_Package; use org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+with org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package; use org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
 package body org.allbinary.android.activity.MidletActivityBase_Package is
 
+   subtype MotionEvent_Access is android.view.MotionEvent_Package_References.MotionEvent_Access;
+   function "=" (Left, Right : MotionEvent_Access) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype MotionEvent_Access_Array is android.view.MotionEvent_Package_References.MotionEvent_Access_Array;
+   function "=" (Left, Right : MotionEvent_Access_Array) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype MotionEvent_Access_Array_Access is android.view.MotionEvent_Package_References.MotionEvent_Access_Array_Access;
+   function "=" (Left, Right : MotionEvent_Access_Array_Access) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype MotionEvent_Access_Array_Access_Array is android.view.MotionEvent_Package_References.MotionEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionEvent_Access_Array_Access_Array) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype MotionEvent_Access_Array_Access_Array_Access is android.view.MotionEvent_Package_References.MotionEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionEvent_Access_Array_Access_Array_Access) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype View_Access is android.view.View_Package_References.View_Access;
+   function "=" (Left, Right : View_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array is android.view.View_Package_References.View_Access_Array;
+   function "=" (Left, Right : View_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array is android.view.View_Package_References.View_Access_Array_Access_Array;
+   function "=" (Left, Right : View_Access_Array_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype GameFeatureEvent_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access;
+   function "=" (Left, Right : GameFeatureEvent_Access) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
+   subtype GameFeatureEvent_Access_Array is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array;
+   function "=" (Left, Right : GameFeatureEvent_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
+   subtype GameFeatureEvent_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access;
+   function "=" (Left, Right : GameFeatureEvent_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
+   subtype GameFeatureEvent_Access_Array_Access_Array is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : GameFeatureEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
+   subtype GameFeatureEvent_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameFeatureEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
+   subtype GameInitializedEvent_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access;
+   function "=" (Left, Right : GameInitializedEvent_Access) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
+   subtype GameInitializedEvent_Access_Array is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array;
+   function "=" (Left, Right : GameInitializedEvent_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
+   subtype GameInitializedEvent_Access_Array_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access;
+   function "=" (Left, Right : GameInitializedEvent_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
+   subtype GameInitializedEvent_Access_Array_Access_Array is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInitializedEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
+   subtype GameInitializedEvent_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInitializedEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   function "=" (Left, Right : AllBinaryEventObject_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
    procedure Initialize_Fields (This : in out MidletActivityBase'Class) is
    begin
       null;

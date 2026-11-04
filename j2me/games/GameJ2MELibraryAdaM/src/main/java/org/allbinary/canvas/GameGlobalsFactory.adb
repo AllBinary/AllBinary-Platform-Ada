@@ -13,17 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 
 package body org.allbinary.canvas.GameGlobalsFactory_Package is
 
    package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   function "=" (Left, Right : GPoint_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
    procedure Initialize_Fields (This : in out GameGlobalsFactory'Class) is
    begin
       null;
       This.newCanvas := True;
       This.newDisplaybleTime := Long_Long_Integer (Integer'First);
-      This.point := PointFactory_Package.getInstance.ZERO_ZERO;
+      This.point := GPoint_Access (PointFactory_Package.getInstance.ZERO_ZERO);
    end Initialize_Fields;
 
    procedure Initialize (This : in out GameGlobalsFactory'Class) is
@@ -41,7 +52,7 @@ package body org.allbinary.canvas.GameGlobalsFactory_Package is
 
    function getInstance return GameGlobalsFactory_Access is
    begin
-        return GameGlobalsFactory_Package.instance;
+        return GameGlobalsFactory_Access (GameGlobalsFactory_Package.instance);
    end getInstance;
 
 begin

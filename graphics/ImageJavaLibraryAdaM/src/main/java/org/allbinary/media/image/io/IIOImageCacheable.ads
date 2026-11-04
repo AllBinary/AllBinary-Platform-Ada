@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.io.IIOImageCacheable_Package;
+package org.allbinary.media.image.io.IIOImageCacheable_Package_References is
+   type IIOImageCacheable_Access is access all org.allbinary.media.image.io.IIOImageCacheable_Package.IIOImageCacheable'Class;
+   type IIOImageCacheable_Access_Array is array (Natural range <>) of IIOImageCacheable_Access;
+   type IIOImageCacheable_Access_Array_Access is access all IIOImageCacheable_Access_Array;
+   type IIOImageCacheable_Access_Array_Access_Array is array (Natural range <>) of IIOImageCacheable_Access_Array_Access;
+   type IIOImageCacheable_Access_Array_Access_Array_Access is access all IIOImageCacheable_Access_Array_Access_Array;
+end org.allbinary.media.image.io.IIOImageCacheable_Package_References;
+
+with org.allbinary.media.image.io.IIOImageCacheable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinar
 package org.allbinary.media.image.io.IIOImageCacheable_Package is
 
    package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type IIOImageCacheable is tagged;
-   type IIOImageCacheable_Access is access all IIOImageCacheable'Class;
-   type IIOImageCacheable_Access_Array is array (Natural range <>) of IIOImageCacheable_Access;
-   type IIOImageCacheable_Access_Array_Access is access all IIOImageCacheable_Access_Array;
-   type IIOImageCacheable_Access_Array_Access_Array is array (Natural range <>) of IIOImageCacheable_Access_Array_Access;
-   type IIOImageCacheable_Access_Array_Access_Array_Access is access all IIOImageCacheable_Access_Array_Access_Array;
+
+   subtype IIOImageCacheable_Access is org.allbinary.media.image.io.IIOImageCacheable_Package_References.IIOImageCacheable_Access;
+   function "=" (Left, Right : IIOImageCacheable_Access) return Boolean renames org.allbinary.media.image.io.IIOImageCacheable_Package_References."=";
+   subtype IIOImageCacheable_Access_Array is org.allbinary.media.image.io.IIOImageCacheable_Package_References.IIOImageCacheable_Access_Array;
+   function "=" (Left, Right : IIOImageCacheable_Access_Array) return Boolean renames org.allbinary.media.image.io.IIOImageCacheable_Package_References."=";
+   subtype IIOImageCacheable_Access_Array_Access is org.allbinary.media.image.io.IIOImageCacheable_Package_References.IIOImageCacheable_Access_Array_Access;
+   function "=" (Left, Right : IIOImageCacheable_Access_Array_Access) return Boolean renames org.allbinary.media.image.io.IIOImageCacheable_Package_References."=";
+   subtype IIOImageCacheable_Access_Array_Access_Array is org.allbinary.media.image.io.IIOImageCacheable_Package_References.IIOImageCacheable_Access_Array_Access_Array;
+   function "=" (Left, Right : IIOImageCacheable_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.io.IIOImageCacheable_Package_References."=";
+   subtype IIOImageCacheable_Access_Array_Access_Array_Access is org.allbinary.media.image.io.IIOImageCacheable_Package_References.IIOImageCacheable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IIOImageCacheable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.io.IIOImageCacheable_Package_References."=";
 
    type IIOImageCacheable is new Java_Object and CacheableInterface with record
       key : Unbounded_String;

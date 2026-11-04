@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
+package org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References is
+   type DestroyedEventHandler_Access is access all org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package.DestroyedEventHandler'Class;
+   type DestroyedEventHandler_Access_Array is array (Natural range <>) of DestroyedEventHandler_Access;
+   type DestroyedEventHandler_Access_Array_Access is access all DestroyedEventHandler_Access_Array;
+   type DestroyedEventHandler_Access_Array_Access_Array is array (Natural range <>) of DestroyedEventHandler_Access_Array_Access;
+   type DestroyedEventHandler_Access_Array_Access_Array_Access is access all DestroyedEventHandler_Access_Array_Access_Array;
+end org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References;
+
+with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
+limited with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
+limited with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package_References;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package is
 
@@ -33,13 +47,61 @@ package org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package is
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype CollidableDestroyableDamageableLayer_Access is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access;
+   use type CollidableDestroyableDamageableLayer_Access;
+   subtype CollidableDestroyableDamageableLayer_Access_Array is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array;
+   use type CollidableDestroyableDamageableLayer_Access_Array;
+   subtype CollidableDestroyableDamageableLayer_Access_Array_Access is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array_Access;
+   use type CollidableDestroyableDamageableLayer_Access_Array_Access;
+   subtype CollidableDestroyableDamageableLayer_Access_Array_Access_Array is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array_Access_Array;
+   use type CollidableDestroyableDamageableLayer_Access_Array_Access_Array;
+   subtype CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access;
+   use type CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
+   subtype EventListenerInterface_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access;
+   use type EventListenerInterface_Access;
+   subtype EventListenerInterface_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array;
+   use type EventListenerInterface_Access_Array;
+   subtype EventListenerInterface_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access;
+   use type EventListenerInterface_Access_Array_Access;
+   subtype EventListenerInterface_Access_Array_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array;
+   use type EventListenerInterface_Access_Array_Access_Array;
+   subtype EventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array_Access;
+   use type EventListenerInterface_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DestroyedEventHandler is tagged;
-   type DestroyedEventHandler_Access is access all DestroyedEventHandler'Class;
-   type DestroyedEventHandler_Access_Array is array (Natural range <>) of DestroyedEventHandler_Access;
-   type DestroyedEventHandler_Access_Array_Access is access all DestroyedEventHandler_Access_Array;
-   type DestroyedEventHandler_Access_Array_Access_Array is array (Natural range <>) of DestroyedEventHandler_Access_Array_Access;
-   type DestroyedEventHandler_Access_Array_Access_Array_Access is access all DestroyedEventHandler_Access_Array_Access_Array;
+
+   subtype DestroyedEventHandler_Access is org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References.DestroyedEventHandler_Access;
+   function "=" (Left, Right : DestroyedEventHandler_Access) return Boolean renames org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References."=";
+   subtype DestroyedEventHandler_Access_Array is org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References.DestroyedEventHandler_Access_Array;
+   function "=" (Left, Right : DestroyedEventHandler_Access_Array) return Boolean renames org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References."=";
+   subtype DestroyedEventHandler_Access_Array_Access is org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References.DestroyedEventHandler_Access_Array_Access;
+   function "=" (Left, Right : DestroyedEventHandler_Access_Array_Access) return Boolean renames org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References."=";
+   subtype DestroyedEventHandler_Access_Array_Access_Array is org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References.DestroyedEventHandler_Access_Array_Access_Array;
+   function "=" (Left, Right : DestroyedEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References."=";
+   subtype DestroyedEventHandler_Access_Array_Access_Array_Access is org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References.DestroyedEventHandler_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DestroyedEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package_References."=";
 
    type DestroyedEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;

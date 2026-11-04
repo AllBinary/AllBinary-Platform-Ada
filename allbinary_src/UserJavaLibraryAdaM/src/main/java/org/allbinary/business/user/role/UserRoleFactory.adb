@@ -29,7 +29,26 @@ with org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAd
 with org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package; use org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package;
 with org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package; use org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package;
 with org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package; use org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package;
+with org.allbinary.business.user.role.BasicUserRoleFactory_Package; use org.allbinary.business.user.role.BasicUserRoleFactory_Package;
 with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.business.user.role.UserRoleB_Package;
+with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
+with org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrderStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.AdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.order.OrderStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.StoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package;
+with org.allbinary.business.user.modules.UserFactory_Package;
+with org.allbinary.business.user.role.UserRoleB_Package;
+with org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUserFactory_Package;
+with org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package;
 
 package body org.allbinary.business.user.role.UserRoleFactory_Package is
 
@@ -49,6 +68,26 @@ package body org.allbinary.business.user.role.UserRoleFactory_Package is
    package WorkflowEditorWebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package;
    package SubscriberUserFactory_Package renames Standard.org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package;
    package WholesaleUserFactory_Package renames Standard.org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package;
+   subtype BasicUserRoleFactory_Access is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access;
+   function "=" (Left, Right : BasicUserRoleFactory_Access) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   subtype BasicUserRoleFactory_Access_Array is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array;
+   function "=" (Left, Right : BasicUserRoleFactory_Access_Array) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   subtype BasicUserRoleFactory_Access_Array_Access is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array_Access;
+   function "=" (Left, Right : BasicUserRoleFactory_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   subtype BasicUserRoleFactory_Access_Array_Access_Array is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicUserRoleFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   subtype BasicUserRoleFactory_Access_Array_Access_Array_Access is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicUserRoleFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   subtype UserRole_Access is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access;
+   function "=" (Left, Right : UserRole_Access) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
+   subtype UserRole_Access_Array is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array;
+   function "=" (Left, Right : UserRole_Access_Array) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
+   subtype UserRole_Access_Array_Access is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array_Access;
+   function "=" (Left, Right : UserRole_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
+   subtype UserRole_Access_Array_Access_Array is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array_Access_Array;
+   function "=" (Left, Right : UserRole_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
+   subtype UserRole_Access_Array_Access_Array_Access is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserRole_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.UserRole_Package_References."=";
    procedure Initialize_Fields (This : in out UserRoleFactory'Class) is
    begin
       null;
@@ -87,7 +126,7 @@ package body org.allbinary.business.user.role.UserRoleFactory_Package is
 
    function getInstance return UserRoleFactory_Access is
    begin
-        return UserRoleFactory_Package.instance;
+        return UserRoleFactory_Access (UserRoleFactory_Package.instance);
    end getInstance;
 
 begin

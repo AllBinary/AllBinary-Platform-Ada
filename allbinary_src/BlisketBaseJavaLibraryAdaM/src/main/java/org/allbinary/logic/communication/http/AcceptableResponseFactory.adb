@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.http.AcceptableResponse_Package; use org.allbinary.logic.communication.http.AcceptableResponse_Package;
+with org.allbinary.logic.communication.http.AcceptableResponse_Package;
 
 package body org.allbinary.logic.communication.http.AcceptableResponseFactory_Package is
 
+   subtype AcceptableResponse_Access is org.allbinary.logic.communication.http.AcceptableResponse_Package_References.AcceptableResponse_Access;
+   function "=" (Left, Right : AcceptableResponse_Access) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponse_Package_References."=";
+   subtype AcceptableResponse_Access_Array is org.allbinary.logic.communication.http.AcceptableResponse_Package_References.AcceptableResponse_Access_Array;
+   function "=" (Left, Right : AcceptableResponse_Access_Array) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponse_Package_References."=";
+   subtype AcceptableResponse_Access_Array_Access is org.allbinary.logic.communication.http.AcceptableResponse_Package_References.AcceptableResponse_Access_Array_Access;
+   function "=" (Left, Right : AcceptableResponse_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponse_Package_References."=";
+   subtype AcceptableResponse_Access_Array_Access_Array is org.allbinary.logic.communication.http.AcceptableResponse_Package_References.AcceptableResponse_Access_Array_Access_Array;
+   function "=" (Left, Right : AcceptableResponse_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponse_Package_References."=";
+   subtype AcceptableResponse_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.AcceptableResponse_Package_References.AcceptableResponse_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AcceptableResponse_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponse_Package_References."=";
    procedure Initialize_Fields (This : in out AcceptableResponseFactory'Class) is
    begin
       null;
@@ -39,7 +51,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseFactory_Pa
 
    function getInstance return AcceptableResponseFactory_Access is
    begin
-        return AcceptableResponseFactory_Package.instance;
+        return AcceptableResponseFactory_Access (AcceptableResponseFactory_Package.instance);
    end getInstance;
 
 begin

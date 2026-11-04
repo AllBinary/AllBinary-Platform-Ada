@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.SVGAsJSONSimpleLoader_Package;
+package org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References is
+   type SVGAsJSONSimpleLoader_Access is access all org.allbinary.animation.SVGAsJSONSimpleLoader_Package.SVGAsJSONSimpleLoader'Class;
+   type SVGAsJSONSimpleLoader_Access_Array is array (Natural range <>) of SVGAsJSONSimpleLoader_Access;
+   type SVGAsJSONSimpleLoader_Access_Array_Access is access all SVGAsJSONSimpleLoader_Access_Array;
+   type SVGAsJSONSimpleLoader_Access_Array_Access_Array is array (Natural range <>) of SVGAsJSONSimpleLoader_Access_Array_Access;
+   type SVGAsJSONSimpleLoader_Access_Array_Access_Array_Access is access all SVGAsJSONSimpleLoader_Access_Array_Access_Array;
+end org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References;
+
+with org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,24 +30,87 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GraphicsStrings_Package; use org.allbinary.graphics.GraphicsStrings_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.json.me.JSONObject_Package; use org.json.me.JSONObject_Package;
-with org.allbinary.animation.ShapeTypeFactory_Package; use org.allbinary.animation.ShapeTypeFactory_Package;
-with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.ShapeType_Package;
+limited with org.allbinary.graphics.GraphicsStrings_Package;
+with org.allbinary.graphics.GraphicsStrings_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.json.me.JSONObject_Package;
+with org.json.me.JSONObject_Package_References;
+limited with org.allbinary.animation.ShapeTypeFactory_Package;
+with org.allbinary.animation.ShapeTypeFactory_Package_References;
+limited with org.allbinary.animation.ShapeType_Package;
+with org.allbinary.animation.ShapeType_Package_References;
 
 package org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
 
    package GraphicsStrings_Package renames Standard.org.allbinary.graphics.GraphicsStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package JSONObject_Package renames Standard.org.json.me.JSONObject_Package;
+   package Reference_Types is
+   subtype GraphicsStrings_Access is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access;
+   use type GraphicsStrings_Access;
+   subtype GraphicsStrings_Access_Array is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array;
+   use type GraphicsStrings_Access_Array;
+   subtype GraphicsStrings_Access_Array_Access is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array_Access;
+   use type GraphicsStrings_Access_Array_Access;
+   subtype GraphicsStrings_Access_Array_Access_Array is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array_Access_Array;
+   use type GraphicsStrings_Access_Array_Access_Array;
+   subtype GraphicsStrings_Access_Array_Access_Array_Access is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array_Access_Array_Access;
+   use type GraphicsStrings_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype JSONObject_Access is org.json.me.JSONObject_Package_References.JSONObject_Access;
+   use type JSONObject_Access;
+   subtype JSONObject_Access_Array is org.json.me.JSONObject_Package_References.JSONObject_Access_Array;
+   use type JSONObject_Access_Array;
+   subtype JSONObject_Access_Array_Access is org.json.me.JSONObject_Package_References.JSONObject_Access_Array_Access;
+   use type JSONObject_Access_Array_Access;
+   subtype JSONObject_Access_Array_Access_Array is org.json.me.JSONObject_Package_References.JSONObject_Access_Array_Access_Array;
+   use type JSONObject_Access_Array_Access_Array;
+   subtype JSONObject_Access_Array_Access_Array_Access is org.json.me.JSONObject_Package_References.JSONObject_Access_Array_Access_Array_Access;
+   use type JSONObject_Access_Array_Access_Array_Access;
+   subtype ShapeTypeFactory_Access is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access;
+   use type ShapeTypeFactory_Access;
+   subtype ShapeTypeFactory_Access_Array is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access_Array;
+   use type ShapeTypeFactory_Access_Array;
+   subtype ShapeTypeFactory_Access_Array_Access is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access_Array_Access;
+   use type ShapeTypeFactory_Access_Array_Access;
+   subtype ShapeTypeFactory_Access_Array_Access_Array is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access_Array_Access_Array;
+   use type ShapeTypeFactory_Access_Array_Access_Array;
+   subtype ShapeTypeFactory_Access_Array_Access_Array_Access is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access_Array_Access_Array_Access;
+   use type ShapeTypeFactory_Access_Array_Access_Array_Access;
+   subtype ShapeType_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access;
+   use type ShapeType_Access;
+   subtype ShapeType_Access_Array is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array;
+   use type ShapeType_Access_Array;
+   subtype ShapeType_Access_Array_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access;
+   use type ShapeType_Access_Array_Access;
+   subtype ShapeType_Access_Array_Access_Array is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access_Array;
+   use type ShapeType_Access_Array_Access_Array;
+   subtype ShapeType_Access_Array_Access_Array_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access_Array_Access;
+   use type ShapeType_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SVGAsJSONSimpleLoader is tagged;
-   type SVGAsJSONSimpleLoader_Access is access all SVGAsJSONSimpleLoader'Class;
-   type SVGAsJSONSimpleLoader_Access_Array is array (Natural range <>) of SVGAsJSONSimpleLoader_Access;
-   type SVGAsJSONSimpleLoader_Access_Array_Access is access all SVGAsJSONSimpleLoader_Access_Array;
-   type SVGAsJSONSimpleLoader_Access_Array_Access_Array is array (Natural range <>) of SVGAsJSONSimpleLoader_Access_Array_Access;
-   type SVGAsJSONSimpleLoader_Access_Array_Access_Array_Access is access all SVGAsJSONSimpleLoader_Access_Array_Access_Array;
+
+   subtype SVGAsJSONSimpleLoader_Access is org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References.SVGAsJSONSimpleLoader_Access;
+   function "=" (Left, Right : SVGAsJSONSimpleLoader_Access) return Boolean renames org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References."=";
+   subtype SVGAsJSONSimpleLoader_Access_Array is org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References.SVGAsJSONSimpleLoader_Access_Array;
+   function "=" (Left, Right : SVGAsJSONSimpleLoader_Access_Array) return Boolean renames org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References."=";
+   subtype SVGAsJSONSimpleLoader_Access_Array_Access is org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References.SVGAsJSONSimpleLoader_Access_Array_Access;
+   function "=" (Left, Right : SVGAsJSONSimpleLoader_Access_Array_Access) return Boolean renames org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References."=";
+   subtype SVGAsJSONSimpleLoader_Access_Array_Access_Array is org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References.SVGAsJSONSimpleLoader_Access_Array_Access_Array;
+   function "=" (Left, Right : SVGAsJSONSimpleLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References."=";
+   subtype SVGAsJSONSimpleLoader_Access_Array_Access_Array_Access is org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References.SVGAsJSONSimpleLoader_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SVGAsJSONSimpleLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.SVGAsJSONSimpleLoader_Package_References."=";
 
    type SVGAsJSONSimpleLoader is new Java_Object with record
       graphicsStrings : GraphicsStrings_Access;

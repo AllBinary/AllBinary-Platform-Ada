@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package;
+package org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References is
+   type BaseDropCellPositionGenerator_Access is access all org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package.BaseDropCellPositionGenerator'Class;
+   type BaseDropCellPositionGenerator_Access_Array is array (Natural range <>) of BaseDropCellPositionGenerator_Access;
+   type BaseDropCellPositionGenerator_Access_Array_Access is access all BaseDropCellPositionGenerator_Access_Array;
+   type BaseDropCellPositionGenerator_Access_Array_Access_Array is array (Natural range <>) of BaseDropCellPositionGenerator_Access_Array_Access;
+   type BaseDropCellPositionGenerator_Access_Array_Access_Array_Access is access all BaseDropCellPositionGenerator_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References;
+
+with org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+limited with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
+limited with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
 with org.allbinary.media.graphics.geography.map.drop.DropCellPositionGeneratorInterface_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionGeneratorInterface_Package;
 
 package org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package is
@@ -32,13 +46,61 @@ package org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGene
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package Reference_Types is
+   subtype AllBinaryGameLayerManager_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access;
+   use type AllBinaryGameLayerManager_Access;
+   subtype AllBinaryGameLayerManager_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access;
+   use type GeographicMapCellPosition_Access;
+   subtype GeographicMapCellPosition_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array;
+   use type GeographicMapCellPosition_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
+   use type GeographicMapCellPosition_Access_Array_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   subtype BasicGeographicMap_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access;
+   use type BasicGeographicMap_Access;
+   subtype BasicGeographicMap_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array;
+   use type BasicGeographicMap_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access;
+   subtype BasicGeographicMap_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array;
+   use type BasicGeographicMap_Access_Array_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BaseDropCellPositionGenerator is tagged;
-   type BaseDropCellPositionGenerator_Access is access all BaseDropCellPositionGenerator'Class;
-   type BaseDropCellPositionGenerator_Access_Array is array (Natural range <>) of BaseDropCellPositionGenerator_Access;
-   type BaseDropCellPositionGenerator_Access_Array_Access is access all BaseDropCellPositionGenerator_Access_Array;
-   type BaseDropCellPositionGenerator_Access_Array_Access_Array is array (Natural range <>) of BaseDropCellPositionGenerator_Access_Array_Access;
-   type BaseDropCellPositionGenerator_Access_Array_Access_Array_Access is access all BaseDropCellPositionGenerator_Access_Array_Access_Array;
+
+   subtype BaseDropCellPositionGenerator_Access is org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References.BaseDropCellPositionGenerator_Access;
+   function "=" (Left, Right : BaseDropCellPositionGenerator_Access) return Boolean renames org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References."=";
+   subtype BaseDropCellPositionGenerator_Access_Array is org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References.BaseDropCellPositionGenerator_Access_Array;
+   function "=" (Left, Right : BaseDropCellPositionGenerator_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References."=";
+   subtype BaseDropCellPositionGenerator_Access_Array_Access is org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References.BaseDropCellPositionGenerator_Access_Array_Access;
+   function "=" (Left, Right : BaseDropCellPositionGenerator_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References."=";
+   subtype BaseDropCellPositionGenerator_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References.BaseDropCellPositionGenerator_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseDropCellPositionGenerator_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References."=";
+   subtype BaseDropCellPositionGenerator_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References.BaseDropCellPositionGenerator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseDropCellPositionGenerator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package_References."=";
 
    type BaseDropCellPositionGenerator is new Java_Object and DropCellPositionGeneratorInterface with null record;
 

@@ -5,6 +5,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.animation.FixedPoint_Package; use org.allbinary.animation.FixedPoint_Package;
 with org.allbinary.animation.PGUtil_Package; use org.allbinary.animation.PGUtil_Package;
+with org.allbinary.animation.FixedPoint_Package;
+with org.allbinary.animation.PGUtil_Package;
 
 package body org.allbinary.animation.PathParser_Package is
 

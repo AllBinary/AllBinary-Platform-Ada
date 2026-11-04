@@ -13,9 +13,43 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package; use org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
 
 package body org.allbinary.business.user.commerce.shipping.modules.PickUpShippingModule_Package is
 
+   subtype OrderInterface_Access is org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References.OrderInterface_Access;
+   function "=" (Left, Right : OrderInterface_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References."=";
+   subtype OrderInterface_Access_Array is org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References.OrderInterface_Access_Array;
+   function "=" (Left, Right : OrderInterface_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References."=";
+   subtype OrderInterface_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References.OrderInterface_Access_Array_Access;
+   function "=" (Left, Right : OrderInterface_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References."=";
+   subtype OrderInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References.OrderInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References."=";
+   subtype OrderInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References.OrderInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References."=";
+   subtype Money_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access;
+   function "=" (Left, Right : Money_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array;
+   function "=" (Left, Right : Money_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access;
+   function "=" (Left, Right : Money_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array;
+   function "=" (Left, Right : Money_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Money_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    procedure Initialize_Fields (This : in out PickUpShippingModule'Class) is
    begin
       null;

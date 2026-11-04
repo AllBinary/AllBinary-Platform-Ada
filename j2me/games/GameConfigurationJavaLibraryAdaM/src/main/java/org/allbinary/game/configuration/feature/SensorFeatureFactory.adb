@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.SensorFeature_Package; use org.allbinary.game.configuration.feature.SensorFeature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.SensorFeature_Package;
 
 package body org.allbinary.game.configuration.feature.SensorFeatureFactory_Package is
 
+   subtype SensorFeature_Access is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access;
+   function "=" (Left, Right : SensorFeature_Access) return Boolean renames org.allbinary.game.configuration.feature.SensorFeature_Package_References."=";
+   subtype SensorFeature_Access_Array is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access_Array;
+   function "=" (Left, Right : SensorFeature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.SensorFeature_Package_References."=";
+   subtype SensorFeature_Access_Array_Access is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access_Array_Access;
+   function "=" (Left, Right : SensorFeature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.SensorFeature_Package_References."=";
+   subtype SensorFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : SensorFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.SensorFeature_Package_References."=";
+   subtype SensorFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SensorFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.SensorFeature_Package_References."=";
    procedure Initialize_Fields (This : in out SensorFeatureFactory'Class) is
    begin
       null;
@@ -32,7 +45,7 @@ package body org.allbinary.game.configuration.feature.SensorFeatureFactory_Packa
 
    function getInstance return SensorFeatureFactory_Access is
    begin
-        return SensorFeatureFactory_Package.instance;
+        return SensorFeatureFactory_Access (SensorFeatureFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out SensorFeatureFactory'Class) is

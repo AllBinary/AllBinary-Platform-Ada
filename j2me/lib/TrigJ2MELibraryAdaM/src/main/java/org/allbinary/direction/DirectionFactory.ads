@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.direction.DirectionFactory_Package;
+package org.allbinary.direction.DirectionFactory_Package_References is
+   type DirectionFactory_Access is access all org.allbinary.direction.DirectionFactory_Package.DirectionFactory'Class;
+   type DirectionFactory_Access_Array is array (Natural range <>) of DirectionFactory_Access;
+   type DirectionFactory_Access_Array_Access is access all DirectionFactory_Access_Array;
+   type DirectionFactory_Access_Array_Access_Array is array (Natural range <>) of DirectionFactory_Access_Array_Access;
+   type DirectionFactory_Access_Array_Access_Array_Access is access all DirectionFactory_Access_Array_Access_Array;
+end org.allbinary.direction.DirectionFactory_Package_References;
+
+with org.allbinary.direction.DirectionFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+limited with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
 
 package org.allbinary.direction.DirectionFactory_Package is
 
+   package Reference_Types is
+   subtype Direction_Access is org.allbinary.direction.Direction_Package_References.Direction_Access;
+   use type Direction_Access;
+   subtype Direction_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array;
+   use type Direction_Access_Array;
+   subtype Direction_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access;
+   use type Direction_Access_Array_Access;
+   subtype Direction_Access_Array_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array;
+   use type Direction_Access_Array_Access_Array;
+   subtype Direction_Access_Array_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array_Access;
+   use type Direction_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DirectionFactory is tagged;
-   type DirectionFactory_Access is access all DirectionFactory'Class;
-   type DirectionFactory_Access_Array is array (Natural range <>) of DirectionFactory_Access;
-   type DirectionFactory_Access_Array_Access is access all DirectionFactory_Access_Array;
-   type DirectionFactory_Access_Array_Access_Array is array (Natural range <>) of DirectionFactory_Access_Array_Access;
-   type DirectionFactory_Access_Array_Access_Array_Access is access all DirectionFactory_Access_Array_Access_Array;
+
+   subtype DirectionFactory_Access is org.allbinary.direction.DirectionFactory_Package_References.DirectionFactory_Access;
+   function "=" (Left, Right : DirectionFactory_Access) return Boolean renames org.allbinary.direction.DirectionFactory_Package_References."=";
+   subtype DirectionFactory_Access_Array is org.allbinary.direction.DirectionFactory_Package_References.DirectionFactory_Access_Array;
+   function "=" (Left, Right : DirectionFactory_Access_Array) return Boolean renames org.allbinary.direction.DirectionFactory_Package_References."=";
+   subtype DirectionFactory_Access_Array_Access is org.allbinary.direction.DirectionFactory_Package_References.DirectionFactory_Access_Array_Access;
+   function "=" (Left, Right : DirectionFactory_Access_Array_Access) return Boolean renames org.allbinary.direction.DirectionFactory_Package_References."=";
+   subtype DirectionFactory_Access_Array_Access_Array is org.allbinary.direction.DirectionFactory_Package_References.DirectionFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : DirectionFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.direction.DirectionFactory_Package_References."=";
+   subtype DirectionFactory_Access_Array_Access_Array_Access is org.allbinary.direction.DirectionFactory_Package_References.DirectionFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DirectionFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.direction.DirectionFactory_Package_References."=";
 
    type DirectionFactory is new Java_Object with record
       NAME : Unbounded_String;

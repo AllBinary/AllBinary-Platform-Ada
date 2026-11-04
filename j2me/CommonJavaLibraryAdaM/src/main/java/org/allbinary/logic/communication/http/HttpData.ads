@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.http.HttpData_Package;
+package org.allbinary.logic.communication.http.HttpData_Package_References is
+   type HttpData_Access is access all org.allbinary.logic.communication.http.HttpData_Package.HttpData'Class;
+   type HttpData_Access_Array is array (Natural range <>) of HttpData_Access;
+   type HttpData_Access_Array_Access is access all HttpData_Access_Array;
+   type HttpData_Access_Array_Access_Array is array (Natural range <>) of HttpData_Access_Array_Access;
+   type HttpData_Access_Array_Access_Array_Access is access all HttpData_Access_Array_Access_Array;
+end org.allbinary.logic.communication.http.HttpData_Package_References;
+
+with org.allbinary.logic.communication.http.HttpData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.communication.http.HttpData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HttpData is tagged;
-   type HttpData_Access is access all HttpData'Class;
-   type HttpData_Access_Array is array (Natural range <>) of HttpData_Access;
-   type HttpData_Access_Array_Access is access all HttpData_Access_Array;
-   type HttpData_Access_Array_Access_Array is array (Natural range <>) of HttpData_Access_Array_Access;
-   type HttpData_Access_Array_Access_Array_Access is access all HttpData_Access_Array_Access_Array;
+
+   subtype HttpData_Access is org.allbinary.logic.communication.http.HttpData_Package_References.HttpData_Access;
+   function "=" (Left, Right : HttpData_Access) return Boolean renames org.allbinary.logic.communication.http.HttpData_Package_References."=";
+   subtype HttpData_Access_Array is org.allbinary.logic.communication.http.HttpData_Package_References.HttpData_Access_Array;
+   function "=" (Left, Right : HttpData_Access_Array) return Boolean renames org.allbinary.logic.communication.http.HttpData_Package_References."=";
+   subtype HttpData_Access_Array_Access is org.allbinary.logic.communication.http.HttpData_Package_References.HttpData_Access_Array_Access;
+   function "=" (Left, Right : HttpData_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.HttpData_Package_References."=";
+   subtype HttpData_Access_Array_Access_Array is org.allbinary.logic.communication.http.HttpData_Package_References.HttpData_Access_Array_Access_Array;
+   function "=" (Left, Right : HttpData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.HttpData_Package_References."=";
+   subtype HttpData_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.HttpData_Package_References.HttpData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HttpData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.HttpData_Package_References."=";
 
    type HttpData is new Java_Object with record
       EQUALS : Unbounded_String;

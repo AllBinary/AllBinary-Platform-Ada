@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+package org.allbinary.game.configuration.event.GameFeatureEvent_Package_References is
+   type GameFeatureEvent_Access is access all org.allbinary.game.configuration.event.GameFeatureEvent_Package.GameFeatureEvent'Class;
+   type GameFeatureEvent_Access_Array is array (Natural range <>) of GameFeatureEvent_Access;
+   type GameFeatureEvent_Access_Array_Access is access all GameFeatureEvent_Access_Array;
+   type GameFeatureEvent_Access_Array_Access_Array is array (Natural range <>) of GameFeatureEvent_Access_Array_Access;
+   type GameFeatureEvent_Access_Array_Access_Array_Access is access all GameFeatureEvent_Access_Array_Access_Array;
+end org.allbinary.game.configuration.event.GameFeatureEvent_Package_References;
+
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 package org.allbinary.game.configuration.event.GameFeatureEvent_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameFeatureEvent is tagged;
-   type GameFeatureEvent_Access is access all GameFeatureEvent'Class;
-   type GameFeatureEvent_Access_Array is array (Natural range <>) of GameFeatureEvent_Access;
-   type GameFeatureEvent_Access_Array_Access is access all GameFeatureEvent_Access_Array;
-   type GameFeatureEvent_Access_Array_Access_Array is array (Natural range <>) of GameFeatureEvent_Access_Array_Access;
-   type GameFeatureEvent_Access_Array_Access_Array_Access is access all GameFeatureEvent_Access_Array_Access_Array;
+
+   subtype GameFeatureEvent_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access;
+   function "=" (Left, Right : GameFeatureEvent_Access) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
+   subtype GameFeatureEvent_Access_Array is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array;
+   function "=" (Left, Right : GameFeatureEvent_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
+   subtype GameFeatureEvent_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access;
+   function "=" (Left, Right : GameFeatureEvent_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
+   subtype GameFeatureEvent_Access_Array_Access_Array is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : GameFeatureEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
+   subtype GameFeatureEvent_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameFeatureEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEvent_Package_References."=";
 
    type GameFeatureEvent is new AllBinaryEventObject with record
       whatChanged : Unbounded_String;

@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.PlayerType_Package; use org.allbinary.game.PlayerType_Package;
+with org.allbinary.game.PlayerType_Package;
 
 package body org.allbinary.game.PlayerTypesFactory_Package is
 
+   subtype PlayerType_Access is org.allbinary.game.PlayerType_Package_References.PlayerType_Access;
+   function "=" (Left, Right : PlayerType_Access) return Boolean renames org.allbinary.game.PlayerType_Package_References."=";
+   subtype PlayerType_Access_Array is org.allbinary.game.PlayerType_Package_References.PlayerType_Access_Array;
+   function "=" (Left, Right : PlayerType_Access_Array) return Boolean renames org.allbinary.game.PlayerType_Package_References."=";
+   subtype PlayerType_Access_Array_Access is org.allbinary.game.PlayerType_Package_References.PlayerType_Access_Array_Access;
+   function "=" (Left, Right : PlayerType_Access_Array_Access) return Boolean renames org.allbinary.game.PlayerType_Package_References."=";
+   subtype PlayerType_Access_Array_Access_Array is org.allbinary.game.PlayerType_Package_References.PlayerType_Access_Array_Access_Array;
+   function "=" (Left, Right : PlayerType_Access_Array_Access_Array) return Boolean renames org.allbinary.game.PlayerType_Package_References."=";
+   subtype PlayerType_Access_Array_Access_Array_Access is org.allbinary.game.PlayerType_Package_References.PlayerType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlayerType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.PlayerType_Package_References."=";
    procedure Initialize_Fields (This : in out PlayerTypesFactory'Class) is
    begin
       null;
@@ -39,7 +51,7 @@ package body org.allbinary.game.PlayerTypesFactory_Package is
 
    function getInstance return PlayerTypesFactory_Access is
    begin
-        return PlayerTypesFactory_Package.SINGLETON;
+        return PlayerTypesFactory_Access (PlayerTypesFactory_Package.SINGLETON);
    end getInstance;
 
 begin

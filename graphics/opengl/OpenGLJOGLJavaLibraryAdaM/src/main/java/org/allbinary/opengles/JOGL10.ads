@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.opengles.JOGL10_Package;
+package org.allbinary.opengles.JOGL10_Package_References is
+   type JOGL10_Access is access all org.allbinary.opengles.JOGL10_Package.JOGL10'Class;
+   type JOGL10_Access_Array is array (Natural range <>) of JOGL10_Access;
+   type JOGL10_Access_Array_Access is access all JOGL10_Access_Array;
+   type JOGL10_Access_Array_Access_Array is array (Natural range <>) of JOGL10_Access_Array_Access;
+   type JOGL10_Access_Array_Access_Array_Access is access all JOGL10_Access_Array_Access_Array;
+end org.allbinary.opengles.JOGL10_Package_References;
+
+with org.allbinary.opengles.JOGL10_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with com.jogamp.opengl.glu.GLU_Package; use com.jogamp.opengl.glu.GLU_Package;
+limited with com.jogamp.opengl.glu.GLU_Package;
+with com.jogamp.opengl.glu.GLU_Package_References;
 with org.allbinary.opengles.GL10_Package; use org.allbinary.opengles.GL10_Package;
 
 package org.allbinary.opengles.JOGL10_Package is
 
    package GLU_Package renames Standard.com.jogamp.opengl.glu.GLU_Package;
+   package Reference_Types is
+   subtype GLU_Access is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access;
+   use type GLU_Access;
+   subtype GLU_Access_Array is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array;
+   use type GLU_Access_Array;
+   subtype GLU_Access_Array_Access is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array_Access;
+   use type GLU_Access_Array_Access;
+   subtype GLU_Access_Array_Access_Array is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array_Access_Array;
+   use type GLU_Access_Array_Access_Array;
+   subtype GLU_Access_Array_Access_Array_Access is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array_Access_Array_Access;
+   use type GLU_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type JOGL10 is tagged;
-   type JOGL10_Access is access all JOGL10'Class;
-   type JOGL10_Access_Array is array (Natural range <>) of JOGL10_Access;
-   type JOGL10_Access_Array_Access is access all JOGL10_Access_Array;
-   type JOGL10_Access_Array_Access_Array is array (Natural range <>) of JOGL10_Access_Array_Access;
-   type JOGL10_Access_Array_Access_Array_Access is access all JOGL10_Access_Array_Access_Array;
+
+   subtype JOGL10_Access is org.allbinary.opengles.JOGL10_Package_References.JOGL10_Access;
+   function "=" (Left, Right : JOGL10_Access) return Boolean renames org.allbinary.opengles.JOGL10_Package_References."=";
+   subtype JOGL10_Access_Array is org.allbinary.opengles.JOGL10_Package_References.JOGL10_Access_Array;
+   function "=" (Left, Right : JOGL10_Access_Array) return Boolean renames org.allbinary.opengles.JOGL10_Package_References."=";
+   subtype JOGL10_Access_Array_Access is org.allbinary.opengles.JOGL10_Package_References.JOGL10_Access_Array_Access;
+   function "=" (Left, Right : JOGL10_Access_Array_Access) return Boolean renames org.allbinary.opengles.JOGL10_Package_References."=";
+   subtype JOGL10_Access_Array_Access_Array is org.allbinary.opengles.JOGL10_Package_References.JOGL10_Access_Array_Access_Array;
+   function "=" (Left, Right : JOGL10_Access_Array_Access_Array) return Boolean renames org.allbinary.opengles.JOGL10_Package_References."=";
+   subtype JOGL10_Access_Array_Access_Array_Access is org.allbinary.opengles.JOGL10_Package_References.JOGL10_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JOGL10_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.opengles.JOGL10_Package_References."=";
 
    type JOGL10 is new Java_Object and GL10 with record
       RED : Unbounded_String;

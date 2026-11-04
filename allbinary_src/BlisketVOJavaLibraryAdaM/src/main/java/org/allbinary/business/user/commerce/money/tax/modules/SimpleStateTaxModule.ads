@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package;
+package org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References is
+   type SimpleStateTaxModule_Access is access all org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package.SimpleStateTaxModule'Class;
+   type SimpleStateTaxModule_Access_Array is array (Natural range <>) of SimpleStateTaxModule_Access;
+   type SimpleStateTaxModule_Access_Array_Access is access all SimpleStateTaxModule_Access_Array;
+   type SimpleStateTaxModule_Access_Array_Access_Array is array (Natural range <>) of SimpleStateTaxModule_Access_Array_Access;
+   type SimpleStateTaxModule_Access_Array_Access_Array_Access is access all SimpleStateTaxModule_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References;
+
+with org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+limited with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
+limited with org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.address.StreetAddress_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.allbinary.business.user.commerce.money.tax.modules.TaxModuleInterface_Package; use org.allbinary.business.user.commerce.money.tax.modules.TaxModuleInterface_Package;
 
 package org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package is
@@ -34,13 +49,71 @@ package org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxMod
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Reference_Types is
+   subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
+   use type StoreFrontInterface_Access;
+   subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
+   use type StoreFrontInterface_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access;
+   subtype StoreFrontInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array;
+   use type StoreFrontInterface_Access_Array_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access_Array_Access;
+   subtype StreetAddress_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access;
+   use type StreetAddress_Access;
+   subtype StreetAddress_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array;
+   use type StreetAddress_Access_Array;
+   subtype StreetAddress_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access;
+   use type StreetAddress_Access_Array_Access;
+   subtype StreetAddress_Access_Array_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array;
+   use type StreetAddress_Access_Array_Access_Array;
+   subtype StreetAddress_Access_Array_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array_Access;
+   use type StreetAddress_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SimpleStateTaxModule is tagged;
-   type SimpleStateTaxModule_Access is access all SimpleStateTaxModule'Class;
-   type SimpleStateTaxModule_Access_Array is array (Natural range <>) of SimpleStateTaxModule_Access;
-   type SimpleStateTaxModule_Access_Array_Access is access all SimpleStateTaxModule_Access_Array;
-   type SimpleStateTaxModule_Access_Array_Access_Array is array (Natural range <>) of SimpleStateTaxModule_Access_Array_Access;
-   type SimpleStateTaxModule_Access_Array_Access_Array_Access is access all SimpleStateTaxModule_Access_Array_Access_Array;
+
+   subtype SimpleStateTaxModule_Access is org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.SimpleStateTaxModule_Access;
+   function "=" (Left, Right : SimpleStateTaxModule_Access) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References."=";
+   subtype SimpleStateTaxModule_Access_Array is org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.SimpleStateTaxModule_Access_Array;
+   function "=" (Left, Right : SimpleStateTaxModule_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References."=";
+   subtype SimpleStateTaxModule_Access_Array_Access is org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.SimpleStateTaxModule_Access_Array_Access;
+   function "=" (Left, Right : SimpleStateTaxModule_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References."=";
+   subtype SimpleStateTaxModule_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.SimpleStateTaxModule_Access_Array_Access_Array;
+   function "=" (Left, Right : SimpleStateTaxModule_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References."=";
+   subtype SimpleStateTaxModule_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.SimpleStateTaxModule_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SimpleStateTaxModule_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References."=";
 
    type SimpleStateTaxModule is new Java_Object and TaxModuleInterface with record
       logUtil : LogUtil_Access;

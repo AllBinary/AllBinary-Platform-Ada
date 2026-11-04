@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.init.CommonGameInitialization_Package;
+package org.allbinary.game.init.CommonGameInitialization_Package_References is
+   type CommonGameInitialization_Access is access all org.allbinary.game.init.CommonGameInitialization_Package.CommonGameInitialization'Class;
+   type CommonGameInitialization_Access_Array is array (Natural range <>) of CommonGameInitialization_Access;
+   type CommonGameInitialization_Access_Array_Access is access all CommonGameInitialization_Access_Array;
+   type CommonGameInitialization_Access_Array_Access_Array is array (Natural range <>) of CommonGameInitialization_Access_Array_Access;
+   type CommonGameInitialization_Access_Array_Access_Array_Access is access all CommonGameInitialization_Access_Array_Access_Array;
+end org.allbinary.game.init.CommonGameInitialization_Package_References;
+
+with org.allbinary.game.init.CommonGameInitialization_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with org.allbinary.game.resource.ResourceInitialization_Package; use org.allbinary.game.resource.ResourceInitialization_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
+limited with org.allbinary.game.resource.ResourceInitialization_Package;
+with org.allbinary.game.resource.ResourceInitialization_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.game.init.BaseGameInitialization_Package; use org.allbinary.game.init.BaseGameInitialization_Package;
 
 package org.allbinary.game.init.CommonGameInitialization_Package is
@@ -32,13 +46,61 @@ package org.allbinary.game.init.CommonGameInitialization_Package is
    package ResourceInitialization_Package renames Standard.org.allbinary.game.resource.ResourceInitialization_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype CommandListener_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access;
+   use type CommandListener_Access;
+   subtype CommandListener_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array;
+   use type CommandListener_Access_Array;
+   subtype CommandListener_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access;
+   use type CommandListener_Access_Array_Access;
+   subtype CommandListener_Access_Array_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array;
+   use type CommandListener_Access_Array_Access_Array;
+   subtype CommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array_Access;
+   use type CommandListener_Access_Array_Access_Array_Access;
+   subtype ResourceInitialization_Access is org.allbinary.game.resource.ResourceInitialization_Package_References.ResourceInitialization_Access;
+   use type ResourceInitialization_Access;
+   subtype ResourceInitialization_Access_Array is org.allbinary.game.resource.ResourceInitialization_Package_References.ResourceInitialization_Access_Array;
+   use type ResourceInitialization_Access_Array;
+   subtype ResourceInitialization_Access_Array_Access is org.allbinary.game.resource.ResourceInitialization_Package_References.ResourceInitialization_Access_Array_Access;
+   use type ResourceInitialization_Access_Array_Access;
+   subtype ResourceInitialization_Access_Array_Access_Array is org.allbinary.game.resource.ResourceInitialization_Package_References.ResourceInitialization_Access_Array_Access_Array;
+   use type ResourceInitialization_Access_Array_Access_Array;
+   subtype ResourceInitialization_Access_Array_Access_Array_Access is org.allbinary.game.resource.ResourceInitialization_Package_References.ResourceInitialization_Access_Array_Access_Array_Access;
+   use type ResourceInitialization_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CommonGameInitialization is tagged;
-   type CommonGameInitialization_Access is access all CommonGameInitialization'Class;
-   type CommonGameInitialization_Access_Array is array (Natural range <>) of CommonGameInitialization_Access;
-   type CommonGameInitialization_Access_Array_Access is access all CommonGameInitialization_Access_Array;
-   type CommonGameInitialization_Access_Array_Access_Array is array (Natural range <>) of CommonGameInitialization_Access_Array_Access;
-   type CommonGameInitialization_Access_Array_Access_Array_Access is access all CommonGameInitialization_Access_Array_Access_Array;
+
+   subtype CommonGameInitialization_Access is org.allbinary.game.init.CommonGameInitialization_Package_References.CommonGameInitialization_Access;
+   function "=" (Left, Right : CommonGameInitialization_Access) return Boolean renames org.allbinary.game.init.CommonGameInitialization_Package_References."=";
+   subtype CommonGameInitialization_Access_Array is org.allbinary.game.init.CommonGameInitialization_Package_References.CommonGameInitialization_Access_Array;
+   function "=" (Left, Right : CommonGameInitialization_Access_Array) return Boolean renames org.allbinary.game.init.CommonGameInitialization_Package_References."=";
+   subtype CommonGameInitialization_Access_Array_Access is org.allbinary.game.init.CommonGameInitialization_Package_References.CommonGameInitialization_Access_Array_Access;
+   function "=" (Left, Right : CommonGameInitialization_Access_Array_Access) return Boolean renames org.allbinary.game.init.CommonGameInitialization_Package_References."=";
+   subtype CommonGameInitialization_Access_Array_Access_Array is org.allbinary.game.init.CommonGameInitialization_Package_References.CommonGameInitialization_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonGameInitialization_Access_Array_Access_Array) return Boolean renames org.allbinary.game.init.CommonGameInitialization_Package_References."=";
+   subtype CommonGameInitialization_Access_Array_Access_Array_Access is org.allbinary.game.init.CommonGameInitialization_Package_References.CommonGameInitialization_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonGameInitialization_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.init.CommonGameInitialization_Package_References."=";
 
    type CommonGameInitialization is new BaseGameInitialization with record
       commonStrings : CommonStrings_Access;

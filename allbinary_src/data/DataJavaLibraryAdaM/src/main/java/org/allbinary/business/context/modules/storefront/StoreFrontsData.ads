@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.modules.storefront.StoreFrontsData_Package;
+package org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References is
+   type StoreFrontsData_Access is access all org.allbinary.business.context.modules.storefront.StoreFrontsData_Package.StoreFrontsData'Class;
+   type StoreFrontsData_Access_Array is array (Natural range <>) of StoreFrontsData_Access;
+   type StoreFrontsData_Access_Array_Access is access all StoreFrontsData_Access_Array;
+   type StoreFrontsData_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsData_Access_Array_Access;
+   type StoreFrontsData_Access_Array_Access_Array_Access is access all StoreFrontsData_Access_Array_Access_Array;
+end org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References;
+
+with org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.context.modules.storefront.StoreFrontsData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreFrontsData is tagged;
-   type StoreFrontsData_Access is access all StoreFrontsData'Class;
-   type StoreFrontsData_Access_Array is array (Natural range <>) of StoreFrontsData_Access;
-   type StoreFrontsData_Access_Array_Access is access all StoreFrontsData_Access_Array;
-   type StoreFrontsData_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsData_Access_Array_Access;
-   type StoreFrontsData_Access_Array_Access_Array_Access is access all StoreFrontsData_Access_Array_Access_Array;
+
+   subtype StoreFrontsData_Access is org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References.StoreFrontsData_Access;
+   function "=" (Left, Right : StoreFrontsData_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References."=";
+   subtype StoreFrontsData_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References.StoreFrontsData_Access_Array;
+   function "=" (Left, Right : StoreFrontsData_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References."=";
+   subtype StoreFrontsData_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References.StoreFrontsData_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontsData_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References."=";
+   subtype StoreFrontsData_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References.StoreFrontsData_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontsData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References."=";
+   subtype StoreFrontsData_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References.StoreFrontsData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontsData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontsData_Package_References."=";
 
    type StoreFrontsData is new Java_Object with record
       TYPE_Id : Unbounded_String;

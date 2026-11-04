@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.BasicPlayer_Package;
+package org.allbinary.media.audio.BasicPlayer_Package_References is
+   type BasicPlayer_Access is access all org.allbinary.media.audio.BasicPlayer_Package.BasicPlayer'Class;
+   type BasicPlayer_Access_Array is array (Natural range <>) of BasicPlayer_Access;
+   type BasicPlayer_Access_Array_Access is access all BasicPlayer_Access_Array;
+   type BasicPlayer_Access_Array_Access_Array is array (Natural range <>) of BasicPlayer_Access_Array_Access;
+   type BasicPlayer_Access_Array_Access_Array_Access is access all BasicPlayer_Access_Array_Access_Array;
+end org.allbinary.media.audio.BasicPlayer_Package_References;
+
+with org.allbinary.media.audio.BasicPlayer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+limited with javax.microedition.media.Control_Package;
+with javax.microedition.media.Control_Package_References;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
-with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
-with javax.microedition.media.TimeBase_Package; use javax.microedition.media.TimeBase_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package_References;
+limited with javax.microedition.media.TimeBase_Package;
+with javax.microedition.media.TimeBase_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.media.audio.TimeBaseInterface_Package; use org.allbinary.media.audio.TimeBaseInterface_Package;
 with org.allbinary.media.audio.Controllable2_Package; use org.allbinary.media.audio.Controllable2_Package;
 
@@ -35,13 +49,61 @@ package org.allbinary.media.audio.BasicPlayer_Package is
    package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package TimeBase_Package renames Standard.javax.microedition.media.TimeBase_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype Control_Access is javax.microedition.media.Control_Package_References.Control_Access;
+   use type Control_Access;
+   subtype Control_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array;
+   use type Control_Access_Array;
+   subtype Control_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access;
+   use type Control_Access_Array_Access;
+   subtype Control_Access_Array_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array;
+   use type Control_Access_Array_Access_Array;
+   subtype Control_Access_Array_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array_Access;
+   use type Control_Access_Array_Access_Array_Access;
+   subtype PlayerListener_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access;
+   use type PlayerListener_Access;
+   subtype PlayerListener_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array;
+   use type PlayerListener_Access_Array;
+   subtype PlayerListener_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access;
+   use type PlayerListener_Access_Array_Access;
+   subtype PlayerListener_Access_Array_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array;
+   use type PlayerListener_Access_Array_Access_Array;
+   subtype PlayerListener_Access_Array_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array_Access;
+   use type PlayerListener_Access_Array_Access_Array_Access;
+   subtype TimeBase_Access is javax.microedition.media.TimeBase_Package_References.TimeBase_Access;
+   use type TimeBase_Access;
+   subtype TimeBase_Access_Array is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array;
+   use type TimeBase_Access_Array;
+   subtype TimeBase_Access_Array_Access is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array_Access;
+   use type TimeBase_Access_Array_Access;
+   subtype TimeBase_Access_Array_Access_Array is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array_Access_Array;
+   use type TimeBase_Access_Array_Access_Array;
+   subtype TimeBase_Access_Array_Access_Array_Access is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array_Access_Array_Access;
+   use type TimeBase_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicPlayer is tagged;
-   type BasicPlayer_Access is access all BasicPlayer'Class;
-   type BasicPlayer_Access_Array is array (Natural range <>) of BasicPlayer_Access;
-   type BasicPlayer_Access_Array_Access is access all BasicPlayer_Access_Array;
-   type BasicPlayer_Access_Array_Access_Array is array (Natural range <>) of BasicPlayer_Access_Array_Access;
-   type BasicPlayer_Access_Array_Access_Array_Access is access all BasicPlayer_Access_Array_Access_Array;
+
+   subtype BasicPlayer_Access is org.allbinary.media.audio.BasicPlayer_Package_References.BasicPlayer_Access;
+   function "=" (Left, Right : BasicPlayer_Access) return Boolean renames org.allbinary.media.audio.BasicPlayer_Package_References."=";
+   subtype BasicPlayer_Access_Array is org.allbinary.media.audio.BasicPlayer_Package_References.BasicPlayer_Access_Array;
+   function "=" (Left, Right : BasicPlayer_Access_Array) return Boolean renames org.allbinary.media.audio.BasicPlayer_Package_References."=";
+   subtype BasicPlayer_Access_Array_Access is org.allbinary.media.audio.BasicPlayer_Package_References.BasicPlayer_Access_Array_Access;
+   function "=" (Left, Right : BasicPlayer_Access_Array_Access) return Boolean renames org.allbinary.media.audio.BasicPlayer_Package_References."=";
+   subtype BasicPlayer_Access_Array_Access_Array is org.allbinary.media.audio.BasicPlayer_Package_References.BasicPlayer_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicPlayer_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.BasicPlayer_Package_References."=";
+   subtype BasicPlayer_Access_Array_Access_Array_Access is org.allbinary.media.audio.BasicPlayer_Package_References.BasicPlayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicPlayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.BasicPlayer_Package_References."=";
 
    type BasicPlayer is new Java_Object and Player and TimeBaseInterface and Controllable2 with record
       listenersList : BasicArrayList_Access;

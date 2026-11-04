@@ -13,12 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.apache.xmlrpc.NullXmlRpcHandler_Package; use org.apache.xmlrpc.NullXmlRpcHandler_Package;
+with org.apache.xmlrpc.XmlRpcClient_Package; use org.apache.xmlrpc.XmlRpcClient_Package;
+with org.apache.xmlrpc.XmlRpcHandler_Package; use org.apache.xmlrpc.XmlRpcHandler_Package;
 
 package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
 
@@ -28,6 +34,66 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package NullXmlRpcHandler_Package renames Standard.org.apache.xmlrpc.NullXmlRpcHandler_Package;
+   subtype MyRandomFactory_Access is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access;
+   function "=" (Left, Right : MyRandomFactory_Access) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype MyRandomFactory_Access_Array is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access_Array;
+   function "=" (Left, Right : MyRandomFactory_Access_Array) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype MyRandomFactory_Access_Array_Access is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access_Array_Access;
+   function "=" (Left, Right : MyRandomFactory_Access_Array_Access) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype MyRandomFactory_Access_Array_Access_Array is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : MyRandomFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype MyRandomFactory_Access_Array_Access_Array_Access is org.allbinary.game.rand.MyRandomFactory_Package_References.MyRandomFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyRandomFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.rand.MyRandomFactory_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   function "=" (Left, Right : AbeClientInformationInterface_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   function "=" (Left, Right : AbeClientInformationInterface_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   function "=" (Left, Right : AbeClientInformationInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AbeClientInformationInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbeClientInformationInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype XmlRpcClient_Access is org.apache.xmlrpc.XmlRpcClient_Package_References.XmlRpcClient_Access;
+   function "=" (Left, Right : XmlRpcClient_Access) return Boolean renames org.apache.xmlrpc.XmlRpcClient_Package_References."=";
+   subtype XmlRpcClient_Access_Array is org.apache.xmlrpc.XmlRpcClient_Package_References.XmlRpcClient_Access_Array;
+   function "=" (Left, Right : XmlRpcClient_Access_Array) return Boolean renames org.apache.xmlrpc.XmlRpcClient_Package_References."=";
+   subtype XmlRpcClient_Access_Array_Access is org.apache.xmlrpc.XmlRpcClient_Package_References.XmlRpcClient_Access_Array_Access;
+   function "=" (Left, Right : XmlRpcClient_Access_Array_Access) return Boolean renames org.apache.xmlrpc.XmlRpcClient_Package_References."=";
+   subtype XmlRpcClient_Access_Array_Access_Array is org.apache.xmlrpc.XmlRpcClient_Package_References.XmlRpcClient_Access_Array_Access_Array;
+   function "=" (Left, Right : XmlRpcClient_Access_Array_Access_Array) return Boolean renames org.apache.xmlrpc.XmlRpcClient_Package_References."=";
+   subtype XmlRpcClient_Access_Array_Access_Array_Access is org.apache.xmlrpc.XmlRpcClient_Package_References.XmlRpcClient_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : XmlRpcClient_Access_Array_Access_Array_Access) return Boolean renames org.apache.xmlrpc.XmlRpcClient_Package_References."=";
+   subtype XmlRpcHandler_Access is org.apache.xmlrpc.XmlRpcHandler_Package_References.XmlRpcHandler_Access;
+   function "=" (Left, Right : XmlRpcHandler_Access) return Boolean renames org.apache.xmlrpc.XmlRpcHandler_Package_References."=";
+   subtype XmlRpcHandler_Access_Array is org.apache.xmlrpc.XmlRpcHandler_Package_References.XmlRpcHandler_Access_Array;
+   function "=" (Left, Right : XmlRpcHandler_Access_Array) return Boolean renames org.apache.xmlrpc.XmlRpcHandler_Package_References."=";
+   subtype XmlRpcHandler_Access_Array_Access is org.apache.xmlrpc.XmlRpcHandler_Package_References.XmlRpcHandler_Access_Array_Access;
+   function "=" (Left, Right : XmlRpcHandler_Access_Array_Access) return Boolean renames org.apache.xmlrpc.XmlRpcHandler_Package_References."=";
+   subtype XmlRpcHandler_Access_Array_Access_Array is org.apache.xmlrpc.XmlRpcHandler_Package_References.XmlRpcHandler_Access_Array_Access_Array;
+   function "=" (Left, Right : XmlRpcHandler_Access_Array_Access_Array) return Boolean renames org.apache.xmlrpc.XmlRpcHandler_Package_References."=";
+   subtype XmlRpcHandler_Access_Array_Access_Array_Access is org.apache.xmlrpc.XmlRpcHandler_Package_References.XmlRpcHandler_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : XmlRpcHandler_Access_Array_Access_Array_Access) return Boolean renames org.apache.xmlrpc.XmlRpcHandler_Package_References."=";
    procedure Initialize_Fields (This : in out XmlRpcAbeClient'Class) is
    begin
       null;
@@ -35,7 +101,7 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
       This.commonStrings := CommonStrings_Package.getInstance;
       
       
-      This.client := NullXmlRpcHandler_Package.NULL_XML_RPC_HANDLER;
+      This.client := XmlRpcHandler_Access (NullXmlRpcHandler_Package.NULL_XML_RPC_HANDLER);
       
       This.start := 0;
       This.maxServers := 0;

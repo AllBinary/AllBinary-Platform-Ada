@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.TouchFeature_Package; use org.allbinary.game.configuration.feature.TouchFeature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.TouchFeature_Package;
 
 package body org.allbinary.game.configuration.feature.TouchFeatureFactory_Package is
 
+   subtype TouchFeature_Access is org.allbinary.game.configuration.feature.TouchFeature_Package_References.TouchFeature_Access;
+   function "=" (Left, Right : TouchFeature_Access) return Boolean renames org.allbinary.game.configuration.feature.TouchFeature_Package_References."=";
+   subtype TouchFeature_Access_Array is org.allbinary.game.configuration.feature.TouchFeature_Package_References.TouchFeature_Access_Array;
+   function "=" (Left, Right : TouchFeature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.TouchFeature_Package_References."=";
+   subtype TouchFeature_Access_Array_Access is org.allbinary.game.configuration.feature.TouchFeature_Package_References.TouchFeature_Access_Array_Access;
+   function "=" (Left, Right : TouchFeature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.TouchFeature_Package_References."=";
+   subtype TouchFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.TouchFeature_Package_References.TouchFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : TouchFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.TouchFeature_Package_References."=";
+   subtype TouchFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.TouchFeature_Package_References.TouchFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TouchFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.TouchFeature_Package_References."=";
    procedure Initialize_Fields (This : in out TouchFeatureFactory'Class) is
    begin
       null;
@@ -28,7 +41,7 @@ package body org.allbinary.game.configuration.feature.TouchFeatureFactory_Packag
 
    function getInstance return TouchFeatureFactory_Access is
    begin
-        return TouchFeatureFactory_Package.instance;
+        return TouchFeatureFactory_Access (TouchFeatureFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out TouchFeatureFactory'Class) is

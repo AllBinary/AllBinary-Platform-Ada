@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.device.OpenGLESGraphicsFactory_Package; use org.allbinary.device.OpenGLESGraphicsFactory_Package;
+with org.allbinary.device.OpenGLESGraphicsFactory_Package;
 
 package body org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
 
+   subtype OpenGLESGraphicsFactory_Access is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access;
+   function "=" (Left, Right : OpenGLESGraphicsFactory_Access) return Boolean renames org.allbinary.device.OpenGLESGraphicsFactory_Package_References."=";
+   subtype OpenGLESGraphicsFactory_Access_Array is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access_Array;
+   function "=" (Left, Right : OpenGLESGraphicsFactory_Access_Array) return Boolean renames org.allbinary.device.OpenGLESGraphicsFactory_Package_References."=";
+   subtype OpenGLESGraphicsFactory_Access_Array_Access is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESGraphicsFactory_Access_Array_Access) return Boolean renames org.allbinary.device.OpenGLESGraphicsFactory_Package_References."=";
+   subtype OpenGLESGraphicsFactory_Access_Array_Access_Array is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLESGraphicsFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.device.OpenGLESGraphicsFactory_Package_References."=";
+   subtype OpenGLESGraphicsFactory_Access_Array_Access_Array_Access is org.allbinary.device.OpenGLESGraphicsFactory_Package_References.OpenGLESGraphicsFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESGraphicsFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.device.OpenGLESGraphicsFactory_Package_References."=";
    procedure Initialize_Fields (This : in out OpenGLESGraphicsCompositeFactory'Class) is
    begin
       null;
@@ -37,7 +49,7 @@ package body org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
 
    function getInstance return OpenGLESGraphicsCompositeFactory_Access is
    begin
-        return OpenGLESGraphicsCompositeFactory_Package.instance;
+        return OpenGLESGraphicsCompositeFactory_Access (OpenGLESGraphicsCompositeFactory_Package.instance);
    end getInstance;
 
    procedure set (This : in out OpenGLESGraphicsCompositeFactory; openGLESGraphicsFactory_Param : access OpenGLESGraphicsFactory_Package.OpenGLESGraphicsFactory'Class) is

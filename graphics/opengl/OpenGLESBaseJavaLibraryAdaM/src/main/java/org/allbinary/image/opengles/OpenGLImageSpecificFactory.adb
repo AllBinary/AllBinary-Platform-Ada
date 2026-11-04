@@ -16,16 +16,31 @@
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.image.opengles.OpenGLImageFactory_Package; use org.allbinary.image.opengles.OpenGLImageFactory_Package;
+with org.allbinary.image.opengles.OpenGLImageFactory_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
 
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype OpenGLImageFactory_Access is org.allbinary.image.opengles.OpenGLImageFactory_Package_References.OpenGLImageFactory_Access;
+   function "=" (Left, Right : OpenGLImageFactory_Access) return Boolean renames org.allbinary.image.opengles.OpenGLImageFactory_Package_References."=";
+   subtype OpenGLImageFactory_Access_Array is org.allbinary.image.opengles.OpenGLImageFactory_Package_References.OpenGLImageFactory_Access_Array;
+   function "=" (Left, Right : OpenGLImageFactory_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLImageFactory_Package_References."=";
+   subtype OpenGLImageFactory_Access_Array_Access is org.allbinary.image.opengles.OpenGLImageFactory_Package_References.OpenGLImageFactory_Access_Array_Access;
+   function "=" (Left, Right : OpenGLImageFactory_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLImageFactory_Package_References."=";
+   subtype OpenGLImageFactory_Access_Array_Access_Array is org.allbinary.image.opengles.OpenGLImageFactory_Package_References.OpenGLImageFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLImageFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLImageFactory_Package_References."=";
+   subtype OpenGLImageFactory_Access_Array_Access_Array_Access is org.allbinary.image.opengles.OpenGLImageFactory_Package_References.OpenGLImageFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLImageFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLImageFactory_Package_References."=";
    procedure Initialize_Fields (This : in out OpenGLImageSpecificFactory'Class) is
    begin
       null;
-      This.imageFactory := OpenGLImageFactory_Package.NULL_OPENGL_IMAGE_FACTORY;
+      This.imageFactory := OpenGLImageFactory_Access (OpenGLImageFactory_Package.NULL_OPENGL_IMAGE_FACTORY);
       This.updating := False;
    end Initialize_Fields;
 
@@ -44,7 +59,7 @@ package body org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
 
    function getInstance return OpenGLImageSpecificFactory_Access is
    begin
-        return OpenGLImageSpecificFactory_Package.instance;
+        return OpenGLImageSpecificFactory_Access (OpenGLImageSpecificFactory_Package.instance);
    end getInstance;
 
    procedure setImageFactory (This : in out OpenGLImageSpecificFactory; imageFactory_Param : access OpenGLImageFactory_Package.OpenGLImageFactory'Class) is

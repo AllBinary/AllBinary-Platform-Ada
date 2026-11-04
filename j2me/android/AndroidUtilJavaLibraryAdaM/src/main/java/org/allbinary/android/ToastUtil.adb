@@ -1,7 +1,10 @@
 --  Generated Code Do Not Modify
 
 
+with android.content.Context_Package; use android.content.Context_Package;
+with android.view.View_Package; use android.view.View_Package;
 with android.widget.Toast_Package; use android.widget.Toast_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
@@ -10,6 +13,36 @@ package body org.allbinary.android.ToastUtil_Package is
    package Toast_Package renames Standard.android.widget.Toast_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   subtype Context_Access is android.content.Context_Package_References.Context_Access;
+   function "=" (Left, Right : Context_Access) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array is android.content.Context_Package_References.Context_Access_Array;
+   function "=" (Left, Right : Context_Access_Array) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access;
+   function "=" (Left, Right : Context_Access_Array_Access) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array_Access_Array is android.content.Context_Package_References.Context_Access_Array_Access_Array;
+   function "=" (Left, Right : Context_Access_Array_Access_Array) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Context_Access_Array_Access_Array_Access) return Boolean renames android.content.Context_Package_References."=";
+   subtype View_Access is android.view.View_Package_References.View_Access;
+   function "=" (Left, Right : View_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array is android.view.View_Package_References.View_Access_Array;
+   function "=" (Left, Right : View_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array is android.view.View_Package_References.View_Access_Array_Access_Array;
+   function "=" (Left, Right : View_Access_Array_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out ToastUtil'Class) is
    begin
       null;
@@ -31,7 +64,7 @@ package body org.allbinary.android.ToastUtil_Package is
 
    function getInstance return ToastUtil_Access is
    begin
-        return ToastUtil_Package.instance;
+        return ToastUtil_Access (ToastUtil_Package.instance);
    end getInstance;
 
    procedure makeToast (This : in out ToastUtil; view_Param : access View_Package.View'Class; context_Param : access Context_Package.Context'Class; message : Unbounded_String; time : Integer) is

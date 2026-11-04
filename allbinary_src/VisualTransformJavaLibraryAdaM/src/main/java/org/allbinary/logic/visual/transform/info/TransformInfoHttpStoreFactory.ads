@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package;
+package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References is
+   type TransformInfoHttpStoreFactory_Access is access all org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package.TransformInfoHttpStoreFactory'Class;
+   type TransformInfoHttpStoreFactory_Access_Array is array (Natural range <>) of TransformInfoHttpStoreFactory_Access;
+   type TransformInfoHttpStoreFactory_Access_Array_Access is access all TransformInfoHttpStoreFactory_Access_Array;
+   type TransformInfoHttpStoreFactory_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpStoreFactory_Access_Array_Access;
+   type TransformInfoHttpStoreFactory_Access_Array_Access_Array_Access is access all TransformInfoHttpStoreFactory_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References;
+
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,18 +33,37 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransformInfoHttpStoreFactory is tagged;
-   type TransformInfoHttpStoreFactory_Access is access all TransformInfoHttpStoreFactory'Class;
-   type TransformInfoHttpStoreFactory_Access_Array is array (Natural range <>) of TransformInfoHttpStoreFactory_Access;
-   type TransformInfoHttpStoreFactory_Access_Array_Access is access all TransformInfoHttpStoreFactory_Access_Array;
-   type TransformInfoHttpStoreFactory_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpStoreFactory_Access_Array_Access;
-   type TransformInfoHttpStoreFactory_Access_Array_Access_Array_Access is access all TransformInfoHttpStoreFactory_Access_Array_Access_Array;
+
+   subtype TransformInfoHttpStoreFactory_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References.TransformInfoHttpStoreFactory_Access;
+   function "=" (Left, Right : TransformInfoHttpStoreFactory_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References."=";
+   subtype TransformInfoHttpStoreFactory_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References.TransformInfoHttpStoreFactory_Access_Array;
+   function "=" (Left, Right : TransformInfoHttpStoreFactory_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References."=";
+   subtype TransformInfoHttpStoreFactory_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References.TransformInfoHttpStoreFactory_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoHttpStoreFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References."=";
+   subtype TransformInfoHttpStoreFactory_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References.TransformInfoHttpStoreFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoHttpStoreFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References."=";
+   subtype TransformInfoHttpStoreFactory_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References.TransformInfoHttpStoreFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoHttpStoreFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package_References."=";
 
    type TransformInfoHttpStoreFactory is new Java_Object and TransformInfoFactoryInterface with null record;
    instance : TransformInfoHttpStoreFactory_Access;

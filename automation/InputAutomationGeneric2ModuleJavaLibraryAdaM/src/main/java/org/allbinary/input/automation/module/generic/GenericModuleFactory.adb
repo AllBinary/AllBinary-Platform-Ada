@@ -13,14 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package; use org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;
 with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
 with org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package; use org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
 with org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package; use org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
+with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package; use org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package;
 with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package; use org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
 
 package body org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package is
 
@@ -30,6 +34,16 @@ package body org.allbinary.input.automation.module.generic_Id.GenericModuleFacto
    package GenericProfile_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
    package NoImageComparatorConstraints_Package renames Standard.org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
    package NoMotionRectangleConstraints_Package renames Standard.org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
+   subtype RunnableInterface_Access is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access;
+   function "=" (Left, Right : RunnableInterface_Access) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array;
+   function "=" (Left, Right : RunnableInterface_Access_Array) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array_Access is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array_Access;
+   function "=" (Left, Right : RunnableInterface_Access_Array_Access) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array_Access_Array is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : RunnableInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array_Access_Array_Access is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RunnableInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
    procedure Initialize_Fields (This : in out GenericModuleFactory'Class) is
    begin
       null;

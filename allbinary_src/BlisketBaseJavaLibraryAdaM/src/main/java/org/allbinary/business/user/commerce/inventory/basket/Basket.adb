@@ -13,7 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
+with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
 with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
@@ -26,6 +28,16 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
    package InventoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
    package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   subtype Money_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access;
+   function "=" (Left, Right : Money_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array;
+   function "=" (Left, Right : Money_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access;
+   function "=" (Left, Right : Money_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array;
+   function "=" (Left, Right : Money_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Money_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
    procedure Initialize_Fields (This : in out Basket'Class) is
    begin
       null;
@@ -80,7 +92,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
    function getTotalWeight (This : in out Basket) return Unbounded_String is
       itemsAndNumberInBasket : HashMap_Access;
       totalWeight : Money_Access;
-      items : Set_Access;
+      items : Java_Object_Access;
       product : Unbounded_String;
       weightFloat : Float;
       itemArray : Java_Object_Access_Array_Access;
@@ -110,8 +122,8 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
         return This.items.size;
    end getNumberOfItems;
 
-   function getIds (This : in out Basket) return Set_Access is
-      set : Set_Access;
+   function getIds (This : in out Basket) return Java_Object_Access is
+      set : Java_Object_Access;
    begin
         set := This.items.keySet;
         return set;
@@ -133,7 +145,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
    function getSubTotal (This : in out Basket) return Money_Access is
       itemsAndNumberInBasket : HashMap_Access;
       subTotal : Money_Access;
-      items : Set_Access;
+      items : Java_Object_Access;
       inventoryEntityFactory : InventoryEntityFactory_Access;
       inventoryEntity : InventoryEntity_Access;
       itemArray : Java_Object_Access_Array_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.info.BasicViewData_Package;
+package org.allbinary.logic.visual.transform.info.BasicViewData_Package_References is
+   type BasicViewData_Access is access all org.allbinary.logic.visual.transform.info.BasicViewData_Package.BasicViewData'Class;
+   type BasicViewData_Access_Array is array (Natural range <>) of BasicViewData_Access;
+   type BasicViewData_Access_Array_Access is access all BasicViewData_Access_Array;
+   type BasicViewData_Access_Array_Access_Array is array (Natural range <>) of BasicViewData_Access_Array_Access;
+   type BasicViewData_Access_Array_Access_Array_Access is access all BasicViewData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.info.BasicViewData_Package_References;
+
+with org.allbinary.logic.visual.transform.info.BasicViewData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.transform.info.BasicViewData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicViewData is tagged;
-   type BasicViewData_Access is access all BasicViewData'Class;
-   type BasicViewData_Access_Array is array (Natural range <>) of BasicViewData_Access;
-   type BasicViewData_Access_Array_Access is access all BasicViewData_Access_Array;
-   type BasicViewData_Access_Array_Access_Array is array (Natural range <>) of BasicViewData_Access_Array_Access;
-   type BasicViewData_Access_Array_Access_Array_Access is access all BasicViewData_Access_Array_Access_Array;
+
+   subtype BasicViewData_Access is org.allbinary.logic.visual.transform.info.BasicViewData_Package_References.BasicViewData_Access;
+   function "=" (Left, Right : BasicViewData_Access) return Boolean renames org.allbinary.logic.visual.transform.info.BasicViewData_Package_References."=";
+   subtype BasicViewData_Access_Array is org.allbinary.logic.visual.transform.info.BasicViewData_Package_References.BasicViewData_Access_Array;
+   function "=" (Left, Right : BasicViewData_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.BasicViewData_Package_References."=";
+   subtype BasicViewData_Access_Array_Access is org.allbinary.logic.visual.transform.info.BasicViewData_Package_References.BasicViewData_Access_Array_Access;
+   function "=" (Left, Right : BasicViewData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.BasicViewData_Package_References."=";
+   subtype BasicViewData_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.BasicViewData_Package_References.BasicViewData_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicViewData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.BasicViewData_Package_References."=";
+   subtype BasicViewData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.BasicViewData_Package_References.BasicViewData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicViewData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.BasicViewData_Package_References."=";
 
    type BasicViewData is new Java_Object with record
       GENERICDIR : Unbounded_String;

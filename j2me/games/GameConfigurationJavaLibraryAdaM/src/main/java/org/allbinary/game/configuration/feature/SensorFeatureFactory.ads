@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+package org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References is
+   type SensorFeatureFactory_Access is access all org.allbinary.game.configuration.feature.SensorFeatureFactory_Package.SensorFeatureFactory'Class;
+   type SensorFeatureFactory_Access_Array is array (Natural range <>) of SensorFeatureFactory_Access;
+   type SensorFeatureFactory_Access_Array_Access is access all SensorFeatureFactory_Access_Array;
+   type SensorFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of SensorFeatureFactory_Access_Array_Access;
+   type SensorFeatureFactory_Access_Array_Access_Array_Access is access all SensorFeatureFactory_Access_Array_Access_Array;
+end org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References;
+
+with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.feature.SensorFeature_Package; use org.allbinary.game.configuration.feature.SensorFeature_Package;
+limited with org.allbinary.game.configuration.feature.SensorFeature_Package;
+with org.allbinary.game.configuration.feature.SensorFeature_Package_References;
 
 package org.allbinary.game.configuration.feature.SensorFeatureFactory_Package is
 
+   package Reference_Types is
+   subtype SensorFeature_Access is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access;
+   use type SensorFeature_Access;
+   subtype SensorFeature_Access_Array is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access_Array;
+   use type SensorFeature_Access_Array;
+   subtype SensorFeature_Access_Array_Access is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access_Array_Access;
+   use type SensorFeature_Access_Array_Access;
+   subtype SensorFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access_Array_Access_Array;
+   use type SensorFeature_Access_Array_Access_Array;
+   subtype SensorFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.SensorFeature_Package_References.SensorFeature_Access_Array_Access_Array_Access;
+   use type SensorFeature_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SensorFeatureFactory is tagged;
-   type SensorFeatureFactory_Access is access all SensorFeatureFactory'Class;
-   type SensorFeatureFactory_Access_Array is array (Natural range <>) of SensorFeatureFactory_Access;
-   type SensorFeatureFactory_Access_Array_Access is access all SensorFeatureFactory_Access_Array;
-   type SensorFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of SensorFeatureFactory_Access_Array_Access;
-   type SensorFeatureFactory_Access_Array_Access_Array_Access is access all SensorFeatureFactory_Access_Array_Access_Array;
+
+   subtype SensorFeatureFactory_Access is org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References.SensorFeatureFactory_Access;
+   function "=" (Left, Right : SensorFeatureFactory_Access) return Boolean renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References."=";
+   subtype SensorFeatureFactory_Access_Array is org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References.SensorFeatureFactory_Access_Array;
+   function "=" (Left, Right : SensorFeatureFactory_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References."=";
+   subtype SensorFeatureFactory_Access_Array_Access is org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References.SensorFeatureFactory_Access_Array_Access;
+   function "=" (Left, Right : SensorFeatureFactory_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References."=";
+   subtype SensorFeatureFactory_Access_Array_Access_Array is org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References.SensorFeatureFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : SensorFeatureFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References."=";
+   subtype SensorFeatureFactory_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References.SensorFeatureFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SensorFeatureFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package_References."=";
 
    type SensorFeatureFactory is new Java_Object with record
       NO_ORIENTATION : SensorFeature_Access;

@@ -12,7 +12,7 @@ package body org.bouncycastle.jce.provider.BouncyCastleProvider_Package is
 
    procedure Initialize (This : in out BouncyCastleProvider'Class) is
    begin
-        Provider_Package.Initialize (This, BouncyCastleProvider_Package.PROVIDER_NAME, 1.41, BouncyCastleProvider_Package.info);
+        null;
    end Initialize;
 
    function Create return BouncyCastleProvider_Access is

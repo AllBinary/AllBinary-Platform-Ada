@@ -26,7 +26,7 @@ package body org.allbinary.logic.communication.http.request.HttpRequestUtil_Pack
 
    function getInstance return HttpRequestUtil_Access is
    begin
-        return HttpRequestUtil_Package.instance;
+        return HttpRequestUtil_Access (HttpRequestUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out HttpRequestUtil'Class) is

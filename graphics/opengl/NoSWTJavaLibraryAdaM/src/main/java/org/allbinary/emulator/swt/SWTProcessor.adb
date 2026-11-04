@@ -13,11 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;
 with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
+with org.eclipse.swt.widgets.Display_Package;
 
 package body org.allbinary.emulator.swt.SWTProcessor_Package is
 
    package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
+   subtype Display_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access;
+   function "=" (Left, Right : Display_Access) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array;
+   function "=" (Left, Right : Display_Access_Array) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access;
+   function "=" (Left, Right : Display_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array_Access_Array is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access_Array;
+   function "=" (Left, Right : Display_Access_Array_Access_Array) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array_Access_Array_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Display_Access_Array_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
    procedure Initialize_Fields (This : in out SWTProcessor'Class) is
    begin
       null;
@@ -39,7 +51,7 @@ package body org.allbinary.emulator.swt.SWTProcessor_Package is
 
    function getInstance return SWTProcessor_Access is
    begin
-        return SWTProcessor_Package.instance;
+        return SWTProcessor_Access (SWTProcessor_Package.instance);
    end getInstance;
 
    procedure process (This : in out SWTProcessor; display_Param : access Display_Package.Display'Class) is

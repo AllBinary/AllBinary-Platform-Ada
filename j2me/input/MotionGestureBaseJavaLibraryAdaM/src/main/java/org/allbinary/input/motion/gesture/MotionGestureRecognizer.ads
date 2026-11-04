@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
+package org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References is
+   type MotionGestureRecognizer_Access is access all org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package.MotionGestureRecognizer'Class;
+   type MotionGestureRecognizer_Access_Array is array (Natural range <>) of MotionGestureRecognizer_Access;
+   type MotionGestureRecognizer_Access_Array_Access is access all MotionGestureRecognizer_Access_Array;
+   type MotionGestureRecognizer_Access_Array_Access_Array is array (Natural range <>) of MotionGestureRecognizer_Access_Array_Access;
+   type MotionGestureRecognizer_Access_Array_Access_Array_Access is access all MotionGestureRecognizer_Access_Array_Access_Array;
+end org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References;
+
+with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.Line_Package; use org.allbinary.graphics.Line_Package;
-with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
-with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package; use org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.math.J2SEMath_Package; use org.allbinary.logic.math.J2SEMath_Package;
-with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+limited with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
+limited with org.allbinary.graphics.Line_Package;
+with org.allbinary.graphics.Line_Package_References;
+limited with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References;
+limited with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
+with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.math.J2SEMath_Package;
+with org.allbinary.logic.math.J2SEMath_Package_References;
+limited with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References;
 
 package org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
 
@@ -37,13 +54,91 @@ package org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package J2SEMath_Package renames Standard.org.allbinary.logic.math.J2SEMath_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package Reference_Types is
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   use type GPoint_Access;
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   use type GPoint_Access_Array;
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   use type GPoint_Access_Array_Access;
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   use type GPoint_Access_Array_Access_Array;
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   use type GPoint_Access_Array_Access_Array_Access;
+   subtype Line_Access is org.allbinary.graphics.Line_Package_References.Line_Access;
+   use type Line_Access;
+   subtype Line_Access_Array is org.allbinary.graphics.Line_Package_References.Line_Access_Array;
+   use type Line_Access_Array;
+   subtype Line_Access_Array_Access is org.allbinary.graphics.Line_Package_References.Line_Access_Array_Access;
+   use type Line_Access_Array_Access;
+   subtype Line_Access_Array_Access_Array is org.allbinary.graphics.Line_Package_References.Line_Access_Array_Access_Array;
+   use type Line_Access_Array_Access_Array;
+   subtype Line_Access_Array_Access_Array_Access is org.allbinary.graphics.Line_Package_References.Line_Access_Array_Access_Array_Access;
+   use type Line_Access_Array_Access_Array_Access;
+   subtype BasicMotionGesturesHandler_Access is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access;
+   use type BasicMotionGesturesHandler_Access;
+   subtype BasicMotionGesturesHandler_Access_Array is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access_Array;
+   use type BasicMotionGesturesHandler_Access_Array;
+   subtype BasicMotionGesturesHandler_Access_Array_Access is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access_Array_Access;
+   use type BasicMotionGesturesHandler_Access_Array_Access;
+   subtype BasicMotionGesturesHandler_Access_Array_Access_Array is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access_Array_Access_Array;
+   use type BasicMotionGesturesHandler_Access_Array_Access_Array;
+   subtype BasicMotionGesturesHandler_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package_References.BasicMotionGesturesHandler_Access_Array_Access_Array_Access;
+   use type BasicMotionGesturesHandler_Access_Array_Access_Array_Access;
+   subtype MotionEventCircularPool_Access is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access;
+   use type MotionEventCircularPool_Access;
+   subtype MotionEventCircularPool_Access_Array is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array;
+   use type MotionEventCircularPool_Access_Array;
+   subtype MotionEventCircularPool_Access_Array_Access is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array_Access;
+   use type MotionEventCircularPool_Access_Array_Access;
+   subtype MotionEventCircularPool_Access_Array_Access_Array is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array_Access_Array;
+   use type MotionEventCircularPool_Access_Array_Access_Array;
+   subtype MotionEventCircularPool_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array_Access_Array_Access;
+   use type MotionEventCircularPool_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype J2SEMath_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access;
+   use type J2SEMath_Access;
+   subtype J2SEMath_Access_Array is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array;
+   use type J2SEMath_Access_Array;
+   subtype J2SEMath_Access_Array_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access;
+   use type J2SEMath_Access_Array_Access;
+   subtype J2SEMath_Access_Array_Access_Array is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access_Array;
+   use type J2SEMath_Access_Array_Access_Array;
+   subtype J2SEMath_Access_Array_Access_Array_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access_Array_Access;
+   use type J2SEMath_Access_Array_Access_Array_Access;
+   subtype BasicEventHandler_Access is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access;
+   use type BasicEventHandler_Access;
+   subtype BasicEventHandler_Access_Array is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access_Array;
+   use type BasicEventHandler_Access_Array;
+   subtype BasicEventHandler_Access_Array_Access is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access_Array_Access;
+   use type BasicEventHandler_Access_Array_Access;
+   subtype BasicEventHandler_Access_Array_Access_Array is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access_Array_Access_Array;
+   use type BasicEventHandler_Access_Array_Access_Array;
+   subtype BasicEventHandler_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References.BasicEventHandler_Access_Array_Access_Array_Access;
+   use type BasicEventHandler_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MotionGestureRecognizer is tagged;
-   type MotionGestureRecognizer_Access is access all MotionGestureRecognizer'Class;
-   type MotionGestureRecognizer_Access_Array is array (Natural range <>) of MotionGestureRecognizer_Access;
-   type MotionGestureRecognizer_Access_Array_Access is access all MotionGestureRecognizer_Access_Array;
-   type MotionGestureRecognizer_Access_Array_Access_Array is array (Natural range <>) of MotionGestureRecognizer_Access_Array_Access;
-   type MotionGestureRecognizer_Access_Array_Access_Array_Access is access all MotionGestureRecognizer_Access_Array_Access_Array;
+
+   subtype MotionGestureRecognizer_Access is org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References.MotionGestureRecognizer_Access;
+   function "=" (Left, Right : MotionGestureRecognizer_Access) return Boolean renames org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References."=";
+   subtype MotionGestureRecognizer_Access_Array is org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References.MotionGestureRecognizer_Access_Array;
+   function "=" (Left, Right : MotionGestureRecognizer_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References."=";
+   subtype MotionGestureRecognizer_Access_Array_Access is org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References.MotionGestureRecognizer_Access_Array_Access;
+   function "=" (Left, Right : MotionGestureRecognizer_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References."=";
+   subtype MotionGestureRecognizer_Access_Array_Access_Array is org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References.MotionGestureRecognizer_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionGestureRecognizer_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References."=";
+   subtype MotionGestureRecognizer_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References.MotionGestureRecognizer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionGestureRecognizer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References."=";
 
    type MotionGestureRecognizer is new Java_Object with record
       logUtil : LogUtil_Access;

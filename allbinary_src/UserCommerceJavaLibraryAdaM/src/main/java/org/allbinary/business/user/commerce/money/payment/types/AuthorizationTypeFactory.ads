@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package;
+package org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References is
+   type AuthorizationTypeFactory_Access is access all org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package.AuthorizationTypeFactory'Class;
+   type AuthorizationTypeFactory_Access_Array is array (Natural range <>) of AuthorizationTypeFactory_Access;
+   type AuthorizationTypeFactory_Access_Array_Access is access all AuthorizationTypeFactory_Access_Array;
+   type AuthorizationTypeFactory_Access_Array_Access_Array is array (Natural range <>) of AuthorizationTypeFactory_Access_Array_Access;
+   type AuthorizationTypeFactory_Access_Array_Access_Array_Access is access all AuthorizationTypeFactory_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package; use org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package;
+limited with org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References;
 
 package org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package is
 
+   package Reference_Types is
+   subtype AuthorizationType_Access is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access;
+   use type AuthorizationType_Access;
+   subtype AuthorizationType_Access_Array is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access_Array;
+   use type AuthorizationType_Access_Array;
+   subtype AuthorizationType_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access_Array_Access;
+   use type AuthorizationType_Access_Array_Access;
+   subtype AuthorizationType_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access_Array_Access_Array;
+   use type AuthorizationType_Access_Array_Access_Array;
+   subtype AuthorizationType_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.AuthorizationType_Package_References.AuthorizationType_Access_Array_Access_Array_Access;
+   use type AuthorizationType_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AuthorizationTypeFactory is tagged;
-   type AuthorizationTypeFactory_Access is access all AuthorizationTypeFactory'Class;
-   type AuthorizationTypeFactory_Access_Array is array (Natural range <>) of AuthorizationTypeFactory_Access;
-   type AuthorizationTypeFactory_Access_Array_Access is access all AuthorizationTypeFactory_Access_Array;
-   type AuthorizationTypeFactory_Access_Array_Access_Array is array (Natural range <>) of AuthorizationTypeFactory_Access_Array_Access;
-   type AuthorizationTypeFactory_Access_Array_Access_Array_Access is access all AuthorizationTypeFactory_Access_Array_Access_Array;
+
+   subtype AuthorizationTypeFactory_Access is org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References.AuthorizationTypeFactory_Access;
+   function "=" (Left, Right : AuthorizationTypeFactory_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References."=";
+   subtype AuthorizationTypeFactory_Access_Array is org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References.AuthorizationTypeFactory_Access_Array;
+   function "=" (Left, Right : AuthorizationTypeFactory_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References."=";
+   subtype AuthorizationTypeFactory_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References.AuthorizationTypeFactory_Access_Array_Access;
+   function "=" (Left, Right : AuthorizationTypeFactory_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References."=";
+   subtype AuthorizationTypeFactory_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References.AuthorizationTypeFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : AuthorizationTypeFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References."=";
+   subtype AuthorizationTypeFactory_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References.AuthorizationTypeFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AuthorizationTypeFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.AuthorizationTypeFactory_Package_References."=";
 
    type AuthorizationTypeFactory is new Java_Object with record
       NONE : AuthorizationType_Access;

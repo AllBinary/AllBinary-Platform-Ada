@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.collision.CollisionType_Package;
+package org.allbinary.game.collision.CollisionType_Package_References is
+   type CollisionType_Access is access all org.allbinary.game.collision.CollisionType_Package.CollisionType'Class;
+   type CollisionType_Access_Array is array (Natural range <>) of CollisionType_Access;
+   type CollisionType_Access_Array_Access is access all CollisionType_Access_Array;
+   type CollisionType_Access_Array_Access_Array is array (Natural range <>) of CollisionType_Access_Array_Access;
+   type CollisionType_Access_Array_Access_Array_Access is access all CollisionType_Access_Array_Access_Array;
+end org.allbinary.game.collision.CollisionType_Package_References;
+
+with org.allbinary.game.collision.CollisionType_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.collision.CollisionType_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CollisionType is tagged;
-   type CollisionType_Access is access all CollisionType'Class;
-   type CollisionType_Access_Array is array (Natural range <>) of CollisionType_Access;
-   type CollisionType_Access_Array_Access is access all CollisionType_Access_Array;
-   type CollisionType_Access_Array_Access_Array is array (Natural range <>) of CollisionType_Access_Array_Access;
-   type CollisionType_Access_Array_Access_Array_Access is access all CollisionType_Access_Array_Access_Array;
+
+   subtype CollisionType_Access is org.allbinary.game.collision.CollisionType_Package_References.CollisionType_Access;
+   function "=" (Left, Right : CollisionType_Access) return Boolean renames org.allbinary.game.collision.CollisionType_Package_References."=";
+   subtype CollisionType_Access_Array is org.allbinary.game.collision.CollisionType_Package_References.CollisionType_Access_Array;
+   function "=" (Left, Right : CollisionType_Access_Array) return Boolean renames org.allbinary.game.collision.CollisionType_Package_References."=";
+   subtype CollisionType_Access_Array_Access is org.allbinary.game.collision.CollisionType_Package_References.CollisionType_Access_Array_Access;
+   function "=" (Left, Right : CollisionType_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollisionType_Package_References."=";
+   subtype CollisionType_Access_Array_Access_Array is org.allbinary.game.collision.CollisionType_Package_References.CollisionType_Access_Array_Access_Array;
+   function "=" (Left, Right : CollisionType_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.CollisionType_Package_References."=";
+   subtype CollisionType_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollisionType_Package_References.CollisionType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollisionType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollisionType_Package_References."=";
 
    type CollisionType is new Java_Object with record
       name : Unbounded_String;

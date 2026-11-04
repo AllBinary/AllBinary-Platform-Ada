@@ -13,7 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.data.resource.ResourceUtil_Package;
 
 package body org.allbinary.logic.system.PlatformAssetManager_Package is
 
@@ -38,7 +40,7 @@ package body org.allbinary.logic.system.PlatformAssetManager_Package is
 
    function getInstance return PlatformAssetManager_Access is
    begin
-        return PlatformAssetManager_Package.instance;
+        return PlatformAssetManager_Access (PlatformAssetManager_Package.instance);
    end getInstance;
 
    --  throws Exception

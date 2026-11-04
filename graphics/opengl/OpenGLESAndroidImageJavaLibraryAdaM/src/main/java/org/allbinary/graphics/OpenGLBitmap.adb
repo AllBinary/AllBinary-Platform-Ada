@@ -1,9 +1,21 @@
 --  Generated Code Do Not Modify
 
 
+with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
 package body org.allbinary.graphics.OpenGLBitmap_Package is
 
+   subtype Bitmap_Access is android.graphics.Bitmap_Package_References.Bitmap_Access;
+   function "=" (Left, Right : Bitmap_Access) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype Bitmap_Access_Array is android.graphics.Bitmap_Package_References.Bitmap_Access_Array;
+   function "=" (Left, Right : Bitmap_Access_Array) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype Bitmap_Access_Array_Access is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access;
+   function "=" (Left, Right : Bitmap_Access_Array_Access) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype Bitmap_Access_Array_Access_Array is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access_Array;
+   function "=" (Left, Right : Bitmap_Access_Array_Access_Array) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype Bitmap_Access_Array_Access_Array_Access is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Bitmap_Access_Array_Access_Array_Access) return Boolean renames android.graphics.Bitmap_Package_References."=";
    procedure Initialize_Fields (This : in out OpenGLBitmap'Class) is
    begin
       null;

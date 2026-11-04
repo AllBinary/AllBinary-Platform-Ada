@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.PaymentGatewayHelperFactory_Package;
+package admin.taghelpers.PaymentGatewayHelperFactory_Package_References is
+   type PaymentGatewayHelperFactory_Access is access all admin.taghelpers.PaymentGatewayHelperFactory_Package.PaymentGatewayHelperFactory'Class;
+   type PaymentGatewayHelperFactory_Access_Array is array (Natural range <>) of PaymentGatewayHelperFactory_Access;
+   type PaymentGatewayHelperFactory_Access_Array_Access is access all PaymentGatewayHelperFactory_Access_Array;
+   type PaymentGatewayHelperFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayHelperFactory_Access_Array_Access;
+   type PaymentGatewayHelperFactory_Access_Array_Access_Array_Access is access all PaymentGatewayHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.PaymentGatewayHelperFactory_Package_References;
+
+with admin.taghelpers.PaymentGatewayHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.PaymentGatewayHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PaymentGatewayHelperFactory is tagged;
-   type PaymentGatewayHelperFactory_Access is access all PaymentGatewayHelperFactory'Class;
-   type PaymentGatewayHelperFactory_Access_Array is array (Natural range <>) of PaymentGatewayHelperFactory_Access;
-   type PaymentGatewayHelperFactory_Access_Array_Access is access all PaymentGatewayHelperFactory_Access_Array;
-   type PaymentGatewayHelperFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayHelperFactory_Access_Array_Access;
-   type PaymentGatewayHelperFactory_Access_Array_Access_Array_Access is access all PaymentGatewayHelperFactory_Access_Array_Access_Array;
+
+   subtype PaymentGatewayHelperFactory_Access is admin.taghelpers.PaymentGatewayHelperFactory_Package_References.PaymentGatewayHelperFactory_Access;
+   function "=" (Left, Right : PaymentGatewayHelperFactory_Access) return Boolean renames admin.taghelpers.PaymentGatewayHelperFactory_Package_References."=";
+   subtype PaymentGatewayHelperFactory_Access_Array is admin.taghelpers.PaymentGatewayHelperFactory_Package_References.PaymentGatewayHelperFactory_Access_Array;
+   function "=" (Left, Right : PaymentGatewayHelperFactory_Access_Array) return Boolean renames admin.taghelpers.PaymentGatewayHelperFactory_Package_References."=";
+   subtype PaymentGatewayHelperFactory_Access_Array_Access is admin.taghelpers.PaymentGatewayHelperFactory_Package_References.PaymentGatewayHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentGatewayHelperFactory_Package_References."=";
+   subtype PaymentGatewayHelperFactory_Access_Array_Access_Array is admin.taghelpers.PaymentGatewayHelperFactory_Package_References.PaymentGatewayHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentGatewayHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PaymentGatewayHelperFactory_Package_References."=";
+   subtype PaymentGatewayHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.PaymentGatewayHelperFactory_Package_References.PaymentGatewayHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentGatewayHelperFactory_Package_References."=";
 
    type PaymentGatewayHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

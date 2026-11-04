@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package;
+package org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References is
+   type VirtualKeyboardAPI1_Access is access all org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package.VirtualKeyboardAPI1'Class;
+   type VirtualKeyboardAPI1_Access_Array is array (Natural range <>) of VirtualKeyboardAPI1_Access;
+   type VirtualKeyboardAPI1_Access_Array_Access is access all VirtualKeyboardAPI1_Access_Array;
+   type VirtualKeyboardAPI1_Access_Array_Access_Array is array (Natural range <>) of VirtualKeyboardAPI1_Access_Array_Access;
+   type VirtualKeyboardAPI1_Access_Array_Access_Array_Access is access all VirtualKeyboardAPI1_Access_Array_Access_Array;
+end org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References;
+
+with org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,20 +32,39 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.android.input.VirtualKeyboard_Package; use org.allbinary.android.input.VirtualKeyboard_Package;
 with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; use org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
-with android.app.Activity_Package; use android.app.Activity_Package;
+limited with android.app.Activity_Package;
+with android.app.Activity_Package_References;
 
 package org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
 
    package VirtualKeyboard_Package renames Standard.org.allbinary.android.input.VirtualKeyboard_Package;
    package VirtualKeyboardEventListenerInterface_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
    package Activity_Package renames Standard.android.app.Activity_Package;
+   package Reference_Types is
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   use type Activity_Access;
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   use type Activity_Access_Array;
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   use type Activity_Access_Array_Access;
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   use type Activity_Access_Array_Access_Array;
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   use type Activity_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type VirtualKeyboardAPI1 is tagged;
-   type VirtualKeyboardAPI1_Access is access all VirtualKeyboardAPI1'Class;
-   type VirtualKeyboardAPI1_Access_Array is array (Natural range <>) of VirtualKeyboardAPI1_Access;
-   type VirtualKeyboardAPI1_Access_Array_Access is access all VirtualKeyboardAPI1_Access_Array;
-   type VirtualKeyboardAPI1_Access_Array_Access_Array is array (Natural range <>) of VirtualKeyboardAPI1_Access_Array_Access;
-   type VirtualKeyboardAPI1_Access_Array_Access_Array_Access is access all VirtualKeyboardAPI1_Access_Array_Access_Array;
+
+   subtype VirtualKeyboardAPI1_Access is org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References.VirtualKeyboardAPI1_Access;
+   function "=" (Left, Right : VirtualKeyboardAPI1_Access) return Boolean renames org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References."=";
+   subtype VirtualKeyboardAPI1_Access_Array is org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References.VirtualKeyboardAPI1_Access_Array;
+   function "=" (Left, Right : VirtualKeyboardAPI1_Access_Array) return Boolean renames org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References."=";
+   subtype VirtualKeyboardAPI1_Access_Array_Access is org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References.VirtualKeyboardAPI1_Access_Array_Access;
+   function "=" (Left, Right : VirtualKeyboardAPI1_Access_Array_Access) return Boolean renames org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References."=";
+   subtype VirtualKeyboardAPI1_Access_Array_Access_Array is org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References.VirtualKeyboardAPI1_Access_Array_Access_Array;
+   function "=" (Left, Right : VirtualKeyboardAPI1_Access_Array_Access_Array) return Boolean renames org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References."=";
+   subtype VirtualKeyboardAPI1_Access_Array_Access_Array_Access is org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References.VirtualKeyboardAPI1_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VirtualKeyboardAPI1_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package_References."=";
 
    type VirtualKeyboardAPI1 is new VirtualKeyboard and VirtualKeyboardEventListenerInterface with null record;
    MIN_API : Integer;

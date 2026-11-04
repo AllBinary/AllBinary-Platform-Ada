@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.sql.AbSqlBean_Package;
+package org.allbinary.logic.communication.sql.AbSqlBean_Package_References is
+   type AbSqlBean_Access is access all org.allbinary.logic.communication.sql.AbSqlBean_Package.AbSqlBean'Class;
+   type AbSqlBean_Access_Array is array (Natural range <>) of AbSqlBean_Access;
+   type AbSqlBean_Access_Array_Access is access all AbSqlBean_Access_Array;
+   type AbSqlBean_Access_Array_Access_Array is array (Natural range <>) of AbSqlBean_Access_Array_Access;
+   type AbSqlBean_Access_Array_Access_Array_Access is access all AbSqlBean_Access_Array_Access_Array;
+end org.allbinary.logic.communication.sql.AbSqlBean_Package_References;
+
+with org.allbinary.logic.communication.sql.AbSqlBean_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,8 +33,10 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.sql.ResultSet_Package; use java.sql.ResultSet_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.business.init.db.DbConnectionInfo_Package;
+with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlRow_Package; use org.allbinary.logic.communication.sql.AbSqlRow_Package;
 
 package org.allbinary.logic.communication.sql.AbSqlBean_Package is
@@ -32,13 +44,41 @@ package org.allbinary.logic.communication.sql.AbSqlBean_Package is
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype DbConnectionInfo_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access;
+   use type DbConnectionInfo_Access;
+   subtype DbConnectionInfo_Access_Array is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array;
+   use type DbConnectionInfo_Access_Array;
+   subtype DbConnectionInfo_Access_Array_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array_Access;
+   use type DbConnectionInfo_Access_Array_Access;
+   subtype DbConnectionInfo_Access_Array_Access_Array is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array_Access_Array;
+   use type DbConnectionInfo_Access_Array_Access_Array;
+   subtype DbConnectionInfo_Access_Array_Access_Array_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array_Access_Array_Access;
+   use type DbConnectionInfo_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbSqlBean is tagged;
-   type AbSqlBean_Access is access all AbSqlBean'Class;
-   type AbSqlBean_Access_Array is array (Natural range <>) of AbSqlBean_Access;
-   type AbSqlBean_Access_Array_Access is access all AbSqlBean_Access_Array;
-   type AbSqlBean_Access_Array_Access_Array is array (Natural range <>) of AbSqlBean_Access_Array_Access;
-   type AbSqlBean_Access_Array_Access_Array_Access is access all AbSqlBean_Access_Array_Access_Array;
+
+   subtype AbSqlBean_Access is org.allbinary.logic.communication.sql.AbSqlBean_Package_References.AbSqlBean_Access;
+   function "=" (Left, Right : AbSqlBean_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
+   subtype AbSqlBean_Access_Array is org.allbinary.logic.communication.sql.AbSqlBean_Package_References.AbSqlBean_Access_Array;
+   function "=" (Left, Right : AbSqlBean_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
+   subtype AbSqlBean_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlBean_Package_References.AbSqlBean_Access_Array_Access;
+   function "=" (Left, Right : AbSqlBean_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
+   subtype AbSqlBean_Access_Array_Access_Array is org.allbinary.logic.communication.sql.AbSqlBean_Package_References.AbSqlBean_Access_Array_Access_Array;
+   function "=" (Left, Right : AbSqlBean_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
+   subtype AbSqlBean_Access_Array_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlBean_Package_References.AbSqlBean_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbSqlBean_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
 
    type AbSqlBean is new AbSqlRow with record
       logUtil : LogUtil_Access;

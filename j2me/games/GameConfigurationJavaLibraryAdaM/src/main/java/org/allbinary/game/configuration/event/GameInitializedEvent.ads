@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+package org.allbinary.game.configuration.event.GameInitializedEvent_Package_References is
+   type GameInitializedEvent_Access is access all org.allbinary.game.configuration.event.GameInitializedEvent_Package.GameInitializedEvent'Class;
+   type GameInitializedEvent_Access_Array is array (Natural range <>) of GameInitializedEvent_Access;
+   type GameInitializedEvent_Access_Array_Access is access all GameInitializedEvent_Access_Array;
+   type GameInitializedEvent_Access_Array_Access_Array is array (Natural range <>) of GameInitializedEvent_Access_Array_Access;
+   type GameInitializedEvent_Access_Array_Access_Array_Access is access all GameInitializedEvent_Access_Array_Access_Array;
+end org.allbinary.game.configuration.event.GameInitializedEvent_Package_References;
+
+with org.allbinary.game.configuration.event.GameInitializedEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.resource.ResourceLoadingLevel_Package; use org.allbinary.game.resource.ResourceLoadingLevel_Package;
+limited with org.allbinary.game.resource.ResourceLoadingLevel_Package;
+with org.allbinary.game.resource.ResourceLoadingLevel_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
 package org.allbinary.game.configuration.event.GameInitializedEvent_Package is
 
    package ResourceLoadingLevel_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevel_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   subtype ResourceLoadingLevel_Access is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access;
+   use type ResourceLoadingLevel_Access;
+   subtype ResourceLoadingLevel_Access_Array is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array;
+   use type ResourceLoadingLevel_Access_Array;
+   subtype ResourceLoadingLevel_Access_Array_Access is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array_Access;
+   use type ResourceLoadingLevel_Access_Array_Access;
+   subtype ResourceLoadingLevel_Access_Array_Access_Array is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array_Access_Array;
+   use type ResourceLoadingLevel_Access_Array_Access_Array;
+   subtype ResourceLoadingLevel_Access_Array_Access_Array_Access is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array_Access_Array_Access;
+   use type ResourceLoadingLevel_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameInitializedEvent is tagged;
-   type GameInitializedEvent_Access is access all GameInitializedEvent'Class;
-   type GameInitializedEvent_Access_Array is array (Natural range <>) of GameInitializedEvent_Access;
-   type GameInitializedEvent_Access_Array_Access is access all GameInitializedEvent_Access_Array;
-   type GameInitializedEvent_Access_Array_Access_Array is array (Natural range <>) of GameInitializedEvent_Access_Array_Access;
-   type GameInitializedEvent_Access_Array_Access_Array_Access is access all GameInitializedEvent_Access_Array_Access_Array;
+
+   subtype GameInitializedEvent_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access;
+   function "=" (Left, Right : GameInitializedEvent_Access) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
+   subtype GameInitializedEvent_Access_Array is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array;
+   function "=" (Left, Right : GameInitializedEvent_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
+   subtype GameInitializedEvent_Access_Array_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access;
+   function "=" (Left, Right : GameInitializedEvent_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
+   subtype GameInitializedEvent_Access_Array_Access_Array is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInitializedEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
+   subtype GameInitializedEvent_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInitializedEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameInitializedEvent_Package_References."=";
 
    type GameInitializedEvent is new AllBinaryEventObject with record
       resourceLoadingLevel : ResourceLoadingLevel_Access;

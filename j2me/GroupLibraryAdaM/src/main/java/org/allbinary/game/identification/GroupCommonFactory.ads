@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.identification.GroupCommonFactory_Package;
+package org.allbinary.game.identification.GroupCommonFactory_Package_References is
+   type GroupCommonFactory_Access is access all org.allbinary.game.identification.GroupCommonFactory_Package.GroupCommonFactory'Class;
+   type GroupCommonFactory_Access_Array is array (Natural range <>) of GroupCommonFactory_Access;
+   type GroupCommonFactory_Access_Array_Access is access all GroupCommonFactory_Access_Array;
+   type GroupCommonFactory_Access_Array_Access_Array is array (Natural range <>) of GroupCommonFactory_Access_Array_Access;
+   type GroupCommonFactory_Access_Array_Access_Array_Access is access all GroupCommonFactory_Access_Array_Access_Array;
+end org.allbinary.game.identification.GroupCommonFactory_Package_References;
+
+with org.allbinary.game.identification.GroupCommonFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.identification.GroupCommonFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GroupCommonFactory is tagged;
-   type GroupCommonFactory_Access is access all GroupCommonFactory'Class;
-   type GroupCommonFactory_Access_Array is array (Natural range <>) of GroupCommonFactory_Access;
-   type GroupCommonFactory_Access_Array_Access is access all GroupCommonFactory_Access_Array;
-   type GroupCommonFactory_Access_Array_Access_Array is array (Natural range <>) of GroupCommonFactory_Access_Array_Access;
-   type GroupCommonFactory_Access_Array_Access_Array_Access is access all GroupCommonFactory_Access_Array_Access_Array;
+
+   subtype GroupCommonFactory_Access is org.allbinary.game.identification.GroupCommonFactory_Package_References.GroupCommonFactory_Access;
+   function "=" (Left, Right : GroupCommonFactory_Access) return Boolean renames org.allbinary.game.identification.GroupCommonFactory_Package_References."=";
+   subtype GroupCommonFactory_Access_Array is org.allbinary.game.identification.GroupCommonFactory_Package_References.GroupCommonFactory_Access_Array;
+   function "=" (Left, Right : GroupCommonFactory_Access_Array) return Boolean renames org.allbinary.game.identification.GroupCommonFactory_Package_References."=";
+   subtype GroupCommonFactory_Access_Array_Access is org.allbinary.game.identification.GroupCommonFactory_Package_References.GroupCommonFactory_Access_Array_Access;
+   function "=" (Left, Right : GroupCommonFactory_Access_Array_Access) return Boolean renames org.allbinary.game.identification.GroupCommonFactory_Package_References."=";
+   subtype GroupCommonFactory_Access_Array_Access_Array is org.allbinary.game.identification.GroupCommonFactory_Package_References.GroupCommonFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : GroupCommonFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.identification.GroupCommonFactory_Package_References."=";
+   subtype GroupCommonFactory_Access_Array_Access_Array_Access is org.allbinary.game.identification.GroupCommonFactory_Package_References.GroupCommonFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GroupCommonFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.identification.GroupCommonFactory_Package_References."=";
 
    type GroupCommonFactory is new Java_Object with record
       ID : Integer;

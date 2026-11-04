@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 
 package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   function "=" (Left, Right : GPoint_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
    procedure Initialize_Fields (This : in out Grid'Class) is
    begin
       null;
@@ -44,7 +55,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
       grid_Var : constant Grid_Access := Grid_Access (grid_Var_Param);
    begin
       Initialize_Fields (This);
-        This.grid_Var := grid_Var.grid_Var;
+        This.grid_Var := GPoint_Access (grid_Var.grid_Var);
         Grid'Class (This).showGrid (grid_Var.isGridOn);
         This.isGridPossible_Field := grid_Var.isGridPossible;
         Grid'Class (This).setZoom (grid_Var.getZoom);

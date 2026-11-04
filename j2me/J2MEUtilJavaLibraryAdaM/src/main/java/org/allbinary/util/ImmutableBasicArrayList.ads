@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.util.ImmutableBasicArrayList_Package;
+package org.allbinary.util.ImmutableBasicArrayList_Package_References is
+   type ImmutableBasicArrayList_Access is access all org.allbinary.util.ImmutableBasicArrayList_Package.ImmutableBasicArrayList'Class;
+   type ImmutableBasicArrayList_Access_Array is array (Natural range <>) of ImmutableBasicArrayList_Access;
+   type ImmutableBasicArrayList_Access_Array_Access is access all ImmutableBasicArrayList_Access_Array;
+   type ImmutableBasicArrayList_Access_Array_Access_Array is array (Natural range <>) of ImmutableBasicArrayList_Access_Array_Access;
+   type ImmutableBasicArrayList_Access_Array_Access_Array_Access is access all ImmutableBasicArrayList_Access_Array_Access_Array;
+end org.allbinary.util.ImmutableBasicArrayList_Package_References;
+
+with org.allbinary.util.ImmutableBasicArrayList_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.util.ImmutableBasicArrayList_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImmutableBasicArrayList is tagged;
-   type ImmutableBasicArrayList_Access is access all ImmutableBasicArrayList'Class;
-   type ImmutableBasicArrayList_Access_Array is array (Natural range <>) of ImmutableBasicArrayList_Access;
-   type ImmutableBasicArrayList_Access_Array_Access is access all ImmutableBasicArrayList_Access_Array;
-   type ImmutableBasicArrayList_Access_Array_Access_Array is array (Natural range <>) of ImmutableBasicArrayList_Access_Array_Access;
-   type ImmutableBasicArrayList_Access_Array_Access_Array_Access is access all ImmutableBasicArrayList_Access_Array_Access_Array;
+
+   subtype ImmutableBasicArrayList_Access is org.allbinary.util.ImmutableBasicArrayList_Package_References.ImmutableBasicArrayList_Access;
+   function "=" (Left, Right : ImmutableBasicArrayList_Access) return Boolean renames org.allbinary.util.ImmutableBasicArrayList_Package_References."=";
+   subtype ImmutableBasicArrayList_Access_Array is org.allbinary.util.ImmutableBasicArrayList_Package_References.ImmutableBasicArrayList_Access_Array;
+   function "=" (Left, Right : ImmutableBasicArrayList_Access_Array) return Boolean renames org.allbinary.util.ImmutableBasicArrayList_Package_References."=";
+   subtype ImmutableBasicArrayList_Access_Array_Access is org.allbinary.util.ImmutableBasicArrayList_Package_References.ImmutableBasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : ImmutableBasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.ImmutableBasicArrayList_Package_References."=";
+   subtype ImmutableBasicArrayList_Access_Array_Access_Array is org.allbinary.util.ImmutableBasicArrayList_Package_References.ImmutableBasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : ImmutableBasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ImmutableBasicArrayList_Package_References."=";
+   subtype ImmutableBasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.ImmutableBasicArrayList_Package_References.ImmutableBasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImmutableBasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ImmutableBasicArrayList_Package_References."=";
 
    type ImmutableBasicArrayList is new BasicArrayListS with record
       name : Unbounded_String;

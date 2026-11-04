@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.form.item.ABTextFieldItem_Package;
+package org.allbinary.graphics.form.item.ABTextFieldItem_Package_References is
+   type ABTextFieldItem_Access is access all org.allbinary.graphics.form.item.ABTextFieldItem_Package.ABTextFieldItem'Class;
+   type ABTextFieldItem_Access_Array is array (Natural range <>) of ABTextFieldItem_Access;
+   type ABTextFieldItem_Access_Array_Access is access all ABTextFieldItem_Access_Array;
+   type ABTextFieldItem_Access_Array_Access_Array is array (Natural range <>) of ABTextFieldItem_Access_Array_Access;
+   type ABTextFieldItem_Access_Array_Access_Array_Access is access all ABTextFieldItem_Access_Array_Access_Array;
+end org.allbinary.graphics.form.item.ABTextFieldItem_Package_References;
+
+with org.allbinary.graphics.form.item.ABTextFieldItem_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,10 +18,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+limited with javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Canvas_Package_References;
+limited with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+limited with org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.graphics.form.item.ABTextItem_Package; use org.allbinary.graphics.form.item.ABTextItem_Package;
 
 package org.allbinary.graphics.form.item.ABTextFieldItem_Package is
@@ -20,13 +34,61 @@ package org.allbinary.graphics.form.item.ABTextFieldItem_Package is
    package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
+   package Reference_Types is
+   subtype Canvas_Access is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access;
+   use type Canvas_Access;
+   subtype Canvas_Access_Array is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access_Array;
+   use type Canvas_Access_Array;
+   subtype Canvas_Access_Array_Access is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access_Array_Access;
+   use type Canvas_Access_Array_Access;
+   subtype Canvas_Access_Array_Access_Array is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access_Array_Access_Array;
+   use type Canvas_Access_Array_Access_Array;
+   subtype Canvas_Access_Array_Access_Array_Access is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access_Array_Access_Array_Access;
+   use type Canvas_Access_Array_Access_Array_Access;
+   subtype Font_Access is javax.microedition.lcdui.Font_Package_References.Font_Access;
+   use type Font_Access;
+   subtype Font_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array;
+   use type Font_Access_Array;
+   subtype Font_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access;
+   use type Font_Access_Array_Access;
+   subtype Font_Access_Array_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array;
+   use type Font_Access_Array_Access_Array;
+   subtype Font_Access_Array_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array_Access;
+   use type Font_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype Visitor_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access;
+   use type Visitor_Access;
+   subtype Visitor_Access_Array is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array;
+   use type Visitor_Access_Array;
+   subtype Visitor_Access_Array_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access;
+   use type Visitor_Access_Array_Access;
+   subtype Visitor_Access_Array_Access_Array is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access_Array;
+   use type Visitor_Access_Array_Access_Array;
+   subtype Visitor_Access_Array_Access_Array_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access_Array_Access;
+   use type Visitor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ABTextFieldItem is tagged;
-   type ABTextFieldItem_Access is access all ABTextFieldItem'Class;
-   type ABTextFieldItem_Access_Array is array (Natural range <>) of ABTextFieldItem_Access;
-   type ABTextFieldItem_Access_Array_Access is access all ABTextFieldItem_Access_Array;
-   type ABTextFieldItem_Access_Array_Access_Array is array (Natural range <>) of ABTextFieldItem_Access_Array_Access;
-   type ABTextFieldItem_Access_Array_Access_Array_Access is access all ABTextFieldItem_Access_Array_Access_Array;
+
+   subtype ABTextFieldItem_Access is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access;
+   function "=" (Left, Right : ABTextFieldItem_Access) return Boolean renames org.allbinary.graphics.form.item.ABTextFieldItem_Package_References."=";
+   subtype ABTextFieldItem_Access_Array is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access_Array;
+   function "=" (Left, Right : ABTextFieldItem_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABTextFieldItem_Package_References."=";
+   subtype ABTextFieldItem_Access_Array_Access is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access_Array_Access;
+   function "=" (Left, Right : ABTextFieldItem_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABTextFieldItem_Package_References."=";
+   subtype ABTextFieldItem_Access_Array_Access_Array is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access_Array_Access_Array;
+   function "=" (Left, Right : ABTextFieldItem_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABTextFieldItem_Package_References."=";
+   subtype ABTextFieldItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABTextFieldItem_Package_References.ABTextFieldItem_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABTextFieldItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABTextFieldItem_Package_References."=";
 
    type ABTextFieldItem is new ABTextItem with record
       font : Font_Access;

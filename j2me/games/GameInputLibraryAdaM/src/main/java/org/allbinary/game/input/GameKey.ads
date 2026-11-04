@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.GameKey_Package;
+package org.allbinary.game.input.GameKey_Package_References is
+   type GameKey_Access is access all org.allbinary.game.input.GameKey_Package.GameKey'Class;
+   type GameKey_Access_Array is array (Natural range <>) of GameKey_Access;
+   type GameKey_Access_Array_Access is access all GameKey_Access_Array;
+   type GameKey_Access_Array_Access_Array is array (Natural range <>) of GameKey_Access_Array_Access;
+   type GameKey_Access_Array_Access_Array_Access is access all GameKey_Access_Array_Access_Array;
+end org.allbinary.game.input.GameKey_Package_References;
+
+with org.allbinary.game.input.GameKey_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_
 
 package org.allbinary.game.input.GameKey_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameKey is tagged;
-   type GameKey_Access is access all GameKey'Class;
-   type GameKey_Access_Array is array (Natural range <>) of GameKey_Access;
-   type GameKey_Access_Array_Access is access all GameKey_Access_Array;
-   type GameKey_Access_Array_Access_Array is array (Natural range <>) of GameKey_Access_Array_Access;
-   type GameKey_Access_Array_Access_Array_Access is access all GameKey_Access_Array_Access_Array;
+
+   subtype GameKey_Access is org.allbinary.game.input.GameKey_Package_References.GameKey_Access;
+   function "=" (Left, Right : GameKey_Access) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
+   subtype GameKey_Access_Array is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array;
+   function "=" (Left, Right : GameKey_Access_Array) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
+   subtype GameKey_Access_Array_Access is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array_Access;
+   function "=" (Left, Right : GameKey_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
+   subtype GameKey_Access_Array_Access_Array is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array_Access_Array;
+   function "=" (Left, Right : GameKey_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
+   subtype GameKey_Access_Array_Access_Array_Access is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameKey_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
 
    type GameKey is new Input_Package.Input with null record;
    NULL_GAME_KEY : GameKey_Access;

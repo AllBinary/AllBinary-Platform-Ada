@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.paint.NullLocationPaintable_Package;
+package org.allbinary.graphics.paint.NullLocationPaintable_Package_References is
+   type NullLocationPaintable_Access is access all org.allbinary.graphics.paint.NullLocationPaintable_Package.NullLocationPaintable'Class;
+   type NullLocationPaintable_Access_Array is array (Natural range <>) of NullLocationPaintable_Access;
+   type NullLocationPaintable_Access_Array_Access is access all NullLocationPaintable_Access_Array;
+   type NullLocationPaintable_Access_Array_Access_Array is array (Natural range <>) of NullLocationPaintable_Access_Array_Access;
+   type NullLocationPaintable_Access_Array_Access_Array_Access is access all NullLocationPaintable_Access_Array_Access_Array;
+end org.allbinary.graphics.paint.NullLocationPaintable_Package_References;
+
+with org.allbinary.graphics.paint.NullLocationPaintable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.graphics.paint.LocationPaintable_Package; use org.allbinary.g
 
 package org.allbinary.graphics.paint.NullLocationPaintable_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullLocationPaintable is tagged;
-   type NullLocationPaintable_Access is access all NullLocationPaintable'Class;
-   type NullLocationPaintable_Access_Array is array (Natural range <>) of NullLocationPaintable_Access;
-   type NullLocationPaintable_Access_Array_Access is access all NullLocationPaintable_Access_Array;
-   type NullLocationPaintable_Access_Array_Access_Array is array (Natural range <>) of NullLocationPaintable_Access_Array_Access;
-   type NullLocationPaintable_Access_Array_Access_Array_Access is access all NullLocationPaintable_Access_Array_Access_Array;
+
+   subtype NullLocationPaintable_Access is org.allbinary.graphics.paint.NullLocationPaintable_Package_References.NullLocationPaintable_Access;
+   function "=" (Left, Right : NullLocationPaintable_Access) return Boolean renames org.allbinary.graphics.paint.NullLocationPaintable_Package_References."=";
+   subtype NullLocationPaintable_Access_Array is org.allbinary.graphics.paint.NullLocationPaintable_Package_References.NullLocationPaintable_Access_Array;
+   function "=" (Left, Right : NullLocationPaintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.NullLocationPaintable_Package_References."=";
+   subtype NullLocationPaintable_Access_Array_Access is org.allbinary.graphics.paint.NullLocationPaintable_Package_References.NullLocationPaintable_Access_Array_Access;
+   function "=" (Left, Right : NullLocationPaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.NullLocationPaintable_Package_References."=";
+   subtype NullLocationPaintable_Access_Array_Access_Array is org.allbinary.graphics.paint.NullLocationPaintable_Package_References.NullLocationPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : NullLocationPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.NullLocationPaintable_Package_References."=";
+   subtype NullLocationPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.NullLocationPaintable_Package_References.NullLocationPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullLocationPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.NullLocationPaintable_Package_References."=";
 
    type NullLocationPaintable is new LocationPaintable with null record;
    instanceC : NullLocationPaintable_Access;

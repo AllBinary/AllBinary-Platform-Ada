@@ -16,6 +16,8 @@
 with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
+with org.allbinary.game.GameAdState_Package;
+with org.allbinary.business.advertisement.GameAdStateFactory_Package;
 
 package body org.allbinary.business.advertisement.BottomLimiter_Package is
 
@@ -33,7 +35,7 @@ package body org.allbinary.business.advertisement.BottomLimiter_Package is
 
    function getInstance return BottomLimiter_Access is
    begin
-        return BottomLimiter_Package.instance;
+        return BottomLimiter_Access (BottomLimiter_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out BottomLimiter'Class) is

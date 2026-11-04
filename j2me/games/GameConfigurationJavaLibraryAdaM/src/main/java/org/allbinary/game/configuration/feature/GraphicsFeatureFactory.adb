@@ -14,10 +14,23 @@
 
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.game.configuration.feature.GraphicsFeature_Package; use org.allbinary.game.configuration.feature.GraphicsFeature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.GraphicsFeature_Package;
 
 package body org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package is
 
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype GraphicsFeature_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access;
+   function "=" (Left, Right : GraphicsFeature_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array;
+   function "=" (Left, Right : GraphicsFeature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access;
+   function "=" (Left, Right : GraphicsFeature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : GraphicsFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GraphicsFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
    procedure Initialize_Fields (This : in out GraphicsFeatureFactory'Class) is
    begin
       null;
@@ -35,7 +48,7 @@ package body org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Pac
 
    function getInstance return GraphicsFeatureFactory_Access is
    begin
-        return GraphicsFeatureFactory_Package.instance;
+        return GraphicsFeatureFactory_Access (GraphicsFeatureFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out GraphicsFeatureFactory'Class) is

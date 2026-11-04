@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.behavior.topview.InitialJumpBehavior_Package;
+package org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References is
+   type InitialJumpBehavior_Access is access all org.allbinary.game.behavior.topview.InitialJumpBehavior_Package.InitialJumpBehavior'Class;
+   type InitialJumpBehavior_Access_Array is array (Natural range <>) of InitialJumpBehavior_Access;
+   type InitialJumpBehavior_Access_Array_Access is access all InitialJumpBehavior_Access_Array;
+   type InitialJumpBehavior_Access_Array_Access_Array is array (Natural range <>) of InitialJumpBehavior_Access_Array_Access;
+   type InitialJumpBehavior_Access_Array_Access_Array_Access is access all InitialJumpBehavior_Access_Array_Access_Array;
+end org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References;
+
+with org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.behavior.topview.InitialJumpBehavior_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InitialJumpBehavior is tagged;
-   type InitialJumpBehavior_Access is access all InitialJumpBehavior'Class;
-   type InitialJumpBehavior_Access_Array is array (Natural range <>) of InitialJumpBehavior_Access;
-   type InitialJumpBehavior_Access_Array_Access is access all InitialJumpBehavior_Access_Array;
-   type InitialJumpBehavior_Access_Array_Access_Array is array (Natural range <>) of InitialJumpBehavior_Access_Array_Access;
-   type InitialJumpBehavior_Access_Array_Access_Array_Access is access all InitialJumpBehavior_Access_Array_Access_Array;
+
+   subtype InitialJumpBehavior_Access is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access;
+   function "=" (Left, Right : InitialJumpBehavior_Access) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
+   subtype InitialJumpBehavior_Access_Array is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array;
+   function "=" (Left, Right : InitialJumpBehavior_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
+   subtype InitialJumpBehavior_Access_Array_Access is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array_Access;
+   function "=" (Left, Right : InitialJumpBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
+   subtype InitialJumpBehavior_Access_Array_Access_Array is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : InitialJumpBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
+   subtype InitialJumpBehavior_Access_Array_Access_Array_Access is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InitialJumpBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
 
    type InitialJumpBehavior is new Java_Object with null record;
 

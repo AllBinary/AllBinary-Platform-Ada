@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.InventoryRequestHelperFactory_Package;
+package admin.taghelpers.InventoryRequestHelperFactory_Package_References is
+   type InventoryRequestHelperFactory_Access is access all admin.taghelpers.InventoryRequestHelperFactory_Package.InventoryRequestHelperFactory'Class;
+   type InventoryRequestHelperFactory_Access_Array is array (Natural range <>) of InventoryRequestHelperFactory_Access;
+   type InventoryRequestHelperFactory_Access_Array_Access is access all InventoryRequestHelperFactory_Access_Array;
+   type InventoryRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of InventoryRequestHelperFactory_Access_Array_Access;
+   type InventoryRequestHelperFactory_Access_Array_Access_Array_Access is access all InventoryRequestHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.InventoryRequestHelperFactory_Package_References;
+
+with admin.taghelpers.InventoryRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.InventoryRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InventoryRequestHelperFactory is tagged;
-   type InventoryRequestHelperFactory_Access is access all InventoryRequestHelperFactory'Class;
-   type InventoryRequestHelperFactory_Access_Array is array (Natural range <>) of InventoryRequestHelperFactory_Access;
-   type InventoryRequestHelperFactory_Access_Array_Access is access all InventoryRequestHelperFactory_Access_Array;
-   type InventoryRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of InventoryRequestHelperFactory_Access_Array_Access;
-   type InventoryRequestHelperFactory_Access_Array_Access_Array_Access is access all InventoryRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype InventoryRequestHelperFactory_Access is admin.taghelpers.InventoryRequestHelperFactory_Package_References.InventoryRequestHelperFactory_Access;
+   function "=" (Left, Right : InventoryRequestHelperFactory_Access) return Boolean renames admin.taghelpers.InventoryRequestHelperFactory_Package_References."=";
+   subtype InventoryRequestHelperFactory_Access_Array is admin.taghelpers.InventoryRequestHelperFactory_Package_References.InventoryRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : InventoryRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.InventoryRequestHelperFactory_Package_References."=";
+   subtype InventoryRequestHelperFactory_Access_Array_Access is admin.taghelpers.InventoryRequestHelperFactory_Package_References.InventoryRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : InventoryRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.InventoryRequestHelperFactory_Package_References."=";
+   subtype InventoryRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.InventoryRequestHelperFactory_Package_References.InventoryRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : InventoryRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.InventoryRequestHelperFactory_Package_References."=";
+   subtype InventoryRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.InventoryRequestHelperFactory_Package_References.InventoryRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InventoryRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.InventoryRequestHelperFactory_Package_References."=";
 
    type InventoryRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

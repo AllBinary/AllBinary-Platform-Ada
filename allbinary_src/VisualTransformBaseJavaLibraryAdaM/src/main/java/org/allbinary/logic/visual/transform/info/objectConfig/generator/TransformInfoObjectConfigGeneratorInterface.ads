@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package;
+package org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References is
+   type TransformInfoObjectConfigGeneratorInterface_Access is access all org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package.TransformInfoObjectConfigGeneratorInterface'Class;
+   type TransformInfoObjectConfigGeneratorInterface_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGeneratorInterface_Access;
+   type TransformInfoObjectConfigGeneratorInterface_Access_Array_Access is access all TransformInfoObjectConfigGeneratorInterface_Access_Array;
+   type TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGeneratorInterface_Access_Array_Access;
+   type TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array_Access is access all TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References;
+
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type TransformInfoObjectConfigGeneratorInterface is interface;
-   type TransformInfoObjectConfigGeneratorInterface_Access is access all TransformInfoObjectConfigGeneratorInterface'Class;
-   type TransformInfoObjectConfigGeneratorInterface_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGeneratorInterface_Access;
-   type TransformInfoObjectConfigGeneratorInterface_Access_Array_Access is access all TransformInfoObjectConfigGeneratorInterface_Access_Array;
-   type TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGeneratorInterface_Access_Array_Access;
-   type TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array_Access is access all TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array;
+   subtype TransformInfoObjectConfigGeneratorInterface_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References.TransformInfoObjectConfigGeneratorInterface_Access;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorInterface_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References."=";
+   subtype TransformInfoObjectConfigGeneratorInterface_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References.TransformInfoObjectConfigGeneratorInterface_Access_Array;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorInterface_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References."=";
+   subtype TransformInfoObjectConfigGeneratorInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References.TransformInfoObjectConfigGeneratorInterface_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References."=";
+   subtype TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References.TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References."=";
+   subtype TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References.TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References."=";
+   function Java_Object_Access_From_TransformInfoObjectConfigGeneratorInterface (Value : TransformInfoObjectConfigGeneratorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function process (This : in out TransformInfoObjectConfigGeneratorInterface; input : Unbounded_String) return Unbounded_String is abstract;
 
 end org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package;

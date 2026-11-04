@@ -13,7 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
 with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
+with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
 
 package body org.allbinary.game.rts.technology.ReloadTechnology_Package is
 

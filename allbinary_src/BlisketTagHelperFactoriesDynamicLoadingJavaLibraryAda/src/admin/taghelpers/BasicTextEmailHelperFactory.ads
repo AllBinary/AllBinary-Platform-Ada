@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.BasicTextEmailHelperFactory_Package;
+package admin.taghelpers.BasicTextEmailHelperFactory_Package_References is
+   type BasicTextEmailHelperFactory_Access is access all admin.taghelpers.BasicTextEmailHelperFactory_Package.BasicTextEmailHelperFactory'Class;
+   type BasicTextEmailHelperFactory_Access_Array is array (Natural range <>) of BasicTextEmailHelperFactory_Access;
+   type BasicTextEmailHelperFactory_Access_Array_Access is access all BasicTextEmailHelperFactory_Access_Array;
+   type BasicTextEmailHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BasicTextEmailHelperFactory_Access_Array_Access;
+   type BasicTextEmailHelperFactory_Access_Array_Access_Array_Access is access all BasicTextEmailHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.BasicTextEmailHelperFactory_Package_References;
+
+with admin.taghelpers.BasicTextEmailHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.BasicTextEmailHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicTextEmailHelperFactory is tagged;
-   type BasicTextEmailHelperFactory_Access is access all BasicTextEmailHelperFactory'Class;
-   type BasicTextEmailHelperFactory_Access_Array is array (Natural range <>) of BasicTextEmailHelperFactory_Access;
-   type BasicTextEmailHelperFactory_Access_Array_Access is access all BasicTextEmailHelperFactory_Access_Array;
-   type BasicTextEmailHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BasicTextEmailHelperFactory_Access_Array_Access;
-   type BasicTextEmailHelperFactory_Access_Array_Access_Array_Access is access all BasicTextEmailHelperFactory_Access_Array_Access_Array;
+
+   subtype BasicTextEmailHelperFactory_Access is admin.taghelpers.BasicTextEmailHelperFactory_Package_References.BasicTextEmailHelperFactory_Access;
+   function "=" (Left, Right : BasicTextEmailHelperFactory_Access) return Boolean renames admin.taghelpers.BasicTextEmailHelperFactory_Package_References."=";
+   subtype BasicTextEmailHelperFactory_Access_Array is admin.taghelpers.BasicTextEmailHelperFactory_Package_References.BasicTextEmailHelperFactory_Access_Array;
+   function "=" (Left, Right : BasicTextEmailHelperFactory_Access_Array) return Boolean renames admin.taghelpers.BasicTextEmailHelperFactory_Package_References."=";
+   subtype BasicTextEmailHelperFactory_Access_Array_Access is admin.taghelpers.BasicTextEmailHelperFactory_Package_References.BasicTextEmailHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : BasicTextEmailHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.BasicTextEmailHelperFactory_Package_References."=";
+   subtype BasicTextEmailHelperFactory_Access_Array_Access_Array is admin.taghelpers.BasicTextEmailHelperFactory_Package_References.BasicTextEmailHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicTextEmailHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.BasicTextEmailHelperFactory_Package_References."=";
+   subtype BasicTextEmailHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.BasicTextEmailHelperFactory_Package_References.BasicTextEmailHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicTextEmailHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.BasicTextEmailHelperFactory_Package_References."=";
 
    type BasicTextEmailHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

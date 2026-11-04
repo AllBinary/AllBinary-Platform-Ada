@@ -13,10 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package; use org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.logic.control.workflow.WorkFlowInterface_Package; use org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
 with org.allbinary.logic.control.workflow.WorkFlowData_Package; use org.allbinary.logic.control.workflow.WorkFlowData_Package;
 
 package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package is
@@ -25,6 +27,16 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   subtype WorkFlowInterface_Access is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access;
+   function "=" (Left, Right : WorkFlowInterface_Access) return Boolean renames org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References."=";
+   subtype WorkFlowInterface_Access_Array is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access_Array;
+   function "=" (Left, Right : WorkFlowInterface_Access_Array) return Boolean renames org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References."=";
+   subtype WorkFlowInterface_Access_Array_Access is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References."=";
+   subtype WorkFlowInterface_Access_Array_Access_Array is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : WorkFlowInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References."=";
+   subtype WorkFlowInterface_Access_Array_Access_Array_Access is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References."=";
    procedure Initialize_Fields (This : in out RequestWorkFlowFactory'Class) is
    begin
       null;

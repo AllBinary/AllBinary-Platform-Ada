@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.init.db.DbConnectionInfo_Package;
+package org.allbinary.business.init.db.DbConnectionInfo_Package_References is
+   type DbConnectionInfo_Access is access all org.allbinary.business.init.db.DbConnectionInfo_Package.DbConnectionInfo'Class;
+   type DbConnectionInfo_Access_Array is array (Natural range <>) of DbConnectionInfo_Access;
+   type DbConnectionInfo_Access_Array_Access is access all DbConnectionInfo_Access_Array;
+   type DbConnectionInfo_Access_Array_Access_Array is array (Natural range <>) of DbConnectionInfo_Access_Array_Access;
+   type DbConnectionInfo_Access_Array_Access_Array_Access is access all DbConnectionInfo_Access_Array_Access_Array;
+end org.allbinary.business.init.db.DbConnectionInfo_Package_References;
+
+with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use
 
 package org.allbinary.business.init.db.DbConnectionInfo_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DbConnectionInfo is tagged;
-   type DbConnectionInfo_Access is access all DbConnectionInfo'Class;
-   type DbConnectionInfo_Access_Array is array (Natural range <>) of DbConnectionInfo_Access;
-   type DbConnectionInfo_Access_Array_Access is access all DbConnectionInfo_Access_Array;
-   type DbConnectionInfo_Access_Array_Access_Array is array (Natural range <>) of DbConnectionInfo_Access_Array_Access;
-   type DbConnectionInfo_Access_Array_Access_Array_Access is access all DbConnectionInfo_Access_Array_Access_Array;
+
+   subtype DbConnectionInfo_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access;
+   function "=" (Left, Right : DbConnectionInfo_Access) return Boolean renames org.allbinary.business.init.db.DbConnectionInfo_Package_References."=";
+   subtype DbConnectionInfo_Access_Array is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array;
+   function "=" (Left, Right : DbConnectionInfo_Access_Array) return Boolean renames org.allbinary.business.init.db.DbConnectionInfo_Package_References."=";
+   subtype DbConnectionInfo_Access_Array_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array_Access;
+   function "=" (Left, Right : DbConnectionInfo_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.DbConnectionInfo_Package_References."=";
+   subtype DbConnectionInfo_Access_Array_Access_Array is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : DbConnectionInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.db.DbConnectionInfo_Package_References."=";
+   subtype DbConnectionInfo_Access_Array_Access_Array_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DbConnectionInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.DbConnectionInfo_Package_References."=";
 
    type DbConnectionInfo is new Java_Object and DatabaseConnectionInfoInterface with record
       jdbcDriver : Unbounded_String;

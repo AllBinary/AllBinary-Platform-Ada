@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+package org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References is
+   type MultipartRequestParams_Access is access all org.allbinary.logic.communication.http.request.MultipartRequestParams_Package.MultipartRequestParams'Class;
+   type MultipartRequestParams_Access_Array is array (Natural range <>) of MultipartRequestParams_Access;
+   type MultipartRequestParams_Access_Array_Access is access all MultipartRequestParams_Access_Array;
+   type MultipartRequestParams_Access_Array_Access_Array is array (Natural range <>) of MultipartRequestParams_Access_Array_Access;
+   type MultipartRequestParams_Access_Array_Access_Array_Access is access all MultipartRequestParams_Access_Array_Access_Array;
+end org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References;
+
+with org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,20 +34,39 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
 
 package org.allbinary.logic.communication.http.request.MultipartRequestParams_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MultipartRequestParams is tagged;
-   type MultipartRequestParams_Access is access all MultipartRequestParams'Class;
-   type MultipartRequestParams_Access_Array is array (Natural range <>) of MultipartRequestParams_Access;
-   type MultipartRequestParams_Access_Array_Access is access all MultipartRequestParams_Access_Array;
-   type MultipartRequestParams_Access_Array_Access_Array is array (Natural range <>) of MultipartRequestParams_Access_Array_Access;
-   type MultipartRequestParams_Access_Array_Access_Array_Access is access all MultipartRequestParams_Access_Array_Access_Array;
+
+   subtype MultipartRequestParams_Access is org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References.MultipartRequestParams_Access;
+   function "=" (Left, Right : MultipartRequestParams_Access) return Boolean renames org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References."=";
+   subtype MultipartRequestParams_Access_Array is org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References.MultipartRequestParams_Access_Array;
+   function "=" (Left, Right : MultipartRequestParams_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References."=";
+   subtype MultipartRequestParams_Access_Array_Access is org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References.MultipartRequestParams_Access_Array_Access;
+   function "=" (Left, Right : MultipartRequestParams_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References."=";
+   subtype MultipartRequestParams_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References.MultipartRequestParams_Access_Array_Access_Array;
+   function "=" (Left, Right : MultipartRequestParams_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References."=";
+   subtype MultipartRequestParams_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References.MultipartRequestParams_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MultipartRequestParams_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.MultipartRequestParams_Package_References."=";
 
    type MultipartRequestParams is new RequestParams with record
       logUtil : LogUtil_Access;

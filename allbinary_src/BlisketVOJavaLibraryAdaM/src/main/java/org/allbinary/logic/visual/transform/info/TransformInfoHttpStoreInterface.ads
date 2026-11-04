@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
+package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References is
+   type TransformInfoHttpStoreInterface_Access is access all org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package.TransformInfoHttpStoreInterface'Class;
+   type TransformInfoHttpStoreInterface_Access_Array is array (Natural range <>) of TransformInfoHttpStoreInterface_Access;
+   type TransformInfoHttpStoreInterface_Access_Array_Access is access all TransformInfoHttpStoreInterface_Access_Array;
+   type TransformInfoHttpStoreInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpStoreInterface_Access_Array_Access;
+   type TransformInfoHttpStoreInterface_Access_Array_Access_Array_Access is access all TransformInfoHttpStoreInterface_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References;
+
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,23 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Packag
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type TransformInfoHttpStoreInterface is interface and TransformInfoHttpInterface;
-   type TransformInfoHttpStoreInterface_Access is access all TransformInfoHttpStoreInterface'Class;
-   type TransformInfoHttpStoreInterface_Access_Array is array (Natural range <>) of TransformInfoHttpStoreInterface_Access;
-   type TransformInfoHttpStoreInterface_Access_Array_Access is access all TransformInfoHttpStoreInterface_Access_Array;
-   type TransformInfoHttpStoreInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpStoreInterface_Access_Array_Access;
-   type TransformInfoHttpStoreInterface_Access_Array_Access_Array_Access is access all TransformInfoHttpStoreInterface_Access_Array_Access_Array;
+   subtype TransformInfoHttpStoreInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References.TransformInfoHttpStoreInterface_Access;
+   function "=" (Left, Right : TransformInfoHttpStoreInterface_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References."=";
+   subtype TransformInfoHttpStoreInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References.TransformInfoHttpStoreInterface_Access_Array;
+   function "=" (Left, Right : TransformInfoHttpStoreInterface_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References."=";
+   subtype TransformInfoHttpStoreInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References.TransformInfoHttpStoreInterface_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoHttpStoreInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References."=";
+   subtype TransformInfoHttpStoreInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References.TransformInfoHttpStoreInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoHttpStoreInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References."=";
+   subtype TransformInfoHttpStoreInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References.TransformInfoHttpStoreInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoHttpStoreInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package_References."=";
+   function Java_Object_Access_From_TransformInfoHttpStoreInterface (Value : TransformInfoHttpStoreInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setStoreName (This : in out TransformInfoHttpStoreInterface; value : Unbounded_String) is abstract;
    function getStoreName (This : in out TransformInfoHttpStoreInterface) return Unbounded_String is abstract;
 

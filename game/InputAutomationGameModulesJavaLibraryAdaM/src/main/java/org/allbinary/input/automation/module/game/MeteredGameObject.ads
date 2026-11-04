@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.game.MeteredGameObject_Package;
+package org.allbinary.input.automation.module.game.MeteredGameObject_Package_References is
+   type MeteredGameObject_Access is access all org.allbinary.input.automation.module.game.MeteredGameObject_Package.MeteredGameObject'Class;
+   type MeteredGameObject_Access_Array is array (Natural range <>) of MeteredGameObject_Access;
+   type MeteredGameObject_Access_Array_Access is access all MeteredGameObject_Access_Array;
+   type MeteredGameObject_Access_Array_Access_Array is array (Natural range <>) of MeteredGameObject_Access_Array_Access;
+   type MeteredGameObject_Access_Array_Access_Array_Access is access all MeteredGameObject_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.game.MeteredGameObject_Package_References;
+
+with org.allbinary.input.automation.module.game.MeteredGameObject_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Packa
 
 package org.allbinary.input.automation.module.game.MeteredGameObject_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type MeteredGameObject is tagged;
-   type MeteredGameObject_Access is access all MeteredGameObject'Class;
-   type MeteredGameObject_Access_Array is array (Natural range <>) of MeteredGameObject_Access;
-   type MeteredGameObject_Access_Array_Access is access all MeteredGameObject_Access_Array;
-   type MeteredGameObject_Access_Array_Access_Array is array (Natural range <>) of MeteredGameObject_Access_Array_Access;
-   type MeteredGameObject_Access_Array_Access_Array_Access is access all MeteredGameObject_Access_Array_Access_Array;
+
+   subtype MeteredGameObject_Access is org.allbinary.input.automation.module.game.MeteredGameObject_Package_References.MeteredGameObject_Access;
+   function "=" (Left, Right : MeteredGameObject_Access) return Boolean renames org.allbinary.input.automation.module.game.MeteredGameObject_Package_References."=";
+   subtype MeteredGameObject_Access_Array is org.allbinary.input.automation.module.game.MeteredGameObject_Package_References.MeteredGameObject_Access_Array;
+   function "=" (Left, Right : MeteredGameObject_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.MeteredGameObject_Package_References."=";
+   subtype MeteredGameObject_Access_Array_Access is org.allbinary.input.automation.module.game.MeteredGameObject_Package_References.MeteredGameObject_Access_Array_Access;
+   function "=" (Left, Right : MeteredGameObject_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.MeteredGameObject_Package_References."=";
+   subtype MeteredGameObject_Access_Array_Access_Array is org.allbinary.input.automation.module.game.MeteredGameObject_Package_References.MeteredGameObject_Access_Array_Access_Array;
+   function "=" (Left, Right : MeteredGameObject_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.MeteredGameObject_Package_References."=";
+   subtype MeteredGameObject_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.game.MeteredGameObject_Package_References.MeteredGameObject_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MeteredGameObject_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.MeteredGameObject_Package_References."=";
 
    type MeteredGameObject is new Java_Object and MeteredGameObjectInterface with record
       ratios : Long_Float_Array_Access;

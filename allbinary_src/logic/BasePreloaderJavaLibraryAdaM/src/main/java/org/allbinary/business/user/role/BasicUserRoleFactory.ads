@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.role.BasicUserRoleFactory_Package;
+package org.allbinary.business.user.role.BasicUserRoleFactory_Package_References is
+   type BasicUserRoleFactory_Access is access all org.allbinary.business.user.role.BasicUserRoleFactory_Package.BasicUserRoleFactory'Class;
+   type BasicUserRoleFactory_Access_Array is array (Natural range <>) of BasicUserRoleFactory_Access;
+   type BasicUserRoleFactory_Access_Array_Access is access all BasicUserRoleFactory_Access_Array;
+   type BasicUserRoleFactory_Access_Array_Access_Array is array (Natural range <>) of BasicUserRoleFactory_Access_Array_Access;
+   type BasicUserRoleFactory_Access_Array_Access_Array_Access is access all BasicUserRoleFactory_Access_Array_Access_Array;
+end org.allbinary.business.user.role.BasicUserRoleFactory_Package_References;
+
+with org.allbinary.business.user.role.BasicUserRoleFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
+limited with org.allbinary.business.user.role.BasicUserRole_Package;
+with org.allbinary.business.user.role.BasicUserRole_Package_References;
 
 package org.allbinary.business.user.role.BasicUserRoleFactory_Package is
 
+   package Reference_Types is
+   subtype BasicUserRole_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access;
+   use type BasicUserRole_Access;
+   subtype BasicUserRole_Access_Array is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array;
+   use type BasicUserRole_Access_Array;
+   subtype BasicUserRole_Access_Array_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array_Access;
+   use type BasicUserRole_Access_Array_Access;
+   subtype BasicUserRole_Access_Array_Access_Array is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array_Access_Array;
+   use type BasicUserRole_Access_Array_Access_Array;
+   subtype BasicUserRole_Access_Array_Access_Array_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array_Access_Array_Access;
+   use type BasicUserRole_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicUserRoleFactory is tagged;
-   type BasicUserRoleFactory_Access is access all BasicUserRoleFactory'Class;
-   type BasicUserRoleFactory_Access_Array is array (Natural range <>) of BasicUserRoleFactory_Access;
-   type BasicUserRoleFactory_Access_Array_Access is access all BasicUserRoleFactory_Access_Array;
-   type BasicUserRoleFactory_Access_Array_Access_Array is array (Natural range <>) of BasicUserRoleFactory_Access_Array_Access;
-   type BasicUserRoleFactory_Access_Array_Access_Array_Access is access all BasicUserRoleFactory_Access_Array_Access_Array;
+
+   subtype BasicUserRoleFactory_Access is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access;
+   function "=" (Left, Right : BasicUserRoleFactory_Access) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   subtype BasicUserRoleFactory_Access_Array is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array;
+   function "=" (Left, Right : BasicUserRoleFactory_Access_Array) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   subtype BasicUserRoleFactory_Access_Array_Access is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array_Access;
+   function "=" (Left, Right : BasicUserRoleFactory_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   subtype BasicUserRoleFactory_Access_Array_Access_Array is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicUserRoleFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   subtype BasicUserRoleFactory_Access_Array_Access_Array_Access is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicUserRoleFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
 
    type BasicUserRoleFactory is new Java_Object with record
       INACTIVITYTIMEOUT : Long_Long_Integer;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.address.BillingAddressData_Package;
+package org.allbinary.business.user.address.BillingAddressData_Package_References is
+   type BillingAddressData_Access is access all org.allbinary.business.user.address.BillingAddressData_Package.BillingAddressData'Class;
+   type BillingAddressData_Access_Array is array (Natural range <>) of BillingAddressData_Access;
+   type BillingAddressData_Access_Array_Access is access all BillingAddressData_Access_Array;
+   type BillingAddressData_Access_Array_Access_Array is array (Natural range <>) of BillingAddressData_Access_Array_Access;
+   type BillingAddressData_Access_Array_Access_Array_Access is access all BillingAddressData_Access_Array_Access_Array;
+end org.allbinary.business.user.address.BillingAddressData_Package_References;
+
+with org.allbinary.business.user.address.BillingAddressData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.address.BillingAddressData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BillingAddressData is tagged;
-   type BillingAddressData_Access is access all BillingAddressData'Class;
-   type BillingAddressData_Access_Array is array (Natural range <>) of BillingAddressData_Access;
-   type BillingAddressData_Access_Array_Access is access all BillingAddressData_Access_Array;
-   type BillingAddressData_Access_Array_Access_Array is array (Natural range <>) of BillingAddressData_Access_Array_Access;
-   type BillingAddressData_Access_Array_Access_Array_Access is access all BillingAddressData_Access_Array_Access_Array;
+
+   subtype BillingAddressData_Access is org.allbinary.business.user.address.BillingAddressData_Package_References.BillingAddressData_Access;
+   function "=" (Left, Right : BillingAddressData_Access) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
+   subtype BillingAddressData_Access_Array is org.allbinary.business.user.address.BillingAddressData_Package_References.BillingAddressData_Access_Array;
+   function "=" (Left, Right : BillingAddressData_Access_Array) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
+   subtype BillingAddressData_Access_Array_Access is org.allbinary.business.user.address.BillingAddressData_Package_References.BillingAddressData_Access_Array_Access;
+   function "=" (Left, Right : BillingAddressData_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
+   subtype BillingAddressData_Access_Array_Access_Array is org.allbinary.business.user.address.BillingAddressData_Package_References.BillingAddressData_Access_Array_Access_Array;
+   function "=" (Left, Right : BillingAddressData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
+   subtype BillingAddressData_Access_Array_Access_Array_Access is org.allbinary.business.user.address.BillingAddressData_Package_References.BillingAddressData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BillingAddressData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
 
    type BillingAddressData is new Java_Object with null record;
    MAX : Integer;

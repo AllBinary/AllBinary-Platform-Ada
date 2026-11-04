@@ -13,9 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package is
 
+   subtype MotionGestureConfiguration_Access is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access;
+   function "=" (Left, Right : MotionGestureConfiguration_Access) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References."=";
+   subtype MotionGestureConfiguration_Access_Array is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access_Array;
+   function "=" (Left, Right : MotionGestureConfiguration_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References."=";
+   subtype MotionGestureConfiguration_Access_Array_Access is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access_Array_Access;
+   function "=" (Left, Right : MotionGestureConfiguration_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References."=";
+   subtype MotionGestureConfiguration_Access_Array_Access_Array is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionGestureConfiguration_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References."=";
+   subtype MotionGestureConfiguration_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionGestureConfiguration_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References."=";
    procedure Initialize_Fields (This : in out MotionGestureConfigurationFactory'Class) is
    begin
       null;
@@ -37,7 +52,7 @@ package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfi
 
    function getInstance return MotionGestureConfiguration_Access is
    begin
-        return MotionGestureConfigurationFactory_Package.config;
+        return MotionGestureConfiguration_Access (MotionGestureConfigurationFactory_Package.config);
    end getInstance;
 
 begin

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.globals.AppUrlGlobals_Package;
+package org.allbinary.globals.AppUrlGlobals_Package_References is
+   type AppUrlGlobals_Access is access all org.allbinary.globals.AppUrlGlobals_Package.AppUrlGlobals'Class;
+   type AppUrlGlobals_Access_Array is array (Natural range <>) of AppUrlGlobals_Access;
+   type AppUrlGlobals_Access_Array_Access is access all AppUrlGlobals_Access_Array;
+   type AppUrlGlobals_Access_Array_Access_Array is array (Natural range <>) of AppUrlGlobals_Access_Array_Access;
+   type AppUrlGlobals_Access_Array_Access_Array_Access is access all AppUrlGlobals_Access_Array_Access_Array;
+end org.allbinary.globals.AppUrlGlobals_Package_References;
+
+with org.allbinary.globals.AppUrlGlobals_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.globals.UrlGlobalsInterface_Package; use org.allbinary.global
 
 package org.allbinary.globals.AppUrlGlobals_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AppUrlGlobals is tagged;
-   type AppUrlGlobals_Access is access all AppUrlGlobals'Class;
-   type AppUrlGlobals_Access_Array is array (Natural range <>) of AppUrlGlobals_Access;
-   type AppUrlGlobals_Access_Array_Access is access all AppUrlGlobals_Access_Array;
-   type AppUrlGlobals_Access_Array_Access_Array is array (Natural range <>) of AppUrlGlobals_Access_Array_Access;
-   type AppUrlGlobals_Access_Array_Access_Array_Access is access all AppUrlGlobals_Access_Array_Access_Array;
+
+   subtype AppUrlGlobals_Access is org.allbinary.globals.AppUrlGlobals_Package_References.AppUrlGlobals_Access;
+   function "=" (Left, Right : AppUrlGlobals_Access) return Boolean renames org.allbinary.globals.AppUrlGlobals_Package_References."=";
+   subtype AppUrlGlobals_Access_Array is org.allbinary.globals.AppUrlGlobals_Package_References.AppUrlGlobals_Access_Array;
+   function "=" (Left, Right : AppUrlGlobals_Access_Array) return Boolean renames org.allbinary.globals.AppUrlGlobals_Package_References."=";
+   subtype AppUrlGlobals_Access_Array_Access is org.allbinary.globals.AppUrlGlobals_Package_References.AppUrlGlobals_Access_Array_Access;
+   function "=" (Left, Right : AppUrlGlobals_Access_Array_Access) return Boolean renames org.allbinary.globals.AppUrlGlobals_Package_References."=";
+   subtype AppUrlGlobals_Access_Array_Access_Array is org.allbinary.globals.AppUrlGlobals_Package_References.AppUrlGlobals_Access_Array_Access_Array;
+   function "=" (Left, Right : AppUrlGlobals_Access_Array_Access_Array) return Boolean renames org.allbinary.globals.AppUrlGlobals_Package_References."=";
+   subtype AppUrlGlobals_Access_Array_Access_Array_Access is org.allbinary.globals.AppUrlGlobals_Package_References.AppUrlGlobals_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AppUrlGlobals_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.globals.AppUrlGlobals_Package_References."=";
 
    type AppUrlGlobals is new UrlGlobalsInterface with record
       path : Unbounded_String;

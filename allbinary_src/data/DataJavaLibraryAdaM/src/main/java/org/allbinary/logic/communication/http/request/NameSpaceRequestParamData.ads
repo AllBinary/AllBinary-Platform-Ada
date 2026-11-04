@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package;
+package org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References is
+   type NameSpaceRequestParamData_Access is access all org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package.NameSpaceRequestParamData'Class;
+   type NameSpaceRequestParamData_Access_Array is array (Natural range <>) of NameSpaceRequestParamData_Access;
+   type NameSpaceRequestParamData_Access_Array_Access is access all NameSpaceRequestParamData_Access_Array;
+   type NameSpaceRequestParamData_Access_Array_Access_Array is array (Natural range <>) of NameSpaceRequestParamData_Access_Array_Access;
+   type NameSpaceRequestParamData_Access_Array_Access_Array_Access is access all NameSpaceRequestParamData_Access_Array_Access_Array;
+end org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References;
+
+with org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NameSpaceRequestParamData is tagged;
-   type NameSpaceRequestParamData_Access is access all NameSpaceRequestParamData'Class;
-   type NameSpaceRequestParamData_Access_Array is array (Natural range <>) of NameSpaceRequestParamData_Access;
-   type NameSpaceRequestParamData_Access_Array_Access is access all NameSpaceRequestParamData_Access_Array;
-   type NameSpaceRequestParamData_Access_Array_Access_Array is array (Natural range <>) of NameSpaceRequestParamData_Access_Array_Access;
-   type NameSpaceRequestParamData_Access_Array_Access_Array_Access is access all NameSpaceRequestParamData_Access_Array_Access_Array;
+
+   subtype NameSpaceRequestParamData_Access is org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References.NameSpaceRequestParamData_Access;
+   function "=" (Left, Right : NameSpaceRequestParamData_Access) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References."=";
+   subtype NameSpaceRequestParamData_Access_Array is org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References.NameSpaceRequestParamData_Access_Array;
+   function "=" (Left, Right : NameSpaceRequestParamData_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References."=";
+   subtype NameSpaceRequestParamData_Access_Array_Access is org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References.NameSpaceRequestParamData_Access_Array_Access;
+   function "=" (Left, Right : NameSpaceRequestParamData_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References."=";
+   subtype NameSpaceRequestParamData_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References.NameSpaceRequestParamData_Access_Array_Access_Array;
+   function "=" (Left, Right : NameSpaceRequestParamData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References."=";
+   subtype NameSpaceRequestParamData_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References.NameSpaceRequestParamData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NameSpaceRequestParamData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package_References."=";
 
    type NameSpaceRequestParamData is new Java_Object with null record;
    NAME : Unbounded_String;

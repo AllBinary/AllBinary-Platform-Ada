@@ -26,7 +26,7 @@ package body org.allbinary.logic.java.FileExtensionData_Package is
 
    function getInstance return FileExtensionData_Access is
    begin
-        return FileExtensionData_Package.instance;
+        return FileExtensionData_Access (FileExtensionData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out FileExtensionData'Class) is

@@ -19,6 +19,7 @@ with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsCo
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.math.PositionStrings_Package;
 
 package body org.allbinary.graphics.GPoint_Package is
 

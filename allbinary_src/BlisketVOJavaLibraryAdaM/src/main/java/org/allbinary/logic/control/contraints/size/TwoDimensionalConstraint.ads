@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
+package org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References is
+   type TwoDimensionalConstraint_Access is access all org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package.TwoDimensionalConstraint'Class;
+   type TwoDimensionalConstraint_Access_Array is array (Natural range <>) of TwoDimensionalConstraint_Access;
+   type TwoDimensionalConstraint_Access_Array_Access is access all TwoDimensionalConstraint_Access_Array;
+   type TwoDimensionalConstraint_Access_Array_Access_Array is array (Natural range <>) of TwoDimensionalConstraint_Access_Array_Access;
+   type TwoDimensionalConstraint_Access_Array_Access_Array_Access is access all TwoDimensionalConstraint_Access_Array_Access_Array;
+end org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References;
+
+with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
-with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
+limited with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package_References;
 
 package org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package is
 
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   subtype SizeConstraintInterface_Access is org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package_References.SizeConstraintInterface_Access;
+   use type SizeConstraintInterface_Access;
+   subtype SizeConstraintInterface_Access_Array is org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package_References.SizeConstraintInterface_Access_Array;
+   use type SizeConstraintInterface_Access_Array;
+   subtype SizeConstraintInterface_Access_Array_Access is org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package_References.SizeConstraintInterface_Access_Array_Access;
+   use type SizeConstraintInterface_Access_Array_Access;
+   subtype SizeConstraintInterface_Access_Array_Access_Array is org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package_References.SizeConstraintInterface_Access_Array_Access_Array;
+   use type SizeConstraintInterface_Access_Array_Access_Array;
+   subtype SizeConstraintInterface_Access_Array_Access_Array_Access is org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package_References.SizeConstraintInterface_Access_Array_Access_Array_Access;
+   use type SizeConstraintInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TwoDimensionalConstraint is tagged;
-   type TwoDimensionalConstraint_Access is access all TwoDimensionalConstraint'Class;
-   type TwoDimensionalConstraint_Access_Array is array (Natural range <>) of TwoDimensionalConstraint_Access;
-   type TwoDimensionalConstraint_Access_Array_Access is access all TwoDimensionalConstraint_Access_Array;
-   type TwoDimensionalConstraint_Access_Array_Access_Array is array (Natural range <>) of TwoDimensionalConstraint_Access_Array_Access;
-   type TwoDimensionalConstraint_Access_Array_Access_Array_Access is access all TwoDimensionalConstraint_Access_Array_Access_Array;
+
+   subtype TwoDimensionalConstraint_Access is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References.TwoDimensionalConstraint_Access;
+   function "=" (Left, Right : TwoDimensionalConstraint_Access) return Boolean renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References."=";
+   subtype TwoDimensionalConstraint_Access_Array is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References.TwoDimensionalConstraint_Access_Array;
+   function "=" (Left, Right : TwoDimensionalConstraint_Access_Array) return Boolean renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References."=";
+   subtype TwoDimensionalConstraint_Access_Array_Access is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References.TwoDimensionalConstraint_Access_Array_Access;
+   function "=" (Left, Right : TwoDimensionalConstraint_Access_Array_Access) return Boolean renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References."=";
+   subtype TwoDimensionalConstraint_Access_Array_Access_Array is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References.TwoDimensionalConstraint_Access_Array_Access_Array;
+   function "=" (Left, Right : TwoDimensionalConstraint_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References."=";
+   subtype TwoDimensionalConstraint_Access_Array_Access_Array_Access is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References.TwoDimensionalConstraint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TwoDimensionalConstraint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package_References."=";
 
    type TwoDimensionalConstraint is new Java_Object and TwoDimensionalConstraintInterface with record
       widthSizeConstraintInterface : SizeConstraintInterface_Access;

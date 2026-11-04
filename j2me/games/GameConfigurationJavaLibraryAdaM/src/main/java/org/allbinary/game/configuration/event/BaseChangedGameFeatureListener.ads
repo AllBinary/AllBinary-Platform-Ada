@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package;
+package org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References is
+   type BaseChangedGameFeatureListener_Access is access all org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package.BaseChangedGameFeatureListener'Class;
+   type BaseChangedGameFeatureListener_Access_Array is array (Natural range <>) of BaseChangedGameFeatureListener_Access;
+   type BaseChangedGameFeatureListener_Access_Array_Access is access all BaseChangedGameFeatureListener_Access_Array;
+   type BaseChangedGameFeatureListener_Access_Array_Access_Array is array (Natural range <>) of BaseChangedGameFeatureListener_Access_Array_Access;
+   type BaseChangedGameFeatureListener_Access_Array_Access_Array_Access is access all BaseChangedGameFeatureListener_Access_Array_Access_Array;
+end org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References;
+
+with org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
-with org.allbinary.game.configuration.feature.GameFeatureUtil_Package; use org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package_References;
+limited with org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
+with org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package; use org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
-with org.allbinary.game.configuration.event.GameFeatureEvent_Package; use org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+limited with org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package_References;
 
 package org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package is
 
@@ -35,13 +51,81 @@ package org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Pa
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype Feature_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access;
+   use type Feature_Access;
+   subtype Feature_Access_Array is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array;
+   use type Feature_Access_Array;
+   subtype Feature_Access_Array_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access;
+   use type Feature_Access_Array_Access;
+   subtype Feature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access_Array;
+   use type Feature_Access_Array_Access_Array;
+   subtype Feature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access_Array_Access;
+   use type Feature_Access_Array_Access_Array_Access;
+   subtype GameFeatureUtil_Access is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access;
+   use type GameFeatureUtil_Access;
+   subtype GameFeatureUtil_Access_Array is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access_Array;
+   use type GameFeatureUtil_Access_Array;
+   subtype GameFeatureUtil_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access_Array_Access;
+   use type GameFeatureUtil_Access_Array_Access;
+   subtype GameFeatureUtil_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access_Array_Access_Array;
+   use type GameFeatureUtil_Access_Array_Access_Array;
+   subtype GameFeatureUtil_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeatureUtil_Package_References.GameFeatureUtil_Access_Array_Access_Array_Access;
+   use type GameFeatureUtil_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype GameFeatureEvent_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access;
+   use type GameFeatureEvent_Access;
+   subtype GameFeatureEvent_Access_Array is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array;
+   use type GameFeatureEvent_Access_Array;
+   subtype GameFeatureEvent_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access;
+   use type GameFeatureEvent_Access_Array_Access;
+   subtype GameFeatureEvent_Access_Array_Access_Array is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access_Array;
+   use type GameFeatureEvent_Access_Array_Access_Array;
+   subtype GameFeatureEvent_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access_Array_Access;
+   use type GameFeatureEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BaseChangedGameFeatureListener is tagged;
-   type BaseChangedGameFeatureListener_Access is access all BaseChangedGameFeatureListener'Class;
-   type BaseChangedGameFeatureListener_Access_Array is array (Natural range <>) of BaseChangedGameFeatureListener_Access;
-   type BaseChangedGameFeatureListener_Access_Array_Access is access all BaseChangedGameFeatureListener_Access_Array;
-   type BaseChangedGameFeatureListener_Access_Array_Access_Array is array (Natural range <>) of BaseChangedGameFeatureListener_Access_Array_Access;
-   type BaseChangedGameFeatureListener_Access_Array_Access_Array_Access is access all BaseChangedGameFeatureListener_Access_Array_Access_Array;
+
+   subtype BaseChangedGameFeatureListener_Access is org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References.BaseChangedGameFeatureListener_Access;
+   function "=" (Left, Right : BaseChangedGameFeatureListener_Access) return Boolean renames org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References."=";
+   subtype BaseChangedGameFeatureListener_Access_Array is org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References.BaseChangedGameFeatureListener_Access_Array;
+   function "=" (Left, Right : BaseChangedGameFeatureListener_Access_Array) return Boolean renames org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References."=";
+   subtype BaseChangedGameFeatureListener_Access_Array_Access is org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References.BaseChangedGameFeatureListener_Access_Array_Access;
+   function "=" (Left, Right : BaseChangedGameFeatureListener_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References."=";
+   subtype BaseChangedGameFeatureListener_Access_Array_Access_Array is org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References.BaseChangedGameFeatureListener_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseChangedGameFeatureListener_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References."=";
+   subtype BaseChangedGameFeatureListener_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References.BaseChangedGameFeatureListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseChangedGameFeatureListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package_References."=";
 
    type BaseChangedGameFeatureListener is new Java_Object and GameFeatureListenerInterface with record
       logUtil : LogUtil_Access;

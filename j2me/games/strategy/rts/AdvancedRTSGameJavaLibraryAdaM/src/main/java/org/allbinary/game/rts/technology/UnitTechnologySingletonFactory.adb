@@ -29,7 +29,7 @@ package body org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Pa
 
    function getInstance return UnitTechnologySingletonFactory_Access is
    begin
-        return UnitTechnologySingletonFactory_Package.instance;
+        return UnitTechnologySingletonFactory_Access (UnitTechnologySingletonFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out UnitTechnologySingletonFactory'Class) is

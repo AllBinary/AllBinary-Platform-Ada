@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
 with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
 with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
 with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
@@ -24,6 +25,16 @@ package body org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_
    package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
    package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   subtype LicenseInitInfo_Access is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access;
+   function "=" (Left, Right : LicenseInitInfo_Access) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
+   subtype LicenseInitInfo_Access_Array is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access_Array;
+   function "=" (Left, Right : LicenseInitInfo_Access_Array) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
+   subtype LicenseInitInfo_Access_Array_Access is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access_Array_Access;
+   function "=" (Left, Right : LicenseInitInfo_Access_Array_Access) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
+   subtype LicenseInitInfo_Access_Array_Access_Array is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : LicenseInitInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
+   subtype LicenseInitInfo_Access_Array_Access_Array_Access is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LicenseInitInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
    procedure Initialize_Fields (This : in out PrintLicenseInitInfo'Class) is
    begin
       null;

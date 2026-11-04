@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package;
+package admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References is
+   type XmlOptionItemsRequestHelperFactory_Access is access all admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package.XmlOptionItemsRequestHelperFactory'Class;
+   type XmlOptionItemsRequestHelperFactory_Access_Array is array (Natural range <>) of XmlOptionItemsRequestHelperFactory_Access;
+   type XmlOptionItemsRequestHelperFactory_Access_Array_Access is access all XmlOptionItemsRequestHelperFactory_Access_Array;
+   type XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of XmlOptionItemsRequestHelperFactory_Access_Array_Access;
+   type XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References;
+
+with admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type XmlOptionItemsRequestHelperFactory is tagged;
-   type XmlOptionItemsRequestHelperFactory_Access is access all XmlOptionItemsRequestHelperFactory'Class;
-   type XmlOptionItemsRequestHelperFactory_Access_Array is array (Natural range <>) of XmlOptionItemsRequestHelperFactory_Access;
-   type XmlOptionItemsRequestHelperFactory_Access_Array_Access is access all XmlOptionItemsRequestHelperFactory_Access_Array;
-   type XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of XmlOptionItemsRequestHelperFactory_Access_Array_Access;
-   type XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype XmlOptionItemsRequestHelperFactory_Access is admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References.XmlOptionItemsRequestHelperFactory_Access;
+   function "=" (Left, Right : XmlOptionItemsRequestHelperFactory_Access) return Boolean renames admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References."=";
+   subtype XmlOptionItemsRequestHelperFactory_Access_Array is admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References.XmlOptionItemsRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : XmlOptionItemsRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References."=";
+   subtype XmlOptionItemsRequestHelperFactory_Access_Array_Access is admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References.XmlOptionItemsRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : XmlOptionItemsRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References."=";
+   subtype XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References.XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References."=";
+   subtype XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References.XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : XmlOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package_References."=";
 
    type XmlOptionItemsRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

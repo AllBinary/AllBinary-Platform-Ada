@@ -13,14 +13,61 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package;
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package;
 
 package body org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package is
 
    package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   function "=" (Left, Right : AllBinaryEventObject_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype EventListenerInterface_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access;
+   function "=" (Left, Right : EventListenerInterface_Access) return Boolean renames org.allbinary.logic.util.event.EventListenerInterface_Package_References."=";
+   subtype EventListenerInterface_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array;
+   function "=" (Left, Right : EventListenerInterface_Access_Array) return Boolean renames org.allbinary.logic.util.event.EventListenerInterface_Package_References."=";
+   subtype EventListenerInterface_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : EventListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.EventListenerInterface_Package_References."=";
+   subtype EventListenerInterface_Access_Array_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : EventListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.event.EventListenerInterface_Package_References."=";
+   subtype EventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EventListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.EventListenerInterface_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype AnalogControllerConfigurationEventListenerInterface_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References.AnalogControllerConfigurationEventListenerInterface_Access;
+   function "=" (Left, Right : AnalogControllerConfigurationEventListenerInterface_Access) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References."=";
+   subtype AnalogControllerConfigurationEventListenerInterface_Access_Array is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References.AnalogControllerConfigurationEventListenerInterface_Access_Array;
+   function "=" (Left, Right : AnalogControllerConfigurationEventListenerInterface_Access_Array) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References."=";
+   subtype AnalogControllerConfigurationEventListenerInterface_Access_Array_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References.AnalogControllerConfigurationEventListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : AnalogControllerConfigurationEventListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References."=";
+   subtype AnalogControllerConfigurationEventListenerInterface_Access_Array_Access_Array is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References.AnalogControllerConfigurationEventListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AnalogControllerConfigurationEventListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References."=";
+   subtype AnalogControllerConfigurationEventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References.AnalogControllerConfigurationEventListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AnalogControllerConfigurationEventListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package_References."=";
    procedure Initialize_Fields (This : in out AnalogControllerConfigurationEventHandler'Class) is
    begin
       null;
@@ -30,7 +77,7 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
 
    function getInstance return AnalogControllerConfigurationEventHandler_Access is
    begin
-        return AnalogControllerConfigurationEventHandler_Package.instance;
+        return AnalogControllerConfigurationEventHandler_Access (AnalogControllerConfigurationEventHandler_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out AnalogControllerConfigurationEventHandler'Class) is
@@ -50,8 +97,8 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
    procedure addListener (This : in out AnalogControllerConfigurationEventHandler; analogControllerConfigurationEventListenerInterface_Param : access AnalogControllerConfigurationEventListenerInterface_Package.AnalogControllerConfigurationEventListenerInterface'Class) is
       analogControllerConfigurationEventListenerInterface : constant AnalogControllerConfigurationEventListenerInterface_Access := AnalogControllerConfigurationEventListenerInterface_Access (analogControllerConfigurationEventListenerInterface_Param);
    begin
-        if not (This.list.contains (Java_Object_Access (analogControllerConfigurationEventListenerInterface))) then
-            This.list.add (Java_Object_Access (analogControllerConfigurationEventListenerInterface));
+        if not (This.list.contains (AnalogControllerConfigurationEventListenerInterface_Package.Java_Object_Access_From_AnalogControllerConfigurationEventListenerInterface (analogControllerConfigurationEventListenerInterface))) then
+            This.list.add (AnalogControllerConfigurationEventListenerInterface_Package.Java_Object_Access_From_AnalogControllerConfigurationEventListenerInterface (analogControllerConfigurationEventListenerInterface));
         end if;
    end addListener;
 
@@ -64,7 +111,7 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
    procedure removeListener (This : in out AnalogControllerConfigurationEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (Java_Object_Access (eventListenerInterface));
+        This.list.remove (EventListenerInterface_Package.Java_Object_Access_From_EventListenerInterface (eventListenerInterface));
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 

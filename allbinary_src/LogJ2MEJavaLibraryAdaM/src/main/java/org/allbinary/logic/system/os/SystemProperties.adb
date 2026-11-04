@@ -28,7 +28,7 @@ package body org.allbinary.logic.system.os.SystemProperties_Package is
 
    function getInstance return SystemProperties_Access is
    begin
-        return SystemProperties_Package.instance;
+        return SystemProperties_Access (SystemProperties_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out SystemProperties'Class) is

@@ -8,7 +8,10 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.util.ArrayUtil_Package; use org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 
 package body org.allbinary.util.BasicArrayList_Package is
 
@@ -19,6 +22,16 @@ package body org.allbinary.util.BasicArrayList_Package is
    package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
    package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
    package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
+   subtype ArrayUtil_Access is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access;
+   function "=" (Left, Right : ArrayUtil_Access) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
+   subtype ArrayUtil_Access_Array is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array;
+   function "=" (Left, Right : ArrayUtil_Access_Array) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
+   subtype ArrayUtil_Access_Array_Access is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array_Access;
+   function "=" (Left, Right : ArrayUtil_Access_Array_Access) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
+   subtype ArrayUtil_Access_Array_Access_Array is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ArrayUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
+   subtype ArrayUtil_Access_Array_Access_Array_Access is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ArrayUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
    procedure Initialize_Fields (This : in out BasicArrayList'Class) is
    begin
       null;

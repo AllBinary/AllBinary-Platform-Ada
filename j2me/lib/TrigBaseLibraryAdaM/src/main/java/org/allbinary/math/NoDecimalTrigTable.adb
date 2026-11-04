@@ -15,6 +15,7 @@
 
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
@@ -24,6 +25,11 @@ with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsPrope
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.math.PositionStrings_Package;
 
 package body org.allbinary.math.NoDecimalTrigTable_Package is
 
@@ -35,6 +41,16 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
    package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
    package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
    package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
+   subtype MathUtil_Access is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access;
+   function "=" (Left, Right : MathUtil_Access) return Boolean renames org.allbinary.logic.math.MathUtil_Package_References."=";
+   subtype MathUtil_Access_Array is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array;
+   function "=" (Left, Right : MathUtil_Access_Array) return Boolean renames org.allbinary.logic.math.MathUtil_Package_References."=";
+   subtype MathUtil_Access_Array_Access is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array_Access;
+   function "=" (Left, Right : MathUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.math.MathUtil_Package_References."=";
+   subtype MathUtil_Access_Array_Access_Array is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : MathUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.MathUtil_Package_References."=";
+   subtype MathUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MathUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.MathUtil_Package_References."=";
    procedure Initialize_Fields (This : in out NoDecimalTrigTable'Class) is
    begin
       null;
@@ -48,7 +64,7 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
 
    function getInstance return NoDecimalTrigTable_Access is
    begin
-        return NoDecimalTrigTable_Package.instance;
+        return NoDecimalTrigTable_Access (NoDecimalTrigTable_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out NoDecimalTrigTable'Class) is

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.BillingAddressHelperFactory_Package;
+package admin.taghelpers.BillingAddressHelperFactory_Package_References is
+   type BillingAddressHelperFactory_Access is access all admin.taghelpers.BillingAddressHelperFactory_Package.BillingAddressHelperFactory'Class;
+   type BillingAddressHelperFactory_Access_Array is array (Natural range <>) of BillingAddressHelperFactory_Access;
+   type BillingAddressHelperFactory_Access_Array_Access is access all BillingAddressHelperFactory_Access_Array;
+   type BillingAddressHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BillingAddressHelperFactory_Access_Array_Access;
+   type BillingAddressHelperFactory_Access_Array_Access_Array_Access is access all BillingAddressHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.BillingAddressHelperFactory_Package_References;
+
+with admin.taghelpers.BillingAddressHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.BillingAddressHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BillingAddressHelperFactory is tagged;
-   type BillingAddressHelperFactory_Access is access all BillingAddressHelperFactory'Class;
-   type BillingAddressHelperFactory_Access_Array is array (Natural range <>) of BillingAddressHelperFactory_Access;
-   type BillingAddressHelperFactory_Access_Array_Access is access all BillingAddressHelperFactory_Access_Array;
-   type BillingAddressHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BillingAddressHelperFactory_Access_Array_Access;
-   type BillingAddressHelperFactory_Access_Array_Access_Array_Access is access all BillingAddressHelperFactory_Access_Array_Access_Array;
+
+   subtype BillingAddressHelperFactory_Access is admin.taghelpers.BillingAddressHelperFactory_Package_References.BillingAddressHelperFactory_Access;
+   function "=" (Left, Right : BillingAddressHelperFactory_Access) return Boolean renames admin.taghelpers.BillingAddressHelperFactory_Package_References."=";
+   subtype BillingAddressHelperFactory_Access_Array is admin.taghelpers.BillingAddressHelperFactory_Package_References.BillingAddressHelperFactory_Access_Array;
+   function "=" (Left, Right : BillingAddressHelperFactory_Access_Array) return Boolean renames admin.taghelpers.BillingAddressHelperFactory_Package_References."=";
+   subtype BillingAddressHelperFactory_Access_Array_Access is admin.taghelpers.BillingAddressHelperFactory_Package_References.BillingAddressHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : BillingAddressHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.BillingAddressHelperFactory_Package_References."=";
+   subtype BillingAddressHelperFactory_Access_Array_Access_Array is admin.taghelpers.BillingAddressHelperFactory_Package_References.BillingAddressHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BillingAddressHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.BillingAddressHelperFactory_Package_References."=";
+   subtype BillingAddressHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.BillingAddressHelperFactory_Package_References.BillingAddressHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BillingAddressHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.BillingAddressHelperFactory_Package_References."=";
 
    type BillingAddressHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

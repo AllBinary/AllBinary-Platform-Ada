@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.util.cache.CacheType_Package;
+package org.allbinary.logic.util.cache.CacheType_Package_References is
+   type CacheType_Access is access all org.allbinary.logic.util.cache.CacheType_Package.CacheType'Class;
+   type CacheType_Access_Array is array (Natural range <>) of CacheType_Access;
+   type CacheType_Access_Array_Access is access all CacheType_Access_Array;
+   type CacheType_Access_Array_Access_Array is array (Natural range <>) of CacheType_Access_Array_Access;
+   type CacheType_Access_Array_Access_Array_Access is access all CacheType_Access_Array_Access_Array;
+end org.allbinary.logic.util.cache.CacheType_Package_References;
+
+with org.allbinary.logic.util.cache.CacheType_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.util.cache.CacheType_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CacheType is tagged;
-   type CacheType_Access is access all CacheType'Class;
-   type CacheType_Access_Array is array (Natural range <>) of CacheType_Access;
-   type CacheType_Access_Array_Access is access all CacheType_Access_Array;
-   type CacheType_Access_Array_Access_Array is array (Natural range <>) of CacheType_Access_Array_Access;
-   type CacheType_Access_Array_Access_Array_Access is access all CacheType_Access_Array_Access_Array;
+
+   subtype CacheType_Access is org.allbinary.logic.util.cache.CacheType_Package_References.CacheType_Access;
+   function "=" (Left, Right : CacheType_Access) return Boolean renames org.allbinary.logic.util.cache.CacheType_Package_References."=";
+   subtype CacheType_Access_Array is org.allbinary.logic.util.cache.CacheType_Package_References.CacheType_Access_Array;
+   function "=" (Left, Right : CacheType_Access_Array) return Boolean renames org.allbinary.logic.util.cache.CacheType_Package_References."=";
+   subtype CacheType_Access_Array_Access is org.allbinary.logic.util.cache.CacheType_Package_References.CacheType_Access_Array_Access;
+   function "=" (Left, Right : CacheType_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CacheType_Package_References."=";
+   subtype CacheType_Access_Array_Access_Array is org.allbinary.logic.util.cache.CacheType_Package_References.CacheType_Access_Array_Access_Array;
+   function "=" (Left, Right : CacheType_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.CacheType_Package_References."=";
+   subtype CacheType_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.CacheType_Package_References.CacheType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CacheType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CacheType_Package_References."=";
 
    type CacheType is new Java_Object with record
       vendor : Unbounded_String;

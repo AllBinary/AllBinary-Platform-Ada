@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.http.AcceptableResponseUtil_Package;
+package org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References is
+   type AcceptableResponseUtil_Access is access all org.allbinary.logic.communication.http.AcceptableResponseUtil_Package.AcceptableResponseUtil'Class;
+   type AcceptableResponseUtil_Access_Array is array (Natural range <>) of AcceptableResponseUtil_Access;
+   type AcceptableResponseUtil_Access_Array_Access is access all AcceptableResponseUtil_Access_Array;
+   type AcceptableResponseUtil_Access_Array_Access_Array is array (Natural range <>) of AcceptableResponseUtil_Access_Array_Access;
+   type AcceptableResponseUtil_Access_Array_Access_Array_Access is access all AcceptableResponseUtil_Access_Array_Access_Array;
+end org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References;
+
+with org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.logic.communication.http.AcceptableResponseUtil_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AcceptableResponseUtil is tagged;
-   type AcceptableResponseUtil_Access is access all AcceptableResponseUtil'Class;
-   type AcceptableResponseUtil_Access_Array is array (Natural range <>) of AcceptableResponseUtil_Access;
-   type AcceptableResponseUtil_Access_Array_Access is access all AcceptableResponseUtil_Access_Array;
-   type AcceptableResponseUtil_Access_Array_Access_Array is array (Natural range <>) of AcceptableResponseUtil_Access_Array_Access;
-   type AcceptableResponseUtil_Access_Array_Access_Array_Access is access all AcceptableResponseUtil_Access_Array_Access_Array;
+
+   subtype AcceptableResponseUtil_Access is org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References.AcceptableResponseUtil_Access;
+   function "=" (Left, Right : AcceptableResponseUtil_Access) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References."=";
+   subtype AcceptableResponseUtil_Access_Array is org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References.AcceptableResponseUtil_Access_Array;
+   function "=" (Left, Right : AcceptableResponseUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References."=";
+   subtype AcceptableResponseUtil_Access_Array_Access is org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References.AcceptableResponseUtil_Access_Array_Access;
+   function "=" (Left, Right : AcceptableResponseUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References."=";
+   subtype AcceptableResponseUtil_Access_Array_Access_Array is org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References.AcceptableResponseUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : AcceptableResponseUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References."=";
+   subtype AcceptableResponseUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References.AcceptableResponseUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AcceptableResponseUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.AcceptableResponseUtil_Package_References."=";
 
    type AcceptableResponseUtil is new Java_Object with record
       candidateVector : BasicArrayList_Access;

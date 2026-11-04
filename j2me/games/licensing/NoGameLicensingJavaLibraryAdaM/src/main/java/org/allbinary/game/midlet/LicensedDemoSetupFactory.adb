@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.midlet.DemoSetup_Package; use org.allbinary.game.midlet.DemoSetup_Package;
+with org.allbinary.game.midlet.DemoSetup_Package;
 
 package body org.allbinary.game.midlet.LicensedDemoSetupFactory_Package is
 
+   subtype DemoSetup_Access is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access;
+   function "=" (Left, Right : DemoSetup_Access) return Boolean renames org.allbinary.game.midlet.DemoSetup_Package_References."=";
+   subtype DemoSetup_Access_Array is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access_Array;
+   function "=" (Left, Right : DemoSetup_Access_Array) return Boolean renames org.allbinary.game.midlet.DemoSetup_Package_References."=";
+   subtype DemoSetup_Access_Array_Access is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access_Array_Access;
+   function "=" (Left, Right : DemoSetup_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.DemoSetup_Package_References."=";
+   subtype DemoSetup_Access_Array_Access_Array is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access_Array_Access_Array;
+   function "=" (Left, Right : DemoSetup_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.DemoSetup_Package_References."=";
+   subtype DemoSetup_Access_Array_Access_Array_Access is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DemoSetup_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.DemoSetup_Package_References."=";
    procedure Initialize_Fields (This : in out LicensedDemoSetupFactory'Class) is
    begin
       null;

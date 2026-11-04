@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+package org.allbinary.layer.AllBinaryLayerManager_Package_References is
+   type AllBinaryLayerManager_Access is access all org.allbinary.layer.AllBinaryLayerManager_Package.AllBinaryLayerManager'Class;
+   type AllBinaryLayerManager_Access_Array is array (Natural range <>) of AllBinaryLayerManager_Access;
+   type AllBinaryLayerManager_Access_Array_Access is access all AllBinaryLayerManager_Access_Array;
+   type AllBinaryLayerManager_Access_Array_Access_Array is array (Natural range <>) of AllBinaryLayerManager_Access_Array_Access;
+   type AllBinaryLayerManager_Access_Array_Access_Array_Access is access all AllBinaryLayerManager_Access_Array_Access_Array;
+end org.allbinary.layer.AllBinaryLayerManager_Package_References;
+
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,23 +30,75 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.layer.event.LayerManagerEvent_Package; use org.allbinary.layer.event.LayerManagerEvent_Package;
-with org.allbinary.layer.event.LayerManagerEventHandler_Package; use org.allbinary.layer.event.LayerManagerEventHandler_Package;
+limited with org.allbinary.layer.event.LayerManagerEvent_Package;
+with org.allbinary.layer.event.LayerManagerEvent_Package_References;
+limited with org.allbinary.layer.event.LayerManagerEventHandler_Package;
+with org.allbinary.layer.event.LayerManagerEventHandler_Package_References;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
-with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+limited with org.allbinary.layer.LayerProcessor_Package;
+with org.allbinary.layer.LayerProcessor_Package_References;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 
 package org.allbinary.layer.AllBinaryLayerManager_Package is
 
    package LayerManagerEvent_Package renames Standard.org.allbinary.layer.event.LayerManagerEvent_Package;
    package LayerManagerEventHandler_Package renames Standard.org.allbinary.layer.event.LayerManagerEventHandler_Package;
+   package Reference_Types is
+   subtype LayerManagerEvent_Access is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access;
+   use type LayerManagerEvent_Access;
+   subtype LayerManagerEvent_Access_Array is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access_Array;
+   use type LayerManagerEvent_Access_Array;
+   subtype LayerManagerEvent_Access_Array_Access is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access_Array_Access;
+   use type LayerManagerEvent_Access_Array_Access;
+   subtype LayerManagerEvent_Access_Array_Access_Array is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access_Array_Access_Array;
+   use type LayerManagerEvent_Access_Array_Access_Array;
+   subtype LayerManagerEvent_Access_Array_Access_Array_Access is org.allbinary.layer.event.LayerManagerEvent_Package_References.LayerManagerEvent_Access_Array_Access_Array_Access;
+   use type LayerManagerEvent_Access_Array_Access_Array_Access;
+   subtype LayerManagerEventHandler_Access is org.allbinary.layer.event.LayerManagerEventHandler_Package_References.LayerManagerEventHandler_Access;
+   use type LayerManagerEventHandler_Access;
+   subtype LayerManagerEventHandler_Access_Array is org.allbinary.layer.event.LayerManagerEventHandler_Package_References.LayerManagerEventHandler_Access_Array;
+   use type LayerManagerEventHandler_Access_Array;
+   subtype LayerManagerEventHandler_Access_Array_Access is org.allbinary.layer.event.LayerManagerEventHandler_Package_References.LayerManagerEventHandler_Access_Array_Access;
+   use type LayerManagerEventHandler_Access_Array_Access;
+   subtype LayerManagerEventHandler_Access_Array_Access_Array is org.allbinary.layer.event.LayerManagerEventHandler_Package_References.LayerManagerEventHandler_Access_Array_Access_Array;
+   use type LayerManagerEventHandler_Access_Array_Access_Array;
+   subtype LayerManagerEventHandler_Access_Array_Access_Array_Access is org.allbinary.layer.event.LayerManagerEventHandler_Package_References.LayerManagerEventHandler_Access_Array_Access_Array_Access;
+   use type LayerManagerEventHandler_Access_Array_Access_Array_Access;
+   subtype LayerProcessor_Access is org.allbinary.layer.LayerProcessor_Package_References.LayerProcessor_Access;
+   use type LayerProcessor_Access;
+   subtype LayerProcessor_Access_Array is org.allbinary.layer.LayerProcessor_Package_References.LayerProcessor_Access_Array;
+   use type LayerProcessor_Access_Array;
+   subtype LayerProcessor_Access_Array_Access is org.allbinary.layer.LayerProcessor_Package_References.LayerProcessor_Access_Array_Access;
+   use type LayerProcessor_Access_Array_Access;
+   subtype LayerProcessor_Access_Array_Access_Array is org.allbinary.layer.LayerProcessor_Package_References.LayerProcessor_Access_Array_Access_Array;
+   use type LayerProcessor_Access_Array_Access_Array;
+   subtype LayerProcessor_Access_Array_Access_Array_Access is org.allbinary.layer.LayerProcessor_Package_References.LayerProcessor_Access_Array_Access_Array_Access;
+   use type LayerProcessor_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AllBinaryLayerManager is tagged;
-   type AllBinaryLayerManager_Access is access all AllBinaryLayerManager'Class;
-   type AllBinaryLayerManager_Access_Array is array (Natural range <>) of AllBinaryLayerManager_Access;
-   type AllBinaryLayerManager_Access_Array_Access is access all AllBinaryLayerManager_Access_Array;
-   type AllBinaryLayerManager_Access_Array_Access_Array is array (Natural range <>) of AllBinaryLayerManager_Access_Array_Access;
-   type AllBinaryLayerManager_Access_Array_Access_Array_Access is access all AllBinaryLayerManager_Access_Array_Access_Array;
+
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   function "=" (Left, Right : AllBinaryLayerManager_Access) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   function "=" (Left, Right : AllBinaryLayerManager_Access_Array) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryLayerManager_Access_Array_Access) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryLayerManager_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryLayerManager_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.AllBinaryLayerManager_Package_References."=";
 
    type AllBinaryLayerManager is new LayerManager with record
       layerManagerEventHandler : LayerManagerEventHandler_Access;

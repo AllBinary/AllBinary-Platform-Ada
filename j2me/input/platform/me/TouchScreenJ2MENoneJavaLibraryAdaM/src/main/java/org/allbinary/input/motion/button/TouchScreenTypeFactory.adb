@@ -37,7 +37,7 @@ package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
    function getInstance return TouchScreenTypeFactory_Access is
    begin
-        return TouchScreenTypeFactory_Package.instance;
+        return TouchScreenTypeFactory_Access (TouchScreenTypeFactory_Package.instance);
    end getInstance;
 
    procedure TouchScreenTypeFactory (This : in out TouchScreenTypeFactory) is

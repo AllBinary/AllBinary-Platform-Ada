@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
+package org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References is
+   type ItemView_Access is access all org.allbinary.business.user.commerce.inventory.item.ItemView_Package.ItemView'Class;
+   type ItemView_Access_Array is array (Natural range <>) of ItemView_Access;
+   type ItemView_Access_Array_Access is access all ItemView_Access_Array;
+   type ItemView_Access_Array_Access_Array is array (Natural range <>) of ItemView_Access_Array_Access;
+   type ItemView_Access_Array_Access_Array_Access is access all ItemView_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References;
+
+with org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,23 +31,75 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
+limited with org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package;
+with org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References;
 
 package org.allbinary.business.user.commerce.inventory.item.ItemView_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   subtype OrderItemInterface_Access is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access;
+   use type OrderItemInterface_Access;
+   subtype OrderItemInterface_Access_Array is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access_Array;
+   use type OrderItemInterface_Access_Array;
+   subtype OrderItemInterface_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access_Array_Access;
+   use type OrderItemInterface_Access_Array_Access;
+   subtype OrderItemInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access_Array_Access_Array;
+   use type OrderItemInterface_Access_Array_Access_Array;
+   subtype OrderItemInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access_Array_Access_Array_Access;
+   use type OrderItemInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ItemView is tagged;
-   type ItemView_Access is access all ItemView'Class;
-   type ItemView_Access_Array is array (Natural range <>) of ItemView_Access;
-   type ItemView_Access_Array_Access is access all ItemView_Access_Array;
-   type ItemView_Access_Array_Access_Array is array (Natural range <>) of ItemView_Access_Array_Access;
-   type ItemView_Access_Array_Access_Array_Access is access all ItemView_Access_Array_Access_Array;
+
+   subtype ItemView_Access is org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References.ItemView_Access;
+   function "=" (Left, Right : ItemView_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References."=";
+   subtype ItemView_Access_Array is org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References.ItemView_Access_Array;
+   function "=" (Left, Right : ItemView_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References."=";
+   subtype ItemView_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References.ItemView_Access_Array_Access;
+   function "=" (Left, Right : ItemView_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References."=";
+   subtype ItemView_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References.ItemView_Access_Array_Access_Array;
+   function "=" (Left, Right : ItemView_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References."=";
+   subtype ItemView_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References.ItemView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ItemView_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.ItemView_Package_References."=";
 
    type ItemView is new Java_Object with record
       itemInterface : OrderItemInterface_Access;

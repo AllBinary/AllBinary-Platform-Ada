@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+package org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References is
+   type CharArrayFactory_Access is access all org.allbinary.logic.java.character_Id.CharArrayFactory_Package.CharArrayFactory'Class;
+   type CharArrayFactory_Access_Array is array (Natural range <>) of CharArrayFactory_Access;
+   type CharArrayFactory_Access_Array_Access is access all CharArrayFactory_Access_Array;
+   type CharArrayFactory_Access_Array_Access_Array is array (Natural range <>) of CharArrayFactory_Access_Array_Access;
+   type CharArrayFactory_Access_Array_Access_Array_Access is access all CharArrayFactory_Access_Array_Access_Array;
+end org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References;
+
+with org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.java.character_Id.CharArrayFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CharArrayFactory is tagged;
-   type CharArrayFactory_Access is access all CharArrayFactory'Class;
-   type CharArrayFactory_Access_Array is array (Natural range <>) of CharArrayFactory_Access;
-   type CharArrayFactory_Access_Array_Access is access all CharArrayFactory_Access_Array;
-   type CharArrayFactory_Access_Array_Access_Array is array (Natural range <>) of CharArrayFactory_Access_Array_Access;
-   type CharArrayFactory_Access_Array_Access_Array_Access is access all CharArrayFactory_Access_Array_Access_Array;
+
+   subtype CharArrayFactory_Access is org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References.CharArrayFactory_Access;
+   function "=" (Left, Right : CharArrayFactory_Access) return Boolean renames org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References."=";
+   subtype CharArrayFactory_Access_Array is org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References.CharArrayFactory_Access_Array;
+   function "=" (Left, Right : CharArrayFactory_Access_Array) return Boolean renames org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References."=";
+   subtype CharArrayFactory_Access_Array_Access is org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References.CharArrayFactory_Access_Array_Access;
+   function "=" (Left, Right : CharArrayFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References."=";
+   subtype CharArrayFactory_Access_Array_Access_Array is org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References.CharArrayFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : CharArrayFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References."=";
+   subtype CharArrayFactory_Access_Array_Access_Array_Access is org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References.CharArrayFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CharArrayFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.character_Id.CharArrayFactory_Package_References."=";
 
    type CharArrayFactory is new Java_Object with record
       zeroCharArray : Character_Array_Access;

@@ -36,7 +36,7 @@ package body org.allbinary.canvas.Processor_Package is
 
    function getInstance return Processor_Access is
    begin
-        return Processor_Package.SINGLETON;
+        return Processor_Access (Processor_Package.SINGLETON);
    end getInstance;
 
    --  throws Exception

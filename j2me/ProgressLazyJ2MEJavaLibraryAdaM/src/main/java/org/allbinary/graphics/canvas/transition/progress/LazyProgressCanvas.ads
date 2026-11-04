@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package;
+package org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References is
+   type LazyProgressCanvas_Access is access all org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package.LazyProgressCanvas'Class;
+   type LazyProgressCanvas_Access_Array is array (Natural range <>) of LazyProgressCanvas_Access;
+   type LazyProgressCanvas_Access_Array_Access is access all LazyProgressCanvas_Access_Array;
+   type LazyProgressCanvas_Access_Array_Access_Array is array (Natural range <>) of LazyProgressCanvas_Access_Array_Access;
+   type LazyProgressCanvas_Access_Array_Access_Array_Access is access all LazyProgressCanvas_Access_Array_Access_Array;
+end org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References;
+
+with org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package is
 
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Reference_Types is
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type LazyProgressCanvas is tagged;
-   type LazyProgressCanvas_Access is access all LazyProgressCanvas'Class;
-   type LazyProgressCanvas_Access_Array is array (Natural range <>) of LazyProgressCanvas_Access;
-   type LazyProgressCanvas_Access_Array_Access is access all LazyProgressCanvas_Access_Array;
-   type LazyProgressCanvas_Access_Array_Access_Array is array (Natural range <>) of LazyProgressCanvas_Access_Array_Access;
-   type LazyProgressCanvas_Access_Array_Access_Array_Access is access all LazyProgressCanvas_Access_Array_Access_Array;
+
+   subtype LazyProgressCanvas_Access is org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References.LazyProgressCanvas_Access;
+   function "=" (Left, Right : LazyProgressCanvas_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References."=";
+   subtype LazyProgressCanvas_Access_Array is org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References.LazyProgressCanvas_Access_Array;
+   function "=" (Left, Right : LazyProgressCanvas_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References."=";
+   subtype LazyProgressCanvas_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References.LazyProgressCanvas_Access_Array_Access;
+   function "=" (Left, Right : LazyProgressCanvas_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References."=";
+   subtype LazyProgressCanvas_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References.LazyProgressCanvas_Access_Array_Access_Array;
+   function "=" (Left, Right : LazyProgressCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References."=";
+   subtype LazyProgressCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References.LazyProgressCanvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LazyProgressCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package_References."=";
 
    type LazyProgressCanvas is new ProgressCanvas with null record;
 

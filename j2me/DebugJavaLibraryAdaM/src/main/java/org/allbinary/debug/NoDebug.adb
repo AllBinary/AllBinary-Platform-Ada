@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.debug.DebugInterface_Package;
 
 package body org.allbinary.debug.NoDebug_Package is
 

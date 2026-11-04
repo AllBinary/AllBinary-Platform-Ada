@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package;
+package org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References is
+   type VertexAttributePointerVBOOpenGLProcessor_Access is access all org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package.VertexAttributePointerVBOOpenGLProcessor'Class;
+   type VertexAttributePointerVBOOpenGLProcessor_Access_Array is array (Natural range <>) of VertexAttributePointerVBOOpenGLProcessor_Access;
+   type VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access is access all VertexAttributePointerVBOOpenGLProcessor_Access_Array;
+   type VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access;
+   type VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array_Access is access all VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array;
+end org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References;
+
+with org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+limited with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package; use org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package;
 
 package org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package ObjectThreedOpenGLProcessor_Package renames Standard.org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package;
+   package Reference_Types is
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   use type GL10_Access;
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   use type GL10_Access_Array;
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   use type GL10_Access_Array_Access;
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   use type GL10_Access_Array_Access_Array;
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   use type GL10_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type VertexAttributePointerVBOOpenGLProcessor is tagged;
-   type VertexAttributePointerVBOOpenGLProcessor_Access is access all VertexAttributePointerVBOOpenGLProcessor'Class;
-   type VertexAttributePointerVBOOpenGLProcessor_Access_Array is array (Natural range <>) of VertexAttributePointerVBOOpenGLProcessor_Access;
-   type VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access is access all VertexAttributePointerVBOOpenGLProcessor_Access_Array;
-   type VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access;
-   type VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array_Access is access all VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array;
+
+   subtype VertexAttributePointerVBOOpenGLProcessor_Access is org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References.VertexAttributePointerVBOOpenGLProcessor_Access;
+   function "=" (Left, Right : VertexAttributePointerVBOOpenGLProcessor_Access) return Boolean renames org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References."=";
+   subtype VertexAttributePointerVBOOpenGLProcessor_Access_Array is org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References.VertexAttributePointerVBOOpenGLProcessor_Access_Array;
+   function "=" (Left, Right : VertexAttributePointerVBOOpenGLProcessor_Access_Array) return Boolean renames org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References."=";
+   subtype VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access is org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References.VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access;
+   function "=" (Left, Right : VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References."=";
+   subtype VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array is org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References.VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References."=";
+   subtype VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References.VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VertexAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGLProcessor_Package_References."=";
 
    type VertexAttributePointerVBOOpenGLProcessor is new ObjectThreedOpenGLProcessor with null record;
    instance : VertexAttributePointerVBOOpenGLProcessor_Access;

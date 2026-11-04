@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+package org.allbinary.graphics.opengles.OpenGLFeature_Package_References is
+   type OpenGLFeature_Access is access all org.allbinary.graphics.opengles.OpenGLFeature_Package.OpenGLFeature'Class;
+   type OpenGLFeature_Access_Array is array (Natural range <>) of OpenGLFeature_Access;
+   type OpenGLFeature_Access_Array_Access is access all OpenGLFeature_Access_Array;
+   type OpenGLFeature_Access_Array_Access_Array is array (Natural range <>) of OpenGLFeature_Access_Array_Access;
+   type OpenGLFeature_Access_Array_Access_Array_Access is access all OpenGLFeature_Access_Array_Access_Array;
+end org.allbinary.graphics.opengles.OpenGLFeature_Package_References;
+
+with org.allbinary.graphics.opengles.OpenGLFeature_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary
 package org.allbinary.graphics.opengles.OpenGLFeature_Package is
 
    package Feature_Package renames Standard.org.allbinary.game.configuration.feature.Feature_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLFeature is tagged;
-   type OpenGLFeature_Access is access all OpenGLFeature'Class;
-   type OpenGLFeature_Access_Array is array (Natural range <>) of OpenGLFeature_Access;
-   type OpenGLFeature_Access_Array_Access is access all OpenGLFeature_Access_Array;
-   type OpenGLFeature_Access_Array_Access_Array is array (Natural range <>) of OpenGLFeature_Access_Array_Access;
-   type OpenGLFeature_Access_Array_Access_Array_Access is access all OpenGLFeature_Access_Array_Access_Array;
+
+   subtype OpenGLFeature_Access is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access;
+   function "=" (Left, Right : OpenGLFeature_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeature_Package_References."=";
+   subtype OpenGLFeature_Access_Array is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access_Array;
+   function "=" (Left, Right : OpenGLFeature_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeature_Package_References."=";
+   subtype OpenGLFeature_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access_Array_Access;
+   function "=" (Left, Right : OpenGLFeature_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeature_Package_References."=";
+   subtype OpenGLFeature_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeature_Package_References."=";
+   subtype OpenGLFeature_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeature_Package_References."=";
 
    type OpenGLFeature is new Feature with null record;
 

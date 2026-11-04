@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with tags.TagStrings_Package; use tags.TagStrings_Package;
+with tags.CustomTagSupport_Package;
+with tags.TagStrings_Package;
 
 package body tags.CommandTag_Package is
 
+   subtype TagStrings_Access is tags.TagStrings_Package_References.TagStrings_Access;
+   function "=" (Left, Right : TagStrings_Access) return Boolean renames tags.TagStrings_Package_References."=";
+   subtype TagStrings_Access_Array is tags.TagStrings_Package_References.TagStrings_Access_Array;
+   function "=" (Left, Right : TagStrings_Access_Array) return Boolean renames tags.TagStrings_Package_References."=";
+   subtype TagStrings_Access_Array_Access is tags.TagStrings_Package_References.TagStrings_Access_Array_Access;
+   function "=" (Left, Right : TagStrings_Access_Array_Access) return Boolean renames tags.TagStrings_Package_References."=";
+   subtype TagStrings_Access_Array_Access_Array is tags.TagStrings_Package_References.TagStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : TagStrings_Access_Array_Access_Array) return Boolean renames tags.TagStrings_Package_References."=";
+   subtype TagStrings_Access_Array_Access_Array_Access is tags.TagStrings_Package_References.TagStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TagStrings_Access_Array_Access_Array_Access) return Boolean renames tags.TagStrings_Package_References."=";
    procedure Initialize_Fields (This : in out CommandTag'Class) is
    begin
       null;

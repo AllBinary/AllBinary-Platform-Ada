@@ -14,12 +14,25 @@
 
 
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.logic.math.permutations.ComparableObject_Package; use org.allbinary.logic.math.permutations.ComparableObject_Package;
 with org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package; use org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package;
+with org.allbinary.logic.math.permutations.ComparableObject_Package;
+with org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package;
 
 package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutationUtil_Package is
 
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   subtype Visitor_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access;
+   function "=" (Left, Right : Visitor_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array;
+   function "=" (Left, Right : Visitor_Access_Array) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access;
+   function "=" (Left, Right : Visitor_Access_Array_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array_Access_Array is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access_Array;
+   function "=" (Left, Right : Visitor_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
+   subtype Visitor_Access_Array_Access_Array_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Visitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
    procedure Initialize_Fields (This : in out OrderedObjectArrayPermutationUtil'Class) is
    begin
       null;
@@ -30,7 +43,7 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
 
    function getInstance return OrderedObjectArrayPermutationUtil_Access is
    begin
-        return OrderedObjectArrayPermutationUtil_Package.instance;
+        return OrderedObjectArrayPermutationUtil_Access (OrderedObjectArrayPermutationUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out OrderedObjectArrayPermutationUtil'Class) is

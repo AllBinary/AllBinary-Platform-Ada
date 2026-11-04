@@ -30,7 +30,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderComposite_Package is
       
       
       
-      This.useProgramShaderOpenGLProcessor := null;
+      This.useProgramShaderOpenGLProcessor := NullOpenGLProcessorFactory_Package.getInstance;
       This.shaderMatrixOpenGLProcessor := NullOpenGLProcessorFactory_Package.getInstance;
       This.colorEnableVertexAttribArrayOpenGLProcessor := NullOpenGLProcessorFactory_Package.getInstance;
       This.normalEnableVertexAttribArrayOpenGLProcessor := NullOpenGLProcessorFactory_Package.getInstance;

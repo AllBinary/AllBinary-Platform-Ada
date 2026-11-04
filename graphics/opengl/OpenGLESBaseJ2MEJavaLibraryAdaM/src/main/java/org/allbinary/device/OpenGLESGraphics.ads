@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.device.OpenGLESGraphics_Package;
+package org.allbinary.device.OpenGLESGraphics_Package_References is
+   type OpenGLESGraphics_Access is access all org.allbinary.device.OpenGLESGraphics_Package.OpenGLESGraphics'Class;
+   type OpenGLESGraphics_Access_Array is array (Natural range <>) of OpenGLESGraphics_Access;
+   type OpenGLESGraphics_Access_Array_Access is access all OpenGLESGraphics_Access_Array;
+   type OpenGLESGraphics_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGraphics_Access_Array_Access;
+   type OpenGLESGraphics_Access_Array_Access_Array_Access is access all OpenGLESGraphics_Access_Array_Access_Array;
+end org.allbinary.device.OpenGLESGraphics_Package_References;
+
+with org.allbinary.device.OpenGLESGraphics_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,12 +18,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
-with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
-with org.allbinary.graphics.font.FontDebugBase_Package; use org.allbinary.graphics.font.FontDebugBase_Package;
+limited with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL_Package_References;
+limited with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
+limited with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
+limited with org.allbinary.graphics.font.FontDebugBase_Package;
+with org.allbinary.graphics.font.FontDebugBase_Package_References;
 with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.device.GraphicsInterface_Package; use org.allbinary.device.GraphicsInterface_Package;
 
 package org.allbinary.device.OpenGLESGraphics_Package is
@@ -24,13 +39,71 @@ package org.allbinary.device.OpenGLESGraphics_Package is
    package FontDebugBase_Package renames Standard.org.allbinary.graphics.font.FontDebugBase_Package;
    package OpenGLSurfaceChangedInterface_Package renames Standard.org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype GL_Access is javax.microedition.khronos.opengles.GL_Package_References.GL_Access;
+   use type GL_Access;
+   subtype GL_Access_Array is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array;
+   use type GL_Access_Array;
+   subtype GL_Access_Array_Access is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array_Access;
+   use type GL_Access_Array_Access;
+   subtype GL_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array_Access_Array;
+   use type GL_Access_Array_Access_Array;
+   subtype GL_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array_Access_Array_Access;
+   use type GL_Access_Array_Access_Array_Access;
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   use type GL10_Access;
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   use type GL10_Access_Array;
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   use type GL10_Access_Array_Access;
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   use type GL10_Access_Array_Access_Array;
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   use type GL10_Access_Array_Access_Array_Access;
+   subtype Font_Access is javax.microedition.lcdui.Font_Package_References.Font_Access;
+   use type Font_Access;
+   subtype Font_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array;
+   use type Font_Access_Array;
+   subtype Font_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access;
+   use type Font_Access_Array_Access;
+   subtype Font_Access_Array_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array;
+   use type Font_Access_Array_Access_Array;
+   subtype Font_Access_Array_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array_Access;
+   use type Font_Access_Array_Access_Array_Access;
+   subtype FontDebugBase_Access is org.allbinary.graphics.font.FontDebugBase_Package_References.FontDebugBase_Access;
+   use type FontDebugBase_Access;
+   subtype FontDebugBase_Access_Array is org.allbinary.graphics.font.FontDebugBase_Package_References.FontDebugBase_Access_Array;
+   use type FontDebugBase_Access_Array;
+   subtype FontDebugBase_Access_Array_Access is org.allbinary.graphics.font.FontDebugBase_Package_References.FontDebugBase_Access_Array_Access;
+   use type FontDebugBase_Access_Array_Access;
+   subtype FontDebugBase_Access_Array_Access_Array is org.allbinary.graphics.font.FontDebugBase_Package_References.FontDebugBase_Access_Array_Access_Array;
+   use type FontDebugBase_Access_Array_Access_Array;
+   subtype FontDebugBase_Access_Array_Access_Array_Access is org.allbinary.graphics.font.FontDebugBase_Package_References.FontDebugBase_Access_Array_Access_Array_Access;
+   use type FontDebugBase_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLESGraphics is tagged;
-   type OpenGLESGraphics_Access is access all OpenGLESGraphics'Class;
-   type OpenGLESGraphics_Access_Array is array (Natural range <>) of OpenGLESGraphics_Access;
-   type OpenGLESGraphics_Access_Array_Access is access all OpenGLESGraphics_Access_Array;
-   type OpenGLESGraphics_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGraphics_Access_Array_Access;
-   type OpenGLESGraphics_Access_Array_Access_Array_Access is access all OpenGLESGraphics_Access_Array_Access_Array;
+
+   subtype OpenGLESGraphics_Access is org.allbinary.device.OpenGLESGraphics_Package_References.OpenGLESGraphics_Access;
+   function "=" (Left, Right : OpenGLESGraphics_Access) return Boolean renames org.allbinary.device.OpenGLESGraphics_Package_References."=";
+   subtype OpenGLESGraphics_Access_Array is org.allbinary.device.OpenGLESGraphics_Package_References.OpenGLESGraphics_Access_Array;
+   function "=" (Left, Right : OpenGLESGraphics_Access_Array) return Boolean renames org.allbinary.device.OpenGLESGraphics_Package_References."=";
+   subtype OpenGLESGraphics_Access_Array_Access is org.allbinary.device.OpenGLESGraphics_Package_References.OpenGLESGraphics_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESGraphics_Access_Array_Access) return Boolean renames org.allbinary.device.OpenGLESGraphics_Package_References."=";
+   subtype OpenGLESGraphics_Access_Array_Access_Array is org.allbinary.device.OpenGLESGraphics_Package_References.OpenGLESGraphics_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLESGraphics_Access_Array_Access_Array) return Boolean renames org.allbinary.device.OpenGLESGraphics_Package_References."=";
+   subtype OpenGLESGraphics_Access_Array_Access_Array_Access is org.allbinary.device.OpenGLESGraphics_Package_References.OpenGLESGraphics_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESGraphics_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.device.OpenGLESGraphics_Package_References."=";
 
    type OpenGLESGraphics is new Java_Object and OpenGLSurfaceChangedInterface and GraphicsInterface with record
       commonStrings : CommonStrings_Access;

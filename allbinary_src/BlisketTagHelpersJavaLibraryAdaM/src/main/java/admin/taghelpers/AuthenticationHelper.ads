@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.AuthenticationHelper_Package;
+package admin.taghelpers.AuthenticationHelper_Package_References is
+   type AuthenticationHelper_Access is access all admin.taghelpers.AuthenticationHelper_Package.AuthenticationHelper'Class;
+   type AuthenticationHelper_Access_Array is array (Natural range <>) of AuthenticationHelper_Access;
+   type AuthenticationHelper_Access_Array_Access is access all AuthenticationHelper_Access_Array;
+   type AuthenticationHelper_Access_Array_Access_Array is array (Natural range <>) of AuthenticationHelper_Access_Array_Access;
+   type AuthenticationHelper_Access_Array_Access_Array_Access is access all AuthenticationHelper_Access_Array_Access_Array;
+end admin.taghelpers.AuthenticationHelper_Package_References;
+
+with admin.taghelpers.AuthenticationHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,13 +31,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 --  with javax.servlet.jsp.tagext.TagSupport_Package; use javax.servlet.jsp.tagext.TagSupport_Package;
-with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.business.user.role.UserRole_Package;
+with org.allbinary.business.user.role.UserRole_Package_References;
+limited with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.AuthenticationHelper_Package is
@@ -37,13 +51,61 @@ package admin.taghelpers.AuthenticationHelper_Package is
    package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype UserRole_Access is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access;
+   use type UserRole_Access;
+   subtype UserRole_Access_Array is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array;
+   use type UserRole_Access_Array;
+   subtype UserRole_Access_Array_Access is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array_Access;
+   use type UserRole_Access_Array_Access;
+   subtype UserRole_Access_Array_Access_Array is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array_Access_Array;
+   use type UserRole_Access_Array_Access_Array;
+   subtype UserRole_Access_Array_Access_Array_Access is org.allbinary.business.user.role.UserRole_Package_References.UserRole_Access_Array_Access_Array_Access;
+   use type UserRole_Access_Array_Access_Array_Access;
+   subtype WeblisketSession_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access;
+   use type WeblisketSession_Access;
+   subtype WeblisketSession_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array;
+   use type WeblisketSession_Access_Array;
+   subtype WeblisketSession_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array_Access;
+   use type WeblisketSession_Access_Array_Access;
+   subtype WeblisketSession_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array_Access_Array;
+   use type WeblisketSession_Access_Array_Access_Array;
+   subtype WeblisketSession_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array_Access_Array_Access;
+   use type WeblisketSession_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AuthenticationHelper is tagged;
-   type AuthenticationHelper_Access is access all AuthenticationHelper'Class;
-   type AuthenticationHelper_Access_Array is array (Natural range <>) of AuthenticationHelper_Access;
-   type AuthenticationHelper_Access_Array_Access is access all AuthenticationHelper_Access_Array;
-   type AuthenticationHelper_Access_Array_Access_Array is array (Natural range <>) of AuthenticationHelper_Access_Array_Access;
-   type AuthenticationHelper_Access_Array_Access_Array_Access is access all AuthenticationHelper_Access_Array_Access_Array;
+
+   subtype AuthenticationHelper_Access is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access;
+   function "=" (Left, Right : AuthenticationHelper_Access) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
+   subtype AuthenticationHelper_Access_Array is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access_Array;
+   function "=" (Left, Right : AuthenticationHelper_Access_Array) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
+   subtype AuthenticationHelper_Access_Array_Access is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access_Array_Access;
+   function "=" (Left, Right : AuthenticationHelper_Access_Array_Access) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
+   subtype AuthenticationHelper_Access_Array_Access_Array is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : AuthenticationHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
+   subtype AuthenticationHelper_Access_Array_Access_Array_Access is admin.taghelpers.AuthenticationHelper_Package_References.AuthenticationHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AuthenticationHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.AuthenticationHelper_Package_References."=";
 
    type AuthenticationHelper is new TagHelper with record
       logUtil : LogUtil_Access;

@@ -13,10 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.InputFeature_Package; use org.allbinary.game.configuration.feature.InputFeature_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.InputFeature_Package;
 
 package body org.allbinary.game.configuration.feature.InputFeatureFactory_Package is
 
+   subtype InputFeature_Access is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access;
+   function "=" (Left, Right : InputFeature_Access) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
+   subtype InputFeature_Access_Array is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access_Array;
+   function "=" (Left, Right : InputFeature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
+   subtype InputFeature_Access_Array_Access is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access_Array_Access;
+   function "=" (Left, Right : InputFeature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
+   subtype InputFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : InputFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
+   subtype InputFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
    procedure Initialize_Fields (This : in out InputFeatureFactory'Class) is
    begin
       null;
@@ -30,7 +44,7 @@ package body org.allbinary.game.configuration.feature.InputFeatureFactory_Packag
 
    function getInstance return InputFeatureFactory_Access is
    begin
-        return InputFeatureFactory_Package.instance;
+        return InputFeatureFactory_Access (InputFeatureFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out InputFeatureFactory'Class) is

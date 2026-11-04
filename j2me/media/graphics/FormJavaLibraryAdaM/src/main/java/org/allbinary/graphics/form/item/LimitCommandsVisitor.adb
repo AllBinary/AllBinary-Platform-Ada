@@ -18,6 +18,8 @@ with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.form.ScreenInfo_Package; use org.allbinary.graphics.form.ScreenInfo_Package;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.graphics.form.ScreenInfo_Package;
 
 package body org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
 

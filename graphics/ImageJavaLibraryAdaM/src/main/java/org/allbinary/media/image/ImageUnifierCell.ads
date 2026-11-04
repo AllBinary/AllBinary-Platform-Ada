@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.ImageUnifierCell_Package;
+package org.allbinary.media.image.ImageUnifierCell_Package_References is
+   type ImageUnifierCell_Access is access all org.allbinary.media.image.ImageUnifierCell_Package.ImageUnifierCell'Class;
+   type ImageUnifierCell_Access_Array is array (Natural range <>) of ImageUnifierCell_Access;
+   type ImageUnifierCell_Access_Array_Access is access all ImageUnifierCell_Access_Array;
+   type ImageUnifierCell_Access_Array_Access_Array is array (Natural range <>) of ImageUnifierCell_Access_Array_Access;
+   type ImageUnifierCell_Access_Array_Access_Array_Access is access all ImageUnifierCell_Access_Array_Access_Array;
+end org.allbinary.media.image.ImageUnifierCell_Package_References;
+
+with org.allbinary.media.image.ImageUnifierCell_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.media.image.ImageUnifierCell_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageUnifierCell is tagged;
-   type ImageUnifierCell_Access is access all ImageUnifierCell'Class;
-   type ImageUnifierCell_Access_Array is array (Natural range <>) of ImageUnifierCell_Access;
-   type ImageUnifierCell_Access_Array_Access is access all ImageUnifierCell_Access_Array;
-   type ImageUnifierCell_Access_Array_Access_Array is array (Natural range <>) of ImageUnifierCell_Access_Array_Access;
-   type ImageUnifierCell_Access_Array_Access_Array_Access is access all ImageUnifierCell_Access_Array_Access_Array;
+
+   subtype ImageUnifierCell_Access is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access;
+   function "=" (Left, Right : ImageUnifierCell_Access) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
+   subtype ImageUnifierCell_Access_Array is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access_Array;
+   function "=" (Left, Right : ImageUnifierCell_Access_Array) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
+   subtype ImageUnifierCell_Access_Array_Access is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access_Array_Access;
+   function "=" (Left, Right : ImageUnifierCell_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
+   subtype ImageUnifierCell_Access_Array_Access_Array is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageUnifierCell_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
+   subtype ImageUnifierCell_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageUnifierCell_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
 
    type ImageUnifierCell is new Java_Object with record
       width : Integer;

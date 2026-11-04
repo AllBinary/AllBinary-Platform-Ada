@@ -13,11 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package; use org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package;
 with org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package; use org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package;
+with org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package;
+with org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package;
+with org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;
 
 package body org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
 
+   subtype Processor_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access;
+   function "=" (Left, Right : Processor_Access) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
+   subtype Processor_Access_Array is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array;
+   function "=" (Left, Right : Processor_Access_Array) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
+   subtype Processor_Access_Array_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access;
+   function "=" (Left, Right : Processor_Access_Array_Access) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
+   subtype Processor_Access_Array_Access_Array is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access_Array;
+   function "=" (Left, Right : Processor_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
+   subtype Processor_Access_Array_Access_Array_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Processor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
    procedure Initialize_Fields (This : in out SingleSensorGameUpdateProcessor'Class) is
    begin
       null;

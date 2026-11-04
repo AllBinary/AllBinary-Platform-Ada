@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.RTSLayerCompositePaintable_Package;
+package org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References is
+   type RTSLayerCompositePaintable_Access is access all org.allbinary.game.layer.RTSLayerCompositePaintable_Package.RTSLayerCompositePaintable'Class;
+   type RTSLayerCompositePaintable_Access_Array is array (Natural range <>) of RTSLayerCompositePaintable_Access;
+   type RTSLayerCompositePaintable_Access_Array_Access is access all RTSLayerCompositePaintable_Access_Array;
+   type RTSLayerCompositePaintable_Access_Array_Access_Array is array (Natural range <>) of RTSLayerCompositePaintable_Access_Array_Access;
+   type RTSLayerCompositePaintable_Access_Array_Access_Array_Access is access all RTSLayerCompositePaintable_Access_Array_Access_Array;
+end org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References;
+
+with org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package; use org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package;
-with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+limited with org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package;
+with org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package_References;
+limited with org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 
 package org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype UpgradableRTSLayerHudPaintable_Access is org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package_References.UpgradableRTSLayerHudPaintable_Access;
+   use type UpgradableRTSLayerHudPaintable_Access;
+   subtype UpgradableRTSLayerHudPaintable_Access_Array is org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package_References.UpgradableRTSLayerHudPaintable_Access_Array;
+   use type UpgradableRTSLayerHudPaintable_Access_Array;
+   subtype UpgradableRTSLayerHudPaintable_Access_Array_Access is org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package_References.UpgradableRTSLayerHudPaintable_Access_Array_Access;
+   use type UpgradableRTSLayerHudPaintable_Access_Array_Access;
+   subtype UpgradableRTSLayerHudPaintable_Access_Array_Access_Array is org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package_References.UpgradableRTSLayerHudPaintable_Access_Array_Access_Array;
+   use type UpgradableRTSLayerHudPaintable_Access_Array_Access_Array;
+   subtype UpgradableRTSLayerHudPaintable_Access_Array_Access_Array_Access is org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package_References.UpgradableRTSLayerHudPaintable_Access_Array_Access_Array_Access;
+   use type UpgradableRTSLayerHudPaintable_Access_Array_Access_Array_Access;
+   subtype RTSLayer_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access;
+   use type RTSLayer_Access;
+   subtype RTSLayer_Access_Array is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array;
+   use type RTSLayer_Access_Array;
+   subtype RTSLayer_Access_Array_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access;
+   use type RTSLayer_Access_Array_Access;
+   subtype RTSLayer_Access_Array_Access_Array is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access_Array;
+   use type RTSLayer_Access_Array_Access_Array;
+   subtype RTSLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access_Array_Access;
+   use type RTSLayer_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type RTSLayerCompositePaintable is tagged;
-   type RTSLayerCompositePaintable_Access is access all RTSLayerCompositePaintable'Class;
-   type RTSLayerCompositePaintable_Access_Array is array (Natural range <>) of RTSLayerCompositePaintable_Access;
-   type RTSLayerCompositePaintable_Access_Array_Access is access all RTSLayerCompositePaintable_Access_Array;
-   type RTSLayerCompositePaintable_Access_Array_Access_Array is array (Natural range <>) of RTSLayerCompositePaintable_Access_Array_Access;
-   type RTSLayerCompositePaintable_Access_Array_Access_Array_Access is access all RTSLayerCompositePaintable_Access_Array_Access_Array;
+
+   subtype RTSLayerCompositePaintable_Access is org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References.RTSLayerCompositePaintable_Access;
+   function "=" (Left, Right : RTSLayerCompositePaintable_Access) return Boolean renames org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References."=";
+   subtype RTSLayerCompositePaintable_Access_Array is org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References.RTSLayerCompositePaintable_Access_Array;
+   function "=" (Left, Right : RTSLayerCompositePaintable_Access_Array) return Boolean renames org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References."=";
+   subtype RTSLayerCompositePaintable_Access_Array_Access is org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References.RTSLayerCompositePaintable_Access_Array_Access;
+   function "=" (Left, Right : RTSLayerCompositePaintable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References."=";
+   subtype RTSLayerCompositePaintable_Access_Array_Access_Array is org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References.RTSLayerCompositePaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : RTSLayerCompositePaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References."=";
+   subtype RTSLayerCompositePaintable_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References.RTSLayerCompositePaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RTSLayerCompositePaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.RTSLayerCompositePaintable_Package_References."=";
 
    type RTSLayerCompositePaintable is new Paintable with record
       upgradeCost : Unbounded_String;

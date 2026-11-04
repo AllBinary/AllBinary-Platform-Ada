@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package;
+package org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References is
+   type RootCategoryPropertiesAbstract_Access is access all org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package.RootCategoryPropertiesAbstract'Class;
+   type RootCategoryPropertiesAbstract_Access_Array is array (Natural range <>) of RootCategoryPropertiesAbstract_Access;
+   type RootCategoryPropertiesAbstract_Access_Array_Access is access all RootCategoryPropertiesAbstract_Access_Array;
+   type RootCategoryPropertiesAbstract_Access_Array_Access_Array is array (Natural range <>) of RootCategoryPropertiesAbstract_Access_Array_Access;
+   type RootCategoryPropertiesAbstract_Access_Array_Access_Array_Access is access all RootCategoryPropertiesAbstract_Access_Array_Access_Array;
+end org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References;
+
+with org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,11 +31,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package; use org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
+with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References;
+limited with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package;
 
 package org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package is
@@ -36,13 +51,71 @@ package org.allbinary.business.category.properties.root.RootCategoryPropertiesAb
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype CategoryHierarchyInterface_Access is org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References.CategoryHierarchyInterface_Access;
+   use type CategoryHierarchyInterface_Access;
+   subtype CategoryHierarchyInterface_Access_Array is org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References.CategoryHierarchyInterface_Access_Array;
+   use type CategoryHierarchyInterface_Access_Array;
+   subtype CategoryHierarchyInterface_Access_Array_Access is org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References.CategoryHierarchyInterface_Access_Array_Access;
+   use type CategoryHierarchyInterface_Access_Array_Access;
+   subtype CategoryHierarchyInterface_Access_Array_Access_Array is org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References.CategoryHierarchyInterface_Access_Array_Access_Array;
+   use type CategoryHierarchyInterface_Access_Array_Access_Array;
+   subtype CategoryHierarchyInterface_Access_Array_Access_Array_Access is org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References.CategoryHierarchyInterface_Access_Array_Access_Array_Access;
+   use type CategoryHierarchyInterface_Access_Array_Access_Array_Access;
+   subtype AbPath_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access;
+   use type AbPath_Access;
+   subtype AbPath_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array;
+   use type AbPath_Access_Array;
+   subtype AbPath_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access;
+   use type AbPath_Access_Array_Access;
+   subtype AbPath_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array;
+   use type AbPath_Access_Array_Access_Array;
+   subtype AbPath_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array_Access;
+   use type AbPath_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type RootCategoryPropertiesAbstract is tagged;
-   type RootCategoryPropertiesAbstract_Access is access all RootCategoryPropertiesAbstract'Class;
-   type RootCategoryPropertiesAbstract_Access_Array is array (Natural range <>) of RootCategoryPropertiesAbstract_Access;
-   type RootCategoryPropertiesAbstract_Access_Array_Access is access all RootCategoryPropertiesAbstract_Access_Array;
-   type RootCategoryPropertiesAbstract_Access_Array_Access_Array is array (Natural range <>) of RootCategoryPropertiesAbstract_Access_Array_Access;
-   type RootCategoryPropertiesAbstract_Access_Array_Access_Array_Access is access all RootCategoryPropertiesAbstract_Access_Array_Access_Array;
+
+   subtype RootCategoryPropertiesAbstract_Access is org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References.RootCategoryPropertiesAbstract_Access;
+   function "=" (Left, Right : RootCategoryPropertiesAbstract_Access) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References."=";
+   subtype RootCategoryPropertiesAbstract_Access_Array is org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References.RootCategoryPropertiesAbstract_Access_Array;
+   function "=" (Left, Right : RootCategoryPropertiesAbstract_Access_Array) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References."=";
+   subtype RootCategoryPropertiesAbstract_Access_Array_Access is org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References.RootCategoryPropertiesAbstract_Access_Array_Access;
+   function "=" (Left, Right : RootCategoryPropertiesAbstract_Access_Array_Access) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References."=";
+   subtype RootCategoryPropertiesAbstract_Access_Array_Access_Array is org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References.RootCategoryPropertiesAbstract_Access_Array_Access_Array;
+   function "=" (Left, Right : RootCategoryPropertiesAbstract_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References."=";
+   subtype RootCategoryPropertiesAbstract_Access_Array_Access_Array_Access is org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References.RootCategoryPropertiesAbstract_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RootCategoryPropertiesAbstract_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package_References."=";
 
    type RootCategoryPropertiesAbstract is new Java_Object and RootCategoryPropertiesInterface with record
       category : Unbounded_String;

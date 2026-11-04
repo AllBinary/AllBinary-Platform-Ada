@@ -13,10 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.math.NamedAngle_Package;
 
 package body org.allbinary.math.AngleIncrementInfoFactory_Package is
 
+   subtype AngleIncrementInfo_Access is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access;
+   function "=" (Left, Right : AngleIncrementInfo_Access) return Boolean renames org.allbinary.math.AngleIncrementInfo_Package_References."=";
+   subtype AngleIncrementInfo_Access_Array is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access_Array;
+   function "=" (Left, Right : AngleIncrementInfo_Access_Array) return Boolean renames org.allbinary.math.AngleIncrementInfo_Package_References."=";
+   subtype AngleIncrementInfo_Access_Array_Access is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access_Array_Access;
+   function "=" (Left, Right : AngleIncrementInfo_Access_Array_Access) return Boolean renames org.allbinary.math.AngleIncrementInfo_Package_References."=";
+   subtype AngleIncrementInfo_Access_Array_Access_Array is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : AngleIncrementInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.math.AngleIncrementInfo_Package_References."=";
+   subtype AngleIncrementInfo_Access_Array_Access_Array_Access is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AngleIncrementInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.AngleIncrementInfo_Package_References."=";
    procedure Initialize_Fields (This : in out AngleIncrementInfoFactory'Class) is
    begin
       null;
@@ -38,7 +54,7 @@ package body org.allbinary.math.AngleIncrementInfoFactory_Package is
 
    function getInstance return AngleIncrementInfoFactory_Access is
    begin
-        return AngleIncrementInfoFactory_Package.instance;
+        return AngleIncrementInfoFactory_Access (AngleIncrementInfoFactory_Package.instance);
    end getInstance;
 
    function getAt (This : in out AngleIncrementInfoFactory; angleIncrement : Short_Integer) return AngleIncrementInfo_Access is

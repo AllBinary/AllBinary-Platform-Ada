@@ -44,7 +44,7 @@ package body org.allbinary.graphics.GraphicsStrings_Package is
 
    function getInstance return GraphicsStrings_Access is
    begin
-        return GraphicsStrings_Package.instance;
+        return GraphicsStrings_Access (GraphicsStrings_Package.instance);
    end getInstance;
 
 begin

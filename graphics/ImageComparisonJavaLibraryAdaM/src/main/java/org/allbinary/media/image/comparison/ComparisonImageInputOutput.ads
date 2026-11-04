@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
+package org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References is
+   type ComparisonImageInputOutput_Access is access all org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package.ComparisonImageInputOutput'Class;
+   type ComparisonImageInputOutput_Access_Array is array (Natural range <>) of ComparisonImageInputOutput_Access;
+   type ComparisonImageInputOutput_Access_Array_Access is access all ComparisonImageInputOutput_Access_Array;
+   type ComparisonImageInputOutput_Access_Array_Access_Array is array (Natural range <>) of ComparisonImageInputOutput_Access_Array_Access;
+   type ComparisonImageInputOutput_Access_Array_Access_Array_Access is access all ComparisonImageInputOutput_Access_Array_Access_Array;
+end org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References;
+
+with org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,21 +31,51 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.image.io.ImageIOInterface_Package; use org.allbinary.media.image.io.ImageIOInterface_Package;
-with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+limited with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 
 package org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ImageIOInterface_Package renames Standard.org.allbinary.media.image.io.ImageIOInterface_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype ImageComparisonResult_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access;
+   use type ImageComparisonResult_Access;
+   subtype ImageComparisonResult_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array;
+   use type ImageComparisonResult_Access_Array;
+   subtype ImageComparisonResult_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access;
+   use type ImageComparisonResult_Access_Array_Access;
+   subtype ImageComparisonResult_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array;
+   use type ImageComparisonResult_Access_Array_Access_Array;
+   subtype ImageComparisonResult_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array_Access;
+   use type ImageComparisonResult_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ComparisonImageInputOutput is tagged;
-   type ComparisonImageInputOutput_Access is access all ComparisonImageInputOutput'Class;
-   type ComparisonImageInputOutput_Access_Array is array (Natural range <>) of ComparisonImageInputOutput_Access;
-   type ComparisonImageInputOutput_Access_Array_Access is access all ComparisonImageInputOutput_Access_Array;
-   type ComparisonImageInputOutput_Access_Array_Access_Array is array (Natural range <>) of ComparisonImageInputOutput_Access_Array_Access;
-   type ComparisonImageInputOutput_Access_Array_Access_Array_Access is access all ComparisonImageInputOutput_Access_Array_Access_Array;
+
+   subtype ComparisonImageInputOutput_Access is org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References.ComparisonImageInputOutput_Access;
+   function "=" (Left, Right : ComparisonImageInputOutput_Access) return Boolean renames org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References."=";
+   subtype ComparisonImageInputOutput_Access_Array is org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References.ComparisonImageInputOutput_Access_Array;
+   function "=" (Left, Right : ComparisonImageInputOutput_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References."=";
+   subtype ComparisonImageInputOutput_Access_Array_Access is org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References.ComparisonImageInputOutput_Access_Array_Access;
+   function "=" (Left, Right : ComparisonImageInputOutput_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References."=";
+   subtype ComparisonImageInputOutput_Access_Array_Access_Array is org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References.ComparisonImageInputOutput_Access_Array_Access_Array;
+   function "=" (Left, Right : ComparisonImageInputOutput_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References."=";
+   subtype ComparisonImageInputOutput_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References.ComparisonImageInputOutput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ComparisonImageInputOutput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package_References."=";
 
    type ComparisonImageInputOutput is new Java_Object and ImageIOInterface with record
       logUtil : LogUtil_Access;

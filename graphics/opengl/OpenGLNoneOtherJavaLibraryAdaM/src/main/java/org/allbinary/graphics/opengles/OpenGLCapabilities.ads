@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
+package org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References is
+   type OpenGLCapabilities_Access is access all org.allbinary.graphics.opengles.OpenGLCapabilities_Package.OpenGLCapabilities'Class;
+   type OpenGLCapabilities_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access;
+   type OpenGLCapabilities_Access_Array_Access is access all OpenGLCapabilities_Access_Array;
+   type OpenGLCapabilities_Access_Array_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access_Array_Access;
+   type OpenGLCapabilities_Access_Array_Access_Array_Access is access all OpenGLCapabilities_Access_Array_Access_Array;
+end org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References;
+
+with org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,15 +33,24 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLCapabilities is tagged;
-   type OpenGLCapabilities_Access is access all OpenGLCapabilities'Class;
-   type OpenGLCapabilities_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access;
-   type OpenGLCapabilities_Access_Array_Access is access all OpenGLCapabilities_Access_Array;
-   type OpenGLCapabilities_Access_Array_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access_Array_Access;
-   type OpenGLCapabilities_Access_Array_Access_Array_Access is access all OpenGLCapabilities_Access_Array_Access_Array;
+
+   subtype OpenGLCapabilities_Access is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access;
+   function "=" (Left, Right : OpenGLCapabilities_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
+   subtype OpenGLCapabilities_Access_Array is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access_Array;
+   function "=" (Left, Right : OpenGLCapabilities_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
+   subtype OpenGLCapabilities_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access_Array_Access;
+   function "=" (Left, Right : OpenGLCapabilities_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
+   subtype OpenGLCapabilities_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLCapabilities_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
+   subtype OpenGLCapabilities_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLCapabilities_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
 
    type OpenGLCapabilities is new Java_Object with record
+      CUSTOM_GL_SURFACE_VIEW : Boolean;
       VERSION_1_0 : Unbounded_String;
       VERSION_1_1 : Unbounded_String;
       VERSION_2_0 : Unbounded_String;
@@ -49,6 +68,7 @@ package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    procedure Initialize (This : in out OpenGLCapabilities'Class);
    function Create return OpenGLCapabilities_Access;
    function getInstance return OpenGLCapabilities_Access;
+   function isInitialized (This : in out OpenGLCapabilities) return Boolean;
    procedure initCapabilities (This : in out OpenGLCapabilities; gl_Param : access Java_Object'Class);
    function isGlExtensionDrawTexture (This : in out OpenGLCapabilities) return Boolean;
    function getGlVersion (This : in out OpenGLCapabilities) return Unbounded_String;

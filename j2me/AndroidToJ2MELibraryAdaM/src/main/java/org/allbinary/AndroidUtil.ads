@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.AndroidUtil_Package;
+package org.allbinary.AndroidUtil_Package_References is
+   type AndroidUtil_Access is access all org.allbinary.AndroidUtil_Package.AndroidUtil'Class;
+   type AndroidUtil_Access_Array is array (Natural range <>) of AndroidUtil_Access;
+   type AndroidUtil_Access_Array_Access is access all AndroidUtil_Access_Array;
+   type AndroidUtil_Access_Array_Access_Array is array (Natural range <>) of AndroidUtil_Access_Array_Access;
+   type AndroidUtil_Access_Array_Access_Array_Access is access all AndroidUtil_Access_Array_Access_Array;
+end org.allbinary.AndroidUtil_Package_References;
+
+with org.allbinary.AndroidUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.app.Activity_Package; use android.app.Activity_Package;
+limited with android.app.Activity_Package;
+with android.app.Activity_Package_References;
 
 package org.allbinary.AndroidUtil_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
+   package Reference_Types is
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   use type Activity_Access;
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   use type Activity_Access_Array;
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   use type Activity_Access_Array_Access;
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   use type Activity_Access_Array_Access_Array;
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   use type Activity_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidUtil is tagged;
-   type AndroidUtil_Access is access all AndroidUtil'Class;
-   type AndroidUtil_Access_Array is array (Natural range <>) of AndroidUtil_Access;
-   type AndroidUtil_Access_Array_Access is access all AndroidUtil_Access_Array;
-   type AndroidUtil_Access_Array_Access_Array is array (Natural range <>) of AndroidUtil_Access_Array_Access;
-   type AndroidUtil_Access_Array_Access_Array_Access is access all AndroidUtil_Access_Array_Access_Array;
+
+   subtype AndroidUtil_Access is org.allbinary.AndroidUtil_Package_References.AndroidUtil_Access;
+   function "=" (Left, Right : AndroidUtil_Access) return Boolean renames org.allbinary.AndroidUtil_Package_References."=";
+   subtype AndroidUtil_Access_Array is org.allbinary.AndroidUtil_Package_References.AndroidUtil_Access_Array;
+   function "=" (Left, Right : AndroidUtil_Access_Array) return Boolean renames org.allbinary.AndroidUtil_Package_References."=";
+   subtype AndroidUtil_Access_Array_Access is org.allbinary.AndroidUtil_Package_References.AndroidUtil_Access_Array_Access;
+   function "=" (Left, Right : AndroidUtil_Access_Array_Access) return Boolean renames org.allbinary.AndroidUtil_Package_References."=";
+   subtype AndroidUtil_Access_Array_Access_Array is org.allbinary.AndroidUtil_Package_References.AndroidUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.AndroidUtil_Package_References."=";
+   subtype AndroidUtil_Access_Array_Access_Array_Access is org.allbinary.AndroidUtil_Package_References.AndroidUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.AndroidUtil_Package_References."=";
 
    type AndroidUtil is new Java_Object with null record;
    NULL_ACTIVITY : Activity_Access;

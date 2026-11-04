@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.canvas.AndroidGameStatistics_Package;
+package org.allbinary.canvas.AndroidGameStatistics_Package_References is
+   type AndroidGameStatistics_Access is access all org.allbinary.canvas.AndroidGameStatistics_Package.AndroidGameStatistics'Class;
+   type AndroidGameStatistics_Access_Array is array (Natural range <>) of AndroidGameStatistics_Access;
+   type AndroidGameStatistics_Access_Array_Access is access all AndroidGameStatistics_Access_Array;
+   type AndroidGameStatistics_Access_Array_Access_Array is array (Natural range <>) of AndroidGameStatistics_Access_Array_Access;
+   type AndroidGameStatistics_Access_Array_Access_Array_Access is access all AndroidGameStatistics_Access_Array_Access_Array;
+end org.allbinary.canvas.AndroidGameStatistics_Package_References;
+
+with org.allbinary.canvas.AndroidGameStatistics_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,51 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.view.View_Package; use android.view.View_Package;
-with org.allbinary.android.view.BaseViewWrapper_Package; use org.allbinary.android.view.BaseViewWrapper_Package;
+limited with android.view.View_Package;
+with android.view.View_Package_References;
+limited with org.allbinary.android.view.BaseViewWrapper_Package;
+with org.allbinary.android.view.BaseViewWrapper_Package_References;
 with org.allbinary.canvas.BaseGameStatistics_Package; use org.allbinary.canvas.BaseGameStatistics_Package;
 
 package org.allbinary.canvas.AndroidGameStatistics_Package is
 
    package View_Package renames Standard.android.view.View_Package;
    package BaseViewWrapper_Package renames Standard.org.allbinary.android.view.BaseViewWrapper_Package;
+   package Reference_Types is
+   subtype View_Access is android.view.View_Package_References.View_Access;
+   use type View_Access;
+   subtype View_Access_Array is android.view.View_Package_References.View_Access_Array;
+   use type View_Access_Array;
+   subtype View_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access;
+   use type View_Access_Array_Access;
+   subtype View_Access_Array_Access_Array is android.view.View_Package_References.View_Access_Array_Access_Array;
+   use type View_Access_Array_Access_Array;
+   subtype View_Access_Array_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access_Array_Access;
+   use type View_Access_Array_Access_Array_Access;
+   subtype BaseViewWrapper_Access is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access;
+   use type BaseViewWrapper_Access;
+   subtype BaseViewWrapper_Access_Array is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access_Array;
+   use type BaseViewWrapper_Access_Array;
+   subtype BaseViewWrapper_Access_Array_Access is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access_Array_Access;
+   use type BaseViewWrapper_Access_Array_Access;
+   subtype BaseViewWrapper_Access_Array_Access_Array is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access_Array_Access_Array;
+   use type BaseViewWrapper_Access_Array_Access_Array;
+   subtype BaseViewWrapper_Access_Array_Access_Array_Access is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access_Array_Access_Array_Access;
+   use type BaseViewWrapper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidGameStatistics is tagged;
-   type AndroidGameStatistics_Access is access all AndroidGameStatistics'Class;
-   type AndroidGameStatistics_Access_Array is array (Natural range <>) of AndroidGameStatistics_Access;
-   type AndroidGameStatistics_Access_Array_Access is access all AndroidGameStatistics_Access_Array;
-   type AndroidGameStatistics_Access_Array_Access_Array is array (Natural range <>) of AndroidGameStatistics_Access_Array_Access;
-   type AndroidGameStatistics_Access_Array_Access_Array_Access is access all AndroidGameStatistics_Access_Array_Access_Array;
+
+   subtype AndroidGameStatistics_Access is org.allbinary.canvas.AndroidGameStatistics_Package_References.AndroidGameStatistics_Access;
+   function "=" (Left, Right : AndroidGameStatistics_Access) return Boolean renames org.allbinary.canvas.AndroidGameStatistics_Package_References."=";
+   subtype AndroidGameStatistics_Access_Array is org.allbinary.canvas.AndroidGameStatistics_Package_References.AndroidGameStatistics_Access_Array;
+   function "=" (Left, Right : AndroidGameStatistics_Access_Array) return Boolean renames org.allbinary.canvas.AndroidGameStatistics_Package_References."=";
+   subtype AndroidGameStatistics_Access_Array_Access is org.allbinary.canvas.AndroidGameStatistics_Package_References.AndroidGameStatistics_Access_Array_Access;
+   function "=" (Left, Right : AndroidGameStatistics_Access_Array_Access) return Boolean renames org.allbinary.canvas.AndroidGameStatistics_Package_References."=";
+   subtype AndroidGameStatistics_Access_Array_Access_Array is org.allbinary.canvas.AndroidGameStatistics_Package_References.AndroidGameStatistics_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidGameStatistics_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.AndroidGameStatistics_Package_References."=";
+   subtype AndroidGameStatistics_Access_Array_Access_Array_Access is org.allbinary.canvas.AndroidGameStatistics_Package_References.AndroidGameStatistics_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidGameStatistics_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.AndroidGameStatistics_Package_References."=";
 
    type AndroidGameStatistics is new BaseGameStatistics with record
       view : BaseViewWrapper_Access;

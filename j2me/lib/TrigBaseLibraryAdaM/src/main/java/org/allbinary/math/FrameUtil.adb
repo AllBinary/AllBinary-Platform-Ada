@@ -17,6 +17,9 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.NamedAngle_Package;
 
 package body org.allbinary.math.FrameUtil_Package is
 
@@ -31,7 +34,7 @@ package body org.allbinary.math.FrameUtil_Package is
 
    function getInstance return FrameUtil_Access is
    begin
-        return FrameUtil_Package.instance;
+        return FrameUtil_Access (FrameUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out FrameUtil'Class) is

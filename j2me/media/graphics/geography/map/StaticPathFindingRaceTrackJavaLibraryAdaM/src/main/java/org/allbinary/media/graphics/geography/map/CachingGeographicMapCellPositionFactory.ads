@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package;
+package org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References is
+   type CachingGeographicMapCellPositionFactory_Access is access all org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package.CachingGeographicMapCellPositionFactory'Class;
+   type CachingGeographicMapCellPositionFactory_Access_Array is array (Natural range <>) of CachingGeographicMapCellPositionFactory_Access;
+   type CachingGeographicMapCellPositionFactory_Access_Array_Access is access all CachingGeographicMapCellPositionFactory_Access_Array;
+   type CachingGeographicMapCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of CachingGeographicMapCellPositionFactory_Access_Array_Access;
+   type CachingGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is access all CachingGeographicMapCellPositionFactory_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References;
+
+with org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,48 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+limited with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 package org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package is
 
+   package Reference_Types is
+   subtype BasicGeographicMap_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access;
+   use type BasicGeographicMap_Access;
+   subtype BasicGeographicMap_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array;
+   use type BasicGeographicMap_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access;
+   subtype BasicGeographicMap_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array;
+   use type BasicGeographicMap_Access_Array_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access;
+   use type GeographicMapCellPosition_Access;
+   subtype GeographicMapCellPosition_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array;
+   use type GeographicMapCellPosition_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
+   use type GeographicMapCellPosition_Access_Array_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CachingGeographicMapCellPositionFactory is tagged;
-   type CachingGeographicMapCellPositionFactory_Access is access all CachingGeographicMapCellPositionFactory'Class;
-   type CachingGeographicMapCellPositionFactory_Access_Array is array (Natural range <>) of CachingGeographicMapCellPositionFactory_Access;
-   type CachingGeographicMapCellPositionFactory_Access_Array_Access is access all CachingGeographicMapCellPositionFactory_Access_Array;
-   type CachingGeographicMapCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of CachingGeographicMapCellPositionFactory_Access_Array_Access;
-   type CachingGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is access all CachingGeographicMapCellPositionFactory_Access_Array_Access_Array;
+
+   subtype CachingGeographicMapCellPositionFactory_Access is org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References.CachingGeographicMapCellPositionFactory_Access;
+   function "=" (Left, Right : CachingGeographicMapCellPositionFactory_Access) return Boolean renames org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References."=";
+   subtype CachingGeographicMapCellPositionFactory_Access_Array is org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References.CachingGeographicMapCellPositionFactory_Access_Array;
+   function "=" (Left, Right : CachingGeographicMapCellPositionFactory_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References."=";
+   subtype CachingGeographicMapCellPositionFactory_Access_Array_Access is org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References.CachingGeographicMapCellPositionFactory_Access_Array_Access;
+   function "=" (Left, Right : CachingGeographicMapCellPositionFactory_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References."=";
+   subtype CachingGeographicMapCellPositionFactory_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References.CachingGeographicMapCellPositionFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : CachingGeographicMapCellPositionFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References."=";
+   subtype CachingGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References.CachingGeographicMapCellPositionFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CachingGeographicMapCellPositionFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package_References."=";
 
    type CachingGeographicMapCellPositionFactory is new BasicGeographicMapCellPositionFactory with null record;
 

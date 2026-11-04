@@ -13,15 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
 with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputData_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package;
+with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputData_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputInterface_Package;
+with org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
+with org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
 
 package body org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package is
 
@@ -32,6 +49,56 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   function "=" (Left, Right : Document_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   function "=" (Left, Right : Node_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   function "=" (Left, Right : Node_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   function "=" (Left, Right : Node_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Point_Access is org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References.Point_Access;
+   function "=" (Left, Right : Point_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References."=";
+   subtype Point_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References.Point_Access_Array;
+   function "=" (Left, Right : Point_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References."=";
+   subtype Point_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References.Point_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References.Point_Access_Array_Access_Array;
+   function "=" (Left, Right : Point_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References.Point_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.Point_Package_References."=";
+   subtype MouseActionScriptInputJPanel_Access is org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References.MouseActionScriptInputJPanel_Access;
+   function "=" (Left, Right : MouseActionScriptInputJPanel_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References."=";
+   subtype MouseActionScriptInputJPanel_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References.MouseActionScriptInputJPanel_Access_Array;
+   function "=" (Left, Right : MouseActionScriptInputJPanel_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References."=";
+   subtype MouseActionScriptInputJPanel_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References.MouseActionScriptInputJPanel_Access_Array_Access;
+   function "=" (Left, Right : MouseActionScriptInputJPanel_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References."=";
+   subtype MouseActionScriptInputJPanel_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References.MouseActionScriptInputJPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : MouseActionScriptInputJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References."=";
+   subtype MouseActionScriptInputJPanel_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References.MouseActionScriptInputJPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MouseActionScriptInputJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package_References."=";
    procedure Initialize_Fields (This : in out MouseActionScriptInput'Class) is
    begin
       null;

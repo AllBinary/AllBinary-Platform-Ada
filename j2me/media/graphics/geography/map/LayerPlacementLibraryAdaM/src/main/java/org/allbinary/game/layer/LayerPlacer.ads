@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.LayerPlacer_Package;
+package org.allbinary.game.layer.LayerPlacer_Package_References is
+   type LayerPlacer_Access is access all org.allbinary.game.layer.LayerPlacer_Package.LayerPlacer'Class;
+   type LayerPlacer_Access_Array is array (Natural range <>) of LayerPlacer_Access;
+   type LayerPlacer_Access_Array_Access is access all LayerPlacer_Access_Array;
+   type LayerPlacer_Access_Array_Access_Array is array (Natural range <>) of LayerPlacer_Access_Array_Access;
+   type LayerPlacer_Access_Array_Access_Array_Access is access all LayerPlacer_Access_Array_Access_Array;
+end org.allbinary.game.layer.LayerPlacer_Package_References;
+
+with org.allbinary.game.layer.LayerPlacer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.layer.LayerInterfaceVisitor_Package; use org.allbinary.layer.LayerInterfaceVisitor_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
-with org.allbinary.game.layer.LayerPlacementInterface_Package; use org.allbinary.game.layer.LayerPlacementInterface_Package;
+limited with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
+limited with org.allbinary.layer.LayerInterfaceVisitor_Package;
+with org.allbinary.layer.LayerInterfaceVisitor_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.util.EnumerationUtil_Package_References;
+limited with org.allbinary.game.layer.LayerPlacementInterface_Package;
+with org.allbinary.game.layer.LayerPlacementInterface_Package_References;
 
 package org.allbinary.game.layer.LayerPlacer_Package is
 
@@ -32,13 +47,71 @@ package org.allbinary.game.layer.LayerPlacer_Package is
    package LayerInterfaceVisitor_Package renames Standard.org.allbinary.layer.LayerInterfaceVisitor_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
+   package Reference_Types is
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   use type GPoint_Access;
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   use type GPoint_Access_Array;
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   use type GPoint_Access_Array_Access;
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   use type GPoint_Access_Array_Access_Array;
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   use type GPoint_Access_Array_Access_Array_Access;
+   subtype LayerInterfaceVisitor_Access is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access;
+   use type LayerInterfaceVisitor_Access;
+   subtype LayerInterfaceVisitor_Access_Array is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access_Array;
+   use type LayerInterfaceVisitor_Access_Array;
+   subtype LayerInterfaceVisitor_Access_Array_Access is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access_Array_Access;
+   use type LayerInterfaceVisitor_Access_Array_Access;
+   subtype LayerInterfaceVisitor_Access_Array_Access_Array is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access_Array_Access_Array;
+   use type LayerInterfaceVisitor_Access_Array_Access_Array;
+   subtype LayerInterfaceVisitor_Access_Array_Access_Array_Access is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access_Array_Access_Array_Access;
+   use type LayerInterfaceVisitor_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype EnumerationUtil_Access is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access;
+   use type EnumerationUtil_Access;
+   subtype EnumerationUtil_Access_Array is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array;
+   use type EnumerationUtil_Access_Array;
+   subtype EnumerationUtil_Access_Array_Access is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array_Access;
+   use type EnumerationUtil_Access_Array_Access;
+   subtype EnumerationUtil_Access_Array_Access_Array is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array_Access_Array;
+   use type EnumerationUtil_Access_Array_Access_Array;
+   subtype EnumerationUtil_Access_Array_Access_Array_Access is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array_Access_Array_Access;
+   use type EnumerationUtil_Access_Array_Access_Array_Access;
+   subtype LayerPlacementInterface_Access is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access;
+   use type LayerPlacementInterface_Access;
+   subtype LayerPlacementInterface_Access_Array is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access_Array;
+   use type LayerPlacementInterface_Access_Array;
+   subtype LayerPlacementInterface_Access_Array_Access is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access_Array_Access;
+   use type LayerPlacementInterface_Access_Array_Access;
+   subtype LayerPlacementInterface_Access_Array_Access_Array is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access_Array_Access_Array;
+   use type LayerPlacementInterface_Access_Array_Access_Array;
+   subtype LayerPlacementInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access_Array_Access_Array_Access;
+   use type LayerPlacementInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type LayerPlacer is tagged;
-   type LayerPlacer_Access is access all LayerPlacer'Class;
-   type LayerPlacer_Access_Array is array (Natural range <>) of LayerPlacer_Access;
-   type LayerPlacer_Access_Array_Access is access all LayerPlacer_Access_Array;
-   type LayerPlacer_Access_Array_Access_Array is array (Natural range <>) of LayerPlacer_Access_Array_Access;
-   type LayerPlacer_Access_Array_Access_Array_Access is access all LayerPlacer_Access_Array_Access_Array;
+
+   subtype LayerPlacer_Access is org.allbinary.game.layer.LayerPlacer_Package_References.LayerPlacer_Access;
+   function "=" (Left, Right : LayerPlacer_Access) return Boolean renames org.allbinary.game.layer.LayerPlacer_Package_References."=";
+   subtype LayerPlacer_Access_Array is org.allbinary.game.layer.LayerPlacer_Package_References.LayerPlacer_Access_Array;
+   function "=" (Left, Right : LayerPlacer_Access_Array) return Boolean renames org.allbinary.game.layer.LayerPlacer_Package_References."=";
+   subtype LayerPlacer_Access_Array_Access is org.allbinary.game.layer.LayerPlacer_Package_References.LayerPlacer_Access_Array_Access;
+   function "=" (Left, Right : LayerPlacer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.LayerPlacer_Package_References."=";
+   subtype LayerPlacer_Access_Array_Access_Array is org.allbinary.game.layer.LayerPlacer_Package_References.LayerPlacer_Access_Array_Access_Array;
+   function "=" (Left, Right : LayerPlacer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.LayerPlacer_Package_References."=";
+   subtype LayerPlacer_Access_Array_Access_Array_Access is org.allbinary.game.layer.LayerPlacer_Package_References.LayerPlacer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LayerPlacer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.LayerPlacer_Package_References."=";
 
    type LayerPlacer is new Java_Object with record
       enumerationUtil : EnumerationUtil_Access;

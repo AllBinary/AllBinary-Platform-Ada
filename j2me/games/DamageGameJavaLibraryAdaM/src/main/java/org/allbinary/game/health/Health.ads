@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.health.Health_Package;
+package org.allbinary.game.health.Health_Package_References is
+   type Health_Access is access all org.allbinary.game.health.Health_Package.Health'Class;
+   type Health_Access_Array is array (Natural range <>) of Health_Access;
+   type Health_Access_Array_Access is access all Health_Access_Array;
+   type Health_Access_Array_Access_Array is array (Natural range <>) of Health_Access_Array_Access;
+   type Health_Access_Array_Access_Array_Access is access all Health_Access_Array_Access_Array;
+end org.allbinary.game.health.Health_Package_References;
+
+with org.allbinary.game.health.Health_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,17 +31,36 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.health.HealthInterface_Package;
-with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinary.game.health.HealthListenerInterface_Package;
+limited with org.allbinary.game.health.HealthListenerInterface_Package;
+with org.allbinary.game.health.HealthListenerInterface_Package_References;
 
 package org.allbinary.game.health.Health_Package is
 
+   package Reference_Types is
+   subtype HealthListenerInterface_Access is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access;
+   use type HealthListenerInterface_Access;
+   subtype HealthListenerInterface_Access_Array is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access_Array;
+   use type HealthListenerInterface_Access_Array;
+   subtype HealthListenerInterface_Access_Array_Access is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access_Array_Access;
+   use type HealthListenerInterface_Access_Array_Access;
+   subtype HealthListenerInterface_Access_Array_Access_Array is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access_Array_Access_Array;
+   use type HealthListenerInterface_Access_Array_Access_Array;
+   subtype HealthListenerInterface_Access_Array_Access_Array_Access is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access_Array_Access_Array_Access;
+   use type HealthListenerInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type Health is tagged;
-   type Health_Access is access all Health'Class;
-   type Health_Access_Array is array (Natural range <>) of Health_Access;
-   type Health_Access_Array_Access is access all Health_Access_Array;
-   type Health_Access_Array_Access_Array is array (Natural range <>) of Health_Access_Array_Access;
-   type Health_Access_Array_Access_Array_Access is access all Health_Access_Array_Access_Array;
+
+   subtype Health_Access is org.allbinary.game.health.Health_Package_References.Health_Access;
+   function "=" (Left, Right : Health_Access) return Boolean renames org.allbinary.game.health.Health_Package_References."=";
+   subtype Health_Access_Array is org.allbinary.game.health.Health_Package_References.Health_Access_Array;
+   function "=" (Left, Right : Health_Access_Array) return Boolean renames org.allbinary.game.health.Health_Package_References."=";
+   subtype Health_Access_Array_Access is org.allbinary.game.health.Health_Package_References.Health_Access_Array_Access;
+   function "=" (Left, Right : Health_Access_Array_Access) return Boolean renames org.allbinary.game.health.Health_Package_References."=";
+   subtype Health_Access_Array_Access_Array is org.allbinary.game.health.Health_Package_References.Health_Access_Array_Access_Array;
+   function "=" (Left, Right : Health_Access_Array_Access_Array) return Boolean renames org.allbinary.game.health.Health_Package_References."=";
+   subtype Health_Access_Array_Access_Array_Access is org.allbinary.game.health.Health_Package_References.Health_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Health_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.health.Health_Package_References."=";
 
    type Health is new Java_Object and HealthInterface with record
       health_Var : Integer;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.GameFeature_Package; use org.allbinary.game.configuration.feature.GameFeature_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGameFeature_Package is
 

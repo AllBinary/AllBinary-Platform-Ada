@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
+package org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References is
+   type HashMapJDialogListenerInterface_Access is access all org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package.HashMapJDialogListenerInterface'Class;
+   type HashMapJDialogListenerInterface_Access_Array is array (Natural range <>) of HashMapJDialogListenerInterface_Access;
+   type HashMapJDialogListenerInterface_Access_Array_Access is access all HashMapJDialogListenerInterface_Access_Array;
+   type HashMapJDialogListenerInterface_Access_Array_Access_Array is array (Natural range <>) of HashMapJDialogListenerInterface_Access_Array_Access;
+   type HashMapJDialogListenerInterface_Access_Array_Access_Array_Access is access all HashMapJDialogListenerInterface_Access_Array_Access_Array;
+end org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References;
+
+with org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,23 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 package org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type HashMapJDialogListenerInterface is interface;
-   type HashMapJDialogListenerInterface_Access is access all HashMapJDialogListenerInterface'Class;
-   type HashMapJDialogListenerInterface_Access_Array is array (Natural range <>) of HashMapJDialogListenerInterface_Access;
-   type HashMapJDialogListenerInterface_Access_Array_Access is access all HashMapJDialogListenerInterface_Access_Array;
-   type HashMapJDialogListenerInterface_Access_Array_Access_Array is array (Natural range <>) of HashMapJDialogListenerInterface_Access_Array_Access;
-   type HashMapJDialogListenerInterface_Access_Array_Access_Array_Access is access all HashMapJDialogListenerInterface_Access_Array_Access_Array;
+   subtype HashMapJDialogListenerInterface_Access is org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References.HashMapJDialogListenerInterface_Access;
+   function "=" (Left, Right : HashMapJDialogListenerInterface_Access) return Boolean renames org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References."=";
+   subtype HashMapJDialogListenerInterface_Access_Array is org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References.HashMapJDialogListenerInterface_Access_Array;
+   function "=" (Left, Right : HashMapJDialogListenerInterface_Access_Array) return Boolean renames org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References."=";
+   subtype HashMapJDialogListenerInterface_Access_Array_Access is org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References.HashMapJDialogListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : HashMapJDialogListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References."=";
+   subtype HashMapJDialogListenerInterface_Access_Array_Access_Array is org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References.HashMapJDialogListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : HashMapJDialogListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References."=";
+   subtype HashMapJDialogListenerInterface_Access_Array_Access_Array_Access is org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References.HashMapJDialogListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HashMapJDialogListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package_References."=";
+   function Java_Object_Access_From_HashMapJDialogListenerInterface (Value : HashMapJDialogListenerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure onHashMap (This : in out HashMapJDialogListenerInterface; hashMap_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;

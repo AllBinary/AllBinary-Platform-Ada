@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.java.characters.CharacterSetData_Package;
+package org.allbinary.logic.java.characters.CharacterSetData_Package_References is
+   type CharacterSetData_Access is access all org.allbinary.logic.java.characters.CharacterSetData_Package.CharacterSetData'Class;
+   type CharacterSetData_Access_Array is array (Natural range <>) of CharacterSetData_Access;
+   type CharacterSetData_Access_Array_Access is access all CharacterSetData_Access_Array;
+   type CharacterSetData_Access_Array_Access_Array is array (Natural range <>) of CharacterSetData_Access_Array_Access;
+   type CharacterSetData_Access_Array_Access_Array_Access is access all CharacterSetData_Access_Array_Access_Array;
+end org.allbinary.logic.java.characters.CharacterSetData_Package_References;
+
+with org.allbinary.logic.java.characters.CharacterSetData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.java.characters.CharacterSetData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CharacterSetData is tagged;
-   type CharacterSetData_Access is access all CharacterSetData'Class;
-   type CharacterSetData_Access_Array is array (Natural range <>) of CharacterSetData_Access;
-   type CharacterSetData_Access_Array_Access is access all CharacterSetData_Access_Array;
-   type CharacterSetData_Access_Array_Access_Array is array (Natural range <>) of CharacterSetData_Access_Array_Access;
-   type CharacterSetData_Access_Array_Access_Array_Access is access all CharacterSetData_Access_Array_Access_Array;
+
+   subtype CharacterSetData_Access is org.allbinary.logic.java.characters.CharacterSetData_Package_References.CharacterSetData_Access;
+   function "=" (Left, Right : CharacterSetData_Access) return Boolean renames org.allbinary.logic.java.characters.CharacterSetData_Package_References."=";
+   subtype CharacterSetData_Access_Array is org.allbinary.logic.java.characters.CharacterSetData_Package_References.CharacterSetData_Access_Array;
+   function "=" (Left, Right : CharacterSetData_Access_Array) return Boolean renames org.allbinary.logic.java.characters.CharacterSetData_Package_References."=";
+   subtype CharacterSetData_Access_Array_Access is org.allbinary.logic.java.characters.CharacterSetData_Package_References.CharacterSetData_Access_Array_Access;
+   function "=" (Left, Right : CharacterSetData_Access_Array_Access) return Boolean renames org.allbinary.logic.java.characters.CharacterSetData_Package_References."=";
+   subtype CharacterSetData_Access_Array_Access_Array is org.allbinary.logic.java.characters.CharacterSetData_Package_References.CharacterSetData_Access_Array_Access_Array;
+   function "=" (Left, Right : CharacterSetData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.characters.CharacterSetData_Package_References."=";
+   subtype CharacterSetData_Access_Array_Access_Array_Access is org.allbinary.logic.java.characters.CharacterSetData_Package_References.CharacterSetData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CharacterSetData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.characters.CharacterSetData_Package_References."=";
 
    type CharacterSetData is new Java_Object with record
       US_ASCII : Unbounded_String;

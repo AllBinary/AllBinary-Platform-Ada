@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package;
+package org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References is
+   type HorizontaRotationManeuverAI_Access is access all org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package.HorizontaRotationManeuverAI'Class;
+   type HorizontaRotationManeuverAI_Access_Array is array (Natural range <>) of HorizontaRotationManeuverAI_Access;
+   type HorizontaRotationManeuverAI_Access_Array_Access is access all HorizontaRotationManeuverAI_Access_Array;
+   type HorizontaRotationManeuverAI_Access_Array_Access_Array is array (Natural range <>) of HorizontaRotationManeuverAI_Access_Array_Access;
+   type HorizontaRotationManeuverAI_Access_Array_Access_Array_Access is access all HorizontaRotationManeuverAI_Access_Array_Access_Array;
+end org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References;
+
+with org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,14 +31,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package; use org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package;
-with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+limited with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimation_Package_References;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
-with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-with org.allbinary.game.physics.velocity.VelocityInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterface_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+limited with org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
+limited with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
+limited with org.allbinary.game.physics.velocity.VelocityInterface_Package;
+with org.allbinary.game.physics.velocity.VelocityInterface_Package_References;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
+limited with org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package_References;
 
 package org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
 
@@ -41,13 +58,91 @@ package org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
+   package Reference_Types is
+   subtype IndexedAnimation_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access;
+   use type IndexedAnimation_Access;
+   subtype IndexedAnimation_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array;
+   use type IndexedAnimation_Access_Array;
+   subtype IndexedAnimation_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access;
+   use type IndexedAnimation_Access_Array_Access;
+   subtype IndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array;
+   use type IndexedAnimation_Access_Array_Access_Array;
+   subtype IndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array_Access;
+   use type IndexedAnimation_Access_Array_Access_Array_Access;
+   subtype GameInput_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access;
+   use type GameInput_Access;
+   subtype GameInput_Access_Array is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array;
+   use type GameInput_Access_Array;
+   subtype GameInput_Access_Array_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array_Access;
+   use type GameInput_Access_Array_Access;
+   subtype GameInput_Access_Array_Access_Array is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array_Access_Array;
+   use type GameInput_Access_Array_Access_Array;
+   subtype GameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array_Access_Array_Access;
+   use type GameInput_Access_Array_Access_Array_Access;
+   subtype BasicVelocityProperties_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access;
+   use type BasicVelocityProperties_Access;
+   subtype BasicVelocityProperties_Access_Array is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array;
+   use type BasicVelocityProperties_Access_Array;
+   subtype BasicVelocityProperties_Access_Array_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access;
+   use type BasicVelocityProperties_Access_Array_Access;
+   subtype BasicVelocityProperties_Access_Array_Access_Array is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access_Array;
+   use type BasicVelocityProperties_Access_Array_Access_Array;
+   subtype BasicVelocityProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access_Array_Access;
+   use type BasicVelocityProperties_Access_Array_Access_Array_Access;
+   subtype VelocityInterface_Access is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access;
+   use type VelocityInterface_Access;
+   subtype VelocityInterface_Access_Array is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array;
+   use type VelocityInterface_Access_Array;
+   subtype VelocityInterface_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array_Access;
+   use type VelocityInterface_Access_Array_Access;
+   subtype VelocityInterface_Access_Array_Access_Array is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array_Access_Array;
+   use type VelocityInterface_Access_Array_Access_Array;
+   subtype VelocityInterface_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array_Access_Array_Access;
+   use type VelocityInterface_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   subtype CircularIndexUtil_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access;
+   use type CircularIndexUtil_Access;
+   subtype CircularIndexUtil_Access_Array is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array;
+   use type CircularIndexUtil_Access_Array;
+   subtype CircularIndexUtil_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access;
+   use type CircularIndexUtil_Access_Array_Access;
+   subtype CircularIndexUtil_Access_Array_Access_Array is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array;
+   use type CircularIndexUtil_Access_Array_Access_Array;
+   subtype CircularIndexUtil_Access_Array_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array_Access;
+   use type CircularIndexUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type HorizontaRotationManeuverAI is tagged;
-   type HorizontaRotationManeuverAI_Access is access all HorizontaRotationManeuverAI'Class;
-   type HorizontaRotationManeuverAI_Access_Array is array (Natural range <>) of HorizontaRotationManeuverAI_Access;
-   type HorizontaRotationManeuverAI_Access_Array_Access is access all HorizontaRotationManeuverAI_Access_Array;
-   type HorizontaRotationManeuverAI_Access_Array_Access_Array is array (Natural range <>) of HorizontaRotationManeuverAI_Access_Array_Access;
-   type HorizontaRotationManeuverAI_Access_Array_Access_Array_Access is access all HorizontaRotationManeuverAI_Access_Array_Access_Array;
+
+   subtype HorizontaRotationManeuverAI_Access is org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References.HorizontaRotationManeuverAI_Access;
+   function "=" (Left, Right : HorizontaRotationManeuverAI_Access) return Boolean renames org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References."=";
+   subtype HorizontaRotationManeuverAI_Access_Array is org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References.HorizontaRotationManeuverAI_Access_Array;
+   function "=" (Left, Right : HorizontaRotationManeuverAI_Access_Array) return Boolean renames org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References."=";
+   subtype HorizontaRotationManeuverAI_Access_Array_Access is org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References.HorizontaRotationManeuverAI_Access_Array_Access;
+   function "=" (Left, Right : HorizontaRotationManeuverAI_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References."=";
+   subtype HorizontaRotationManeuverAI_Access_Array_Access_Array is org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References.HorizontaRotationManeuverAI_Access_Array_Access_Array;
+   function "=" (Left, Right : HorizontaRotationManeuverAI_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References."=";
+   subtype HorizontaRotationManeuverAI_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References.HorizontaRotationManeuverAI_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HorizontaRotationManeuverAI_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package_References."=";
 
    type HorizontaRotationManeuverAI is new BasicAI and ArtificialIntelligenceTransitionInterface with record
       circularIndexUtil : CircularIndexUtil_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.advertisement.area.AdvertisementArea_Package;
+package org.allbinary.business.advertisement.area.AdvertisementArea_Package_References is
+   type AdvertisementArea_Access is access all org.allbinary.business.advertisement.area.AdvertisementArea_Package.AdvertisementArea'Class;
+   type AdvertisementArea_Access_Array is array (Natural range <>) of AdvertisementArea_Access;
+   type AdvertisementArea_Access_Array_Access is access all AdvertisementArea_Access_Array;
+   type AdvertisementArea_Access_Array_Access_Array is array (Natural range <>) of AdvertisementArea_Access_Array_Access;
+   type AdvertisementArea_Access_Array_Access_Array_Access is access all AdvertisementArea_Access_Array_Access_Array;
+end org.allbinary.business.advertisement.area.AdvertisementArea_Package_References;
+
+with org.allbinary.business.advertisement.area.AdvertisementArea_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,18 +32,37 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
-with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
+limited with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References;
 
 package org.allbinary.business.advertisement.area.AdvertisementArea_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   subtype AdvertisementAreaConstraintsInterface_Access is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access;
+   use type AdvertisementAreaConstraintsInterface_Access;
+   subtype AdvertisementAreaConstraintsInterface_Access_Array is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access_Array;
+   use type AdvertisementAreaConstraintsInterface_Access_Array;
+   subtype AdvertisementAreaConstraintsInterface_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access_Array_Access;
+   use type AdvertisementAreaConstraintsInterface_Access_Array_Access;
+   subtype AdvertisementAreaConstraintsInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access_Array_Access_Array;
+   use type AdvertisementAreaConstraintsInterface_Access_Array_Access_Array;
+   subtype AdvertisementAreaConstraintsInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access_Array_Access_Array_Access;
+   use type AdvertisementAreaConstraintsInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AdvertisementArea is tagged;
-   type AdvertisementArea_Access is access all AdvertisementArea'Class;
-   type AdvertisementArea_Access_Array is array (Natural range <>) of AdvertisementArea_Access;
-   type AdvertisementArea_Access_Array_Access is access all AdvertisementArea_Access_Array;
-   type AdvertisementArea_Access_Array_Access_Array is array (Natural range <>) of AdvertisementArea_Access_Array_Access;
-   type AdvertisementArea_Access_Array_Access_Array_Access is access all AdvertisementArea_Access_Array_Access_Array;
+
+   subtype AdvertisementArea_Access is org.allbinary.business.advertisement.area.AdvertisementArea_Package_References.AdvertisementArea_Access;
+   function "=" (Left, Right : AdvertisementArea_Access) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementArea_Package_References."=";
+   subtype AdvertisementArea_Access_Array is org.allbinary.business.advertisement.area.AdvertisementArea_Package_References.AdvertisementArea_Access_Array;
+   function "=" (Left, Right : AdvertisementArea_Access_Array) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementArea_Package_References."=";
+   subtype AdvertisementArea_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementArea_Package_References.AdvertisementArea_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementArea_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementArea_Package_References."=";
+   subtype AdvertisementArea_Access_Array_Access_Array is org.allbinary.business.advertisement.area.AdvertisementArea_Package_References.AdvertisementArea_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementArea_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementArea_Package_References."=";
+   subtype AdvertisementArea_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementArea_Package_References.AdvertisementArea_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementArea_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementArea_Package_References."=";
 
    type AdvertisementArea is new Java_Object and AdvertisementAreaInterface with record
       name : Unbounded_String;

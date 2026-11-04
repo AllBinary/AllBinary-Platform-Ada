@@ -13,15 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.resource.ResourceLoadingLevel_Package; use org.allbinary.game.resource.ResourceLoadingLevel_Package;
 with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.game.resource.ResourceLoadingLevel_Package;
+with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 
 package body org.allbinary.game.configuration.event.GameInitializedEvent_Package is
 
    package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+   subtype ResourceLoadingLevel_Access is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access;
+   function "=" (Left, Right : ResourceLoadingLevel_Access) return Boolean renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References."=";
+   subtype ResourceLoadingLevel_Access_Array is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array;
+   function "=" (Left, Right : ResourceLoadingLevel_Access_Array) return Boolean renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References."=";
+   subtype ResourceLoadingLevel_Access_Array_Access is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array_Access;
+   function "=" (Left, Right : ResourceLoadingLevel_Access_Array_Access) return Boolean renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References."=";
+   subtype ResourceLoadingLevel_Access_Array_Access_Array is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array_Access_Array;
+   function "=" (Left, Right : ResourceLoadingLevel_Access_Array_Access_Array) return Boolean renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References."=";
+   subtype ResourceLoadingLevel_Access_Array_Access_Array_Access is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ResourceLoadingLevel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References."=";
    procedure Initialize_Fields (This : in out GameInitializedEvent'Class) is
    begin
       null;
-      This.resourceLoadingLevel := ResourceLoadingLevelFactory_Package.getInstance.LEVEL;
+      This.resourceLoadingLevel := ResourceLoadingLevel_Access (ResourceLoadingLevelFactory_Package.getInstance.LEVEL);
       This.level := 0;
    end Initialize_Fields;
 
@@ -43,7 +57,7 @@ package body org.allbinary.game.configuration.event.GameInitializedEvent_Package
    procedure setLevel (This : in out GameInitializedEvent; level : Integer) is
    begin
         This.level := level;
-        This.resourceLoadingLevel := ResourceLoadingLevelFactory_Package.getInstance.LEVEL;
+        This.resourceLoadingLevel := ResourceLoadingLevel_Access (ResourceLoadingLevelFactory_Package.getInstance.LEVEL);
    end setLevel;
 
    function getLevel (This : in out GameInitializedEvent) return Integer is

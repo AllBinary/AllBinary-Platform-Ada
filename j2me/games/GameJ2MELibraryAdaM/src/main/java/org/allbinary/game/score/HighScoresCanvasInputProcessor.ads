@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
+package org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References is
+   type HighScoresCanvasInputProcessor_Access is access all org.allbinary.game.score.HighScoresCanvasInputProcessor_Package.HighScoresCanvasInputProcessor'Class;
+   type HighScoresCanvasInputProcessor_Access_Array is array (Natural range <>) of HighScoresCanvasInputProcessor_Access;
+   type HighScoresCanvasInputProcessor_Access_Array_Access is access all HighScoresCanvasInputProcessor_Access_Array;
+   type HighScoresCanvasInputProcessor_Access_Array_Access_Array is array (Natural range <>) of HighScoresCanvasInputProcessor_Access_Array_Access;
+   type HighScoresCanvasInputProcessor_Access_Array_Access_Array_Access is access all HighScoresCanvasInputProcessor_Access_Array_Access_Array;
+end org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References;
+
+with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
-with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
-with org.allbinary.game.score.displayable.HighScoresCanvas_Package; use org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+limited with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
+limited with org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+with org.allbinary.game.score.displayable.HighScoresCanvas_Package_References;
 
 package org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
 
@@ -31,13 +44,51 @@ package org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
    package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package HighScoresCanvas_Package renames Standard.org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype GameKeyEvent_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access;
+   use type GameKeyEvent_Access;
+   subtype GameKeyEvent_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array;
+   use type GameKeyEvent_Access_Array;
+   subtype GameKeyEvent_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access;
+   use type GameKeyEvent_Access_Array_Access;
+   subtype GameKeyEvent_Access_Array_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array;
+   use type GameKeyEvent_Access_Array_Access_Array;
+   subtype GameKeyEvent_Access_Array_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array_Access;
+   use type GameKeyEvent_Access_Array_Access_Array_Access;
+   subtype HighScoresCanvas_Access is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access;
+   use type HighScoresCanvas_Access;
+   subtype HighScoresCanvas_Access_Array is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array;
+   use type HighScoresCanvas_Access_Array;
+   subtype HighScoresCanvas_Access_Array_Access is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array_Access;
+   use type HighScoresCanvas_Access_Array_Access;
+   subtype HighScoresCanvas_Access_Array_Access_Array is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array_Access_Array;
+   use type HighScoresCanvas_Access_Array_Access_Array;
+   subtype HighScoresCanvas_Access_Array_Access_Array_Access is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array_Access_Array_Access;
+   use type HighScoresCanvas_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type HighScoresCanvasInputProcessor is tagged;
-   type HighScoresCanvasInputProcessor_Access is access all HighScoresCanvasInputProcessor'Class;
-   type HighScoresCanvasInputProcessor_Access_Array is array (Natural range <>) of HighScoresCanvasInputProcessor_Access;
-   type HighScoresCanvasInputProcessor_Access_Array_Access is access all HighScoresCanvasInputProcessor_Access_Array;
-   type HighScoresCanvasInputProcessor_Access_Array_Access_Array is array (Natural range <>) of HighScoresCanvasInputProcessor_Access_Array_Access;
-   type HighScoresCanvasInputProcessor_Access_Array_Access_Array_Access is access all HighScoresCanvasInputProcessor_Access_Array_Access_Array;
+
+   subtype HighScoresCanvasInputProcessor_Access is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access;
+   function "=" (Left, Right : HighScoresCanvasInputProcessor_Access) return Boolean renames org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References."=";
+   subtype HighScoresCanvasInputProcessor_Access_Array is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access_Array;
+   function "=" (Left, Right : HighScoresCanvasInputProcessor_Access_Array) return Boolean renames org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References."=";
+   subtype HighScoresCanvasInputProcessor_Access_Array_Access is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access_Array_Access;
+   function "=" (Left, Right : HighScoresCanvasInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References."=";
+   subtype HighScoresCanvasInputProcessor_Access_Array_Access_Array is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : HighScoresCanvasInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References."=";
+   subtype HighScoresCanvasInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HighScoresCanvasInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References."=";
 
    type HighScoresCanvasInputProcessor is new PlayerGameInput with record
       highScoresCanvas : HighScoresCanvas_Access;

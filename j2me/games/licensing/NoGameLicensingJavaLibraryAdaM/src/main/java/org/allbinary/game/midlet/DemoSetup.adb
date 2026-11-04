@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.midlet.GameMidlet_Package; use org.allbinary.game.midlet.GameMidlet_Package;
 
 package body org.allbinary.game.midlet.DemoSetup_Package is
 
+   subtype GameMidlet_Access is org.allbinary.game.midlet.GameMidlet_Package_References.GameMidlet_Access;
+   function "=" (Left, Right : GameMidlet_Access) return Boolean renames org.allbinary.game.midlet.GameMidlet_Package_References."=";
+   subtype GameMidlet_Access_Array is org.allbinary.game.midlet.GameMidlet_Package_References.GameMidlet_Access_Array;
+   function "=" (Left, Right : GameMidlet_Access_Array) return Boolean renames org.allbinary.game.midlet.GameMidlet_Package_References."=";
+   subtype GameMidlet_Access_Array_Access is org.allbinary.game.midlet.GameMidlet_Package_References.GameMidlet_Access_Array_Access;
+   function "=" (Left, Right : GameMidlet_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.GameMidlet_Package_References."=";
+   subtype GameMidlet_Access_Array_Access_Array is org.allbinary.game.midlet.GameMidlet_Package_References.GameMidlet_Access_Array_Access_Array;
+   function "=" (Left, Right : GameMidlet_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.GameMidlet_Package_References."=";
+   subtype GameMidlet_Access_Array_Access_Array_Access is org.allbinary.game.midlet.GameMidlet_Package_References.GameMidlet_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameMidlet_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.GameMidlet_Package_References."=";
    procedure Initialize_Fields (This : in out DemoSetup'Class) is
    begin
       null;

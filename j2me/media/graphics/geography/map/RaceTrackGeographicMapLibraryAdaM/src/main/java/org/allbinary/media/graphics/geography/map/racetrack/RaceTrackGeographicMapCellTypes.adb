@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package is
 
+   subtype RaceTrackGeographicMapCellType_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
+   subtype RaceTrackGeographicMapCellType_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
+   subtype RaceTrackGeographicMapCellType_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
+   subtype RaceTrackGeographicMapCellType_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array_Access_Array;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
+   subtype RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=";
    procedure Initialize_Fields (This : in out RaceTrackGeographicMapCellTypes'Class) is
    begin
       null;
@@ -32,7 +44,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
 
    function getInstance return RaceTrackGeographicMapCellTypes_Access is
    begin
-        return RaceTrackGeographicMapCellTypes_Package.instance;
+        return RaceTrackGeographicMapCellTypes_Access (RaceTrackGeographicMapCellTypes_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out RaceTrackGeographicMapCellTypes'Class) is

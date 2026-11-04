@@ -13,13 +13,90 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.game.layer.SpriteFactory_Package; use org.allbinary.game.layer.SpriteFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLUtil_Package; use org.allbinary.graphics.opengles.OpenGLUtil_Package;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package; use org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
+with org.allbinary.logic.math.J2SEMath_Package; use org.allbinary.logic.math.J2SEMath_Package;
+with org.allbinary.media.image.ImageScaleUtil_Package; use org.allbinary.media.image.ImageScaleUtil_Package;
 
 package body org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package is
 
    package SpriteFactory_Package renames Standard.org.allbinary.game.layer.SpriteFactory_Package;
    package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Sprite_Access is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access;
+   function "=" (Left, Right : Sprite_Access) return Boolean renames javax.microedition.lcdui.game.Sprite_Package_References."=";
+   subtype Sprite_Access_Array is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array;
+   function "=" (Left, Right : Sprite_Access_Array) return Boolean renames javax.microedition.lcdui.game.Sprite_Package_References."=";
+   subtype Sprite_Access_Array_Access is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array_Access;
+   function "=" (Left, Right : Sprite_Access_Array_Access) return Boolean renames javax.microedition.lcdui.game.Sprite_Package_References."=";
+   subtype Sprite_Access_Array_Access_Array is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array_Access_Array;
+   function "=" (Left, Right : Sprite_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.game.Sprite_Package_References."=";
+   subtype Sprite_Access_Array_Access_Array_Access is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Sprite_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.game.Sprite_Package_References."=";
+   subtype OpenGLUtil_Access is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access;
+   function "=" (Left, Right : OpenGLUtil_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype OpenGLUtil_Access_Array is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array;
+   function "=" (Left, Right : OpenGLUtil_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype OpenGLUtil_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array_Access;
+   function "=" (Left, Right : OpenGLUtil_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype OpenGLUtil_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype OpenGLUtil_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   function "=" (Left, Right : ImageCache_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access_Array is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype J2SEMath_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access;
+   function "=" (Left, Right : J2SEMath_Access) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype J2SEMath_Access_Array is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array;
+   function "=" (Left, Right : J2SEMath_Access_Array) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype J2SEMath_Access_Array_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access;
+   function "=" (Left, Right : J2SEMath_Access_Array_Access) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype J2SEMath_Access_Array_Access_Array is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access_Array;
+   function "=" (Left, Right : J2SEMath_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype J2SEMath_Access_Array_Access_Array_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : J2SEMath_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.J2SEMath_Package_References."=";
+   subtype ImageScaleUtil_Access is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access;
+   function "=" (Left, Right : ImageScaleUtil_Access) return Boolean renames org.allbinary.media.image.ImageScaleUtil_Package_References."=";
+   subtype ImageScaleUtil_Access_Array is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access_Array;
+   function "=" (Left, Right : ImageScaleUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageScaleUtil_Package_References."=";
+   subtype ImageScaleUtil_Access_Array_Access is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageScaleUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageScaleUtil_Package_References."=";
+   subtype ImageScaleUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageScaleUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageScaleUtil_Package_References."=";
+   subtype ImageScaleUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageScaleUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageScaleUtil_Package_References."=";
    procedure Initialize_Fields (This : in out AnimationFactorySpriteScaleUtil'Class) is
    begin
       null;
@@ -45,7 +122,7 @@ package body org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package 
 
    function getInstance return AnimationFactorySpriteScaleUtil_Access is
    begin
-        return AnimationFactorySpriteScaleUtil_Package.instance;
+        return AnimationFactorySpriteScaleUtil_Access (AnimationFactorySpriteScaleUtil_Package.instance);
    end getInstance;
 
    --  throws Exception

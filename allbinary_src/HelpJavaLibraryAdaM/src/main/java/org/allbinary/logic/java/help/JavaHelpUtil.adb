@@ -14,11 +14,55 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.help.Point_Package; use org.allbinary.logic.java.help.Point_Package;
+with org.allbinary.logic.java.help.Dimension_Package; use org.allbinary.logic.java.help.Dimension_Package;
 with org.allbinary.logic.java.help.JLabel_Package; use org.allbinary.logic.java.help.JLabel_Package;
 
 package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype Point_Access is org.allbinary.logic.java.help.Point_Package_References.Point_Access;
+   function "=" (Left, Right : Point_Access) return Boolean renames org.allbinary.logic.java.help.Point_Package_References."=";
+   subtype Point_Access_Array is org.allbinary.logic.java.help.Point_Package_References.Point_Access_Array;
+   function "=" (Left, Right : Point_Access_Array) return Boolean renames org.allbinary.logic.java.help.Point_Package_References."=";
+   subtype Point_Access_Array_Access is org.allbinary.logic.java.help.Point_Package_References.Point_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access) return Boolean renames org.allbinary.logic.java.help.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array is org.allbinary.logic.java.help.Point_Package_References.Point_Access_Array_Access_Array;
+   function "=" (Left, Right : Point_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.help.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array_Access is org.allbinary.logic.java.help.Point_Package_References.Point_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.help.Point_Package_References."=";
+   subtype Dimension_Access is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access;
+   function "=" (Left, Right : Dimension_Access) return Boolean renames org.allbinary.logic.java.help.Dimension_Package_References."=";
+   subtype Dimension_Access_Array is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access_Array;
+   function "=" (Left, Right : Dimension_Access_Array) return Boolean renames org.allbinary.logic.java.help.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access_Array_Access;
+   function "=" (Left, Right : Dimension_Access_Array_Access) return Boolean renames org.allbinary.logic.java.help.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access_Array is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access_Array_Access_Array;
+   function "=" (Left, Right : Dimension_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.help.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access_Array_Access is org.allbinary.logic.java.help.Dimension_Package_References.Dimension_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Dimension_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.help.Dimension_Package_References."=";
    procedure Initialize_Fields (This : in out JavaHelpUtil'Class) is
    begin
       null;
@@ -32,7 +76,7 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
 
    function getInstance return JavaHelpUtil_Access is
    begin
-        return JavaHelpUtil_Package.instance;
+        return JavaHelpUtil_Access (JavaHelpUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out JavaHelpUtil'Class) is

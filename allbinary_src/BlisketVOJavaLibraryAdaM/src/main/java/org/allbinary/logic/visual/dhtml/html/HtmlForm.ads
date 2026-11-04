@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.html.HtmlForm_Package;
+package org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References is
+   type HtmlForm_Access is access all org.allbinary.logic.visual.dhtml.html.HtmlForm_Package.HtmlForm'Class;
+   type HtmlForm_Access_Array is array (Natural range <>) of HtmlForm_Access;
+   type HtmlForm_Access_Array_Access is access all HtmlForm_Access_Array;
+   type HtmlForm_Access_Array_Access_Array is array (Natural range <>) of HtmlForm_Access_Array_Access;
+   type HtmlForm_Access_Array_Access_Array_Access is access all HtmlForm_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References;
+
+with org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;
-with org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package; use org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;
+with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References;
+limited with org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package;
+with org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References;
 
 package org.allbinary.logic.visual.dhtml.html.HtmlForm_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package HtmlInput_Package renames Standard.org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;
    package HtmlTable_Package renames Standard.org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype HtmlInput_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access;
+   use type HtmlInput_Access;
+   subtype HtmlInput_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access_Array;
+   use type HtmlInput_Access_Array;
+   subtype HtmlInput_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access_Array_Access;
+   use type HtmlInput_Access_Array_Access;
+   subtype HtmlInput_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access_Array_Access_Array;
+   use type HtmlInput_Access_Array_Access_Array;
+   subtype HtmlInput_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access_Array_Access_Array_Access;
+   use type HtmlInput_Access_Array_Access_Array_Access;
+   subtype HtmlTable_Access is org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.HtmlTable_Access;
+   use type HtmlTable_Access;
+   subtype HtmlTable_Access_Array is org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.HtmlTable_Access_Array;
+   use type HtmlTable_Access_Array;
+   subtype HtmlTable_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.HtmlTable_Access_Array_Access;
+   use type HtmlTable_Access_Array_Access;
+   subtype HtmlTable_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.HtmlTable_Access_Array_Access_Array;
+   use type HtmlTable_Access_Array_Access_Array;
+   subtype HtmlTable_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.HtmlTable_Access_Array_Access_Array_Access;
+   use type HtmlTable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type HtmlForm is tagged;
-   type HtmlForm_Access is access all HtmlForm'Class;
-   type HtmlForm_Access_Array is array (Natural range <>) of HtmlForm_Access;
-   type HtmlForm_Access_Array_Access is access all HtmlForm_Access_Array;
-   type HtmlForm_Access_Array_Access_Array is array (Natural range <>) of HtmlForm_Access_Array_Access;
-   type HtmlForm_Access_Array_Access_Array_Access is access all HtmlForm_Access_Array_Access_Array;
+
+   subtype HtmlForm_Access is org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References.HtmlForm_Access;
+   function "=" (Left, Right : HtmlForm_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References."=";
+   subtype HtmlForm_Access_Array is org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References.HtmlForm_Access_Array;
+   function "=" (Left, Right : HtmlForm_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References."=";
+   subtype HtmlForm_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References.HtmlForm_Access_Array_Access;
+   function "=" (Left, Right : HtmlForm_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References."=";
+   subtype HtmlForm_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References.HtmlForm_Access_Array_Access_Array;
+   function "=" (Left, Right : HtmlForm_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References."=";
+   subtype HtmlForm_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References.HtmlForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HtmlForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlForm_Package_References."=";
 
    type HtmlForm is new Java_Object with record
       FORMBEGIN : Unbounded_String;

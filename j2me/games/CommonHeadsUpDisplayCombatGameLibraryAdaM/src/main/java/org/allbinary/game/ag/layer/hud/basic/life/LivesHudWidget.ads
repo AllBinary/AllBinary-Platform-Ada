@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package;
+package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References is
+   type LivesHudWidget_Access is access all org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package.LivesHudWidget'Class;
+   type LivesHudWidget_Access_Array is array (Natural range <>) of LivesHudWidget_Access;
+   type LivesHudWidget_Access_Array_Access is access all LivesHudWidget_Access_Array;
+   type LivesHudWidget_Access_Array_Access_Array is array (Natural range <>) of LivesHudWidget_Access_Array_Access;
+   type LivesHudWidget_Access_Array_Access_Array_Access is access all LivesHudWidget_Access_Array_Access_Array;
+end org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References;
+
+with org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
+limited with org.allbinary.game.ag.life.Life_Package;
+with org.allbinary.game.ag.life.Life_Package_References;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
-with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+limited with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is
@@ -35,13 +49,61 @@ package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is
    package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
    package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype Life_Access is org.allbinary.game.ag.life.Life_Package_References.Life_Access;
+   use type Life_Access;
+   subtype Life_Access_Array is org.allbinary.game.ag.life.Life_Package_References.Life_Access_Array;
+   use type Life_Access_Array;
+   subtype Life_Access_Array_Access is org.allbinary.game.ag.life.Life_Package_References.Life_Access_Array_Access;
+   use type Life_Access_Array_Access;
+   subtype Life_Access_Array_Access_Array is org.allbinary.game.ag.life.Life_Package_References.Life_Access_Array_Access_Array;
+   use type Life_Access_Array_Access_Array;
+   subtype Life_Access_Array_Access_Array_Access is org.allbinary.game.ag.life.Life_Package_References.Life_Access_Array_Access_Array_Access;
+   use type Life_Access_Array_Access_Array_Access;
+   subtype DisplayChangeEvent_Access is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access;
+   use type DisplayChangeEvent_Access;
+   subtype DisplayChangeEvent_Access_Array is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access_Array;
+   use type DisplayChangeEvent_Access_Array;
+   subtype DisplayChangeEvent_Access_Array_Access is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access_Array_Access;
+   use type DisplayChangeEvent_Access_Array_Access;
+   subtype DisplayChangeEvent_Access_Array_Access_Array is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access_Array_Access_Array;
+   use type DisplayChangeEvent_Access_Array_Access_Array;
+   subtype DisplayChangeEvent_Access_Array_Access_Array_Access is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access_Array_Access_Array_Access;
+   use type DisplayChangeEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type LivesHudWidget is tagged;
-   type LivesHudWidget_Access is access all LivesHudWidget'Class;
-   type LivesHudWidget_Access_Array is array (Natural range <>) of LivesHudWidget_Access;
-   type LivesHudWidget_Access_Array_Access is access all LivesHudWidget_Access_Array;
-   type LivesHudWidget_Access_Array_Access_Array is array (Natural range <>) of LivesHudWidget_Access_Array_Access;
-   type LivesHudWidget_Access_Array_Access_Array_Access is access all LivesHudWidget_Access_Array_Access_Array;
+
+   subtype LivesHudWidget_Access is org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.LivesHudWidget_Access;
+   function "=" (Left, Right : LivesHudWidget_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References."=";
+   subtype LivesHudWidget_Access_Array is org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.LivesHudWidget_Access_Array;
+   function "=" (Left, Right : LivesHudWidget_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References."=";
+   subtype LivesHudWidget_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.LivesHudWidget_Access_Array_Access;
+   function "=" (Left, Right : LivesHudWidget_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References."=";
+   subtype LivesHudWidget_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.LivesHudWidget_Access_Array_Access_Array;
+   function "=" (Left, Right : LivesHudWidget_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References."=";
+   subtype LivesHudWidget_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.LivesHudWidget_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LivesHudWidget_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References."=";
 
    type LivesHudWidget is new BasicHud and PaintableInterface with record
       lifeInterface : Life_Access;

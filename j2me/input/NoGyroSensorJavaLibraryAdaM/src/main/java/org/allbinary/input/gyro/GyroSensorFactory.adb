@@ -13,10 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
 with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.gyro.NoGyroSensor_Package;
 
 package body org.allbinary.input.gyro.GyroSensorFactory_Package is
 
+   subtype AllBinaryOrientationSensor_Access is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access;
+   function "=" (Left, Right : AllBinaryOrientationSensor_Access) return Boolean renames org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References."=";
+   subtype AllBinaryOrientationSensor_Access_Array is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access_Array;
+   function "=" (Left, Right : AllBinaryOrientationSensor_Access_Array) return Boolean renames org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References."=";
+   subtype AllBinaryOrientationSensor_Access_Array_Access is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryOrientationSensor_Access_Array_Access) return Boolean renames org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References."=";
+   subtype AllBinaryOrientationSensor_Access_Array_Access_Array is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryOrientationSensor_Access_Array_Access_Array) return Boolean renames org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References."=";
+   subtype AllBinaryOrientationSensor_Access_Array_Access_Array_Access is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryOrientationSensor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References."=";
    procedure Initialize_Fields (This : in out GyroSensorFactory'Class) is
    begin
       null;
@@ -43,12 +60,12 @@ package body org.allbinary.input.gyro.GyroSensorFactory_Package is
 
    function getInstance return AllBinaryOrientationSensor_Access is
    begin
-        return GyroSensorFactory_Package.allBinaryGyroSensor;
+        return AllBinaryOrientationSensor_Access (GyroSensorFactory_Package.allBinaryGyroSensor);
    end getInstance;
 
 begin
    null;
-   allBinaryGyroSensor := AllBinaryOrientationSensor_Package.NULL_ALLBINARY_ORIENTATION_SENSOR;
+   allBinaryGyroSensor := AllBinaryOrientationSensor_Access (AllBinaryOrientationSensor_Package.NULL_ALLBINARY_ORIENTATION_SENSOR);
 
 end org.allbinary.input.gyro.GyroSensorFactory_Package;
 

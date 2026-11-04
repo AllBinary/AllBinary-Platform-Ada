@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.graphics.color.Color_Package; use org.allbinary.graphics.color.Color_Package;
 
 package body org.allbinary.graphics.color.ColorCacheable_Package is
 
+   subtype Color_Access is org.allbinary.graphics.color.Color_Package_References.Color_Access;
+   function "=" (Left, Right : Color_Access) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
+   subtype Color_Access_Array is org.allbinary.graphics.color.Color_Package_References.Color_Access_Array;
+   function "=" (Left, Right : Color_Access_Array) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
+   subtype Color_Access_Array_Access is org.allbinary.graphics.color.Color_Package_References.Color_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array is org.allbinary.graphics.color.Color_Package_References.Color_Access_Array_Access_Array;
+   function "=" (Left, Right : Color_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array_Access is org.allbinary.graphics.color.Color_Package_References.Color_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
    procedure Initialize_Fields (This : in out ColorCacheable'Class) is
    begin
       null;

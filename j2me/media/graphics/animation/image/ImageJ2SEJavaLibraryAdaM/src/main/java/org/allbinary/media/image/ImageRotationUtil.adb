@@ -13,16 +13,42 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.microemu.device.j2se.J2SEImmutableImage_Package; use org.microemu.device.j2se.J2SEImmutableImage_Package;
 with org.microemu.device.j2se.J2SEMutableImage_Package; use org.microemu.device.j2se.J2SEMutableImage_Package;
+with org.allbinary.media.image.ImageJ2SERotationUtil_Package; use org.allbinary.media.image.ImageJ2SERotationUtil_Package;
 with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
+with org.allbinary.media.image.ImageCreationUtil_Package;
+with org.allbinary.media.image.ImageJ2SERotationUtil_Package;
+with org.allbinary.media.image.ImageJ2SEUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package;
 
 package body org.allbinary.media.image.ImageRotationUtil_Package is
 
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package J2SEImmutableImage_Package renames Standard.org.microemu.device.j2se.J2SEImmutableImage_Package;
    package J2SEMutableImage_Package renames Standard.org.microemu.device.j2se.J2SEMutableImage_Package;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype ImageJ2SERotationUtil_Access is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   subtype ImageJ2SERotationUtil_Access_Array is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   subtype ImageJ2SERotationUtil_Access_Array_Access is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   subtype ImageJ2SERotationUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   subtype ImageJ2SERotationUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
    procedure Initialize_Fields (This : in out ImageRotationUtil'Class) is
    begin
       null;
@@ -32,7 +58,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
 
    function getInstance return ImageRotationUtil_Access is
    begin
-        return ImageRotationUtil_Package.instance;
+        return ImageRotationUtil_Access (ImageRotationUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ImageRotationUtil'Class) is

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package;
+package org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References is
+   type DownOrientationInputToGameKeyEventAction_Access is access all org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package.DownOrientationInputToGameKeyEventAction'Class;
+   type DownOrientationInputToGameKeyEventAction_Access_Array is array (Natural range <>) of DownOrientationInputToGameKeyEventAction_Access;
+   type DownOrientationInputToGameKeyEventAction_Access_Array_Access is access all DownOrientationInputToGameKeyEventAction_Access_Array;
+   type DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of DownOrientationInputToGameKeyEventAction_Access_Array_Access;
+   type DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array;
+end org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References;
+
+with org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEve
 package org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package is
 
    package GameKeyCompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DownOrientationInputToGameKeyEventAction is tagged;
-   type DownOrientationInputToGameKeyEventAction_Access is access all DownOrientationInputToGameKeyEventAction'Class;
-   type DownOrientationInputToGameKeyEventAction_Access_Array is array (Natural range <>) of DownOrientationInputToGameKeyEventAction_Access;
-   type DownOrientationInputToGameKeyEventAction_Access_Array_Access is access all DownOrientationInputToGameKeyEventAction_Access_Array;
-   type DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of DownOrientationInputToGameKeyEventAction_Access_Array_Access;
-   type DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array;
+
+   subtype DownOrientationInputToGameKeyEventAction_Access is org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References.DownOrientationInputToGameKeyEventAction_Access;
+   function "=" (Left, Right : DownOrientationInputToGameKeyEventAction_Access) return Boolean renames org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References."=";
+   subtype DownOrientationInputToGameKeyEventAction_Access_Array is org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References.DownOrientationInputToGameKeyEventAction_Access_Array;
+   function "=" (Left, Right : DownOrientationInputToGameKeyEventAction_Access_Array) return Boolean renames org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References."=";
+   subtype DownOrientationInputToGameKeyEventAction_Access_Array_Access is org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References.DownOrientationInputToGameKeyEventAction_Access_Array_Access;
+   function "=" (Left, Right : DownOrientationInputToGameKeyEventAction_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References."=";
+   subtype DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array is org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References.DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array;
+   function "=" (Left, Right : DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References."=";
+   subtype DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access is org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References.DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DownOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKeyEventAction_Package_References."=";
 
    type DownOrientationInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with null record;
    instance : Java_Object_Access;

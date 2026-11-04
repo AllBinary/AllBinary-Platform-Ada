@@ -13,9 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.media.image.search.ImageComparisonSearch_Package; use org.allbinary.media.image.search.ImageComparisonSearch_Package;
+with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.media.image.search.ImageComparisonSearch_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package body org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package is
 
+   subtype ImageComparisonSearch_Access is org.allbinary.media.image.search.ImageComparisonSearch_Package_References.ImageComparisonSearch_Access;
+   function "=" (Left, Right : ImageComparisonSearch_Access) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearch_Package_References."=";
+   subtype ImageComparisonSearch_Access_Array is org.allbinary.media.image.search.ImageComparisonSearch_Package_References.ImageComparisonSearch_Access_Array;
+   function "=" (Left, Right : ImageComparisonSearch_Access_Array) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearch_Package_References."=";
+   subtype ImageComparisonSearch_Access_Array_Access is org.allbinary.media.image.search.ImageComparisonSearch_Package_References.ImageComparisonSearch_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonSearch_Access_Array_Access) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearch_Package_References."=";
+   subtype ImageComparisonSearch_Access_Array_Access_Array is org.allbinary.media.image.search.ImageComparisonSearch_Package_References.ImageComparisonSearch_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageComparisonSearch_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearch_Package_References."=";
+   subtype ImageComparisonSearch_Access_Array_Access_Array_Access is org.allbinary.media.image.search.ImageComparisonSearch_Package_References.ImageComparisonSearch_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonSearch_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearch_Package_References."=";
    procedure Initialize_Fields (This : in out ImageComparisonSearchResultsEvent'Class) is
    begin
       null;

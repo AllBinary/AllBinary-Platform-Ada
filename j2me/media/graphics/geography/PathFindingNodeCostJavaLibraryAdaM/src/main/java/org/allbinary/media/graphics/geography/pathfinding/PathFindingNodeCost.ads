@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package;
+package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References is
+   type PathFindingNodeCost_Access is access all org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package.PathFindingNodeCost'Class;
+   type PathFindingNodeCost_Access_Array is array (Natural range <>) of PathFindingNodeCost_Access;
+   type PathFindingNodeCost_Access_Array_Access is access all PathFindingNodeCost_Access_Array;
+   type PathFindingNodeCost_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCost_Access_Array_Access;
+   type PathFindingNodeCost_Access_Array_Access_Array_Access is access all PathFindingNodeCost_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References;
+
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,23 +30,64 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+limited with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 with java.lang.Comparable_Package; use java.lang.Comparable_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
+limited with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package is
 
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package Reference_Types is
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   use type CommonSeps_Access;
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   use type CommonSeps_Access_Array;
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access;
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   use type CommonSeps_Access_Array_Access_Array;
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access;
+   use type GeographicMapCellPosition_Access;
+   subtype GeographicMapCellPosition_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array;
+   use type GeographicMapCellPosition_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
+   use type GeographicMapCellPosition_Access_Array_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   subtype PathFindingNodeCostInfo_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References.PathFindingNodeCostInfo_Access;
+   use type PathFindingNodeCostInfo_Access;
+   subtype PathFindingNodeCostInfo_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References.PathFindingNodeCostInfo_Access_Array;
+   use type PathFindingNodeCostInfo_Access_Array;
+   subtype PathFindingNodeCostInfo_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References.PathFindingNodeCostInfo_Access_Array_Access;
+   use type PathFindingNodeCostInfo_Access_Array_Access;
+   subtype PathFindingNodeCostInfo_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References.PathFindingNodeCostInfo_Access_Array_Access_Array;
+   use type PathFindingNodeCostInfo_Access_Array_Access_Array;
+   subtype PathFindingNodeCostInfo_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References.PathFindingNodeCostInfo_Access_Array_Access_Array_Access;
+   use type PathFindingNodeCostInfo_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PathFindingNodeCost is tagged;
-   type PathFindingNodeCost_Access is access all PathFindingNodeCost'Class;
-   type PathFindingNodeCost_Access_Array is array (Natural range <>) of PathFindingNodeCost_Access;
-   type PathFindingNodeCost_Access_Array_Access is access all PathFindingNodeCost_Access_Array;
-   type PathFindingNodeCost_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCost_Access_Array_Access;
-   type PathFindingNodeCost_Access_Array_Access_Array_Access is access all PathFindingNodeCost_Access_Array_Access_Array;
+
+   subtype PathFindingNodeCost_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References.PathFindingNodeCost_Access;
+   function "=" (Left, Right : PathFindingNodeCost_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References."=";
+   subtype PathFindingNodeCost_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References.PathFindingNodeCost_Access_Array;
+   function "=" (Left, Right : PathFindingNodeCost_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References."=";
+   subtype PathFindingNodeCost_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References.PathFindingNodeCost_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNodeCost_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References."=";
+   subtype PathFindingNodeCost_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References.PathFindingNodeCost_Access_Array_Access_Array;
+   function "=" (Left, Right : PathFindingNodeCost_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References."=";
+   subtype PathFindingNodeCost_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References.PathFindingNodeCost_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNodeCost_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package_References."=";
 
    type PathFindingNodeCost is new PathFindingNode and Comparable with record
       commonSeps : CommonSeps_Access;

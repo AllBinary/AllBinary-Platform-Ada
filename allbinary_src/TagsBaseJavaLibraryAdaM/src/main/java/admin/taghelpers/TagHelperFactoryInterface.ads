@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.TagHelperFactoryInterface_Package;
+package admin.taghelpers.TagHelperFactoryInterface_Package_References is
+   type TagHelperFactoryInterface_Access is access all admin.taghelpers.TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class;
+   type TagHelperFactoryInterface_Access_Array is array (Natural range <>) of TagHelperFactoryInterface_Access;
+   type TagHelperFactoryInterface_Access_Array_Access is access all TagHelperFactoryInterface_Access_Array;
+   type TagHelperFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of TagHelperFactoryInterface_Access_Array_Access;
+   type TagHelperFactoryInterface_Access_Array_Access_Array_Access is access all TagHelperFactoryInterface_Access_Array_Access_Array;
+end admin.taghelpers.TagHelperFactoryInterface_Package_References;
+
+with admin.taghelpers.TagHelperFactoryInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,23 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 package admin.taghelpers.TagHelperFactoryInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type TagHelperFactoryInterface is interface;
-   type TagHelperFactoryInterface_Access is access all TagHelperFactoryInterface'Class;
-   type TagHelperFactoryInterface_Access_Array is array (Natural range <>) of TagHelperFactoryInterface_Access;
-   type TagHelperFactoryInterface_Access_Array_Access is access all TagHelperFactoryInterface_Access_Array;
-   type TagHelperFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of TagHelperFactoryInterface_Access_Array_Access;
-   type TagHelperFactoryInterface_Access_Array_Access_Array_Access is access all TagHelperFactoryInterface_Access_Array_Access_Array;
+   subtype TagHelperFactoryInterface_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   subtype TagHelperFactoryInterface_Access_Array is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access_Array) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   subtype TagHelperFactoryInterface_Access_Array_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access_Array_Access) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   subtype TagHelperFactoryInterface_Access_Array_Access_Array is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access_Array_Access_Array) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   subtype TagHelperFactoryInterface_Access_Array_Access_Array_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TagHelperFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
+   function Java_Object_Access_From_TagHelperFactoryInterface (Value : TagHelperFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out TagHelperFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return Java_Object_Access is abstract;
 
 end admin.taghelpers.TagHelperFactoryInterface_Package;

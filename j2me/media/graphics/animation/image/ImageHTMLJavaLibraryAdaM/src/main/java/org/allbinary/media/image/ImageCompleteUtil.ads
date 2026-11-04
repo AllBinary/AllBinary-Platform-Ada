@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.ImageCompleteUtil_Package;
+package org.allbinary.media.image.ImageCompleteUtil_Package_References is
+   type ImageCompleteUtil_Access is access all org.allbinary.media.image.ImageCompleteUtil_Package.ImageCompleteUtil'Class;
+   type ImageCompleteUtil_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access;
+   type ImageCompleteUtil_Access_Array_Access is access all ImageCompleteUtil_Access_Array;
+   type ImageCompleteUtil_Access_Array_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access_Array_Access;
+   type ImageCompleteUtil_Access_Array_Access_Array_Access is access all ImageCompleteUtil_Access_Array_Access_Array;
+end org.allbinary.media.image.ImageCompleteUtil_Package_References;
+
+with org.allbinary.media.image.ImageCompleteUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 
 package org.allbinary.media.image.ImageCompleteUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype TimeDelayHelper_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access;
+   use type TimeDelayHelper_Access;
+   subtype TimeDelayHelper_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array;
+   use type TimeDelayHelper_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access;
+   subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
+   use type TimeDelayHelper_Access_Array_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageCompleteUtil is tagged;
-   type ImageCompleteUtil_Access is access all ImageCompleteUtil'Class;
-   type ImageCompleteUtil_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access;
-   type ImageCompleteUtil_Access_Array_Access is access all ImageCompleteUtil_Access_Array;
-   type ImageCompleteUtil_Access_Array_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access_Array_Access;
-   type ImageCompleteUtil_Access_Array_Access_Array_Access is access all ImageCompleteUtil_Access_Array_Access_Array;
+
+   subtype ImageCompleteUtil_Access is org.allbinary.media.image.ImageCompleteUtil_Package_References.ImageCompleteUtil_Access;
+   function "=" (Left, Right : ImageCompleteUtil_Access) return Boolean renames org.allbinary.media.image.ImageCompleteUtil_Package_References."=";
+   subtype ImageCompleteUtil_Access_Array is org.allbinary.media.image.ImageCompleteUtil_Package_References.ImageCompleteUtil_Access_Array;
+   function "=" (Left, Right : ImageCompleteUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageCompleteUtil_Package_References."=";
+   subtype ImageCompleteUtil_Access_Array_Access is org.allbinary.media.image.ImageCompleteUtil_Package_References.ImageCompleteUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageCompleteUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageCompleteUtil_Package_References."=";
+   subtype ImageCompleteUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageCompleteUtil_Package_References.ImageCompleteUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageCompleteUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageCompleteUtil_Package_References."=";
+   subtype ImageCompleteUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageCompleteUtil_Package_References.ImageCompleteUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageCompleteUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageCompleteUtil_Package_References."=";
 
    type ImageCompleteUtil is new Java_Object with record
       timeDelayHelper : TimeDelayHelper_Access;

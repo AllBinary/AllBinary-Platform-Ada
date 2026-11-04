@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package;
+package org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References is
+   type AuthorizeNetSimData_Access is access all org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package.AuthorizeNetSimData'Class;
+   type AuthorizeNetSimData_Access_Array is array (Natural range <>) of AuthorizeNetSimData_Access;
+   type AuthorizeNetSimData_Access_Array_Access is access all AuthorizeNetSimData_Access_Array;
+   type AuthorizeNetSimData_Access_Array_Access_Array is array (Natural range <>) of AuthorizeNetSimData_Access_Array_Access;
+   type AuthorizeNetSimData_Access_Array_Access_Array_Access is access all AuthorizeNetSimData_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AuthorizeNetSimData is tagged;
-   type AuthorizeNetSimData_Access is access all AuthorizeNetSimData'Class;
-   type AuthorizeNetSimData_Access_Array is array (Natural range <>) of AuthorizeNetSimData_Access;
-   type AuthorizeNetSimData_Access_Array_Access is access all AuthorizeNetSimData_Access_Array;
-   type AuthorizeNetSimData_Access_Array_Access_Array is array (Natural range <>) of AuthorizeNetSimData_Access_Array_Access;
-   type AuthorizeNetSimData_Access_Array_Access_Array_Access is access all AuthorizeNetSimData_Access_Array_Access_Array;
+
+   subtype AuthorizeNetSimData_Access is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References.AuthorizeNetSimData_Access;
+   function "=" (Left, Right : AuthorizeNetSimData_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References."=";
+   subtype AuthorizeNetSimData_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References.AuthorizeNetSimData_Access_Array;
+   function "=" (Left, Right : AuthorizeNetSimData_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References."=";
+   subtype AuthorizeNetSimData_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References.AuthorizeNetSimData_Access_Array_Access;
+   function "=" (Left, Right : AuthorizeNetSimData_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References."=";
+   subtype AuthorizeNetSimData_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References.AuthorizeNetSimData_Access_Array_Access_Array;
+   function "=" (Left, Right : AuthorizeNetSimData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References."=";
+   subtype AuthorizeNetSimData_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References.AuthorizeNetSimData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AuthorizeNetSimData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package_References."=";
 
    type AuthorizeNetSimData is new Java_Object with null record;
    X_FP_HASH : Unbounded_String;

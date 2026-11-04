@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 
 package body javax.microedition.lcdui.ChoiceGroupImageFactory_Package is
 
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
    procedure Initialize_Fields (This : in out ChoiceGroupImageFactory'Class) is
    begin
       null;
@@ -49,7 +60,7 @@ package body javax.microedition.lcdui.ChoiceGroupImageFactory_Package is
 
    function getInstance return ChoiceGroupImageFactory_Access is
    begin
-        return ChoiceGroupImageFactory_Package.instance;
+        return ChoiceGroupImageFactory_Access (ChoiceGroupImageFactory_Package.instance);
    end getInstance;
 
    function getImageArray (This : in out ChoiceGroupImageFactory) return Image_Access_Array_Access is

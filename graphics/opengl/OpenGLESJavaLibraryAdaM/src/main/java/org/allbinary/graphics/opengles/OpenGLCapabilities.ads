@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
+package org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References is
+   type OpenGLCapabilities_Access is access all org.allbinary.graphics.opengles.OpenGLCapabilities_Package.OpenGLCapabilities'Class;
+   type OpenGLCapabilities_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access;
+   type OpenGLCapabilities_Access_Array_Access is access all OpenGLCapabilities_Access_Array;
+   type OpenGLCapabilities_Access_Array_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access_Array_Access;
+   type OpenGLCapabilities_Access_Array_Access_Array_Access is access all OpenGLCapabilities_Access_Array_Access_Array;
+end org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References;
+
+with org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,23 +30,75 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.graphics.opengles.OpenGLFeature_Package;
+limited with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
+limited with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package_References;
 
 package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   use type GL10_Access;
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   use type GL10_Access_Array;
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   use type GL10_Access_Array_Access;
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   use type GL10_Access_Array_Access_Array;
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   use type GL10_Access_Array_Access_Array_Access;
+   subtype StringUtil_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access;
+   use type StringUtil_Access;
+   subtype StringUtil_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array;
+   use type StringUtil_Access_Array;
+   subtype StringUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access;
+   use type StringUtil_Access_Array_Access;
+   subtype StringUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array;
+   use type StringUtil_Access_Array_Access_Array;
+   subtype StringUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array_Access;
+   use type StringUtil_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype OpenGLFeature_Access is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access;
+   use type OpenGLFeature_Access;
+   subtype OpenGLFeature_Access_Array is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access_Array;
+   use type OpenGLFeature_Access_Array;
+   subtype OpenGLFeature_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access_Array_Access;
+   use type OpenGLFeature_Access_Array_Access;
+   subtype OpenGLFeature_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access_Array_Access_Array;
+   use type OpenGLFeature_Access_Array_Access_Array;
+   subtype OpenGLFeature_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access_Array_Access_Array_Access;
+   use type OpenGLFeature_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLCapabilities is tagged;
-   type OpenGLCapabilities_Access is access all OpenGLCapabilities'Class;
-   type OpenGLCapabilities_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access;
-   type OpenGLCapabilities_Access_Array_Access is access all OpenGLCapabilities_Access_Array;
-   type OpenGLCapabilities_Access_Array_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access_Array_Access;
-   type OpenGLCapabilities_Access_Array_Access_Array_Access is access all OpenGLCapabilities_Access_Array_Access_Array;
+
+   subtype OpenGLCapabilities_Access is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access;
+   function "=" (Left, Right : OpenGLCapabilities_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
+   subtype OpenGLCapabilities_Access_Array is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access_Array;
+   function "=" (Left, Right : OpenGLCapabilities_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
+   subtype OpenGLCapabilities_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access_Array_Access;
+   function "=" (Left, Right : OpenGLCapabilities_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
+   subtype OpenGLCapabilities_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLCapabilities_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
+   subtype OpenGLCapabilities_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References.OpenGLCapabilities_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLCapabilities_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package_References."=";
 
    type OpenGLCapabilities is new Java_Object with record
       logUtil : LogUtil_Access;

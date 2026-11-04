@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package;
+package org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References is
+   type HtmlLengthInput_Access is access all org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package.HtmlLengthInput'Class;
+   type HtmlLengthInput_Access_Array is array (Natural range <>) of HtmlLengthInput_Access;
+   type HtmlLengthInput_Access_Array_Access is access all HtmlLengthInput_Access_Array;
+   type HtmlLengthInput_Access_Array_Access_Array is array (Natural range <>) of HtmlLengthInput_Access_Array_Access;
+   type HtmlLengthInput_Access_Array_Access_Array_Access is access all HtmlLengthInput_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References;
+
+with org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package; use org
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HtmlLengthInput is tagged;
-   type HtmlLengthInput_Access is access all HtmlLengthInput'Class;
-   type HtmlLengthInput_Access_Array is array (Natural range <>) of HtmlLengthInput_Access;
-   type HtmlLengthInput_Access_Array_Access is access all HtmlLengthInput_Access_Array;
-   type HtmlLengthInput_Access_Array_Access_Array is array (Natural range <>) of HtmlLengthInput_Access_Array_Access;
-   type HtmlLengthInput_Access_Array_Access_Array_Access is access all HtmlLengthInput_Access_Array_Access_Array;
+
+   subtype HtmlLengthInput_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References.HtmlLengthInput_Access;
+   function "=" (Left, Right : HtmlLengthInput_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References."=";
+   subtype HtmlLengthInput_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References.HtmlLengthInput_Access_Array;
+   function "=" (Left, Right : HtmlLengthInput_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References."=";
+   subtype HtmlLengthInput_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References.HtmlLengthInput_Access_Array_Access;
+   function "=" (Left, Right : HtmlLengthInput_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References."=";
+   subtype HtmlLengthInput_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References.HtmlLengthInput_Access_Array_Access_Array;
+   function "=" (Left, Right : HtmlLengthInput_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References."=";
+   subtype HtmlLengthInput_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References.HtmlLengthInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HtmlLengthInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package_References."=";
 
    type HtmlLengthInput is new HtmlValueInput with record
       MAXLENGTH : Unbounded_String;

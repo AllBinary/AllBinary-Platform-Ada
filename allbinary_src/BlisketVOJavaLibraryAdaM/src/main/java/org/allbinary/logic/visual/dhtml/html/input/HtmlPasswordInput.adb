@@ -14,6 +14,11 @@
 
 
 with org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package;
+with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;
+with org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package;
+with org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package;
+with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
+with org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package;
 
 package body org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package is
 

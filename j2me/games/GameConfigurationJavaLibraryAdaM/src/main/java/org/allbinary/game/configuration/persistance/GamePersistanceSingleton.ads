@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package;
+package org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References is
+   type GamePersistanceSingleton_Access is access all org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package.GamePersistanceSingleton'Class;
+   type GamePersistanceSingleton_Access_Array is array (Natural range <>) of GamePersistanceSingleton_Access;
+   type GamePersistanceSingleton_Access_Array_Access is access all GamePersistanceSingleton_Access_Array;
+   type GamePersistanceSingleton_Access_Array_Access_Array is array (Natural range <>) of GamePersistanceSingleton_Access_Array_Access;
+   type GamePersistanceSingleton_Access_Array_Access_Array_Access is access all GamePersistanceSingleton_Access_Array_Access_Array;
+end org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References;
+
+with org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.configuration.persistance.KeyValuePersistance_Package; u
 
 package org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GamePersistanceSingleton is tagged;
-   type GamePersistanceSingleton_Access is access all GamePersistanceSingleton'Class;
-   type GamePersistanceSingleton_Access_Array is array (Natural range <>) of GamePersistanceSingleton_Access;
-   type GamePersistanceSingleton_Access_Array_Access is access all GamePersistanceSingleton_Access_Array;
-   type GamePersistanceSingleton_Access_Array_Access_Array is array (Natural range <>) of GamePersistanceSingleton_Access_Array_Access;
-   type GamePersistanceSingleton_Access_Array_Access_Array_Access is access all GamePersistanceSingleton_Access_Array_Access_Array;
+
+   subtype GamePersistanceSingleton_Access is org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References.GamePersistanceSingleton_Access;
+   function "=" (Left, Right : GamePersistanceSingleton_Access) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References."=";
+   subtype GamePersistanceSingleton_Access_Array is org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References.GamePersistanceSingleton_Access_Array;
+   function "=" (Left, Right : GamePersistanceSingleton_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References."=";
+   subtype GamePersistanceSingleton_Access_Array_Access is org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References.GamePersistanceSingleton_Access_Array_Access;
+   function "=" (Left, Right : GamePersistanceSingleton_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References."=";
+   subtype GamePersistanceSingleton_Access_Array_Access_Array is org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References.GamePersistanceSingleton_Access_Array_Access_Array;
+   function "=" (Left, Right : GamePersistanceSingleton_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References."=";
+   subtype GamePersistanceSingleton_Access_Array_Access_Array_Access is org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References.GamePersistanceSingleton_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GamePersistanceSingleton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package_References."=";
 
    type GamePersistanceSingleton is new KeyValuePersistance with null record;
    GAME_PERSISTANCE : GamePersistanceSingleton_Access;

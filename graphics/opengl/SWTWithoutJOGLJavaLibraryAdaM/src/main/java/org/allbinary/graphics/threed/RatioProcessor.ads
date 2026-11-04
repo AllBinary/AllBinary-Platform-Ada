@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.threed.RatioProcessor_Package;
+package org.allbinary.graphics.threed.RatioProcessor_Package_References is
+   type RatioProcessor_Access is access all org.allbinary.graphics.threed.RatioProcessor_Package.RatioProcessor'Class;
+   type RatioProcessor_Access_Array is array (Natural range <>) of RatioProcessor_Access;
+   type RatioProcessor_Access_Array_Access is access all RatioProcessor_Access_Array;
+   type RatioProcessor_Access_Array_Access_Array is array (Natural range <>) of RatioProcessor_Access_Array_Access;
+   type RatioProcessor_Access_Array_Access_Array_Access is access all RatioProcessor_Access_Array_Access_Array;
+end org.allbinary.graphics.threed.RatioProcessor_Package_References;
+
+with org.allbinary.graphics.threed.RatioProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.threed.RatioProcessor_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type RatioProcessor is tagged;
-   type RatioProcessor_Access is access all RatioProcessor'Class;
-   type RatioProcessor_Access_Array is array (Natural range <>) of RatioProcessor_Access;
-   type RatioProcessor_Access_Array_Access is access all RatioProcessor_Access_Array;
-   type RatioProcessor_Access_Array_Access_Array is array (Natural range <>) of RatioProcessor_Access_Array_Access;
-   type RatioProcessor_Access_Array_Access_Array_Access is access all RatioProcessor_Access_Array_Access_Array;
+
+   subtype RatioProcessor_Access is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access;
+   function "=" (Left, Right : RatioProcessor_Access) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
+   subtype RatioProcessor_Access_Array is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array;
+   function "=" (Left, Right : RatioProcessor_Access_Array) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
+   subtype RatioProcessor_Access_Array_Access is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array_Access;
+   function "=" (Left, Right : RatioProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
+   subtype RatioProcessor_Access_Array_Access_Array is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : RatioProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
+   subtype RatioProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RatioProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.threed.RatioProcessor_Package_References."=";
 
    type RatioProcessor is new Java_Object with null record;
 

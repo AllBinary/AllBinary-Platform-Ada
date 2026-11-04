@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package;
+package org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References is
+   type ConstrainedMotionRectangles_Access is access all org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package.ConstrainedMotionRectangles'Class;
+   type ConstrainedMotionRectangles_Access_Array is array (Natural range <>) of ConstrainedMotionRectangles_Access;
+   type ConstrainedMotionRectangles_Access_Array_Access is access all ConstrainedMotionRectangles_Access_Array;
+   type ConstrainedMotionRectangles_Access_Array_Access_Array is array (Natural range <>) of ConstrainedMotionRectangles_Access_Array_Access;
+   type ConstrainedMotionRectangles_Access_Array_Access_Array_Access is access all ConstrainedMotionRectangles_Access_Array_Access_Array;
+end org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References;
+
+with org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,20 +32,50 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Rectangle_Package; use java.awt.Rectangle_Package;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+limited with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References;
 
 package org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype MotionRectangleConstraintsInterface_Access is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access;
+   use type MotionRectangleConstraintsInterface_Access;
+   subtype MotionRectangleConstraintsInterface_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access_Array;
+   use type MotionRectangleConstraintsInterface_Access_Array;
+   subtype MotionRectangleConstraintsInterface_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access_Array_Access;
+   use type MotionRectangleConstraintsInterface_Access_Array_Access;
+   subtype MotionRectangleConstraintsInterface_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access_Array_Access_Array;
+   use type MotionRectangleConstraintsInterface_Access_Array_Access_Array;
+   subtype MotionRectangleConstraintsInterface_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References.MotionRectangleConstraintsInterface_Access_Array_Access_Array_Access;
+   use type MotionRectangleConstraintsInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ConstrainedMotionRectangles is tagged;
-   type ConstrainedMotionRectangles_Access is access all ConstrainedMotionRectangles'Class;
-   type ConstrainedMotionRectangles_Access_Array is array (Natural range <>) of ConstrainedMotionRectangles_Access;
-   type ConstrainedMotionRectangles_Access_Array_Access is access all ConstrainedMotionRectangles_Access_Array;
-   type ConstrainedMotionRectangles_Access_Array_Access_Array is array (Natural range <>) of ConstrainedMotionRectangles_Access_Array_Access;
-   type ConstrainedMotionRectangles_Access_Array_Access_Array_Access is access all ConstrainedMotionRectangles_Access_Array_Access_Array;
+
+   subtype ConstrainedMotionRectangles_Access is org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References.ConstrainedMotionRectangles_Access;
+   function "=" (Left, Right : ConstrainedMotionRectangles_Access) return Boolean renames org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References."=";
+   subtype ConstrainedMotionRectangles_Access_Array is org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References.ConstrainedMotionRectangles_Access_Array;
+   function "=" (Left, Right : ConstrainedMotionRectangles_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References."=";
+   subtype ConstrainedMotionRectangles_Access_Array_Access is org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References.ConstrainedMotionRectangles_Access_Array_Access;
+   function "=" (Left, Right : ConstrainedMotionRectangles_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References."=";
+   subtype ConstrainedMotionRectangles_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References.ConstrainedMotionRectangles_Access_Array_Access_Array;
+   function "=" (Left, Right : ConstrainedMotionRectangles_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References."=";
+   subtype ConstrainedMotionRectangles_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References.ConstrainedMotionRectangles_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ConstrainedMotionRectangles_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package_References."=";
 
    type ConstrainedMotionRectangles is new MotionRectangles with record
       logUtil : LogUtil_Access;

@@ -14,10 +14,21 @@
 
 
 with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
 
 package body org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeDefaultComboBoxModelFactory_Package is
 
    package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
+   subtype DefaultComboBoxModel_Access is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access;
+   function "=" (Left, Right : DefaultComboBoxModel_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
+   subtype DefaultComboBoxModel_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access_Array;
+   function "=" (Left, Right : DefaultComboBoxModel_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
+   subtype DefaultComboBoxModel_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access_Array_Access;
+   function "=" (Left, Right : DefaultComboBoxModel_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
+   subtype DefaultComboBoxModel_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access_Array_Access_Array;
+   function "=" (Left, Right : DefaultComboBoxModel_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
+   subtype DefaultComboBoxModel_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DefaultComboBoxModel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationTypeDefaultComboBoxModelFactory'Class) is
    begin
       null;
@@ -40,7 +51,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    --  throws Exception
    function getInstance return DefaultComboBoxModel_Access is
       defaultComboBoxModel : DefaultComboBoxModel_Access;
-      set : Set_Access;
+      set : Java_Object_Access;
       nameArray : Java_Object_Access_Array_Access;
       size : Integer;
       index : Integer;

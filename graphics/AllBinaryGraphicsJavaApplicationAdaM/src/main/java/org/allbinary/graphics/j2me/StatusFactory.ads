@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.StatusFactory_Package;
+package org.allbinary.graphics.j2me.StatusFactory_Package_References is
+   type StatusFactory_Access is access all org.allbinary.graphics.j2me.StatusFactory_Package.StatusFactory'Class;
+   type StatusFactory_Access_Array is array (Natural range <>) of StatusFactory_Access;
+   type StatusFactory_Access_Array_Access is access all StatusFactory_Access_Array;
+   type StatusFactory_Access_Array_Access_Array is array (Natural range <>) of StatusFactory_Access_Array_Access;
+   type StatusFactory_Access_Array_Access_Array_Access is access all StatusFactory_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.StatusFactory_Package_References;
+
+with org.allbinary.graphics.j2me.StatusFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.graphics.j2me.StatusFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StatusFactory is tagged;
-   type StatusFactory_Access is access all StatusFactory'Class;
-   type StatusFactory_Access_Array is array (Natural range <>) of StatusFactory_Access;
-   type StatusFactory_Access_Array_Access is access all StatusFactory_Access_Array;
-   type StatusFactory_Access_Array_Access_Array is array (Natural range <>) of StatusFactory_Access_Array_Access;
-   type StatusFactory_Access_Array_Access_Array_Access is access all StatusFactory_Access_Array_Access_Array;
+
+   subtype StatusFactory_Access is org.allbinary.graphics.j2me.StatusFactory_Package_References.StatusFactory_Access;
+   function "=" (Left, Right : StatusFactory_Access) return Boolean renames org.allbinary.graphics.j2me.StatusFactory_Package_References."=";
+   subtype StatusFactory_Access_Array is org.allbinary.graphics.j2me.StatusFactory_Package_References.StatusFactory_Access_Array;
+   function "=" (Left, Right : StatusFactory_Access_Array) return Boolean renames org.allbinary.graphics.j2me.StatusFactory_Package_References."=";
+   subtype StatusFactory_Access_Array_Access is org.allbinary.graphics.j2me.StatusFactory_Package_References.StatusFactory_Access_Array_Access;
+   function "=" (Left, Right : StatusFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.StatusFactory_Package_References."=";
+   subtype StatusFactory_Access_Array_Access_Array is org.allbinary.graphics.j2me.StatusFactory_Package_References.StatusFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : StatusFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.StatusFactory_Package_References."=";
+   subtype StatusFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.StatusFactory_Package_References.StatusFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StatusFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.StatusFactory_Package_References."=";
 
    type StatusFactory is new Java_Object with record
       logUtil : LogUtil_Access;

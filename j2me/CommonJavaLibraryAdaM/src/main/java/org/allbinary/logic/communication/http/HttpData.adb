@@ -14,6 +14,7 @@
 
 
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 
 package body org.allbinary.logic.communication.http.HttpData_Package is
 
@@ -30,7 +31,7 @@ package body org.allbinary.logic.communication.http.HttpData_Package is
 
    function getInstance return HttpData_Access is
    begin
-        return HttpData_Package.instance;
+        return HttpData_Access (HttpData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out HttpData'Class) is

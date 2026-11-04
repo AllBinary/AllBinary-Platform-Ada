@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.feature.GraphicsFeature_Package;
+package org.allbinary.game.configuration.feature.GraphicsFeature_Package_References is
+   type GraphicsFeature_Access is access all org.allbinary.game.configuration.feature.GraphicsFeature_Package.GraphicsFeature'Class;
+   type GraphicsFeature_Access_Array is array (Natural range <>) of GraphicsFeature_Access;
+   type GraphicsFeature_Access_Array_Access is access all GraphicsFeature_Access_Array;
+   type GraphicsFeature_Access_Array_Access_Array is array (Natural range <>) of GraphicsFeature_Access_Array_Access;
+   type GraphicsFeature_Access_Array_Access_Array_Access is access all GraphicsFeature_Access_Array_Access_Array;
+end org.allbinary.game.configuration.feature.GraphicsFeature_Package_References;
+
+with org.allbinary.game.configuration.feature.GraphicsFeature_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary
 
 package org.allbinary.game.configuration.feature.GraphicsFeature_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GraphicsFeature is tagged;
-   type GraphicsFeature_Access is access all GraphicsFeature'Class;
-   type GraphicsFeature_Access_Array is array (Natural range <>) of GraphicsFeature_Access;
-   type GraphicsFeature_Access_Array_Access is access all GraphicsFeature_Access_Array;
-   type GraphicsFeature_Access_Array_Access_Array is array (Natural range <>) of GraphicsFeature_Access_Array_Access;
-   type GraphicsFeature_Access_Array_Access_Array_Access is access all GraphicsFeature_Access_Array_Access_Array;
+
+   subtype GraphicsFeature_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access;
+   function "=" (Left, Right : GraphicsFeature_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array;
+   function "=" (Left, Right : GraphicsFeature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access;
+   function "=" (Left, Right : GraphicsFeature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : GraphicsFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
+   subtype GraphicsFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GraphicsFeature_Package_References.GraphicsFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GraphicsFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GraphicsFeature_Package_References."=";
 
    type GraphicsFeature is new Feature_Package.Feature with null record;
 

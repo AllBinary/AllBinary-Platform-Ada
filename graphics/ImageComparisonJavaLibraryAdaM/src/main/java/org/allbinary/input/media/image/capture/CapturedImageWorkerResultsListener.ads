@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package;
+package org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References is
+   type CapturedImageWorkerResultsListener_Access is access all org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package.CapturedImageWorkerResultsListener'Class;
+   type CapturedImageWorkerResultsListener_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsListener_Access;
+   type CapturedImageWorkerResultsListener_Access_Array_Access is access all CapturedImageWorkerResultsListener_Access_Array;
+   type CapturedImageWorkerResultsListener_Access_Array_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsListener_Access_Array_Access;
+   type CapturedImageWorkerResultsListener_Access_Array_Access_Array_Access is access all CapturedImageWorkerResultsListener_Access_Array_Access_Array;
+end org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References;
+
+with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,39 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.BasicEventListenerInterface_Package; use org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
-with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package; use org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
+limited with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
+with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References;
 
 package org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package is
 
    package BasicEventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
+   package Reference_Types is
+   subtype CapturedImageWorkerResultsEvent_Access is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access;
+   use type CapturedImageWorkerResultsEvent_Access;
+   subtype CapturedImageWorkerResultsEvent_Access_Array is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access_Array;
+   use type CapturedImageWorkerResultsEvent_Access_Array;
+   subtype CapturedImageWorkerResultsEvent_Access_Array_Access is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access_Array_Access;
+   use type CapturedImageWorkerResultsEvent_Access_Array_Access;
+   subtype CapturedImageWorkerResultsEvent_Access_Array_Access_Array is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access_Array_Access_Array;
+   use type CapturedImageWorkerResultsEvent_Access_Array_Access_Array;
+   subtype CapturedImageWorkerResultsEvent_Access_Array_Access_Array_Access is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access_Array_Access_Array_Access;
+   use type CapturedImageWorkerResultsEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type CapturedImageWorkerResultsListener is interface and BasicEventListenerInterface;
-   type CapturedImageWorkerResultsListener_Access is access all CapturedImageWorkerResultsListener'Class;
-   type CapturedImageWorkerResultsListener_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsListener_Access;
-   type CapturedImageWorkerResultsListener_Access_Array_Access is access all CapturedImageWorkerResultsListener_Access_Array;
-   type CapturedImageWorkerResultsListener_Access_Array_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsListener_Access_Array_Access;
-   type CapturedImageWorkerResultsListener_Access_Array_Access_Array_Access is access all CapturedImageWorkerResultsListener_Access_Array_Access_Array;
+   subtype CapturedImageWorkerResultsListener_Access is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References.CapturedImageWorkerResultsListener_Access;
+   function "=" (Left, Right : CapturedImageWorkerResultsListener_Access) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References."=";
+   subtype CapturedImageWorkerResultsListener_Access_Array is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References.CapturedImageWorkerResultsListener_Access_Array;
+   function "=" (Left, Right : CapturedImageWorkerResultsListener_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References."=";
+   subtype CapturedImageWorkerResultsListener_Access_Array_Access is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References.CapturedImageWorkerResultsListener_Access_Array_Access;
+   function "=" (Left, Right : CapturedImageWorkerResultsListener_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References."=";
+   subtype CapturedImageWorkerResultsListener_Access_Array_Access_Array is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References.CapturedImageWorkerResultsListener_Access_Array_Access_Array;
+   function "=" (Left, Right : CapturedImageWorkerResultsListener_Access_Array_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References."=";
+   subtype CapturedImageWorkerResultsListener_Access_Array_Access_Array_Access is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References.CapturedImageWorkerResultsListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CapturedImageWorkerResultsListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package_References."=";
+   function Java_Object_Access_From_CapturedImageWorkerResultsListener (Value : CapturedImageWorkerResultsListener_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure onCaptureEvent (This : in out CapturedImageWorkerResultsListener; capturedimageworkerresultsevent_Param : access CapturedImageWorkerResultsEvent_Package.CapturedImageWorkerResultsEvent'Class) is abstract;
 
 end org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package;

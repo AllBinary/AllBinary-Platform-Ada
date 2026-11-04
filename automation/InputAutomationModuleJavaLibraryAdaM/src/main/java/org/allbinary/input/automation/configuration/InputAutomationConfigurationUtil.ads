@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
+package org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References is
+   type InputAutomationConfigurationUtil_Access is access all org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package.InputAutomationConfigurationUtil'Class;
+   type InputAutomationConfigurationUtil_Access_Array is array (Natural range <>) of InputAutomationConfigurationUtil_Access;
+   type InputAutomationConfigurationUtil_Access_Array_Access is access all InputAutomationConfigurationUtil_Access_Array;
+   type InputAutomationConfigurationUtil_Access_Array_Access_Array is array (Natural range <>) of InputAutomationConfigurationUtil_Access_Array_Access;
+   type InputAutomationConfigurationUtil_Access_Array_Access_Array_Access is access all InputAutomationConfigurationUtil_Access_Array_Access_Array;
+end org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References;
+
+with org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
+limited with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References;
+limited with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
+with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References;
 
 package org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package is
 
    package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+   package Reference_Types is
+   subtype InputAutomationModuleFactoryInterface_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access;
+   use type InputAutomationModuleFactoryInterface_Access;
+   subtype InputAutomationModuleFactoryInterface_Access_Array is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array;
+   use type InputAutomationModuleFactoryInterface_Access_Array;
+   subtype InputAutomationModuleFactoryInterface_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array_Access;
+   use type InputAutomationModuleFactoryInterface_Access_Array_Access;
+   subtype InputAutomationModuleFactoryInterface_Access_Array_Access_Array is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array_Access_Array;
+   use type InputAutomationModuleFactoryInterface_Access_Array_Access_Array;
+   subtype InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access;
+   use type InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access;
+   subtype InputAutomationConfigurationModuleChangeEvent_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access;
+   use type InputAutomationConfigurationModuleChangeEvent_Access;
+   subtype InputAutomationConfigurationModuleChangeEvent_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array;
+   use type InputAutomationConfigurationModuleChangeEvent_Access_Array;
+   subtype InputAutomationConfigurationModuleChangeEvent_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array_Access;
+   use type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access;
+   subtype InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array;
+   use type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array;
+   subtype InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access;
+   use type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputAutomationConfigurationUtil is tagged;
-   type InputAutomationConfigurationUtil_Access is access all InputAutomationConfigurationUtil'Class;
-   type InputAutomationConfigurationUtil_Access_Array is array (Natural range <>) of InputAutomationConfigurationUtil_Access;
-   type InputAutomationConfigurationUtil_Access_Array_Access is access all InputAutomationConfigurationUtil_Access_Array;
-   type InputAutomationConfigurationUtil_Access_Array_Access_Array is array (Natural range <>) of InputAutomationConfigurationUtil_Access_Array_Access;
-   type InputAutomationConfigurationUtil_Access_Array_Access_Array_Access is access all InputAutomationConfigurationUtil_Access_Array_Access_Array;
+
+   subtype InputAutomationConfigurationUtil_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References.InputAutomationConfigurationUtil_Access;
+   function "=" (Left, Right : InputAutomationConfigurationUtil_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References."=";
+   subtype InputAutomationConfigurationUtil_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References.InputAutomationConfigurationUtil_Access_Array;
+   function "=" (Left, Right : InputAutomationConfigurationUtil_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References."=";
+   subtype InputAutomationConfigurationUtil_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References.InputAutomationConfigurationUtil_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationConfigurationUtil_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References."=";
+   subtype InputAutomationConfigurationUtil_Access_Array_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References.InputAutomationConfigurationUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationConfigurationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References."=";
+   subtype InputAutomationConfigurationUtil_Access_Array_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References.InputAutomationConfigurationUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationConfigurationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package_References."=";
 
    type InputAutomationConfigurationUtil is new Java_Object with null record;
 

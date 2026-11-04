@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.AndroidGameKey_Package;
+package org.allbinary.game.input.AndroidGameKey_Package_References is
+   type AndroidGameKey_Access is access all org.allbinary.game.input.AndroidGameKey_Package.AndroidGameKey'Class;
+   type AndroidGameKey_Access_Array is array (Natural range <>) of AndroidGameKey_Access;
+   type AndroidGameKey_Access_Array_Access is access all AndroidGameKey_Access_Array;
+   type AndroidGameKey_Access_Array_Access_Array is array (Natural range <>) of AndroidGameKey_Access_Array_Access;
+   type AndroidGameKey_Access_Array_Access_Array_Access is access all AndroidGameKey_Access_Array_Access_Array;
+end org.allbinary.game.input.AndroidGameKey_Package_References;
+
+with org.allbinary.game.input.AndroidGameKey_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -12,13 +22,21 @@ with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_
 
 package org.allbinary.game.input.AndroidGameKey_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidGameKey is tagged;
-   type AndroidGameKey_Access is access all AndroidGameKey'Class;
-   type AndroidGameKey_Access_Array is array (Natural range <>) of AndroidGameKey_Access;
-   type AndroidGameKey_Access_Array_Access is access all AndroidGameKey_Access_Array;
-   type AndroidGameKey_Access_Array_Access_Array is array (Natural range <>) of AndroidGameKey_Access_Array_Access;
-   type AndroidGameKey_Access_Array_Access_Array_Access is access all AndroidGameKey_Access_Array_Access_Array;
+
+   subtype AndroidGameKey_Access is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access;
+   function "=" (Left, Right : AndroidGameKey_Access) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
+   subtype AndroidGameKey_Access_Array is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array;
+   function "=" (Left, Right : AndroidGameKey_Access_Array) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
+   subtype AndroidGameKey_Access_Array_Access is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array_Access;
+   function "=" (Left, Right : AndroidGameKey_Access_Array_Access) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
+   subtype AndroidGameKey_Access_Array_Access_Array is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidGameKey_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
+   subtype AndroidGameKey_Access_Array_Access_Array_Access is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidGameKey_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
 
    type AndroidGameKey is new Input_Package.Input with null record;
 

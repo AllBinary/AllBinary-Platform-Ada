@@ -55,7 +55,7 @@ package body org.allbinary.string_Id.CommonPhoneStrings_Package is
 
    function getInstance return CommonPhoneStrings_Access is
    begin
-        return CommonPhoneStrings_Package.instance;
+        return CommonPhoneStrings_Access (CommonPhoneStrings_Package.instance);
    end getInstance;
 
 begin

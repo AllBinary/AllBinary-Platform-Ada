@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package;
+package org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References is
+   type AdjustedSpriteIndexedAnimation_Access is access all org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package.AdjustedSpriteIndexedAnimation'Class;
+   type AdjustedSpriteIndexedAnimation_Access_Array is array (Natural range <>) of AdjustedSpriteIndexedAnimation_Access;
+   type AdjustedSpriteIndexedAnimation_Access_Array_Access is access all AdjustedSpriteIndexedAnimation_Access_Array;
+   type AdjustedSpriteIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustedSpriteIndexedAnimation_Access_Array_Access;
+   type AdjustedSpriteIndexedAnimation_Access_Array_Access_Array_Access is access all AdjustedSpriteIndexedAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References;
+
+with org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with javax.microedition.lcdui.game.Sprite_Package;
+with javax.microedition.lcdui.game.Sprite_Package_References;
+limited with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
 
 package org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package is
@@ -34,13 +49,71 @@ package org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Pack
    package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype Sprite_Access is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access;
+   use type Sprite_Access;
+   subtype Sprite_Access_Array is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array;
+   use type Sprite_Access_Array;
+   subtype Sprite_Access_Array_Access is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array_Access;
+   use type Sprite_Access_Array_Access;
+   subtype Sprite_Access_Array_Access_Array is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array_Access_Array;
+   use type Sprite_Access_Array_Access_Array;
+   subtype Sprite_Access_Array_Access_Array_Access is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array_Access_Array_Access;
+   use type Sprite_Access_Array_Access_Array_Access;
+   subtype AnimationBehavior_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access;
+   use type AnimationBehavior_Access;
+   subtype AnimationBehavior_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array;
+   use type AnimationBehavior_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access;
+   subtype AnimationBehavior_Access_Array_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array;
+   use type AnimationBehavior_Access_Array_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AdjustedSpriteIndexedAnimation is tagged;
-   type AdjustedSpriteIndexedAnimation_Access is access all AdjustedSpriteIndexedAnimation'Class;
-   type AdjustedSpriteIndexedAnimation_Access_Array is array (Natural range <>) of AdjustedSpriteIndexedAnimation_Access;
-   type AdjustedSpriteIndexedAnimation_Access_Array_Access is access all AdjustedSpriteIndexedAnimation_Access_Array;
-   type AdjustedSpriteIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustedSpriteIndexedAnimation_Access_Array_Access;
-   type AdjustedSpriteIndexedAnimation_Access_Array_Access_Array_Access is access all AdjustedSpriteIndexedAnimation_Access_Array_Access_Array;
+
+   subtype AdjustedSpriteIndexedAnimation_Access is org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References.AdjustedSpriteIndexedAnimation_Access;
+   function "=" (Left, Right : AdjustedSpriteIndexedAnimation_Access) return Boolean renames org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References."=";
+   subtype AdjustedSpriteIndexedAnimation_Access_Array is org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References.AdjustedSpriteIndexedAnimation_Access_Array;
+   function "=" (Left, Right : AdjustedSpriteIndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References."=";
+   subtype AdjustedSpriteIndexedAnimation_Access_Array_Access is org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References.AdjustedSpriteIndexedAnimation_Access_Array_Access;
+   function "=" (Left, Right : AdjustedSpriteIndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References."=";
+   subtype AdjustedSpriteIndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References.AdjustedSpriteIndexedAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : AdjustedSpriteIndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References."=";
+   subtype AdjustedSpriteIndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References.AdjustedSpriteIndexedAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdjustedSpriteIndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package_References."=";
 
    type AdjustedSpriteIndexedAnimation is new SpriteIndexedAnimation with record
       dx : Integer;

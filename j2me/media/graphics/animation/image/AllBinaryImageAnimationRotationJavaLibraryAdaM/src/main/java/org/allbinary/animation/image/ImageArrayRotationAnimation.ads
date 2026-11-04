@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
+package org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References is
+   type ImageArrayRotationAnimation_Access is access all org.allbinary.animation.image.ImageArrayRotationAnimation_Package.ImageArrayRotationAnimation'Class;
+   type ImageArrayRotationAnimation_Access_Array is array (Natural range <>) of ImageArrayRotationAnimation_Access;
+   type ImageArrayRotationAnimation_Access_Array_Access is access all ImageArrayRotationAnimation_Access_Array;
+   type ImageArrayRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of ImageArrayRotationAnimation_Access_Array_Access;
+   type ImageArrayRotationAnimation_Access_Array_Access_Array_Access is access all ImageArrayRotationAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References;
+
+with org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,9 +30,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
+limited with org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package; use org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package;
 
 package org.allbinary.animation.image.ImageArrayRotationAnimation_Package is
@@ -30,13 +43,51 @@ package org.allbinary.animation.image.ImageArrayRotationAnimation_Package is
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype AnimationBehavior_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access;
+   use type AnimationBehavior_Access;
+   subtype AnimationBehavior_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array;
+   use type AnimationBehavior_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access;
+   subtype AnimationBehavior_Access_Array_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array;
+   use type AnimationBehavior_Access_Array_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access_Array_Access;
+   subtype AngleInfo_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access;
+   use type AngleInfo_Access;
+   subtype AngleInfo_Access_Array is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array;
+   use type AngleInfo_Access_Array;
+   subtype AngleInfo_Access_Array_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access;
+   use type AngleInfo_Access_Array_Access;
+   subtype AngleInfo_Access_Array_Access_Array is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access_Array;
+   use type AngleInfo_Access_Array_Access_Array;
+   subtype AngleInfo_Access_Array_Access_Array_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access_Array_Access;
+   use type AngleInfo_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageArrayRotationAnimation is tagged;
-   type ImageArrayRotationAnimation_Access is access all ImageArrayRotationAnimation'Class;
-   type ImageArrayRotationAnimation_Access_Array is array (Natural range <>) of ImageArrayRotationAnimation_Access;
-   type ImageArrayRotationAnimation_Access_Array_Access is access all ImageArrayRotationAnimation_Access_Array;
-   type ImageArrayRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of ImageArrayRotationAnimation_Access_Array_Access;
-   type ImageArrayRotationAnimation_Access_Array_Access_Array_Access is access all ImageArrayRotationAnimation_Access_Array_Access_Array;
+
+   subtype ImageArrayRotationAnimation_Access is org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References.ImageArrayRotationAnimation_Access;
+   function "=" (Left, Right : ImageArrayRotationAnimation_Access) return Boolean renames org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References."=";
+   subtype ImageArrayRotationAnimation_Access_Array is org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References.ImageArrayRotationAnimation_Access_Array;
+   function "=" (Left, Right : ImageArrayRotationAnimation_Access_Array) return Boolean renames org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References."=";
+   subtype ImageArrayRotationAnimation_Access_Array_Access is org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References.ImageArrayRotationAnimation_Access_Array_Access;
+   function "=" (Left, Right : ImageArrayRotationAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References."=";
+   subtype ImageArrayRotationAnimation_Access_Array_Access_Array is org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References.ImageArrayRotationAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageArrayRotationAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References."=";
+   subtype ImageArrayRotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References.ImageArrayRotationAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageArrayRotationAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.ImageArrayRotationAnimation_Package_References."=";
 
    type ImageArrayRotationAnimation is new ImageArrayBaseRotationAnimation with record
       expectedTotalFrames : Integer;

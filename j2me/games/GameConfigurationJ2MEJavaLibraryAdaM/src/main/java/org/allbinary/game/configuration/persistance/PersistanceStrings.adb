@@ -47,7 +47,7 @@ package body org.allbinary.game.configuration.persistance.PersistanceStrings_Pac
 
    function getInstance return PersistanceStrings_Access is
    begin
-        return PersistanceStrings_Package.instance;
+        return PersistanceStrings_Access (PersistanceStrings_Package.instance);
    end getInstance;
 
 begin

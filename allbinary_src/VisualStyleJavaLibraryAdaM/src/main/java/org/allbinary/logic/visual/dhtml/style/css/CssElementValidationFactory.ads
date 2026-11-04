@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package;
+package org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References is
+   type CssElementValidationFactory_Access is access all org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package.CssElementValidationFactory'Class;
+   type CssElementValidationFactory_Access_Array is array (Natural range <>) of CssElementValidationFactory_Access;
+   type CssElementValidationFactory_Access_Array_Access is access all CssElementValidationFactory_Access_Array;
+   type CssElementValidationFactory_Access_Array_Access_Array is array (Natural range <>) of CssElementValidationFactory_Access_Array_Access;
+   type CssElementValidationFactory_Access_Array_Access_Array_Access is access all CssElementValidationFactory_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References;
+
+with org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.allbinary.logic.control.validate.ValidationInterface_Package;
+with org.allbinary.logic.control.validate.ValidationInterface_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 
 package org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package is
 
    package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype ValidationInterface_Access is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access;
+   use type ValidationInterface_Access;
+   subtype ValidationInterface_Access_Array is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access_Array;
+   use type ValidationInterface_Access_Array;
+   subtype ValidationInterface_Access_Array_Access is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access_Array_Access;
+   use type ValidationInterface_Access_Array_Access;
+   subtype ValidationInterface_Access_Array_Access_Array is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access_Array_Access_Array;
+   use type ValidationInterface_Access_Array_Access_Array;
+   subtype ValidationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access_Array_Access_Array_Access;
+   use type ValidationInterface_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CssElementValidationFactory is tagged;
-   type CssElementValidationFactory_Access is access all CssElementValidationFactory'Class;
-   type CssElementValidationFactory_Access_Array is array (Natural range <>) of CssElementValidationFactory_Access;
-   type CssElementValidationFactory_Access_Array_Access is access all CssElementValidationFactory_Access_Array;
-   type CssElementValidationFactory_Access_Array_Access_Array is array (Natural range <>) of CssElementValidationFactory_Access_Array_Access;
-   type CssElementValidationFactory_Access_Array_Access_Array_Access is access all CssElementValidationFactory_Access_Array_Access_Array;
+
+   subtype CssElementValidationFactory_Access is org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References.CssElementValidationFactory_Access;
+   function "=" (Left, Right : CssElementValidationFactory_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References."=";
+   subtype CssElementValidationFactory_Access_Array is org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References.CssElementValidationFactory_Access_Array;
+   function "=" (Left, Right : CssElementValidationFactory_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References."=";
+   subtype CssElementValidationFactory_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References.CssElementValidationFactory_Access_Array_Access;
+   function "=" (Left, Right : CssElementValidationFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References."=";
+   subtype CssElementValidationFactory_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References.CssElementValidationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : CssElementValidationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References."=";
+   subtype CssElementValidationFactory_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References.CssElementValidationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CssElementValidationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package_References."=";
 
    type CssElementValidationFactory is new Java_Object with null record;
 

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
+package org.allbinary.game.layer.RTSLayer2LogHelper_Package_References is
+   type RTSLayer2LogHelper_Access is access all org.allbinary.game.layer.RTSLayer2LogHelper_Package.RTSLayer2LogHelper'Class;
+   type RTSLayer2LogHelper_Access_Array is array (Natural range <>) of RTSLayer2LogHelper_Access;
+   type RTSLayer2LogHelper_Access_Array_Access is access all RTSLayer2LogHelper_Access_Array;
+   type RTSLayer2LogHelper_Access_Array_Access_Array is array (Natural range <>) of RTSLayer2LogHelper_Access_Array_Access;
+   type RTSLayer2LogHelper_Access_Array_Access_Array_Access is access all RTSLayer2LogHelper_Access_Array_Access_Array;
+end org.allbinary.game.layer.RTSLayer2LogHelper_Package_References;
+
+with org.allbinary.game.layer.RTSLayer2LogHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+limited with org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 
 package org.allbinary.game.layer.RTSLayer2LogHelper_Package is
 
+   package Reference_Types is
+   subtype PathFindingLayerInterface_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access;
+   use type PathFindingLayerInterface_Access;
+   subtype PathFindingLayerInterface_Access_Array is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array;
+   use type PathFindingLayerInterface_Access_Array;
+   subtype PathFindingLayerInterface_Access_Array_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access;
+   use type PathFindingLayerInterface_Access_Array_Access;
+   subtype PathFindingLayerInterface_Access_Array_Access_Array is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access_Array;
+   use type PathFindingLayerInterface_Access_Array_Access_Array;
+   subtype PathFindingLayerInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access_Array_Access;
+   use type PathFindingLayerInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type RTSLayer2LogHelper is tagged;
-   type RTSLayer2LogHelper_Access is access all RTSLayer2LogHelper'Class;
-   type RTSLayer2LogHelper_Access_Array is array (Natural range <>) of RTSLayer2LogHelper_Access;
-   type RTSLayer2LogHelper_Access_Array_Access is access all RTSLayer2LogHelper_Access_Array;
-   type RTSLayer2LogHelper_Access_Array_Access_Array is array (Natural range <>) of RTSLayer2LogHelper_Access_Array_Access;
-   type RTSLayer2LogHelper_Access_Array_Access_Array_Access is access all RTSLayer2LogHelper_Access_Array_Access_Array;
+
+   subtype RTSLayer2LogHelper_Access is org.allbinary.game.layer.RTSLayer2LogHelper_Package_References.RTSLayer2LogHelper_Access;
+   function "=" (Left, Right : RTSLayer2LogHelper_Access) return Boolean renames org.allbinary.game.layer.RTSLayer2LogHelper_Package_References."=";
+   subtype RTSLayer2LogHelper_Access_Array is org.allbinary.game.layer.RTSLayer2LogHelper_Package_References.RTSLayer2LogHelper_Access_Array;
+   function "=" (Left, Right : RTSLayer2LogHelper_Access_Array) return Boolean renames org.allbinary.game.layer.RTSLayer2LogHelper_Package_References."=";
+   subtype RTSLayer2LogHelper_Access_Array_Access is org.allbinary.game.layer.RTSLayer2LogHelper_Package_References.RTSLayer2LogHelper_Access_Array_Access;
+   function "=" (Left, Right : RTSLayer2LogHelper_Access_Array_Access) return Boolean renames org.allbinary.game.layer.RTSLayer2LogHelper_Package_References."=";
+   subtype RTSLayer2LogHelper_Access_Array_Access_Array is org.allbinary.game.layer.RTSLayer2LogHelper_Package_References.RTSLayer2LogHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : RTSLayer2LogHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.RTSLayer2LogHelper_Package_References."=";
+   subtype RTSLayer2LogHelper_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSLayer2LogHelper_Package_References.RTSLayer2LogHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RTSLayer2LogHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.RTSLayer2LogHelper_Package_References."=";
 
    type RTSLayer2LogHelper is new Java_Object with null record;
    instance : RTSLayer2LogHelper_Access;

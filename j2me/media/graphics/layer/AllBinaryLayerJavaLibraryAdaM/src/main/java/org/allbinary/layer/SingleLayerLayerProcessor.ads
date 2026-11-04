@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.layer.SingleLayerLayerProcessor_Package;
+package org.allbinary.layer.SingleLayerLayerProcessor_Package_References is
+   type SingleLayerLayerProcessor_Access is access all org.allbinary.layer.SingleLayerLayerProcessor_Package.SingleLayerLayerProcessor'Class;
+   type SingleLayerLayerProcessor_Access_Array is array (Natural range <>) of SingleLayerLayerProcessor_Access;
+   type SingleLayerLayerProcessor_Access_Array_Access is access all SingleLayerLayerProcessor_Access_Array;
+   type SingleLayerLayerProcessor_Access_Array_Access_Array is array (Natural range <>) of SingleLayerLayerProcessor_Access_Array_Access;
+   type SingleLayerLayerProcessor_Access_Array_Access_Array_Access is access all SingleLayerLayerProcessor_Access_Array_Access_Array;
+end org.allbinary.layer.SingleLayerLayerProcessor_Package_References;
+
+with org.allbinary.layer.SingleLayerLayerProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,17 +31,36 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 
 package org.allbinary.layer.SingleLayerLayerProcessor_Package is
 
+   package Reference_Types is
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SingleLayerLayerProcessor is tagged;
-   type SingleLayerLayerProcessor_Access is access all SingleLayerLayerProcessor'Class;
-   type SingleLayerLayerProcessor_Access_Array is array (Natural range <>) of SingleLayerLayerProcessor_Access;
-   type SingleLayerLayerProcessor_Access_Array_Access is access all SingleLayerLayerProcessor_Access_Array;
-   type SingleLayerLayerProcessor_Access_Array_Access_Array is array (Natural range <>) of SingleLayerLayerProcessor_Access_Array_Access;
-   type SingleLayerLayerProcessor_Access_Array_Access_Array_Access is access all SingleLayerLayerProcessor_Access_Array_Access_Array;
+
+   subtype SingleLayerLayerProcessor_Access is org.allbinary.layer.SingleLayerLayerProcessor_Package_References.SingleLayerLayerProcessor_Access;
+   function "=" (Left, Right : SingleLayerLayerProcessor_Access) return Boolean renames org.allbinary.layer.SingleLayerLayerProcessor_Package_References."=";
+   subtype SingleLayerLayerProcessor_Access_Array is org.allbinary.layer.SingleLayerLayerProcessor_Package_References.SingleLayerLayerProcessor_Access_Array;
+   function "=" (Left, Right : SingleLayerLayerProcessor_Access_Array) return Boolean renames org.allbinary.layer.SingleLayerLayerProcessor_Package_References."=";
+   subtype SingleLayerLayerProcessor_Access_Array_Access is org.allbinary.layer.SingleLayerLayerProcessor_Package_References.SingleLayerLayerProcessor_Access_Array_Access;
+   function "=" (Left, Right : SingleLayerLayerProcessor_Access_Array_Access) return Boolean renames org.allbinary.layer.SingleLayerLayerProcessor_Package_References."=";
+   subtype SingleLayerLayerProcessor_Access_Array_Access_Array is org.allbinary.layer.SingleLayerLayerProcessor_Package_References.SingleLayerLayerProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : SingleLayerLayerProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.SingleLayerLayerProcessor_Package_References."=";
+   subtype SingleLayerLayerProcessor_Access_Array_Access_Array_Access is org.allbinary.layer.SingleLayerLayerProcessor_Package_References.SingleLayerLayerProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SingleLayerLayerProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.SingleLayerLayerProcessor_Package_References."=";
 
    type SingleLayerLayerProcessor is new LayerProcessor with null record;
 

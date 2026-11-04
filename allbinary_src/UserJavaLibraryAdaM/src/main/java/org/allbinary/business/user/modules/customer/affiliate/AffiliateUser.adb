@@ -13,9 +13,35 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package; use org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package;
+with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+with org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package;
+with org.allbinary.business.user.modules.User_Package;
 
 package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUser_Package is
 
+   subtype AffiliateSales_Access is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access;
+   function "=" (Left, Right : AffiliateSales_Access) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
+   subtype AffiliateSales_Access_Array is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access_Array;
+   function "=" (Left, Right : AffiliateSales_Access_Array) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
+   subtype AffiliateSales_Access_Array_Access is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access_Array_Access;
+   function "=" (Left, Right : AffiliateSales_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
+   subtype AffiliateSales_Access_Array_Access_Array is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access_Array_Access_Array;
+   function "=" (Left, Right : AffiliateSales_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
+   subtype AffiliateSales_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AffiliateSales_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
+   subtype WeblisketSessionInterface_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access;
+   function "=" (Left, Right : WeblisketSessionInterface_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
+   subtype WeblisketSessionInterface_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array;
+   function "=" (Left, Right : WeblisketSessionInterface_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
+   subtype WeblisketSessionInterface_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access;
+   function "=" (Left, Right : WeblisketSessionInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
+   subtype WeblisketSessionInterface_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : WeblisketSessionInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
+   subtype WeblisketSessionInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WeblisketSessionInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
    procedure Initialize_Fields (This : in out AffiliateUser'Class) is
    begin
       null;

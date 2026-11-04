@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.linux.Monitor_Package;
+package org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References is
+   type Monitor_Access is access all org.allbinary.logic.system.hardware.components.linux.Monitor_Package.Monitor'Class;
+   type Monitor_Access_Array is array (Natural range <>) of Monitor_Access;
+   type Monitor_Access_Array_Access is access all Monitor_Access_Array;
+   type Monitor_Access_Array_Access_Array is array (Natural range <>) of Monitor_Access_Array_Access;
+   type Monitor_Access_Array_Access_Array_Access is access all Monitor_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References;
+
+with org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ package org.allbinary.logic.system.hardware.components.linux.Monitor_Package is
 
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
    package MonitorInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Monitor is tagged;
-   type Monitor_Access is access all Monitor'Class;
-   type Monitor_Access_Array is array (Natural range <>) of Monitor_Access;
-   type Monitor_Access_Array_Access is access all Monitor_Access_Array;
-   type Monitor_Access_Array_Access_Array is array (Natural range <>) of Monitor_Access_Array_Access;
-   type Monitor_Access_Array_Access_Array_Access is access all Monitor_Access_Array_Access_Array;
+
+   subtype Monitor_Access is org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References.Monitor_Access;
+   function "=" (Left, Right : Monitor_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References."=";
+   subtype Monitor_Access_Array is org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References.Monitor_Access_Array;
+   function "=" (Left, Right : Monitor_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References."=";
+   subtype Monitor_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References.Monitor_Access_Array_Access;
+   function "=" (Left, Right : Monitor_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References."=";
+   subtype Monitor_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References.Monitor_Access_Array_Access_Array;
+   function "=" (Left, Right : Monitor_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References."=";
+   subtype Monitor_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References.Monitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Monitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Monitor_Package_References."=";
 
    type Monitor is new Java_Object and HardwareComponentInterface and MonitorInterface with record
       data : Unbounded_String;

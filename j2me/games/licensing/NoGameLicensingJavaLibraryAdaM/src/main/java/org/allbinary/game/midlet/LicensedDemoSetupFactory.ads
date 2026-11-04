@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;
+package org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References is
+   type LicensedDemoSetupFactory_Access is access all org.allbinary.game.midlet.LicensedDemoSetupFactory_Package.LicensedDemoSetupFactory'Class;
+   type LicensedDemoSetupFactory_Access_Array is array (Natural range <>) of LicensedDemoSetupFactory_Access;
+   type LicensedDemoSetupFactory_Access_Array_Access is access all LicensedDemoSetupFactory_Access_Array;
+   type LicensedDemoSetupFactory_Access_Array_Access_Array is array (Natural range <>) of LicensedDemoSetupFactory_Access_Array_Access;
+   type LicensedDemoSetupFactory_Access_Array_Access_Array_Access is access all LicensedDemoSetupFactory_Access_Array_Access_Array;
+end org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References;
+
+with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.midlet.DemoSetup_Package; use org.allbinary.game.midlet.DemoSetup_Package;
+limited with org.allbinary.game.midlet.DemoSetup_Package;
+with org.allbinary.game.midlet.DemoSetup_Package_References;
 
 package org.allbinary.game.midlet.LicensedDemoSetupFactory_Package is
 
+   package Reference_Types is
+   subtype DemoSetup_Access is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access;
+   use type DemoSetup_Access;
+   subtype DemoSetup_Access_Array is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access_Array;
+   use type DemoSetup_Access_Array;
+   subtype DemoSetup_Access_Array_Access is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access_Array_Access;
+   use type DemoSetup_Access_Array_Access;
+   subtype DemoSetup_Access_Array_Access_Array is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access_Array_Access_Array;
+   use type DemoSetup_Access_Array_Access_Array;
+   subtype DemoSetup_Access_Array_Access_Array_Access is org.allbinary.game.midlet.DemoSetup_Package_References.DemoSetup_Access_Array_Access_Array_Access;
+   use type DemoSetup_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type LicensedDemoSetupFactory is tagged;
-   type LicensedDemoSetupFactory_Access is access all LicensedDemoSetupFactory'Class;
-   type LicensedDemoSetupFactory_Access_Array is array (Natural range <>) of LicensedDemoSetupFactory_Access;
-   type LicensedDemoSetupFactory_Access_Array_Access is access all LicensedDemoSetupFactory_Access_Array;
-   type LicensedDemoSetupFactory_Access_Array_Access_Array is array (Natural range <>) of LicensedDemoSetupFactory_Access_Array_Access;
-   type LicensedDemoSetupFactory_Access_Array_Access_Array_Access is access all LicensedDemoSetupFactory_Access_Array_Access_Array;
+
+   subtype LicensedDemoSetupFactory_Access is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
+   subtype LicensedDemoSetupFactory_Access_Array is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access_Array;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access_Array) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
+   subtype LicensedDemoSetupFactory_Access_Array_Access is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access_Array_Access;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
+   subtype LicensedDemoSetupFactory_Access_Array_Access_Array is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
+   subtype LicensedDemoSetupFactory_Access_Array_Access_Array_Access is org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References.LicensedDemoSetupFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LicensedDemoSetupFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References."=";
 
    type LicensedDemoSetupFactory is new Java_Object with null record;
 

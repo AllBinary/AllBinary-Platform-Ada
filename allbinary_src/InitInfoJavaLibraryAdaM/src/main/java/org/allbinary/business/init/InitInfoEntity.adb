@@ -24,6 +24,10 @@ with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.business.init.InitInfo_Package; use org.allbinary.business.init.InitInfo_Package;
+with org.allbinary.business.init.InitException_Package;
+with org.allbinary.business.init.InitInfo_Package;
+with org.allbinary.business.init.InitSql_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 
 package body org.allbinary.business.init.InitInfoEntity_Package is
 

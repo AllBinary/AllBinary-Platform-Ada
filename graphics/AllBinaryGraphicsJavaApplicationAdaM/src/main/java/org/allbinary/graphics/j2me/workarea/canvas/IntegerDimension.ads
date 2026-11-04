@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+package org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References is
+   type IntegerDimension_Access is access all org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package.IntegerDimension'Class;
+   type IntegerDimension_Access_Array is array (Natural range <>) of IntegerDimension_Access;
+   type IntegerDimension_Access_Array_Access is access all IntegerDimension_Access_Array;
+   type IntegerDimension_Access_Array_Access_Array is array (Natural range <>) of IntegerDimension_Access_Array_Access;
+   type IntegerDimension_Access_Array_Access_Array_Access is access all IntegerDimension_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type IntegerDimension is tagged;
-   type IntegerDimension_Access is access all IntegerDimension'Class;
-   type IntegerDimension_Access_Array is array (Natural range <>) of IntegerDimension_Access;
-   type IntegerDimension_Access_Array_Access is access all IntegerDimension_Access_Array;
-   type IntegerDimension_Access_Array_Access_Array is array (Natural range <>) of IntegerDimension_Access_Array_Access;
-   type IntegerDimension_Access_Array_Access_Array_Access is access all IntegerDimension_Access_Array_Access_Array;
+
+   subtype IntegerDimension_Access is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access;
+   function "=" (Left, Right : IntegerDimension_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References."=";
+   subtype IntegerDimension_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access_Array;
+   function "=" (Left, Right : IntegerDimension_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References."=";
+   subtype IntegerDimension_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access_Array_Access;
+   function "=" (Left, Right : IntegerDimension_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References."=";
+   subtype IntegerDimension_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access_Array_Access_Array;
+   function "=" (Left, Right : IntegerDimension_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References."=";
+   subtype IntegerDimension_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IntegerDimension_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References."=";
 
    type IntegerDimension is new Java_Object with record
       width : Integer;

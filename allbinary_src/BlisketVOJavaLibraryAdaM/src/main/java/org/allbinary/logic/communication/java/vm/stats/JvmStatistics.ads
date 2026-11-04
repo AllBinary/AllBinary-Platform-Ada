@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package;
+package org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References is
+   type JvmStatistics_Access is access all org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package.JvmStatistics'Class;
+   type JvmStatistics_Access_Array is array (Natural range <>) of JvmStatistics_Access;
+   type JvmStatistics_Access_Array_Access is access all JvmStatistics_Access_Array;
+   type JvmStatistics_Access_Array_Access_Array is array (Natural range <>) of JvmStatistics_Access_Array_Access;
+   type JvmStatistics_Access_Array_Access_Array_Access is access all JvmStatistics_Access_Array_Access_Array;
+end org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References;
+
+with org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with java.lang.Runtime_Package; use java.lang.Runtime_Package;
 package org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package is
 
    package Runtime_Package renames Standard.java.lang.Runtime_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type JvmStatistics is tagged;
-   type JvmStatistics_Access is access all JvmStatistics'Class;
-   type JvmStatistics_Access_Array is array (Natural range <>) of JvmStatistics_Access;
-   type JvmStatistics_Access_Array_Access is access all JvmStatistics_Access_Array;
-   type JvmStatistics_Access_Array_Access_Array is array (Natural range <>) of JvmStatistics_Access_Array_Access;
-   type JvmStatistics_Access_Array_Access_Array_Access is access all JvmStatistics_Access_Array_Access_Array;
+
+   subtype JvmStatistics_Access is org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References.JvmStatistics_Access;
+   function "=" (Left, Right : JvmStatistics_Access) return Boolean renames org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References."=";
+   subtype JvmStatistics_Access_Array is org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References.JvmStatistics_Access_Array;
+   function "=" (Left, Right : JvmStatistics_Access_Array) return Boolean renames org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References."=";
+   subtype JvmStatistics_Access_Array_Access is org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References.JvmStatistics_Access_Array_Access;
+   function "=" (Left, Right : JvmStatistics_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References."=";
+   subtype JvmStatistics_Access_Array_Access_Array is org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References.JvmStatistics_Access_Array_Access_Array;
+   function "=" (Left, Right : JvmStatistics_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References."=";
+   subtype JvmStatistics_Access_Array_Access_Array_Access is org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References.JvmStatistics_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JvmStatistics_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package_References."=";
 
    type JvmStatistics is new Java_Object with record
       runtime : Runtime_Access;

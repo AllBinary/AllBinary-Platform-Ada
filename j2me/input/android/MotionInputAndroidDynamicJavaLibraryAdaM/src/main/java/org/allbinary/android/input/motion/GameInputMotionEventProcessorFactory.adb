@@ -16,12 +16,23 @@
 with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
 with org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package; use org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package;
 with org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package; use org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package;
+with org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package; use org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
 
 package body org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package is
 
    package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
    package GameInputMotionEventProcessorAPI1_Package renames Standard.org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package;
    package GameInputMotionEventProcessorAPI5_Package renames Standard.org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package;
+   subtype BaseGameInputMotionEventProcessor_Access is org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References.BaseGameInputMotionEventProcessor_Access;
+   function "=" (Left, Right : BaseGameInputMotionEventProcessor_Access) return Boolean renames org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References."=";
+   subtype BaseGameInputMotionEventProcessor_Access_Array is org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References.BaseGameInputMotionEventProcessor_Access_Array;
+   function "=" (Left, Right : BaseGameInputMotionEventProcessor_Access_Array) return Boolean renames org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References."=";
+   subtype BaseGameInputMotionEventProcessor_Access_Array_Access is org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References.BaseGameInputMotionEventProcessor_Access_Array_Access;
+   function "=" (Left, Right : BaseGameInputMotionEventProcessor_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References."=";
+   subtype BaseGameInputMotionEventProcessor_Access_Array_Access_Array is org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References.BaseGameInputMotionEventProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseGameInputMotionEventProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References."=";
+   subtype BaseGameInputMotionEventProcessor_Access_Array_Access_Array_Access is org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References.BaseGameInputMotionEventProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseGameInputMotionEventProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out GameInputMotionEventProcessorFactory'Class) is
    begin
       null;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
 with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
 
 package body org.allbinary.ai.ArtificialIntelligenceLayerManager_Package is

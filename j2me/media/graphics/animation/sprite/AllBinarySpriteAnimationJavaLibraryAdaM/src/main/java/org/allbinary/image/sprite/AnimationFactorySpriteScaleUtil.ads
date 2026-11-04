@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
+package org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References is
+   type AnimationFactorySpriteScaleUtil_Access is access all org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package.AnimationFactorySpriteScaleUtil'Class;
+   type AnimationFactorySpriteScaleUtil_Access_Array is array (Natural range <>) of AnimationFactorySpriteScaleUtil_Access;
+   type AnimationFactorySpriteScaleUtil_Access_Array_Access is access all AnimationFactorySpriteScaleUtil_Access_Array;
+   type AnimationFactorySpriteScaleUtil_Access_Array_Access_Array is array (Natural range <>) of AnimationFactorySpriteScaleUtil_Access_Array_Access;
+   type AnimationFactorySpriteScaleUtil_Access_Array_Access_Array_Access is access all AnimationFactorySpriteScaleUtil_Access_Array_Access_Array;
+end org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References;
+
+with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
-with org.allbinary.graphics.opengles.OpenGLUtil_Package; use org.allbinary.graphics.opengles.OpenGLUtil_Package;
-with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
-with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package; use org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
-with org.allbinary.logic.math.J2SEMath_Package; use org.allbinary.logic.math.J2SEMath_Package;
-with org.allbinary.media.image.ImageScaleUtil_Package; use org.allbinary.media.image.ImageScaleUtil_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with javax.microedition.lcdui.game.Sprite_Package;
+with javax.microedition.lcdui.game.Sprite_Package_References;
+limited with org.allbinary.graphics.opengles.OpenGLUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLUtil_Package_References;
+limited with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
+limited with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References;
+limited with org.allbinary.logic.math.J2SEMath_Package;
+with org.allbinary.logic.math.J2SEMath_Package_References;
+limited with org.allbinary.media.image.ImageScaleUtil_Package;
+with org.allbinary.media.image.ImageScaleUtil_Package_References;
 
 package org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package is
 
@@ -37,13 +54,91 @@ package org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package is
    package OpenGLESImageExclusionUtil_Package renames Standard.org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
    package J2SEMath_Package renames Standard.org.allbinary.logic.math.J2SEMath_Package;
    package ImageScaleUtil_Package renames Standard.org.allbinary.media.image.ImageScaleUtil_Package;
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype Sprite_Access is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access;
+   use type Sprite_Access;
+   subtype Sprite_Access_Array is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array;
+   use type Sprite_Access_Array;
+   subtype Sprite_Access_Array_Access is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array_Access;
+   use type Sprite_Access_Array_Access;
+   subtype Sprite_Access_Array_Access_Array is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array_Access_Array;
+   use type Sprite_Access_Array_Access_Array;
+   subtype Sprite_Access_Array_Access_Array_Access is javax.microedition.lcdui.game.Sprite_Package_References.Sprite_Access_Array_Access_Array_Access;
+   use type Sprite_Access_Array_Access_Array_Access;
+   subtype OpenGLUtil_Access is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access;
+   use type OpenGLUtil_Access;
+   subtype OpenGLUtil_Access_Array is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array;
+   use type OpenGLUtil_Access_Array;
+   subtype OpenGLUtil_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array_Access;
+   use type OpenGLUtil_Access_Array_Access;
+   subtype OpenGLUtil_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array_Access_Array;
+   use type OpenGLUtil_Access_Array_Access_Array;
+   subtype OpenGLUtil_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array_Access_Array_Access;
+   use type OpenGLUtil_Access_Array_Access_Array_Access;
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   use type ImageCache_Access;
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   use type ImageCache_Access_Array;
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   use type ImageCache_Access_Array_Access;
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   use type ImageCache_Access_Array_Access_Array;
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   use type ImageCache_Access_Array_Access_Array_Access;
+   subtype OpenGLESImageExclusionUtil_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access;
+   use type OpenGLESImageExclusionUtil_Access;
+   subtype OpenGLESImageExclusionUtil_Access_Array is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array;
+   use type OpenGLESImageExclusionUtil_Access_Array;
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access;
+   use type OpenGLESImageExclusionUtil_Access_Array_Access;
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access_Array is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access_Array;
+   use type OpenGLESImageExclusionUtil_Access_Array_Access_Array;
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access;
+   use type OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access;
+   subtype J2SEMath_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access;
+   use type J2SEMath_Access;
+   subtype J2SEMath_Access_Array is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array;
+   use type J2SEMath_Access_Array;
+   subtype J2SEMath_Access_Array_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access;
+   use type J2SEMath_Access_Array_Access;
+   subtype J2SEMath_Access_Array_Access_Array is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access_Array;
+   use type J2SEMath_Access_Array_Access_Array;
+   subtype J2SEMath_Access_Array_Access_Array_Access is org.allbinary.logic.math.J2SEMath_Package_References.J2SEMath_Access_Array_Access_Array_Access;
+   use type J2SEMath_Access_Array_Access_Array_Access;
+   subtype ImageScaleUtil_Access is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access;
+   use type ImageScaleUtil_Access;
+   subtype ImageScaleUtil_Access_Array is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access_Array;
+   use type ImageScaleUtil_Access_Array;
+   subtype ImageScaleUtil_Access_Array_Access is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access_Array_Access;
+   use type ImageScaleUtil_Access_Array_Access;
+   subtype ImageScaleUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access_Array_Access_Array;
+   use type ImageScaleUtil_Access_Array_Access_Array;
+   subtype ImageScaleUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageScaleUtil_Package_References.ImageScaleUtil_Access_Array_Access_Array_Access;
+   use type ImageScaleUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AnimationFactorySpriteScaleUtil is tagged;
-   type AnimationFactorySpriteScaleUtil_Access is access all AnimationFactorySpriteScaleUtil'Class;
-   type AnimationFactorySpriteScaleUtil_Access_Array is array (Natural range <>) of AnimationFactorySpriteScaleUtil_Access;
-   type AnimationFactorySpriteScaleUtil_Access_Array_Access is access all AnimationFactorySpriteScaleUtil_Access_Array;
-   type AnimationFactorySpriteScaleUtil_Access_Array_Access_Array is array (Natural range <>) of AnimationFactorySpriteScaleUtil_Access_Array_Access;
-   type AnimationFactorySpriteScaleUtil_Access_Array_Access_Array_Access is access all AnimationFactorySpriteScaleUtil_Access_Array_Access_Array;
+
+   subtype AnimationFactorySpriteScaleUtil_Access is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access;
+   function "=" (Left, Right : AnimationFactorySpriteScaleUtil_Access) return Boolean renames org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References."=";
+   subtype AnimationFactorySpriteScaleUtil_Access_Array is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access_Array;
+   function "=" (Left, Right : AnimationFactorySpriteScaleUtil_Access_Array) return Boolean renames org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References."=";
+   subtype AnimationFactorySpriteScaleUtil_Access_Array_Access is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access_Array_Access;
+   function "=" (Left, Right : AnimationFactorySpriteScaleUtil_Access_Array_Access) return Boolean renames org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References."=";
+   subtype AnimationFactorySpriteScaleUtil_Access_Array_Access_Array is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : AnimationFactorySpriteScaleUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References."=";
+   subtype AnimationFactorySpriteScaleUtil_Access_Array_Access_Array_Access is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AnimationFactorySpriteScaleUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References."=";
 
    type AnimationFactorySpriteScaleUtil is new Java_Object with record
       imageCache : ImageCache_Access;

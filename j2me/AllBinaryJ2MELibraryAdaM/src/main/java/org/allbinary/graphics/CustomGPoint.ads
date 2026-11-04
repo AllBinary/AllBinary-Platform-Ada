@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.CustomGPoint_Package;
+package org.allbinary.graphics.CustomGPoint_Package_References is
+   type CustomGPoint_Access is access all org.allbinary.graphics.CustomGPoint_Package.CustomGPoint'Class;
+   type CustomGPoint_Access_Array is array (Natural range <>) of CustomGPoint_Access;
+   type CustomGPoint_Access_Array_Access is access all CustomGPoint_Access_Array;
+   type CustomGPoint_Access_Array_Access_Array is array (Natural range <>) of CustomGPoint_Access_Array_Access;
+   type CustomGPoint_Access_Array_Access_Array_Access is access all CustomGPoint_Access_Array_Access_Array;
+end org.allbinary.graphics.CustomGPoint_Package_References;
+
+with org.allbinary.graphics.CustomGPoint_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Pa
 
 package org.allbinary.graphics.CustomGPoint_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CustomGPoint is tagged;
-   type CustomGPoint_Access is access all CustomGPoint'Class;
-   type CustomGPoint_Access_Array is array (Natural range <>) of CustomGPoint_Access;
-   type CustomGPoint_Access_Array_Access is access all CustomGPoint_Access_Array;
-   type CustomGPoint_Access_Array_Access_Array is array (Natural range <>) of CustomGPoint_Access_Array_Access;
-   type CustomGPoint_Access_Array_Access_Array_Access is access all CustomGPoint_Access_Array_Access_Array;
+
+   subtype CustomGPoint_Access is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access;
+   function "=" (Left, Right : CustomGPoint_Access) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
+   subtype CustomGPoint_Access_Array is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array;
+   function "=" (Left, Right : CustomGPoint_Access_Array) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
+   subtype CustomGPoint_Access_Array_Access is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array_Access;
+   function "=" (Left, Right : CustomGPoint_Access_Array_Access) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
+   subtype CustomGPoint_Access_Array_Access_Array is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array_Access_Array;
+   function "=" (Left, Right : CustomGPoint_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
+   subtype CustomGPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.CustomGPoint_Package_References.CustomGPoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CustomGPoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.CustomGPoint_Package_References."=";
 
    type CustomGPoint is new GPoint with record
       cx : Integer;

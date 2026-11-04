@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.ActivityFractureUtil_Package; use org.allbinary.android.ActivityFractureUtil_Package;
 with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
 with org.allbinary.android.api1.ActivityFractureUtilAPI1_Package; use org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
 with org.allbinary.android.api16.ActivityFractureUtilAPI16_Package; use org.allbinary.android.api16.ActivityFractureUtilAPI16_Package;
@@ -26,6 +27,16 @@ package body org.allbinary.android.input.motion.ActivityFractureInputUtilFactory
    package ActivityFractureUtilAPI16_Package renames Standard.org.allbinary.android.api16.ActivityFractureUtilAPI16_Package;
    package ActivityFractureUtilAPI19_Package renames Standard.org.allbinary.android.api19.ActivityFractureUtilAPI19_Package;
    package ActivityFractureUtilAPI5_Package renames Standard.org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
+   subtype ActivityFractureUtil_Access is org.allbinary.android.ActivityFractureUtil_Package_References.ActivityFractureUtil_Access;
+   function "=" (Left, Right : ActivityFractureUtil_Access) return Boolean renames org.allbinary.android.ActivityFractureUtil_Package_References."=";
+   subtype ActivityFractureUtil_Access_Array is org.allbinary.android.ActivityFractureUtil_Package_References.ActivityFractureUtil_Access_Array;
+   function "=" (Left, Right : ActivityFractureUtil_Access_Array) return Boolean renames org.allbinary.android.ActivityFractureUtil_Package_References."=";
+   subtype ActivityFractureUtil_Access_Array_Access is org.allbinary.android.ActivityFractureUtil_Package_References.ActivityFractureUtil_Access_Array_Access;
+   function "=" (Left, Right : ActivityFractureUtil_Access_Array_Access) return Boolean renames org.allbinary.android.ActivityFractureUtil_Package_References."=";
+   subtype ActivityFractureUtil_Access_Array_Access_Array is org.allbinary.android.ActivityFractureUtil_Package_References.ActivityFractureUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ActivityFractureUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.android.ActivityFractureUtil_Package_References."=";
+   subtype ActivityFractureUtil_Access_Array_Access_Array_Access is org.allbinary.android.ActivityFractureUtil_Package_References.ActivityFractureUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ActivityFractureUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.ActivityFractureUtil_Package_References."=";
    procedure Initialize_Fields (This : in out ActivityFractureInputUtilFactory'Class) is
    begin
       null;

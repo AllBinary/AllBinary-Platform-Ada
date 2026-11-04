@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.init.db.UserDbInitInfo_Package;
+package org.allbinary.business.init.db.UserDbInitInfo_Package_References is
+   type UserDbInitInfo_Access is access all org.allbinary.business.init.db.UserDbInitInfo_Package.UserDbInitInfo'Class;
+   type UserDbInitInfo_Access_Array is array (Natural range <>) of UserDbInitInfo_Access;
+   type UserDbInitInfo_Access_Array_Access is access all UserDbInitInfo_Access_Array;
+   type UserDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of UserDbInitInfo_Access_Array_Access;
+   type UserDbInitInfo_Access_Array_Access_Array_Access is access all UserDbInitInfo_Access_Array_Access_Array;
+end org.allbinary.business.init.db.UserDbInitInfo_Package_References;
+
+with org.allbinary.business.init.db.UserDbInitInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.business.init.db.DbInitInfo_Package; use org.allbinary.busine
 
 package org.allbinary.business.init.db.UserDbInitInfo_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type UserDbInitInfo is tagged;
-   type UserDbInitInfo_Access is access all UserDbInitInfo'Class;
-   type UserDbInitInfo_Access_Array is array (Natural range <>) of UserDbInitInfo_Access;
-   type UserDbInitInfo_Access_Array_Access is access all UserDbInitInfo_Access_Array;
-   type UserDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of UserDbInitInfo_Access_Array_Access;
-   type UserDbInitInfo_Access_Array_Access_Array_Access is access all UserDbInitInfo_Access_Array_Access_Array;
+
+   subtype UserDbInitInfo_Access is org.allbinary.business.init.db.UserDbInitInfo_Package_References.UserDbInitInfo_Access;
+   function "=" (Left, Right : UserDbInitInfo_Access) return Boolean renames org.allbinary.business.init.db.UserDbInitInfo_Package_References."=";
+   subtype UserDbInitInfo_Access_Array is org.allbinary.business.init.db.UserDbInitInfo_Package_References.UserDbInitInfo_Access_Array;
+   function "=" (Left, Right : UserDbInitInfo_Access_Array) return Boolean renames org.allbinary.business.init.db.UserDbInitInfo_Package_References."=";
+   subtype UserDbInitInfo_Access_Array_Access is org.allbinary.business.init.db.UserDbInitInfo_Package_References.UserDbInitInfo_Access_Array_Access;
+   function "=" (Left, Right : UserDbInitInfo_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.UserDbInitInfo_Package_References."=";
+   subtype UserDbInitInfo_Access_Array_Access_Array is org.allbinary.business.init.db.UserDbInitInfo_Package_References.UserDbInitInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : UserDbInitInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.db.UserDbInitInfo_Package_References."=";
+   subtype UserDbInitInfo_Access_Array_Access_Array_Access is org.allbinary.business.init.db.UserDbInitInfo_Package_References.UserDbInitInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserDbInitInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.UserDbInitInfo_Package_References."=";
 
    type UserDbInitInfo is new DbInitInfo with null record;
 

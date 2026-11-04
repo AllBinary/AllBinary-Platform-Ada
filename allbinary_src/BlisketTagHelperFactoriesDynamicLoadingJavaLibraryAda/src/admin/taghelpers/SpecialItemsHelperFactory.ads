@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.SpecialItemsHelperFactory_Package;
+package admin.taghelpers.SpecialItemsHelperFactory_Package_References is
+   type SpecialItemsHelperFactory_Access is access all admin.taghelpers.SpecialItemsHelperFactory_Package.SpecialItemsHelperFactory'Class;
+   type SpecialItemsHelperFactory_Access_Array is array (Natural range <>) of SpecialItemsHelperFactory_Access;
+   type SpecialItemsHelperFactory_Access_Array_Access is access all SpecialItemsHelperFactory_Access_Array;
+   type SpecialItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of SpecialItemsHelperFactory_Access_Array_Access;
+   type SpecialItemsHelperFactory_Access_Array_Access_Array_Access is access all SpecialItemsHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.SpecialItemsHelperFactory_Package_References;
+
+with admin.taghelpers.SpecialItemsHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.SpecialItemsHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SpecialItemsHelperFactory is tagged;
-   type SpecialItemsHelperFactory_Access is access all SpecialItemsHelperFactory'Class;
-   type SpecialItemsHelperFactory_Access_Array is array (Natural range <>) of SpecialItemsHelperFactory_Access;
-   type SpecialItemsHelperFactory_Access_Array_Access is access all SpecialItemsHelperFactory_Access_Array;
-   type SpecialItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of SpecialItemsHelperFactory_Access_Array_Access;
-   type SpecialItemsHelperFactory_Access_Array_Access_Array_Access is access all SpecialItemsHelperFactory_Access_Array_Access_Array;
+
+   subtype SpecialItemsHelperFactory_Access is admin.taghelpers.SpecialItemsHelperFactory_Package_References.SpecialItemsHelperFactory_Access;
+   function "=" (Left, Right : SpecialItemsHelperFactory_Access) return Boolean renames admin.taghelpers.SpecialItemsHelperFactory_Package_References."=";
+   subtype SpecialItemsHelperFactory_Access_Array is admin.taghelpers.SpecialItemsHelperFactory_Package_References.SpecialItemsHelperFactory_Access_Array;
+   function "=" (Left, Right : SpecialItemsHelperFactory_Access_Array) return Boolean renames admin.taghelpers.SpecialItemsHelperFactory_Package_References."=";
+   subtype SpecialItemsHelperFactory_Access_Array_Access is admin.taghelpers.SpecialItemsHelperFactory_Package_References.SpecialItemsHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : SpecialItemsHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.SpecialItemsHelperFactory_Package_References."=";
+   subtype SpecialItemsHelperFactory_Access_Array_Access_Array is admin.taghelpers.SpecialItemsHelperFactory_Package_References.SpecialItemsHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : SpecialItemsHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.SpecialItemsHelperFactory_Package_References."=";
+   subtype SpecialItemsHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.SpecialItemsHelperFactory_Package_References.SpecialItemsHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SpecialItemsHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.SpecialItemsHelperFactory_Package_References."=";
 
    type SpecialItemsHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

@@ -17,6 +17,7 @@ with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Pack
 with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
 
 package body org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package is
 
@@ -24,6 +25,16 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontFactory
    package StoreFrontsEntityFactory_Package renames Standard.org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype StoreFront_Access is org.allbinary.business.context.modules.storefront.StoreFront_Package_References.StoreFront_Access;
+   function "=" (Left, Right : StoreFront_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFront_Package_References."=";
+   subtype StoreFront_Access_Array is org.allbinary.business.context.modules.storefront.StoreFront_Package_References.StoreFront_Access_Array;
+   function "=" (Left, Right : StoreFront_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFront_Package_References."=";
+   subtype StoreFront_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFront_Package_References.StoreFront_Access_Array_Access;
+   function "=" (Left, Right : StoreFront_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFront_Package_References."=";
+   subtype StoreFront_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.StoreFront_Package_References.StoreFront_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFront_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFront_Package_References."=";
+   subtype StoreFront_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFront_Package_References.StoreFront_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFront_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFront_Package_References."=";
    procedure Initialize_Fields (This : in out StoreFrontFactory'Class) is
    begin
       null;

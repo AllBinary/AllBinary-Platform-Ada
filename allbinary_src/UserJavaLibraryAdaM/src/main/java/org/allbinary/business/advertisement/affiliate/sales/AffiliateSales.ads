@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package;
+package org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References is
+   type AffiliateSales_Access is access all org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package.AffiliateSales'Class;
+   type AffiliateSales_Access_Array is array (Natural range <>) of AffiliateSales_Access;
+   type AffiliateSales_Access_Array_Access is access all AffiliateSales_Access_Array;
+   type AffiliateSales_Access_Array_Access_Array is array (Natural range <>) of AffiliateSales_Access_Array_Access;
+   type AffiliateSales_Access_Array_Access_Array_Access is access all AffiliateSales_Access_Array_Access_Array;
+end org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References;
+
+with org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AffiliateSales is tagged;
-   type AffiliateSales_Access is access all AffiliateSales'Class;
-   type AffiliateSales_Access_Array is array (Natural range <>) of AffiliateSales_Access;
-   type AffiliateSales_Access_Array_Access is access all AffiliateSales_Access_Array;
-   type AffiliateSales_Access_Array_Access_Array is array (Natural range <>) of AffiliateSales_Access_Array_Access;
-   type AffiliateSales_Access_Array_Access_Array_Access is access all AffiliateSales_Access_Array_Access_Array;
+
+   subtype AffiliateSales_Access is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access;
+   function "=" (Left, Right : AffiliateSales_Access) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
+   subtype AffiliateSales_Access_Array is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access_Array;
+   function "=" (Left, Right : AffiliateSales_Access_Array) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
+   subtype AffiliateSales_Access_Array_Access is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access_Array_Access;
+   function "=" (Left, Right : AffiliateSales_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
+   subtype AffiliateSales_Access_Array_Access_Array is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access_Array_Access_Array;
+   function "=" (Left, Right : AffiliateSales_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
+   subtype AffiliateSales_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References.AffiliateSales_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AffiliateSales_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package_References."=";
 
    type AffiliateSales is new Java_Object with null record;
 

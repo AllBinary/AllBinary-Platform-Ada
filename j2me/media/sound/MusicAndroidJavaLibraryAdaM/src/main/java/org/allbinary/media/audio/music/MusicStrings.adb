@@ -39,7 +39,7 @@ package body org.allbinary.media.audio.music.MusicStrings_Package is
 
    function getInstance return MusicStrings_Access is
    begin
-        return MusicStrings_Package.instance;
+        return MusicStrings_Access (MusicStrings_Package.instance);
    end getInstance;
 
 begin

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tree.dom.StoreUriResolver_Package;
+package org.allbinary.data.tree.dom.StoreUriResolver_Package_References is
+   type StoreUriResolver_Access is access all org.allbinary.data.tree.dom.StoreUriResolver_Package.StoreUriResolver'Class;
+   type StoreUriResolver_Access_Array is array (Natural range <>) of StoreUriResolver_Access;
+   type StoreUriResolver_Access_Array_Access is access all StoreUriResolver_Access_Array;
+   type StoreUriResolver_Access_Array_Access_Array is array (Natural range <>) of StoreUriResolver_Access_Array_Access;
+   type StoreUriResolver_Access_Array_Access_Array_Access is access all StoreUriResolver_Access_Array_Access_Array;
+end org.allbinary.data.tree.dom.StoreUriResolver_Package_References;
+
+with org.allbinary.data.tree.dom.StoreUriResolver_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,22 +34,74 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.xml.transform.TransformerException_Package; use javax.xml.transform.TransformerException_Package;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
 --  with javax.xml.transform.stream.StreamSource_Package; use javax.xml.transform.stream.StreamSource_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.data.tree.dom.URIResolverStrings_Package; use org.allbinary.data.tree.dom.URIResolverStrings_Package;
-with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
+limited with org.allbinary.data.tree.dom.URIResolverStrings_Package;
+with org.allbinary.data.tree.dom.URIResolverStrings_Package_References;
+limited with org.allbinary.data.tree.dom.BasicUriResolver_Package;
+with org.allbinary.data.tree.dom.BasicUriResolver_Package_References;
 
 package org.allbinary.data.tree.dom.StoreUriResolver_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   subtype URIResolverStrings_Access is org.allbinary.data.tree.dom.URIResolverStrings_Package_References.URIResolverStrings_Access;
+   use type URIResolverStrings_Access;
+   subtype URIResolverStrings_Access_Array is org.allbinary.data.tree.dom.URIResolverStrings_Package_References.URIResolverStrings_Access_Array;
+   use type URIResolverStrings_Access_Array;
+   subtype URIResolverStrings_Access_Array_Access is org.allbinary.data.tree.dom.URIResolverStrings_Package_References.URIResolverStrings_Access_Array_Access;
+   use type URIResolverStrings_Access_Array_Access;
+   subtype URIResolverStrings_Access_Array_Access_Array is org.allbinary.data.tree.dom.URIResolverStrings_Package_References.URIResolverStrings_Access_Array_Access_Array;
+   use type URIResolverStrings_Access_Array_Access_Array;
+   subtype URIResolverStrings_Access_Array_Access_Array_Access is org.allbinary.data.tree.dom.URIResolverStrings_Package_References.URIResolverStrings_Access_Array_Access_Array_Access;
+   use type URIResolverStrings_Access_Array_Access_Array_Access;
+   subtype BasicUriResolver_Access is org.allbinary.data.tree.dom.BasicUriResolver_Package_References.BasicUriResolver_Access;
+   use type BasicUriResolver_Access;
+   subtype BasicUriResolver_Access_Array is org.allbinary.data.tree.dom.BasicUriResolver_Package_References.BasicUriResolver_Access_Array;
+   use type BasicUriResolver_Access_Array;
+   subtype BasicUriResolver_Access_Array_Access is org.allbinary.data.tree.dom.BasicUriResolver_Package_References.BasicUriResolver_Access_Array_Access;
+   use type BasicUriResolver_Access_Array_Access;
+   subtype BasicUriResolver_Access_Array_Access_Array is org.allbinary.data.tree.dom.BasicUriResolver_Package_References.BasicUriResolver_Access_Array_Access_Array;
+   use type BasicUriResolver_Access_Array_Access_Array;
+   subtype BasicUriResolver_Access_Array_Access_Array_Access is org.allbinary.data.tree.dom.BasicUriResolver_Package_References.BasicUriResolver_Access_Array_Access_Array_Access;
+   use type BasicUriResolver_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreUriResolver is tagged;
-   type StoreUriResolver_Access is access all StoreUriResolver'Class;
-   type StoreUriResolver_Access_Array is array (Natural range <>) of StoreUriResolver_Access;
-   type StoreUriResolver_Access_Array_Access is access all StoreUriResolver_Access_Array;
-   type StoreUriResolver_Access_Array_Access_Array is array (Natural range <>) of StoreUriResolver_Access_Array_Access;
-   type StoreUriResolver_Access_Array_Access_Array_Access is access all StoreUriResolver_Access_Array_Access_Array;
+
+   subtype StoreUriResolver_Access is org.allbinary.data.tree.dom.StoreUriResolver_Package_References.StoreUriResolver_Access;
+   function "=" (Left, Right : StoreUriResolver_Access) return Boolean renames org.allbinary.data.tree.dom.StoreUriResolver_Package_References."=";
+   subtype StoreUriResolver_Access_Array is org.allbinary.data.tree.dom.StoreUriResolver_Package_References.StoreUriResolver_Access_Array;
+   function "=" (Left, Right : StoreUriResolver_Access_Array) return Boolean renames org.allbinary.data.tree.dom.StoreUriResolver_Package_References."=";
+   subtype StoreUriResolver_Access_Array_Access is org.allbinary.data.tree.dom.StoreUriResolver_Package_References.StoreUriResolver_Access_Array_Access;
+   function "=" (Left, Right : StoreUriResolver_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.StoreUriResolver_Package_References."=";
+   subtype StoreUriResolver_Access_Array_Access_Array is org.allbinary.data.tree.dom.StoreUriResolver_Package_References.StoreUriResolver_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreUriResolver_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tree.dom.StoreUriResolver_Package_References."=";
+   subtype StoreUriResolver_Access_Array_Access_Array_Access is org.allbinary.data.tree.dom.StoreUriResolver_Package_References.StoreUriResolver_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreUriResolver_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.StoreUriResolver_Package_References."=";
 
    type StoreUriResolver is new Java_Object with record
       logUtil : LogUtil_Access;

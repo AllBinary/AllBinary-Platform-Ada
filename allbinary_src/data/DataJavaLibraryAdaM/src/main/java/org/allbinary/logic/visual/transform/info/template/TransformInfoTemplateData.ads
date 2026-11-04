@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+package org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References is
+   type TransformInfoTemplateData_Access is access all org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package.TransformInfoTemplateData'Class;
+   type TransformInfoTemplateData_Access_Array is array (Natural range <>) of TransformInfoTemplateData_Access;
+   type TransformInfoTemplateData_Access_Array_Access is access all TransformInfoTemplateData_Access_Array;
+   type TransformInfoTemplateData_Access_Array_Access_Array is array (Natural range <>) of TransformInfoTemplateData_Access_Array_Access;
+   type TransformInfoTemplateData_Access_Array_Access_Array_Access is access all TransformInfoTemplateData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References;
+
+with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransformInfoTemplateData is tagged;
-   type TransformInfoTemplateData_Access is access all TransformInfoTemplateData'Class;
-   type TransformInfoTemplateData_Access_Array is array (Natural range <>) of TransformInfoTemplateData_Access;
-   type TransformInfoTemplateData_Access_Array_Access is access all TransformInfoTemplateData_Access_Array;
-   type TransformInfoTemplateData_Access_Array_Access_Array is array (Natural range <>) of TransformInfoTemplateData_Access_Array_Access;
-   type TransformInfoTemplateData_Access_Array_Access_Array_Access is access all TransformInfoTemplateData_Access_Array_Access_Array;
+
+   subtype TransformInfoTemplateData_Access is org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References.TransformInfoTemplateData_Access;
+   function "=" (Left, Right : TransformInfoTemplateData_Access) return Boolean renames org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References."=";
+   subtype TransformInfoTemplateData_Access_Array is org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References.TransformInfoTemplateData_Access_Array;
+   function "=" (Left, Right : TransformInfoTemplateData_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References."=";
+   subtype TransformInfoTemplateData_Access_Array_Access is org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References.TransformInfoTemplateData_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoTemplateData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References."=";
+   subtype TransformInfoTemplateData_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References.TransformInfoTemplateData_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoTemplateData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References."=";
+   subtype TransformInfoTemplateData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References.TransformInfoTemplateData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoTemplateData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package_References."=";
 
    type TransformInfoTemplateData is new Java_Object with record
       UNCRYPTED_EXTENSION : Unbounded_String;

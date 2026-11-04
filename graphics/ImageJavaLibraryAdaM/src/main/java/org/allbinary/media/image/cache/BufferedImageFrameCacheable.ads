@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package;
+package org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References is
+   type BufferedImageFrameCacheable_Access is access all org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package.BufferedImageFrameCacheable'Class;
+   type BufferedImageFrameCacheable_Access_Array is array (Natural range <>) of BufferedImageFrameCacheable_Access;
+   type BufferedImageFrameCacheable_Access_Array_Access is access all BufferedImageFrameCacheable_Access_Array;
+   type BufferedImageFrameCacheable_Access_Array_Access_Array is array (Natural range <>) of BufferedImageFrameCacheable_Access_Array_Access;
+   type BufferedImageFrameCacheable_Access_Array_Access_Array_Access is access all BufferedImageFrameCacheable_Access_Array_Access_Array;
+end org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References;
+
+with org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinar
 package org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package is
 
    package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BufferedImageFrameCacheable is tagged;
-   type BufferedImageFrameCacheable_Access is access all BufferedImageFrameCacheable'Class;
-   type BufferedImageFrameCacheable_Access_Array is array (Natural range <>) of BufferedImageFrameCacheable_Access;
-   type BufferedImageFrameCacheable_Access_Array_Access is access all BufferedImageFrameCacheable_Access_Array;
-   type BufferedImageFrameCacheable_Access_Array_Access_Array is array (Natural range <>) of BufferedImageFrameCacheable_Access_Array_Access;
-   type BufferedImageFrameCacheable_Access_Array_Access_Array_Access is access all BufferedImageFrameCacheable_Access_Array_Access_Array;
+
+   subtype BufferedImageFrameCacheable_Access is org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References.BufferedImageFrameCacheable_Access;
+   function "=" (Left, Right : BufferedImageFrameCacheable_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References."=";
+   subtype BufferedImageFrameCacheable_Access_Array is org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References.BufferedImageFrameCacheable_Access_Array;
+   function "=" (Left, Right : BufferedImageFrameCacheable_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References."=";
+   subtype BufferedImageFrameCacheable_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References.BufferedImageFrameCacheable_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageFrameCacheable_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References."=";
+   subtype BufferedImageFrameCacheable_Access_Array_Access_Array is org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References.BufferedImageFrameCacheable_Access_Array_Access_Array;
+   function "=" (Left, Right : BufferedImageFrameCacheable_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References."=";
+   subtype BufferedImageFrameCacheable_Access_Array_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References.BufferedImageFrameCacheable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageFrameCacheable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package_References."=";
 
    type BufferedImageFrameCacheable is new Java_Object and CacheableInterface with record
       frame : Long_Long_Integer;

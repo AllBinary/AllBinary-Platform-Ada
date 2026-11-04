@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.opengles.shader.Shader_Package;
+with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package;
 
 package body org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Package is
 
@@ -37,7 +39,7 @@ package body org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Pack
 
    function getInstance return SimpleShaderInitializer_Access is
    begin
-        return SimpleShaderInitializer_Package.instanceC;
+        return SimpleShaderInitializer_Access (SimpleShaderInitializer_Package.instanceC);
    end getInstance;
 
 begin

@@ -14,13 +14,36 @@
 
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 
 package body org.allbinary.logic.math.PrimitiveLongUtil_Package is
 
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype PrimitiveLongSingleton_Access is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
+   subtype PrimitiveLongSingleton_Access_Array is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access_Array) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
+   subtype PrimitiveLongSingleton_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array_Access;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access_Array_Access) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
+   subtype PrimitiveLongSingleton_Access_Array_Access_Array is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array_Access_Array;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
+   subtype PrimitiveLongSingleton_Access_Array_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
    procedure Initialize_Fields (This : in out PrimitiveLongUtil'Class) is
    begin
       null;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.persistance.KeyValuePersistance_Package;
+package org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References is
+   type KeyValuePersistance_Access is access all org.allbinary.game.configuration.persistance.KeyValuePersistance_Package.KeyValuePersistance'Class;
+   type KeyValuePersistance_Access_Array is array (Natural range <>) of KeyValuePersistance_Access;
+   type KeyValuePersistance_Access_Array_Access is access all KeyValuePersistance_Access_Array;
+   type KeyValuePersistance_Access_Array_Access_Array is array (Natural range <>) of KeyValuePersistance_Access_Array_Access;
+   type KeyValuePersistance_Access_Array_Access_Array_Access is access all KeyValuePersistance_Access_Array_Access_Array;
+end org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References;
+
+with org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,9 +31,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+limited with org.allbinary.TsUtil_Package;
+with org.allbinary.TsUtil_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.configuration.persistance.BasicPersitance_Package; use org.allbinary.game.configuration.persistance.BasicPersitance_Package;
 
 package org.allbinary.game.configuration.persistance.KeyValuePersistance_Package is
@@ -31,13 +44,51 @@ package org.allbinary.game.configuration.persistance.KeyValuePersistance_Package
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Reference_Types is
+   subtype TsUtil_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access;
+   use type TsUtil_Access;
+   subtype TsUtil_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array;
+   use type TsUtil_Access_Array;
+   subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
+   use type TsUtil_Access_Array_Access;
+   subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
+   use type TsUtil_Access_Array_Access_Array;
+   subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
+   use type TsUtil_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   use type ABHashtable_Access;
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   use type ABHashtable_Access_Array;
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access;
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   use type ABHashtable_Access_Array_Access_Array;
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type KeyValuePersistance is tagged;
-   type KeyValuePersistance_Access is access all KeyValuePersistance'Class;
-   type KeyValuePersistance_Access_Array is array (Natural range <>) of KeyValuePersistance_Access;
-   type KeyValuePersistance_Access_Array_Access is access all KeyValuePersistance_Access_Array;
-   type KeyValuePersistance_Access_Array_Access_Array is array (Natural range <>) of KeyValuePersistance_Access_Array_Access;
-   type KeyValuePersistance_Access_Array_Access_Array_Access is access all KeyValuePersistance_Access_Array_Access_Array;
+
+   subtype KeyValuePersistance_Access is org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References.KeyValuePersistance_Access;
+   function "=" (Left, Right : KeyValuePersistance_Access) return Boolean renames org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References."=";
+   subtype KeyValuePersistance_Access_Array is org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References.KeyValuePersistance_Access_Array;
+   function "=" (Left, Right : KeyValuePersistance_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References."=";
+   subtype KeyValuePersistance_Access_Array_Access is org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References.KeyValuePersistance_Access_Array_Access;
+   function "=" (Left, Right : KeyValuePersistance_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References."=";
+   subtype KeyValuePersistance_Access_Array_Access_Array is org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References.KeyValuePersistance_Access_Array_Access_Array;
+   function "=" (Left, Right : KeyValuePersistance_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References."=";
+   subtype KeyValuePersistance_Access_Array_Access_Array_Access is org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References.KeyValuePersistance_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : KeyValuePersistance_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.KeyValuePersistance_Package_References."=";
 
    type KeyValuePersistance is new BasicPersitance with record
       tsUtil : TsUtil_Access;

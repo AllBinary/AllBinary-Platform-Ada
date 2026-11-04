@@ -13,13 +13,35 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package body org.allbinary.game.configuration.GameConfigurationTextInput_Package is
 
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype TextField_Access is javax.microedition.lcdui.TextField_Package_References.TextField_Access;
+   function "=" (Left, Right : TextField_Access) return Boolean renames javax.microedition.lcdui.TextField_Package_References."=";
+   subtype TextField_Access_Array is javax.microedition.lcdui.TextField_Package_References.TextField_Access_Array;
+   function "=" (Left, Right : TextField_Access_Array) return Boolean renames javax.microedition.lcdui.TextField_Package_References."=";
+   subtype TextField_Access_Array_Access is javax.microedition.lcdui.TextField_Package_References.TextField_Access_Array_Access;
+   function "=" (Left, Right : TextField_Access_Array_Access) return Boolean renames javax.microedition.lcdui.TextField_Package_References."=";
+   subtype TextField_Access_Array_Access_Array is javax.microedition.lcdui.TextField_Package_References.TextField_Access_Array_Access_Array;
+   function "=" (Left, Right : TextField_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.TextField_Package_References."=";
+   subtype TextField_Access_Array_Access_Array_Access is javax.microedition.lcdui.TextField_Package_References.TextField_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TextField_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.TextField_Package_References."=";
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   function "=" (Left, Right : ABHashtable_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
    procedure Initialize_Fields (This : in out GameConfigurationTextInput'Class) is
    begin
       null;
@@ -75,7 +97,7 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
 
    function getHashtable return ABHashtable_Access is
    begin
-        return GameConfigurationTextInput_Package.hashtable;
+        return ABHashtable_Access (GameConfigurationTextInput_Package.hashtable);
    end getHashtable;
 
 begin

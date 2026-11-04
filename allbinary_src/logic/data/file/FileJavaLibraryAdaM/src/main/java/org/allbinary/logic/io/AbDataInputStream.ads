@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.AbDataInputStream_Package;
+package org.allbinary.logic.io.AbDataInputStream_Package_References is
+   type AbDataInputStream_Access is access all org.allbinary.logic.io.AbDataInputStream_Package.AbDataInputStream'Class;
+   type AbDataInputStream_Access_Array is array (Natural range <>) of AbDataInputStream_Access;
+   type AbDataInputStream_Access_Array_Access is access all AbDataInputStream_Access_Array;
+   type AbDataInputStream_Access_Array_Access_Array is array (Natural range <>) of AbDataInputStream_Access_Array_Access;
+   type AbDataInputStream_Access_Array_Access_Array_Access is access all AbDataInputStream_Access_Array_Access_Array;
+end org.allbinary.logic.io.AbDataInputStream_Package_References;
+
+with org.allbinary.logic.io.AbDataInputStream_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ package org.allbinary.logic.io.AbDataInputStream_Package is
 
    package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
    package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbDataInputStream is tagged;
-   type AbDataInputStream_Access is access all AbDataInputStream'Class;
-   type AbDataInputStream_Access_Array is array (Natural range <>) of AbDataInputStream_Access;
-   type AbDataInputStream_Access_Array_Access is access all AbDataInputStream_Access_Array;
-   type AbDataInputStream_Access_Array_Access_Array is array (Natural range <>) of AbDataInputStream_Access_Array_Access;
-   type AbDataInputStream_Access_Array_Access_Array_Access is access all AbDataInputStream_Access_Array_Access_Array;
+
+   subtype AbDataInputStream_Access is org.allbinary.logic.io.AbDataInputStream_Package_References.AbDataInputStream_Access;
+   function "=" (Left, Right : AbDataInputStream_Access) return Boolean renames org.allbinary.logic.io.AbDataInputStream_Package_References."=";
+   subtype AbDataInputStream_Access_Array is org.allbinary.logic.io.AbDataInputStream_Package_References.AbDataInputStream_Access_Array;
+   function "=" (Left, Right : AbDataInputStream_Access_Array) return Boolean renames org.allbinary.logic.io.AbDataInputStream_Package_References."=";
+   subtype AbDataInputStream_Access_Array_Access is org.allbinary.logic.io.AbDataInputStream_Package_References.AbDataInputStream_Access_Array_Access;
+   function "=" (Left, Right : AbDataInputStream_Access_Array_Access) return Boolean renames org.allbinary.logic.io.AbDataInputStream_Package_References."=";
+   subtype AbDataInputStream_Access_Array_Access_Array is org.allbinary.logic.io.AbDataInputStream_Package_References.AbDataInputStream_Access_Array_Access_Array;
+   function "=" (Left, Right : AbDataInputStream_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.AbDataInputStream_Package_References."=";
+   subtype AbDataInputStream_Access_Array_Access_Array_Access is org.allbinary.logic.io.AbDataInputStream_Package_References.AbDataInputStream_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbDataInputStream_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.AbDataInputStream_Package_References."=";
 
    type AbDataInputStream is new DataInputStream with null record;
 

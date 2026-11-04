@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.ai.NullAI_Package;
+package org.allbinary.game.ag.ai.NullAI_Package_References is
+   type NullAI_Access is access all org.allbinary.game.ag.ai.NullAI_Package.NullAI'Class;
+   type NullAI_Access_Array is array (Natural range <>) of NullAI_Access;
+   type NullAI_Access_Array_Access is access all NullAI_Access_Array;
+   type NullAI_Access_Array_Access_Array is array (Natural range <>) of NullAI_Access_Array_Access;
+   type NullAI_Access_Array_Access_Array_Access is access all NullAI_Access_Array_Access_Array;
+end org.allbinary.game.ag.ai.NullAI_Package_References;
+
+with org.allbinary.game.ag.ai.NullAI_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,19 +31,38 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.ArtificialIntelligence_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 
 package org.allbinary.game.ag.ai.NullAI_Package is
 
    package ArtificialIntelligence_Package renames Standard.org.allbinary.ai.ArtificialIntelligence_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package Reference_Types is
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullAI is tagged;
-   type NullAI_Access is access all NullAI'Class;
-   type NullAI_Access_Array is array (Natural range <>) of NullAI_Access;
-   type NullAI_Access_Array_Access is access all NullAI_Access_Array;
-   type NullAI_Access_Array_Access_Array is array (Natural range <>) of NullAI_Access_Array_Access;
-   type NullAI_Access_Array_Access_Array_Access is access all NullAI_Access_Array_Access_Array;
+
+   subtype NullAI_Access is org.allbinary.game.ag.ai.NullAI_Package_References.NullAI_Access;
+   function "=" (Left, Right : NullAI_Access) return Boolean renames org.allbinary.game.ag.ai.NullAI_Package_References."=";
+   subtype NullAI_Access_Array is org.allbinary.game.ag.ai.NullAI_Package_References.NullAI_Access_Array;
+   function "=" (Left, Right : NullAI_Access_Array) return Boolean renames org.allbinary.game.ag.ai.NullAI_Package_References."=";
+   subtype NullAI_Access_Array_Access is org.allbinary.game.ag.ai.NullAI_Package_References.NullAI_Access_Array_Access;
+   function "=" (Left, Right : NullAI_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.NullAI_Package_References."=";
+   subtype NullAI_Access_Array_Access_Array is org.allbinary.game.ag.ai.NullAI_Package_References.NullAI_Access_Array_Access_Array;
+   function "=" (Left, Right : NullAI_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.NullAI_Package_References."=";
+   subtype NullAI_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.NullAI_Package_References.NullAI_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullAI_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.NullAI_Package_References."=";
 
    type NullAI is new ArtificialIntelligence with null record;
 

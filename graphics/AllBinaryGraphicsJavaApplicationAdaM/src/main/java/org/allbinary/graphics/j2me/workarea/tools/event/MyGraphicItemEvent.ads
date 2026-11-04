@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
+package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References is
+   type MyGraphicItemEvent_Access is access all org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package.MyGraphicItemEvent'Class;
+   type MyGraphicItemEvent_Access_Array is array (Natural range <>) of MyGraphicItemEvent_Access;
+   type MyGraphicItemEvent_Access_Array_Access is access all MyGraphicItemEvent_Access_Array;
+   type MyGraphicItemEvent_Access_Array_Access_Array is array (Natural range <>) of MyGraphicItemEvent_Access_Array_Access;
+   type MyGraphicItemEvent_Access_Array_Access_Array_Access is access all MyGraphicItemEvent_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.graphics.j2me.workarea.tools.event.EventObject_Package; use o
 
 package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type MyGraphicItemEvent is tagged;
-   type MyGraphicItemEvent_Access is access all MyGraphicItemEvent'Class;
-   type MyGraphicItemEvent_Access_Array is array (Natural range <>) of MyGraphicItemEvent_Access;
-   type MyGraphicItemEvent_Access_Array_Access is access all MyGraphicItemEvent_Access_Array;
-   type MyGraphicItemEvent_Access_Array_Access_Array is array (Natural range <>) of MyGraphicItemEvent_Access_Array_Access;
-   type MyGraphicItemEvent_Access_Array_Access_Array_Access is access all MyGraphicItemEvent_Access_Array_Access_Array;
+
+   subtype MyGraphicItemEvent_Access is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References.MyGraphicItemEvent_Access;
+   function "=" (Left, Right : MyGraphicItemEvent_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References."=";
+   subtype MyGraphicItemEvent_Access_Array is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References.MyGraphicItemEvent_Access_Array;
+   function "=" (Left, Right : MyGraphicItemEvent_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References."=";
+   subtype MyGraphicItemEvent_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References.MyGraphicItemEvent_Access_Array_Access;
+   function "=" (Left, Right : MyGraphicItemEvent_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References."=";
+   subtype MyGraphicItemEvent_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References.MyGraphicItemEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : MyGraphicItemEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References."=";
+   subtype MyGraphicItemEvent_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References.MyGraphicItemEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyGraphicItemEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package_References."=";
 
    type MyGraphicItemEvent is new EventObject with null record;
 

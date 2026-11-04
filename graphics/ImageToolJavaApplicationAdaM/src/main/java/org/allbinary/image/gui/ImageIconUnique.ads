@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.gui.ImageIconUnique_Package;
+package org.allbinary.image.gui.ImageIconUnique_Package_References is
+   type ImageIconUnique_Access is access all org.allbinary.image.gui.ImageIconUnique_Package.ImageIconUnique'Class;
+   type ImageIconUnique_Access_Array is array (Natural range <>) of ImageIconUnique_Access;
+   type ImageIconUnique_Access_Array_Access is access all ImageIconUnique_Access_Array;
+   type ImageIconUnique_Access_Array_Access_Array is array (Natural range <>) of ImageIconUnique_Access_Array_Access;
+   type ImageIconUnique_Access_Array_Access_Array_Access is access all ImageIconUnique_Access_Array_Access_Array;
+end org.allbinary.image.gui.ImageIconUnique_Package_References;
+
+with org.allbinary.image.gui.ImageIconUnique_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.image.gui.ImageIcon_Package; use org.allbinary.image.gui.Imag
 
 package org.allbinary.image.gui.ImageIconUnique_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageIconUnique is tagged;
-   type ImageIconUnique_Access is access all ImageIconUnique'Class;
-   type ImageIconUnique_Access_Array is array (Natural range <>) of ImageIconUnique_Access;
-   type ImageIconUnique_Access_Array_Access is access all ImageIconUnique_Access_Array;
-   type ImageIconUnique_Access_Array_Access_Array is array (Natural range <>) of ImageIconUnique_Access_Array_Access;
-   type ImageIconUnique_Access_Array_Access_Array_Access is access all ImageIconUnique_Access_Array_Access_Array;
+
+   subtype ImageIconUnique_Access is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access;
+   function "=" (Left, Right : ImageIconUnique_Access) return Boolean renames org.allbinary.image.gui.ImageIconUnique_Package_References."=";
+   subtype ImageIconUnique_Access_Array is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access_Array;
+   function "=" (Left, Right : ImageIconUnique_Access_Array) return Boolean renames org.allbinary.image.gui.ImageIconUnique_Package_References."=";
+   subtype ImageIconUnique_Access_Array_Access is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access_Array_Access;
+   function "=" (Left, Right : ImageIconUnique_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageIconUnique_Package_References."=";
+   subtype ImageIconUnique_Access_Array_Access_Array is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageIconUnique_Access_Array_Access_Array) return Boolean renames org.allbinary.image.gui.ImageIconUnique_Package_References."=";
+   subtype ImageIconUnique_Access_Array_Access_Array_Access is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageIconUnique_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageIconUnique_Package_References."=";
 
    type ImageIconUnique is new ImageIcon with record
       id : Integer;

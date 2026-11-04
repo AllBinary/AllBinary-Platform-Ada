@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.generator.OrderIdGenerator_Package;
+package org.allbinary.data.generator.OrderIdGenerator_Package_References is
+   type OrderIdGenerator_Access is access all org.allbinary.data.generator.OrderIdGenerator_Package.OrderIdGenerator'Class;
+   type OrderIdGenerator_Access_Array is array (Natural range <>) of OrderIdGenerator_Access;
+   type OrderIdGenerator_Access_Array_Access is access all OrderIdGenerator_Access_Array;
+   type OrderIdGenerator_Access_Array_Access_Array is array (Natural range <>) of OrderIdGenerator_Access_Array_Access;
+   type OrderIdGenerator_Access_Array_Access_Array_Access is access all OrderIdGenerator_Access_Array_Access_Array;
+end org.allbinary.data.generator.OrderIdGenerator_Package_References;
+
+with org.allbinary.data.generator.OrderIdGenerator_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.data.generator.UniqueIdGenerator_Package; use org.allbinary.d
 
 package org.allbinary.data.generator.OrderIdGenerator_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OrderIdGenerator is tagged;
-   type OrderIdGenerator_Access is access all OrderIdGenerator'Class;
-   type OrderIdGenerator_Access_Array is array (Natural range <>) of OrderIdGenerator_Access;
-   type OrderIdGenerator_Access_Array_Access is access all OrderIdGenerator_Access_Array;
-   type OrderIdGenerator_Access_Array_Access_Array is array (Natural range <>) of OrderIdGenerator_Access_Array_Access;
-   type OrderIdGenerator_Access_Array_Access_Array_Access is access all OrderIdGenerator_Access_Array_Access_Array;
+
+   subtype OrderIdGenerator_Access is org.allbinary.data.generator.OrderIdGenerator_Package_References.OrderIdGenerator_Access;
+   function "=" (Left, Right : OrderIdGenerator_Access) return Boolean renames org.allbinary.data.generator.OrderIdGenerator_Package_References."=";
+   subtype OrderIdGenerator_Access_Array is org.allbinary.data.generator.OrderIdGenerator_Package_References.OrderIdGenerator_Access_Array;
+   function "=" (Left, Right : OrderIdGenerator_Access_Array) return Boolean renames org.allbinary.data.generator.OrderIdGenerator_Package_References."=";
+   subtype OrderIdGenerator_Access_Array_Access is org.allbinary.data.generator.OrderIdGenerator_Package_References.OrderIdGenerator_Access_Array_Access;
+   function "=" (Left, Right : OrderIdGenerator_Access_Array_Access) return Boolean renames org.allbinary.data.generator.OrderIdGenerator_Package_References."=";
+   subtype OrderIdGenerator_Access_Array_Access_Array is org.allbinary.data.generator.OrderIdGenerator_Package_References.OrderIdGenerator_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderIdGenerator_Access_Array_Access_Array) return Boolean renames org.allbinary.data.generator.OrderIdGenerator_Package_References."=";
+   subtype OrderIdGenerator_Access_Array_Access_Array_Access is org.allbinary.data.generator.OrderIdGenerator_Package_References.OrderIdGenerator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderIdGenerator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.generator.OrderIdGenerator_Package_References."=";
 
    type OrderIdGenerator is new UniqueIdGenerator with record
       IDFILE : Unbounded_String;

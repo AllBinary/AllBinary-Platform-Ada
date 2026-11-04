@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.category.properties.CategoryPropertiesView_Package;
+package org.allbinary.business.category.properties.CategoryPropertiesView_Package_References is
+   type CategoryPropertiesView_Access is access all org.allbinary.business.category.properties.CategoryPropertiesView_Package.CategoryPropertiesView'Class;
+   type CategoryPropertiesView_Access_Array is array (Natural range <>) of CategoryPropertiesView_Access;
+   type CategoryPropertiesView_Access_Array_Access is access all CategoryPropertiesView_Access_Array;
+   type CategoryPropertiesView_Access_Array_Access_Array is array (Natural range <>) of CategoryPropertiesView_Access_Array_Access;
+   type CategoryPropertiesView_Access_Array_Access_Array_Access is access all CategoryPropertiesView_Access_Array_Access_Array;
+end org.allbinary.business.category.properties.CategoryPropertiesView_Package_References;
+
+with org.allbinary.business.category.properties.CategoryPropertiesView_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,22 +31,63 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
+limited with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
+with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package_References;
 
 package org.allbinary.business.category.properties.CategoryPropertiesView_Package is
 
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   subtype CategoryPropertiesInterface_Access is org.allbinary.business.category.properties.CategoryPropertiesInterface_Package_References.CategoryPropertiesInterface_Access;
+   use type CategoryPropertiesInterface_Access;
+   subtype CategoryPropertiesInterface_Access_Array is org.allbinary.business.category.properties.CategoryPropertiesInterface_Package_References.CategoryPropertiesInterface_Access_Array;
+   use type CategoryPropertiesInterface_Access_Array;
+   subtype CategoryPropertiesInterface_Access_Array_Access is org.allbinary.business.category.properties.CategoryPropertiesInterface_Package_References.CategoryPropertiesInterface_Access_Array_Access;
+   use type CategoryPropertiesInterface_Access_Array_Access;
+   subtype CategoryPropertiesInterface_Access_Array_Access_Array is org.allbinary.business.category.properties.CategoryPropertiesInterface_Package_References.CategoryPropertiesInterface_Access_Array_Access_Array;
+   use type CategoryPropertiesInterface_Access_Array_Access_Array;
+   subtype CategoryPropertiesInterface_Access_Array_Access_Array_Access is org.allbinary.business.category.properties.CategoryPropertiesInterface_Package_References.CategoryPropertiesInterface_Access_Array_Access_Array_Access;
+   use type CategoryPropertiesInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CategoryPropertiesView is tagged;
-   type CategoryPropertiesView_Access is access all CategoryPropertiesView'Class;
-   type CategoryPropertiesView_Access_Array is array (Natural range <>) of CategoryPropertiesView_Access;
-   type CategoryPropertiesView_Access_Array_Access is access all CategoryPropertiesView_Access_Array;
-   type CategoryPropertiesView_Access_Array_Access_Array is array (Natural range <>) of CategoryPropertiesView_Access_Array_Access;
-   type CategoryPropertiesView_Access_Array_Access_Array_Access is access all CategoryPropertiesView_Access_Array_Access_Array;
+
+   subtype CategoryPropertiesView_Access is org.allbinary.business.category.properties.CategoryPropertiesView_Package_References.CategoryPropertiesView_Access;
+   function "=" (Left, Right : CategoryPropertiesView_Access) return Boolean renames org.allbinary.business.category.properties.CategoryPropertiesView_Package_References."=";
+   subtype CategoryPropertiesView_Access_Array is org.allbinary.business.category.properties.CategoryPropertiesView_Package_References.CategoryPropertiesView_Access_Array;
+   function "=" (Left, Right : CategoryPropertiesView_Access_Array) return Boolean renames org.allbinary.business.category.properties.CategoryPropertiesView_Package_References."=";
+   subtype CategoryPropertiesView_Access_Array_Access is org.allbinary.business.category.properties.CategoryPropertiesView_Package_References.CategoryPropertiesView_Access_Array_Access;
+   function "=" (Left, Right : CategoryPropertiesView_Access_Array_Access) return Boolean renames org.allbinary.business.category.properties.CategoryPropertiesView_Package_References."=";
+   subtype CategoryPropertiesView_Access_Array_Access_Array is org.allbinary.business.category.properties.CategoryPropertiesView_Package_References.CategoryPropertiesView_Access_Array_Access_Array;
+   function "=" (Left, Right : CategoryPropertiesView_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.properties.CategoryPropertiesView_Package_References."=";
+   subtype CategoryPropertiesView_Access_Array_Access_Array_Access is org.allbinary.business.category.properties.CategoryPropertiesView_Package_References.CategoryPropertiesView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CategoryPropertiesView_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.properties.CategoryPropertiesView_Package_References."=";
 
    type CategoryPropertiesView is new Java_Object and DomNodeInterface with record
       categoryPropertiesInterface : CategoryPropertiesInterface_Access;

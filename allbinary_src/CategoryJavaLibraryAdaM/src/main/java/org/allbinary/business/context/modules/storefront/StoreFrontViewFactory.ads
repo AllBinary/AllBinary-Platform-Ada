@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package;
+package org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References is
+   type StoreFrontViewFactory_Access is access all org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package.StoreFrontViewFactory'Class;
+   type StoreFrontViewFactory_Access_Array is array (Natural range <>) of StoreFrontViewFactory_Access;
+   type StoreFrontViewFactory_Access_Array_Access is access all StoreFrontViewFactory_Access_Array;
+   type StoreFrontViewFactory_Access_Array_Access_Array is array (Natural range <>) of StoreFrontViewFactory_Access_Array_Access;
+   type StoreFrontViewFactory_Access_Array_Access_Array_Access is access all StoreFrontViewFactory_Access_Array_Access_Array;
+end org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References;
+
+with org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.allbinary.data.tree.dom.DomNodeInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package is
 
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype DomNodeInterface_Access is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access;
+   use type DomNodeInterface_Access;
+   subtype DomNodeInterface_Access_Array is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access_Array;
+   use type DomNodeInterface_Access_Array;
+   subtype DomNodeInterface_Access_Array_Access is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access_Array_Access;
+   use type DomNodeInterface_Access_Array_Access;
+   subtype DomNodeInterface_Access_Array_Access_Array is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access_Array_Access_Array;
+   use type DomNodeInterface_Access_Array_Access_Array;
+   subtype DomNodeInterface_Access_Array_Access_Array_Access is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access_Array_Access_Array_Access;
+   use type DomNodeInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreFrontViewFactory is tagged;
-   type StoreFrontViewFactory_Access is access all StoreFrontViewFactory'Class;
-   type StoreFrontViewFactory_Access_Array is array (Natural range <>) of StoreFrontViewFactory_Access;
-   type StoreFrontViewFactory_Access_Array_Access is access all StoreFrontViewFactory_Access_Array;
-   type StoreFrontViewFactory_Access_Array_Access_Array is array (Natural range <>) of StoreFrontViewFactory_Access_Array_Access;
-   type StoreFrontViewFactory_Access_Array_Access_Array_Access is access all StoreFrontViewFactory_Access_Array_Access_Array;
+
+   subtype StoreFrontViewFactory_Access is org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References.StoreFrontViewFactory_Access;
+   function "=" (Left, Right : StoreFrontViewFactory_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References."=";
+   subtype StoreFrontViewFactory_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References.StoreFrontViewFactory_Access_Array;
+   function "=" (Left, Right : StoreFrontViewFactory_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References."=";
+   subtype StoreFrontViewFactory_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References.StoreFrontViewFactory_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontViewFactory_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References."=";
+   subtype StoreFrontViewFactory_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References.StoreFrontViewFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontViewFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References."=";
+   subtype StoreFrontViewFactory_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References.StoreFrontViewFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontViewFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package_References."=";
 
    type StoreFrontViewFactory is new Java_Object with record
       logUtil : LogUtil_Access;

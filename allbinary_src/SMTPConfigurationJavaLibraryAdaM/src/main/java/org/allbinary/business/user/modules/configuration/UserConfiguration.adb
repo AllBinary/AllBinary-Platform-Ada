@@ -13,13 +13,64 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.time.created.TimeCreated_Package; use org.allbinary.business.time.created.TimeCreated_Package;
+with org.allbinary.business.time.modified.TimeLastModified_Package; use org.allbinary.business.time.modified.TimeLastModified_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
+with org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
+with org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+with org.allbinary.business.time.Time_Package;
+with org.allbinary.business.time.created.TimeCreated_Package;
+with org.allbinary.business.time.modified.TimeLastModified_Package;
+with org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
+with org.allbinary.business.user.UserFactoryInterface_Package;
+with org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.role.UserRole_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 
 package body org.allbinary.business.user.modules.configuration.UserConfiguration_Package is
 
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package UserEmailConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
+   subtype TimeCreated_Access is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access;
+   function "=" (Left, Right : TimeCreated_Access) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   subtype TimeCreated_Access_Array is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array;
+   function "=" (Left, Right : TimeCreated_Access_Array) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   subtype TimeCreated_Access_Array_Access is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array_Access;
+   function "=" (Left, Right : TimeCreated_Access_Array_Access) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   subtype TimeCreated_Access_Array_Access_Array is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array_Access_Array;
+   function "=" (Left, Right : TimeCreated_Access_Array_Access_Array) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   subtype TimeCreated_Access_Array_Access_Array_Access is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TimeCreated_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   subtype TimeLastModified_Access is org.allbinary.business.time.modified.TimeLastModified_Package_References.TimeLastModified_Access;
+   function "=" (Left, Right : TimeLastModified_Access) return Boolean renames org.allbinary.business.time.modified.TimeLastModified_Package_References."=";
+   subtype TimeLastModified_Access_Array is org.allbinary.business.time.modified.TimeLastModified_Package_References.TimeLastModified_Access_Array;
+   function "=" (Left, Right : TimeLastModified_Access_Array) return Boolean renames org.allbinary.business.time.modified.TimeLastModified_Package_References."=";
+   subtype TimeLastModified_Access_Array_Access is org.allbinary.business.time.modified.TimeLastModified_Package_References.TimeLastModified_Access_Array_Access;
+   function "=" (Left, Right : TimeLastModified_Access_Array_Access) return Boolean renames org.allbinary.business.time.modified.TimeLastModified_Package_References."=";
+   subtype TimeLastModified_Access_Array_Access_Array is org.allbinary.business.time.modified.TimeLastModified_Package_References.TimeLastModified_Access_Array_Access_Array;
+   function "=" (Left, Right : TimeLastModified_Access_Array_Access_Array) return Boolean renames org.allbinary.business.time.modified.TimeLastModified_Package_References."=";
+   subtype TimeLastModified_Access_Array_Access_Array_Access is org.allbinary.business.time.modified.TimeLastModified_Package_References.TimeLastModified_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TimeLastModified_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.time.modified.TimeLastModified_Package_References."=";
+   subtype UserEmailConfigurationInterface_Access is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
+   subtype UserEmailConfigurationInterface_Access_Array is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access_Array;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
+   subtype UserEmailConfigurationInterface_Access_Array_Access is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access_Array_Access;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
+   subtype UserEmailConfigurationInterface_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
+   subtype UserEmailConfigurationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
    procedure Initialize_Fields (This : in out UserConfiguration'Class) is
    begin
       null;

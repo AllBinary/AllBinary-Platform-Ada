@@ -45,7 +45,7 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package i
 
    function getInstance return HtmlInputData_Access is
    begin
-        return HtmlInputData_Package.instance;
+        return HtmlInputData_Access (HtmlInputData_Package.instance);
    end getInstance;
 
 begin

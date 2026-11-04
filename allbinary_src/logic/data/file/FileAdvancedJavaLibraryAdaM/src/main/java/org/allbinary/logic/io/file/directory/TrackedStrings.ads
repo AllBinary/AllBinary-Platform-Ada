@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.file.directory.TrackedStrings_Package;
+package org.allbinary.logic.io.file.directory.TrackedStrings_Package_References is
+   type TrackedStrings_Access is access all org.allbinary.logic.io.file.directory.TrackedStrings_Package.TrackedStrings'Class;
+   type TrackedStrings_Access_Array is array (Natural range <>) of TrackedStrings_Access;
+   type TrackedStrings_Access_Array_Access is access all TrackedStrings_Access_Array;
+   type TrackedStrings_Access_Array_Access_Array is array (Natural range <>) of TrackedStrings_Access_Array_Access;
+   type TrackedStrings_Access_Array_Access_Array_Access is access all TrackedStrings_Access_Array_Access_Array;
+end org.allbinary.logic.io.file.directory.TrackedStrings_Package_References;
+
+with org.allbinary.logic.io.file.directory.TrackedStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.io.file.directory.TrackedStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TrackedStrings is tagged;
-   type TrackedStrings_Access is access all TrackedStrings'Class;
-   type TrackedStrings_Access_Array is array (Natural range <>) of TrackedStrings_Access;
-   type TrackedStrings_Access_Array_Access is access all TrackedStrings_Access_Array;
-   type TrackedStrings_Access_Array_Access_Array is array (Natural range <>) of TrackedStrings_Access_Array_Access;
-   type TrackedStrings_Access_Array_Access_Array_Access is access all TrackedStrings_Access_Array_Access_Array;
+
+   subtype TrackedStrings_Access is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access;
+   function "=" (Left, Right : TrackedStrings_Access) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
+   subtype TrackedStrings_Access_Array is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array;
+   function "=" (Left, Right : TrackedStrings_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
+   subtype TrackedStrings_Access_Array_Access is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array_Access;
+   function "=" (Left, Right : TrackedStrings_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
+   subtype TrackedStrings_Access_Array_Access_Array is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : TrackedStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
+   subtype TrackedStrings_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TrackedStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
 
    type TrackedStrings is new Java_Object with record
       TARGET_PATH_WINDOWS : Unbounded_String;

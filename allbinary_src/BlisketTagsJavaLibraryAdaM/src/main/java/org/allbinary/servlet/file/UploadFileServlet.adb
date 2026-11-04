@@ -59,7 +59,6 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
 
    procedure Initialize (This : in out UploadFileServlet'Class) is
    begin
-      HttpServlet_Package.Initialize (This);
       Initialize_Fields (This);
    end Initialize;
 

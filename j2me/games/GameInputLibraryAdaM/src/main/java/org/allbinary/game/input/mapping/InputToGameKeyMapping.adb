@@ -13,6 +13,10 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
@@ -20,7 +24,13 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.mapping.InputMapping_Package;
 
 package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
 
@@ -32,6 +42,56 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype Canvas_Access is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access;
+   function "=" (Left, Right : Canvas_Access) return Boolean renames javax.microedition.lcdui.Canvas_Package_References."=";
+   subtype Canvas_Access_Array is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access_Array;
+   function "=" (Left, Right : Canvas_Access_Array) return Boolean renames javax.microedition.lcdui.Canvas_Package_References."=";
+   subtype Canvas_Access_Array_Access is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access_Array_Access;
+   function "=" (Left, Right : Canvas_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Canvas_Package_References."=";
+   subtype Canvas_Access_Array_Access_Array is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access_Array_Access_Array;
+   function "=" (Left, Right : Canvas_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Canvas_Package_References."=";
+   subtype Canvas_Access_Array_Access_Array_Access is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Canvas_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Canvas_Package_References."=";
+   subtype GameKey_Access is org.allbinary.game.input.GameKey_Package_References.GameKey_Access;
+   function "=" (Left, Right : GameKey_Access) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
+   subtype GameKey_Access_Array is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array;
+   function "=" (Left, Right : GameKey_Access_Array) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
+   subtype GameKey_Access_Array_Access is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array_Access;
+   function "=" (Left, Right : GameKey_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
+   subtype GameKey_Access_Array_Access_Array is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array_Access_Array;
+   function "=" (Left, Right : GameKey_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
+   subtype GameKey_Access_Array_Access_Array_Access is org.allbinary.game.input.GameKey_Package_References.GameKey_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameKey_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKey_Package_References."=";
+   subtype GameKeyFactory_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access;
+   function "=" (Left, Right : GameKeyFactory_Access) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype GameKeyFactory_Access_Array is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array;
+   function "=" (Left, Right : GameKeyFactory_Access_Array) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype GameKeyFactory_Access_Array_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access;
+   function "=" (Left, Right : GameKeyFactory_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype GameKeyFactory_Access_Array_Access_Array is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : GameKeyFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype GameKeyFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameKeyFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype Input_Access is org.allbinary.game.input.Input_Package_References.Input_Access;
+   function "=" (Left, Right : Input_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array;
+   function "=" (Left, Right : Input_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array;
+   function "=" (Left, Right : Input_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    procedure Initialize_Fields (This : in out InputToGameKeyMapping'Class) is
    begin
       null;
@@ -69,7 +129,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
       index : Integer;
    begin
         for index in reverse 0 .. (This.platformToGameKeyMapping'Length) - (1) loop
-            This.platformToGameKeyMapping (index) := This.gameKeyFactory.NONE;
+            This.platformToGameKeyMapping (index) := GameKey_Access (This.gameKeyFactory.NONE);
         end loop;
    end clear;
 
@@ -210,7 +270,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
                 negativePlatformToGameKeyMapping := new GameKey_Access_Array'(0 .. (-(smallestKey)) - 1 => null);
                 index := negativePlatformToGameKeyMapping'Length;
                 while (Java_Pre_Decrement (index)) >= (0) loop
-                    negativePlatformToGameKeyMapping (index) := This.gameKeyFactory.NONE;
+                    negativePlatformToGameKeyMapping (index) := GameKey_Access (This.gameKeyFactory.NONE);
                 end loop;
                 This.negativePlatformToGameKeyMapping := negativePlatformToGameKeyMapping;
             end if;
@@ -236,7 +296,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         elsif ((id) < (0)) and then ((-(id)) < (This.negativePlatformToGameKeyMapping'Length)) then
             return This.negativePlatformToGameKeyMapping (-(id));
         else
-            return This.gameKeyFactory.NONE;
+            return GameKey_Access (This.gameKeyFactory.NONE);
         end if;
    end getInstanceForCanvas;
 
@@ -247,7 +307,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         elsif ((id) < (0)) and then ((-(id)) < (This.negativePlatformToGameKeyMapping'Length)) then
             return This.negativePlatformToGameKeyMapping (-(id));
         else
-            return This.gameKeyFactory.NONE;
+            return GameKey_Access (This.gameKeyFactory.NONE);
         end if;
    end getInstance;
 

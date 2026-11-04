@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.button.TouchButtonResource_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Package is
 
@@ -24,7 +25,7 @@ package body org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Packa
 
    function getInstance return TouchButtonResource_Access is
    begin
-        return TouchButtonTurnLeftResource_Package.instance;
+        return TouchButtonResource_Access (TouchButtonTurnLeftResource_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out TouchButtonTurnLeftResource'Class) is

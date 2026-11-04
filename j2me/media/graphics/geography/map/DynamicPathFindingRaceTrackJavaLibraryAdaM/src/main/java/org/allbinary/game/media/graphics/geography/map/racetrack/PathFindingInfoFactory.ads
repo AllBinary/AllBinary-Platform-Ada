@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package;
+package org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References is
+   type PathFindingInfoFactory_Access is access all org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package.PathFindingInfoFactory'Class;
+   type PathFindingInfoFactory_Access_Array is array (Natural range <>) of PathFindingInfoFactory_Access;
+   type PathFindingInfoFactory_Access_Array_Access is access all PathFindingInfoFactory_Access_Array;
+   type PathFindingInfoFactory_Access_Array_Access_Array is array (Natural range <>) of PathFindingInfoFactory_Access_Array_Access;
+   type PathFindingInfoFactory_Access_Array_Access_Array_Access is access all PathFindingInfoFactory_Access_Array_Access_Array;
+end org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References;
+
+with org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+limited with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.BasePathFindingInfoFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.BasePathFindingInfoFactory_Package;
-with org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapGraph_Package; use org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapGraph_Package;
-with org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package; use org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+limited with org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapGraph_Package;
+with org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapGraph_Package_References;
+limited with org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package;
+with org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package_References;
+limited with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References;
+limited with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References;
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package is
 
@@ -37,13 +53,81 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInf
    package BasicGeographicMapPathFinder_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package;
    package PathFinderGraphVisitorFactoryBase_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package;
    package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+   package Reference_Types is
+   subtype BasicGeographicMap_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access;
+   use type BasicGeographicMap_Access;
+   subtype BasicGeographicMap_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array;
+   use type BasicGeographicMap_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access;
+   subtype BasicGeographicMap_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array;
+   use type BasicGeographicMap_Access_Array_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access;
+   use type GeographicMapCellPosition_Access;
+   subtype GeographicMapCellPosition_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array;
+   use type GeographicMapCellPosition_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
+   use type GeographicMapCellPosition_Access_Array_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   subtype BasicGeographicMapGraph_Access is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapGraph_Package_References.BasicGeographicMapGraph_Access;
+   use type BasicGeographicMapGraph_Access;
+   subtype BasicGeographicMapGraph_Access_Array is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapGraph_Package_References.BasicGeographicMapGraph_Access_Array;
+   use type BasicGeographicMapGraph_Access_Array;
+   subtype BasicGeographicMapGraph_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapGraph_Package_References.BasicGeographicMapGraph_Access_Array_Access;
+   use type BasicGeographicMapGraph_Access_Array_Access;
+   subtype BasicGeographicMapGraph_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapGraph_Package_References.BasicGeographicMapGraph_Access_Array_Access_Array;
+   use type BasicGeographicMapGraph_Access_Array_Access_Array;
+   subtype BasicGeographicMapGraph_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapGraph_Package_References.BasicGeographicMapGraph_Access_Array_Access_Array_Access;
+   use type BasicGeographicMapGraph_Access_Array_Access_Array_Access;
+   subtype BasicGeographicMapPathFinder_Access is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package_References.BasicGeographicMapPathFinder_Access;
+   use type BasicGeographicMapPathFinder_Access;
+   subtype BasicGeographicMapPathFinder_Access_Array is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package_References.BasicGeographicMapPathFinder_Access_Array;
+   use type BasicGeographicMapPathFinder_Access_Array;
+   subtype BasicGeographicMapPathFinder_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package_References.BasicGeographicMapPathFinder_Access_Array_Access;
+   use type BasicGeographicMapPathFinder_Access_Array_Access;
+   subtype BasicGeographicMapPathFinder_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package_References.BasicGeographicMapPathFinder_Access_Array_Access_Array;
+   use type BasicGeographicMapPathFinder_Access_Array_Access_Array;
+   subtype BasicGeographicMapPathFinder_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapPathFinder_Package_References.BasicGeographicMapPathFinder_Access_Array_Access_Array_Access;
+   use type BasicGeographicMapPathFinder_Access_Array_Access_Array_Access;
+   subtype PathFinderGraphVisitorFactoryBase_Access is org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.PathFinderGraphVisitorFactoryBase_Access;
+   use type PathFinderGraphVisitorFactoryBase_Access;
+   subtype PathFinderGraphVisitorFactoryBase_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.PathFinderGraphVisitorFactoryBase_Access_Array;
+   use type PathFinderGraphVisitorFactoryBase_Access_Array;
+   subtype PathFinderGraphVisitorFactoryBase_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.PathFinderGraphVisitorFactoryBase_Access_Array_Access;
+   use type PathFinderGraphVisitorFactoryBase_Access_Array_Access;
+   subtype PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array;
+   use type PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array;
+   subtype PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access;
+   use type PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access;
+   subtype PathFindingInfo_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References.PathFindingInfo_Access;
+   use type PathFindingInfo_Access;
+   subtype PathFindingInfo_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References.PathFindingInfo_Access_Array;
+   use type PathFindingInfo_Access_Array;
+   subtype PathFindingInfo_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References.PathFindingInfo_Access_Array_Access;
+   use type PathFindingInfo_Access_Array_Access;
+   subtype PathFindingInfo_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References.PathFindingInfo_Access_Array_Access_Array;
+   use type PathFindingInfo_Access_Array_Access_Array;
+   subtype PathFindingInfo_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References.PathFindingInfo_Access_Array_Access_Array_Access;
+   use type PathFindingInfo_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PathFindingInfoFactory is tagged;
-   type PathFindingInfoFactory_Access is access all PathFindingInfoFactory'Class;
-   type PathFindingInfoFactory_Access_Array is array (Natural range <>) of PathFindingInfoFactory_Access;
-   type PathFindingInfoFactory_Access_Array_Access is access all PathFindingInfoFactory_Access_Array;
-   type PathFindingInfoFactory_Access_Array_Access_Array is array (Natural range <>) of PathFindingInfoFactory_Access_Array_Access;
-   type PathFindingInfoFactory_Access_Array_Access_Array_Access is access all PathFindingInfoFactory_Access_Array_Access_Array;
+
+   subtype PathFindingInfoFactory_Access is org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References.PathFindingInfoFactory_Access;
+   function "=" (Left, Right : PathFindingInfoFactory_Access) return Boolean renames org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References."=";
+   subtype PathFindingInfoFactory_Access_Array is org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References.PathFindingInfoFactory_Access_Array;
+   function "=" (Left, Right : PathFindingInfoFactory_Access_Array) return Boolean renames org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References."=";
+   subtype PathFindingInfoFactory_Access_Array_Access is org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References.PathFindingInfoFactory_Access_Array_Access;
+   function "=" (Left, Right : PathFindingInfoFactory_Access_Array_Access) return Boolean renames org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References."=";
+   subtype PathFindingInfoFactory_Access_Array_Access_Array is org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References.PathFindingInfoFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PathFindingInfoFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References."=";
+   subtype PathFindingInfoFactory_Access_Array_Access_Array_Access is org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References.PathFindingInfoFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PathFindingInfoFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package_References."=";
 
    type PathFindingInfoFactory is new BasePathFindingInfoFactory with record
       MAX_DIRECTIONS : Integer;

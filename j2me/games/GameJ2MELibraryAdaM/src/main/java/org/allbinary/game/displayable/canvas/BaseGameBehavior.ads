@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.displayable.canvas.BaseGameBehavior_Package;
+package org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References is
+   type BaseGameBehavior_Access is access all org.allbinary.game.displayable.canvas.BaseGameBehavior_Package.BaseGameBehavior'Class;
+   type BaseGameBehavior_Access_Array is array (Natural range <>) of BaseGameBehavior_Access;
+   type BaseGameBehavior_Access_Array_Access is access all BaseGameBehavior_Access_Array;
+   type BaseGameBehavior_Access_Array_Access_Array is array (Natural range <>) of BaseGameBehavior_Access_Array_Access;
+   type BaseGameBehavior_Access_Array_Access_Array_Access is access all BaseGameBehavior_Access_Array_Access_Array;
+end org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References;
+
+with org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package; use org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
-with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+limited with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References;
 
 package org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
 
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype AllBinaryGameCanvas_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access;
+   use type AllBinaryGameCanvas_Access;
+   subtype AllBinaryGameCanvas_Access_Array is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array;
+   use type AllBinaryGameCanvas_Access_Array;
+   subtype AllBinaryGameCanvas_Access_Array_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access;
+   use type AllBinaryGameCanvas_Access_Array_Access;
+   subtype AllBinaryGameCanvas_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access_Array;
+   use type AllBinaryGameCanvas_Access_Array_Access_Array;
+   subtype AllBinaryGameCanvas_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access_Array_Access;
+   use type AllBinaryGameCanvas_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BaseGameBehavior is tagged;
-   type BaseGameBehavior_Access is access all BaseGameBehavior'Class;
-   type BaseGameBehavior_Access_Array is array (Natural range <>) of BaseGameBehavior_Access;
-   type BaseGameBehavior_Access_Array_Access is access all BaseGameBehavior_Access_Array;
-   type BaseGameBehavior_Access_Array_Access_Array is array (Natural range <>) of BaseGameBehavior_Access_Array_Access;
-   type BaseGameBehavior_Access_Array_Access_Array_Access is access all BaseGameBehavior_Access_Array_Access_Array;
+
+   subtype BaseGameBehavior_Access is org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References.BaseGameBehavior_Access;
+   function "=" (Left, Right : BaseGameBehavior_Access) return Boolean renames org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References."=";
+   subtype BaseGameBehavior_Access_Array is org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References.BaseGameBehavior_Access_Array;
+   function "=" (Left, Right : BaseGameBehavior_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References."=";
+   subtype BaseGameBehavior_Access_Array_Access is org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References.BaseGameBehavior_Access_Array_Access;
+   function "=" (Left, Right : BaseGameBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References."=";
+   subtype BaseGameBehavior_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References.BaseGameBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseGameBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References."=";
+   subtype BaseGameBehavior_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References.BaseGameBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseGameBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.BaseGameBehavior_Package_References."=";
 
    type BaseGameBehavior is new DemoGameBehavior with null record;
    instanceC : BaseGameBehavior_Access;

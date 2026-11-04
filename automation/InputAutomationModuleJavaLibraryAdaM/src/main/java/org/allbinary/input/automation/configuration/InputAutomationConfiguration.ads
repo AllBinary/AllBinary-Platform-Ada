@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
+package org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References is
+   type InputAutomationConfiguration_Access is access all org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package.InputAutomationConfiguration'Class;
+   type InputAutomationConfiguration_Access_Array is array (Natural range <>) of InputAutomationConfiguration_Access;
+   type InputAutomationConfiguration_Access_Array_Access is access all InputAutomationConfiguration_Access_Array;
+   type InputAutomationConfiguration_Access_Array_Access_Array is array (Natural range <>) of InputAutomationConfiguration_Access_Array_Access;
+   type InputAutomationConfiguration_Access_Array_Access_Array_Access is access all InputAutomationConfiguration_Access_Array_Access_Array;
+end org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References;
+
+with org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -29,19 +39,38 @@ with java.io.File_Package; use java.io.File_Package;
 --  with javax.xml.bind.annotation.XmlElement_Package; use javax.xml.bind.annotation.XmlElement_Package;
 --  with javax.xml.bind.annotation.XmlRootElement_Package; use javax.xml.bind.annotation.XmlRootElement_Package;
 --  with javax.xml.bind.annotation.XmlType_Package; use javax.xml.bind.annotation.XmlType_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package is
 
    package File_Package renames Standard.java.io.File_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputAutomationConfiguration is tagged;
-   type InputAutomationConfiguration_Access is access all InputAutomationConfiguration'Class;
-   type InputAutomationConfiguration_Access_Array is array (Natural range <>) of InputAutomationConfiguration_Access;
-   type InputAutomationConfiguration_Access_Array_Access is access all InputAutomationConfiguration_Access_Array;
-   type InputAutomationConfiguration_Access_Array_Access_Array is array (Natural range <>) of InputAutomationConfiguration_Access_Array_Access;
-   type InputAutomationConfiguration_Access_Array_Access_Array_Access is access all InputAutomationConfiguration_Access_Array_Access_Array;
+
+   subtype InputAutomationConfiguration_Access is org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References.InputAutomationConfiguration_Access;
+   function "=" (Left, Right : InputAutomationConfiguration_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References."=";
+   subtype InputAutomationConfiguration_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References.InputAutomationConfiguration_Access_Array;
+   function "=" (Left, Right : InputAutomationConfiguration_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References."=";
+   subtype InputAutomationConfiguration_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References.InputAutomationConfiguration_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationConfiguration_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References."=";
+   subtype InputAutomationConfiguration_Access_Array_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References.InputAutomationConfiguration_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationConfiguration_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References."=";
+   subtype InputAutomationConfiguration_Access_Array_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References.InputAutomationConfiguration_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationConfiguration_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package_References."=";
 
    type InputAutomationConfiguration is new Java_Object with record
       logUtil : LogUtil_Access;

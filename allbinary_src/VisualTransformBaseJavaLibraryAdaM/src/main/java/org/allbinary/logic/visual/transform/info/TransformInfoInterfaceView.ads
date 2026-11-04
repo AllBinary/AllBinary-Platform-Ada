@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package;
+package org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References is
+   type TransformInfoInterfaceView_Access is access all org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package.TransformInfoInterfaceView'Class;
+   type TransformInfoInterfaceView_Access_Array is array (Natural range <>) of TransformInfoInterfaceView_Access;
+   type TransformInfoInterfaceView_Access_Array_Access is access all TransformInfoInterfaceView_Access_Array;
+   type TransformInfoInterfaceView_Access_Array_Access_Array is array (Natural range <>) of TransformInfoInterfaceView_Access_Array_Access;
+   type TransformInfoInterfaceView_Access_Array_Access_Array_Access is access all TransformInfoInterfaceView_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References;
+
+with org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,22 +31,63 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package is
 
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransformInfoInterfaceView is tagged;
-   type TransformInfoInterfaceView_Access is access all TransformInfoInterfaceView'Class;
-   type TransformInfoInterfaceView_Access_Array is array (Natural range <>) of TransformInfoInterfaceView_Access;
-   type TransformInfoInterfaceView_Access_Array_Access is access all TransformInfoInterfaceView_Access_Array;
-   type TransformInfoInterfaceView_Access_Array_Access_Array is array (Natural range <>) of TransformInfoInterfaceView_Access_Array_Access;
-   type TransformInfoInterfaceView_Access_Array_Access_Array_Access is access all TransformInfoInterfaceView_Access_Array_Access_Array;
+
+   subtype TransformInfoInterfaceView_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References.TransformInfoInterfaceView_Access;
+   function "=" (Left, Right : TransformInfoInterfaceView_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References."=";
+   subtype TransformInfoInterfaceView_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References.TransformInfoInterfaceView_Access_Array;
+   function "=" (Left, Right : TransformInfoInterfaceView_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References."=";
+   subtype TransformInfoInterfaceView_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References.TransformInfoInterfaceView_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoInterfaceView_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References."=";
+   subtype TransformInfoInterfaceView_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References.TransformInfoInterfaceView_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoInterfaceView_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References."=";
+   subtype TransformInfoInterfaceView_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References.TransformInfoInterfaceView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoInterfaceView_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package_References."=";
 
    type TransformInfoInterfaceView is new Java_Object and DomNodeInterface with record
       transformInfoInterface : TransformInfoInterface_Access;

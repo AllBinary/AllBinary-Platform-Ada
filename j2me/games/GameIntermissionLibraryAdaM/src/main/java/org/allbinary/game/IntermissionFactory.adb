@@ -13,11 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
+with org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameStateFactory_Package;
 
 package body org.allbinary.game.IntermissionFactory_Package is
 
    package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
+   subtype GameState_Access is org.allbinary.game.state.GameState_Package_References.GameState_Access;
+   function "=" (Left, Right : GameState_Access) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
+   subtype GameState_Access_Array is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array;
+   function "=" (Left, Right : GameState_Access_Array) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
+   subtype GameState_Access_Array_Access is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array_Access;
+   function "=" (Left, Right : GameState_Access_Array_Access) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
+   subtype GameState_Access_Array_Access_Array is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array_Access_Array;
+   function "=" (Left, Right : GameState_Access_Array_Access_Array) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
+   subtype GameState_Access_Array_Access_Array_Access is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameState_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
    procedure Initialize_Fields (This : in out IntermissionFactory'Class) is
    begin
       null;
@@ -42,7 +55,7 @@ package body org.allbinary.game.IntermissionFactory_Package is
 
    function getInstance return IntermissionFactory_Access is
    begin
-        return IntermissionFactory_Package.instance;
+        return IntermissionFactory_Access (IntermissionFactory_Package.instance);
    end getInstance;
 
 begin

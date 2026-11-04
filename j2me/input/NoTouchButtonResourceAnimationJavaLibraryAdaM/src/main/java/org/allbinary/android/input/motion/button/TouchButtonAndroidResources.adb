@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
 
 package body org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package is
 

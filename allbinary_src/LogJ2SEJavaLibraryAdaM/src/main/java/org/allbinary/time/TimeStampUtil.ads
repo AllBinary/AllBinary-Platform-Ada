@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.time.TimeStampUtil_Package;
+package org.allbinary.time.TimeStampUtil_Package_References is
+   type TimeStampUtil_Access is access all org.allbinary.time.TimeStampUtil_Package.TimeStampUtil'Class;
+   type TimeStampUtil_Access_Array is array (Natural range <>) of TimeStampUtil_Access;
+   type TimeStampUtil_Access_Array_Access is access all TimeStampUtil_Access_Array;
+   type TimeStampUtil_Access_Array_Access_Array is array (Natural range <>) of TimeStampUtil_Access_Array_Access;
+   type TimeStampUtil_Access_Array_Access_Array_Access is access all TimeStampUtil_Access_Array_Access_Array;
+end org.allbinary.time.TimeStampUtil_Package_References;
+
+with org.allbinary.time.TimeStampUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with java.text.SimpleDateFormat_Package; use java.text.SimpleDateFormat_Package;
 package org.allbinary.time.TimeStampUtil_Package is
 
    package SimpleDateFormat_Package renames Standard.java.text.SimpleDateFormat_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TimeStampUtil is tagged;
-   type TimeStampUtil_Access is access all TimeStampUtil'Class;
-   type TimeStampUtil_Access_Array is array (Natural range <>) of TimeStampUtil_Access;
-   type TimeStampUtil_Access_Array_Access is access all TimeStampUtil_Access_Array;
-   type TimeStampUtil_Access_Array_Access_Array is array (Natural range <>) of TimeStampUtil_Access_Array_Access;
-   type TimeStampUtil_Access_Array_Access_Array_Access is access all TimeStampUtil_Access_Array_Access_Array;
+
+   subtype TimeStampUtil_Access is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access;
+   function "=" (Left, Right : TimeStampUtil_Access) return Boolean renames org.allbinary.time.TimeStampUtil_Package_References."=";
+   subtype TimeStampUtil_Access_Array is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access_Array;
+   function "=" (Left, Right : TimeStampUtil_Access_Array) return Boolean renames org.allbinary.time.TimeStampUtil_Package_References."=";
+   subtype TimeStampUtil_Access_Array_Access is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access_Array_Access;
+   function "=" (Left, Right : TimeStampUtil_Access_Array_Access) return Boolean renames org.allbinary.time.TimeStampUtil_Package_References."=";
+   subtype TimeStampUtil_Access_Array_Access_Array is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : TimeStampUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.time.TimeStampUtil_Package_References."=";
+   subtype TimeStampUtil_Access_Array_Access_Array_Access is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TimeStampUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.time.TimeStampUtil_Package_References."=";
 
    type TimeStampUtil is new Java_Object with record
       simpleDataFormat : SimpleDateFormat_Access;

@@ -14,9 +14,23 @@
 
 
 with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
+with org.allbinary.logic.system.security.licensing.LicenseType_Package;
 
 package body org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_Package is
 
+   subtype AbeLicenseInterface_Access is org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.AbeLicenseInterface_Access;
+   function "=" (Left, Right : AbeLicenseInterface_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=";
+   subtype AbeLicenseInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.AbeLicenseInterface_Access_Array;
+   function "=" (Left, Right : AbeLicenseInterface_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=";
+   subtype AbeLicenseInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.AbeLicenseInterface_Access_Array_Access;
+   function "=" (Left, Right : AbeLicenseInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=";
+   subtype AbeLicenseInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.AbeLicenseInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AbeLicenseInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=";
+   subtype AbeLicenseInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.AbeLicenseInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbeLicenseInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=";
    procedure Initialize_Fields (This : in out LicenseInterfaceSingleton'Class) is
    begin
       null;

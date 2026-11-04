@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.tags.UpdateOrderTag_Package;
+package admin.tags.UpdateOrderTag_Package_References is
+   type UpdateOrderTag_Access is access all admin.tags.UpdateOrderTag_Package.UpdateOrderTag'Class;
+   type UpdateOrderTag_Access_Array is array (Natural range <>) of UpdateOrderTag_Access;
+   type UpdateOrderTag_Access_Array_Access is access all UpdateOrderTag_Access_Array;
+   type UpdateOrderTag_Access_Array_Access_Array is array (Natural range <>) of UpdateOrderTag_Access_Array_Access;
+   type UpdateOrderTag_Access_Array_Access_Array_Access is access all UpdateOrderTag_Access_Array_Access_Array;
+end admin.tags.UpdateOrderTag_Package_References;
+
+with admin.tags.UpdateOrderTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.UpdateOrderTag_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type UpdateOrderTag is tagged;
-   type UpdateOrderTag_Access is access all UpdateOrderTag'Class;
-   type UpdateOrderTag_Access_Array is array (Natural range <>) of UpdateOrderTag_Access;
-   type UpdateOrderTag_Access_Array_Access is access all UpdateOrderTag_Access_Array;
-   type UpdateOrderTag_Access_Array_Access_Array is array (Natural range <>) of UpdateOrderTag_Access_Array_Access;
-   type UpdateOrderTag_Access_Array_Access_Array_Access is access all UpdateOrderTag_Access_Array_Access_Array;
+
+   subtype UpdateOrderTag_Access is admin.tags.UpdateOrderTag_Package_References.UpdateOrderTag_Access;
+   function "=" (Left, Right : UpdateOrderTag_Access) return Boolean renames admin.tags.UpdateOrderTag_Package_References."=";
+   subtype UpdateOrderTag_Access_Array is admin.tags.UpdateOrderTag_Package_References.UpdateOrderTag_Access_Array;
+   function "=" (Left, Right : UpdateOrderTag_Access_Array) return Boolean renames admin.tags.UpdateOrderTag_Package_References."=";
+   subtype UpdateOrderTag_Access_Array_Access is admin.tags.UpdateOrderTag_Package_References.UpdateOrderTag_Access_Array_Access;
+   function "=" (Left, Right : UpdateOrderTag_Access_Array_Access) return Boolean renames admin.tags.UpdateOrderTag_Package_References."=";
+   subtype UpdateOrderTag_Access_Array_Access_Array is admin.tags.UpdateOrderTag_Package_References.UpdateOrderTag_Access_Array_Access_Array;
+   function "=" (Left, Right : UpdateOrderTag_Access_Array_Access_Array) return Boolean renames admin.tags.UpdateOrderTag_Package_References."=";
+   subtype UpdateOrderTag_Access_Array_Access_Array_Access is admin.tags.UpdateOrderTag_Package_References.UpdateOrderTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UpdateOrderTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.UpdateOrderTag_Package_References."=";
 
    type UpdateOrderTag is new TableTag with null record;
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.math.FrameUtil_Package;
+package org.allbinary.math.FrameUtil_Package_References is
+   type FrameUtil_Access is access all org.allbinary.math.FrameUtil_Package.FrameUtil'Class;
+   type FrameUtil_Access_Array is array (Natural range <>) of FrameUtil_Access;
+   type FrameUtil_Access_Array_Access is access all FrameUtil_Access_Array;
+   type FrameUtil_Access_Array_Access_Array is array (Natural range <>) of FrameUtil_Access_Array_Access;
+   type FrameUtil_Access_Array_Access_Array_Access is access all FrameUtil_Access_Array_Access_Array;
+end org.allbinary.math.FrameUtil_Package_References;
+
+with org.allbinary.math.FrameUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.math.FrameUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type FrameUtil is tagged;
-   type FrameUtil_Access is access all FrameUtil'Class;
-   type FrameUtil_Access_Array is array (Natural range <>) of FrameUtil_Access;
-   type FrameUtil_Access_Array_Access is access all FrameUtil_Access_Array;
-   type FrameUtil_Access_Array_Access_Array is array (Natural range <>) of FrameUtil_Access_Array_Access;
-   type FrameUtil_Access_Array_Access_Array_Access is access all FrameUtil_Access_Array_Access_Array;
+
+   subtype FrameUtil_Access is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access;
+   function "=" (Left, Right : FrameUtil_Access) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   subtype FrameUtil_Access_Array is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array;
+   function "=" (Left, Right : FrameUtil_Access_Array) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   subtype FrameUtil_Access_Array_Access is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array_Access;
+   function "=" (Left, Right : FrameUtil_Access_Array_Access) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   subtype FrameUtil_Access_Array_Access_Array is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : FrameUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   subtype FrameUtil_Access_Array_Access_Array_Access is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FrameUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
 
    type FrameUtil is new Java_Object with null record;
    instance : FrameUtil_Access;

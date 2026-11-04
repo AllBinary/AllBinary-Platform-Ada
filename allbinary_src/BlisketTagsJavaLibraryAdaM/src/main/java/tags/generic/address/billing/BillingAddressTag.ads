@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.generic_Id.address.billing.BillingAddressTag_Package;
+package tags.generic_Id.address.billing.BillingAddressTag_Package_References is
+   type BillingAddressTag_Access is access all tags.generic_Id.address.billing.BillingAddressTag_Package.BillingAddressTag'Class;
+   type BillingAddressTag_Access_Array is array (Natural range <>) of BillingAddressTag_Access;
+   type BillingAddressTag_Access_Array_Access is access all BillingAddressTag_Access_Array;
+   type BillingAddressTag_Access_Array_Access_Array is array (Natural range <>) of BillingAddressTag_Access_Array_Access;
+   type BillingAddressTag_Access_Array_Access_Array_Access is access all BillingAddressTag_Access_Array_Access_Array;
+end tags.generic_Id.address.billing.BillingAddressTag_Package_References;
+
+with tags.generic_Id.address.billing.BillingAddressTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 package tags.generic_Id.address.billing.BillingAddressTag_Package is
 
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BillingAddressTag is tagged;
-   type BillingAddressTag_Access is access all BillingAddressTag'Class;
-   type BillingAddressTag_Access_Array is array (Natural range <>) of BillingAddressTag_Access;
-   type BillingAddressTag_Access_Array_Access is access all BillingAddressTag_Access_Array;
-   type BillingAddressTag_Access_Array_Access_Array is array (Natural range <>) of BillingAddressTag_Access_Array_Access;
-   type BillingAddressTag_Access_Array_Access_Array_Access is access all BillingAddressTag_Access_Array_Access_Array;
+
+   subtype BillingAddressTag_Access is tags.generic_Id.address.billing.BillingAddressTag_Package_References.BillingAddressTag_Access;
+   function "=" (Left, Right : BillingAddressTag_Access) return Boolean renames tags.generic_Id.address.billing.BillingAddressTag_Package_References."=";
+   subtype BillingAddressTag_Access_Array is tags.generic_Id.address.billing.BillingAddressTag_Package_References.BillingAddressTag_Access_Array;
+   function "=" (Left, Right : BillingAddressTag_Access_Array) return Boolean renames tags.generic_Id.address.billing.BillingAddressTag_Package_References."=";
+   subtype BillingAddressTag_Access_Array_Access is tags.generic_Id.address.billing.BillingAddressTag_Package_References.BillingAddressTag_Access_Array_Access;
+   function "=" (Left, Right : BillingAddressTag_Access_Array_Access) return Boolean renames tags.generic_Id.address.billing.BillingAddressTag_Package_References."=";
+   subtype BillingAddressTag_Access_Array_Access_Array is tags.generic_Id.address.billing.BillingAddressTag_Package_References.BillingAddressTag_Access_Array_Access_Array;
+   function "=" (Left, Right : BillingAddressTag_Access_Array_Access_Array) return Boolean renames tags.generic_Id.address.billing.BillingAddressTag_Package_References."=";
+   subtype BillingAddressTag_Access_Array_Access_Array_Access is tags.generic_Id.address.billing.BillingAddressTag_Package_References.BillingAddressTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BillingAddressTag_Access_Array_Access_Array_Access) return Boolean renames tags.generic_Id.address.billing.BillingAddressTag_Package_References."=";
 
    type BillingAddressTag is new StoreValidationTransformTag with null record;
 

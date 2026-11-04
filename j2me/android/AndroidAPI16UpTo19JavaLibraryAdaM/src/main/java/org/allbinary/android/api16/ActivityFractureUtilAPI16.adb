@@ -13,11 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.Activity_Package; use android.app.Activity_Package;
 with android.view.View_Package; use android.view.View_Package;
+with org.allbinary.android.api5.ActivityFractureUtilAPI5_Package; use org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
 
 package body org.allbinary.android.api16.ActivityFractureUtilAPI16_Package is
 
    package View_Package renames Standard.android.view.View_Package;
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   function "=" (Left, Right : Activity_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
    procedure Initialize_Fields (This : in out ActivityFractureUtilAPI16'Class) is
    begin
       null;
@@ -39,7 +51,7 @@ package body org.allbinary.android.api16.ActivityFractureUtilAPI16_Package is
 
    function getInstance return ActivityFractureUtilAPI16_Access is
    begin
-        return ActivityFractureUtilAPI16_Package.instance16;
+        return ActivityFractureUtilAPI16_Access (ActivityFractureUtilAPI16_Package.instance16);
    end getInstance;
 
    procedure setFullScreen (This : in out ActivityFractureUtilAPI16; activity_Param : access Activity_Package.Activity'Class) is

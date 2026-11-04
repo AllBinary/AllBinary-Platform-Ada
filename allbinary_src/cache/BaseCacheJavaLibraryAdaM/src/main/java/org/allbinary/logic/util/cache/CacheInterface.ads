@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.util.cache.CacheInterface_Package;
+package org.allbinary.logic.util.cache.CacheInterface_Package_References is
+   type CacheInterface_Access is access all org.allbinary.logic.util.cache.CacheInterface_Package.CacheInterface'Class;
+   type CacheInterface_Access_Array is array (Natural range <>) of CacheInterface_Access;
+   type CacheInterface_Access_Array_Access is access all CacheInterface_Access_Array;
+   type CacheInterface_Access_Array_Access_Array is array (Natural range <>) of CacheInterface_Access_Array_Access;
+   type CacheInterface_Access_Array_Access_Array_Access is access all CacheInterface_Access_Array_Access_Array;
+end org.allbinary.logic.util.cache.CacheInterface_Package_References;
+
+with org.allbinary.logic.util.cache.CacheInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+limited with org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
 
 package org.allbinary.logic.util.cache.CacheInterface_Package is
 
+   package Reference_Types is
+   subtype CacheableInterface_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access;
+   use type CacheableInterface_Access;
+   subtype CacheableInterface_Access_Array is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array;
+   use type CacheableInterface_Access_Array;
+   subtype CacheableInterface_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access;
+   use type CacheableInterface_Access_Array_Access;
+   subtype CacheableInterface_Access_Array_Access_Array is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access_Array;
+   use type CacheableInterface_Access_Array_Access_Array;
+   subtype CacheableInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access_Array_Access;
+   use type CacheableInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type CacheInterface is interface;
-   type CacheInterface_Access is access all CacheInterface'Class;
-   type CacheInterface_Access_Array is array (Natural range <>) of CacheInterface_Access;
-   type CacheInterface_Access_Array_Access is access all CacheInterface_Access_Array;
-   type CacheInterface_Access_Array_Access_Array is array (Natural range <>) of CacheInterface_Access_Array_Access;
-   type CacheInterface_Access_Array_Access_Array_Access is access all CacheInterface_Access_Array_Access_Array;
+   subtype CacheInterface_Access is org.allbinary.logic.util.cache.CacheInterface_Package_References.CacheInterface_Access;
+   function "=" (Left, Right : CacheInterface_Access) return Boolean renames org.allbinary.logic.util.cache.CacheInterface_Package_References."=";
+   subtype CacheInterface_Access_Array is org.allbinary.logic.util.cache.CacheInterface_Package_References.CacheInterface_Access_Array;
+   function "=" (Left, Right : CacheInterface_Access_Array) return Boolean renames org.allbinary.logic.util.cache.CacheInterface_Package_References."=";
+   subtype CacheInterface_Access_Array_Access is org.allbinary.logic.util.cache.CacheInterface_Package_References.CacheInterface_Access_Array_Access;
+   function "=" (Left, Right : CacheInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CacheInterface_Package_References."=";
+   subtype CacheInterface_Access_Array_Access_Array is org.allbinary.logic.util.cache.CacheInterface_Package_References.CacheInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CacheInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.CacheInterface_Package_References."=";
+   subtype CacheInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.CacheInterface_Package_References.CacheInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CacheInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CacheInterface_Package_References."=";
+   function Java_Object_Access_From_CacheInterface (Value : CacheInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure add (This : in out CacheInterface; cacheableInterface_Param : access CacheableInterface_Package.CacheableInterface'Class) is abstract;
    procedure addArray (This : in out CacheInterface; cacheableInterfaces : CacheableInterface_Access_Array_Access) is abstract;
    procedure clear (This : in out CacheInterface) is abstract;

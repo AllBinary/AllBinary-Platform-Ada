@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.admin.inventory.DownloadItemTag_Package;
+package tags.admin.inventory.DownloadItemTag_Package_References is
+   type DownloadItemTag_Access is access all tags.admin.inventory.DownloadItemTag_Package.DownloadItemTag'Class;
+   type DownloadItemTag_Access_Array is array (Natural range <>) of DownloadItemTag_Access;
+   type DownloadItemTag_Access_Array_Access is access all DownloadItemTag_Access_Array;
+   type DownloadItemTag_Access_Array_Access_Array is array (Natural range <>) of DownloadItemTag_Access_Array_Access;
+   type DownloadItemTag_Access_Array_Access_Array_Access is access all DownloadItemTag_Access_Array_Access_Array;
+end tags.admin.inventory.DownloadItemTag_Package_References;
+
+with tags.admin.inventory.DownloadItemTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 package tags.admin.inventory.DownloadItemTag_Package is
 
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DownloadItemTag is tagged;
-   type DownloadItemTag_Access is access all DownloadItemTag'Class;
-   type DownloadItemTag_Access_Array is array (Natural range <>) of DownloadItemTag_Access;
-   type DownloadItemTag_Access_Array_Access is access all DownloadItemTag_Access_Array;
-   type DownloadItemTag_Access_Array_Access_Array is array (Natural range <>) of DownloadItemTag_Access_Array_Access;
-   type DownloadItemTag_Access_Array_Access_Array_Access is access all DownloadItemTag_Access_Array_Access_Array;
+
+   subtype DownloadItemTag_Access is tags.admin.inventory.DownloadItemTag_Package_References.DownloadItemTag_Access;
+   function "=" (Left, Right : DownloadItemTag_Access) return Boolean renames tags.admin.inventory.DownloadItemTag_Package_References."=";
+   subtype DownloadItemTag_Access_Array is tags.admin.inventory.DownloadItemTag_Package_References.DownloadItemTag_Access_Array;
+   function "=" (Left, Right : DownloadItemTag_Access_Array) return Boolean renames tags.admin.inventory.DownloadItemTag_Package_References."=";
+   subtype DownloadItemTag_Access_Array_Access is tags.admin.inventory.DownloadItemTag_Package_References.DownloadItemTag_Access_Array_Access;
+   function "=" (Left, Right : DownloadItemTag_Access_Array_Access) return Boolean renames tags.admin.inventory.DownloadItemTag_Package_References."=";
+   subtype DownloadItemTag_Access_Array_Access_Array is tags.admin.inventory.DownloadItemTag_Package_References.DownloadItemTag_Access_Array_Access_Array;
+   function "=" (Left, Right : DownloadItemTag_Access_Array_Access_Array) return Boolean renames tags.admin.inventory.DownloadItemTag_Package_References."=";
+   subtype DownloadItemTag_Access_Array_Access_Array_Access is tags.admin.inventory.DownloadItemTag_Package_References.DownloadItemTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DownloadItemTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.inventory.DownloadItemTag_Package_References."=";
 
    type DownloadItemTag is new StoreValidationTransformTag with null record;
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.media.MediaDataFactory_Package;
+package org.allbinary.logic.visual.media.MediaDataFactory_Package_References is
+   type MediaDataFactory_Access is access all org.allbinary.logic.visual.media.MediaDataFactory_Package.MediaDataFactory'Class;
+   type MediaDataFactory_Access_Array is array (Natural range <>) of MediaDataFactory_Access;
+   type MediaDataFactory_Access_Array_Access is access all MediaDataFactory_Access_Array;
+   type MediaDataFactory_Access_Array_Access_Array is array (Natural range <>) of MediaDataFactory_Access_Array_Access;
+   type MediaDataFactory_Access_Array_Access_Array_Access is access all MediaDataFactory_Access_Array_Access_Array;
+end org.allbinary.logic.visual.media.MediaDataFactory_Package_References;
+
+with org.allbinary.logic.visual.media.MediaDataFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.visual.media.MediaData_Package; use org.allbinary.logic.visual.media.MediaData_Package;
+limited with org.allbinary.logic.visual.media.MediaData_Package;
+with org.allbinary.logic.visual.media.MediaData_Package_References;
 
 package org.allbinary.logic.visual.media.MediaDataFactory_Package is
 
+   package Reference_Types is
+   subtype MediaData_Access is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access;
+   use type MediaData_Access;
+   subtype MediaData_Access_Array is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array;
+   use type MediaData_Access_Array;
+   subtype MediaData_Access_Array_Access is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array_Access;
+   use type MediaData_Access_Array_Access;
+   subtype MediaData_Access_Array_Access_Array is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array_Access_Array;
+   use type MediaData_Access_Array_Access_Array;
+   subtype MediaData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array_Access_Array_Access;
+   use type MediaData_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MediaDataFactory is tagged;
-   type MediaDataFactory_Access is access all MediaDataFactory'Class;
-   type MediaDataFactory_Access_Array is array (Natural range <>) of MediaDataFactory_Access;
-   type MediaDataFactory_Access_Array_Access is access all MediaDataFactory_Access_Array;
-   type MediaDataFactory_Access_Array_Access_Array is array (Natural range <>) of MediaDataFactory_Access_Array_Access;
-   type MediaDataFactory_Access_Array_Access_Array_Access is access all MediaDataFactory_Access_Array_Access_Array;
+
+   subtype MediaDataFactory_Access is org.allbinary.logic.visual.media.MediaDataFactory_Package_References.MediaDataFactory_Access;
+   function "=" (Left, Right : MediaDataFactory_Access) return Boolean renames org.allbinary.logic.visual.media.MediaDataFactory_Package_References."=";
+   subtype MediaDataFactory_Access_Array is org.allbinary.logic.visual.media.MediaDataFactory_Package_References.MediaDataFactory_Access_Array;
+   function "=" (Left, Right : MediaDataFactory_Access_Array) return Boolean renames org.allbinary.logic.visual.media.MediaDataFactory_Package_References."=";
+   subtype MediaDataFactory_Access_Array_Access is org.allbinary.logic.visual.media.MediaDataFactory_Package_References.MediaDataFactory_Access_Array_Access;
+   function "=" (Left, Right : MediaDataFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.media.MediaDataFactory_Package_References."=";
+   subtype MediaDataFactory_Access_Array_Access_Array is org.allbinary.logic.visual.media.MediaDataFactory_Package_References.MediaDataFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : MediaDataFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.media.MediaDataFactory_Package_References."=";
+   subtype MediaDataFactory_Access_Array_Access_Array_Access is org.allbinary.logic.visual.media.MediaDataFactory_Package_References.MediaDataFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MediaDataFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.media.MediaDataFactory_Package_References."=";
 
    type MediaDataFactory is new Java_Object with record
       AVI : MediaData_Access;

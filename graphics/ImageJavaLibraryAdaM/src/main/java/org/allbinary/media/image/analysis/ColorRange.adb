@@ -15,11 +15,23 @@
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.media.image.analysis.Color_Package; use org.allbinary.media.image.analysis.Color_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package;
 
 package body org.allbinary.media.image.analysis.ColorRange_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   subtype Color_Access is org.allbinary.media.image.analysis.Color_Package_References.Color_Access;
+   function "=" (Left, Right : Color_Access) return Boolean renames org.allbinary.media.image.analysis.Color_Package_References."=";
+   subtype Color_Access_Array is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array;
+   function "=" (Left, Right : Color_Access_Array) return Boolean renames org.allbinary.media.image.analysis.Color_Package_References."=";
+   subtype Color_Access_Array_Access is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array_Access_Array;
+   function "=" (Left, Right : Color_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.Color_Package_References."=";
    procedure Initialize_Fields (This : in out ColorRange'Class) is
    begin
       null;

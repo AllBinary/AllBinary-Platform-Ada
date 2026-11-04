@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References is
+   type BasicVelocityProperties_Access is access all org.allbinary.game.physics.velocity.BasicVelocityProperties_Package.BasicVelocityProperties'Class;
+   type BasicVelocityProperties_Access_Array is array (Natural range <>) of BasicVelocityProperties_Access;
+   type BasicVelocityProperties_Access_Array_Access is access all BasicVelocityProperties_Access_Array;
+   type BasicVelocityProperties_Access_Array_Access_Array is array (Natural range <>) of BasicVelocityProperties_Access_Array_Access;
+   type BasicVelocityProperties_Access_Array_Access_Array_Access is access all BasicVelocityProperties_Access_Array_Access_Array;
+end org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
+
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
-with org.allbinary.direction.DirectionUtil_Package; use org.allbinary.direction.DirectionUtil_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
-with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package; use org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
-with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+limited with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
+limited with org.allbinary.direction.DirectionUtil_Package;
+with org.allbinary.direction.DirectionUtil_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.math.BasicDecimal_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
+limited with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
+with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References;
+limited with org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
 with org.allbinary.game.physics.velocity.BasicVelocityInterface_Package; use org.allbinary.game.physics.velocity.BasicVelocityInterface_Package;
 
 package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package is
@@ -36,13 +52,81 @@ package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package is
    package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
    package AxisMathVectorUtil_Package renames Standard.org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
+   package Reference_Types is
+   subtype Direction_Access is org.allbinary.direction.Direction_Package_References.Direction_Access;
+   use type Direction_Access;
+   subtype Direction_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array;
+   use type Direction_Access_Array;
+   subtype Direction_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access;
+   use type Direction_Access_Array_Access;
+   subtype Direction_Access_Array_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array;
+   use type Direction_Access_Array_Access_Array;
+   subtype Direction_Access_Array_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array_Access;
+   use type Direction_Access_Array_Access_Array_Access;
+   subtype DirectionUtil_Access is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access;
+   use type DirectionUtil_Access;
+   subtype DirectionUtil_Access_Array is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access_Array;
+   use type DirectionUtil_Access_Array;
+   subtype DirectionUtil_Access_Array_Access is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access_Array_Access;
+   use type DirectionUtil_Access_Array_Access;
+   subtype DirectionUtil_Access_Array_Access_Array is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access_Array_Access_Array;
+   use type DirectionUtil_Access_Array_Access_Array;
+   subtype DirectionUtil_Access_Array_Access_Array_Access is org.allbinary.direction.DirectionUtil_Package_References.DirectionUtil_Access_Array_Access_Array_Access;
+   use type DirectionUtil_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype BasicDecimal_Access is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access;
+   use type BasicDecimal_Access;
+   subtype BasicDecimal_Access_Array is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array;
+   use type BasicDecimal_Access_Array;
+   subtype BasicDecimal_Access_Array_Access is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array_Access;
+   use type BasicDecimal_Access_Array_Access;
+   subtype BasicDecimal_Access_Array_Access_Array is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array_Access_Array;
+   use type BasicDecimal_Access_Array_Access_Array;
+   subtype BasicDecimal_Access_Array_Access_Array_Access is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array_Access_Array_Access;
+   use type BasicDecimal_Access_Array_Access_Array_Access;
+   subtype AxisMathVectorUtil_Access is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access;
+   use type AxisMathVectorUtil_Access;
+   subtype AxisMathVectorUtil_Access_Array is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access_Array;
+   use type AxisMathVectorUtil_Access_Array;
+   subtype AxisMathVectorUtil_Access_Array_Access is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access_Array_Access;
+   use type AxisMathVectorUtil_Access_Array_Access;
+   subtype AxisMathVectorUtil_Access_Array_Access_Array is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access_Array_Access_Array;
+   use type AxisMathVectorUtil_Access_Array_Access_Array;
+   subtype AxisMathVectorUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.vector.AxisMathVectorUtil_Package_References.AxisMathVectorUtil_Access_Array_Access_Array_Access;
+   use type AxisMathVectorUtil_Access_Array_Access_Array_Access;
+   subtype Angle_Access is org.allbinary.math.Angle_Package_References.Angle_Access;
+   use type Angle_Access;
+   subtype Angle_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array;
+   use type Angle_Access_Array;
+   subtype Angle_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access;
+   use type Angle_Access_Array_Access;
+   subtype Angle_Access_Array_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array;
+   use type Angle_Access_Array_Access_Array;
+   subtype Angle_Access_Array_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array_Access;
+   use type Angle_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicVelocityProperties is tagged;
-   type BasicVelocityProperties_Access is access all BasicVelocityProperties'Class;
-   type BasicVelocityProperties_Access_Array is array (Natural range <>) of BasicVelocityProperties_Access;
-   type BasicVelocityProperties_Access_Array_Access is access all BasicVelocityProperties_Access_Array;
-   type BasicVelocityProperties_Access_Array_Access_Array is array (Natural range <>) of BasicVelocityProperties_Access_Array_Access;
-   type BasicVelocityProperties_Access_Array_Access_Array_Access is access all BasicVelocityProperties_Access_Array_Access_Array;
+
+   subtype BasicVelocityProperties_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access;
+   function "=" (Left, Right : BasicVelocityProperties_Access) return Boolean renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References."=";
+   subtype BasicVelocityProperties_Access_Array is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array;
+   function "=" (Left, Right : BasicVelocityProperties_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References."=";
+   subtype BasicVelocityProperties_Access_Array_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access;
+   function "=" (Left, Right : BasicVelocityProperties_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References."=";
+   subtype BasicVelocityProperties_Access_Array_Access_Array is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicVelocityProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References."=";
+   subtype BasicVelocityProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicVelocityProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References."=";
 
    type BasicVelocityProperties is new Java_Object and BasicVelocityInterface with record
       logUtil : LogUtil_Access;

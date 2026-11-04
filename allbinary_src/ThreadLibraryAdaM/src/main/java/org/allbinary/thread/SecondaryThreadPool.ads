@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.thread.SecondaryThreadPool_Package;
+package org.allbinary.thread.SecondaryThreadPool_Package_References is
+   type SecondaryThreadPool_Access is access all org.allbinary.thread.SecondaryThreadPool_Package.SecondaryThreadPool'Class;
+   type SecondaryThreadPool_Access_Array is array (Natural range <>) of SecondaryThreadPool_Access;
+   type SecondaryThreadPool_Access_Array_Access is access all SecondaryThreadPool_Access_Array;
+   type SecondaryThreadPool_Access_Array_Access_Array is array (Natural range <>) of SecondaryThreadPool_Access_Array_Access;
+   type SecondaryThreadPool_Access_Array_Access_Array_Access is access all SecondaryThreadPool_Access_Array_Access_Array;
+end org.allbinary.thread.SecondaryThreadPool_Package_References;
+
+with org.allbinary.thread.SecondaryThreadPool_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.thread.SecondaryThreadPool_Package is
 
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SecondaryThreadPool is tagged;
-   type SecondaryThreadPool_Access is access all SecondaryThreadPool'Class;
-   type SecondaryThreadPool_Access_Array is array (Natural range <>) of SecondaryThreadPool_Access;
-   type SecondaryThreadPool_Access_Array_Access is access all SecondaryThreadPool_Access_Array;
-   type SecondaryThreadPool_Access_Array_Access_Array is array (Natural range <>) of SecondaryThreadPool_Access_Array_Access;
-   type SecondaryThreadPool_Access_Array_Access_Array_Access is access all SecondaryThreadPool_Access_Array_Access_Array;
+
+   subtype SecondaryThreadPool_Access is org.allbinary.thread.SecondaryThreadPool_Package_References.SecondaryThreadPool_Access;
+   function "=" (Left, Right : SecondaryThreadPool_Access) return Boolean renames org.allbinary.thread.SecondaryThreadPool_Package_References."=";
+   subtype SecondaryThreadPool_Access_Array is org.allbinary.thread.SecondaryThreadPool_Package_References.SecondaryThreadPool_Access_Array;
+   function "=" (Left, Right : SecondaryThreadPool_Access_Array) return Boolean renames org.allbinary.thread.SecondaryThreadPool_Package_References."=";
+   subtype SecondaryThreadPool_Access_Array_Access is org.allbinary.thread.SecondaryThreadPool_Package_References.SecondaryThreadPool_Access_Array_Access;
+   function "=" (Left, Right : SecondaryThreadPool_Access_Array_Access) return Boolean renames org.allbinary.thread.SecondaryThreadPool_Package_References."=";
+   subtype SecondaryThreadPool_Access_Array_Access_Array is org.allbinary.thread.SecondaryThreadPool_Package_References.SecondaryThreadPool_Access_Array_Access_Array;
+   function "=" (Left, Right : SecondaryThreadPool_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.SecondaryThreadPool_Package_References."=";
+   subtype SecondaryThreadPool_Access_Array_Access_Array_Access is org.allbinary.thread.SecondaryThreadPool_Package_References.SecondaryThreadPool_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SecondaryThreadPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.SecondaryThreadPool_Package_References."=";
 
    type SecondaryThreadPool is new ThreadPool with null record;
    instance : ThreadPool_Access;

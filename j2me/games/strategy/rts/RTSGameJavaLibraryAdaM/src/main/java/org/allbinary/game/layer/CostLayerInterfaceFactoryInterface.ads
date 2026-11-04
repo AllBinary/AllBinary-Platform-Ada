@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package;
+package org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References is
+   type CostLayerInterfaceFactoryInterface_Access is access all org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package.CostLayerInterfaceFactoryInterface'Class;
+   type CostLayerInterfaceFactoryInterface_Access_Array is array (Natural range <>) of CostLayerInterfaceFactoryInterface_Access;
+   type CostLayerInterfaceFactoryInterface_Access_Array_Access is access all CostLayerInterfaceFactoryInterface_Access_Array;
+   type CostLayerInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CostLayerInterfaceFactoryInterface_Access_Array_Access;
+   type CostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all CostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
+end org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References;
+
+with org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,23 @@ with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbina
 package org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package is
 
    package LayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type CostLayerInterfaceFactoryInterface is interface and LayerInterfaceFactoryInterface;
-   type CostLayerInterfaceFactoryInterface_Access is access all CostLayerInterfaceFactoryInterface'Class;
-   type CostLayerInterfaceFactoryInterface_Access_Array is array (Natural range <>) of CostLayerInterfaceFactoryInterface_Access;
-   type CostLayerInterfaceFactoryInterface_Access_Array_Access is access all CostLayerInterfaceFactoryInterface_Access_Array;
-   type CostLayerInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CostLayerInterfaceFactoryInterface_Access_Array_Access;
-   type CostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all CostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
+   subtype CostLayerInterfaceFactoryInterface_Access is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access;
+   function "=" (Left, Right : CostLayerInterfaceFactoryInterface_Access) return Boolean renames org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References."=";
+   subtype CostLayerInterfaceFactoryInterface_Access_Array is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access_Array;
+   function "=" (Left, Right : CostLayerInterfaceFactoryInterface_Access_Array) return Boolean renames org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References."=";
+   subtype CostLayerInterfaceFactoryInterface_Access_Array_Access is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : CostLayerInterfaceFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References."=";
+   subtype CostLayerInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CostLayerInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References."=";
+   subtype CostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References."=";
+   function Java_Object_Access_From_CostLayerInterfaceFactoryInterface (Value : CostLayerInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getCost (This : in out CostLayerInterfaceFactoryInterface) return Integer is abstract;
 
 end org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package;

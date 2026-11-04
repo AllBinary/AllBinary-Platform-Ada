@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.FixedPoint_Package;
+package org.allbinary.animation.FixedPoint_Package_References is
+   type FixedPoint_Access is access all org.allbinary.animation.FixedPoint_Package.FixedPoint'Class;
+   type FixedPoint_Access_Array is array (Natural range <>) of FixedPoint_Access;
+   type FixedPoint_Access_Array_Access is access all FixedPoint_Access_Array;
+   type FixedPoint_Access_Array_Access_Array is array (Natural range <>) of FixedPoint_Access_Array_Access;
+   type FixedPoint_Access_Array_Access_Array_Access is access all FixedPoint_Access_Array_Access_Array;
+end org.allbinary.animation.FixedPoint_Package_References;
+
+with org.allbinary.animation.FixedPoint_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -11,13 +21,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.animation.FixedPoint_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type FixedPoint is tagged;
-   type FixedPoint_Access is access all FixedPoint'Class;
-   type FixedPoint_Access_Array is array (Natural range <>) of FixedPoint_Access;
-   type FixedPoint_Access_Array_Access is access all FixedPoint_Access_Array;
-   type FixedPoint_Access_Array_Access_Array is array (Natural range <>) of FixedPoint_Access_Array_Access;
-   type FixedPoint_Access_Array_Access_Array_Access is access all FixedPoint_Access_Array_Access_Array;
+
+   subtype FixedPoint_Access is org.allbinary.animation.FixedPoint_Package_References.FixedPoint_Access;
+   function "=" (Left, Right : FixedPoint_Access) return Boolean renames org.allbinary.animation.FixedPoint_Package_References."=";
+   subtype FixedPoint_Access_Array is org.allbinary.animation.FixedPoint_Package_References.FixedPoint_Access_Array;
+   function "=" (Left, Right : FixedPoint_Access_Array) return Boolean renames org.allbinary.animation.FixedPoint_Package_References."=";
+   subtype FixedPoint_Access_Array_Access is org.allbinary.animation.FixedPoint_Package_References.FixedPoint_Access_Array_Access;
+   function "=" (Left, Right : FixedPoint_Access_Array_Access) return Boolean renames org.allbinary.animation.FixedPoint_Package_References."=";
+   subtype FixedPoint_Access_Array_Access_Array is org.allbinary.animation.FixedPoint_Package_References.FixedPoint_Access_Array_Access_Array;
+   function "=" (Left, Right : FixedPoint_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.FixedPoint_Package_References."=";
+   subtype FixedPoint_Access_Array_Access_Array_Access is org.allbinary.animation.FixedPoint_Package_References.FixedPoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FixedPoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.FixedPoint_Package_References."=";
 
    type FixedPoint is new Java_Object with record
       ONE : Integer;

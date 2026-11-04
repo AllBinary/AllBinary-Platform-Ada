@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.string_Id.tokens.UniqueTokens_Package;
+package org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References is
+   type UniqueTokens_Access is access all org.allbinary.logic.string_Id.tokens.UniqueTokens_Package.UniqueTokens'Class;
+   type UniqueTokens_Access_Array is array (Natural range <>) of UniqueTokens_Access;
+   type UniqueTokens_Access_Array_Access is access all UniqueTokens_Access_Array;
+   type UniqueTokens_Access_Array_Access_Array is array (Natural range <>) of UniqueTokens_Access_Array_Access;
+   type UniqueTokens_Access_Array_Access_Array_Access is access all UniqueTokens_Access_Array_Access_Array;
+end org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References;
+
+with org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,37 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashSet_Package; use java.util.HashSet_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type UniqueTokens is tagged;
-   type UniqueTokens_Access is access all UniqueTokens'Class;
-   type UniqueTokens_Access_Array is array (Natural range <>) of UniqueTokens_Access;
-   type UniqueTokens_Access_Array_Access is access all UniqueTokens_Access_Array;
-   type UniqueTokens_Access_Array_Access_Array is array (Natural range <>) of UniqueTokens_Access_Array_Access;
-   type UniqueTokens_Access_Array_Access_Array_Access is access all UniqueTokens_Access_Array_Access_Array;
+
+   subtype UniqueTokens_Access is org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References.UniqueTokens_Access;
+   function "=" (Left, Right : UniqueTokens_Access) return Boolean renames org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References."=";
+   subtype UniqueTokens_Access_Array is org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References.UniqueTokens_Access_Array;
+   function "=" (Left, Right : UniqueTokens_Access_Array) return Boolean renames org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References."=";
+   subtype UniqueTokens_Access_Array_Access is org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References.UniqueTokens_Access_Array_Access;
+   function "=" (Left, Right : UniqueTokens_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References."=";
+   subtype UniqueTokens_Access_Array_Access_Array is org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References.UniqueTokens_Access_Array_Access_Array;
+   function "=" (Left, Right : UniqueTokens_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References."=";
+   subtype UniqueTokens_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References.UniqueTokens_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UniqueTokens_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.tokens.UniqueTokens_Package_References."=";
 
    type UniqueTokens is new Java_Object with record
       specialCharacters : BasicArrayList_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.health.HealthListenerInterface_Package;
 
 package body org.allbinary.game.health.NullHealthListener_Package is
 

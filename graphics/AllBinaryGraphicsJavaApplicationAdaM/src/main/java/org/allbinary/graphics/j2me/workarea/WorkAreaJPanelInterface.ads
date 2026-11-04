@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
+package org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References is
+   type WorkAreaJPanelInterface_Access is access all org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package.WorkAreaJPanelInterface'Class;
+   type WorkAreaJPanelInterface_Access_Array is array (Natural range <>) of WorkAreaJPanelInterface_Access;
+   type WorkAreaJPanelInterface_Access_Array_Access is access all WorkAreaJPanelInterface_Access_Array;
+   type WorkAreaJPanelInterface_Access_Array_Access_Array is array (Natural range <>) of WorkAreaJPanelInterface_Access_Array_Access;
+   type WorkAreaJPanelInterface_Access_Array_Access_Array_Access is access all WorkAreaJPanelInterface_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,40 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.allbinary.graphics.j2me.workarea.KeyListener_Package; use org.allbinary.graphics.j2me.workarea.KeyListener_Package;
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package is
 
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Reference_Types is
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type WorkAreaJPanelInterface is interface and KeyListener;
-   type WorkAreaJPanelInterface_Access is access all WorkAreaJPanelInterface'Class;
-   type WorkAreaJPanelInterface_Access_Array is array (Natural range <>) of WorkAreaJPanelInterface_Access;
-   type WorkAreaJPanelInterface_Access_Array_Access is access all WorkAreaJPanelInterface_Access_Array;
-   type WorkAreaJPanelInterface_Access_Array_Access_Array is array (Natural range <>) of WorkAreaJPanelInterface_Access_Array_Access;
-   type WorkAreaJPanelInterface_Access_Array_Access_Array_Access is access all WorkAreaJPanelInterface_Access_Array_Access_Array;
+   subtype WorkAreaJPanelInterface_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References.WorkAreaJPanelInterface_Access;
+   function "=" (Left, Right : WorkAreaJPanelInterface_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References."=";
+   subtype WorkAreaJPanelInterface_Access_Array is org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References.WorkAreaJPanelInterface_Access_Array;
+   function "=" (Left, Right : WorkAreaJPanelInterface_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References."=";
+   subtype WorkAreaJPanelInterface_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References.WorkAreaJPanelInterface_Access_Array_Access;
+   function "=" (Left, Right : WorkAreaJPanelInterface_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References."=";
+   subtype WorkAreaJPanelInterface_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References.WorkAreaJPanelInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : WorkAreaJPanelInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References."=";
+   subtype WorkAreaJPanelInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References.WorkAreaJPanelInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WorkAreaJPanelInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References."=";
+   function Java_Object_Access_From_WorkAreaJPanelInterface (Value : WorkAreaJPanelInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getName (This : in out WorkAreaJPanelInterface) return Unbounded_String is abstract;
    procedure deselect (This : in out WorkAreaJPanelInterface) is abstract;
    procedure select_Id (This : in out WorkAreaJPanelInterface) is abstract;

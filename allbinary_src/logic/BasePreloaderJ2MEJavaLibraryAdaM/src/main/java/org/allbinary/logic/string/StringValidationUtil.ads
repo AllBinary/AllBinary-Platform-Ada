@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.string_Id.StringValidationUtil_Package;
+package org.allbinary.logic.string_Id.StringValidationUtil_Package_References is
+   type StringValidationUtil_Access is access all org.allbinary.logic.string_Id.StringValidationUtil_Package.StringValidationUtil'Class;
+   type StringValidationUtil_Access_Array is array (Natural range <>) of StringValidationUtil_Access;
+   type StringValidationUtil_Access_Array_Access is access all StringValidationUtil_Access_Array;
+   type StringValidationUtil_Access_Array_Access_Array is array (Natural range <>) of StringValidationUtil_Access_Array_Access;
+   type StringValidationUtil_Access_Array_Access_Array_Access is access all StringValidationUtil_Access_Array_Access_Array;
+end org.allbinary.logic.string_Id.StringValidationUtil_Package_References;
+
+with org.allbinary.logic.string_Id.StringValidationUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,17 +31,36 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+limited with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 
 package org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
+   package Reference_Types is
+   subtype StringUtil_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access;
+   use type StringUtil_Access;
+   subtype StringUtil_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array;
+   use type StringUtil_Access_Array;
+   subtype StringUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access;
+   use type StringUtil_Access_Array_Access;
+   subtype StringUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array;
+   use type StringUtil_Access_Array_Access_Array;
+   subtype StringUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array_Access;
+   use type StringUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StringValidationUtil is tagged;
-   type StringValidationUtil_Access is access all StringValidationUtil'Class;
-   type StringValidationUtil_Access_Array is array (Natural range <>) of StringValidationUtil_Access;
-   type StringValidationUtil_Access_Array_Access is access all StringValidationUtil_Access_Array;
-   type StringValidationUtil_Access_Array_Access_Array is array (Natural range <>) of StringValidationUtil_Access_Array_Access;
-   type StringValidationUtil_Access_Array_Access_Array_Access is access all StringValidationUtil_Access_Array_Access_Array;
+
+   subtype StringValidationUtil_Access is org.allbinary.logic.string_Id.StringValidationUtil_Package_References.StringValidationUtil_Access;
+   function "=" (Left, Right : StringValidationUtil_Access) return Boolean renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References."=";
+   subtype StringValidationUtil_Access_Array is org.allbinary.logic.string_Id.StringValidationUtil_Package_References.StringValidationUtil_Access_Array;
+   function "=" (Left, Right : StringValidationUtil_Access_Array) return Boolean renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References."=";
+   subtype StringValidationUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringValidationUtil_Package_References.StringValidationUtil_Access_Array_Access;
+   function "=" (Left, Right : StringValidationUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References."=";
+   subtype StringValidationUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringValidationUtil_Package_References.StringValidationUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : StringValidationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References."=";
+   subtype StringValidationUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringValidationUtil_Package_References.StringValidationUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StringValidationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References."=";
 
    type StringValidationUtil is new Java_Object with record
       stringUtil : StringUtil_Access;

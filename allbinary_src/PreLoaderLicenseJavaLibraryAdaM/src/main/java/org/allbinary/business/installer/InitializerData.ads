@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.installer.InitializerData_Package;
+package org.allbinary.business.installer.InitializerData_Package_References is
+   type InitializerData_Access is access all org.allbinary.business.installer.InitializerData_Package.InitializerData'Class;
+   type InitializerData_Access_Array is array (Natural range <>) of InitializerData_Access;
+   type InitializerData_Access_Array_Access is access all InitializerData_Access_Array;
+   type InitializerData_Access_Array_Access_Array is array (Natural range <>) of InitializerData_Access_Array_Access;
+   type InitializerData_Access_Array_Access_Array_Access is access all InitializerData_Access_Array_Access_Array;
+end org.allbinary.business.installer.InitializerData_Package_References;
+
+with org.allbinary.business.installer.InitializerData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.installer.InitializerData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InitializerData is tagged;
-   type InitializerData_Access is access all InitializerData'Class;
-   type InitializerData_Access_Array is array (Natural range <>) of InitializerData_Access;
-   type InitializerData_Access_Array_Access is access all InitializerData_Access_Array;
-   type InitializerData_Access_Array_Access_Array is array (Natural range <>) of InitializerData_Access_Array_Access;
-   type InitializerData_Access_Array_Access_Array_Access is access all InitializerData_Access_Array_Access_Array;
+
+   subtype InitializerData_Access is org.allbinary.business.installer.InitializerData_Package_References.InitializerData_Access;
+   function "=" (Left, Right : InitializerData_Access) return Boolean renames org.allbinary.business.installer.InitializerData_Package_References."=";
+   subtype InitializerData_Access_Array is org.allbinary.business.installer.InitializerData_Package_References.InitializerData_Access_Array;
+   function "=" (Left, Right : InitializerData_Access_Array) return Boolean renames org.allbinary.business.installer.InitializerData_Package_References."=";
+   subtype InitializerData_Access_Array_Access is org.allbinary.business.installer.InitializerData_Package_References.InitializerData_Access_Array_Access;
+   function "=" (Left, Right : InitializerData_Access_Array_Access) return Boolean renames org.allbinary.business.installer.InitializerData_Package_References."=";
+   subtype InitializerData_Access_Array_Access_Array is org.allbinary.business.installer.InitializerData_Package_References.InitializerData_Access_Array_Access_Array;
+   function "=" (Left, Right : InitializerData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.installer.InitializerData_Package_References."=";
+   subtype InitializerData_Access_Array_Access_Array_Access is org.allbinary.business.installer.InitializerData_Package_References.InitializerData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InitializerData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.installer.InitializerData_Package_References."=";
 
    type InitializerData is new Java_Object with record
       DBUSER : Unbounded_String;

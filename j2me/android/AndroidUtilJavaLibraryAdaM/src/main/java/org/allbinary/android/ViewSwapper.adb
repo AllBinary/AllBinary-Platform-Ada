@@ -1,11 +1,33 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.Activity_Package; use android.app.Activity_Package;
+with android.view.View_Package; use android.view.View_Package;
 with android.view.ViewGroup_Package; use android.view.ViewGroup_Package;
 
 package body org.allbinary.android.ViewSwapper_Package is
 
    package ViewGroup_Package renames Standard.android.view.ViewGroup_Package;
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   function "=" (Left, Right : Activity_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype View_Access is android.view.View_Package_References.View_Access;
+   function "=" (Left, Right : View_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array is android.view.View_Package_References.View_Access_Array;
+   function "=" (Left, Right : View_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array is android.view.View_Package_References.View_Access_Array_Access_Array;
+   function "=" (Left, Right : View_Access_Array_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
    procedure Initialize_Fields (This : in out ViewSwapper'Class) is
    begin
       null;

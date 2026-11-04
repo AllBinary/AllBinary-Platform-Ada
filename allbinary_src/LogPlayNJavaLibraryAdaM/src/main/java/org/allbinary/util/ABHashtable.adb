@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Hashtable_Package; use java.util.Hashtable_Package;
 
 package body org.allbinary.util.ABHashtable_Package is
 

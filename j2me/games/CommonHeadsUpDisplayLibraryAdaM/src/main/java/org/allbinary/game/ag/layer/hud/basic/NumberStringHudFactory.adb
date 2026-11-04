@@ -19,6 +19,8 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package is
 
@@ -28,6 +30,16 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Packag
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype NumberStringHud_Access is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access;
+   function "=" (Left, Right : NumberStringHud_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
+   subtype NumberStringHud_Access_Array is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access_Array;
+   function "=" (Left, Right : NumberStringHud_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
+   subtype NumberStringHud_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access_Array_Access;
+   function "=" (Left, Right : NumberStringHud_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
+   subtype NumberStringHud_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access_Array_Access_Array;
+   function "=" (Left, Right : NumberStringHud_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
+   subtype NumberStringHud_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NumberStringHud_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
    procedure Initialize_Fields (This : in out NumberStringHudFactory'Class) is
    begin
       null;

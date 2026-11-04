@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.view.ViewWrapper_Package;
+package org.allbinary.android.view.ViewWrapper_Package_References is
+   type ViewWrapper_Access is access all org.allbinary.android.view.ViewWrapper_Package.ViewWrapper'Class;
+   type ViewWrapper_Access_Array is array (Natural range <>) of ViewWrapper_Access;
+   type ViewWrapper_Access_Array_Access is access all ViewWrapper_Access_Array;
+   type ViewWrapper_Access_Array_Access_Array is array (Natural range <>) of ViewWrapper_Access_Array_Access;
+   type ViewWrapper_Access_Array_Access_Array_Access is access all ViewWrapper_Access_Array_Access_Array;
+end org.allbinary.android.view.ViewWrapper_Package_References;
+
+with org.allbinary.android.view.ViewWrapper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.view.View_Package; use android.view.View_Package;
+limited with android.view.View_Package;
+with android.view.View_Package_References;
 with org.allbinary.android.view.BaseViewWrapper_Package; use org.allbinary.android.view.BaseViewWrapper_Package;
 
 package org.allbinary.android.view.ViewWrapper_Package is
 
    package View_Package renames Standard.android.view.View_Package;
+   package Reference_Types is
+   subtype View_Access is android.view.View_Package_References.View_Access;
+   use type View_Access;
+   subtype View_Access_Array is android.view.View_Package_References.View_Access_Array;
+   use type View_Access_Array;
+   subtype View_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access;
+   use type View_Access_Array_Access;
+   subtype View_Access_Array_Access_Array is android.view.View_Package_References.View_Access_Array_Access_Array;
+   use type View_Access_Array_Access_Array;
+   subtype View_Access_Array_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access_Array_Access;
+   use type View_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ViewWrapper is tagged;
-   type ViewWrapper_Access is access all ViewWrapper'Class;
-   type ViewWrapper_Access_Array is array (Natural range <>) of ViewWrapper_Access;
-   type ViewWrapper_Access_Array_Access is access all ViewWrapper_Access_Array;
-   type ViewWrapper_Access_Array_Access_Array is array (Natural range <>) of ViewWrapper_Access_Array_Access;
-   type ViewWrapper_Access_Array_Access_Array_Access is access all ViewWrapper_Access_Array_Access_Array;
+
+   subtype ViewWrapper_Access is org.allbinary.android.view.ViewWrapper_Package_References.ViewWrapper_Access;
+   function "=" (Left, Right : ViewWrapper_Access) return Boolean renames org.allbinary.android.view.ViewWrapper_Package_References."=";
+   subtype ViewWrapper_Access_Array is org.allbinary.android.view.ViewWrapper_Package_References.ViewWrapper_Access_Array;
+   function "=" (Left, Right : ViewWrapper_Access_Array) return Boolean renames org.allbinary.android.view.ViewWrapper_Package_References."=";
+   subtype ViewWrapper_Access_Array_Access is org.allbinary.android.view.ViewWrapper_Package_References.ViewWrapper_Access_Array_Access;
+   function "=" (Left, Right : ViewWrapper_Access_Array_Access) return Boolean renames org.allbinary.android.view.ViewWrapper_Package_References."=";
+   subtype ViewWrapper_Access_Array_Access_Array is org.allbinary.android.view.ViewWrapper_Package_References.ViewWrapper_Access_Array_Access_Array;
+   function "=" (Left, Right : ViewWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.android.view.ViewWrapper_Package_References."=";
+   subtype ViewWrapper_Access_Array_Access_Array_Access is org.allbinary.android.view.ViewWrapper_Package_References.ViewWrapper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ViewWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.view.ViewWrapper_Package_References."=";
 
    type ViewWrapper is new BaseViewWrapper with record
       view : View_Access;

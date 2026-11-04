@@ -13,17 +13,90 @@
 --  Generated Code Do Not Modify
 
 
+with org.osgi.framework.BundleActivator_Package; use org.osgi.framework.BundleActivator_Package;
+with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.ServiceFactory_Package; use org.osgi.framework.ServiceFactory_Package;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
+with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package; use bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
 with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package; use bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
+with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
+with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package is
 
    package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
    package InputAutomationRobotServiceInterface_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
    package OSGIActivatorUtil_Package renames Standard.org.allbinary.osgi.OSGIActivatorUtil_Package;
+   subtype BundleContext_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access;
+   function "=" (Left, Right : BundleContext_Access) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array;
+   function "=" (Left, Right : BundleContext_Access_Array) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access;
+   function "=" (Left, Right : BundleContext_Access_Array_Access) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array_Access_Array is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access_Array;
+   function "=" (Left, Right : BundleContext_Access_Array_Access_Array) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array_Access_Array_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BundleContext_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype ServiceFactory_Access is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access;
+   function "=" (Left, Right : ServiceFactory_Access) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype ServiceFactory_Access_Array is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array;
+   function "=" (Left, Right : ServiceFactory_Access_Array) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype ServiceFactory_Access_Array_Access is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array_Access;
+   function "=" (Left, Right : ServiceFactory_Access_Array_Access) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype ServiceFactory_Access_Array_Access_Array is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ServiceFactory_Access_Array_Access_Array) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype ServiceFactory_Access_Array_Access_Array_Access is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ServiceFactory_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype InputAutomationRobotChangeListener_Access is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access;
+   function "=" (Left, Right : InputAutomationRobotChangeListener_Access) return Boolean renames bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References."=";
+   subtype InputAutomationRobotChangeListener_Access_Array is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotChangeListener_Access_Array) return Boolean renames bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References."=";
+   subtype InputAutomationRobotChangeListener_Access_Array_Access is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotChangeListener_Access_Array_Access) return Boolean renames bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References."=";
+   subtype InputAutomationRobotChangeListener_Access_Array_Access_Array is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotChangeListener_Access_Array_Access_Array) return Boolean renames bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References."=";
+   subtype InputAutomationRobotChangeListener_Access_Array_Access_Array_Access is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotChangeListener_Access_Array_Access_Array_Access) return Boolean renames bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References."=";
+   subtype InputRobotInterface_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access;
+   function "=" (Left, Right : InputRobotInterface_Access) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
+   subtype InputRobotInterface_Access_Array is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array;
+   function "=" (Left, Right : InputRobotInterface_Access_Array) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
+   subtype InputRobotInterface_Access_Array_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access;
+   function "=" (Left, Right : InputRobotInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
+   subtype InputRobotInterface_Access_Array_Access_Array is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : InputRobotInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
+   subtype InputRobotInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputRobotInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.InputRobotInterface_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationRobotBundleActivator'Class) is
    begin
       null;

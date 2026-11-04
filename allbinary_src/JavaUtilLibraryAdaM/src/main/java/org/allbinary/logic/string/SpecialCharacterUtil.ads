@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.string_Id.SpecialCharacterUtil_Package;
+package org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References is
+   type SpecialCharacterUtil_Access is access all org.allbinary.logic.string_Id.SpecialCharacterUtil_Package.SpecialCharacterUtil'Class;
+   type SpecialCharacterUtil_Access_Array is array (Natural range <>) of SpecialCharacterUtil_Access;
+   type SpecialCharacterUtil_Access_Array_Access is access all SpecialCharacterUtil_Access_Array;
+   type SpecialCharacterUtil_Access_Array_Access_Array is array (Natural range <>) of SpecialCharacterUtil_Access_Array_Access;
+   type SpecialCharacterUtil_Access_Array_Access_Array_Access is access all SpecialCharacterUtil_Access_Array_Access_Array;
+end org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References;
+
+with org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 package org.allbinary.logic.string_Id.SpecialCharacterUtil_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SpecialCharacterUtil is tagged;
-   type SpecialCharacterUtil_Access is access all SpecialCharacterUtil'Class;
-   type SpecialCharacterUtil_Access_Array is array (Natural range <>) of SpecialCharacterUtil_Access;
-   type SpecialCharacterUtil_Access_Array_Access is access all SpecialCharacterUtil_Access_Array;
-   type SpecialCharacterUtil_Access_Array_Access_Array is array (Natural range <>) of SpecialCharacterUtil_Access_Array_Access;
-   type SpecialCharacterUtil_Access_Array_Access_Array_Access is access all SpecialCharacterUtil_Access_Array_Access_Array;
+
+   subtype SpecialCharacterUtil_Access is org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References.SpecialCharacterUtil_Access;
+   function "=" (Left, Right : SpecialCharacterUtil_Access) return Boolean renames org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References."=";
+   subtype SpecialCharacterUtil_Access_Array is org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References.SpecialCharacterUtil_Access_Array;
+   function "=" (Left, Right : SpecialCharacterUtil_Access_Array) return Boolean renames org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References."=";
+   subtype SpecialCharacterUtil_Access_Array_Access is org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References.SpecialCharacterUtil_Access_Array_Access;
+   function "=" (Left, Right : SpecialCharacterUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References."=";
+   subtype SpecialCharacterUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References.SpecialCharacterUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : SpecialCharacterUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References."=";
+   subtype SpecialCharacterUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References.SpecialCharacterUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SpecialCharacterUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.SpecialCharacterUtil_Package_References."=";
 
    type SpecialCharacterUtil is new Java_Object with null record;
 

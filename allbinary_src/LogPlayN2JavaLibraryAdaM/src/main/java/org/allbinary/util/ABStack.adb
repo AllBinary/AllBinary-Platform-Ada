@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Stack_Package; use java.util.Stack_Package;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package body org.allbinary.util.ABStack_Package is

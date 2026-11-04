@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.math.AngleIncrementInfoFactory_Package;
+package org.allbinary.math.AngleIncrementInfoFactory_Package_References is
+   type AngleIncrementInfoFactory_Access is access all org.allbinary.math.AngleIncrementInfoFactory_Package.AngleIncrementInfoFactory'Class;
+   type AngleIncrementInfoFactory_Access_Array is array (Natural range <>) of AngleIncrementInfoFactory_Access;
+   type AngleIncrementInfoFactory_Access_Array_Access is access all AngleIncrementInfoFactory_Access_Array;
+   type AngleIncrementInfoFactory_Access_Array_Access_Array is array (Natural range <>) of AngleIncrementInfoFactory_Access_Array_Access;
+   type AngleIncrementInfoFactory_Access_Array_Access_Array_Access is access all AngleIncrementInfoFactory_Access_Array_Access_Array;
+end org.allbinary.math.AngleIncrementInfoFactory_Package_References;
+
+with org.allbinary.math.AngleIncrementInfoFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
+limited with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleIncrementInfo_Package_References;
 
 package org.allbinary.math.AngleIncrementInfoFactory_Package is
 
+   package Reference_Types is
+   subtype AngleIncrementInfo_Access is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access;
+   use type AngleIncrementInfo_Access;
+   subtype AngleIncrementInfo_Access_Array is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access_Array;
+   use type AngleIncrementInfo_Access_Array;
+   subtype AngleIncrementInfo_Access_Array_Access is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access_Array_Access;
+   use type AngleIncrementInfo_Access_Array_Access;
+   subtype AngleIncrementInfo_Access_Array_Access_Array is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access_Array_Access_Array;
+   use type AngleIncrementInfo_Access_Array_Access_Array;
+   subtype AngleIncrementInfo_Access_Array_Access_Array_Access is org.allbinary.math.AngleIncrementInfo_Package_References.AngleIncrementInfo_Access_Array_Access_Array_Access;
+   use type AngleIncrementInfo_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AngleIncrementInfoFactory is tagged;
-   type AngleIncrementInfoFactory_Access is access all AngleIncrementInfoFactory'Class;
-   type AngleIncrementInfoFactory_Access_Array is array (Natural range <>) of AngleIncrementInfoFactory_Access;
-   type AngleIncrementInfoFactory_Access_Array_Access is access all AngleIncrementInfoFactory_Access_Array;
-   type AngleIncrementInfoFactory_Access_Array_Access_Array is array (Natural range <>) of AngleIncrementInfoFactory_Access_Array_Access;
-   type AngleIncrementInfoFactory_Access_Array_Access_Array_Access is access all AngleIncrementInfoFactory_Access_Array_Access_Array;
+
+   subtype AngleIncrementInfoFactory_Access is org.allbinary.math.AngleIncrementInfoFactory_Package_References.AngleIncrementInfoFactory_Access;
+   function "=" (Left, Right : AngleIncrementInfoFactory_Access) return Boolean renames org.allbinary.math.AngleIncrementInfoFactory_Package_References."=";
+   subtype AngleIncrementInfoFactory_Access_Array is org.allbinary.math.AngleIncrementInfoFactory_Package_References.AngleIncrementInfoFactory_Access_Array;
+   function "=" (Left, Right : AngleIncrementInfoFactory_Access_Array) return Boolean renames org.allbinary.math.AngleIncrementInfoFactory_Package_References."=";
+   subtype AngleIncrementInfoFactory_Access_Array_Access is org.allbinary.math.AngleIncrementInfoFactory_Package_References.AngleIncrementInfoFactory_Access_Array_Access;
+   function "=" (Left, Right : AngleIncrementInfoFactory_Access_Array_Access) return Boolean renames org.allbinary.math.AngleIncrementInfoFactory_Package_References."=";
+   subtype AngleIncrementInfoFactory_Access_Array_Access_Array is org.allbinary.math.AngleIncrementInfoFactory_Package_References.AngleIncrementInfoFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : AngleIncrementInfoFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.math.AngleIncrementInfoFactory_Package_References."=";
+   subtype AngleIncrementInfoFactory_Access_Array_Access_Array_Access is org.allbinary.math.AngleIncrementInfoFactory_Package_References.AngleIncrementInfoFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AngleIncrementInfoFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.AngleIncrementInfoFactory_Package_References."=";
 
    type AngleIncrementInfoFactory is new Java_Object with record
       angleIncrementInfo : AngleIncrementInfo_Access_Array_Access;

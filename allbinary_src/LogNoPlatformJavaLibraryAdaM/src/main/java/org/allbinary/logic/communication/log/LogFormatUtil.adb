@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
 
@@ -24,7 +25,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
 
    function getInstance return LogFormatUtil_Access is
    begin
-        return LogFormatUtil_Package.instance;
+        return LogFormatUtil_Access (LogFormatUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out LogFormatUtil'Class) is

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.NoHardware_Package;
+package org.allbinary.logic.system.hardware.NoHardware_Package_References is
+   type NoHardware_Access is access all org.allbinary.logic.system.hardware.NoHardware_Package.NoHardware'Class;
+   type NoHardware_Access_Array is array (Natural range <>) of NoHardware_Access;
+   type NoHardware_Access_Array_Access is access all NoHardware_Access_Array;
+   type NoHardware_Access_Array_Access_Array is array (Natural range <>) of NoHardware_Access_Array_Access;
+   type NoHardware_Access_Array_Access_Array_Access is access all NoHardware_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.NoHardware_Package_References;
+
+with org.allbinary.logic.system.hardware.NoHardware_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,51 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+limited with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References;
+limited with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 
 package org.allbinary.logic.system.hardware.NoHardware_Package is
 
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Reference_Types is
+   subtype HardwareComponentInterface_Access is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access;
+   use type HardwareComponentInterface_Access;
+   subtype HardwareComponentInterface_Access_Array is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access_Array;
+   use type HardwareComponentInterface_Access_Array;
+   subtype HardwareComponentInterface_Access_Array_Access is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access_Array_Access;
+   use type HardwareComponentInterface_Access_Array_Access;
+   subtype HardwareComponentInterface_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access_Array_Access_Array;
+   use type HardwareComponentInterface_Access_Array_Access_Array;
+   subtype HardwareComponentInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access_Array_Access_Array_Access;
+   use type HardwareComponentInterface_Access_Array_Access_Array_Access;
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   use type ABHashtable_Access;
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   use type ABHashtable_Access_Array;
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access;
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   use type ABHashtable_Access_Array_Access_Array;
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoHardware is tagged;
-   type NoHardware_Access is access all NoHardware'Class;
-   type NoHardware_Access_Array is array (Natural range <>) of NoHardware_Access;
-   type NoHardware_Access_Array_Access is access all NoHardware_Access_Array;
-   type NoHardware_Access_Array_Access_Array is array (Natural range <>) of NoHardware_Access_Array_Access;
-   type NoHardware_Access_Array_Access_Array_Access is access all NoHardware_Access_Array_Access_Array;
+
+   subtype NoHardware_Access is org.allbinary.logic.system.hardware.NoHardware_Package_References.NoHardware_Access;
+   function "=" (Left, Right : NoHardware_Access) return Boolean renames org.allbinary.logic.system.hardware.NoHardware_Package_References."=";
+   subtype NoHardware_Access_Array is org.allbinary.logic.system.hardware.NoHardware_Package_References.NoHardware_Access_Array;
+   function "=" (Left, Right : NoHardware_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.NoHardware_Package_References."=";
+   subtype NoHardware_Access_Array_Access is org.allbinary.logic.system.hardware.NoHardware_Package_References.NoHardware_Access_Array_Access;
+   function "=" (Left, Right : NoHardware_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.NoHardware_Package_References."=";
+   subtype NoHardware_Access_Array_Access_Array is org.allbinary.logic.system.hardware.NoHardware_Package_References.NoHardware_Access_Array_Access_Array;
+   function "=" (Left, Right : NoHardware_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.NoHardware_Package_References."=";
+   subtype NoHardware_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.NoHardware_Package_References.NoHardware_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoHardware_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.NoHardware_Package_References."=";
 
    type NoHardware is new Java_Object and HardwareInterface with null record;
    instance : HardwareInterface_Access;

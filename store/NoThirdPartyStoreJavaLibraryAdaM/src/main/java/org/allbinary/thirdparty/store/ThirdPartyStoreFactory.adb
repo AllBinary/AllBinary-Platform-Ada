@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thirdparty.store.NoThirdPartyStore_Package; use org.allbinary.thirdparty.store.NoThirdPartyStore_Package;
+with org.allbinary.thirdparty.store.ThirdPartyStore_Package; use org.allbinary.thirdparty.store.ThirdPartyStore_Package;
+with org.allbinary.thirdparty.store.NoThirdPartyStore_Package;
 
 package body org.allbinary.thirdparty.store.ThirdPartyStoreFactory_Package is
 
+   subtype NoThirdPartyStore_Access is org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References.NoThirdPartyStore_Access;
+   function "=" (Left, Right : NoThirdPartyStore_Access) return Boolean renames org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References."=";
+   subtype NoThirdPartyStore_Access_Array is org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References.NoThirdPartyStore_Access_Array;
+   function "=" (Left, Right : NoThirdPartyStore_Access_Array) return Boolean renames org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References."=";
+   subtype NoThirdPartyStore_Access_Array_Access is org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References.NoThirdPartyStore_Access_Array_Access;
+   function "=" (Left, Right : NoThirdPartyStore_Access_Array_Access) return Boolean renames org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References."=";
+   subtype NoThirdPartyStore_Access_Array_Access_Array is org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References.NoThirdPartyStore_Access_Array_Access_Array;
+   function "=" (Left, Right : NoThirdPartyStore_Access_Array_Access_Array) return Boolean renames org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References."=";
+   subtype NoThirdPartyStore_Access_Array_Access_Array_Access is org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References.NoThirdPartyStore_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoThirdPartyStore_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References."=";
+   subtype ThirdPartyStore_Access is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access;
+   function "=" (Left, Right : ThirdPartyStore_Access) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   subtype ThirdPartyStore_Access_Array is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array;
+   function "=" (Left, Right : ThirdPartyStore_Access_Array) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   subtype ThirdPartyStore_Access_Array_Access is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array_Access;
+   function "=" (Left, Right : ThirdPartyStore_Access_Array_Access) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   subtype ThirdPartyStore_Access_Array_Access_Array is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array_Access_Array;
+   function "=" (Left, Right : ThirdPartyStore_Access_Array_Access_Array) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   subtype ThirdPartyStore_Access_Array_Access_Array_Access is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ThirdPartyStore_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
    procedure Initialize_Fields (This : in out ThirdPartyStoreFactory'Class) is
    begin
       null;
@@ -24,7 +47,7 @@ package body org.allbinary.thirdparty.store.ThirdPartyStoreFactory_Package is
 
    function getInstance return ThirdPartyStore_Access is
    begin
-        return ThirdPartyStoreFactory_Package.instance;
+        return ThirdPartyStore_Access (ThirdPartyStoreFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ThirdPartyStoreFactory'Class) is

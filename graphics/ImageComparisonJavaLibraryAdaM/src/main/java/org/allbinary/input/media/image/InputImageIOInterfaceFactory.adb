@@ -16,12 +16,42 @@
 with org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package; use org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
 with org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package; use org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
+with org.allbinary.media.image.io.ImageIOInterface_Package; use org.allbinary.media.image.io.ImageIOInterface_Package;
+with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.input.media.image.InputImageType_Package;
+with org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
+with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.input.media.image.InputImageType_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package is
 
    package CapturedImageInputOutput_Package renames Standard.org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
    package ComparisonImageInputOutput_Package renames Standard.org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
    package MotionRectanglesImageInputOutput_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
+   subtype ImageIOInterface_Access is org.allbinary.media.image.io.ImageIOInterface_Package_References.ImageIOInterface_Access;
+   function "=" (Left, Right : ImageIOInterface_Access) return Boolean renames org.allbinary.media.image.io.ImageIOInterface_Package_References."=";
+   subtype ImageIOInterface_Access_Array is org.allbinary.media.image.io.ImageIOInterface_Package_References.ImageIOInterface_Access_Array;
+   function "=" (Left, Right : ImageIOInterface_Access_Array) return Boolean renames org.allbinary.media.image.io.ImageIOInterface_Package_References."=";
+   subtype ImageIOInterface_Access_Array_Access is org.allbinary.media.image.io.ImageIOInterface_Package_References.ImageIOInterface_Access_Array_Access;
+   function "=" (Left, Right : ImageIOInterface_Access_Array_Access) return Boolean renames org.allbinary.media.image.io.ImageIOInterface_Package_References."=";
+   subtype ImageIOInterface_Access_Array_Access_Array is org.allbinary.media.image.io.ImageIOInterface_Package_References.ImageIOInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageIOInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.io.ImageIOInterface_Package_References."=";
+   subtype ImageIOInterface_Access_Array_Access_Array_Access is org.allbinary.media.image.io.ImageIOInterface_Package_References.ImageIOInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageIOInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.io.ImageIOInterface_Package_References."=";
+   subtype InputImageType_Access is org.allbinary.input.media.image.InputImageType_Package_References.InputImageType_Access;
+   function "=" (Left, Right : InputImageType_Access) return Boolean renames org.allbinary.input.media.image.InputImageType_Package_References."=";
+   subtype InputImageType_Access_Array is org.allbinary.input.media.image.InputImageType_Package_References.InputImageType_Access_Array;
+   function "=" (Left, Right : InputImageType_Access_Array) return Boolean renames org.allbinary.input.media.image.InputImageType_Package_References."=";
+   subtype InputImageType_Access_Array_Access is org.allbinary.input.media.image.InputImageType_Package_References.InputImageType_Access_Array_Access;
+   function "=" (Left, Right : InputImageType_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.InputImageType_Package_References."=";
+   subtype InputImageType_Access_Array_Access_Array is org.allbinary.input.media.image.InputImageType_Package_References.InputImageType_Access_Array_Access_Array;
+   function "=" (Left, Right : InputImageType_Access_Array_Access_Array) return Boolean renames org.allbinary.input.media.image.InputImageType_Package_References."=";
+   subtype InputImageType_Access_Array_Access_Array_Access is org.allbinary.input.media.image.InputImageType_Package_References.InputImageType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputImageType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.InputImageType_Package_References."=";
    procedure Initialize_Fields (This : in out InputImageIOInterfaceFactory'Class) is
    begin
       null;

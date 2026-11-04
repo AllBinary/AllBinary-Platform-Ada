@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.InitHelperFactory_Package;
+package admin.taghelpers.InitHelperFactory_Package_References is
+   type InitHelperFactory_Access is access all admin.taghelpers.InitHelperFactory_Package.InitHelperFactory'Class;
+   type InitHelperFactory_Access_Array is array (Natural range <>) of InitHelperFactory_Access;
+   type InitHelperFactory_Access_Array_Access is access all InitHelperFactory_Access_Array;
+   type InitHelperFactory_Access_Array_Access_Array is array (Natural range <>) of InitHelperFactory_Access_Array_Access;
+   type InitHelperFactory_Access_Array_Access_Array_Access is access all InitHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.InitHelperFactory_Package_References;
+
+with admin.taghelpers.InitHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.InitHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InitHelperFactory is tagged;
-   type InitHelperFactory_Access is access all InitHelperFactory'Class;
-   type InitHelperFactory_Access_Array is array (Natural range <>) of InitHelperFactory_Access;
-   type InitHelperFactory_Access_Array_Access is access all InitHelperFactory_Access_Array;
-   type InitHelperFactory_Access_Array_Access_Array is array (Natural range <>) of InitHelperFactory_Access_Array_Access;
-   type InitHelperFactory_Access_Array_Access_Array_Access is access all InitHelperFactory_Access_Array_Access_Array;
+
+   subtype InitHelperFactory_Access is admin.taghelpers.InitHelperFactory_Package_References.InitHelperFactory_Access;
+   function "=" (Left, Right : InitHelperFactory_Access) return Boolean renames admin.taghelpers.InitHelperFactory_Package_References."=";
+   subtype InitHelperFactory_Access_Array is admin.taghelpers.InitHelperFactory_Package_References.InitHelperFactory_Access_Array;
+   function "=" (Left, Right : InitHelperFactory_Access_Array) return Boolean renames admin.taghelpers.InitHelperFactory_Package_References."=";
+   subtype InitHelperFactory_Access_Array_Access is admin.taghelpers.InitHelperFactory_Package_References.InitHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : InitHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.InitHelperFactory_Package_References."=";
+   subtype InitHelperFactory_Access_Array_Access_Array is admin.taghelpers.InitHelperFactory_Package_References.InitHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : InitHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.InitHelperFactory_Package_References."=";
+   subtype InitHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.InitHelperFactory_Package_References.InitHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InitHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.InitHelperFactory_Package_References."=";
 
    type InitHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.log.GuiLog_Package;
+package org.allbinary.logic.communication.log.GuiLog_Package_References is
+   type GuiLog_Access is access all org.allbinary.logic.communication.log.GuiLog_Package.GuiLog'Class;
+   type GuiLog_Access_Array is array (Natural range <>) of GuiLog_Access;
+   type GuiLog_Access_Array_Access is access all GuiLog_Access_Array;
+   type GuiLog_Access_Array_Access_Array is array (Natural range <>) of GuiLog_Access_Array_Access;
+   type GuiLog_Access_Array_Access_Array_Access is access all GuiLog_Access_Array_Access_Array;
+end org.allbinary.logic.communication.log.GuiLog_Package_References;
+
+with org.allbinary.logic.communication.log.GuiLog_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package_References;
 
 package org.allbinary.logic.communication.log.GuiLog_Package is
 
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype LogFormatUtil_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access;
+   use type LogFormatUtil_Access;
+   subtype LogFormatUtil_Access_Array is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array;
+   use type LogFormatUtil_Access_Array;
+   subtype LogFormatUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access;
+   use type LogFormatUtil_Access_Array_Access;
+   subtype LogFormatUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access_Array;
+   use type LogFormatUtil_Access_Array_Access_Array;
+   subtype LogFormatUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access_Array_Access;
+   use type LogFormatUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GuiLog is tagged;
-   type GuiLog_Access is access all GuiLog'Class;
-   type GuiLog_Access_Array is array (Natural range <>) of GuiLog_Access;
-   type GuiLog_Access_Array_Access is access all GuiLog_Access_Array;
-   type GuiLog_Access_Array_Access_Array is array (Natural range <>) of GuiLog_Access_Array_Access;
-   type GuiLog_Access_Array_Access_Array_Access is access all GuiLog_Access_Array_Access_Array;
+
+   subtype GuiLog_Access is org.allbinary.logic.communication.log.GuiLog_Package_References.GuiLog_Access;
+   function "=" (Left, Right : GuiLog_Access) return Boolean renames org.allbinary.logic.communication.log.GuiLog_Package_References."=";
+   subtype GuiLog_Access_Array is org.allbinary.logic.communication.log.GuiLog_Package_References.GuiLog_Access_Array;
+   function "=" (Left, Right : GuiLog_Access_Array) return Boolean renames org.allbinary.logic.communication.log.GuiLog_Package_References."=";
+   subtype GuiLog_Access_Array_Access is org.allbinary.logic.communication.log.GuiLog_Package_References.GuiLog_Access_Array_Access;
+   function "=" (Left, Right : GuiLog_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.GuiLog_Package_References."=";
+   subtype GuiLog_Access_Array_Access_Array is org.allbinary.logic.communication.log.GuiLog_Package_References.GuiLog_Access_Array_Access_Array;
+   function "=" (Left, Right : GuiLog_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.GuiLog_Package_References."=";
+   subtype GuiLog_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.GuiLog_Package_References.GuiLog_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GuiLog_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.GuiLog_Package_References."=";
 
    type GuiLog is new Java_Object with record
       logFormatUtil : LogFormatUtil_Access;

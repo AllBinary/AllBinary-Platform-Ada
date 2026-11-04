@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.game.TiledLayer_Package; use javax.microedition.lcdui.game.TiledLayer_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package is
 
+   subtype TiledLayer_Access is javax.microedition.lcdui.game.TiledLayer_Package_References.TiledLayer_Access;
+   function "=" (Left, Right : TiledLayer_Access) return Boolean renames javax.microedition.lcdui.game.TiledLayer_Package_References."=";
+   subtype TiledLayer_Access_Array is javax.microedition.lcdui.game.TiledLayer_Package_References.TiledLayer_Access_Array;
+   function "=" (Left, Right : TiledLayer_Access_Array) return Boolean renames javax.microedition.lcdui.game.TiledLayer_Package_References."=";
+   subtype TiledLayer_Access_Array_Access is javax.microedition.lcdui.game.TiledLayer_Package_References.TiledLayer_Access_Array_Access;
+   function "=" (Left, Right : TiledLayer_Access_Array_Access) return Boolean renames javax.microedition.lcdui.game.TiledLayer_Package_References."=";
+   subtype TiledLayer_Access_Array_Access_Array is javax.microedition.lcdui.game.TiledLayer_Package_References.TiledLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : TiledLayer_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.game.TiledLayer_Package_References."=";
+   subtype TiledLayer_Access_Array_Access_Array_Access is javax.microedition.lcdui.game.TiledLayer_Package_References.TiledLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TiledLayer_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.game.TiledLayer_Package_References."=";
+   subtype RaceTrackData_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References.RaceTrackData_Access;
+   function "=" (Left, Right : RaceTrackData_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References."=";
+   subtype RaceTrackData_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References.RaceTrackData_Access_Array;
+   function "=" (Left, Right : RaceTrackData_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References."=";
+   subtype RaceTrackData_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References.RaceTrackData_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackData_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References."=";
+   subtype RaceTrackData_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References.RaceTrackData_Access_Array_Access_Array;
+   function "=" (Left, Right : RaceTrackData_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References."=";
+   subtype RaceTrackData_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References.RaceTrackData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References."=";
    procedure Initialize_Fields (This : in out TiledLayerFactory'Class) is
    begin
       null;

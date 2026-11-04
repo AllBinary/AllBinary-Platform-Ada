@@ -15,6 +15,8 @@
 
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with org.allbinary.game.score.HighScoreCommands_Package; use org.allbinary.game.score.HighScoreCommands_Package;
+with org.allbinary.game.score.HighScoreCommands_Package;
+with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 
 package body org.allbinary.game.score.HighScoreCommandsFactory_Package is
 
@@ -27,7 +29,7 @@ package body org.allbinary.game.score.HighScoreCommandsFactory_Package is
 
    function getInstance return HighScoreCommandsFactory_Access is
    begin
-        return HighScoreCommandsFactory_Package.instance;
+        return HighScoreCommandsFactory_Access (HighScoreCommandsFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out HighScoreCommandsFactory'Class) is

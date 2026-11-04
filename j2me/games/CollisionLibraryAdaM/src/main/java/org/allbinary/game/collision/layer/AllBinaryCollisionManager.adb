@@ -14,12 +14,43 @@
 
 
 with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
+with org.allbinary.game.collision.CollidableBaseBehavior_Package;
+with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
+with org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.collision.CollidableInterface_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.collision.CollisionProcessor_Package;
+with org.allbinary.game.collision.CollisionType_Package;
+with org.allbinary.game.collision.LayerCollisionUtil_Package;
 
 package body org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package is
 
    package CollidableBaseBehavior_Package renames Standard.org.allbinary.game.collision.CollidableBaseBehavior_Package;
    package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   subtype CollidableInterfaceCompositeInterface_Access is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype CollidableInterfaceCompositeInterface_Access_Array is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype CollidableInterfaceCompositeInterface_Access_Array_Access is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array_Access;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype CollidableInterfaceCompositeInterface_Access_Array_Access_Array is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype LayerManager_Access is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access;
+   function "=" (Left, Right : LayerManager_Access) return Boolean renames org.allbinary.layer.LayerManager_Package_References."=";
+   subtype LayerManager_Access_Array is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access_Array;
+   function "=" (Left, Right : LayerManager_Access_Array) return Boolean renames org.allbinary.layer.LayerManager_Package_References."=";
+   subtype LayerManager_Access_Array_Access is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access_Array_Access;
+   function "=" (Left, Right : LayerManager_Access_Array_Access) return Boolean renames org.allbinary.layer.LayerManager_Package_References."=";
+   subtype LayerManager_Access_Array_Access_Array is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access_Array_Access_Array;
+   function "=" (Left, Right : LayerManager_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.LayerManager_Package_References."=";
+   subtype LayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LayerManager_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.LayerManager_Package_References."=";
    procedure Initialize_Fields (This : in out AllBinaryCollisionManager'Class) is
    begin
       null;
@@ -41,7 +72,7 @@ package body org.allbinary.game.collision.layer.AllBinaryCollisionManager_Packag
 
    function getInstance return AllBinaryCollisionManager_Access is
    begin
-        return AllBinaryCollisionManager_Package.allBinaryCollisionManager_Var;
+        return AllBinaryCollisionManager_Access (AllBinaryCollisionManager_Package.allBinaryCollisionManager_Var);
    end getInstance;
 
    --  throws Exception

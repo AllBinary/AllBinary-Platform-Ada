@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.string_Id.CommonSeps_Package;
+package org.allbinary.string_Id.CommonSeps_Package_References is
+   type CommonSeps_Access is access all org.allbinary.string_Id.CommonSeps_Package.CommonSeps'Class;
+   type CommonSeps_Access_Array is array (Natural range <>) of CommonSeps_Access;
+   type CommonSeps_Access_Array_Access is access all CommonSeps_Access_Array;
+   type CommonSeps_Access_Array_Access_Array is array (Natural range <>) of CommonSeps_Access_Array_Access;
+   type CommonSeps_Access_Array_Access_Array_Access is access all CommonSeps_Access_Array_Access_Array;
+end org.allbinary.string_Id.CommonSeps_Package_References;
+
+with org.allbinary.string_Id.CommonSeps_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.string_Id.CommonSeps_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CommonSeps is tagged;
-   type CommonSeps_Access is access all CommonSeps'Class;
-   type CommonSeps_Access_Array is array (Natural range <>) of CommonSeps_Access;
-   type CommonSeps_Access_Array_Access is access all CommonSeps_Access_Array;
-   type CommonSeps_Access_Array_Access_Array is array (Natural range <>) of CommonSeps_Access_Array_Access;
-   type CommonSeps_Access_Array_Access_Array_Access is access all CommonSeps_Access_Array_Access_Array;
+
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   function "=" (Left, Right : CommonSeps_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
 
    type CommonSeps is new Java_Object with record
       NEW_LINE : Unbounded_String;

@@ -16,6 +16,8 @@
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package is
 
@@ -29,7 +31,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceT
 
    function getInstance return EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access is
    begin
-        return EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package.instanceC;
+        return EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access (EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package.instanceC);
    end getInstance;
 
    procedure Initialize (This : in out EmptyRaceRaceTrackGeographicMapCellTypeFactory'Class) is

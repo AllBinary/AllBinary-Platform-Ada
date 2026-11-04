@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package;
+package org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References is
+   type LeftTouchInputToGameKeyEventAction_Access is access all org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package.LeftTouchInputToGameKeyEventAction'Class;
+   type LeftTouchInputToGameKeyEventAction_Access_Array is array (Natural range <>) of LeftTouchInputToGameKeyEventAction_Access;
+   type LeftTouchInputToGameKeyEventAction_Access_Array_Access is access all LeftTouchInputToGameKeyEventAction_Access_Array;
+   type LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of LeftTouchInputToGameKeyEventAction_Access_Array_Access;
+   type LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+end org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References;
+
+with org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEve
 package org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package is
 
    package GameKeyCompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type LeftTouchInputToGameKeyEventAction is tagged;
-   type LeftTouchInputToGameKeyEventAction_Access is access all LeftTouchInputToGameKeyEventAction'Class;
-   type LeftTouchInputToGameKeyEventAction_Access_Array is array (Natural range <>) of LeftTouchInputToGameKeyEventAction_Access;
-   type LeftTouchInputToGameKeyEventAction_Access_Array_Access is access all LeftTouchInputToGameKeyEventAction_Access_Array;
-   type LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of LeftTouchInputToGameKeyEventAction_Access_Array_Access;
-   type LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+
+   subtype LeftTouchInputToGameKeyEventAction_Access is org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References.LeftTouchInputToGameKeyEventAction_Access;
+   function "=" (Left, Right : LeftTouchInputToGameKeyEventAction_Access) return Boolean renames org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References."=";
+   subtype LeftTouchInputToGameKeyEventAction_Access_Array is org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References.LeftTouchInputToGameKeyEventAction_Access_Array;
+   function "=" (Left, Right : LeftTouchInputToGameKeyEventAction_Access_Array) return Boolean renames org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References."=";
+   subtype LeftTouchInputToGameKeyEventAction_Access_Array_Access is org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References.LeftTouchInputToGameKeyEventAction_Access_Array_Access;
+   function "=" (Left, Right : LeftTouchInputToGameKeyEventAction_Access_Array_Access) return Boolean renames org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References."=";
+   subtype LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array is org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References.LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+   function "=" (Left, Right : LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References."=";
+   subtype LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References.LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LeftTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package_References."=";
 
    type LeftTouchInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with null record;
    instance : Java_Object_Access;

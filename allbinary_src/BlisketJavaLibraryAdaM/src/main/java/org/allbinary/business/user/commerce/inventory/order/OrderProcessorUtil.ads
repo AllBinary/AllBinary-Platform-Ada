@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package;
+package org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References is
+   type OrderProcessorUtil_Access is access all org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package.OrderProcessorUtil'Class;
+   type OrderProcessorUtil_Access_Array is array (Natural range <>) of OrderProcessorUtil_Access;
+   type OrderProcessorUtil_Access_Array_Access is access all OrderProcessorUtil_Access_Array;
+   type OrderProcessorUtil_Access_Array_Access_Array is array (Natural range <>) of OrderProcessorUtil_Access_Array_Access;
+   type OrderProcessorUtil_Access_Array_Access_Array_Access is access all OrderProcessorUtil_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References;
+
+with org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
+limited with org.allbinary.business.user.commerce.inventory.order.Order_Package;
+with org.allbinary.business.user.commerce.inventory.order.Order_Package_References;
 
 package org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package is
 
+   package Reference_Types is
+   subtype Order_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access;
+   use type Order_Access;
+   subtype Order_Access_Array is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array;
+   use type Order_Access_Array;
+   subtype Order_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access;
+   use type Order_Access_Array_Access;
+   subtype Order_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access_Array;
+   use type Order_Access_Array_Access_Array;
+   subtype Order_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access_Array_Access;
+   use type Order_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OrderProcessorUtil is tagged;
-   type OrderProcessorUtil_Access is access all OrderProcessorUtil'Class;
-   type OrderProcessorUtil_Access_Array is array (Natural range <>) of OrderProcessorUtil_Access;
-   type OrderProcessorUtil_Access_Array_Access is access all OrderProcessorUtil_Access_Array;
-   type OrderProcessorUtil_Access_Array_Access_Array is array (Natural range <>) of OrderProcessorUtil_Access_Array_Access;
-   type OrderProcessorUtil_Access_Array_Access_Array_Access is access all OrderProcessorUtil_Access_Array_Access_Array;
+
+   subtype OrderProcessorUtil_Access is org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References.OrderProcessorUtil_Access;
+   function "=" (Left, Right : OrderProcessorUtil_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References."=";
+   subtype OrderProcessorUtil_Access_Array is org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References.OrderProcessorUtil_Access_Array;
+   function "=" (Left, Right : OrderProcessorUtil_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References."=";
+   subtype OrderProcessorUtil_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References.OrderProcessorUtil_Access_Array_Access;
+   function "=" (Left, Right : OrderProcessorUtil_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References."=";
+   subtype OrderProcessorUtil_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References.OrderProcessorUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderProcessorUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References."=";
+   subtype OrderProcessorUtil_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References.OrderProcessorUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderProcessorUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package_References."=";
 
    type OrderProcessorUtil is new Java_Object with record
       ORDER_PROCESSED : Unbounded_String;

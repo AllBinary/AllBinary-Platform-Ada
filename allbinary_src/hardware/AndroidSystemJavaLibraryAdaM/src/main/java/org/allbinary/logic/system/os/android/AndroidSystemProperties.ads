@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.os.android.AndroidSystemProperties_Package;
+package org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References is
+   type AndroidSystemProperties_Access is access all org.allbinary.logic.system.os.android.AndroidSystemProperties_Package.AndroidSystemProperties'Class;
+   type AndroidSystemProperties_Access_Array is array (Natural range <>) of AndroidSystemProperties_Access;
+   type AndroidSystemProperties_Access_Array_Access is access all AndroidSystemProperties_Access_Array;
+   type AndroidSystemProperties_Access_Array_Access_Array is array (Natural range <>) of AndroidSystemProperties_Access_Array_Access;
+   type AndroidSystemProperties_Access_Array_Access_Array_Access is access all AndroidSystemProperties_Access_Array_Access_Array;
+end org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References;
+
+with org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.content.Context_Package; use android.content.Context_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with android.content.Context_Package;
+with android.content.Context_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package org.allbinary.logic.system.os.android.AndroidSystemProperties_Package is
 
    package Context_Package renames Standard.android.content.Context_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype Context_Access is android.content.Context_Package_References.Context_Access;
+   use type Context_Access;
+   subtype Context_Access_Array is android.content.Context_Package_References.Context_Access_Array;
+   use type Context_Access_Array;
+   subtype Context_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access;
+   use type Context_Access_Array_Access;
+   subtype Context_Access_Array_Access_Array is android.content.Context_Package_References.Context_Access_Array_Access_Array;
+   use type Context_Access_Array_Access_Array;
+   subtype Context_Access_Array_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access_Array_Access;
+   use type Context_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidSystemProperties is tagged;
-   type AndroidSystemProperties_Access is access all AndroidSystemProperties'Class;
-   type AndroidSystemProperties_Access_Array is array (Natural range <>) of AndroidSystemProperties_Access;
-   type AndroidSystemProperties_Access_Array_Access is access all AndroidSystemProperties_Access_Array;
-   type AndroidSystemProperties_Access_Array_Access_Array is array (Natural range <>) of AndroidSystemProperties_Access_Array_Access;
-   type AndroidSystemProperties_Access_Array_Access_Array_Access is access all AndroidSystemProperties_Access_Array_Access_Array;
+
+   subtype AndroidSystemProperties_Access is org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References.AndroidSystemProperties_Access;
+   function "=" (Left, Right : AndroidSystemProperties_Access) return Boolean renames org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References."=";
+   subtype AndroidSystemProperties_Access_Array is org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References.AndroidSystemProperties_Access_Array;
+   function "=" (Left, Right : AndroidSystemProperties_Access_Array) return Boolean renames org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References."=";
+   subtype AndroidSystemProperties_Access_Array_Access is org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References.AndroidSystemProperties_Access_Array_Access;
+   function "=" (Left, Right : AndroidSystemProperties_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References."=";
+   subtype AndroidSystemProperties_Access_Array_Access_Array is org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References.AndroidSystemProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidSystemProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References."=";
+   subtype AndroidSystemProperties_Access_Array_Access_Array_Access is org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References.AndroidSystemProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidSystemProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.android.AndroidSystemProperties_Package_References."=";
 
    type AndroidSystemProperties is new Java_Object with record
       commonStrings : CommonStrings_Access;

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
+with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
 
 package body org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package is
 
@@ -25,7 +26,7 @@ package body org.allbinary.game.configuration.persistance.GamePersistanceSinglet
 
    function getInstance return GamePersistanceSingleton_Access is
    begin
-        return GamePersistanceSingleton_Package.GAME_PERSISTANCE;
+        return GamePersistanceSingleton_Access (GamePersistanceSingleton_Package.GAME_PERSISTANCE);
    end getInstance;
 
    procedure Initialize (This : in out GamePersistanceSingleton'Class) is

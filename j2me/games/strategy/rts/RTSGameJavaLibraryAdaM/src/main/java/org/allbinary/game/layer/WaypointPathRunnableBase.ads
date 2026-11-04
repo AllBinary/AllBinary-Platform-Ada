@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
+package org.allbinary.game.layer.WaypointPathRunnableBase_Package_References is
+   type WaypointPathRunnableBase_Access is access all org.allbinary.game.layer.WaypointPathRunnableBase_Package.WaypointPathRunnableBase'Class;
+   type WaypointPathRunnableBase_Access_Array is array (Natural range <>) of WaypointPathRunnableBase_Access;
+   type WaypointPathRunnableBase_Access_Array_Access is access all WaypointPathRunnableBase_Access_Array;
+   type WaypointPathRunnableBase_Access_Array_Access_Array is array (Natural range <>) of WaypointPathRunnableBase_Access_Array_Access;
+   type WaypointPathRunnableBase_Access_Array_Access_Array_Access is access all WaypointPathRunnableBase_Access_Array_Access_Array;
+end org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
+
+with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.math.LayerDistanceUtil_Package; use org.allbinary.math.LayerDistanceUtil_Package;
+limited with org.allbinary.math.LayerDistanceUtil_Package;
+with org.allbinary.math.LayerDistanceUtil_Package_References;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
-with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+limited with org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.game.layer.WaypointPathRunnableBase_Package is
@@ -32,13 +44,41 @@ package org.allbinary.game.layer.WaypointPathRunnableBase_Package is
    package PriorityRunnable_Package renames Standard.org.allbinary.thread.PriorityRunnable_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Reference_Types is
+   subtype LayerDistanceUtil_Access is org.allbinary.math.LayerDistanceUtil_Package_References.LayerDistanceUtil_Access;
+   use type LayerDistanceUtil_Access;
+   subtype LayerDistanceUtil_Access_Array is org.allbinary.math.LayerDistanceUtil_Package_References.LayerDistanceUtil_Access_Array;
+   use type LayerDistanceUtil_Access_Array;
+   subtype LayerDistanceUtil_Access_Array_Access is org.allbinary.math.LayerDistanceUtil_Package_References.LayerDistanceUtil_Access_Array_Access;
+   use type LayerDistanceUtil_Access_Array_Access;
+   subtype LayerDistanceUtil_Access_Array_Access_Array is org.allbinary.math.LayerDistanceUtil_Package_References.LayerDistanceUtil_Access_Array_Access_Array;
+   use type LayerDistanceUtil_Access_Array_Access_Array;
+   subtype LayerDistanceUtil_Access_Array_Access_Array_Access is org.allbinary.math.LayerDistanceUtil_Package_References.LayerDistanceUtil_Access_Array_Access_Array_Access;
+   use type LayerDistanceUtil_Access_Array_Access_Array_Access;
+   subtype PathFindingLayerInterface_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access;
+   use type PathFindingLayerInterface_Access;
+   subtype PathFindingLayerInterface_Access_Array is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array;
+   use type PathFindingLayerInterface_Access_Array;
+   subtype PathFindingLayerInterface_Access_Array_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access;
+   use type PathFindingLayerInterface_Access_Array_Access;
+   subtype PathFindingLayerInterface_Access_Array_Access_Array is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access_Array;
+   use type PathFindingLayerInterface_Access_Array_Access_Array;
+   subtype PathFindingLayerInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access_Array_Access;
+   use type PathFindingLayerInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type WaypointPathRunnableBase is tagged;
-   type WaypointPathRunnableBase_Access is access all WaypointPathRunnableBase'Class;
-   type WaypointPathRunnableBase_Access_Array is array (Natural range <>) of WaypointPathRunnableBase_Access;
-   type WaypointPathRunnableBase_Access_Array_Access is access all WaypointPathRunnableBase_Access_Array;
-   type WaypointPathRunnableBase_Access_Array_Access_Array is array (Natural range <>) of WaypointPathRunnableBase_Access_Array_Access;
-   type WaypointPathRunnableBase_Access_Array_Access_Array_Access is access all WaypointPathRunnableBase_Access_Array_Access_Array;
+
+   subtype WaypointPathRunnableBase_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access_Array is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
 
    type WaypointPathRunnableBase is new Java_Object and RunnableInterface and PriorityRunnable with record
       layerDistanceUtil : LayerDistanceUtil_Access;

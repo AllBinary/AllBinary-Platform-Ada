@@ -14,6 +14,9 @@
 
 
 with org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.NormalRaceTrackGeographicMapCellTypeFactory_Package is
 
@@ -25,7 +28,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NormalRaceTrac
 
    function getInstance return NormalRaceTrackGeographicMapCellTypeFactory_Access is
    begin
-        return NormalRaceTrackGeographicMapCellTypeFactory_Package.instanceC;
+        return NormalRaceTrackGeographicMapCellTypeFactory_Access (NormalRaceTrackGeographicMapCellTypeFactory_Package.instanceC);
    end getInstance;
 
    procedure Initialize (This : in out NormalRaceTrackGeographicMapCellTypeFactory'Class) is

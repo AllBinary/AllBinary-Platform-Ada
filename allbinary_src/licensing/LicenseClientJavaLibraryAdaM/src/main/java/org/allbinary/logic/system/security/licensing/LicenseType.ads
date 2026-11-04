@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.security.licensing.LicenseType_Package;
+package org.allbinary.logic.system.security.licensing.LicenseType_Package_References is
+   type LicenseType_Access is access all org.allbinary.logic.system.security.licensing.LicenseType_Package.LicenseType'Class;
+   type LicenseType_Access_Array is array (Natural range <>) of LicenseType_Access;
+   type LicenseType_Access_Array_Access is access all LicenseType_Access_Array;
+   type LicenseType_Access_Array_Access_Array is array (Natural range <>) of LicenseType_Access_Array_Access;
+   type LicenseType_Access_Array_Access_Array_Access is access all LicenseType_Access_Array_Access_Array;
+end org.allbinary.logic.system.security.licensing.LicenseType_Package_References;
+
+with org.allbinary.logic.system.security.licensing.LicenseType_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.system.security.licensing.LicenseType_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type LicenseType is tagged;
-   type LicenseType_Access is access all LicenseType'Class;
-   type LicenseType_Access_Array is array (Natural range <>) of LicenseType_Access;
-   type LicenseType_Access_Array_Access is access all LicenseType_Access_Array;
-   type LicenseType_Access_Array_Access_Array is array (Natural range <>) of LicenseType_Access_Array_Access;
-   type LicenseType_Access_Array_Access_Array_Access is access all LicenseType_Access_Array_Access_Array;
+
+   subtype LicenseType_Access is org.allbinary.logic.system.security.licensing.LicenseType_Package_References.LicenseType_Access;
+   function "=" (Left, Right : LicenseType_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseType_Package_References."=";
+   subtype LicenseType_Access_Array is org.allbinary.logic.system.security.licensing.LicenseType_Package_References.LicenseType_Access_Array;
+   function "=" (Left, Right : LicenseType_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseType_Package_References."=";
+   subtype LicenseType_Access_Array_Access is org.allbinary.logic.system.security.licensing.LicenseType_Package_References.LicenseType_Access_Array_Access;
+   function "=" (Left, Right : LicenseType_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseType_Package_References."=";
+   subtype LicenseType_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.LicenseType_Package_References.LicenseType_Access_Array_Access_Array;
+   function "=" (Left, Right : LicenseType_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseType_Package_References."=";
+   subtype LicenseType_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.LicenseType_Package_References.LicenseType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LicenseType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseType_Package_References."=";
 
    type LicenseType is new Java_Object with record
       name : Unbounded_String;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package;
+package org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References is
+   type CssElementData_Access is access all org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package.CssElementData'Class;
+   type CssElementData_Access_Array is array (Natural range <>) of CssElementData_Access;
+   type CssElementData_Access_Array_Access is access all CssElementData_Access_Array;
+   type CssElementData_Access_Array_Access_Array is array (Natural range <>) of CssElementData_Access_Array_Access;
+   type CssElementData_Access_Array_Access_Array_Access is access all CssElementData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References;
+
+with org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CssElementData is tagged;
-   type CssElementData_Access is access all CssElementData'Class;
-   type CssElementData_Access_Array is array (Natural range <>) of CssElementData_Access;
-   type CssElementData_Access_Array_Access is access all CssElementData_Access_Array;
-   type CssElementData_Access_Array_Access_Array is array (Natural range <>) of CssElementData_Access_Array_Access;
-   type CssElementData_Access_Array_Access_Array_Access is access all CssElementData_Access_Array_Access_Array;
+
+   subtype CssElementData_Access is org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References.CssElementData_Access;
+   function "=" (Left, Right : CssElementData_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References."=";
+   subtype CssElementData_Access_Array is org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References.CssElementData_Access_Array;
+   function "=" (Left, Right : CssElementData_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References."=";
+   subtype CssElementData_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References.CssElementData_Access_Array_Access;
+   function "=" (Left, Right : CssElementData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References."=";
+   subtype CssElementData_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References.CssElementData_Access_Array_Access_Array;
+   function "=" (Left, Right : CssElementData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References."=";
+   subtype CssElementData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References.CssElementData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CssElementData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package_References."=";
 
    type CssElementData is new Java_Object with record
       NAME : Unbounded_String;

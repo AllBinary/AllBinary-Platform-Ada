@@ -13,12 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
 
 package body org.allbinary.media.audio.NoPlayer_Package is
 
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype Control_Access is javax.microedition.media.Control_Package_References.Control_Access;
+   function "=" (Left, Right : Control_Access) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array;
+   function "=" (Left, Right : Control_Access_Array) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access;
+   function "=" (Left, Right : Control_Access_Array_Access) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array;
+   function "=" (Left, Right : Control_Access_Array_Access_Array) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Control_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.Control_Package_References."=";
    procedure Initialize_Fields (This : in out NoPlayer'Class) is
    begin
       null;

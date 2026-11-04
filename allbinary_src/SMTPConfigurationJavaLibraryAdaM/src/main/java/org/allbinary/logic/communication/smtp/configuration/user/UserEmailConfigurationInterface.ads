@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References is
+   type UserEmailConfigurationInterface_Access is access all org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package.UserEmailConfigurationInterface'Class;
+   type UserEmailConfigurationInterface_Access_Array is array (Natural range <>) of UserEmailConfigurationInterface_Access;
+   type UserEmailConfigurationInterface_Access_Array_Access is access all UserEmailConfigurationInterface_Access_Array;
+   type UserEmailConfigurationInterface_Access_Array_Access_Array is array (Natural range <>) of UserEmailConfigurationInterface_Access_Array_Access;
+   type UserEmailConfigurationInterface_Access_Array_Access_Array_Access is access all UserEmailConfigurationInterface_Access_Array_Access_Array;
+end org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References;
+
+with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
+limited with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package_References;
 
 package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package is
 
    package UserEmailEventsConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
+   package Reference_Types is
+   subtype UserEmailEventsConfigurationInterface_Access is org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package_References.UserEmailEventsConfigurationInterface_Access;
+   use type UserEmailEventsConfigurationInterface_Access;
+   subtype UserEmailEventsConfigurationInterface_Access_Array is org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package_References.UserEmailEventsConfigurationInterface_Access_Array;
+   use type UserEmailEventsConfigurationInterface_Access_Array;
+   subtype UserEmailEventsConfigurationInterface_Access_Array_Access is org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package_References.UserEmailEventsConfigurationInterface_Access_Array_Access;
+   use type UserEmailEventsConfigurationInterface_Access_Array_Access;
+   subtype UserEmailEventsConfigurationInterface_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package_References.UserEmailEventsConfigurationInterface_Access_Array_Access_Array;
+   use type UserEmailEventsConfigurationInterface_Access_Array_Access_Array;
+   subtype UserEmailEventsConfigurationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package_References.UserEmailEventsConfigurationInterface_Access_Array_Access_Array_Access;
+   use type UserEmailEventsConfigurationInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type UserEmailConfigurationInterface is interface;
-   type UserEmailConfigurationInterface_Access is access all UserEmailConfigurationInterface'Class;
-   type UserEmailConfigurationInterface_Access_Array is array (Natural range <>) of UserEmailConfigurationInterface_Access;
-   type UserEmailConfigurationInterface_Access_Array_Access is access all UserEmailConfigurationInterface_Access_Array;
-   type UserEmailConfigurationInterface_Access_Array_Access_Array is array (Natural range <>) of UserEmailConfigurationInterface_Access_Array_Access;
-   type UserEmailConfigurationInterface_Access_Array_Access_Array_Access is access all UserEmailConfigurationInterface_Access_Array_Access_Array;
+   subtype UserEmailConfigurationInterface_Access is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
+   subtype UserEmailConfigurationInterface_Access_Array is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access_Array;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
+   subtype UserEmailConfigurationInterface_Access_Array_Access is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access_Array_Access;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
+   subtype UserEmailConfigurationInterface_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
+   subtype UserEmailConfigurationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References.UserEmailConfigurationInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserEmailConfigurationInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References."=";
+   function Java_Object_Access_From_UserEmailConfigurationInterface (Value : UserEmailConfigurationInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getUserEmailEventsConfigurationInterface (This : in out UserEmailConfigurationInterface) return UserEmailEventsConfigurationInterface_Access is abstract;
    procedure setUserEmailEventsConfigurationInterface (This : in out UserEmailConfigurationInterface; emailEventsConfigurationInterface_Param : access UserEmailEventsConfigurationInterface_Package.UserEmailEventsConfigurationInterface'Class) is abstract;
 

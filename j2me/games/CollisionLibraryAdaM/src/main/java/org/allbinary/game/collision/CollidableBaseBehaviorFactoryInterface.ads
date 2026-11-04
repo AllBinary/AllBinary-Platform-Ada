@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package;
+package org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References is
+   type CollidableBaseBehaviorFactoryInterface_Access is access all org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package.CollidableBaseBehaviorFactoryInterface'Class;
+   type CollidableBaseBehaviorFactoryInterface_Access_Array is array (Natural range <>) of CollidableBaseBehaviorFactoryInterface_Access;
+   type CollidableBaseBehaviorFactoryInterface_Access_Array_Access is access all CollidableBaseBehaviorFactoryInterface_Access_Array;
+   type CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CollidableBaseBehaviorFactoryInterface_Access_Array_Access;
+   type CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array_Access is access all CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array;
+end org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References;
+
+with org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
+limited with org.allbinary.game.collision.CollidableBaseBehavior_Package;
+with org.allbinary.game.collision.CollidableBaseBehavior_Package_References;
 
 package org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package is
 
+   package Reference_Types is
+   subtype CollidableBaseBehavior_Access is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access;
+   use type CollidableBaseBehavior_Access;
+   subtype CollidableBaseBehavior_Access_Array is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array;
+   use type CollidableBaseBehavior_Access_Array;
+   subtype CollidableBaseBehavior_Access_Array_Access is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array_Access;
+   use type CollidableBaseBehavior_Access_Array_Access;
+   subtype CollidableBaseBehavior_Access_Array_Access_Array is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array_Access_Array;
+   use type CollidableBaseBehavior_Access_Array_Access_Array;
+   subtype CollidableBaseBehavior_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array_Access_Array_Access;
+   use type CollidableBaseBehavior_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type CollidableBaseBehaviorFactoryInterface is interface;
-   type CollidableBaseBehaviorFactoryInterface_Access is access all CollidableBaseBehaviorFactoryInterface'Class;
-   type CollidableBaseBehaviorFactoryInterface_Access_Array is array (Natural range <>) of CollidableBaseBehaviorFactoryInterface_Access;
-   type CollidableBaseBehaviorFactoryInterface_Access_Array_Access is access all CollidableBaseBehaviorFactoryInterface_Access_Array;
-   type CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CollidableBaseBehaviorFactoryInterface_Access_Array_Access;
-   type CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array_Access is access all CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array;
+   subtype CollidableBaseBehaviorFactoryInterface_Access is org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References.CollidableBaseBehaviorFactoryInterface_Access;
+   function "=" (Left, Right : CollidableBaseBehaviorFactoryInterface_Access) return Boolean renames org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References."=";
+   subtype CollidableBaseBehaviorFactoryInterface_Access_Array is org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References.CollidableBaseBehaviorFactoryInterface_Access_Array;
+   function "=" (Left, Right : CollidableBaseBehaviorFactoryInterface_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References."=";
+   subtype CollidableBaseBehaviorFactoryInterface_Access_Array_Access is org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References.CollidableBaseBehaviorFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : CollidableBaseBehaviorFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References."=";
+   subtype CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array is org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References.CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References."=";
+   subtype CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References.CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package_References."=";
+   function Java_Object_Access_From_CollidableBaseBehaviorFactoryInterface (Value : CollidableBaseBehaviorFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function createBehavior (This : in out CollidableBaseBehaviorFactoryInterface) return CollidableBaseBehavior_Access is abstract;
 
 end org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package;

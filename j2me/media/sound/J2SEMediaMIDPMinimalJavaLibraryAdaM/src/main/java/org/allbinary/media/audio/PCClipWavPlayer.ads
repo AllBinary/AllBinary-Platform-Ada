@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.PCClipWavPlayer_Package;
+package org.allbinary.media.audio.PCClipWavPlayer_Package_References is
+   type PCClipWavPlayer_Access is access all org.allbinary.media.audio.PCClipWavPlayer_Package.PCClipWavPlayer'Class;
+   type PCClipWavPlayer_Access_Array is array (Natural range <>) of PCClipWavPlayer_Access;
+   type PCClipWavPlayer_Access_Array_Access is access all PCClipWavPlayer_Access_Array;
+   type PCClipWavPlayer_Access_Array_Access_Array is array (Natural range <>) of PCClipWavPlayer_Access_Array_Access;
+   type PCClipWavPlayer_Access_Array_Access_Array_Access is access all PCClipWavPlayer_Access_Array_Access_Array;
+end org.allbinary.media.audio.PCClipWavPlayer_Package_References;
+
+with org.allbinary.media.audio.PCClipWavPlayer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,14 +32,16 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+limited with javax.microedition.media.Control_Package;
+with javax.microedition.media.Control_Package_References;
 --  with javax.sound.sampled.AudioInputStream_Package; use javax.sound.sampled.AudioInputStream_Package;
 --  with javax.sound.sampled.AudioSystem_Package; use javax.sound.sampled.AudioSystem_Package;
 --  with javax.sound.sampled.Clip_Package; use javax.sound.sampled.Clip_Package;
 --  with javax.sound.sampled.FloatControl_Package; use javax.sound.sampled.FloatControl_Package;
 --  with javax.sound.sampled.LineEvent_Package; use javax.sound.sampled.LineEvent_Package;
 --  with javax.sound.sampled.LineListener_Package; use javax.sound.sampled.LineListener_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.audio.BasicPlayer_Package; use org.allbinary.media.audio.BasicPlayer_Package;
 
 package org.allbinary.media.audio.PCClipWavPlayer_Package is
@@ -37,13 +49,41 @@ package org.allbinary.media.audio.PCClipWavPlayer_Package is
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package Control_Package renames Standard.javax.microedition.media.Control_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype Control_Access is javax.microedition.media.Control_Package_References.Control_Access;
+   use type Control_Access;
+   subtype Control_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array;
+   use type Control_Access_Array;
+   subtype Control_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access;
+   use type Control_Access_Array_Access;
+   subtype Control_Access_Array_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array;
+   use type Control_Access_Array_Access_Array;
+   subtype Control_Access_Array_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array_Access;
+   use type Control_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PCClipWavPlayer is tagged;
-   type PCClipWavPlayer_Access is access all PCClipWavPlayer'Class;
-   type PCClipWavPlayer_Access_Array is array (Natural range <>) of PCClipWavPlayer_Access;
-   type PCClipWavPlayer_Access_Array_Access is access all PCClipWavPlayer_Access_Array;
-   type PCClipWavPlayer_Access_Array_Access_Array is array (Natural range <>) of PCClipWavPlayer_Access_Array_Access;
-   type PCClipWavPlayer_Access_Array_Access_Array_Access is access all PCClipWavPlayer_Access_Array_Access_Array;
+
+   subtype PCClipWavPlayer_Access is org.allbinary.media.audio.PCClipWavPlayer_Package_References.PCClipWavPlayer_Access;
+   function "=" (Left, Right : PCClipWavPlayer_Access) return Boolean renames org.allbinary.media.audio.PCClipWavPlayer_Package_References."=";
+   subtype PCClipWavPlayer_Access_Array is org.allbinary.media.audio.PCClipWavPlayer_Package_References.PCClipWavPlayer_Access_Array;
+   function "=" (Left, Right : PCClipWavPlayer_Access_Array) return Boolean renames org.allbinary.media.audio.PCClipWavPlayer_Package_References."=";
+   subtype PCClipWavPlayer_Access_Array_Access is org.allbinary.media.audio.PCClipWavPlayer_Package_References.PCClipWavPlayer_Access_Array_Access;
+   function "=" (Left, Right : PCClipWavPlayer_Access_Array_Access) return Boolean renames org.allbinary.media.audio.PCClipWavPlayer_Package_References."=";
+   subtype PCClipWavPlayer_Access_Array_Access_Array is org.allbinary.media.audio.PCClipWavPlayer_Package_References.PCClipWavPlayer_Access_Array_Access_Array;
+   function "=" (Left, Right : PCClipWavPlayer_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.PCClipWavPlayer_Package_References."=";
+   subtype PCClipWavPlayer_Access_Array_Access_Array_Access is org.allbinary.media.audio.PCClipWavPlayer_Package_References.PCClipWavPlayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PCClipWavPlayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.PCClipWavPlayer_Package_References."=";
 
    type PCClipWavPlayer is new BasicPlayer with record
       logUtil : LogUtil_Access;

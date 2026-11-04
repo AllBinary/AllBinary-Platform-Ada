@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with javax.microedition.lcdui.NullCommandListener_Package;
+package javax.microedition.lcdui.NullCommandListener_Package_References is
+   type NullCommandListener_Access is access all javax.microedition.lcdui.NullCommandListener_Package.NullCommandListener'Class;
+   type NullCommandListener_Access_Array is array (Natural range <>) of NullCommandListener_Access;
+   type NullCommandListener_Access_Array_Access is access all NullCommandListener_Access_Array;
+   type NullCommandListener_Access_Array_Access_Array is array (Natural range <>) of NullCommandListener_Access_Array_Access;
+   type NullCommandListener_Access_Array_Access_Array_Access is access all NullCommandListener_Access_Array_Access_Array;
+end javax.microedition.lcdui.NullCommandListener_Package_References;
+
+with javax.microedition.lcdui.NullCommandListener_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -9,18 +19,48 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
+limited with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
+limited with javax.microedition.lcdui.Displayable_Package;
+with javax.microedition.lcdui.Displayable_Package_References;
 
 package javax.microedition.lcdui.NullCommandListener_Package is
 
+   package Reference_Types is
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   use type Command_Access;
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   use type Command_Access_Array;
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   use type Command_Access_Array_Access;
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   use type Command_Access_Array_Access_Array;
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   use type Command_Access_Array_Access_Array_Access;
+   subtype Displayable_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access;
+   use type Displayable_Access;
+   subtype Displayable_Access_Array is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array;
+   use type Displayable_Access_Array;
+   subtype Displayable_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access;
+   use type Displayable_Access_Array_Access;
+   subtype Displayable_Access_Array_Access_Array is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array;
+   use type Displayable_Access_Array_Access_Array;
+   subtype Displayable_Access_Array_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array_Access;
+   use type Displayable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullCommandListener is tagged;
-   type NullCommandListener_Access is access all NullCommandListener'Class;
-   type NullCommandListener_Access_Array is array (Natural range <>) of NullCommandListener_Access;
-   type NullCommandListener_Access_Array_Access is access all NullCommandListener_Access_Array;
-   type NullCommandListener_Access_Array_Access_Array is array (Natural range <>) of NullCommandListener_Access_Array_Access;
-   type NullCommandListener_Access_Array_Access_Array_Access is access all NullCommandListener_Access_Array_Access_Array;
+
+   subtype NullCommandListener_Access is javax.microedition.lcdui.NullCommandListener_Package_References.NullCommandListener_Access;
+   function "=" (Left, Right : NullCommandListener_Access) return Boolean renames javax.microedition.lcdui.NullCommandListener_Package_References."=";
+   subtype NullCommandListener_Access_Array is javax.microedition.lcdui.NullCommandListener_Package_References.NullCommandListener_Access_Array;
+   function "=" (Left, Right : NullCommandListener_Access_Array) return Boolean renames javax.microedition.lcdui.NullCommandListener_Package_References."=";
+   subtype NullCommandListener_Access_Array_Access is javax.microedition.lcdui.NullCommandListener_Package_References.NullCommandListener_Access_Array_Access;
+   function "=" (Left, Right : NullCommandListener_Access_Array_Access) return Boolean renames javax.microedition.lcdui.NullCommandListener_Package_References."=";
+   subtype NullCommandListener_Access_Array_Access_Array is javax.microedition.lcdui.NullCommandListener_Package_References.NullCommandListener_Access_Array_Access_Array;
+   function "=" (Left, Right : NullCommandListener_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.NullCommandListener_Package_References."=";
+   subtype NullCommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.NullCommandListener_Package_References.NullCommandListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullCommandListener_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.NullCommandListener_Package_References."=";
 
    type NullCommandListener is new Java_Object and CommandListener with null record;
    NULL_COMMAND_LISTENER : NullCommandListener_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
+package org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References is
+   type LicenseServerInitFileUtil_Access is access all org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package.LicenseServerInitFileUtil'Class;
+   type LicenseServerInitFileUtil_Access_Array is array (Natural range <>) of LicenseServerInitFileUtil_Access;
+   type LicenseServerInitFileUtil_Access_Array_Access is access all LicenseServerInitFileUtil_Access_Array;
+   type LicenseServerInitFileUtil_Access_Array_Access_Array is array (Natural range <>) of LicenseServerInitFileUtil_Access_Array_Access;
+   type LicenseServerInitFileUtil_Access_Array_Access_Array_Access is access all LicenseServerInitFileUtil_Access_Array_Access_Array;
+end org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References;
+
+with org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,21 +31,51 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.OutputStream_Package; use java.io.OutputStream_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package is
 
    package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type LicenseServerInitFileUtil is tagged;
-   type LicenseServerInitFileUtil_Access is access all LicenseServerInitFileUtil'Class;
-   type LicenseServerInitFileUtil_Access_Array is array (Natural range <>) of LicenseServerInitFileUtil_Access;
-   type LicenseServerInitFileUtil_Access_Array_Access is access all LicenseServerInitFileUtil_Access_Array;
-   type LicenseServerInitFileUtil_Access_Array_Access_Array is array (Natural range <>) of LicenseServerInitFileUtil_Access_Array_Access;
-   type LicenseServerInitFileUtil_Access_Array_Access_Array_Access is access all LicenseServerInitFileUtil_Access_Array_Access_Array;
+
+   subtype LicenseServerInitFileUtil_Access is org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References.LicenseServerInitFileUtil_Access;
+   function "=" (Left, Right : LicenseServerInitFileUtil_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References."=";
+   subtype LicenseServerInitFileUtil_Access_Array is org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References.LicenseServerInitFileUtil_Access_Array;
+   function "=" (Left, Right : LicenseServerInitFileUtil_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References."=";
+   subtype LicenseServerInitFileUtil_Access_Array_Access is org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References.LicenseServerInitFileUtil_Access_Array_Access;
+   function "=" (Left, Right : LicenseServerInitFileUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References."=";
+   subtype LicenseServerInitFileUtil_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References.LicenseServerInitFileUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LicenseServerInitFileUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References."=";
+   subtype LicenseServerInitFileUtil_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References.LicenseServerInitFileUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LicenseServerInitFileUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package_References."=";
 
    type LicenseServerInitFileUtil is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -13,15 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with android.app.Activity_Package; use android.app.Activity_Package;
+with android.content.Context_Package; use android.content.Context_Package;
+with android.content.res.Resources_Package; use android.content.res.Resources_Package;
 with org.allbinary.debug.DebugFactory_Package; use org.allbinary.debug.DebugFactory_Package;
 with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
 
 package body org.allbinary.data.resource.ResourceUtil_Package is
@@ -36,6 +42,56 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   function "=" (Left, Right : Activity_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Context_Access is android.content.Context_Package_References.Context_Access;
+   function "=" (Left, Right : Context_Access) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array is android.content.Context_Package_References.Context_Access_Array;
+   function "=" (Left, Right : Context_Access_Array) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access;
+   function "=" (Left, Right : Context_Access_Array_Access) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array_Access_Array is android.content.Context_Package_References.Context_Access_Array_Access_Array;
+   function "=" (Left, Right : Context_Access_Array_Access_Array) return Boolean renames android.content.Context_Package_References."=";
+   subtype Context_Access_Array_Access_Array_Access is android.content.Context_Package_References.Context_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Context_Access_Array_Access_Array_Access) return Boolean renames android.content.Context_Package_References."=";
+   subtype Resources_Access is android.content.res.Resources_Package_References.Resources_Access;
+   function "=" (Left, Right : Resources_Access) return Boolean renames android.content.res.Resources_Package_References."=";
+   subtype Resources_Access_Array is android.content.res.Resources_Package_References.Resources_Access_Array;
+   function "=" (Left, Right : Resources_Access_Array) return Boolean renames android.content.res.Resources_Package_References."=";
+   subtype Resources_Access_Array_Access is android.content.res.Resources_Package_References.Resources_Access_Array_Access;
+   function "=" (Left, Right : Resources_Access_Array_Access) return Boolean renames android.content.res.Resources_Package_References."=";
+   subtype Resources_Access_Array_Access_Array is android.content.res.Resources_Package_References.Resources_Access_Array_Access_Array;
+   function "=" (Left, Right : Resources_Access_Array_Access_Array) return Boolean renames android.content.res.Resources_Package_References."=";
+   subtype Resources_Access_Array_Access_Array_Access is android.content.res.Resources_Package_References.Resources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Resources_Access_Array_Access_Array_Access) return Boolean renames android.content.res.Resources_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   function "=" (Left, Right : ABHashtable_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
    procedure Initialize_Fields (This : in out ResourceUtil'Class) is
    begin
       null;
@@ -48,7 +104,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
 
    function getInstance return ResourceUtil_Access is
    begin
-        return ResourceUtil_Package.instance;
+        return ResourceUtil_Access (ResourceUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ResourceUtil'Class) is

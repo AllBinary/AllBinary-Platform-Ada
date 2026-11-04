@@ -13,12 +13,30 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
 with org.allbinary.game.GameTypeFactory_Package; use org.allbinary.game.GameTypeFactory_Package;
 with org.allbinary.game.GameMode_Package; use org.allbinary.game.GameMode_Package;
 with org.allbinary.game.PlayerTypesFactory_Package; use org.allbinary.game.PlayerTypesFactory_Package;
+with org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.GameInfoData_Package;
+with org.allbinary.game.GameMode_Package;
+with org.allbinary.game.GameType_Package;
+with org.allbinary.game.GameTypeFactory_Package;
+with org.allbinary.game.PlayerType_Package;
+with org.allbinary.game.PlayerTypesFactory_Package;
 
 package body org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
 
+   subtype GameInfo_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access;
+   function "=" (Left, Right : GameInfo_Access) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
+   subtype GameInfo_Access_Array is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array;
+   function "=" (Left, Right : GameInfo_Access_Array) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
+   subtype GameInfo_Access_Array_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access;
+   function "=" (Left, Right : GameInfo_Access_Array_Access) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
+   subtype GameInfo_Access_Array_Access_Array is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
+   subtype GameInfo_Access_Array_Access_Array_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
    procedure Initialize_Fields (This : in out BasicHighScoresGameInfoFactory'Class) is
    begin
       null;
@@ -41,7 +59,7 @@ package body org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
 
    function getInstance return BasicHighScoresGameInfoFactory_Access is
    begin
-        return BasicHighScoresGameInfoFactory_Package.SINGLETON;
+        return BasicHighScoresGameInfoFactory_Access (BasicHighScoresGameInfoFactory_Package.SINGLETON);
    end getInstance;
 
 begin

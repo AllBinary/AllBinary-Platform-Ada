@@ -17,12 +17,26 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Pac
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
 with org.allbinary.data.tables.transform.info.TransformInfoEntityFactory_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityFactory_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
 
 package body org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package is
 
    package TransformInfoHttpStoreFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package;
    package TransformInfoObjectConfigAndManipulatorFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
    package TransformInfoObjectConfigGeneratorFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
+   subtype TransformInfoEntity_Access is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access;
+   function "=" (Left, Right : TransformInfoEntity_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
+   subtype TransformInfoEntity_Access_Array is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array;
+   function "=" (Left, Right : TransformInfoEntity_Access_Array) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
+   subtype TransformInfoEntity_Access_Array_Access is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
+   subtype TransformInfoEntity_Access_Array_Access_Array is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
+   subtype TransformInfoEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
    procedure Initialize_Fields (This : in out TransformInfoEntityBuilder'Class) is
    begin
       null;

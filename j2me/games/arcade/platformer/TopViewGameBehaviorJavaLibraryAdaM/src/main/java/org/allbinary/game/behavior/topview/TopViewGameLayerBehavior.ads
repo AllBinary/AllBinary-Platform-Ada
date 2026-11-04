@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package;
+package org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References is
+   type TopViewGameLayerBehavior_Access is access all org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package.TopViewGameLayerBehavior'Class;
+   type TopViewGameLayerBehavior_Access_Array is array (Natural range <>) of TopViewGameLayerBehavior_Access;
+   type TopViewGameLayerBehavior_Access_Array_Access is access all TopViewGameLayerBehavior_Access_Array;
+   type TopViewGameLayerBehavior_Access_Array_Access_Array is array (Natural range <>) of TopViewGameLayerBehavior_Access_Array_Access;
+   type TopViewGameLayerBehavior_Access_Array_Access_Array_Access is access all TopViewGameLayerBehavior_Access_Array_Access_Array;
+end org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References;
+
+with org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,22 +31,63 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.behavior.GameLayerBehavior_Package; use org.allbinary.game.layer.behavior.GameLayerBehavior_Package;
-with org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package; use org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package;
-with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
-with org.allbinary.game.behavior.topview.InitialJumpBehavior_Package; use org.allbinary.game.behavior.topview.InitialJumpBehavior_Package;
+limited with org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package;
+with org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References;
+limited with org.allbinary.game.physics.velocity.VelocityProperties_Package;
+with org.allbinary.game.physics.velocity.VelocityProperties_Package_References;
+limited with org.allbinary.game.behavior.topview.InitialJumpBehavior_Package;
+with org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References;
 
 package org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package is
 
    package GameLayerBehavior_Package renames Standard.org.allbinary.game.layer.behavior.GameLayerBehavior_Package;
    package BasicAccelerationProperties_Package renames Standard.org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package;
    package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
+   package Reference_Types is
+   subtype BasicAccelerationProperties_Access is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access;
+   use type BasicAccelerationProperties_Access;
+   subtype BasicAccelerationProperties_Access_Array is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access_Array;
+   use type BasicAccelerationProperties_Access_Array;
+   subtype BasicAccelerationProperties_Access_Array_Access is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access_Array_Access;
+   use type BasicAccelerationProperties_Access_Array_Access;
+   subtype BasicAccelerationProperties_Access_Array_Access_Array is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access_Array_Access_Array;
+   use type BasicAccelerationProperties_Access_Array_Access_Array;
+   subtype BasicAccelerationProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access_Array_Access_Array_Access;
+   use type BasicAccelerationProperties_Access_Array_Access_Array_Access;
+   subtype VelocityProperties_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access;
+   use type VelocityProperties_Access;
+   subtype VelocityProperties_Access_Array is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array;
+   use type VelocityProperties_Access_Array;
+   subtype VelocityProperties_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access;
+   use type VelocityProperties_Access_Array_Access;
+   subtype VelocityProperties_Access_Array_Access_Array is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access_Array;
+   use type VelocityProperties_Access_Array_Access_Array;
+   subtype VelocityProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access_Array_Access;
+   use type VelocityProperties_Access_Array_Access_Array_Access;
+   subtype InitialJumpBehavior_Access is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access;
+   use type InitialJumpBehavior_Access;
+   subtype InitialJumpBehavior_Access_Array is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array;
+   use type InitialJumpBehavior_Access_Array;
+   subtype InitialJumpBehavior_Access_Array_Access is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array_Access;
+   use type InitialJumpBehavior_Access_Array_Access;
+   subtype InitialJumpBehavior_Access_Array_Access_Array is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array_Access_Array;
+   use type InitialJumpBehavior_Access_Array_Access_Array;
+   subtype InitialJumpBehavior_Access_Array_Access_Array_Access is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array_Access_Array_Access;
+   use type InitialJumpBehavior_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TopViewGameLayerBehavior is tagged;
-   type TopViewGameLayerBehavior_Access is access all TopViewGameLayerBehavior'Class;
-   type TopViewGameLayerBehavior_Access_Array is array (Natural range <>) of TopViewGameLayerBehavior_Access;
-   type TopViewGameLayerBehavior_Access_Array_Access is access all TopViewGameLayerBehavior_Access_Array;
-   type TopViewGameLayerBehavior_Access_Array_Access_Array is array (Natural range <>) of TopViewGameLayerBehavior_Access_Array_Access;
-   type TopViewGameLayerBehavior_Access_Array_Access_Array_Access is access all TopViewGameLayerBehavior_Access_Array_Access_Array;
+
+   subtype TopViewGameLayerBehavior_Access is org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References.TopViewGameLayerBehavior_Access;
+   function "=" (Left, Right : TopViewGameLayerBehavior_Access) return Boolean renames org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References."=";
+   subtype TopViewGameLayerBehavior_Access_Array is org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References.TopViewGameLayerBehavior_Access_Array;
+   function "=" (Left, Right : TopViewGameLayerBehavior_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References."=";
+   subtype TopViewGameLayerBehavior_Access_Array_Access is org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References.TopViewGameLayerBehavior_Access_Array_Access;
+   function "=" (Left, Right : TopViewGameLayerBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References."=";
+   subtype TopViewGameLayerBehavior_Access_Array_Access_Array is org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References.TopViewGameLayerBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : TopViewGameLayerBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References."=";
+   subtype TopViewGameLayerBehavior_Access_Array_Access_Array_Access is org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References.TopViewGameLayerBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TopViewGameLayerBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package_References."=";
 
    type TopViewGameLayerBehavior is new GameLayerBehavior with record
       maxGravityActionIndex : Integer;

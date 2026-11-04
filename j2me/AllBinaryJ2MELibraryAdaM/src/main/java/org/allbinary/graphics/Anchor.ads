@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.Anchor_Package;
+package org.allbinary.graphics.Anchor_Package_References is
+   type Anchor_Access is access all org.allbinary.graphics.Anchor_Package.Anchor'Class;
+   type Anchor_Access_Array is array (Natural range <>) of Anchor_Access;
+   type Anchor_Access_Array_Access is access all Anchor_Access_Array;
+   type Anchor_Access_Array_Access_Array is array (Natural range <>) of Anchor_Access_Array_Access;
+   type Anchor_Access_Array_Access_Array_Access is access all Anchor_Access_Array_Access_Array;
+end org.allbinary.graphics.Anchor_Package_References;
+
+with org.allbinary.graphics.Anchor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.Anchor_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Anchor is tagged;
-   type Anchor_Access is access all Anchor'Class;
-   type Anchor_Access_Array is array (Natural range <>) of Anchor_Access;
-   type Anchor_Access_Array_Access is access all Anchor_Access_Array;
-   type Anchor_Access_Array_Access_Array is array (Natural range <>) of Anchor_Access_Array_Access;
-   type Anchor_Access_Array_Access_Array_Access is access all Anchor_Access_Array_Access_Array;
+
+   subtype Anchor_Access is org.allbinary.graphics.Anchor_Package_References.Anchor_Access;
+   function "=" (Left, Right : Anchor_Access) return Boolean renames org.allbinary.graphics.Anchor_Package_References."=";
+   subtype Anchor_Access_Array is org.allbinary.graphics.Anchor_Package_References.Anchor_Access_Array;
+   function "=" (Left, Right : Anchor_Access_Array) return Boolean renames org.allbinary.graphics.Anchor_Package_References."=";
+   subtype Anchor_Access_Array_Access is org.allbinary.graphics.Anchor_Package_References.Anchor_Access_Array_Access;
+   function "=" (Left, Right : Anchor_Access_Array_Access) return Boolean renames org.allbinary.graphics.Anchor_Package_References."=";
+   subtype Anchor_Access_Array_Access_Array is org.allbinary.graphics.Anchor_Package_References.Anchor_Access_Array_Access_Array;
+   function "=" (Left, Right : Anchor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.Anchor_Package_References."=";
+   subtype Anchor_Access_Array_Access_Array_Access is org.allbinary.graphics.Anchor_Package_References.Anchor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Anchor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.Anchor_Package_References."=";
 
    type Anchor is new Java_Object with null record;
    TOP_LEFT : Integer;

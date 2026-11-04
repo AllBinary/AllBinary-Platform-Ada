@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;
+package org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References is
+   type Ethernet_Access is access all org.allbinary.logic.system.hardware.components.linux.Ethernet_Package.Ethernet'Class;
+   type Ethernet_Access_Array is array (Natural range <>) of Ethernet_Access;
+   type Ethernet_Access_Array_Access is access all Ethernet_Access_Array;
+   type Ethernet_Access_Array_Access_Array is array (Natural range <>) of Ethernet_Access_Array_Access;
+   type Ethernet_Access_Array_Access_Array_Access is access all Ethernet_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References;
+
+with org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ package org.allbinary.logic.system.hardware.components.linux.Ethernet_Package is
 
    package EthernetInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.EthernetInterface_Package;
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Ethernet is tagged;
-   type Ethernet_Access is access all Ethernet'Class;
-   type Ethernet_Access_Array is array (Natural range <>) of Ethernet_Access;
-   type Ethernet_Access_Array_Access is access all Ethernet_Access_Array;
-   type Ethernet_Access_Array_Access_Array is array (Natural range <>) of Ethernet_Access_Array_Access;
-   type Ethernet_Access_Array_Access_Array_Access is access all Ethernet_Access_Array_Access_Array;
+
+   subtype Ethernet_Access is org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References.Ethernet_Access;
+   function "=" (Left, Right : Ethernet_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References."=";
+   subtype Ethernet_Access_Array is org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References.Ethernet_Access_Array;
+   function "=" (Left, Right : Ethernet_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References."=";
+   subtype Ethernet_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References.Ethernet_Access_Array_Access;
+   function "=" (Left, Right : Ethernet_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References."=";
+   subtype Ethernet_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References.Ethernet_Access_Array_Access_Array;
+   function "=" (Left, Right : Ethernet_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References."=";
+   subtype Ethernet_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References.Ethernet_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Ethernet_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Ethernet_Package_References."=";
 
    type Ethernet is new Java_Object and HardwareComponentInterface and EthernetInterface with record
       data : Unbounded_String;

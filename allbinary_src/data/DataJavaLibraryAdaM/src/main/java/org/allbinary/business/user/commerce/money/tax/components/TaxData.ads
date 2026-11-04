@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.tax.components.TaxData_Package;
+package org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References is
+   type TaxData_Access is access all org.allbinary.business.user.commerce.money.tax.components.TaxData_Package.TaxData'Class;
+   type TaxData_Access_Array is array (Natural range <>) of TaxData_Access;
+   type TaxData_Access_Array_Access is access all TaxData_Access_Array;
+   type TaxData_Access_Array_Access_Array is array (Natural range <>) of TaxData_Access_Array_Access;
+   type TaxData_Access_Array_Access_Array_Access is access all TaxData_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References;
+
+with org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.commerce.money.tax.components.TaxData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TaxData is tagged;
-   type TaxData_Access is access all TaxData'Class;
-   type TaxData_Access_Array is array (Natural range <>) of TaxData_Access;
-   type TaxData_Access_Array_Access is access all TaxData_Access_Array;
-   type TaxData_Access_Array_Access_Array is array (Natural range <>) of TaxData_Access_Array_Access;
-   type TaxData_Access_Array_Access_Array_Access is access all TaxData_Access_Array_Access_Array;
+
+   subtype TaxData_Access is org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References.TaxData_Access;
+   function "=" (Left, Right : TaxData_Access) return Boolean renames org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References."=";
+   subtype TaxData_Access_Array is org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References.TaxData_Access_Array;
+   function "=" (Left, Right : TaxData_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References."=";
+   subtype TaxData_Access_Array_Access is org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References.TaxData_Access_Array_Access;
+   function "=" (Left, Right : TaxData_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References."=";
+   subtype TaxData_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References.TaxData_Access_Array_Access_Array;
+   function "=" (Left, Right : TaxData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References."=";
+   subtype TaxData_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References.TaxData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TaxData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.tax.components.TaxData_Package_References."=";
 
    type TaxData is new Java_Object with null record;
    NAME : Unbounded_String;

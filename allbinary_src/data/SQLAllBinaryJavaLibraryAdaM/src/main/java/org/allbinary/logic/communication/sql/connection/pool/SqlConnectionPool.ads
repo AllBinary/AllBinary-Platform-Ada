@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package;
+package org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References is
+   type SqlConnectionPool_Access is access all org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package.SqlConnectionPool'Class;
+   type SqlConnectionPool_Access_Array is array (Natural range <>) of SqlConnectionPool_Access;
+   type SqlConnectionPool_Access_Array_Access is access all SqlConnectionPool_Access_Array;
+   type SqlConnectionPool_Access_Array_Access_Array is array (Natural range <>) of SqlConnectionPool_Access_Array_Access;
+   type SqlConnectionPool_Access_Array_Access_Array_Access is access all SqlConnectionPool_Access_Array_Access_Array;
+end org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References;
+
+with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,21 +34,51 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.sql.DriverManager_Package; use java.sql.DriverManager_Package;
 --  with java.sql.SQLException_Package; use java.sql.SQLException_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.StdUtil_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype StdUtil_Access is org.allbinary.logic.StdUtil_Package_References.StdUtil_Access;
+   use type StdUtil_Access;
+   subtype StdUtil_Access_Array is org.allbinary.logic.StdUtil_Package_References.StdUtil_Access_Array;
+   use type StdUtil_Access_Array;
+   subtype StdUtil_Access_Array_Access is org.allbinary.logic.StdUtil_Package_References.StdUtil_Access_Array_Access;
+   use type StdUtil_Access_Array_Access;
+   subtype StdUtil_Access_Array_Access_Array is org.allbinary.logic.StdUtil_Package_References.StdUtil_Access_Array_Access_Array;
+   use type StdUtil_Access_Array_Access_Array;
+   subtype StdUtil_Access_Array_Access_Array_Access is org.allbinary.logic.StdUtil_Package_References.StdUtil_Access_Array_Access_Array_Access;
+   use type StdUtil_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SqlConnectionPool is tagged;
-   type SqlConnectionPool_Access is access all SqlConnectionPool'Class;
-   type SqlConnectionPool_Access_Array is array (Natural range <>) of SqlConnectionPool_Access;
-   type SqlConnectionPool_Access_Array_Access is access all SqlConnectionPool_Access_Array;
-   type SqlConnectionPool_Access_Array_Access_Array is array (Natural range <>) of SqlConnectionPool_Access_Array_Access;
-   type SqlConnectionPool_Access_Array_Access_Array_Access is access all SqlConnectionPool_Access_Array_Access_Array;
+
+   subtype SqlConnectionPool_Access is org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.SqlConnectionPool_Access;
+   function "=" (Left, Right : SqlConnectionPool_Access) return Boolean renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References."=";
+   subtype SqlConnectionPool_Access_Array is org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.SqlConnectionPool_Access_Array;
+   function "=" (Left, Right : SqlConnectionPool_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References."=";
+   subtype SqlConnectionPool_Access_Array_Access is org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.SqlConnectionPool_Access_Array_Access;
+   function "=" (Left, Right : SqlConnectionPool_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References."=";
+   subtype SqlConnectionPool_Access_Array_Access_Array is org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.SqlConnectionPool_Access_Array_Access_Array;
+   function "=" (Left, Right : SqlConnectionPool_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References."=";
+   subtype SqlConnectionPool_Access_Array_Access_Array_Access is org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.SqlConnectionPool_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SqlConnectionPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References."=";
 
    type SqlConnectionPool is new Java_Object with record
       logUtil : LogUtil_Access;

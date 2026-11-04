@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tree.dom.DomNodeHelper_Package;
+package org.allbinary.data.tree.dom.DomNodeHelper_Package_References is
+   type DomNodeHelper_Access is access all org.allbinary.data.tree.dom.DomNodeHelper_Package.DomNodeHelper'Class;
+   type DomNodeHelper_Access_Array is array (Natural range <>) of DomNodeHelper_Access;
+   type DomNodeHelper_Access_Array_Access is access all DomNodeHelper_Access_Array;
+   type DomNodeHelper_Access_Array_Access_Array is array (Natural range <>) of DomNodeHelper_Access_Array_Access;
+   type DomNodeHelper_Access_Array_Access_Array_Access is access all DomNodeHelper_Access_Array_Access_Array;
+end org.allbinary.data.tree.dom.DomNodeHelper_Package_References;
+
+with org.allbinary.data.tree.dom.DomNodeHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
+limited with org.w3c.dom.NodeList_Package;
+with org.w3c.dom.NodeList_Package_References;
 
 package org.allbinary.data.tree.dom.DomNodeHelper_Package is
 
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package Reference_Types is
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   subtype NodeList_Access is org.w3c.dom.NodeList_Package_References.NodeList_Access;
+   use type NodeList_Access;
+   subtype NodeList_Access_Array is org.w3c.dom.NodeList_Package_References.NodeList_Access_Array;
+   use type NodeList_Access_Array;
+   subtype NodeList_Access_Array_Access is org.w3c.dom.NodeList_Package_References.NodeList_Access_Array_Access;
+   use type NodeList_Access_Array_Access;
+   subtype NodeList_Access_Array_Access_Array is org.w3c.dom.NodeList_Package_References.NodeList_Access_Array_Access_Array;
+   use type NodeList_Access_Array_Access_Array;
+   subtype NodeList_Access_Array_Access_Array_Access is org.w3c.dom.NodeList_Package_References.NodeList_Access_Array_Access_Array_Access;
+   use type NodeList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DomNodeHelper is tagged;
-   type DomNodeHelper_Access is access all DomNodeHelper'Class;
-   type DomNodeHelper_Access_Array is array (Natural range <>) of DomNodeHelper_Access;
-   type DomNodeHelper_Access_Array_Access is access all DomNodeHelper_Access_Array;
-   type DomNodeHelper_Access_Array_Access_Array is array (Natural range <>) of DomNodeHelper_Access_Array_Access;
-   type DomNodeHelper_Access_Array_Access_Array_Access is access all DomNodeHelper_Access_Array_Access_Array;
+
+   subtype DomNodeHelper_Access is org.allbinary.data.tree.dom.DomNodeHelper_Package_References.DomNodeHelper_Access;
+   function "=" (Left, Right : DomNodeHelper_Access) return Boolean renames org.allbinary.data.tree.dom.DomNodeHelper_Package_References."=";
+   subtype DomNodeHelper_Access_Array is org.allbinary.data.tree.dom.DomNodeHelper_Package_References.DomNodeHelper_Access_Array;
+   function "=" (Left, Right : DomNodeHelper_Access_Array) return Boolean renames org.allbinary.data.tree.dom.DomNodeHelper_Package_References."=";
+   subtype DomNodeHelper_Access_Array_Access is org.allbinary.data.tree.dom.DomNodeHelper_Package_References.DomNodeHelper_Access_Array_Access;
+   function "=" (Left, Right : DomNodeHelper_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.DomNodeHelper_Package_References."=";
+   subtype DomNodeHelper_Access_Array_Access_Array is org.allbinary.data.tree.dom.DomNodeHelper_Package_References.DomNodeHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : DomNodeHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tree.dom.DomNodeHelper_Package_References."=";
+   subtype DomNodeHelper_Access_Array_Access_Array_Access is org.allbinary.data.tree.dom.DomNodeHelper_Package_References.DomNodeHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DomNodeHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.DomNodeHelper_Package_References."=";
 
    type DomNodeHelper is new Java_Object with null record;
 

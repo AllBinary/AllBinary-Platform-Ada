@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.log.FrameLog_Package;
+package org.allbinary.input.automation.log.FrameLog_Package_References is
+   type FrameLog_Access is access all org.allbinary.input.automation.log.FrameLog_Package.FrameLog'Class;
+   type FrameLog_Access_Array is array (Natural range <>) of FrameLog_Access;
+   type FrameLog_Access_Array_Access is access all FrameLog_Access_Array;
+   type FrameLog_Access_Array_Access_Array is array (Natural range <>) of FrameLog_Access_Array_Access;
+   type FrameLog_Access_Array_Access_Array_Access is access all FrameLog_Access_Array_Access_Array;
+end org.allbinary.input.automation.log.FrameLog_Package_References;
+
+with org.allbinary.input.automation.log.FrameLog_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,20 +31,50 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
 
 package org.allbinary.input.automation.log.FrameLog_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype StringMaker_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access;
+   use type StringMaker_Access;
+   subtype StringMaker_Access_Array is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array;
+   use type StringMaker_Access_Array;
+   subtype StringMaker_Access_Array_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access;
+   use type StringMaker_Access_Array_Access;
+   subtype StringMaker_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access_Array;
+   use type StringMaker_Access_Array_Access_Array;
+   subtype StringMaker_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access_Array_Access;
+   use type StringMaker_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type FrameLog is tagged;
-   type FrameLog_Access is access all FrameLog'Class;
-   type FrameLog_Access_Array is array (Natural range <>) of FrameLog_Access;
-   type FrameLog_Access_Array_Access is access all FrameLog_Access_Array;
-   type FrameLog_Access_Array_Access_Array is array (Natural range <>) of FrameLog_Access_Array_Access;
-   type FrameLog_Access_Array_Access_Array_Access is access all FrameLog_Access_Array_Access_Array;
+
+   subtype FrameLog_Access is org.allbinary.input.automation.log.FrameLog_Package_References.FrameLog_Access;
+   function "=" (Left, Right : FrameLog_Access) return Boolean renames org.allbinary.input.automation.log.FrameLog_Package_References."=";
+   subtype FrameLog_Access_Array is org.allbinary.input.automation.log.FrameLog_Package_References.FrameLog_Access_Array;
+   function "=" (Left, Right : FrameLog_Access_Array) return Boolean renames org.allbinary.input.automation.log.FrameLog_Package_References."=";
+   subtype FrameLog_Access_Array_Access is org.allbinary.input.automation.log.FrameLog_Package_References.FrameLog_Access_Array_Access;
+   function "=" (Left, Right : FrameLog_Access_Array_Access) return Boolean renames org.allbinary.input.automation.log.FrameLog_Package_References."=";
+   subtype FrameLog_Access_Array_Access_Array is org.allbinary.input.automation.log.FrameLog_Package_References.FrameLog_Access_Array_Access_Array;
+   function "=" (Left, Right : FrameLog_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.log.FrameLog_Package_References."=";
+   subtype FrameLog_Access_Array_Access_Array_Access is org.allbinary.input.automation.log.FrameLog_Package_References.FrameLog_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FrameLog_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.log.FrameLog_Package_References."=";
 
    type FrameLog is new Java_Object with record
       frame : Long_Long_Integer;

@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
+with org.allbinary.game.layer.VehicleFrictionProperties_Package; use org.allbinary.game.layer.VehicleFrictionProperties_Package;
+with org.allbinary.game.layer.VehicleFrictionProperties_Package;
 
 package body org.allbinary.game.layer.VehicleProperties_Package is
 
+   subtype VelocityProperties_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access;
+   function "=" (Left, Right : VelocityProperties_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array;
+   function "=" (Left, Right : VelocityProperties_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access;
+   function "=" (Left, Right : VelocityProperties_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array_Access_Array is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : VelocityProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VelocityProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VehicleFrictionProperties_Access is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access;
+   function "=" (Left, Right : VehicleFrictionProperties_Access) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
+   subtype VehicleFrictionProperties_Access_Array is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access_Array;
+   function "=" (Left, Right : VehicleFrictionProperties_Access_Array) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
+   subtype VehicleFrictionProperties_Access_Array_Access is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access_Array_Access;
+   function "=" (Left, Right : VehicleFrictionProperties_Access_Array_Access) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
+   subtype VehicleFrictionProperties_Access_Array_Access_Array is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : VehicleFrictionProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
+   subtype VehicleFrictionProperties_Access_Array_Access_Array_Access is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VehicleFrictionProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
    procedure Initialize_Fields (This : in out VehicleProperties'Class) is
    begin
       null;

@@ -13,9 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageJ2SEUtil_Package; use org.allbinary.media.image.ImageJ2SEUtil_Package;
+with org.allbinary.media.image.ImageJ2SEUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package;
 
 package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
 
+   subtype ImageUtil_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access;
+   function "=" (Left, Right : ImageUtil_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array;
+   function "=" (Left, Right : ImageUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   subtype ImageJ2SEUtil_Access is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access;
+   function "=" (Left, Right : ImageJ2SEUtil_Access) return Boolean renames org.allbinary.media.image.ImageJ2SEUtil_Package_References."=";
+   subtype ImageJ2SEUtil_Access_Array is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access_Array;
+   function "=" (Left, Right : ImageJ2SEUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2SEUtil_Package_References."=";
+   subtype ImageJ2SEUtil_Access_Array_Access is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageJ2SEUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2SEUtil_Package_References."=";
+   subtype ImageJ2SEUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageJ2SEUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2SEUtil_Package_References."=";
+   subtype ImageJ2SEUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageJ2SEUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2SEUtil_Package_References."=";
    procedure Initialize_Fields (This : in out ImageJ2SERotationUtil'Class) is
    begin
       null;
@@ -27,7 +51,7 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
 
    function getInstance return ImageJ2SERotationUtil_Access is
    begin
-        return ImageJ2SERotationUtil_Package.instance;
+        return ImageJ2SERotationUtil_Access (ImageJ2SERotationUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ImageJ2SERotationUtil'Class) is

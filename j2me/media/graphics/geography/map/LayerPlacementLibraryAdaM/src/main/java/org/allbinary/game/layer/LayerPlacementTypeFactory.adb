@@ -14,10 +14,22 @@
 
 
 with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.game.layer.LayerPlacementType_Package; use org.allbinary.game.layer.LayerPlacementType_Package;
+with org.allbinary.game.layer.LayerPlacementType_Package;
 
 package body org.allbinary.game.layer.LayerPlacementTypeFactory_Package is
 
    package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   subtype LayerPlacementType_Access is org.allbinary.game.layer.LayerPlacementType_Package_References.LayerPlacementType_Access;
+   function "=" (Left, Right : LayerPlacementType_Access) return Boolean renames org.allbinary.game.layer.LayerPlacementType_Package_References."=";
+   subtype LayerPlacementType_Access_Array is org.allbinary.game.layer.LayerPlacementType_Package_References.LayerPlacementType_Access_Array;
+   function "=" (Left, Right : LayerPlacementType_Access_Array) return Boolean renames org.allbinary.game.layer.LayerPlacementType_Package_References."=";
+   subtype LayerPlacementType_Access_Array_Access is org.allbinary.game.layer.LayerPlacementType_Package_References.LayerPlacementType_Access_Array_Access;
+   function "=" (Left, Right : LayerPlacementType_Access_Array_Access) return Boolean renames org.allbinary.game.layer.LayerPlacementType_Package_References."=";
+   subtype LayerPlacementType_Access_Array_Access_Array is org.allbinary.game.layer.LayerPlacementType_Package_References.LayerPlacementType_Access_Array_Access_Array;
+   function "=" (Left, Right : LayerPlacementType_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.LayerPlacementType_Package_References."=";
+   subtype LayerPlacementType_Access_Array_Access_Array_Access is org.allbinary.game.layer.LayerPlacementType_Package_References.LayerPlacementType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LayerPlacementType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.LayerPlacementType_Package_References."=";
    procedure Initialize_Fields (This : in out LayerPlacementTypeFactory'Class) is
    begin
       null;
@@ -43,7 +55,7 @@ package body org.allbinary.game.layer.LayerPlacementTypeFactory_Package is
 
    function getInstance return LayerPlacementTypeFactory_Access is
    begin
-        return LayerPlacementTypeFactory_Package.instance;
+        return LayerPlacementTypeFactory_Access (LayerPlacementTypeFactory_Package.instance);
    end getInstance;
 
 begin

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.thread.MusicThreadPool_Package;
+package org.allbinary.thread.MusicThreadPool_Package_References is
+   type MusicThreadPool_Access is access all org.allbinary.thread.MusicThreadPool_Package.MusicThreadPool'Class;
+   type MusicThreadPool_Access_Array is array (Natural range <>) of MusicThreadPool_Access;
+   type MusicThreadPool_Access_Array_Access is access all MusicThreadPool_Access_Array;
+   type MusicThreadPool_Access_Array_Access_Array is array (Natural range <>) of MusicThreadPool_Access_Array_Access;
+   type MusicThreadPool_Access_Array_Access_Array_Access is access all MusicThreadPool_Access_Array_Access_Array;
+end org.allbinary.thread.MusicThreadPool_Package_References;
+
+with org.allbinary.thread.MusicThreadPool_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.thread.MusicThreadPool_Package is
 
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type MusicThreadPool is tagged;
-   type MusicThreadPool_Access is access all MusicThreadPool'Class;
-   type MusicThreadPool_Access_Array is array (Natural range <>) of MusicThreadPool_Access;
-   type MusicThreadPool_Access_Array_Access is access all MusicThreadPool_Access_Array;
-   type MusicThreadPool_Access_Array_Access_Array is array (Natural range <>) of MusicThreadPool_Access_Array_Access;
-   type MusicThreadPool_Access_Array_Access_Array_Access is access all MusicThreadPool_Access_Array_Access_Array;
+
+   subtype MusicThreadPool_Access is org.allbinary.thread.MusicThreadPool_Package_References.MusicThreadPool_Access;
+   function "=" (Left, Right : MusicThreadPool_Access) return Boolean renames org.allbinary.thread.MusicThreadPool_Package_References."=";
+   subtype MusicThreadPool_Access_Array is org.allbinary.thread.MusicThreadPool_Package_References.MusicThreadPool_Access_Array;
+   function "=" (Left, Right : MusicThreadPool_Access_Array) return Boolean renames org.allbinary.thread.MusicThreadPool_Package_References."=";
+   subtype MusicThreadPool_Access_Array_Access is org.allbinary.thread.MusicThreadPool_Package_References.MusicThreadPool_Access_Array_Access;
+   function "=" (Left, Right : MusicThreadPool_Access_Array_Access) return Boolean renames org.allbinary.thread.MusicThreadPool_Package_References."=";
+   subtype MusicThreadPool_Access_Array_Access_Array is org.allbinary.thread.MusicThreadPool_Package_References.MusicThreadPool_Access_Array_Access_Array;
+   function "=" (Left, Right : MusicThreadPool_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.MusicThreadPool_Package_References."=";
+   subtype MusicThreadPool_Access_Array_Access_Array_Access is org.allbinary.thread.MusicThreadPool_Package_References.MusicThreadPool_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MusicThreadPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.MusicThreadPool_Package_References."=";
 
    type MusicThreadPool is new ThreadPool with null record;
    THREAD_POOL : ThreadPool_Access;

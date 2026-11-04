@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.behavior.GameLayerBehavior_Package;
+package org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References is
+   type GameLayerBehavior_Access is access all org.allbinary.game.layer.behavior.GameLayerBehavior_Package.GameLayerBehavior'Class;
+   type GameLayerBehavior_Access_Array is array (Natural range <>) of GameLayerBehavior_Access;
+   type GameLayerBehavior_Access_Array_Access is access all GameLayerBehavior_Access_Array;
+   type GameLayerBehavior_Access_Array_Access_Array is array (Natural range <>) of GameLayerBehavior_Access_Array_Access;
+   type GameLayerBehavior_Access_Array_Access_Array_Access is access all GameLayerBehavior_Access_Array_Access_Array;
+end org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References;
+
+with org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.layer.behavior.GameLayerBehavior_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameLayerBehavior is tagged;
-   type GameLayerBehavior_Access is access all GameLayerBehavior'Class;
-   type GameLayerBehavior_Access_Array is array (Natural range <>) of GameLayerBehavior_Access;
-   type GameLayerBehavior_Access_Array_Access is access all GameLayerBehavior_Access_Array;
-   type GameLayerBehavior_Access_Array_Access_Array is array (Natural range <>) of GameLayerBehavior_Access_Array_Access;
-   type GameLayerBehavior_Access_Array_Access_Array_Access is access all GameLayerBehavior_Access_Array_Access_Array;
+
+   subtype GameLayerBehavior_Access is org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References.GameLayerBehavior_Access;
+   function "=" (Left, Right : GameLayerBehavior_Access) return Boolean renames org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References."=";
+   subtype GameLayerBehavior_Access_Array is org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References.GameLayerBehavior_Access_Array;
+   function "=" (Left, Right : GameLayerBehavior_Access_Array) return Boolean renames org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References."=";
+   subtype GameLayerBehavior_Access_Array_Access is org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References.GameLayerBehavior_Access_Array_Access;
+   function "=" (Left, Right : GameLayerBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References."=";
+   subtype GameLayerBehavior_Access_Array_Access_Array is org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References.GameLayerBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : GameLayerBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References."=";
+   subtype GameLayerBehavior_Access_Array_Access_Array_Access is org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References.GameLayerBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameLayerBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.behavior.GameLayerBehavior_Package_References."=";
 
    type GameLayerBehavior is new Java_Object with null record;
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package;
+package org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References is
+   type TimeFiredInterface_Access is access all org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package.TimeFiredInterface'Class;
+   type TimeFiredInterface_Access_Array is array (Natural range <>) of TimeFiredInterface_Access;
+   type TimeFiredInterface_Access_Array_Access is access all TimeFiredInterface_Access_Array;
+   type TimeFiredInterface_Access_Array_Access_Array is array (Natural range <>) of TimeFiredInterface_Access_Array_Access;
+   type TimeFiredInterface_Access_Array_Access_Array_Access is access all TimeFiredInterface_Access_Array_Access_Array;
+end org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References;
+
+with org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type TimeFiredInterface is interface;
-   type TimeFiredInterface_Access is access all TimeFiredInterface'Class;
-   type TimeFiredInterface_Access_Array is array (Natural range <>) of TimeFiredInterface_Access;
-   type TimeFiredInterface_Access_Array_Access is access all TimeFiredInterface_Access_Array;
-   type TimeFiredInterface_Access_Array_Access_Array is array (Natural range <>) of TimeFiredInterface_Access_Array_Access;
-   type TimeFiredInterface_Access_Array_Access_Array_Access is access all TimeFiredInterface_Access_Array_Access_Array;
+   subtype TimeFiredInterface_Access is org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References.TimeFiredInterface_Access;
+   function "=" (Left, Right : TimeFiredInterface_Access) return Boolean renames org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References."=";
+   subtype TimeFiredInterface_Access_Array is org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References.TimeFiredInterface_Access_Array;
+   function "=" (Left, Right : TimeFiredInterface_Access_Array) return Boolean renames org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References."=";
+   subtype TimeFiredInterface_Access_Array_Access is org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References.TimeFiredInterface_Access_Array_Access;
+   function "=" (Left, Right : TimeFiredInterface_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References."=";
+   subtype TimeFiredInterface_Access_Array_Access_Array is org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References.TimeFiredInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TimeFiredInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References."=";
+   subtype TimeFiredInterface_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References.TimeFiredInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TimeFiredInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package_References."=";
+   function Java_Object_Access_From_TimeFiredInterface (Value : TimeFiredInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getLastFireTime (This : in out TimeFiredInterface) return Long_Long_Integer is abstract;
 
 end org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package;

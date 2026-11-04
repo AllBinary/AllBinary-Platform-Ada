@@ -13,14 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.globals.UrlGlobalsView_Package; use org.allbinary.globals.UrlGlobalsView_Package;
+with org.allbinary.globals.UrlGlobalsView_Package;
 
 package body org.allbinary.globals.UrlGlobalsViewFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype DomNodeInterface_Access is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access;
+   function "=" (Left, Right : DomNodeInterface_Access) return Boolean renames org.allbinary.data.tree.dom.DomNodeInterface_Package_References."=";
+   subtype DomNodeInterface_Access_Array is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access_Array;
+   function "=" (Left, Right : DomNodeInterface_Access_Array) return Boolean renames org.allbinary.data.tree.dom.DomNodeInterface_Package_References."=";
+   subtype DomNodeInterface_Access_Array_Access is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access_Array_Access;
+   function "=" (Left, Right : DomNodeInterface_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.DomNodeInterface_Package_References."=";
+   subtype DomNodeInterface_Access_Array_Access_Array is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : DomNodeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tree.dom.DomNodeInterface_Package_References."=";
+   subtype DomNodeInterface_Access_Array_Access_Array_Access is org.allbinary.data.tree.dom.DomNodeInterface_Package_References.DomNodeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DomNodeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.DomNodeInterface_Package_References."=";
    procedure Initialize_Fields (This : in out UrlGlobalsViewFactory'Class) is
    begin
       null;

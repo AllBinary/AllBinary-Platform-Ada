@@ -11,6 +11,16 @@
 -- Created By: Travis Berthelot  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.capital.event.CapitalEvent_Package;
+package org.allbinary.game.layer.capital.event.CapitalEvent_Package_References is
+   type CapitalEvent_Access is access all org.allbinary.game.layer.capital.event.CapitalEvent_Package.CapitalEvent'Class;
+   type CapitalEvent_Access_Array is array (Natural range <>) of CapitalEvent_Access;
+   type CapitalEvent_Access_Array_Access is access all CapitalEvent_Access_Array;
+   type CapitalEvent_Access_Array_Access_Array is array (Natural range <>) of CapitalEvent_Access_Array_Access;
+   type CapitalEvent_Access_Array_Access_Array_Access is access all CapitalEvent_Access_Array_Access_Array;
+end org.allbinary.game.layer.capital.event.CapitalEvent_Package_References;
+
+with org.allbinary.game.layer.capital.event.CapitalEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 package org.allbinary.game.layer.capital.event.CapitalEvent_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CapitalEvent is tagged;
-   type CapitalEvent_Access is access all CapitalEvent'Class;
-   type CapitalEvent_Access_Array is array (Natural range <>) of CapitalEvent_Access;
-   type CapitalEvent_Access_Array_Access is access all CapitalEvent_Access_Array;
-   type CapitalEvent_Access_Array_Access_Array is array (Natural range <>) of CapitalEvent_Access_Array_Access;
-   type CapitalEvent_Access_Array_Access_Array_Access is access all CapitalEvent_Access_Array_Access_Array;
+
+   subtype CapitalEvent_Access is org.allbinary.game.layer.capital.event.CapitalEvent_Package_References.CapitalEvent_Access;
+   function "=" (Left, Right : CapitalEvent_Access) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEvent_Package_References."=";
+   subtype CapitalEvent_Access_Array is org.allbinary.game.layer.capital.event.CapitalEvent_Package_References.CapitalEvent_Access_Array;
+   function "=" (Left, Right : CapitalEvent_Access_Array) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEvent_Package_References."=";
+   subtype CapitalEvent_Access_Array_Access is org.allbinary.game.layer.capital.event.CapitalEvent_Package_References.CapitalEvent_Access_Array_Access;
+   function "=" (Left, Right : CapitalEvent_Access_Array_Access) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEvent_Package_References."=";
+   subtype CapitalEvent_Access_Array_Access_Array is org.allbinary.game.layer.capital.event.CapitalEvent_Package_References.CapitalEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : CapitalEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEvent_Package_References."=";
+   subtype CapitalEvent_Access_Array_Access_Array_Access is org.allbinary.game.layer.capital.event.CapitalEvent_Package_References.CapitalEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CapitalEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEvent_Package_References."=";
 
    type CapitalEvent is new AllBinaryEventObject with record
       value : Integer;

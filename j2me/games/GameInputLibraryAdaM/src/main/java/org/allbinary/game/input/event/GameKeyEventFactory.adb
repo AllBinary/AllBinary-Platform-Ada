@@ -13,13 +13,61 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.GameKeyEventSourceInterface_Package; use org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+with org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.InputFactory_Package;
 
 package body org.allbinary.game.input.event.GameKeyEventFactory_Package is
 
    package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   subtype GameKeyEventSourceInterface_Access is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   subtype GameKeyEventSourceInterface_Access_Array is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access_Array;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access_Array) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   subtype GameKeyEventSourceInterface_Access_Array_Access is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   subtype GameKeyEventSourceInterface_Access_Array_Access_Array is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   subtype GameKeyEventSourceInterface_Access_Array_Access_Array_Access is org.allbinary.game.input.GameKeyEventSourceInterface_Package_References.GameKeyEventSourceInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEventSourceInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKeyEventSourceInterface_Package_References."=";
+   subtype Input_Access is org.allbinary.game.input.Input_Package_References.Input_Access;
+   function "=" (Left, Right : Input_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array;
+   function "=" (Left, Right : Input_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array;
+   function "=" (Left, Right : Input_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype GameKeyEvent_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access;
+   function "=" (Left, Right : GameKeyEvent_Access) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array;
+   function "=" (Left, Right : GameKeyEvent_Access_Array) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEvent_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : GameKeyEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
    procedure Initialize_Fields (This : in out GameKeyEventFactory'Class) is
    begin
       null;

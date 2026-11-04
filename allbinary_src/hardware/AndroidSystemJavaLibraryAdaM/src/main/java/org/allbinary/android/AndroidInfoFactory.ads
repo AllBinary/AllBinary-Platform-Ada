@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.AndroidInfoFactory_Package;
+package org.allbinary.android.AndroidInfoFactory_Package_References is
+   type AndroidInfoFactory_Access is access all org.allbinary.android.AndroidInfoFactory_Package.AndroidInfoFactory'Class;
+   type AndroidInfoFactory_Access_Array is array (Natural range <>) of AndroidInfoFactory_Access;
+   type AndroidInfoFactory_Access_Array_Access is access all AndroidInfoFactory_Access_Array;
+   type AndroidInfoFactory_Access_Array_Access_Array is array (Natural range <>) of AndroidInfoFactory_Access_Array_Access;
+   type AndroidInfoFactory_Access_Array_Access_Array_Access is access all AndroidInfoFactory_Access_Array_Access_Array;
+end org.allbinary.android.AndroidInfoFactory_Package_References;
+
+with org.allbinary.android.AndroidInfoFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.android.AndroidInfoFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidInfoFactory is tagged;
-   type AndroidInfoFactory_Access is access all AndroidInfoFactory'Class;
-   type AndroidInfoFactory_Access_Array is array (Natural range <>) of AndroidInfoFactory_Access;
-   type AndroidInfoFactory_Access_Array_Access is access all AndroidInfoFactory_Access_Array;
-   type AndroidInfoFactory_Access_Array_Access_Array is array (Natural range <>) of AndroidInfoFactory_Access_Array_Access;
-   type AndroidInfoFactory_Access_Array_Access_Array_Access is access all AndroidInfoFactory_Access_Array_Access_Array;
+
+   subtype AndroidInfoFactory_Access is org.allbinary.android.AndroidInfoFactory_Package_References.AndroidInfoFactory_Access;
+   function "=" (Left, Right : AndroidInfoFactory_Access) return Boolean renames org.allbinary.android.AndroidInfoFactory_Package_References."=";
+   subtype AndroidInfoFactory_Access_Array is org.allbinary.android.AndroidInfoFactory_Package_References.AndroidInfoFactory_Access_Array;
+   function "=" (Left, Right : AndroidInfoFactory_Access_Array) return Boolean renames org.allbinary.android.AndroidInfoFactory_Package_References."=";
+   subtype AndroidInfoFactory_Access_Array_Access is org.allbinary.android.AndroidInfoFactory_Package_References.AndroidInfoFactory_Access_Array_Access;
+   function "=" (Left, Right : AndroidInfoFactory_Access_Array_Access) return Boolean renames org.allbinary.android.AndroidInfoFactory_Package_References."=";
+   subtype AndroidInfoFactory_Access_Array_Access_Array is org.allbinary.android.AndroidInfoFactory_Package_References.AndroidInfoFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidInfoFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.android.AndroidInfoFactory_Package_References."=";
+   subtype AndroidInfoFactory_Access_Array_Access_Array_Access is org.allbinary.android.AndroidInfoFactory_Package_References.AndroidInfoFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidInfoFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.AndroidInfoFactory_Package_References."=";
 
    type AndroidInfoFactory is new Java_Object with record
       version : Integer;

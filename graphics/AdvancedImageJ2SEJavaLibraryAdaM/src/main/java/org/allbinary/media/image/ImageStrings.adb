@@ -38,7 +38,7 @@ package body org.allbinary.media.image.ImageStrings_Package is
 
    function getInstance return ImageStrings_Access is
    begin
-        return ImageStrings_Package.instance;
+        return ImageStrings_Access (ImageStrings_Package.instance);
    end getInstance;
 
 begin

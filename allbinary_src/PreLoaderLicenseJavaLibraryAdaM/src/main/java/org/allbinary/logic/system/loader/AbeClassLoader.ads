@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.loader.AbeClassLoader_Package;
+package org.allbinary.logic.system.loader.AbeClassLoader_Package_References is
+   type AbeClassLoader_Access is access all org.allbinary.logic.system.loader.AbeClassLoader_Package.AbeClassLoader'Class;
+   type AbeClassLoader_Access_Array is array (Natural range <>) of AbeClassLoader_Access;
+   type AbeClassLoader_Access_Array_Access is access all AbeClassLoader_Access_Array;
+   type AbeClassLoader_Access_Array_Access_Array is array (Natural range <>) of AbeClassLoader_Access_Array_Access;
+   type AbeClassLoader_Access_Array_Access_Array_Access is access all AbeClassLoader_Access_Array_Access_Array;
+end org.allbinary.logic.system.loader.AbeClassLoader_Package_References;
+
+with org.allbinary.logic.system.loader.AbeClassLoader_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,8 +33,10 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with java.util.Map_Package; use java.util.Map_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.AbCryptUtil_Package; use org.allbinary.logic.system.security.AbCryptUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.system.security.AbCryptUtil_Package;
+with org.allbinary.logic.system.security.AbCryptUtil_Package_References;
 with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
 
 package org.allbinary.logic.system.loader.AbeClassLoader_Package is
@@ -32,13 +44,41 @@ package org.allbinary.logic.system.loader.AbeClassLoader_Package is
    package Map_Package renames Standard.java.util.Map_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbCryptUtil_Package renames Standard.org.allbinary.logic.system.security.AbCryptUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbCryptUtil_Access is org.allbinary.logic.system.security.AbCryptUtil_Package_References.AbCryptUtil_Access;
+   use type AbCryptUtil_Access;
+   subtype AbCryptUtil_Access_Array is org.allbinary.logic.system.security.AbCryptUtil_Package_References.AbCryptUtil_Access_Array;
+   use type AbCryptUtil_Access_Array;
+   subtype AbCryptUtil_Access_Array_Access is org.allbinary.logic.system.security.AbCryptUtil_Package_References.AbCryptUtil_Access_Array_Access;
+   use type AbCryptUtil_Access_Array_Access;
+   subtype AbCryptUtil_Access_Array_Access_Array is org.allbinary.logic.system.security.AbCryptUtil_Package_References.AbCryptUtil_Access_Array_Access_Array;
+   use type AbCryptUtil_Access_Array_Access_Array;
+   subtype AbCryptUtil_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.AbCryptUtil_Package_References.AbCryptUtil_Access_Array_Access_Array_Access;
+   use type AbCryptUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbeClassLoader is tagged;
-   type AbeClassLoader_Access is access all AbeClassLoader'Class;
-   type AbeClassLoader_Access_Array is array (Natural range <>) of AbeClassLoader_Access;
-   type AbeClassLoader_Access_Array_Access is access all AbeClassLoader_Access_Array;
-   type AbeClassLoader_Access_Array_Access_Array is array (Natural range <>) of AbeClassLoader_Access_Array_Access;
-   type AbeClassLoader_Access_Array_Access_Array_Access is access all AbeClassLoader_Access_Array_Access_Array;
+
+   subtype AbeClassLoader_Access is org.allbinary.logic.system.loader.AbeClassLoader_Package_References.AbeClassLoader_Access;
+   function "=" (Left, Right : AbeClassLoader_Access) return Boolean renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References."=";
+   subtype AbeClassLoader_Access_Array is org.allbinary.logic.system.loader.AbeClassLoader_Package_References.AbeClassLoader_Access_Array;
+   function "=" (Left, Right : AbeClassLoader_Access_Array) return Boolean renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References."=";
+   subtype AbeClassLoader_Access_Array_Access is org.allbinary.logic.system.loader.AbeClassLoader_Package_References.AbeClassLoader_Access_Array_Access;
+   function "=" (Left, Right : AbeClassLoader_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References."=";
+   subtype AbeClassLoader_Access_Array_Access_Array is org.allbinary.logic.system.loader.AbeClassLoader_Package_References.AbeClassLoader_Access_Array_Access_Array;
+   function "=" (Left, Right : AbeClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References."=";
+   subtype AbeClassLoader_Access_Array_Access_Array_Access is org.allbinary.logic.system.loader.AbeClassLoader_Package_References.AbeClassLoader_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbeClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References."=";
 
    type AbeClassLoader is new ClassLoader with record
       logUtil : LogUtil_Access;

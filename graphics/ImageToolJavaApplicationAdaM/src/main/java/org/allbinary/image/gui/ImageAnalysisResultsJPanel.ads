@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;
+package org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References is
+   type ImageAnalysisResultsJPanel_Access is access all org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package.ImageAnalysisResultsJPanel'Class;
+   type ImageAnalysisResultsJPanel_Access_Array is array (Natural range <>) of ImageAnalysisResultsJPanel_Access;
+   type ImageAnalysisResultsJPanel_Access_Array_Access is access all ImageAnalysisResultsJPanel_Access_Array;
+   type ImageAnalysisResultsJPanel_Access_Array_Access_Array is array (Natural range <>) of ImageAnalysisResultsJPanel_Access_Array_Access;
+   type ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access is access all ImageAnalysisResultsJPanel_Access_Array_Access_Array;
+end org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References;
+
+with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
+limited with org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
+with org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
 
 package org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package is
 
    package ImageAnalysisResults_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
+   package Reference_Types is
+   subtype ImageAnalysisResults_Access is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access;
+   use type ImageAnalysisResults_Access;
+   subtype ImageAnalysisResults_Access_Array is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array;
+   use type ImageAnalysisResults_Access_Array;
+   subtype ImageAnalysisResults_Access_Array_Access is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array_Access;
+   use type ImageAnalysisResults_Access_Array_Access;
+   subtype ImageAnalysisResults_Access_Array_Access_Array is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array_Access_Array;
+   use type ImageAnalysisResults_Access_Array_Access_Array;
+   subtype ImageAnalysisResults_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array_Access_Array_Access;
+   use type ImageAnalysisResults_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageAnalysisResultsJPanel is tagged;
-   type ImageAnalysisResultsJPanel_Access is access all ImageAnalysisResultsJPanel'Class;
-   type ImageAnalysisResultsJPanel_Access_Array is array (Natural range <>) of ImageAnalysisResultsJPanel_Access;
-   type ImageAnalysisResultsJPanel_Access_Array_Access is access all ImageAnalysisResultsJPanel_Access_Array;
-   type ImageAnalysisResultsJPanel_Access_Array_Access_Array is array (Natural range <>) of ImageAnalysisResultsJPanel_Access_Array_Access;
-   type ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access is access all ImageAnalysisResultsJPanel_Access_Array_Access_Array;
+
+   subtype ImageAnalysisResultsJPanel_Access is org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.ImageAnalysisResultsJPanel_Access;
+   function "=" (Left, Right : ImageAnalysisResultsJPanel_Access) return Boolean renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References."=";
+   subtype ImageAnalysisResultsJPanel_Access_Array is org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.ImageAnalysisResultsJPanel_Access_Array;
+   function "=" (Left, Right : ImageAnalysisResultsJPanel_Access_Array) return Boolean renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References."=";
+   subtype ImageAnalysisResultsJPanel_Access_Array_Access is org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.ImageAnalysisResultsJPanel_Access_Array_Access;
+   function "=" (Left, Right : ImageAnalysisResultsJPanel_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References."=";
+   subtype ImageAnalysisResultsJPanel_Access_Array_Access_Array is org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.ImageAnalysisResultsJPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageAnalysisResultsJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References."=";
+   subtype ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access is org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References."=";
 
    type ImageAnalysisResultsJPanel is new JPanel with record
       avgBlueJTextField : JTextField_Access;

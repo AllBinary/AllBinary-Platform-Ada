@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package;
+package org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References is
+   type ColorChooser_Access is access all org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package.ColorChooser'Class;
+   type ColorChooser_Access_Array is array (Natural range <>) of ColorChooser_Access;
+   type ColorChooser_Access_Array_Access is access all ColorChooser_Access_Array;
+   type ColorChooser_Access_Array_Access_Array is array (Natural range <>) of ColorChooser_Access_Array_Access;
+   type ColorChooser_Access_Array_Access_Array_Access is access all ColorChooser_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.graphics.j2me.workarea.color.JPanel_Package; use org.allbinar
 
 package org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ColorChooser is tagged;
-   type ColorChooser_Access is access all ColorChooser'Class;
-   type ColorChooser_Access_Array is array (Natural range <>) of ColorChooser_Access;
-   type ColorChooser_Access_Array_Access is access all ColorChooser_Access_Array;
-   type ColorChooser_Access_Array_Access_Array is array (Natural range <>) of ColorChooser_Access_Array_Access;
-   type ColorChooser_Access_Array_Access_Array_Access is access all ColorChooser_Access_Array_Access_Array;
+
+   subtype ColorChooser_Access is org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References.ColorChooser_Access;
+   function "=" (Left, Right : ColorChooser_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References."=";
+   subtype ColorChooser_Access_Array is org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References.ColorChooser_Access_Array;
+   function "=" (Left, Right : ColorChooser_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References."=";
+   subtype ColorChooser_Access_Array_Access is org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References.ColorChooser_Access_Array_Access;
+   function "=" (Left, Right : ColorChooser_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References."=";
+   subtype ColorChooser_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References.ColorChooser_Access_Array_Access_Array;
+   function "=" (Left, Right : ColorChooser_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References."=";
+   subtype ColorChooser_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References.ColorChooser_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ColorChooser_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package_References."=";
 
    type ColorChooser is new JPanel with record
       jColorChooser1 : JColorChooser_Access;

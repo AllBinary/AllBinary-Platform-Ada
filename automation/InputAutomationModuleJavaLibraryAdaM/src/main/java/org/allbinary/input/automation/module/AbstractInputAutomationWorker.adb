@@ -13,13 +13,80 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package; use org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.media.image.comparison.ImageComparisonWorker_Package; use org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
 
 package body org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package is
 
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   subtype CaptureWorkerInterface_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access;
+   function "=" (Left, Right : CaptureWorkerInterface_Access) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array_Access_Array is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array_Access_Array_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype ImageComparisonWorker_Access is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access;
+   function "=" (Left, Right : ImageComparisonWorker_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References."=";
+   subtype ImageComparisonWorker_Access_Array is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array;
+   function "=" (Left, Right : ImageComparisonWorker_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References."=";
+   subtype ImageComparisonWorker_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonWorker_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References."=";
+   subtype ImageComparisonWorker_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageComparisonWorker_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References."=";
+   subtype ImageComparisonWorker_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonWorker_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References."=";
+   subtype MotionRectanglesWorker_Access is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access;
+   function "=" (Left, Right : MotionRectanglesWorker_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References."=";
+   subtype MotionRectanglesWorker_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access_Array;
+   function "=" (Left, Right : MotionRectanglesWorker_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References."=";
+   subtype MotionRectanglesWorker_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access_Array_Access;
+   function "=" (Left, Right : MotionRectanglesWorker_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References."=";
+   subtype MotionRectanglesWorker_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionRectanglesWorker_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References."=";
+   subtype MotionRectanglesWorker_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionRectanglesWorker_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype InputAutomationActionInterface_Access is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access;
+   function "=" (Left, Right : InputAutomationActionInterface_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References."=";
+   subtype InputAutomationActionInterface_Access_Array is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array;
+   function "=" (Left, Right : InputAutomationActionInterface_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References."=";
+   subtype InputAutomationActionInterface_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationActionInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References."=";
+   subtype InputAutomationActionInterface_Access_Array_Access_Array is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationActionInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References."=";
+   subtype InputAutomationActionInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationActionInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References."=";
    procedure Initialize_Fields (This : in out AbstractInputAutomationWorker'Class) is
    begin
       null;

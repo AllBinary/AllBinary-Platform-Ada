@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
+with org.allbinary.game.layer.capital.Capital_Package;
 
 package body org.allbinary.game.layer.capital.HudCapital_Package is
 
+   subtype NumberStringHud_Access is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access;
+   function "=" (Left, Right : NumberStringHud_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
+   subtype NumberStringHud_Access_Array is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access_Array;
+   function "=" (Left, Right : NumberStringHud_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
+   subtype NumberStringHud_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access_Array_Access;
+   function "=" (Left, Right : NumberStringHud_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
+   subtype NumberStringHud_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access_Array_Access_Array;
+   function "=" (Left, Right : NumberStringHud_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
+   subtype NumberStringHud_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References.NumberStringHud_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NumberStringHud_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References."=";
    procedure Initialize_Fields (This : in out HudCapital'Class) is
    begin
       null;

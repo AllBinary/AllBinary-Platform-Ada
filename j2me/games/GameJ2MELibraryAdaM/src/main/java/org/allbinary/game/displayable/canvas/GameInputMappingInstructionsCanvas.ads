@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
+package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References is
+   type GameInputMappingInstructionsCanvas_Access is access all org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package.GameInputMappingInstructionsCanvas'Class;
+   type GameInputMappingInstructionsCanvas_Access_Array is array (Natural range <>) of GameInputMappingInstructionsCanvas_Access;
+   type GameInputMappingInstructionsCanvas_Access_Array_Access is access all GameInputMappingInstructionsCanvas_Access_Array;
+   type GameInputMappingInstructionsCanvas_Access_Array_Access_Array is array (Natural range <>) of GameInputMappingInstructionsCanvas_Access_Array_Access;
+   type GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access is access all GameInputMappingInstructionsCanvas_Access_Array_Access_Array;
+end org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References;
+
+with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
-with org.allbinary.graphics.draw.DrawStringUtil_Package; use org.allbinary.graphics.draw.DrawStringUtil_Package;
+limited with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
+limited with javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
+limited with org.allbinary.game.paint.ColorFillBasePaintable_Package;
+with org.allbinary.game.paint.ColorFillBasePaintable_Package_References;
+limited with org.allbinary.graphics.draw.DrawStringUtil_Package;
+with org.allbinary.graphics.draw.DrawStringUtil_Package_References;
 with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package is
@@ -36,13 +52,81 @@ package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
    package ColorFillBasePaintable_Package renames Standard.org.allbinary.game.paint.ColorFillBasePaintable_Package;
    package DrawStringUtil_Package renames Standard.org.allbinary.graphics.draw.DrawStringUtil_Package;
+   package Reference_Types is
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   use type Command_Access;
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   use type Command_Access_Array;
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   use type Command_Access_Array_Access;
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   use type Command_Access_Array_Access_Array;
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   use type Command_Access_Array_Access_Array_Access;
+   subtype CommandListener_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access;
+   use type CommandListener_Access;
+   subtype CommandListener_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array;
+   use type CommandListener_Access_Array;
+   subtype CommandListener_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access;
+   use type CommandListener_Access_Array_Access;
+   subtype CommandListener_Access_Array_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array;
+   use type CommandListener_Access_Array_Access_Array;
+   subtype CommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array_Access;
+   use type CommandListener_Access_Array_Access_Array_Access;
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype AllBinaryGameLayerManager_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access;
+   use type AllBinaryGameLayerManager_Access;
+   subtype AllBinaryGameLayerManager_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   subtype ColorFillBasePaintable_Access is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access;
+   use type ColorFillBasePaintable_Access;
+   subtype ColorFillBasePaintable_Access_Array is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access_Array;
+   use type ColorFillBasePaintable_Access_Array;
+   subtype ColorFillBasePaintable_Access_Array_Access is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access_Array_Access;
+   use type ColorFillBasePaintable_Access_Array_Access;
+   subtype ColorFillBasePaintable_Access_Array_Access_Array is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access_Array_Access_Array;
+   use type ColorFillBasePaintable_Access_Array_Access_Array;
+   subtype ColorFillBasePaintable_Access_Array_Access_Array_Access is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access_Array_Access_Array_Access;
+   use type ColorFillBasePaintable_Access_Array_Access_Array_Access;
+   subtype DrawStringUtil_Access is org.allbinary.graphics.draw.DrawStringUtil_Package_References.DrawStringUtil_Access;
+   use type DrawStringUtil_Access;
+   subtype DrawStringUtil_Access_Array is org.allbinary.graphics.draw.DrawStringUtil_Package_References.DrawStringUtil_Access_Array;
+   use type DrawStringUtil_Access_Array;
+   subtype DrawStringUtil_Access_Array_Access is org.allbinary.graphics.draw.DrawStringUtil_Package_References.DrawStringUtil_Access_Array_Access;
+   use type DrawStringUtil_Access_Array_Access;
+   subtype DrawStringUtil_Access_Array_Access_Array is org.allbinary.graphics.draw.DrawStringUtil_Package_References.DrawStringUtil_Access_Array_Access_Array;
+   use type DrawStringUtil_Access_Array_Access_Array;
+   subtype DrawStringUtil_Access_Array_Access_Array_Access is org.allbinary.graphics.draw.DrawStringUtil_Package_References.DrawStringUtil_Access_Array_Access_Array_Access;
+   use type DrawStringUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameInputMappingInstructionsCanvas is tagged;
-   type GameInputMappingInstructionsCanvas_Access is access all GameInputMappingInstructionsCanvas'Class;
-   type GameInputMappingInstructionsCanvas_Access_Array is array (Natural range <>) of GameInputMappingInstructionsCanvas_Access;
-   type GameInputMappingInstructionsCanvas_Access_Array_Access is access all GameInputMappingInstructionsCanvas_Access_Array;
-   type GameInputMappingInstructionsCanvas_Access_Array_Access_Array is array (Natural range <>) of GameInputMappingInstructionsCanvas_Access_Array_Access;
-   type GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access is access all GameInputMappingInstructionsCanvas_Access_Array_Access_Array;
+
+   subtype GameInputMappingInstructionsCanvas_Access is org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.GameInputMappingInstructionsCanvas_Access;
+   function "=" (Left, Right : GameInputMappingInstructionsCanvas_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References."=";
+   subtype GameInputMappingInstructionsCanvas_Access_Array is org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.GameInputMappingInstructionsCanvas_Access_Array;
+   function "=" (Left, Right : GameInputMappingInstructionsCanvas_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References."=";
+   subtype GameInputMappingInstructionsCanvas_Access_Array_Access is org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.GameInputMappingInstructionsCanvas_Access_Array_Access;
+   function "=" (Left, Right : GameInputMappingInstructionsCanvas_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References."=";
+   subtype GameInputMappingInstructionsCanvas_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.GameInputMappingInstructionsCanvas_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInputMappingInstructionsCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References."=";
+   subtype GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References."=";
 
    type GameInputMappingInstructionsCanvas is new GameCommandCanvas with record
       drawStringUtil : DrawStringUtil_Access;

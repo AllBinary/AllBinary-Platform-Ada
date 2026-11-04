@@ -21,6 +21,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    procedure Initialize_Fields (This : in out OpenGLCapabilities'Class) is
    begin
       null;
+      This.CUSTOM_GL_SURFACE_VIEW := True;
       This.VERSION_1_0 := To_Unbounded_String ("1.0");
       This.VERSION_1_1 := To_Unbounded_String ("1.1");
       This.VERSION_2_0 := To_Unbounded_String ("2.0");
@@ -37,7 +38,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
    function getInstance return OpenGLCapabilities_Access is
    begin
-        return OpenGLCapabilities_Package.instance;
+        return OpenGLCapabilities_Access (OpenGLCapabilities_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out OpenGLCapabilities'Class) is
@@ -52,6 +53,11 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
       OpenGLCapabilities_Package.Initialize (This.all);
       return This;
    end Create;
+
+   function isInitialized (This : in out OpenGLCapabilities) return Boolean is
+   begin
+        return True;
+   end isInitialized;
 
    procedure initCapabilities (This : in out OpenGLCapabilities; gl_Param : access Java_Object'Class) is
       gl : constant Java_Object_Access := Java_Object_Access (gl_Param);

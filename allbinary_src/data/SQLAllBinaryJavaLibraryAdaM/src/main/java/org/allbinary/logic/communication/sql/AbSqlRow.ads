@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.sql.AbSqlRow_Package;
+package org.allbinary.logic.communication.sql.AbSqlRow_Package_References is
+   type AbSqlRow_Access is access all org.allbinary.logic.communication.sql.AbSqlRow_Package.AbSqlRow'Class;
+   type AbSqlRow_Access_Array is array (Natural range <>) of AbSqlRow_Access;
+   type AbSqlRow_Access_Array_Access is access all AbSqlRow_Access_Array;
+   type AbSqlRow_Access_Array_Access_Array is array (Natural range <>) of AbSqlRow_Access_Array_Access;
+   type AbSqlRow_Access_Array_Access_Array_Access is access all AbSqlRow_Access_Array_Access_Array;
+end org.allbinary.logic.communication.sql.AbSqlRow_Package_References;
+
+with org.allbinary.logic.communication.sql.AbSqlRow_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,9 +34,12 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.sql.ResultSetMetaData_Package; use java.sql.ResultSetMetaData_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.business.init.db.DbConnectionInfo_Package;
+with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlColumn_Package; use org.allbinary.logic.communication.sql.AbSqlColumn_Package;
 
 package org.allbinary.logic.communication.sql.AbSqlRow_Package is
@@ -35,13 +48,51 @@ package org.allbinary.logic.communication.sql.AbSqlRow_Package is
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype DbConnectionInfo_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access;
+   use type DbConnectionInfo_Access;
+   subtype DbConnectionInfo_Access_Array is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array;
+   use type DbConnectionInfo_Access_Array;
+   subtype DbConnectionInfo_Access_Array_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array_Access;
+   use type DbConnectionInfo_Access_Array_Access;
+   subtype DbConnectionInfo_Access_Array_Access_Array is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array_Access_Array;
+   use type DbConnectionInfo_Access_Array_Access_Array;
+   subtype DbConnectionInfo_Access_Array_Access_Array_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array_Access_Array_Access;
+   use type DbConnectionInfo_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbSqlRow is tagged;
-   type AbSqlRow_Access is access all AbSqlRow'Class;
-   type AbSqlRow_Access_Array is array (Natural range <>) of AbSqlRow_Access;
-   type AbSqlRow_Access_Array_Access is access all AbSqlRow_Access_Array;
-   type AbSqlRow_Access_Array_Access_Array is array (Natural range <>) of AbSqlRow_Access_Array_Access;
-   type AbSqlRow_Access_Array_Access_Array_Access is access all AbSqlRow_Access_Array_Access_Array;
+
+   subtype AbSqlRow_Access is org.allbinary.logic.communication.sql.AbSqlRow_Package_References.AbSqlRow_Access;
+   function "=" (Left, Right : AbSqlRow_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlRow_Package_References."=";
+   subtype AbSqlRow_Access_Array is org.allbinary.logic.communication.sql.AbSqlRow_Package_References.AbSqlRow_Access_Array;
+   function "=" (Left, Right : AbSqlRow_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.AbSqlRow_Package_References."=";
+   subtype AbSqlRow_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlRow_Package_References.AbSqlRow_Access_Array_Access;
+   function "=" (Left, Right : AbSqlRow_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlRow_Package_References."=";
+   subtype AbSqlRow_Access_Array_Access_Array is org.allbinary.logic.communication.sql.AbSqlRow_Package_References.AbSqlRow_Access_Array_Access_Array;
+   function "=" (Left, Right : AbSqlRow_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.AbSqlRow_Package_References."=";
+   subtype AbSqlRow_Access_Array_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlRow_Package_References.AbSqlRow_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbSqlRow_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlRow_Package_References."=";
 
    type AbSqlRow is new AbSqlColumn with record
       logUtil : LogUtil_Access;

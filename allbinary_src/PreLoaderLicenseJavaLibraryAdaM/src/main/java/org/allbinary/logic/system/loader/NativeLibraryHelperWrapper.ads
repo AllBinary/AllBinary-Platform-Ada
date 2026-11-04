@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package;
+package org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References is
+   type NativeLibraryHelperWrapper_Access is access all org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package.NativeLibraryHelperWrapper'Class;
+   type NativeLibraryHelperWrapper_Access_Array is array (Natural range <>) of NativeLibraryHelperWrapper_Access;
+   type NativeLibraryHelperWrapper_Access_Array_Access is access all NativeLibraryHelperWrapper_Access_Array;
+   type NativeLibraryHelperWrapper_Access_Array_Access_Array is array (Natural range <>) of NativeLibraryHelperWrapper_Access_Array_Access;
+   type NativeLibraryHelperWrapper_Access_Array_Access_Array_Access is access all NativeLibraryHelperWrapper_Access_Array_Access_Array;
+end org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References;
+
+with org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,17 +32,36 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Constructor_Package; use java.lang.reflect.Constructor_Package;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
-with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
+limited with org.allbinary.logic.system.loader.ClassLoader_Package;
+with org.allbinary.logic.system.loader.ClassLoader_Package_References;
 
 package org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package is
 
+   package Reference_Types is
+   subtype ClassLoader_Access is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access;
+   use type ClassLoader_Access;
+   subtype ClassLoader_Access_Array is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access_Array;
+   use type ClassLoader_Access_Array;
+   subtype ClassLoader_Access_Array_Access is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
+   use type ClassLoader_Access_Array_Access;
+   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
+   use type ClassLoader_Access_Array_Access_Array;
+   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
+   use type ClassLoader_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NativeLibraryHelperWrapper is tagged;
-   type NativeLibraryHelperWrapper_Access is access all NativeLibraryHelperWrapper'Class;
-   type NativeLibraryHelperWrapper_Access_Array is array (Natural range <>) of NativeLibraryHelperWrapper_Access;
-   type NativeLibraryHelperWrapper_Access_Array_Access is access all NativeLibraryHelperWrapper_Access_Array;
-   type NativeLibraryHelperWrapper_Access_Array_Access_Array is array (Natural range <>) of NativeLibraryHelperWrapper_Access_Array_Access;
-   type NativeLibraryHelperWrapper_Access_Array_Access_Array_Access is access all NativeLibraryHelperWrapper_Access_Array_Access_Array;
+
+   subtype NativeLibraryHelperWrapper_Access is org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.NativeLibraryHelperWrapper_Access;
+   function "=" (Left, Right : NativeLibraryHelperWrapper_Access) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References."=";
+   subtype NativeLibraryHelperWrapper_Access_Array is org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.NativeLibraryHelperWrapper_Access_Array;
+   function "=" (Left, Right : NativeLibraryHelperWrapper_Access_Array) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References."=";
+   subtype NativeLibraryHelperWrapper_Access_Array_Access is org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.NativeLibraryHelperWrapper_Access_Array_Access;
+   function "=" (Left, Right : NativeLibraryHelperWrapper_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References."=";
+   subtype NativeLibraryHelperWrapper_Access_Array_Access_Array is org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.NativeLibraryHelperWrapper_Access_Array_Access_Array;
+   function "=" (Left, Right : NativeLibraryHelperWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References."=";
+   subtype NativeLibraryHelperWrapper_Access_Array_Access_Array_Access is org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.NativeLibraryHelperWrapper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NativeLibraryHelperWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References."=";
 
    type NativeLibraryHelperWrapper is new Java_Object with record
       libraryName : Unbounded_String;

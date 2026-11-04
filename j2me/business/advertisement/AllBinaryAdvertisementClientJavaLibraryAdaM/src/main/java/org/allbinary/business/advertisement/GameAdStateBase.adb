@@ -13,13 +13,71 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
+with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.business.advertisement.AdConfiguration_Package; use org.allbinary.business.advertisement.AdConfiguration_Package;
+with org.allbinary.business.advertisement.Advertisements_Package; use org.allbinary.business.advertisement.Advertisements_Package;
+with org.allbinary.business.advertisement.AdConfiguration_Package;
+with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
+with org.allbinary.business.advertisement.Advertisements_Package;
 
 package body org.allbinary.business.advertisement.GameAdStateBase_Package is
 
    package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   subtype GameType_Access is org.allbinary.game.GameType_Package_References.GameType_Access;
+   function "=" (Left, Right : GameType_Access) return Boolean renames org.allbinary.game.GameType_Package_References."=";
+   subtype GameType_Access_Array is org.allbinary.game.GameType_Package_References.GameType_Access_Array;
+   function "=" (Left, Right : GameType_Access_Array) return Boolean renames org.allbinary.game.GameType_Package_References."=";
+   subtype GameType_Access_Array_Access is org.allbinary.game.GameType_Package_References.GameType_Access_Array_Access;
+   function "=" (Left, Right : GameType_Access_Array_Access) return Boolean renames org.allbinary.game.GameType_Package_References."=";
+   subtype GameType_Access_Array_Access_Array is org.allbinary.game.GameType_Package_References.GameType_Access_Array_Access_Array;
+   function "=" (Left, Right : GameType_Access_Array_Access_Array) return Boolean renames org.allbinary.game.GameType_Package_References."=";
+   subtype GameType_Access_Array_Access_Array_Access is org.allbinary.game.GameType_Package_References.GameType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.GameType_Package_References."=";
+   subtype GameState_Access is org.allbinary.game.state.GameState_Package_References.GameState_Access;
+   function "=" (Left, Right : GameState_Access) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
+   subtype GameState_Access_Array is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array;
+   function "=" (Left, Right : GameState_Access_Array) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
+   subtype GameState_Access_Array_Access is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array_Access;
+   function "=" (Left, Right : GameState_Access_Array_Access) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
+   subtype GameState_Access_Array_Access_Array is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array_Access_Array;
+   function "=" (Left, Right : GameState_Access_Array_Access_Array) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
+   subtype GameState_Access_Array_Access_Array_Access is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameState_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.state.GameState_Package_References."=";
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   function "=" (Left, Right : AllBinaryEventObject_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryEventObject_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
+   subtype AdConfiguration_Access is org.allbinary.business.advertisement.AdConfiguration_Package_References.AdConfiguration_Access;
+   function "=" (Left, Right : AdConfiguration_Access) return Boolean renames org.allbinary.business.advertisement.AdConfiguration_Package_References."=";
+   subtype AdConfiguration_Access_Array is org.allbinary.business.advertisement.AdConfiguration_Package_References.AdConfiguration_Access_Array;
+   function "=" (Left, Right : AdConfiguration_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdConfiguration_Package_References."=";
+   subtype AdConfiguration_Access_Array_Access is org.allbinary.business.advertisement.AdConfiguration_Package_References.AdConfiguration_Access_Array_Access;
+   function "=" (Left, Right : AdConfiguration_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdConfiguration_Package_References."=";
+   subtype AdConfiguration_Access_Array_Access_Array is org.allbinary.business.advertisement.AdConfiguration_Package_References.AdConfiguration_Access_Array_Access_Array;
+   function "=" (Left, Right : AdConfiguration_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdConfiguration_Package_References."=";
+   subtype AdConfiguration_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.AdConfiguration_Package_References.AdConfiguration_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdConfiguration_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdConfiguration_Package_References."=";
+   subtype Advertisements_Access is org.allbinary.business.advertisement.Advertisements_Package_References.Advertisements_Access;
+   function "=" (Left, Right : Advertisements_Access) return Boolean renames org.allbinary.business.advertisement.Advertisements_Package_References."=";
+   subtype Advertisements_Access_Array is org.allbinary.business.advertisement.Advertisements_Package_References.Advertisements_Access_Array;
+   function "=" (Left, Right : Advertisements_Access_Array) return Boolean renames org.allbinary.business.advertisement.Advertisements_Package_References."=";
+   subtype Advertisements_Access_Array_Access is org.allbinary.business.advertisement.Advertisements_Package_References.Advertisements_Access_Array_Access;
+   function "=" (Left, Right : Advertisements_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.Advertisements_Package_References."=";
+   subtype Advertisements_Access_Array_Access_Array is org.allbinary.business.advertisement.Advertisements_Package_References.Advertisements_Access_Array_Access_Array;
+   function "=" (Left, Right : Advertisements_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.Advertisements_Package_References."=";
+   subtype Advertisements_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.Advertisements_Package_References.Advertisements_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Advertisements_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.Advertisements_Package_References."=";
    procedure Initialize_Fields (This : in out GameAdStateBase'Class) is
    begin
       null;

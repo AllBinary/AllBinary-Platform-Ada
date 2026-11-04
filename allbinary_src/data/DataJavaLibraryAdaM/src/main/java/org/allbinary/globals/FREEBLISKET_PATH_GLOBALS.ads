@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+package org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References is
+   type FREEBLISKET_PATH_GLOBALS_Access is access all org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package.FREEBLISKET_PATH_GLOBALS'Class;
+   type FREEBLISKET_PATH_GLOBALS_Access_Array is array (Natural range <>) of FREEBLISKET_PATH_GLOBALS_Access;
+   type FREEBLISKET_PATH_GLOBALS_Access_Array_Access is access all FREEBLISKET_PATH_GLOBALS_Access_Array;
+   type FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array is array (Natural range <>) of FREEBLISKET_PATH_GLOBALS_Access_Array_Access;
+   type FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array_Access is access all FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array;
+end org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References;
+
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type FREEBLISKET_PATH_GLOBALS is tagged;
-   type FREEBLISKET_PATH_GLOBALS_Access is access all FREEBLISKET_PATH_GLOBALS'Class;
-   type FREEBLISKET_PATH_GLOBALS_Access_Array is array (Natural range <>) of FREEBLISKET_PATH_GLOBALS_Access;
-   type FREEBLISKET_PATH_GLOBALS_Access_Array_Access is access all FREEBLISKET_PATH_GLOBALS_Access_Array;
-   type FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array is array (Natural range <>) of FREEBLISKET_PATH_GLOBALS_Access_Array_Access;
-   type FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array_Access is access all FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array;
+
+   subtype FREEBLISKET_PATH_GLOBALS_Access is org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References.FREEBLISKET_PATH_GLOBALS_Access;
+   function "=" (Left, Right : FREEBLISKET_PATH_GLOBALS_Access) return Boolean renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References."=";
+   subtype FREEBLISKET_PATH_GLOBALS_Access_Array is org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References.FREEBLISKET_PATH_GLOBALS_Access_Array;
+   function "=" (Left, Right : FREEBLISKET_PATH_GLOBALS_Access_Array) return Boolean renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References."=";
+   subtype FREEBLISKET_PATH_GLOBALS_Access_Array_Access is org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References.FREEBLISKET_PATH_GLOBALS_Access_Array_Access;
+   function "=" (Left, Right : FREEBLISKET_PATH_GLOBALS_Access_Array_Access) return Boolean renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References."=";
+   subtype FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array is org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References.FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array;
+   function "=" (Left, Right : FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array) return Boolean renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References."=";
+   subtype FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array_Access is org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References.FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FREEBLISKET_PATH_GLOBALS_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package_References."=";
 
    type FREEBLISKET_PATH_GLOBALS is new Java_Object with record
       INSTALLPATH : Unbounded_String;

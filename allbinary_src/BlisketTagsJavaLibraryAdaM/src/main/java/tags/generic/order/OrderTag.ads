@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.generic_Id.order.OrderTag_Package;
+package tags.generic_Id.order.OrderTag_Package_References is
+   type OrderTag_Access is access all tags.generic_Id.order.OrderTag_Package.OrderTag'Class;
+   type OrderTag_Access_Array is array (Natural range <>) of OrderTag_Access;
+   type OrderTag_Access_Array_Access is access all OrderTag_Access_Array;
+   type OrderTag_Access_Array_Access_Array is array (Natural range <>) of OrderTag_Access_Array_Access;
+   type OrderTag_Access_Array_Access_Array_Access is access all OrderTag_Access_Array_Access_Array;
+end tags.generic_Id.order.OrderTag_Package_References;
+
+with tags.generic_Id.order.OrderTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 package tags.generic_Id.order.OrderTag_Package is
 
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OrderTag is tagged;
-   type OrderTag_Access is access all OrderTag'Class;
-   type OrderTag_Access_Array is array (Natural range <>) of OrderTag_Access;
-   type OrderTag_Access_Array_Access is access all OrderTag_Access_Array;
-   type OrderTag_Access_Array_Access_Array is array (Natural range <>) of OrderTag_Access_Array_Access;
-   type OrderTag_Access_Array_Access_Array_Access is access all OrderTag_Access_Array_Access_Array;
+
+   subtype OrderTag_Access is tags.generic_Id.order.OrderTag_Package_References.OrderTag_Access;
+   function "=" (Left, Right : OrderTag_Access) return Boolean renames tags.generic_Id.order.OrderTag_Package_References."=";
+   subtype OrderTag_Access_Array is tags.generic_Id.order.OrderTag_Package_References.OrderTag_Access_Array;
+   function "=" (Left, Right : OrderTag_Access_Array) return Boolean renames tags.generic_Id.order.OrderTag_Package_References."=";
+   subtype OrderTag_Access_Array_Access is tags.generic_Id.order.OrderTag_Package_References.OrderTag_Access_Array_Access;
+   function "=" (Left, Right : OrderTag_Access_Array_Access) return Boolean renames tags.generic_Id.order.OrderTag_Package_References."=";
+   subtype OrderTag_Access_Array_Access_Array is tags.generic_Id.order.OrderTag_Package_References.OrderTag_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderTag_Access_Array_Access_Array) return Boolean renames tags.generic_Id.order.OrderTag_Package_References."=";
+   subtype OrderTag_Access_Array_Access_Array_Access is tags.generic_Id.order.OrderTag_Package_References.OrderTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderTag_Access_Array_Access_Array_Access) return Boolean renames tags.generic_Id.order.OrderTag_Package_References."=";
 
    type OrderTag is new StoreValidationTransformTag with null record;
 

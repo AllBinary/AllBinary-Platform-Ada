@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.string_Id.ServletStrings_Package;
+package org.allbinary.logic.string_Id.ServletStrings_Package_References is
+   type ServletStrings_Access is access all org.allbinary.logic.string_Id.ServletStrings_Package.ServletStrings'Class;
+   type ServletStrings_Access_Array is array (Natural range <>) of ServletStrings_Access;
+   type ServletStrings_Access_Array_Access is access all ServletStrings_Access_Array;
+   type ServletStrings_Access_Array_Access_Array is array (Natural range <>) of ServletStrings_Access_Array_Access;
+   type ServletStrings_Access_Array_Access_Array_Access is access all ServletStrings_Access_Array_Access_Array;
+end org.allbinary.logic.string_Id.ServletStrings_Package_References;
+
+with org.allbinary.logic.string_Id.ServletStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.string_Id.ServletStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ServletStrings is tagged;
-   type ServletStrings_Access is access all ServletStrings'Class;
-   type ServletStrings_Access_Array is array (Natural range <>) of ServletStrings_Access;
-   type ServletStrings_Access_Array_Access is access all ServletStrings_Access_Array;
-   type ServletStrings_Access_Array_Access_Array is array (Natural range <>) of ServletStrings_Access_Array_Access;
-   type ServletStrings_Access_Array_Access_Array_Access is access all ServletStrings_Access_Array_Access_Array;
+
+   subtype ServletStrings_Access is org.allbinary.logic.string_Id.ServletStrings_Package_References.ServletStrings_Access;
+   function "=" (Left, Right : ServletStrings_Access) return Boolean renames org.allbinary.logic.string_Id.ServletStrings_Package_References."=";
+   subtype ServletStrings_Access_Array is org.allbinary.logic.string_Id.ServletStrings_Package_References.ServletStrings_Access_Array;
+   function "=" (Left, Right : ServletStrings_Access_Array) return Boolean renames org.allbinary.logic.string_Id.ServletStrings_Package_References."=";
+   subtype ServletStrings_Access_Array_Access is org.allbinary.logic.string_Id.ServletStrings_Package_References.ServletStrings_Access_Array_Access;
+   function "=" (Left, Right : ServletStrings_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.ServletStrings_Package_References."=";
+   subtype ServletStrings_Access_Array_Access_Array is org.allbinary.logic.string_Id.ServletStrings_Package_References.ServletStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : ServletStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.string_Id.ServletStrings_Package_References."=";
+   subtype ServletStrings_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.ServletStrings_Package_References.ServletStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ServletStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.ServletStrings_Package_References."=";
 
    type ServletStrings is new Java_Object with record
       DOPOST : Unbounded_String;

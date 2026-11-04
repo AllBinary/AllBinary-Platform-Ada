@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.audio.AudioContentTypeData_Package; use org.allbinary.audio.AudioContentTypeData_Package;
+with org.allbinary.audio.AudioContentTypeData_Package;
 
 package body org.allbinary.audio.AudioContentTypeDataFactory_Package is
 
+   subtype AudioContentTypeData_Access is org.allbinary.audio.AudioContentTypeData_Package_References.AudioContentTypeData_Access;
+   function "=" (Left, Right : AudioContentTypeData_Access) return Boolean renames org.allbinary.audio.AudioContentTypeData_Package_References."=";
+   subtype AudioContentTypeData_Access_Array is org.allbinary.audio.AudioContentTypeData_Package_References.AudioContentTypeData_Access_Array;
+   function "=" (Left, Right : AudioContentTypeData_Access_Array) return Boolean renames org.allbinary.audio.AudioContentTypeData_Package_References."=";
+   subtype AudioContentTypeData_Access_Array_Access is org.allbinary.audio.AudioContentTypeData_Package_References.AudioContentTypeData_Access_Array_Access;
+   function "=" (Left, Right : AudioContentTypeData_Access_Array_Access) return Boolean renames org.allbinary.audio.AudioContentTypeData_Package_References."=";
+   subtype AudioContentTypeData_Access_Array_Access_Array is org.allbinary.audio.AudioContentTypeData_Package_References.AudioContentTypeData_Access_Array_Access_Array;
+   function "=" (Left, Right : AudioContentTypeData_Access_Array_Access_Array) return Boolean renames org.allbinary.audio.AudioContentTypeData_Package_References."=";
+   subtype AudioContentTypeData_Access_Array_Access_Array_Access is org.allbinary.audio.AudioContentTypeData_Package_References.AudioContentTypeData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AudioContentTypeData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.audio.AudioContentTypeData_Package_References."=";
    procedure Initialize_Fields (This : in out AudioContentTypeDataFactory'Class) is
    begin
       null;
@@ -30,7 +42,7 @@ package body org.allbinary.audio.AudioContentTypeDataFactory_Package is
 
    function getInstance return AudioContentTypeDataFactory_Access is
    begin
-        return AudioContentTypeDataFactory_Package.instance;
+        return AudioContentTypeDataFactory_Access (AudioContentTypeDataFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out AudioContentTypeDataFactory'Class) is

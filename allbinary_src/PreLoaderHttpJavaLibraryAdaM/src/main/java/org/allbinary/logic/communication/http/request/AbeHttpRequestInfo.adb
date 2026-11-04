@@ -14,10 +14,14 @@
 
 
 with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package; use org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package;
 
 package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package is
 
@@ -26,6 +30,36 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   function "=" (Left, Right : CommonSeps_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonSeps_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonSeps_Package_References."=";
+   subtype AbeHttpRequestInfoData_Access is org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References.AbeHttpRequestInfoData_Access;
+   function "=" (Left, Right : AbeHttpRequestInfoData_Access) return Boolean renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References."=";
+   subtype AbeHttpRequestInfoData_Access_Array is org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References.AbeHttpRequestInfoData_Access_Array;
+   function "=" (Left, Right : AbeHttpRequestInfoData_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References."=";
+   subtype AbeHttpRequestInfoData_Access_Array_Access is org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References.AbeHttpRequestInfoData_Access_Array_Access;
+   function "=" (Left, Right : AbeHttpRequestInfoData_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References."=";
+   subtype AbeHttpRequestInfoData_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References.AbeHttpRequestInfoData_Access_Array_Access_Array;
+   function "=" (Left, Right : AbeHttpRequestInfoData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References."=";
+   subtype AbeHttpRequestInfoData_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References.AbeHttpRequestInfoData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbeHttpRequestInfoData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package_References."=";
    procedure Initialize_Fields (This : in out AbeHttpRequestInfo'Class) is
    begin
       null;

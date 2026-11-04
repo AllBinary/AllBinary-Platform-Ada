@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.score.NoScoreable_Package;
+package org.allbinary.game.score.NoScoreable_Package_References is
+   type NoScoreable_Access is access all org.allbinary.game.score.NoScoreable_Package.NoScoreable'Class;
+   type NoScoreable_Access_Array is array (Natural range <>) of NoScoreable_Access;
+   type NoScoreable_Access_Array_Access is access all NoScoreable_Access_Array;
+   type NoScoreable_Access_Array_Access_Array is array (Natural range <>) of NoScoreable_Access_Array_Access;
+   type NoScoreable_Access_Array_Access_Array_Access is access all NoScoreable_Access_Array_Access_Array;
+end org.allbinary.game.score.NoScoreable_Package_References;
+
+with org.allbinary.game.score.NoScoreable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.score.Scoreable_Package; use org.allbinary.game.score.Sc
 
 package org.allbinary.game.score.NoScoreable_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoScoreable is tagged;
-   type NoScoreable_Access is access all NoScoreable'Class;
-   type NoScoreable_Access_Array is array (Natural range <>) of NoScoreable_Access;
-   type NoScoreable_Access_Array_Access is access all NoScoreable_Access_Array;
-   type NoScoreable_Access_Array_Access_Array is array (Natural range <>) of NoScoreable_Access_Array_Access;
-   type NoScoreable_Access_Array_Access_Array_Access is access all NoScoreable_Access_Array_Access_Array;
+
+   subtype NoScoreable_Access is org.allbinary.game.score.NoScoreable_Package_References.NoScoreable_Access;
+   function "=" (Left, Right : NoScoreable_Access) return Boolean renames org.allbinary.game.score.NoScoreable_Package_References."=";
+   subtype NoScoreable_Access_Array is org.allbinary.game.score.NoScoreable_Package_References.NoScoreable_Access_Array;
+   function "=" (Left, Right : NoScoreable_Access_Array) return Boolean renames org.allbinary.game.score.NoScoreable_Package_References."=";
+   subtype NoScoreable_Access_Array_Access is org.allbinary.game.score.NoScoreable_Package_References.NoScoreable_Access_Array_Access;
+   function "=" (Left, Right : NoScoreable_Access_Array_Access) return Boolean renames org.allbinary.game.score.NoScoreable_Package_References."=";
+   subtype NoScoreable_Access_Array_Access_Array is org.allbinary.game.score.NoScoreable_Package_References.NoScoreable_Access_Array_Access_Array;
+   function "=" (Left, Right : NoScoreable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.NoScoreable_Package_References."=";
+   subtype NoScoreable_Access_Array_Access_Array_Access is org.allbinary.game.score.NoScoreable_Package_References.NoScoreable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoScoreable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.NoScoreable_Package_References."=";
 
    type NoScoreable is new Scoreable with null record;
    SINGLETON : NoScoreable_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package;
+package org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References is
+   type DownTouchInputToGameKeyEventAction_Access is access all org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package.DownTouchInputToGameKeyEventAction'Class;
+   type DownTouchInputToGameKeyEventAction_Access_Array is array (Natural range <>) of DownTouchInputToGameKeyEventAction_Access;
+   type DownTouchInputToGameKeyEventAction_Access_Array_Access is access all DownTouchInputToGameKeyEventAction_Access_Array;
+   type DownTouchInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of DownTouchInputToGameKeyEventAction_Access_Array_Access;
+   type DownTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all DownTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+end org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References;
+
+with org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEve
 package org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package is
 
    package GameKeyCompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DownTouchInputToGameKeyEventAction is tagged;
-   type DownTouchInputToGameKeyEventAction_Access is access all DownTouchInputToGameKeyEventAction'Class;
-   type DownTouchInputToGameKeyEventAction_Access_Array is array (Natural range <>) of DownTouchInputToGameKeyEventAction_Access;
-   type DownTouchInputToGameKeyEventAction_Access_Array_Access is access all DownTouchInputToGameKeyEventAction_Access_Array;
-   type DownTouchInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of DownTouchInputToGameKeyEventAction_Access_Array_Access;
-   type DownTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all DownTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+
+   subtype DownTouchInputToGameKeyEventAction_Access is org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References.DownTouchInputToGameKeyEventAction_Access;
+   function "=" (Left, Right : DownTouchInputToGameKeyEventAction_Access) return Boolean renames org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References."=";
+   subtype DownTouchInputToGameKeyEventAction_Access_Array is org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References.DownTouchInputToGameKeyEventAction_Access_Array;
+   function "=" (Left, Right : DownTouchInputToGameKeyEventAction_Access_Array) return Boolean renames org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References."=";
+   subtype DownTouchInputToGameKeyEventAction_Access_Array_Access is org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References.DownTouchInputToGameKeyEventAction_Access_Array_Access;
+   function "=" (Left, Right : DownTouchInputToGameKeyEventAction_Access_Array_Access) return Boolean renames org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References."=";
+   subtype DownTouchInputToGameKeyEventAction_Access_Array_Access_Array is org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References.DownTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+   function "=" (Left, Right : DownTouchInputToGameKeyEventAction_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References."=";
+   subtype DownTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References.DownTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DownTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package_References."=";
 
    type DownTouchInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with null record;
    instance : Java_Object_Access;

@@ -16,6 +16,7 @@
 with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 
 package body org.allbinary.logic.io.path.AbPathData_Package is
 
@@ -33,7 +34,7 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
 
    function getInstance return AbPathData_Access is
    begin
-        return AbPathData_Package.instance;
+        return AbPathData_Access (AbPathData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out AbPathData'Class) is

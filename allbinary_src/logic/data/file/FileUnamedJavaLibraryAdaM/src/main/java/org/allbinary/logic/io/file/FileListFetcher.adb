@@ -16,9 +16,12 @@
 with org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package; use org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package;
 with org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package; use org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package;
 with org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package; use org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package;
+with org.allbinary.logic.io.file.directory.SubDirectory_Package; use org.allbinary.logic.io.file.directory.SubDirectory_Package;
 with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package; use org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
 
 package body org.allbinary.logic.io.file.FileListFetcher_Package is
 
@@ -27,6 +30,26 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
    package DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package;
    package VisitorFileFilter_Package renames Standard.org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype SubDirectory_Access is org.allbinary.logic.io.file.directory.SubDirectory_Package_References.SubDirectory_Access;
+   function "=" (Left, Right : SubDirectory_Access) return Boolean renames org.allbinary.logic.io.file.directory.SubDirectory_Package_References."=";
+   subtype SubDirectory_Access_Array is org.allbinary.logic.io.file.directory.SubDirectory_Package_References.SubDirectory_Access_Array;
+   function "=" (Left, Right : SubDirectory_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.SubDirectory_Package_References."=";
+   subtype SubDirectory_Access_Array_Access is org.allbinary.logic.io.file.directory.SubDirectory_Package_References.SubDirectory_Access_Array_Access;
+   function "=" (Left, Right : SubDirectory_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.SubDirectory_Package_References."=";
+   subtype SubDirectory_Access_Array_Access_Array is org.allbinary.logic.io.file.directory.SubDirectory_Package_References.SubDirectory_Access_Array_Access_Array;
+   function "=" (Left, Right : SubDirectory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.SubDirectory_Package_References."=";
+   subtype SubDirectory_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.directory.SubDirectory_Package_References.SubDirectory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SubDirectory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.SubDirectory_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    procedure Initialize_Fields (This : in out FileListFetcher'Class) is
    begin
       null;
@@ -48,7 +71,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
 
    function getInstance return FileListFetcher_Access is
    begin
-        return FileListFetcher_Package.instance;
+        return FileListFetcher_Access (FileListFetcher_Package.instance);
    end getInstance;
 
    function getFiles (This : in out FileListFetcher; path : Unbounded_String) return BasicArrayList_Access is

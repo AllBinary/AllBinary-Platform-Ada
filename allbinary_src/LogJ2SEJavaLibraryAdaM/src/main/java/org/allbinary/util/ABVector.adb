@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Vector_Package; use java.util.Vector_Package;
 
 package body org.allbinary.util.ABVector_Package is
 

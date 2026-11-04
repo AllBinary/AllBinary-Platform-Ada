@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+package org.allbinary.logic.communication.log.LogFormatUtil_Package_References is
+   type LogFormatUtil_Access is access all org.allbinary.logic.communication.log.LogFormatUtil_Package.LogFormatUtil'Class;
+   type LogFormatUtil_Access_Array is array (Natural range <>) of LogFormatUtil_Access;
+   type LogFormatUtil_Access_Array_Access is access all LogFormatUtil_Access_Array;
+   type LogFormatUtil_Access_Array_Access_Array is array (Natural range <>) of LogFormatUtil_Access_Array_Access;
+   type LogFormatUtil_Access_Array_Access_Array_Access is access all LogFormatUtil_Access_Array_Access_Array;
+end org.allbinary.logic.communication.log.LogFormatUtil_Package_References;
+
+with org.allbinary.logic.communication.log.LogFormatUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.time.TimeStampUtil_Package; use org.allbinary.time.TimeStampUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package; use org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+limited with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.NullUtil_Package_References;
+limited with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package_References;
+limited with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
+limited with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
+limited with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
+limited with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References;
 
 package org.allbinary.logic.communication.log.LogFormatUtil_Package is
 
@@ -35,13 +51,81 @@ package org.allbinary.logic.communication.log.LogFormatUtil_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+   package Reference_Types is
+   subtype NullUtil_Access is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access;
+   use type NullUtil_Access;
+   subtype NullUtil_Access_Array is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access_Array;
+   use type NullUtil_Access_Array;
+   subtype NullUtil_Access_Array_Access is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access_Array_Access;
+   use type NullUtil_Access_Array_Access;
+   subtype NullUtil_Access_Array_Access_Array is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access_Array_Access_Array;
+   use type NullUtil_Access_Array_Access_Array;
+   subtype NullUtil_Access_Array_Access_Array_Access is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access_Array_Access_Array_Access;
+   use type NullUtil_Access_Array_Access_Array_Access;
+   subtype TimeStampUtil_Access is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access;
+   use type TimeStampUtil_Access;
+   subtype TimeStampUtil_Access_Array is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access_Array;
+   use type TimeStampUtil_Access_Array;
+   subtype TimeStampUtil_Access_Array_Access is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access_Array_Access;
+   use type TimeStampUtil_Access_Array_Access;
+   subtype TimeStampUtil_Access_Array_Access_Array is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access_Array_Access_Array;
+   use type TimeStampUtil_Access_Array_Access_Array;
+   subtype TimeStampUtil_Access_Array_Access_Array_Access is org.allbinary.time.TimeStampUtil_Package_References.TimeStampUtil_Access_Array_Access_Array_Access;
+   use type TimeStampUtil_Access_Array_Access_Array_Access;
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   use type CommonSeps_Access;
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   use type CommonSeps_Access_Array;
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access;
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   use type CommonSeps_Access_Array_Access_Array;
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access_Array_Access;
+   subtype StringMaker_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access;
+   use type StringMaker_Access;
+   subtype StringMaker_Access_Array is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array;
+   use type StringMaker_Access_Array;
+   subtype StringMaker_Access_Array_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access;
+   use type StringMaker_Access_Array_Access;
+   subtype StringMaker_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access_Array;
+   use type StringMaker_Access_Array_Access_Array;
+   subtype StringMaker_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access_Array_Access;
+   use type StringMaker_Access_Array_Access_Array_Access;
+   subtype StringUtil_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access;
+   use type StringUtil_Access;
+   subtype StringUtil_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array;
+   use type StringUtil_Access_Array;
+   subtype StringUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access;
+   use type StringUtil_Access_Array_Access;
+   subtype StringUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array;
+   use type StringUtil_Access_Array_Access_Array;
+   subtype StringUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array_Access;
+   use type StringUtil_Access_Array_Access_Array_Access;
+   subtype ExceptionUtil_Access is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access;
+   use type ExceptionUtil_Access;
+   subtype ExceptionUtil_Access_Array is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access_Array;
+   use type ExceptionUtil_Access_Array;
+   subtype ExceptionUtil_Access_Array_Access is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access_Array_Access;
+   use type ExceptionUtil_Access_Array_Access;
+   subtype ExceptionUtil_Access_Array_Access_Array is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access_Array_Access_Array;
+   use type ExceptionUtil_Access_Array_Access_Array;
+   subtype ExceptionUtil_Access_Array_Access_Array_Access is org.allbinary.logic.java.exception_Id.ExceptionUtil_Package_References.ExceptionUtil_Access_Array_Access_Array_Access;
+   use type ExceptionUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type LogFormatUtil is tagged;
-   type LogFormatUtil_Access is access all LogFormatUtil'Class;
-   type LogFormatUtil_Access_Array is array (Natural range <>) of LogFormatUtil_Access;
-   type LogFormatUtil_Access_Array_Access is access all LogFormatUtil_Access_Array;
-   type LogFormatUtil_Access_Array_Access_Array is array (Natural range <>) of LogFormatUtil_Access_Array_Access;
-   type LogFormatUtil_Access_Array_Access_Array_Access is access all LogFormatUtil_Access_Array_Access_Array;
+
+   subtype LogFormatUtil_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access;
+   function "=" (Left, Right : LogFormatUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
+   subtype LogFormatUtil_Access_Array is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array;
+   function "=" (Left, Right : LogFormatUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
+   subtype LogFormatUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access;
+   function "=" (Left, Right : LogFormatUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
+   subtype LogFormatUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogFormatUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
+   subtype LogFormatUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogFormatUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogFormatUtil_Package_References."=";
 
    type LogFormatUtil is new Java_Object with record
       timeStampUtil : TimeStampUtil_Access;

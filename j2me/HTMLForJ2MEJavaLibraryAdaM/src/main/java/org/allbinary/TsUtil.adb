@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
 with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
 with javax.microedition.rms.InvalidRecordIDException_Package; use javax.microedition.rms.InvalidRecordIDException_Package;
 with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
@@ -28,6 +29,16 @@ package body org.allbinary.TsUtil_Package is
    package RecordStoreException_Package renames Standard.javax.microedition.rms.RecordStoreException_Package;
    package RecordStoreNotOpenException_Package renames Standard.javax.microedition.rms.RecordStoreNotOpenException_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   subtype Displayable_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access;
+   function "=" (Left, Right : Displayable_Access) return Boolean renames javax.microedition.lcdui.Displayable_Package_References."=";
+   subtype Displayable_Access_Array is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array;
+   function "=" (Left, Right : Displayable_Access_Array) return Boolean renames javax.microedition.lcdui.Displayable_Package_References."=";
+   subtype Displayable_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access;
+   function "=" (Left, Right : Displayable_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Displayable_Package_References."=";
+   subtype Displayable_Access_Array_Access_Array is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array;
+   function "=" (Left, Right : Displayable_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Displayable_Package_References."=";
+   subtype Displayable_Access_Array_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Displayable_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Displayable_Package_References."=";
    procedure Initialize_Fields (This : in out TsUtil'Class) is
    begin
       null;
@@ -48,8 +59,18 @@ package body org.allbinary.TsUtil_Package is
 
    function getInstance return TsUtil_Access is
    begin
-        return TsUtil_Package.instance;
+        return TsUtil_Access (TsUtil_Package.instance);
    end getInstance;
+
+   function longBitsToDouble (This : in out TsUtil; bits : Long_Long_Integer) return Long_Float is
+   begin
+        return Java_Long_Bits_To_Double (bits);
+   end longBitsToDouble;
+
+   function intBitsToFloat (This : in out TsUtil; bits : Integer) return Float is
+   begin
+        return Java_Int_Bits_To_Float (bits);
+   end intBitsToFloat;
 
    function hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) return Integer is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
@@ -125,6 +146,20 @@ package body org.allbinary.TsUtil_Package is
    begin
         null;
    end gc;
+
+   procedure longBitsToDouble (This : in out TsUtil; bits : Long_Long_Integer) is
+      Java_Result : constant Long_Float := TsUtil'Class (This).longBitsToDouble (bits => bits);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end longBitsToDouble;
+
+   procedure intBitsToFloat (This : in out TsUtil; bits : Integer) is
+      Java_Result : constant Float := TsUtil'Class (This).intBitsToFloat (bits => bits);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end intBitsToFloat;
 
    procedure hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Integer := TsUtil'Class (This).hashCode (anyType_Param => anyType_Param);

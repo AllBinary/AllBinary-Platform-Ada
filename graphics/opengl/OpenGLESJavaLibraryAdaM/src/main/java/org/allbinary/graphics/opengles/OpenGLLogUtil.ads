@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+package org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References is
+   type OpenGLLogUtil_Access is access all org.allbinary.graphics.opengles.OpenGLLogUtil_Package.OpenGLLogUtil'Class;
+   type OpenGLLogUtil_Access_Array is array (Natural range <>) of OpenGLLogUtil_Access;
+   type OpenGLLogUtil_Access_Array_Access is access all OpenGLLogUtil_Access_Array;
+   type OpenGLLogUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLLogUtil_Access_Array_Access;
+   type OpenGLLogUtil_Access_Array_Access_Array_Access is access all OpenGLLogUtil_Access_Array_Access_Array;
+end org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References;
+
+with org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,20 +18,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+limited with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 
 package org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package Reference_Types is
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   use type GL10_Access;
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   use type GL10_Access_Array;
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   use type GL10_Access_Array_Access;
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   use type GL10_Access_Array_Access_Array;
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   use type GL10_Access_Array_Access_Array_Access;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLLogUtil is tagged;
-   type OpenGLLogUtil_Access is access all OpenGLLogUtil'Class;
-   type OpenGLLogUtil_Access_Array is array (Natural range <>) of OpenGLLogUtil_Access;
-   type OpenGLLogUtil_Access_Array_Access is access all OpenGLLogUtil_Access_Array;
-   type OpenGLLogUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLLogUtil_Access_Array_Access;
-   type OpenGLLogUtil_Access_Array_Access_Array_Access is access all OpenGLLogUtil_Access_Array_Access_Array;
+
+   subtype OpenGLLogUtil_Access is org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References.OpenGLLogUtil_Access;
+   function "=" (Left, Right : OpenGLLogUtil_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References."=";
+   subtype OpenGLLogUtil_Access_Array is org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References.OpenGLLogUtil_Access_Array;
+   function "=" (Left, Right : OpenGLLogUtil_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References."=";
+   subtype OpenGLLogUtil_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References.OpenGLLogUtil_Access_Array_Access;
+   function "=" (Left, Right : OpenGLLogUtil_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References."=";
+   subtype OpenGLLogUtil_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References.OpenGLLogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLLogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References."=";
+   subtype OpenGLLogUtil_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References.OpenGLLogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLLogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLLogUtil_Package_References."=";
 
    type OpenGLLogUtil is new Java_Object with record
       MAX_TEXTURE : Unbounded_String;

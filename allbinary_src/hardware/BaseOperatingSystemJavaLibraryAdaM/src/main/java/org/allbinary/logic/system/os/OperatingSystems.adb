@@ -59,7 +59,7 @@ package body org.allbinary.logic.system.os.OperatingSystems_Package is
 
    function getInstance return OperatingSystems_Access is
    begin
-        return OperatingSystems_Package.instance;
+        return OperatingSystems_Access (OperatingSystems_Package.instance);
    end getInstance;
 
 begin

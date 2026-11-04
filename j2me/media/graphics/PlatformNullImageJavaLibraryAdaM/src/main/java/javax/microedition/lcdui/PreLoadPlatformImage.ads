@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with javax.microedition.lcdui.PreLoadPlatformImage_Package;
+package javax.microedition.lcdui.PreLoadPlatformImage_Package_References is
+   type PreLoadPlatformImage_Access is access all javax.microedition.lcdui.PreLoadPlatformImage_Package.PreLoadPlatformImage'Class;
+   type PreLoadPlatformImage_Access_Array is array (Natural range <>) of PreLoadPlatformImage_Access;
+   type PreLoadPlatformImage_Access_Array_Access is access all PreLoadPlatformImage_Access_Array;
+   type PreLoadPlatformImage_Access_Array_Access_Array is array (Natural range <>) of PreLoadPlatformImage_Access_Array_Access;
+   type PreLoadPlatformImage_Access_Array_Access_Array_Access is access all PreLoadPlatformImage_Access_Array_Access_Array;
+end javax.microedition.lcdui.PreLoadPlatformImage_Package_References;
+
+with javax.microedition.lcdui.PreLoadPlatformImage_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with javax.microedition.lcdui.PlatformImage_Package; use javax.microedition.lcdu
 
 package javax.microedition.lcdui.PreLoadPlatformImage_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PreLoadPlatformImage is tagged;
-   type PreLoadPlatformImage_Access is access all PreLoadPlatformImage'Class;
-   type PreLoadPlatformImage_Access_Array is array (Natural range <>) of PreLoadPlatformImage_Access;
-   type PreLoadPlatformImage_Access_Array_Access is access all PreLoadPlatformImage_Access_Array;
-   type PreLoadPlatformImage_Access_Array_Access_Array is array (Natural range <>) of PreLoadPlatformImage_Access_Array_Access;
-   type PreLoadPlatformImage_Access_Array_Access_Array_Access is access all PreLoadPlatformImage_Access_Array_Access_Array;
+
+   subtype PreLoadPlatformImage_Access is javax.microedition.lcdui.PreLoadPlatformImage_Package_References.PreLoadPlatformImage_Access;
+   function "=" (Left, Right : PreLoadPlatformImage_Access) return Boolean renames javax.microedition.lcdui.PreLoadPlatformImage_Package_References."=";
+   subtype PreLoadPlatformImage_Access_Array is javax.microedition.lcdui.PreLoadPlatformImage_Package_References.PreLoadPlatformImage_Access_Array;
+   function "=" (Left, Right : PreLoadPlatformImage_Access_Array) return Boolean renames javax.microedition.lcdui.PreLoadPlatformImage_Package_References."=";
+   subtype PreLoadPlatformImage_Access_Array_Access is javax.microedition.lcdui.PreLoadPlatformImage_Package_References.PreLoadPlatformImage_Access_Array_Access;
+   function "=" (Left, Right : PreLoadPlatformImage_Access_Array_Access) return Boolean renames javax.microedition.lcdui.PreLoadPlatformImage_Package_References."=";
+   subtype PreLoadPlatformImage_Access_Array_Access_Array is javax.microedition.lcdui.PreLoadPlatformImage_Package_References.PreLoadPlatformImage_Access_Array_Access_Array;
+   function "=" (Left, Right : PreLoadPlatformImage_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.PreLoadPlatformImage_Package_References."=";
+   subtype PreLoadPlatformImage_Access_Array_Access_Array_Access is javax.microedition.lcdui.PreLoadPlatformImage_Package_References.PreLoadPlatformImage_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PreLoadPlatformImage_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.PreLoadPlatformImage_Package_References."=";
 
    type PreLoadPlatformImage is new PlatformImage with null record;
    instance : PreLoadPlatformImage_Access;

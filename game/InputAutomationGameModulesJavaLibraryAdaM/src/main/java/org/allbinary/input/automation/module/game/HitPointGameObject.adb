@@ -15,6 +15,9 @@
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.input.automation.module.game.HitPointGameObjectInterface_Package;
+with org.allbinary.input.automation.module.game.MeteredGameObject_Package;
+with org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Package;
 
 package body org.allbinary.input.automation.module.game.HitPointGameObject_Package is
 

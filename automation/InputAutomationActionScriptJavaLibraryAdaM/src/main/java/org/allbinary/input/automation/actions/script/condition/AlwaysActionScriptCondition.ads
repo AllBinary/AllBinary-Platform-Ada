@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
+package org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References is
+   type AlwaysActionScriptCondition_Access is access all org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package.AlwaysActionScriptCondition'Class;
+   type AlwaysActionScriptCondition_Access_Array is array (Natural range <>) of AlwaysActionScriptCondition_Access;
+   type AlwaysActionScriptCondition_Access_Array_Access is access all AlwaysActionScriptCondition_Access_Array;
+   type AlwaysActionScriptCondition_Access_Array_Access_Array is array (Natural range <>) of AlwaysActionScriptCondition_Access_Array_Access;
+   type AlwaysActionScriptCondition_Access_Array_Access_Array_Access is access all AlwaysActionScriptCondition_Access_Array_Access_Array;
+end org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References;
+
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,12 +31,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package;
+limited with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package_References;
 
 package org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package is
 
@@ -34,13 +48,61 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   subtype AlwaysActionScriptConditionJPanel_Access is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package_References.AlwaysActionScriptConditionJPanel_Access;
+   use type AlwaysActionScriptConditionJPanel_Access;
+   subtype AlwaysActionScriptConditionJPanel_Access_Array is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package_References.AlwaysActionScriptConditionJPanel_Access_Array;
+   use type AlwaysActionScriptConditionJPanel_Access_Array;
+   subtype AlwaysActionScriptConditionJPanel_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package_References.AlwaysActionScriptConditionJPanel_Access_Array_Access;
+   use type AlwaysActionScriptConditionJPanel_Access_Array_Access;
+   subtype AlwaysActionScriptConditionJPanel_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package_References.AlwaysActionScriptConditionJPanel_Access_Array_Access_Array;
+   use type AlwaysActionScriptConditionJPanel_Access_Array_Access_Array;
+   subtype AlwaysActionScriptConditionJPanel_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package_References.AlwaysActionScriptConditionJPanel_Access_Array_Access_Array_Access;
+   use type AlwaysActionScriptConditionJPanel_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AlwaysActionScriptCondition is tagged;
-   type AlwaysActionScriptCondition_Access is access all AlwaysActionScriptCondition'Class;
-   type AlwaysActionScriptCondition_Access_Array is array (Natural range <>) of AlwaysActionScriptCondition_Access;
-   type AlwaysActionScriptCondition_Access_Array_Access is access all AlwaysActionScriptCondition_Access_Array;
-   type AlwaysActionScriptCondition_Access_Array_Access_Array is array (Natural range <>) of AlwaysActionScriptCondition_Access_Array_Access;
-   type AlwaysActionScriptCondition_Access_Array_Access_Array_Access is access all AlwaysActionScriptCondition_Access_Array_Access_Array;
+
+   subtype AlwaysActionScriptCondition_Access is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References.AlwaysActionScriptCondition_Access;
+   function "=" (Left, Right : AlwaysActionScriptCondition_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References."=";
+   subtype AlwaysActionScriptCondition_Access_Array is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References.AlwaysActionScriptCondition_Access_Array;
+   function "=" (Left, Right : AlwaysActionScriptCondition_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References."=";
+   subtype AlwaysActionScriptCondition_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References.AlwaysActionScriptCondition_Access_Array_Access;
+   function "=" (Left, Right : AlwaysActionScriptCondition_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References."=";
+   subtype AlwaysActionScriptCondition_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References.AlwaysActionScriptCondition_Access_Array_Access_Array;
+   function "=" (Left, Right : AlwaysActionScriptCondition_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References."=";
+   subtype AlwaysActionScriptCondition_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References.AlwaysActionScriptCondition_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AlwaysActionScriptCondition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References."=";
 
    type AlwaysActionScriptCondition is new BasicProfileActionScriptCondition and AlwaysActionScriptConditionInterface with record
       logUtil : LogUtil_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package;
+package org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References is
+   type InputAutomationModuleOSGIServiceVisitor_Access is access all org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package.InputAutomationModuleOSGIServiceVisitor'Class;
+   type InputAutomationModuleOSGIServiceVisitor_Access_Array is array (Natural range <>) of InputAutomationModuleOSGIServiceVisitor_Access;
+   type InputAutomationModuleOSGIServiceVisitor_Access_Array_Access is access all InputAutomationModuleOSGIServiceVisitor_Access_Array;
+   type InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleOSGIServiceVisitor_Access_Array_Access;
+   type InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array_Access is access all InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References;
+
+with org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.osgi.OSGIServiceInterface_Package;
+with org.allbinary.osgi.OSGIServiceInterface_Package_References;
 with org.allbinary.osgi.OSGIServiceVisitorInterface_Package; use org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package is
 
@@ -31,13 +44,51 @@ package org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServ
    package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
    package OSGIServiceVisitorInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype OSGIServiceInterface_Access is org.allbinary.osgi.OSGIServiceInterface_Package_References.OSGIServiceInterface_Access;
+   use type OSGIServiceInterface_Access;
+   subtype OSGIServiceInterface_Access_Array is org.allbinary.osgi.OSGIServiceInterface_Package_References.OSGIServiceInterface_Access_Array;
+   use type OSGIServiceInterface_Access_Array;
+   subtype OSGIServiceInterface_Access_Array_Access is org.allbinary.osgi.OSGIServiceInterface_Package_References.OSGIServiceInterface_Access_Array_Access;
+   use type OSGIServiceInterface_Access_Array_Access;
+   subtype OSGIServiceInterface_Access_Array_Access_Array is org.allbinary.osgi.OSGIServiceInterface_Package_References.OSGIServiceInterface_Access_Array_Access_Array;
+   use type OSGIServiceInterface_Access_Array_Access_Array;
+   subtype OSGIServiceInterface_Access_Array_Access_Array_Access is org.allbinary.osgi.OSGIServiceInterface_Package_References.OSGIServiceInterface_Access_Array_Access_Array_Access;
+   use type OSGIServiceInterface_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputAutomationModuleOSGIServiceVisitor is tagged;
-   type InputAutomationModuleOSGIServiceVisitor_Access is access all InputAutomationModuleOSGIServiceVisitor'Class;
-   type InputAutomationModuleOSGIServiceVisitor_Access_Array is array (Natural range <>) of InputAutomationModuleOSGIServiceVisitor_Access;
-   type InputAutomationModuleOSGIServiceVisitor_Access_Array_Access is access all InputAutomationModuleOSGIServiceVisitor_Access_Array;
-   type InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleOSGIServiceVisitor_Access_Array_Access;
-   type InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array_Access is access all InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array;
+
+   subtype InputAutomationModuleOSGIServiceVisitor_Access is org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References.InputAutomationModuleOSGIServiceVisitor_Access;
+   function "=" (Left, Right : InputAutomationModuleOSGIServiceVisitor_Access) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References."=";
+   subtype InputAutomationModuleOSGIServiceVisitor_Access_Array is org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References.InputAutomationModuleOSGIServiceVisitor_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleOSGIServiceVisitor_Access_Array) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References."=";
+   subtype InputAutomationModuleOSGIServiceVisitor_Access_Array_Access is org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References.InputAutomationModuleOSGIServiceVisitor_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleOSGIServiceVisitor_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References."=";
+   subtype InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array is org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References.InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References."=";
+   subtype InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References.InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleOSGIServiceVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package_References."=";
 
    type InputAutomationModuleOSGIServiceVisitor is new Java_Object and OSGIServiceVisitorInterface with record
       logUtil : LogUtil_Access;

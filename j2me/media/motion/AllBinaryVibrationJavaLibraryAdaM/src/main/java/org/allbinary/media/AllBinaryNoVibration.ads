@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.AllBinaryNoVibration_Package;
+package org.allbinary.media.AllBinaryNoVibration_Package_References is
+   type AllBinaryNoVibration_Access is access all org.allbinary.media.AllBinaryNoVibration_Package.AllBinaryNoVibration'Class;
+   type AllBinaryNoVibration_Access_Array is array (Natural range <>) of AllBinaryNoVibration_Access;
+   type AllBinaryNoVibration_Access_Array_Access is access all AllBinaryNoVibration_Access_Array;
+   type AllBinaryNoVibration_Access_Array_Access_Array is array (Natural range <>) of AllBinaryNoVibration_Access_Array_Access;
+   type AllBinaryNoVibration_Access_Array_Access_Array_Access is access all AllBinaryNoVibration_Access_Array_Access_Array;
+end org.allbinary.media.AllBinaryNoVibration_Package_References;
+
+with org.allbinary.media.AllBinaryNoVibration_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.A
 
 package org.allbinary.media.AllBinaryNoVibration_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AllBinaryNoVibration is tagged;
-   type AllBinaryNoVibration_Access is access all AllBinaryNoVibration'Class;
-   type AllBinaryNoVibration_Access_Array is array (Natural range <>) of AllBinaryNoVibration_Access;
-   type AllBinaryNoVibration_Access_Array_Access is access all AllBinaryNoVibration_Access_Array;
-   type AllBinaryNoVibration_Access_Array_Access_Array is array (Natural range <>) of AllBinaryNoVibration_Access_Array_Access;
-   type AllBinaryNoVibration_Access_Array_Access_Array_Access is access all AllBinaryNoVibration_Access_Array_Access_Array;
+
+   subtype AllBinaryNoVibration_Access is org.allbinary.media.AllBinaryNoVibration_Package_References.AllBinaryNoVibration_Access;
+   function "=" (Left, Right : AllBinaryNoVibration_Access) return Boolean renames org.allbinary.media.AllBinaryNoVibration_Package_References."=";
+   subtype AllBinaryNoVibration_Access_Array is org.allbinary.media.AllBinaryNoVibration_Package_References.AllBinaryNoVibration_Access_Array;
+   function "=" (Left, Right : AllBinaryNoVibration_Access_Array) return Boolean renames org.allbinary.media.AllBinaryNoVibration_Package_References."=";
+   subtype AllBinaryNoVibration_Access_Array_Access is org.allbinary.media.AllBinaryNoVibration_Package_References.AllBinaryNoVibration_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryNoVibration_Access_Array_Access) return Boolean renames org.allbinary.media.AllBinaryNoVibration_Package_References."=";
+   subtype AllBinaryNoVibration_Access_Array_Access_Array is org.allbinary.media.AllBinaryNoVibration_Package_References.AllBinaryNoVibration_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryNoVibration_Access_Array_Access_Array) return Boolean renames org.allbinary.media.AllBinaryNoVibration_Package_References."=";
+   subtype AllBinaryNoVibration_Access_Array_Access_Array_Access is org.allbinary.media.AllBinaryNoVibration_Package_References.AllBinaryNoVibration_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryNoVibration_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.AllBinaryNoVibration_Package_References."=";
 
    type AllBinaryNoVibration is new AllBinaryVibrationME with null record;
    NO_VIBRATION : AllBinaryVibrationME_Access;

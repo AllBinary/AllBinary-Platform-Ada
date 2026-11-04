@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.generic_Id.address.shipping.ShippingAddressTag_Package;
+package tags.generic_Id.address.shipping.ShippingAddressTag_Package_References is
+   type ShippingAddressTag_Access is access all tags.generic_Id.address.shipping.ShippingAddressTag_Package.ShippingAddressTag'Class;
+   type ShippingAddressTag_Access_Array is array (Natural range <>) of ShippingAddressTag_Access;
+   type ShippingAddressTag_Access_Array_Access is access all ShippingAddressTag_Access_Array;
+   type ShippingAddressTag_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressTag_Access_Array_Access;
+   type ShippingAddressTag_Access_Array_Access_Array_Access is access all ShippingAddressTag_Access_Array_Access_Array;
+end tags.generic_Id.address.shipping.ShippingAddressTag_Package_References;
+
+with tags.generic_Id.address.shipping.ShippingAddressTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 package tags.generic_Id.address.shipping.ShippingAddressTag_Package is
 
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ShippingAddressTag is tagged;
-   type ShippingAddressTag_Access is access all ShippingAddressTag'Class;
-   type ShippingAddressTag_Access_Array is array (Natural range <>) of ShippingAddressTag_Access;
-   type ShippingAddressTag_Access_Array_Access is access all ShippingAddressTag_Access_Array;
-   type ShippingAddressTag_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressTag_Access_Array_Access;
-   type ShippingAddressTag_Access_Array_Access_Array_Access is access all ShippingAddressTag_Access_Array_Access_Array;
+
+   subtype ShippingAddressTag_Access is tags.generic_Id.address.shipping.ShippingAddressTag_Package_References.ShippingAddressTag_Access;
+   function "=" (Left, Right : ShippingAddressTag_Access) return Boolean renames tags.generic_Id.address.shipping.ShippingAddressTag_Package_References."=";
+   subtype ShippingAddressTag_Access_Array is tags.generic_Id.address.shipping.ShippingAddressTag_Package_References.ShippingAddressTag_Access_Array;
+   function "=" (Left, Right : ShippingAddressTag_Access_Array) return Boolean renames tags.generic_Id.address.shipping.ShippingAddressTag_Package_References."=";
+   subtype ShippingAddressTag_Access_Array_Access is tags.generic_Id.address.shipping.ShippingAddressTag_Package_References.ShippingAddressTag_Access_Array_Access;
+   function "=" (Left, Right : ShippingAddressTag_Access_Array_Access) return Boolean renames tags.generic_Id.address.shipping.ShippingAddressTag_Package_References."=";
+   subtype ShippingAddressTag_Access_Array_Access_Array is tags.generic_Id.address.shipping.ShippingAddressTag_Package_References.ShippingAddressTag_Access_Array_Access_Array;
+   function "=" (Left, Right : ShippingAddressTag_Access_Array_Access_Array) return Boolean renames tags.generic_Id.address.shipping.ShippingAddressTag_Package_References."=";
+   subtype ShippingAddressTag_Access_Array_Access_Array_Access is tags.generic_Id.address.shipping.ShippingAddressTag_Package_References.ShippingAddressTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShippingAddressTag_Access_Array_Access_Array_Access) return Boolean renames tags.generic_Id.address.shipping.ShippingAddressTag_Package_References."=";
 
    type ShippingAddressTag is new StoreValidationTransformTag with record
       value : Unbounded_String;

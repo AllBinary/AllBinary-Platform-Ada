@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.feature.InputFeature_Package;
+package org.allbinary.game.configuration.feature.InputFeature_Package_References is
+   type InputFeature_Access is access all org.allbinary.game.configuration.feature.InputFeature_Package.InputFeature'Class;
+   type InputFeature_Access_Array is array (Natural range <>) of InputFeature_Access;
+   type InputFeature_Access_Array_Access is access all InputFeature_Access_Array;
+   type InputFeature_Access_Array_Access_Array is array (Natural range <>) of InputFeature_Access_Array_Access;
+   type InputFeature_Access_Array_Access_Array_Access is access all InputFeature_Access_Array_Access_Array;
+end org.allbinary.game.configuration.feature.InputFeature_Package_References;
+
+with org.allbinary.game.configuration.feature.InputFeature_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary
 
 package org.allbinary.game.configuration.feature.InputFeature_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputFeature is tagged;
-   type InputFeature_Access is access all InputFeature'Class;
-   type InputFeature_Access_Array is array (Natural range <>) of InputFeature_Access;
-   type InputFeature_Access_Array_Access is access all InputFeature_Access_Array;
-   type InputFeature_Access_Array_Access_Array is array (Natural range <>) of InputFeature_Access_Array_Access;
-   type InputFeature_Access_Array_Access_Array_Access is access all InputFeature_Access_Array_Access_Array;
+
+   subtype InputFeature_Access is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access;
+   function "=" (Left, Right : InputFeature_Access) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
+   subtype InputFeature_Access_Array is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access_Array;
+   function "=" (Left, Right : InputFeature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
+   subtype InputFeature_Access_Array_Access is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access_Array_Access;
+   function "=" (Left, Right : InputFeature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
+   subtype InputFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : InputFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
+   subtype InputFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.InputFeature_Package_References.InputFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.InputFeature_Package_References."=";
 
    type InputFeature is new Feature_Package.Feature with null record;
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package;
+package org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References is
+   type BillingAddressesEntity_Access is access all org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package.BillingAddressesEntity'Class;
+   type BillingAddressesEntity_Access_Array is array (Natural range <>) of BillingAddressesEntity_Access;
+   type BillingAddressesEntity_Access_Array_Access is access all BillingAddressesEntity_Access_Array;
+   type BillingAddressesEntity_Access_Array_Access_Array is array (Natural range <>) of BillingAddressesEntity_Access_Array_Access;
+   type BillingAddressesEntity_Access_Array_Access_Array_Access is access all BillingAddressesEntity_Access_Array_Access_Array;
+end org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References;
+
+with org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package; use o
 package org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package is
 
    package StreetAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BillingAddressesEntity is tagged;
-   type BillingAddressesEntity_Access is access all BillingAddressesEntity'Class;
-   type BillingAddressesEntity_Access_Array is array (Natural range <>) of BillingAddressesEntity_Access;
-   type BillingAddressesEntity_Access_Array_Access is access all BillingAddressesEntity_Access_Array;
-   type BillingAddressesEntity_Access_Array_Access_Array is array (Natural range <>) of BillingAddressesEntity_Access_Array_Access;
-   type BillingAddressesEntity_Access_Array_Access_Array_Access is access all BillingAddressesEntity_Access_Array_Access_Array;
+
+   subtype BillingAddressesEntity_Access is org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References.BillingAddressesEntity_Access;
+   function "=" (Left, Right : BillingAddressesEntity_Access) return Boolean renames org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References."=";
+   subtype BillingAddressesEntity_Access_Array is org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References.BillingAddressesEntity_Access_Array;
+   function "=" (Left, Right : BillingAddressesEntity_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References."=";
+   subtype BillingAddressesEntity_Access_Array_Access is org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References.BillingAddressesEntity_Access_Array_Access;
+   function "=" (Left, Right : BillingAddressesEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References."=";
+   subtype BillingAddressesEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References.BillingAddressesEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : BillingAddressesEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References."=";
+   subtype BillingAddressesEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References.BillingAddressesEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BillingAddressesEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package_References."=";
 
    type BillingAddressesEntity is new StreetAddressesEntity with record
       TABLENAME : Unbounded_String;

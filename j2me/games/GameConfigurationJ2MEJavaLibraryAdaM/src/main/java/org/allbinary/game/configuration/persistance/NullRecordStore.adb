@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
 
 package body org.allbinary.game.configuration.persistance.NullRecordStore_Package is
 

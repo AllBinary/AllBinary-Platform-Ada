@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.DownloadItemsHelperFactory_Package;
+package admin.taghelpers.DownloadItemsHelperFactory_Package_References is
+   type DownloadItemsHelperFactory_Access is access all admin.taghelpers.DownloadItemsHelperFactory_Package.DownloadItemsHelperFactory'Class;
+   type DownloadItemsHelperFactory_Access_Array is array (Natural range <>) of DownloadItemsHelperFactory_Access;
+   type DownloadItemsHelperFactory_Access_Array_Access is access all DownloadItemsHelperFactory_Access_Array;
+   type DownloadItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of DownloadItemsHelperFactory_Access_Array_Access;
+   type DownloadItemsHelperFactory_Access_Array_Access_Array_Access is access all DownloadItemsHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.DownloadItemsHelperFactory_Package_References;
+
+with admin.taghelpers.DownloadItemsHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.DownloadItemsHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DownloadItemsHelperFactory is tagged;
-   type DownloadItemsHelperFactory_Access is access all DownloadItemsHelperFactory'Class;
-   type DownloadItemsHelperFactory_Access_Array is array (Natural range <>) of DownloadItemsHelperFactory_Access;
-   type DownloadItemsHelperFactory_Access_Array_Access is access all DownloadItemsHelperFactory_Access_Array;
-   type DownloadItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of DownloadItemsHelperFactory_Access_Array_Access;
-   type DownloadItemsHelperFactory_Access_Array_Access_Array_Access is access all DownloadItemsHelperFactory_Access_Array_Access_Array;
+
+   subtype DownloadItemsHelperFactory_Access is admin.taghelpers.DownloadItemsHelperFactory_Package_References.DownloadItemsHelperFactory_Access;
+   function "=" (Left, Right : DownloadItemsHelperFactory_Access) return Boolean renames admin.taghelpers.DownloadItemsHelperFactory_Package_References."=";
+   subtype DownloadItemsHelperFactory_Access_Array is admin.taghelpers.DownloadItemsHelperFactory_Package_References.DownloadItemsHelperFactory_Access_Array;
+   function "=" (Left, Right : DownloadItemsHelperFactory_Access_Array) return Boolean renames admin.taghelpers.DownloadItemsHelperFactory_Package_References."=";
+   subtype DownloadItemsHelperFactory_Access_Array_Access is admin.taghelpers.DownloadItemsHelperFactory_Package_References.DownloadItemsHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : DownloadItemsHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.DownloadItemsHelperFactory_Package_References."=";
+   subtype DownloadItemsHelperFactory_Access_Array_Access_Array is admin.taghelpers.DownloadItemsHelperFactory_Package_References.DownloadItemsHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : DownloadItemsHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.DownloadItemsHelperFactory_Package_References."=";
+   subtype DownloadItemsHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.DownloadItemsHelperFactory_Package_References.DownloadItemsHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DownloadItemsHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.DownloadItemsHelperFactory_Package_References."=";
 
    type DownloadItemsHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

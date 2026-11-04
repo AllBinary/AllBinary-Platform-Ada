@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.NullParcelable_Package;
+package org.allbinary.android.NullParcelable_Package_References is
+   type NullParcelable_Access is access all org.allbinary.android.NullParcelable_Package.NullParcelable'Class;
+   type NullParcelable_Access_Array is array (Natural range <>) of NullParcelable_Access;
+   type NullParcelable_Access_Array_Access is access all NullParcelable_Access_Array;
+   type NullParcelable_Access_Array_Access_Array is array (Natural range <>) of NullParcelable_Access_Array_Access;
+   type NullParcelable_Access_Array_Access_Array_Access is access all NullParcelable_Access_Array_Access_Array;
+end org.allbinary.android.NullParcelable_Package_References;
+
+with org.allbinary.android.NullParcelable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,19 +31,38 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.os.Parcelable_Package; use android.os.Parcelable_Package;
-with android.os.Parcel_Package; use android.os.Parcel_Package;
+limited with android.os.Parcel_Package;
+with android.os.Parcel_Package_References;
 
 package org.allbinary.android.NullParcelable_Package is
 
    package Parcelable_Package renames Standard.android.os.Parcelable_Package;
    package Parcel_Package renames Standard.android.os.Parcel_Package;
+   package Reference_Types is
+   subtype Parcel_Access is android.os.Parcel_Package_References.Parcel_Access;
+   use type Parcel_Access;
+   subtype Parcel_Access_Array is android.os.Parcel_Package_References.Parcel_Access_Array;
+   use type Parcel_Access_Array;
+   subtype Parcel_Access_Array_Access is android.os.Parcel_Package_References.Parcel_Access_Array_Access;
+   use type Parcel_Access_Array_Access;
+   subtype Parcel_Access_Array_Access_Array is android.os.Parcel_Package_References.Parcel_Access_Array_Access_Array;
+   use type Parcel_Access_Array_Access_Array;
+   subtype Parcel_Access_Array_Access_Array_Access is android.os.Parcel_Package_References.Parcel_Access_Array_Access_Array_Access;
+   use type Parcel_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullParcelable is tagged;
-   type NullParcelable_Access is access all NullParcelable'Class;
-   type NullParcelable_Access_Array is array (Natural range <>) of NullParcelable_Access;
-   type NullParcelable_Access_Array_Access is access all NullParcelable_Access_Array;
-   type NullParcelable_Access_Array_Access_Array is array (Natural range <>) of NullParcelable_Access_Array_Access;
-   type NullParcelable_Access_Array_Access_Array_Access is access all NullParcelable_Access_Array_Access_Array;
+
+   subtype NullParcelable_Access is org.allbinary.android.NullParcelable_Package_References.NullParcelable_Access;
+   function "=" (Left, Right : NullParcelable_Access) return Boolean renames org.allbinary.android.NullParcelable_Package_References."=";
+   subtype NullParcelable_Access_Array is org.allbinary.android.NullParcelable_Package_References.NullParcelable_Access_Array;
+   function "=" (Left, Right : NullParcelable_Access_Array) return Boolean renames org.allbinary.android.NullParcelable_Package_References."=";
+   subtype NullParcelable_Access_Array_Access is org.allbinary.android.NullParcelable_Package_References.NullParcelable_Access_Array_Access;
+   function "=" (Left, Right : NullParcelable_Access_Array_Access) return Boolean renames org.allbinary.android.NullParcelable_Package_References."=";
+   subtype NullParcelable_Access_Array_Access_Array is org.allbinary.android.NullParcelable_Package_References.NullParcelable_Access_Array_Access_Array;
+   function "=" (Left, Right : NullParcelable_Access_Array_Access_Array) return Boolean renames org.allbinary.android.NullParcelable_Package_References."=";
+   subtype NullParcelable_Access_Array_Access_Array_Access is org.allbinary.android.NullParcelable_Package_References.NullParcelable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullParcelable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.NullParcelable_Package_References."=";
 
    type NullParcelable is new Java_Object and Parcelable with null record;
    NULL_PARCELABLE : NullParcelable_Access;

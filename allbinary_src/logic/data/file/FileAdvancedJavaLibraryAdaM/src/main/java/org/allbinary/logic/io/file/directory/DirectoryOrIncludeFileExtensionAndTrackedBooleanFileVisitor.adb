@@ -13,13 +13,62 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.java.runtime.process.git.GitProcessHelper_Package; use org.allbinary.java.runtime.process.git.GitProcessHelper_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinary.logic.io.file.CommonDataFileStrings_Package;
+with org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package; use org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.io.file.directory.TrackedStrings_Package; use org.allbinary.logic.io.file.directory.TrackedStrings_Package;
+with org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package;
+with org.allbinary.java.runtime.process.git.GitProcessHelper_Package;
+with org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
+with org.allbinary.logic.io.file.directory.TrackedStrings_Package;
 
 package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package is
 
    package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype GitProcessHelper_Access is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access;
+   function "=" (Left, Right : GitProcessHelper_Access) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
+   subtype GitProcessHelper_Access_Array is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access_Array;
+   function "=" (Left, Right : GitProcessHelper_Access_Array) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
+   subtype GitProcessHelper_Access_Array_Access is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access_Array_Access;
+   function "=" (Left, Right : GitProcessHelper_Access_Array_Access) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
+   subtype GitProcessHelper_Access_Array_Access_Array is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : GitProcessHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
+   subtype GitProcessHelper_Access_Array_Access_Array_Access is org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References.GitProcessHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GitProcessHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package_References."=";
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   function "=" (Left, Right : AbFile_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype TrackedStrings_Access is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access;
+   function "=" (Left, Right : TrackedStrings_Access) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
+   subtype TrackedStrings_Access_Array is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array;
+   function "=" (Left, Right : TrackedStrings_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
+   subtype TrackedStrings_Access_Array_Access is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array_Access;
+   function "=" (Left, Right : TrackedStrings_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
+   subtype TrackedStrings_Access_Array_Access_Array is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : TrackedStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
+   subtype TrackedStrings_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.directory.TrackedStrings_Package_References.TrackedStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TrackedStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.TrackedStrings_Package_References."=";
    procedure Initialize_Fields (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class) is
    begin
       null;

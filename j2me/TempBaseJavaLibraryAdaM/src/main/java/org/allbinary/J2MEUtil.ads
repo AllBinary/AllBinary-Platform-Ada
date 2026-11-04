@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.J2MEUtil_Package;
+package org.allbinary.J2MEUtil_Package_References is
+   type J2MEUtil_Access is access all org.allbinary.J2MEUtil_Package.J2MEUtil'Class;
+   type J2MEUtil_Access_Array is array (Natural range <>) of J2MEUtil_Access;
+   type J2MEUtil_Access_Array_Access is access all J2MEUtil_Access_Array;
+   type J2MEUtil_Access_Array_Access_Array is array (Natural range <>) of J2MEUtil_Access_Array_Access;
+   type J2MEUtil_Access_Array_Access_Array_Access is access all J2MEUtil_Access_Array_Access_Array;
+end org.allbinary.J2MEUtil_Package_References;
+
+with org.allbinary.J2MEUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.J2MEUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type J2MEUtil is tagged;
-   type J2MEUtil_Access is access all J2MEUtil'Class;
-   type J2MEUtil_Access_Array is array (Natural range <>) of J2MEUtil_Access;
-   type J2MEUtil_Access_Array_Access is access all J2MEUtil_Access_Array;
-   type J2MEUtil_Access_Array_Access_Array is array (Natural range <>) of J2MEUtil_Access_Array_Access;
-   type J2MEUtil_Access_Array_Access_Array_Access is access all J2MEUtil_Access_Array_Access_Array;
+
+   subtype J2MEUtil_Access is org.allbinary.J2MEUtil_Package_References.J2MEUtil_Access;
+   function "=" (Left, Right : J2MEUtil_Access) return Boolean renames org.allbinary.J2MEUtil_Package_References."=";
+   subtype J2MEUtil_Access_Array is org.allbinary.J2MEUtil_Package_References.J2MEUtil_Access_Array;
+   function "=" (Left, Right : J2MEUtil_Access_Array) return Boolean renames org.allbinary.J2MEUtil_Package_References."=";
+   subtype J2MEUtil_Access_Array_Access is org.allbinary.J2MEUtil_Package_References.J2MEUtil_Access_Array_Access;
+   function "=" (Left, Right : J2MEUtil_Access_Array_Access) return Boolean renames org.allbinary.J2MEUtil_Package_References."=";
+   subtype J2MEUtil_Access_Array_Access_Array is org.allbinary.J2MEUtil_Package_References.J2MEUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : J2MEUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.J2MEUtil_Package_References."=";
+   subtype J2MEUtil_Access_Array_Access_Array_Access is org.allbinary.J2MEUtil_Package_References.J2MEUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : J2MEUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.J2MEUtil_Package_References."=";
 
    type J2MEUtil is new Java_Object with null record;
 

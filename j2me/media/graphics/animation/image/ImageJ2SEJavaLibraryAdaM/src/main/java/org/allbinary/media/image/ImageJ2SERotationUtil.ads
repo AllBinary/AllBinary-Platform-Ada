@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.ImageJ2SERotationUtil_Package;
+package org.allbinary.media.image.ImageJ2SERotationUtil_Package_References is
+   type ImageJ2SERotationUtil_Access is access all org.allbinary.media.image.ImageJ2SERotationUtil_Package.ImageJ2SERotationUtil'Class;
+   type ImageJ2SERotationUtil_Access_Array is array (Natural range <>) of ImageJ2SERotationUtil_Access;
+   type ImageJ2SERotationUtil_Access_Array_Access is access all ImageJ2SERotationUtil_Access_Array;
+   type ImageJ2SERotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageJ2SERotationUtil_Access_Array_Access;
+   type ImageJ2SERotationUtil_Access_Array_Access_Array_Access is access all ImageJ2SERotationUtil_Access_Array_Access_Array;
+end org.allbinary.media.image.ImageJ2SERotationUtil_Package_References;
+
+with org.allbinary.media.image.ImageJ2SERotationUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,18 +33,48 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Graphics2D_Package; use java.awt.Graphics2D_Package;
 --  with java.awt.Image_Package; use java.awt.Image_Package;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
-with org.allbinary.media.image.ImageJ2SEUtil_Package; use org.allbinary.media.image.ImageJ2SEUtil_Package;
+limited with org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package_References;
+limited with org.allbinary.media.image.ImageJ2SEUtil_Package;
+with org.allbinary.media.image.ImageJ2SEUtil_Package_References;
 
 package org.allbinary.media.image.ImageJ2SERotationUtil_Package is
 
+   package Reference_Types is
+   subtype ImageUtil_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access;
+   use type ImageUtil_Access;
+   subtype ImageUtil_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array;
+   use type ImageUtil_Access_Array;
+   subtype ImageUtil_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access;
+   use type ImageUtil_Access_Array_Access;
+   subtype ImageUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array;
+   use type ImageUtil_Access_Array_Access_Array;
+   subtype ImageUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array_Access;
+   use type ImageUtil_Access_Array_Access_Array_Access;
+   subtype ImageJ2SEUtil_Access is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access;
+   use type ImageJ2SEUtil_Access;
+   subtype ImageJ2SEUtil_Access_Array is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access_Array;
+   use type ImageJ2SEUtil_Access_Array;
+   subtype ImageJ2SEUtil_Access_Array_Access is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access_Array_Access;
+   use type ImageJ2SEUtil_Access_Array_Access;
+   subtype ImageJ2SEUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access_Array_Access_Array;
+   use type ImageJ2SEUtil_Access_Array_Access_Array;
+   subtype ImageJ2SEUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageJ2SEUtil_Package_References.ImageJ2SEUtil_Access_Array_Access_Array_Access;
+   use type ImageJ2SEUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageJ2SERotationUtil is tagged;
-   type ImageJ2SERotationUtil_Access is access all ImageJ2SERotationUtil'Class;
-   type ImageJ2SERotationUtil_Access_Array is array (Natural range <>) of ImageJ2SERotationUtil_Access;
-   type ImageJ2SERotationUtil_Access_Array_Access is access all ImageJ2SERotationUtil_Access_Array;
-   type ImageJ2SERotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageJ2SERotationUtil_Access_Array_Access;
-   type ImageJ2SERotationUtil_Access_Array_Access_Array_Access is access all ImageJ2SERotationUtil_Access_Array_Access_Array;
+
+   subtype ImageJ2SERotationUtil_Access is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   subtype ImageJ2SERotationUtil_Access_Array is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   subtype ImageJ2SERotationUtil_Access_Array_Access is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   subtype ImageJ2SERotationUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   subtype ImageJ2SERotationUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
 
    type ImageJ2SERotationUtil is new Java_Object with record
       imageUtil : ImageUtil_Access;

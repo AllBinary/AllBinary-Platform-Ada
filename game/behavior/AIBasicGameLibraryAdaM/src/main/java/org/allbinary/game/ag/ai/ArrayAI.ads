@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.ai.ArrayAI_Package;
+package org.allbinary.game.ag.ai.ArrayAI_Package_References is
+   type ArrayAI_Access is access all org.allbinary.game.ag.ai.ArrayAI_Package.ArrayAI'Class;
+   type ArrayAI_Access_Array is array (Natural range <>) of ArrayAI_Access;
+   type ArrayAI_Access_Array_Access is access all ArrayAI_Access_Array;
+   type ArrayAI_Access_Array_Access_Array is array (Natural range <>) of ArrayAI_Access_Array_Access;
+   type ArrayAI_Access_Array_Access_Array_Access is access all ArrayAI_Access_Array_Access_Array;
+end org.allbinary.game.ag.ai.ArrayAI_Package_References;
+
+with org.allbinary.game.ag.ai.ArrayAI_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
-with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+limited with org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package_References;
+limited with org.allbinary.game.input.GameInput_Package;
+with org.allbinary.game.input.GameInput_Package_References;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 
 package org.allbinary.game.ag.ai.ArrayAI_Package is
@@ -33,13 +47,61 @@ package org.allbinary.game.ag.ai.ArrayAI_Package is
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package Reference_Types is
+   subtype ArtificialIntelligenceInterface_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access;
+   use type ArtificialIntelligenceInterface_Access;
+   subtype ArtificialIntelligenceInterface_Access_Array is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array;
+   use type ArtificialIntelligenceInterface_Access_Array;
+   subtype ArtificialIntelligenceInterface_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access;
+   use type ArtificialIntelligenceInterface_Access_Array_Access;
+   subtype ArtificialIntelligenceInterface_Access_Array_Access_Array is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access_Array;
+   use type ArtificialIntelligenceInterface_Access_Array_Access_Array;
+   subtype ArtificialIntelligenceInterface_Access_Array_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access_Array_Access;
+   use type ArtificialIntelligenceInterface_Access_Array_Access_Array_Access;
+   subtype GameInput_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access;
+   use type GameInput_Access;
+   subtype GameInput_Access_Array is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array;
+   use type GameInput_Access_Array;
+   subtype GameInput_Access_Array_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array_Access;
+   use type GameInput_Access_Array_Access;
+   subtype GameInput_Access_Array_Access_Array is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array_Access_Array;
+   use type GameInput_Access_Array_Access_Array;
+   subtype GameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array_Access_Array_Access;
+   use type GameInput_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ArrayAI is tagged;
-   type ArrayAI_Access is access all ArrayAI'Class;
-   type ArrayAI_Access_Array is array (Natural range <>) of ArrayAI_Access;
-   type ArrayAI_Access_Array_Access is access all ArrayAI_Access_Array;
-   type ArrayAI_Access_Array_Access_Array is array (Natural range <>) of ArrayAI_Access_Array_Access;
-   type ArrayAI_Access_Array_Access_Array_Access is access all ArrayAI_Access_Array_Access_Array;
+
+   subtype ArrayAI_Access is org.allbinary.game.ag.ai.ArrayAI_Package_References.ArrayAI_Access;
+   function "=" (Left, Right : ArrayAI_Access) return Boolean renames org.allbinary.game.ag.ai.ArrayAI_Package_References."=";
+   subtype ArrayAI_Access_Array is org.allbinary.game.ag.ai.ArrayAI_Package_References.ArrayAI_Access_Array;
+   function "=" (Left, Right : ArrayAI_Access_Array) return Boolean renames org.allbinary.game.ag.ai.ArrayAI_Package_References."=";
+   subtype ArrayAI_Access_Array_Access is org.allbinary.game.ag.ai.ArrayAI_Package_References.ArrayAI_Access_Array_Access;
+   function "=" (Left, Right : ArrayAI_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.ArrayAI_Package_References."=";
+   subtype ArrayAI_Access_Array_Access_Array is org.allbinary.game.ag.ai.ArrayAI_Package_References.ArrayAI_Access_Array_Access_Array;
+   function "=" (Left, Right : ArrayAI_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.ArrayAI_Package_References."=";
+   subtype ArrayAI_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.ArrayAI_Package_References.ArrayAI_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ArrayAI_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.ArrayAI_Package_References."=";
 
    type ArrayAI is new BasicAI with record
       artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access;

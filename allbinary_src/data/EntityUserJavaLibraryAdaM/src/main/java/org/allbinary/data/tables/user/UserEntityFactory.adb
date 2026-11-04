@@ -15,11 +15,24 @@
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.UserEntity_Package; use org.allbinary.data.tables.user.UserEntity_Package;
+with org.allbinary.data.tables.user.UserEntity_Package;
+with org.allbinary.data.tables.user.UserEntityInterface_Package;
 
 package body org.allbinary.data.tables.user.UserEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype UserEntity_Access is org.allbinary.data.tables.user.UserEntity_Package_References.UserEntity_Access;
+   function "=" (Left, Right : UserEntity_Access) return Boolean renames org.allbinary.data.tables.user.UserEntity_Package_References."=";
+   subtype UserEntity_Access_Array is org.allbinary.data.tables.user.UserEntity_Package_References.UserEntity_Access_Array;
+   function "=" (Left, Right : UserEntity_Access_Array) return Boolean renames org.allbinary.data.tables.user.UserEntity_Package_References."=";
+   subtype UserEntity_Access_Array_Access is org.allbinary.data.tables.user.UserEntity_Package_References.UserEntity_Access_Array_Access;
+   function "=" (Left, Right : UserEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.UserEntity_Package_References."=";
+   subtype UserEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.UserEntity_Package_References.UserEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : UserEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.UserEntity_Package_References."=";
+   subtype UserEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.UserEntity_Package_References.UserEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.UserEntity_Package_References."=";
    procedure Initialize_Fields (This : in out UserEntityFactory'Class) is
    begin
       null;

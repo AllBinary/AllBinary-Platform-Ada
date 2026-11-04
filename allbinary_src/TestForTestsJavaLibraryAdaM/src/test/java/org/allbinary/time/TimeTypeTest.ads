@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.time.TimeTypeTest_Package;
+package org.allbinary.time.TimeTypeTest_Package_References is
+   type TimeTypeTest_Access is access all org.allbinary.time.TimeTypeTest_Package.TimeTypeTest'Class;
+   type TimeTypeTest_Access_Array is array (Natural range <>) of TimeTypeTest_Access;
+   type TimeTypeTest_Access_Array_Access is access all TimeTypeTest_Access_Array;
+   type TimeTypeTest_Access_Array_Access_Array is array (Natural range <>) of TimeTypeTest_Access_Array_Access;
+   type TimeTypeTest_Access_Array_Access_Array_Access is access all TimeTypeTest_Access_Array_Access_Array;
+end org.allbinary.time.TimeTypeTest_Package_References;
+
+with org.allbinary.time.TimeTypeTest_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,17 +18,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.time.TimeTypeUtil_Package; use org.allbinary.time.TimeTypeUtil_Package;
+limited with org.allbinary.time.TimeTypeUtil_Package;
+with org.allbinary.time.TimeTypeUtil_Package_References;
 
 package org.allbinary.time.TimeTypeTest_Package is
 
+   package Reference_Types is
+   subtype TimeTypeUtil_Access is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access;
+   use type TimeTypeUtil_Access;
+   subtype TimeTypeUtil_Access_Array is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array;
+   use type TimeTypeUtil_Access_Array;
+   subtype TimeTypeUtil_Access_Array_Access is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array_Access;
+   use type TimeTypeUtil_Access_Array_Access;
+   subtype TimeTypeUtil_Access_Array_Access_Array is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array_Access_Array;
+   use type TimeTypeUtil_Access_Array_Access_Array;
+   subtype TimeTypeUtil_Access_Array_Access_Array_Access is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array_Access_Array_Access;
+   use type TimeTypeUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TimeTypeTest is tagged;
-   type TimeTypeTest_Access is access all TimeTypeTest'Class;
-   type TimeTypeTest_Access_Array is array (Natural range <>) of TimeTypeTest_Access;
-   type TimeTypeTest_Access_Array_Access is access all TimeTypeTest_Access_Array;
-   type TimeTypeTest_Access_Array_Access_Array is array (Natural range <>) of TimeTypeTest_Access_Array_Access;
-   type TimeTypeTest_Access_Array_Access_Array_Access is access all TimeTypeTest_Access_Array_Access_Array;
+
+   subtype TimeTypeTest_Access is org.allbinary.time.TimeTypeTest_Package_References.TimeTypeTest_Access;
+   function "=" (Left, Right : TimeTypeTest_Access) return Boolean renames org.allbinary.time.TimeTypeTest_Package_References."=";
+   subtype TimeTypeTest_Access_Array is org.allbinary.time.TimeTypeTest_Package_References.TimeTypeTest_Access_Array;
+   function "=" (Left, Right : TimeTypeTest_Access_Array) return Boolean renames org.allbinary.time.TimeTypeTest_Package_References."=";
+   subtype TimeTypeTest_Access_Array_Access is org.allbinary.time.TimeTypeTest_Package_References.TimeTypeTest_Access_Array_Access;
+   function "=" (Left, Right : TimeTypeTest_Access_Array_Access) return Boolean renames org.allbinary.time.TimeTypeTest_Package_References."=";
+   subtype TimeTypeTest_Access_Array_Access_Array is org.allbinary.time.TimeTypeTest_Package_References.TimeTypeTest_Access_Array_Access_Array;
+   function "=" (Left, Right : TimeTypeTest_Access_Array_Access_Array) return Boolean renames org.allbinary.time.TimeTypeTest_Package_References."=";
+   subtype TimeTypeTest_Access_Array_Access_Array_Access is org.allbinary.time.TimeTypeTest_Package_References.TimeTypeTest_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TimeTypeTest_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.time.TimeTypeTest_Package_References."=";
 
    type TimeTypeTest is new Java_Object with null record;
 
@@ -39,6 +68,16 @@ package org.allbinary.time.TimeTypeTest_Package is
 
 end org.allbinary.time.TimeTypeTest_Package;
 
+limited with org.allbinary.time.TestableTimeTypeUtil_Package;
+package org.allbinary.time.TestableTimeTypeUtil_Package_References is
+   type TestableTimeTypeUtil_Access is access all org.allbinary.time.TestableTimeTypeUtil_Package.TestableTimeTypeUtil'Class;
+   type TestableTimeTypeUtil_Access_Array is array (Natural range <>) of TestableTimeTypeUtil_Access;
+   type TestableTimeTypeUtil_Access_Array_Access is access all TestableTimeTypeUtil_Access_Array;
+   type TestableTimeTypeUtil_Access_Array_Access_Array is array (Natural range <>) of TestableTimeTypeUtil_Access_Array_Access;
+   type TestableTimeTypeUtil_Access_Array_Access_Array_Access is access all TestableTimeTypeUtil_Access_Array_Access_Array;
+end org.allbinary.time.TestableTimeTypeUtil_Package_References;
+
+with org.allbinary.time.TestableTimeTypeUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -47,17 +86,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.time.TimeTypeUtil_Package; use org.allbinary.time.TimeTypeUtil_Package;
+limited with org.allbinary.time.TimeTypeUtil_Package;
+with org.allbinary.time.TimeTypeUtil_Package_References;
 
 package org.allbinary.time.TestableTimeTypeUtil_Package is
 
+   package Reference_Types is
+   subtype TimeTypeUtil_Access is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access;
+   use type TimeTypeUtil_Access;
+   subtype TimeTypeUtil_Access_Array is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array;
+   use type TimeTypeUtil_Access_Array;
+   subtype TimeTypeUtil_Access_Array_Access is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array_Access;
+   use type TimeTypeUtil_Access_Array_Access;
+   subtype TimeTypeUtil_Access_Array_Access_Array is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array_Access_Array;
+   use type TimeTypeUtil_Access_Array_Access_Array;
+   subtype TimeTypeUtil_Access_Array_Access_Array_Access is org.allbinary.time.TimeTypeUtil_Package_References.TimeTypeUtil_Access_Array_Access_Array_Access;
+   use type TimeTypeUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TestableTimeTypeUtil is tagged;
-   type TestableTimeTypeUtil_Access is access all TestableTimeTypeUtil'Class;
-   type TestableTimeTypeUtil_Access_Array is array (Natural range <>) of TestableTimeTypeUtil_Access;
-   type TestableTimeTypeUtil_Access_Array_Access is access all TestableTimeTypeUtil_Access_Array;
-   type TestableTimeTypeUtil_Access_Array_Access_Array is array (Natural range <>) of TestableTimeTypeUtil_Access_Array_Access;
-   type TestableTimeTypeUtil_Access_Array_Access_Array_Access is access all TestableTimeTypeUtil_Access_Array_Access_Array;
+
+   subtype TestableTimeTypeUtil_Access is org.allbinary.time.TestableTimeTypeUtil_Package_References.TestableTimeTypeUtil_Access;
+   function "=" (Left, Right : TestableTimeTypeUtil_Access) return Boolean renames org.allbinary.time.TestableTimeTypeUtil_Package_References."=";
+   subtype TestableTimeTypeUtil_Access_Array is org.allbinary.time.TestableTimeTypeUtil_Package_References.TestableTimeTypeUtil_Access_Array;
+   function "=" (Left, Right : TestableTimeTypeUtil_Access_Array) return Boolean renames org.allbinary.time.TestableTimeTypeUtil_Package_References."=";
+   subtype TestableTimeTypeUtil_Access_Array_Access is org.allbinary.time.TestableTimeTypeUtil_Package_References.TestableTimeTypeUtil_Access_Array_Access;
+   function "=" (Left, Right : TestableTimeTypeUtil_Access_Array_Access) return Boolean renames org.allbinary.time.TestableTimeTypeUtil_Package_References."=";
+   subtype TestableTimeTypeUtil_Access_Array_Access_Array is org.allbinary.time.TestableTimeTypeUtil_Package_References.TestableTimeTypeUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : TestableTimeTypeUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.time.TestableTimeTypeUtil_Package_References."=";
+   subtype TestableTimeTypeUtil_Access_Array_Access_Array_Access is org.allbinary.time.TestableTimeTypeUtil_Package_References.TestableTimeTypeUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TestableTimeTypeUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.time.TestableTimeTypeUtil_Package_References."=";
 
    type TestableTimeTypeUtil is new TimeTypeUtil with record
       hour : Integer;

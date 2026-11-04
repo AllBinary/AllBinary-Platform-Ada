@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package;
+package views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References is
+   type CompoundContextTransformInfoObjectConfig_Access is access all views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package.CompoundContextTransformInfoObjectConfig'Class;
+   type CompoundContextTransformInfoObjectConfig_Access_Array is array (Natural range <>) of CompoundContextTransformInfoObjectConfig_Access;
+   type CompoundContextTransformInfoObjectConfig_Access_Array_Access is access all CompoundContextTransformInfoObjectConfig_Access_Array;
+   type CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array is array (Natural range <>) of CompoundContextTransformInfoObjectConfig_Access_Array_Access;
+   type CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access is access all CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array;
+end views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References;
+
+with views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,11 +32,15 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package; use org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 
 package views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package is
 
@@ -36,13 +50,61 @@ package views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Pac
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package GenericStoreTransformInfoObjectConfig_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CompoundContextTransformInfoObjectConfig is tagged;
-   type CompoundContextTransformInfoObjectConfig_Access is access all CompoundContextTransformInfoObjectConfig'Class;
-   type CompoundContextTransformInfoObjectConfig_Access_Array is array (Natural range <>) of CompoundContextTransformInfoObjectConfig_Access;
-   type CompoundContextTransformInfoObjectConfig_Access_Array_Access is access all CompoundContextTransformInfoObjectConfig_Access_Array;
-   type CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array is array (Natural range <>) of CompoundContextTransformInfoObjectConfig_Access_Array_Access;
-   type CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access is access all CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array;
+
+   subtype CompoundContextTransformInfoObjectConfig_Access is views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.CompoundContextTransformInfoObjectConfig_Access;
+   function "=" (Left, Right : CompoundContextTransformInfoObjectConfig_Access) return Boolean renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References."=";
+   subtype CompoundContextTransformInfoObjectConfig_Access_Array is views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.CompoundContextTransformInfoObjectConfig_Access_Array;
+   function "=" (Left, Right : CompoundContextTransformInfoObjectConfig_Access_Array) return Boolean renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References."=";
+   subtype CompoundContextTransformInfoObjectConfig_Access_Array_Access is views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.CompoundContextTransformInfoObjectConfig_Access_Array_Access;
+   function "=" (Left, Right : CompoundContextTransformInfoObjectConfig_Access_Array_Access) return Boolean renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References."=";
+   subtype CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array is views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array;
+   function "=" (Left, Right : CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array) return Boolean renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References."=";
+   subtype CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access is views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access) return Boolean renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References."=";
 
    type CompoundContextTransformInfoObjectConfig is new GenericStoreTransformInfoObjectConfig with record
       logUtil : LogUtil_Access;

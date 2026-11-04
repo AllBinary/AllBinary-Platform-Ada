@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.util.cache.CachePolicy_Package;
+package org.allbinary.logic.util.cache.CachePolicy_Package_References is
+   type CachePolicy_Access is access all org.allbinary.logic.util.cache.CachePolicy_Package.CachePolicy'Class;
+   type CachePolicy_Access_Array is array (Natural range <>) of CachePolicy_Access;
+   type CachePolicy_Access_Array_Access is access all CachePolicy_Access_Array;
+   type CachePolicy_Access_Array_Access_Array is array (Natural range <>) of CachePolicy_Access_Array_Access;
+   type CachePolicy_Access_Array_Access_Array_Access is access all CachePolicy_Access_Array_Access_Array;
+end org.allbinary.logic.util.cache.CachePolicy_Package_References;
+
+with org.allbinary.logic.util.cache.CachePolicy_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.util.cache.CachePolicy_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CachePolicy is tagged;
-   type CachePolicy_Access is access all CachePolicy'Class;
-   type CachePolicy_Access_Array is array (Natural range <>) of CachePolicy_Access;
-   type CachePolicy_Access_Array_Access is access all CachePolicy_Access_Array;
-   type CachePolicy_Access_Array_Access_Array is array (Natural range <>) of CachePolicy_Access_Array_Access;
-   type CachePolicy_Access_Array_Access_Array_Access is access all CachePolicy_Access_Array_Access_Array;
+
+   subtype CachePolicy_Access is org.allbinary.logic.util.cache.CachePolicy_Package_References.CachePolicy_Access;
+   function "=" (Left, Right : CachePolicy_Access) return Boolean renames org.allbinary.logic.util.cache.CachePolicy_Package_References."=";
+   subtype CachePolicy_Access_Array is org.allbinary.logic.util.cache.CachePolicy_Package_References.CachePolicy_Access_Array;
+   function "=" (Left, Right : CachePolicy_Access_Array) return Boolean renames org.allbinary.logic.util.cache.CachePolicy_Package_References."=";
+   subtype CachePolicy_Access_Array_Access is org.allbinary.logic.util.cache.CachePolicy_Package_References.CachePolicy_Access_Array_Access;
+   function "=" (Left, Right : CachePolicy_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CachePolicy_Package_References."=";
+   subtype CachePolicy_Access_Array_Access_Array is org.allbinary.logic.util.cache.CachePolicy_Package_References.CachePolicy_Access_Array_Access_Array;
+   function "=" (Left, Right : CachePolicy_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.CachePolicy_Package_References."=";
+   subtype CachePolicy_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.CachePolicy_Package_References.CachePolicy_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CachePolicy_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CachePolicy_Package_References."=";
 
    type CachePolicy is new Java_Object with record
       name : Unbounded_String;

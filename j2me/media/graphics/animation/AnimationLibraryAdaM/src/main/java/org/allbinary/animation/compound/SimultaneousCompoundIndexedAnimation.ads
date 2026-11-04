@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package;
+package org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References is
+   type SimultaneousCompoundIndexedAnimation_Access is access all org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package.SimultaneousCompoundIndexedAnimation'Class;
+   type SimultaneousCompoundIndexedAnimation_Access_Array is array (Natural range <>) of SimultaneousCompoundIndexedAnimation_Access;
+   type SimultaneousCompoundIndexedAnimation_Access_Array_Access is access all SimultaneousCompoundIndexedAnimation_Access_Array;
+   type SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of SimultaneousCompoundIndexedAnimation_Access_Array_Access;
+   type SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array_Access is access all SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References;
+
+with org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,9 +30,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
+limited with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 
 package org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package is
@@ -31,13 +44,51 @@ package org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Pa
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype AnimationBehavior_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access;
+   use type AnimationBehavior_Access;
+   subtype AnimationBehavior_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array;
+   use type AnimationBehavior_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access;
+   subtype AnimationBehavior_Access_Array_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array;
+   use type AnimationBehavior_Access_Array_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SimultaneousCompoundIndexedAnimation is tagged;
-   type SimultaneousCompoundIndexedAnimation_Access is access all SimultaneousCompoundIndexedAnimation'Class;
-   type SimultaneousCompoundIndexedAnimation_Access_Array is array (Natural range <>) of SimultaneousCompoundIndexedAnimation_Access;
-   type SimultaneousCompoundIndexedAnimation_Access_Array_Access is access all SimultaneousCompoundIndexedAnimation_Access_Array;
-   type SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of SimultaneousCompoundIndexedAnimation_Access_Array_Access;
-   type SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array_Access is access all SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array;
+
+   subtype SimultaneousCompoundIndexedAnimation_Access is org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References.SimultaneousCompoundIndexedAnimation_Access;
+   function "=" (Left, Right : SimultaneousCompoundIndexedAnimation_Access) return Boolean renames org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References."=";
+   subtype SimultaneousCompoundIndexedAnimation_Access_Array is org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References.SimultaneousCompoundIndexedAnimation_Access_Array;
+   function "=" (Left, Right : SimultaneousCompoundIndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References."=";
+   subtype SimultaneousCompoundIndexedAnimation_Access_Array_Access is org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References.SimultaneousCompoundIndexedAnimation_Access_Array_Access;
+   function "=" (Left, Right : SimultaneousCompoundIndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References."=";
+   subtype SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References.SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References."=";
+   subtype SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References.SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package_References."=";
 
    type SimultaneousCompoundIndexedAnimation is new IndexedAnimation with record
       animationInterfaceArray : Animation_Access_Array_Access;

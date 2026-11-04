@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package;
+package org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References is
+   type InputAutomationRobotBundleActivator_Access is access all org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package.InputAutomationRobotBundleActivator'Class;
+   type InputAutomationRobotBundleActivator_Access_Array is array (Natural range <>) of InputAutomationRobotBundleActivator_Access;
+   type InputAutomationRobotBundleActivator_Access_Array_Access is access all InputAutomationRobotBundleActivator_Access_Array;
+   type InputAutomationRobotBundleActivator_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotBundleActivator_Access_Array_Access;
+   type InputAutomationRobotBundleActivator_Access_Array_Access_Array_Access is access all InputAutomationRobotBundleActivator_Access_Array_Access_Array;
+end org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References;
+
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,12 +31,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.osgi.framework.BundleActivator_Package; use org.osgi.framework.BundleActivator_Package;
-with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
-with org.osgi.framework.ServiceFactory_Package; use org.osgi.framework.ServiceFactory_Package;
-with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package; use bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.BundleContext_Package_References;
+limited with org.osgi.framework.ServiceFactory_Package;
+with org.osgi.framework.ServiceFactory_Package_References;
+limited with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
+with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References;
+limited with org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package is
 
@@ -37,13 +53,81 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActi
    package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype BundleContext_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access;
+   use type BundleContext_Access;
+   subtype BundleContext_Access_Array is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array;
+   use type BundleContext_Access_Array;
+   subtype BundleContext_Access_Array_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access;
+   use type BundleContext_Access_Array_Access;
+   subtype BundleContext_Access_Array_Access_Array is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access_Array;
+   use type BundleContext_Access_Array_Access_Array;
+   subtype BundleContext_Access_Array_Access_Array_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access_Array_Access;
+   use type BundleContext_Access_Array_Access_Array_Access;
+   subtype ServiceFactory_Access is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access;
+   use type ServiceFactory_Access;
+   subtype ServiceFactory_Access_Array is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array;
+   use type ServiceFactory_Access_Array;
+   subtype ServiceFactory_Access_Array_Access is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array_Access;
+   use type ServiceFactory_Access_Array_Access;
+   subtype ServiceFactory_Access_Array_Access_Array is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array_Access_Array;
+   use type ServiceFactory_Access_Array_Access_Array;
+   subtype ServiceFactory_Access_Array_Access_Array_Access is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array_Access_Array_Access;
+   use type ServiceFactory_Access_Array_Access_Array_Access;
+   subtype InputAutomationRobotChangeListener_Access is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access;
+   use type InputAutomationRobotChangeListener_Access;
+   subtype InputAutomationRobotChangeListener_Access_Array is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access_Array;
+   use type InputAutomationRobotChangeListener_Access_Array;
+   subtype InputAutomationRobotChangeListener_Access_Array_Access is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access_Array_Access;
+   use type InputAutomationRobotChangeListener_Access_Array_Access;
+   subtype InputAutomationRobotChangeListener_Access_Array_Access_Array is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access_Array_Access_Array;
+   use type InputAutomationRobotChangeListener_Access_Array_Access_Array;
+   subtype InputAutomationRobotChangeListener_Access_Array_Access_Array_Access is bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References.InputAutomationRobotChangeListener_Access_Array_Access_Array_Access;
+   use type InputAutomationRobotChangeListener_Access_Array_Access_Array_Access;
+   subtype InputRobotInterface_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access;
+   use type InputRobotInterface_Access;
+   subtype InputRobotInterface_Access_Array is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array;
+   use type InputRobotInterface_Access_Array;
+   subtype InputRobotInterface_Access_Array_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access;
+   use type InputRobotInterface_Access_Array_Access;
+   subtype InputRobotInterface_Access_Array_Access_Array is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access_Array;
+   use type InputRobotInterface_Access_Array_Access_Array;
+   subtype InputRobotInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access_Array_Access;
+   use type InputRobotInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputAutomationRobotBundleActivator is tagged;
-   type InputAutomationRobotBundleActivator_Access is access all InputAutomationRobotBundleActivator'Class;
-   type InputAutomationRobotBundleActivator_Access_Array is array (Natural range <>) of InputAutomationRobotBundleActivator_Access;
-   type InputAutomationRobotBundleActivator_Access_Array_Access is access all InputAutomationRobotBundleActivator_Access_Array;
-   type InputAutomationRobotBundleActivator_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotBundleActivator_Access_Array_Access;
-   type InputAutomationRobotBundleActivator_Access_Array_Access_Array_Access is access all InputAutomationRobotBundleActivator_Access_Array_Access_Array;
+
+   subtype InputAutomationRobotBundleActivator_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References.InputAutomationRobotBundleActivator_Access;
+   function "=" (Left, Right : InputAutomationRobotBundleActivator_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References."=";
+   subtype InputAutomationRobotBundleActivator_Access_Array is org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References.InputAutomationRobotBundleActivator_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotBundleActivator_Access_Array) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References."=";
+   subtype InputAutomationRobotBundleActivator_Access_Array_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References.InputAutomationRobotBundleActivator_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotBundleActivator_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References."=";
+   subtype InputAutomationRobotBundleActivator_Access_Array_Access_Array is org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References.InputAutomationRobotBundleActivator_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotBundleActivator_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References."=";
+   subtype InputAutomationRobotBundleActivator_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References.InputAutomationRobotBundleActivator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotBundleActivator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package_References."=";
 
    type InputAutomationRobotBundleActivator is new Java_Object and BundleActivator with record
       logUtil : LogUtil_Access;

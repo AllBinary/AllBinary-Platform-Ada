@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.math.NoDecimalTrigTable_Package; use org.allbinary.math.NoDecimalTrigTable_Package;
 
 package body org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
 
+   subtype NoDecimalTrigTable_Access is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access;
+   function "=" (Left, Right : NoDecimalTrigTable_Access) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
+   subtype NoDecimalTrigTable_Access_Array is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access_Array;
+   function "=" (Left, Right : NoDecimalTrigTable_Access_Array) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
+   subtype NoDecimalTrigTable_Access_Array_Access is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access_Array_Access;
+   function "=" (Left, Right : NoDecimalTrigTable_Access_Array_Access) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
+   subtype NoDecimalTrigTable_Access_Array_Access_Array is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access_Array_Access_Array;
+   function "=" (Left, Right : NoDecimalTrigTable_Access_Array_Access_Array) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
+   subtype NoDecimalTrigTable_Access_Array_Access_Array_Access is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoDecimalTrigTable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
    procedure Initialize_Fields (This : in out AxisMathVectorUtil'Class) is
    begin
       null;
@@ -37,7 +48,7 @@ package body org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
 
    function getInstance return AxisMathVectorUtil_Access is
    begin
-        return AxisMathVectorUtil_Package.instance;
+        return AxisMathVectorUtil_Access (AxisMathVectorUtil_Package.instance);
    end getInstance;
 
    function calculateX (This : in out AxisMathVectorUtil; magnitude : Long_Long_Integer; angle : Integer) return Long_Long_Integer is

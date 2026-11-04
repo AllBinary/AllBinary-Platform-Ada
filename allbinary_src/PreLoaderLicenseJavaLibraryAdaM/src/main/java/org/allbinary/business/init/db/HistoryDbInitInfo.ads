@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.init.db.HistoryDbInitInfo_Package;
+package org.allbinary.business.init.db.HistoryDbInitInfo_Package_References is
+   type HistoryDbInitInfo_Access is access all org.allbinary.business.init.db.HistoryDbInitInfo_Package.HistoryDbInitInfo'Class;
+   type HistoryDbInitInfo_Access_Array is array (Natural range <>) of HistoryDbInitInfo_Access;
+   type HistoryDbInitInfo_Access_Array_Access is access all HistoryDbInitInfo_Access_Array;
+   type HistoryDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of HistoryDbInitInfo_Access_Array_Access;
+   type HistoryDbInitInfo_Access_Array_Access_Array_Access is access all HistoryDbInitInfo_Access_Array_Access_Array;
+end org.allbinary.business.init.db.HistoryDbInitInfo_Package_References;
+
+with org.allbinary.business.init.db.HistoryDbInitInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.business.init.db.DbInitInfo_Package; use org.allbinary.busine
 
 package org.allbinary.business.init.db.HistoryDbInitInfo_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HistoryDbInitInfo is tagged;
-   type HistoryDbInitInfo_Access is access all HistoryDbInitInfo'Class;
-   type HistoryDbInitInfo_Access_Array is array (Natural range <>) of HistoryDbInitInfo_Access;
-   type HistoryDbInitInfo_Access_Array_Access is access all HistoryDbInitInfo_Access_Array;
-   type HistoryDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of HistoryDbInitInfo_Access_Array_Access;
-   type HistoryDbInitInfo_Access_Array_Access_Array_Access is access all HistoryDbInitInfo_Access_Array_Access_Array;
+
+   subtype HistoryDbInitInfo_Access is org.allbinary.business.init.db.HistoryDbInitInfo_Package_References.HistoryDbInitInfo_Access;
+   function "=" (Left, Right : HistoryDbInitInfo_Access) return Boolean renames org.allbinary.business.init.db.HistoryDbInitInfo_Package_References."=";
+   subtype HistoryDbInitInfo_Access_Array is org.allbinary.business.init.db.HistoryDbInitInfo_Package_References.HistoryDbInitInfo_Access_Array;
+   function "=" (Left, Right : HistoryDbInitInfo_Access_Array) return Boolean renames org.allbinary.business.init.db.HistoryDbInitInfo_Package_References."=";
+   subtype HistoryDbInitInfo_Access_Array_Access is org.allbinary.business.init.db.HistoryDbInitInfo_Package_References.HistoryDbInitInfo_Access_Array_Access;
+   function "=" (Left, Right : HistoryDbInitInfo_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.HistoryDbInitInfo_Package_References."=";
+   subtype HistoryDbInitInfo_Access_Array_Access_Array is org.allbinary.business.init.db.HistoryDbInitInfo_Package_References.HistoryDbInitInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : HistoryDbInitInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.db.HistoryDbInitInfo_Package_References."=";
+   subtype HistoryDbInitInfo_Access_Array_Access_Array_Access is org.allbinary.business.init.db.HistoryDbInitInfo_Package_References.HistoryDbInitInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HistoryDbInitInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.HistoryDbInitInfo_Package_References."=";
 
    type HistoryDbInitInfo is new DbInitInfo with null record;
    INITFILE : Unbounded_String;

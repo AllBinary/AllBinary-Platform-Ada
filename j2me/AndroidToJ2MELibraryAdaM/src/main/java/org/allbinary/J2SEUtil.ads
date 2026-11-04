@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.J2SEUtil_Package;
+package org.allbinary.J2SEUtil_Package_References is
+   type J2SEUtil_Access is access all org.allbinary.J2SEUtil_Package.J2SEUtil'Class;
+   type J2SEUtil_Access_Array is array (Natural range <>) of J2SEUtil_Access;
+   type J2SEUtil_Access_Array_Access is access all J2SEUtil_Access_Array;
+   type J2SEUtil_Access_Array_Access_Array is array (Natural range <>) of J2SEUtil_Access_Array_Access;
+   type J2SEUtil_Access_Array_Access_Array_Access is access all J2SEUtil_Access_Array_Access_Array;
+end org.allbinary.J2SEUtil_Package_References;
+
+with org.allbinary.J2SEUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -28,13 +38,21 @@ package org.allbinary.J2SEUtil_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Map_Package renames Standard.java.util.Map_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type J2SEUtil is tagged;
-   type J2SEUtil_Access is access all J2SEUtil'Class;
-   type J2SEUtil_Access_Array is array (Natural range <>) of J2SEUtil_Access;
-   type J2SEUtil_Access_Array_Access is access all J2SEUtil_Access_Array;
-   type J2SEUtil_Access_Array_Access_Array is array (Natural range <>) of J2SEUtil_Access_Array_Access;
-   type J2SEUtil_Access_Array_Access_Array_Access is access all J2SEUtil_Access_Array_Access_Array;
+
+   subtype J2SEUtil_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access;
+   function "=" (Left, Right : J2SEUtil_Access) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
+   subtype J2SEUtil_Access_Array is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array;
+   function "=" (Left, Right : J2SEUtil_Access_Array) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
+   subtype J2SEUtil_Access_Array_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array_Access;
+   function "=" (Left, Right : J2SEUtil_Access_Array_Access) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
+   subtype J2SEUtil_Access_Array_Access_Array is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : J2SEUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
+   subtype J2SEUtil_Access_Array_Access_Array_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : J2SEUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
 
    type J2SEUtil is new Java_Object with null record;
    instance : J2SEUtil_Access;
@@ -46,8 +64,8 @@ package org.allbinary.J2SEUtil_Package is
    procedure getHashMapAsArray (This : in out J2SEUtil; hashMap_Param : access HashMap_Package.HashMap'Class);
    function getMapAsArray (This : in out J2SEUtil; map_Param : access Map_Package.Map'Class) return Java_Object_Access_Array_Access;
    procedure getMapAsArray (This : in out J2SEUtil; map_Param : access Map_Package.Map'Class);
-   function getSetAsArray (This : in out J2SEUtil; set_Param : access Set_Package.Set'Class) return Java_Object_Access_Array_Access;
-   procedure getSetAsArray (This : in out J2SEUtil; set_Param : access Set_Package.Set'Class);
+   function getSetAsArray (This : in out J2SEUtil; set_Param : access Java_Object'Class) return Java_Object_Access_Array_Access;
+   procedure getSetAsArray (This : in out J2SEUtil; set_Param : access Java_Object'Class);
 
 end org.allbinary.J2SEUtil_Package;
 

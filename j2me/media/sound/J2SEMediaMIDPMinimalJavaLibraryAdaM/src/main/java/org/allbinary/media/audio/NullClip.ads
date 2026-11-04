@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.NullClip_Package;
+package org.allbinary.media.audio.NullClip_Package_References is
+   type NullClip_Access is access all org.allbinary.media.audio.NullClip_Package.NullClip'Class;
+   type NullClip_Access_Array is array (Natural range <>) of NullClip_Access;
+   type NullClip_Access_Array_Access is access all NullClip_Access_Array;
+   type NullClip_Access_Array_Access_Array is array (Natural range <>) of NullClip_Access_Array_Access;
+   type NullClip_Access_Array_Access_Array_Access is access all NullClip_Access_Array_Access_Array;
+end org.allbinary.media.audio.NullClip_Package_References;
+
+with org.allbinary.media.audio.NullClip_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -30,17 +40,36 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.sound.sampled.Line.Info_Package; use javax.sound.sampled.Line.Info_Package;
 --  with javax.sound.sampled.LineListener_Package; use javax.sound.sampled.LineListener_Package;
 --  with javax.sound.sampled.LineUnavailableException_Package; use javax.sound.sampled.LineUnavailableException_Package;
-with org.allbinary.media.audio.NullJ2SEControl_Package; use org.allbinary.media.audio.NullJ2SEControl_Package;
+limited with org.allbinary.media.audio.NullJ2SEControl_Package;
+with org.allbinary.media.audio.NullJ2SEControl_Package_References;
 
 package org.allbinary.media.audio.NullClip_Package is
 
+   package Reference_Types is
+   subtype NullJ2SEControl_Access is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access;
+   use type NullJ2SEControl_Access;
+   subtype NullJ2SEControl_Access_Array is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access_Array;
+   use type NullJ2SEControl_Access_Array;
+   subtype NullJ2SEControl_Access_Array_Access is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access_Array_Access;
+   use type NullJ2SEControl_Access_Array_Access;
+   subtype NullJ2SEControl_Access_Array_Access_Array is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access_Array_Access_Array;
+   use type NullJ2SEControl_Access_Array_Access_Array;
+   subtype NullJ2SEControl_Access_Array_Access_Array_Access is org.allbinary.media.audio.NullJ2SEControl_Package_References.NullJ2SEControl_Access_Array_Access_Array_Access;
+   use type NullJ2SEControl_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullClip is tagged;
-   type NullClip_Access is access all NullClip'Class;
-   type NullClip_Access_Array is array (Natural range <>) of NullClip_Access;
-   type NullClip_Access_Array_Access is access all NullClip_Access_Array;
-   type NullClip_Access_Array_Access_Array is array (Natural range <>) of NullClip_Access_Array_Access;
-   type NullClip_Access_Array_Access_Array_Access is access all NullClip_Access_Array_Access_Array;
+
+   subtype NullClip_Access is org.allbinary.media.audio.NullClip_Package_References.NullClip_Access;
+   function "=" (Left, Right : NullClip_Access) return Boolean renames org.allbinary.media.audio.NullClip_Package_References."=";
+   subtype NullClip_Access_Array is org.allbinary.media.audio.NullClip_Package_References.NullClip_Access_Array;
+   function "=" (Left, Right : NullClip_Access_Array) return Boolean renames org.allbinary.media.audio.NullClip_Package_References."=";
+   subtype NullClip_Access_Array_Access is org.allbinary.media.audio.NullClip_Package_References.NullClip_Access_Array_Access;
+   function "=" (Left, Right : NullClip_Access_Array_Access) return Boolean renames org.allbinary.media.audio.NullClip_Package_References."=";
+   subtype NullClip_Access_Array_Access_Array is org.allbinary.media.audio.NullClip_Package_References.NullClip_Access_Array_Access_Array;
+   function "=" (Left, Right : NullClip_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.NullClip_Package_References."=";
+   subtype NullClip_Access_Array_Access_Array_Access is org.allbinary.media.audio.NullClip_Package_References.NullClip_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullClip_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.NullClip_Package_References."=";
 
    type NullClip is new Java_Object with null record;
    NULL_CONTROL : NullJ2SEControl_Access;

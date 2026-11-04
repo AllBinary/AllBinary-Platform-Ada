@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.path.PathUtil_Package;
+package org.allbinary.logic.io.path.PathUtil_Package_References is
+   type PathUtil_Access is access all org.allbinary.logic.io.path.PathUtil_Package.PathUtil'Class;
+   type PathUtil_Access_Array is array (Natural range <>) of PathUtil_Access;
+   type PathUtil_Access_Array_Access is access all PathUtil_Access_Array;
+   type PathUtil_Access_Array_Access_Array is array (Natural range <>) of PathUtil_Access_Array_Access;
+   type PathUtil_Access_Array_Access_Array_Access is access all PathUtil_Access_Array_Access_Array;
+end org.allbinary.logic.io.path.PathUtil_Package_References;
+
+with org.allbinary.logic.io.path.PathUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,73 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+limited with org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.file.FilePathData_Package_References;
+limited with org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.io.path.AbPathData_Package_References;
+limited with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package_References;
+limited with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 
 package org.allbinary.logic.io.path.PathUtil_Package is
 
    package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package Reference_Types is
+   subtype FilePathData_Access is org.allbinary.logic.io.file.FilePathData_Package_References.FilePathData_Access;
+   use type FilePathData_Access;
+   subtype FilePathData_Access_Array is org.allbinary.logic.io.file.FilePathData_Package_References.FilePathData_Access_Array;
+   use type FilePathData_Access_Array;
+   subtype FilePathData_Access_Array_Access is org.allbinary.logic.io.file.FilePathData_Package_References.FilePathData_Access_Array_Access;
+   use type FilePathData_Access_Array_Access;
+   subtype FilePathData_Access_Array_Access_Array is org.allbinary.logic.io.file.FilePathData_Package_References.FilePathData_Access_Array_Access_Array;
+   use type FilePathData_Access_Array_Access_Array;
+   subtype FilePathData_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.FilePathData_Package_References.FilePathData_Access_Array_Access_Array_Access;
+   use type FilePathData_Access_Array_Access_Array_Access;
+   subtype AbPathData_Access is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access;
+   use type AbPathData_Access;
+   subtype AbPathData_Access_Array is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array;
+   use type AbPathData_Access_Array;
+   subtype AbPathData_Access_Array_Access is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array_Access;
+   use type AbPathData_Access_Array_Access;
+   subtype AbPathData_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array_Access_Array;
+   use type AbPathData_Access_Array_Access_Array;
+   subtype AbPathData_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPathData_Package_References.AbPathData_Access_Array_Access_Array_Access;
+   use type AbPathData_Access_Array_Access_Array_Access;
+   subtype AbFilePath_Access is org.allbinary.logic.io.path.AbFilePath_Package_References.AbFilePath_Access;
+   use type AbFilePath_Access;
+   subtype AbFilePath_Access_Array is org.allbinary.logic.io.path.AbFilePath_Package_References.AbFilePath_Access_Array;
+   use type AbFilePath_Access_Array;
+   subtype AbFilePath_Access_Array_Access is org.allbinary.logic.io.path.AbFilePath_Package_References.AbFilePath_Access_Array_Access;
+   use type AbFilePath_Access_Array_Access;
+   subtype AbFilePath_Access_Array_Access_Array is org.allbinary.logic.io.path.AbFilePath_Package_References.AbFilePath_Access_Array_Access_Array;
+   use type AbFilePath_Access_Array_Access_Array;
+   subtype AbFilePath_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbFilePath_Package_References.AbFilePath_Access_Array_Access_Array_Access;
+   use type AbFilePath_Access_Array_Access_Array_Access;
+   subtype AbPath_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access;
+   use type AbPath_Access;
+   subtype AbPath_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array;
+   use type AbPath_Access_Array;
+   subtype AbPath_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access;
+   use type AbPath_Access_Array_Access;
+   subtype AbPath_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array;
+   use type AbPath_Access_Array_Access_Array;
+   subtype AbPath_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array_Access;
+   use type AbPath_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PathUtil is tagged;
-   type PathUtil_Access is access all PathUtil'Class;
-   type PathUtil_Access_Array is array (Natural range <>) of PathUtil_Access;
-   type PathUtil_Access_Array_Access is access all PathUtil_Access_Array;
-   type PathUtil_Access_Array_Access_Array is array (Natural range <>) of PathUtil_Access_Array_Access;
-   type PathUtil_Access_Array_Access_Array_Access is access all PathUtil_Access_Array_Access_Array;
+
+   subtype PathUtil_Access is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access;
+   function "=" (Left, Right : PathUtil_Access) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   subtype PathUtil_Access_Array is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array;
+   function "=" (Left, Right : PathUtil_Access_Array) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   subtype PathUtil_Access_Array_Access is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array_Access;
+   function "=" (Left, Right : PathUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   subtype PathUtil_Access_Array_Access_Array is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : PathUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   subtype PathUtil_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PathUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
 
    type PathUtil is new Java_Object with record
       abPathData : AbPathData_Access;

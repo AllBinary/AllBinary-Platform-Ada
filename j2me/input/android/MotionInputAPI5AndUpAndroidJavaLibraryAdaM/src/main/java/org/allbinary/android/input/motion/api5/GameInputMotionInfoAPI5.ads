@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
+package org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References is
+   type GameInputMotionInfoAPI5_Access is access all org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package.GameInputMotionInfoAPI5'Class;
+   type GameInputMotionInfoAPI5_Access_Array is array (Natural range <>) of GameInputMotionInfoAPI5_Access;
+   type GameInputMotionInfoAPI5_Access_Array_Access is access all GameInputMotionInfoAPI5_Access_Array;
+   type GameInputMotionInfoAPI5_Access_Array_Access_Array is array (Natural range <>) of GameInputMotionInfoAPI5_Access_Array_Access;
+   type GameInputMotionInfoAPI5_Access_Array_Access_Array_Access is access all GameInputMotionInfoAPI5_Access_Array_Access_Array;
+end org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References;
+
+with org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.android.input.motion.GameInputMotionInfo_Package; use org.all
 package org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package is
 
    package GameInputMotionInfo_Package renames Standard.org.allbinary.android.input.motion.GameInputMotionInfo_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameInputMotionInfoAPI5 is tagged;
-   type GameInputMotionInfoAPI5_Access is access all GameInputMotionInfoAPI5'Class;
-   type GameInputMotionInfoAPI5_Access_Array is array (Natural range <>) of GameInputMotionInfoAPI5_Access;
-   type GameInputMotionInfoAPI5_Access_Array_Access is access all GameInputMotionInfoAPI5_Access_Array;
-   type GameInputMotionInfoAPI5_Access_Array_Access_Array is array (Natural range <>) of GameInputMotionInfoAPI5_Access_Array_Access;
-   type GameInputMotionInfoAPI5_Access_Array_Access_Array_Access is access all GameInputMotionInfoAPI5_Access_Array_Access_Array;
+
+   subtype GameInputMotionInfoAPI5_Access is org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References.GameInputMotionInfoAPI5_Access;
+   function "=" (Left, Right : GameInputMotionInfoAPI5_Access) return Boolean renames org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References."=";
+   subtype GameInputMotionInfoAPI5_Access_Array is org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References.GameInputMotionInfoAPI5_Access_Array;
+   function "=" (Left, Right : GameInputMotionInfoAPI5_Access_Array) return Boolean renames org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References."=";
+   subtype GameInputMotionInfoAPI5_Access_Array_Access is org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References.GameInputMotionInfoAPI5_Access_Array_Access;
+   function "=" (Left, Right : GameInputMotionInfoAPI5_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References."=";
+   subtype GameInputMotionInfoAPI5_Access_Array_Access_Array is org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References.GameInputMotionInfoAPI5_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInputMotionInfoAPI5_Access_Array_Access_Array) return Boolean renames org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References."=";
+   subtype GameInputMotionInfoAPI5_Access_Array_Access_Array_Access is org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References.GameInputMotionInfoAPI5_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInputMotionInfoAPI5_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package_References."=";
 
    type GameInputMotionInfoAPI5 is new GameInputMotionInfo with null record;
    instance : GameInputMotionInfoAPI5_Access;

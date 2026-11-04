@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.rts.technology.HealthTechnology_Package;
+package org.allbinary.game.rts.technology.HealthTechnology_Package_References is
+   type HealthTechnology_Access is access all org.allbinary.game.rts.technology.HealthTechnology_Package.HealthTechnology'Class;
+   type HealthTechnology_Access_Array is array (Natural range <>) of HealthTechnology_Access;
+   type HealthTechnology_Access_Array_Access is access all HealthTechnology_Access_Array;
+   type HealthTechnology_Access_Array_Access_Array is array (Natural range <>) of HealthTechnology_Access_Array_Access;
+   type HealthTechnology_Access_Array_Access_Array_Access is access all HealthTechnology_Access_Array_Access_Array;
+end org.allbinary.game.rts.technology.HealthTechnology_Package_References;
+
+with org.allbinary.game.rts.technology.HealthTechnology_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer
 package org.allbinary.game.rts.technology.HealthTechnology_Package is
 
    package RTSInterface_Package renames Standard.org.allbinary.game.layer.RTSInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HealthTechnology is tagged;
-   type HealthTechnology_Access is access all HealthTechnology'Class;
-   type HealthTechnology_Access_Array is array (Natural range <>) of HealthTechnology_Access;
-   type HealthTechnology_Access_Array_Access is access all HealthTechnology_Access_Array;
-   type HealthTechnology_Access_Array_Access_Array is array (Natural range <>) of HealthTechnology_Access_Array_Access;
-   type HealthTechnology_Access_Array_Access_Array_Access is access all HealthTechnology_Access_Array_Access_Array;
+
+   subtype HealthTechnology_Access is org.allbinary.game.rts.technology.HealthTechnology_Package_References.HealthTechnology_Access;
+   function "=" (Left, Right : HealthTechnology_Access) return Boolean renames org.allbinary.game.rts.technology.HealthTechnology_Package_References."=";
+   subtype HealthTechnology_Access_Array is org.allbinary.game.rts.technology.HealthTechnology_Package_References.HealthTechnology_Access_Array;
+   function "=" (Left, Right : HealthTechnology_Access_Array) return Boolean renames org.allbinary.game.rts.technology.HealthTechnology_Package_References."=";
+   subtype HealthTechnology_Access_Array_Access is org.allbinary.game.rts.technology.HealthTechnology_Package_References.HealthTechnology_Access_Array_Access;
+   function "=" (Left, Right : HealthTechnology_Access_Array_Access) return Boolean renames org.allbinary.game.rts.technology.HealthTechnology_Package_References."=";
+   subtype HealthTechnology_Access_Array_Access_Array is org.allbinary.game.rts.technology.HealthTechnology_Package_References.HealthTechnology_Access_Array_Access_Array;
+   function "=" (Left, Right : HealthTechnology_Access_Array_Access_Array) return Boolean renames org.allbinary.game.rts.technology.HealthTechnology_Package_References."=";
+   subtype HealthTechnology_Access_Array_Access_Array_Access is org.allbinary.game.rts.technology.HealthTechnology_Package_References.HealthTechnology_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HealthTechnology_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.rts.technology.HealthTechnology_Package_References."=";
 
    type HealthTechnology is new Java_Object and RTSInterface with record
       level : Integer;

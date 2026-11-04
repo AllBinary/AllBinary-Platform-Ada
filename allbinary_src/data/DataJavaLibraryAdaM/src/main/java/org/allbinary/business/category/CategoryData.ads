@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.category.CategoryData_Package;
+package org.allbinary.business.category.CategoryData_Package_References is
+   type CategoryData_Access is access all org.allbinary.business.category.CategoryData_Package.CategoryData'Class;
+   type CategoryData_Access_Array is array (Natural range <>) of CategoryData_Access;
+   type CategoryData_Access_Array_Access is access all CategoryData_Access_Array;
+   type CategoryData_Access_Array_Access_Array is array (Natural range <>) of CategoryData_Access_Array_Access;
+   type CategoryData_Access_Array_Access_Array_Access is access all CategoryData_Access_Array_Access_Array;
+end org.allbinary.business.category.CategoryData_Package_References;
+
+with org.allbinary.business.category.CategoryData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.category.CategoryData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CategoryData is tagged;
-   type CategoryData_Access is access all CategoryData'Class;
-   type CategoryData_Access_Array is array (Natural range <>) of CategoryData_Access;
-   type CategoryData_Access_Array_Access is access all CategoryData_Access_Array;
-   type CategoryData_Access_Array_Access_Array is array (Natural range <>) of CategoryData_Access_Array_Access;
-   type CategoryData_Access_Array_Access_Array_Access is access all CategoryData_Access_Array_Access_Array;
+
+   subtype CategoryData_Access is org.allbinary.business.category.CategoryData_Package_References.CategoryData_Access;
+   function "=" (Left, Right : CategoryData_Access) return Boolean renames org.allbinary.business.category.CategoryData_Package_References."=";
+   subtype CategoryData_Access_Array is org.allbinary.business.category.CategoryData_Package_References.CategoryData_Access_Array;
+   function "=" (Left, Right : CategoryData_Access_Array) return Boolean renames org.allbinary.business.category.CategoryData_Package_References."=";
+   subtype CategoryData_Access_Array_Access is org.allbinary.business.category.CategoryData_Package_References.CategoryData_Access_Array_Access;
+   function "=" (Left, Right : CategoryData_Access_Array_Access) return Boolean renames org.allbinary.business.category.CategoryData_Package_References."=";
+   subtype CategoryData_Access_Array_Access_Array is org.allbinary.business.category.CategoryData_Package_References.CategoryData_Access_Array_Access_Array;
+   function "=" (Left, Right : CategoryData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.CategoryData_Package_References."=";
+   subtype CategoryData_Access_Array_Access_Array_Access is org.allbinary.business.category.CategoryData_Package_References.CategoryData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CategoryData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.CategoryData_Package_References."=";
 
    type CategoryData is new Java_Object with record
       PARENT : Unbounded_String;

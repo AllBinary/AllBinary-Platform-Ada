@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.StoreFrontsHelperFactory_Package;
+package admin.taghelpers.StoreFrontsHelperFactory_Package_References is
+   type StoreFrontsHelperFactory_Access is access all admin.taghelpers.StoreFrontsHelperFactory_Package.StoreFrontsHelperFactory'Class;
+   type StoreFrontsHelperFactory_Access_Array is array (Natural range <>) of StoreFrontsHelperFactory_Access;
+   type StoreFrontsHelperFactory_Access_Array_Access is access all StoreFrontsHelperFactory_Access_Array;
+   type StoreFrontsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsHelperFactory_Access_Array_Access;
+   type StoreFrontsHelperFactory_Access_Array_Access_Array_Access is access all StoreFrontsHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.StoreFrontsHelperFactory_Package_References;
+
+with admin.taghelpers.StoreFrontsHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.StoreFrontsHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreFrontsHelperFactory is tagged;
-   type StoreFrontsHelperFactory_Access is access all StoreFrontsHelperFactory'Class;
-   type StoreFrontsHelperFactory_Access_Array is array (Natural range <>) of StoreFrontsHelperFactory_Access;
-   type StoreFrontsHelperFactory_Access_Array_Access is access all StoreFrontsHelperFactory_Access_Array;
-   type StoreFrontsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsHelperFactory_Access_Array_Access;
-   type StoreFrontsHelperFactory_Access_Array_Access_Array_Access is access all StoreFrontsHelperFactory_Access_Array_Access_Array;
+
+   subtype StoreFrontsHelperFactory_Access is admin.taghelpers.StoreFrontsHelperFactory_Package_References.StoreFrontsHelperFactory_Access;
+   function "=" (Left, Right : StoreFrontsHelperFactory_Access) return Boolean renames admin.taghelpers.StoreFrontsHelperFactory_Package_References."=";
+   subtype StoreFrontsHelperFactory_Access_Array is admin.taghelpers.StoreFrontsHelperFactory_Package_References.StoreFrontsHelperFactory_Access_Array;
+   function "=" (Left, Right : StoreFrontsHelperFactory_Access_Array) return Boolean renames admin.taghelpers.StoreFrontsHelperFactory_Package_References."=";
+   subtype StoreFrontsHelperFactory_Access_Array_Access is admin.taghelpers.StoreFrontsHelperFactory_Package_References.StoreFrontsHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontsHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.StoreFrontsHelperFactory_Package_References."=";
+   subtype StoreFrontsHelperFactory_Access_Array_Access_Array is admin.taghelpers.StoreFrontsHelperFactory_Package_References.StoreFrontsHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontsHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.StoreFrontsHelperFactory_Package_References."=";
+   subtype StoreFrontsHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.StoreFrontsHelperFactory_Package_References.StoreFrontsHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontsHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.StoreFrontsHelperFactory_Package_References."=";
 
    type StoreFrontsHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.advertisement.GameAdStateFactory_Package;
+package org.allbinary.business.advertisement.GameAdStateFactory_Package_References is
+   type GameAdStateFactory_Access is access all org.allbinary.business.advertisement.GameAdStateFactory_Package.GameAdStateFactory'Class;
+   type GameAdStateFactory_Access_Array is array (Natural range <>) of GameAdStateFactory_Access;
+   type GameAdStateFactory_Access_Array_Access is access all GameAdStateFactory_Access_Array;
+   type GameAdStateFactory_Access_Array_Access_Array is array (Natural range <>) of GameAdStateFactory_Access_Array_Access;
+   type GameAdStateFactory_Access_Array_Access_Array_Access is access all GameAdStateFactory_Access_Array_Access_Array;
+end org.allbinary.business.advertisement.GameAdStateFactory_Package_References;
+
+with org.allbinary.business.advertisement.GameAdStateFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,22 +18,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
-with org.allbinary.logic.system.SoftwareInformation_Package; use org.allbinary.logic.system.SoftwareInformation_Package;
+limited with org.allbinary.game.GameAdState_Package;
+with org.allbinary.game.GameAdState_Package_References;
+limited with org.allbinary.logic.system.SoftwareInformation_Package;
+with org.allbinary.logic.system.SoftwareInformation_Package_References;
 with org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package; use org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package;
-with org.allbinary.business.advertisement.GameAdStateBase_Package; use org.allbinary.business.advertisement.GameAdStateBase_Package;
+limited with org.allbinary.business.advertisement.GameAdStateBase_Package;
+with org.allbinary.business.advertisement.GameAdStateBase_Package_References;
 
 package org.allbinary.business.advertisement.GameAdStateFactory_Package is
 
    package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
    package SoftwareInformation_Package renames Standard.org.allbinary.logic.system.SoftwareInformation_Package;
+   package Reference_Types is
+   subtype GameAdState_Access is org.allbinary.game.GameAdState_Package_References.GameAdState_Access;
+   use type GameAdState_Access;
+   subtype GameAdState_Access_Array is org.allbinary.game.GameAdState_Package_References.GameAdState_Access_Array;
+   use type GameAdState_Access_Array;
+   subtype GameAdState_Access_Array_Access is org.allbinary.game.GameAdState_Package_References.GameAdState_Access_Array_Access;
+   use type GameAdState_Access_Array_Access;
+   subtype GameAdState_Access_Array_Access_Array is org.allbinary.game.GameAdState_Package_References.GameAdState_Access_Array_Access_Array;
+   use type GameAdState_Access_Array_Access_Array;
+   subtype GameAdState_Access_Array_Access_Array_Access is org.allbinary.game.GameAdState_Package_References.GameAdState_Access_Array_Access_Array_Access;
+   use type GameAdState_Access_Array_Access_Array_Access;
+   subtype SoftwareInformation_Access is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access;
+   use type SoftwareInformation_Access;
+   subtype SoftwareInformation_Access_Array is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array;
+   use type SoftwareInformation_Access_Array;
+   subtype SoftwareInformation_Access_Array_Access is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array_Access;
+   use type SoftwareInformation_Access_Array_Access;
+   subtype SoftwareInformation_Access_Array_Access_Array is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array_Access_Array;
+   use type SoftwareInformation_Access_Array_Access_Array;
+   subtype SoftwareInformation_Access_Array_Access_Array_Access is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array_Access_Array_Access;
+   use type SoftwareInformation_Access_Array_Access_Array_Access;
+   subtype GameAdStateBase_Access is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access;
+   use type GameAdStateBase_Access;
+   subtype GameAdStateBase_Access_Array is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access_Array;
+   use type GameAdStateBase_Access_Array;
+   subtype GameAdStateBase_Access_Array_Access is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access_Array_Access;
+   use type GameAdStateBase_Access_Array_Access;
+   subtype GameAdStateBase_Access_Array_Access_Array is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access_Array_Access_Array;
+   use type GameAdStateBase_Access_Array_Access_Array;
+   subtype GameAdStateBase_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access_Array_Access_Array_Access;
+   use type GameAdStateBase_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameAdStateFactory is tagged;
-   type GameAdStateFactory_Access is access all GameAdStateFactory'Class;
-   type GameAdStateFactory_Access_Array is array (Natural range <>) of GameAdStateFactory_Access;
-   type GameAdStateFactory_Access_Array_Access is access all GameAdStateFactory_Access_Array;
-   type GameAdStateFactory_Access_Array_Access_Array is array (Natural range <>) of GameAdStateFactory_Access_Array_Access;
-   type GameAdStateFactory_Access_Array_Access_Array_Access is access all GameAdStateFactory_Access_Array_Access_Array;
+
+   subtype GameAdStateFactory_Access is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access;
+   function "=" (Left, Right : GameAdStateFactory_Access) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References."=";
+   subtype GameAdStateFactory_Access_Array is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access_Array;
+   function "=" (Left, Right : GameAdStateFactory_Access_Array) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References."=";
+   subtype GameAdStateFactory_Access_Array_Access is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access_Array_Access;
+   function "=" (Left, Right : GameAdStateFactory_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References."=";
+   subtype GameAdStateFactory_Access_Array_Access_Array is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : GameAdStateFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References."=";
+   subtype GameAdStateFactory_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameAdStateFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References."=";
 
    type GameAdStateFactory is new Java_Object and GameAdStateFactoryInterface with record
       gameAdStateArray : GameAdState_Access_Array_Access;

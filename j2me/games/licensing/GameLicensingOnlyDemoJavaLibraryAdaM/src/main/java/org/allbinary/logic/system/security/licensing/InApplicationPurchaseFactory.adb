@@ -6,10 +6,21 @@
 
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
 
 package body org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package is
 
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype LockableFeature_Access is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access;
+   function "=" (Left, Right : LockableFeature_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
+   subtype LockableFeature_Access_Array is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array;
+   function "=" (Left, Right : LockableFeature_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
+   subtype LockableFeature_Access_Array_Access is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array_Access;
+   function "=" (Left, Right : LockableFeature_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
+   subtype LockableFeature_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : LockableFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
+   subtype LockableFeature_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LockableFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
    procedure Initialize_Fields (This : in out InApplicationPurchaseFactory'Class) is
    begin
       null;
@@ -18,7 +29,7 @@ package body org.allbinary.logic.system.security.licensing.InApplicationPurchase
 
    function getInstance return InApplicationPurchaseFactory_Access is
    begin
-        return InApplicationPurchaseFactory_Package.instance;
+        return InApplicationPurchaseFactory_Access (InApplicationPurchaseFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out InApplicationPurchaseFactory'Class) is

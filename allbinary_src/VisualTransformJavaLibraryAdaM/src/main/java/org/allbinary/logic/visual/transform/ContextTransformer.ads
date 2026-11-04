@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.ContextTransformer_Package;
+package org.allbinary.logic.visual.transform.ContextTransformer_Package_References is
+   type ContextTransformer_Access is access all org.allbinary.logic.visual.transform.ContextTransformer_Package.ContextTransformer'Class;
+   type ContextTransformer_Access_Array is array (Natural range <>) of ContextTransformer_Access;
+   type ContextTransformer_Access_Array_Access is access all ContextTransformer_Access_Array;
+   type ContextTransformer_Access_Array_Access_Array is array (Natural range <>) of ContextTransformer_Access_Array_Access;
+   type ContextTransformer_Access_Array_Access_Array_Access is access all ContextTransformer_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.ContextTransformer_Package_References;
+
+with org.allbinary.logic.visual.transform.ContextTransformer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,21 +31,51 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.allbinary.logic.visual.transform.BasicTransformer_Package; use org.allbinary.logic.visual.transform.BasicTransformer_Package;
 
 package org.allbinary.logic.visual.transform.ContextTransformer_Package is
 
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Reference_Types is
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ContextTransformer is tagged;
-   type ContextTransformer_Access is access all ContextTransformer'Class;
-   type ContextTransformer_Access_Array is array (Natural range <>) of ContextTransformer_Access;
-   type ContextTransformer_Access_Array_Access is access all ContextTransformer_Access_Array;
-   type ContextTransformer_Access_Array_Access_Array is array (Natural range <>) of ContextTransformer_Access_Array_Access;
-   type ContextTransformer_Access_Array_Access_Array_Access is access all ContextTransformer_Access_Array_Access_Array;
+
+   subtype ContextTransformer_Access is org.allbinary.logic.visual.transform.ContextTransformer_Package_References.ContextTransformer_Access;
+   function "=" (Left, Right : ContextTransformer_Access) return Boolean renames org.allbinary.logic.visual.transform.ContextTransformer_Package_References."=";
+   subtype ContextTransformer_Access_Array is org.allbinary.logic.visual.transform.ContextTransformer_Package_References.ContextTransformer_Access_Array;
+   function "=" (Left, Right : ContextTransformer_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.ContextTransformer_Package_References."=";
+   subtype ContextTransformer_Access_Array_Access is org.allbinary.logic.visual.transform.ContextTransformer_Package_References.ContextTransformer_Access_Array_Access;
+   function "=" (Left, Right : ContextTransformer_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.ContextTransformer_Package_References."=";
+   subtype ContextTransformer_Access_Array_Access_Array is org.allbinary.logic.visual.transform.ContextTransformer_Package_References.ContextTransformer_Access_Array_Access_Array;
+   function "=" (Left, Right : ContextTransformer_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.ContextTransformer_Package_References."=";
+   subtype ContextTransformer_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.ContextTransformer_Package_References.ContextTransformer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ContextTransformer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.ContextTransformer_Package_References."=";
 
    type ContextTransformer is new BasicTransformer with null record;
 

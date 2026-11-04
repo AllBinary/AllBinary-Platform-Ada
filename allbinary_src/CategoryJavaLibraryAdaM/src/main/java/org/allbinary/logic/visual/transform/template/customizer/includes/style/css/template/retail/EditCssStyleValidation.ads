@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package;
+package org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References is
+   type EditCssStyleValidation_Access is access all org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package.EditCssStyleValidation'Class;
+   type EditCssStyleValidation_Access_Array is array (Natural range <>) of EditCssStyleValidation_Access;
+   type EditCssStyleValidation_Access_Array_Access is access all EditCssStyleValidation_Access_Array;
+   type EditCssStyleValidation_Access_Array_Access_Array is array (Natural range <>) of EditCssStyleValidation_Access_Array_Access;
+   type EditCssStyleValidation_Access_Array_Access_Array_Access is access all EditCssStyleValidation_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References;
+
+with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,8 +33,10 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package; use org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package is
@@ -34,13 +46,41 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.style.
    package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type EditCssStyleValidation is tagged;
-   type EditCssStyleValidation_Access is access all EditCssStyleValidation'Class;
-   type EditCssStyleValidation_Access_Array is array (Natural range <>) of EditCssStyleValidation_Access;
-   type EditCssStyleValidation_Access_Array_Access is access all EditCssStyleValidation_Access_Array;
-   type EditCssStyleValidation_Access_Array_Access_Array is array (Natural range <>) of EditCssStyleValidation_Access_Array_Access;
-   type EditCssStyleValidation_Access_Array_Access_Array_Access is access all EditCssStyleValidation_Access_Array_Access_Array;
+
+   subtype EditCssStyleValidation_Access is org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References.EditCssStyleValidation_Access;
+   function "=" (Left, Right : EditCssStyleValidation_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References."=";
+   subtype EditCssStyleValidation_Access_Array is org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References.EditCssStyleValidation_Access_Array;
+   function "=" (Left, Right : EditCssStyleValidation_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References."=";
+   subtype EditCssStyleValidation_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References.EditCssStyleValidation_Access_Array_Access;
+   function "=" (Left, Right : EditCssStyleValidation_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References."=";
+   subtype EditCssStyleValidation_Access_Array_Access_Array is org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References.EditCssStyleValidation_Access_Array_Access_Array;
+   function "=" (Left, Right : EditCssStyleValidation_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References."=";
+   subtype EditCssStyleValidation_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References.EditCssStyleValidation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EditCssStyleValidation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package_References."=";
 
    type EditCssStyleValidation is new CssStyleValidation and ValidationInterface and DomNodeInterface with null record;
 

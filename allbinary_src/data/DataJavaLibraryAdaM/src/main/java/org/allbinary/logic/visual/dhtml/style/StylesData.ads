@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.style.StylesData_Package;
+package org.allbinary.logic.visual.dhtml.style.StylesData_Package_References is
+   type StylesData_Access is access all org.allbinary.logic.visual.dhtml.style.StylesData_Package.StylesData'Class;
+   type StylesData_Access_Array is array (Natural range <>) of StylesData_Access;
+   type StylesData_Access_Array_Access is access all StylesData_Access_Array;
+   type StylesData_Access_Array_Access_Array is array (Natural range <>) of StylesData_Access_Array_Access;
+   type StylesData_Access_Array_Access_Array_Access is access all StylesData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.style.StylesData_Package_References;
+
+with org.allbinary.logic.visual.dhtml.style.StylesData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.dhtml.style.StylesData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type StylesData is tagged;
-   type StylesData_Access is access all StylesData'Class;
-   type StylesData_Access_Array is array (Natural range <>) of StylesData_Access;
-   type StylesData_Access_Array_Access is access all StylesData_Access_Array;
-   type StylesData_Access_Array_Access_Array is array (Natural range <>) of StylesData_Access_Array_Access;
-   type StylesData_Access_Array_Access_Array_Access is access all StylesData_Access_Array_Access_Array;
+
+   subtype StylesData_Access is org.allbinary.logic.visual.dhtml.style.StylesData_Package_References.StylesData_Access;
+   function "=" (Left, Right : StylesData_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.StylesData_Package_References."=";
+   subtype StylesData_Access_Array is org.allbinary.logic.visual.dhtml.style.StylesData_Package_References.StylesData_Access_Array;
+   function "=" (Left, Right : StylesData_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.StylesData_Package_References."=";
+   subtype StylesData_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.StylesData_Package_References.StylesData_Access_Array_Access;
+   function "=" (Left, Right : StylesData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.StylesData_Package_References."=";
+   subtype StylesData_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.style.StylesData_Package_References.StylesData_Access_Array_Access_Array;
+   function "=" (Left, Right : StylesData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.StylesData_Package_References."=";
+   subtype StylesData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.StylesData_Package_References.StylesData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StylesData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.StylesData_Package_References."=";
 
    type StylesData is new Java_Object with record
       NAME : Unbounded_String;

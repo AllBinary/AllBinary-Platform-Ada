@@ -14,12 +14,58 @@
 
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntityInterface_Package;
 
 package body org.allbinary.data.tables.transform.info.TransformInfoEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype TransformInfoFactoryInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References.TransformInfoFactoryInterface_Access;
+   function "=" (Left, Right : TransformInfoFactoryInterface_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References."=";
+   subtype TransformInfoFactoryInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References.TransformInfoFactoryInterface_Access_Array;
+   function "=" (Left, Right : TransformInfoFactoryInterface_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References."=";
+   subtype TransformInfoFactoryInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References.TransformInfoFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References."=";
+   subtype TransformInfoFactoryInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References.TransformInfoFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References."=";
+   subtype TransformInfoFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References.TransformInfoFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References."=";
+   subtype TransformInfoObjectConfigAndManipulatorFactoryBase_Access is org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References.TransformInfoObjectConfigAndManipulatorFactoryBase_Access;
+   function "=" (Left, Right : TransformInfoObjectConfigAndManipulatorFactoryBase_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References."=";
+   subtype TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References.TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array;
+   function "=" (Left, Right : TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References."=";
+   subtype TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References.TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References."=";
+   subtype TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References.TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References."=";
+   subtype TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References.TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References."=";
+   subtype TransformInfoObjectConfigGeneratorFactoryInterface_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References.TransformInfoObjectConfigGeneratorFactoryInterface_Access;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactoryInterface_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References."=";
+   subtype TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References.TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References."=";
+   subtype TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References.TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References."=";
+   subtype TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References.TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References."=";
+   subtype TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References.TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References."=";
+   subtype TransformInfoEntity_Access is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access;
+   function "=" (Left, Right : TransformInfoEntity_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
+   subtype TransformInfoEntity_Access_Array is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array;
+   function "=" (Left, Right : TransformInfoEntity_Access_Array) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
+   subtype TransformInfoEntity_Access_Array_Access is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
+   subtype TransformInfoEntity_Access_Array_Access_Array is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
+   subtype TransformInfoEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References."=";
    procedure Initialize_Fields (This : in out TransformInfoEntityFactory'Class) is
    begin
       null;

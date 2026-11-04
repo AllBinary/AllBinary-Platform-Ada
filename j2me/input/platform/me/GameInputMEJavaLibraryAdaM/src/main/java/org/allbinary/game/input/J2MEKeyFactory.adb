@@ -13,11 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package body org.allbinary.game.input.J2MEKeyFactory_Package is
 
+   subtype GameKeyFactory_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access;
+   function "=" (Left, Right : GameKeyFactory_Access) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype GameKeyFactory_Access_Array is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array;
+   function "=" (Left, Right : GameKeyFactory_Access_Array) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype GameKeyFactory_Access_Array_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access;
+   function "=" (Left, Right : GameKeyFactory_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype GameKeyFactory_Access_Array_Access_Array is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : GameKeyFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype GameKeyFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameKeyFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameKeyFactory_Package_References."=";
+   subtype Input_Access is org.allbinary.game.input.Input_Package_References.Input_Access;
+   function "=" (Left, Right : Input_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array;
+   function "=" (Left, Right : Input_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array;
+   function "=" (Left, Right : Input_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
    procedure Initialize_Fields (This : in out J2MEKeyFactory'Class) is
    begin
       null;
@@ -27,7 +49,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
 
    function getInstance return J2MEKeyFactory_Access is
    begin
-        return J2MEKeyFactory_Package.instance;
+        return J2MEKeyFactory_Access (J2MEKeyFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out J2MEKeyFactory'Class) is

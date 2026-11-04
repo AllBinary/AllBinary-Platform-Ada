@@ -21,6 +21,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
    procedure Initialize_Fields (This : in out UnitWaypointStrings'Class) is
    begin
       null;
+      This.PATHING := To_Unbounded_String ("Pathing");
       This.WANDERING := To_Unbounded_String ("Order?");
       This.THINKING := To_Unbounded_String ("Thinking");
       This.THINKING_ABOUT_TARGET := To_Unbounded_String ("Hmmm");
@@ -34,6 +35,10 @@ package body org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
       This.ALREADY_THERE_SHORT := To_Unbounded_String ("Again?");
       This.ALREADY_THERE := To_Unbounded_String ("Already There");
       This.NEXT_PATH_NODE := Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Path Node");
+      This.U_ALL_VISITED_SHORT := To_Unbounded_String (" Arrived");
+      This.U_ALREADY_THERE_SHORT := To_Unbounded_String (" Again?");
+      This.VISITED_MOST_OF_THE_PATH := To_Unbounded_String (" visited most of the path");
+      This.RETURNING_AS_WAYPOINT_PATH_LIST := To_Unbounded_String (" returning as waypointPathsList was runningWaypointPathList");
    end Initialize_Fields;
 
    procedure Initialize (This : in out UnitWaypointStrings'Class) is
@@ -51,7 +56,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
 
    function getInstance return UnitWaypointStrings_Access is
    begin
-        return UnitWaypointStrings_Package.instance;
+        return UnitWaypointStrings_Access (UnitWaypointStrings_Package.instance);
    end getInstance;
 
 begin

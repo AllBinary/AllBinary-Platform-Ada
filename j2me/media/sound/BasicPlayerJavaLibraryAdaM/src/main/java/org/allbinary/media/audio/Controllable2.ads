@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.Controllable2_Package;
+package org.allbinary.media.audio.Controllable2_Package_References is
+   type Controllable2_Access is access all org.allbinary.media.audio.Controllable2_Package.Controllable2'Class;
+   type Controllable2_Access_Array is array (Natural range <>) of Controllable2_Access;
+   type Controllable2_Access_Array_Access is access all Controllable2_Access_Array;
+   type Controllable2_Access_Array_Access_Array is array (Natural range <>) of Controllable2_Access_Array_Access;
+   type Controllable2_Access_Array_Access_Array_Access is access all Controllable2_Access_Array_Access_Array;
+end org.allbinary.media.audio.Controllable2_Package_References;
+
+with org.allbinary.media.audio.Controllable2_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.media.audio.Controllable2_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type Controllable2 is interface;
-   type Controllable2_Access is access all Controllable2'Class;
-   type Controllable2_Access_Array is array (Natural range <>) of Controllable2_Access;
-   type Controllable2_Access_Array_Access is access all Controllable2_Access_Array;
-   type Controllable2_Access_Array_Access_Array is array (Natural range <>) of Controllable2_Access_Array_Access;
-   type Controllable2_Access_Array_Access_Array_Access is access all Controllable2_Access_Array_Access_Array;
+   subtype Controllable2_Access is org.allbinary.media.audio.Controllable2_Package_References.Controllable2_Access;
+   function "=" (Left, Right : Controllable2_Access) return Boolean renames org.allbinary.media.audio.Controllable2_Package_References."=";
+   subtype Controllable2_Access_Array is org.allbinary.media.audio.Controllable2_Package_References.Controllable2_Access_Array;
+   function "=" (Left, Right : Controllable2_Access_Array) return Boolean renames org.allbinary.media.audio.Controllable2_Package_References."=";
+   subtype Controllable2_Access_Array_Access is org.allbinary.media.audio.Controllable2_Package_References.Controllable2_Access_Array_Access;
+   function "=" (Left, Right : Controllable2_Access_Array_Access) return Boolean renames org.allbinary.media.audio.Controllable2_Package_References."=";
+   subtype Controllable2_Access_Array_Access_Array is org.allbinary.media.audio.Controllable2_Package_References.Controllable2_Access_Array_Access_Array;
+   function "=" (Left, Right : Controllable2_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.Controllable2_Package_References."=";
+   subtype Controllable2_Access_Array_Access_Array_Access is org.allbinary.media.audio.Controllable2_Package_References.Controllable2_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Controllable2_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.Controllable2_Package_References."=";
+   function Java_Object_Access_From_Controllable2 (Value : Controllable2_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setVolume (This : in out Controllable2; leftVolume : Integer; rightVolume : Integer) is abstract;
 
 end org.allbinary.media.audio.Controllable2_Package;

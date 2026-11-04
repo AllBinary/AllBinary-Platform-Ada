@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 
 package body org.allbinary.graphics.paint.LocationPaintable_Package is
 
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   function "=" (Left, Right : Graphics_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   function "=" (Left, Right : Graphics_Access_Array) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   function "=" (Left, Right : Graphics_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   function "=" (Left, Right : Graphics_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Graphics_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
    procedure Initialize_Fields (This : in out LocationPaintable'Class) is
    begin
       null;
@@ -36,7 +48,7 @@ package body org.allbinary.graphics.paint.LocationPaintable_Package is
 
    function getInstance return LocationPaintable_Access is
    begin
-        return LocationPaintable_Package.instance;
+        return LocationPaintable_Access (LocationPaintable_Package.instance);
    end getInstance;
 
    procedure paintXY (This : in out LocationPaintable; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is

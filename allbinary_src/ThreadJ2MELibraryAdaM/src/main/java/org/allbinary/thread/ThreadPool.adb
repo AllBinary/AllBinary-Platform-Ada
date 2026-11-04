@@ -13,11 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
+with org.allbinary.thread.ThreadPoolStrings_Package; use org.allbinary.thread.ThreadPoolStrings_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
 with org.allbinary.thread.PooledThread_Package; use org.allbinary.thread.PooledThread_Package;
+with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
+with org.allbinary.thread.PooledThread_Package;
+with org.allbinary.thread.PriorityRunnable_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package;
+with org.allbinary.thread.ThreadPoolStrings_Package;
 
 package body org.allbinary.thread.ThreadPool_Package is
 
@@ -25,6 +36,76 @@ package body org.allbinary.thread.ThreadPool_Package is
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype NullRunnable_Access is org.allbinary.thread.NullRunnable_Package_References.NullRunnable_Access;
+   function "=" (Left, Right : NullRunnable_Access) return Boolean renames org.allbinary.thread.NullRunnable_Package_References."=";
+   subtype NullRunnable_Access_Array is org.allbinary.thread.NullRunnable_Package_References.NullRunnable_Access_Array;
+   function "=" (Left, Right : NullRunnable_Access_Array) return Boolean renames org.allbinary.thread.NullRunnable_Package_References."=";
+   subtype NullRunnable_Access_Array_Access is org.allbinary.thread.NullRunnable_Package_References.NullRunnable_Access_Array_Access;
+   function "=" (Left, Right : NullRunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.NullRunnable_Package_References."=";
+   subtype NullRunnable_Access_Array_Access_Array is org.allbinary.thread.NullRunnable_Package_References.NullRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : NullRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.NullRunnable_Package_References."=";
+   subtype NullRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.NullRunnable_Package_References.NullRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.NullRunnable_Package_References."=";
+   subtype ThreadPoolStrings_Access is org.allbinary.thread.ThreadPoolStrings_Package_References.ThreadPoolStrings_Access;
+   function "=" (Left, Right : ThreadPoolStrings_Access) return Boolean renames org.allbinary.thread.ThreadPoolStrings_Package_References."=";
+   subtype ThreadPoolStrings_Access_Array is org.allbinary.thread.ThreadPoolStrings_Package_References.ThreadPoolStrings_Access_Array;
+   function "=" (Left, Right : ThreadPoolStrings_Access_Array) return Boolean renames org.allbinary.thread.ThreadPoolStrings_Package_References."=";
+   subtype ThreadPoolStrings_Access_Array_Access is org.allbinary.thread.ThreadPoolStrings_Package_References.ThreadPoolStrings_Access_Array_Access;
+   function "=" (Left, Right : ThreadPoolStrings_Access_Array_Access) return Boolean renames org.allbinary.thread.ThreadPoolStrings_Package_References."=";
+   subtype ThreadPoolStrings_Access_Array_Access_Array is org.allbinary.thread.ThreadPoolStrings_Package_References.ThreadPoolStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : ThreadPoolStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ThreadPoolStrings_Package_References."=";
+   subtype ThreadPoolStrings_Access_Array_Access_Array_Access is org.allbinary.thread.ThreadPoolStrings_Package_References.ThreadPoolStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ThreadPoolStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ThreadPoolStrings_Package_References."=";
+   subtype ThreadObjectUtil_Access is org.allbinary.thread.ThreadObjectUtil_Package_References.ThreadObjectUtil_Access;
+   function "=" (Left, Right : ThreadObjectUtil_Access) return Boolean renames org.allbinary.thread.ThreadObjectUtil_Package_References."=";
+   subtype ThreadObjectUtil_Access_Array is org.allbinary.thread.ThreadObjectUtil_Package_References.ThreadObjectUtil_Access_Array;
+   function "=" (Left, Right : ThreadObjectUtil_Access_Array) return Boolean renames org.allbinary.thread.ThreadObjectUtil_Package_References."=";
+   subtype ThreadObjectUtil_Access_Array_Access is org.allbinary.thread.ThreadObjectUtil_Package_References.ThreadObjectUtil_Access_Array_Access;
+   function "=" (Left, Right : ThreadObjectUtil_Access_Array_Access) return Boolean renames org.allbinary.thread.ThreadObjectUtil_Package_References."=";
+   subtype ThreadObjectUtil_Access_Array_Access_Array is org.allbinary.thread.ThreadObjectUtil_Package_References.ThreadObjectUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ThreadObjectUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ThreadObjectUtil_Package_References."=";
+   subtype ThreadObjectUtil_Access_Array_Access_Array_Access is org.allbinary.thread.ThreadObjectUtil_Package_References.ThreadObjectUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ThreadObjectUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ThreadObjectUtil_Package_References."=";
+   subtype PriorityRunnable_Access is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access;
+   function "=" (Left, Right : PriorityRunnable_Access) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
+   subtype PriorityRunnable_Access_Array is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access_Array;
+   function "=" (Left, Right : PriorityRunnable_Access_Array) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
+   subtype PriorityRunnable_Access_Array_Access is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access_Array_Access;
+   function "=" (Left, Right : PriorityRunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
+   subtype PriorityRunnable_Access_Array_Access_Array is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : PriorityRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
+   subtype PriorityRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.PriorityRunnable_Package_References.PriorityRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PriorityRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.PriorityRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out ThreadPool'Class) is
    begin
       null;
@@ -94,7 +175,7 @@ package body org.allbinary.thread.ThreadPool_Package is
             if (task_Id) /= (null) then
                 size := This.taskQueue.size;
                 runnable := null;
-                lowerPriorityRunnable := This.threadObjectUtil.NULL_PRIORITY_RUNNABLE;
+                lowerPriorityRunnable := PriorityRunnable_Access (This.threadObjectUtil.NULL_PRIORITY_RUNNABLE);
                 for index in 0 .. (size) - 1 loop
                     runnable := PriorityRunnable_Access (This.taskQueue.get (index));
                     if (runnable.getPriority) > (task_Id.getPriority) then
@@ -121,7 +202,7 @@ package body org.allbinary.thread.ThreadPool_Package is
                 ThreadPool'Class (This).init;
             end if;
             if (task_Id) /= (null) then
-                This.taskQueue.add (Java_Object_Access (task_Id));
+                This.taskQueue.add (Runnable_Package.Java_Object_Access_From_Runnable (task_Id));
                 ThreadPool'Class (This).notify;
             end if;
         end;

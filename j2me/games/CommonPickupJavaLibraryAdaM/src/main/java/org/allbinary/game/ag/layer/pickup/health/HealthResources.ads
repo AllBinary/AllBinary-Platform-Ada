@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.layer.pickup.health.HealthResources_Package;
+package org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References is
+   type HealthResources_Access is access all org.allbinary.game.ag.layer.pickup.health.HealthResources_Package.HealthResources'Class;
+   type HealthResources_Access_Array is array (Natural range <>) of HealthResources_Access;
+   type HealthResources_Access_Array_Access is access all HealthResources_Access_Array;
+   type HealthResources_Access_Array_Access_Array is array (Natural range <>) of HealthResources_Access_Array_Access;
+   type HealthResources_Access_Array_Access_Array_Access is access all HealthResources_Access_Array_Access_Array;
+end org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References;
+
+with org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.ag.layer.pickup.health.HealthResources_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HealthResources is tagged;
-   type HealthResources_Access is access all HealthResources'Class;
-   type HealthResources_Access_Array is array (Natural range <>) of HealthResources_Access;
-   type HealthResources_Access_Array_Access is access all HealthResources_Access_Array;
-   type HealthResources_Access_Array_Access_Array is array (Natural range <>) of HealthResources_Access_Array_Access;
-   type HealthResources_Access_Array_Access_Array_Access is access all HealthResources_Access_Array_Access_Array;
+
+   subtype HealthResources_Access is org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References.HealthResources_Access;
+   function "=" (Left, Right : HealthResources_Access) return Boolean renames org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References."=";
+   subtype HealthResources_Access_Array is org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References.HealthResources_Access_Array;
+   function "=" (Left, Right : HealthResources_Access_Array) return Boolean renames org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References."=";
+   subtype HealthResources_Access_Array_Access is org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References.HealthResources_Access_Array_Access;
+   function "=" (Left, Right : HealthResources_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References."=";
+   subtype HealthResources_Access_Array_Access_Array is org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References.HealthResources_Access_Array_Access_Array;
+   function "=" (Left, Right : HealthResources_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References."=";
+   subtype HealthResources_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References.HealthResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HealthResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.pickup.health.HealthResources_Package_References."=";
 
    type HealthResources is new Java_Object with record
       RESOURCE : Unbounded_String;

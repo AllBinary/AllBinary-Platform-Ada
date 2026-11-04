@@ -13,18 +13,23 @@
 --  Generated Code Do Not Modify
 
 
-with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with org.allbinary.graphics.GraphicsStrings_Package; use org.allbinary.graphics.GraphicsStrings_Package;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.json.me.JSONArray_Package; use org.json.me.JSONArray_Package;
 with org.json.me.JSONException_Package; use org.json.me.JSONException_Package;
+with org.json.me.JSONObject_Package; use org.json.me.JSONObject_Package;
+with org.allbinary.animation.ShapeTypeFactory_Package; use org.allbinary.animation.ShapeTypeFactory_Package;
+with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.ShapeType_Package;
+with org.allbinary.animation.ShapeType_Package;
+with org.allbinary.animation.ShapeTypeFactory_Package;
 
 package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
 
-   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
    package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
@@ -32,6 +37,56 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package JSONArray_Package renames Standard.org.json.me.JSONArray_Package;
    package JSONException_Package renames Standard.org.json.me.JSONException_Package;
+   subtype GraphicsStrings_Access is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access;
+   function "=" (Left, Right : GraphicsStrings_Access) return Boolean renames org.allbinary.graphics.GraphicsStrings_Package_References."=";
+   subtype GraphicsStrings_Access_Array is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array;
+   function "=" (Left, Right : GraphicsStrings_Access_Array) return Boolean renames org.allbinary.graphics.GraphicsStrings_Package_References."=";
+   subtype GraphicsStrings_Access_Array_Access is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array_Access;
+   function "=" (Left, Right : GraphicsStrings_Access_Array_Access) return Boolean renames org.allbinary.graphics.GraphicsStrings_Package_References."=";
+   subtype GraphicsStrings_Access_Array_Access_Array is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : GraphicsStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.GraphicsStrings_Package_References."=";
+   subtype GraphicsStrings_Access_Array_Access_Array_Access is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GraphicsStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.GraphicsStrings_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype JSONObject_Access is org.json.me.JSONObject_Package_References.JSONObject_Access;
+   function "=" (Left, Right : JSONObject_Access) return Boolean renames org.json.me.JSONObject_Package_References."=";
+   subtype JSONObject_Access_Array is org.json.me.JSONObject_Package_References.JSONObject_Access_Array;
+   function "=" (Left, Right : JSONObject_Access_Array) return Boolean renames org.json.me.JSONObject_Package_References."=";
+   subtype JSONObject_Access_Array_Access is org.json.me.JSONObject_Package_References.JSONObject_Access_Array_Access;
+   function "=" (Left, Right : JSONObject_Access_Array_Access) return Boolean renames org.json.me.JSONObject_Package_References."=";
+   subtype JSONObject_Access_Array_Access_Array is org.json.me.JSONObject_Package_References.JSONObject_Access_Array_Access_Array;
+   function "=" (Left, Right : JSONObject_Access_Array_Access_Array) return Boolean renames org.json.me.JSONObject_Package_References."=";
+   subtype JSONObject_Access_Array_Access_Array_Access is org.json.me.JSONObject_Package_References.JSONObject_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JSONObject_Access_Array_Access_Array_Access) return Boolean renames org.json.me.JSONObject_Package_References."=";
+   subtype ShapeTypeFactory_Access is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access;
+   function "=" (Left, Right : ShapeTypeFactory_Access) return Boolean renames org.allbinary.animation.ShapeTypeFactory_Package_References."=";
+   subtype ShapeTypeFactory_Access_Array is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access_Array;
+   function "=" (Left, Right : ShapeTypeFactory_Access_Array) return Boolean renames org.allbinary.animation.ShapeTypeFactory_Package_References."=";
+   subtype ShapeTypeFactory_Access_Array_Access is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access_Array_Access;
+   function "=" (Left, Right : ShapeTypeFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.ShapeTypeFactory_Package_References."=";
+   subtype ShapeTypeFactory_Access_Array_Access_Array is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ShapeTypeFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.ShapeTypeFactory_Package_References."=";
+   subtype ShapeTypeFactory_Access_Array_Access_Array_Access is org.allbinary.animation.ShapeTypeFactory_Package_References.ShapeTypeFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShapeTypeFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.ShapeTypeFactory_Package_References."=";
+   subtype ShapeType_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access;
+   function "=" (Left, Right : ShapeType_Access) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array;
+   function "=" (Left, Right : ShapeType_Access_Array) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access;
+   function "=" (Left, Right : ShapeType_Access_Array_Access) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array_Access_Array is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access_Array;
+   function "=" (Left, Right : ShapeType_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array_Access_Array_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShapeType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
    procedure Initialize_Fields (This : in out SVGAsJSONSimpleLoader'Class) is
    begin
       null;
@@ -71,7 +126,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
 
    function getInstance return SVGAsJSONSimpleLoader_Access is
    begin
-        return SVGAsJSONSimpleLoader_Package.instance;
+        return SVGAsJSONSimpleLoader_Access (SVGAsJSONSimpleLoader_Package.instance);
    end getInstance;
 
    --  throws Exception
@@ -80,9 +135,11 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       svgValue : Java_Object_Access;
       svg : JSONObject_Access;
       pointVector : BasicArrayList_Access;
-      keys : Enumeration_Access;
+      objectArray : Java_Object_Access_Array_Access;
+      size : Integer;
       key : Unbounded_String;
       value : Java_Object_Access;
+      index : Integer;
    begin
         if (svgAsJson) = (Null_Unbounded_String) then
             return This.EMPTY_POINTS;
@@ -92,9 +149,10 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
             svgValue := root.opt (This.KEY_SVG);
             svg := (if (svgValue) = (null) then root else SVGAsJSONSimpleLoader'Class (This).asObject (svgValue, This.KEY_SVG));
             pointVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            keys := svg.keys;
-            while keys.hasMoreElements loop
-                key := Java_Unbox (keys.nextElement);
+            objectArray := svg.keysAsArray;
+            size := objectArray'Length;
+            for index in 0 .. (size) - 1 loop
+                key := Java_Unbox (objectArray (index));
                 value := svg.opt (key);
                 if This.shapeTypeFactory.KEY_LINE.equals (key) then
                     SVGAsJSONSimpleLoader'Class (This).addShapes (pointVector, value, This.shapeTypeFactory.LINE);

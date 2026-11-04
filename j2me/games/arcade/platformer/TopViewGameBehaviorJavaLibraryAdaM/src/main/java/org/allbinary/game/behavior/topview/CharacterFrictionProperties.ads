@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package;
+package org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References is
+   type CharacterFrictionProperties_Access is access all org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package.CharacterFrictionProperties'Class;
+   type CharacterFrictionProperties_Access_Array is array (Natural range <>) of CharacterFrictionProperties_Access;
+   type CharacterFrictionProperties_Access_Array_Access is access all CharacterFrictionProperties_Access_Array;
+   type CharacterFrictionProperties_Access_Array_Access_Array is array (Natural range <>) of CharacterFrictionProperties_Access_Array_Access;
+   type CharacterFrictionProperties_Access_Array_Access_Array_Access is access all CharacterFrictionProperties_Access_Array_Access_Array;
+end org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References;
+
+with org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.physics.FrictionProperties_Package; use org.allbinary.ga
 package org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package is
 
    package FrictionProperties_Package renames Standard.org.allbinary.game.physics.FrictionProperties_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CharacterFrictionProperties is tagged;
-   type CharacterFrictionProperties_Access is access all CharacterFrictionProperties'Class;
-   type CharacterFrictionProperties_Access_Array is array (Natural range <>) of CharacterFrictionProperties_Access;
-   type CharacterFrictionProperties_Access_Array_Access is access all CharacterFrictionProperties_Access_Array;
-   type CharacterFrictionProperties_Access_Array_Access_Array is array (Natural range <>) of CharacterFrictionProperties_Access_Array_Access;
-   type CharacterFrictionProperties_Access_Array_Access_Array_Access is access all CharacterFrictionProperties_Access_Array_Access_Array;
+
+   subtype CharacterFrictionProperties_Access is org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References.CharacterFrictionProperties_Access;
+   function "=" (Left, Right : CharacterFrictionProperties_Access) return Boolean renames org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References."=";
+   subtype CharacterFrictionProperties_Access_Array is org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References.CharacterFrictionProperties_Access_Array;
+   function "=" (Left, Right : CharacterFrictionProperties_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References."=";
+   subtype CharacterFrictionProperties_Access_Array_Access is org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References.CharacterFrictionProperties_Access_Array_Access;
+   function "=" (Left, Right : CharacterFrictionProperties_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References."=";
+   subtype CharacterFrictionProperties_Access_Array_Access_Array is org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References.CharacterFrictionProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : CharacterFrictionProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References."=";
+   subtype CharacterFrictionProperties_Access_Array_Access_Array_Access is org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References.CharacterFrictionProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CharacterFrictionProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package_References."=";
 
    type CharacterFrictionProperties is new FrictionProperties with record
       WATER_FRICTION_NOMINATOR : Integer;

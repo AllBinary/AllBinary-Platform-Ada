@@ -13,12 +13,36 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package; use org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package; use org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package;
+with org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package;
+with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
 
 package body org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package is
 
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype StreetAddressesEntity_Access is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access;
+   function "=" (Left, Right : StreetAddressesEntity_Access) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References."=";
+   subtype StreetAddressesEntity_Access_Array is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access_Array;
+   function "=" (Left, Right : StreetAddressesEntity_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References."=";
+   subtype StreetAddressesEntity_Access_Array_Access is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access_Array_Access;
+   function "=" (Left, Right : StreetAddressesEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References."=";
+   subtype StreetAddressesEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : StreetAddressesEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References."=";
+   subtype StreetAddressesEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References.StreetAddressesEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StreetAddressesEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntity_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out BillingAddressesEntityFactory'Class) is
    begin
       null;
@@ -28,7 +52,7 @@ package body org.allbinary.data.tables.user.address.billing.BillingAddressesEnti
 
    function getInstance return BillingAddressesEntityFactory_Access is
    begin
-        return BillingAddressesEntityFactory_Package.instance;
+        return BillingAddressesEntityFactory_Access (BillingAddressesEntityFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out BillingAddressesEntityFactory'Class) is

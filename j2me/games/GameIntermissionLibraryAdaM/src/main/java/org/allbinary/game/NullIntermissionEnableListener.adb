@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.IntermissionEnableListenerInterface_Package;
 
 package body org.allbinary.game.NullIntermissionEnableListener_Package is
 

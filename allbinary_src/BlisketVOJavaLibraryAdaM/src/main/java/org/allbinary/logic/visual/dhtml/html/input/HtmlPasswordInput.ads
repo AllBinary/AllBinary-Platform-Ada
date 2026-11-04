@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package;
+package org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References is
+   type HtmlPasswordInput_Access is access all org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package.HtmlPasswordInput'Class;
+   type HtmlPasswordInput_Access_Array is array (Natural range <>) of HtmlPasswordInput_Access;
+   type HtmlPasswordInput_Access_Array_Access is access all HtmlPasswordInput_Access_Array;
+   type HtmlPasswordInput_Access_Array_Access_Array is array (Natural range <>) of HtmlPasswordInput_Access_Array_Access;
+   type HtmlPasswordInput_Access_Array_Access_Array_Access is access all HtmlPasswordInput_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References;
+
+with org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package; use or
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HtmlPasswordInput is tagged;
-   type HtmlPasswordInput_Access is access all HtmlPasswordInput'Class;
-   type HtmlPasswordInput_Access_Array is array (Natural range <>) of HtmlPasswordInput_Access;
-   type HtmlPasswordInput_Access_Array_Access is access all HtmlPasswordInput_Access_Array;
-   type HtmlPasswordInput_Access_Array_Access_Array is array (Natural range <>) of HtmlPasswordInput_Access_Array_Access;
-   type HtmlPasswordInput_Access_Array_Access_Array_Access is access all HtmlPasswordInput_Access_Array_Access_Array;
+
+   subtype HtmlPasswordInput_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References.HtmlPasswordInput_Access;
+   function "=" (Left, Right : HtmlPasswordInput_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References."=";
+   subtype HtmlPasswordInput_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References.HtmlPasswordInput_Access_Array;
+   function "=" (Left, Right : HtmlPasswordInput_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References."=";
+   subtype HtmlPasswordInput_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References.HtmlPasswordInput_Access_Array_Access;
+   function "=" (Left, Right : HtmlPasswordInput_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References."=";
+   subtype HtmlPasswordInput_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References.HtmlPasswordInput_Access_Array_Access_Array;
+   function "=" (Left, Right : HtmlPasswordInput_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References."=";
+   subtype HtmlPasswordInput_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References.HtmlPasswordInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HtmlPasswordInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package_References."=";
 
    type HtmlPasswordInput is new HtmlLengthInput with null record;
 

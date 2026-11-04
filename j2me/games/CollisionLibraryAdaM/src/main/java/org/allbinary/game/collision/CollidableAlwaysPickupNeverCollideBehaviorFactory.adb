@@ -13,9 +13,42 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package; use org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package;
+with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
+with org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package;
+with org.allbinary.game.collision.CollidableBaseBehavior_Package;
+with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
+with org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.collision.CollidableInterface_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.collision.CollidableNeverCollideBehavior_Package;
+with org.allbinary.game.collision.CollisionProcessor_Package;
+with org.allbinary.game.collision.CollisionType_Package;
+with org.allbinary.game.collision.LayerCollisionUtil_Package;
 
 package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehaviorFactory_Package is
 
+   subtype CollidableAlwaysPickupNeverCollideBehavior_Access is org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References.CollidableAlwaysPickupNeverCollideBehavior_Access;
+   function "=" (Left, Right : CollidableAlwaysPickupNeverCollideBehavior_Access) return Boolean renames org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References."=";
+   subtype CollidableAlwaysPickupNeverCollideBehavior_Access_Array is org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References.CollidableAlwaysPickupNeverCollideBehavior_Access_Array;
+   function "=" (Left, Right : CollidableAlwaysPickupNeverCollideBehavior_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References."=";
+   subtype CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access is org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References.CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access;
+   function "=" (Left, Right : CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References."=";
+   subtype CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access_Array is org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References.CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References."=";
+   subtype CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References.CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package_References."=";
+   subtype CollidableBaseBehavior_Access is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access;
+   function "=" (Left, Right : CollidableBaseBehavior_Access) return Boolean renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References."=";
+   subtype CollidableBaseBehavior_Access_Array is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array;
+   function "=" (Left, Right : CollidableBaseBehavior_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References."=";
+   subtype CollidableBaseBehavior_Access_Array_Access is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array_Access;
+   function "=" (Left, Right : CollidableBaseBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References."=";
+   subtype CollidableBaseBehavior_Access_Array_Access_Array is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : CollidableBaseBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References."=";
+   subtype CollidableBaseBehavior_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollidableBaseBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References."=";
    procedure Initialize_Fields (This : in out CollidableAlwaysPickupNeverCollideBehaviorFactory'Class) is
    begin
       null;
@@ -38,7 +71,7 @@ package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBeha
 
    function getInstance return CollidableAlwaysPickupNeverCollideBehaviorFactory_Access is
    begin
-        return CollidableAlwaysPickupNeverCollideBehaviorFactory_Package.instanceC;
+        return CollidableAlwaysPickupNeverCollideBehaviorFactory_Access (CollidableAlwaysPickupNeverCollideBehaviorFactory_Package.instanceC);
    end getInstance;
 
    function createBehavior (This : in out CollidableAlwaysPickupNeverCollideBehaviorFactory) return CollidableBaseBehavior_Access is

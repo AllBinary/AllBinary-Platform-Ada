@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package;
 
 package body org.allbinary.gui.dialog.ExitCloseListener_Package is
 

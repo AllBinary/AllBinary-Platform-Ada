@@ -13,10 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.device.NullGL10_Package; use org.allbinary.device.NullGL10_Package;
+with org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package; use org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+with org.allbinary.image.PreResourceImageUtil_Package; use org.allbinary.image.PreResourceImageUtil_Package;
+with org.allbinary.thread.SynchObject_Package; use org.allbinary.thread.SynchObject_Package;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageCache_Package is
@@ -25,12 +33,72 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
    package NullGL10_Package renames Standard.org.allbinary.device.NullGL10_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   function "=" (Left, Right : GL10_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   function "=" (Left, Right : GL10_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   function "=" (Left, Right : GL10_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   function "=" (Left, Right : GL10_Access_Array_Access_Array) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GL10_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.khronos.opengles.GL10_Package_References."=";
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype AllBinaryRendererBase3_Access is org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References.AllBinaryRendererBase3_Access;
+   function "=" (Left, Right : AllBinaryRendererBase3_Access) return Boolean renames org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References."=";
+   subtype AllBinaryRendererBase3_Access_Array is org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References.AllBinaryRendererBase3_Access_Array;
+   function "=" (Left, Right : AllBinaryRendererBase3_Access_Array) return Boolean renames org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References."=";
+   subtype AllBinaryRendererBase3_Access_Array_Access is org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References.AllBinaryRendererBase3_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryRendererBase3_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References."=";
+   subtype AllBinaryRendererBase3_Access_Array_Access_Array is org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References.AllBinaryRendererBase3_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryRendererBase3_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References."=";
+   subtype AllBinaryRendererBase3_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References.AllBinaryRendererBase3_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryRendererBase3_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype PreResourceImageUtil_Access is org.allbinary.image.PreResourceImageUtil_Package_References.PreResourceImageUtil_Access;
+   function "=" (Left, Right : PreResourceImageUtil_Access) return Boolean renames org.allbinary.image.PreResourceImageUtil_Package_References."=";
+   subtype PreResourceImageUtil_Access_Array is org.allbinary.image.PreResourceImageUtil_Package_References.PreResourceImageUtil_Access_Array;
+   function "=" (Left, Right : PreResourceImageUtil_Access_Array) return Boolean renames org.allbinary.image.PreResourceImageUtil_Package_References."=";
+   subtype PreResourceImageUtil_Access_Array_Access is org.allbinary.image.PreResourceImageUtil_Package_References.PreResourceImageUtil_Access_Array_Access;
+   function "=" (Left, Right : PreResourceImageUtil_Access_Array_Access) return Boolean renames org.allbinary.image.PreResourceImageUtil_Package_References."=";
+   subtype PreResourceImageUtil_Access_Array_Access_Array is org.allbinary.image.PreResourceImageUtil_Package_References.PreResourceImageUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : PreResourceImageUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.image.PreResourceImageUtil_Package_References."=";
+   subtype PreResourceImageUtil_Access_Array_Access_Array_Access is org.allbinary.image.PreResourceImageUtil_Package_References.PreResourceImageUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PreResourceImageUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.PreResourceImageUtil_Package_References."=";
+   subtype SynchObject_Access is org.allbinary.thread.SynchObject_Package_References.SynchObject_Access;
+   function "=" (Left, Right : SynchObject_Access) return Boolean renames org.allbinary.thread.SynchObject_Package_References."=";
+   subtype SynchObject_Access_Array is org.allbinary.thread.SynchObject_Package_References.SynchObject_Access_Array;
+   function "=" (Left, Right : SynchObject_Access_Array) return Boolean renames org.allbinary.thread.SynchObject_Package_References."=";
+   subtype SynchObject_Access_Array_Access is org.allbinary.thread.SynchObject_Package_References.SynchObject_Access_Array_Access;
+   function "=" (Left, Right : SynchObject_Access_Array_Access) return Boolean renames org.allbinary.thread.SynchObject_Package_References."=";
+   subtype SynchObject_Access_Array_Access_Array is org.allbinary.thread.SynchObject_Package_References.SynchObject_Access_Array_Access_Array;
+   function "=" (Left, Right : SynchObject_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.SynchObject_Package_References."=";
+   subtype SynchObject_Access_Array_Access_Array_Access is org.allbinary.thread.SynchObject_Package_References.SynchObject_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SynchObject_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.SynchObject_Package_References."=";
    procedure Initialize_Fields (This : in out OpenGLImageCache'Class) is
    begin
       null;
       This.imageCache := ImageCacheFactory_Package.getInstance;
       This.preResourceImageUtil := PreResourceImageUtil_Package.getInstance;
-      This.gl := NullGL10_Package.NULL_GL10;
+      This.gl := GL10_Access (NullGL10_Package.NULL_GL10);
       This.lock := SynchObject_Package.Create;
       This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.renderer := AllBinaryRendererBase3_Package.Create;

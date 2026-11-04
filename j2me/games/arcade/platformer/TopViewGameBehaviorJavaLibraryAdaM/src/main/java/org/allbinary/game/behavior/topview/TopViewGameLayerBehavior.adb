@@ -13,9 +13,44 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.behavior.GameLayerBehavior_Package; use org.allbinary.game.layer.behavior.GameLayerBehavior_Package;
+with org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package; use org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package;
+with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
+with org.allbinary.game.behavior.topview.InitialJumpBehavior_Package; use org.allbinary.game.behavior.topview.InitialJumpBehavior_Package;
+with org.allbinary.game.behavior.topview.InitialJumpBehavior_Package;
 
 package body org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package is
 
+   subtype BasicAccelerationProperties_Access is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access;
+   function "=" (Left, Right : BasicAccelerationProperties_Access) return Boolean renames org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References."=";
+   subtype BasicAccelerationProperties_Access_Array is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access_Array;
+   function "=" (Left, Right : BasicAccelerationProperties_Access_Array) return Boolean renames org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References."=";
+   subtype BasicAccelerationProperties_Access_Array_Access is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access_Array_Access;
+   function "=" (Left, Right : BasicAccelerationProperties_Access_Array_Access) return Boolean renames org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References."=";
+   subtype BasicAccelerationProperties_Access_Array_Access_Array is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicAccelerationProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References."=";
+   subtype BasicAccelerationProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References.BasicAccelerationProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicAccelerationProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package_References."=";
+   subtype VelocityProperties_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access;
+   function "=" (Left, Right : VelocityProperties_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array;
+   function "=" (Left, Right : VelocityProperties_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access;
+   function "=" (Left, Right : VelocityProperties_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array_Access_Array is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : VelocityProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VelocityProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype InitialJumpBehavior_Access is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access;
+   function "=" (Left, Right : InitialJumpBehavior_Access) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
+   subtype InitialJumpBehavior_Access_Array is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array;
+   function "=" (Left, Right : InitialJumpBehavior_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
+   subtype InitialJumpBehavior_Access_Array_Access is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array_Access;
+   function "=" (Left, Right : InitialJumpBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
+   subtype InitialJumpBehavior_Access_Array_Access_Array is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : InitialJumpBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
+   subtype InitialJumpBehavior_Access_Array_Access_Array_Access is org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References.InitialJumpBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InitialJumpBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.InitialJumpBehavior_Package_References."=";
    procedure Initialize_Fields (This : in out TopViewGameLayerBehavior'Class) is
    begin
       null;

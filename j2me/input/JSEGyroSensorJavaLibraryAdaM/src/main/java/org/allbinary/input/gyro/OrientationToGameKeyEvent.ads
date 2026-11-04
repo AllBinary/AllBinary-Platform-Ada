@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.gyro.OrientationToGameKeyEvent_Package;
+package org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References is
+   type OrientationToGameKeyEvent_Access is access all org.allbinary.input.gyro.OrientationToGameKeyEvent_Package.OrientationToGameKeyEvent'Class;
+   type OrientationToGameKeyEvent_Access_Array is array (Natural range <>) of OrientationToGameKeyEvent_Access;
+   type OrientationToGameKeyEvent_Access_Array_Access is access all OrientationToGameKeyEvent_Access_Array;
+   type OrientationToGameKeyEvent_Access_Array_Access_Array is array (Natural range <>) of OrientationToGameKeyEvent_Access_Array_Access;
+   type OrientationToGameKeyEvent_Access_Array_Access_Array_Access is access all OrientationToGameKeyEvent_Access_Array_Access_Array;
+end org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References;
+
+with org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
-with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+limited with org.allbinary.logic.math.Orientation_Package;
+with org.allbinary.logic.math.Orientation_Package_References;
+limited with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References;
 
 package org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
 
    package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
+   package Reference_Types is
+   subtype Orientation_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access;
+   use type Orientation_Access;
+   subtype Orientation_Access_Array is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array;
+   use type Orientation_Access_Array;
+   subtype Orientation_Access_Array_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access;
+   use type Orientation_Access_Array_Access;
+   subtype Orientation_Access_Array_Access_Array is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access_Array;
+   use type Orientation_Access_Array_Access_Array;
+   subtype Orientation_Access_Array_Access_Array_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access_Array_Access;
+   use type Orientation_Access_Array_Access_Array_Access;
+   subtype AllBinaryOrientationSensor_Access is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access;
+   use type AllBinaryOrientationSensor_Access;
+   subtype AllBinaryOrientationSensor_Access_Array is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access_Array;
+   use type AllBinaryOrientationSensor_Access_Array;
+   subtype AllBinaryOrientationSensor_Access_Array_Access is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access_Array_Access;
+   use type AllBinaryOrientationSensor_Access_Array_Access;
+   subtype AllBinaryOrientationSensor_Access_Array_Access_Array is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access_Array_Access_Array;
+   use type AllBinaryOrientationSensor_Access_Array_Access_Array;
+   subtype AllBinaryOrientationSensor_Access_Array_Access_Array_Access is org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References.AllBinaryOrientationSensor_Access_Array_Access_Array_Access;
+   use type AllBinaryOrientationSensor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OrientationToGameKeyEvent is tagged;
-   type OrientationToGameKeyEvent_Access is access all OrientationToGameKeyEvent'Class;
-   type OrientationToGameKeyEvent_Access_Array is array (Natural range <>) of OrientationToGameKeyEvent_Access;
-   type OrientationToGameKeyEvent_Access_Array_Access is access all OrientationToGameKeyEvent_Access_Array;
-   type OrientationToGameKeyEvent_Access_Array_Access_Array is array (Natural range <>) of OrientationToGameKeyEvent_Access_Array_Access;
-   type OrientationToGameKeyEvent_Access_Array_Access_Array_Access is access all OrientationToGameKeyEvent_Access_Array_Access_Array;
+
+   subtype OrientationToGameKeyEvent_Access is org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References.OrientationToGameKeyEvent_Access;
+   function "=" (Left, Right : OrientationToGameKeyEvent_Access) return Boolean renames org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References."=";
+   subtype OrientationToGameKeyEvent_Access_Array is org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References.OrientationToGameKeyEvent_Access_Array;
+   function "=" (Left, Right : OrientationToGameKeyEvent_Access_Array) return Boolean renames org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References."=";
+   subtype OrientationToGameKeyEvent_Access_Array_Access is org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References.OrientationToGameKeyEvent_Access_Array_Access;
+   function "=" (Left, Right : OrientationToGameKeyEvent_Access_Array_Access) return Boolean renames org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References."=";
+   subtype OrientationToGameKeyEvent_Access_Array_Access_Array is org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References.OrientationToGameKeyEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : OrientationToGameKeyEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References."=";
+   subtype OrientationToGameKeyEvent_Access_Array_Access_Array_Access is org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References.OrientationToGameKeyEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrientationToGameKeyEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.gyro.OrientationToGameKeyEvent_Package_References."=";
 
    type OrientationToGameKeyEvent is new Java_Object with record
       allBinaryGyroSensor : AllBinaryOrientationSensor_Access;

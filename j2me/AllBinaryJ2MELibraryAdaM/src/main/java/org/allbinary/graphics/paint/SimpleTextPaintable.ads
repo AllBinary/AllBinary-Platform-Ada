@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+package org.allbinary.graphics.paint.SimpleTextPaintable_Package_References is
+   type SimpleTextPaintable_Access is access all org.allbinary.graphics.paint.SimpleTextPaintable_Package.SimpleTextPaintable'Class;
+   type SimpleTextPaintable_Access_Array is array (Natural range <>) of SimpleTextPaintable_Access;
+   type SimpleTextPaintable_Access_Array_Access is access all SimpleTextPaintable_Access_Array;
+   type SimpleTextPaintable_Access_Array_Access_Array is array (Natural range <>) of SimpleTextPaintable_Access_Array_Access;
+   type SimpleTextPaintable_Access_Array_Access_Array_Access is access all SimpleTextPaintable_Access_Array_Access_Array;
+end org.allbinary.graphics.paint.SimpleTextPaintable_Package_References;
+
+with org.allbinary.graphics.paint.SimpleTextPaintable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+limited with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References;
+limited with org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 
@@ -34,13 +48,61 @@ package org.allbinary.graphics.paint.SimpleTextPaintable_Package is
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype DisplayInfoSingleton_Access is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access;
+   use type DisplayInfoSingleton_Access;
+   subtype DisplayInfoSingleton_Access_Array is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array;
+   use type DisplayInfoSingleton_Access_Array;
+   subtype DisplayInfoSingleton_Access_Array_Access is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array_Access;
+   use type DisplayInfoSingleton_Access_Array_Access;
+   subtype DisplayInfoSingleton_Access_Array_Access_Array is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array_Access_Array;
+   use type DisplayInfoSingleton_Access_Array_Access_Array;
+   subtype DisplayInfoSingleton_Access_Array_Access_Array_Access is org.allbinary.graphics.displayable.DisplayInfoSingleton_Package_References.DisplayInfoSingleton_Access_Array_Access_Array_Access;
+   use type DisplayInfoSingleton_Access_Array_Access_Array_Access;
+   subtype MyFontProcessor_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access;
+   use type MyFontProcessor_Access;
+   subtype MyFontProcessor_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array;
+   use type MyFontProcessor_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access;
+   subtype MyFontProcessor_Access_Array_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array;
+   use type MyFontProcessor_Access_Array_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SimpleTextPaintable is tagged;
-   type SimpleTextPaintable_Access is access all SimpleTextPaintable'Class;
-   type SimpleTextPaintable_Access_Array is array (Natural range <>) of SimpleTextPaintable_Access;
-   type SimpleTextPaintable_Access_Array_Access is access all SimpleTextPaintable_Access_Array;
-   type SimpleTextPaintable_Access_Array_Access_Array is array (Natural range <>) of SimpleTextPaintable_Access_Array_Access;
-   type SimpleTextPaintable_Access_Array_Access_Array_Access is access all SimpleTextPaintable_Access_Array_Access_Array;
+
+   subtype SimpleTextPaintable_Access is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access;
+   function "=" (Left, Right : SimpleTextPaintable_Access) return Boolean renames org.allbinary.graphics.paint.SimpleTextPaintable_Package_References."=";
+   subtype SimpleTextPaintable_Access_Array is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access_Array;
+   function "=" (Left, Right : SimpleTextPaintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.SimpleTextPaintable_Package_References."=";
+   subtype SimpleTextPaintable_Access_Array_Access is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access_Array_Access;
+   function "=" (Left, Right : SimpleTextPaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.SimpleTextPaintable_Package_References."=";
+   subtype SimpleTextPaintable_Access_Array_Access_Array is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : SimpleTextPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.SimpleTextPaintable_Package_References."=";
+   subtype SimpleTextPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SimpleTextPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.SimpleTextPaintable_Package_References."=";
 
    type SimpleTextPaintable is new Paintable and UpdateMyFontInterface with record
       displayInfoSingleton : DisplayInfoSingleton_Access;

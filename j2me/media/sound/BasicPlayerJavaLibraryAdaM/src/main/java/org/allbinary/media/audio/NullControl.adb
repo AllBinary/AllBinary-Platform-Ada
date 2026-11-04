@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
 
 package body org.allbinary.media.audio.NullControl_Package is
 

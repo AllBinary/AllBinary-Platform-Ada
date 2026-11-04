@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.PaymentTransactionHelperFactory_Package;
+package admin.taghelpers.PaymentTransactionHelperFactory_Package_References is
+   type PaymentTransactionHelperFactory_Access is access all admin.taghelpers.PaymentTransactionHelperFactory_Package.PaymentTransactionHelperFactory'Class;
+   type PaymentTransactionHelperFactory_Access_Array is array (Natural range <>) of PaymentTransactionHelperFactory_Access;
+   type PaymentTransactionHelperFactory_Access_Array_Access is access all PaymentTransactionHelperFactory_Access_Array;
+   type PaymentTransactionHelperFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionHelperFactory_Access_Array_Access;
+   type PaymentTransactionHelperFactory_Access_Array_Access_Array_Access is access all PaymentTransactionHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.PaymentTransactionHelperFactory_Package_References;
+
+with admin.taghelpers.PaymentTransactionHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.PaymentTransactionHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PaymentTransactionHelperFactory is tagged;
-   type PaymentTransactionHelperFactory_Access is access all PaymentTransactionHelperFactory'Class;
-   type PaymentTransactionHelperFactory_Access_Array is array (Natural range <>) of PaymentTransactionHelperFactory_Access;
-   type PaymentTransactionHelperFactory_Access_Array_Access is access all PaymentTransactionHelperFactory_Access_Array;
-   type PaymentTransactionHelperFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionHelperFactory_Access_Array_Access;
-   type PaymentTransactionHelperFactory_Access_Array_Access_Array_Access is access all PaymentTransactionHelperFactory_Access_Array_Access_Array;
+
+   subtype PaymentTransactionHelperFactory_Access is admin.taghelpers.PaymentTransactionHelperFactory_Package_References.PaymentTransactionHelperFactory_Access;
+   function "=" (Left, Right : PaymentTransactionHelperFactory_Access) return Boolean renames admin.taghelpers.PaymentTransactionHelperFactory_Package_References."=";
+   subtype PaymentTransactionHelperFactory_Access_Array is admin.taghelpers.PaymentTransactionHelperFactory_Package_References.PaymentTransactionHelperFactory_Access_Array;
+   function "=" (Left, Right : PaymentTransactionHelperFactory_Access_Array) return Boolean renames admin.taghelpers.PaymentTransactionHelperFactory_Package_References."=";
+   subtype PaymentTransactionHelperFactory_Access_Array_Access is admin.taghelpers.PaymentTransactionHelperFactory_Package_References.PaymentTransactionHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentTransactionHelperFactory_Package_References."=";
+   subtype PaymentTransactionHelperFactory_Access_Array_Access_Array is admin.taghelpers.PaymentTransactionHelperFactory_Package_References.PaymentTransactionHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentTransactionHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PaymentTransactionHelperFactory_Package_References."=";
+   subtype PaymentTransactionHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.PaymentTransactionHelperFactory_Package_References.PaymentTransactionHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentTransactionHelperFactory_Package_References."=";
 
    type PaymentTransactionHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

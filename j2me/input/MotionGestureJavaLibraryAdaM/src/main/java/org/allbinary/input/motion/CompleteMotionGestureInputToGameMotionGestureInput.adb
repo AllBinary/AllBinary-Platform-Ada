@@ -25,10 +25,20 @@ with org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_
 with org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package; use org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package;
 with org.allbinary.input.motion.touch.action.RightTouchInputToGameKeyEventAction_Package; use org.allbinary.input.motion.touch.action.RightTouchInputToGameKeyEventAction_Package;
 with org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package; use org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.input.motion.touch.action.DiagonalDownLeftTouchInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.touch.action.DiagonalDownRightTouchInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.touch.action.DiagonalUpLeftTouchInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.touch.action.DiagonalUpRightTouchInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.touch.action.RightTouchInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package;
 
 package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package is
 
@@ -48,6 +58,16 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out CompleteMotionGestureInputToGameMotionGestureInput'Class) is
    begin
       null;
@@ -69,7 +89,7 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
 
    function getInstance return CompleteMotionGestureInputToGameMotionGestureInput_Access is
    begin
-        return CompleteMotionGestureInputToGameMotionGestureInput_Package.instance;
+        return CompleteMotionGestureInputToGameMotionGestureInput_Access (CompleteMotionGestureInputToGameMotionGestureInput_Package.instance);
    end getInstance;
 
    procedure init (This : in out CompleteMotionGestureInputToGameMotionGestureInput) is

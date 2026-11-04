@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.java.anyType.ParamsUtil_Package;
+package org.allbinary.logic.java.anyType.ParamsUtil_Package_References is
+   type ParamsUtil_Access is access all org.allbinary.logic.java.anyType.ParamsUtil_Package.ParamsUtil'Class;
+   type ParamsUtil_Access_Array is array (Natural range <>) of ParamsUtil_Access;
+   type ParamsUtil_Access_Array_Access is access all ParamsUtil_Access_Array;
+   type ParamsUtil_Access_Array_Access_Array is array (Natural range <>) of ParamsUtil_Access_Array_Access;
+   type ParamsUtil_Access_Array_Access_Array_Access is access all ParamsUtil_Access_Array_Access_Array;
+end org.allbinary.logic.java.anyType.ParamsUtil_Package_References;
+
+with org.allbinary.logic.java.anyType.ParamsUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.java.anyType.ParamsUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ParamsUtil is tagged;
-   type ParamsUtil_Access is access all ParamsUtil'Class;
-   type ParamsUtil_Access_Array is array (Natural range <>) of ParamsUtil_Access;
-   type ParamsUtil_Access_Array_Access is access all ParamsUtil_Access_Array;
-   type ParamsUtil_Access_Array_Access_Array is array (Natural range <>) of ParamsUtil_Access_Array_Access;
-   type ParamsUtil_Access_Array_Access_Array_Access is access all ParamsUtil_Access_Array_Access_Array;
+
+   subtype ParamsUtil_Access is org.allbinary.logic.java.anyType.ParamsUtil_Package_References.ParamsUtil_Access;
+   function "=" (Left, Right : ParamsUtil_Access) return Boolean renames org.allbinary.logic.java.anyType.ParamsUtil_Package_References."=";
+   subtype ParamsUtil_Access_Array is org.allbinary.logic.java.anyType.ParamsUtil_Package_References.ParamsUtil_Access_Array;
+   function "=" (Left, Right : ParamsUtil_Access_Array) return Boolean renames org.allbinary.logic.java.anyType.ParamsUtil_Package_References."=";
+   subtype ParamsUtil_Access_Array_Access is org.allbinary.logic.java.anyType.ParamsUtil_Package_References.ParamsUtil_Access_Array_Access;
+   function "=" (Left, Right : ParamsUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.java.anyType.ParamsUtil_Package_References."=";
+   subtype ParamsUtil_Access_Array_Access_Array is org.allbinary.logic.java.anyType.ParamsUtil_Package_References.ParamsUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ParamsUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.anyType.ParamsUtil_Package_References."=";
+   subtype ParamsUtil_Access_Array_Access_Array_Access is org.allbinary.logic.java.anyType.ParamsUtil_Package_References.ParamsUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ParamsUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.anyType.ParamsUtil_Package_References."=";
 
    type ParamsUtil is new Java_Object with null record;
 

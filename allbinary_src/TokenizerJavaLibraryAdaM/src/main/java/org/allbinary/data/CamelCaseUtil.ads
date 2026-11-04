@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.CamelCaseUtil_Package;
+package org.allbinary.data.CamelCaseUtil_Package_References is
+   type CamelCaseUtil_Access is access all org.allbinary.data.CamelCaseUtil_Package.CamelCaseUtil'Class;
+   type CamelCaseUtil_Access_Array is array (Natural range <>) of CamelCaseUtil_Access;
+   type CamelCaseUtil_Access_Array_Access is access all CamelCaseUtil_Access_Array;
+   type CamelCaseUtil_Access_Array_Access_Array is array (Natural range <>) of CamelCaseUtil_Access_Array_Access;
+   type CamelCaseUtil_Access_Array_Access_Array_Access is access all CamelCaseUtil_Access_Array_Access_Array;
+end org.allbinary.data.CamelCaseUtil_Package_References;
+
+with org.allbinary.data.CamelCaseUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+limited with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
+limited with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 
 package org.allbinary.data.CamelCaseUtil_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package Reference_Types is
+   subtype StringMaker_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access;
+   use type StringMaker_Access;
+   subtype StringMaker_Access_Array is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array;
+   use type StringMaker_Access_Array;
+   subtype StringMaker_Access_Array_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access;
+   use type StringMaker_Access_Array_Access;
+   subtype StringMaker_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access_Array;
+   use type StringMaker_Access_Array_Access_Array;
+   subtype StringMaker_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access_Array_Access;
+   use type StringMaker_Access_Array_Access_Array_Access;
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   use type CommonSeps_Access;
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   use type CommonSeps_Access_Array;
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access;
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   use type CommonSeps_Access_Array_Access_Array;
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CamelCaseUtil is tagged;
-   type CamelCaseUtil_Access is access all CamelCaseUtil'Class;
-   type CamelCaseUtil_Access_Array is array (Natural range <>) of CamelCaseUtil_Access;
-   type CamelCaseUtil_Access_Array_Access is access all CamelCaseUtil_Access_Array;
-   type CamelCaseUtil_Access_Array_Access_Array is array (Natural range <>) of CamelCaseUtil_Access_Array_Access;
-   type CamelCaseUtil_Access_Array_Access_Array_Access is access all CamelCaseUtil_Access_Array_Access_Array;
+
+   subtype CamelCaseUtil_Access is org.allbinary.data.CamelCaseUtil_Package_References.CamelCaseUtil_Access;
+   function "=" (Left, Right : CamelCaseUtil_Access) return Boolean renames org.allbinary.data.CamelCaseUtil_Package_References."=";
+   subtype CamelCaseUtil_Access_Array is org.allbinary.data.CamelCaseUtil_Package_References.CamelCaseUtil_Access_Array;
+   function "=" (Left, Right : CamelCaseUtil_Access_Array) return Boolean renames org.allbinary.data.CamelCaseUtil_Package_References."=";
+   subtype CamelCaseUtil_Access_Array_Access is org.allbinary.data.CamelCaseUtil_Package_References.CamelCaseUtil_Access_Array_Access;
+   function "=" (Left, Right : CamelCaseUtil_Access_Array_Access) return Boolean renames org.allbinary.data.CamelCaseUtil_Package_References."=";
+   subtype CamelCaseUtil_Access_Array_Access_Array is org.allbinary.data.CamelCaseUtil_Package_References.CamelCaseUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : CamelCaseUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.data.CamelCaseUtil_Package_References."=";
+   subtype CamelCaseUtil_Access_Array_Access_Array_Access is org.allbinary.data.CamelCaseUtil_Package_References.CamelCaseUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CamelCaseUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.CamelCaseUtil_Package_References."=";
 
    type CamelCaseUtil is new Java_Object with record
       commonSeps : CommonSeps_Access;

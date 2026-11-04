@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.InputProcessor_Package; use org.allbinary.game.input.InputProcessor_Package;
+with org.allbinary.game.input.GameInputStrings_Package;
+with org.allbinary.game.input.InputProcessor_Package;
 
 package body org.allbinary.game.input.InputProcessorFactory_Package is
 
+   subtype InputProcessor_Access is org.allbinary.game.input.InputProcessor_Package_References.InputProcessor_Access;
+   function "=" (Left, Right : InputProcessor_Access) return Boolean renames org.allbinary.game.input.InputProcessor_Package_References."=";
+   subtype InputProcessor_Access_Array is org.allbinary.game.input.InputProcessor_Package_References.InputProcessor_Access_Array;
+   function "=" (Left, Right : InputProcessor_Access_Array) return Boolean renames org.allbinary.game.input.InputProcessor_Package_References."=";
+   subtype InputProcessor_Access_Array_Access is org.allbinary.game.input.InputProcessor_Package_References.InputProcessor_Access_Array_Access;
+   function "=" (Left, Right : InputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.input.InputProcessor_Package_References."=";
+   subtype InputProcessor_Access_Array_Access_Array is org.allbinary.game.input.InputProcessor_Package_References.InputProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : InputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.InputProcessor_Package_References."=";
+   subtype InputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.InputProcessor_Package_References.InputProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.InputProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out InputProcessorFactory'Class) is
    begin
       null;
@@ -37,7 +50,7 @@ package body org.allbinary.game.input.InputProcessorFactory_Package is
 
    function getInstance return InputProcessorFactory_Access is
    begin
-        return InputProcessorFactory_Package.instance;
+        return InputProcessorFactory_Access (InputProcessorFactory_Package.instance);
    end getInstance;
 
    function getInputProcessor (This : in out InputProcessorFactory) return InputProcessor_Access is

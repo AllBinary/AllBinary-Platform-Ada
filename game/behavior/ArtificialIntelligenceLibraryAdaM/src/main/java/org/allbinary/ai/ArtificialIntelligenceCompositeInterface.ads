@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package;
+package org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References is
+   type ArtificialIntelligenceCompositeInterface_Access is access all org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package.ArtificialIntelligenceCompositeInterface'Class;
+   type ArtificialIntelligenceCompositeInterface_Access_Array is array (Natural range <>) of ArtificialIntelligenceCompositeInterface_Access;
+   type ArtificialIntelligenceCompositeInterface_Access_Array_Access is access all ArtificialIntelligenceCompositeInterface_Access_Array;
+   type ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of ArtificialIntelligenceCompositeInterface_Access_Array_Access;
+   type ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array_Access is access all ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array;
+end org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References;
+
+with org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+limited with org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package_References;
 
 package org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package is
 
+   package Reference_Types is
+   subtype ArtificialIntelligenceInterface_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access;
+   use type ArtificialIntelligenceInterface_Access;
+   subtype ArtificialIntelligenceInterface_Access_Array is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array;
+   use type ArtificialIntelligenceInterface_Access_Array;
+   subtype ArtificialIntelligenceInterface_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access;
+   use type ArtificialIntelligenceInterface_Access_Array_Access;
+   subtype ArtificialIntelligenceInterface_Access_Array_Access_Array is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access_Array;
+   use type ArtificialIntelligenceInterface_Access_Array_Access_Array;
+   subtype ArtificialIntelligenceInterface_Access_Array_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access_Array_Access;
+   use type ArtificialIntelligenceInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type ArtificialIntelligenceCompositeInterface is interface;
-   type ArtificialIntelligenceCompositeInterface_Access is access all ArtificialIntelligenceCompositeInterface'Class;
-   type ArtificialIntelligenceCompositeInterface_Access_Array is array (Natural range <>) of ArtificialIntelligenceCompositeInterface_Access;
-   type ArtificialIntelligenceCompositeInterface_Access_Array_Access is access all ArtificialIntelligenceCompositeInterface_Access_Array;
-   type ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of ArtificialIntelligenceCompositeInterface_Access_Array_Access;
-   type ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array_Access is access all ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array;
+   subtype ArtificialIntelligenceCompositeInterface_Access is org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References.ArtificialIntelligenceCompositeInterface_Access;
+   function "=" (Left, Right : ArtificialIntelligenceCompositeInterface_Access) return Boolean renames org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References."=";
+   subtype ArtificialIntelligenceCompositeInterface_Access_Array is org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References.ArtificialIntelligenceCompositeInterface_Access_Array;
+   function "=" (Left, Right : ArtificialIntelligenceCompositeInterface_Access_Array) return Boolean renames org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References."=";
+   subtype ArtificialIntelligenceCompositeInterface_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References.ArtificialIntelligenceCompositeInterface_Access_Array_Access;
+   function "=" (Left, Right : ArtificialIntelligenceCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References."=";
+   subtype ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array is org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References.ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References."=";
+   subtype ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References.ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package_References."=";
+   function Java_Object_Access_From_ArtificialIntelligenceCompositeInterface (Value : ArtificialIntelligenceCompositeInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getArtificialIntelligenceInterface (This : in out ArtificialIntelligenceCompositeInterface) return ArtificialIntelligenceInterface_Access is abstract;
 
 end org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package;

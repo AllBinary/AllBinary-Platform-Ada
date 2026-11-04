@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package;
+package org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References is
+   type RootCategoryPropertiesInterface_Access is access all org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package.RootCategoryPropertiesInterface'Class;
+   type RootCategoryPropertiesInterface_Access_Array is array (Natural range <>) of RootCategoryPropertiesInterface_Access;
+   type RootCategoryPropertiesInterface_Access_Array_Access is access all RootCategoryPropertiesInterface_Access_Array;
+   type RootCategoryPropertiesInterface_Access_Array_Access_Array is array (Natural range <>) of RootCategoryPropertiesInterface_Access_Array_Access;
+   type RootCategoryPropertiesInterface_Access_Array_Access_Array_Access is access all RootCategoryPropertiesInterface_Access_Array_Access_Array;
+end org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References;
+
+with org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+limited with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 
 package org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package is
 
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package Reference_Types is
+   subtype AbPath_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access;
+   use type AbPath_Access;
+   subtype AbPath_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array;
+   use type AbPath_Access_Array;
+   subtype AbPath_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access;
+   use type AbPath_Access_Array_Access;
+   subtype AbPath_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array;
+   use type AbPath_Access_Array_Access_Array;
+   subtype AbPath_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array_Access;
+   use type AbPath_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type RootCategoryPropertiesInterface is interface;
-   type RootCategoryPropertiesInterface_Access is access all RootCategoryPropertiesInterface'Class;
-   type RootCategoryPropertiesInterface_Access_Array is array (Natural range <>) of RootCategoryPropertiesInterface_Access;
-   type RootCategoryPropertiesInterface_Access_Array_Access is access all RootCategoryPropertiesInterface_Access_Array;
-   type RootCategoryPropertiesInterface_Access_Array_Access_Array is array (Natural range <>) of RootCategoryPropertiesInterface_Access_Array_Access;
-   type RootCategoryPropertiesInterface_Access_Array_Access_Array_Access is access all RootCategoryPropertiesInterface_Access_Array_Access_Array;
+   subtype RootCategoryPropertiesInterface_Access is org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References.RootCategoryPropertiesInterface_Access;
+   function "=" (Left, Right : RootCategoryPropertiesInterface_Access) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References."=";
+   subtype RootCategoryPropertiesInterface_Access_Array is org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References.RootCategoryPropertiesInterface_Access_Array;
+   function "=" (Left, Right : RootCategoryPropertiesInterface_Access_Array) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References."=";
+   subtype RootCategoryPropertiesInterface_Access_Array_Access is org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References.RootCategoryPropertiesInterface_Access_Array_Access;
+   function "=" (Left, Right : RootCategoryPropertiesInterface_Access_Array_Access) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References."=";
+   subtype RootCategoryPropertiesInterface_Access_Array_Access_Array is org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References.RootCategoryPropertiesInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : RootCategoryPropertiesInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References."=";
+   subtype RootCategoryPropertiesInterface_Access_Array_Access_Array_Access is org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References.RootCategoryPropertiesInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RootCategoryPropertiesInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package_References."=";
+   function Java_Object_Access_From_RootCategoryPropertiesInterface (Value : RootCategoryPropertiesInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setRootFilePath (This : in out RootCategoryPropertiesInterface; value_Param : access AbPath_Package.AbPath'Class) is abstract;
    function getRootFilePath (This : in out RootCategoryPropertiesInterface) return AbPath_Access is abstract;
 

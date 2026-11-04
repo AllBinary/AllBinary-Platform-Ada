@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.init.GameInitializationUtil_Package;
+package org.allbinary.game.init.GameInitializationUtil_Package_References is
+   type GameInitializationUtil_Access is access all org.allbinary.game.init.GameInitializationUtil_Package.GameInitializationUtil'Class;
+   type GameInitializationUtil_Access_Array is array (Natural range <>) of GameInitializationUtil_Access;
+   type GameInitializationUtil_Access_Array_Access is access all GameInitializationUtil_Access_Array;
+   type GameInitializationUtil_Access_Array_Access_Array is array (Natural range <>) of GameInitializationUtil_Access_Array_Access;
+   type GameInitializationUtil_Access_Array_Access_Array_Access is access all GameInitializationUtil_Access_Array_Access_Array;
+end org.allbinary.game.init.GameInitializationUtil_Package_References;
+
+with org.allbinary.game.init.GameInitializationUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,23 +30,75 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.event.GameInitializedEvent_Package; use org.allbinary.game.configuration.event.GameInitializedEvent_Package;
-with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package; use org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
+limited with org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+with org.allbinary.game.configuration.event.GameInitializedEvent_Package_References;
+limited with org.allbinary.graphics.displayable.MyCanvas_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
+with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package_References;
 
 package org.allbinary.game.init.GameInitializationUtil_Package is
 
    package GameInitializedEvent_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEvent_Package;
    package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype GameInitializedEvent_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access;
+   use type GameInitializedEvent_Access;
+   subtype GameInitializedEvent_Access_Array is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array;
+   use type GameInitializedEvent_Access_Array;
+   subtype GameInitializedEvent_Access_Array_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access;
+   use type GameInitializedEvent_Access_Array_Access;
+   subtype GameInitializedEvent_Access_Array_Access_Array is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access_Array;
+   use type GameInitializedEvent_Access_Array_Access_Array;
+   subtype GameInitializedEvent_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access_Array_Access;
+   use type GameInitializedEvent_Access_Array_Access_Array_Access;
+   subtype MyCanvas_Access is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access;
+   use type MyCanvas_Access;
+   subtype MyCanvas_Access_Array is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access_Array;
+   use type MyCanvas_Access_Array;
+   subtype MyCanvas_Access_Array_Access is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access_Array_Access;
+   use type MyCanvas_Access_Array_Access;
+   subtype MyCanvas_Access_Array_Access_Array is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access_Array_Access_Array;
+   use type MyCanvas_Access_Array_Access_Array;
+   subtype MyCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.displayable.MyCanvas_Package_References.MyCanvas_Access_Array_Access_Array_Access;
+   use type MyCanvas_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype BasicBuildGameInitializerFactory_Access is org.allbinary.game.init.BasicBuildGameInitializerFactory_Package_References.BasicBuildGameInitializerFactory_Access;
+   use type BasicBuildGameInitializerFactory_Access;
+   subtype BasicBuildGameInitializerFactory_Access_Array is org.allbinary.game.init.BasicBuildGameInitializerFactory_Package_References.BasicBuildGameInitializerFactory_Access_Array;
+   use type BasicBuildGameInitializerFactory_Access_Array;
+   subtype BasicBuildGameInitializerFactory_Access_Array_Access is org.allbinary.game.init.BasicBuildGameInitializerFactory_Package_References.BasicBuildGameInitializerFactory_Access_Array_Access;
+   use type BasicBuildGameInitializerFactory_Access_Array_Access;
+   subtype BasicBuildGameInitializerFactory_Access_Array_Access_Array is org.allbinary.game.init.BasicBuildGameInitializerFactory_Package_References.BasicBuildGameInitializerFactory_Access_Array_Access_Array;
+   use type BasicBuildGameInitializerFactory_Access_Array_Access_Array;
+   subtype BasicBuildGameInitializerFactory_Access_Array_Access_Array_Access is org.allbinary.game.init.BasicBuildGameInitializerFactory_Package_References.BasicBuildGameInitializerFactory_Access_Array_Access_Array_Access;
+   use type BasicBuildGameInitializerFactory_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameInitializationUtil is tagged;
-   type GameInitializationUtil_Access is access all GameInitializationUtil'Class;
-   type GameInitializationUtil_Access_Array is array (Natural range <>) of GameInitializationUtil_Access;
-   type GameInitializationUtil_Access_Array_Access is access all GameInitializationUtil_Access_Array;
-   type GameInitializationUtil_Access_Array_Access_Array is array (Natural range <>) of GameInitializationUtil_Access_Array_Access;
-   type GameInitializationUtil_Access_Array_Access_Array_Access is access all GameInitializationUtil_Access_Array_Access_Array;
+
+   subtype GameInitializationUtil_Access is org.allbinary.game.init.GameInitializationUtil_Package_References.GameInitializationUtil_Access;
+   function "=" (Left, Right : GameInitializationUtil_Access) return Boolean renames org.allbinary.game.init.GameInitializationUtil_Package_References."=";
+   subtype GameInitializationUtil_Access_Array is org.allbinary.game.init.GameInitializationUtil_Package_References.GameInitializationUtil_Access_Array;
+   function "=" (Left, Right : GameInitializationUtil_Access_Array) return Boolean renames org.allbinary.game.init.GameInitializationUtil_Package_References."=";
+   subtype GameInitializationUtil_Access_Array_Access is org.allbinary.game.init.GameInitializationUtil_Package_References.GameInitializationUtil_Access_Array_Access;
+   function "=" (Left, Right : GameInitializationUtil_Access_Array_Access) return Boolean renames org.allbinary.game.init.GameInitializationUtil_Package_References."=";
+   subtype GameInitializationUtil_Access_Array_Access_Array is org.allbinary.game.init.GameInitializationUtil_Package_References.GameInitializationUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInitializationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.game.init.GameInitializationUtil_Package_References."=";
+   subtype GameInitializationUtil_Access_Array_Access_Array_Access is org.allbinary.game.init.GameInitializationUtil_Package_References.GameInitializationUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInitializationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.init.GameInitializationUtil_Package_References."=";
 
    type GameInitializationUtil is new Java_Object with record
       EVENT : GameInitializedEvent_Access;

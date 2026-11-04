@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package;
+package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References is
+   type MultiPlayerGameLayer_Access is access all org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package.MultiPlayerGameLayer'Class;
+   type MultiPlayerGameLayer_Access_Array is array (Natural range <>) of MultiPlayerGameLayer_Access;
+   type MultiPlayerGameLayer_Access_Array_Access is access all MultiPlayerGameLayer_Access_Array;
+   type MultiPlayerGameLayer_Access_Array_Access_Array is array (Natural range <>) of MultiPlayerGameLayer_Access_Array_Access;
+   type MultiPlayerGameLayer_Access_Array_Access_Array_Access is access all MultiPlayerGameLayer_Access_Array_Access_Array;
+end org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References;
+
+with org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+limited with org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+limited with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
+limited with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.game.multiplayer.layer.MultiPlayerGameLayerInterface_Package; use org.allbinary.game.multiplayer.layer.MultiPlayerGameLayerInterface_Package;
-with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package; use org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package;
+limited with org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+with org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References;
+limited with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package;
+with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package_References;
 
 package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package is
 
@@ -34,13 +49,71 @@ package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package is
    package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
+   package Reference_Types is
+   subtype Group_Access is org.allbinary.game.identification.Group_Package_References.Group_Access;
+   use type Group_Access;
+   subtype Group_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array;
+   use type Group_Access_Array;
+   subtype Group_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access;
+   use type Group_Access_Array_Access;
+   subtype Group_Access_Array_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array;
+   use type Group_Access_Array_Access_Array;
+   subtype Group_Access_Array_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array_Access;
+   use type Group_Access_Array_Access_Array_Access;
+   subtype Rectangle_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access;
+   use type Rectangle_Access;
+   subtype Rectangle_Access_Array is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array;
+   use type Rectangle_Access_Array;
+   subtype Rectangle_Access_Array_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access;
+   use type Rectangle_Access_Array_Access;
+   subtype Rectangle_Access_Array_Access_Array is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access_Array;
+   use type Rectangle_Access_Array_Access_Array;
+   subtype Rectangle_Access_Array_Access_Array_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access_Array_Access;
+   use type Rectangle_Access_Array_Access_Array_Access;
+   subtype ViewPositionBase_Access is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access;
+   use type ViewPositionBase_Access;
+   subtype ViewPositionBase_Access_Array is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access_Array;
+   use type ViewPositionBase_Access_Array;
+   subtype ViewPositionBase_Access_Array_Access is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access_Array_Access;
+   use type ViewPositionBase_Access_Array_Access;
+   subtype ViewPositionBase_Access_Array_Access_Array is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access_Array_Access_Array;
+   use type ViewPositionBase_Access_Array_Access_Array;
+   subtype ViewPositionBase_Access_Array_Access_Array_Access is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access_Array_Access_Array_Access;
+   use type ViewPositionBase_Access_Array_Access_Array_Access;
+   subtype RemoteInfo_Access is org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References.RemoteInfo_Access;
+   use type RemoteInfo_Access;
+   subtype RemoteInfo_Access_Array is org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References.RemoteInfo_Access_Array;
+   use type RemoteInfo_Access_Array;
+   subtype RemoteInfo_Access_Array_Access is org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References.RemoteInfo_Access_Array_Access;
+   use type RemoteInfo_Access_Array_Access;
+   subtype RemoteInfo_Access_Array_Access_Array is org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References.RemoteInfo_Access_Array_Access_Array;
+   use type RemoteInfo_Access_Array_Access_Array;
+   subtype RemoteInfo_Access_Array_Access_Array_Access is org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References.RemoteInfo_Access_Array_Access_Array_Access;
+   use type RemoteInfo_Access_Array_Access_Array_Access;
+   subtype MultiplayerBehavior_Access is org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package_References.MultiplayerBehavior_Access;
+   use type MultiplayerBehavior_Access;
+   subtype MultiplayerBehavior_Access_Array is org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package_References.MultiplayerBehavior_Access_Array;
+   use type MultiplayerBehavior_Access_Array;
+   subtype MultiplayerBehavior_Access_Array_Access is org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package_References.MultiplayerBehavior_Access_Array_Access;
+   use type MultiplayerBehavior_Access_Array_Access;
+   subtype MultiplayerBehavior_Access_Array_Access_Array is org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package_References.MultiplayerBehavior_Access_Array_Access_Array;
+   use type MultiplayerBehavior_Access_Array_Access_Array;
+   subtype MultiplayerBehavior_Access_Array_Access_Array_Access is org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package_References.MultiplayerBehavior_Access_Array_Access_Array_Access;
+   use type MultiplayerBehavior_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MultiPlayerGameLayer is tagged;
-   type MultiPlayerGameLayer_Access is access all MultiPlayerGameLayer'Class;
-   type MultiPlayerGameLayer_Access_Array is array (Natural range <>) of MultiPlayerGameLayer_Access;
-   type MultiPlayerGameLayer_Access_Array_Access is access all MultiPlayerGameLayer_Access_Array;
-   type MultiPlayerGameLayer_Access_Array_Access_Array is array (Natural range <>) of MultiPlayerGameLayer_Access_Array_Access;
-   type MultiPlayerGameLayer_Access_Array_Access_Array_Access is access all MultiPlayerGameLayer_Access_Array_Access_Array;
+
+   subtype MultiPlayerGameLayer_Access is org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.MultiPlayerGameLayer_Access;
+   function "=" (Left, Right : MultiPlayerGameLayer_Access) return Boolean renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References."=";
+   subtype MultiPlayerGameLayer_Access_Array is org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.MultiPlayerGameLayer_Access_Array;
+   function "=" (Left, Right : MultiPlayerGameLayer_Access_Array) return Boolean renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References."=";
+   subtype MultiPlayerGameLayer_Access_Array_Access is org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.MultiPlayerGameLayer_Access_Array_Access;
+   function "=" (Left, Right : MultiPlayerGameLayer_Access_Array_Access) return Boolean renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References."=";
+   subtype MultiPlayerGameLayer_Access_Array_Access_Array is org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.MultiPlayerGameLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : MultiPlayerGameLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References."=";
+   subtype MultiPlayerGameLayer_Access_Array_Access_Array_Access is org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.MultiPlayerGameLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MultiPlayerGameLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References."=";
 
    type MultiPlayerGameLayer is new CollidableDestroyableDamageableLayer and MultiPlayerGameLayerInterface with null record;
 

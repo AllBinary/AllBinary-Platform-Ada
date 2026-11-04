@@ -31,13 +31,14 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
       This.NULL_STRING := To_Unbounded_String ("null");
       This.EMPTY_STRING := To_Unbounded_String ("");
       This.ONE_EMPTY_STRING_ARRAY := new Unbounded_String_Array'(0 => This.EMPTY_STRING);
+      This.ONE_EMPTY_STRING_ARRAY_OF_ARRAYS := new Unbounded_String_Array_Access_Array'(0 .. (0) - 1 => new Unbounded_String_Array'(0 .. (0) - 1 => Null_Unbounded_String));
       This.stringArray := new Unbounded_String_Array'(0 .. (0) - 1 => Null_Unbounded_String);
    end Initialize_Fields;
 
 
    function getInstance return StringUtil_Access is
    begin
-        return StringUtil_Package.instance;
+        return StringUtil_Access (StringUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out StringUtil'Class) is

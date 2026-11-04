@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
+with org.allbinary.business.init.LicenseInitInfo_Package;
 
 package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
 
+   subtype LicenseInitInfo_Access is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access;
+   function "=" (Left, Right : LicenseInitInfo_Access) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
+   subtype LicenseInitInfo_Access_Array is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access_Array;
+   function "=" (Left, Right : LicenseInitInfo_Access_Array) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
+   subtype LicenseInitInfo_Access_Array_Access is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access_Array_Access;
+   function "=" (Left, Right : LicenseInitInfo_Access_Array_Access) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
+   subtype LicenseInitInfo_Access_Array_Access_Array is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : LicenseInitInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
+   subtype LicenseInitInfo_Access_Array_Access_Array_Access is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LicenseInitInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
    procedure Initialize_Fields (This : in out LicenseInitInfoUtil'Class) is
    begin
       null;
@@ -28,7 +40,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
 
    function getInstance return LicenseInitInfoUtil_Access is
    begin
-        return LicenseInitInfoUtil_Package.instance;
+        return LicenseInitInfoUtil_Access (LicenseInitInfoUtil_Package.instance);
    end getInstance;
 
    procedure setFilePath (This : in out LicenseInitInfoUtil; filePath : Unbounded_String) is

@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.AndroidKeyFactory_Package;
+package org.allbinary.game.input.AndroidKeyFactory_Package_References is
+   type AndroidKeyFactory_Access is access all org.allbinary.game.input.AndroidKeyFactory_Package.AndroidKeyFactory'Class;
+   type AndroidKeyFactory_Access_Array is array (Natural range <>) of AndroidKeyFactory_Access;
+   type AndroidKeyFactory_Access_Array_Access is access all AndroidKeyFactory_Access_Array;
+   type AndroidKeyFactory_Access_Array_Access_Array is array (Natural range <>) of AndroidKeyFactory_Access_Array_Access;
+   type AndroidKeyFactory_Access_Array_Access_Array_Access is access all AndroidKeyFactory_Access_Array_Access_Array;
+end org.allbinary.game.input.AndroidKeyFactory_Package_References;
+
+with org.allbinary.game.input.AndroidKeyFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -9,21 +19,62 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.android.ActivityFractureUtil_Package; use org.allbinary.android.ActivityFractureUtil_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
-with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.game.input.AndroidGameKey_Package;
+with org.allbinary.game.input.AndroidGameKey_Package_References;
+limited with org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 
 package org.allbinary.game.input.AndroidKeyFactory_Package is
 
    package ActivityFractureUtil_Package renames Standard.org.allbinary.android.ActivityFractureUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AndroidGameKey_Access is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access;
+   use type AndroidGameKey_Access;
+   subtype AndroidGameKey_Access_Array is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array;
+   use type AndroidGameKey_Access_Array;
+   subtype AndroidGameKey_Access_Array_Access is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array_Access;
+   use type AndroidGameKey_Access_Array_Access;
+   subtype AndroidGameKey_Access_Array_Access_Array is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array_Access_Array;
+   use type AndroidGameKey_Access_Array_Access_Array;
+   subtype AndroidGameKey_Access_Array_Access_Array_Access is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array_Access_Array_Access;
+   use type AndroidGameKey_Access_Array_Access_Array_Access;
+   subtype Input_Access is org.allbinary.game.input.Input_Package_References.Input_Access;
+   use type Input_Access;
+   subtype Input_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array;
+   use type Input_Access_Array;
+   subtype Input_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access;
+   use type Input_Access_Array_Access;
+   subtype Input_Access_Array_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array;
+   use type Input_Access_Array_Access_Array;
+   subtype Input_Access_Array_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array_Access;
+   use type Input_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidKeyFactory is tagged;
-   type AndroidKeyFactory_Access is access all AndroidKeyFactory'Class;
-   type AndroidKeyFactory_Access_Array is array (Natural range <>) of AndroidKeyFactory_Access;
-   type AndroidKeyFactory_Access_Array_Access is access all AndroidKeyFactory_Access_Array;
-   type AndroidKeyFactory_Access_Array_Access_Array is array (Natural range <>) of AndroidKeyFactory_Access_Array_Access;
-   type AndroidKeyFactory_Access_Array_Access_Array_Access is access all AndroidKeyFactory_Access_Array_Access_Array;
+
+   subtype AndroidKeyFactory_Access is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access;
+   function "=" (Left, Right : AndroidKeyFactory_Access) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
+   subtype AndroidKeyFactory_Access_Array is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access_Array;
+   function "=" (Left, Right : AndroidKeyFactory_Access_Array) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
+   subtype AndroidKeyFactory_Access_Array_Access is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access_Array_Access;
+   function "=" (Left, Right : AndroidKeyFactory_Access_Array_Access) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
+   subtype AndroidKeyFactory_Access_Array_Access_Array is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidKeyFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
+   subtype AndroidKeyFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidKeyFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
 
    type AndroidKeyFactory is new ActivityFractureUtil with record
       logUtil : LogUtil_Access;

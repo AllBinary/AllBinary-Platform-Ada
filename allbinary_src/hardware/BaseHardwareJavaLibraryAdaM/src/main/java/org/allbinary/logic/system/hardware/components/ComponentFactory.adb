@@ -14,10 +14,22 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.hardware.components.Component_Package; use org.allbinary.logic.system.hardware.components.Component_Package;
+with org.allbinary.logic.system.hardware.components.Component_Package;
 
 package body org.allbinary.logic.system.hardware.components.ComponentFactory_Package is
 
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype Component_Access is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access;
+   function "=" (Left, Right : Component_Access) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
+   subtype Component_Access_Array is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array;
+   function "=" (Left, Right : Component_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
+   subtype Component_Access_Array_Access is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array_Access;
+   function "=" (Left, Right : Component_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
+   subtype Component_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array_Access_Array;
+   function "=" (Left, Right : Component_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
+   subtype Component_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Component_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
    procedure Initialize_Fields (This : in out ComponentFactory'Class) is
    begin
       null;
@@ -51,7 +63,7 @@ package body org.allbinary.logic.system.hardware.components.ComponentFactory_Pac
 
    function getInstance return ComponentFactory_Access is
    begin
-        return ComponentFactory_Package.instance;
+        return ComponentFactory_Access (ComponentFactory_Package.instance);
    end getInstance;
 
 begin

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package;
+package org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References is
+   type UpTouchInputToGameKeyEventAction_Access is access all org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package.UpTouchInputToGameKeyEventAction'Class;
+   type UpTouchInputToGameKeyEventAction_Access_Array is array (Natural range <>) of UpTouchInputToGameKeyEventAction_Access;
+   type UpTouchInputToGameKeyEventAction_Access_Array_Access is access all UpTouchInputToGameKeyEventAction_Access_Array;
+   type UpTouchInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of UpTouchInputToGameKeyEventAction_Access_Array_Access;
+   type UpTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all UpTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+end org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References;
+
+with org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEve
 package org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package is
 
    package GameKeyCompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type UpTouchInputToGameKeyEventAction is tagged;
-   type UpTouchInputToGameKeyEventAction_Access is access all UpTouchInputToGameKeyEventAction'Class;
-   type UpTouchInputToGameKeyEventAction_Access_Array is array (Natural range <>) of UpTouchInputToGameKeyEventAction_Access;
-   type UpTouchInputToGameKeyEventAction_Access_Array_Access is access all UpTouchInputToGameKeyEventAction_Access_Array;
-   type UpTouchInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of UpTouchInputToGameKeyEventAction_Access_Array_Access;
-   type UpTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all UpTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+
+   subtype UpTouchInputToGameKeyEventAction_Access is org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References.UpTouchInputToGameKeyEventAction_Access;
+   function "=" (Left, Right : UpTouchInputToGameKeyEventAction_Access) return Boolean renames org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References."=";
+   subtype UpTouchInputToGameKeyEventAction_Access_Array is org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References.UpTouchInputToGameKeyEventAction_Access_Array;
+   function "=" (Left, Right : UpTouchInputToGameKeyEventAction_Access_Array) return Boolean renames org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References."=";
+   subtype UpTouchInputToGameKeyEventAction_Access_Array_Access is org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References.UpTouchInputToGameKeyEventAction_Access_Array_Access;
+   function "=" (Left, Right : UpTouchInputToGameKeyEventAction_Access_Array_Access) return Boolean renames org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References."=";
+   subtype UpTouchInputToGameKeyEventAction_Access_Array_Access_Array is org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References.UpTouchInputToGameKeyEventAction_Access_Array_Access_Array;
+   function "=" (Left, Right : UpTouchInputToGameKeyEventAction_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References."=";
+   subtype UpTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References.UpTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UpTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package_References."=";
 
    type UpTouchInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with null record;
    instance : Java_Object_Access;

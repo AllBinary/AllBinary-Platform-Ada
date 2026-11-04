@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.SideScrollerAnimation_Package;
+package org.allbinary.animation.SideScrollerAnimation_Package_References is
+   type SideScrollerAnimation_Access is access all org.allbinary.animation.SideScrollerAnimation_Package.SideScrollerAnimation'Class;
+   type SideScrollerAnimation_Access_Array is array (Natural range <>) of SideScrollerAnimation_Access;
+   type SideScrollerAnimation_Access_Array_Access is access all SideScrollerAnimation_Access_Array;
+   type SideScrollerAnimation_Access_Array_Access_Array is array (Natural range <>) of SideScrollerAnimation_Access_Array_Access;
+   type SideScrollerAnimation_Access_Array_Access_Array_Access is access all SideScrollerAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.SideScrollerAnimation_Package_References;
+
+with org.allbinary.animation.SideScrollerAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.animation.SideScrollerAnimation_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SideScrollerAnimation is tagged;
-   type SideScrollerAnimation_Access is access all SideScrollerAnimation'Class;
-   type SideScrollerAnimation_Access_Array is array (Natural range <>) of SideScrollerAnimation_Access;
-   type SideScrollerAnimation_Access_Array_Access is access all SideScrollerAnimation_Access_Array;
-   type SideScrollerAnimation_Access_Array_Access_Array is array (Natural range <>) of SideScrollerAnimation_Access_Array_Access;
-   type SideScrollerAnimation_Access_Array_Access_Array_Access is access all SideScrollerAnimation_Access_Array_Access_Array;
+
+   subtype SideScrollerAnimation_Access is org.allbinary.animation.SideScrollerAnimation_Package_References.SideScrollerAnimation_Access;
+   function "=" (Left, Right : SideScrollerAnimation_Access) return Boolean renames org.allbinary.animation.SideScrollerAnimation_Package_References."=";
+   subtype SideScrollerAnimation_Access_Array is org.allbinary.animation.SideScrollerAnimation_Package_References.SideScrollerAnimation_Access_Array;
+   function "=" (Left, Right : SideScrollerAnimation_Access_Array) return Boolean renames org.allbinary.animation.SideScrollerAnimation_Package_References."=";
+   subtype SideScrollerAnimation_Access_Array_Access is org.allbinary.animation.SideScrollerAnimation_Package_References.SideScrollerAnimation_Access_Array_Access;
+   function "=" (Left, Right : SideScrollerAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.SideScrollerAnimation_Package_References."=";
+   subtype SideScrollerAnimation_Access_Array_Access_Array is org.allbinary.animation.SideScrollerAnimation_Package_References.SideScrollerAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : SideScrollerAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.SideScrollerAnimation_Package_References."=";
+   subtype SideScrollerAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.SideScrollerAnimation_Package_References.SideScrollerAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SideScrollerAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.SideScrollerAnimation_Package_References."=";
 
    type SideScrollerAnimation is new Java_Object with null record;
 

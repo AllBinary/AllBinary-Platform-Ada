@@ -24,7 +24,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
 
    function getInstance return GeographicMapCellHistoryProgressBase_Access is
    begin
-        return GeographicMapCellHistoryProgressBase_Package.instance;
+        return GeographicMapCellHistoryProgressBase_Access (GeographicMapCellHistoryProgressBase_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out GeographicMapCellHistoryProgressBase'Class) is

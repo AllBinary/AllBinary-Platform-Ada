@@ -48,7 +48,7 @@ package body org.allbinary.string_Id.CommonStateStrings_Package is
 
    function getInstance return CommonStateStrings_Access is
    begin
-        return CommonStateStrings_Package.instance;
+        return CommonStateStrings_Access (CommonStateStrings_Package.instance);
    end getInstance;
 
 begin

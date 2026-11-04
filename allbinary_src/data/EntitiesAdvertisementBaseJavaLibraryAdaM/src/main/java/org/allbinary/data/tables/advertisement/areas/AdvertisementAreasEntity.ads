@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;
+package org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References is
+   type AdvertisementAreasEntity_Access is access all org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package.AdvertisementAreasEntity'Class;
+   type AdvertisementAreasEntity_Access_Array is array (Natural range <>) of AdvertisementAreasEntity_Access;
+   type AdvertisementAreasEntity_Access_Array_Access is access all AdvertisementAreasEntity_Access_Array;
+   type AdvertisementAreasEntity_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreasEntity_Access_Array_Access;
+   type AdvertisementAreasEntity_Access_Array_Access_Array_Access is access all AdvertisementAreasEntity_Access_Array_Access_Array;
+end org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References;
+
+with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,9 +31,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
 
@@ -34,13 +47,51 @@ package org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_P
    package AdvertisementAreaInterface_Package renames Standard.org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype AdvertisementAreaInterface_Access is org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package_References.AdvertisementAreaInterface_Access;
+   use type AdvertisementAreaInterface_Access;
+   subtype AdvertisementAreaInterface_Access_Array is org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package_References.AdvertisementAreaInterface_Access_Array;
+   use type AdvertisementAreaInterface_Access_Array;
+   subtype AdvertisementAreaInterface_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package_References.AdvertisementAreaInterface_Access_Array_Access;
+   use type AdvertisementAreaInterface_Access_Array_Access;
+   subtype AdvertisementAreaInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package_References.AdvertisementAreaInterface_Access_Array_Access_Array;
+   use type AdvertisementAreaInterface_Access_Array_Access_Array;
+   subtype AdvertisementAreaInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package_References.AdvertisementAreaInterface_Access_Array_Access_Array_Access;
+   use type AdvertisementAreaInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AdvertisementAreasEntity is tagged;
-   type AdvertisementAreasEntity_Access is access all AdvertisementAreasEntity'Class;
-   type AdvertisementAreasEntity_Access_Array is array (Natural range <>) of AdvertisementAreasEntity_Access;
-   type AdvertisementAreasEntity_Access_Array_Access is access all AdvertisementAreasEntity_Access_Array;
-   type AdvertisementAreasEntity_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreasEntity_Access_Array_Access;
-   type AdvertisementAreasEntity_Access_Array_Access_Array_Access is access all AdvertisementAreasEntity_Access_Array_Access_Array;
+
+   subtype AdvertisementAreasEntity_Access is org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References.AdvertisementAreasEntity_Access;
+   function "=" (Left, Right : AdvertisementAreasEntity_Access) return Boolean renames org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References."=";
+   subtype AdvertisementAreasEntity_Access_Array is org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References.AdvertisementAreasEntity_Access_Array;
+   function "=" (Left, Right : AdvertisementAreasEntity_Access_Array) return Boolean renames org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References."=";
+   subtype AdvertisementAreasEntity_Access_Array_Access is org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References.AdvertisementAreasEntity_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementAreasEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References."=";
+   subtype AdvertisementAreasEntity_Access_Array_Access_Array is org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References.AdvertisementAreasEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementAreasEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References."=";
+   subtype AdvertisementAreasEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References.AdvertisementAreasEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementAreasEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package_References."=";
 
    type AdvertisementAreasEntity is new AbSqlBean and AdvertisementAreasEntityInterface with record
       logUtil : LogUtil_Access;

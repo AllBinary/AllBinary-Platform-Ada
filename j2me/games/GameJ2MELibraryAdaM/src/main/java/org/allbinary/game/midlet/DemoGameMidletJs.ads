@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.midlet.DemoGameMidletJs_Package;
+package org.allbinary.game.midlet.DemoGameMidletJs_Package_References is
+   type DemoGameMidletJs_Access is access all org.allbinary.game.midlet.DemoGameMidletJs_Package.DemoGameMidletJs'Class;
+   type DemoGameMidletJs_Access_Array is array (Natural range <>) of DemoGameMidletJs_Access;
+   type DemoGameMidletJs_Access_Array_Access is access all DemoGameMidletJs_Access_Array;
+   type DemoGameMidletJs_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletJs_Access_Array_Access;
+   type DemoGameMidletJs_Access_Array_Access_Array_Access is access all DemoGameMidletJs_Access_Array_Access_Array;
+end org.allbinary.game.midlet.DemoGameMidletJs_Package_References;
+
+with org.allbinary.game.midlet.DemoGameMidletJs_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; use org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
+limited with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
+with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package_References;
 
 package org.allbinary.game.midlet.DemoGameMidletJs_Package is
 
    package GameCanvasRunnableInterface_Package renames Standard.org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
+   package Reference_Types is
+   subtype GameCanvasRunnableInterface_Access is org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package_References.GameCanvasRunnableInterface_Access;
+   use type GameCanvasRunnableInterface_Access;
+   subtype GameCanvasRunnableInterface_Access_Array is org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package_References.GameCanvasRunnableInterface_Access_Array;
+   use type GameCanvasRunnableInterface_Access_Array;
+   subtype GameCanvasRunnableInterface_Access_Array_Access is org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package_References.GameCanvasRunnableInterface_Access_Array_Access;
+   use type GameCanvasRunnableInterface_Access_Array_Access;
+   subtype GameCanvasRunnableInterface_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package_References.GameCanvasRunnableInterface_Access_Array_Access_Array;
+   use type GameCanvasRunnableInterface_Access_Array_Access_Array;
+   subtype GameCanvasRunnableInterface_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package_References.GameCanvasRunnableInterface_Access_Array_Access_Array_Access;
+   use type GameCanvasRunnableInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type DemoGameMidletJs is interface;
-   type DemoGameMidletJs_Access is access all DemoGameMidletJs'Class;
-   type DemoGameMidletJs_Access_Array is array (Natural range <>) of DemoGameMidletJs_Access;
-   type DemoGameMidletJs_Access_Array_Access is access all DemoGameMidletJs_Access_Array;
-   type DemoGameMidletJs_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletJs_Access_Array_Access;
-   type DemoGameMidletJs_Access_Array_Access_Array_Access is access all DemoGameMidletJs_Access_Array_Access_Array;
+   subtype DemoGameMidletJs_Access is org.allbinary.game.midlet.DemoGameMidletJs_Package_References.DemoGameMidletJs_Access;
+   function "=" (Left, Right : DemoGameMidletJs_Access) return Boolean renames org.allbinary.game.midlet.DemoGameMidletJs_Package_References."=";
+   subtype DemoGameMidletJs_Access_Array is org.allbinary.game.midlet.DemoGameMidletJs_Package_References.DemoGameMidletJs_Access_Array;
+   function "=" (Left, Right : DemoGameMidletJs_Access_Array) return Boolean renames org.allbinary.game.midlet.DemoGameMidletJs_Package_References."=";
+   subtype DemoGameMidletJs_Access_Array_Access is org.allbinary.game.midlet.DemoGameMidletJs_Package_References.DemoGameMidletJs_Access_Array_Access;
+   function "=" (Left, Right : DemoGameMidletJs_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.DemoGameMidletJs_Package_References."=";
+   subtype DemoGameMidletJs_Access_Array_Access_Array is org.allbinary.game.midlet.DemoGameMidletJs_Package_References.DemoGameMidletJs_Access_Array_Access_Array;
+   function "=" (Left, Right : DemoGameMidletJs_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.DemoGameMidletJs_Package_References."=";
+   subtype DemoGameMidletJs_Access_Array_Access_Array_Access is org.allbinary.game.midlet.DemoGameMidletJs_Package_References.DemoGameMidletJs_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DemoGameMidletJs_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.DemoGameMidletJs_Package_References."=";
+   function Java_Object_Access_From_DemoGameMidletJs (Value : DemoGameMidletJs_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function createDemoGameCanvasRunnableInterface (This : in out DemoGameMidletJs) return GameCanvasRunnableInterface_Access is abstract;
 
 end org.allbinary.game.midlet.DemoGameMidletJs_Package;

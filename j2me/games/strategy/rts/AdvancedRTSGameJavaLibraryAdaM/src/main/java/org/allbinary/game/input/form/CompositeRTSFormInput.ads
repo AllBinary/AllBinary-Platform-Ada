@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.form.CompositeRTSFormInput_Package;
+package org.allbinary.game.input.form.CompositeRTSFormInput_Package_References is
+   type CompositeRTSFormInput_Access is access all org.allbinary.game.input.form.CompositeRTSFormInput_Package.CompositeRTSFormInput'Class;
+   type CompositeRTSFormInput_Access_Array is array (Natural range <>) of CompositeRTSFormInput_Access;
+   type CompositeRTSFormInput_Access_Array_Access is access all CompositeRTSFormInput_Access_Array;
+   type CompositeRTSFormInput_Access_Array_Access_Array is array (Natural range <>) of CompositeRTSFormInput_Access_Array_Access;
+   type CompositeRTSFormInput_Access_Array_Access_Array_Access is access all CompositeRTSFormInput_Access_Array_Access_Array;
+end org.allbinary.game.input.form.CompositeRTSFormInput_Package_References;
+
+with org.allbinary.game.input.form.CompositeRTSFormInput_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
-with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
-with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+limited with org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References;
+limited with org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
+limited with org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.Group_Package_References;
+limited with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
+limited with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References;
+limited with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.input.form.RTSFormInput_Package; use org.allbinary.game.input.form.RTSFormInput_Package;
 
 package org.allbinary.game.input.form.CompositeRTSFormInput_Package is
@@ -38,13 +55,91 @@ package org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package Reference_Types is
+   subtype RTSPlayerLayerInterface_Access is org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References.RTSPlayerLayerInterface_Access;
+   use type RTSPlayerLayerInterface_Access;
+   subtype RTSPlayerLayerInterface_Access_Array is org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References.RTSPlayerLayerInterface_Access_Array;
+   use type RTSPlayerLayerInterface_Access_Array;
+   subtype RTSPlayerLayerInterface_Access_Array_Access is org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References.RTSPlayerLayerInterface_Access_Array_Access;
+   use type RTSPlayerLayerInterface_Access_Array_Access;
+   subtype RTSPlayerLayerInterface_Access_Array_Access_Array is org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References.RTSPlayerLayerInterface_Access_Array_Access_Array;
+   use type RTSPlayerLayerInterface_Access_Array_Access_Array;
+   subtype RTSPlayerLayerInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSPlayerLayerInterface_Package_References.RTSPlayerLayerInterface_Access_Array_Access_Array_Access;
+   use type RTSPlayerLayerInterface_Access_Array_Access_Array_Access;
+   subtype ABCustomItem_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access;
+   use type ABCustomItem_Access;
+   subtype ABCustomItem_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array;
+   use type ABCustomItem_Access_Array;
+   subtype ABCustomItem_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access;
+   use type ABCustomItem_Access_Array_Access;
+   subtype ABCustomItem_Access_Array_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array;
+   use type ABCustomItem_Access_Array_Access_Array;
+   subtype ABCustomItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array_Access;
+   use type ABCustomItem_Access_Array_Access_Array_Access;
+   subtype Group_Access is org.allbinary.game.identification.Group_Package_References.Group_Access;
+   use type Group_Access;
+   subtype Group_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array;
+   use type Group_Access_Array;
+   subtype Group_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access;
+   use type Group_Access_Array_Access;
+   subtype Group_Access_Array_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array;
+   use type Group_Access_Array_Access_Array;
+   subtype Group_Access_Array_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array_Access;
+   use type Group_Access_Array_Access_Array_Access;
+   subtype AllBinaryGameLayerManager_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access;
+   use type AllBinaryGameLayerManager_Access;
+   subtype AllBinaryGameLayerManager_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   subtype CollidableDestroyableDamageableLayer_Access is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access;
+   use type CollidableDestroyableDamageableLayer_Access;
+   subtype CollidableDestroyableDamageableLayer_Access_Array is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array;
+   use type CollidableDestroyableDamageableLayer_Access_Array;
+   subtype CollidableDestroyableDamageableLayer_Access_Array_Access is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array_Access;
+   use type CollidableDestroyableDamageableLayer_Access_Array_Access;
+   subtype CollidableDestroyableDamageableLayer_Access_Array_Access_Array is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array_Access_Array;
+   use type CollidableDestroyableDamageableLayer_Access_Array_Access_Array;
+   subtype CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package_References.CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access;
+   use type CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access;
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   use type GPoint_Access;
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   use type GPoint_Access_Array;
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   use type GPoint_Access_Array_Access;
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   use type GPoint_Access_Array_Access_Array;
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   use type GPoint_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CompositeRTSFormInput is tagged;
-   type CompositeRTSFormInput_Access is access all CompositeRTSFormInput'Class;
-   type CompositeRTSFormInput_Access_Array is array (Natural range <>) of CompositeRTSFormInput_Access;
-   type CompositeRTSFormInput_Access_Array_Access is access all CompositeRTSFormInput_Access_Array;
-   type CompositeRTSFormInput_Access_Array_Access_Array is array (Natural range <>) of CompositeRTSFormInput_Access_Array_Access;
-   type CompositeRTSFormInput_Access_Array_Access_Array_Access is access all CompositeRTSFormInput_Access_Array_Access_Array;
+
+   subtype CompositeRTSFormInput_Access is org.allbinary.game.input.form.CompositeRTSFormInput_Package_References.CompositeRTSFormInput_Access;
+   function "=" (Left, Right : CompositeRTSFormInput_Access) return Boolean renames org.allbinary.game.input.form.CompositeRTSFormInput_Package_References."=";
+   subtype CompositeRTSFormInput_Access_Array is org.allbinary.game.input.form.CompositeRTSFormInput_Package_References.CompositeRTSFormInput_Access_Array;
+   function "=" (Left, Right : CompositeRTSFormInput_Access_Array) return Boolean renames org.allbinary.game.input.form.CompositeRTSFormInput_Package_References."=";
+   subtype CompositeRTSFormInput_Access_Array_Access is org.allbinary.game.input.form.CompositeRTSFormInput_Package_References.CompositeRTSFormInput_Access_Array_Access;
+   function "=" (Left, Right : CompositeRTSFormInput_Access_Array_Access) return Boolean renames org.allbinary.game.input.form.CompositeRTSFormInput_Package_References."=";
+   subtype CompositeRTSFormInput_Access_Array_Access_Array is org.allbinary.game.input.form.CompositeRTSFormInput_Package_References.CompositeRTSFormInput_Access_Array_Access_Array;
+   function "=" (Left, Right : CompositeRTSFormInput_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.form.CompositeRTSFormInput_Package_References."=";
+   subtype CompositeRTSFormInput_Access_Array_Access_Array_Access is org.allbinary.game.input.form.CompositeRTSFormInput_Package_References.CompositeRTSFormInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CompositeRTSFormInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.form.CompositeRTSFormInput_Package_References."=";
 
    type CompositeRTSFormInput is new RTSFormInput with record
       rtsFormInputArray : RTSFormInput_Access_Array_Access;

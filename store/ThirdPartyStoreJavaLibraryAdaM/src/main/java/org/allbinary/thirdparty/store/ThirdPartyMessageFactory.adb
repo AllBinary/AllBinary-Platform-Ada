@@ -39,7 +39,7 @@ package body org.allbinary.thirdparty.store.ThirdPartyMessageFactory_Package is
 
    function getInstance return ThirdPartyMessageFactory_Access is
    begin
-        return ThirdPartyMessageFactory_Package.instance;
+        return ThirdPartyMessageFactory_Access (ThirdPartyMessageFactory_Package.instance);
    end getInstance;
 
 begin

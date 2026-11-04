@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
+package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References is
+   type PathFindingNodeCostInfoData_Access is access all org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package.PathFindingNodeCostInfoData'Class;
+   type PathFindingNodeCostInfoData_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoData_Access;
+   type PathFindingNodeCostInfoData_Access_Array_Access is access all PathFindingNodeCostInfoData_Access_Array;
+   type PathFindingNodeCostInfoData_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoData_Access_Array_Access;
+   type PathFindingNodeCostInfoData_Access_Array_Access_Array_Access is access all PathFindingNodeCostInfoData_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References;
+
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PathFindingNodeCostInfoData is tagged;
-   type PathFindingNodeCostInfoData_Access is access all PathFindingNodeCostInfoData'Class;
-   type PathFindingNodeCostInfoData_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoData_Access;
-   type PathFindingNodeCostInfoData_Access_Array_Access is access all PathFindingNodeCostInfoData_Access_Array;
-   type PathFindingNodeCostInfoData_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoData_Access_Array_Access;
-   type PathFindingNodeCostInfoData_Access_Array_Access_Array_Access is access all PathFindingNodeCostInfoData_Access_Array_Access_Array;
+
+   subtype PathFindingNodeCostInfoData_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
+   subtype PathFindingNodeCostInfoData_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access_Array;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
+   subtype PathFindingNodeCostInfoData_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
+   subtype PathFindingNodeCostInfoData_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access_Array_Access_Array;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
+   subtype PathFindingNodeCostInfoData_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References.PathFindingNodeCostInfoData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PathFindingNodeCostInfoData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package_References."=";
 
    type PathFindingNodeCostInfoData is new Java_Object with record
       MAX_TOTAL_COST : Integer;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.PaymentGatewayHelper_Package;
+package admin.taghelpers.PaymentGatewayHelper_Package_References is
+   type PaymentGatewayHelper_Access is access all admin.taghelpers.PaymentGatewayHelper_Package.PaymentGatewayHelper'Class;
+   type PaymentGatewayHelper_Access_Array is array (Natural range <>) of PaymentGatewayHelper_Access;
+   type PaymentGatewayHelper_Access_Array_Access is access all PaymentGatewayHelper_Access_Array;
+   type PaymentGatewayHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayHelper_Access_Array_Access;
+   type PaymentGatewayHelper_Access_Array_Access_Array_Access is access all PaymentGatewayHelper_Access_Array_Access_Array;
+end admin.taghelpers.PaymentGatewayHelper_Package_References;
+
+with admin.taghelpers.PaymentGatewayHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,9 +33,12 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.business.installer.Portion_Package;
+with org.allbinary.business.installer.Portion_Package_References;
+limited with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
 
 package admin.taghelpers.PaymentGatewayHelper_Package is
@@ -34,13 +47,51 @@ package admin.taghelpers.PaymentGatewayHelper_Package is
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype Portion_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access;
+   use type Portion_Access;
+   subtype Portion_Access_Array is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array;
+   use type Portion_Access_Array;
+   subtype Portion_Access_Array_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access;
+   use type Portion_Access_Array_Access;
+   subtype Portion_Access_Array_Access_Array is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access_Array;
+   use type Portion_Access_Array_Access_Array;
+   subtype Portion_Access_Array_Access_Array_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access_Array_Access;
+   use type Portion_Access_Array_Access_Array_Access;
+   subtype WeblisketSession_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access;
+   use type WeblisketSession_Access;
+   subtype WeblisketSession_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array;
+   use type WeblisketSession_Access_Array;
+   subtype WeblisketSession_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array_Access;
+   use type WeblisketSession_Access_Array_Access;
+   subtype WeblisketSession_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array_Access_Array;
+   use type WeblisketSession_Access_Array_Access_Array;
+   subtype WeblisketSession_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array_Access_Array_Access;
+   use type WeblisketSession_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PaymentGatewayHelper is tagged;
-   type PaymentGatewayHelper_Access is access all PaymentGatewayHelper'Class;
-   type PaymentGatewayHelper_Access_Array is array (Natural range <>) of PaymentGatewayHelper_Access;
-   type PaymentGatewayHelper_Access_Array_Access is access all PaymentGatewayHelper_Access_Array;
-   type PaymentGatewayHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayHelper_Access_Array_Access;
-   type PaymentGatewayHelper_Access_Array_Access_Array_Access is access all PaymentGatewayHelper_Access_Array_Access_Array;
+
+   subtype PaymentGatewayHelper_Access is admin.taghelpers.PaymentGatewayHelper_Package_References.PaymentGatewayHelper_Access;
+   function "=" (Left, Right : PaymentGatewayHelper_Access) return Boolean renames admin.taghelpers.PaymentGatewayHelper_Package_References."=";
+   subtype PaymentGatewayHelper_Access_Array is admin.taghelpers.PaymentGatewayHelper_Package_References.PaymentGatewayHelper_Access_Array;
+   function "=" (Left, Right : PaymentGatewayHelper_Access_Array) return Boolean renames admin.taghelpers.PaymentGatewayHelper_Package_References."=";
+   subtype PaymentGatewayHelper_Access_Array_Access is admin.taghelpers.PaymentGatewayHelper_Package_References.PaymentGatewayHelper_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayHelper_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentGatewayHelper_Package_References."=";
+   subtype PaymentGatewayHelper_Access_Array_Access_Array is admin.taghelpers.PaymentGatewayHelper_Package_References.PaymentGatewayHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentGatewayHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PaymentGatewayHelper_Package_References."=";
+   subtype PaymentGatewayHelper_Access_Array_Access_Array_Access is admin.taghelpers.PaymentGatewayHelper_Package_References.PaymentGatewayHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentGatewayHelper_Package_References."=";
 
    type PaymentGatewayHelper is new BasicTable with record
       logUtil : LogUtil_Access;

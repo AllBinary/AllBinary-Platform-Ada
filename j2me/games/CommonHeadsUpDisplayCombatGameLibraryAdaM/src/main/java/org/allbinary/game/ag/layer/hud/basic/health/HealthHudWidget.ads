@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package;
+package org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References is
+   type HealthHudWidget_Access is access all org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package.HealthHudWidget'Class;
+   type HealthHudWidget_Access_Array is array (Natural range <>) of HealthHudWidget_Access;
+   type HealthHudWidget_Access_Array_Access is access all HealthHudWidget_Access_Array;
+   type HealthHudWidget_Access_Array_Access_Array is array (Natural range <>) of HealthHudWidget_Access_Array_Access;
+   type HealthHudWidget_Access_Array_Access_Array_Access is access all HealthHudWidget_Access_Array_Access_Array;
+end org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References;
+
+with org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,14 +30,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
-with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
+limited with org.allbinary.game.health.Health_Package;
+with org.allbinary.game.health.Health_Package_References;
 with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinary.game.health.HealthListenerInterface_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
-with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+limited with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
+limited with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 
 package org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package is
 
@@ -39,13 +54,71 @@ package org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package is
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype Health_Access is org.allbinary.game.health.Health_Package_References.Health_Access;
+   use type Health_Access;
+   subtype Health_Access_Array is org.allbinary.game.health.Health_Package_References.Health_Access_Array;
+   use type Health_Access_Array;
+   subtype Health_Access_Array_Access is org.allbinary.game.health.Health_Package_References.Health_Access_Array_Access;
+   use type Health_Access_Array_Access;
+   subtype Health_Access_Array_Access_Array is org.allbinary.game.health.Health_Package_References.Health_Access_Array_Access_Array;
+   use type Health_Access_Array_Access_Array;
+   subtype Health_Access_Array_Access_Array_Access is org.allbinary.game.health.Health_Package_References.Health_Access_Array_Access_Array_Access;
+   use type Health_Access_Array_Access_Array_Access;
+   subtype GameTickTimeDelayHelper_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access;
+   use type GameTickTimeDelayHelper_Access;
+   subtype GameTickTimeDelayHelper_Access_Array is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array;
+   use type GameTickTimeDelayHelper_Access_Array;
+   subtype GameTickTimeDelayHelper_Access_Array_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access;
+   use type GameTickTimeDelayHelper_Access_Array_Access;
+   subtype GameTickTimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access_Array;
+   use type GameTickTimeDelayHelper_Access_Array_Access_Array;
+   subtype GameTickTimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access_Array_Access;
+   use type GameTickTimeDelayHelper_Access_Array_Access_Array_Access;
+   subtype TimeDelayHelper_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access;
+   use type TimeDelayHelper_Access;
+   subtype TimeDelayHelper_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array;
+   use type TimeDelayHelper_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access;
+   subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
+   use type TimeDelayHelper_Access_Array_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type HealthHudWidget is tagged;
-   type HealthHudWidget_Access is access all HealthHudWidget'Class;
-   type HealthHudWidget_Access_Array is array (Natural range <>) of HealthHudWidget_Access;
-   type HealthHudWidget_Access_Array_Access is access all HealthHudWidget_Access_Array;
-   type HealthHudWidget_Access_Array_Access_Array is array (Natural range <>) of HealthHudWidget_Access_Array_Access;
-   type HealthHudWidget_Access_Array_Access_Array_Access is access all HealthHudWidget_Access_Array_Access_Array;
+
+   subtype HealthHudWidget_Access is org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References.HealthHudWidget_Access;
+   function "=" (Left, Right : HealthHudWidget_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References."=";
+   subtype HealthHudWidget_Access_Array is org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References.HealthHudWidget_Access_Array;
+   function "=" (Left, Right : HealthHudWidget_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References."=";
+   subtype HealthHudWidget_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References.HealthHudWidget_Access_Array_Access;
+   function "=" (Left, Right : HealthHudWidget_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References."=";
+   subtype HealthHudWidget_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References.HealthHudWidget_Access_Array_Access_Array;
+   function "=" (Left, Right : HealthHudWidget_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References."=";
+   subtype HealthHudWidget_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References.HealthHudWidget_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HealthHudWidget_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package_References."=";
 
    type HealthHudWidget is new BasicHud and PaintableInterface and HealthListenerInterface with record
       healthScale : Integer;

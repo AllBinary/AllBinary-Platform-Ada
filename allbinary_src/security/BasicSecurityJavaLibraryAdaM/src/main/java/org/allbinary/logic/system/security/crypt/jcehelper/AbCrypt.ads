@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
+package org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References is
+   type AbCrypt_Access is access all org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package.AbCrypt'Class;
+   type AbCrypt_Access_Array is array (Natural range <>) of AbCrypt_Access;
+   type AbCrypt_Access_Array_Access is access all AbCrypt_Access_Array;
+   type AbCrypt_Access_Array_Access_Array is array (Natural range <>) of AbCrypt_Access_Array_Access;
+   type AbCrypt_Access_Array_Access_Array_Access is access all AbCrypt_Access_Array_Access_Array;
+end org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References;
+
+with org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,21 +35,51 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.crypto.Cipher_Package; use javax.crypto.Cipher_Package;
 --  with javax.crypto.SecretKey_Package; use javax.crypto.SecretKey_Package;
 --  with javax.crypto.SecretKeyFactory_Package; use javax.crypto.SecretKeyFactory_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+limited with org.allbinary.TsUtil_Package;
+with org.allbinary.TsUtil_Package_References;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package; use org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
+limited with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References;
 
 package org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package is
 
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package Reference_Types is
+   subtype TsUtil_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access;
+   use type TsUtil_Access;
+   subtype TsUtil_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array;
+   use type TsUtil_Access_Array;
+   subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
+   use type TsUtil_Access_Array_Access;
+   subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
+   use type TsUtil_Access_Array_Access_Array;
+   subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
+   use type TsUtil_Access_Array_Access_Array_Access;
+   subtype BaseSecretComposite_Access is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access;
+   use type BaseSecretComposite_Access;
+   subtype BaseSecretComposite_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access_Array;
+   use type BaseSecretComposite_Access_Array;
+   subtype BaseSecretComposite_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access_Array_Access;
+   use type BaseSecretComposite_Access_Array_Access;
+   subtype BaseSecretComposite_Access_Array_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access_Array_Access_Array;
+   use type BaseSecretComposite_Access_Array_Access_Array;
+   subtype BaseSecretComposite_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access_Array_Access_Array_Access;
+   use type BaseSecretComposite_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbCrypt is tagged;
-   type AbCrypt_Access is access all AbCrypt'Class;
-   type AbCrypt_Access_Array is array (Natural range <>) of AbCrypt_Access;
-   type AbCrypt_Access_Array_Access is access all AbCrypt_Access_Array;
-   type AbCrypt_Access_Array_Access_Array is array (Natural range <>) of AbCrypt_Access_Array_Access;
-   type AbCrypt_Access_Array_Access_Array_Access is access all AbCrypt_Access_Array_Access_Array;
+
+   subtype AbCrypt_Access is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access;
+   function "=" (Left, Right : AbCrypt_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
+   subtype AbCrypt_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access_Array;
+   function "=" (Left, Right : AbCrypt_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
+   subtype AbCrypt_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access_Array_Access;
+   function "=" (Left, Right : AbCrypt_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
+   subtype AbCrypt_Access_Array_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access_Array_Access_Array;
+   function "=" (Left, Right : AbCrypt_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
+   subtype AbCrypt_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbCrypt_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
 
    type AbCrypt is new Java_Object and CryptInterface with record
       tsUtil : TsUtil_Access;

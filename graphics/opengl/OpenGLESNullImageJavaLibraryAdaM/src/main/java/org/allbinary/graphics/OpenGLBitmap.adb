@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
 package body org.allbinary.graphics.OpenGLBitmap_Package is
 

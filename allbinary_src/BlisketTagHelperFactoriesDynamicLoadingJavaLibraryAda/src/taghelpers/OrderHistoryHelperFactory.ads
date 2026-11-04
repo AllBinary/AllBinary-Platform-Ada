@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with taghelpers.OrderHistoryHelperFactory_Package;
+package taghelpers.OrderHistoryHelperFactory_Package_References is
+   type OrderHistoryHelperFactory_Access is access all taghelpers.OrderHistoryHelperFactory_Package.OrderHistoryHelperFactory'Class;
+   type OrderHistoryHelperFactory_Access_Array is array (Natural range <>) of OrderHistoryHelperFactory_Access;
+   type OrderHistoryHelperFactory_Access_Array_Access is access all OrderHistoryHelperFactory_Access_Array;
+   type OrderHistoryHelperFactory_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryHelperFactory_Access_Array_Access;
+   type OrderHistoryHelperFactory_Access_Array_Access_Array_Access is access all OrderHistoryHelperFactory_Access_Array_Access_Array;
+end taghelpers.OrderHistoryHelperFactory_Package_References;
+
+with taghelpers.OrderHistoryHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 package taghelpers.OrderHistoryHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OrderHistoryHelperFactory is tagged;
-   type OrderHistoryHelperFactory_Access is access all OrderHistoryHelperFactory'Class;
-   type OrderHistoryHelperFactory_Access_Array is array (Natural range <>) of OrderHistoryHelperFactory_Access;
-   type OrderHistoryHelperFactory_Access_Array_Access is access all OrderHistoryHelperFactory_Access_Array;
-   type OrderHistoryHelperFactory_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryHelperFactory_Access_Array_Access;
-   type OrderHistoryHelperFactory_Access_Array_Access_Array_Access is access all OrderHistoryHelperFactory_Access_Array_Access_Array;
+
+   subtype OrderHistoryHelperFactory_Access is taghelpers.OrderHistoryHelperFactory_Package_References.OrderHistoryHelperFactory_Access;
+   function "=" (Left, Right : OrderHistoryHelperFactory_Access) return Boolean renames taghelpers.OrderHistoryHelperFactory_Package_References."=";
+   subtype OrderHistoryHelperFactory_Access_Array is taghelpers.OrderHistoryHelperFactory_Package_References.OrderHistoryHelperFactory_Access_Array;
+   function "=" (Left, Right : OrderHistoryHelperFactory_Access_Array) return Boolean renames taghelpers.OrderHistoryHelperFactory_Package_References."=";
+   subtype OrderHistoryHelperFactory_Access_Array_Access is taghelpers.OrderHistoryHelperFactory_Package_References.OrderHistoryHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : OrderHistoryHelperFactory_Access_Array_Access) return Boolean renames taghelpers.OrderHistoryHelperFactory_Package_References."=";
+   subtype OrderHistoryHelperFactory_Access_Array_Access_Array is taghelpers.OrderHistoryHelperFactory_Package_References.OrderHistoryHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderHistoryHelperFactory_Access_Array_Access_Array) return Boolean renames taghelpers.OrderHistoryHelperFactory_Package_References."=";
+   subtype OrderHistoryHelperFactory_Access_Array_Access_Array_Access is taghelpers.OrderHistoryHelperFactory_Package_References.OrderHistoryHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderHistoryHelperFactory_Access_Array_Access_Array_Access) return Boolean renames taghelpers.OrderHistoryHelperFactory_Package_References."=";
 
    type OrderHistoryHelperFactory is new Java_Object with null record;
    CLASSNAME : Unbounded_String;

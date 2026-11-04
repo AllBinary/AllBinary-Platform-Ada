@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.VectorBaseRotationAnimation_Package;
+package org.allbinary.animation.VectorBaseRotationAnimation_Package_References is
+   type VectorBaseRotationAnimation_Access is access all org.allbinary.animation.VectorBaseRotationAnimation_Package.VectorBaseRotationAnimation'Class;
+   type VectorBaseRotationAnimation_Access_Array is array (Natural range <>) of VectorBaseRotationAnimation_Access;
+   type VectorBaseRotationAnimation_Access_Array_Access is access all VectorBaseRotationAnimation_Access_Array;
+   type VectorBaseRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of VectorBaseRotationAnimation_Access_Array_Access;
+   type VectorBaseRotationAnimation_Access_Array_Access_Array_Access is access all VectorBaseRotationAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.VectorBaseRotationAnimation_Package_References;
+
+with org.allbinary.animation.VectorBaseRotationAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,25 +30,77 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+limited with org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.VectorAnimationInterface_Package; use org.allbinary.animation.VectorAnimationInterface_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+limited with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 
 package org.allbinary.animation.VectorBaseRotationAnimation_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype AngleInfo_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access;
+   use type AngleInfo_Access;
+   subtype AngleInfo_Access_Array is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array;
+   use type AngleInfo_Access_Array;
+   subtype AngleInfo_Access_Array_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access;
+   use type AngleInfo_Access_Array_Access;
+   subtype AngleInfo_Access_Array_Access_Array is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access_Array;
+   use type AngleInfo_Access_Array_Access_Array;
+   subtype AngleInfo_Access_Array_Access_Array_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access_Array_Access;
+   use type AngleInfo_Access_Array_Access_Array_Access;
+   subtype AnimationBehavior_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access;
+   use type AnimationBehavior_Access;
+   subtype AnimationBehavior_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array;
+   use type AnimationBehavior_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access;
+   subtype AnimationBehavior_Access_Array_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array;
+   use type AnimationBehavior_Access_Array_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type VectorBaseRotationAnimation is tagged;
-   type VectorBaseRotationAnimation_Access is access all VectorBaseRotationAnimation'Class;
-   type VectorBaseRotationAnimation_Access_Array is array (Natural range <>) of VectorBaseRotationAnimation_Access;
-   type VectorBaseRotationAnimation_Access_Array_Access is access all VectorBaseRotationAnimation_Access_Array;
-   type VectorBaseRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of VectorBaseRotationAnimation_Access_Array_Access;
-   type VectorBaseRotationAnimation_Access_Array_Access_Array_Access is access all VectorBaseRotationAnimation_Access_Array_Access_Array;
+
+   subtype VectorBaseRotationAnimation_Access is org.allbinary.animation.VectorBaseRotationAnimation_Package_References.VectorBaseRotationAnimation_Access;
+   function "=" (Left, Right : VectorBaseRotationAnimation_Access) return Boolean renames org.allbinary.animation.VectorBaseRotationAnimation_Package_References."=";
+   subtype VectorBaseRotationAnimation_Access_Array is org.allbinary.animation.VectorBaseRotationAnimation_Package_References.VectorBaseRotationAnimation_Access_Array;
+   function "=" (Left, Right : VectorBaseRotationAnimation_Access_Array) return Boolean renames org.allbinary.animation.VectorBaseRotationAnimation_Package_References."=";
+   subtype VectorBaseRotationAnimation_Access_Array_Access is org.allbinary.animation.VectorBaseRotationAnimation_Package_References.VectorBaseRotationAnimation_Access_Array_Access;
+   function "=" (Left, Right : VectorBaseRotationAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorBaseRotationAnimation_Package_References."=";
+   subtype VectorBaseRotationAnimation_Access_Array_Access_Array is org.allbinary.animation.VectorBaseRotationAnimation_Package_References.VectorBaseRotationAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : VectorBaseRotationAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.VectorBaseRotationAnimation_Package_References."=";
+   subtype VectorBaseRotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.VectorBaseRotationAnimation_Package_References.VectorBaseRotationAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VectorBaseRotationAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorBaseRotationAnimation_Package_References."=";
 
    type VectorBaseRotationAnimation is new RotationAnimation and VectorAnimationInterface with record
       currentPoints : Integer_Array_Access_Array_Access_Array_Access;

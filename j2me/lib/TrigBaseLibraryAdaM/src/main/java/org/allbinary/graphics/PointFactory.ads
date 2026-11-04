@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.PointFactory_Package;
+package org.allbinary.graphics.PointFactory_Package_References is
+   type PointFactory_Access is access all org.allbinary.graphics.PointFactory_Package.PointFactory'Class;
+   type PointFactory_Access_Array is array (Natural range <>) of PointFactory_Access;
+   type PointFactory_Access_Array_Access is access all PointFactory_Access_Array;
+   type PointFactory_Access_Array_Access_Array is array (Natural range <>) of PointFactory_Access_Array_Access;
+   type PointFactory_Access_Array_Access_Array_Access is access all PointFactory_Access_Array_Access_Array;
+end org.allbinary.graphics.PointFactory_Package_References;
+
+with org.allbinary.graphics.PointFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+limited with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
 
 package org.allbinary.graphics.PointFactory_Package is
 
+   package Reference_Types is
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   use type GPoint_Access;
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   use type GPoint_Access_Array;
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   use type GPoint_Access_Array_Access;
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   use type GPoint_Access_Array_Access_Array;
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   use type GPoint_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PointFactory is tagged;
-   type PointFactory_Access is access all PointFactory'Class;
-   type PointFactory_Access_Array is array (Natural range <>) of PointFactory_Access;
-   type PointFactory_Access_Array_Access is access all PointFactory_Access_Array;
-   type PointFactory_Access_Array_Access_Array is array (Natural range <>) of PointFactory_Access_Array_Access;
-   type PointFactory_Access_Array_Access_Array_Access is access all PointFactory_Access_Array_Access_Array;
+
+   subtype PointFactory_Access is org.allbinary.graphics.PointFactory_Package_References.PointFactory_Access;
+   function "=" (Left, Right : PointFactory_Access) return Boolean renames org.allbinary.graphics.PointFactory_Package_References."=";
+   subtype PointFactory_Access_Array is org.allbinary.graphics.PointFactory_Package_References.PointFactory_Access_Array;
+   function "=" (Left, Right : PointFactory_Access_Array) return Boolean renames org.allbinary.graphics.PointFactory_Package_References."=";
+   subtype PointFactory_Access_Array_Access is org.allbinary.graphics.PointFactory_Package_References.PointFactory_Access_Array_Access;
+   function "=" (Left, Right : PointFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.PointFactory_Package_References."=";
+   subtype PointFactory_Access_Array_Access_Array is org.allbinary.graphics.PointFactory_Package_References.PointFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PointFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.PointFactory_Package_References."=";
+   subtype PointFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.PointFactory_Package_References.PointFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PointFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.PointFactory_Package_References."=";
 
    type PointFactory is new Java_Object with record
       ZERO_ZERO : GPoint_Access;

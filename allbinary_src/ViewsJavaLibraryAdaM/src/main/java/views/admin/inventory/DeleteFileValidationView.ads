@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with views.admin.inventory.DeleteFileValidationView_Package;
+package views.admin.inventory.DeleteFileValidationView_Package_References is
+   type DeleteFileValidationView_Access is access all views.admin.inventory.DeleteFileValidationView_Package.DeleteFileValidationView'Class;
+   type DeleteFileValidationView_Access_Array is array (Natural range <>) of DeleteFileValidationView_Access;
+   type DeleteFileValidationView_Access_Array_Access is access all DeleteFileValidationView_Access_Array;
+   type DeleteFileValidationView_Access_Array_Access_Array is array (Natural range <>) of DeleteFileValidationView_Access_Array_Access;
+   type DeleteFileValidationView_Access_Array_Access_Array_Access is access all DeleteFileValidationView_Access_Array_Access_Array;
+end views.admin.inventory.DeleteFileValidationView_Package_References;
+
+with views.admin.inventory.DeleteFileValidationView_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,9 +31,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with views.admin.inventory.InventoryItemView_Package; use views.admin.inventory.InventoryItemView_Package;
 
 package views.admin.inventory.DeleteFileValidationView_Package is
@@ -32,13 +45,51 @@ package views.admin.inventory.DeleteFileValidationView_Package is
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DeleteFileValidationView is tagged;
-   type DeleteFileValidationView_Access is access all DeleteFileValidationView'Class;
-   type DeleteFileValidationView_Access_Array is array (Natural range <>) of DeleteFileValidationView_Access;
-   type DeleteFileValidationView_Access_Array_Access is access all DeleteFileValidationView_Access_Array;
-   type DeleteFileValidationView_Access_Array_Access_Array is array (Natural range <>) of DeleteFileValidationView_Access_Array_Access;
-   type DeleteFileValidationView_Access_Array_Access_Array_Access is access all DeleteFileValidationView_Access_Array_Access_Array;
+
+   subtype DeleteFileValidationView_Access is views.admin.inventory.DeleteFileValidationView_Package_References.DeleteFileValidationView_Access;
+   function "=" (Left, Right : DeleteFileValidationView_Access) return Boolean renames views.admin.inventory.DeleteFileValidationView_Package_References."=";
+   subtype DeleteFileValidationView_Access_Array is views.admin.inventory.DeleteFileValidationView_Package_References.DeleteFileValidationView_Access_Array;
+   function "=" (Left, Right : DeleteFileValidationView_Access_Array) return Boolean renames views.admin.inventory.DeleteFileValidationView_Package_References."=";
+   subtype DeleteFileValidationView_Access_Array_Access is views.admin.inventory.DeleteFileValidationView_Package_References.DeleteFileValidationView_Access_Array_Access;
+   function "=" (Left, Right : DeleteFileValidationView_Access_Array_Access) return Boolean renames views.admin.inventory.DeleteFileValidationView_Package_References."=";
+   subtype DeleteFileValidationView_Access_Array_Access_Array is views.admin.inventory.DeleteFileValidationView_Package_References.DeleteFileValidationView_Access_Array_Access_Array;
+   function "=" (Left, Right : DeleteFileValidationView_Access_Array_Access_Array) return Boolean renames views.admin.inventory.DeleteFileValidationView_Package_References."=";
+   subtype DeleteFileValidationView_Access_Array_Access_Array_Access is views.admin.inventory.DeleteFileValidationView_Package_References.DeleteFileValidationView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DeleteFileValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.DeleteFileValidationView_Package_References."=";
 
    type DeleteFileValidationView is new InventoryItemView and ValidationComponentInterface with record
       id : Unbounded_String;

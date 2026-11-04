@@ -13,9 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.opengles.shader.ShaderComposite_Package; use org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
+with org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package; use org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package;
 
 package body org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_Package is
 
+   subtype ShaderComposite_Access is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access;
+   function "=" (Left, Right : ShaderComposite_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References."=";
+   subtype ShaderComposite_Access_Array is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access_Array;
+   function "=" (Left, Right : ShaderComposite_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References."=";
+   subtype ShaderComposite_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access_Array_Access;
+   function "=" (Left, Right : ShaderComposite_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References."=";
+   subtype ShaderComposite_Access_Array_Access_Array is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access_Array_Access_Array;
+   function "=" (Left, Right : ShaderComposite_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References."=";
+   subtype ShaderComposite_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShaderComposite_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References."=";
+   subtype ShaderOpenGLProcessor_Access is org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References.ShaderOpenGLProcessor_Access;
+   function "=" (Left, Right : ShaderOpenGLProcessor_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References."=";
+   subtype ShaderOpenGLProcessor_Access_Array is org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References.ShaderOpenGLProcessor_Access_Array;
+   function "=" (Left, Right : ShaderOpenGLProcessor_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References."=";
+   subtype ShaderOpenGLProcessor_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References.ShaderOpenGLProcessor_Access_Array_Access;
+   function "=" (Left, Right : ShaderOpenGLProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References."=";
+   subtype ShaderOpenGLProcessor_Access_Array_Access_Array is org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References.ShaderOpenGLProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : ShaderOpenGLProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References."=";
+   subtype ShaderOpenGLProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References.ShaderOpenGLProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShaderOpenGLProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out AppRendererShaderUpdaterFactory'Class) is
    begin
       null;
@@ -40,7 +62,7 @@ package body org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFact
 
    function getInstance return AppRendererShaderUpdaterFactory_Access is
    begin
-        return AppRendererShaderUpdaterFactory_Package.instanceC;
+        return AppRendererShaderUpdaterFactory_Access (AppRendererShaderUpdaterFactory_Package.instanceC);
    end getInstance;
 
    function getTestShaders (This : in out AppRendererShaderUpdaterFactory) return ShaderOpenGLProcessor_Access_Array_Access is

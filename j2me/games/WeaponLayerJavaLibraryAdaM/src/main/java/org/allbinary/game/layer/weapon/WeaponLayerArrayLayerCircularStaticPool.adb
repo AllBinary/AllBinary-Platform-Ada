@@ -13,9 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
+with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
+with org.allbinary.game.layer.weapon.WeaponLayer_Package;
 
 package body org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package is
 
+   subtype CircularIndexUtil_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access;
+   function "=" (Left, Right : CircularIndexUtil_Access) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype CircularIndexUtil_Access_Array is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array;
+   function "=" (Left, Right : CircularIndexUtil_Access_Array) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype CircularIndexUtil_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access;
+   function "=" (Left, Right : CircularIndexUtil_Access_Array_Access) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype CircularIndexUtil_Access_Array_Access_Array is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : CircularIndexUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype CircularIndexUtil_Access_Array_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CircularIndexUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype WeaponLayer_Access is org.allbinary.game.layer.weapon.WeaponLayer_Package_References.WeaponLayer_Access;
+   function "=" (Left, Right : WeaponLayer_Access) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References."=";
+   subtype WeaponLayer_Access_Array is org.allbinary.game.layer.weapon.WeaponLayer_Package_References.WeaponLayer_Access_Array;
+   function "=" (Left, Right : WeaponLayer_Access_Array) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References."=";
+   subtype WeaponLayer_Access_Array_Access is org.allbinary.game.layer.weapon.WeaponLayer_Package_References.WeaponLayer_Access_Array_Access;
+   function "=" (Left, Right : WeaponLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References."=";
+   subtype WeaponLayer_Access_Array_Access_Array is org.allbinary.game.layer.weapon.WeaponLayer_Package_References.WeaponLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : WeaponLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References."=";
+   subtype WeaponLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.weapon.WeaponLayer_Package_References.WeaponLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WeaponLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References."=";
    procedure Initialize_Fields (This : in out WeaponLayerArrayLayerCircularStaticPool'Class) is
    begin
       null;
@@ -39,7 +63,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStatic
 
    function getInstance return WeaponLayerArrayLayerCircularStaticPool_Access is
    begin
-        return WeaponLayerArrayLayerCircularStaticPool_Package.instance;
+        return WeaponLayerArrayLayerCircularStaticPool_Access (WeaponLayerArrayLayerCircularStaticPool_Package.instance);
    end getInstance;
 
    procedure init (This : in out WeaponLayerArrayLayerCircularStaticPool) is

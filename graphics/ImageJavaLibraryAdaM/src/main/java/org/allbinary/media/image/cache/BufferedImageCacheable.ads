@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.cache.BufferedImageCacheable_Package;
+package org.allbinary.media.image.cache.BufferedImageCacheable_Package_References is
+   type BufferedImageCacheable_Access is access all org.allbinary.media.image.cache.BufferedImageCacheable_Package.BufferedImageCacheable'Class;
+   type BufferedImageCacheable_Access_Array is array (Natural range <>) of BufferedImageCacheable_Access;
+   type BufferedImageCacheable_Access_Array_Access is access all BufferedImageCacheable_Access_Array;
+   type BufferedImageCacheable_Access_Array_Access_Array is array (Natural range <>) of BufferedImageCacheable_Access_Array_Access;
+   type BufferedImageCacheable_Access_Array_Access_Array_Access is access all BufferedImageCacheable_Access_Array_Access_Array;
+end org.allbinary.media.image.cache.BufferedImageCacheable_Package_References;
+
+with org.allbinary.media.image.cache.BufferedImageCacheable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,18 +32,37 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
-with org.allbinary.media.image.cache.BufferedImageInfo_Package; use org.allbinary.media.image.cache.BufferedImageInfo_Package;
+limited with org.allbinary.media.image.cache.BufferedImageInfo_Package;
+with org.allbinary.media.image.cache.BufferedImageInfo_Package_References;
 
 package org.allbinary.media.image.cache.BufferedImageCacheable_Package is
 
    package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package Reference_Types is
+   subtype BufferedImageInfo_Access is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access;
+   use type BufferedImageInfo_Access;
+   subtype BufferedImageInfo_Access_Array is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array;
+   use type BufferedImageInfo_Access_Array;
+   subtype BufferedImageInfo_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array_Access;
+   use type BufferedImageInfo_Access_Array_Access;
+   subtype BufferedImageInfo_Access_Array_Access_Array is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array_Access_Array;
+   use type BufferedImageInfo_Access_Array_Access_Array;
+   subtype BufferedImageInfo_Access_Array_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array_Access_Array_Access;
+   use type BufferedImageInfo_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BufferedImageCacheable is tagged;
-   type BufferedImageCacheable_Access is access all BufferedImageCacheable'Class;
-   type BufferedImageCacheable_Access_Array is array (Natural range <>) of BufferedImageCacheable_Access;
-   type BufferedImageCacheable_Access_Array_Access is access all BufferedImageCacheable_Access_Array;
-   type BufferedImageCacheable_Access_Array_Access_Array is array (Natural range <>) of BufferedImageCacheable_Access_Array_Access;
-   type BufferedImageCacheable_Access_Array_Access_Array_Access is access all BufferedImageCacheable_Access_Array_Access_Array;
+
+   subtype BufferedImageCacheable_Access is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access;
+   function "=" (Left, Right : BufferedImageCacheable_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
+   subtype BufferedImageCacheable_Access_Array is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array;
+   function "=" (Left, Right : BufferedImageCacheable_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
+   subtype BufferedImageCacheable_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageCacheable_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
+   subtype BufferedImageCacheable_Access_Array_Access_Array is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array_Access_Array;
+   function "=" (Left, Right : BufferedImageCacheable_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
+   subtype BufferedImageCacheable_Access_Array_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageCacheable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
 
    type BufferedImageCacheable is new Java_Object and CacheableInterface with record
       key : BufferedImageInfo_Access;

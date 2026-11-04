@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+package org.allbinary.logic.math.PrimitiveLongSingleton_Package_References is
+   type PrimitiveLongSingleton_Access is access all org.allbinary.logic.math.PrimitiveLongSingleton_Package.PrimitiveLongSingleton'Class;
+   type PrimitiveLongSingleton_Access_Array is array (Natural range <>) of PrimitiveLongSingleton_Access;
+   type PrimitiveLongSingleton_Access_Array_Access is access all PrimitiveLongSingleton_Access_Array;
+   type PrimitiveLongSingleton_Access_Array_Access_Array is array (Natural range <>) of PrimitiveLongSingleton_Access_Array_Access;
+   type PrimitiveLongSingleton_Access_Array_Access_Array_Access is access all PrimitiveLongSingleton_Access_Array_Access_Array;
+end org.allbinary.logic.math.PrimitiveLongSingleton_Package_References;
+
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.math.PrimitiveLongSingleton_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PrimitiveLongSingleton is tagged;
-   type PrimitiveLongSingleton_Access is access all PrimitiveLongSingleton'Class;
-   type PrimitiveLongSingleton_Access_Array is array (Natural range <>) of PrimitiveLongSingleton_Access;
-   type PrimitiveLongSingleton_Access_Array_Access is access all PrimitiveLongSingleton_Access_Array;
-   type PrimitiveLongSingleton_Access_Array_Access_Array is array (Natural range <>) of PrimitiveLongSingleton_Access_Array_Access;
-   type PrimitiveLongSingleton_Access_Array_Access_Array_Access is access all PrimitiveLongSingleton_Access_Array_Access_Array;
+
+   subtype PrimitiveLongSingleton_Access is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
+   subtype PrimitiveLongSingleton_Access_Array is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access_Array) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
+   subtype PrimitiveLongSingleton_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array_Access;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access_Array_Access) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
+   subtype PrimitiveLongSingleton_Access_Array_Access_Array is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array_Access_Array;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
+   subtype PrimitiveLongSingleton_Access_Array_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongSingleton_Package_References.PrimitiveLongSingleton_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PrimitiveLongSingleton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.PrimitiveLongSingleton_Package_References."=";
 
    type PrimitiveLongSingleton is new Java_Object with record
       UNK : Character_Array_Access;

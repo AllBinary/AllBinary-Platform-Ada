@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package is
 
+   subtype WaypointInfoHudPaintable_Access is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
+   subtype WaypointInfoHudPaintable_Access_Array is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access_Array;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
+   subtype WaypointInfoHudPaintable_Access_Array_Access is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access_Array_Access;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
+   subtype WaypointInfoHudPaintable_Access_Array_Access_Array is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
+   subtype WaypointInfoHudPaintable_Access_Array_Access_Array_Access is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
    procedure Initialize_Fields (This : in out WaypointInfoHudPaintableSingleton'Class) is
    begin
       null;
@@ -36,7 +48,7 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton
 
    function getInstance return WaypointInfoHudPaintable_Access is
    begin
-        return WaypointInfoHudPaintableSingleton_Package.instance;
+        return WaypointInfoHudPaintable_Access (WaypointInfoHudPaintableSingleton_Package.instance);
    end getInstance;
 
 begin

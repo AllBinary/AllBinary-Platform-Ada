@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References is
+   type PaymentGatewayData_Access is access all org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package.PaymentGatewayData'Class;
+   type PaymentGatewayData_Access_Array is array (Natural range <>) of PaymentGatewayData_Access;
+   type PaymentGatewayData_Access_Array_Access is access all PaymentGatewayData_Access_Array;
+   type PaymentGatewayData_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayData_Access_Array_Access;
+   type PaymentGatewayData_Access_Array_Access_Array_Access is access all PaymentGatewayData_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PaymentGatewayData is tagged;
-   type PaymentGatewayData_Access is access all PaymentGatewayData'Class;
-   type PaymentGatewayData_Access_Array is array (Natural range <>) of PaymentGatewayData_Access;
-   type PaymentGatewayData_Access_Array_Access is access all PaymentGatewayData_Access_Array;
-   type PaymentGatewayData_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayData_Access_Array_Access;
-   type PaymentGatewayData_Access_Array_Access_Array_Access is access all PaymentGatewayData_Access_Array_Access_Array;
+
+   subtype PaymentGatewayData_Access is org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References.PaymentGatewayData_Access;
+   function "=" (Left, Right : PaymentGatewayData_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References."=";
+   subtype PaymentGatewayData_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References.PaymentGatewayData_Access_Array;
+   function "=" (Left, Right : PaymentGatewayData_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References."=";
+   subtype PaymentGatewayData_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References.PaymentGatewayData_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayData_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References."=";
+   subtype PaymentGatewayData_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References.PaymentGatewayData_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentGatewayData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References."=";
+   subtype PaymentGatewayData_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References.PaymentGatewayData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package_References."=";
 
    type PaymentGatewayData is new Java_Object with record
       key : Unbounded_String;

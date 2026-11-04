@@ -14,10 +14,23 @@
 
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.media.image.cache.BufferedImageInfo_Package; use org.allbinary.media.image.cache.BufferedImageInfo_Package;
+with org.allbinary.media.image.cache.BufferedImageInfo_Package;
 
 package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   subtype BufferedImageInfo_Access is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access;
+   function "=" (Left, Right : BufferedImageInfo_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
+   subtype BufferedImageInfo_Access_Array is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array;
+   function "=" (Left, Right : BufferedImageInfo_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
+   subtype BufferedImageInfo_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageInfo_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
+   subtype BufferedImageInfo_Access_Array_Access_Array is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : BufferedImageInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
+   subtype BufferedImageInfo_Access_Array_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageInfo_Package_References.BufferedImageInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=";
    procedure Initialize_Fields (This : in out BufferedImageCacheable'Class) is
    begin
       null;

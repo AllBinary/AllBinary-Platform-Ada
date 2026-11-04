@@ -13,19 +13,43 @@
 --  Generated Code Do Not Modify
 
 
+with android.view.View_Package; use android.view.View_Package;
+with org.allbinary.android.view.BaseViewWrapper_Package; use org.allbinary.android.view.BaseViewWrapper_Package;
 with org.allbinary.android.view.ViewWrapper_Package; use org.allbinary.android.view.ViewWrapper_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.android.view.BaseViewWrapper_Package;
+with org.allbinary.android.view.ViewWrapper_Package;
 
 package body org.allbinary.canvas.AndroidGameStatistics_Package is
 
    package ViewWrapper_Package renames Standard.org.allbinary.android.view.ViewWrapper_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   subtype View_Access is android.view.View_Package_References.View_Access;
+   function "=" (Left, Right : View_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array is android.view.View_Package_References.View_Access_Array;
+   function "=" (Left, Right : View_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array is android.view.View_Package_References.View_Access_Array_Access_Array;
+   function "=" (Left, Right : View_Access_Array_Access_Array) return Boolean renames android.view.View_Package_References."=";
+   subtype View_Access_Array_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : View_Access_Array_Access_Array_Access) return Boolean renames android.view.View_Package_References."=";
+   subtype BaseViewWrapper_Access is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access;
+   function "=" (Left, Right : BaseViewWrapper_Access) return Boolean renames org.allbinary.android.view.BaseViewWrapper_Package_References."=";
+   subtype BaseViewWrapper_Access_Array is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access_Array;
+   function "=" (Left, Right : BaseViewWrapper_Access_Array) return Boolean renames org.allbinary.android.view.BaseViewWrapper_Package_References."=";
+   subtype BaseViewWrapper_Access_Array_Access is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access_Array_Access;
+   function "=" (Left, Right : BaseViewWrapper_Access_Array_Access) return Boolean renames org.allbinary.android.view.BaseViewWrapper_Package_References."=";
+   subtype BaseViewWrapper_Access_Array_Access_Array is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseViewWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.android.view.BaseViewWrapper_Package_References."=";
+   subtype BaseViewWrapper_Access_Array_Access_Array_Access is org.allbinary.android.view.BaseViewWrapper_Package_References.BaseViewWrapper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseViewWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.view.BaseViewWrapper_Package_References."=";
    procedure Initialize_Fields (This : in out AndroidGameStatistics'Class) is
    begin
       null;
-      This.view := BaseViewWrapper_Package.NULL_VIEW_WRAPPER;
+      This.view := BaseViewWrapper_Access (BaseViewWrapper_Package.NULL_VIEW_WRAPPER);
       This.totalOnDraws := 0;
       This.ANDROID_STRING_ARRAY := new Unbounded_String_Array'(0 .. (14) - 1 => Null_Unbounded_String);
       This.TOTAL_ONDRAWS := To_Unbounded_String (" Total onDraws: ");

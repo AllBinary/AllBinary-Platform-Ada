@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.util.ArrayUtil_Package;
+package org.allbinary.util.ArrayUtil_Package_References is
+   type ArrayUtil_Access is access all org.allbinary.util.ArrayUtil_Package.ArrayUtil'Class;
+   type ArrayUtil_Access_Array is array (Natural range <>) of ArrayUtil_Access;
+   type ArrayUtil_Access_Array_Access is access all ArrayUtil_Access_Array;
+   type ArrayUtil_Access_Array_Access_Array is array (Natural range <>) of ArrayUtil_Access_Array_Access;
+   type ArrayUtil_Access_Array_Access_Array_Access is access all ArrayUtil_Access_Array_Access_Array;
+end org.allbinary.util.ArrayUtil_Package_References;
+
+with org.allbinary.util.ArrayUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,18 +18,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
+limited with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package_References;
 
 package org.allbinary.util.ArrayUtil_Package is
 
    package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
+   package Reference_Types is
+   subtype MathUtil_Access is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access;
+   use type MathUtil_Access;
+   subtype MathUtil_Access_Array is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array;
+   use type MathUtil_Access_Array;
+   subtype MathUtil_Access_Array_Access is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array_Access;
+   use type MathUtil_Access_Array_Access;
+   subtype MathUtil_Access_Array_Access_Array is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array_Access_Array;
+   use type MathUtil_Access_Array_Access_Array;
+   subtype MathUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array_Access_Array_Access;
+   use type MathUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ArrayUtil is tagged;
-   type ArrayUtil_Access is access all ArrayUtil'Class;
-   type ArrayUtil_Access_Array is array (Natural range <>) of ArrayUtil_Access;
-   type ArrayUtil_Access_Array_Access is access all ArrayUtil_Access_Array;
-   type ArrayUtil_Access_Array_Access_Array is array (Natural range <>) of ArrayUtil_Access_Array_Access;
-   type ArrayUtil_Access_Array_Access_Array_Access is access all ArrayUtil_Access_Array_Access_Array;
+
+   subtype ArrayUtil_Access is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access;
+   function "=" (Left, Right : ArrayUtil_Access) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
+   subtype ArrayUtil_Access_Array is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array;
+   function "=" (Left, Right : ArrayUtil_Access_Array) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
+   subtype ArrayUtil_Access_Array_Access is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array_Access;
+   function "=" (Left, Right : ArrayUtil_Access_Array_Access) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
+   subtype ArrayUtil_Access_Array_Access_Array is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ArrayUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
+   subtype ArrayUtil_Access_Array_Access_Array_Access is org.allbinary.util.ArrayUtil_Package_References.ArrayUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ArrayUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ArrayUtil_Package_References."=";
 
    type ArrayUtil is new Java_Object with record
       mathUtil : MathUtil_Access;

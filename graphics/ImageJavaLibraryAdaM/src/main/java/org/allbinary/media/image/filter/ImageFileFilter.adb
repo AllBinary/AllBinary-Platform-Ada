@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
 
 package body org.allbinary.media.image.filter.ImageFileFilter_Package is
 
@@ -23,7 +24,6 @@ package body org.allbinary.media.image.filter.ImageFileFilter_Package is
 
    procedure Initialize (This : in out ImageFileFilter'Class) is
    begin
-      FileFilter_Package.Initialize (This);
       Initialize_Fields (This);
    end Initialize;
 

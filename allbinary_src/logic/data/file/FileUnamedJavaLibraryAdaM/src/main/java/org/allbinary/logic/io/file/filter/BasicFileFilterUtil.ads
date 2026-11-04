@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package;
+package org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References is
+   type BasicFileFilterUtil_Access is access all org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package.BasicFileFilterUtil'Class;
+   type BasicFileFilterUtil_Access_Array is array (Natural range <>) of BasicFileFilterUtil_Access;
+   type BasicFileFilterUtil_Access_Array_Access is access all BasicFileFilterUtil_Access_Array;
+   type BasicFileFilterUtil_Access_Array_Access_Array is array (Natural range <>) of BasicFileFilterUtil_Access_Array_Access;
+   type BasicFileFilterUtil_Access_Array_Access_Array_Access is access all BasicFileFilterUtil_Access_Array_Access_Array;
+end org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References;
+
+with org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicFileFilterUtil is tagged;
-   type BasicFileFilterUtil_Access is access all BasicFileFilterUtil'Class;
-   type BasicFileFilterUtil_Access_Array is array (Natural range <>) of BasicFileFilterUtil_Access;
-   type BasicFileFilterUtil_Access_Array_Access is access all BasicFileFilterUtil_Access_Array;
-   type BasicFileFilterUtil_Access_Array_Access_Array is array (Natural range <>) of BasicFileFilterUtil_Access_Array_Access;
-   type BasicFileFilterUtil_Access_Array_Access_Array_Access is access all BasicFileFilterUtil_Access_Array_Access_Array;
+
+   subtype BasicFileFilterUtil_Access is org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References.BasicFileFilterUtil_Access;
+   function "=" (Left, Right : BasicFileFilterUtil_Access) return Boolean renames org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References."=";
+   subtype BasicFileFilterUtil_Access_Array is org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References.BasicFileFilterUtil_Access_Array;
+   function "=" (Left, Right : BasicFileFilterUtil_Access_Array) return Boolean renames org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References."=";
+   subtype BasicFileFilterUtil_Access_Array_Access is org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References.BasicFileFilterUtil_Access_Array_Access;
+   function "=" (Left, Right : BasicFileFilterUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References."=";
+   subtype BasicFileFilterUtil_Access_Array_Access_Array is org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References.BasicFileFilterUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicFileFilterUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References."=";
+   subtype BasicFileFilterUtil_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References.BasicFileFilterUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicFileFilterUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package_References."=";
 
    type BasicFileFilterUtil is new Java_Object with null record;
 

@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.PathParser_Package;
+package org.allbinary.animation.PathParser_Package_References is
+   type PathParser_Access is access all org.allbinary.animation.PathParser_Package.PathParser'Class;
+   type PathParser_Access_Array is array (Natural range <>) of PathParser_Access;
+   type PathParser_Access_Array_Access is access all PathParser_Access_Array;
+   type PathParser_Access_Array_Access_Array is array (Natural range <>) of PathParser_Access_Array_Access;
+   type PathParser_Access_Array_Access_Array_Access is access all PathParser_Access_Array_Access_Array;
+end org.allbinary.animation.PathParser_Package_References;
+
+with org.allbinary.animation.PathParser_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -11,13 +21,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.animation.PathParser_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PathParser is tagged;
-   type PathParser_Access is access all PathParser'Class;
-   type PathParser_Access_Array is array (Natural range <>) of PathParser_Access;
-   type PathParser_Access_Array_Access is access all PathParser_Access_Array;
-   type PathParser_Access_Array_Access_Array is array (Natural range <>) of PathParser_Access_Array_Access;
-   type PathParser_Access_Array_Access_Array_Access is access all PathParser_Access_Array_Access_Array;
+
+   subtype PathParser_Access is org.allbinary.animation.PathParser_Package_References.PathParser_Access;
+   function "=" (Left, Right : PathParser_Access) return Boolean renames org.allbinary.animation.PathParser_Package_References."=";
+   subtype PathParser_Access_Array is org.allbinary.animation.PathParser_Package_References.PathParser_Access_Array;
+   function "=" (Left, Right : PathParser_Access_Array) return Boolean renames org.allbinary.animation.PathParser_Package_References."=";
+   subtype PathParser_Access_Array_Access is org.allbinary.animation.PathParser_Package_References.PathParser_Access_Array_Access;
+   function "=" (Left, Right : PathParser_Access_Array_Access) return Boolean renames org.allbinary.animation.PathParser_Package_References."=";
+   subtype PathParser_Access_Array_Access_Array is org.allbinary.animation.PathParser_Package_References.PathParser_Access_Array_Access_Array;
+   function "=" (Left, Right : PathParser_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.PathParser_Package_References."=";
+   subtype PathParser_Access_Array_Access_Array_Access is org.allbinary.animation.PathParser_Package_References.PathParser_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PathParser_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.PathParser_Package_References."=";
 
    type PathParser is new Java_Object with null record;
 

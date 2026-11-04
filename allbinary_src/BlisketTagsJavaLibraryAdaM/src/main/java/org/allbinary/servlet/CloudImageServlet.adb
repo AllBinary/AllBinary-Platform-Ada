@@ -38,7 +38,6 @@ package body org.allbinary.servlet.CloudImageServlet_Package is
 
    procedure Initialize (This : in out CloudImageServlet'Class) is
    begin
-      HttpServlet_Package.Initialize (This);
       Initialize_Fields (This);
    end Initialize;
 

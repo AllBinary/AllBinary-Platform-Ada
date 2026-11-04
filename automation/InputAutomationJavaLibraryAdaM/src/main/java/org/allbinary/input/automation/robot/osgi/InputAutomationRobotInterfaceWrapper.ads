@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
+package org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References is
+   type InputAutomationRobotInterfaceWrapper_Access is access all org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package.InputAutomationRobotInterfaceWrapper'Class;
+   type InputAutomationRobotInterfaceWrapper_Access_Array is array (Natural range <>) of InputAutomationRobotInterfaceWrapper_Access;
+   type InputAutomationRobotInterfaceWrapper_Access_Array_Access is access all InputAutomationRobotInterfaceWrapper_Access_Array;
+   type InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotInterfaceWrapper_Access_Array_Access;
+   type InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array_Access is access all InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array;
+end org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References;
+
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
+limited with org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package_References;
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package is
 
    package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
+   package Reference_Types is
+   subtype InputRobotInterface_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access;
+   use type InputRobotInterface_Access;
+   subtype InputRobotInterface_Access_Array is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array;
+   use type InputRobotInterface_Access_Array;
+   subtype InputRobotInterface_Access_Array_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access;
+   use type InputRobotInterface_Access_Array_Access;
+   subtype InputRobotInterface_Access_Array_Access_Array is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access_Array;
+   use type InputRobotInterface_Access_Array_Access_Array;
+   subtype InputRobotInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.InputRobotInterface_Package_References.InputRobotInterface_Access_Array_Access_Array_Access;
+   use type InputRobotInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputAutomationRobotInterfaceWrapper is tagged;
-   type InputAutomationRobotInterfaceWrapper_Access is access all InputAutomationRobotInterfaceWrapper'Class;
-   type InputAutomationRobotInterfaceWrapper_Access_Array is array (Natural range <>) of InputAutomationRobotInterfaceWrapper_Access;
-   type InputAutomationRobotInterfaceWrapper_Access_Array_Access is access all InputAutomationRobotInterfaceWrapper_Access_Array;
-   type InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotInterfaceWrapper_Access_Array_Access;
-   type InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array_Access is access all InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array;
+
+   subtype InputAutomationRobotInterfaceWrapper_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
+   subtype InputAutomationRobotInterfaceWrapper_Access_Array is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access_Array) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
+   subtype InputAutomationRobotInterfaceWrapper_Access_Array_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
+   subtype InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
+   subtype InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
 
    type InputAutomationRobotInterfaceWrapper is new Java_Object with record
       inputRobotInterface : InputRobotInterface_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package;
+package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References is
+   type AdvertisementThumbnail_Access is access all org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package.AdvertisementThumbnail'Class;
+   type AdvertisementThumbnail_Access_Array is array (Natural range <>) of AdvertisementThumbnail_Access;
+   type AdvertisementThumbnail_Access_Array_Access is access all AdvertisementThumbnail_Access_Array;
+   type AdvertisementThumbnail_Access_Array_Access_Array is array (Natural range <>) of AdvertisementThumbnail_Access_Array_Access;
+   type AdvertisementThumbnail_Access_Array_Access_Array_Access is access all AdvertisementThumbnail_Access_Array_Access_Array;
+end org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References;
+
+with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+limited with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References;
 with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package; use org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
 
 package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package is
 
    package TwoDimensionalConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+   package Reference_Types is
+   subtype TwoDimensionalConstraintInterface_Access is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access;
+   use type TwoDimensionalConstraintInterface_Access;
+   subtype TwoDimensionalConstraintInterface_Access_Array is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access_Array;
+   use type TwoDimensionalConstraintInterface_Access_Array;
+   subtype TwoDimensionalConstraintInterface_Access_Array_Access is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access_Array_Access;
+   use type TwoDimensionalConstraintInterface_Access_Array_Access;
+   subtype TwoDimensionalConstraintInterface_Access_Array_Access_Array is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access_Array_Access_Array;
+   use type TwoDimensionalConstraintInterface_Access_Array_Access_Array;
+   subtype TwoDimensionalConstraintInterface_Access_Array_Access_Array_Access is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access_Array_Access_Array_Access;
+   use type TwoDimensionalConstraintInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AdvertisementThumbnail is tagged;
-   type AdvertisementThumbnail_Access is access all AdvertisementThumbnail'Class;
-   type AdvertisementThumbnail_Access_Array is array (Natural range <>) of AdvertisementThumbnail_Access;
-   type AdvertisementThumbnail_Access_Array_Access is access all AdvertisementThumbnail_Access_Array;
-   type AdvertisementThumbnail_Access_Array_Access_Array is array (Natural range <>) of AdvertisementThumbnail_Access_Array_Access;
-   type AdvertisementThumbnail_Access_Array_Access_Array_Access is access all AdvertisementThumbnail_Access_Array_Access_Array;
+
+   subtype AdvertisementThumbnail_Access is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.AdvertisementThumbnail_Access;
+   function "=" (Left, Right : AdvertisementThumbnail_Access) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References."=";
+   subtype AdvertisementThumbnail_Access_Array is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.AdvertisementThumbnail_Access_Array;
+   function "=" (Left, Right : AdvertisementThumbnail_Access_Array) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References."=";
+   subtype AdvertisementThumbnail_Access_Array_Access is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.AdvertisementThumbnail_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementThumbnail_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References."=";
+   subtype AdvertisementThumbnail_Access_Array_Access_Array is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.AdvertisementThumbnail_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementThumbnail_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References."=";
+   subtype AdvertisementThumbnail_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.AdvertisementThumbnail_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementThumbnail_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References."=";
 
    type AdvertisementThumbnail is new Java_Object and AdvertisementThumbnailInterface with record
       imageFileName : Unbounded_String;

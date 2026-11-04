@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.comparison.ChangedPixelsUtil_Package;
+package org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References is
+   type ChangedPixelsUtil_Access is access all org.allbinary.media.image.comparison.ChangedPixelsUtil_Package.ChangedPixelsUtil'Class;
+   type ChangedPixelsUtil_Access_Array is array (Natural range <>) of ChangedPixelsUtil_Access;
+   type ChangedPixelsUtil_Access_Array_Access is access all ChangedPixelsUtil_Access_Array;
+   type ChangedPixelsUtil_Access_Array_Access_Array is array (Natural range <>) of ChangedPixelsUtil_Access_Array_Access;
+   type ChangedPixelsUtil_Access_Array_Access_Array_Access is access all ChangedPixelsUtil_Access_Array_Access_Array;
+end org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References;
+
+with org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,19 +31,49 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.media.image.cache.BufferedImageCacheable_Package; use org.allbinary.media.image.cache.BufferedImageCacheable_Package;
-with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+limited with org.allbinary.media.image.cache.BufferedImageCacheable_Package;
+with org.allbinary.media.image.cache.BufferedImageCacheable_Package_References;
+limited with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 
 package org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
 
    package BufferedImageCacheable_Package renames Standard.org.allbinary.media.image.cache.BufferedImageCacheable_Package;
+   package Reference_Types is
+   subtype BufferedImageCacheable_Access is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access;
+   use type BufferedImageCacheable_Access;
+   subtype BufferedImageCacheable_Access_Array is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array;
+   use type BufferedImageCacheable_Access_Array;
+   subtype BufferedImageCacheable_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array_Access;
+   use type BufferedImageCacheable_Access_Array_Access;
+   subtype BufferedImageCacheable_Access_Array_Access_Array is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array_Access_Array;
+   use type BufferedImageCacheable_Access_Array_Access_Array;
+   subtype BufferedImageCacheable_Access_Array_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array_Access_Array_Access;
+   use type BufferedImageCacheable_Access_Array_Access_Array_Access;
+   subtype ImageComparisonResult_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access;
+   use type ImageComparisonResult_Access;
+   subtype ImageComparisonResult_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array;
+   use type ImageComparisonResult_Access_Array;
+   subtype ImageComparisonResult_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access;
+   use type ImageComparisonResult_Access_Array_Access;
+   subtype ImageComparisonResult_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array;
+   use type ImageComparisonResult_Access_Array_Access_Array;
+   subtype ImageComparisonResult_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array_Access;
+   use type ImageComparisonResult_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ChangedPixelsUtil is tagged;
-   type ChangedPixelsUtil_Access is access all ChangedPixelsUtil'Class;
-   type ChangedPixelsUtil_Access_Array is array (Natural range <>) of ChangedPixelsUtil_Access;
-   type ChangedPixelsUtil_Access_Array_Access is access all ChangedPixelsUtil_Access_Array;
-   type ChangedPixelsUtil_Access_Array_Access_Array is array (Natural range <>) of ChangedPixelsUtil_Access_Array_Access;
-   type ChangedPixelsUtil_Access_Array_Access_Array_Access is access all ChangedPixelsUtil_Access_Array_Access_Array;
+
+   subtype ChangedPixelsUtil_Access is org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References.ChangedPixelsUtil_Access;
+   function "=" (Left, Right : ChangedPixelsUtil_Access) return Boolean renames org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References."=";
+   subtype ChangedPixelsUtil_Access_Array is org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References.ChangedPixelsUtil_Access_Array;
+   function "=" (Left, Right : ChangedPixelsUtil_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References."=";
+   subtype ChangedPixelsUtil_Access_Array_Access is org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References.ChangedPixelsUtil_Access_Array_Access;
+   function "=" (Left, Right : ChangedPixelsUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References."=";
+   subtype ChangedPixelsUtil_Access_Array_Access_Array is org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References.ChangedPixelsUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ChangedPixelsUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References."=";
+   subtype ChangedPixelsUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References.ChangedPixelsUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ChangedPixelsUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ChangedPixelsUtil_Package_References."=";
 
    type ChangedPixelsUtil is new Java_Object with null record;
    START_X : Integer;

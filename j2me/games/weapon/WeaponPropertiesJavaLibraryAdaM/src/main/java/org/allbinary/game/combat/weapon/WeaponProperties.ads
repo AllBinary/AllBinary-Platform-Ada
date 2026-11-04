@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.combat.weapon.WeaponProperties_Package;
+package org.allbinary.game.combat.weapon.WeaponProperties_Package_References is
+   type WeaponProperties_Access is access all org.allbinary.game.combat.weapon.WeaponProperties_Package.WeaponProperties'Class;
+   type WeaponProperties_Access_Array is array (Natural range <>) of WeaponProperties_Access;
+   type WeaponProperties_Access_Array_Access is access all WeaponProperties_Access_Array;
+   type WeaponProperties_Access_Array_Access_Array is array (Natural range <>) of WeaponProperties_Access_Array_Access;
+   type WeaponProperties_Access_Array_Access_Array_Access is access all WeaponProperties_Access_Array_Access_Array;
+end org.allbinary.game.combat.weapon.WeaponProperties_Package_References;
+
+with org.allbinary.game.combat.weapon.WeaponProperties_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
+limited with org.allbinary.logic.math.BasicDecimal_Package;
+with org.allbinary.logic.math.BasicDecimal_Package_References;
 with org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package; use org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package;
 
 package org.allbinary.game.combat.weapon.WeaponProperties_Package is
 
    package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
+   package Reference_Types is
+   subtype BasicDecimal_Access is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access;
+   use type BasicDecimal_Access;
+   subtype BasicDecimal_Access_Array is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array;
+   use type BasicDecimal_Access_Array;
+   subtype BasicDecimal_Access_Array_Access is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array_Access;
+   use type BasicDecimal_Access_Array_Access;
+   subtype BasicDecimal_Access_Array_Access_Array is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array_Access_Array;
+   use type BasicDecimal_Access_Array_Access_Array;
+   subtype BasicDecimal_Access_Array_Access_Array_Access is org.allbinary.logic.math.BasicDecimal_Package_References.BasicDecimal_Access_Array_Access_Array_Access;
+   use type BasicDecimal_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type WeaponProperties is tagged;
-   type WeaponProperties_Access is access all WeaponProperties'Class;
-   type WeaponProperties_Access_Array is array (Natural range <>) of WeaponProperties_Access;
-   type WeaponProperties_Access_Array_Access is access all WeaponProperties_Access_Array;
-   type WeaponProperties_Access_Array_Access_Array is array (Natural range <>) of WeaponProperties_Access_Array_Access;
-   type WeaponProperties_Access_Array_Access_Array_Access is access all WeaponProperties_Access_Array_Access_Array;
+
+   subtype WeaponProperties_Access is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access;
+   function "=" (Left, Right : WeaponProperties_Access) return Boolean renames org.allbinary.game.combat.weapon.WeaponProperties_Package_References."=";
+   subtype WeaponProperties_Access_Array is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access_Array;
+   function "=" (Left, Right : WeaponProperties_Access_Array) return Boolean renames org.allbinary.game.combat.weapon.WeaponProperties_Package_References."=";
+   subtype WeaponProperties_Access_Array_Access is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access_Array_Access;
+   function "=" (Left, Right : WeaponProperties_Access_Array_Access) return Boolean renames org.allbinary.game.combat.weapon.WeaponProperties_Package_References."=";
+   subtype WeaponProperties_Access_Array_Access_Array is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : WeaponProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.weapon.WeaponProperties_Package_References."=";
+   subtype WeaponProperties_Access_Array_Access_Array_Access is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WeaponProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.weapon.WeaponProperties_Package_References."=";
 
    type WeaponProperties is new SimpleWeaponProperties with record
       reloadTime : Long_Long_Integer;

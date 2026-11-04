@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.DriverCompositeInterface_Package;
+package org.allbinary.game.layer.DriverCompositeInterface_Package_References is
+   type DriverCompositeInterface_Access is access all org.allbinary.game.layer.DriverCompositeInterface_Package.DriverCompositeInterface'Class;
+   type DriverCompositeInterface_Access_Array is array (Natural range <>) of DriverCompositeInterface_Access;
+   type DriverCompositeInterface_Access_Array_Access is access all DriverCompositeInterface_Access_Array;
+   type DriverCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of DriverCompositeInterface_Access_Array_Access;
+   type DriverCompositeInterface_Access_Array_Access_Array_Access is access all DriverCompositeInterface_Access_Array_Access_Array;
+end org.allbinary.game.layer.DriverCompositeInterface_Package_References;
+
+with org.allbinary.game.layer.DriverCompositeInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.Driver_Package; use org.allbinary.game.layer.Driver_Package;
+limited with org.allbinary.game.layer.Driver_Package;
+with org.allbinary.game.layer.Driver_Package_References;
 
 package org.allbinary.game.layer.DriverCompositeInterface_Package is
 
+   package Reference_Types is
+   subtype Driver_Access is org.allbinary.game.layer.Driver_Package_References.Driver_Access;
+   use type Driver_Access;
+   subtype Driver_Access_Array is org.allbinary.game.layer.Driver_Package_References.Driver_Access_Array;
+   use type Driver_Access_Array;
+   subtype Driver_Access_Array_Access is org.allbinary.game.layer.Driver_Package_References.Driver_Access_Array_Access;
+   use type Driver_Access_Array_Access;
+   subtype Driver_Access_Array_Access_Array is org.allbinary.game.layer.Driver_Package_References.Driver_Access_Array_Access_Array;
+   use type Driver_Access_Array_Access_Array;
+   subtype Driver_Access_Array_Access_Array_Access is org.allbinary.game.layer.Driver_Package_References.Driver_Access_Array_Access_Array_Access;
+   use type Driver_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type DriverCompositeInterface is interface;
-   type DriverCompositeInterface_Access is access all DriverCompositeInterface'Class;
-   type DriverCompositeInterface_Access_Array is array (Natural range <>) of DriverCompositeInterface_Access;
-   type DriverCompositeInterface_Access_Array_Access is access all DriverCompositeInterface_Access_Array;
-   type DriverCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of DriverCompositeInterface_Access_Array_Access;
-   type DriverCompositeInterface_Access_Array_Access_Array_Access is access all DriverCompositeInterface_Access_Array_Access_Array;
+   subtype DriverCompositeInterface_Access is org.allbinary.game.layer.DriverCompositeInterface_Package_References.DriverCompositeInterface_Access;
+   function "=" (Left, Right : DriverCompositeInterface_Access) return Boolean renames org.allbinary.game.layer.DriverCompositeInterface_Package_References."=";
+   subtype DriverCompositeInterface_Access_Array is org.allbinary.game.layer.DriverCompositeInterface_Package_References.DriverCompositeInterface_Access_Array;
+   function "=" (Left, Right : DriverCompositeInterface_Access_Array) return Boolean renames org.allbinary.game.layer.DriverCompositeInterface_Package_References."=";
+   subtype DriverCompositeInterface_Access_Array_Access is org.allbinary.game.layer.DriverCompositeInterface_Package_References.DriverCompositeInterface_Access_Array_Access;
+   function "=" (Left, Right : DriverCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.DriverCompositeInterface_Package_References."=";
+   subtype DriverCompositeInterface_Access_Array_Access_Array is org.allbinary.game.layer.DriverCompositeInterface_Package_References.DriverCompositeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : DriverCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.DriverCompositeInterface_Package_References."=";
+   subtype DriverCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.DriverCompositeInterface_Package_References.DriverCompositeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DriverCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.DriverCompositeInterface_Package_References."=";
+   function Java_Object_Access_From_DriverCompositeInterface (Value : DriverCompositeInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getDriver (This : in out DriverCompositeInterface) return Driver_Access is abstract;
 
 end org.allbinary.game.layer.DriverCompositeInterface_Package;

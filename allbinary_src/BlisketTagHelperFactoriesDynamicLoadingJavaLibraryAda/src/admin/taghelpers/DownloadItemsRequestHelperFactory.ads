@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.DownloadItemsRequestHelperFactory_Package;
+package admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References is
+   type DownloadItemsRequestHelperFactory_Access is access all admin.taghelpers.DownloadItemsRequestHelperFactory_Package.DownloadItemsRequestHelperFactory'Class;
+   type DownloadItemsRequestHelperFactory_Access_Array is array (Natural range <>) of DownloadItemsRequestHelperFactory_Access;
+   type DownloadItemsRequestHelperFactory_Access_Array_Access is access all DownloadItemsRequestHelperFactory_Access_Array;
+   type DownloadItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of DownloadItemsRequestHelperFactory_Access_Array_Access;
+   type DownloadItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all DownloadItemsRequestHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References;
+
+with admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.DownloadItemsRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DownloadItemsRequestHelperFactory is tagged;
-   type DownloadItemsRequestHelperFactory_Access is access all DownloadItemsRequestHelperFactory'Class;
-   type DownloadItemsRequestHelperFactory_Access_Array is array (Natural range <>) of DownloadItemsRequestHelperFactory_Access;
-   type DownloadItemsRequestHelperFactory_Access_Array_Access is access all DownloadItemsRequestHelperFactory_Access_Array;
-   type DownloadItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of DownloadItemsRequestHelperFactory_Access_Array_Access;
-   type DownloadItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all DownloadItemsRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype DownloadItemsRequestHelperFactory_Access is admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References.DownloadItemsRequestHelperFactory_Access;
+   function "=" (Left, Right : DownloadItemsRequestHelperFactory_Access) return Boolean renames admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References."=";
+   subtype DownloadItemsRequestHelperFactory_Access_Array is admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References.DownloadItemsRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : DownloadItemsRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References."=";
+   subtype DownloadItemsRequestHelperFactory_Access_Array_Access is admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References.DownloadItemsRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : DownloadItemsRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References."=";
+   subtype DownloadItemsRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References.DownloadItemsRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : DownloadItemsRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References."=";
+   subtype DownloadItemsRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References.DownloadItemsRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DownloadItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.DownloadItemsRequestHelperFactory_Package_References."=";
 
    type DownloadItemsRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

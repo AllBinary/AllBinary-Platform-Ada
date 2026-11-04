@@ -13,12 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.bouncycastle.jce.provider.BouncyCastleProvider_Package; use org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package; use org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package; use org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package;
 
 package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package is
 
@@ -26,11 +32,31 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BouncyCastleProvider_Package renames Standard.org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
+   subtype TsUtil_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access;
+   function "=" (Left, Right : TsUtil_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array;
+   function "=" (Left, Right : TsUtil_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
+   function "=" (Left, Right : TsUtil_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : TsUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TsUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype BaseSecretComposite_Access is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access;
+   function "=" (Left, Right : BaseSecretComposite_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References."=";
+   subtype BaseSecretComposite_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access_Array;
+   function "=" (Left, Right : BaseSecretComposite_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References."=";
+   subtype BaseSecretComposite_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access_Array_Access;
+   function "=" (Left, Right : BaseSecretComposite_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References."=";
+   subtype BaseSecretComposite_Access_Array_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseSecretComposite_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References."=";
+   subtype BaseSecretComposite_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References.BaseSecretComposite_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseSecretComposite_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package_References."=";
    procedure Initialize_Fields (This : in out AbCrypt'Class) is
    begin
       null;
       This.tsUtil := TsUtil_Package.getInstance;
-      This.secretComposite := BaseSecretComposite_Package.NULL_SECRET_COMPOSITE;
+      This.secretComposite := BaseSecretComposite_Access (BaseSecretComposite_Package.NULL_SECRET_COMPOSITE);
       
    end Initialize_Fields;
 

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.paint.LocationPaintable_Package;
+with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 
 package body org.allbinary.graphics.paint.NullLocationPaintable_Package is
 
@@ -37,7 +39,7 @@ package body org.allbinary.graphics.paint.NullLocationPaintable_Package is
 
    function getInstance return NullLocationPaintable_Access is
    begin
-        return NullLocationPaintable_Package.instanceC;
+        return NullLocationPaintable_Access (NullLocationPaintable_Package.instanceC);
    end getInstance;
 
 begin

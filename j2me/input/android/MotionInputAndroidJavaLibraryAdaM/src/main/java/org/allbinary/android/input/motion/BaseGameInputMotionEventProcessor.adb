@@ -13,13 +13,47 @@
 --  Generated Code Do Not Modify
 
 
+with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
 with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+with org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package; use org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.android.input.motion.MotionEventProcessor_Package;
 
 package body org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package is
 
    package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
    package MotionGestureReceiveInterfaceFactory_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
+   subtype MotionEvent_Access is android.view.MotionEvent_Package_References.MotionEvent_Access;
+   function "=" (Left, Right : MotionEvent_Access) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype MotionEvent_Access_Array is android.view.MotionEvent_Package_References.MotionEvent_Access_Array;
+   function "=" (Left, Right : MotionEvent_Access_Array) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype MotionEvent_Access_Array_Access is android.view.MotionEvent_Package_References.MotionEvent_Access_Array_Access;
+   function "=" (Left, Right : MotionEvent_Access_Array_Access) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype MotionEvent_Access_Array_Access_Array is android.view.MotionEvent_Package_References.MotionEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionEvent_Access_Array_Access_Array) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype MotionEvent_Access_Array_Access_Array_Access is android.view.MotionEvent_Package_References.MotionEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionEvent_Access_Array_Access_Array_Access) return Boolean renames android.view.MotionEvent_Package_References."=";
+   subtype GameMotionGestureListener_Access is org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.GameMotionGestureListener_Access;
+   function "=" (Left, Right : GameMotionGestureListener_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References."=";
+   subtype GameMotionGestureListener_Access_Array is org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.GameMotionGestureListener_Access_Array;
+   function "=" (Left, Right : GameMotionGestureListener_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References."=";
+   subtype GameMotionGestureListener_Access_Array_Access is org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.GameMotionGestureListener_Access_Array_Access;
+   function "=" (Left, Right : GameMotionGestureListener_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References."=";
+   subtype GameMotionGestureListener_Access_Array_Access_Array is org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.GameMotionGestureListener_Access_Array_Access_Array;
+   function "=" (Left, Right : GameMotionGestureListener_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References."=";
+   subtype GameMotionGestureListener_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.GameMotionGestureListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameMotionGestureListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    procedure Initialize_Fields (This : in out BaseGameInputMotionEventProcessor'Class) is
    begin
       null;

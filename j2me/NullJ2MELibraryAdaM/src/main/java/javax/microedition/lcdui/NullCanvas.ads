@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with javax.microedition.lcdui.NullCanvas_Package;
+package javax.microedition.lcdui.NullCanvas_Package_References is
+   type NullCanvas_Access is access all javax.microedition.lcdui.NullCanvas_Package.NullCanvas'Class;
+   type NullCanvas_Access_Array is array (Natural range <>) of NullCanvas_Access;
+   type NullCanvas_Access_Array_Access is access all NullCanvas_Access_Array;
+   type NullCanvas_Access_Array_Access_Array is array (Natural range <>) of NullCanvas_Access_Array_Access;
+   type NullCanvas_Access_Array_Access_Array_Access is access all NullCanvas_Access_Array_Access_Array;
+end javax.microedition.lcdui.NullCanvas_Package_References;
+
+with javax.microedition.lcdui.NullCanvas_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -10,20 +20,61 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.Stack_Package; use java.util.Stack_Package;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+limited with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
+limited with javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 
 package javax.microedition.lcdui.NullCanvas_Package is
 
    package Stack_Package renames Standard.java.util.Stack_Package;
+   package Reference_Types is
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   use type Command_Access;
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   use type Command_Access_Array;
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   use type Command_Access_Array_Access;
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   use type Command_Access_Array_Access_Array;
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   use type Command_Access_Array_Access_Array_Access;
+   subtype CommandListener_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access;
+   use type CommandListener_Access;
+   subtype CommandListener_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array;
+   use type CommandListener_Access_Array;
+   subtype CommandListener_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access;
+   use type CommandListener_Access_Array_Access;
+   subtype CommandListener_Access_Array_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array;
+   use type CommandListener_Access_Array_Access_Array;
+   subtype CommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array_Access;
+   use type CommandListener_Access_Array_Access_Array_Access;
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullCanvas is tagged;
-   type NullCanvas_Access is access all NullCanvas'Class;
-   type NullCanvas_Access_Array is array (Natural range <>) of NullCanvas_Access;
-   type NullCanvas_Access_Array_Access is access all NullCanvas_Access_Array;
-   type NullCanvas_Access_Array_Access_Array is array (Natural range <>) of NullCanvas_Access_Array_Access;
-   type NullCanvas_Access_Array_Access_Array_Access is access all NullCanvas_Access_Array_Access_Array;
+
+   subtype NullCanvas_Access is javax.microedition.lcdui.NullCanvas_Package_References.NullCanvas_Access;
+   function "=" (Left, Right : NullCanvas_Access) return Boolean renames javax.microedition.lcdui.NullCanvas_Package_References."=";
+   subtype NullCanvas_Access_Array is javax.microedition.lcdui.NullCanvas_Package_References.NullCanvas_Access_Array;
+   function "=" (Left, Right : NullCanvas_Access_Array) return Boolean renames javax.microedition.lcdui.NullCanvas_Package_References."=";
+   subtype NullCanvas_Access_Array_Access is javax.microedition.lcdui.NullCanvas_Package_References.NullCanvas_Access_Array_Access;
+   function "=" (Left, Right : NullCanvas_Access_Array_Access) return Boolean renames javax.microedition.lcdui.NullCanvas_Package_References."=";
+   subtype NullCanvas_Access_Array_Access_Array is javax.microedition.lcdui.NullCanvas_Package_References.NullCanvas_Access_Array_Access_Array;
+   function "=" (Left, Right : NullCanvas_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.NullCanvas_Package_References."=";
+   subtype NullCanvas_Access_Array_Access_Array_Access is javax.microedition.lcdui.NullCanvas_Package_References.NullCanvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullCanvas_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.NullCanvas_Package_References."=";
 
    type NullCanvas is new Canvas with null record;
    NULL_CANVAS : NullCanvas_Access;

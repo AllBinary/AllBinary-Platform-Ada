@@ -13,9 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package body org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
 
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   function "=" (Left, Right : Document_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
    procedure Initialize_Fields (This : in out DomDocumentHelper'Class) is
    begin
       null;
@@ -36,11 +50,13 @@ package body org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
    end Create;
 
    procedure init is
+      commonPhoneStrings : CommonPhoneStrings_Access;
       LIMIT : Unbounded_String;
    begin
-        System_Package.setProperty (To_Unbounded_String ("jdk.xml.maxElementDepth"), To_Unbounded_String ("0"));
-        System_Package.setProperty (To_Unbounded_String ("jdk.xml.xpathExprOpLimit"), To_Unbounded_String ("0"));
-        System_Package.setProperty (To_Unbounded_String ("jdk.xml.xpathTotalOpLimit"), To_Unbounded_String ("0"));
+        commonPhoneStrings := CommonPhoneStrings_Package.getInstance;
+        System_Package.setProperty (To_Unbounded_String ("jdk.xml.maxElementDepth"), commonPhoneStrings.ZERO);
+        System_Package.setProperty (To_Unbounded_String ("jdk.xml.xpathExprOpLimit"), commonPhoneStrings.ZERO);
+        System_Package.setProperty (To_Unbounded_String ("jdk.xml.xpathTotalOpLimit"), commonPhoneStrings.ZERO);
         LIMIT := To_Unbounded_String ("500000");
         System_Package.setProperty (To_Unbounded_String ("jdk.xml.maxGeneralEntitySizeLimit"), LIMIT);
         System_Package.setProperty (To_Unbounded_String ("jdk.xml.totalEntitySizeLimit"), LIMIT);

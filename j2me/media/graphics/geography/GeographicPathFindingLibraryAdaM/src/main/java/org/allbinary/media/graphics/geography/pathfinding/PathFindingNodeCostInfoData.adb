@@ -26,7 +26,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
 
    function getInstance return PathFindingNodeCostInfoData_Access is
    begin
-        return PathFindingNodeCostInfoData_Package.instance;
+        return PathFindingNodeCostInfoData_Access (PathFindingNodeCostInfoData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out PathFindingNodeCostInfoData'Class) is

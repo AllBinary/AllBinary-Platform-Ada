@@ -14,14 +14,20 @@
 
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
 with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.MusicThreadPool_Package; use org.allbinary.thread.MusicThreadPool_Package;
 with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
 with org.allbinary.media.audio.NullClip_Package; use org.allbinary.media.audio.NullClip_Package;
 with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
+with org.allbinary.media.audio.NullAudioFormat_Package;
+with org.allbinary.media.audio.NullClip_Package;
+with org.allbinary.media.audio.NullJ2SEControl_Package;
 
 package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 
@@ -31,6 +37,26 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package MusicThreadPool_Package renames Standard.org.allbinary.thread.MusicThreadPool_Package;
+   subtype Control_Access is javax.microedition.media.Control_Package_References.Control_Access;
+   function "=" (Left, Right : Control_Access) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array;
+   function "=" (Left, Right : Control_Access_Array) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access;
+   function "=" (Left, Right : Control_Access_Array_Access) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array;
+   function "=" (Left, Right : Control_Access_Array_Access_Array) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Control_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out PCClipWavPlayer'Class) is
    begin
       null;

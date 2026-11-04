@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.life.Life_Package;
+package org.allbinary.game.ag.life.Life_Package_References is
+   type Life_Access is access all org.allbinary.game.ag.life.Life_Package.Life'Class;
+   type Life_Access_Array is array (Natural range <>) of Life_Access;
+   type Life_Access_Array_Access is access all Life_Access_Array;
+   type Life_Access_Array_Access_Array is array (Natural range <>) of Life_Access_Array_Access;
+   type Life_Access_Array_Access_Array_Access is access all Life_Access_Array_Access_Array;
+end org.allbinary.game.ag.life.Life_Package_References;
+
+with org.allbinary.game.ag.life.Life_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.ag.life.LifeInterface_Package; use org.allbinary.game.ag
 
 package org.allbinary.game.ag.life.Life_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Life is tagged;
-   type Life_Access is access all Life'Class;
-   type Life_Access_Array is array (Natural range <>) of Life_Access;
-   type Life_Access_Array_Access is access all Life_Access_Array;
-   type Life_Access_Array_Access_Array is array (Natural range <>) of Life_Access_Array_Access;
-   type Life_Access_Array_Access_Array_Access is access all Life_Access_Array_Access_Array;
+
+   subtype Life_Access is org.allbinary.game.ag.life.Life_Package_References.Life_Access;
+   function "=" (Left, Right : Life_Access) return Boolean renames org.allbinary.game.ag.life.Life_Package_References."=";
+   subtype Life_Access_Array is org.allbinary.game.ag.life.Life_Package_References.Life_Access_Array;
+   function "=" (Left, Right : Life_Access_Array) return Boolean renames org.allbinary.game.ag.life.Life_Package_References."=";
+   subtype Life_Access_Array_Access is org.allbinary.game.ag.life.Life_Package_References.Life_Access_Array_Access;
+   function "=" (Left, Right : Life_Access_Array_Access) return Boolean renames org.allbinary.game.ag.life.Life_Package_References."=";
+   subtype Life_Access_Array_Access_Array is org.allbinary.game.ag.life.Life_Package_References.Life_Access_Array_Access_Array;
+   function "=" (Left, Right : Life_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.life.Life_Package_References."=";
+   subtype Life_Access_Array_Access_Array_Access is org.allbinary.game.ag.life.Life_Package_References.Life_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Life_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.life.Life_Package_References."=";
 
    type Life is new Java_Object and LifeInterface with record
       lives : Short_Integer;

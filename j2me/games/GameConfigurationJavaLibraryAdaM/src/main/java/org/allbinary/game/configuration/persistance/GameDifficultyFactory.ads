@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package;
+package org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References is
+   type GameDifficultyFactory_Access is access all org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package.GameDifficultyFactory'Class;
+   type GameDifficultyFactory_Access_Array is array (Natural range <>) of GameDifficultyFactory_Access;
+   type GameDifficultyFactory_Access_Array_Access is access all GameDifficultyFactory_Access_Array;
+   type GameDifficultyFactory_Access_Array_Access_Array is array (Natural range <>) of GameDifficultyFactory_Access_Array_Access;
+   type GameDifficultyFactory_Access_Array_Access_Array_Access is access all GameDifficultyFactory_Access_Array_Access_Array;
+end org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References;
+
+with org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameDifficultyFactory is tagged;
-   type GameDifficultyFactory_Access is access all GameDifficultyFactory'Class;
-   type GameDifficultyFactory_Access_Array is array (Natural range <>) of GameDifficultyFactory_Access;
-   type GameDifficultyFactory_Access_Array_Access is access all GameDifficultyFactory_Access_Array;
-   type GameDifficultyFactory_Access_Array_Access_Array is array (Natural range <>) of GameDifficultyFactory_Access_Array_Access;
-   type GameDifficultyFactory_Access_Array_Access_Array_Access is access all GameDifficultyFactory_Access_Array_Access_Array;
+
+   subtype GameDifficultyFactory_Access is org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References.GameDifficultyFactory_Access;
+   function "=" (Left, Right : GameDifficultyFactory_Access) return Boolean renames org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References."=";
+   subtype GameDifficultyFactory_Access_Array is org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References.GameDifficultyFactory_Access_Array;
+   function "=" (Left, Right : GameDifficultyFactory_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References."=";
+   subtype GameDifficultyFactory_Access_Array_Access is org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References.GameDifficultyFactory_Access_Array_Access;
+   function "=" (Left, Right : GameDifficultyFactory_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References."=";
+   subtype GameDifficultyFactory_Access_Array_Access_Array is org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References.GameDifficultyFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : GameDifficultyFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References."=";
+   subtype GameDifficultyFactory_Access_Array_Access_Array_Access is org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References.GameDifficultyFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameDifficultyFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package_References."=";
 
    type GameDifficultyFactory is new Java_Object with record
       level : Integer;

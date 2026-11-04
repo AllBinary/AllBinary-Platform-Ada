@@ -13,9 +13,72 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package; use org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
+with org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package; use org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package;
+with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package; use org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
+with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
+with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package; use org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+with org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
+with org.allbinary.business.advertisement.AdvertisementInterface_Package;
+with org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package;
+with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
+with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
 package body org.allbinary.business.advertisement.Advertisement_Package is
 
+   subtype AdvertisementImageInterface_Access is org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References.AdvertisementImageInterface_Access;
+   function "=" (Left, Right : AdvertisementImageInterface_Access) return Boolean renames org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References."=";
+   subtype AdvertisementImageInterface_Access_Array is org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References.AdvertisementImageInterface_Access_Array;
+   function "=" (Left, Right : AdvertisementImageInterface_Access_Array) return Boolean renames org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References."=";
+   subtype AdvertisementImageInterface_Access_Array_Access is org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References.AdvertisementImageInterface_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementImageInterface_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References."=";
+   subtype AdvertisementImageInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References.AdvertisementImageInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementImageInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References."=";
+   subtype AdvertisementImageInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References.AdvertisementImageInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementImageInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package_References."=";
+   subtype AdvertisementProductInterface_Access is org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References.AdvertisementProductInterface_Access;
+   function "=" (Left, Right : AdvertisementProductInterface_Access) return Boolean renames org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References."=";
+   subtype AdvertisementProductInterface_Access_Array is org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References.AdvertisementProductInterface_Access_Array;
+   function "=" (Left, Right : AdvertisementProductInterface_Access_Array) return Boolean renames org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References."=";
+   subtype AdvertisementProductInterface_Access_Array_Access is org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References.AdvertisementProductInterface_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementProductInterface_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References."=";
+   subtype AdvertisementProductInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References.AdvertisementProductInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementProductInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References."=";
+   subtype AdvertisementProductInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References.AdvertisementProductInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementProductInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package_References."=";
+   subtype AdvertisementThumbnailInterface_Access is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References.AdvertisementThumbnailInterface_Access;
+   function "=" (Left, Right : AdvertisementThumbnailInterface_Access) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References."=";
+   subtype AdvertisementThumbnailInterface_Access_Array is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References.AdvertisementThumbnailInterface_Access_Array;
+   function "=" (Left, Right : AdvertisementThumbnailInterface_Access_Array) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References."=";
+   subtype AdvertisementThumbnailInterface_Access_Array_Access is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References.AdvertisementThumbnailInterface_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementThumbnailInterface_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References."=";
+   subtype AdvertisementThumbnailInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References.AdvertisementThumbnailInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementThumbnailInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References."=";
+   subtype AdvertisementThumbnailInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References.AdvertisementThumbnailInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementThumbnailInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package_References."=";
+   subtype Money_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access;
+   function "=" (Left, Right : Money_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array;
+   function "=" (Left, Right : Money_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access;
+   function "=" (Left, Right : Money_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array;
+   function "=" (Left, Right : Money_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype Money_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Money_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.Money_Package_References."=";
+   subtype DisplayInBrowserContraintsInterface_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access;
+   function "=" (Left, Right : DisplayInBrowserContraintsInterface_Access) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References."=";
+   subtype DisplayInBrowserContraintsInterface_Access_Array is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access_Array;
+   function "=" (Left, Right : DisplayInBrowserContraintsInterface_Access_Array) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References."=";
+   subtype DisplayInBrowserContraintsInterface_Access_Array_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access_Array_Access;
+   function "=" (Left, Right : DisplayInBrowserContraintsInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References."=";
+   subtype DisplayInBrowserContraintsInterface_Access_Array_Access_Array is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : DisplayInBrowserContraintsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References."=";
+   subtype DisplayInBrowserContraintsInterface_Access_Array_Access_Array_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DisplayInBrowserContraintsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References."=";
    procedure Initialize_Fields (This : in out Advertisement'Class) is
    begin
       null;

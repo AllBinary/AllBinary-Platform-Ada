@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package;
+package org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References is
+   type MachineAccessControlAddress_Access is access all org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package.MachineAccessControlAddress'Class;
+   type MachineAccessControlAddress_Access_Array is array (Natural range <>) of MachineAccessControlAddress_Access;
+   type MachineAccessControlAddress_Access_Array_Access is access all MachineAccessControlAddress_Access_Array;
+   type MachineAccessControlAddress_Access_Array_Access_Array is array (Natural range <>) of MachineAccessControlAddress_Access_Array_Access;
+   type MachineAccessControlAddress_Access_Array_Access_Array_Access is access all MachineAccessControlAddress_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References;
+
+with org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ package org.allbinary.logic.system.hardware.components.linux.MachineAccessContro
 
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
    package MachineAccessControlAddressInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type MachineAccessControlAddress is tagged;
-   type MachineAccessControlAddress_Access is access all MachineAccessControlAddress'Class;
-   type MachineAccessControlAddress_Access_Array is array (Natural range <>) of MachineAccessControlAddress_Access;
-   type MachineAccessControlAddress_Access_Array_Access is access all MachineAccessControlAddress_Access_Array;
-   type MachineAccessControlAddress_Access_Array_Access_Array is array (Natural range <>) of MachineAccessControlAddress_Access_Array_Access;
-   type MachineAccessControlAddress_Access_Array_Access_Array_Access is access all MachineAccessControlAddress_Access_Array_Access_Array;
+
+   subtype MachineAccessControlAddress_Access is org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References.MachineAccessControlAddress_Access;
+   function "=" (Left, Right : MachineAccessControlAddress_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References."=";
+   subtype MachineAccessControlAddress_Access_Array is org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References.MachineAccessControlAddress_Access_Array;
+   function "=" (Left, Right : MachineAccessControlAddress_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References."=";
+   subtype MachineAccessControlAddress_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References.MachineAccessControlAddress_Access_Array_Access;
+   function "=" (Left, Right : MachineAccessControlAddress_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References."=";
+   subtype MachineAccessControlAddress_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References.MachineAccessControlAddress_Access_Array_Access_Array;
+   function "=" (Left, Right : MachineAccessControlAddress_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References."=";
+   subtype MachineAccessControlAddress_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References.MachineAccessControlAddress_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MachineAccessControlAddress_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package_References."=";
 
    type MachineAccessControlAddress is new Java_Object and HardwareComponentInterface and MachineAccessControlAddressInterface with null record;
 

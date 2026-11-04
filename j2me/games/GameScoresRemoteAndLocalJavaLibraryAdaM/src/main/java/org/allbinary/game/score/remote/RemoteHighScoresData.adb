@@ -42,7 +42,7 @@ package body org.allbinary.game.score.remote.RemoteHighScoresData_Package is
 
    function getInstance return RemoteHighScoresData_Access is
    begin
-        return RemoteHighScoresData_Package.SINGLETON;
+        return RemoteHighScoresData_Access (RemoteHighScoresData_Package.SINGLETON);
    end getInstance;
 
 begin

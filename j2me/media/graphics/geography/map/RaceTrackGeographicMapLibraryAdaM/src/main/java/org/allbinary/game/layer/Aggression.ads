@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.Aggression_Package;
+package org.allbinary.game.layer.Aggression_Package_References is
+   type Aggression_Access is access all org.allbinary.game.layer.Aggression_Package.Aggression'Class;
+   type Aggression_Access_Array is array (Natural range <>) of Aggression_Access;
+   type Aggression_Access_Array_Access is access all Aggression_Access_Array;
+   type Aggression_Access_Array_Access_Array is array (Natural range <>) of Aggression_Access_Array_Access;
+   type Aggression_Access_Array_Access_Array_Access is access all Aggression_Access_Array_Access_Array;
+end org.allbinary.game.layer.Aggression_Package_References;
+
+with org.allbinary.game.layer.Aggression_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.layer.Aggression_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Aggression is tagged;
-   type Aggression_Access is access all Aggression'Class;
-   type Aggression_Access_Array is array (Natural range <>) of Aggression_Access;
-   type Aggression_Access_Array_Access is access all Aggression_Access_Array;
-   type Aggression_Access_Array_Access_Array is array (Natural range <>) of Aggression_Access_Array_Access;
-   type Aggression_Access_Array_Access_Array_Access is access all Aggression_Access_Array_Access_Array;
+
+   subtype Aggression_Access is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access;
+   function "=" (Left, Right : Aggression_Access) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
+   subtype Aggression_Access_Array is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access_Array;
+   function "=" (Left, Right : Aggression_Access_Array) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
+   subtype Aggression_Access_Array_Access is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access_Array_Access;
+   function "=" (Left, Right : Aggression_Access_Array_Access) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
+   subtype Aggression_Access_Array_Access_Array is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access_Array_Access_Array;
+   function "=" (Left, Right : Aggression_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
+   subtype Aggression_Access_Array_Access_Array_Access is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Aggression_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
 
    type Aggression is new Java_Object with record
       ram : Integer;

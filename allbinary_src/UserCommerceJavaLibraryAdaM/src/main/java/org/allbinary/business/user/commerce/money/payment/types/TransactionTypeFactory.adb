@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package; use org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.types.TransactionTypeFactory_Package is
 
+   subtype TransactionType_Access is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access;
+   function "=" (Left, Right : TransactionType_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
+   subtype TransactionType_Access_Array is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access_Array;
+   function "=" (Left, Right : TransactionType_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
+   subtype TransactionType_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access_Array_Access;
+   function "=" (Left, Right : TransactionType_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
+   subtype TransactionType_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access_Array_Access_Array;
+   function "=" (Left, Right : TransactionType_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
+   subtype TransactionType_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransactionType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
    procedure Initialize_Fields (This : in out TransactionTypeFactory'Class) is
    begin
       null;
@@ -42,7 +54,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
 
    function getInstance return TransactionTypeFactory_Access is
    begin
-        return TransactionTypeFactory_Package.instance;
+        return TransactionTypeFactory_Access (TransactionTypeFactory_Package.instance);
    end getInstance;
 
 begin

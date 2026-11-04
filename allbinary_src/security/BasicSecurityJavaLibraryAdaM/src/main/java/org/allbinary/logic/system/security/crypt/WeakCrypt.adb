@@ -13,11 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package; use org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package; use org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
+with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 
 package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
 
@@ -25,6 +31,26 @@ package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package KeySpecFactory_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype TsUtil_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access;
+   function "=" (Left, Right : TsUtil_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array;
+   function "=" (Left, Right : TsUtil_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
+   function "=" (Left, Right : TsUtil_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : TsUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TsUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype AbCrypt_Access is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access;
+   function "=" (Left, Right : AbCrypt_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
+   subtype AbCrypt_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access_Array;
+   function "=" (Left, Right : AbCrypt_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
+   subtype AbCrypt_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access_Array_Access;
+   function "=" (Left, Right : AbCrypt_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
+   subtype AbCrypt_Access_Array_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access_Array_Access_Array;
+   function "=" (Left, Right : AbCrypt_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
+   subtype AbCrypt_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References.AbCrypt_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbCrypt_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package_References."=";
    procedure Initialize_Fields (This : in out WeakCrypt'Class) is
    begin
       null;

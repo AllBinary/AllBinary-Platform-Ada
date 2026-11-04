@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package;
+package org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References is
+   type StoreFrontAdvertisementsStatistics_Access is access all org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package.StoreFrontAdvertisementsStatistics'Class;
+   type StoreFrontAdvertisementsStatistics_Access_Array is array (Natural range <>) of StoreFrontAdvertisementsStatistics_Access;
+   type StoreFrontAdvertisementsStatistics_Access_Array_Access is access all StoreFrontAdvertisementsStatistics_Access_Array;
+   type StoreFrontAdvertisementsStatistics_Access_Array_Access_Array is array (Natural range <>) of StoreFrontAdvertisementsStatistics_Access_Array_Access;
+   type StoreFrontAdvertisementsStatistics_Access_Array_Access_Array_Access is access all StoreFrontAdvertisementsStatistics_Access_Array_Access_Array;
+end org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References;
+
+with org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,8 +31,10 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 with org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package is
@@ -30,13 +42,41 @@ package org.allbinary.business.context.modules.storefront.statistics.advertiseme
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
+   use type StoreFrontInterface_Access;
+   subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
+   use type StoreFrontInterface_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access;
+   subtype StoreFrontInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array;
+   use type StoreFrontInterface_Access_Array_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreFrontAdvertisementsStatistics is tagged;
-   type StoreFrontAdvertisementsStatistics_Access is access all StoreFrontAdvertisementsStatistics'Class;
-   type StoreFrontAdvertisementsStatistics_Access_Array is array (Natural range <>) of StoreFrontAdvertisementsStatistics_Access;
-   type StoreFrontAdvertisementsStatistics_Access_Array_Access is access all StoreFrontAdvertisementsStatistics_Access_Array;
-   type StoreFrontAdvertisementsStatistics_Access_Array_Access_Array is array (Natural range <>) of StoreFrontAdvertisementsStatistics_Access_Array_Access;
-   type StoreFrontAdvertisementsStatistics_Access_Array_Access_Array_Access is access all StoreFrontAdvertisementsStatistics_Access_Array_Access_Array;
+
+   subtype StoreFrontAdvertisementsStatistics_Access is org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References.StoreFrontAdvertisementsStatistics_Access;
+   function "=" (Left, Right : StoreFrontAdvertisementsStatistics_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References."=";
+   subtype StoreFrontAdvertisementsStatistics_Access_Array is org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References.StoreFrontAdvertisementsStatistics_Access_Array;
+   function "=" (Left, Right : StoreFrontAdvertisementsStatistics_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References."=";
+   subtype StoreFrontAdvertisementsStatistics_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References.StoreFrontAdvertisementsStatistics_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontAdvertisementsStatistics_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References."=";
+   subtype StoreFrontAdvertisementsStatistics_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References.StoreFrontAdvertisementsStatistics_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontAdvertisementsStatistics_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References."=";
+   subtype StoreFrontAdvertisementsStatistics_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References.StoreFrontAdvertisementsStatistics_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontAdvertisementsStatistics_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package_References."=";
 
    type StoreFrontAdvertisementsStatistics is new Java_Object and StoreFrontAdvertisementsStatisticsInterface with null record;
 

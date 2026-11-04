@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.admin.UserTag_Package;
+package tags.admin.UserTag_Package_References is
+   type UserTag_Access is access all tags.admin.UserTag_Package.UserTag'Class;
+   type UserTag_Access_Array is array (Natural range <>) of UserTag_Access;
+   type UserTag_Access_Array_Access is access all UserTag_Access_Array;
+   type UserTag_Access_Array_Access_Array is array (Natural range <>) of UserTag_Access_Array_Access;
+   type UserTag_Access_Array_Access_Array_Access is access all UserTag_Access_Array_Access_Array;
+end tags.admin.UserTag_Package_References;
+
+with tags.admin.UserTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 package tags.admin.UserTag_Package is
 
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type UserTag is tagged;
-   type UserTag_Access is access all UserTag'Class;
-   type UserTag_Access_Array is array (Natural range <>) of UserTag_Access;
-   type UserTag_Access_Array_Access is access all UserTag_Access_Array;
-   type UserTag_Access_Array_Access_Array is array (Natural range <>) of UserTag_Access_Array_Access;
-   type UserTag_Access_Array_Access_Array_Access is access all UserTag_Access_Array_Access_Array;
+
+   subtype UserTag_Access is tags.admin.UserTag_Package_References.UserTag_Access;
+   function "=" (Left, Right : UserTag_Access) return Boolean renames tags.admin.UserTag_Package_References."=";
+   subtype UserTag_Access_Array is tags.admin.UserTag_Package_References.UserTag_Access_Array;
+   function "=" (Left, Right : UserTag_Access_Array) return Boolean renames tags.admin.UserTag_Package_References."=";
+   subtype UserTag_Access_Array_Access is tags.admin.UserTag_Package_References.UserTag_Access_Array_Access;
+   function "=" (Left, Right : UserTag_Access_Array_Access) return Boolean renames tags.admin.UserTag_Package_References."=";
+   subtype UserTag_Access_Array_Access_Array is tags.admin.UserTag_Package_References.UserTag_Access_Array_Access_Array;
+   function "=" (Left, Right : UserTag_Access_Array_Access_Array) return Boolean renames tags.admin.UserTag_Package_References."=";
+   subtype UserTag_Access_Array_Access_Array_Access is tags.admin.UserTag_Package_References.UserTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.UserTag_Package_References."=";
 
    type UserTag is new StoreValidationTransformTag with record
       role : Unbounded_String;

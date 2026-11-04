@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package;
+package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References is
+   type GeographicMapCellPositionTrackingCompositeInterface_Access is access all org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package.GeographicMapCellPositionTrackingCompositeInterface'Class;
+   type GeographicMapCellPositionTrackingCompositeInterface_Access_Array is array (Natural range <>) of GeographicMapCellPositionTrackingCompositeInterface_Access;
+   type GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access is access all GeographicMapCellPositionTrackingCompositeInterface_Access_Array;
+   type GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access;
+   type GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array_Access is access all GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References;
+
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,17 +18,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package_References;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package is
 
+   package Reference_Types is
+   subtype GeographicMapCellPositionTracking_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package_References.GeographicMapCellPositionTracking_Access;
+   use type GeographicMapCellPositionTracking_Access;
+   subtype GeographicMapCellPositionTracking_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package_References.GeographicMapCellPositionTracking_Access_Array;
+   use type GeographicMapCellPositionTracking_Access_Array;
+   subtype GeographicMapCellPositionTracking_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package_References.GeographicMapCellPositionTracking_Access_Array_Access;
+   use type GeographicMapCellPositionTracking_Access_Array_Access;
+   subtype GeographicMapCellPositionTracking_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package_References.GeographicMapCellPositionTracking_Access_Array_Access_Array;
+   use type GeographicMapCellPositionTracking_Access_Array_Access_Array;
+   subtype GeographicMapCellPositionTracking_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package_References.GeographicMapCellPositionTracking_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPositionTracking_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type GeographicMapCellPositionTrackingCompositeInterface is interface;
-   type GeographicMapCellPositionTrackingCompositeInterface_Access is access all GeographicMapCellPositionTrackingCompositeInterface'Class;
-   type GeographicMapCellPositionTrackingCompositeInterface_Access_Array is array (Natural range <>) of GeographicMapCellPositionTrackingCompositeInterface_Access;
-   type GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access is access all GeographicMapCellPositionTrackingCompositeInterface_Access_Array;
-   type GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access;
-   type GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array_Access is access all GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array;
+   subtype GeographicMapCellPositionTrackingCompositeInterface_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References.GeographicMapCellPositionTrackingCompositeInterface_Access;
+   function "=" (Left, Right : GeographicMapCellPositionTrackingCompositeInterface_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References."=";
+   subtype GeographicMapCellPositionTrackingCompositeInterface_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References.GeographicMapCellPositionTrackingCompositeInterface_Access_Array;
+   function "=" (Left, Right : GeographicMapCellPositionTrackingCompositeInterface_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References."=";
+   subtype GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References.GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References."=";
+   subtype GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References.GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References."=";
+   subtype GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References.GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapCellPositionTrackingCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package_References."=";
+   function Java_Object_Access_From_GeographicMapCellPositionTrackingCompositeInterface (Value : GeographicMapCellPositionTrackingCompositeInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getGeographicMapCellPositionTracking (This : in out GeographicMapCellPositionTrackingCompositeInterface) return GeographicMapCellPositionTracking_Access is abstract;
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackingCompositeInterface_Package;

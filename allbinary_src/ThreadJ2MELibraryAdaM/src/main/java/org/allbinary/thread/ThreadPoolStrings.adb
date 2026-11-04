@@ -39,7 +39,7 @@ package body org.allbinary.thread.ThreadPoolStrings_Package is
 
    function getInstance return ThreadPoolStrings_Access is
    begin
-        return ThreadPoolStrings_Package.instance;
+        return ThreadPoolStrings_Access (ThreadPoolStrings_Package.instance);
    end getInstance;
 
 begin

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.PlatformImage_Package;
 
 package body javax.microedition.lcdui.PreLoadPlatformImage_Package is
 
@@ -37,7 +38,7 @@ package body javax.microedition.lcdui.PreLoadPlatformImage_Package is
 
    function getInstance return PreLoadPlatformImage_Access is
    begin
-        return PreLoadPlatformImage_Package.instance;
+        return PreLoadPlatformImage_Access (PreLoadPlatformImage_Package.instance);
    end getInstance;
 
 begin

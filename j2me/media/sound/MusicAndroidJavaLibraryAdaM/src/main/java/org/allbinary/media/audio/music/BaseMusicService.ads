@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.music.BaseMusicService_Package;
+package org.allbinary.media.audio.music.BaseMusicService_Package_References is
+   type BaseMusicService_Access is access all org.allbinary.media.audio.music.BaseMusicService_Package.BaseMusicService'Class;
+   type BaseMusicService_Access_Array is array (Natural range <>) of BaseMusicService_Access;
+   type BaseMusicService_Access_Array_Access is access all BaseMusicService_Access_Array;
+   type BaseMusicService_Access_Array_Access_Array is array (Natural range <>) of BaseMusicService_Access_Array_Access;
+   type BaseMusicService_Access_Array_Access_Array_Access is access all BaseMusicService_Access_Array_Access_Array;
+end org.allbinary.media.audio.music.BaseMusicService_Package_References;
+
+with org.allbinary.media.audio.music.BaseMusicService_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -9,12 +19,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.app.Service_Package; use android.app.Service_Package;
-with android.content.Intent_Package; use android.content.Intent_Package;
-with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
-with android.os.IBinder_Package; use android.os.IBinder_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStateStrings_Package; use org.allbinary.string_Id.CommonStateStrings_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with android.content.Intent_Package;
+with android.content.Intent_Package_References;
+limited with android.media.MediaPlayer_Package;
+with android.media.MediaPlayer_Package_References;
+limited with android.os.IBinder_Package;
+with android.os.IBinder_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStateStrings_Package;
+with org.allbinary.string_Id.CommonStateStrings_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package org.allbinary.media.audio.music.BaseMusicService_Package is
 
@@ -25,13 +41,81 @@ package org.allbinary.media.audio.music.BaseMusicService_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStateStrings_Package renames Standard.org.allbinary.string_Id.CommonStateStrings_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype Intent_Access is android.content.Intent_Package_References.Intent_Access;
+   use type Intent_Access;
+   subtype Intent_Access_Array is android.content.Intent_Package_References.Intent_Access_Array;
+   use type Intent_Access_Array;
+   subtype Intent_Access_Array_Access is android.content.Intent_Package_References.Intent_Access_Array_Access;
+   use type Intent_Access_Array_Access;
+   subtype Intent_Access_Array_Access_Array is android.content.Intent_Package_References.Intent_Access_Array_Access_Array;
+   use type Intent_Access_Array_Access_Array;
+   subtype Intent_Access_Array_Access_Array_Access is android.content.Intent_Package_References.Intent_Access_Array_Access_Array_Access;
+   use type Intent_Access_Array_Access_Array_Access;
+   subtype MediaPlayer_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access;
+   use type MediaPlayer_Access;
+   subtype MediaPlayer_Access_Array is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array;
+   use type MediaPlayer_Access_Array;
+   subtype MediaPlayer_Access_Array_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access;
+   use type MediaPlayer_Access_Array_Access;
+   subtype MediaPlayer_Access_Array_Access_Array is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access_Array;
+   use type MediaPlayer_Access_Array_Access_Array;
+   subtype MediaPlayer_Access_Array_Access_Array_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access_Array_Access;
+   use type MediaPlayer_Access_Array_Access_Array_Access;
+   subtype IBinder_Access is android.os.IBinder_Package_References.IBinder_Access;
+   use type IBinder_Access;
+   subtype IBinder_Access_Array is android.os.IBinder_Package_References.IBinder_Access_Array;
+   use type IBinder_Access_Array;
+   subtype IBinder_Access_Array_Access is android.os.IBinder_Package_References.IBinder_Access_Array_Access;
+   use type IBinder_Access_Array_Access;
+   subtype IBinder_Access_Array_Access_Array is android.os.IBinder_Package_References.IBinder_Access_Array_Access_Array;
+   use type IBinder_Access_Array_Access_Array;
+   subtype IBinder_Access_Array_Access_Array_Access is android.os.IBinder_Package_References.IBinder_Access_Array_Access_Array_Access;
+   use type IBinder_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStateStrings_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access;
+   use type CommonStateStrings_Access;
+   subtype CommonStateStrings_Access_Array is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array;
+   use type CommonStateStrings_Access_Array;
+   subtype CommonStateStrings_Access_Array_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access;
+   use type CommonStateStrings_Access_Array_Access;
+   subtype CommonStateStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access_Array;
+   use type CommonStateStrings_Access_Array_Access_Array;
+   subtype CommonStateStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access_Array_Access;
+   use type CommonStateStrings_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BaseMusicService is tagged;
-   type BaseMusicService_Access is access all BaseMusicService'Class;
-   type BaseMusicService_Access_Array is array (Natural range <>) of BaseMusicService_Access;
-   type BaseMusicService_Access_Array_Access is access all BaseMusicService_Access_Array;
-   type BaseMusicService_Access_Array_Access_Array is array (Natural range <>) of BaseMusicService_Access_Array_Access;
-   type BaseMusicService_Access_Array_Access_Array_Access is access all BaseMusicService_Access_Array_Access_Array;
+
+   subtype BaseMusicService_Access is org.allbinary.media.audio.music.BaseMusicService_Package_References.BaseMusicService_Access;
+   function "=" (Left, Right : BaseMusicService_Access) return Boolean renames org.allbinary.media.audio.music.BaseMusicService_Package_References."=";
+   subtype BaseMusicService_Access_Array is org.allbinary.media.audio.music.BaseMusicService_Package_References.BaseMusicService_Access_Array;
+   function "=" (Left, Right : BaseMusicService_Access_Array) return Boolean renames org.allbinary.media.audio.music.BaseMusicService_Package_References."=";
+   subtype BaseMusicService_Access_Array_Access is org.allbinary.media.audio.music.BaseMusicService_Package_References.BaseMusicService_Access_Array_Access;
+   function "=" (Left, Right : BaseMusicService_Access_Array_Access) return Boolean renames org.allbinary.media.audio.music.BaseMusicService_Package_References."=";
+   subtype BaseMusicService_Access_Array_Access_Array is org.allbinary.media.audio.music.BaseMusicService_Package_References.BaseMusicService_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseMusicService_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.music.BaseMusicService_Package_References."=";
+   subtype BaseMusicService_Access_Array_Access_Array_Access is org.allbinary.media.audio.music.BaseMusicService_Package_References.BaseMusicService_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseMusicService_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.music.BaseMusicService_Package_References."=";
 
    type BaseMusicService is new Service with record
       logUtil : LogUtil_Access;

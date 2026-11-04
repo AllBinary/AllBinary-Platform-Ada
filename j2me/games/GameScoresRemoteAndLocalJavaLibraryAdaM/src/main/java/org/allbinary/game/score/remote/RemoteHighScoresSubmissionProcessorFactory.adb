@@ -14,9 +14,23 @@
 
 
 with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package;
+with org.allbinary.game.score.remote.RemoteHighScores_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package;
 
 package body org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package is
 
+   subtype RemoteHighScoresSubmissionProcessorInterface_Access is org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References.RemoteHighScoresSubmissionProcessorInterface_Access;
+   function "=" (Left, Right : RemoteHighScoresSubmissionProcessorInterface_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References."=";
+   subtype RemoteHighScoresSubmissionProcessorInterface_Access_Array is org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References.RemoteHighScoresSubmissionProcessorInterface_Access_Array;
+   function "=" (Left, Right : RemoteHighScoresSubmissionProcessorInterface_Access_Array) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References."=";
+   subtype RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References.RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access;
+   function "=" (Left, Right : RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References."=";
+   subtype RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access_Array is org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References.RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References."=";
+   subtype RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References.RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package_References."=";
    procedure Initialize_Fields (This : in out RemoteHighScoresSubmissionProcessorFactory'Class) is
    begin
       null;

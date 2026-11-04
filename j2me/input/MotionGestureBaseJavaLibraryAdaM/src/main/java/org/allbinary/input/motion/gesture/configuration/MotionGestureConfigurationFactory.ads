@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+package org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References is
+   type MotionGestureConfigurationFactory_Access is access all org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package.MotionGestureConfigurationFactory'Class;
+   type MotionGestureConfigurationFactory_Access_Array is array (Natural range <>) of MotionGestureConfigurationFactory_Access;
+   type MotionGestureConfigurationFactory_Access_Array_Access is access all MotionGestureConfigurationFactory_Access_Array;
+   type MotionGestureConfigurationFactory_Access_Array_Access_Array is array (Natural range <>) of MotionGestureConfigurationFactory_Access_Array_Access;
+   type MotionGestureConfigurationFactory_Access_Array_Access_Array_Access is access all MotionGestureConfigurationFactory_Access_Array_Access_Array;
+end org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References;
+
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+limited with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References;
 
 package org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package is
 
+   package Reference_Types is
+   subtype MotionGestureConfiguration_Access is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access;
+   use type MotionGestureConfiguration_Access;
+   subtype MotionGestureConfiguration_Access_Array is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access_Array;
+   use type MotionGestureConfiguration_Access_Array;
+   subtype MotionGestureConfiguration_Access_Array_Access is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access_Array_Access;
+   use type MotionGestureConfiguration_Access_Array_Access;
+   subtype MotionGestureConfiguration_Access_Array_Access_Array is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access_Array_Access_Array;
+   use type MotionGestureConfiguration_Access_Array_Access_Array;
+   subtype MotionGestureConfiguration_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package_References.MotionGestureConfiguration_Access_Array_Access_Array_Access;
+   use type MotionGestureConfiguration_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MotionGestureConfigurationFactory is tagged;
-   type MotionGestureConfigurationFactory_Access is access all MotionGestureConfigurationFactory'Class;
-   type MotionGestureConfigurationFactory_Access_Array is array (Natural range <>) of MotionGestureConfigurationFactory_Access;
-   type MotionGestureConfigurationFactory_Access_Array_Access is access all MotionGestureConfigurationFactory_Access_Array;
-   type MotionGestureConfigurationFactory_Access_Array_Access_Array is array (Natural range <>) of MotionGestureConfigurationFactory_Access_Array_Access;
-   type MotionGestureConfigurationFactory_Access_Array_Access_Array_Access is access all MotionGestureConfigurationFactory_Access_Array_Access_Array;
+
+   subtype MotionGestureConfigurationFactory_Access is org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References.MotionGestureConfigurationFactory_Access;
+   function "=" (Left, Right : MotionGestureConfigurationFactory_Access) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References."=";
+   subtype MotionGestureConfigurationFactory_Access_Array is org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References.MotionGestureConfigurationFactory_Access_Array;
+   function "=" (Left, Right : MotionGestureConfigurationFactory_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References."=";
+   subtype MotionGestureConfigurationFactory_Access_Array_Access is org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References.MotionGestureConfigurationFactory_Access_Array_Access;
+   function "=" (Left, Right : MotionGestureConfigurationFactory_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References."=";
+   subtype MotionGestureConfigurationFactory_Access_Array_Access_Array is org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References.MotionGestureConfigurationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionGestureConfigurationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References."=";
+   subtype MotionGestureConfigurationFactory_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References.MotionGestureConfigurationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionGestureConfigurationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package_References."=";
 
    type MotionGestureConfigurationFactory is new Java_Object with null record;
    config : MotionGestureConfiguration_Access;

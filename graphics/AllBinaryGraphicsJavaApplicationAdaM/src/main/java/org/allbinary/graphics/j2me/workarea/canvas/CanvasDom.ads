@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+package org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References is
+   type CanvasDom_Access is access all org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package.CanvasDom'Class;
+   type CanvasDom_Access_Array is array (Natural range <>) of CanvasDom_Access;
+   type CanvasDom_Access_Array_Access is access all CanvasDom_Access_Array;
+   type CanvasDom_Access_Array_Access_Array is array (Natural range <>) of CanvasDom_Access_Array_Access;
+   type CanvasDom_Access_Array_Access_Array_Access is access all CanvasDom_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,12 +31,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.GraphicsStrings_Package; use org.allbinary.graphics.GraphicsStrings_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package; use org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package; use org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+limited with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
+limited with org.allbinary.graphics.GraphicsStrings_Package;
+with org.allbinary.graphics.GraphicsStrings_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
+limited with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References;
+limited with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References;
+limited with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References;
 
 package org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
 
@@ -34,13 +50,81 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package GraphicsStrings_Package renames Standard.org.allbinary.graphics.GraphicsStrings_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   use type GPoint_Access;
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   use type GPoint_Access_Array;
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   use type GPoint_Access_Array_Access;
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   use type GPoint_Access_Array_Access_Array;
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   use type GPoint_Access_Array_Access_Array_Access;
+   subtype GraphicsStrings_Access is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access;
+   use type GraphicsStrings_Access;
+   subtype GraphicsStrings_Access_Array is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array;
+   use type GraphicsStrings_Access_Array;
+   subtype GraphicsStrings_Access_Array_Access is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array_Access;
+   use type GraphicsStrings_Access_Array_Access;
+   subtype GraphicsStrings_Access_Array_Access_Array is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array_Access_Array;
+   use type GraphicsStrings_Access_Array_Access_Array;
+   subtype GraphicsStrings_Access_Array_Access_Array_Access is org.allbinary.graphics.GraphicsStrings_Package_References.GraphicsStrings_Access_Array_Access_Array_Access;
+   use type GraphicsStrings_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   subtype IntegerDimension_Access is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access;
+   use type IntegerDimension_Access;
+   subtype IntegerDimension_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access_Array;
+   use type IntegerDimension_Access_Array;
+   subtype IntegerDimension_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access_Array_Access;
+   use type IntegerDimension_Access_Array_Access;
+   subtype IntegerDimension_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access_Array_Access_Array;
+   use type IntegerDimension_Access_Array_Access_Array;
+   subtype IntegerDimension_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References.IntegerDimension_Access_Array_Access_Array_Access;
+   use type IntegerDimension_Access_Array_Access_Array_Access;
+   subtype Grid_Access is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access;
+   use type Grid_Access;
+   subtype Grid_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access_Array;
+   use type Grid_Access_Array;
+   subtype Grid_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access_Array_Access;
+   use type Grid_Access_Array_Access;
+   subtype Grid_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access_Array_Access_Array;
+   use type Grid_Access_Array_Access_Array;
+   subtype Grid_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References.Grid_Access_Array_Access_Array_Access;
+   use type Grid_Access_Array_Access_Array_Access;
+   subtype CanvasJPanel_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access;
+   use type CanvasJPanel_Access;
+   subtype CanvasJPanel_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array;
+   use type CanvasJPanel_Access_Array;
+   subtype CanvasJPanel_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array_Access;
+   use type CanvasJPanel_Access_Array_Access;
+   subtype CanvasJPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array_Access_Array;
+   use type CanvasJPanel_Access_Array_Access_Array;
+   subtype CanvasJPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array_Access_Array_Access;
+   use type CanvasJPanel_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CanvasDom is tagged;
-   type CanvasDom_Access is access all CanvasDom'Class;
-   type CanvasDom_Access_Array is array (Natural range <>) of CanvasDom_Access;
-   type CanvasDom_Access_Array_Access is access all CanvasDom_Access_Array;
-   type CanvasDom_Access_Array_Access_Array is array (Natural range <>) of CanvasDom_Access_Array_Access;
-   type CanvasDom_Access_Array_Access_Array_Access is access all CanvasDom_Access_Array_Access_Array;
+
+   subtype CanvasDom_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References.CanvasDom_Access;
+   function "=" (Left, Right : CanvasDom_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References."=";
+   subtype CanvasDom_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References.CanvasDom_Access_Array;
+   function "=" (Left, Right : CanvasDom_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References."=";
+   subtype CanvasDom_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References.CanvasDom_Access_Array_Access;
+   function "=" (Left, Right : CanvasDom_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References."=";
+   subtype CanvasDom_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References.CanvasDom_Access_Array_Access_Array;
+   function "=" (Left, Right : CanvasDom_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References."=";
+   subtype CanvasDom_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References.CanvasDom_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CanvasDom_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References."=";
 
    type CanvasDom is new Java_Object with record
       graphicsStrings : GraphicsStrings_Access;

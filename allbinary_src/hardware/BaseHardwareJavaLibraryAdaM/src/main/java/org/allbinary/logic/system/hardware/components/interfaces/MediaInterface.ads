@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
+package org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References is
+   type MediaInterface_Access is access all org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package.MediaInterface'Class;
+   type MediaInterface_Access_Array is array (Natural range <>) of MediaInterface_Access;
+   type MediaInterface_Access_Array_Access is access all MediaInterface_Access_Array;
+   type MediaInterface_Access_Array_Access_Array is array (Natural range <>) of MediaInterface_Access_Array_Access;
+   type MediaInterface_Access_Array_Access_Array_Access is access all MediaInterface_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References;
+
+with org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type MediaInterface is interface;
-   type MediaInterface_Access is access all MediaInterface'Class;
-   type MediaInterface_Access_Array is array (Natural range <>) of MediaInterface_Access;
-   type MediaInterface_Access_Array_Access is access all MediaInterface_Access_Array;
-   type MediaInterface_Access_Array_Access_Array is array (Natural range <>) of MediaInterface_Access_Array_Access;
-   type MediaInterface_Access_Array_Access_Array_Access is access all MediaInterface_Access_Array_Access_Array;
+   subtype MediaInterface_Access is org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References.MediaInterface_Access;
+   function "=" (Left, Right : MediaInterface_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References."=";
+   subtype MediaInterface_Access_Array is org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References.MediaInterface_Access_Array;
+   function "=" (Left, Right : MediaInterface_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References."=";
+   subtype MediaInterface_Access_Array_Access is org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References.MediaInterface_Access_Array_Access;
+   function "=" (Left, Right : MediaInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References."=";
+   subtype MediaInterface_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References.MediaInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : MediaInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References."=";
+   subtype MediaInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References.MediaInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MediaInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package_References."=";
+   function Java_Object_Access_From_MediaInterface (Value : MediaInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
 
 end org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
 

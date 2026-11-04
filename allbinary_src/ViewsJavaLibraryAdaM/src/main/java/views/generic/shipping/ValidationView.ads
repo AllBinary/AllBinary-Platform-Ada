@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with views.generic_Id.shipping.ValidationView_Package;
+package views.generic_Id.shipping.ValidationView_Package_References is
+   type ValidationView_Access is access all views.generic_Id.shipping.ValidationView_Package.ValidationView'Class;
+   type ValidationView_Access_Array is array (Natural range <>) of ValidationView_Access;
+   type ValidationView_Access_Array_Access is access all ValidationView_Access_Array;
+   type ValidationView_Access_Array_Access_Array is array (Natural range <>) of ValidationView_Access_Array_Access;
+   type ValidationView_Access_Array_Access_Array_Access is access all ValidationView_Access_Array_Access_Array;
+end views.generic_Id.shipping.ValidationView_Package_References;
+
+with views.generic_Id.shipping.ValidationView_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,20 +31,39 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with views.generic_Id.shipping.ShippingMethodsView_Package; use views.generic_Id.shipping.ShippingMethodsView_Package;
 
 package views.generic_Id.shipping.ValidationView_Package is
 
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Reference_Types is
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ValidationView is tagged;
-   type ValidationView_Access is access all ValidationView'Class;
-   type ValidationView_Access_Array is array (Natural range <>) of ValidationView_Access;
-   type ValidationView_Access_Array_Access is access all ValidationView_Access_Array;
-   type ValidationView_Access_Array_Access_Array is array (Natural range <>) of ValidationView_Access_Array_Access;
-   type ValidationView_Access_Array_Access_Array_Access is access all ValidationView_Access_Array_Access_Array;
+
+   subtype ValidationView_Access is views.generic_Id.shipping.ValidationView_Package_References.ValidationView_Access;
+   function "=" (Left, Right : ValidationView_Access) return Boolean renames views.generic_Id.shipping.ValidationView_Package_References."=";
+   subtype ValidationView_Access_Array is views.generic_Id.shipping.ValidationView_Package_References.ValidationView_Access_Array;
+   function "=" (Left, Right : ValidationView_Access_Array) return Boolean renames views.generic_Id.shipping.ValidationView_Package_References."=";
+   subtype ValidationView_Access_Array_Access is views.generic_Id.shipping.ValidationView_Package_References.ValidationView_Access_Array_Access;
+   function "=" (Left, Right : ValidationView_Access_Array_Access) return Boolean renames views.generic_Id.shipping.ValidationView_Package_References."=";
+   subtype ValidationView_Access_Array_Access_Array is views.generic_Id.shipping.ValidationView_Package_References.ValidationView_Access_Array_Access_Array;
+   function "=" (Left, Right : ValidationView_Access_Array_Access_Array) return Boolean renames views.generic_Id.shipping.ValidationView_Package_References."=";
+   subtype ValidationView_Access_Array_Access_Array_Access is views.generic_Id.shipping.ValidationView_Package_References.ValidationView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ValidationView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.shipping.ValidationView_Package_References."=";
 
    type ValidationView is new ShippingMethodsView and ValidationComponentInterface with null record;
 

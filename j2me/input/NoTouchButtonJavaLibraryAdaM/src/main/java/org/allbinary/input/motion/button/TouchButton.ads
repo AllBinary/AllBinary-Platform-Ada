@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.button.TouchButton_Package;
+package org.allbinary.input.motion.button.TouchButton_Package_References is
+   type TouchButton_Access is access all org.allbinary.input.motion.button.TouchButton_Package.TouchButton'Class;
+   type TouchButton_Access_Array is array (Natural range <>) of TouchButton_Access;
+   type TouchButton_Access_Array_Access is access all TouchButton_Access_Array;
+   type TouchButton_Access_Array_Access_Array is array (Natural range <>) of TouchButton_Access_Array_Access;
+   type TouchButton_Access_Array_Access_Array_Access is access all TouchButton_Access_Array_Access_Array;
+end org.allbinary.input.motion.button.TouchButton_Package_References;
+
+with org.allbinary.input.motion.button.TouchButton_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,15 +30,23 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationInterface_Package; use org.allbinary.animation.AnimationInterface_Package;
-with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
-with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
+limited with org.allbinary.animation.AnimationInterface_Package;
+with org.allbinary.animation.AnimationInterface_Package_References;
+limited with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.graphics.CellPosition_Package_References;
+limited with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 
 package org.allbinary.input.motion.button.TouchButton_Package is
 
@@ -40,13 +58,101 @@ package org.allbinary.input.motion.button.TouchButton_Package is
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype AnimationInterface_Access is org.allbinary.animation.AnimationInterface_Package_References.AnimationInterface_Access;
+   use type AnimationInterface_Access;
+   subtype AnimationInterface_Access_Array is org.allbinary.animation.AnimationInterface_Package_References.AnimationInterface_Access_Array;
+   use type AnimationInterface_Access_Array;
+   subtype AnimationInterface_Access_Array_Access is org.allbinary.animation.AnimationInterface_Package_References.AnimationInterface_Access_Array_Access;
+   use type AnimationInterface_Access_Array_Access;
+   subtype AnimationInterface_Access_Array_Access_Array is org.allbinary.animation.AnimationInterface_Package_References.AnimationInterface_Access_Array_Access_Array;
+   use type AnimationInterface_Access_Array_Access_Array;
+   subtype AnimationInterface_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationInterface_Package_References.AnimationInterface_Access_Array_Access_Array_Access;
+   use type AnimationInterface_Access_Array_Access_Array_Access;
+   subtype CellPosition_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access;
+   use type CellPosition_Access;
+   subtype CellPosition_Access_Array is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array;
+   use type CellPosition_Access_Array;
+   subtype CellPosition_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access;
+   use type CellPosition_Access_Array_Access;
+   subtype CellPosition_Access_Array_Access_Array is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array;
+   use type CellPosition_Access_Array_Access_Array;
+   subtype CellPosition_Access_Array_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array_Access;
+   use type CellPosition_Access_Array_Access_Array_Access;
+   subtype Rectangle_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access;
+   use type Rectangle_Access;
+   subtype Rectangle_Access_Array is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array;
+   use type Rectangle_Access_Array;
+   subtype Rectangle_Access_Array_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access;
+   use type Rectangle_Access_Array_Access;
+   subtype Rectangle_Access_Array_Access_Array is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access_Array;
+   use type Rectangle_Access_Array_Access_Array;
+   subtype Rectangle_Access_Array_Access_Array_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access_Array_Access;
+   use type Rectangle_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype TouchButtonInput_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access;
+   use type TouchButtonInput_Access;
+   subtype TouchButtonInput_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array;
+   use type TouchButtonInput_Access_Array;
+   subtype TouchButtonInput_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access;
+   use type TouchButtonInput_Access_Array_Access;
+   subtype TouchButtonInput_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array;
+   use type TouchButtonInput_Access_Array_Access_Array;
+   subtype TouchButtonInput_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array_Access;
+   use type TouchButtonInput_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TouchButton is tagged;
-   type TouchButton_Access is access all TouchButton'Class;
-   type TouchButton_Access_Array is array (Natural range <>) of TouchButton_Access;
-   type TouchButton_Access_Array_Access is access all TouchButton_Access_Array;
-   type TouchButton_Access_Array_Access_Array is array (Natural range <>) of TouchButton_Access_Array_Access;
-   type TouchButton_Access_Array_Access_Array_Access is access all TouchButton_Access_Array_Access_Array;
+
+   subtype TouchButton_Access is org.allbinary.input.motion.button.TouchButton_Package_References.TouchButton_Access;
+   function "=" (Left, Right : TouchButton_Access) return Boolean renames org.allbinary.input.motion.button.TouchButton_Package_References."=";
+   subtype TouchButton_Access_Array is org.allbinary.input.motion.button.TouchButton_Package_References.TouchButton_Access_Array;
+   function "=" (Left, Right : TouchButton_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButton_Package_References."=";
+   subtype TouchButton_Access_Array_Access is org.allbinary.input.motion.button.TouchButton_Package_References.TouchButton_Access_Array_Access;
+   function "=" (Left, Right : TouchButton_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButton_Package_References."=";
+   subtype TouchButton_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButton_Package_References.TouchButton_Access_Array_Access_Array;
+   function "=" (Left, Right : TouchButton_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButton_Package_References."=";
+   subtype TouchButton_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButton_Package_References.TouchButton_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TouchButton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButton_Package_References."=";
 
    type TouchButton is new Paintable with record
       logUtil : LogUtil_Access;

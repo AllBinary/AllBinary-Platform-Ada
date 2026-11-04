@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.platform.opengl.OpenGLTextureFactory_Package;
+package org.platform.opengl.OpenGLTextureFactory_Package_References is
+   type OpenGLTextureFactory_Access is access all org.platform.opengl.OpenGLTextureFactory_Package.OpenGLTextureFactory'Class;
+   type OpenGLTextureFactory_Access_Array is array (Natural range <>) of OpenGLTextureFactory_Access;
+   type OpenGLTextureFactory_Access_Array_Access is access all OpenGLTextureFactory_Access_Array;
+   type OpenGLTextureFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLTextureFactory_Access_Array_Access;
+   type OpenGLTextureFactory_Access_Array_Access_Array_Access is access all OpenGLTextureFactory_Access_Array_Access_Array;
+end org.platform.opengl.OpenGLTextureFactory_Package_References;
+
+with org.platform.opengl.OpenGLTextureFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,23 +18,64 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+limited with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
-with org.platform.opengl.OpenGLGLUUtils_Package; use org.platform.opengl.OpenGLGLUUtils_Package;
+limited with org.platform.opengl.OpenGLGLUUtils_Package;
+with org.platform.opengl.OpenGLGLUUtils_Package_References;
 
 package org.platform.opengl.OpenGLTextureFactory_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package PlatformTextureBaseFactory_Package renames Standard.org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+   package Reference_Types is
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   use type GL10_Access;
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   use type GL10_Access_Array;
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   use type GL10_Access_Array_Access;
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   use type GL10_Access_Array_Access_Array;
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   use type GL10_Access_Array_Access_Array_Access;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype OpenGLGLUUtils_Access is org.platform.opengl.OpenGLGLUUtils_Package_References.OpenGLGLUUtils_Access;
+   use type OpenGLGLUUtils_Access;
+   subtype OpenGLGLUUtils_Access_Array is org.platform.opengl.OpenGLGLUUtils_Package_References.OpenGLGLUUtils_Access_Array;
+   use type OpenGLGLUUtils_Access_Array;
+   subtype OpenGLGLUUtils_Access_Array_Access is org.platform.opengl.OpenGLGLUUtils_Package_References.OpenGLGLUUtils_Access_Array_Access;
+   use type OpenGLGLUUtils_Access_Array_Access;
+   subtype OpenGLGLUUtils_Access_Array_Access_Array is org.platform.opengl.OpenGLGLUUtils_Package_References.OpenGLGLUUtils_Access_Array_Access_Array;
+   use type OpenGLGLUUtils_Access_Array_Access_Array;
+   subtype OpenGLGLUUtils_Access_Array_Access_Array_Access is org.platform.opengl.OpenGLGLUUtils_Package_References.OpenGLGLUUtils_Access_Array_Access_Array_Access;
+   use type OpenGLGLUUtils_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLTextureFactory is tagged;
-   type OpenGLTextureFactory_Access is access all OpenGLTextureFactory'Class;
-   type OpenGLTextureFactory_Access_Array is array (Natural range <>) of OpenGLTextureFactory_Access;
-   type OpenGLTextureFactory_Access_Array_Access is access all OpenGLTextureFactory_Access_Array;
-   type OpenGLTextureFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLTextureFactory_Access_Array_Access;
-   type OpenGLTextureFactory_Access_Array_Access_Array_Access is access all OpenGLTextureFactory_Access_Array_Access_Array;
+
+   subtype OpenGLTextureFactory_Access is org.platform.opengl.OpenGLTextureFactory_Package_References.OpenGLTextureFactory_Access;
+   function "=" (Left, Right : OpenGLTextureFactory_Access) return Boolean renames org.platform.opengl.OpenGLTextureFactory_Package_References."=";
+   subtype OpenGLTextureFactory_Access_Array is org.platform.opengl.OpenGLTextureFactory_Package_References.OpenGLTextureFactory_Access_Array;
+   function "=" (Left, Right : OpenGLTextureFactory_Access_Array) return Boolean renames org.platform.opengl.OpenGLTextureFactory_Package_References."=";
+   subtype OpenGLTextureFactory_Access_Array_Access is org.platform.opengl.OpenGLTextureFactory_Package_References.OpenGLTextureFactory_Access_Array_Access;
+   function "=" (Left, Right : OpenGLTextureFactory_Access_Array_Access) return Boolean renames org.platform.opengl.OpenGLTextureFactory_Package_References."=";
+   subtype OpenGLTextureFactory_Access_Array_Access_Array is org.platform.opengl.OpenGLTextureFactory_Package_References.OpenGLTextureFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLTextureFactory_Access_Array_Access_Array) return Boolean renames org.platform.opengl.OpenGLTextureFactory_Package_References."=";
+   subtype OpenGLTextureFactory_Access_Array_Access_Array_Access is org.platform.opengl.OpenGLTextureFactory_Package_References.OpenGLTextureFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLTextureFactory_Access_Array_Access_Array_Access) return Boolean renames org.platform.opengl.OpenGLTextureFactory_Package_References."=";
 
    type OpenGLTextureFactory is new PlatformTextureBaseFactory with record
       gluUtils : OpenGLGLUUtils_Access;

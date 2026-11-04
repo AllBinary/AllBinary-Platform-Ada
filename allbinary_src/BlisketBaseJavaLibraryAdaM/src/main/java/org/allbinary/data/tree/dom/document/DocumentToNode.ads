@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tree.dom.document.DocumentToNode_Package;
+package org.allbinary.data.tree.dom.document.DocumentToNode_Package_References is
+   type DocumentToNode_Access is access all org.allbinary.data.tree.dom.document.DocumentToNode_Package.DocumentToNode'Class;
+   type DocumentToNode_Access_Array is array (Natural range <>) of DocumentToNode_Access;
+   type DocumentToNode_Access_Array_Access is access all DocumentToNode_Access_Array;
+   type DocumentToNode_Access_Array_Access_Array is array (Natural range <>) of DocumentToNode_Access_Array_Access;
+   type DocumentToNode_Access_Array_Access_Array_Access is access all DocumentToNode_Access_Array_Access_Array;
+end org.allbinary.data.tree.dom.document.DocumentToNode_Package_References;
+
+with org.allbinary.data.tree.dom.document.DocumentToNode_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.data.tree.dom.document.DocumentToNode_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DocumentToNode is tagged;
-   type DocumentToNode_Access is access all DocumentToNode'Class;
-   type DocumentToNode_Access_Array is array (Natural range <>) of DocumentToNode_Access;
-   type DocumentToNode_Access_Array_Access is access all DocumentToNode_Access_Array;
-   type DocumentToNode_Access_Array_Access_Array is array (Natural range <>) of DocumentToNode_Access_Array_Access;
-   type DocumentToNode_Access_Array_Access_Array_Access is access all DocumentToNode_Access_Array_Access_Array;
+
+   subtype DocumentToNode_Access is org.allbinary.data.tree.dom.document.DocumentToNode_Package_References.DocumentToNode_Access;
+   function "=" (Left, Right : DocumentToNode_Access) return Boolean renames org.allbinary.data.tree.dom.document.DocumentToNode_Package_References."=";
+   subtype DocumentToNode_Access_Array is org.allbinary.data.tree.dom.document.DocumentToNode_Package_References.DocumentToNode_Access_Array;
+   function "=" (Left, Right : DocumentToNode_Access_Array) return Boolean renames org.allbinary.data.tree.dom.document.DocumentToNode_Package_References."=";
+   subtype DocumentToNode_Access_Array_Access is org.allbinary.data.tree.dom.document.DocumentToNode_Package_References.DocumentToNode_Access_Array_Access;
+   function "=" (Left, Right : DocumentToNode_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.document.DocumentToNode_Package_References."=";
+   subtype DocumentToNode_Access_Array_Access_Array is org.allbinary.data.tree.dom.document.DocumentToNode_Package_References.DocumentToNode_Access_Array_Access_Array;
+   function "=" (Left, Right : DocumentToNode_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tree.dom.document.DocumentToNode_Package_References."=";
+   subtype DocumentToNode_Access_Array_Access_Array_Access is org.allbinary.data.tree.dom.document.DocumentToNode_Package_References.DocumentToNode_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DocumentToNode_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.document.DocumentToNode_Package_References."=";
 
    type DocumentToNode is new Java_Object with null record;
    XMLROOT : Unbounded_String;

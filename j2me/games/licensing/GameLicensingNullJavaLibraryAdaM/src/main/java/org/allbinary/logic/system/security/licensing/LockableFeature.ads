@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.security.licensing.LockableFeature_Package;
+package org.allbinary.logic.system.security.licensing.LockableFeature_Package_References is
+   type LockableFeature_Access is access all org.allbinary.logic.system.security.licensing.LockableFeature_Package.LockableFeature'Class;
+   type LockableFeature_Access_Array is array (Natural range <>) of LockableFeature_Access;
+   type LockableFeature_Access_Array_Access is access all LockableFeature_Access_Array;
+   type LockableFeature_Access_Array_Access_Array is array (Natural range <>) of LockableFeature_Access_Array_Access;
+   type LockableFeature_Access_Array_Access_Array_Access is access all LockableFeature_Access_Array_Access_Array;
+end org.allbinary.logic.system.security.licensing.LockableFeature_Package_References;
+
+with org.allbinary.logic.system.security.licensing.LockableFeature_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.system.security.licensing.LockableFeature_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type LockableFeature is tagged;
-   type LockableFeature_Access is access all LockableFeature'Class;
-   type LockableFeature_Access_Array is array (Natural range <>) of LockableFeature_Access;
-   type LockableFeature_Access_Array_Access is access all LockableFeature_Access_Array;
-   type LockableFeature_Access_Array_Access_Array is array (Natural range <>) of LockableFeature_Access_Array_Access;
-   type LockableFeature_Access_Array_Access_Array_Access is access all LockableFeature_Access_Array_Access_Array;
+
+   subtype LockableFeature_Access is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access;
+   function "=" (Left, Right : LockableFeature_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
+   subtype LockableFeature_Access_Array is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array;
+   function "=" (Left, Right : LockableFeature_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
+   subtype LockableFeature_Access_Array_Access is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array_Access;
+   function "=" (Left, Right : LockableFeature_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
+   subtype LockableFeature_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : LockableFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
+   subtype LockableFeature_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.LockableFeature_Package_References.LockableFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LockableFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LockableFeature_Package_References."=";
 
    type LockableFeature is new Java_Object with record
       name : Unbounded_String;

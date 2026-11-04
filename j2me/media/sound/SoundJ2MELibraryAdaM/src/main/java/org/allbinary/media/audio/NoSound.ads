@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.NoSound_Package;
+package org.allbinary.media.audio.NoSound_Package_References is
+   type NoSound_Access is access all org.allbinary.media.audio.NoSound_Package.NoSound'Class;
+   type NoSound_Access_Array is array (Natural range <>) of NoSound_Access;
+   type NoSound_Access_Array_Access is access all NoSound_Access_Array;
+   type NoSound_Access_Array_Access_Array is array (Natural range <>) of NoSound_Access_Array_Access;
+   type NoSound_Access_Array_Access_Array_Access is access all NoSound_Access_Array_Access_Array;
+end org.allbinary.media.audio.NoSound_Package_References;
+
+with org.allbinary.media.audio.NoSound_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Soun
 
 package org.allbinary.media.audio.NoSound_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoSound is tagged;
-   type NoSound_Access is access all NoSound'Class;
-   type NoSound_Access_Array is array (Natural range <>) of NoSound_Access;
-   type NoSound_Access_Array_Access is access all NoSound_Access_Array;
-   type NoSound_Access_Array_Access_Array is array (Natural range <>) of NoSound_Access_Array_Access;
-   type NoSound_Access_Array_Access_Array_Access is access all NoSound_Access_Array_Access_Array;
+
+   subtype NoSound_Access is org.allbinary.media.audio.NoSound_Package_References.NoSound_Access;
+   function "=" (Left, Right : NoSound_Access) return Boolean renames org.allbinary.media.audio.NoSound_Package_References."=";
+   subtype NoSound_Access_Array is org.allbinary.media.audio.NoSound_Package_References.NoSound_Access_Array;
+   function "=" (Left, Right : NoSound_Access_Array) return Boolean renames org.allbinary.media.audio.NoSound_Package_References."=";
+   subtype NoSound_Access_Array_Access is org.allbinary.media.audio.NoSound_Package_References.NoSound_Access_Array_Access;
+   function "=" (Left, Right : NoSound_Access_Array_Access) return Boolean renames org.allbinary.media.audio.NoSound_Package_References."=";
+   subtype NoSound_Access_Array_Access_Array is org.allbinary.media.audio.NoSound_Package_References.NoSound_Access_Array_Access_Array;
+   function "=" (Left, Right : NoSound_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.NoSound_Package_References."=";
+   subtype NoSound_Access_Array_Access_Array_Access is org.allbinary.media.audio.NoSound_Package_References.NoSound_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoSound_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.NoSound_Package_References."=";
 
    type NoSound is new Sound with null record;
    instance : NoSound_Access;

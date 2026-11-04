@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.activity.NullProgressActivity_Package;
+package org.allbinary.android.activity.NullProgressActivity_Package_References is
+   type NullProgressActivity_Access is access all org.allbinary.android.activity.NullProgressActivity_Package.NullProgressActivity'Class;
+   type NullProgressActivity_Access_Array is array (Natural range <>) of NullProgressActivity_Access;
+   type NullProgressActivity_Access_Array_Access is access all NullProgressActivity_Access_Array;
+   type NullProgressActivity_Access_Array_Access_Array is array (Natural range <>) of NullProgressActivity_Access_Array_Access;
+   type NullProgressActivity_Access_Array_Access_Array_Access is access all NullProgressActivity_Access_Array_Access_Array;
+end org.allbinary.android.activity.NullProgressActivity_Package_References;
+
+with org.allbinary.android.activity.NullProgressActivity_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.android.activity.NullProgressActivity_Package is
 
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullProgressActivity is tagged;
-   type NullProgressActivity_Access is access all NullProgressActivity'Class;
-   type NullProgressActivity_Access_Array is array (Natural range <>) of NullProgressActivity_Access;
-   type NullProgressActivity_Access_Array_Access is access all NullProgressActivity_Access_Array;
-   type NullProgressActivity_Access_Array_Access_Array is array (Natural range <>) of NullProgressActivity_Access_Array_Access;
-   type NullProgressActivity_Access_Array_Access_Array_Access is access all NullProgressActivity_Access_Array_Access_Array;
+
+   subtype NullProgressActivity_Access is org.allbinary.android.activity.NullProgressActivity_Package_References.NullProgressActivity_Access;
+   function "=" (Left, Right : NullProgressActivity_Access) return Boolean renames org.allbinary.android.activity.NullProgressActivity_Package_References."=";
+   subtype NullProgressActivity_Access_Array is org.allbinary.android.activity.NullProgressActivity_Package_References.NullProgressActivity_Access_Array;
+   function "=" (Left, Right : NullProgressActivity_Access_Array) return Boolean renames org.allbinary.android.activity.NullProgressActivity_Package_References."=";
+   subtype NullProgressActivity_Access_Array_Access is org.allbinary.android.activity.NullProgressActivity_Package_References.NullProgressActivity_Access_Array_Access;
+   function "=" (Left, Right : NullProgressActivity_Access_Array_Access) return Boolean renames org.allbinary.android.activity.NullProgressActivity_Package_References."=";
+   subtype NullProgressActivity_Access_Array_Access_Array is org.allbinary.android.activity.NullProgressActivity_Package_References.NullProgressActivity_Access_Array_Access_Array;
+   function "=" (Left, Right : NullProgressActivity_Access_Array_Access_Array) return Boolean renames org.allbinary.android.activity.NullProgressActivity_Package_References."=";
+   subtype NullProgressActivity_Access_Array_Access_Array_Access is org.allbinary.android.activity.NullProgressActivity_Package_References.NullProgressActivity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullProgressActivity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.activity.NullProgressActivity_Package_References."=";
 
    type NullProgressActivity is new Java_Object and ProgressActivityInterface with null record;
    NULL_PROGRESS_ACTIVITY : NullProgressActivity_Access;

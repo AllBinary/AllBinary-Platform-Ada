@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package;
+package org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References is
+   type ImageComparisonSearchResultsListener_Access is access all org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package.ImageComparisonSearchResultsListener'Class;
+   type ImageComparisonSearchResultsListener_Access_Array is array (Natural range <>) of ImageComparisonSearchResultsListener_Access;
+   type ImageComparisonSearchResultsListener_Access_Array_Access is access all ImageComparisonSearchResultsListener_Access_Array;
+   type ImageComparisonSearchResultsListener_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonSearchResultsListener_Access_Array_Access;
+   type ImageComparisonSearchResultsListener_Access_Array_Access_Array_Access is access all ImageComparisonSearchResultsListener_Access_Array_Access_Array;
+end org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References;
+
+with org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,39 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.BasicEventListenerInterface_Package; use org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
-with org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package; use org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package;
+limited with org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package;
+with org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package_References;
 
 package org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package is
 
    package BasicEventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
+   package Reference_Types is
+   subtype ImageComparisonSearchResultsEvent_Access is org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package_References.ImageComparisonSearchResultsEvent_Access;
+   use type ImageComparisonSearchResultsEvent_Access;
+   subtype ImageComparisonSearchResultsEvent_Access_Array is org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package_References.ImageComparisonSearchResultsEvent_Access_Array;
+   use type ImageComparisonSearchResultsEvent_Access_Array;
+   subtype ImageComparisonSearchResultsEvent_Access_Array_Access is org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package_References.ImageComparisonSearchResultsEvent_Access_Array_Access;
+   use type ImageComparisonSearchResultsEvent_Access_Array_Access;
+   subtype ImageComparisonSearchResultsEvent_Access_Array_Access_Array is org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package_References.ImageComparisonSearchResultsEvent_Access_Array_Access_Array;
+   use type ImageComparisonSearchResultsEvent_Access_Array_Access_Array;
+   subtype ImageComparisonSearchResultsEvent_Access_Array_Access_Array_Access is org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package_References.ImageComparisonSearchResultsEvent_Access_Array_Access_Array_Access;
+   use type ImageComparisonSearchResultsEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type ImageComparisonSearchResultsListener is interface and BasicEventListenerInterface;
-   type ImageComparisonSearchResultsListener_Access is access all ImageComparisonSearchResultsListener'Class;
-   type ImageComparisonSearchResultsListener_Access_Array is array (Natural range <>) of ImageComparisonSearchResultsListener_Access;
-   type ImageComparisonSearchResultsListener_Access_Array_Access is access all ImageComparisonSearchResultsListener_Access_Array;
-   type ImageComparisonSearchResultsListener_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonSearchResultsListener_Access_Array_Access;
-   type ImageComparisonSearchResultsListener_Access_Array_Access_Array_Access is access all ImageComparisonSearchResultsListener_Access_Array_Access_Array;
+   subtype ImageComparisonSearchResultsListener_Access is org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References.ImageComparisonSearchResultsListener_Access;
+   function "=" (Left, Right : ImageComparisonSearchResultsListener_Access) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References."=";
+   subtype ImageComparisonSearchResultsListener_Access_Array is org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References.ImageComparisonSearchResultsListener_Access_Array;
+   function "=" (Left, Right : ImageComparisonSearchResultsListener_Access_Array) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References."=";
+   subtype ImageComparisonSearchResultsListener_Access_Array_Access is org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References.ImageComparisonSearchResultsListener_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonSearchResultsListener_Access_Array_Access) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References."=";
+   subtype ImageComparisonSearchResultsListener_Access_Array_Access_Array is org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References.ImageComparisonSearchResultsListener_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageComparisonSearchResultsListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References."=";
+   subtype ImageComparisonSearchResultsListener_Access_Array_Access_Array_Access is org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References.ImageComparisonSearchResultsListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonSearchResultsListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package_References."=";
+   function Java_Object_Access_From_ImageComparisonSearchResultsListener (Value : ImageComparisonSearchResultsListener_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure onImageComparisonResultsEvent (This : in out ImageComparisonSearchResultsListener; imageComparisonSearchResultsEvent_Param : access ImageComparisonSearchResultsEvent_Package.ImageComparisonSearchResultsEvent'Class) is abstract;
 
 end org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package;

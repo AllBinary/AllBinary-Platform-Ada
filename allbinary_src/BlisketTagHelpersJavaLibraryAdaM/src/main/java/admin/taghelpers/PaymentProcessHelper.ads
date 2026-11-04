@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.PaymentProcessHelper_Package;
+package admin.taghelpers.PaymentProcessHelper_Package_References is
+   type PaymentProcessHelper_Access is access all admin.taghelpers.PaymentProcessHelper_Package.PaymentProcessHelper'Class;
+   type PaymentProcessHelper_Access_Array is array (Natural range <>) of PaymentProcessHelper_Access;
+   type PaymentProcessHelper_Access_Array_Access is access all PaymentProcessHelper_Access_Array;
+   type PaymentProcessHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentProcessHelper_Access_Array_Access;
+   type PaymentProcessHelper_Access_Array_Access_Array_Access is access all PaymentProcessHelper_Access_Array_Access_Array;
+end admin.taghelpers.PaymentProcessHelper_Package_References;
+
+with admin.taghelpers.PaymentProcessHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,20 +32,39 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with views.admin.payment.PaymentProcessorComponent_Package; use views.admin.payment.PaymentProcessorComponent_Package;
+limited with views.admin.payment.PaymentProcessorComponent_Package;
+with views.admin.payment.PaymentProcessorComponent_Package_References;
 with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.PaymentProcessHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package PaymentProcessorComponent_Package renames Standard.views.admin.payment.PaymentProcessorComponent_Package;
+   package Reference_Types is
+   subtype PaymentProcessorComponent_Access is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access;
+   use type PaymentProcessorComponent_Access;
+   subtype PaymentProcessorComponent_Access_Array is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access_Array;
+   use type PaymentProcessorComponent_Access_Array;
+   subtype PaymentProcessorComponent_Access_Array_Access is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access_Array_Access;
+   use type PaymentProcessorComponent_Access_Array_Access;
+   subtype PaymentProcessorComponent_Access_Array_Access_Array is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access_Array_Access_Array;
+   use type PaymentProcessorComponent_Access_Array_Access_Array;
+   subtype PaymentProcessorComponent_Access_Array_Access_Array_Access is views.admin.payment.PaymentProcessorComponent_Package_References.PaymentProcessorComponent_Access_Array_Access_Array_Access;
+   use type PaymentProcessorComponent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PaymentProcessHelper is tagged;
-   type PaymentProcessHelper_Access is access all PaymentProcessHelper'Class;
-   type PaymentProcessHelper_Access_Array is array (Natural range <>) of PaymentProcessHelper_Access;
-   type PaymentProcessHelper_Access_Array_Access is access all PaymentProcessHelper_Access_Array;
-   type PaymentProcessHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentProcessHelper_Access_Array_Access;
-   type PaymentProcessHelper_Access_Array_Access_Array_Access is access all PaymentProcessHelper_Access_Array_Access_Array;
+
+   subtype PaymentProcessHelper_Access is admin.taghelpers.PaymentProcessHelper_Package_References.PaymentProcessHelper_Access;
+   function "=" (Left, Right : PaymentProcessHelper_Access) return Boolean renames admin.taghelpers.PaymentProcessHelper_Package_References."=";
+   subtype PaymentProcessHelper_Access_Array is admin.taghelpers.PaymentProcessHelper_Package_References.PaymentProcessHelper_Access_Array;
+   function "=" (Left, Right : PaymentProcessHelper_Access_Array) return Boolean renames admin.taghelpers.PaymentProcessHelper_Package_References."=";
+   subtype PaymentProcessHelper_Access_Array_Access is admin.taghelpers.PaymentProcessHelper_Package_References.PaymentProcessHelper_Access_Array_Access;
+   function "=" (Left, Right : PaymentProcessHelper_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentProcessHelper_Package_References."=";
+   subtype PaymentProcessHelper_Access_Array_Access_Array is admin.taghelpers.PaymentProcessHelper_Package_References.PaymentProcessHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentProcessHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PaymentProcessHelper_Package_References."=";
+   subtype PaymentProcessHelper_Access_Array_Access_Array_Access is admin.taghelpers.PaymentProcessHelper_Package_References.PaymentProcessHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentProcessHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentProcessHelper_Package_References."=";
 
    type PaymentProcessHelper is new TagHelper with record
       paymentProcessorComponent : PaymentProcessorComponent_Access;

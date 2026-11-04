@@ -2,9 +2,14 @@
 
 
 with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
+with org.allbinary.android.ActivityFractureUtil_Package; use org.allbinary.android.ActivityFractureUtil_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.AndroidGameKey_Package;
 
 package body org.allbinary.game.input.AndroidKeyFactory_Package is
 
@@ -12,6 +17,36 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype AndroidGameKey_Access is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access;
+   function "=" (Left, Right : AndroidGameKey_Access) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
+   subtype AndroidGameKey_Access_Array is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array;
+   function "=" (Left, Right : AndroidGameKey_Access_Array) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
+   subtype AndroidGameKey_Access_Array_Access is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array_Access;
+   function "=" (Left, Right : AndroidGameKey_Access_Array_Access) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
+   subtype AndroidGameKey_Access_Array_Access_Array is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidGameKey_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
+   subtype AndroidGameKey_Access_Array_Access_Array_Access is org.allbinary.game.input.AndroidGameKey_Package_References.AndroidGameKey_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidGameKey_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.AndroidGameKey_Package_References."=";
+   subtype Input_Access is org.allbinary.game.input.Input_Package_References.Input_Access;
+   function "=" (Left, Right : Input_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array;
+   function "=" (Left, Right : Input_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array;
+   function "=" (Left, Right : Input_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
    procedure Initialize_Fields (This : in out AndroidKeyFactory'Class) is
    begin
       null;

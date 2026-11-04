@@ -37,7 +37,7 @@ package body org.allbinary.media.graphics.geography.map.PathData_Package is
 
    function getInstance return PathData_Access is
    begin
-        return PathData_Package.instance;
+        return PathData_Access (PathData_Package.instance);
    end getInstance;
 
 begin

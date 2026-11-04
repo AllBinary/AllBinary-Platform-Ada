@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package;
+package org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References is
+   type ImageMiniMapLayer_Access is access all org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package.ImageMiniMapLayer'Class;
+   type ImageMiniMapLayer_Access_Array is array (Natural range <>) of ImageMiniMapLayer_Access;
+   type ImageMiniMapLayer_Access_Array_Access is access all ImageMiniMapLayer_Access_Array;
+   type ImageMiniMapLayer_Access_Array_Access_Array is array (Natural range <>) of ImageMiniMapLayer_Access_Array_Access;
+   type ImageMiniMapLayer_Access_Array_Access_Array_Access is access all ImageMiniMapLayer_Access_Array_Access_Array;
+end org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References;
+
+with org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
+limited with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.game.layer.geographic.map.MiniMapLayer_Package; use org.allbinary.game.layer.geographic.map.MiniMapLayer_Package;
 
 package org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package is
@@ -32,13 +46,61 @@ package org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package is
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype BasicGeographicMap_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access;
+   use type BasicGeographicMap_Access;
+   subtype BasicGeographicMap_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array;
+   use type BasicGeographicMap_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access;
+   subtype BasicGeographicMap_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array;
+   use type BasicGeographicMap_Access_Array_Access_Array;
+   subtype BasicGeographicMap_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array_Access;
+   use type BasicGeographicMap_Access_Array_Access_Array_Access;
+   subtype ViewPositionBase_Access is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access;
+   use type ViewPositionBase_Access;
+   subtype ViewPositionBase_Access_Array is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access_Array;
+   use type ViewPositionBase_Access_Array;
+   subtype ViewPositionBase_Access_Array_Access is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access_Array_Access;
+   use type ViewPositionBase_Access_Array_Access;
+   subtype ViewPositionBase_Access_Array_Access_Array is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access_Array_Access_Array;
+   use type ViewPositionBase_Access_Array_Access_Array;
+   subtype ViewPositionBase_Access_Array_Access_Array_Access is org.allbinary.view.ViewPositionBase_Package_References.ViewPositionBase_Access_Array_Access_Array_Access;
+   use type ViewPositionBase_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageMiniMapLayer is tagged;
-   type ImageMiniMapLayer_Access is access all ImageMiniMapLayer'Class;
-   type ImageMiniMapLayer_Access_Array is array (Natural range <>) of ImageMiniMapLayer_Access;
-   type ImageMiniMapLayer_Access_Array_Access is access all ImageMiniMapLayer_Access_Array;
-   type ImageMiniMapLayer_Access_Array_Access_Array is array (Natural range <>) of ImageMiniMapLayer_Access_Array_Access;
-   type ImageMiniMapLayer_Access_Array_Access_Array_Access is access all ImageMiniMapLayer_Access_Array_Access_Array;
+
+   subtype ImageMiniMapLayer_Access is org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References.ImageMiniMapLayer_Access;
+   function "=" (Left, Right : ImageMiniMapLayer_Access) return Boolean renames org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References."=";
+   subtype ImageMiniMapLayer_Access_Array is org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References.ImageMiniMapLayer_Access_Array;
+   function "=" (Left, Right : ImageMiniMapLayer_Access_Array) return Boolean renames org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References."=";
+   subtype ImageMiniMapLayer_Access_Array_Access is org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References.ImageMiniMapLayer_Access_Array_Access;
+   function "=" (Left, Right : ImageMiniMapLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References."=";
+   subtype ImageMiniMapLayer_Access_Array_Access_Array is org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References.ImageMiniMapLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageMiniMapLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References."=";
+   subtype ImageMiniMapLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References.ImageMiniMapLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageMiniMapLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package_References."=";
 
    type ImageMiniMapLayer is new MiniMapLayer with record
       image : Image_Access;

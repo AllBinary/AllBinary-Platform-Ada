@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.log.Log_Package;
+package org.allbinary.logic.communication.log.Log_Package_References is
+   type Log_Access is access all org.allbinary.logic.communication.log.Log_Package.Log'Class;
+   type Log_Access_Array is array (Natural range <>) of Log_Access;
+   type Log_Access_Array_Access is access all Log_Access_Array;
+   type Log_Access_Array_Access_Array is array (Natural range <>) of Log_Access_Array_Access;
+   type Log_Access_Array_Access_Array_Access is access all Log_Access_Array_Access_Array;
+end org.allbinary.logic.communication.log.Log_Package_References;
+
+with org.allbinary.logic.communication.log.Log_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
+limited with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package_References;
 
 package org.allbinary.logic.communication.log.Log_Package is
 
    package LogFormatUtil_Package renames Standard.org.allbinary.logic.communication.log.LogFormatUtil_Package;
+   package Reference_Types is
+   subtype LogFormatUtil_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access;
+   use type LogFormatUtil_Access;
+   subtype LogFormatUtil_Access_Array is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array;
+   use type LogFormatUtil_Access_Array;
+   subtype LogFormatUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access;
+   use type LogFormatUtil_Access_Array_Access;
+   subtype LogFormatUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access_Array;
+   use type LogFormatUtil_Access_Array_Access_Array;
+   subtype LogFormatUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access_Array_Access;
+   use type LogFormatUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type Log is tagged;
-   type Log_Access is access all Log'Class;
-   type Log_Access_Array is array (Natural range <>) of Log_Access;
-   type Log_Access_Array_Access is access all Log_Access_Array;
-   type Log_Access_Array_Access_Array is array (Natural range <>) of Log_Access_Array_Access;
-   type Log_Access_Array_Access_Array_Access is access all Log_Access_Array_Access_Array;
+
+   subtype Log_Access is org.allbinary.logic.communication.log.Log_Package_References.Log_Access;
+   function "=" (Left, Right : Log_Access) return Boolean renames org.allbinary.logic.communication.log.Log_Package_References."=";
+   subtype Log_Access_Array is org.allbinary.logic.communication.log.Log_Package_References.Log_Access_Array;
+   function "=" (Left, Right : Log_Access_Array) return Boolean renames org.allbinary.logic.communication.log.Log_Package_References."=";
+   subtype Log_Access_Array_Access is org.allbinary.logic.communication.log.Log_Package_References.Log_Access_Array_Access;
+   function "=" (Left, Right : Log_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.Log_Package_References."=";
+   subtype Log_Access_Array_Access_Array is org.allbinary.logic.communication.log.Log_Package_References.Log_Access_Array_Access_Array;
+   function "=" (Left, Right : Log_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.Log_Package_References."=";
+   subtype Log_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.Log_Package_References.Log_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Log_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.Log_Package_References."=";
 
    type Log is new Java_Object with record
       logFormatUtil : LogFormatUtil_Access;

@@ -13,13 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
 with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package;
 
 package body org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package is
 
    package AnalogControllerConfigurationEventHandler_Package renames Standard.org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
    package ScaleFactorFactory_Package renames Standard.org.allbinary.logic.math.ScaleFactorFactory_Package;
+   subtype AnalogControllerConfigurationEvent_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access;
+   function "=" (Left, Right : AnalogControllerConfigurationEvent_Access) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References."=";
+   subtype AnalogControllerConfigurationEvent_Access_Array is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access_Array;
+   function "=" (Left, Right : AnalogControllerConfigurationEvent_Access_Array) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References."=";
+   subtype AnalogControllerConfigurationEvent_Access_Array_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access_Array_Access;
+   function "=" (Left, Right : AnalogControllerConfigurationEvent_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References."=";
+   subtype AnalogControllerConfigurationEvent_Access_Array_Access_Array is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : AnalogControllerConfigurationEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References."=";
+   subtype AnalogControllerConfigurationEvent_Access_Array_Access_Array_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AnalogControllerConfigurationEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References."=";
    procedure Initialize_Fields (This : in out AnalogControllerConfigurationFactory'Class) is
    begin
       null;
@@ -32,7 +46,7 @@ package body org.allbinary.android.input.motion.AnalogControllerConfigurationFac
 
    function getInstance return AnalogControllerConfigurationFactory_Access is
    begin
-        return AnalogControllerConfigurationFactory_Package.instance;
+        return AnalogControllerConfigurationFactory_Access (AnalogControllerConfigurationFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out AnalogControllerConfigurationFactory'Class) is

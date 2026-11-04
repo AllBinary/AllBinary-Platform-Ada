@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package;
+package org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References is
+   type GeographicMapEventHandler_Access is access all org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package.GeographicMapEventHandler'Class;
+   type GeographicMapEventHandler_Access_Array is array (Natural range <>) of GeographicMapEventHandler_Access;
+   type GeographicMapEventHandler_Access_Array_Access is access all GeographicMapEventHandler_Access_Array;
+   type GeographicMapEventHandler_Access_Array_Access_Array is array (Natural range <>) of GeographicMapEventHandler_Access_Array_Access;
+   type GeographicMapEventHandler_Access_Array_Access_Array_Access is access all GeographicMapEventHandler_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References;
+
+with org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
-with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
+limited with org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
+limited with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package_References;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package is
 
@@ -31,13 +44,51 @@ package org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Pac
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype AllBinaryGameLayer_Access is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access;
+   use type AllBinaryGameLayer_Access;
+   subtype AllBinaryGameLayer_Access_Array is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array;
+   use type AllBinaryGameLayer_Access_Array;
+   subtype AllBinaryGameLayer_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array_Access;
+   use type AllBinaryGameLayer_Access_Array_Access;
+   subtype AllBinaryGameLayer_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array_Access_Array;
+   use type AllBinaryGameLayer_Access_Array_Access_Array;
+   subtype AllBinaryGameLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryGameLayer_Access_Array_Access_Array_Access;
+   subtype EventListenerInterface_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access;
+   use type EventListenerInterface_Access;
+   subtype EventListenerInterface_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array;
+   use type EventListenerInterface_Access_Array;
+   subtype EventListenerInterface_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access;
+   use type EventListenerInterface_Access_Array_Access;
+   subtype EventListenerInterface_Access_Array_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array;
+   use type EventListenerInterface_Access_Array_Access_Array;
+   subtype EventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array_Access;
+   use type EventListenerInterface_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GeographicMapEventHandler is tagged;
-   type GeographicMapEventHandler_Access is access all GeographicMapEventHandler'Class;
-   type GeographicMapEventHandler_Access_Array is array (Natural range <>) of GeographicMapEventHandler_Access;
-   type GeographicMapEventHandler_Access_Array_Access is access all GeographicMapEventHandler_Access_Array;
-   type GeographicMapEventHandler_Access_Array_Access_Array is array (Natural range <>) of GeographicMapEventHandler_Access_Array_Access;
-   type GeographicMapEventHandler_Access_Array_Access_Array_Access is access all GeographicMapEventHandler_Access_Array_Access_Array;
+
+   subtype GeographicMapEventHandler_Access is org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References.GeographicMapEventHandler_Access;
+   function "=" (Left, Right : GeographicMapEventHandler_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References."=";
+   subtype GeographicMapEventHandler_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References.GeographicMapEventHandler_Access_Array;
+   function "=" (Left, Right : GeographicMapEventHandler_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References."=";
+   subtype GeographicMapEventHandler_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References.GeographicMapEventHandler_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapEventHandler_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References."=";
+   subtype GeographicMapEventHandler_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References.GeographicMapEventHandler_Access_Array_Access_Array;
+   function "=" (Left, Right : GeographicMapEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References."=";
+   subtype GeographicMapEventHandler_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References.GeographicMapEventHandler_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package_References."=";
 
    type GeographicMapEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;

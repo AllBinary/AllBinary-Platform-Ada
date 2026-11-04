@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.item.RTSLayerCostAnimation_Package;
+package org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References is
+   type RTSLayerCostAnimation_Access is access all org.allbinary.game.layer.item.RTSLayerCostAnimation_Package.RTSLayerCostAnimation'Class;
+   type RTSLayerCostAnimation_Access_Array is array (Natural range <>) of RTSLayerCostAnimation_Access;
+   type RTSLayerCostAnimation_Access_Array_Access is access all RTSLayerCostAnimation_Access_Array;
+   type RTSLayerCostAnimation_Access_Array_Access_Array is array (Natural range <>) of RTSLayerCostAnimation_Access_Array_Access;
+   type RTSLayerCostAnimation_Access_Array_Access_Array_Access is access all RTSLayerCostAnimation_Access_Array_Access_Array;
+end org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References;
+
+with org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,16 +30,23 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References;
 with org.allbinary.game.rts.technology.event.TechEventListenerInterface_Package; use org.allbinary.game.rts.technology.event.TechEventListenerInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+limited with org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
+limited with org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
 
 package org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
 
@@ -43,13 +60,91 @@ package org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype CostLayerInterfaceFactoryInterface_Access is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access;
+   use type CostLayerInterfaceFactoryInterface_Access;
+   subtype CostLayerInterfaceFactoryInterface_Access_Array is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access_Array;
+   use type CostLayerInterfaceFactoryInterface_Access_Array;
+   subtype CostLayerInterfaceFactoryInterface_Access_Array_Access is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access_Array_Access;
+   use type CostLayerInterfaceFactoryInterface_Access_Array_Access;
+   subtype CostLayerInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
+   use type CostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
+   subtype CostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package_References.CostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   use type CostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype MyFontProcessor_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access;
+   use type MyFontProcessor_Access;
+   subtype MyFontProcessor_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array;
+   use type MyFontProcessor_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access;
+   subtype MyFontProcessor_Access_Array_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array;
+   use type MyFontProcessor_Access_Array_Access_Array;
+   subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
+   use type MyFontProcessor_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
+   subtype PrimitiveLongUtil_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access;
+   use type PrimitiveLongUtil_Access;
+   subtype PrimitiveLongUtil_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array;
+   use type PrimitiveLongUtil_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array;
+   use type PrimitiveLongUtil_Access_Array_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type RTSLayerCostAnimation is tagged;
-   type RTSLayerCostAnimation_Access is access all RTSLayerCostAnimation'Class;
-   type RTSLayerCostAnimation_Access_Array is array (Natural range <>) of RTSLayerCostAnimation_Access;
-   type RTSLayerCostAnimation_Access_Array_Access is access all RTSLayerCostAnimation_Access_Array;
-   type RTSLayerCostAnimation_Access_Array_Access_Array is array (Natural range <>) of RTSLayerCostAnimation_Access_Array_Access;
-   type RTSLayerCostAnimation_Access_Array_Access_Array_Access is access all RTSLayerCostAnimation_Access_Array_Access_Array;
+
+   subtype RTSLayerCostAnimation_Access is org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References.RTSLayerCostAnimation_Access;
+   function "=" (Left, Right : RTSLayerCostAnimation_Access) return Boolean renames org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References."=";
+   subtype RTSLayerCostAnimation_Access_Array is org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References.RTSLayerCostAnimation_Access_Array;
+   function "=" (Left, Right : RTSLayerCostAnimation_Access_Array) return Boolean renames org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References."=";
+   subtype RTSLayerCostAnimation_Access_Array_Access is org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References.RTSLayerCostAnimation_Access_Array_Access;
+   function "=" (Left, Right : RTSLayerCostAnimation_Access_Array_Access) return Boolean renames org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References."=";
+   subtype RTSLayerCostAnimation_Access_Array_Access_Array is org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References.RTSLayerCostAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : RTSLayerCostAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References."=";
+   subtype RTSLayerCostAnimation_Access_Array_Access_Array_Access is org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References.RTSLayerCostAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RTSLayerCostAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References."=";
 
    type RTSLayerCostAnimation is new Animation and TechEventListenerInterface and UpdateMyFontInterface with record
       logUtil : LogUtil_Access;

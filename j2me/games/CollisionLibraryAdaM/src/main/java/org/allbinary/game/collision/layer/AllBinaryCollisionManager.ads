@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package;
+package org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References is
+   type AllBinaryCollisionManager_Access is access all org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package.AllBinaryCollisionManager'Class;
+   type AllBinaryCollisionManager_Access_Array is array (Natural range <>) of AllBinaryCollisionManager_Access;
+   type AllBinaryCollisionManager_Access_Array_Access is access all AllBinaryCollisionManager_Access_Array;
+   type AllBinaryCollisionManager_Access_Array_Access_Array is array (Natural range <>) of AllBinaryCollisionManager_Access_Array_Access;
+   type AllBinaryCollisionManager_Access_Array_Access_Array_Access is access all AllBinaryCollisionManager_Access_Array_Access_Array;
+end org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References;
+
+with org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
+limited with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References;
+limited with org.allbinary.layer.LayerManager_Package;
+with org.allbinary.layer.LayerManager_Package_References;
 
 package org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package is
 
    package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
    package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
+   package Reference_Types is
+   subtype CollidableInterfaceCompositeInterface_Access is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access;
+   use type CollidableInterfaceCompositeInterface_Access;
+   subtype CollidableInterfaceCompositeInterface_Access_Array is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array;
+   use type CollidableInterfaceCompositeInterface_Access_Array;
+   subtype CollidableInterfaceCompositeInterface_Access_Array_Access is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array_Access;
+   use type CollidableInterfaceCompositeInterface_Access_Array_Access;
+   subtype CollidableInterfaceCompositeInterface_Access_Array_Access_Array is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array_Access_Array;
+   use type CollidableInterfaceCompositeInterface_Access_Array_Access_Array;
+   subtype CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access;
+   use type CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access;
+   subtype LayerManager_Access is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access;
+   use type LayerManager_Access;
+   subtype LayerManager_Access_Array is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access_Array;
+   use type LayerManager_Access_Array;
+   subtype LayerManager_Access_Array_Access is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access_Array_Access;
+   use type LayerManager_Access_Array_Access;
+   subtype LayerManager_Access_Array_Access_Array is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access_Array_Access_Array;
+   use type LayerManager_Access_Array_Access_Array;
+   subtype LayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.LayerManager_Package_References.LayerManager_Access_Array_Access_Array_Access;
+   use type LayerManager_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AllBinaryCollisionManager is tagged;
-   type AllBinaryCollisionManager_Access is access all AllBinaryCollisionManager'Class;
-   type AllBinaryCollisionManager_Access_Array is array (Natural range <>) of AllBinaryCollisionManager_Access;
-   type AllBinaryCollisionManager_Access_Array_Access is access all AllBinaryCollisionManager_Access_Array;
-   type AllBinaryCollisionManager_Access_Array_Access_Array is array (Natural range <>) of AllBinaryCollisionManager_Access_Array_Access;
-   type AllBinaryCollisionManager_Access_Array_Access_Array_Access is access all AllBinaryCollisionManager_Access_Array_Access_Array;
+
+   subtype AllBinaryCollisionManager_Access is org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References.AllBinaryCollisionManager_Access;
+   function "=" (Left, Right : AllBinaryCollisionManager_Access) return Boolean renames org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References."=";
+   subtype AllBinaryCollisionManager_Access_Array is org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References.AllBinaryCollisionManager_Access_Array;
+   function "=" (Left, Right : AllBinaryCollisionManager_Access_Array) return Boolean renames org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References."=";
+   subtype AllBinaryCollisionManager_Access_Array_Access is org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References.AllBinaryCollisionManager_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryCollisionManager_Access_Array_Access) return Boolean renames org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References."=";
+   subtype AllBinaryCollisionManager_Access_Array_Access_Array is org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References.AllBinaryCollisionManager_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryCollisionManager_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References."=";
+   subtype AllBinaryCollisionManager_Access_Array_Access_Array_Access is org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References.AllBinaryCollisionManager_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryCollisionManager_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package_References."=";
 
    type AllBinaryCollisionManager is new Java_Object with null record;
    allBinaryCollisionManager_Var : AllBinaryCollisionManager_Access;

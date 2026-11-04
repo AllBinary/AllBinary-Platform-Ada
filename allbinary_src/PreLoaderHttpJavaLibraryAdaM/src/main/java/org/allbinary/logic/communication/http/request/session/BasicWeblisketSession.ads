@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package;
+package org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References is
+   type BasicWeblisketSession_Access is access all org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package.BasicWeblisketSession'Class;
+   type BasicWeblisketSession_Access_Array is array (Natural range <>) of BasicWeblisketSession_Access;
+   type BasicWeblisketSession_Access_Array_Access is access all BasicWeblisketSession_Access_Array;
+   type BasicWeblisketSession_Access_Array_Access_Array is array (Natural range <>) of BasicWeblisketSession_Access_Array_Access;
+   type BasicWeblisketSession_Access_Array_Access_Array_Access is access all BasicWeblisketSession_Access_Array_Access_Array;
+end org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References;
+
+with org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,18 +33,37 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.http.HttpSession_Package; use javax.servlet.http.HttpSession_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
+limited with org.allbinary.business.user.role.BasicUserRole_Package;
+with org.allbinary.business.user.role.BasicUserRole_Package_References;
 
 package org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package is
 
    package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
+   package Reference_Types is
+   subtype BasicUserRole_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access;
+   use type BasicUserRole_Access;
+   subtype BasicUserRole_Access_Array is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array;
+   use type BasicUserRole_Access_Array;
+   subtype BasicUserRole_Access_Array_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array_Access;
+   use type BasicUserRole_Access_Array_Access;
+   subtype BasicUserRole_Access_Array_Access_Array is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array_Access_Array;
+   use type BasicUserRole_Access_Array_Access_Array;
+   subtype BasicUserRole_Access_Array_Access_Array_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array_Access_Array_Access;
+   use type BasicUserRole_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicWeblisketSession is tagged;
-   type BasicWeblisketSession_Access is access all BasicWeblisketSession'Class;
-   type BasicWeblisketSession_Access_Array is array (Natural range <>) of BasicWeblisketSession_Access;
-   type BasicWeblisketSession_Access_Array_Access is access all BasicWeblisketSession_Access_Array;
-   type BasicWeblisketSession_Access_Array_Access_Array is array (Natural range <>) of BasicWeblisketSession_Access_Array_Access;
-   type BasicWeblisketSession_Access_Array_Access_Array_Access is access all BasicWeblisketSession_Access_Array_Access_Array;
+
+   subtype BasicWeblisketSession_Access is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access;
+   function "=" (Left, Right : BasicWeblisketSession_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References."=";
+   subtype BasicWeblisketSession_Access_Array is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access_Array;
+   function "=" (Left, Right : BasicWeblisketSession_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References."=";
+   subtype BasicWeblisketSession_Access_Array_Access is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access_Array_Access;
+   function "=" (Left, Right : BasicWeblisketSession_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References."=";
+   subtype BasicWeblisketSession_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicWeblisketSession_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References."=";
+   subtype BasicWeblisketSession_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicWeblisketSession_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References."=";
 
    type BasicWeblisketSession is new Java_Object with record
       session : HttpSession_Access;

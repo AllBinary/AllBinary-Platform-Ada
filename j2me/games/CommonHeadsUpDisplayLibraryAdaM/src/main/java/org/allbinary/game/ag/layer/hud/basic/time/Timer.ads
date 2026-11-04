@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.layer.hud.basic.time.Timer_Package;
+package org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References is
+   type Timer_Access is access all org.allbinary.game.ag.layer.hud.basic.time.Timer_Package.Timer'Class;
+   type Timer_Access_Array is array (Natural range <>) of Timer_Access;
+   type Timer_Access_Array_Access is access all Timer_Access_Array;
+   type Timer_Access_Array_Access_Array is array (Natural range <>) of Timer_Access_Array_Access;
+   type Timer_Access_Array_Access_Array_Access is access all Timer_Access_Array_Access_Array;
+end org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References;
+
+with org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
-with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
+limited with org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
+limited with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
 
 package org.allbinary.game.ag.layer.hud.basic.time.Timer_Package is
 
    package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
+   package Reference_Types is
+   subtype PrimitiveLongUtil_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access;
+   use type PrimitiveLongUtil_Access;
+   subtype PrimitiveLongUtil_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array;
+   use type PrimitiveLongUtil_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array;
+   use type PrimitiveLongUtil_Access_Array_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   subtype GameTickTimeDelayHelper_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access;
+   use type GameTickTimeDelayHelper_Access;
+   subtype GameTickTimeDelayHelper_Access_Array is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array;
+   use type GameTickTimeDelayHelper_Access_Array;
+   subtype GameTickTimeDelayHelper_Access_Array_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access;
+   use type GameTickTimeDelayHelper_Access_Array_Access;
+   subtype GameTickTimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access_Array;
+   use type GameTickTimeDelayHelper_Access_Array_Access_Array;
+   subtype GameTickTimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access_Array_Access;
+   use type GameTickTimeDelayHelper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type Timer is tagged;
-   type Timer_Access is access all Timer'Class;
-   type Timer_Access_Array is array (Natural range <>) of Timer_Access;
-   type Timer_Access_Array_Access is access all Timer_Access_Array;
-   type Timer_Access_Array_Access_Array is array (Natural range <>) of Timer_Access_Array_Access;
-   type Timer_Access_Array_Access_Array_Access is access all Timer_Access_Array_Access_Array;
+
+   subtype Timer_Access is org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References.Timer_Access;
+   function "=" (Left, Right : Timer_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References."=";
+   subtype Timer_Access_Array is org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References.Timer_Access_Array;
+   function "=" (Left, Right : Timer_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References."=";
+   subtype Timer_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References.Timer_Access_Array_Access;
+   function "=" (Left, Right : Timer_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References."=";
+   subtype Timer_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References.Timer_Access_Array_Access_Array;
+   function "=" (Left, Right : Timer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References."=";
+   subtype Timer_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References.Timer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Timer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.time.Timer_Package_References."=";
 
    type Timer is new Java_Object with record
       startTime : Long_Long_Integer;

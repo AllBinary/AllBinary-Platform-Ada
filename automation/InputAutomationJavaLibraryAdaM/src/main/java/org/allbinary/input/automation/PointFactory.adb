@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.Point_Package; use org.allbinary.input.automation.Point_Package;
 
 package body org.allbinary.input.automation.PointFactory_Package is
 
+   subtype Point_Access is org.allbinary.input.automation.Point_Package_References.Point_Access;
+   function "=" (Left, Right : Point_Access) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
+   subtype Point_Access_Array is org.allbinary.input.automation.Point_Package_References.Point_Access_Array;
+   function "=" (Left, Right : Point_Access_Array) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
+   subtype Point_Access_Array_Access is org.allbinary.input.automation.Point_Package_References.Point_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array is org.allbinary.input.automation.Point_Package_References.Point_Access_Array_Access_Array;
+   function "=" (Left, Right : Point_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array_Access is org.allbinary.input.automation.Point_Package_References.Point_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.Point_Package_References."=";
    procedure Initialize_Fields (This : in out PointFactory'Class) is
    begin
       null;

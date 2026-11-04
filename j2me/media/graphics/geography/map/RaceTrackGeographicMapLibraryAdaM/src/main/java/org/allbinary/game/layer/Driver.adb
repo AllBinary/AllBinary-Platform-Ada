@@ -14,10 +14,22 @@
 
 
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.game.layer.Aggression_Package; use org.allbinary.game.layer.Aggression_Package;
+with org.allbinary.game.layer.Aggression_Package;
 
 package body org.allbinary.game.layer.Driver_Package is
 
    package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   subtype Aggression_Access is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access;
+   function "=" (Left, Right : Aggression_Access) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
+   subtype Aggression_Access_Array is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access_Array;
+   function "=" (Left, Right : Aggression_Access_Array) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
+   subtype Aggression_Access_Array_Access is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access_Array_Access;
+   function "=" (Left, Right : Aggression_Access_Array_Access) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
+   subtype Aggression_Access_Array_Access_Array is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access_Array_Access_Array;
+   function "=" (Left, Right : Aggression_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
+   subtype Aggression_Access_Array_Access_Array_Access is org.allbinary.game.layer.Aggression_Package_References.Aggression_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Aggression_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.Aggression_Package_References."=";
    procedure Initialize_Fields (This : in out Driver'Class) is
    begin
       null;

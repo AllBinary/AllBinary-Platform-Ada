@@ -15,11 +15,24 @@
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package; use org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package;
+with org.allbinary.data.tables.generator.IdGeneratorEntity_Package;
+with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package;
 
 package body org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype IdGeneratorEntityInterface_Access is org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References.IdGeneratorEntityInterface_Access;
+   function "=" (Left, Right : IdGeneratorEntityInterface_Access) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References."=";
+   subtype IdGeneratorEntityInterface_Access_Array is org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References.IdGeneratorEntityInterface_Access_Array;
+   function "=" (Left, Right : IdGeneratorEntityInterface_Access_Array) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References."=";
+   subtype IdGeneratorEntityInterface_Access_Array_Access is org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References.IdGeneratorEntityInterface_Access_Array_Access;
+   function "=" (Left, Right : IdGeneratorEntityInterface_Access_Array_Access) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References."=";
+   subtype IdGeneratorEntityInterface_Access_Array_Access_Array is org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References.IdGeneratorEntityInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : IdGeneratorEntityInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References."=";
+   subtype IdGeneratorEntityInterface_Access_Array_Access_Array_Access is org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References.IdGeneratorEntityInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IdGeneratorEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References."=";
    procedure Initialize_Fields (This : in out IdGeneratorEntityFactory'Class) is
    begin
       null;

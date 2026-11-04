@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package;
+package org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References is
+   type AbBasicCrypt_Access is access all org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package.AbBasicCrypt'Class;
+   type AbBasicCrypt_Access_Array is array (Natural range <>) of AbBasicCrypt_Access;
+   type AbBasicCrypt_Access_Array_Access is access all AbBasicCrypt_Access_Array;
+   type AbBasicCrypt_Access_Array_Access_Array is array (Natural range <>) of AbBasicCrypt_Access_Array_Access;
+   type AbBasicCrypt_Access_Array_Access_Array_Access is access all AbBasicCrypt_Access_Array_Access_Array;
+end org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References;
+
+with org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -31,13 +41,21 @@ with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinar
 package org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package is
 
    package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbBasicCrypt is tagged;
-   type AbBasicCrypt_Access is access all AbBasicCrypt'Class;
-   type AbBasicCrypt_Access_Array is array (Natural range <>) of AbBasicCrypt_Access;
-   type AbBasicCrypt_Access_Array_Access is access all AbBasicCrypt_Access_Array;
-   type AbBasicCrypt_Access_Array_Access_Array is array (Natural range <>) of AbBasicCrypt_Access_Array_Access;
-   type AbBasicCrypt_Access_Array_Access_Array_Access is access all AbBasicCrypt_Access_Array_Access_Array;
+
+   subtype AbBasicCrypt_Access is org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References.AbBasicCrypt_Access;
+   function "=" (Left, Right : AbBasicCrypt_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References."=";
+   subtype AbBasicCrypt_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References.AbBasicCrypt_Access_Array;
+   function "=" (Left, Right : AbBasicCrypt_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References."=";
+   subtype AbBasicCrypt_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References.AbBasicCrypt_Access_Array_Access;
+   function "=" (Left, Right : AbBasicCrypt_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References."=";
+   subtype AbBasicCrypt_Access_Array_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References.AbBasicCrypt_Access_Array_Access_Array;
+   function "=" (Left, Right : AbBasicCrypt_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References."=";
+   subtype AbBasicCrypt_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References.AbBasicCrypt_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbBasicCrypt_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package_References."=";
 
    type AbBasicCrypt is new Java_Object and CryptInterface with record
       cipher : Cipher_Access;

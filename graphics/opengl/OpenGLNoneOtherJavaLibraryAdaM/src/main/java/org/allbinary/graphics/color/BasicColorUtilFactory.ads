@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.color.BasicColorUtilFactory_Package;
+package org.allbinary.graphics.color.BasicColorUtilFactory_Package_References is
+   type BasicColorUtilFactory_Access is access all org.allbinary.graphics.color.BasicColorUtilFactory_Package.BasicColorUtilFactory'Class;
+   type BasicColorUtilFactory_Access_Array is array (Natural range <>) of BasicColorUtilFactory_Access;
+   type BasicColorUtilFactory_Access_Array_Access is access all BasicColorUtilFactory_Access_Array;
+   type BasicColorUtilFactory_Access_Array_Access_Array is array (Natural range <>) of BasicColorUtilFactory_Access_Array_Access;
+   type BasicColorUtilFactory_Access_Array_Access_Array_Access is access all BasicColorUtilFactory_Access_Array_Access_Array;
+end org.allbinary.graphics.color.BasicColorUtilFactory_Package_References;
+
+with org.allbinary.graphics.color.BasicColorUtilFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
+limited with org.allbinary.graphics.color.BasicColorUtil_Package;
+with org.allbinary.graphics.color.BasicColorUtil_Package_References;
 
 package org.allbinary.graphics.color.BasicColorUtilFactory_Package is
 
+   package Reference_Types is
+   subtype BasicColorUtil_Access is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access;
+   use type BasicColorUtil_Access;
+   subtype BasicColorUtil_Access_Array is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access_Array;
+   use type BasicColorUtil_Access_Array;
+   subtype BasicColorUtil_Access_Array_Access is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access_Array_Access;
+   use type BasicColorUtil_Access_Array_Access;
+   subtype BasicColorUtil_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access_Array_Access_Array;
+   use type BasicColorUtil_Access_Array_Access_Array;
+   subtype BasicColorUtil_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColorUtil_Package_References.BasicColorUtil_Access_Array_Access_Array_Access;
+   use type BasicColorUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicColorUtilFactory is tagged;
-   type BasicColorUtilFactory_Access is access all BasicColorUtilFactory'Class;
-   type BasicColorUtilFactory_Access_Array is array (Natural range <>) of BasicColorUtilFactory_Access;
-   type BasicColorUtilFactory_Access_Array_Access is access all BasicColorUtilFactory_Access_Array;
-   type BasicColorUtilFactory_Access_Array_Access_Array is array (Natural range <>) of BasicColorUtilFactory_Access_Array_Access;
-   type BasicColorUtilFactory_Access_Array_Access_Array_Access is access all BasicColorUtilFactory_Access_Array_Access_Array;
+
+   subtype BasicColorUtilFactory_Access is org.allbinary.graphics.color.BasicColorUtilFactory_Package_References.BasicColorUtilFactory_Access;
+   function "=" (Left, Right : BasicColorUtilFactory_Access) return Boolean renames org.allbinary.graphics.color.BasicColorUtilFactory_Package_References."=";
+   subtype BasicColorUtilFactory_Access_Array is org.allbinary.graphics.color.BasicColorUtilFactory_Package_References.BasicColorUtilFactory_Access_Array;
+   function "=" (Left, Right : BasicColorUtilFactory_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColorUtilFactory_Package_References."=";
+   subtype BasicColorUtilFactory_Access_Array_Access is org.allbinary.graphics.color.BasicColorUtilFactory_Package_References.BasicColorUtilFactory_Access_Array_Access;
+   function "=" (Left, Right : BasicColorUtilFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColorUtilFactory_Package_References."=";
+   subtype BasicColorUtilFactory_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColorUtilFactory_Package_References.BasicColorUtilFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicColorUtilFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColorUtilFactory_Package_References."=";
+   subtype BasicColorUtilFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColorUtilFactory_Package_References.BasicColorUtilFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicColorUtilFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColorUtilFactory_Package_References."=";
 
    type BasicColorUtilFactory is new Java_Object with null record;
 

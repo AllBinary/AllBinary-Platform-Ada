@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package;
+package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References is
+   type PaymentGatewayEntityFactory_Access is access all org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package.PaymentGatewayEntityFactory'Class;
+   type PaymentGatewayEntityFactory_Access_Array is array (Natural range <>) of PaymentGatewayEntityFactory_Access;
+   type PaymentGatewayEntityFactory_Access_Array_Access is access all PaymentGatewayEntityFactory_Access_Array;
+   type PaymentGatewayEntityFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayEntityFactory_Access_Array_Access;
+   type PaymentGatewayEntityFactory_Access_Array_Access_Array_Access is access all PaymentGatewayEntityFactory_Access_Array_Access_Array;
+end org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References;
+
+with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package;
+limited with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package;
+with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package_References;
 
 package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package is
 
+   package Reference_Types is
+   subtype PaymentGatewayEntity_Access is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package_References.PaymentGatewayEntity_Access;
+   use type PaymentGatewayEntity_Access;
+   subtype PaymentGatewayEntity_Access_Array is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package_References.PaymentGatewayEntity_Access_Array;
+   use type PaymentGatewayEntity_Access_Array;
+   subtype PaymentGatewayEntity_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package_References.PaymentGatewayEntity_Access_Array_Access;
+   use type PaymentGatewayEntity_Access_Array_Access;
+   subtype PaymentGatewayEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package_References.PaymentGatewayEntity_Access_Array_Access_Array;
+   use type PaymentGatewayEntity_Access_Array_Access_Array;
+   subtype PaymentGatewayEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package_References.PaymentGatewayEntity_Access_Array_Access_Array_Access;
+   use type PaymentGatewayEntity_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PaymentGatewayEntityFactory is tagged;
-   type PaymentGatewayEntityFactory_Access is access all PaymentGatewayEntityFactory'Class;
-   type PaymentGatewayEntityFactory_Access_Array is array (Natural range <>) of PaymentGatewayEntityFactory_Access;
-   type PaymentGatewayEntityFactory_Access_Array_Access is access all PaymentGatewayEntityFactory_Access_Array;
-   type PaymentGatewayEntityFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayEntityFactory_Access_Array_Access;
-   type PaymentGatewayEntityFactory_Access_Array_Access_Array_Access is access all PaymentGatewayEntityFactory_Access_Array_Access_Array;
+
+   subtype PaymentGatewayEntityFactory_Access is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References.PaymentGatewayEntityFactory_Access;
+   function "=" (Left, Right : PaymentGatewayEntityFactory_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References."=";
+   subtype PaymentGatewayEntityFactory_Access_Array is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References.PaymentGatewayEntityFactory_Access_Array;
+   function "=" (Left, Right : PaymentGatewayEntityFactory_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References."=";
+   subtype PaymentGatewayEntityFactory_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References.PaymentGatewayEntityFactory_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayEntityFactory_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References."=";
+   subtype PaymentGatewayEntityFactory_Access_Array_Access_Array is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References.PaymentGatewayEntityFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentGatewayEntityFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References."=";
+   subtype PaymentGatewayEntityFactory_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References.PaymentGatewayEntityFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayEntityFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package_References."=";
 
    type PaymentGatewayEntityFactory is new Java_Object with null record;
 

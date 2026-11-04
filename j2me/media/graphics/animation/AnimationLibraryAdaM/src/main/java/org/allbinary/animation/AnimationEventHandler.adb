@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 
 package body org.allbinary.animation.AnimationEventHandler_Package is
 
@@ -38,7 +39,7 @@ package body org.allbinary.animation.AnimationEventHandler_Package is
 
    function getInstance return AnimationEventHandler_Access is
    begin
-        return AnimationEventHandler_Package.eventHandler;
+        return AnimationEventHandler_Access (AnimationEventHandler_Package.eventHandler);
    end getInstance;
 
 begin

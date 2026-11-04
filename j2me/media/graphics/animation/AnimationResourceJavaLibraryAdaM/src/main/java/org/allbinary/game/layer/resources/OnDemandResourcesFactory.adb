@@ -13,9 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.resources.OnDemandResources_Package; use org.allbinary.game.layer.resources.OnDemandResources_Package;
+with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.resources.OnDemandResources_Package;
+with org.allbinary.game.resource.RectangleResourceFactoryInterface_Package;
+with org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterface_Package;
 
 package body org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package is
 
+   subtype OnDemandResources_Access is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access;
+   function "=" (Left, Right : OnDemandResources_Access) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
+   subtype OnDemandResources_Access_Array is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access_Array;
+   function "=" (Left, Right : OnDemandResources_Access_Array) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
+   subtype OnDemandResources_Access_Array_Access is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access_Array_Access;
+   function "=" (Left, Right : OnDemandResources_Access_Array_Access) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
+   subtype OnDemandResources_Access_Array_Access_Array is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access_Array_Access_Array;
+   function "=" (Left, Right : OnDemandResources_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
+   subtype OnDemandResources_Access_Array_Access_Array_Access is org.allbinary.game.layer.resources.OnDemandResources_Package_References.OnDemandResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OnDemandResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.resources.OnDemandResources_Package_References."=";
    procedure Initialize_Fields (This : in out OnDemandResourcesFactory'Class) is
    begin
       null;
@@ -41,7 +57,7 @@ package body org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package
 
    function remove (This : in out OnDemandResourcesFactory; layerId : Integer) return OnDemandResources_Access is
    begin
-        return OnDemandResources_Package.NULL_ON_DEMAND_RESOURCES;
+        return OnDemandResources_Access (OnDemandResources_Package.NULL_ON_DEMAND_RESOURCES);
    end remove;
 
    procedure remove (This : in out OnDemandResourcesFactory; layerId : Integer) is

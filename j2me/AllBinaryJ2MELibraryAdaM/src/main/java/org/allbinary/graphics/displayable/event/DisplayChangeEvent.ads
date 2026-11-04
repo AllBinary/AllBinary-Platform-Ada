@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+package org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References is
+   type DisplayChangeEvent_Access is access all org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package.DisplayChangeEvent'Class;
+   type DisplayChangeEvent_Access_Array is array (Natural range <>) of DisplayChangeEvent_Access;
+   type DisplayChangeEvent_Access_Array_Access is access all DisplayChangeEvent_Access_Array;
+   type DisplayChangeEvent_Access_Array_Access_Array is array (Natural range <>) of DisplayChangeEvent_Access_Array_Access;
+   type DisplayChangeEvent_Access_Array_Access_Array_Access is access all DisplayChangeEvent_Access_Array_Access_Array;
+end org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References;
+
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 package org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DisplayChangeEvent is tagged;
-   type DisplayChangeEvent_Access is access all DisplayChangeEvent'Class;
-   type DisplayChangeEvent_Access_Array is array (Natural range <>) of DisplayChangeEvent_Access;
-   type DisplayChangeEvent_Access_Array_Access is access all DisplayChangeEvent_Access_Array;
-   type DisplayChangeEvent_Access_Array_Access_Array is array (Natural range <>) of DisplayChangeEvent_Access_Array_Access;
-   type DisplayChangeEvent_Access_Array_Access_Array_Access is access all DisplayChangeEvent_Access_Array_Access_Array;
+
+   subtype DisplayChangeEvent_Access is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access;
+   function "=" (Left, Right : DisplayChangeEvent_Access) return Boolean renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References."=";
+   subtype DisplayChangeEvent_Access_Array is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access_Array;
+   function "=" (Left, Right : DisplayChangeEvent_Access_Array) return Boolean renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References."=";
+   subtype DisplayChangeEvent_Access_Array_Access is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access_Array_Access;
+   function "=" (Left, Right : DisplayChangeEvent_Access_Array_Access) return Boolean renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References."=";
+   subtype DisplayChangeEvent_Access_Array_Access_Array is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : DisplayChangeEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References."=";
+   subtype DisplayChangeEvent_Access_Array_Access_Array_Access is org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References.DisplayChangeEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DisplayChangeEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References."=";
 
    type DisplayChangeEvent is new AllBinaryEventObject with null record;
 

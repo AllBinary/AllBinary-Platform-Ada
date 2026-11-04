@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+package org.allbinary.graphics.paint.InitUpdatePaintable_Package_References is
+   type InitUpdatePaintable_Access is access all org.allbinary.graphics.paint.InitUpdatePaintable_Package.InitUpdatePaintable'Class;
+   type InitUpdatePaintable_Access_Array is array (Natural range <>) of InitUpdatePaintable_Access;
+   type InitUpdatePaintable_Access_Array_Access is access all InitUpdatePaintable_Access_Array;
+   type InitUpdatePaintable_Access_Array_Access_Array is array (Natural range <>) of InitUpdatePaintable_Access_Array_Access;
+   type InitUpdatePaintable_Access_Array_Access_Array_Access is access all InitUpdatePaintable_Access_Array_Access_Array;
+end org.allbinary.graphics.paint.InitUpdatePaintable_Package_References;
+
+with org.allbinary.graphics.paint.InitUpdatePaintable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.graphics.paint.InitUpdatePaintableInterface_Package; use org.
 
 package org.allbinary.graphics.paint.InitUpdatePaintable_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InitUpdatePaintable is tagged;
-   type InitUpdatePaintable_Access is access all InitUpdatePaintable'Class;
-   type InitUpdatePaintable_Access_Array is array (Natural range <>) of InitUpdatePaintable_Access;
-   type InitUpdatePaintable_Access_Array_Access is access all InitUpdatePaintable_Access_Array;
-   type InitUpdatePaintable_Access_Array_Access_Array is array (Natural range <>) of InitUpdatePaintable_Access_Array_Access;
-   type InitUpdatePaintable_Access_Array_Access_Array_Access is access all InitUpdatePaintable_Access_Array_Access_Array;
+
+   subtype InitUpdatePaintable_Access is org.allbinary.graphics.paint.InitUpdatePaintable_Package_References.InitUpdatePaintable_Access;
+   function "=" (Left, Right : InitUpdatePaintable_Access) return Boolean renames org.allbinary.graphics.paint.InitUpdatePaintable_Package_References."=";
+   subtype InitUpdatePaintable_Access_Array is org.allbinary.graphics.paint.InitUpdatePaintable_Package_References.InitUpdatePaintable_Access_Array;
+   function "=" (Left, Right : InitUpdatePaintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.InitUpdatePaintable_Package_References."=";
+   subtype InitUpdatePaintable_Access_Array_Access is org.allbinary.graphics.paint.InitUpdatePaintable_Package_References.InitUpdatePaintable_Access_Array_Access;
+   function "=" (Left, Right : InitUpdatePaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.InitUpdatePaintable_Package_References."=";
+   subtype InitUpdatePaintable_Access_Array_Access_Array is org.allbinary.graphics.paint.InitUpdatePaintable_Package_References.InitUpdatePaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : InitUpdatePaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.InitUpdatePaintable_Package_References."=";
+   subtype InitUpdatePaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.InitUpdatePaintable_Package_References.InitUpdatePaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InitUpdatePaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.InitUpdatePaintable_Package_References."=";
 
    type InitUpdatePaintable is new Paintable and InitUpdatePaintableInterface with null record;
 

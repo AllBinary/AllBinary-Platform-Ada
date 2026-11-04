@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.GameInputProcessorUtil_Package;
+package org.allbinary.game.input.GameInputProcessorUtil_Package_References is
+   type GameInputProcessorUtil_Access is access all org.allbinary.game.input.GameInputProcessorUtil_Package.GameInputProcessorUtil'Class;
+   type GameInputProcessorUtil_Access_Array is array (Natural range <>) of GameInputProcessorUtil_Access;
+   type GameInputProcessorUtil_Access_Array_Access is access all GameInputProcessorUtil_Access_Array;
+   type GameInputProcessorUtil_Access_Array_Access_Array is array (Natural range <>) of GameInputProcessorUtil_Access_Array_Access;
+   type GameInputProcessorUtil_Access_Array_Access_Array_Access is access all GameInputProcessorUtil_Access_Array_Access_Array;
+end org.allbinary.game.input.GameInputProcessorUtil_Package_References;
+
+with org.allbinary.game.input.GameInputProcessorUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
+limited with org.allbinary.game.input.GameInputProcessor_Package;
+with org.allbinary.game.input.GameInputProcessor_Package_References;
 
 package org.allbinary.game.input.GameInputProcessorUtil_Package is
 
+   package Reference_Types is
+   subtype GameInputProcessor_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access;
+   use type GameInputProcessor_Access;
+   subtype GameInputProcessor_Access_Array is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array;
+   use type GameInputProcessor_Access_Array;
+   subtype GameInputProcessor_Access_Array_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access;
+   use type GameInputProcessor_Access_Array_Access;
+   subtype GameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access_Array;
+   use type GameInputProcessor_Access_Array_Access_Array;
+   subtype GameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access_Array_Access;
+   use type GameInputProcessor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameInputProcessorUtil is tagged;
-   type GameInputProcessorUtil_Access is access all GameInputProcessorUtil'Class;
-   type GameInputProcessorUtil_Access_Array is array (Natural range <>) of GameInputProcessorUtil_Access;
-   type GameInputProcessorUtil_Access_Array_Access is access all GameInputProcessorUtil_Access_Array;
-   type GameInputProcessorUtil_Access_Array_Access_Array is array (Natural range <>) of GameInputProcessorUtil_Access_Array_Access;
-   type GameInputProcessorUtil_Access_Array_Access_Array_Access is access all GameInputProcessorUtil_Access_Array_Access_Array;
+
+   subtype GameInputProcessorUtil_Access is org.allbinary.game.input.GameInputProcessorUtil_Package_References.GameInputProcessorUtil_Access;
+   function "=" (Left, Right : GameInputProcessorUtil_Access) return Boolean renames org.allbinary.game.input.GameInputProcessorUtil_Package_References."=";
+   subtype GameInputProcessorUtil_Access_Array is org.allbinary.game.input.GameInputProcessorUtil_Package_References.GameInputProcessorUtil_Access_Array;
+   function "=" (Left, Right : GameInputProcessorUtil_Access_Array) return Boolean renames org.allbinary.game.input.GameInputProcessorUtil_Package_References."=";
+   subtype GameInputProcessorUtil_Access_Array_Access is org.allbinary.game.input.GameInputProcessorUtil_Package_References.GameInputProcessorUtil_Access_Array_Access;
+   function "=" (Left, Right : GameInputProcessorUtil_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputProcessorUtil_Package_References."=";
+   subtype GameInputProcessorUtil_Access_Array_Access_Array is org.allbinary.game.input.GameInputProcessorUtil_Package_References.GameInputProcessorUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInputProcessorUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameInputProcessorUtil_Package_References."=";
+   subtype GameInputProcessorUtil_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInputProcessorUtil_Package_References.GameInputProcessorUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInputProcessorUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputProcessorUtil_Package_References."=";
 
    type GameInputProcessorUtil is new Java_Object with null record;
 

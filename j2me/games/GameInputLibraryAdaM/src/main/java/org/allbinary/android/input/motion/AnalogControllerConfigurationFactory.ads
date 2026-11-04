@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package;
+package org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References is
+   type AnalogControllerConfigurationFactory_Access is access all org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package.AnalogControllerConfigurationFactory'Class;
+   type AnalogControllerConfigurationFactory_Access_Array is array (Natural range <>) of AnalogControllerConfigurationFactory_Access;
+   type AnalogControllerConfigurationFactory_Access_Array_Access is access all AnalogControllerConfigurationFactory_Access_Array;
+   type AnalogControllerConfigurationFactory_Access_Array_Access_Array is array (Natural range <>) of AnalogControllerConfigurationFactory_Access_Array_Access;
+   type AnalogControllerConfigurationFactory_Access_Array_Access_Array_Access is access all AnalogControllerConfigurationFactory_Access_Array_Access_Array;
+end org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References;
+
+with org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
+limited with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References;
 
 package org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package is
 
    package AnalogControllerConfigurationEvent_Package renames Standard.org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
+   package Reference_Types is
+   subtype AnalogControllerConfigurationEvent_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access;
+   use type AnalogControllerConfigurationEvent_Access;
+   subtype AnalogControllerConfigurationEvent_Access_Array is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access_Array;
+   use type AnalogControllerConfigurationEvent_Access_Array;
+   subtype AnalogControllerConfigurationEvent_Access_Array_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access_Array_Access;
+   use type AnalogControllerConfigurationEvent_Access_Array_Access;
+   subtype AnalogControllerConfigurationEvent_Access_Array_Access_Array is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access_Array_Access_Array;
+   use type AnalogControllerConfigurationEvent_Access_Array_Access_Array;
+   subtype AnalogControllerConfigurationEvent_Access_Array_Access_Array_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package_References.AnalogControllerConfigurationEvent_Access_Array_Access_Array_Access;
+   use type AnalogControllerConfigurationEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AnalogControllerConfigurationFactory is tagged;
-   type AnalogControllerConfigurationFactory_Access is access all AnalogControllerConfigurationFactory'Class;
-   type AnalogControllerConfigurationFactory_Access_Array is array (Natural range <>) of AnalogControllerConfigurationFactory_Access;
-   type AnalogControllerConfigurationFactory_Access_Array_Access is access all AnalogControllerConfigurationFactory_Access_Array;
-   type AnalogControllerConfigurationFactory_Access_Array_Access_Array is array (Natural range <>) of AnalogControllerConfigurationFactory_Access_Array_Access;
-   type AnalogControllerConfigurationFactory_Access_Array_Access_Array_Access is access all AnalogControllerConfigurationFactory_Access_Array_Access_Array;
+
+   subtype AnalogControllerConfigurationFactory_Access is org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References.AnalogControllerConfigurationFactory_Access;
+   function "=" (Left, Right : AnalogControllerConfigurationFactory_Access) return Boolean renames org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References."=";
+   subtype AnalogControllerConfigurationFactory_Access_Array is org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References.AnalogControllerConfigurationFactory_Access_Array;
+   function "=" (Left, Right : AnalogControllerConfigurationFactory_Access_Array) return Boolean renames org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References."=";
+   subtype AnalogControllerConfigurationFactory_Access_Array_Access is org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References.AnalogControllerConfigurationFactory_Access_Array_Access;
+   function "=" (Left, Right : AnalogControllerConfigurationFactory_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References."=";
+   subtype AnalogControllerConfigurationFactory_Access_Array_Access_Array is org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References.AnalogControllerConfigurationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : AnalogControllerConfigurationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References."=";
+   subtype AnalogControllerConfigurationFactory_Access_Array_Access_Array_Access is org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References.AnalogControllerConfigurationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AnalogControllerConfigurationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package_References."=";
 
    type AnalogControllerConfigurationFactory is new Java_Object with record
       SCALE_FACTOR : Integer;

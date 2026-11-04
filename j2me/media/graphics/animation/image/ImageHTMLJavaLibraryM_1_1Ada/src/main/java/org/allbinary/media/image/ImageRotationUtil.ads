@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.ImageRotationUtil_Package;
+package org.allbinary.media.image.ImageRotationUtil_Package_References is
+   type ImageRotationUtil_Access is access all org.allbinary.media.image.ImageRotationUtil_Package.ImageRotationUtil'Class;
+   type ImageRotationUtil_Access_Array is array (Natural range <>) of ImageRotationUtil_Access;
+   type ImageRotationUtil_Access_Array_Access is access all ImageRotationUtil_Access_Array;
+   type ImageRotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageRotationUtil_Access_Array_Access;
+   type ImageRotationUtil_Access_Array_Access_Array_Access is access all ImageRotationUtil_Access_Array_Access_Array;
+end org.allbinary.media.image.ImageRotationUtil_Package_References;
+
+with org.allbinary.media.image.ImageRotationUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with playn.core.CanvasSurface_Package;
+with playn.core.CanvasSurface_Package_References;
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package CanvasSurface_Package renames Standard.playn.core.CanvasSurface_Package;
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype CanvasSurface_Access is playn.core.CanvasSurface_Package_References.CanvasSurface_Access;
+   use type CanvasSurface_Access;
+   subtype CanvasSurface_Access_Array is playn.core.CanvasSurface_Package_References.CanvasSurface_Access_Array;
+   use type CanvasSurface_Access_Array;
+   subtype CanvasSurface_Access_Array_Access is playn.core.CanvasSurface_Package_References.CanvasSurface_Access_Array_Access;
+   use type CanvasSurface_Access_Array_Access;
+   subtype CanvasSurface_Access_Array_Access_Array is playn.core.CanvasSurface_Package_References.CanvasSurface_Access_Array_Access_Array;
+   use type CanvasSurface_Access_Array_Access_Array;
+   subtype CanvasSurface_Access_Array_Access_Array_Access is playn.core.CanvasSurface_Package_References.CanvasSurface_Access_Array_Access_Array_Access;
+   use type CanvasSurface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageRotationUtil is tagged;
-   type ImageRotationUtil_Access is access all ImageRotationUtil'Class;
-   type ImageRotationUtil_Access_Array is array (Natural range <>) of ImageRotationUtil_Access;
-   type ImageRotationUtil_Access_Array_Access is access all ImageRotationUtil_Access_Array;
-   type ImageRotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageRotationUtil_Access_Array_Access;
-   type ImageRotationUtil_Access_Array_Access_Array_Access is access all ImageRotationUtil_Access_Array_Access_Array;
+
+   subtype ImageRotationUtil_Access is org.allbinary.media.image.ImageRotationUtil_Package_References.ImageRotationUtil_Access;
+   function "=" (Left, Right : ImageRotationUtil_Access) return Boolean renames org.allbinary.media.image.ImageRotationUtil_Package_References."=";
+   subtype ImageRotationUtil_Access_Array is org.allbinary.media.image.ImageRotationUtil_Package_References.ImageRotationUtil_Access_Array;
+   function "=" (Left, Right : ImageRotationUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageRotationUtil_Package_References."=";
+   subtype ImageRotationUtil_Access_Array_Access is org.allbinary.media.image.ImageRotationUtil_Package_References.ImageRotationUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageRotationUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageRotationUtil_Package_References."=";
+   subtype ImageRotationUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageRotationUtil_Package_References.ImageRotationUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageRotationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageRotationUtil_Package_References."=";
+   subtype ImageRotationUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageRotationUtil_Package_References.ImageRotationUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageRotationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageRotationUtil_Package_References."=";
 
    type ImageRotationUtil is new Java_Object with null record;
    instance : ImageRotationUtil_Access;

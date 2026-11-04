@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.DataOutputStreamFactory_Package;
+package org.allbinary.logic.io.DataOutputStreamFactory_Package_References is
+   type DataOutputStreamFactory_Access is access all org.allbinary.logic.io.DataOutputStreamFactory_Package.DataOutputStreamFactory'Class;
+   type DataOutputStreamFactory_Access_Array is array (Natural range <>) of DataOutputStreamFactory_Access;
+   type DataOutputStreamFactory_Access_Array_Access is access all DataOutputStreamFactory_Access_Array;
+   type DataOutputStreamFactory_Access_Array_Access_Array is array (Natural range <>) of DataOutputStreamFactory_Access_Array_Access;
+   type DataOutputStreamFactory_Access_Array_Access_Array_Access is access all DataOutputStreamFactory_Access_Array_Access_Array;
+end org.allbinary.logic.io.DataOutputStreamFactory_Package_References;
+
+with org.allbinary.logic.io.DataOutputStreamFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
+limited with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.AbFile_Package_References;
+limited with org.allbinary.logic.io.AbDataOutputStream_Package;
+with org.allbinary.logic.io.AbDataOutputStream_Package_References;
 
 package org.allbinary.logic.io.DataOutputStreamFactory_Package is
 
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package Reference_Types is
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   use type AbFile_Access;
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   use type AbFile_Access_Array;
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   use type AbFile_Access_Array_Access;
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   use type AbFile_Access_Array_Access_Array;
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   use type AbFile_Access_Array_Access_Array_Access;
+   subtype AbDataOutputStream_Access is org.allbinary.logic.io.AbDataOutputStream_Package_References.AbDataOutputStream_Access;
+   use type AbDataOutputStream_Access;
+   subtype AbDataOutputStream_Access_Array is org.allbinary.logic.io.AbDataOutputStream_Package_References.AbDataOutputStream_Access_Array;
+   use type AbDataOutputStream_Access_Array;
+   subtype AbDataOutputStream_Access_Array_Access is org.allbinary.logic.io.AbDataOutputStream_Package_References.AbDataOutputStream_Access_Array_Access;
+   use type AbDataOutputStream_Access_Array_Access;
+   subtype AbDataOutputStream_Access_Array_Access_Array is org.allbinary.logic.io.AbDataOutputStream_Package_References.AbDataOutputStream_Access_Array_Access_Array;
+   use type AbDataOutputStream_Access_Array_Access_Array;
+   subtype AbDataOutputStream_Access_Array_Access_Array_Access is org.allbinary.logic.io.AbDataOutputStream_Package_References.AbDataOutputStream_Access_Array_Access_Array_Access;
+   use type AbDataOutputStream_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DataOutputStreamFactory is tagged;
-   type DataOutputStreamFactory_Access is access all DataOutputStreamFactory'Class;
-   type DataOutputStreamFactory_Access_Array is array (Natural range <>) of DataOutputStreamFactory_Access;
-   type DataOutputStreamFactory_Access_Array_Access is access all DataOutputStreamFactory_Access_Array;
-   type DataOutputStreamFactory_Access_Array_Access_Array is array (Natural range <>) of DataOutputStreamFactory_Access_Array_Access;
-   type DataOutputStreamFactory_Access_Array_Access_Array_Access is access all DataOutputStreamFactory_Access_Array_Access_Array;
+
+   subtype DataOutputStreamFactory_Access is org.allbinary.logic.io.DataOutputStreamFactory_Package_References.DataOutputStreamFactory_Access;
+   function "=" (Left, Right : DataOutputStreamFactory_Access) return Boolean renames org.allbinary.logic.io.DataOutputStreamFactory_Package_References."=";
+   subtype DataOutputStreamFactory_Access_Array is org.allbinary.logic.io.DataOutputStreamFactory_Package_References.DataOutputStreamFactory_Access_Array;
+   function "=" (Left, Right : DataOutputStreamFactory_Access_Array) return Boolean renames org.allbinary.logic.io.DataOutputStreamFactory_Package_References."=";
+   subtype DataOutputStreamFactory_Access_Array_Access is org.allbinary.logic.io.DataOutputStreamFactory_Package_References.DataOutputStreamFactory_Access_Array_Access;
+   function "=" (Left, Right : DataOutputStreamFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.io.DataOutputStreamFactory_Package_References."=";
+   subtype DataOutputStreamFactory_Access_Array_Access_Array is org.allbinary.logic.io.DataOutputStreamFactory_Package_References.DataOutputStreamFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : DataOutputStreamFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.DataOutputStreamFactory_Package_References."=";
+   subtype DataOutputStreamFactory_Access_Array_Access_Array_Access is org.allbinary.logic.io.DataOutputStreamFactory_Package_References.DataOutputStreamFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DataOutputStreamFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.DataOutputStreamFactory_Package_References."=";
 
    type DataOutputStreamFactory is new Java_Object with null record;
    instance : DataOutputStreamFactory_Access;

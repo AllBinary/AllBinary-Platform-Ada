@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.combat.damage.AnimationDamageFloaters_Package;
+package org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References is
+   type AnimationDamageFloaters_Access is access all org.allbinary.game.combat.damage.AnimationDamageFloaters_Package.AnimationDamageFloaters'Class;
+   type AnimationDamageFloaters_Access_Array is array (Natural range <>) of AnimationDamageFloaters_Access;
+   type AnimationDamageFloaters_Access_Array_Access is access all AnimationDamageFloaters_Access_Array;
+   type AnimationDamageFloaters_Access_Array_Access_Array is array (Natural range <>) of AnimationDamageFloaters_Access_Array_Access;
+   type AnimationDamageFloaters_Access_Array_Access_Array_Access is access all AnimationDamageFloaters_Access_Array_Access_Array;
+end org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References;
+
+with org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimation_Package_References;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.game.combat.damage.DamageFloaters_Package; use org.allbinary.game.combat.damage.DamageFloaters_Package;
 
 package org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
@@ -34,13 +49,71 @@ package org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype IndexedAnimation_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access;
+   use type IndexedAnimation_Access;
+   subtype IndexedAnimation_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array;
+   use type IndexedAnimation_Access_Array;
+   subtype IndexedAnimation_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access;
+   use type IndexedAnimation_Access_Array_Access;
+   subtype IndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array;
+   use type IndexedAnimation_Access_Array_Access_Array;
+   subtype IndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array_Access;
+   use type IndexedAnimation_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CircularIndexUtil_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access;
+   use type CircularIndexUtil_Access;
+   subtype CircularIndexUtil_Access_Array is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array;
+   use type CircularIndexUtil_Access_Array;
+   subtype CircularIndexUtil_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access;
+   use type CircularIndexUtil_Access_Array_Access;
+   subtype CircularIndexUtil_Access_Array_Access_Array is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array;
+   use type CircularIndexUtil_Access_Array_Access_Array;
+   subtype CircularIndexUtil_Access_Array_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array_Access;
+   use type CircularIndexUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AnimationDamageFloaters is tagged;
-   type AnimationDamageFloaters_Access is access all AnimationDamageFloaters'Class;
-   type AnimationDamageFloaters_Access_Array is array (Natural range <>) of AnimationDamageFloaters_Access;
-   type AnimationDamageFloaters_Access_Array_Access is access all AnimationDamageFloaters_Access_Array;
-   type AnimationDamageFloaters_Access_Array_Access_Array is array (Natural range <>) of AnimationDamageFloaters_Access_Array_Access;
-   type AnimationDamageFloaters_Access_Array_Access_Array_Access is access all AnimationDamageFloaters_Access_Array_Access_Array;
+
+   subtype AnimationDamageFloaters_Access is org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References.AnimationDamageFloaters_Access;
+   function "=" (Left, Right : AnimationDamageFloaters_Access) return Boolean renames org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References."=";
+   subtype AnimationDamageFloaters_Access_Array is org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References.AnimationDamageFloaters_Access_Array;
+   function "=" (Left, Right : AnimationDamageFloaters_Access_Array) return Boolean renames org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References."=";
+   subtype AnimationDamageFloaters_Access_Array_Access is org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References.AnimationDamageFloaters_Access_Array_Access;
+   function "=" (Left, Right : AnimationDamageFloaters_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References."=";
+   subtype AnimationDamageFloaters_Access_Array_Access_Array is org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References.AnimationDamageFloaters_Access_Array_Access_Array;
+   function "=" (Left, Right : AnimationDamageFloaters_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References."=";
+   subtype AnimationDamageFloaters_Access_Array_Access_Array_Access is org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References.AnimationDamageFloaters_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AnimationDamageFloaters_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.AnimationDamageFloaters_Package_References."=";
 
    type AnimationDamageFloaters is new DamageFloaters with record
       logUtil : LogUtil_Access;

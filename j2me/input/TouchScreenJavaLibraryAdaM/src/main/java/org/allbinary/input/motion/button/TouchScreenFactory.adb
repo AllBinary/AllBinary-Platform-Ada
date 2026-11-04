@@ -13,16 +13,40 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
+with org.allbinary.input.motion.button.TouchScreenType_Package; use org.allbinary.input.motion.button.TouchScreenType_Package;
+with org.allbinary.input.motion.button.TouchScreenType_Package;
+with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
 
 package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype TouchScreenType_Access is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access;
+   function "=" (Left, Right : TouchScreenType_Access) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
+   subtype TouchScreenType_Access_Array is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access_Array;
+   function "=" (Left, Right : TouchScreenType_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
+   subtype TouchScreenType_Access_Array_Access is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access_Array_Access;
+   function "=" (Left, Right : TouchScreenType_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
+   subtype TouchScreenType_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access_Array_Access_Array;
+   function "=" (Left, Right : TouchScreenType_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
+   subtype TouchScreenType_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TouchScreenType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
    procedure Initialize_Fields (This : in out TouchScreenFactory'Class) is
    begin
       null;
@@ -30,7 +54,7 @@ package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
       This.touch := False;
       This.multiTouch := False;
       This.multiTouchDistinct := False;
-      This.touchScreenType := TouchScreenTypesFactory_Package.getInstance.NOTOUCH;
+      This.touchScreenType := TouchScreenType_Access (TouchScreenTypesFactory_Package.getInstance.NOTOUCH);
    end Initialize_Fields;
 
 
@@ -61,7 +85,7 @@ package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
 
    function getInstance return TouchScreenFactory_Access is
    begin
-        return TouchScreenFactory_Package.SINGLETON;
+        return TouchScreenFactory_Access (TouchScreenFactory_Package.SINGLETON);
    end getInstance;
 
    procedure setMultiTouch (This : in out TouchScreenFactory; multiTouch : Boolean) is

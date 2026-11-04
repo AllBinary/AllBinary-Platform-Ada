@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.persistance.PlatformRecordIdUtil_Package;
+package org.allbinary.persistance.PlatformRecordIdUtil_Package_References is
+   type PlatformRecordIdUtil_Access is access all org.allbinary.persistance.PlatformRecordIdUtil_Package.PlatformRecordIdUtil'Class;
+   type PlatformRecordIdUtil_Access_Array is array (Natural range <>) of PlatformRecordIdUtil_Access;
+   type PlatformRecordIdUtil_Access_Array_Access is access all PlatformRecordIdUtil_Access_Array;
+   type PlatformRecordIdUtil_Access_Array_Access_Array is array (Natural range <>) of PlatformRecordIdUtil_Access_Array_Access;
+   type PlatformRecordIdUtil_Access_Array_Access_Array_Access is access all PlatformRecordIdUtil_Access_Array_Access_Array;
+end org.allbinary.persistance.PlatformRecordIdUtil_Package_References;
+
+with org.allbinary.persistance.PlatformRecordIdUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 
 package org.allbinary.persistance.PlatformRecordIdUtil_Package is
 
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PlatformRecordIdUtil is tagged;
-   type PlatformRecordIdUtil_Access is access all PlatformRecordIdUtil'Class;
-   type PlatformRecordIdUtil_Access_Array is array (Natural range <>) of PlatformRecordIdUtil_Access;
-   type PlatformRecordIdUtil_Access_Array_Access is access all PlatformRecordIdUtil_Access_Array;
-   type PlatformRecordIdUtil_Access_Array_Access_Array is array (Natural range <>) of PlatformRecordIdUtil_Access_Array_Access;
-   type PlatformRecordIdUtil_Access_Array_Access_Array_Access is access all PlatformRecordIdUtil_Access_Array_Access_Array;
+
+   subtype PlatformRecordIdUtil_Access is org.allbinary.persistance.PlatformRecordIdUtil_Package_References.PlatformRecordIdUtil_Access;
+   function "=" (Left, Right : PlatformRecordIdUtil_Access) return Boolean renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References."=";
+   subtype PlatformRecordIdUtil_Access_Array is org.allbinary.persistance.PlatformRecordIdUtil_Package_References.PlatformRecordIdUtil_Access_Array;
+   function "=" (Left, Right : PlatformRecordIdUtil_Access_Array) return Boolean renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References."=";
+   subtype PlatformRecordIdUtil_Access_Array_Access is org.allbinary.persistance.PlatformRecordIdUtil_Package_References.PlatformRecordIdUtil_Access_Array_Access;
+   function "=" (Left, Right : PlatformRecordIdUtil_Access_Array_Access) return Boolean renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References."=";
+   subtype PlatformRecordIdUtil_Access_Array_Access_Array is org.allbinary.persistance.PlatformRecordIdUtil_Package_References.PlatformRecordIdUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : PlatformRecordIdUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References."=";
+   subtype PlatformRecordIdUtil_Access_Array_Access_Array_Access is org.allbinary.persistance.PlatformRecordIdUtil_Package_References.PlatformRecordIdUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlatformRecordIdUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References."=";
 
    type PlatformRecordIdUtil is new Java_Object with record
       PLATFORM_SHORT_NAME : Unbounded_String;

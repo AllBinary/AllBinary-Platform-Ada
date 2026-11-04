@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package;
+package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References is
+   type LogoData_Access is access all org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package.LogoData'Class;
+   type LogoData_Access_Array is array (Natural range <>) of LogoData_Access;
+   type LogoData_Access_Array_Access is access all LogoData_Access_Array;
+   type LogoData_Access_Array_Access_Array is array (Natural range <>) of LogoData_Access_Array_Access;
+   type LogoData_Access_Array_Access_Array_Access is access all LogoData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References;
+
+with org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type LogoData is tagged;
-   type LogoData_Access is access all LogoData'Class;
-   type LogoData_Access_Array is array (Natural range <>) of LogoData_Access;
-   type LogoData_Access_Array_Access is access all LogoData_Access_Array;
-   type LogoData_Access_Array_Access_Array is array (Natural range <>) of LogoData_Access_Array_Access;
-   type LogoData_Access_Array_Access_Array_Access is access all LogoData_Access_Array_Access_Array;
+
+   subtype LogoData_Access is org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References.LogoData_Access;
+   function "=" (Left, Right : LogoData_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References."=";
+   subtype LogoData_Access_Array is org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References.LogoData_Access_Array;
+   function "=" (Left, Right : LogoData_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References."=";
+   subtype LogoData_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References.LogoData_Access_Array_Access;
+   function "=" (Left, Right : LogoData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References."=";
+   subtype LogoData_Access_Array_Access_Array is org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References.LogoData_Access_Array_Access_Array;
+   function "=" (Left, Right : LogoData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References."=";
+   subtype LogoData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References.LogoData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogoData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package_References."=";
 
    type LogoData is new Java_Object with record
       NAME : Unbounded_String;

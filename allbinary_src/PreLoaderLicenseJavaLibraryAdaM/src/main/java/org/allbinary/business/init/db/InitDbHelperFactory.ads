@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.init.db.InitDbHelperFactory_Package;
+package org.allbinary.business.init.db.InitDbHelperFactory_Package_References is
+   type InitDbHelperFactory_Access is access all org.allbinary.business.init.db.InitDbHelperFactory_Package.InitDbHelperFactory'Class;
+   type InitDbHelperFactory_Access_Array is array (Natural range <>) of InitDbHelperFactory_Access;
+   type InitDbHelperFactory_Access_Array_Access is access all InitDbHelperFactory_Access_Array;
+   type InitDbHelperFactory_Access_Array_Access_Array is array (Natural range <>) of InitDbHelperFactory_Access_Array_Access;
+   type InitDbHelperFactory_Access_Array_Access_Array_Access is access all InitDbHelperFactory_Access_Array_Access_Array;
+end org.allbinary.business.init.db.InitDbHelperFactory_Package_References;
+
+with org.allbinary.business.init.db.InitDbHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
+with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References;
 
 package org.allbinary.business.init.db.InitDbHelperFactory_Package is
 
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype DatabaseConnectionInfoInterface_Access is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access;
+   use type DatabaseConnectionInfoInterface_Access;
+   subtype DatabaseConnectionInfoInterface_Access_Array is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access_Array;
+   use type DatabaseConnectionInfoInterface_Access_Array;
+   subtype DatabaseConnectionInfoInterface_Access_Array_Access is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access_Array_Access;
+   use type DatabaseConnectionInfoInterface_Access_Array_Access;
+   subtype DatabaseConnectionInfoInterface_Access_Array_Access_Array is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access_Array_Access_Array;
+   use type DatabaseConnectionInfoInterface_Access_Array_Access_Array;
+   subtype DatabaseConnectionInfoInterface_Access_Array_Access_Array_Access is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access_Array_Access_Array_Access;
+   use type DatabaseConnectionInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InitDbHelperFactory is tagged;
-   type InitDbHelperFactory_Access is access all InitDbHelperFactory'Class;
-   type InitDbHelperFactory_Access_Array is array (Natural range <>) of InitDbHelperFactory_Access;
-   type InitDbHelperFactory_Access_Array_Access is access all InitDbHelperFactory_Access_Array;
-   type InitDbHelperFactory_Access_Array_Access_Array is array (Natural range <>) of InitDbHelperFactory_Access_Array_Access;
-   type InitDbHelperFactory_Access_Array_Access_Array_Access is access all InitDbHelperFactory_Access_Array_Access_Array;
+
+   subtype InitDbHelperFactory_Access is org.allbinary.business.init.db.InitDbHelperFactory_Package_References.InitDbHelperFactory_Access;
+   function "=" (Left, Right : InitDbHelperFactory_Access) return Boolean renames org.allbinary.business.init.db.InitDbHelperFactory_Package_References."=";
+   subtype InitDbHelperFactory_Access_Array is org.allbinary.business.init.db.InitDbHelperFactory_Package_References.InitDbHelperFactory_Access_Array;
+   function "=" (Left, Right : InitDbHelperFactory_Access_Array) return Boolean renames org.allbinary.business.init.db.InitDbHelperFactory_Package_References."=";
+   subtype InitDbHelperFactory_Access_Array_Access is org.allbinary.business.init.db.InitDbHelperFactory_Package_References.InitDbHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : InitDbHelperFactory_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.InitDbHelperFactory_Package_References."=";
+   subtype InitDbHelperFactory_Access_Array_Access_Array is org.allbinary.business.init.db.InitDbHelperFactory_Package_References.InitDbHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : InitDbHelperFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.db.InitDbHelperFactory_Package_References."=";
+   subtype InitDbHelperFactory_Access_Array_Access_Array_Access is org.allbinary.business.init.db.InitDbHelperFactory_Package_References.InitDbHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InitDbHelperFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.db.InitDbHelperFactory_Package_References."=";
 
    type InitDbHelperFactory is new Java_Object with null record;
    CLASSNAME : Unbounded_String;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.time.Time_Package; use org.allbinary.business.time.Time_Package;
+with org.allbinary.business.time.Time_Package;
 
 package body org.allbinary.business.time.modified.TimeLastModified_Package is
 

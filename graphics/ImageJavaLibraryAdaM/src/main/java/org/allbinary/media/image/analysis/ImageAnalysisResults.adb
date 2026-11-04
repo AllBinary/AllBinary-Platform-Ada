@@ -13,9 +13,36 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.analysis.ImageColorRangeResults_Package; use org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
+with org.allbinary.media.image.analysis.ImageColorResults_Package; use org.allbinary.media.image.analysis.ImageColorResults_Package;
+with org.allbinary.media.image.analysis.ColorAverage_Package;
+with org.allbinary.media.image.analysis.ColorRange_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
+with org.allbinary.media.image.analysis.ImageColorResults_Package;
 
 package body org.allbinary.media.image.analysis.ImageAnalysisResults_Package is
 
+   subtype ImageColorRangeResults_Access is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access;
+   function "=" (Left, Right : ImageColorRangeResults_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   subtype ImageColorRangeResults_Access_Array is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array;
+   function "=" (Left, Right : ImageColorRangeResults_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   subtype ImageColorRangeResults_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array_Access;
+   function "=" (Left, Right : ImageColorRangeResults_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   subtype ImageColorRangeResults_Access_Array_Access_Array is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageColorRangeResults_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   subtype ImageColorRangeResults_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageColorRangeResults_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   subtype ImageColorResults_Access is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access;
+   function "=" (Left, Right : ImageColorResults_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorResults_Package_References."=";
+   subtype ImageColorResults_Access_Array is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access_Array;
+   function "=" (Left, Right : ImageColorResults_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageColorResults_Package_References."=";
+   subtype ImageColorResults_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access_Array_Access;
+   function "=" (Left, Right : ImageColorResults_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorResults_Package_References."=";
+   subtype ImageColorResults_Access_Array_Access_Array is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageColorResults_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageColorResults_Package_References."=";
+   subtype ImageColorResults_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageColorResults_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorResults_Package_References."=";
    procedure Initialize_Fields (This : in out ImageAnalysisResults'Class) is
    begin
       null;

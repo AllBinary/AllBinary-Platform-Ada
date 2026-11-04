@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.admin.WorkFlowsTag_Package;
+package tags.admin.WorkFlowsTag_Package_References is
+   type WorkFlowsTag_Access is access all tags.admin.WorkFlowsTag_Package.WorkFlowsTag'Class;
+   type WorkFlowsTag_Access_Array is array (Natural range <>) of WorkFlowsTag_Access;
+   type WorkFlowsTag_Access_Array_Access is access all WorkFlowsTag_Access_Array;
+   type WorkFlowsTag_Access_Array_Access_Array is array (Natural range <>) of WorkFlowsTag_Access_Array_Access;
+   type WorkFlowsTag_Access_Array_Access_Array_Access is access all WorkFlowsTag_Access_Array_Access_Array;
+end tags.admin.WorkFlowsTag_Package_References;
+
+with tags.admin.WorkFlowsTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 package tags.admin.WorkFlowsTag_Package is
 
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type WorkFlowsTag is tagged;
-   type WorkFlowsTag_Access is access all WorkFlowsTag'Class;
-   type WorkFlowsTag_Access_Array is array (Natural range <>) of WorkFlowsTag_Access;
-   type WorkFlowsTag_Access_Array_Access is access all WorkFlowsTag_Access_Array;
-   type WorkFlowsTag_Access_Array_Access_Array is array (Natural range <>) of WorkFlowsTag_Access_Array_Access;
-   type WorkFlowsTag_Access_Array_Access_Array_Access is access all WorkFlowsTag_Access_Array_Access_Array;
+
+   subtype WorkFlowsTag_Access is tags.admin.WorkFlowsTag_Package_References.WorkFlowsTag_Access;
+   function "=" (Left, Right : WorkFlowsTag_Access) return Boolean renames tags.admin.WorkFlowsTag_Package_References."=";
+   subtype WorkFlowsTag_Access_Array is tags.admin.WorkFlowsTag_Package_References.WorkFlowsTag_Access_Array;
+   function "=" (Left, Right : WorkFlowsTag_Access_Array) return Boolean renames tags.admin.WorkFlowsTag_Package_References."=";
+   subtype WorkFlowsTag_Access_Array_Access is tags.admin.WorkFlowsTag_Package_References.WorkFlowsTag_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowsTag_Access_Array_Access) return Boolean renames tags.admin.WorkFlowsTag_Package_References."=";
+   subtype WorkFlowsTag_Access_Array_Access_Array is tags.admin.WorkFlowsTag_Package_References.WorkFlowsTag_Access_Array_Access_Array;
+   function "=" (Left, Right : WorkFlowsTag_Access_Array_Access_Array) return Boolean renames tags.admin.WorkFlowsTag_Package_References."=";
+   subtype WorkFlowsTag_Access_Array_Access_Array_Access is tags.admin.WorkFlowsTag_Package_References.WorkFlowsTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowsTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.WorkFlowsTag_Package_References."=";
 
    type WorkFlowsTag is new StoreValidationTransformTag with null record;
 

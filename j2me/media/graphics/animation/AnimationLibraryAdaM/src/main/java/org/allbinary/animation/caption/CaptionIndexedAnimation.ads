@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
+package org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References is
+   type CaptionIndexedAnimation_Access is access all org.allbinary.animation.caption.CaptionIndexedAnimation_Package.CaptionIndexedAnimation'Class;
+   type CaptionIndexedAnimation_Access_Array is array (Natural range <>) of CaptionIndexedAnimation_Access;
+   type CaptionIndexedAnimation_Access_Array_Access is access all CaptionIndexedAnimation_Access_Array;
+   type CaptionIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of CaptionIndexedAnimation_Access_Array_Access;
+   type CaptionIndexedAnimation_Access_Array_Access_Array_Access is access all CaptionIndexedAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References;
+
+with org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with javax.microedition.media.Player_Package;
+with javax.microedition.media.Player_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
+limited with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
+limited with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 
 package org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
 
@@ -37,13 +53,81 @@ package org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Player_Access is javax.microedition.media.Player_Package_References.Player_Access;
+   use type Player_Access;
+   subtype Player_Access_Array is javax.microedition.media.Player_Package_References.Player_Access_Array;
+   use type Player_Access_Array;
+   subtype Player_Access_Array_Access is javax.microedition.media.Player_Package_References.Player_Access_Array_Access;
+   use type Player_Access_Array_Access;
+   subtype Player_Access_Array_Access_Array is javax.microedition.media.Player_Package_References.Player_Access_Array_Access_Array;
+   use type Player_Access_Array_Access_Array;
+   subtype Player_Access_Array_Access_Array_Access is javax.microedition.media.Player_Package_References.Player_Access_Array_Access_Array_Access;
+   use type Player_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype AnimationBehavior_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access;
+   use type AnimationBehavior_Access;
+   subtype AnimationBehavior_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array;
+   use type AnimationBehavior_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access;
+   subtype AnimationBehavior_Access_Array_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array;
+   use type AnimationBehavior_Access_Array_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
+   subtype TimeDelayHelper_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access;
+   use type TimeDelayHelper_Access;
+   subtype TimeDelayHelper_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array;
+   use type TimeDelayHelper_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access;
+   subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
+   use type TimeDelayHelper_Access_Array_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CaptionIndexedAnimation is tagged;
-   type CaptionIndexedAnimation_Access is access all CaptionIndexedAnimation'Class;
-   type CaptionIndexedAnimation_Access_Array is array (Natural range <>) of CaptionIndexedAnimation_Access;
-   type CaptionIndexedAnimation_Access_Array_Access is access all CaptionIndexedAnimation_Access_Array;
-   type CaptionIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of CaptionIndexedAnimation_Access_Array_Access;
-   type CaptionIndexedAnimation_Access_Array_Access_Array_Access is access all CaptionIndexedAnimation_Access_Array_Access_Array;
+
+   subtype CaptionIndexedAnimation_Access is org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References.CaptionIndexedAnimation_Access;
+   function "=" (Left, Right : CaptionIndexedAnimation_Access) return Boolean renames org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References."=";
+   subtype CaptionIndexedAnimation_Access_Array is org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References.CaptionIndexedAnimation_Access_Array;
+   function "=" (Left, Right : CaptionIndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References."=";
+   subtype CaptionIndexedAnimation_Access_Array_Access is org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References.CaptionIndexedAnimation_Access_Array_Access;
+   function "=" (Left, Right : CaptionIndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References."=";
+   subtype CaptionIndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References.CaptionIndexedAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : CaptionIndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References."=";
+   subtype CaptionIndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References.CaptionIndexedAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CaptionIndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.caption.CaptionIndexedAnimation_Package_References."=";
 
    type CaptionIndexedAnimation is new IndexedAnimation with record
       animationInterface : Animation_Access;

@@ -36,7 +36,7 @@ package body org.allbinary.TsUtil_Package is
 
    function getInstance return TsUtil_Access is
    begin
-        return TsUtil_Package.instance;
+        return TsUtil_Access (TsUtil_Package.instance);
    end getInstance;
 
    function hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) return Integer is

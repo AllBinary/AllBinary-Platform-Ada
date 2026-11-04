@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.log.LogTableEntity_Package;
+package org.allbinary.data.tables.log.LogTableEntity_Package_References is
+   type LogTableEntity_Access is access all org.allbinary.data.tables.log.LogTableEntity_Package.LogTableEntity'Class;
+   type LogTableEntity_Access_Array is array (Natural range <>) of LogTableEntity_Access;
+   type LogTableEntity_Access_Array_Access is access all LogTableEntity_Access_Array;
+   type LogTableEntity_Access_Array_Access_Array is array (Natural range <>) of LogTableEntity_Access_Array_Access;
+   type LogTableEntity_Access_Array_Access_Array_Access is access all LogTableEntity_Access_Array_Access_Array;
+end org.allbinary.data.tables.log.LogTableEntity_Package_References;
+
+with org.allbinary.data.tables.log.LogTableEntity_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with org.allbinary.data.tables.log.LogTableEntityInterface_Package; use org.allb
 package org.allbinary.data.tables.log.LogTableEntity_Package is
 
    package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type LogTableEntity is tagged;
-   type LogTableEntity_Access is access all LogTableEntity'Class;
-   type LogTableEntity_Access_Array is array (Natural range <>) of LogTableEntity_Access;
-   type LogTableEntity_Access_Array_Access is access all LogTableEntity_Access_Array;
-   type LogTableEntity_Access_Array_Access_Array is array (Natural range <>) of LogTableEntity_Access_Array_Access;
-   type LogTableEntity_Access_Array_Access_Array_Access is access all LogTableEntity_Access_Array_Access_Array;
+
+   subtype LogTableEntity_Access is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access;
+   function "=" (Left, Right : LogTableEntity_Access) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   subtype LogTableEntity_Access_Array is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array;
+   function "=" (Left, Right : LogTableEntity_Access_Array) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   subtype LogTableEntity_Access_Array_Access is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array_Access;
+   function "=" (Left, Right : LogTableEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   subtype LogTableEntity_Access_Array_Access_Array is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : LogTableEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   subtype LogTableEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogTableEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
 
    type LogTableEntity is new AbSqlBean and LogTableEntityInterface with record
       tableName : Unbounded_String;

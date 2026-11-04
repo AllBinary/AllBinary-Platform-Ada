@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
+package org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References is
+   type Basket_Access is access all org.allbinary.business.user.commerce.inventory.basket.Basket_Package.Basket'Class;
+   type Basket_Access_Array is array (Natural range <>) of Basket_Access;
+   type Basket_Access_Array_Access is access all Basket_Access_Array;
+   type Basket_Access_Array_Access_Array is array (Natural range <>) of Basket_Access_Array_Access;
+   type Basket_Access_Array_Access_Array_Access is access all Basket_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References;
+
+with org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,20 +33,39 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Serializable_Package; use java.io.Serializable_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
+limited with org.allbinary.business.user.commerce.money.Money_Package;
+with org.allbinary.business.user.commerce.money.Money_Package_References;
 with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
 
 package org.allbinary.business.user.commerce.inventory.basket.Basket_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package Reference_Types is
+   subtype Money_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access;
+   use type Money_Access;
+   subtype Money_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array;
+   use type Money_Access_Array;
+   subtype Money_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access;
+   use type Money_Access_Array_Access;
+   subtype Money_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array;
+   use type Money_Access_Array_Access_Array;
+   subtype Money_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array_Access;
+   use type Money_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type Basket is tagged;
-   type Basket_Access is access all Basket'Class;
-   type Basket_Access_Array is array (Natural range <>) of Basket_Access;
-   type Basket_Access_Array_Access is access all Basket_Access_Array;
-   type Basket_Access_Array_Access_Array is array (Natural range <>) of Basket_Access_Array_Access;
-   type Basket_Access_Array_Access_Array_Access is access all Basket_Access_Array_Access_Array;
+
+   subtype Basket_Access is org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References.Basket_Access;
+   function "=" (Left, Right : Basket_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References."=";
+   subtype Basket_Access_Array is org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References.Basket_Access_Array;
+   function "=" (Left, Right : Basket_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References."=";
+   subtype Basket_Access_Array_Access is org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References.Basket_Access_Array_Access;
+   function "=" (Left, Right : Basket_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References."=";
+   subtype Basket_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References.Basket_Access_Array_Access_Array;
+   function "=" (Left, Right : Basket_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References."=";
+   subtype Basket_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References.Basket_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Basket_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.basket.Basket_Package_References."=";
 
    type Basket is new Java_Object and BasketInterface with record
       items : HashMap_Access;
@@ -49,7 +78,7 @@ package org.allbinary.business.user.commerce.inventory.basket.Basket_Package is
    procedure adjustItem (This : in out Basket; id : Unbounded_String; num : Unbounded_String);
    function getTotalWeight (This : in out Basket) return Unbounded_String;
    function getNumberOfItems (This : in out Basket) return Integer;
-   function getIds (This : in out Basket) return Set_Access;
+   function getIds (This : in out Basket) return Java_Object_Access;
    function getItems (This : in out Basket) return HashMap_Access;
    function getNumberOf (This : in out Basket; product : Unbounded_String) return Integer;
    procedure getNumberOf (This : in out Basket; product : Unbounded_String);

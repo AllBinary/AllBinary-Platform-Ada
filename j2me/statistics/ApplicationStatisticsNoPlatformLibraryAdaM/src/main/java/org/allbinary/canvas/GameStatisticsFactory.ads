@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.canvas.GameStatisticsFactory_Package;
+package org.allbinary.canvas.GameStatisticsFactory_Package_References is
+   type GameStatisticsFactory_Access is access all org.allbinary.canvas.GameStatisticsFactory_Package.GameStatisticsFactory'Class;
+   type GameStatisticsFactory_Access_Array is array (Natural range <>) of GameStatisticsFactory_Access;
+   type GameStatisticsFactory_Access_Array_Access is access all GameStatisticsFactory_Access_Array;
+   type GameStatisticsFactory_Access_Array_Access_Array is array (Natural range <>) of GameStatisticsFactory_Access_Array_Access;
+   type GameStatisticsFactory_Access_Array_Access_Array_Access is access all GameStatisticsFactory_Access_Array_Access_Array;
+end org.allbinary.canvas.GameStatisticsFactory_Package_References;
+
+with org.allbinary.canvas.GameStatisticsFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.canvas.BaseGameStatistics_Package; use org.allbinary.canvas.B
 
 package org.allbinary.canvas.GameStatisticsFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameStatisticsFactory is tagged;
-   type GameStatisticsFactory_Access is access all GameStatisticsFactory'Class;
-   type GameStatisticsFactory_Access_Array is array (Natural range <>) of GameStatisticsFactory_Access;
-   type GameStatisticsFactory_Access_Array_Access is access all GameStatisticsFactory_Access_Array;
-   type GameStatisticsFactory_Access_Array_Access_Array is array (Natural range <>) of GameStatisticsFactory_Access_Array_Access;
-   type GameStatisticsFactory_Access_Array_Access_Array_Access is access all GameStatisticsFactory_Access_Array_Access_Array;
+
+   subtype GameStatisticsFactory_Access is org.allbinary.canvas.GameStatisticsFactory_Package_References.GameStatisticsFactory_Access;
+   function "=" (Left, Right : GameStatisticsFactory_Access) return Boolean renames org.allbinary.canvas.GameStatisticsFactory_Package_References."=";
+   subtype GameStatisticsFactory_Access_Array is org.allbinary.canvas.GameStatisticsFactory_Package_References.GameStatisticsFactory_Access_Array;
+   function "=" (Left, Right : GameStatisticsFactory_Access_Array) return Boolean renames org.allbinary.canvas.GameStatisticsFactory_Package_References."=";
+   subtype GameStatisticsFactory_Access_Array_Access is org.allbinary.canvas.GameStatisticsFactory_Package_References.GameStatisticsFactory_Access_Array_Access;
+   function "=" (Left, Right : GameStatisticsFactory_Access_Array_Access) return Boolean renames org.allbinary.canvas.GameStatisticsFactory_Package_References."=";
+   subtype GameStatisticsFactory_Access_Array_Access_Array is org.allbinary.canvas.GameStatisticsFactory_Package_References.GameStatisticsFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : GameStatisticsFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.GameStatisticsFactory_Package_References."=";
+   subtype GameStatisticsFactory_Access_Array_Access_Array_Access is org.allbinary.canvas.GameStatisticsFactory_Package_References.GameStatisticsFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameStatisticsFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.GameStatisticsFactory_Package_References."=";
 
    type GameStatisticsFactory is new BaseGameStatistics with null record;
    instance : GameStatisticsFactory_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package;
+package org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References is
+   type HtmlSubmitInput_Access is access all org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package.HtmlSubmitInput'Class;
+   type HtmlSubmitInput_Access_Array is array (Natural range <>) of HtmlSubmitInput_Access;
+   type HtmlSubmitInput_Access_Array_Access is access all HtmlSubmitInput_Access_Array;
+   type HtmlSubmitInput_Access_Array_Access_Array is array (Natural range <>) of HtmlSubmitInput_Access_Array_Access;
+   type HtmlSubmitInput_Access_Array_Access_Array_Access is access all HtmlSubmitInput_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References;
+
+with org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package; use org
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HtmlSubmitInput is tagged;
-   type HtmlSubmitInput_Access is access all HtmlSubmitInput'Class;
-   type HtmlSubmitInput_Access_Array is array (Natural range <>) of HtmlSubmitInput_Access;
-   type HtmlSubmitInput_Access_Array_Access is access all HtmlSubmitInput_Access_Array;
-   type HtmlSubmitInput_Access_Array_Access_Array is array (Natural range <>) of HtmlSubmitInput_Access_Array_Access;
-   type HtmlSubmitInput_Access_Array_Access_Array_Access is access all HtmlSubmitInput_Access_Array_Access_Array;
+
+   subtype HtmlSubmitInput_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References.HtmlSubmitInput_Access;
+   function "=" (Left, Right : HtmlSubmitInput_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References."=";
+   subtype HtmlSubmitInput_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References.HtmlSubmitInput_Access_Array;
+   function "=" (Left, Right : HtmlSubmitInput_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References."=";
+   subtype HtmlSubmitInput_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References.HtmlSubmitInput_Access_Array_Access;
+   function "=" (Left, Right : HtmlSubmitInput_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References."=";
+   subtype HtmlSubmitInput_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References.HtmlSubmitInput_Access_Array_Access_Array;
+   function "=" (Left, Right : HtmlSubmitInput_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References."=";
+   subtype HtmlSubmitInput_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References.HtmlSubmitInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HtmlSubmitInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package_References."=";
 
    type HtmlSubmitInput is new HtmlValueInput with null record;
 

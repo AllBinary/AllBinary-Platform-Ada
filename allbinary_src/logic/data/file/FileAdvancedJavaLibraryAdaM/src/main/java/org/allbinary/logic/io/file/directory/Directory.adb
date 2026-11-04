@@ -14,8 +14,11 @@
 
 
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
 with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package body org.allbinary.logic.io.file.directory.Directory_Package is
@@ -24,6 +27,36 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
    package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
    package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file.FileWrapperUtil_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   function "=" (Left, Right : AbFile_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbPath_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access;
+   function "=" (Left, Right : AbPath_Access) return Boolean renames org.allbinary.logic.io.path.AbPath_Package_References."=";
+   subtype AbPath_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array;
+   function "=" (Left, Right : AbPath_Access_Array) return Boolean renames org.allbinary.logic.io.path.AbPath_Package_References."=";
+   subtype AbPath_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access;
+   function "=" (Left, Right : AbPath_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.AbPath_Package_References."=";
+   subtype AbPath_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array;
+   function "=" (Left, Right : AbPath_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.path.AbPath_Package_References."=";
+   subtype AbPath_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbPath_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.AbPath_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    procedure Initialize_Fields (This : in out Directory'Class) is
    begin
       null;
@@ -32,7 +65,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
 
    function getInstance return Directory_Access is
    begin
-        return Directory_Package.instance;
+        return Directory_Access (Directory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out Directory'Class) is
@@ -130,7 +163,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
             end if;
             size := files'Length;
             for index in 0 .. (size) - 1 loop
-                fileList.add (files (index));
+                fileList.add (Java_Object_Access (files (index)));
                 if isRecursiveSearch then
                     recursiveFileList := Directory'Class (This).search (fileFilter, files (index), isRecursiveSearch);
                     fileList.addAllList (recursiveFileList);
@@ -166,7 +199,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
                 return fileList;
             end if;
             for index in 0 .. (files'Length) - 1 loop
-                fileList.add (files (index));
+                fileList.add (Java_Object_Access (files (index)));
                 if isRecursiveSearch then
                     recursiveFileList := Directory'Class (This).search (files (index), isRecursiveSearch);
                     fileList.addAllList (recursiveFileList);
@@ -203,7 +236,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
             end if;
             for index in 0 .. (files'Length) - 1 loop
                 if (files (index).getPath.indexOf (searchValue)) >= (0) then
-                    fileList.add (files (index));
+                    fileList.add (Java_Object_Access (files (index)));
                 end if;
                 if isRecursiveSearch then
                     recursiveFileList := Directory'Class (This).search (searchValue, files (index), isRecursiveSearch);
@@ -240,7 +273,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
                 return fileList;
             end if;
             for index in 0 .. (files'Length) - 1 loop
-                fileList.add (files (index));
+                fileList.add (Java_Object_Access (files (index)));
                 if (level) <= (0) then
                     return fileList;
                 end if;

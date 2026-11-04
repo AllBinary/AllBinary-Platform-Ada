@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package; use org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
+with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
 
 package body org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Package is
 
+   subtype Group_Access is org.allbinary.game.identification.Group_Package_References.Group_Access;
+   function "=" (Left, Right : Group_Access) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype Group_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array;
+   function "=" (Left, Right : Group_Access_Array) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype Group_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access;
+   function "=" (Left, Right : Group_Access_Array_Access) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype Group_Access_Array_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array;
+   function "=" (Left, Right : Group_Access_Array_Access_Array) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype Group_Access_Array_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Group_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   subtype WaypointEventHandler_Access is org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References.WaypointEventHandler_Access;
+   function "=" (Left, Right : WaypointEventHandler_Access) return Boolean renames org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References."=";
+   subtype WaypointEventHandler_Access_Array is org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References.WaypointEventHandler_Access_Array;
+   function "=" (Left, Right : WaypointEventHandler_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References."=";
+   subtype WaypointEventHandler_Access_Array_Access is org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References.WaypointEventHandler_Access_Array_Access;
+   function "=" (Left, Right : WaypointEventHandler_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References."=";
+   subtype WaypointEventHandler_Access_Array_Access_Array is org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References.WaypointEventHandler_Access_Array_Access_Array;
+   function "=" (Left, Right : WaypointEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References."=";
+   subtype WaypointEventHandler_Access_Array_Access_Array_Access is org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References.WaypointEventHandler_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WaypointEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package_References."=";
    procedure Initialize_Fields (This : in out WaypointEventHandlerFactory'Class) is
    begin
       null;
@@ -36,8 +59,10 @@ package body org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory
 
    function getInstance (groupInterface_Param : access Group_Package.Group'Class) return WaypointEventHandler_Access is
       groupInterface : constant Group_Access := Group_Access (groupInterface_Param);
+      groupId : Integer;
    begin
-        return WaypointEventHandlerFactory_Package.eventHandlerArray (Integer (groupInterface.getGroupId));
+        groupId := Integer (groupInterface.getGroupId);
+        return WaypointEventHandlerFactory_Package.eventHandlerArray (groupId);
    end getInstance;
 
    procedure removeAll is

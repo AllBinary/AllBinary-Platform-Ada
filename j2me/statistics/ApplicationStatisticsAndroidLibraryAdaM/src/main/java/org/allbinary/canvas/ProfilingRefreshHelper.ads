@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.canvas.ProfilingRefreshHelper_Package;
+package org.allbinary.canvas.ProfilingRefreshHelper_Package_References is
+   type ProfilingRefreshHelper_Access is access all org.allbinary.canvas.ProfilingRefreshHelper_Package.ProfilingRefreshHelper'Class;
+   type ProfilingRefreshHelper_Access_Array is array (Natural range <>) of ProfilingRefreshHelper_Access;
+   type ProfilingRefreshHelper_Access_Array_Access is access all ProfilingRefreshHelper_Access_Array;
+   type ProfilingRefreshHelper_Access_Array_Access_Array is array (Natural range <>) of ProfilingRefreshHelper_Access_Array_Access;
+   type ProfilingRefreshHelper_Access_Array_Access_Array_Access is access all ProfilingRefreshHelper_Access_Array_Access_Array;
+end org.allbinary.canvas.ProfilingRefreshHelper_Package_References;
+
+with org.allbinary.canvas.ProfilingRefreshHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.view.View_Package; use android.view.View_Package;
+limited with android.view.View_Package;
+with android.view.View_Package_References;
 with org.allbinary.canvas.AndroidGameStatistics_Package; use org.allbinary.canvas.AndroidGameStatistics_Package;
 
 package org.allbinary.canvas.ProfilingRefreshHelper_Package is
 
    package View_Package renames Standard.android.view.View_Package;
+   package Reference_Types is
+   subtype View_Access is android.view.View_Package_References.View_Access;
+   use type View_Access;
+   subtype View_Access_Array is android.view.View_Package_References.View_Access_Array;
+   use type View_Access_Array;
+   subtype View_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access;
+   use type View_Access_Array_Access;
+   subtype View_Access_Array_Access_Array is android.view.View_Package_References.View_Access_Array_Access_Array;
+   use type View_Access_Array_Access_Array;
+   subtype View_Access_Array_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access_Array_Access;
+   use type View_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ProfilingRefreshHelper is tagged;
-   type ProfilingRefreshHelper_Access is access all ProfilingRefreshHelper'Class;
-   type ProfilingRefreshHelper_Access_Array is array (Natural range <>) of ProfilingRefreshHelper_Access;
-   type ProfilingRefreshHelper_Access_Array_Access is access all ProfilingRefreshHelper_Access_Array;
-   type ProfilingRefreshHelper_Access_Array_Access_Array is array (Natural range <>) of ProfilingRefreshHelper_Access_Array_Access;
-   type ProfilingRefreshHelper_Access_Array_Access_Array_Access is access all ProfilingRefreshHelper_Access_Array_Access_Array;
+
+   subtype ProfilingRefreshHelper_Access is org.allbinary.canvas.ProfilingRefreshHelper_Package_References.ProfilingRefreshHelper_Access;
+   function "=" (Left, Right : ProfilingRefreshHelper_Access) return Boolean renames org.allbinary.canvas.ProfilingRefreshHelper_Package_References."=";
+   subtype ProfilingRefreshHelper_Access_Array is org.allbinary.canvas.ProfilingRefreshHelper_Package_References.ProfilingRefreshHelper_Access_Array;
+   function "=" (Left, Right : ProfilingRefreshHelper_Access_Array) return Boolean renames org.allbinary.canvas.ProfilingRefreshHelper_Package_References."=";
+   subtype ProfilingRefreshHelper_Access_Array_Access is org.allbinary.canvas.ProfilingRefreshHelper_Package_References.ProfilingRefreshHelper_Access_Array_Access;
+   function "=" (Left, Right : ProfilingRefreshHelper_Access_Array_Access) return Boolean renames org.allbinary.canvas.ProfilingRefreshHelper_Package_References."=";
+   subtype ProfilingRefreshHelper_Access_Array_Access_Array is org.allbinary.canvas.ProfilingRefreshHelper_Package_References.ProfilingRefreshHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : ProfilingRefreshHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.ProfilingRefreshHelper_Package_References."=";
+   subtype ProfilingRefreshHelper_Access_Array_Access_Array_Access is org.allbinary.canvas.ProfilingRefreshHelper_Package_References.ProfilingRefreshHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ProfilingRefreshHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.ProfilingRefreshHelper_Package_References."=";
 
    type ProfilingRefreshHelper is new AndroidGameStatistics with record
       firstTime : Boolean;

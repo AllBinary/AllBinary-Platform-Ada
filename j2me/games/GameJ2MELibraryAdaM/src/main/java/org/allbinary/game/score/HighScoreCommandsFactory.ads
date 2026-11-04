@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.score.HighScoreCommandsFactory_Package;
+package org.allbinary.game.score.HighScoreCommandsFactory_Package_References is
+   type HighScoreCommandsFactory_Access is access all org.allbinary.game.score.HighScoreCommandsFactory_Package.HighScoreCommandsFactory'Class;
+   type HighScoreCommandsFactory_Access_Array is array (Natural range <>) of HighScoreCommandsFactory_Access;
+   type HighScoreCommandsFactory_Access_Array_Access is access all HighScoreCommandsFactory_Access_Array;
+   type HighScoreCommandsFactory_Access_Array_Access_Array is array (Natural range <>) of HighScoreCommandsFactory_Access_Array_Access;
+   type HighScoreCommandsFactory_Access_Array_Access_Array_Access is access all HighScoreCommandsFactory_Access_Array_Access_Array;
+end org.allbinary.game.score.HighScoreCommandsFactory_Package_References;
+
+with org.allbinary.game.score.HighScoreCommandsFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package; use org.allb
 
 package org.allbinary.game.score.HighScoreCommandsFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HighScoreCommandsFactory is tagged;
-   type HighScoreCommandsFactory_Access is access all HighScoreCommandsFactory'Class;
-   type HighScoreCommandsFactory_Access_Array is array (Natural range <>) of HighScoreCommandsFactory_Access;
-   type HighScoreCommandsFactory_Access_Array_Access is access all HighScoreCommandsFactory_Access_Array;
-   type HighScoreCommandsFactory_Access_Array_Access_Array is array (Natural range <>) of HighScoreCommandsFactory_Access_Array_Access;
-   type HighScoreCommandsFactory_Access_Array_Access_Array_Access is access all HighScoreCommandsFactory_Access_Array_Access_Array;
+
+   subtype HighScoreCommandsFactory_Access is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access;
+   function "=" (Left, Right : HighScoreCommandsFactory_Access) return Boolean renames org.allbinary.game.score.HighScoreCommandsFactory_Package_References."=";
+   subtype HighScoreCommandsFactory_Access_Array is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access_Array;
+   function "=" (Left, Right : HighScoreCommandsFactory_Access_Array) return Boolean renames org.allbinary.game.score.HighScoreCommandsFactory_Package_References."=";
+   subtype HighScoreCommandsFactory_Access_Array_Access is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access_Array_Access;
+   function "=" (Left, Right : HighScoreCommandsFactory_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScoreCommandsFactory_Package_References."=";
+   subtype HighScoreCommandsFactory_Access_Array_Access_Array is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : HighScoreCommandsFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.HighScoreCommandsFactory_Package_References."=";
+   subtype HighScoreCommandsFactory_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HighScoreCommandsFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScoreCommandsFactory_Package_References."=";
 
    type HighScoreCommandsFactory is new HighScoreCommandsBaseFactory with null record;
    instance : HighScoreCommandsFactory_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.debug.AndroidDebug_Package;
+package org.allbinary.debug.AndroidDebug_Package_References is
+   type AndroidDebug_Access is access all org.allbinary.debug.AndroidDebug_Package.AndroidDebug'Class;
+   type AndroidDebug_Access_Array is array (Natural range <>) of AndroidDebug_Access;
+   type AndroidDebug_Access_Array_Access is access all AndroidDebug_Access_Array;
+   type AndroidDebug_Access_Array_Access_Array is array (Natural range <>) of AndroidDebug_Access_Array_Access;
+   type AndroidDebug_Access_Array_Access_Array_Access is access all AndroidDebug_Access_Array_Access_Array;
+end org.allbinary.debug.AndroidDebug_Package_References;
+
+with org.allbinary.debug.AndroidDebug_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.debug.DebugInterface_Package; use org.allbinary.debug.DebugIn
 
 package org.allbinary.debug.AndroidDebug_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidDebug is tagged;
-   type AndroidDebug_Access is access all AndroidDebug'Class;
-   type AndroidDebug_Access_Array is array (Natural range <>) of AndroidDebug_Access;
-   type AndroidDebug_Access_Array_Access is access all AndroidDebug_Access_Array;
-   type AndroidDebug_Access_Array_Access_Array is array (Natural range <>) of AndroidDebug_Access_Array_Access;
-   type AndroidDebug_Access_Array_Access_Array_Access is access all AndroidDebug_Access_Array_Access_Array;
+
+   subtype AndroidDebug_Access is org.allbinary.debug.AndroidDebug_Package_References.AndroidDebug_Access;
+   function "=" (Left, Right : AndroidDebug_Access) return Boolean renames org.allbinary.debug.AndroidDebug_Package_References."=";
+   subtype AndroidDebug_Access_Array is org.allbinary.debug.AndroidDebug_Package_References.AndroidDebug_Access_Array;
+   function "=" (Left, Right : AndroidDebug_Access_Array) return Boolean renames org.allbinary.debug.AndroidDebug_Package_References."=";
+   subtype AndroidDebug_Access_Array_Access is org.allbinary.debug.AndroidDebug_Package_References.AndroidDebug_Access_Array_Access;
+   function "=" (Left, Right : AndroidDebug_Access_Array_Access) return Boolean renames org.allbinary.debug.AndroidDebug_Package_References."=";
+   subtype AndroidDebug_Access_Array_Access_Array is org.allbinary.debug.AndroidDebug_Package_References.AndroidDebug_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidDebug_Access_Array_Access_Array) return Boolean renames org.allbinary.debug.AndroidDebug_Package_References."=";
+   subtype AndroidDebug_Access_Array_Access_Array_Access is org.allbinary.debug.AndroidDebug_Package_References.AndroidDebug_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidDebug_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.debug.AndroidDebug_Package_References."=";
 
    type AndroidDebug is new Java_Object and DebugInterface with record
       startTime : Long_Long_Integer;

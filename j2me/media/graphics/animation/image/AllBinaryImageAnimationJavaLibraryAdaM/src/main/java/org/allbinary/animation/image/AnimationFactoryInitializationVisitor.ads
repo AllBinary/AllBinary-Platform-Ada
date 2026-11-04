@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
+package org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References is
+   type AnimationFactoryInitializationVisitor_Access is access all org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package.AnimationFactoryInitializationVisitor'Class;
+   type AnimationFactoryInitializationVisitor_Access_Array is array (Natural range <>) of AnimationFactoryInitializationVisitor_Access;
+   type AnimationFactoryInitializationVisitor_Access_Array_Access is access all AnimationFactoryInitializationVisitor_Access_Array;
+   type AnimationFactoryInitializationVisitor_Access_Array_Access_Array is array (Natural range <>) of AnimationFactoryInitializationVisitor_Access_Array_Access;
+   type AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access is access all AnimationFactoryInitializationVisitor_Access_Array_Access_Array;
+end org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References;
+
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AnimationFactoryInitializationVisitor is tagged;
-   type AnimationFactoryInitializationVisitor_Access is access all AnimationFactoryInitializationVisitor'Class;
-   type AnimationFactoryInitializationVisitor_Access_Array is array (Natural range <>) of AnimationFactoryInitializationVisitor_Access;
-   type AnimationFactoryInitializationVisitor_Access_Array_Access is access all AnimationFactoryInitializationVisitor_Access_Array;
-   type AnimationFactoryInitializationVisitor_Access_Array_Access_Array is array (Natural range <>) of AnimationFactoryInitializationVisitor_Access_Array_Access;
-   type AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access is access all AnimationFactoryInitializationVisitor_Access_Array_Access_Array;
+
+   subtype AnimationFactoryInitializationVisitor_Access is org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.AnimationFactoryInitializationVisitor_Access;
+   function "=" (Left, Right : AnimationFactoryInitializationVisitor_Access) return Boolean renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References."=";
+   subtype AnimationFactoryInitializationVisitor_Access_Array is org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.AnimationFactoryInitializationVisitor_Access_Array;
+   function "=" (Left, Right : AnimationFactoryInitializationVisitor_Access_Array) return Boolean renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References."=";
+   subtype AnimationFactoryInitializationVisitor_Access_Array_Access is org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.AnimationFactoryInitializationVisitor_Access_Array_Access;
+   function "=" (Left, Right : AnimationFactoryInitializationVisitor_Access_Array_Access) return Boolean renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References."=";
+   subtype AnimationFactoryInitializationVisitor_Access_Array_Access_Array is org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.AnimationFactoryInitializationVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : AnimationFactoryInitializationVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References."=";
+   subtype AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access is org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References."=";
 
    type AnimationFactoryInitializationVisitor is new Java_Object with record
       width : Integer;

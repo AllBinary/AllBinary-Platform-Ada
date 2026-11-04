@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.StoreTransformer_Package;
+package org.allbinary.logic.visual.transform.StoreTransformer_Package_References is
+   type StoreTransformer_Access is access all org.allbinary.logic.visual.transform.StoreTransformer_Package.StoreTransformer'Class;
+   type StoreTransformer_Access_Array is array (Natural range <>) of StoreTransformer_Access;
+   type StoreTransformer_Access_Array_Access is access all StoreTransformer_Access_Array;
+   type StoreTransformer_Access_Array_Access_Array is array (Natural range <>) of StoreTransformer_Access_Array_Access;
+   type StoreTransformer_Access_Array_Access_Array_Access is access all StoreTransformer_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.StoreTransformer_Package_References;
+
+with org.allbinary.logic.visual.transform.StoreTransformer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,21 +31,51 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.allbinary.logic.visual.transform.BasicTransformer_Package; use org.allbinary.logic.visual.transform.BasicTransformer_Package;
 
 package org.allbinary.logic.visual.transform.StoreTransformer_Package is
 
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Reference_Types is
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreTransformer is tagged;
-   type StoreTransformer_Access is access all StoreTransformer'Class;
-   type StoreTransformer_Access_Array is array (Natural range <>) of StoreTransformer_Access;
-   type StoreTransformer_Access_Array_Access is access all StoreTransformer_Access_Array;
-   type StoreTransformer_Access_Array_Access_Array is array (Natural range <>) of StoreTransformer_Access_Array_Access;
-   type StoreTransformer_Access_Array_Access_Array_Access is access all StoreTransformer_Access_Array_Access_Array;
+
+   subtype StoreTransformer_Access is org.allbinary.logic.visual.transform.StoreTransformer_Package_References.StoreTransformer_Access;
+   function "=" (Left, Right : StoreTransformer_Access) return Boolean renames org.allbinary.logic.visual.transform.StoreTransformer_Package_References."=";
+   subtype StoreTransformer_Access_Array is org.allbinary.logic.visual.transform.StoreTransformer_Package_References.StoreTransformer_Access_Array;
+   function "=" (Left, Right : StoreTransformer_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.StoreTransformer_Package_References."=";
+   subtype StoreTransformer_Access_Array_Access is org.allbinary.logic.visual.transform.StoreTransformer_Package_References.StoreTransformer_Access_Array_Access;
+   function "=" (Left, Right : StoreTransformer_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.StoreTransformer_Package_References."=";
+   subtype StoreTransformer_Access_Array_Access_Array is org.allbinary.logic.visual.transform.StoreTransformer_Package_References.StoreTransformer_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreTransformer_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.StoreTransformer_Package_References."=";
+   subtype StoreTransformer_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.StoreTransformer_Package_References.StoreTransformer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreTransformer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.StoreTransformer_Package_References."=";
 
    type StoreTransformer is new BasicTransformer with null record;
 

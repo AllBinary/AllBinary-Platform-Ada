@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
 with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
 with android.graphics.Color_Package; use android.graphics.Color_Package;
+with android.graphics.Matrix_Package; use android.graphics.Matrix_Package;
+with android.graphics.Paint_Package; use android.graphics.Paint_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
 
 package body org.allbinary.media.image.AndroidImageUtil_Package is
@@ -22,6 +26,46 @@ package body org.allbinary.media.image.AndroidImageUtil_Package is
    package Canvas_Package renames Standard.android.graphics.Canvas_Package;
    package Color_Package renames Standard.android.graphics.Color_Package;
    package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
+   subtype Bitmap_Access is android.graphics.Bitmap_Package_References.Bitmap_Access;
+   function "=" (Left, Right : Bitmap_Access) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype Bitmap_Access_Array is android.graphics.Bitmap_Package_References.Bitmap_Access_Array;
+   function "=" (Left, Right : Bitmap_Access_Array) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype Bitmap_Access_Array_Access is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access;
+   function "=" (Left, Right : Bitmap_Access_Array_Access) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype Bitmap_Access_Array_Access_Array is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access_Array;
+   function "=" (Left, Right : Bitmap_Access_Array_Access_Array) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype Bitmap_Access_Array_Access_Array_Access is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Bitmap_Access_Array_Access_Array_Access) return Boolean renames android.graphics.Bitmap_Package_References."=";
+   subtype Matrix_Access is android.graphics.Matrix_Package_References.Matrix_Access;
+   function "=" (Left, Right : Matrix_Access) return Boolean renames android.graphics.Matrix_Package_References."=";
+   subtype Matrix_Access_Array is android.graphics.Matrix_Package_References.Matrix_Access_Array;
+   function "=" (Left, Right : Matrix_Access_Array) return Boolean renames android.graphics.Matrix_Package_References."=";
+   subtype Matrix_Access_Array_Access is android.graphics.Matrix_Package_References.Matrix_Access_Array_Access;
+   function "=" (Left, Right : Matrix_Access_Array_Access) return Boolean renames android.graphics.Matrix_Package_References."=";
+   subtype Matrix_Access_Array_Access_Array is android.graphics.Matrix_Package_References.Matrix_Access_Array_Access_Array;
+   function "=" (Left, Right : Matrix_Access_Array_Access_Array) return Boolean renames android.graphics.Matrix_Package_References."=";
+   subtype Matrix_Access_Array_Access_Array_Access is android.graphics.Matrix_Package_References.Matrix_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Matrix_Access_Array_Access_Array_Access) return Boolean renames android.graphics.Matrix_Package_References."=";
+   subtype Paint_Access is android.graphics.Paint_Package_References.Paint_Access;
+   function "=" (Left, Right : Paint_Access) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Paint_Access_Array is android.graphics.Paint_Package_References.Paint_Access_Array;
+   function "=" (Left, Right : Paint_Access_Array) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Paint_Access_Array_Access is android.graphics.Paint_Package_References.Paint_Access_Array_Access;
+   function "=" (Left, Right : Paint_Access_Array_Access) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Paint_Access_Array_Access_Array is android.graphics.Paint_Package_References.Paint_Access_Array_Access_Array;
+   function "=" (Left, Right : Paint_Access_Array_Access_Array) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Paint_Access_Array_Access_Array_Access is android.graphics.Paint_Package_References.Paint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Paint_Access_Array_Access_Array_Access) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
    procedure Initialize_Fields (This : in out AndroidImageUtil'Class) is
    begin
       null;
@@ -42,7 +86,7 @@ package body org.allbinary.media.image.AndroidImageUtil_Package is
 
    function getInstance return AndroidImageUtil_Access is
    begin
-        return AndroidImageUtil_Package.instance;
+        return AndroidImageUtil_Access (AndroidImageUtil_Package.instance);
    end getInstance;
 
    procedure paintBitmap (This : in out AndroidImageUtil; bitmap_Param : access Bitmap_Package.Bitmap'Class; originalBitmap_Param : access Bitmap_Package.Bitmap'Class; paint_Param : access Paint_Package.Paint'Class) is

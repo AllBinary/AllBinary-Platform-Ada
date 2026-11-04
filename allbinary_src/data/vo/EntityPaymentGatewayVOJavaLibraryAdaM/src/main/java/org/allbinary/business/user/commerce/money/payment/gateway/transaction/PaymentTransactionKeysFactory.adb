@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package is
 
+   subtype PaymentTransactionKeys_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access;
+   function "=" (Left, Right : PaymentTransactionKeys_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References."=";
+   subtype PaymentTransactionKeys_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access_Array;
+   function "=" (Left, Right : PaymentTransactionKeys_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References."=";
+   subtype PaymentTransactionKeys_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionKeys_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References."=";
+   subtype PaymentTransactionKeys_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentTransactionKeys_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References."=";
+   subtype PaymentTransactionKeys_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionKeys_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References."=";
    procedure Initialize_Fields (This : in out PaymentTransactionKeysFactory'Class) is
    begin
       null;
@@ -117,7 +129,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
 
    function getInstance return PaymentTransactionKeysFactory_Access is
    begin
-        return PaymentTransactionKeysFactory_Package.instance;
+        return PaymentTransactionKeysFactory_Access (PaymentTransactionKeysFactory_Package.instance);
    end getInstance;
 
 begin

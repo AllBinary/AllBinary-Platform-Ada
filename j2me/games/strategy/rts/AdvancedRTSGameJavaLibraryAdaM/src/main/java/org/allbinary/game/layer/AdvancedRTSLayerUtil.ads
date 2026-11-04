@@ -11,6 +11,16 @@
 -- Created By: Travis Berthelot  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.AdvancedRTSLayerUtil_Package;
+package org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References is
+   type AdvancedRTSLayerUtil_Access is access all org.allbinary.game.layer.AdvancedRTSLayerUtil_Package.AdvancedRTSLayerUtil'Class;
+   type AdvancedRTSLayerUtil_Access_Array is array (Natural range <>) of AdvancedRTSLayerUtil_Access;
+   type AdvancedRTSLayerUtil_Access_Array_Access is access all AdvancedRTSLayerUtil_Access_Array;
+   type AdvancedRTSLayerUtil_Access_Array_Access_Array is array (Natural range <>) of AdvancedRTSLayerUtil_Access_Array_Access;
+   type AdvancedRTSLayerUtil_Access_Array_Access_Array_Access is access all AdvancedRTSLayerUtil_Access_Array_Access_Array;
+end org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References;
+
+with org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -19,20 +29,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+limited with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package_References;
+limited with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 
 package org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
 
    package BaseRaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Reference_Types is
+   subtype BaseRaceTrackGeographicMap_Access is org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package_References.BaseRaceTrackGeographicMap_Access;
+   use type BaseRaceTrackGeographicMap_Access;
+   subtype BaseRaceTrackGeographicMap_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package_References.BaseRaceTrackGeographicMap_Access_Array;
+   use type BaseRaceTrackGeographicMap_Access_Array;
+   subtype BaseRaceTrackGeographicMap_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package_References.BaseRaceTrackGeographicMap_Access_Array_Access;
+   use type BaseRaceTrackGeographicMap_Access_Array_Access;
+   subtype BaseRaceTrackGeographicMap_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package_References.BaseRaceTrackGeographicMap_Access_Array_Access_Array;
+   use type BaseRaceTrackGeographicMap_Access_Array_Access_Array;
+   subtype BaseRaceTrackGeographicMap_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package_References.BaseRaceTrackGeographicMap_Access_Array_Access_Array_Access;
+   use type BaseRaceTrackGeographicMap_Access_Array_Access_Array_Access;
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   use type ABHashtable_Access;
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   use type ABHashtable_Access_Array;
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access;
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   use type ABHashtable_Access_Array_Access_Array;
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AdvancedRTSLayerUtil is tagged;
-   type AdvancedRTSLayerUtil_Access is access all AdvancedRTSLayerUtil'Class;
-   type AdvancedRTSLayerUtil_Access_Array is array (Natural range <>) of AdvancedRTSLayerUtil_Access;
-   type AdvancedRTSLayerUtil_Access_Array_Access is access all AdvancedRTSLayerUtil_Access_Array;
-   type AdvancedRTSLayerUtil_Access_Array_Access_Array is array (Natural range <>) of AdvancedRTSLayerUtil_Access_Array_Access;
-   type AdvancedRTSLayerUtil_Access_Array_Access_Array_Access is access all AdvancedRTSLayerUtil_Access_Array_Access_Array;
+
+   subtype AdvancedRTSLayerUtil_Access is org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References.AdvancedRTSLayerUtil_Access;
+   function "=" (Left, Right : AdvancedRTSLayerUtil_Access) return Boolean renames org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References."=";
+   subtype AdvancedRTSLayerUtil_Access_Array is org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References.AdvancedRTSLayerUtil_Access_Array;
+   function "=" (Left, Right : AdvancedRTSLayerUtil_Access_Array) return Boolean renames org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References."=";
+   subtype AdvancedRTSLayerUtil_Access_Array_Access is org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References.AdvancedRTSLayerUtil_Access_Array_Access;
+   function "=" (Left, Right : AdvancedRTSLayerUtil_Access_Array_Access) return Boolean renames org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References."=";
+   subtype AdvancedRTSLayerUtil_Access_Array_Access_Array is org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References.AdvancedRTSLayerUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvancedRTSLayerUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References."=";
+   subtype AdvancedRTSLayerUtil_Access_Array_Access_Array_Access is org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References.AdvancedRTSLayerUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvancedRTSLayerUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.AdvancedRTSLayerUtil_Package_References."=";
 
    type AdvancedRTSLayerUtil is new Java_Object with null record;
    instance : AdvancedRTSLayerUtil_Access;

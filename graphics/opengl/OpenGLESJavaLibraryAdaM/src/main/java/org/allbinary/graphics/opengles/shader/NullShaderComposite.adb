@@ -52,7 +52,7 @@ package body org.allbinary.graphics.opengles.shader.NullShaderComposite_Package 
 
 begin
    null;
-   instance := NullShaderComposite_Package.Create (OpenGLCapabilities_Package.getInstance.VERSION_2_0, new Shader_Access_Array'(Shader_Package.Create, Shader_Package.Create), CompositeShaderUpdater_Package.getInstance, ShaderInitializer_Package.getInstance, ModelViewProjection_Package.getInstance, null, null, NullOpenGLProcessorFactory_Package.getInstance)  --  Java anonymous class body: implement it as a named type
+   instance := NullShaderComposite_Package.Create (OpenGLCapabilities_Package.getInstance.VERSION_2_0, new Shader_Access_Array'(Shader_Package.Create, Shader_Package.Create), CompositeShaderUpdater_Package.getInstance, ShaderInitializer_Package.getInstance, ModelViewProjection_Package.getInstance, NullOpenGLProcessorFactory_Package.getInstance, NullOpenGLProcessorFactory_Package.getInstance, NullOpenGLProcessorFactory_Package.getInstance)  --  Java anonymous class body: implement it as a named type
 --          
 --     procedure init (This : in out ; gl_Param : access GL10_Package.GL10'Class) is
 --        gl : constant GL10_Access := GL10_Access (gl_Param);

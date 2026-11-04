@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
 with org.allbinary.animation.NullRotationAnimationFactory_Package; use org.allbinary.animation.NullRotationAnimationFactory_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 
 package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Package is
@@ -22,6 +25,36 @@ package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Packag
    package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
    package NullRotationAnimationFactory_Package renames Standard.org.allbinary.animation.NullRotationAnimationFactory_Package;
    package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   subtype BasicGameResources_Access is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access;
+   function "=" (Left, Right : BasicGameResources_Access) return Boolean renames org.allbinary.game.layer.resources.BasicGameResources_Package_References."=";
+   subtype BasicGameResources_Access_Array is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access_Array;
+   function "=" (Left, Right : BasicGameResources_Access_Array) return Boolean renames org.allbinary.game.layer.resources.BasicGameResources_Package_References."=";
+   subtype BasicGameResources_Access_Array_Access is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access_Array_Access;
+   function "=" (Left, Right : BasicGameResources_Access_Array_Access) return Boolean renames org.allbinary.game.layer.resources.BasicGameResources_Package_References."=";
+   subtype BasicGameResources_Access_Array_Access_Array is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicGameResources_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.resources.BasicGameResources_Package_References."=";
+   subtype BasicGameResources_Access_Array_Access_Array_Access is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicGameResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.resources.BasicGameResources_Package_References."=";
+   subtype AnimationInterfaceFactoryInterface_Access is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access;
+   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
+   subtype AnimationInterfaceFactoryInterface_Access_Array is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access_Array;
+   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access_Array) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
+   subtype AnimationInterfaceFactoryInterface_Access_Array_Access is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
+   subtype AnimationInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
+   subtype AnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   function "=" (Left, Right : BasicColor_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
    procedure Initialize_Fields (This : in out DecalAnimationInterfaceFactory'Class) is
    begin
       null;
@@ -42,7 +75,7 @@ package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Packag
 
    function getInstance return DecalAnimationInterfaceFactory_Access is
    begin
-        return DecalAnimationInterfaceFactory_Package.instance;
+        return DecalAnimationInterfaceFactory_Access (DecalAnimationInterfaceFactory_Package.instance);
    end getInstance;
 
    --  throws Exception

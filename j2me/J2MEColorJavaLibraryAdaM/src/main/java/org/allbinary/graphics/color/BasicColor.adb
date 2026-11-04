@@ -19,6 +19,7 @@ with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
+with org.allbinary.graphics.color.BasicColorUtil_Package;
 
 package body org.allbinary.graphics.color.BasicColor_Package is
 

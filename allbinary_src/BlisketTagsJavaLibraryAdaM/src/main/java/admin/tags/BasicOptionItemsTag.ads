@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.tags.BasicOptionItemsTag_Package;
+package admin.tags.BasicOptionItemsTag_Package_References is
+   type BasicOptionItemsTag_Access is access all admin.tags.BasicOptionItemsTag_Package.BasicOptionItemsTag'Class;
+   type BasicOptionItemsTag_Access_Array is array (Natural range <>) of BasicOptionItemsTag_Access;
+   type BasicOptionItemsTag_Access_Array_Access is access all BasicOptionItemsTag_Access_Array;
+   type BasicOptionItemsTag_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemsTag_Access_Array_Access;
+   type BasicOptionItemsTag_Access_Array_Access_Array_Access is access all BasicOptionItemsTag_Access_Array_Access_Array;
+end admin.tags.BasicOptionItemsTag_Package_References;
+
+with admin.tags.BasicOptionItemsTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 package admin.tags.BasicOptionItemsTag_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicOptionItemsTag is tagged;
-   type BasicOptionItemsTag_Access is access all BasicOptionItemsTag'Class;
-   type BasicOptionItemsTag_Access_Array is array (Natural range <>) of BasicOptionItemsTag_Access;
-   type BasicOptionItemsTag_Access_Array_Access is access all BasicOptionItemsTag_Access_Array;
-   type BasicOptionItemsTag_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemsTag_Access_Array_Access;
-   type BasicOptionItemsTag_Access_Array_Access_Array_Access is access all BasicOptionItemsTag_Access_Array_Access_Array;
+
+   subtype BasicOptionItemsTag_Access is admin.tags.BasicOptionItemsTag_Package_References.BasicOptionItemsTag_Access;
+   function "=" (Left, Right : BasicOptionItemsTag_Access) return Boolean renames admin.tags.BasicOptionItemsTag_Package_References."=";
+   subtype BasicOptionItemsTag_Access_Array is admin.tags.BasicOptionItemsTag_Package_References.BasicOptionItemsTag_Access_Array;
+   function "=" (Left, Right : BasicOptionItemsTag_Access_Array) return Boolean renames admin.tags.BasicOptionItemsTag_Package_References."=";
+   subtype BasicOptionItemsTag_Access_Array_Access is admin.tags.BasicOptionItemsTag_Package_References.BasicOptionItemsTag_Access_Array_Access;
+   function "=" (Left, Right : BasicOptionItemsTag_Access_Array_Access) return Boolean renames admin.tags.BasicOptionItemsTag_Package_References."=";
+   subtype BasicOptionItemsTag_Access_Array_Access_Array is admin.tags.BasicOptionItemsTag_Package_References.BasicOptionItemsTag_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicOptionItemsTag_Access_Array_Access_Array) return Boolean renames admin.tags.BasicOptionItemsTag_Package_References."=";
+   subtype BasicOptionItemsTag_Access_Array_Access_Array_Access is admin.tags.BasicOptionItemsTag_Package_References.BasicOptionItemsTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicOptionItemsTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.BasicOptionItemsTag_Package_References."=";
 
    type BasicOptionItemsTag is new TableTag with record
       propertiesHashMap : HashMap_Access;

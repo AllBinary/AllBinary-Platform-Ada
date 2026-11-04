@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.game.MagicGameObject_Package;
+package org.allbinary.input.automation.module.game.MagicGameObject_Package_References is
+   type MagicGameObject_Access is access all org.allbinary.input.automation.module.game.MagicGameObject_Package.MagicGameObject'Class;
+   type MagicGameObject_Access_Array is array (Natural range <>) of MagicGameObject_Access;
+   type MagicGameObject_Access_Array_Access is access all MagicGameObject_Access_Array;
+   type MagicGameObject_Access_Array_Access_Array is array (Natural range <>) of MagicGameObject_Access_Array_Access;
+   type MagicGameObject_Access_Array_Access_Array_Access is access all MagicGameObject_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.game.MagicGameObject_Package_References;
+
+with org.allbinary.input.automation.module.game.MagicGameObject_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package
 
 package org.allbinary.input.automation.module.game.MagicGameObject_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type MagicGameObject is tagged;
-   type MagicGameObject_Access is access all MagicGameObject'Class;
-   type MagicGameObject_Access_Array is array (Natural range <>) of MagicGameObject_Access;
-   type MagicGameObject_Access_Array_Access is access all MagicGameObject_Access_Array;
-   type MagicGameObject_Access_Array_Access_Array is array (Natural range <>) of MagicGameObject_Access_Array_Access;
-   type MagicGameObject_Access_Array_Access_Array_Access is access all MagicGameObject_Access_Array_Access_Array;
+
+   subtype MagicGameObject_Access is org.allbinary.input.automation.module.game.MagicGameObject_Package_References.MagicGameObject_Access;
+   function "=" (Left, Right : MagicGameObject_Access) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObject_Package_References."=";
+   subtype MagicGameObject_Access_Array is org.allbinary.input.automation.module.game.MagicGameObject_Package_References.MagicGameObject_Access_Array;
+   function "=" (Left, Right : MagicGameObject_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObject_Package_References."=";
+   subtype MagicGameObject_Access_Array_Access is org.allbinary.input.automation.module.game.MagicGameObject_Package_References.MagicGameObject_Access_Array_Access;
+   function "=" (Left, Right : MagicGameObject_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObject_Package_References."=";
+   subtype MagicGameObject_Access_Array_Access_Array is org.allbinary.input.automation.module.game.MagicGameObject_Package_References.MagicGameObject_Access_Array_Access_Array;
+   function "=" (Left, Right : MagicGameObject_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObject_Package_References."=";
+   subtype MagicGameObject_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.game.MagicGameObject_Package_References.MagicGameObject_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MagicGameObject_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.MagicGameObject_Package_References."=";
 
    type MagicGameObject is new MeteredGameObject and MagicGameObjectInterface with record
       MP_LABEL : Unbounded_String;

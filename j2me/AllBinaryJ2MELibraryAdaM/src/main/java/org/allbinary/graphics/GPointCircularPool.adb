@@ -13,8 +13,10 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.cache.BaseCircularPool_Package; use org.allbinary.logic.util.cache.BaseCircularPool_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
+with org.allbinary.graphics.CustomGPoint_Package;
 
 package body org.allbinary.graphics.GPointCircularPool_Package is
 

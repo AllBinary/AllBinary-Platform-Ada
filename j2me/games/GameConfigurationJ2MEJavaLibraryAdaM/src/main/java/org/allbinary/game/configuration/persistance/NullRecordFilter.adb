@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.rms.RecordFilter_Package; use javax.microedition.rms.RecordFilter_Package;
 
 package body org.allbinary.game.configuration.persistance.NullRecordFilter_Package is
 

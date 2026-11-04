@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package;
+package org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References is
+   type GenericProfileActionScriptOutputData_Access is access all org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package.GenericProfileActionScriptOutputData'Class;
+   type GenericProfileActionScriptOutputData_Access_Array is array (Natural range <>) of GenericProfileActionScriptOutputData_Access;
+   type GenericProfileActionScriptOutputData_Access_Array_Access is access all GenericProfileActionScriptOutputData_Access_Array;
+   type GenericProfileActionScriptOutputData_Access_Array_Access_Array is array (Natural range <>) of GenericProfileActionScriptOutputData_Access_Array_Access;
+   type GenericProfileActionScriptOutputData_Access_Array_Access_Array_Access is access all GenericProfileActionScriptOutputData_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References;
+
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GenericProfileActionScriptOutputData is tagged;
-   type GenericProfileActionScriptOutputData_Access is access all GenericProfileActionScriptOutputData'Class;
-   type GenericProfileActionScriptOutputData_Access_Array is array (Natural range <>) of GenericProfileActionScriptOutputData_Access;
-   type GenericProfileActionScriptOutputData_Access_Array_Access is access all GenericProfileActionScriptOutputData_Access_Array;
-   type GenericProfileActionScriptOutputData_Access_Array_Access_Array is array (Natural range <>) of GenericProfileActionScriptOutputData_Access_Array_Access;
-   type GenericProfileActionScriptOutputData_Access_Array_Access_Array_Access is access all GenericProfileActionScriptOutputData_Access_Array_Access_Array;
+
+   subtype GenericProfileActionScriptOutputData_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References.GenericProfileActionScriptOutputData_Access;
+   function "=" (Left, Right : GenericProfileActionScriptOutputData_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References."=";
+   subtype GenericProfileActionScriptOutputData_Access_Array is org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References.GenericProfileActionScriptOutputData_Access_Array;
+   function "=" (Left, Right : GenericProfileActionScriptOutputData_Access_Array) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References."=";
+   subtype GenericProfileActionScriptOutputData_Access_Array_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References.GenericProfileActionScriptOutputData_Access_Array_Access;
+   function "=" (Left, Right : GenericProfileActionScriptOutputData_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References."=";
+   subtype GenericProfileActionScriptOutputData_Access_Array_Access_Array is org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References.GenericProfileActionScriptOutputData_Access_Array_Access_Array;
+   function "=" (Left, Right : GenericProfileActionScriptOutputData_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References."=";
+   subtype GenericProfileActionScriptOutputData_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References.GenericProfileActionScriptOutputData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GenericProfileActionScriptOutputData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package_References."=";
 
    type GenericProfileActionScriptOutputData is new Java_Object with null record;
    NAME : Unbounded_String;

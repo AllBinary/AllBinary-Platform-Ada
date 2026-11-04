@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.theme.ThemeInterface_Package;
+package org.allbinary.logic.visual.theme.ThemeInterface_Package_References is
+   type ThemeInterface_Access is access all org.allbinary.logic.visual.theme.ThemeInterface_Package.ThemeInterface'Class;
+   type ThemeInterface_Access_Array is array (Natural range <>) of ThemeInterface_Access;
+   type ThemeInterface_Access_Array_Access is access all ThemeInterface_Access_Array;
+   type ThemeInterface_Access_Array_Access_Array is array (Natural range <>) of ThemeInterface_Access_Array_Access;
+   type ThemeInterface_Access_Array_Access_Array_Access is access all ThemeInterface_Access_Array_Access_Array;
+end org.allbinary.logic.visual.theme.ThemeInterface_Package_References;
+
+with org.allbinary.logic.visual.theme.ThemeInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,23 @@ with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.
 package org.allbinary.logic.visual.theme.ThemeInterface_Package is
 
    package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type ThemeInterface is interface and TableMappingInterface;
-   type ThemeInterface_Access is access all ThemeInterface'Class;
-   type ThemeInterface_Access_Array is array (Natural range <>) of ThemeInterface_Access;
-   type ThemeInterface_Access_Array_Access is access all ThemeInterface_Access_Array;
-   type ThemeInterface_Access_Array_Access_Array is array (Natural range <>) of ThemeInterface_Access_Array_Access;
-   type ThemeInterface_Access_Array_Access_Array_Access is access all ThemeInterface_Access_Array_Access_Array;
+   subtype ThemeInterface_Access is org.allbinary.logic.visual.theme.ThemeInterface_Package_References.ThemeInterface_Access;
+   function "=" (Left, Right : ThemeInterface_Access) return Boolean renames org.allbinary.logic.visual.theme.ThemeInterface_Package_References."=";
+   subtype ThemeInterface_Access_Array is org.allbinary.logic.visual.theme.ThemeInterface_Package_References.ThemeInterface_Access_Array;
+   function "=" (Left, Right : ThemeInterface_Access_Array) return Boolean renames org.allbinary.logic.visual.theme.ThemeInterface_Package_References."=";
+   subtype ThemeInterface_Access_Array_Access is org.allbinary.logic.visual.theme.ThemeInterface_Package_References.ThemeInterface_Access_Array_Access;
+   function "=" (Left, Right : ThemeInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.theme.ThemeInterface_Package_References."=";
+   subtype ThemeInterface_Access_Array_Access_Array is org.allbinary.logic.visual.theme.ThemeInterface_Package_References.ThemeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ThemeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.theme.ThemeInterface_Package_References."=";
+   subtype ThemeInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.theme.ThemeInterface_Package_References.ThemeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ThemeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.theme.ThemeInterface_Package_References."=";
+   function Java_Object_Access_From_ThemeInterface (Value : ThemeInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getName (This : in out ThemeInterface) return Unbounded_String is abstract;
    function getPath (This : in out ThemeInterface) return Unbounded_String is abstract;
    function getPreviewImageName (This : in out ThemeInterface) return Unbounded_String is abstract;

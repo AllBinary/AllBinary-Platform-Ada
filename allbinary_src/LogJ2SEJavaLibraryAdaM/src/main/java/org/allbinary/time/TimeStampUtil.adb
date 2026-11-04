@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.text.SimpleDateFormat_Package; use java.text.SimpleDateFormat_Package;
 with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.Date_Package; use java.util.Date_Package;
 
@@ -29,7 +30,7 @@ package body org.allbinary.time.TimeStampUtil_Package is
 
    function getInstance return TimeStampUtil_Access is
    begin
-        return TimeStampUtil_Package.instance;
+        return TimeStampUtil_Access (TimeStampUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out TimeStampUtil'Class) is

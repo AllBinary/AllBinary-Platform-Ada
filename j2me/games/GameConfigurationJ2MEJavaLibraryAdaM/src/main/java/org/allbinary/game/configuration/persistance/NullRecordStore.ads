@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.persistance.NullRecordStore_Package;
+package org.allbinary.game.configuration.persistance.NullRecordStore_Package_References is
+   type NullRecordStore_Access is access all org.allbinary.game.configuration.persistance.NullRecordStore_Package.NullRecordStore'Class;
+   type NullRecordStore_Access_Array is array (Natural range <>) of NullRecordStore_Access;
+   type NullRecordStore_Access_Array_Access is access all NullRecordStore_Access_Array;
+   type NullRecordStore_Access_Array_Access_Array is array (Natural range <>) of NullRecordStore_Access_Array_Access;
+   type NullRecordStore_Access_Array_Access_Array_Access is access all NullRecordStore_Access_Array_Access_Array;
+end org.allbinary.game.configuration.persistance.NullRecordStore_Package_References;
+
+with org.allbinary.game.configuration.persistance.NullRecordStore_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.Reco
 package org.allbinary.game.configuration.persistance.NullRecordStore_Package is
 
    package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullRecordStore is tagged;
-   type NullRecordStore_Access is access all NullRecordStore'Class;
-   type NullRecordStore_Access_Array is array (Natural range <>) of NullRecordStore_Access;
-   type NullRecordStore_Access_Array_Access is access all NullRecordStore_Access_Array;
-   type NullRecordStore_Access_Array_Access_Array is array (Natural range <>) of NullRecordStore_Access_Array_Access;
-   type NullRecordStore_Access_Array_Access_Array_Access is access all NullRecordStore_Access_Array_Access_Array;
+
+   subtype NullRecordStore_Access is org.allbinary.game.configuration.persistance.NullRecordStore_Package_References.NullRecordStore_Access;
+   function "=" (Left, Right : NullRecordStore_Access) return Boolean renames org.allbinary.game.configuration.persistance.NullRecordStore_Package_References."=";
+   subtype NullRecordStore_Access_Array is org.allbinary.game.configuration.persistance.NullRecordStore_Package_References.NullRecordStore_Access_Array;
+   function "=" (Left, Right : NullRecordStore_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.NullRecordStore_Package_References."=";
+   subtype NullRecordStore_Access_Array_Access is org.allbinary.game.configuration.persistance.NullRecordStore_Package_References.NullRecordStore_Access_Array_Access;
+   function "=" (Left, Right : NullRecordStore_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.NullRecordStore_Package_References."=";
+   subtype NullRecordStore_Access_Array_Access_Array is org.allbinary.game.configuration.persistance.NullRecordStore_Package_References.NullRecordStore_Access_Array_Access_Array;
+   function "=" (Left, Right : NullRecordStore_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.persistance.NullRecordStore_Package_References."=";
+   subtype NullRecordStore_Access_Array_Access_Array_Access is org.allbinary.game.configuration.persistance.NullRecordStore_Package_References.NullRecordStore_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullRecordStore_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.persistance.NullRecordStore_Package_References."=";
 
    type NullRecordStore is new RecordStore with null record;
    NULL_RECORD_STORE : NullRecordStore_Access;

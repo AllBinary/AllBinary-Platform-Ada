@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.BasicGameInfoFactory_Package;
+package org.allbinary.game.BasicGameInfoFactory_Package_References is
+   type BasicGameInfoFactory_Access is access all org.allbinary.game.BasicGameInfoFactory_Package.BasicGameInfoFactory'Class;
+   type BasicGameInfoFactory_Access_Array is array (Natural range <>) of BasicGameInfoFactory_Access;
+   type BasicGameInfoFactory_Access_Array_Access is access all BasicGameInfoFactory_Access_Array;
+   type BasicGameInfoFactory_Access_Array_Access_Array is array (Natural range <>) of BasicGameInfoFactory_Access_Array_Access;
+   type BasicGameInfoFactory_Access_Array_Access_Array_Access is access all BasicGameInfoFactory_Access_Array_Access_Array;
+end org.allbinary.game.BasicGameInfoFactory_Package_References;
+
+with org.allbinary.game.BasicGameInfoFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -11,13 +21,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.BasicGameInfoFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicGameInfoFactory is tagged;
-   type BasicGameInfoFactory_Access is access all BasicGameInfoFactory'Class;
-   type BasicGameInfoFactory_Access_Array is array (Natural range <>) of BasicGameInfoFactory_Access;
-   type BasicGameInfoFactory_Access_Array_Access is access all BasicGameInfoFactory_Access_Array;
-   type BasicGameInfoFactory_Access_Array_Access_Array is array (Natural range <>) of BasicGameInfoFactory_Access_Array_Access;
-   type BasicGameInfoFactory_Access_Array_Access_Array_Access is access all BasicGameInfoFactory_Access_Array_Access_Array;
+
+   subtype BasicGameInfoFactory_Access is org.allbinary.game.BasicGameInfoFactory_Package_References.BasicGameInfoFactory_Access;
+   function "=" (Left, Right : BasicGameInfoFactory_Access) return Boolean renames org.allbinary.game.BasicGameInfoFactory_Package_References."=";
+   subtype BasicGameInfoFactory_Access_Array is org.allbinary.game.BasicGameInfoFactory_Package_References.BasicGameInfoFactory_Access_Array;
+   function "=" (Left, Right : BasicGameInfoFactory_Access_Array) return Boolean renames org.allbinary.game.BasicGameInfoFactory_Package_References."=";
+   subtype BasicGameInfoFactory_Access_Array_Access is org.allbinary.game.BasicGameInfoFactory_Package_References.BasicGameInfoFactory_Access_Array_Access;
+   function "=" (Left, Right : BasicGameInfoFactory_Access_Array_Access) return Boolean renames org.allbinary.game.BasicGameInfoFactory_Package_References."=";
+   subtype BasicGameInfoFactory_Access_Array_Access_Array is org.allbinary.game.BasicGameInfoFactory_Package_References.BasicGameInfoFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicGameInfoFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.BasicGameInfoFactory_Package_References."=";
+   subtype BasicGameInfoFactory_Access_Array_Access_Array_Access is org.allbinary.game.BasicGameInfoFactory_Package_References.BasicGameInfoFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicGameInfoFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.BasicGameInfoFactory_Package_References."=";
 
    type BasicGameInfoFactory is new Java_Object with record
       currentReleaseIndex : Integer;

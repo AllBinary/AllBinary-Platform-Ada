@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.button.TouchScreenType_Package; use org.allbinary.input.motion.button.TouchScreenType_Package;
+with org.allbinary.input.motion.button.TouchScreenType_Package;
 
 package body org.allbinary.input.motion.button.TouchScreenTypesFactory_Package is
 
+   subtype TouchScreenType_Access is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access;
+   function "=" (Left, Right : TouchScreenType_Access) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
+   subtype TouchScreenType_Access_Array is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access_Array;
+   function "=" (Left, Right : TouchScreenType_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
+   subtype TouchScreenType_Access_Array_Access is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access_Array_Access;
+   function "=" (Left, Right : TouchScreenType_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
+   subtype TouchScreenType_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access_Array_Access_Array;
+   function "=" (Left, Right : TouchScreenType_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
+   subtype TouchScreenType_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchScreenType_Package_References.TouchScreenType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TouchScreenType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchScreenType_Package_References."=";
    procedure Initialize_Fields (This : in out TouchScreenTypesFactory'Class) is
    begin
       null;
@@ -40,7 +52,7 @@ package body org.allbinary.input.motion.button.TouchScreenTypesFactory_Package i
 
    function getInstance return TouchScreenTypesFactory_Access is
    begin
-        return TouchScreenTypesFactory_Package.instance;
+        return TouchScreenTypesFactory_Access (TouchScreenTypesFactory_Package.instance);
    end getInstance;
 
 begin

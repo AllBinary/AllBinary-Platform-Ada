@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.NullAnimationFactory_Package;
+package org.allbinary.animation.NullAnimationFactory_Package_References is
+   type NullAnimationFactory_Access is access all org.allbinary.animation.NullAnimationFactory_Package.NullAnimationFactory'Class;
+   type NullAnimationFactory_Access_Array is array (Natural range <>) of NullAnimationFactory_Access;
+   type NullAnimationFactory_Access_Array_Access is access all NullAnimationFactory_Access_Array;
+   type NullAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of NullAnimationFactory_Access_Array_Access;
+   type NullAnimationFactory_Access_Array_Access_Array_Access is access all NullAnimationFactory_Access_Array_Access_Array;
+end org.allbinary.animation.NullAnimationFactory_Package_References;
+
+with org.allbinary.animation.NullAnimationFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,51 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+limited with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 
 package org.allbinary.animation.NullAnimationFactory_Package is
 
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package Reference_Types is
+   subtype ScaleProperties_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access;
+   use type ScaleProperties_Access;
+   subtype ScaleProperties_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array;
+   use type ScaleProperties_Access_Array;
+   subtype ScaleProperties_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access;
+   subtype ScaleProperties_Access_Array_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array;
+   use type ScaleProperties_Access_Array_Access_Array;
+   subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullAnimationFactory is tagged;
-   type NullAnimationFactory_Access is access all NullAnimationFactory'Class;
-   type NullAnimationFactory_Access_Array is array (Natural range <>) of NullAnimationFactory_Access;
-   type NullAnimationFactory_Access_Array_Access is access all NullAnimationFactory_Access_Array;
-   type NullAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of NullAnimationFactory_Access_Array_Access;
-   type NullAnimationFactory_Access_Array_Access_Array_Access is access all NullAnimationFactory_Access_Array_Access_Array;
+
+   subtype NullAnimationFactory_Access is org.allbinary.animation.NullAnimationFactory_Package_References.NullAnimationFactory_Access;
+   function "=" (Left, Right : NullAnimationFactory_Access) return Boolean renames org.allbinary.animation.NullAnimationFactory_Package_References."=";
+   subtype NullAnimationFactory_Access_Array is org.allbinary.animation.NullAnimationFactory_Package_References.NullAnimationFactory_Access_Array;
+   function "=" (Left, Right : NullAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.NullAnimationFactory_Package_References."=";
+   subtype NullAnimationFactory_Access_Array_Access is org.allbinary.animation.NullAnimationFactory_Package_References.NullAnimationFactory_Access_Array_Access;
+   function "=" (Left, Right : NullAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.NullAnimationFactory_Package_References."=";
+   subtype NullAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.NullAnimationFactory_Package_References.NullAnimationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : NullAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.NullAnimationFactory_Package_References."=";
+   subtype NullAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.NullAnimationFactory_Package_References.NullAnimationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.NullAnimationFactory_Package_References."=";
 
    type NullAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
       NULL_ANIMATION : Animation_Access;

@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.emulator.swt.SWTProcessor_Package; use org.allbinary.emulator.swt.SWTProcessor_Package;
+with org.allbinary.emulator.swt.SWTProcessor_Package;
 
 package body org.allbinary.emulator.swt.SWTProcessorUtil_Package is
 
+   subtype SWTProcessor_Access is org.allbinary.emulator.swt.SWTProcessor_Package_References.SWTProcessor_Access;
+   function "=" (Left, Right : SWTProcessor_Access) return Boolean renames org.allbinary.emulator.swt.SWTProcessor_Package_References."=";
+   subtype SWTProcessor_Access_Array is org.allbinary.emulator.swt.SWTProcessor_Package_References.SWTProcessor_Access_Array;
+   function "=" (Left, Right : SWTProcessor_Access_Array) return Boolean renames org.allbinary.emulator.swt.SWTProcessor_Package_References."=";
+   subtype SWTProcessor_Access_Array_Access is org.allbinary.emulator.swt.SWTProcessor_Package_References.SWTProcessor_Access_Array_Access;
+   function "=" (Left, Right : SWTProcessor_Access_Array_Access) return Boolean renames org.allbinary.emulator.swt.SWTProcessor_Package_References."=";
+   subtype SWTProcessor_Access_Array_Access_Array is org.allbinary.emulator.swt.SWTProcessor_Package_References.SWTProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : SWTProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.emulator.swt.SWTProcessor_Package_References."=";
+   subtype SWTProcessor_Access_Array_Access_Array_Access is org.allbinary.emulator.swt.SWTProcessor_Package_References.SWTProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SWTProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.emulator.swt.SWTProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out SWTProcessorUtil'Class) is
    begin
       null;
@@ -37,7 +49,7 @@ package body org.allbinary.emulator.swt.SWTProcessorUtil_Package is
 
    function getInstance return SWTProcessorUtil_Access is
    begin
-        return SWTProcessorUtil_Package.instance;
+        return SWTProcessorUtil_Access (SWTProcessorUtil_Package.instance);
    end getInstance;
 
 begin

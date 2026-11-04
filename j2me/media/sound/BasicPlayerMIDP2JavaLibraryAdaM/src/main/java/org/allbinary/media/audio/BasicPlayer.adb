@@ -13,16 +13,64 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
 with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.TimeBase_Package; use javax.microedition.media.TimeBase_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
+with org.allbinary.media.audio.Controllable2_Package;
+with org.allbinary.media.audio.NullControl_Package;
+with org.allbinary.media.audio.TimeBaseInterface_Package;
 
 package body org.allbinary.media.audio.BasicPlayer_Package is
 
    package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype Control_Access is javax.microedition.media.Control_Package_References.Control_Access;
+   function "=" (Left, Right : Control_Access) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array;
+   function "=" (Left, Right : Control_Access_Array) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access;
+   function "=" (Left, Right : Control_Access_Array_Access) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array;
+   function "=" (Left, Right : Control_Access_Array_Access_Array) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype Control_Access_Array_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Control_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.Control_Package_References."=";
+   subtype PlayerListener_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access;
+   function "=" (Left, Right : PlayerListener_Access) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
+   subtype PlayerListener_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array;
+   function "=" (Left, Right : PlayerListener_Access_Array) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
+   subtype PlayerListener_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access;
+   function "=" (Left, Right : PlayerListener_Access_Array_Access) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
+   subtype PlayerListener_Access_Array_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array;
+   function "=" (Left, Right : PlayerListener_Access_Array_Access_Array) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
+   subtype PlayerListener_Access_Array_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlayerListener_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
+   subtype TimeBase_Access is javax.microedition.media.TimeBase_Package_References.TimeBase_Access;
+   function "=" (Left, Right : TimeBase_Access) return Boolean renames javax.microedition.media.TimeBase_Package_References."=";
+   subtype TimeBase_Access_Array is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array;
+   function "=" (Left, Right : TimeBase_Access_Array) return Boolean renames javax.microedition.media.TimeBase_Package_References."=";
+   subtype TimeBase_Access_Array_Access is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array_Access;
+   function "=" (Left, Right : TimeBase_Access_Array_Access) return Boolean renames javax.microedition.media.TimeBase_Package_References."=";
+   subtype TimeBase_Access_Array_Access_Array is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array_Access_Array;
+   function "=" (Left, Right : TimeBase_Access_Array_Access_Array) return Boolean renames javax.microedition.media.TimeBase_Package_References."=";
+   subtype TimeBase_Access_Array_Access_Array_Access is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TimeBase_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.TimeBase_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    procedure Initialize_Fields (This : in out BasicPlayer'Class) is
    begin
       null;

@@ -13,6 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.init.InitInterface_Package;
+with org.allbinary.graphics.paint.InitUpdatePaintableInterface_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.init.UpdateInterface_Package;
 
 package body org.allbinary.graphics.paint.InitUpdatePaintable_Package is
 

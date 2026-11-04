@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.CloudStreamUtil_Package;
+package org.allbinary.logic.io.CloudStreamUtil_Package_References is
+   type CloudStreamUtil_Access is access all org.allbinary.logic.io.CloudStreamUtil_Package.CloudStreamUtil'Class;
+   type CloudStreamUtil_Access_Array is array (Natural range <>) of CloudStreamUtil_Access;
+   type CloudStreamUtil_Access_Array_Access is access all CloudStreamUtil_Access_Array;
+   type CloudStreamUtil_Access_Array_Access_Array is array (Natural range <>) of CloudStreamUtil_Access_Array_Access;
+   type CloudStreamUtil_Access_Array_Access_Array_Access is access all CloudStreamUtil_Access_Array_Access_Array;
+end org.allbinary.logic.io.CloudStreamUtil_Package_References;
+
+with org.allbinary.logic.io.CloudStreamUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,21 +31,51 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.AbFile_Package_References;
 
 package org.allbinary.logic.io.CloudStreamUtil_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   use type AbFile_Access;
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   use type AbFile_Access_Array;
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   use type AbFile_Access_Array_Access;
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   use type AbFile_Access_Array_Access_Array;
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   use type AbFile_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CloudStreamUtil is tagged;
-   type CloudStreamUtil_Access is access all CloudStreamUtil'Class;
-   type CloudStreamUtil_Access_Array is array (Natural range <>) of CloudStreamUtil_Access;
-   type CloudStreamUtil_Access_Array_Access is access all CloudStreamUtil_Access_Array;
-   type CloudStreamUtil_Access_Array_Access_Array is array (Natural range <>) of CloudStreamUtil_Access_Array_Access;
-   type CloudStreamUtil_Access_Array_Access_Array_Access is access all CloudStreamUtil_Access_Array_Access_Array;
+
+   subtype CloudStreamUtil_Access is org.allbinary.logic.io.CloudStreamUtil_Package_References.CloudStreamUtil_Access;
+   function "=" (Left, Right : CloudStreamUtil_Access) return Boolean renames org.allbinary.logic.io.CloudStreamUtil_Package_References."=";
+   subtype CloudStreamUtil_Access_Array is org.allbinary.logic.io.CloudStreamUtil_Package_References.CloudStreamUtil_Access_Array;
+   function "=" (Left, Right : CloudStreamUtil_Access_Array) return Boolean renames org.allbinary.logic.io.CloudStreamUtil_Package_References."=";
+   subtype CloudStreamUtil_Access_Array_Access is org.allbinary.logic.io.CloudStreamUtil_Package_References.CloudStreamUtil_Access_Array_Access;
+   function "=" (Left, Right : CloudStreamUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.io.CloudStreamUtil_Package_References."=";
+   subtype CloudStreamUtil_Access_Array_Access_Array is org.allbinary.logic.io.CloudStreamUtil_Package_References.CloudStreamUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : CloudStreamUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.CloudStreamUtil_Package_References."=";
+   subtype CloudStreamUtil_Access_Array_Access_Array_Access is org.allbinary.logic.io.CloudStreamUtil_Package_References.CloudStreamUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CloudStreamUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.CloudStreamUtil_Package_References."=";
 
    type CloudStreamUtil is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.ScreenCapture_Package;
+package org.allbinary.graphics.ScreenCapture_Package_References is
+   type ScreenCapture_Access is access all org.allbinary.graphics.ScreenCapture_Package.ScreenCapture'Class;
+   type ScreenCapture_Access_Array is array (Natural range <>) of ScreenCapture_Access;
+   type ScreenCapture_Access_Array_Access is access all ScreenCapture_Access_Array;
+   type ScreenCapture_Access_Array_Access_Array is array (Natural range <>) of ScreenCapture_Access_Array_Access;
+   type ScreenCapture_Access_Array_Access_Array_Access is access all ScreenCapture_Access_Array_Access_Array;
+end org.allbinary.graphics.ScreenCapture_Package_References;
+
+with org.allbinary.graphics.ScreenCapture_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.ScreenCapture_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ScreenCapture is tagged;
-   type ScreenCapture_Access is access all ScreenCapture'Class;
-   type ScreenCapture_Access_Array is array (Natural range <>) of ScreenCapture_Access;
-   type ScreenCapture_Access_Array_Access is access all ScreenCapture_Access_Array;
-   type ScreenCapture_Access_Array_Access_Array is array (Natural range <>) of ScreenCapture_Access_Array_Access;
-   type ScreenCapture_Access_Array_Access_Array_Access is access all ScreenCapture_Access_Array_Access_Array;
+
+   subtype ScreenCapture_Access is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access;
+   function "=" (Left, Right : ScreenCapture_Access) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
+   subtype ScreenCapture_Access_Array is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access_Array;
+   function "=" (Left, Right : ScreenCapture_Access_Array) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
+   subtype ScreenCapture_Access_Array_Access is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access_Array_Access;
+   function "=" (Left, Right : ScreenCapture_Access_Array_Access) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
+   subtype ScreenCapture_Access_Array_Access_Array is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access_Array_Access_Array;
+   function "=" (Left, Right : ScreenCapture_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
+   subtype ScreenCapture_Access_Array_Access_Array_Access is org.allbinary.graphics.ScreenCapture_Package_References.ScreenCapture_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScreenCapture_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.ScreenCapture_Package_References."=";
 
    type ScreenCapture is new Java_Object with null record;
 

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package;
+package org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References is
+   type ModifierOpenGLESImageProcessor_Access is access all org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package.ModifierOpenGLESImageProcessor'Class;
+   type ModifierOpenGLESImageProcessor_Access_Array is array (Natural range <>) of ModifierOpenGLESImageProcessor_Access;
+   type ModifierOpenGLESImageProcessor_Access_Array_Access is access all ModifierOpenGLESImageProcessor_Access_Array;
+   type ModifierOpenGLESImageProcessor_Access_Array_Access_Array is array (Natural range <>) of ModifierOpenGLESImageProcessor_Access_Array_Access;
+   type ModifierOpenGLESImageProcessor_Access_Array_Access_Array_Access is access all ModifierOpenGLESImageProcessor_Access_Array_Access_Array;
+end org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References;
+
+with org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.image.opengles.OpenGLESImageProcessor_Package; use org.allbin
 
 package org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ModifierOpenGLESImageProcessor is tagged;
-   type ModifierOpenGLESImageProcessor_Access is access all ModifierOpenGLESImageProcessor'Class;
-   type ModifierOpenGLESImageProcessor_Access_Array is array (Natural range <>) of ModifierOpenGLESImageProcessor_Access;
-   type ModifierOpenGLESImageProcessor_Access_Array_Access is access all ModifierOpenGLESImageProcessor_Access_Array;
-   type ModifierOpenGLESImageProcessor_Access_Array_Access_Array is array (Natural range <>) of ModifierOpenGLESImageProcessor_Access_Array_Access;
-   type ModifierOpenGLESImageProcessor_Access_Array_Access_Array_Access is access all ModifierOpenGLESImageProcessor_Access_Array_Access_Array;
+
+   subtype ModifierOpenGLESImageProcessor_Access is org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References.ModifierOpenGLESImageProcessor_Access;
+   function "=" (Left, Right : ModifierOpenGLESImageProcessor_Access) return Boolean renames org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References."=";
+   subtype ModifierOpenGLESImageProcessor_Access_Array is org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References.ModifierOpenGLESImageProcessor_Access_Array;
+   function "=" (Left, Right : ModifierOpenGLESImageProcessor_Access_Array) return Boolean renames org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References."=";
+   subtype ModifierOpenGLESImageProcessor_Access_Array_Access is org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References.ModifierOpenGLESImageProcessor_Access_Array_Access;
+   function "=" (Left, Right : ModifierOpenGLESImageProcessor_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References."=";
+   subtype ModifierOpenGLESImageProcessor_Access_Array_Access_Array is org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References.ModifierOpenGLESImageProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : ModifierOpenGLESImageProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References."=";
+   subtype ModifierOpenGLESImageProcessor_Access_Array_Access_Array_Access is org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References.ModifierOpenGLESImageProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ModifierOpenGLESImageProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package_References."=";
 
    type ModifierOpenGLESImageProcessor is new OpenGLESImageProcessor with null record;
    instanceC : ModifierOpenGLESImageProcessor_Access;

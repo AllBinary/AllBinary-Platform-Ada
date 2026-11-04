@@ -13,7 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
+with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
 with org.allbinary.business.user.commerce.inventory.item.Item_Package; use org.allbinary.business.user.commerce.inventory.item.Item_Package;
 
@@ -21,6 +23,16 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemFactoryUnus
 
    package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
    package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   subtype TableMappingInterface_Access is org.allbinary.data.tables.TableMappingInterface_Package_References.TableMappingInterface_Access;
+   function "=" (Left, Right : TableMappingInterface_Access) return Boolean renames org.allbinary.data.tables.TableMappingInterface_Package_References."=";
+   subtype TableMappingInterface_Access_Array is org.allbinary.data.tables.TableMappingInterface_Package_References.TableMappingInterface_Access_Array;
+   function "=" (Left, Right : TableMappingInterface_Access_Array) return Boolean renames org.allbinary.data.tables.TableMappingInterface_Package_References."=";
+   subtype TableMappingInterface_Access_Array_Access is org.allbinary.data.tables.TableMappingInterface_Package_References.TableMappingInterface_Access_Array_Access;
+   function "=" (Left, Right : TableMappingInterface_Access_Array_Access) return Boolean renames org.allbinary.data.tables.TableMappingInterface_Package_References."=";
+   subtype TableMappingInterface_Access_Array_Access_Array is org.allbinary.data.tables.TableMappingInterface_Package_References.TableMappingInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : TableMappingInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.TableMappingInterface_Package_References."=";
+   subtype TableMappingInterface_Access_Array_Access_Array_Access is org.allbinary.data.tables.TableMappingInterface_Package_References.TableMappingInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TableMappingInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.TableMappingInterface_Package_References."=";
    procedure Initialize_Fields (This : in out ItemFactoryUnused'Class) is
    begin
       null;

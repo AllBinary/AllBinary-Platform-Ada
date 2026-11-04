@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+package org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References is
+   type TransformInfoEntityBuilder_Access is access all org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package.TransformInfoEntityBuilder'Class;
+   type TransformInfoEntityBuilder_Access_Array is array (Natural range <>) of TransformInfoEntityBuilder_Access;
+   type TransformInfoEntityBuilder_Access_Array_Access is access all TransformInfoEntityBuilder_Access_Array;
+   type TransformInfoEntityBuilder_Access_Array_Access_Array is array (Natural range <>) of TransformInfoEntityBuilder_Access_Array_Access;
+   type TransformInfoEntityBuilder_Access_Array_Access_Array_Access is access all TransformInfoEntityBuilder_Access_Array_Access_Array;
+end org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References;
+
+with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
+limited with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References;
 
 package org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package is
 
+   package Reference_Types is
+   subtype TransformInfoEntity_Access is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access;
+   use type TransformInfoEntity_Access;
+   subtype TransformInfoEntity_Access_Array is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array;
+   use type TransformInfoEntity_Access_Array;
+   subtype TransformInfoEntity_Access_Array_Access is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array_Access;
+   use type TransformInfoEntity_Access_Array_Access;
+   subtype TransformInfoEntity_Access_Array_Access_Array is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array_Access_Array;
+   use type TransformInfoEntity_Access_Array_Access_Array;
+   subtype TransformInfoEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.transform.info.TransformInfoEntity_Package_References.TransformInfoEntity_Access_Array_Access_Array_Access;
+   use type TransformInfoEntity_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransformInfoEntityBuilder is tagged;
-   type TransformInfoEntityBuilder_Access is access all TransformInfoEntityBuilder'Class;
-   type TransformInfoEntityBuilder_Access_Array is array (Natural range <>) of TransformInfoEntityBuilder_Access;
-   type TransformInfoEntityBuilder_Access_Array_Access is access all TransformInfoEntityBuilder_Access_Array;
-   type TransformInfoEntityBuilder_Access_Array_Access_Array is array (Natural range <>) of TransformInfoEntityBuilder_Access_Array_Access;
-   type TransformInfoEntityBuilder_Access_Array_Access_Array_Access is access all TransformInfoEntityBuilder_Access_Array_Access_Array;
+
+   subtype TransformInfoEntityBuilder_Access is org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References.TransformInfoEntityBuilder_Access;
+   function "=" (Left, Right : TransformInfoEntityBuilder_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References."=";
+   subtype TransformInfoEntityBuilder_Access_Array is org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References.TransformInfoEntityBuilder_Access_Array;
+   function "=" (Left, Right : TransformInfoEntityBuilder_Access_Array) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References."=";
+   subtype TransformInfoEntityBuilder_Access_Array_Access is org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References.TransformInfoEntityBuilder_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoEntityBuilder_Access_Array_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References."=";
+   subtype TransformInfoEntityBuilder_Access_Array_Access_Array is org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References.TransformInfoEntityBuilder_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoEntityBuilder_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References."=";
+   subtype TransformInfoEntityBuilder_Access_Array_Access_Array_Access is org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References.TransformInfoEntityBuilder_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoEntityBuilder_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package_References."=";
 
    type TransformInfoEntityBuilder is new Java_Object with null record;
 

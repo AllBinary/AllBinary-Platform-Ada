@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.AvianUtil_Package;
+package org.allbinary.AvianUtil_Package_References is
+   type AvianUtil_Access is access all org.allbinary.AvianUtil_Package.AvianUtil'Class;
+   type AvianUtil_Access_Array is array (Natural range <>) of AvianUtil_Access;
+   type AvianUtil_Access_Array_Access is access all AvianUtil_Access_Array;
+   type AvianUtil_Access_Array_Access_Array is array (Natural range <>) of AvianUtil_Access_Array_Access;
+   type AvianUtil_Access_Array_Access_Array_Access is access all AvianUtil_Access_Array_Access_Array;
+end org.allbinary.AvianUtil_Package_References;
+
+with org.allbinary.AvianUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.AvianUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AvianUtil is tagged;
-   type AvianUtil_Access is access all AvianUtil'Class;
-   type AvianUtil_Access_Array is array (Natural range <>) of AvianUtil_Access;
-   type AvianUtil_Access_Array_Access is access all AvianUtil_Access_Array;
-   type AvianUtil_Access_Array_Access_Array is array (Natural range <>) of AvianUtil_Access_Array_Access;
-   type AvianUtil_Access_Array_Access_Array_Access is access all AvianUtil_Access_Array_Access_Array;
+
+   subtype AvianUtil_Access is org.allbinary.AvianUtil_Package_References.AvianUtil_Access;
+   function "=" (Left, Right : AvianUtil_Access) return Boolean renames org.allbinary.AvianUtil_Package_References."=";
+   subtype AvianUtil_Access_Array is org.allbinary.AvianUtil_Package_References.AvianUtil_Access_Array;
+   function "=" (Left, Right : AvianUtil_Access_Array) return Boolean renames org.allbinary.AvianUtil_Package_References."=";
+   subtype AvianUtil_Access_Array_Access is org.allbinary.AvianUtil_Package_References.AvianUtil_Access_Array_Access;
+   function "=" (Left, Right : AvianUtil_Access_Array_Access) return Boolean renames org.allbinary.AvianUtil_Package_References."=";
+   subtype AvianUtil_Access_Array_Access_Array is org.allbinary.AvianUtil_Package_References.AvianUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : AvianUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.AvianUtil_Package_References."=";
+   subtype AvianUtil_Access_Array_Access_Array_Access is org.allbinary.AvianUtil_Package_References.AvianUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AvianUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.AvianUtil_Package_References."=";
 
    type AvianUtil is new Java_Object with null record;
 

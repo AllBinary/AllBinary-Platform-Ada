@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.PlayerComposite_Package;
+package org.allbinary.media.audio.PlayerComposite_Package_References is
+   type PlayerComposite_Access is access all org.allbinary.media.audio.PlayerComposite_Package.PlayerComposite'Class;
+   type PlayerComposite_Access_Array is array (Natural range <>) of PlayerComposite_Access;
+   type PlayerComposite_Access_Array_Access is access all PlayerComposite_Access_Array;
+   type PlayerComposite_Access_Array_Access_Array is array (Natural range <>) of PlayerComposite_Access_Array_Access;
+   type PlayerComposite_Access_Array_Access_Array_Access is access all PlayerComposite_Access_Array_Access_Array;
+end org.allbinary.media.audio.PlayerComposite_Package_References;
+
+with org.allbinary.media.audio.PlayerComposite_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,15 +30,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
+limited with javax.microedition.media.Control_Package;
+with javax.microedition.media.Control_Package_References;
 with javax.microedition.media.Controllable_Package; use javax.microedition.media.Controllable_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
-with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
-with javax.microedition.media.TimeBase_Package; use javax.microedition.media.TimeBase_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+limited with javax.microedition.media.PlayerListener_Package;
+with javax.microedition.media.PlayerListener_Package_References;
+limited with javax.microedition.media.TimeBase_Package;
+with javax.microedition.media.TimeBase_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package_References;
+limited with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
 
 package org.allbinary.media.audio.PlayerComposite_Package is
 
@@ -41,13 +58,91 @@ package org.allbinary.media.audio.PlayerComposite_Package is
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package Reference_Types is
+   subtype Control_Access is javax.microedition.media.Control_Package_References.Control_Access;
+   use type Control_Access;
+   subtype Control_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array;
+   use type Control_Access_Array;
+   subtype Control_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access;
+   use type Control_Access_Array_Access;
+   subtype Control_Access_Array_Access_Array is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array;
+   use type Control_Access_Array_Access_Array;
+   subtype Control_Access_Array_Access_Array_Access is javax.microedition.media.Control_Package_References.Control_Access_Array_Access_Array_Access;
+   use type Control_Access_Array_Access_Array_Access;
+   subtype PlayerListener_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access;
+   use type PlayerListener_Access;
+   subtype PlayerListener_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array;
+   use type PlayerListener_Access_Array;
+   subtype PlayerListener_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access;
+   use type PlayerListener_Access_Array_Access;
+   subtype PlayerListener_Access_Array_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array;
+   use type PlayerListener_Access_Array_Access_Array;
+   subtype PlayerListener_Access_Array_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array_Access;
+   use type PlayerListener_Access_Array_Access_Array_Access;
+   subtype TimeBase_Access is javax.microedition.media.TimeBase_Package_References.TimeBase_Access;
+   use type TimeBase_Access;
+   subtype TimeBase_Access_Array is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array;
+   use type TimeBase_Access_Array;
+   subtype TimeBase_Access_Array_Access is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array_Access;
+   use type TimeBase_Access_Array_Access;
+   subtype TimeBase_Access_Array_Access_Array is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array_Access_Array;
+   use type TimeBase_Access_Array_Access_Array;
+   subtype TimeBase_Access_Array_Access_Array_Access is javax.microedition.media.TimeBase_Package_References.TimeBase_Access_Array_Access_Array_Access;
+   use type TimeBase_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype GameTickTimeDelayHelper_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access;
+   use type GameTickTimeDelayHelper_Access;
+   subtype GameTickTimeDelayHelper_Access_Array is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array;
+   use type GameTickTimeDelayHelper_Access_Array;
+   subtype GameTickTimeDelayHelper_Access_Array_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access;
+   use type GameTickTimeDelayHelper_Access_Array_Access;
+   subtype GameTickTimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access_Array;
+   use type GameTickTimeDelayHelper_Access_Array_Access_Array;
+   subtype GameTickTimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.GameTickTimeDelayHelper_Package_References.GameTickTimeDelayHelper_Access_Array_Access_Array_Access;
+   use type GameTickTimeDelayHelper_Access_Array_Access_Array_Access;
+   subtype TimeDelayHelper_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access;
+   use type TimeDelayHelper_Access;
+   subtype TimeDelayHelper_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array;
+   use type TimeDelayHelper_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access;
+   subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
+   use type TimeDelayHelper_Access_Array_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PlayerComposite is tagged;
-   type PlayerComposite_Access is access all PlayerComposite'Class;
-   type PlayerComposite_Access_Array is array (Natural range <>) of PlayerComposite_Access;
-   type PlayerComposite_Access_Array_Access is access all PlayerComposite_Access_Array;
-   type PlayerComposite_Access_Array_Access_Array is array (Natural range <>) of PlayerComposite_Access_Array_Access;
-   type PlayerComposite_Access_Array_Access_Array_Access is access all PlayerComposite_Access_Array_Access_Array;
+
+   subtype PlayerComposite_Access is org.allbinary.media.audio.PlayerComposite_Package_References.PlayerComposite_Access;
+   function "=" (Left, Right : PlayerComposite_Access) return Boolean renames org.allbinary.media.audio.PlayerComposite_Package_References."=";
+   subtype PlayerComposite_Access_Array is org.allbinary.media.audio.PlayerComposite_Package_References.PlayerComposite_Access_Array;
+   function "=" (Left, Right : PlayerComposite_Access_Array) return Boolean renames org.allbinary.media.audio.PlayerComposite_Package_References."=";
+   subtype PlayerComposite_Access_Array_Access is org.allbinary.media.audio.PlayerComposite_Package_References.PlayerComposite_Access_Array_Access;
+   function "=" (Left, Right : PlayerComposite_Access_Array_Access) return Boolean renames org.allbinary.media.audio.PlayerComposite_Package_References."=";
+   subtype PlayerComposite_Access_Array_Access_Array is org.allbinary.media.audio.PlayerComposite_Package_References.PlayerComposite_Access_Array_Access_Array;
+   function "=" (Left, Right : PlayerComposite_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.PlayerComposite_Package_References."=";
+   subtype PlayerComposite_Access_Array_Access_Array_Access is org.allbinary.media.audio.PlayerComposite_Package_References.PlayerComposite_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlayerComposite_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.PlayerComposite_Package_References."=";
 
    type PlayerComposite is new Java_Object and Controllable and Player with record
       logUtil : LogUtil_Access;

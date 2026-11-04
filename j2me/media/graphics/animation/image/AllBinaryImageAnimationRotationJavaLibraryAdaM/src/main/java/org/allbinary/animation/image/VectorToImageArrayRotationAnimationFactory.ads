@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package;
+package org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References is
+   type VectorToImageArrayRotationAnimationFactory_Access is access all org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package.VectorToImageArrayRotationAnimationFactory'Class;
+   type VectorToImageArrayRotationAnimationFactory_Access_Array is array (Natural range <>) of VectorToImageArrayRotationAnimationFactory_Access;
+   type VectorToImageArrayRotationAnimationFactory_Access_Array_Access is access all VectorToImageArrayRotationAnimationFactory_Access_Array;
+   type VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of VectorToImageArrayRotationAnimationFactory_Access_Array_Access;
+   type VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array_Access is access all VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array;
+end org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References;
+
+with org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.vector.VectorInfo_Package; use org.allbinary.vector.VectorInfo_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
+limited with org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+limited with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
+limited with org.allbinary.vector.VectorInfo_Package;
+with org.allbinary.vector.VectorInfo_Package_References;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 
 package org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package is
@@ -36,13 +52,81 @@ package org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
    package VectorInfo_Package renames Standard.org.allbinary.vector.VectorInfo_Package;
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype AnimationBehaviorFactory_Access is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access;
+   use type AnimationBehaviorFactory_Access;
+   subtype AnimationBehaviorFactory_Access_Array is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access_Array;
+   use type AnimationBehaviorFactory_Access_Array;
+   subtype AnimationBehaviorFactory_Access_Array_Access is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access_Array_Access;
+   use type AnimationBehaviorFactory_Access_Array_Access;
+   subtype AnimationBehaviorFactory_Access_Array_Access_Array is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access_Array_Access_Array;
+   use type AnimationBehaviorFactory_Access_Array_Access_Array;
+   subtype AnimationBehaviorFactory_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access_Array_Access_Array_Access;
+   use type AnimationBehaviorFactory_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype ScaleProperties_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access;
+   use type ScaleProperties_Access;
+   subtype ScaleProperties_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array;
+   use type ScaleProperties_Access_Array;
+   subtype ScaleProperties_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access;
+   subtype ScaleProperties_Access_Array_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array;
+   use type ScaleProperties_Access_Array_Access_Array;
+   subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access_Array_Access;
+   subtype VectorInfo_Access is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access;
+   use type VectorInfo_Access;
+   subtype VectorInfo_Access_Array is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access_Array;
+   use type VectorInfo_Access_Array;
+   subtype VectorInfo_Access_Array_Access is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access_Array_Access;
+   use type VectorInfo_Access_Array_Access;
+   subtype VectorInfo_Access_Array_Access_Array is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access_Array_Access_Array;
+   use type VectorInfo_Access_Array_Access_Array;
+   subtype VectorInfo_Access_Array_Access_Array_Access is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access_Array_Access_Array_Access;
+   use type VectorInfo_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type VectorToImageArrayRotationAnimationFactory is tagged;
-   type VectorToImageArrayRotationAnimationFactory_Access is access all VectorToImageArrayRotationAnimationFactory'Class;
-   type VectorToImageArrayRotationAnimationFactory_Access_Array is array (Natural range <>) of VectorToImageArrayRotationAnimationFactory_Access;
-   type VectorToImageArrayRotationAnimationFactory_Access_Array_Access is access all VectorToImageArrayRotationAnimationFactory_Access_Array;
-   type VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of VectorToImageArrayRotationAnimationFactory_Access_Array_Access;
-   type VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array_Access is access all VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array;
+
+   subtype VectorToImageArrayRotationAnimationFactory_Access is org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References.VectorToImageArrayRotationAnimationFactory_Access;
+   function "=" (Left, Right : VectorToImageArrayRotationAnimationFactory_Access) return Boolean renames org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References."=";
+   subtype VectorToImageArrayRotationAnimationFactory_Access_Array is org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References.VectorToImageArrayRotationAnimationFactory_Access_Array;
+   function "=" (Left, Right : VectorToImageArrayRotationAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References."=";
+   subtype VectorToImageArrayRotationAnimationFactory_Access_Array_Access is org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References.VectorToImageArrayRotationAnimationFactory_Access_Array_Access;
+   function "=" (Left, Right : VectorToImageArrayRotationAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References."=";
+   subtype VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References.VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References."=";
+   subtype VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References.VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VectorToImageArrayRotationAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package_References."=";
 
    type VectorToImageArrayRotationAnimationFactory is new BaseImageAnimationFactory with record
       imageArray : Image_Access_Array_Access;

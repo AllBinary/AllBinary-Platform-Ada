@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.ScreenEmptyListener_Package;
+package org.allbinary.graphics.ScreenEmptyListener_Package_References is
+   type ScreenEmptyListener_Access is access all org.allbinary.graphics.ScreenEmptyListener_Package.ScreenEmptyListener'Class;
+   type ScreenEmptyListener_Access_Array is array (Natural range <>) of ScreenEmptyListener_Access;
+   type ScreenEmptyListener_Access_Array_Access is access all ScreenEmptyListener_Access_Array;
+   type ScreenEmptyListener_Access_Array_Access_Array is array (Natural range <>) of ScreenEmptyListener_Access_Array_Access;
+   type ScreenEmptyListener_Access_Array_Access_Array_Access is access all ScreenEmptyListener_Access_Array_Access_Array;
+end org.allbinary.graphics.ScreenEmptyListener_Package_References;
+
+with org.allbinary.graphics.ScreenEmptyListener_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.graphics.ScreenListenerInterface_Package; use org.allbinary.g
 
 package org.allbinary.graphics.ScreenEmptyListener_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ScreenEmptyListener is tagged;
-   type ScreenEmptyListener_Access is access all ScreenEmptyListener'Class;
-   type ScreenEmptyListener_Access_Array is array (Natural range <>) of ScreenEmptyListener_Access;
-   type ScreenEmptyListener_Access_Array_Access is access all ScreenEmptyListener_Access_Array;
-   type ScreenEmptyListener_Access_Array_Access_Array is array (Natural range <>) of ScreenEmptyListener_Access_Array_Access;
-   type ScreenEmptyListener_Access_Array_Access_Array_Access is access all ScreenEmptyListener_Access_Array_Access_Array;
+
+   subtype ScreenEmptyListener_Access is org.allbinary.graphics.ScreenEmptyListener_Package_References.ScreenEmptyListener_Access;
+   function "=" (Left, Right : ScreenEmptyListener_Access) return Boolean renames org.allbinary.graphics.ScreenEmptyListener_Package_References."=";
+   subtype ScreenEmptyListener_Access_Array is org.allbinary.graphics.ScreenEmptyListener_Package_References.ScreenEmptyListener_Access_Array;
+   function "=" (Left, Right : ScreenEmptyListener_Access_Array) return Boolean renames org.allbinary.graphics.ScreenEmptyListener_Package_References."=";
+   subtype ScreenEmptyListener_Access_Array_Access is org.allbinary.graphics.ScreenEmptyListener_Package_References.ScreenEmptyListener_Access_Array_Access;
+   function "=" (Left, Right : ScreenEmptyListener_Access_Array_Access) return Boolean renames org.allbinary.graphics.ScreenEmptyListener_Package_References."=";
+   subtype ScreenEmptyListener_Access_Array_Access_Array is org.allbinary.graphics.ScreenEmptyListener_Package_References.ScreenEmptyListener_Access_Array_Access_Array;
+   function "=" (Left, Right : ScreenEmptyListener_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.ScreenEmptyListener_Package_References."=";
+   subtype ScreenEmptyListener_Access_Array_Access_Array_Access is org.allbinary.graphics.ScreenEmptyListener_Package_References.ScreenEmptyListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScreenEmptyListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.ScreenEmptyListener_Package_References."=";
 
    type ScreenEmptyListener is new Java_Object and ScreenListenerInterface with null record;
 

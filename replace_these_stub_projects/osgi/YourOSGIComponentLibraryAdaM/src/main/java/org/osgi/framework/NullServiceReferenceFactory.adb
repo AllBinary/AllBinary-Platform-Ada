@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.osgi.framework.NullServiceReference_Package; use org.osgi.framework.NullServiceReference_Package;
+with org.osgi.framework.NullServiceReference_Package;
 
 package body org.osgi.framework.NullServiceReferenceFactory_Package is
 
+   subtype NullServiceReference_Access is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access;
+   function "=" (Left, Right : NullServiceReference_Access) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
+   subtype NullServiceReference_Access_Array is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access_Array;
+   function "=" (Left, Right : NullServiceReference_Access_Array) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
+   subtype NullServiceReference_Access_Array_Access is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access_Array_Access;
+   function "=" (Left, Right : NullServiceReference_Access_Array_Access) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
+   subtype NullServiceReference_Access_Array_Access_Array is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access_Array_Access_Array;
+   function "=" (Left, Right : NullServiceReference_Access_Array_Access_Array) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
+   subtype NullServiceReference_Access_Array_Access_Array_Access is org.osgi.framework.NullServiceReference_Package_References.NullServiceReference_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullServiceReference_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.NullServiceReference_Package_References."=";
    procedure Initialize_Fields (This : in out NullServiceReferenceFactory'Class) is
    begin
       null;
@@ -37,7 +49,7 @@ package body org.osgi.framework.NullServiceReferenceFactory_Package is
 
    function getInstance return NullServiceReferenceFactory_Access is
    begin
-        return NullServiceReferenceFactory_Package.instance;
+        return NullServiceReferenceFactory_Access (NullServiceReferenceFactory_Package.instance);
    end getInstance;
 
 begin

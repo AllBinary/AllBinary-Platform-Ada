@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.analysis.ColorRange_Package;
+package org.allbinary.media.image.analysis.ColorRange_Package_References is
+   type ColorRange_Access is access all org.allbinary.media.image.analysis.ColorRange_Package.ColorRange'Class;
+   type ColorRange_Access_Array is array (Natural range <>) of ColorRange_Access;
+   type ColorRange_Access_Array_Access is access all ColorRange_Access_Array;
+   type ColorRange_Access_Array_Access_Array is array (Natural range <>) of ColorRange_Access_Array_Access;
+   type ColorRange_Access_Array_Access_Array_Access is access all ColorRange_Access_Array_Access_Array;
+end org.allbinary.media.image.analysis.ColorRange_Package_References;
+
+with org.allbinary.media.image.analysis.ColorRange_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,17 +31,36 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
-with org.allbinary.media.image.analysis.Color_Package; use org.allbinary.media.image.analysis.Color_Package;
+limited with org.allbinary.media.image.analysis.Color_Package;
+with org.allbinary.media.image.analysis.Color_Package_References;
 
 package org.allbinary.media.image.analysis.ColorRange_Package is
 
+   package Reference_Types is
+   subtype Color_Access is org.allbinary.media.image.analysis.Color_Package_References.Color_Access;
+   use type Color_Access;
+   subtype Color_Access_Array is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array;
+   use type Color_Access_Array;
+   subtype Color_Access_Array_Access is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array_Access;
+   use type Color_Access_Array_Access;
+   subtype Color_Access_Array_Access_Array is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array_Access_Array;
+   use type Color_Access_Array_Access_Array;
+   subtype Color_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array_Access_Array_Access;
+   use type Color_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ColorRange is tagged;
-   type ColorRange_Access is access all ColorRange'Class;
-   type ColorRange_Access_Array is array (Natural range <>) of ColorRange_Access;
-   type ColorRange_Access_Array_Access is access all ColorRange_Access_Array;
-   type ColorRange_Access_Array_Access_Array is array (Natural range <>) of ColorRange_Access_Array_Access;
-   type ColorRange_Access_Array_Access_Array_Access is access all ColorRange_Access_Array_Access_Array;
+
+   subtype ColorRange_Access is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access;
+   function "=" (Left, Right : ColorRange_Access) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
+   subtype ColorRange_Access_Array is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access_Array;
+   function "=" (Left, Right : ColorRange_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
+   subtype ColorRange_Access_Array_Access is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access_Array_Access;
+   function "=" (Left, Right : ColorRange_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
+   subtype ColorRange_Access_Array_Access_Array is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access_Array_Access_Array;
+   function "=" (Left, Right : ColorRange_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
+   subtype ColorRange_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ColorRange_Package_References.ColorRange_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ColorRange_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ColorRange_Package_References."=";
 
    type ColorRange is new Java_Object and ColorRangeInterface with record
       minRed : Integer;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.midlet.DemoGameMidletState_Package;
+package org.allbinary.game.midlet.DemoGameMidletState_Package_References is
+   type DemoGameMidletState_Access is access all org.allbinary.game.midlet.DemoGameMidletState_Package.DemoGameMidletState'Class;
+   type DemoGameMidletState_Access_Array is array (Natural range <>) of DemoGameMidletState_Access;
+   type DemoGameMidletState_Access_Array_Access is access all DemoGameMidletState_Access_Array;
+   type DemoGameMidletState_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletState_Access_Array_Access;
+   type DemoGameMidletState_Access_Array_Access_Array_Access is access all DemoGameMidletState_Access_Array_Access_Array;
+end org.allbinary.game.midlet.DemoGameMidletState_Package_References;
+
+with org.allbinary.game.midlet.DemoGameMidletState_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.midlet.DemoGameMidletState_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DemoGameMidletState is tagged;
-   type DemoGameMidletState_Access is access all DemoGameMidletState'Class;
-   type DemoGameMidletState_Access_Array is array (Natural range <>) of DemoGameMidletState_Access;
-   type DemoGameMidletState_Access_Array_Access is access all DemoGameMidletState_Access_Array;
-   type DemoGameMidletState_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletState_Access_Array_Access;
-   type DemoGameMidletState_Access_Array_Access_Array_Access is access all DemoGameMidletState_Access_Array_Access_Array;
+
+   subtype DemoGameMidletState_Access is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access;
+   function "=" (Left, Right : DemoGameMidletState_Access) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
+   subtype DemoGameMidletState_Access_Array is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access_Array;
+   function "=" (Left, Right : DemoGameMidletState_Access_Array) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
+   subtype DemoGameMidletState_Access_Array_Access is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access_Array_Access;
+   function "=" (Left, Right : DemoGameMidletState_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
+   subtype DemoGameMidletState_Access_Array_Access_Array is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access_Array_Access_Array;
+   function "=" (Left, Right : DemoGameMidletState_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
+   subtype DemoGameMidletState_Access_Array_Access_Array_Access is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DemoGameMidletState_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
 
    type DemoGameMidletState is new Java_Object with null record;
 

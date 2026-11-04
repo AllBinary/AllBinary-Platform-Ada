@@ -13,9 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.ArtificialIntelligence_Package;
+with org.allbinary.ai.ArtificialIntelligence_Package;
+with org.allbinary.ai.ArtificialIntelligenceFactoryInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package;
 
 package body org.allbinary.ai.ArtificialIntelligenceFactory_Package is
 
+   subtype ArtificialIntelligence_Access is org.allbinary.ai.ArtificialIntelligence_Package_References.ArtificialIntelligence_Access;
+   function "=" (Left, Right : ArtificialIntelligence_Access) return Boolean renames org.allbinary.ai.ArtificialIntelligence_Package_References."=";
+   subtype ArtificialIntelligence_Access_Array is org.allbinary.ai.ArtificialIntelligence_Package_References.ArtificialIntelligence_Access_Array;
+   function "=" (Left, Right : ArtificialIntelligence_Access_Array) return Boolean renames org.allbinary.ai.ArtificialIntelligence_Package_References."=";
+   subtype ArtificialIntelligence_Access_Array_Access is org.allbinary.ai.ArtificialIntelligence_Package_References.ArtificialIntelligence_Access_Array_Access;
+   function "=" (Left, Right : ArtificialIntelligence_Access_Array_Access) return Boolean renames org.allbinary.ai.ArtificialIntelligence_Package_References."=";
+   subtype ArtificialIntelligence_Access_Array_Access_Array is org.allbinary.ai.ArtificialIntelligence_Package_References.ArtificialIntelligence_Access_Array_Access_Array;
+   function "=" (Left, Right : ArtificialIntelligence_Access_Array_Access_Array) return Boolean renames org.allbinary.ai.ArtificialIntelligence_Package_References."=";
+   subtype ArtificialIntelligence_Access_Array_Access_Array_Access is org.allbinary.ai.ArtificialIntelligence_Package_References.ArtificialIntelligence_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ArtificialIntelligence_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.ai.ArtificialIntelligence_Package_References."=";
    procedure Initialize_Fields (This : in out ArtificialIntelligenceFactory'Class) is
    begin
       null;

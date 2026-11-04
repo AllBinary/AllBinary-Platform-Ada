@@ -52,7 +52,7 @@ package body org.allbinary.game.input.GameInputStrings_Package is
 
    function getInstance return GameInputStrings_Access is
    begin
-        return GameInputStrings_Package.instance;
+        return GameInputStrings_Access (GameInputStrings_Package.instance);
    end getInstance;
 
 begin

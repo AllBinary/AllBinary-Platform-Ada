@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.ShapeType_Package;
+package org.allbinary.animation.ShapeType_Package_References is
+   type ShapeType_Access is access all org.allbinary.animation.ShapeType_Package.ShapeType'Class;
+   type ShapeType_Access_Array is array (Natural range <>) of ShapeType_Access;
+   type ShapeType_Access_Array_Access is access all ShapeType_Access_Array;
+   type ShapeType_Access_Array_Access_Array is array (Natural range <>) of ShapeType_Access_Array_Access;
+   type ShapeType_Access_Array_Access_Array_Access is access all ShapeType_Access_Array_Access_Array;
+end org.allbinary.animation.ShapeType_Package_References;
+
+with org.allbinary.animation.ShapeType_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.animation.ShapeType_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ShapeType is tagged;
-   type ShapeType_Access is access all ShapeType'Class;
-   type ShapeType_Access_Array is array (Natural range <>) of ShapeType_Access;
-   type ShapeType_Access_Array_Access is access all ShapeType_Access_Array;
-   type ShapeType_Access_Array_Access_Array is array (Natural range <>) of ShapeType_Access_Array_Access;
-   type ShapeType_Access_Array_Access_Array_Access is access all ShapeType_Access_Array_Access_Array;
+
+   subtype ShapeType_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access;
+   function "=" (Left, Right : ShapeType_Access) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array;
+   function "=" (Left, Right : ShapeType_Access_Array) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access;
+   function "=" (Left, Right : ShapeType_Access_Array_Access) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array_Access_Array is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access_Array;
+   function "=" (Left, Right : ShapeType_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
+   subtype ShapeType_Access_Array_Access_Array_Access is org.allbinary.animation.ShapeType_Package_References.ShapeType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShapeType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.ShapeType_Package_References."=";
 
    type ShapeType is new Java_Object with record
       name : Unbounded_String;

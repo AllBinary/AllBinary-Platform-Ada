@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.NullPlayerGameInputComposite_Package;
+package org.allbinary.game.input.NullPlayerGameInputComposite_Package_References is
+   type NullPlayerGameInputComposite_Access is access all org.allbinary.game.input.NullPlayerGameInputComposite_Package.NullPlayerGameInputComposite'Class;
+   type NullPlayerGameInputComposite_Access_Array is array (Natural range <>) of NullPlayerGameInputComposite_Access;
+   type NullPlayerGameInputComposite_Access_Array_Access is access all NullPlayerGameInputComposite_Access_Array;
+   type NullPlayerGameInputComposite_Access_Array_Access_Array is array (Natural range <>) of NullPlayerGameInputComposite_Access_Array_Access;
+   type NullPlayerGameInputComposite_Access_Array_Access_Array_Access is access all NullPlayerGameInputComposite_Access_Array_Access_Array;
+end org.allbinary.game.input.NullPlayerGameInputComposite_Package_References;
+
+with org.allbinary.game.input.NullPlayerGameInputComposite_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
-with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+limited with org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.PlayerGameInput_Package_References;
 
 package org.allbinary.game.input.NullPlayerGameInputComposite_Package is
 
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package Reference_Types is
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   subtype PlayerGameInput_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access;
+   use type PlayerGameInput_Access;
+   subtype PlayerGameInput_Access_Array is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array;
+   use type PlayerGameInput_Access_Array;
+   subtype PlayerGameInput_Access_Array_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access;
+   use type PlayerGameInput_Access_Array_Access;
+   subtype PlayerGameInput_Access_Array_Access_Array is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access_Array;
+   use type PlayerGameInput_Access_Array_Access_Array;
+   subtype PlayerGameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access_Array_Access;
+   use type PlayerGameInput_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullPlayerGameInputComposite is tagged;
-   type NullPlayerGameInputComposite_Access is access all NullPlayerGameInputComposite'Class;
-   type NullPlayerGameInputComposite_Access_Array is array (Natural range <>) of NullPlayerGameInputComposite_Access;
-   type NullPlayerGameInputComposite_Access_Array_Access is access all NullPlayerGameInputComposite_Access_Array;
-   type NullPlayerGameInputComposite_Access_Array_Access_Array is array (Natural range <>) of NullPlayerGameInputComposite_Access_Array_Access;
-   type NullPlayerGameInputComposite_Access_Array_Access_Array_Access is access all NullPlayerGameInputComposite_Access_Array_Access_Array;
+
+   subtype NullPlayerGameInputComposite_Access is org.allbinary.game.input.NullPlayerGameInputComposite_Package_References.NullPlayerGameInputComposite_Access;
+   function "=" (Left, Right : NullPlayerGameInputComposite_Access) return Boolean renames org.allbinary.game.input.NullPlayerGameInputComposite_Package_References."=";
+   subtype NullPlayerGameInputComposite_Access_Array is org.allbinary.game.input.NullPlayerGameInputComposite_Package_References.NullPlayerGameInputComposite_Access_Array;
+   function "=" (Left, Right : NullPlayerGameInputComposite_Access_Array) return Boolean renames org.allbinary.game.input.NullPlayerGameInputComposite_Package_References."=";
+   subtype NullPlayerGameInputComposite_Access_Array_Access is org.allbinary.game.input.NullPlayerGameInputComposite_Package_References.NullPlayerGameInputComposite_Access_Array_Access;
+   function "=" (Left, Right : NullPlayerGameInputComposite_Access_Array_Access) return Boolean renames org.allbinary.game.input.NullPlayerGameInputComposite_Package_References."=";
+   subtype NullPlayerGameInputComposite_Access_Array_Access_Array is org.allbinary.game.input.NullPlayerGameInputComposite_Package_References.NullPlayerGameInputComposite_Access_Array_Access_Array;
+   function "=" (Left, Right : NullPlayerGameInputComposite_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.NullPlayerGameInputComposite_Package_References."=";
+   subtype NullPlayerGameInputComposite_Access_Array_Access_Array_Access is org.allbinary.game.input.NullPlayerGameInputComposite_Package_References.NullPlayerGameInputComposite_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullPlayerGameInputComposite_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.NullPlayerGameInputComposite_Package_References."=";
 
    type NullPlayerGameInputComposite is new Java_Object and PlayerGameInputCompositeInterface with null record;
    NULL_PLAYER_GAME_INPUT_COMPOSITE : NullPlayerGameInputComposite_Access;

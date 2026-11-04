@@ -13,9 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.Activity_Package; use android.app.Activity_Package;
 with org.allbinary.input.motion.button.TouchScreenTypeFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypeFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.android.api1.ActivityFractureUtilAPI1_Package; use org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
 with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
 
 package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
@@ -24,6 +26,16 @@ package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package TouchScreenFactory_Package renames Standard.org.allbinary.input.motion.button.TouchScreenFactory_Package;
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   function "=" (Left, Right : Activity_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
    procedure Initialize_Fields (This : in out ActivityFractureUtilAPI5'Class) is
    begin
       null;
@@ -48,7 +60,7 @@ package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
 
    function getInstance return ActivityFractureUtilAPI5_Access is
    begin
-        return ActivityFractureUtilAPI5_Package.instance5;
+        return ActivityFractureUtilAPI5_Access (ActivityFractureUtilAPI5_Package.instance5);
    end getInstance;
 
    procedure process (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class) is

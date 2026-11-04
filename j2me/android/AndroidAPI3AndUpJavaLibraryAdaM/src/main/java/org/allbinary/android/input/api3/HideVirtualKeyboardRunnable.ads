@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package;
+package org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References is
+   type HideVirtualKeyboardRunnable_Access is access all org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package.HideVirtualKeyboardRunnable'Class;
+   type HideVirtualKeyboardRunnable_Access_Array is array (Natural range <>) of HideVirtualKeyboardRunnable_Access;
+   type HideVirtualKeyboardRunnable_Access_Array_Access is access all HideVirtualKeyboardRunnable_Access_Array;
+   type HideVirtualKeyboardRunnable_Access_Array_Access_Array is array (Natural range <>) of HideVirtualKeyboardRunnable_Access_Array_Access;
+   type HideVirtualKeyboardRunnable_Access_Array_Access_Array_Access is access all HideVirtualKeyboardRunnable_Access_Array_Access_Array;
+end org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References;
+
+with org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,8 +30,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.app.Activity_Package; use android.app.Activity_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with android.app.Activity_Package;
+with android.app.Activity_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package is
@@ -29,13 +41,41 @@ package org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package is
    package Activity_Package renames Standard.android.app.Activity_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   use type Activity_Access;
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   use type Activity_Access_Array;
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   use type Activity_Access_Array_Access;
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   use type Activity_Access_Array_Access_Array;
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   use type Activity_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type HideVirtualKeyboardRunnable is tagged;
-   type HideVirtualKeyboardRunnable_Access is access all HideVirtualKeyboardRunnable'Class;
-   type HideVirtualKeyboardRunnable_Access_Array is array (Natural range <>) of HideVirtualKeyboardRunnable_Access;
-   type HideVirtualKeyboardRunnable_Access_Array_Access is access all HideVirtualKeyboardRunnable_Access_Array;
-   type HideVirtualKeyboardRunnable_Access_Array_Access_Array is array (Natural range <>) of HideVirtualKeyboardRunnable_Access_Array_Access;
-   type HideVirtualKeyboardRunnable_Access_Array_Access_Array_Access is access all HideVirtualKeyboardRunnable_Access_Array_Access_Array;
+
+   subtype HideVirtualKeyboardRunnable_Access is org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References.HideVirtualKeyboardRunnable_Access;
+   function "=" (Left, Right : HideVirtualKeyboardRunnable_Access) return Boolean renames org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References."=";
+   subtype HideVirtualKeyboardRunnable_Access_Array is org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References.HideVirtualKeyboardRunnable_Access_Array;
+   function "=" (Left, Right : HideVirtualKeyboardRunnable_Access_Array) return Boolean renames org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References."=";
+   subtype HideVirtualKeyboardRunnable_Access_Array_Access is org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References.HideVirtualKeyboardRunnable_Access_Array_Access;
+   function "=" (Left, Right : HideVirtualKeyboardRunnable_Access_Array_Access) return Boolean renames org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References."=";
+   subtype HideVirtualKeyboardRunnable_Access_Array_Access_Array is org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References.HideVirtualKeyboardRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : HideVirtualKeyboardRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References."=";
+   subtype HideVirtualKeyboardRunnable_Access_Array_Access_Array_Access is org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References.HideVirtualKeyboardRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HideVirtualKeyboardRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package_References."=";
 
    type HideVirtualKeyboardRunnable is new Java_Object and Runnable with record
       logUtil : LogUtil_Access;

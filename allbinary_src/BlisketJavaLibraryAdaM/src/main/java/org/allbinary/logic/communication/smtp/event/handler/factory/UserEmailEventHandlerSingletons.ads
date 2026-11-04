@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package;
+package org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References is
+   type UserEmailEventHandlerSingletons_Access is access all org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package.UserEmailEventHandlerSingletons'Class;
+   type UserEmailEventHandlerSingletons_Access_Array is array (Natural range <>) of UserEmailEventHandlerSingletons_Access;
+   type UserEmailEventHandlerSingletons_Access_Array_Access is access all UserEmailEventHandlerSingletons_Access_Array;
+   type UserEmailEventHandlerSingletons_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventHandlerSingletons_Access_Array_Access;
+   type UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access is access all UserEmailEventHandlerSingletons_Access_Array_Access_Array;
+end org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References;
+
+with org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,12 +31,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
-with org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package; use org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.UserInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
+with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References;
+limited with org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package;
+with org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 
 package org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package is
 
@@ -37,13 +53,81 @@ package org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEv
    package UserEmailEventHandler_Package renames Standard.org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype UserInterface_Access is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access;
+   use type UserInterface_Access;
+   subtype UserInterface_Access_Array is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array;
+   use type UserInterface_Access_Array;
+   subtype UserInterface_Access_Array_Access is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array_Access;
+   use type UserInterface_Access_Array_Access;
+   subtype UserInterface_Access_Array_Access_Array is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array_Access_Array;
+   use type UserInterface_Access_Array_Access_Array;
+   subtype UserInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array_Access_Array_Access;
+   use type UserInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype UserEmailEventNameData_Access is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access;
+   use type UserEmailEventNameData_Access;
+   subtype UserEmailEventNameData_Access_Array is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access_Array;
+   use type UserEmailEventNameData_Access_Array;
+   subtype UserEmailEventNameData_Access_Array_Access is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access_Array_Access;
+   use type UserEmailEventNameData_Access_Array_Access;
+   subtype UserEmailEventNameData_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access_Array_Access_Array;
+   use type UserEmailEventNameData_Access_Array_Access_Array;
+   subtype UserEmailEventNameData_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access_Array_Access_Array_Access;
+   use type UserEmailEventNameData_Access_Array_Access_Array_Access;
+   subtype UserEmailEventHandler_Access is org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package_References.UserEmailEventHandler_Access;
+   use type UserEmailEventHandler_Access;
+   subtype UserEmailEventHandler_Access_Array is org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package_References.UserEmailEventHandler_Access_Array;
+   use type UserEmailEventHandler_Access_Array;
+   subtype UserEmailEventHandler_Access_Array_Access is org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package_References.UserEmailEventHandler_Access_Array_Access;
+   use type UserEmailEventHandler_Access_Array_Access;
+   subtype UserEmailEventHandler_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package_References.UserEmailEventHandler_Access_Array_Access_Array;
+   use type UserEmailEventHandler_Access_Array_Access_Array;
+   subtype UserEmailEventHandler_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package_References.UserEmailEventHandler_Access_Array_Access_Array_Access;
+   use type UserEmailEventHandler_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type UserEmailEventHandlerSingletons is tagged;
-   type UserEmailEventHandlerSingletons_Access is access all UserEmailEventHandlerSingletons'Class;
-   type UserEmailEventHandlerSingletons_Access_Array is array (Natural range <>) of UserEmailEventHandlerSingletons_Access;
-   type UserEmailEventHandlerSingletons_Access_Array_Access is access all UserEmailEventHandlerSingletons_Access_Array;
-   type UserEmailEventHandlerSingletons_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventHandlerSingletons_Access_Array_Access;
-   type UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access is access all UserEmailEventHandlerSingletons_Access_Array_Access_Array;
+
+   subtype UserEmailEventHandlerSingletons_Access is org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.UserEmailEventHandlerSingletons_Access;
+   function "=" (Left, Right : UserEmailEventHandlerSingletons_Access) return Boolean renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References."=";
+   subtype UserEmailEventHandlerSingletons_Access_Array is org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.UserEmailEventHandlerSingletons_Access_Array;
+   function "=" (Left, Right : UserEmailEventHandlerSingletons_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References."=";
+   subtype UserEmailEventHandlerSingletons_Access_Array_Access is org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.UserEmailEventHandlerSingletons_Access_Array_Access;
+   function "=" (Left, Right : UserEmailEventHandlerSingletons_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References."=";
+   subtype UserEmailEventHandlerSingletons_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.UserEmailEventHandlerSingletons_Access_Array_Access_Array;
+   function "=" (Left, Right : UserEmailEventHandlerSingletons_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References."=";
+   subtype UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References."=";
 
    type UserEmailEventHandlerSingletons is new Java_Object with record
       logUtil : LogUtil_Access;

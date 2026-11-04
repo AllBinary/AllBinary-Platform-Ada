@@ -28,7 +28,7 @@ package body org.allbinary.graphics.form.ScreenInfo_Package is
 
    function getInstance return ScreenInfo_Access is
    begin
-        return ScreenInfo_Package.instance;
+        return ScreenInfo_Access (ScreenInfo_Package.instance);
    end getInstance;
 
 begin

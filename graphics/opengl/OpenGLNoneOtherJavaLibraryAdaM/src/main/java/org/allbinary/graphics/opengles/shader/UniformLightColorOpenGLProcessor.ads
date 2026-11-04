@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package;
+package org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References is
+   type UniformLightColorOpenGLProcessor_Access is access all org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package.UniformLightColorOpenGLProcessor'Class;
+   type UniformLightColorOpenGLProcessor_Access_Array is array (Natural range <>) of UniformLightColorOpenGLProcessor_Access;
+   type UniformLightColorOpenGLProcessor_Access_Array_Access is access all UniformLightColorOpenGLProcessor_Access_Array;
+   type UniformLightColorOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of UniformLightColorOpenGLProcessor_Access_Array_Access;
+   type UniformLightColorOpenGLProcessor_Access_Array_Access_Array_Access is access all UniformLightColorOpenGLProcessor_Access_Array_Access_Array;
+end org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References;
+
+with org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+limited with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package; use org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
-with org.allbinary.graphics.opengles.shader.ShaderComposite_Package; use org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
+limited with org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
+with org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References;
 
 package org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
+   package Reference_Types is
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   use type GL10_Access;
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   use type GL10_Access_Array;
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   use type GL10_Access_Array_Access;
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   use type GL10_Access_Array_Access_Array;
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   use type GL10_Access_Array_Access_Array_Access;
+   subtype ShaderComposite_Access is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access;
+   use type ShaderComposite_Access;
+   subtype ShaderComposite_Access_Array is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access_Array;
+   use type ShaderComposite_Access_Array;
+   subtype ShaderComposite_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access_Array_Access;
+   use type ShaderComposite_Access_Array_Access;
+   subtype ShaderComposite_Access_Array_Access_Array is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access_Array_Access_Array;
+   use type ShaderComposite_Access_Array_Access_Array;
+   subtype ShaderComposite_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.shader.ShaderComposite_Package_References.ShaderComposite_Access_Array_Access_Array_Access;
+   use type ShaderComposite_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type UniformLightColorOpenGLProcessor is tagged;
-   type UniformLightColorOpenGLProcessor_Access is access all UniformLightColorOpenGLProcessor'Class;
-   type UniformLightColorOpenGLProcessor_Access_Array is array (Natural range <>) of UniformLightColorOpenGLProcessor_Access;
-   type UniformLightColorOpenGLProcessor_Access_Array_Access is access all UniformLightColorOpenGLProcessor_Access_Array;
-   type UniformLightColorOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of UniformLightColorOpenGLProcessor_Access_Array_Access;
-   type UniformLightColorOpenGLProcessor_Access_Array_Access_Array_Access is access all UniformLightColorOpenGLProcessor_Access_Array_Access_Array;
+
+   subtype UniformLightColorOpenGLProcessor_Access is org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References.UniformLightColorOpenGLProcessor_Access;
+   function "=" (Left, Right : UniformLightColorOpenGLProcessor_Access) return Boolean renames org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References."=";
+   subtype UniformLightColorOpenGLProcessor_Access_Array is org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References.UniformLightColorOpenGLProcessor_Access_Array;
+   function "=" (Left, Right : UniformLightColorOpenGLProcessor_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References."=";
+   subtype UniformLightColorOpenGLProcessor_Access_Array_Access is org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References.UniformLightColorOpenGLProcessor_Access_Array_Access;
+   function "=" (Left, Right : UniformLightColorOpenGLProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References."=";
+   subtype UniformLightColorOpenGLProcessor_Access_Array_Access_Array is org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References.UniformLightColorOpenGLProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : UniformLightColorOpenGLProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References."=";
+   subtype UniformLightColorOpenGLProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References.UniformLightColorOpenGLProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UniformLightColorOpenGLProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package_References."=";
 
    type UniformLightColorOpenGLProcessor is new OpenGLObject3dProcessor with null record;
 

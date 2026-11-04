@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.util.cache.BasicArrayListPool_Package;
+package org.allbinary.logic.util.cache.BasicArrayListPool_Package_References is
+   type BasicArrayListPool_Access is access all org.allbinary.logic.util.cache.BasicArrayListPool_Package.BasicArrayListPool'Class;
+   type BasicArrayListPool_Access_Array is array (Natural range <>) of BasicArrayListPool_Access;
+   type BasicArrayListPool_Access_Array_Access is access all BasicArrayListPool_Access_Array;
+   type BasicArrayListPool_Access_Array_Access_Array is array (Natural range <>) of BasicArrayListPool_Access_Array_Access;
+   type BasicArrayListPool_Access_Array_Access_Array_Access is access all BasicArrayListPool_Access_Array_Access_Array;
+end org.allbinary.logic.util.cache.BasicArrayListPool_Package_References;
+
+with org.allbinary.logic.util.cache.BasicArrayListPool_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,62 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.logic.util.cache.AbstractArrayListPool_Package; use org.allbinary.logic.util.cache.AbstractArrayListPool_Package;
-with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
-with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+limited with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References;
+limited with org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
 
 package org.allbinary.logic.util.cache.BasicArrayListPool_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype CacheableInterfaceFactoryInterface_Access is org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References.CacheableInterfaceFactoryInterface_Access;
+   use type CacheableInterfaceFactoryInterface_Access;
+   subtype CacheableInterfaceFactoryInterface_Access_Array is org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References.CacheableInterfaceFactoryInterface_Access_Array;
+   use type CacheableInterfaceFactoryInterface_Access_Array;
+   subtype CacheableInterfaceFactoryInterface_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References.CacheableInterfaceFactoryInterface_Access_Array_Access;
+   use type CacheableInterfaceFactoryInterface_Access_Array_Access;
+   subtype CacheableInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References.CacheableInterfaceFactoryInterface_Access_Array_Access_Array;
+   use type CacheableInterfaceFactoryInterface_Access_Array_Access_Array;
+   subtype CacheableInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References.CacheableInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   use type CacheableInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   subtype CacheableInterface_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access;
+   use type CacheableInterface_Access;
+   subtype CacheableInterface_Access_Array is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array;
+   use type CacheableInterface_Access_Array;
+   subtype CacheableInterface_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access;
+   use type CacheableInterface_Access_Array_Access;
+   subtype CacheableInterface_Access_Array_Access_Array is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access_Array;
+   use type CacheableInterface_Access_Array_Access_Array;
+   subtype CacheableInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access_Array_Access;
+   use type CacheableInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicArrayListPool is tagged;
-   type BasicArrayListPool_Access is access all BasicArrayListPool'Class;
-   type BasicArrayListPool_Access_Array is array (Natural range <>) of BasicArrayListPool_Access;
-   type BasicArrayListPool_Access_Array_Access is access all BasicArrayListPool_Access_Array;
-   type BasicArrayListPool_Access_Array_Access_Array is array (Natural range <>) of BasicArrayListPool_Access_Array_Access;
-   type BasicArrayListPool_Access_Array_Access_Array_Access is access all BasicArrayListPool_Access_Array_Access_Array;
+
+   subtype BasicArrayListPool_Access is org.allbinary.logic.util.cache.BasicArrayListPool_Package_References.BasicArrayListPool_Access;
+   function "=" (Left, Right : BasicArrayListPool_Access) return Boolean renames org.allbinary.logic.util.cache.BasicArrayListPool_Package_References."=";
+   subtype BasicArrayListPool_Access_Array is org.allbinary.logic.util.cache.BasicArrayListPool_Package_References.BasicArrayListPool_Access_Array;
+   function "=" (Left, Right : BasicArrayListPool_Access_Array) return Boolean renames org.allbinary.logic.util.cache.BasicArrayListPool_Package_References."=";
+   subtype BasicArrayListPool_Access_Array_Access is org.allbinary.logic.util.cache.BasicArrayListPool_Package_References.BasicArrayListPool_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayListPool_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.BasicArrayListPool_Package_References."=";
+   subtype BasicArrayListPool_Access_Array_Access_Array is org.allbinary.logic.util.cache.BasicArrayListPool_Package_References.BasicArrayListPool_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayListPool_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.BasicArrayListPool_Package_References."=";
+   subtype BasicArrayListPool_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.BasicArrayListPool_Package_References.BasicArrayListPool_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayListPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.BasicArrayListPool_Package_References."=";
 
    type BasicArrayListPool is new AbstractArrayListPool with null record;
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.PaymentTransactionHelper_Package;
+package admin.taghelpers.PaymentTransactionHelper_Package_References is
+   type PaymentTransactionHelper_Access is access all admin.taghelpers.PaymentTransactionHelper_Package.PaymentTransactionHelper'Class;
+   type PaymentTransactionHelper_Access_Array is array (Natural range <>) of PaymentTransactionHelper_Access;
+   type PaymentTransactionHelper_Access_Array_Access is access all PaymentTransactionHelper_Access_Array;
+   type PaymentTransactionHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionHelper_Access_Array_Access;
+   type PaymentTransactionHelper_Access_Array_Access_Array_Access is access all PaymentTransactionHelper_Access_Array_Access_Array;
+end admin.taghelpers.PaymentTransactionHelper_Package_References;
+
+with admin.taghelpers.PaymentTransactionHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,8 +32,10 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.business.installer.Portion_Package;
+with org.allbinary.business.installer.Portion_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
 
 package admin.taghelpers.PaymentTransactionHelper_Package is
@@ -31,13 +43,41 @@ package admin.taghelpers.PaymentTransactionHelper_Package is
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype Portion_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access;
+   use type Portion_Access;
+   subtype Portion_Access_Array is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array;
+   use type Portion_Access_Array;
+   subtype Portion_Access_Array_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access;
+   use type Portion_Access_Array_Access;
+   subtype Portion_Access_Array_Access_Array is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access_Array;
+   use type Portion_Access_Array_Access_Array;
+   subtype Portion_Access_Array_Access_Array_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access_Array_Access;
+   use type Portion_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PaymentTransactionHelper is tagged;
-   type PaymentTransactionHelper_Access is access all PaymentTransactionHelper'Class;
-   type PaymentTransactionHelper_Access_Array is array (Natural range <>) of PaymentTransactionHelper_Access;
-   type PaymentTransactionHelper_Access_Array_Access is access all PaymentTransactionHelper_Access_Array;
-   type PaymentTransactionHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionHelper_Access_Array_Access;
-   type PaymentTransactionHelper_Access_Array_Access_Array_Access is access all PaymentTransactionHelper_Access_Array_Access_Array;
+
+   subtype PaymentTransactionHelper_Access is admin.taghelpers.PaymentTransactionHelper_Package_References.PaymentTransactionHelper_Access;
+   function "=" (Left, Right : PaymentTransactionHelper_Access) return Boolean renames admin.taghelpers.PaymentTransactionHelper_Package_References."=";
+   subtype PaymentTransactionHelper_Access_Array is admin.taghelpers.PaymentTransactionHelper_Package_References.PaymentTransactionHelper_Access_Array;
+   function "=" (Left, Right : PaymentTransactionHelper_Access_Array) return Boolean renames admin.taghelpers.PaymentTransactionHelper_Package_References."=";
+   subtype PaymentTransactionHelper_Access_Array_Access is admin.taghelpers.PaymentTransactionHelper_Package_References.PaymentTransactionHelper_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionHelper_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentTransactionHelper_Package_References."=";
+   subtype PaymentTransactionHelper_Access_Array_Access_Array is admin.taghelpers.PaymentTransactionHelper_Package_References.PaymentTransactionHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentTransactionHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PaymentTransactionHelper_Package_References."=";
+   subtype PaymentTransactionHelper_Access_Array_Access_Array_Access is admin.taghelpers.PaymentTransactionHelper_Package_References.PaymentTransactionHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentTransactionHelper_Package_References."=";
 
    type PaymentTransactionHelper is new BasicTable with record
       logUtil : LogUtil_Access;

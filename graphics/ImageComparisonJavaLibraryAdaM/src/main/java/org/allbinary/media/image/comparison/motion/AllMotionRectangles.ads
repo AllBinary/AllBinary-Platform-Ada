@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package;
+package org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References is
+   type AllMotionRectangles_Access is access all org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package.AllMotionRectangles'Class;
+   type AllMotionRectangles_Access_Array is array (Natural range <>) of AllMotionRectangles_Access;
+   type AllMotionRectangles_Access_Array_Access is access all AllMotionRectangles_Access_Array;
+   type AllMotionRectangles_Access_Array_Access_Array is array (Natural range <>) of AllMotionRectangles_Access_Array_Access;
+   type AllMotionRectangles_Access_Array_Access_Array_Access is access all AllMotionRectangles_Access_Array_Access_Array;
+end org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References;
+
+with org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
-with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+limited with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
+limited with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
+limited with org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References;
 
 package org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package is
 
    package ImageComparisonResult_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonResult_Package;
    package PixelDelta_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+   package Reference_Types is
+   subtype ImageComparisonResult_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access;
+   use type ImageComparisonResult_Access;
+   subtype ImageComparisonResult_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array;
+   use type ImageComparisonResult_Access_Array;
+   subtype ImageComparisonResult_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access;
+   use type ImageComparisonResult_Access_Array_Access;
+   subtype ImageComparisonResult_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array;
+   use type ImageComparisonResult_Access_Array_Access_Array;
+   subtype ImageComparisonResult_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array_Access;
+   use type ImageComparisonResult_Access_Array_Access_Array_Access;
+   subtype PixelDelta_Access is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access;
+   use type PixelDelta_Access;
+   subtype PixelDelta_Access_Array is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access_Array;
+   use type PixelDelta_Access_Array;
+   subtype PixelDelta_Access_Array_Access is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access_Array_Access;
+   use type PixelDelta_Access_Array_Access;
+   subtype PixelDelta_Access_Array_Access_Array is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access_Array_Access_Array;
+   use type PixelDelta_Access_Array_Access_Array;
+   subtype PixelDelta_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References.PixelDelta_Access_Array_Access_Array_Access;
+   use type PixelDelta_Access_Array_Access_Array_Access;
+   subtype MotionRectangle_Access is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access;
+   use type MotionRectangle_Access;
+   subtype MotionRectangle_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array;
+   use type MotionRectangle_Access_Array;
+   subtype MotionRectangle_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array_Access;
+   use type MotionRectangle_Access_Array_Access;
+   subtype MotionRectangle_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array_Access_Array;
+   use type MotionRectangle_Access_Array_Access_Array;
+   subtype MotionRectangle_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array_Access_Array_Access;
+   use type MotionRectangle_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AllMotionRectangles is tagged;
-   type AllMotionRectangles_Access is access all AllMotionRectangles'Class;
-   type AllMotionRectangles_Access_Array is array (Natural range <>) of AllMotionRectangles_Access;
-   type AllMotionRectangles_Access_Array_Access is access all AllMotionRectangles_Access_Array;
-   type AllMotionRectangles_Access_Array_Access_Array is array (Natural range <>) of AllMotionRectangles_Access_Array_Access;
-   type AllMotionRectangles_Access_Array_Access_Array_Access is access all AllMotionRectangles_Access_Array_Access_Array;
+
+   subtype AllMotionRectangles_Access is org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References.AllMotionRectangles_Access;
+   function "=" (Left, Right : AllMotionRectangles_Access) return Boolean renames org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References."=";
+   subtype AllMotionRectangles_Access_Array is org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References.AllMotionRectangles_Access_Array;
+   function "=" (Left, Right : AllMotionRectangles_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References."=";
+   subtype AllMotionRectangles_Access_Array_Access is org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References.AllMotionRectangles_Access_Array_Access;
+   function "=" (Left, Right : AllMotionRectangles_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References."=";
+   subtype AllMotionRectangles_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References.AllMotionRectangles_Access_Array_Access_Array;
+   function "=" (Left, Right : AllMotionRectangles_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References."=";
+   subtype AllMotionRectangles_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References.AllMotionRectangles_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllMotionRectangles_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package_References."=";
 
    type AllMotionRectangles is new MotionRectangles with null record;
    NAME : Unbounded_String;

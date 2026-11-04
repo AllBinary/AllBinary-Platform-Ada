@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.UsersData_Package;
+package org.allbinary.business.user.UsersData_Package_References is
+   type UsersData_Access is access all org.allbinary.business.user.UsersData_Package.UsersData'Class;
+   type UsersData_Access_Array is array (Natural range <>) of UsersData_Access;
+   type UsersData_Access_Array_Access is access all UsersData_Access_Array;
+   type UsersData_Access_Array_Access_Array is array (Natural range <>) of UsersData_Access_Array_Access;
+   type UsersData_Access_Array_Access_Array_Access is access all UsersData_Access_Array_Access_Array;
+end org.allbinary.business.user.UsersData_Package_References;
+
+with org.allbinary.business.user.UsersData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.UsersData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type UsersData is tagged;
-   type UsersData_Access is access all UsersData'Class;
-   type UsersData_Access_Array is array (Natural range <>) of UsersData_Access;
-   type UsersData_Access_Array_Access is access all UsersData_Access_Array;
-   type UsersData_Access_Array_Access_Array is array (Natural range <>) of UsersData_Access_Array_Access;
-   type UsersData_Access_Array_Access_Array_Access is access all UsersData_Access_Array_Access_Array;
+
+   subtype UsersData_Access is org.allbinary.business.user.UsersData_Package_References.UsersData_Access;
+   function "=" (Left, Right : UsersData_Access) return Boolean renames org.allbinary.business.user.UsersData_Package_References."=";
+   subtype UsersData_Access_Array is org.allbinary.business.user.UsersData_Package_References.UsersData_Access_Array;
+   function "=" (Left, Right : UsersData_Access_Array) return Boolean renames org.allbinary.business.user.UsersData_Package_References."=";
+   subtype UsersData_Access_Array_Access is org.allbinary.business.user.UsersData_Package_References.UsersData_Access_Array_Access;
+   function "=" (Left, Right : UsersData_Access_Array_Access) return Boolean renames org.allbinary.business.user.UsersData_Package_References."=";
+   subtype UsersData_Access_Array_Access_Array is org.allbinary.business.user.UsersData_Package_References.UsersData_Access_Array_Access_Array;
+   function "=" (Left, Right : UsersData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.UsersData_Package_References."=";
+   subtype UsersData_Access_Array_Access_Array_Access is org.allbinary.business.user.UsersData_Package_References.UsersData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UsersData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.UsersData_Package_References."=";
 
    type UsersData is new Java_Object with null record;
    NAME : Unbounded_String;

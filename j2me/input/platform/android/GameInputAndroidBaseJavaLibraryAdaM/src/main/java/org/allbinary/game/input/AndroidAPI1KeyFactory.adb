@@ -2,6 +2,8 @@
 
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.input.AndroidGameKey_Package;
+with org.allbinary.game.input.AndroidKeyFactory_Package;
 
 package body org.allbinary.game.input.AndroidAPI1KeyFactory_Package is
 

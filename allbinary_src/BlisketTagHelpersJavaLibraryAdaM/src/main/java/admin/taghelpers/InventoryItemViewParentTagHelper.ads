@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.InventoryItemViewParentTagHelper_Package;
+package admin.taghelpers.InventoryItemViewParentTagHelper_Package_References is
+   type InventoryItemViewParentTagHelper_Access is access all admin.taghelpers.InventoryItemViewParentTagHelper_Package.InventoryItemViewParentTagHelper'Class;
+   type InventoryItemViewParentTagHelper_Access_Array is array (Natural range <>) of InventoryItemViewParentTagHelper_Access;
+   type InventoryItemViewParentTagHelper_Access_Array_Access is access all InventoryItemViewParentTagHelper_Access_Array;
+   type InventoryItemViewParentTagHelper_Access_Array_Access_Array is array (Natural range <>) of InventoryItemViewParentTagHelper_Access_Array_Access;
+   type InventoryItemViewParentTagHelper_Access_Array_Access_Array_Access is access all InventoryItemViewParentTagHelper_Access_Array_Access_Array;
+end admin.taghelpers.InventoryItemViewParentTagHelper_Package_References;
+
+with admin.taghelpers.InventoryItemViewParentTagHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.http.request.RequestMapInterface_Package; use org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
-with tags.HelperTag_Package; use tags.HelperTag_Package;
-with views.admin.inventory.InventoryItemView_Package; use views.admin.inventory.InventoryItemView_Package;
-with views.admin.inventory.download.DownloadableInventoryItemView_Package; use views.admin.inventory.download.DownloadableInventoryItemView_Package;
+limited with org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
+with org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References;
+limited with tags.HelperTag_Package;
+with tags.HelperTag_Package_References;
+limited with views.admin.inventory.InventoryItemView_Package;
+with views.admin.inventory.InventoryItemView_Package_References;
+limited with views.admin.inventory.download.DownloadableInventoryItemView_Package;
+with views.admin.inventory.download.DownloadableInventoryItemView_Package_References;
 
 package admin.taghelpers.InventoryItemViewParentTagHelper_Package is
 
@@ -31,13 +45,61 @@ package admin.taghelpers.InventoryItemViewParentTagHelper_Package is
    package HelperTag_Package renames Standard.tags.HelperTag_Package;
    package InventoryItemView_Package renames Standard.views.admin.inventory.InventoryItemView_Package;
    package DownloadableInventoryItemView_Package renames Standard.views.admin.inventory.download.DownloadableInventoryItemView_Package;
+   package Reference_Types is
+   subtype RequestMapInterface_Access is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access;
+   use type RequestMapInterface_Access;
+   subtype RequestMapInterface_Access_Array is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access_Array;
+   use type RequestMapInterface_Access_Array;
+   subtype RequestMapInterface_Access_Array_Access is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access_Array_Access;
+   use type RequestMapInterface_Access_Array_Access;
+   subtype RequestMapInterface_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access_Array_Access_Array;
+   use type RequestMapInterface_Access_Array_Access_Array;
+   subtype RequestMapInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.RequestMapInterface_Package_References.RequestMapInterface_Access_Array_Access_Array_Access;
+   use type RequestMapInterface_Access_Array_Access_Array_Access;
+   subtype HelperTag_Access is tags.HelperTag_Package_References.HelperTag_Access;
+   use type HelperTag_Access;
+   subtype HelperTag_Access_Array is tags.HelperTag_Package_References.HelperTag_Access_Array;
+   use type HelperTag_Access_Array;
+   subtype HelperTag_Access_Array_Access is tags.HelperTag_Package_References.HelperTag_Access_Array_Access;
+   use type HelperTag_Access_Array_Access;
+   subtype HelperTag_Access_Array_Access_Array is tags.HelperTag_Package_References.HelperTag_Access_Array_Access_Array;
+   use type HelperTag_Access_Array_Access_Array;
+   subtype HelperTag_Access_Array_Access_Array_Access is tags.HelperTag_Package_References.HelperTag_Access_Array_Access_Array_Access;
+   use type HelperTag_Access_Array_Access_Array_Access;
+   subtype InventoryItemView_Access is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access;
+   use type InventoryItemView_Access;
+   subtype InventoryItemView_Access_Array is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array;
+   use type InventoryItemView_Access_Array;
+   subtype InventoryItemView_Access_Array_Access is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array_Access;
+   use type InventoryItemView_Access_Array_Access;
+   subtype InventoryItemView_Access_Array_Access_Array is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array_Access_Array;
+   use type InventoryItemView_Access_Array_Access_Array;
+   subtype InventoryItemView_Access_Array_Access_Array_Access is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array_Access_Array_Access;
+   use type InventoryItemView_Access_Array_Access_Array_Access;
+   subtype DownloadableInventoryItemView_Access is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access;
+   use type DownloadableInventoryItemView_Access;
+   subtype DownloadableInventoryItemView_Access_Array is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access_Array;
+   use type DownloadableInventoryItemView_Access_Array;
+   subtype DownloadableInventoryItemView_Access_Array_Access is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access_Array_Access;
+   use type DownloadableInventoryItemView_Access_Array_Access;
+   subtype DownloadableInventoryItemView_Access_Array_Access_Array is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access_Array_Access_Array;
+   use type DownloadableInventoryItemView_Access_Array_Access_Array;
+   subtype DownloadableInventoryItemView_Access_Array_Access_Array_Access is views.admin.inventory.download.DownloadableInventoryItemView_Package_References.DownloadableInventoryItemView_Access_Array_Access_Array_Access;
+   use type DownloadableInventoryItemView_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InventoryItemViewParentTagHelper is tagged;
-   type InventoryItemViewParentTagHelper_Access is access all InventoryItemViewParentTagHelper'Class;
-   type InventoryItemViewParentTagHelper_Access_Array is array (Natural range <>) of InventoryItemViewParentTagHelper_Access;
-   type InventoryItemViewParentTagHelper_Access_Array_Access is access all InventoryItemViewParentTagHelper_Access_Array;
-   type InventoryItemViewParentTagHelper_Access_Array_Access_Array is array (Natural range <>) of InventoryItemViewParentTagHelper_Access_Array_Access;
-   type InventoryItemViewParentTagHelper_Access_Array_Access_Array_Access is access all InventoryItemViewParentTagHelper_Access_Array_Access_Array;
+
+   subtype InventoryItemViewParentTagHelper_Access is admin.taghelpers.InventoryItemViewParentTagHelper_Package_References.InventoryItemViewParentTagHelper_Access;
+   function "=" (Left, Right : InventoryItemViewParentTagHelper_Access) return Boolean renames admin.taghelpers.InventoryItemViewParentTagHelper_Package_References."=";
+   subtype InventoryItemViewParentTagHelper_Access_Array is admin.taghelpers.InventoryItemViewParentTagHelper_Package_References.InventoryItemViewParentTagHelper_Access_Array;
+   function "=" (Left, Right : InventoryItemViewParentTagHelper_Access_Array) return Boolean renames admin.taghelpers.InventoryItemViewParentTagHelper_Package_References."=";
+   subtype InventoryItemViewParentTagHelper_Access_Array_Access is admin.taghelpers.InventoryItemViewParentTagHelper_Package_References.InventoryItemViewParentTagHelper_Access_Array_Access;
+   function "=" (Left, Right : InventoryItemViewParentTagHelper_Access_Array_Access) return Boolean renames admin.taghelpers.InventoryItemViewParentTagHelper_Package_References."=";
+   subtype InventoryItemViewParentTagHelper_Access_Array_Access_Array is admin.taghelpers.InventoryItemViewParentTagHelper_Package_References.InventoryItemViewParentTagHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : InventoryItemViewParentTagHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.InventoryItemViewParentTagHelper_Package_References."=";
+   subtype InventoryItemViewParentTagHelper_Access_Array_Access_Array_Access is admin.taghelpers.InventoryItemViewParentTagHelper_Package_References.InventoryItemViewParentTagHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InventoryItemViewParentTagHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.InventoryItemViewParentTagHelper_Package_References."=";
 
    type InventoryItemViewParentTagHelper is new Java_Object with null record;
    instance : InventoryItemViewParentTagHelper_Access;

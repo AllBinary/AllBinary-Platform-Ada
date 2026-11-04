@@ -14,6 +14,8 @@
 
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;
+with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
 
 package body org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package is
 

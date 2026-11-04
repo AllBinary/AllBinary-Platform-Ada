@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.logic.system.hardware.components.ComponentFactory_Package; use org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
 with org.allbinary.logic.system.hardware.components.linux.Bridge_Package; use org.allbinary.logic.system.hardware.components.linux.Bridge_Package;
 with org.allbinary.logic.system.hardware.components.linux.Ethernet_Package; use org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;
 with org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package; use org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;
@@ -24,6 +27,14 @@ with org.allbinary.logic.system.hardware.components.linux.Unknown_Package; use o
 with org.allbinary.logic.system.hardware.components.linux.Usb_Package; use org.allbinary.logic.system.hardware.components.linux.Usb_Package;
 with org.allbinary.logic.system.hardware.components.linux.Video_Package; use org.allbinary.logic.system.hardware.components.linux.Video_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.hardware.components.linux.Bridge_Package;
+with org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;
+with org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;
+with org.allbinary.logic.system.hardware.components.linux.Media_Package;
+with org.allbinary.logic.system.hardware.components.linux.PCI_Package;
+with org.allbinary.logic.system.hardware.components.linux.Unknown_Package;
+with org.allbinary.logic.system.hardware.components.linux.Usb_Package;
+with org.allbinary.logic.system.hardware.components.linux.Video_Package;
 
 package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package is
 
@@ -38,6 +49,36 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
    package Usb_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Usb_Package;
    package Video_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Video_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype ComponentFactory_Access is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access;
+   function "=" (Left, Right : ComponentFactory_Access) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
+   subtype ComponentFactory_Access_Array is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access_Array;
+   function "=" (Left, Right : ComponentFactory_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
+   subtype ComponentFactory_Access_Array_Access is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access_Array_Access;
+   function "=" (Left, Right : ComponentFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
+   subtype ComponentFactory_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ComponentFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
+   subtype ComponentFactory_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References.ComponentFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ComponentFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package_References."=";
+   subtype HardwareComponentInterface_Access is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access;
+   function "=" (Left, Right : HardwareComponentInterface_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References."=";
+   subtype HardwareComponentInterface_Access_Array is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access_Array;
+   function "=" (Left, Right : HardwareComponentInterface_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References."=";
+   subtype HardwareComponentInterface_Access_Array_Access is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access_Array_Access;
+   function "=" (Left, Right : HardwareComponentInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References."=";
+   subtype HardwareComponentInterface_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : HardwareComponentInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References."=";
+   subtype HardwareComponentInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References.HardwareComponentInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HardwareComponentInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References."=";
    procedure Initialize_Fields (This : in out PCComponentFactory'Class) is
    begin
       null;
@@ -48,7 +89,7 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
 
    function getInstance return PCComponentFactory_Access is
    begin
-        return PCComponentFactory_Package.instance;
+        return PCComponentFactory_Access (PCComponentFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out PCComponentFactory'Class) is

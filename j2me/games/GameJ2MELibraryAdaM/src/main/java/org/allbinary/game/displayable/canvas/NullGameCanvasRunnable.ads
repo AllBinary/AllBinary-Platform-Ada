@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package;
+package org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References is
+   type NullGameCanvasRunnable_Access is access all org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package.NullGameCanvasRunnable'Class;
+   type NullGameCanvasRunnable_Access_Array is array (Natural range <>) of NullGameCanvasRunnable_Access;
+   type NullGameCanvasRunnable_Access_Array_Access is access all NullGameCanvasRunnable_Access_Array;
+   type NullGameCanvasRunnable_Access_Array_Access_Array is array (Natural range <>) of NullGameCanvasRunnable_Access_Array_Access;
+   type NullGameCanvasRunnable_Access_Array_Access_Array_Access is access all NullGameCanvasRunnable_Access_Array_Access_Array;
+end org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References;
+
+with org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
-with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
-with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+limited with javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.Item_Package_References;
+limited with org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameState_Package_References;
+limited with org.allbinary.game.state.GameStateFactory_Package;
+with org.allbinary.game.state.GameStateFactory_Package_References;
+limited with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; use org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 
@@ -38,13 +54,81 @@ package org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package is
    package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Reference_Types is
+   subtype CommandListener_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access;
+   use type CommandListener_Access;
+   subtype CommandListener_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array;
+   use type CommandListener_Access_Array;
+   subtype CommandListener_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access;
+   use type CommandListener_Access_Array_Access;
+   subtype CommandListener_Access_Array_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array;
+   use type CommandListener_Access_Array_Access_Array;
+   subtype CommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array_Access;
+   use type CommandListener_Access_Array_Access_Array_Access;
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype Item_Access is javax.microedition.lcdui.Item_Package_References.Item_Access;
+   use type Item_Access;
+   subtype Item_Access_Array is javax.microedition.lcdui.Item_Package_References.Item_Access_Array;
+   use type Item_Access_Array;
+   subtype Item_Access_Array_Access is javax.microedition.lcdui.Item_Package_References.Item_Access_Array_Access;
+   use type Item_Access_Array_Access;
+   subtype Item_Access_Array_Access_Array is javax.microedition.lcdui.Item_Package_References.Item_Access_Array_Access_Array;
+   use type Item_Access_Array_Access_Array;
+   subtype Item_Access_Array_Access_Array_Access is javax.microedition.lcdui.Item_Package_References.Item_Access_Array_Access_Array_Access;
+   use type Item_Access_Array_Access_Array_Access;
+   subtype GameState_Access is org.allbinary.game.state.GameState_Package_References.GameState_Access;
+   use type GameState_Access;
+   subtype GameState_Access_Array is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array;
+   use type GameState_Access_Array;
+   subtype GameState_Access_Array_Access is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array_Access;
+   use type GameState_Access_Array_Access;
+   subtype GameState_Access_Array_Access_Array is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array_Access_Array;
+   use type GameState_Access_Array_Access_Array;
+   subtype GameState_Access_Array_Access_Array_Access is org.allbinary.game.state.GameState_Package_References.GameState_Access_Array_Access_Array_Access;
+   use type GameState_Access_Array_Access_Array_Access;
+   subtype GameStateFactory_Access is org.allbinary.game.state.GameStateFactory_Package_References.GameStateFactory_Access;
+   use type GameStateFactory_Access;
+   subtype GameStateFactory_Access_Array is org.allbinary.game.state.GameStateFactory_Package_References.GameStateFactory_Access_Array;
+   use type GameStateFactory_Access_Array;
+   subtype GameStateFactory_Access_Array_Access is org.allbinary.game.state.GameStateFactory_Package_References.GameStateFactory_Access_Array_Access;
+   use type GameStateFactory_Access_Array_Access;
+   subtype GameStateFactory_Access_Array_Access_Array is org.allbinary.game.state.GameStateFactory_Package_References.GameStateFactory_Access_Array_Access_Array;
+   use type GameStateFactory_Access_Array_Access_Array;
+   subtype GameStateFactory_Access_Array_Access_Array_Access is org.allbinary.game.state.GameStateFactory_Package_References.GameStateFactory_Access_Array_Access_Array_Access;
+   use type GameStateFactory_Access_Array_Access_Array_Access;
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   use type ABHashtable_Access;
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   use type ABHashtable_Access_Array;
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access;
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   use type ABHashtable_Access_Array_Access_Array;
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullGameCanvasRunnable is tagged;
-   type NullGameCanvasRunnable_Access is access all NullGameCanvasRunnable'Class;
-   type NullGameCanvasRunnable_Access_Array is array (Natural range <>) of NullGameCanvasRunnable_Access;
-   type NullGameCanvasRunnable_Access_Array_Access is access all NullGameCanvasRunnable_Access_Array;
-   type NullGameCanvasRunnable_Access_Array_Access_Array is array (Natural range <>) of NullGameCanvasRunnable_Access_Array_Access;
-   type NullGameCanvasRunnable_Access_Array_Access_Array_Access is access all NullGameCanvasRunnable_Access_Array_Access_Array;
+
+   subtype NullGameCanvasRunnable_Access is org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References.NullGameCanvasRunnable_Access;
+   function "=" (Left, Right : NullGameCanvasRunnable_Access) return Boolean renames org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References."=";
+   subtype NullGameCanvasRunnable_Access_Array is org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References.NullGameCanvasRunnable_Access_Array;
+   function "=" (Left, Right : NullGameCanvasRunnable_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References."=";
+   subtype NullGameCanvasRunnable_Access_Array_Access is org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References.NullGameCanvasRunnable_Access_Array_Access;
+   function "=" (Left, Right : NullGameCanvasRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References."=";
+   subtype NullGameCanvasRunnable_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References.NullGameCanvasRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : NullGameCanvasRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References."=";
+   subtype NullGameCanvasRunnable_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References.NullGameCanvasRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullGameCanvasRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package_References."=";
 
    type NullGameCanvasRunnable is new Java_Object and GameCanvasRunnableInterface with record
       gameStateFactory : GameStateFactory_Access;

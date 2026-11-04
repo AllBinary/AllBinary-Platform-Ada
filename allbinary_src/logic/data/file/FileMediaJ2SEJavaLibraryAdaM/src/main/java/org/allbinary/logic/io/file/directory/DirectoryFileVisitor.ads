@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package;
+package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References is
+   type DirectoryFileVisitor_Access is access all org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package.DirectoryFileVisitor'Class;
+   type DirectoryFileVisitor_Access_Array is array (Natural range <>) of DirectoryFileVisitor_Access;
+   type DirectoryFileVisitor_Access_Array_Access is access all DirectoryFileVisitor_Access_Array;
+   type DirectoryFileVisitor_Access_Array_Access_Array is array (Natural range <>) of DirectoryFileVisitor_Access_Array_Access;
+   type DirectoryFileVisitor_Access_Array_Access_Array_Access is access all DirectoryFileVisitor_Access_Array_Access_Array;
+end org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References;
+
+with org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -28,13 +38,21 @@ package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package is
 
    package File_Package renames Standard.java.io.File_Package;
    package VisitorInterface_Package renames Standard.org.allbinary.logic.util.visitor.VisitorInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DirectoryFileVisitor is tagged;
-   type DirectoryFileVisitor_Access is access all DirectoryFileVisitor'Class;
-   type DirectoryFileVisitor_Access_Array is array (Natural range <>) of DirectoryFileVisitor_Access;
-   type DirectoryFileVisitor_Access_Array_Access is access all DirectoryFileVisitor_Access_Array;
-   type DirectoryFileVisitor_Access_Array_Access_Array is array (Natural range <>) of DirectoryFileVisitor_Access_Array_Access;
-   type DirectoryFileVisitor_Access_Array_Access_Array_Access is access all DirectoryFileVisitor_Access_Array_Access_Array;
+
+   subtype DirectoryFileVisitor_Access is org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.DirectoryFileVisitor_Access;
+   function "=" (Left, Right : DirectoryFileVisitor_Access) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
+   subtype DirectoryFileVisitor_Access_Array is org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.DirectoryFileVisitor_Access_Array;
+   function "=" (Left, Right : DirectoryFileVisitor_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
+   subtype DirectoryFileVisitor_Access_Array_Access is org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.DirectoryFileVisitor_Access_Array_Access;
+   function "=" (Left, Right : DirectoryFileVisitor_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
+   subtype DirectoryFileVisitor_Access_Array_Access_Array is org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.DirectoryFileVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : DirectoryFileVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
+   subtype DirectoryFileVisitor_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.DirectoryFileVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DirectoryFileVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
 
    type DirectoryFileVisitor is new Java_Object and VisitorInterface with null record;
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.OrderItemsRequestHelper_Package;
+package admin.taghelpers.OrderItemsRequestHelper_Package_References is
+   type OrderItemsRequestHelper_Access is access all admin.taghelpers.OrderItemsRequestHelper_Package.OrderItemsRequestHelper'Class;
+   type OrderItemsRequestHelper_Access_Array is array (Natural range <>) of OrderItemsRequestHelper_Access;
+   type OrderItemsRequestHelper_Access_Array_Access is access all OrderItemsRequestHelper_Access_Array;
+   type OrderItemsRequestHelper_Access_Array_Access_Array is array (Natural range <>) of OrderItemsRequestHelper_Access_Array_Access;
+   type OrderItemsRequestHelper_Access_Array_Access_Array_Access is access all OrderItemsRequestHelper_Access_Array_Access_Array;
+end admin.taghelpers.OrderItemsRequestHelper_Package_References;
+
+with admin.taghelpers.OrderItemsRequestHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,20 +33,39 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.OrderItemsRequestHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OrderItemsRequestHelper is tagged;
-   type OrderItemsRequestHelper_Access is access all OrderItemsRequestHelper'Class;
-   type OrderItemsRequestHelper_Access_Array is array (Natural range <>) of OrderItemsRequestHelper_Access;
-   type OrderItemsRequestHelper_Access_Array_Access is access all OrderItemsRequestHelper_Access_Array;
-   type OrderItemsRequestHelper_Access_Array_Access_Array is array (Natural range <>) of OrderItemsRequestHelper_Access_Array_Access;
-   type OrderItemsRequestHelper_Access_Array_Access_Array_Access is access all OrderItemsRequestHelper_Access_Array_Access_Array;
+
+   subtype OrderItemsRequestHelper_Access is admin.taghelpers.OrderItemsRequestHelper_Package_References.OrderItemsRequestHelper_Access;
+   function "=" (Left, Right : OrderItemsRequestHelper_Access) return Boolean renames admin.taghelpers.OrderItemsRequestHelper_Package_References."=";
+   subtype OrderItemsRequestHelper_Access_Array is admin.taghelpers.OrderItemsRequestHelper_Package_References.OrderItemsRequestHelper_Access_Array;
+   function "=" (Left, Right : OrderItemsRequestHelper_Access_Array) return Boolean renames admin.taghelpers.OrderItemsRequestHelper_Package_References."=";
+   subtype OrderItemsRequestHelper_Access_Array_Access is admin.taghelpers.OrderItemsRequestHelper_Package_References.OrderItemsRequestHelper_Access_Array_Access;
+   function "=" (Left, Right : OrderItemsRequestHelper_Access_Array_Access) return Boolean renames admin.taghelpers.OrderItemsRequestHelper_Package_References."=";
+   subtype OrderItemsRequestHelper_Access_Array_Access_Array is admin.taghelpers.OrderItemsRequestHelper_Package_References.OrderItemsRequestHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderItemsRequestHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.OrderItemsRequestHelper_Package_References."=";
+   subtype OrderItemsRequestHelper_Access_Array_Access_Array_Access is admin.taghelpers.OrderItemsRequestHelper_Package_References.OrderItemsRequestHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderItemsRequestHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.OrderItemsRequestHelper_Package_References."=";
 
    type OrderItemsRequestHelper is new TagHelper with record
       logUtil : LogUtil_Access;

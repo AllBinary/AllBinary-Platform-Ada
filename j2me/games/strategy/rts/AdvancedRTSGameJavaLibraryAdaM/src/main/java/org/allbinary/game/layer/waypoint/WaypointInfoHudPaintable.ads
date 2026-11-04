@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
+package org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References is
+   type WaypointInfoHudPaintable_Access is access all org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package.WaypointInfoHudPaintable'Class;
+   type WaypointInfoHudPaintable_Access_Array is array (Natural range <>) of WaypointInfoHudPaintable_Access;
+   type WaypointInfoHudPaintable_Access_Array_Access is access all WaypointInfoHudPaintable_Access_Array;
+   type WaypointInfoHudPaintable_Access_Array_Access_Array is array (Natural range <>) of WaypointInfoHudPaintable_Access_Array_Access;
+   type WaypointInfoHudPaintable_Access_Array_Access_Array_Access is access all WaypointInfoHudPaintable_Access_Array_Access_Array;
+end org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References;
+
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
-with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
+limited with org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
-with org.allbinary.graphics.draw.KeyValueDrawString_Package; use org.allbinary.graphics.draw.KeyValueDrawString_Package;
+limited with org.allbinary.graphics.draw.KeyValueDrawString_Package;
+with org.allbinary.graphics.draw.KeyValueDrawString_Package_References;
 
 package org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package is
 
@@ -33,13 +47,61 @@ package org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package is
    package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
    package SelectionHudPaintable_Package renames Standard.org.allbinary.game.layer.SelectionHudPaintable_Package;
    package KeyValueDrawString_Package renames Standard.org.allbinary.graphics.draw.KeyValueDrawString_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype PathFindingLayerInterface_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access;
+   use type PathFindingLayerInterface_Access;
+   subtype PathFindingLayerInterface_Access_Array is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array;
+   use type PathFindingLayerInterface_Access_Array;
+   subtype PathFindingLayerInterface_Access_Array_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access;
+   use type PathFindingLayerInterface_Access_Array_Access;
+   subtype PathFindingLayerInterface_Access_Array_Access_Array is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access_Array;
+   use type PathFindingLayerInterface_Access_Array_Access_Array;
+   subtype PathFindingLayerInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.PathFindingLayerInterface_Package_References.PathFindingLayerInterface_Access_Array_Access_Array_Access;
+   use type PathFindingLayerInterface_Access_Array_Access_Array_Access;
+   subtype RTSLayer_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access;
+   use type RTSLayer_Access;
+   subtype RTSLayer_Access_Array is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array;
+   use type RTSLayer_Access_Array;
+   subtype RTSLayer_Access_Array_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access;
+   use type RTSLayer_Access_Array_Access;
+   subtype RTSLayer_Access_Array_Access_Array is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access_Array;
+   use type RTSLayer_Access_Array_Access_Array;
+   subtype RTSLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access_Array_Access;
+   use type RTSLayer_Access_Array_Access_Array_Access;
+   subtype KeyValueDrawString_Access is org.allbinary.graphics.draw.KeyValueDrawString_Package_References.KeyValueDrawString_Access;
+   use type KeyValueDrawString_Access;
+   subtype KeyValueDrawString_Access_Array is org.allbinary.graphics.draw.KeyValueDrawString_Package_References.KeyValueDrawString_Access_Array;
+   use type KeyValueDrawString_Access_Array;
+   subtype KeyValueDrawString_Access_Array_Access is org.allbinary.graphics.draw.KeyValueDrawString_Package_References.KeyValueDrawString_Access_Array_Access;
+   use type KeyValueDrawString_Access_Array_Access;
+   subtype KeyValueDrawString_Access_Array_Access_Array is org.allbinary.graphics.draw.KeyValueDrawString_Package_References.KeyValueDrawString_Access_Array_Access_Array;
+   use type KeyValueDrawString_Access_Array_Access_Array;
+   subtype KeyValueDrawString_Access_Array_Access_Array_Access is org.allbinary.graphics.draw.KeyValueDrawString_Package_References.KeyValueDrawString_Access_Array_Access_Array_Access;
+   use type KeyValueDrawString_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type WaypointInfoHudPaintable is tagged;
-   type WaypointInfoHudPaintable_Access is access all WaypointInfoHudPaintable'Class;
-   type WaypointInfoHudPaintable_Access_Array is array (Natural range <>) of WaypointInfoHudPaintable_Access;
-   type WaypointInfoHudPaintable_Access_Array_Access is access all WaypointInfoHudPaintable_Access_Array;
-   type WaypointInfoHudPaintable_Access_Array_Access_Array is array (Natural range <>) of WaypointInfoHudPaintable_Access_Array_Access;
-   type WaypointInfoHudPaintable_Access_Array_Access_Array_Access is access all WaypointInfoHudPaintable_Access_Array_Access_Array;
+
+   subtype WaypointInfoHudPaintable_Access is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
+   subtype WaypointInfoHudPaintable_Access_Array is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access_Array;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
+   subtype WaypointInfoHudPaintable_Access_Array_Access is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access_Array_Access;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
+   subtype WaypointInfoHudPaintable_Access_Array_Access_Array is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
+   subtype WaypointInfoHudPaintable_Access_Array_Access_Array_Access is org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References.WaypointInfoHudPaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WaypointInfoHudPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package_References."=";
 
    type WaypointInfoHudPaintable is new SelectionHudPaintable with record
       keyvalueDrawString : KeyValueDrawString_Access;

@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
+with org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
+with org.allbinary.graphics.opengles.shader.ShaderUpdater_Package;
 
 package body org.allbinary.graphics.opengles.shader.SimpleCompositeShaderUpdater_Package is
 

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
+with org.allbinary.logic.math.ScaleFactorFactory_Package;
 
 package body org.allbinary.logic.math.BasicDecimal_Package is
 

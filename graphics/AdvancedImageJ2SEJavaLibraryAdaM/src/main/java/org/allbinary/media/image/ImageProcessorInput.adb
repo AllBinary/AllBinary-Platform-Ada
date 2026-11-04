@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
 
 package body org.allbinary.media.image.ImageProcessorInput_Package is
 

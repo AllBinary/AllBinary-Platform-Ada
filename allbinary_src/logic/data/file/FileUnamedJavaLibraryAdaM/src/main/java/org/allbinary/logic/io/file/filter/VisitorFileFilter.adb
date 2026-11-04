@@ -13,11 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
+with org.allbinary.logic.util.visitor.VisitorInterface_Package; use org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
 package body org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
 
    package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file.FileWrapperUtil_Package;
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   function "=" (Left, Right : AbFile_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype VisitorInterface_Access is org.allbinary.logic.util.visitor.VisitorInterface_Package_References.VisitorInterface_Access;
+   function "=" (Left, Right : VisitorInterface_Access) return Boolean renames org.allbinary.logic.util.visitor.VisitorInterface_Package_References."=";
+   subtype VisitorInterface_Access_Array is org.allbinary.logic.util.visitor.VisitorInterface_Package_References.VisitorInterface_Access_Array;
+   function "=" (Left, Right : VisitorInterface_Access_Array) return Boolean renames org.allbinary.logic.util.visitor.VisitorInterface_Package_References."=";
+   subtype VisitorInterface_Access_Array_Access is org.allbinary.logic.util.visitor.VisitorInterface_Package_References.VisitorInterface_Access_Array_Access;
+   function "=" (Left, Right : VisitorInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.util.visitor.VisitorInterface_Package_References."=";
+   subtype VisitorInterface_Access_Array_Access_Array is org.allbinary.logic.util.visitor.VisitorInterface_Package_References.VisitorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : VisitorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.visitor.VisitorInterface_Package_References."=";
+   subtype VisitorInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.visitor.VisitorInterface_Package_References.VisitorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VisitorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.visitor.VisitorInterface_Package_References."=";
    procedure Initialize_Fields (This : in out VisitorFileFilter'Class) is
    begin
       null;

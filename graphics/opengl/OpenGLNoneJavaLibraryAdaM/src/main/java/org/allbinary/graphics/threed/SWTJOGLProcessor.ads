@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
+package org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References is
+   type SWTJOGLProcessor_Access is access all org.allbinary.graphics.threed.SWTJOGLProcessor_Package.SWTJOGLProcessor'Class;
+   type SWTJOGLProcessor_Access_Array is array (Natural range <>) of SWTJOGLProcessor_Access;
+   type SWTJOGLProcessor_Access_Array_Access is access all SWTJOGLProcessor_Access_Array;
+   type SWTJOGLProcessor_Access_Array_Access_Array is array (Natural range <>) of SWTJOGLProcessor_Access_Array_Access;
+   type SWTJOGLProcessor_Access_Array_Access_Array_Access is access all SWTJOGLProcessor_Access_Array_Access_Array;
+end org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References;
+
+with org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,23 +30,64 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
-with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
+limited with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Font_Package_References;
+limited with javax.microedition.midlet.MIDlet_Package;
+with javax.microedition.midlet.MIDlet_Package_References;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
-with org.allbinary.graphics.threed.RatioProcessor_Package; use org.allbinary.graphics.threed.RatioProcessor_Package;
+limited with org.allbinary.graphics.threed.RatioProcessor_Package;
+with org.allbinary.graphics.threed.RatioProcessor_Package_References;
 
 package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
 
    package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package MIDlet_Package renames Standard.javax.microedition.midlet.MIDlet_Package;
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   subtype Font_Access is javax.microedition.lcdui.Font_Package_References.Font_Access;
+   use type Font_Access;
+   subtype Font_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array;
+   use type Font_Access_Array;
+   subtype Font_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access;
+   use type Font_Access_Array_Access;
+   subtype Font_Access_Array_Access_Array is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array;
+   use type Font_Access_Array_Access_Array;
+   subtype Font_Access_Array_Access_Array_Access is javax.microedition.lcdui.Font_Package_References.Font_Access_Array_Access_Array_Access;
+   use type Font_Access_Array_Access_Array_Access;
+   subtype MIDlet_Access is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access;
+   use type MIDlet_Access;
+   subtype MIDlet_Access_Array is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access_Array;
+   use type MIDlet_Access_Array;
+   subtype MIDlet_Access_Array_Access is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access_Array_Access;
+   use type MIDlet_Access_Array_Access;
+   subtype MIDlet_Access_Array_Access_Array is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access_Array_Access_Array;
+   use type MIDlet_Access_Array_Access_Array;
+   subtype MIDlet_Access_Array_Access_Array_Access is javax.microedition.midlet.MIDlet_Package_References.MIDlet_Access_Array_Access_Array_Access;
+   use type MIDlet_Access_Array_Access_Array_Access;
+   subtype RatioProcessor_Access is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access;
+   use type RatioProcessor_Access;
+   subtype RatioProcessor_Access_Array is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array;
+   use type RatioProcessor_Access_Array;
+   subtype RatioProcessor_Access_Array_Access is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array_Access;
+   use type RatioProcessor_Access_Array_Access;
+   subtype RatioProcessor_Access_Array_Access_Array is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array_Access_Array;
+   use type RatioProcessor_Access_Array_Access_Array;
+   subtype RatioProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.threed.RatioProcessor_Package_References.RatioProcessor_Access_Array_Access_Array_Access;
+   use type RatioProcessor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SWTJOGLProcessor is tagged;
-   type SWTJOGLProcessor_Access is access all SWTJOGLProcessor'Class;
-   type SWTJOGLProcessor_Access_Array is array (Natural range <>) of SWTJOGLProcessor_Access;
-   type SWTJOGLProcessor_Access_Array_Access is access all SWTJOGLProcessor_Access_Array;
-   type SWTJOGLProcessor_Access_Array_Access_Array is array (Natural range <>) of SWTJOGLProcessor_Access_Array_Access;
-   type SWTJOGLProcessor_Access_Array_Access_Array_Access is access all SWTJOGLProcessor_Access_Array_Access_Array;
+
+   subtype SWTJOGLProcessor_Access is org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References.SWTJOGLProcessor_Access;
+   function "=" (Left, Right : SWTJOGLProcessor_Access) return Boolean renames org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References."=";
+   subtype SWTJOGLProcessor_Access_Array is org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References.SWTJOGLProcessor_Access_Array;
+   function "=" (Left, Right : SWTJOGLProcessor_Access_Array) return Boolean renames org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References."=";
+   subtype SWTJOGLProcessor_Access_Array_Access is org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References.SWTJOGLProcessor_Access_Array_Access;
+   function "=" (Left, Right : SWTJOGLProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References."=";
+   subtype SWTJOGLProcessor_Access_Array_Access_Array is org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References.SWTJOGLProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : SWTJOGLProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References."=";
+   subtype SWTJOGLProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References.SWTJOGLProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SWTJOGLProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.threed.SWTJOGLProcessor_Package_References."=";
 
    type SWTJOGLProcessor is new Java_Object and Runnable with null record;
    instance : SWTJOGLProcessor_Access;

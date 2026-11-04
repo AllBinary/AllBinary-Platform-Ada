@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+package org.allbinary.logic.string_Id.regex.replace.Replace_Package_References is
+   type Replace_Access is access all org.allbinary.logic.string_Id.regex.replace.Replace_Package.Replace'Class;
+   type Replace_Access_Array is array (Natural range <>) of Replace_Access;
+   type Replace_Access_Array_Access is access all Replace_Access_Array;
+   type Replace_Access_Array_Access_Array is array (Natural range <>) of Replace_Access_Array_Access;
+   type Replace_Access_Array_Access_Array_Access is access all Replace_Access_Array_Access_Array;
+end org.allbinary.logic.string_Id.regex.replace.Replace_Package_References;
+
+with org.allbinary.logic.string_Id.regex.replace.Replace_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,21 +31,51 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.J2SEUtil_Package; use org.allbinary.J2SEUtil_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.J2SEUtil_Package;
+with org.allbinary.J2SEUtil_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.logic.string_Id.regex.replace.Replace_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package J2SEUtil_Package renames Standard.org.allbinary.J2SEUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype J2SEUtil_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access;
+   use type J2SEUtil_Access;
+   subtype J2SEUtil_Access_Array is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array;
+   use type J2SEUtil_Access_Array;
+   subtype J2SEUtil_Access_Array_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array_Access;
+   use type J2SEUtil_Access_Array_Access;
+   subtype J2SEUtil_Access_Array_Access_Array is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array_Access_Array;
+   use type J2SEUtil_Access_Array_Access_Array;
+   subtype J2SEUtil_Access_Array_Access_Array_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array_Access_Array_Access;
+   use type J2SEUtil_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type Replace is tagged;
-   type Replace_Access is access all Replace'Class;
-   type Replace_Access_Array is array (Natural range <>) of Replace_Access;
-   type Replace_Access_Array_Access is access all Replace_Access_Array;
-   type Replace_Access_Array_Access_Array is array (Natural range <>) of Replace_Access_Array_Access;
-   type Replace_Access_Array_Access_Array_Access is access all Replace_Access_Array_Access_Array;
+
+   subtype Replace_Access is org.allbinary.logic.string_Id.regex.replace.Replace_Package_References.Replace_Access;
+   function "=" (Left, Right : Replace_Access) return Boolean renames org.allbinary.logic.string_Id.regex.replace.Replace_Package_References."=";
+   subtype Replace_Access_Array is org.allbinary.logic.string_Id.regex.replace.Replace_Package_References.Replace_Access_Array;
+   function "=" (Left, Right : Replace_Access_Array) return Boolean renames org.allbinary.logic.string_Id.regex.replace.Replace_Package_References."=";
+   subtype Replace_Access_Array_Access is org.allbinary.logic.string_Id.regex.replace.Replace_Package_References.Replace_Access_Array_Access;
+   function "=" (Left, Right : Replace_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.regex.replace.Replace_Package_References."=";
+   subtype Replace_Access_Array_Access_Array is org.allbinary.logic.string_Id.regex.replace.Replace_Package_References.Replace_Access_Array_Access_Array;
+   function "=" (Left, Right : Replace_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.string_Id.regex.replace.Replace_Package_References."=";
+   subtype Replace_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.regex.replace.Replace_Package_References.Replace_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Replace_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.regex.replace.Replace_Package_References."=";
 
    type Replace is new Java_Object with record
       logUtil : LogUtil_Access;

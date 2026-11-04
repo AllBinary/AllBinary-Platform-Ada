@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.advertisement.AdvertisementsInterface_Package;
+package org.allbinary.business.advertisement.AdvertisementsInterface_Package_References is
+   type AdvertisementsInterface_Access is access all org.allbinary.business.advertisement.AdvertisementsInterface_Package.AdvertisementsInterface'Class;
+   type AdvertisementsInterface_Access_Array is array (Natural range <>) of AdvertisementsInterface_Access;
+   type AdvertisementsInterface_Access_Array_Access is access all AdvertisementsInterface_Access_Array;
+   type AdvertisementsInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementsInterface_Access_Array_Access;
+   type AdvertisementsInterface_Access_Array_Access_Array_Access is access all AdvertisementsInterface_Access_Array_Access_Array;
+end org.allbinary.business.advertisement.AdvertisementsInterface_Package_References;
+
+with org.allbinary.business.advertisement.AdvertisementsInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.advertisement.AdvertisementInterface_Package; use org.allbinary.business.advertisement.AdvertisementInterface_Package;
+limited with org.allbinary.business.advertisement.AdvertisementInterface_Package;
+with org.allbinary.business.advertisement.AdvertisementInterface_Package_References;
 
 package org.allbinary.business.advertisement.AdvertisementsInterface_Package is
 
+   package Reference_Types is
+   subtype AdvertisementInterface_Access is org.allbinary.business.advertisement.AdvertisementInterface_Package_References.AdvertisementInterface_Access;
+   use type AdvertisementInterface_Access;
+   subtype AdvertisementInterface_Access_Array is org.allbinary.business.advertisement.AdvertisementInterface_Package_References.AdvertisementInterface_Access_Array;
+   use type AdvertisementInterface_Access_Array;
+   subtype AdvertisementInterface_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementInterface_Package_References.AdvertisementInterface_Access_Array_Access;
+   use type AdvertisementInterface_Access_Array_Access;
+   subtype AdvertisementInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.AdvertisementInterface_Package_References.AdvertisementInterface_Access_Array_Access_Array;
+   use type AdvertisementInterface_Access_Array_Access_Array;
+   subtype AdvertisementInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementInterface_Package_References.AdvertisementInterface_Access_Array_Access_Array_Access;
+   use type AdvertisementInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type AdvertisementsInterface is interface;
-   type AdvertisementsInterface_Access is access all AdvertisementsInterface'Class;
-   type AdvertisementsInterface_Access_Array is array (Natural range <>) of AdvertisementsInterface_Access;
-   type AdvertisementsInterface_Access_Array_Access is access all AdvertisementsInterface_Access_Array;
-   type AdvertisementsInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementsInterface_Access_Array_Access;
-   type AdvertisementsInterface_Access_Array_Access_Array_Access is access all AdvertisementsInterface_Access_Array_Access_Array;
+   subtype AdvertisementsInterface_Access is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access;
+   function "=" (Left, Right : AdvertisementsInterface_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   subtype AdvertisementsInterface_Access_Array is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access_Array;
+   function "=" (Left, Right : AdvertisementsInterface_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   subtype AdvertisementsInterface_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementsInterface_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   subtype AdvertisementsInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   subtype AdvertisementsInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   function Java_Object_Access_From_AdvertisementsInterface (Value : AdvertisementsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure add (This : in out AdvertisementsInterface; advertisementInterface_Param : access AdvertisementInterface_Package.AdvertisementInterface'Class) is abstract;
    function get (This : in out AdvertisementsInterface; index : Integer) return AdvertisementInterface_Access is abstract;
    function getCurrentPageNum (This : in out AdvertisementsInterface) return Integer is abstract;

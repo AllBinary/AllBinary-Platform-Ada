@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.GameYouWinSound_Package;
+package org.allbinary.media.audio.GameYouWinSound_Package_References is
+   type GameYouWinSound_Access is access all org.allbinary.media.audio.GameYouWinSound_Package.GameYouWinSound'Class;
+   type GameYouWinSound_Access_Array is array (Natural range <>) of GameYouWinSound_Access;
+   type GameYouWinSound_Access_Array_Access is access all GameYouWinSound_Access_Array;
+   type GameYouWinSound_Access_Array_Access_Array is array (Natural range <>) of GameYouWinSound_Access_Array_Access;
+   type GameYouWinSound_Access_Array_Access_Array_Access is access all GameYouWinSound_Access_Array_Access_Array;
+end org.allbinary.media.audio.GameYouWinSound_Package_References;
+
+with org.allbinary.media.audio.GameYouWinSound_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,17 +31,36 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.CompositeSound_Package; use org.allbinary.media.audio.CompositeSound_Package;
-with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+limited with org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 
 package org.allbinary.media.audio.GameYouWinSound_Package is
 
+   package Reference_Types is
+   subtype Sound_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access;
+   use type Sound_Access;
+   subtype Sound_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array;
+   use type Sound_Access_Array;
+   subtype Sound_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access;
+   use type Sound_Access_Array_Access;
+   subtype Sound_Access_Array_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array;
+   use type Sound_Access_Array_Access_Array;
+   subtype Sound_Access_Array_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array_Access;
+   use type Sound_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameYouWinSound is tagged;
-   type GameYouWinSound_Access is access all GameYouWinSound'Class;
-   type GameYouWinSound_Access_Array is array (Natural range <>) of GameYouWinSound_Access;
-   type GameYouWinSound_Access_Array_Access is access all GameYouWinSound_Access_Array;
-   type GameYouWinSound_Access_Array_Access_Array is array (Natural range <>) of GameYouWinSound_Access_Array_Access;
-   type GameYouWinSound_Access_Array_Access_Array_Access is access all GameYouWinSound_Access_Array_Access_Array;
+
+   subtype GameYouWinSound_Access is org.allbinary.media.audio.GameYouWinSound_Package_References.GameYouWinSound_Access;
+   function "=" (Left, Right : GameYouWinSound_Access) return Boolean renames org.allbinary.media.audio.GameYouWinSound_Package_References."=";
+   subtype GameYouWinSound_Access_Array is org.allbinary.media.audio.GameYouWinSound_Package_References.GameYouWinSound_Access_Array;
+   function "=" (Left, Right : GameYouWinSound_Access_Array) return Boolean renames org.allbinary.media.audio.GameYouWinSound_Package_References."=";
+   subtype GameYouWinSound_Access_Array_Access is org.allbinary.media.audio.GameYouWinSound_Package_References.GameYouWinSound_Access_Array_Access;
+   function "=" (Left, Right : GameYouWinSound_Access_Array_Access) return Boolean renames org.allbinary.media.audio.GameYouWinSound_Package_References."=";
+   subtype GameYouWinSound_Access_Array_Access_Array is org.allbinary.media.audio.GameYouWinSound_Package_References.GameYouWinSound_Access_Array_Access_Array;
+   function "=" (Left, Right : GameYouWinSound_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.GameYouWinSound_Package_References."=";
+   subtype GameYouWinSound_Access_Array_Access_Array_Access is org.allbinary.media.audio.GameYouWinSound_Package_References.GameYouWinSound_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameYouWinSound_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.GameYouWinSound_Package_References."=";
 
    type GameYouWinSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

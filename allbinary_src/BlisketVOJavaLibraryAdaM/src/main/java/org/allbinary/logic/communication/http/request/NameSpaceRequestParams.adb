@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.data.tree.dom.DomData_Package; use org.allbinary.data.tree.dom.DomData_Package;
 with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
 with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
@@ -20,10 +22,15 @@ with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tr
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package;
+with org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package;
+with org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package;
 
 package body org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package is
 
@@ -37,6 +44,56 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   function "=" (Left, Right : Document_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   function "=" (Left, Right : Node_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   function "=" (Left, Right : Node_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   function "=" (Left, Right : Node_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype NameSpaceRequestParam_Access is org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References.NameSpaceRequestParam_Access;
+   function "=" (Left, Right : NameSpaceRequestParam_Access) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References."=";
+   subtype NameSpaceRequestParam_Access_Array is org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References.NameSpaceRequestParam_Access_Array;
+   function "=" (Left, Right : NameSpaceRequestParam_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References."=";
+   subtype NameSpaceRequestParam_Access_Array_Access is org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References.NameSpaceRequestParam_Access_Array_Access;
+   function "=" (Left, Right : NameSpaceRequestParam_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References."=";
+   subtype NameSpaceRequestParam_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References.NameSpaceRequestParam_Access_Array_Access_Array;
+   function "=" (Left, Right : NameSpaceRequestParam_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References."=";
+   subtype NameSpaceRequestParam_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References.NameSpaceRequestParam_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NameSpaceRequestParam_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References."=";
    procedure Initialize_Fields (This : in out NameSpaceRequestParams'Class) is
    begin
       null;
@@ -99,7 +156,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       document : constant Document_Access := Document_Access (document_Param);
       packagePropertiesHashMap : constant HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
       node : Node_Access;
-      propertyKeySet : Set_Access;
+      propertyKeySet : Java_Object_Access;
       propertyKeySetArray : Java_Object_Access_Array_Access;
       size : Integer;
       propertyName : Unbounded_String;
@@ -181,7 +238,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       document : constant Document_Access := Document_Access (document_Param);
       node : constant Node_Access := Node_Access (node_Param);
       nextPackagePropertiesHashMap : constant HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
-      propertyNameSet : Set_Access;
+      propertyNameSet : Java_Object_Access;
       propertyNameSetArray : Java_Object_Access_Array_Access;
       size : Integer;
       nextPropertyName : Unbounded_String;
@@ -365,7 +422,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function toHashMap (This : in out NameSpaceRequestParams) return HashMap_Access is
       document : Document_Access;
       hashMap : HashMap_Access;
-      keys : Set_Access;
+      keys : Java_Object_Access;
       keyArray : Java_Object_Access_Array_Access;
       keySize : Integer;
       key : Unbounded_String;

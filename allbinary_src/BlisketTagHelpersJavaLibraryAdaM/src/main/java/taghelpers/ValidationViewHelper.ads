@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with taghelpers.ValidationViewHelper_Package;
+package taghelpers.ValidationViewHelper_Package_References is
+   type ValidationViewHelper_Access is access all taghelpers.ValidationViewHelper_Package.ValidationViewHelper'Class;
+   type ValidationViewHelper_Access_Array is array (Natural range <>) of ValidationViewHelper_Access;
+   type ValidationViewHelper_Access_Array_Access is access all ValidationViewHelper_Access_Array;
+   type ValidationViewHelper_Access_Array_Access_Array is array (Natural range <>) of ValidationViewHelper_Access_Array_Access;
+   type ValidationViewHelper_Access_Array_Access_Array_Access is access all ValidationViewHelper_Access_Array_Access_Array;
+end taghelpers.ValidationViewHelper_Package_References;
+
+with taghelpers.ValidationViewHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,10 +32,13 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 with taghelpers.ViewHelper_Package; use taghelpers.ViewHelper_Package;
 
 package taghelpers.ValidationViewHelper_Package is
@@ -35,13 +48,51 @@ package taghelpers.ValidationViewHelper_Package is
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ValidationViewHelper is tagged;
-   type ValidationViewHelper_Access is access all ValidationViewHelper'Class;
-   type ValidationViewHelper_Access_Array is array (Natural range <>) of ValidationViewHelper_Access;
-   type ValidationViewHelper_Access_Array_Access is access all ValidationViewHelper_Access_Array;
-   type ValidationViewHelper_Access_Array_Access_Array is array (Natural range <>) of ValidationViewHelper_Access_Array_Access;
-   type ValidationViewHelper_Access_Array_Access_Array_Access is access all ValidationViewHelper_Access_Array_Access_Array;
+
+   subtype ValidationViewHelper_Access is taghelpers.ValidationViewHelper_Package_References.ValidationViewHelper_Access;
+   function "=" (Left, Right : ValidationViewHelper_Access) return Boolean renames taghelpers.ValidationViewHelper_Package_References."=";
+   subtype ValidationViewHelper_Access_Array is taghelpers.ValidationViewHelper_Package_References.ValidationViewHelper_Access_Array;
+   function "=" (Left, Right : ValidationViewHelper_Access_Array) return Boolean renames taghelpers.ValidationViewHelper_Package_References."=";
+   subtype ValidationViewHelper_Access_Array_Access is taghelpers.ValidationViewHelper_Package_References.ValidationViewHelper_Access_Array_Access;
+   function "=" (Left, Right : ValidationViewHelper_Access_Array_Access) return Boolean renames taghelpers.ValidationViewHelper_Package_References."=";
+   subtype ValidationViewHelper_Access_Array_Access_Array is taghelpers.ValidationViewHelper_Package_References.ValidationViewHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : ValidationViewHelper_Access_Array_Access_Array) return Boolean renames taghelpers.ValidationViewHelper_Package_References."=";
+   subtype ValidationViewHelper_Access_Array_Access_Array_Access is taghelpers.ValidationViewHelper_Package_References.ValidationViewHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ValidationViewHelper_Access_Array_Access_Array_Access) return Boolean renames taghelpers.ValidationViewHelper_Package_References."=";
 
    type ValidationViewHelper is new ViewHelper and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

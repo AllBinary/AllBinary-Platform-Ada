@@ -13,18 +13,57 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package; use org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package; use org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package;
 with org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package; use org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package;
 with org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package; use org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
 with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package; use org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
+with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+with org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
+with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
+with org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package;
+with org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package;
 
 package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package is
 
    package BufferedImageFrameCacheable_Package renames Standard.org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype ScreenScavangerRobot_Access is org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References.ScreenScavangerRobot_Access;
+   function "=" (Left, Right : ScreenScavangerRobot_Access) return Boolean renames org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References."=";
+   subtype ScreenScavangerRobot_Access_Array is org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References.ScreenScavangerRobot_Access_Array;
+   function "=" (Left, Right : ScreenScavangerRobot_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References."=";
+   subtype ScreenScavangerRobot_Access_Array_Access is org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References.ScreenScavangerRobot_Access_Array_Access;
+   function "=" (Left, Right : ScreenScavangerRobot_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References."=";
+   subtype ScreenScavangerRobot_Access_Array_Access_Array is org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References.ScreenScavangerRobot_Access_Array_Access_Array;
+   function "=" (Left, Right : ScreenScavangerRobot_Access_Array_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References."=";
+   subtype ScreenScavangerRobot_Access_Array_Access_Array_Access is org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References.ScreenScavangerRobot_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScreenScavangerRobot_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_References."=";
    procedure Initialize_Fields (This : in out ScreenCaptureImagesWorker'Class) is
    begin
       null;

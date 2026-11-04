@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package;
+package org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References is
+   type GraphicsAnalysisUtil_Access is access all org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package.GraphicsAnalysisUtil'Class;
+   type GraphicsAnalysisUtil_Access_Array is array (Natural range <>) of GraphicsAnalysisUtil_Access;
+   type GraphicsAnalysisUtil_Access_Array_Access is access all GraphicsAnalysisUtil_Access_Array;
+   type GraphicsAnalysisUtil_Access_Array_Access_Array is array (Natural range <>) of GraphicsAnalysisUtil_Access_Array_Access;
+   type GraphicsAnalysisUtil_Access_Array_Access_Array_Access is access all GraphicsAnalysisUtil_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References;
+
+with org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GraphicsAnalysisUtil is tagged;
-   type GraphicsAnalysisUtil_Access is access all GraphicsAnalysisUtil'Class;
-   type GraphicsAnalysisUtil_Access_Array is array (Natural range <>) of GraphicsAnalysisUtil_Access;
-   type GraphicsAnalysisUtil_Access_Array_Access is access all GraphicsAnalysisUtil_Access_Array;
-   type GraphicsAnalysisUtil_Access_Array_Access_Array is array (Natural range <>) of GraphicsAnalysisUtil_Access_Array_Access;
-   type GraphicsAnalysisUtil_Access_Array_Access_Array_Access is access all GraphicsAnalysisUtil_Access_Array_Access_Array;
+
+   subtype GraphicsAnalysisUtil_Access is org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References.GraphicsAnalysisUtil_Access;
+   function "=" (Left, Right : GraphicsAnalysisUtil_Access) return Boolean renames org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References."=";
+   subtype GraphicsAnalysisUtil_Access_Array is org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References.GraphicsAnalysisUtil_Access_Array;
+   function "=" (Left, Right : GraphicsAnalysisUtil_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References."=";
+   subtype GraphicsAnalysisUtil_Access_Array_Access is org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References.GraphicsAnalysisUtil_Access_Array_Access;
+   function "=" (Left, Right : GraphicsAnalysisUtil_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References."=";
+   subtype GraphicsAnalysisUtil_Access_Array_Access_Array is org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References.GraphicsAnalysisUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : GraphicsAnalysisUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References."=";
+   subtype GraphicsAnalysisUtil_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References.GraphicsAnalysisUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GraphicsAnalysisUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package_References."=";
 
    type GraphicsAnalysisUtil is new Java_Object with null record;
    MAX : Integer;

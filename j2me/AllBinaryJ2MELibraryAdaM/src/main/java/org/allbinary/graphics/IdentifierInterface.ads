@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.IdentifierInterface_Package;
+package org.allbinary.graphics.IdentifierInterface_Package_References is
+   type IdentifierInterface_Access is access all org.allbinary.graphics.IdentifierInterface_Package.IdentifierInterface'Class;
+   type IdentifierInterface_Access_Array is array (Natural range <>) of IdentifierInterface_Access;
+   type IdentifierInterface_Access_Array_Access is access all IdentifierInterface_Access_Array;
+   type IdentifierInterface_Access_Array_Access_Array is array (Natural range <>) of IdentifierInterface_Access_Array_Access;
+   type IdentifierInterface_Access_Array_Access_Array_Access is access all IdentifierInterface_Access_Array_Access_Array;
+end org.allbinary.graphics.IdentifierInterface_Package_References;
+
+with org.allbinary.graphics.IdentifierInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,23 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.graphics.IdentifierInterface_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type IdentifierInterface is interface;
-   type IdentifierInterface_Access is access all IdentifierInterface'Class;
-   type IdentifierInterface_Access_Array is array (Natural range <>) of IdentifierInterface_Access;
-   type IdentifierInterface_Access_Array_Access is access all IdentifierInterface_Access_Array;
-   type IdentifierInterface_Access_Array_Access_Array is array (Natural range <>) of IdentifierInterface_Access_Array_Access;
-   type IdentifierInterface_Access_Array_Access_Array_Access is access all IdentifierInterface_Access_Array_Access_Array;
+   subtype IdentifierInterface_Access is org.allbinary.graphics.IdentifierInterface_Package_References.IdentifierInterface_Access;
+   function "=" (Left, Right : IdentifierInterface_Access) return Boolean renames org.allbinary.graphics.IdentifierInterface_Package_References."=";
+   subtype IdentifierInterface_Access_Array is org.allbinary.graphics.IdentifierInterface_Package_References.IdentifierInterface_Access_Array;
+   function "=" (Left, Right : IdentifierInterface_Access_Array) return Boolean renames org.allbinary.graphics.IdentifierInterface_Package_References."=";
+   subtype IdentifierInterface_Access_Array_Access is org.allbinary.graphics.IdentifierInterface_Package_References.IdentifierInterface_Access_Array_Access;
+   function "=" (Left, Right : IdentifierInterface_Access_Array_Access) return Boolean renames org.allbinary.graphics.IdentifierInterface_Package_References."=";
+   subtype IdentifierInterface_Access_Array_Access_Array is org.allbinary.graphics.IdentifierInterface_Package_References.IdentifierInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : IdentifierInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.IdentifierInterface_Package_References."=";
+   subtype IdentifierInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.IdentifierInterface_Package_References.IdentifierInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IdentifierInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.IdentifierInterface_Package_References."=";
+   function Java_Object_Access_From_IdentifierInterface (Value : IdentifierInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getId (This : in out IdentifierInterface) return Integer is abstract;
 
 end org.allbinary.graphics.IdentifierInterface_Package;

@@ -13,9 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.GameFeature_Package; use org.allbinary.game.configuration.feature.GameFeature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.GameFeature_Package;
 
 package body org.allbinary.game.configuration.feature.GameFeatureFactory_Package is
 
+   subtype GameFeature_Access is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access;
+   function "=" (Left, Right : GameFeature_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
+   subtype GameFeature_Access_Array is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access_Array;
+   function "=" (Left, Right : GameFeature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
+   subtype GameFeature_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access_Array_Access;
+   function "=" (Left, Right : GameFeature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
+   subtype GameFeature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access_Array_Access_Array;
+   function "=" (Left, Right : GameFeature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
+   subtype GameFeature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeature_Package_References.GameFeature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeature_Package_References."=";
+   subtype Feature_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access;
+   function "=" (Left, Right : Feature_Access) return Boolean renames org.allbinary.game.configuration.feature.Feature_Package_References."=";
+   subtype Feature_Access_Array is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array;
+   function "=" (Left, Right : Feature_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.Feature_Package_References."=";
+   subtype Feature_Access_Array_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access;
+   function "=" (Left, Right : Feature_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.Feature_Package_References."=";
+   subtype Feature_Access_Array_Access_Array is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access_Array;
+   function "=" (Left, Right : Feature_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.Feature_Package_References."=";
+   subtype Feature_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.Feature_Package_References.Feature_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Feature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.Feature_Package_References."=";
    procedure Initialize_Fields (This : in out GameFeatureFactory'Class) is
    begin
       null;
@@ -40,7 +64,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureFactory_Package
 
    function getInstance return GameFeatureFactory_Access is
    begin
-        return GameFeatureFactory_Package.instance;
+        return GameFeatureFactory_Access (GameFeatureFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out GameFeatureFactory'Class) is

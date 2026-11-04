@@ -1,12 +1,20 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.Service_Package; use android.app.Service_Package;
+with android.content.Intent_Package; use android.content.Intent_Package;
+with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
+with android.os.IBinder_Package; use android.os.IBinder_Package;
 with org.allbinary.android.NullAndroidCanvas_Package; use org.allbinary.android.NullAndroidCanvas_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStateStrings_Package; use org.allbinary.string_Id.CommonStateStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.media.audio.music.MusicStrings_Package; use org.allbinary.media.audio.music.MusicStrings_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+with org.allbinary.media.audio.music.MusicStrings_Package;
 
 package body org.allbinary.media.audio.music.BaseMusicService_Package is
 
@@ -15,6 +23,66 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   subtype Intent_Access is android.content.Intent_Package_References.Intent_Access;
+   function "=" (Left, Right : Intent_Access) return Boolean renames android.content.Intent_Package_References."=";
+   subtype Intent_Access_Array is android.content.Intent_Package_References.Intent_Access_Array;
+   function "=" (Left, Right : Intent_Access_Array) return Boolean renames android.content.Intent_Package_References."=";
+   subtype Intent_Access_Array_Access is android.content.Intent_Package_References.Intent_Access_Array_Access;
+   function "=" (Left, Right : Intent_Access_Array_Access) return Boolean renames android.content.Intent_Package_References."=";
+   subtype Intent_Access_Array_Access_Array is android.content.Intent_Package_References.Intent_Access_Array_Access_Array;
+   function "=" (Left, Right : Intent_Access_Array_Access_Array) return Boolean renames android.content.Intent_Package_References."=";
+   subtype Intent_Access_Array_Access_Array_Access is android.content.Intent_Package_References.Intent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Intent_Access_Array_Access_Array_Access) return Boolean renames android.content.Intent_Package_References."=";
+   subtype MediaPlayer_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access;
+   function "=" (Left, Right : MediaPlayer_Access) return Boolean renames android.media.MediaPlayer_Package_References."=";
+   subtype MediaPlayer_Access_Array is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array;
+   function "=" (Left, Right : MediaPlayer_Access_Array) return Boolean renames android.media.MediaPlayer_Package_References."=";
+   subtype MediaPlayer_Access_Array_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access;
+   function "=" (Left, Right : MediaPlayer_Access_Array_Access) return Boolean renames android.media.MediaPlayer_Package_References."=";
+   subtype MediaPlayer_Access_Array_Access_Array is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access_Array;
+   function "=" (Left, Right : MediaPlayer_Access_Array_Access_Array) return Boolean renames android.media.MediaPlayer_Package_References."=";
+   subtype MediaPlayer_Access_Array_Access_Array_Access is android.media.MediaPlayer_Package_References.MediaPlayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MediaPlayer_Access_Array_Access_Array_Access) return Boolean renames android.media.MediaPlayer_Package_References."=";
+   subtype IBinder_Access is android.os.IBinder_Package_References.IBinder_Access;
+   function "=" (Left, Right : IBinder_Access) return Boolean renames android.os.IBinder_Package_References."=";
+   subtype IBinder_Access_Array is android.os.IBinder_Package_References.IBinder_Access_Array;
+   function "=" (Left, Right : IBinder_Access_Array) return Boolean renames android.os.IBinder_Package_References."=";
+   subtype IBinder_Access_Array_Access is android.os.IBinder_Package_References.IBinder_Access_Array_Access;
+   function "=" (Left, Right : IBinder_Access_Array_Access) return Boolean renames android.os.IBinder_Package_References."=";
+   subtype IBinder_Access_Array_Access_Array is android.os.IBinder_Package_References.IBinder_Access_Array_Access_Array;
+   function "=" (Left, Right : IBinder_Access_Array_Access_Array) return Boolean renames android.os.IBinder_Package_References."=";
+   subtype IBinder_Access_Array_Access_Array_Access is android.os.IBinder_Package_References.IBinder_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IBinder_Access_Array_Access_Array_Access) return Boolean renames android.os.IBinder_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStateStrings_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access;
+   function "=" (Left, Right : CommonStateStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   subtype CommonStateStrings_Access_Array is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array;
+   function "=" (Left, Right : CommonStateStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   subtype CommonStateStrings_Access_Array_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStateStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   subtype CommonStateStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStateStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   subtype CommonStateStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStateStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    procedure Initialize_Fields (This : in out BaseMusicService'Class) is
    begin
       null;
@@ -23,7 +91,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
       This.commonStateStrings := CommonStateStrings_Package.getInstance;
       This.ALREADY_PLAYING := To_Unbounded_String ("This is one song per music service");
       This.WAITING_FOR_MUSIC_TO_END := To_Unbounded_String ("Waiting for music to end");
-      This.player := NullAndroidCanvas_Package.NULL_MEDIA_PLAYER;
+      This.player := MediaPlayer_Access (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER);
       This.songId := -(1);
       This.leftVolume := -(1);
       This.rightVolume := -(1);

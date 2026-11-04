@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.smtp.EmailInterface_Package;
+package org.allbinary.logic.communication.smtp.EmailInterface_Package_References is
+   type EmailInterface_Access is access all org.allbinary.logic.communication.smtp.EmailInterface_Package.EmailInterface'Class;
+   type EmailInterface_Access_Array is array (Natural range <>) of EmailInterface_Access;
+   type EmailInterface_Access_Array_Access is access all EmailInterface_Access_Array;
+   type EmailInterface_Access_Array_Access_Array is array (Natural range <>) of EmailInterface_Access_Array_Access;
+   type EmailInterface_Access_Array_Access_Array_Access is access all EmailInterface_Access_Array_Access_Array;
+end org.allbinary.logic.communication.smtp.EmailInterface_Package_References;
+
+with org.allbinary.logic.communication.smtp.EmailInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -28,13 +38,23 @@ package org.allbinary.logic.communication.smtp.EmailInterface_Package is
 
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package DomDocumentMappingInterface_Package renames Standard.org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type EmailInterface is interface and DomNodeInterface and DomDocumentMappingInterface;
-   type EmailInterface_Access is access all EmailInterface'Class;
-   type EmailInterface_Access_Array is array (Natural range <>) of EmailInterface_Access;
-   type EmailInterface_Access_Array_Access is access all EmailInterface_Access_Array;
-   type EmailInterface_Access_Array_Access_Array is array (Natural range <>) of EmailInterface_Access_Array_Access;
-   type EmailInterface_Access_Array_Access_Array_Access is access all EmailInterface_Access_Array_Access_Array;
+   subtype EmailInterface_Access is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access;
+   function "=" (Left, Right : EmailInterface_Access) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
+   subtype EmailInterface_Access_Array is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access_Array;
+   function "=" (Left, Right : EmailInterface_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
+   subtype EmailInterface_Access_Array_Access is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access_Array_Access;
+   function "=" (Left, Right : EmailInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
+   subtype EmailInterface_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : EmailInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
+   subtype EmailInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.EmailInterface_Package_References.EmailInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EmailInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.EmailInterface_Package_References."=";
+   function Java_Object_Access_From_EmailInterface (Value : EmailInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getDebugInfo (This : in out EmailInterface) return Unbounded_String is abstract;
    function getMimeMessage (This : in out EmailInterface) return MimeMessage_Access is abstract;
    function log (This : in out EmailInterface) return Unbounded_String is abstract;

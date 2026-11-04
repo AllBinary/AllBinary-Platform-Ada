@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.WorkFlowRequestHelperFactory_Package;
+package admin.taghelpers.WorkFlowRequestHelperFactory_Package_References is
+   type WorkFlowRequestHelperFactory_Access is access all admin.taghelpers.WorkFlowRequestHelperFactory_Package.WorkFlowRequestHelperFactory'Class;
+   type WorkFlowRequestHelperFactory_Access_Array is array (Natural range <>) of WorkFlowRequestHelperFactory_Access;
+   type WorkFlowRequestHelperFactory_Access_Array_Access is access all WorkFlowRequestHelperFactory_Access_Array;
+   type WorkFlowRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of WorkFlowRequestHelperFactory_Access_Array_Access;
+   type WorkFlowRequestHelperFactory_Access_Array_Access_Array_Access is access all WorkFlowRequestHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.WorkFlowRequestHelperFactory_Package_References;
+
+with admin.taghelpers.WorkFlowRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.WorkFlowRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type WorkFlowRequestHelperFactory is tagged;
-   type WorkFlowRequestHelperFactory_Access is access all WorkFlowRequestHelperFactory'Class;
-   type WorkFlowRequestHelperFactory_Access_Array is array (Natural range <>) of WorkFlowRequestHelperFactory_Access;
-   type WorkFlowRequestHelperFactory_Access_Array_Access is access all WorkFlowRequestHelperFactory_Access_Array;
-   type WorkFlowRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of WorkFlowRequestHelperFactory_Access_Array_Access;
-   type WorkFlowRequestHelperFactory_Access_Array_Access_Array_Access is access all WorkFlowRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype WorkFlowRequestHelperFactory_Access is admin.taghelpers.WorkFlowRequestHelperFactory_Package_References.WorkFlowRequestHelperFactory_Access;
+   function "=" (Left, Right : WorkFlowRequestHelperFactory_Access) return Boolean renames admin.taghelpers.WorkFlowRequestHelperFactory_Package_References."=";
+   subtype WorkFlowRequestHelperFactory_Access_Array is admin.taghelpers.WorkFlowRequestHelperFactory_Package_References.WorkFlowRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : WorkFlowRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.WorkFlowRequestHelperFactory_Package_References."=";
+   subtype WorkFlowRequestHelperFactory_Access_Array_Access is admin.taghelpers.WorkFlowRequestHelperFactory_Package_References.WorkFlowRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.WorkFlowRequestHelperFactory_Package_References."=";
+   subtype WorkFlowRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.WorkFlowRequestHelperFactory_Package_References.WorkFlowRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : WorkFlowRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.WorkFlowRequestHelperFactory_Package_References."=";
+   subtype WorkFlowRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.WorkFlowRequestHelperFactory_Package_References.WorkFlowRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.WorkFlowRequestHelperFactory_Package_References."=";
 
    type WorkFlowRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

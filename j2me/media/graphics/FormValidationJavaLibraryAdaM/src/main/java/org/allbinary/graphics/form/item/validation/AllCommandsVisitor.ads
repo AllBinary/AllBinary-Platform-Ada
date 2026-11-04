@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package;
+package org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References is
+   type AllCommandsVisitor_Access is access all org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package.AllCommandsVisitor'Class;
+   type AllCommandsVisitor_Access_Array is array (Natural range <>) of AllCommandsVisitor_Access;
+   type AllCommandsVisitor_Access_Array_Access is access all AllCommandsVisitor_Access_Array;
+   type AllCommandsVisitor_Access_Array_Access_Array is array (Natural range <>) of AllCommandsVisitor_Access_Array_Access;
+   type AllCommandsVisitor_Access_Array_Access_Array_Access is access all AllCommandsVisitor_Access_Array_Access_Array;
+end org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References;
+
+with org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 package org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package is
 
    package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AllCommandsVisitor is tagged;
-   type AllCommandsVisitor_Access is access all AllCommandsVisitor'Class;
-   type AllCommandsVisitor_Access_Array is array (Natural range <>) of AllCommandsVisitor_Access;
-   type AllCommandsVisitor_Access_Array_Access is access all AllCommandsVisitor_Access_Array;
-   type AllCommandsVisitor_Access_Array_Access_Array is array (Natural range <>) of AllCommandsVisitor_Access_Array_Access;
-   type AllCommandsVisitor_Access_Array_Access_Array_Access is access all AllCommandsVisitor_Access_Array_Access_Array;
+
+   subtype AllCommandsVisitor_Access is org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References.AllCommandsVisitor_Access;
+   function "=" (Left, Right : AllCommandsVisitor_Access) return Boolean renames org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References."=";
+   subtype AllCommandsVisitor_Access_Array is org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References.AllCommandsVisitor_Access_Array;
+   function "=" (Left, Right : AllCommandsVisitor_Access_Array) return Boolean renames org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References."=";
+   subtype AllCommandsVisitor_Access_Array_Access is org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References.AllCommandsVisitor_Access_Array_Access;
+   function "=" (Left, Right : AllCommandsVisitor_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References."=";
+   subtype AllCommandsVisitor_Access_Array_Access_Array is org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References.AllCommandsVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : AllCommandsVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References."=";
+   subtype AllCommandsVisitor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References.AllCommandsVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllCommandsVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References."=";
 
    type AllCommandsVisitor is new Visitor with null record;
 

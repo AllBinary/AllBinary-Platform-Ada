@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package;
+package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References is
+   type PaymentTransactionInterfaceFactoryInterface_Access is access all org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package.PaymentTransactionInterfaceFactoryInterface'Class;
+   type PaymentTransactionInterfaceFactoryInterface_Access_Array is array (Natural range <>) of PaymentTransactionInterfaceFactoryInterface_Access;
+   type PaymentTransactionInterfaceFactoryInterface_Access_Array_Access is access all PaymentTransactionInterfaceFactoryInterface_Access_Array;
+   type PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionInterfaceFactoryInterface_Access_Array_Access;
+   type PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,64 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
-with org.allbinary.business.user.commerce.money.payment.types.TenderType_Package; use org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
-with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
+limited with org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package_References;
+limited with org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References;
+limited with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package is
 
    package OrderHistory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
    package TenderType_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
+   package Reference_Types is
+   subtype OrderHistory_Access is org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package_References.OrderHistory_Access;
+   use type OrderHistory_Access;
+   subtype OrderHistory_Access_Array is org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package_References.OrderHistory_Access_Array;
+   use type OrderHistory_Access_Array;
+   subtype OrderHistory_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package_References.OrderHistory_Access_Array_Access;
+   use type OrderHistory_Access_Array_Access;
+   subtype OrderHistory_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package_References.OrderHistory_Access_Array_Access_Array;
+   use type OrderHistory_Access_Array_Access_Array;
+   subtype OrderHistory_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package_References.OrderHistory_Access_Array_Access_Array_Access;
+   use type OrderHistory_Access_Array_Access_Array_Access;
+   subtype TenderType_Access is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access;
+   use type TenderType_Access;
+   subtype TenderType_Access_Array is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access_Array;
+   use type TenderType_Access_Array;
+   subtype TenderType_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access_Array_Access;
+   use type TenderType_Access_Array_Access;
+   subtype TenderType_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access_Array_Access_Array;
+   use type TenderType_Access_Array_Access_Array;
+   subtype TenderType_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access_Array_Access_Array_Access;
+   use type TenderType_Access_Array_Access_Array_Access;
+   subtype PaymentTransactionInterface_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References.PaymentTransactionInterface_Access;
+   use type PaymentTransactionInterface_Access;
+   subtype PaymentTransactionInterface_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References.PaymentTransactionInterface_Access_Array;
+   use type PaymentTransactionInterface_Access_Array;
+   subtype PaymentTransactionInterface_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References.PaymentTransactionInterface_Access_Array_Access;
+   use type PaymentTransactionInterface_Access_Array_Access;
+   subtype PaymentTransactionInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References.PaymentTransactionInterface_Access_Array_Access_Array;
+   use type PaymentTransactionInterface_Access_Array_Access_Array;
+   subtype PaymentTransactionInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References.PaymentTransactionInterface_Access_Array_Access_Array_Access;
+   use type PaymentTransactionInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type PaymentTransactionInterfaceFactoryInterface is interface;
-   type PaymentTransactionInterfaceFactoryInterface_Access is access all PaymentTransactionInterfaceFactoryInterface'Class;
-   type PaymentTransactionInterfaceFactoryInterface_Access_Array is array (Natural range <>) of PaymentTransactionInterfaceFactoryInterface_Access;
-   type PaymentTransactionInterfaceFactoryInterface_Access_Array_Access is access all PaymentTransactionInterfaceFactoryInterface_Access_Array;
-   type PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionInterfaceFactoryInterface_Access_Array_Access;
-   type PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array;
+   subtype PaymentTransactionInterfaceFactoryInterface_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References.PaymentTransactionInterfaceFactoryInterface_Access;
+   function "=" (Left, Right : PaymentTransactionInterfaceFactoryInterface_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References."=";
+   subtype PaymentTransactionInterfaceFactoryInterface_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References.PaymentTransactionInterfaceFactoryInterface_Access_Array;
+   function "=" (Left, Right : PaymentTransactionInterfaceFactoryInterface_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References."=";
+   subtype PaymentTransactionInterfaceFactoryInterface_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References.PaymentTransactionInterfaceFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionInterfaceFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References."=";
+   subtype PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References.PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References."=";
+   subtype PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References.PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References."=";
+   function Java_Object_Access_From_PaymentTransactionInterfaceFactoryInterface (Value : PaymentTransactionInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out PaymentTransactionInterfaceFactoryInterface; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return PaymentTransactionInterface_Access is abstract;
    function getSaleTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;
    function getCreditTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;

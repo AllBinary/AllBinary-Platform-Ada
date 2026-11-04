@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
 
 package body org.allbinary.logic.io.AbFileInputStream_Package is
 

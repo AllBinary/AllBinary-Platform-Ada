@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.GameStrings_Package;
+package org.allbinary.game.GameStrings_Package_References is
+   type GameStrings_Access is access all org.allbinary.game.GameStrings_Package.GameStrings'Class;
+   type GameStrings_Access_Array is array (Natural range <>) of GameStrings_Access;
+   type GameStrings_Access_Array_Access is access all GameStrings_Access_Array;
+   type GameStrings_Access_Array_Access_Array is array (Natural range <>) of GameStrings_Access_Array_Access;
+   type GameStrings_Access_Array_Access_Array_Access is access all GameStrings_Access_Array_Access_Array;
+end org.allbinary.game.GameStrings_Package_References;
+
+with org.allbinary.game.GameStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.GameStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameStrings is tagged;
-   type GameStrings_Access is access all GameStrings'Class;
-   type GameStrings_Access_Array is array (Natural range <>) of GameStrings_Access;
-   type GameStrings_Access_Array_Access is access all GameStrings_Access_Array;
-   type GameStrings_Access_Array_Access_Array is array (Natural range <>) of GameStrings_Access_Array_Access;
-   type GameStrings_Access_Array_Access_Array_Access is access all GameStrings_Access_Array_Access_Array;
+
+   subtype GameStrings_Access is org.allbinary.game.GameStrings_Package_References.GameStrings_Access;
+   function "=" (Left, Right : GameStrings_Access) return Boolean renames org.allbinary.game.GameStrings_Package_References."=";
+   subtype GameStrings_Access_Array is org.allbinary.game.GameStrings_Package_References.GameStrings_Access_Array;
+   function "=" (Left, Right : GameStrings_Access_Array) return Boolean renames org.allbinary.game.GameStrings_Package_References."=";
+   subtype GameStrings_Access_Array_Access is org.allbinary.game.GameStrings_Package_References.GameStrings_Access_Array_Access;
+   function "=" (Left, Right : GameStrings_Access_Array_Access) return Boolean renames org.allbinary.game.GameStrings_Package_References."=";
+   subtype GameStrings_Access_Array_Access_Array is org.allbinary.game.GameStrings_Package_References.GameStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : GameStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.game.GameStrings_Package_References."=";
+   subtype GameStrings_Access_Array_Access_Array_Access is org.allbinary.game.GameStrings_Package_References.GameStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.GameStrings_Package_References."=";
 
    type GameStrings is new Java_Object with record
       PROCESS_TICK : Unbounded_String;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package;
+package admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References is
+   type BasicOptionItemsRequestHelperFactory_Access is access all admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package.BasicOptionItemsRequestHelperFactory'Class;
+   type BasicOptionItemsRequestHelperFactory_Access_Array is array (Natural range <>) of BasicOptionItemsRequestHelperFactory_Access;
+   type BasicOptionItemsRequestHelperFactory_Access_Array_Access is access all BasicOptionItemsRequestHelperFactory_Access_Array;
+   type BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemsRequestHelperFactory_Access_Array_Access;
+   type BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References;
+
+with admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicOptionItemsRequestHelperFactory is tagged;
-   type BasicOptionItemsRequestHelperFactory_Access is access all BasicOptionItemsRequestHelperFactory'Class;
-   type BasicOptionItemsRequestHelperFactory_Access_Array is array (Natural range <>) of BasicOptionItemsRequestHelperFactory_Access;
-   type BasicOptionItemsRequestHelperFactory_Access_Array_Access is access all BasicOptionItemsRequestHelperFactory_Access_Array;
-   type BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemsRequestHelperFactory_Access_Array_Access;
-   type BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype BasicOptionItemsRequestHelperFactory_Access is admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References.BasicOptionItemsRequestHelperFactory_Access;
+   function "=" (Left, Right : BasicOptionItemsRequestHelperFactory_Access) return Boolean renames admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References."=";
+   subtype BasicOptionItemsRequestHelperFactory_Access_Array is admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References.BasicOptionItemsRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : BasicOptionItemsRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References."=";
+   subtype BasicOptionItemsRequestHelperFactory_Access_Array_Access is admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References.BasicOptionItemsRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : BasicOptionItemsRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References."=";
+   subtype BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References.BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References."=";
+   subtype BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References.BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package_References."=";
 
    type BasicOptionItemsRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

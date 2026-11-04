@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.input.motion.MotionEventProcessor_Package;
 
 package body org.allbinary.android.input.motion.NoMotionEventProcessor_Package is
 
@@ -37,7 +38,7 @@ package body org.allbinary.android.input.motion.NoMotionEventProcessor_Package i
 
    function getInstance return MotionEventProcessor_Access is
    begin
-        return NoMotionEventProcessor_Package.SINGLETON;
+        return MotionEventProcessor_Access (NoMotionEventProcessor_Package.SINGLETON);
    end getInstance;
 
 begin

@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+with org.allbinary.input.automation.module.Dimension_Package; use org.allbinary.input.automation.module.Dimension_Package;
+with org.allbinary.input.automation.module.Rectangle_Package; use org.allbinary.input.automation.module.Rectangle_Package;
 
 package body org.allbinary.input.automation.module.MotionRectangleConstraints_Package is
 
+   subtype Dimension_Access is org.allbinary.input.automation.module.Dimension_Package_References.Dimension_Access;
+   function "=" (Left, Right : Dimension_Access) return Boolean renames org.allbinary.input.automation.module.Dimension_Package_References."=";
+   subtype Dimension_Access_Array is org.allbinary.input.automation.module.Dimension_Package_References.Dimension_Access_Array;
+   function "=" (Left, Right : Dimension_Access_Array) return Boolean renames org.allbinary.input.automation.module.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access is org.allbinary.input.automation.module.Dimension_Package_References.Dimension_Access_Array_Access;
+   function "=" (Left, Right : Dimension_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access_Array is org.allbinary.input.automation.module.Dimension_Package_References.Dimension_Access_Array_Access_Array;
+   function "=" (Left, Right : Dimension_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.Dimension_Package_References.Dimension_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Dimension_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.Dimension_Package_References."=";
+   subtype Rectangle_Access is org.allbinary.input.automation.module.Rectangle_Package_References.Rectangle_Access;
+   function "=" (Left, Right : Rectangle_Access) return Boolean renames org.allbinary.input.automation.module.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array is org.allbinary.input.automation.module.Rectangle_Package_References.Rectangle_Access_Array;
+   function "=" (Left, Right : Rectangle_Access_Array) return Boolean renames org.allbinary.input.automation.module.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access is org.allbinary.input.automation.module.Rectangle_Package_References.Rectangle_Access_Array_Access;
+   function "=" (Left, Right : Rectangle_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access_Array is org.allbinary.input.automation.module.Rectangle_Package_References.Rectangle_Access_Array_Access_Array;
+   function "=" (Left, Right : Rectangle_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.Rectangle_Package_References.Rectangle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Rectangle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.Rectangle_Package_References."=";
    procedure Initialize_Fields (This : in out MotionRectangleConstraints'Class) is
    begin
       null;

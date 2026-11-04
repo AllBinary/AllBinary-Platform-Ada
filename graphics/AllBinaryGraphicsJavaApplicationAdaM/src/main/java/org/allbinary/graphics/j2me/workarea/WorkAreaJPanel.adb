@@ -13,20 +13,51 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
 with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package; use org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package; use org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
 with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.Component_Package; use org.allbinary.graphics.j2me.workarea.Component_Package;
+with org.allbinary.graphics.j2me.workarea.Dimension_Package; use org.allbinary.graphics.j2me.workarea.Dimension_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
 with org.allbinary.graphics.j2me.workarea.GridLayout_Package; use org.allbinary.graphics.j2me.workarea.GridLayout_Package;
 with org.allbinary.graphics.j2me.workarea.GridBagLayout_Package; use org.allbinary.graphics.j2me.workarea.GridBagLayout_Package;
 with org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package; use org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
+with org.allbinary.dom.DomHelper_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+with org.allbinary.log.LOGGING_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
+with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
+with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
+with org.allbinary.graphics.j2me.StatusFactory_Package;
+with org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 
 package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
@@ -40,6 +71,86 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   subtype CanvasJPanel_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access;
+   function "=" (Left, Right : CanvasJPanel_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=";
+   subtype CanvasJPanel_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array;
+   function "=" (Left, Right : CanvasJPanel_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=";
+   subtype CanvasJPanel_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array_Access;
+   function "=" (Left, Right : CanvasJPanel_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=";
+   subtype CanvasJPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : CanvasJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=";
+   subtype CanvasJPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CanvasJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=";
+   subtype MyCanvasEvent_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access;
+   function "=" (Left, Right : MyCanvasEvent_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
+   subtype MyCanvasEvent_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array;
+   function "=" (Left, Right : MyCanvasEvent_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
+   subtype MyCanvasEvent_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEvent_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
+   subtype MyCanvasEvent_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : MyCanvasEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
+   subtype MyCanvasEvent_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References."=";
+   subtype PropertiesJPanel_Access is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access;
+   function "=" (Left, Right : PropertiesJPanel_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
+   subtype PropertiesJPanel_Access_Array is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access_Array;
+   function "=" (Left, Right : PropertiesJPanel_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
+   subtype PropertiesJPanel_Access_Array_Access is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access_Array_Access;
+   function "=" (Left, Right : PropertiesJPanel_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
+   subtype PropertiesJPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : PropertiesJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
+   subtype PropertiesJPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References.PropertiesJPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PropertiesJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   function "=" (Left, Right : Document_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype WorkAreaJTreeJPanel_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
+   subtype WorkAreaJTreeJPanel_Access_Array is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access_Array;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
+   subtype WorkAreaJTreeJPanel_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access_Array_Access;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
+   subtype WorkAreaJTreeJPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
+   subtype WorkAreaJTreeJPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References.WorkAreaJTreeJPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WorkAreaJTreeJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References."=";
+   subtype Dimension_Access is org.allbinary.graphics.j2me.workarea.Dimension_Package_References.Dimension_Access;
+   function "=" (Left, Right : Dimension_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.Dimension_Package_References."=";
+   subtype Dimension_Access_Array is org.allbinary.graphics.j2me.workarea.Dimension_Package_References.Dimension_Access_Array;
+   function "=" (Left, Right : Dimension_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access is org.allbinary.graphics.j2me.workarea.Dimension_Package_References.Dimension_Access_Array_Access;
+   function "=" (Left, Right : Dimension_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.Dimension_Package_References.Dimension_Access_Array_Access_Array;
+   function "=" (Left, Right : Dimension_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.Dimension_Package_References."=";
+   subtype Dimension_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.Dimension_Package_References.Dimension_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Dimension_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.Dimension_Package_References."=";
+   subtype WorkAreaDom_Access is org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References.WorkAreaDom_Access;
+   function "=" (Left, Right : WorkAreaDom_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References."=";
+   subtype WorkAreaDom_Access_Array is org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References.WorkAreaDom_Access_Array;
+   function "=" (Left, Right : WorkAreaDom_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References."=";
+   subtype WorkAreaDom_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References.WorkAreaDom_Access_Array_Access;
+   function "=" (Left, Right : WorkAreaDom_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References."=";
+   subtype WorkAreaDom_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References.WorkAreaDom_Access_Array_Access_Array;
+   function "=" (Left, Right : WorkAreaDom_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References."=";
+   subtype WorkAreaDom_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References.WorkAreaDom_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WorkAreaDom_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References."=";
    procedure Initialize_Fields (This : in out WorkAreaJPanel'Class) is
    begin
       null;
@@ -365,7 +476,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
    function getDocument return Document_Access is
    begin
-        return WorkAreaJPanel_Package.document;
+        return Document_Access (WorkAreaJPanel_Package.document);
    end getDocument;
 
    --  throws Exception

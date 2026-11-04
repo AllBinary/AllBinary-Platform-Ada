@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.analysis.ImageAnalysis_Package;
+package org.allbinary.media.image.analysis.ImageAnalysis_Package_References is
+   type ImageAnalysis_Access is access all org.allbinary.media.image.analysis.ImageAnalysis_Package.ImageAnalysis'Class;
+   type ImageAnalysis_Access_Array is array (Natural range <>) of ImageAnalysis_Access;
+   type ImageAnalysis_Access_Array_Access is access all ImageAnalysis_Access_Array;
+   type ImageAnalysis_Access_Array_Access_Array is array (Natural range <>) of ImageAnalysis_Access_Array_Access;
+   type ImageAnalysis_Access_Array_Access_Array_Access is access all ImageAnalysis_Access_Array_Access_Array;
+end org.allbinary.media.image.analysis.ImageAnalysis_Package_References;
+
+with org.allbinary.media.image.analysis.ImageAnalysis_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,22 +31,85 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
-with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
-with org.allbinary.media.image.analysis.Color_Package; use org.allbinary.media.image.analysis.Color_Package;
-with org.allbinary.media.image.analysis.ImageColorResults_Package; use org.allbinary.media.image.analysis.ImageColorResults_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
+with org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References;
+limited with org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package_References;
+limited with org.allbinary.media.image.analysis.Color_Package;
+with org.allbinary.media.image.analysis.Color_Package_References;
+limited with org.allbinary.media.image.analysis.ImageColorResults_Package;
+with org.allbinary.media.image.analysis.ImageColorResults_Package_References;
 
 package org.allbinary.media.image.analysis.ImageAnalysis_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype ImageAnalysisResults_Access is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access;
+   use type ImageAnalysisResults_Access;
+   subtype ImageAnalysisResults_Access_Array is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array;
+   use type ImageAnalysisResults_Access_Array;
+   subtype ImageAnalysisResults_Access_Array_Access is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array_Access;
+   use type ImageAnalysisResults_Access_Array_Access;
+   subtype ImageAnalysisResults_Access_Array_Access_Array is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array_Access_Array;
+   use type ImageAnalysisResults_Access_Array_Access_Array;
+   subtype ImageAnalysisResults_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References.ImageAnalysisResults_Access_Array_Access_Array_Access;
+   use type ImageAnalysisResults_Access_Array_Access_Array_Access;
+   subtype ColorRangeInterface_Access is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access;
+   use type ColorRangeInterface_Access;
+   subtype ColorRangeInterface_Access_Array is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array;
+   use type ColorRangeInterface_Access_Array;
+   subtype ColorRangeInterface_Access_Array_Access is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array_Access;
+   use type ColorRangeInterface_Access_Array_Access;
+   subtype ColorRangeInterface_Access_Array_Access_Array is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array_Access_Array;
+   use type ColorRangeInterface_Access_Array_Access_Array;
+   subtype ColorRangeInterface_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array_Access_Array_Access;
+   use type ColorRangeInterface_Access_Array_Access_Array_Access;
+   subtype Color_Access is org.allbinary.media.image.analysis.Color_Package_References.Color_Access;
+   use type Color_Access;
+   subtype Color_Access_Array is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array;
+   use type Color_Access_Array;
+   subtype Color_Access_Array_Access is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array_Access;
+   use type Color_Access_Array_Access;
+   subtype Color_Access_Array_Access_Array is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array_Access_Array;
+   use type Color_Access_Array_Access_Array;
+   subtype Color_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.Color_Package_References.Color_Access_Array_Access_Array_Access;
+   use type Color_Access_Array_Access_Array_Access;
+   subtype ImageColorResults_Access is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access;
+   use type ImageColorResults_Access;
+   subtype ImageColorResults_Access_Array is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access_Array;
+   use type ImageColorResults_Access_Array;
+   subtype ImageColorResults_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access_Array_Access;
+   use type ImageColorResults_Access_Array_Access;
+   subtype ImageColorResults_Access_Array_Access_Array is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access_Array_Access_Array;
+   use type ImageColorResults_Access_Array_Access_Array;
+   subtype ImageColorResults_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorResults_Package_References.ImageColorResults_Access_Array_Access_Array_Access;
+   use type ImageColorResults_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageAnalysis is tagged;
-   type ImageAnalysis_Access is access all ImageAnalysis'Class;
-   type ImageAnalysis_Access_Array is array (Natural range <>) of ImageAnalysis_Access;
-   type ImageAnalysis_Access_Array_Access is access all ImageAnalysis_Access_Array;
-   type ImageAnalysis_Access_Array_Access_Array is array (Natural range <>) of ImageAnalysis_Access_Array_Access;
-   type ImageAnalysis_Access_Array_Access_Array_Access is access all ImageAnalysis_Access_Array_Access_Array;
+
+   subtype ImageAnalysis_Access is org.allbinary.media.image.analysis.ImageAnalysis_Package_References.ImageAnalysis_Access;
+   function "=" (Left, Right : ImageAnalysis_Access) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysis_Package_References."=";
+   subtype ImageAnalysis_Access_Array is org.allbinary.media.image.analysis.ImageAnalysis_Package_References.ImageAnalysis_Access_Array;
+   function "=" (Left, Right : ImageAnalysis_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysis_Package_References."=";
+   subtype ImageAnalysis_Access_Array_Access is org.allbinary.media.image.analysis.ImageAnalysis_Package_References.ImageAnalysis_Access_Array_Access;
+   function "=" (Left, Right : ImageAnalysis_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysis_Package_References."=";
+   subtype ImageAnalysis_Access_Array_Access_Array is org.allbinary.media.image.analysis.ImageAnalysis_Package_References.ImageAnalysis_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageAnalysis_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysis_Package_References."=";
+   subtype ImageAnalysis_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ImageAnalysis_Package_References.ImageAnalysis_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageAnalysis_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageAnalysis_Package_References."=";
 
    type ImageAnalysis is new Java_Object with record
       logUtil : LogUtil_Access;

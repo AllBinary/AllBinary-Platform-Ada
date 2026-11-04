@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.paint.MainGameDemoStatePaintable_Package;
+package org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References is
+   type MainGameDemoStatePaintable_Access is access all org.allbinary.game.paint.MainGameDemoStatePaintable_Package.MainGameDemoStatePaintable'Class;
+   type MainGameDemoStatePaintable_Access_Array is array (Natural range <>) of MainGameDemoStatePaintable_Access;
+   type MainGameDemoStatePaintable_Access_Array_Access is access all MainGameDemoStatePaintable_Access_Array;
+   type MainGameDemoStatePaintable_Access_Array_Access_Array is array (Natural range <>) of MainGameDemoStatePaintable_Access_Array_Access;
+   type MainGameDemoStatePaintable_Access_Array_Access_Array_Access is access all MainGameDemoStatePaintable_Access_Array_Access_Array;
+end org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References;
+
+with org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 
 package org.allbinary.game.paint.MainGameDemoStatePaintable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MainGameDemoStatePaintable is tagged;
-   type MainGameDemoStatePaintable_Access is access all MainGameDemoStatePaintable'Class;
-   type MainGameDemoStatePaintable_Access_Array is array (Natural range <>) of MainGameDemoStatePaintable_Access;
-   type MainGameDemoStatePaintable_Access_Array_Access is access all MainGameDemoStatePaintable_Access_Array;
-   type MainGameDemoStatePaintable_Access_Array_Access_Array is array (Natural range <>) of MainGameDemoStatePaintable_Access_Array_Access;
-   type MainGameDemoStatePaintable_Access_Array_Access_Array_Access is access all MainGameDemoStatePaintable_Access_Array_Access_Array;
+
+   subtype MainGameDemoStatePaintable_Access is org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References.MainGameDemoStatePaintable_Access;
+   function "=" (Left, Right : MainGameDemoStatePaintable_Access) return Boolean renames org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References."=";
+   subtype MainGameDemoStatePaintable_Access_Array is org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References.MainGameDemoStatePaintable_Access_Array;
+   function "=" (Left, Right : MainGameDemoStatePaintable_Access_Array) return Boolean renames org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References."=";
+   subtype MainGameDemoStatePaintable_Access_Array_Access is org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References.MainGameDemoStatePaintable_Access_Array_Access;
+   function "=" (Left, Right : MainGameDemoStatePaintable_Access_Array_Access) return Boolean renames org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References."=";
+   subtype MainGameDemoStatePaintable_Access_Array_Access_Array is org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References.MainGameDemoStatePaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : MainGameDemoStatePaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References."=";
+   subtype MainGameDemoStatePaintable_Access_Array_Access_Array_Access is org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References.MainGameDemoStatePaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MainGameDemoStatePaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.paint.MainGameDemoStatePaintable_Package_References."=";
 
    type MainGameDemoStatePaintable is new Paintable with record
       ownershipPaintableInterface : Paintable_Access;

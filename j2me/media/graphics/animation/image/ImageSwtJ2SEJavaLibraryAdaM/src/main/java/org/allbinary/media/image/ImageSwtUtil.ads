@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.ImageSwtUtil_Package;
+package org.allbinary.media.image.ImageSwtUtil_Package_References is
+   type ImageSwtUtil_Access is access all org.allbinary.media.image.ImageSwtUtil_Package.ImageSwtUtil'Class;
+   type ImageSwtUtil_Access_Array is array (Natural range <>) of ImageSwtUtil_Access;
+   type ImageSwtUtil_Access_Array_Access is access all ImageSwtUtil_Access_Array;
+   type ImageSwtUtil_Access_Array_Access_Array is array (Natural range <>) of ImageSwtUtil_Access_Array_Access;
+   type ImageSwtUtil_Access_Array_Access_Array_Access is access all ImageSwtUtil_Access_Array_Access_Array;
+end org.allbinary.media.image.ImageSwtUtil_Package_References;
+
+with org.allbinary.media.image.ImageSwtUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.media.image.ImageSwtUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageSwtUtil is tagged;
-   type ImageSwtUtil_Access is access all ImageSwtUtil'Class;
-   type ImageSwtUtil_Access_Array is array (Natural range <>) of ImageSwtUtil_Access;
-   type ImageSwtUtil_Access_Array_Access is access all ImageSwtUtil_Access_Array;
-   type ImageSwtUtil_Access_Array_Access_Array is array (Natural range <>) of ImageSwtUtil_Access_Array_Access;
-   type ImageSwtUtil_Access_Array_Access_Array_Access is access all ImageSwtUtil_Access_Array_Access_Array;
+
+   subtype ImageSwtUtil_Access is org.allbinary.media.image.ImageSwtUtil_Package_References.ImageSwtUtil_Access;
+   function "=" (Left, Right : ImageSwtUtil_Access) return Boolean renames org.allbinary.media.image.ImageSwtUtil_Package_References."=";
+   subtype ImageSwtUtil_Access_Array is org.allbinary.media.image.ImageSwtUtil_Package_References.ImageSwtUtil_Access_Array;
+   function "=" (Left, Right : ImageSwtUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageSwtUtil_Package_References."=";
+   subtype ImageSwtUtil_Access_Array_Access is org.allbinary.media.image.ImageSwtUtil_Package_References.ImageSwtUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageSwtUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageSwtUtil_Package_References."=";
+   subtype ImageSwtUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageSwtUtil_Package_References.ImageSwtUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageSwtUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageSwtUtil_Package_References."=";
+   subtype ImageSwtUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageSwtUtil_Package_References.ImageSwtUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageSwtUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageSwtUtil_Package_References."=";
 
    type ImageSwtUtil is new Java_Object with null record;
    instance : ImageSwtUtil_Access;

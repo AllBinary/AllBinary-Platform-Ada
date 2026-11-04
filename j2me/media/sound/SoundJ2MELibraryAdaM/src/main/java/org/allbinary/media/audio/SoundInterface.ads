@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.SoundInterface_Package;
+package org.allbinary.media.audio.SoundInterface_Package_References is
+   type SoundInterface_Access is access all org.allbinary.media.audio.SoundInterface_Package.SoundInterface'Class;
+   type SoundInterface_Access_Array is array (Natural range <>) of SoundInterface_Access;
+   type SoundInterface_Access_Array_Access is access all SoundInterface_Access_Array;
+   type SoundInterface_Access_Array_Access_Array is array (Natural range <>) of SoundInterface_Access_Array_Access;
+   type SoundInterface_Access_Array_Access_Array_Access is access all SoundInterface_Access_Array_Access_Array;
+end org.allbinary.media.audio.SoundInterface_Package_References;
+
+with org.allbinary.media.audio.SoundInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+limited with javax.microedition.media.Player_Package;
+with javax.microedition.media.Player_Package_References;
 
 package org.allbinary.media.audio.SoundInterface_Package is
 
    package Player_Package renames Standard.javax.microedition.media.Player_Package;
+   package Reference_Types is
+   subtype Player_Access is javax.microedition.media.Player_Package_References.Player_Access;
+   use type Player_Access;
+   subtype Player_Access_Array is javax.microedition.media.Player_Package_References.Player_Access_Array;
+   use type Player_Access_Array;
+   subtype Player_Access_Array_Access is javax.microedition.media.Player_Package_References.Player_Access_Array_Access;
+   use type Player_Access_Array_Access;
+   subtype Player_Access_Array_Access_Array is javax.microedition.media.Player_Package_References.Player_Access_Array_Access_Array;
+   use type Player_Access_Array_Access_Array;
+   subtype Player_Access_Array_Access_Array_Access is javax.microedition.media.Player_Package_References.Player_Access_Array_Access_Array_Access;
+   use type Player_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type SoundInterface is interface;
-   type SoundInterface_Access is access all SoundInterface'Class;
-   type SoundInterface_Access_Array is array (Natural range <>) of SoundInterface_Access;
-   type SoundInterface_Access_Array_Access is access all SoundInterface_Access_Array;
-   type SoundInterface_Access_Array_Access_Array is array (Natural range <>) of SoundInterface_Access_Array_Access;
-   type SoundInterface_Access_Array_Access_Array_Access is access all SoundInterface_Access_Array_Access_Array;
+   subtype SoundInterface_Access is org.allbinary.media.audio.SoundInterface_Package_References.SoundInterface_Access;
+   function "=" (Left, Right : SoundInterface_Access) return Boolean renames org.allbinary.media.audio.SoundInterface_Package_References."=";
+   subtype SoundInterface_Access_Array is org.allbinary.media.audio.SoundInterface_Package_References.SoundInterface_Access_Array;
+   function "=" (Left, Right : SoundInterface_Access_Array) return Boolean renames org.allbinary.media.audio.SoundInterface_Package_References."=";
+   subtype SoundInterface_Access_Array_Access is org.allbinary.media.audio.SoundInterface_Package_References.SoundInterface_Access_Array_Access;
+   function "=" (Left, Right : SoundInterface_Access_Array_Access) return Boolean renames org.allbinary.media.audio.SoundInterface_Package_References."=";
+   subtype SoundInterface_Access_Array_Access_Array is org.allbinary.media.audio.SoundInterface_Package_References.SoundInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : SoundInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.SoundInterface_Package_References."=";
+   subtype SoundInterface_Access_Array_Access_Array_Access is org.allbinary.media.audio.SoundInterface_Package_References.SoundInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SoundInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.SoundInterface_Package_References."=";
+   function Java_Object_Access_From_SoundInterface (Value : SoundInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getResource (This : in out SoundInterface) return Unbounded_String is abstract;
    function getPlayerP (This : in out SoundInterface) return Player_Access is abstract;
    procedure init (This : in out SoundInterface) is abstract;

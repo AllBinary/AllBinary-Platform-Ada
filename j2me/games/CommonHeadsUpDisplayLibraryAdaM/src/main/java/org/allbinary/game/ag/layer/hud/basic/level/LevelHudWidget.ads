@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package;
+package org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References is
+   type LevelHudWidget_Access is access all org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package.LevelHudWidget'Class;
+   type LevelHudWidget_Access_Array is array (Natural range <>) of LevelHudWidget_Access;
+   type LevelHudWidget_Access_Array_Access is access all LevelHudWidget_Access_Array;
+   type LevelHudWidget_Access_Array_Access_Array is array (Natural range <>) of LevelHudWidget_Access_Array_Access;
+   type LevelHudWidget_Access_Array_Access_Array_Access is access all LevelHudWidget_Access_Array_Access_Array;
+end org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References;
+
+with org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
-with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
+limited with org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
 
 package org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package is
 
@@ -31,13 +43,41 @@ package org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package is
    package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
    package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype PrimitiveLongUtil_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access;
+   use type PrimitiveLongUtil_Access;
+   subtype PrimitiveLongUtil_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array;
+   use type PrimitiveLongUtil_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array;
+   use type PrimitiveLongUtil_Access_Array_Access_Array;
+   subtype PrimitiveLongUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.PrimitiveLongUtil_Package_References.PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   use type PrimitiveLongUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type LevelHudWidget is tagged;
-   type LevelHudWidget_Access is access all LevelHudWidget'Class;
-   type LevelHudWidget_Access_Array is array (Natural range <>) of LevelHudWidget_Access;
-   type LevelHudWidget_Access_Array_Access is access all LevelHudWidget_Access_Array;
-   type LevelHudWidget_Access_Array_Access_Array is array (Natural range <>) of LevelHudWidget_Access_Array_Access;
-   type LevelHudWidget_Access_Array_Access_Array_Access is access all LevelHudWidget_Access_Array_Access_Array;
+
+   subtype LevelHudWidget_Access is org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References.LevelHudWidget_Access;
+   function "=" (Left, Right : LevelHudWidget_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References."=";
+   subtype LevelHudWidget_Access_Array is org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References.LevelHudWidget_Access_Array;
+   function "=" (Left, Right : LevelHudWidget_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References."=";
+   subtype LevelHudWidget_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References.LevelHudWidget_Access_Array_Access;
+   function "=" (Left, Right : LevelHudWidget_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References."=";
+   subtype LevelHudWidget_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References.LevelHudWidget_Access_Array_Access_Array;
+   function "=" (Left, Right : LevelHudWidget_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References."=";
+   subtype LevelHudWidget_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References.LevelHudWidget_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LevelHudWidget_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package_References."=";
 
    type LevelHudWidget is new BasicHud and PaintableInterface with record
       level : Integer;

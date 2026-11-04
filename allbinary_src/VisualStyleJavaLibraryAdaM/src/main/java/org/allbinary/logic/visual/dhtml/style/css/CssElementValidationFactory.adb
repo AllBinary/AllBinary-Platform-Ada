@@ -13,10 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package;
+with org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package;
+with org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package;
 
 package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package is
 
+   subtype ValidationInterface_Access is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access;
+   function "=" (Left, Right : ValidationInterface_Access) return Boolean renames org.allbinary.logic.control.validate.ValidationInterface_Package_References."=";
+   subtype ValidationInterface_Access_Array is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access_Array;
+   function "=" (Left, Right : ValidationInterface_Access_Array) return Boolean renames org.allbinary.logic.control.validate.ValidationInterface_Package_References."=";
+   subtype ValidationInterface_Access_Array_Access is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access_Array_Access;
+   function "=" (Left, Right : ValidationInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.control.validate.ValidationInterface_Package_References."=";
+   subtype ValidationInterface_Access_Array_Access_Array is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ValidationInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.validate.ValidationInterface_Package_References."=";
+   subtype ValidationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.control.validate.ValidationInterface_Package_References.ValidationInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ValidationInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.validate.ValidationInterface_Package_References."=";
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   function "=" (Left, Right : Node_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   function "=" (Left, Right : Node_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   function "=" (Left, Right : Node_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
    procedure Initialize_Fields (This : in out CssElementValidationFactory'Class) is
    begin
       null;

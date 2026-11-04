@@ -13,12 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
+with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
 package body org.allbinary.business.advertisement.area.AdvertisementArea_Package is
 
@@ -26,6 +35,16 @@ package body org.allbinary.business.advertisement.area.AdvertisementArea_Package
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   subtype AdvertisementAreaConstraintsInterface_Access is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access;
+   function "=" (Left, Right : AdvertisementAreaConstraintsInterface_Access) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References."=";
+   subtype AdvertisementAreaConstraintsInterface_Access_Array is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access_Array;
+   function "=" (Left, Right : AdvertisementAreaConstraintsInterface_Access_Array) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References."=";
+   subtype AdvertisementAreaConstraintsInterface_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementAreaConstraintsInterface_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References."=";
+   subtype AdvertisementAreaConstraintsInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementAreaConstraintsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References."=";
+   subtype AdvertisementAreaConstraintsInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References.AdvertisementAreaConstraintsInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementAreaConstraintsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package_References."=";
    procedure Initialize_Fields (This : in out AdvertisementArea'Class) is
    begin
       null;

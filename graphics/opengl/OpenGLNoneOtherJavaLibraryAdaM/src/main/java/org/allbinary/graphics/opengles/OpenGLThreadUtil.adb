@@ -24,7 +24,7 @@ package body org.allbinary.graphics.opengles.OpenGLThreadUtil_Package is
 
    function getInstance return OpenGLThreadUtil_Access is
    begin
-        return OpenGLThreadUtil_Package.instance;
+        return OpenGLThreadUtil_Access (OpenGLThreadUtil_Package.instance);
    end getInstance;
 
    procedure set (This : in out OpenGLThreadUtil; glSurfaceView_Param : access Java_Object'Class) is

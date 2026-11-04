@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package;
+package org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References is
+   type GenericTrackingLayerCircularStaticPool_Access is access all org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package.GenericTrackingLayerCircularStaticPool'Class;
+   type GenericTrackingLayerCircularStaticPool_Access_Array is array (Natural range <>) of GenericTrackingLayerCircularStaticPool_Access;
+   type GenericTrackingLayerCircularStaticPool_Access_Array_Access is access all GenericTrackingLayerCircularStaticPool_Access_Array;
+   type GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of GenericTrackingLayerCircularStaticPool_Access_Array_Access;
+   type GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array_Access is access all GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array;
+end org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References;
+
+with org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.l
 package org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package is
 
    package AllBinaryLayerCircularPool_Package renames Standard.org.allbinary.layer.AllBinaryLayerCircularPool_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GenericTrackingLayerCircularStaticPool is tagged;
-   type GenericTrackingLayerCircularStaticPool_Access is access all GenericTrackingLayerCircularStaticPool'Class;
-   type GenericTrackingLayerCircularStaticPool_Access_Array is array (Natural range <>) of GenericTrackingLayerCircularStaticPool_Access;
-   type GenericTrackingLayerCircularStaticPool_Access_Array_Access is access all GenericTrackingLayerCircularStaticPool_Access_Array;
-   type GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of GenericTrackingLayerCircularStaticPool_Access_Array_Access;
-   type GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array_Access is access all GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array;
+
+   subtype GenericTrackingLayerCircularStaticPool_Access is org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References.GenericTrackingLayerCircularStaticPool_Access;
+   function "=" (Left, Right : GenericTrackingLayerCircularStaticPool_Access) return Boolean renames org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References."=";
+   subtype GenericTrackingLayerCircularStaticPool_Access_Array is org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References.GenericTrackingLayerCircularStaticPool_Access_Array;
+   function "=" (Left, Right : GenericTrackingLayerCircularStaticPool_Access_Array) return Boolean renames org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References."=";
+   subtype GenericTrackingLayerCircularStaticPool_Access_Array_Access is org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References.GenericTrackingLayerCircularStaticPool_Access_Array_Access;
+   function "=" (Left, Right : GenericTrackingLayerCircularStaticPool_Access_Array_Access) return Boolean renames org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References."=";
+   subtype GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array is org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References.GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array;
+   function "=" (Left, Right : GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array) return Boolean renames org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References."=";
+   subtype GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array_Access is org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References.GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package_References."=";
 
    type GenericTrackingLayerCircularStaticPool is new AllBinaryLayerCircularPool with null record;
    SINGLETON : GenericTrackingLayerCircularStaticPool_Access;

@@ -13,10 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLUtil_Package; use org.allbinary.graphics.opengles.OpenGLUtil_Package;
 with org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package; use org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
+with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package; use org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
 with org.microemu.app.ui.swt.SwtDeviceComponent_Package; use org.microemu.app.ui.swt.SwtDeviceComponent_Package;
 with org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package; use org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package;
@@ -36,6 +44,86 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    package PostLoadSwtMutableImageProcessor_Package renames Standard.org.microemu.device.swt.PostLoadSwtMutableImageProcessor_Package;
    package SwtImmutableImage_Package renames Standard.org.microemu.device.swt.SwtImmutableImage_Package;
    package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Features_Access is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access;
+   function "=" (Left, Right : Features_Access) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype Features_Access_Array is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access_Array;
+   function "=" (Left, Right : Features_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype Features_Access_Array_Access is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access_Array_Access;
+   function "=" (Left, Right : Features_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype Features_Access_Array_Access_Array is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access_Array_Access_Array;
+   function "=" (Left, Right : Features_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype Features_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Features_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype GameFeatureFactory_Access is org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References.GameFeatureFactory_Access;
+   function "=" (Left, Right : GameFeatureFactory_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References."=";
+   subtype GameFeatureFactory_Access_Array is org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References.GameFeatureFactory_Access_Array;
+   function "=" (Left, Right : GameFeatureFactory_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References."=";
+   subtype GameFeatureFactory_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References.GameFeatureFactory_Access_Array_Access;
+   function "=" (Left, Right : GameFeatureFactory_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References."=";
+   subtype GameFeatureFactory_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References.GameFeatureFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : GameFeatureFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References."=";
+   subtype GameFeatureFactory_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References.GameFeatureFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameFeatureFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package_References."=";
+   subtype OpenGLFeatureFactory_Access is org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References.OpenGLFeatureFactory_Access;
+   function "=" (Left, Right : OpenGLFeatureFactory_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References."=";
+   subtype OpenGLFeatureFactory_Access_Array is org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References.OpenGLFeatureFactory_Access_Array;
+   function "=" (Left, Right : OpenGLFeatureFactory_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References."=";
+   subtype OpenGLFeatureFactory_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References.OpenGLFeatureFactory_Access_Array_Access;
+   function "=" (Left, Right : OpenGLFeatureFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References."=";
+   subtype OpenGLFeatureFactory_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References.OpenGLFeatureFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLFeatureFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References."=";
+   subtype OpenGLFeatureFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References.OpenGLFeatureFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLFeatureFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package_References."=";
+   subtype OpenGLUtil_Access is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access;
+   function "=" (Left, Right : OpenGLUtil_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype OpenGLUtil_Access_Array is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array;
+   function "=" (Left, Right : OpenGLUtil_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype OpenGLUtil_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array_Access;
+   function "=" (Left, Right : OpenGLUtil_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype OpenGLUtil_Access_Array_Access_Array is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype OpenGLUtil_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLUtil_Package_References.OpenGLUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access_Array is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access is org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References.OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    procedure Initialize_Fields (This : in out ImageCopyUtil'Class) is
    begin
       null;
@@ -55,7 +143,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
 
    function getInstance return ImageCopyUtil_Access is
    begin
-        return ImageCopyUtil_Package.instance;
+        return ImageCopyUtil_Access (ImageCopyUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ImageCopyUtil'Class) is
@@ -197,7 +285,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
             displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
             if (originalImage.getType) >= (OpenGLESImage_Package.TYPE_Id) then
                 openGLESImage := (OpenGLESImage_Access (originalImage));
-                openGLESImageProperties := openGLESImage.openGLESImageProperties;
+                openGLESImageProperties := OpenGLESImageProperties_Access (openGLESImage.openGLESImageProperties);
                 openGLWidth := openGLESImage.openGLBitmap.getWidth;
                 openGLHeight := openGLESImage.openGLBitmap.getHeight;
                 openGLESImageProperties.scaleX2 := (((Float (width))) / (Float (openGLWidth)));
@@ -214,7 +302,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
             else
                 image := originalImage;
                 openGLESImage := OpenGLESImage_Access (This.openGLUtil.addImage (image));
-                openGLESImageProperties := openGLESImage.openGLESImageProperties;
+                openGLESImageProperties := OpenGLESImageProperties_Access (openGLESImage.openGLESImageProperties);
                 openGLESImageProperties.scaleX2 := Float ((((Float (width))) / (openGLESImage.getWidth)));
                 openGLESImageProperties.scaleX := openGLESImageProperties.scaleX2;
                 openGLESImageProperties.scaleY2 := Float ((((Float (height))) / (openGLESImage.getHeight)));

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.emulator.device.TrueTypeFontUtilBase_Package;
+package org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References is
+   type TrueTypeFontUtilBase_Access is access all org.allbinary.emulator.device.TrueTypeFontUtilBase_Package.TrueTypeFontUtilBase'Class;
+   type TrueTypeFontUtilBase_Access_Array is array (Natural range <>) of TrueTypeFontUtilBase_Access;
+   type TrueTypeFontUtilBase_Access_Array_Access is access all TrueTypeFontUtilBase_Access_Array;
+   type TrueTypeFontUtilBase_Access_Array_Access_Array is array (Natural range <>) of TrueTypeFontUtilBase_Access_Array_Access;
+   type TrueTypeFontUtilBase_Access_Array_Access_Array_Access is access all TrueTypeFontUtilBase_Access_Array_Access_Array;
+end org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References;
+
+with org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TrueTypeFontUtilBase is tagged;
-   type TrueTypeFontUtilBase_Access is access all TrueTypeFontUtilBase'Class;
-   type TrueTypeFontUtilBase_Access_Array is array (Natural range <>) of TrueTypeFontUtilBase_Access;
-   type TrueTypeFontUtilBase_Access_Array_Access is access all TrueTypeFontUtilBase_Access_Array;
-   type TrueTypeFontUtilBase_Access_Array_Access_Array is array (Natural range <>) of TrueTypeFontUtilBase_Access_Array_Access;
-   type TrueTypeFontUtilBase_Access_Array_Access_Array_Access is access all TrueTypeFontUtilBase_Access_Array_Access_Array;
+
+   subtype TrueTypeFontUtilBase_Access is org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References.TrueTypeFontUtilBase_Access;
+   function "=" (Left, Right : TrueTypeFontUtilBase_Access) return Boolean renames org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References."=";
+   subtype TrueTypeFontUtilBase_Access_Array is org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References.TrueTypeFontUtilBase_Access_Array;
+   function "=" (Left, Right : TrueTypeFontUtilBase_Access_Array) return Boolean renames org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References."=";
+   subtype TrueTypeFontUtilBase_Access_Array_Access is org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References.TrueTypeFontUtilBase_Access_Array_Access;
+   function "=" (Left, Right : TrueTypeFontUtilBase_Access_Array_Access) return Boolean renames org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References."=";
+   subtype TrueTypeFontUtilBase_Access_Array_Access_Array is org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References.TrueTypeFontUtilBase_Access_Array_Access_Array;
+   function "=" (Left, Right : TrueTypeFontUtilBase_Access_Array_Access_Array) return Boolean renames org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References."=";
+   subtype TrueTypeFontUtilBase_Access_Array_Access_Array_Access is org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References.TrueTypeFontUtilBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TrueTypeFontUtilBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.emulator.device.TrueTypeFontUtilBase_Package_References."=";
 
    type TrueTypeFontUtilBase is new Java_Object with null record;
 

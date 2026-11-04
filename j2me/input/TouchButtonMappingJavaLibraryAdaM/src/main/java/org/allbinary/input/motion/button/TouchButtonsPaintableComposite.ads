@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package;
+package org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References is
+   type TouchButtonsPaintableComposite_Access is access all org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package.TouchButtonsPaintableComposite'Class;
+   type TouchButtonsPaintableComposite_Access_Array is array (Natural range <>) of TouchButtonsPaintableComposite_Access;
+   type TouchButtonsPaintableComposite_Access_Array_Access is access all TouchButtonsPaintableComposite_Access_Array;
+   type TouchButtonsPaintableComposite_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsPaintableComposite_Access_Array_Access;
+   type TouchButtonsPaintableComposite_Access_Array_Access_Array_Access is access all TouchButtonsPaintableComposite_Access_Array_Access_Array;
+end org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References;
+
+with org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,16 +30,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+limited with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package_References;
 with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package; use org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
-with org.allbinary.game.input.mapping.InputMappingInterface_Package; use org.allbinary.game.input.mapping.InputMappingInterface_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+limited with org.allbinary.game.input.mapping.InputMappingInterface_Package;
+with org.allbinary.game.input.mapping.InputMappingInterface_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.graphics.paint.ProcessPaintable_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
-with org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package; use org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeDelayHelper_Package_References;
+limited with org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package;
+with org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References;
 
 package org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package is
 
@@ -42,13 +60,101 @@ package org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package Reference_Types is
+   subtype CompleteMotionGestureInputEvent_Access is org.allbinary.game.input.CompleteMotionGestureInputEvent_Package_References.CompleteMotionGestureInputEvent_Access;
+   use type CompleteMotionGestureInputEvent_Access;
+   subtype CompleteMotionGestureInputEvent_Access_Array is org.allbinary.game.input.CompleteMotionGestureInputEvent_Package_References.CompleteMotionGestureInputEvent_Access_Array;
+   use type CompleteMotionGestureInputEvent_Access_Array;
+   subtype CompleteMotionGestureInputEvent_Access_Array_Access is org.allbinary.game.input.CompleteMotionGestureInputEvent_Package_References.CompleteMotionGestureInputEvent_Access_Array_Access;
+   use type CompleteMotionGestureInputEvent_Access_Array_Access;
+   subtype CompleteMotionGestureInputEvent_Access_Array_Access_Array is org.allbinary.game.input.CompleteMotionGestureInputEvent_Package_References.CompleteMotionGestureInputEvent_Access_Array_Access_Array;
+   use type CompleteMotionGestureInputEvent_Access_Array_Access_Array;
+   subtype CompleteMotionGestureInputEvent_Access_Array_Access_Array_Access is org.allbinary.game.input.CompleteMotionGestureInputEvent_Package_References.CompleteMotionGestureInputEvent_Access_Array_Access_Array_Access;
+   use type CompleteMotionGestureInputEvent_Access_Array_Access_Array_Access;
+   subtype InputMappingInterface_Access is org.allbinary.game.input.mapping.InputMappingInterface_Package_References.InputMappingInterface_Access;
+   use type InputMappingInterface_Access;
+   subtype InputMappingInterface_Access_Array is org.allbinary.game.input.mapping.InputMappingInterface_Package_References.InputMappingInterface_Access_Array;
+   use type InputMappingInterface_Access_Array;
+   subtype InputMappingInterface_Access_Array_Access is org.allbinary.game.input.mapping.InputMappingInterface_Package_References.InputMappingInterface_Access_Array_Access;
+   use type InputMappingInterface_Access_Array_Access;
+   subtype InputMappingInterface_Access_Array_Access_Array is org.allbinary.game.input.mapping.InputMappingInterface_Package_References.InputMappingInterface_Access_Array_Access_Array;
+   use type InputMappingInterface_Access_Array_Access_Array;
+   subtype InputMappingInterface_Access_Array_Access_Array_Access is org.allbinary.game.input.mapping.InputMappingInterface_Package_References.InputMappingInterface_Access_Array_Access_Array_Access;
+   use type InputMappingInterface_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype TimeDelayHelper_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access;
+   use type TimeDelayHelper_Access;
+   subtype TimeDelayHelper_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array;
+   use type TimeDelayHelper_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access;
+   subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
+   use type TimeDelayHelper_Access_Array_Access_Array;
+   subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
+   use type TimeDelayHelper_Access_Array_Access_Array_Access;
+   subtype TouchButtonsMappingPaintable_Access is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access;
+   use type TouchButtonsMappingPaintable_Access;
+   subtype TouchButtonsMappingPaintable_Access_Array is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access_Array;
+   use type TouchButtonsMappingPaintable_Access_Array;
+   subtype TouchButtonsMappingPaintable_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access_Array_Access;
+   use type TouchButtonsMappingPaintable_Access_Array_Access;
+   subtype TouchButtonsMappingPaintable_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access_Array_Access_Array;
+   use type TouchButtonsMappingPaintable_Access_Array_Access_Array;
+   subtype TouchButtonsMappingPaintable_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References.TouchButtonsMappingPaintable_Access_Array_Access_Array_Access;
+   use type TouchButtonsMappingPaintable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TouchButtonsPaintableComposite is tagged;
-   type TouchButtonsPaintableComposite_Access is access all TouchButtonsPaintableComposite'Class;
-   type TouchButtonsPaintableComposite_Access_Array is array (Natural range <>) of TouchButtonsPaintableComposite_Access;
-   type TouchButtonsPaintableComposite_Access_Array_Access is access all TouchButtonsPaintableComposite_Access_Array;
-   type TouchButtonsPaintableComposite_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsPaintableComposite_Access_Array_Access;
-   type TouchButtonsPaintableComposite_Access_Array_Access_Array_Access is access all TouchButtonsPaintableComposite_Access_Array_Access_Array;
+
+   subtype TouchButtonsPaintableComposite_Access is org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References.TouchButtonsPaintableComposite_Access;
+   function "=" (Left, Right : TouchButtonsPaintableComposite_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References."=";
+   subtype TouchButtonsPaintableComposite_Access_Array is org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References.TouchButtonsPaintableComposite_Access_Array;
+   function "=" (Left, Right : TouchButtonsPaintableComposite_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References."=";
+   subtype TouchButtonsPaintableComposite_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References.TouchButtonsPaintableComposite_Access_Array_Access;
+   function "=" (Left, Right : TouchButtonsPaintableComposite_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References."=";
+   subtype TouchButtonsPaintableComposite_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References.TouchButtonsPaintableComposite_Access_Array_Access_Array;
+   function "=" (Left, Right : TouchButtonsPaintableComposite_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References."=";
+   subtype TouchButtonsPaintableComposite_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References.TouchButtonsPaintableComposite_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TouchButtonsPaintableComposite_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package_References."=";
 
    type TouchButtonsPaintableComposite is new ProcessPaintable and CompleteMotionGestureInputEventListenerInterface with record
       logUtil : LogUtil_Access;

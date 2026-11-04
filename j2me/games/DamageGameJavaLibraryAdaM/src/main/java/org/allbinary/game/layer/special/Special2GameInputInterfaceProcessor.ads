@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package;
+package org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References is
+   type Special2GameInputInterfaceProcessor_Access is access all org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package.Special2GameInputInterfaceProcessor'Class;
+   type Special2GameInputInterfaceProcessor_Access_Array is array (Natural range <>) of Special2GameInputInterfaceProcessor_Access;
+   type Special2GameInputInterfaceProcessor_Access_Array_Access is access all Special2GameInputInterfaceProcessor_Access_Array;
+   type Special2GameInputInterfaceProcessor_Access_Array_Access_Array is array (Natural range <>) of Special2GameInputInterfaceProcessor_Access_Array_Access;
+   type Special2GameInputInterfaceProcessor_Access_Array_Access_Array_Access is access all Special2GameInputInterfaceProcessor_Access_Array_Access_Array;
+end org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References;
+
+with org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+limited with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.layer.special.SpecialGameInputInterfaceProcessor_Package; use org.allbinary.game.layer.special.SpecialGameInputInterfaceProcessor_Package;
-with org.allbinary.game.layer.special.SpecialGameInputInterface_Package; use org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
+limited with org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
+with org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References;
 
 package org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package is
 
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package Reference_Types is
+   subtype GameKeyEvent_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access;
+   use type GameKeyEvent_Access;
+   subtype GameKeyEvent_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array;
+   use type GameKeyEvent_Access_Array;
+   subtype GameKeyEvent_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access;
+   use type GameKeyEvent_Access_Array_Access;
+   subtype GameKeyEvent_Access_Array_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array;
+   use type GameKeyEvent_Access_Array_Access_Array;
+   subtype GameKeyEvent_Access_Array_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array_Access;
+   use type GameKeyEvent_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   subtype SpecialGameInputInterface_Access is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access;
+   use type SpecialGameInputInterface_Access;
+   subtype SpecialGameInputInterface_Access_Array is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access_Array;
+   use type SpecialGameInputInterface_Access_Array;
+   subtype SpecialGameInputInterface_Access_Array_Access is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access_Array_Access;
+   use type SpecialGameInputInterface_Access_Array_Access;
+   subtype SpecialGameInputInterface_Access_Array_Access_Array is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access_Array_Access_Array;
+   use type SpecialGameInputInterface_Access_Array_Access_Array;
+   subtype SpecialGameInputInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access_Array_Access_Array_Access;
+   use type SpecialGameInputInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type Special2GameInputInterfaceProcessor is tagged;
-   type Special2GameInputInterfaceProcessor_Access is access all Special2GameInputInterfaceProcessor'Class;
-   type Special2GameInputInterfaceProcessor_Access_Array is array (Natural range <>) of Special2GameInputInterfaceProcessor_Access;
-   type Special2GameInputInterfaceProcessor_Access_Array_Access is access all Special2GameInputInterfaceProcessor_Access_Array;
-   type Special2GameInputInterfaceProcessor_Access_Array_Access_Array is array (Natural range <>) of Special2GameInputInterfaceProcessor_Access_Array_Access;
-   type Special2GameInputInterfaceProcessor_Access_Array_Access_Array_Access is access all Special2GameInputInterfaceProcessor_Access_Array_Access_Array;
+
+   subtype Special2GameInputInterfaceProcessor_Access is org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References.Special2GameInputInterfaceProcessor_Access;
+   function "=" (Left, Right : Special2GameInputInterfaceProcessor_Access) return Boolean renames org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References."=";
+   subtype Special2GameInputInterfaceProcessor_Access_Array is org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References.Special2GameInputInterfaceProcessor_Access_Array;
+   function "=" (Left, Right : Special2GameInputInterfaceProcessor_Access_Array) return Boolean renames org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References."=";
+   subtype Special2GameInputInterfaceProcessor_Access_Array_Access is org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References.Special2GameInputInterfaceProcessor_Access_Array_Access;
+   function "=" (Left, Right : Special2GameInputInterfaceProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References."=";
+   subtype Special2GameInputInterfaceProcessor_Access_Array_Access_Array is org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References.Special2GameInputInterfaceProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : Special2GameInputInterfaceProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References."=";
+   subtype Special2GameInputInterfaceProcessor_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References.Special2GameInputInterfaceProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Special2GameInputInterfaceProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package_References."=";
 
    type Special2GameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 

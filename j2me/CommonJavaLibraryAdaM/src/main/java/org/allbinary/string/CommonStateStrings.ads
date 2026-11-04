@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.string_Id.CommonStateStrings_Package;
+package org.allbinary.string_Id.CommonStateStrings_Package_References is
+   type CommonStateStrings_Access is access all org.allbinary.string_Id.CommonStateStrings_Package.CommonStateStrings'Class;
+   type CommonStateStrings_Access_Array is array (Natural range <>) of CommonStateStrings_Access;
+   type CommonStateStrings_Access_Array_Access is access all CommonStateStrings_Access_Array;
+   type CommonStateStrings_Access_Array_Access_Array is array (Natural range <>) of CommonStateStrings_Access_Array_Access;
+   type CommonStateStrings_Access_Array_Access_Array_Access is access all CommonStateStrings_Access_Array_Access_Array;
+end org.allbinary.string_Id.CommonStateStrings_Package_References;
+
+with org.allbinary.string_Id.CommonStateStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.string_Id.CommonStateStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CommonStateStrings is tagged;
-   type CommonStateStrings_Access is access all CommonStateStrings'Class;
-   type CommonStateStrings_Access_Array is array (Natural range <>) of CommonStateStrings_Access;
-   type CommonStateStrings_Access_Array_Access is access all CommonStateStrings_Access_Array;
-   type CommonStateStrings_Access_Array_Access_Array is array (Natural range <>) of CommonStateStrings_Access_Array_Access;
-   type CommonStateStrings_Access_Array_Access_Array_Access is access all CommonStateStrings_Access_Array_Access_Array;
+
+   subtype CommonStateStrings_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access;
+   function "=" (Left, Right : CommonStateStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   subtype CommonStateStrings_Access_Array is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array;
+   function "=" (Left, Right : CommonStateStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   subtype CommonStateStrings_Access_Array_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStateStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   subtype CommonStateStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStateStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   subtype CommonStateStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStateStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
 
    type CommonStateStrings is new Java_Object with record
       CONTEXT : Unbounded_String;

@@ -28,7 +28,7 @@ package body org.allbinary.time.TimeStampUtil_Package is
 
    function getInstance return TimeStampUtil_Access is
    begin
-        return TimeStampUtil_Package.instance;
+        return TimeStampUtil_Access (TimeStampUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out TimeStampUtil'Class) is

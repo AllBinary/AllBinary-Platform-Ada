@@ -13,14 +13,49 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
+with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package; use org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
+with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
+with org.allbinary.game.ai.BasicAI_Package;
 
 package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   function "=" (Left, Right : ABHashtable_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABHashtable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype ArtificialIntelligenceInterfaceFactoryInterface_Access is org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References.ArtificialIntelligenceInterfaceFactoryInterface_Access;
+   function "=" (Left, Right : ArtificialIntelligenceInterfaceFactoryInterface_Access) return Boolean renames org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References."=";
+   subtype ArtificialIntelligenceInterfaceFactoryInterface_Access_Array is org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References.ArtificialIntelligenceInterfaceFactoryInterface_Access_Array;
+   function "=" (Left, Right : ArtificialIntelligenceInterfaceFactoryInterface_Access_Array) return Boolean renames org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References."=";
+   subtype ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access is org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References.ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References."=";
+   subtype ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References.ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References."=";
+   subtype ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References.ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References."=";
    procedure Initialize_Fields (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory'Class) is
    begin
       null;
@@ -47,7 +82,7 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
 
    function getInstance return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access is
    begin
-        return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package.SINGLETON;
+        return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access (ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package.SINGLETON);
    end getInstance;
 
    function getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) return ArtificialIntelligenceInterfaceFactoryInterface_Access is
@@ -65,7 +100,7 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
    procedure add (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; artificialIntelligenceInterfaceFactoryInterface_Param : access ArtificialIntelligenceInterfaceFactoryInterface_Package.ArtificialIntelligenceInterfaceFactoryInterface'Class) is
       artificialIntelligenceInterfaceFactoryInterface : constant ArtificialIntelligenceInterfaceFactoryInterface_Access := ArtificialIntelligenceInterfaceFactoryInterface_Access (artificialIntelligenceInterfaceFactoryInterface_Param);
    begin
-        This.list.add (Java_Object_Access (artificialIntelligenceInterfaceFactoryInterface));
+        This.list.add (ArtificialIntelligenceInterfaceFactoryInterface_Package.Java_Object_Access_From_ArtificialIntelligenceInterfaceFactoryInterface (artificialIntelligenceInterfaceFactoryInterface));
    end add;
 
    procedure getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is

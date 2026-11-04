@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
+package org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References is
+   type PickedUpLayerType_Access is access all org.allbinary.game.layer.pickup.PickedUpLayerType_Package.PickedUpLayerType'Class;
+   type PickedUpLayerType_Access_Array is array (Natural range <>) of PickedUpLayerType_Access;
+   type PickedUpLayerType_Access_Array_Access is access all PickedUpLayerType_Access_Array;
+   type PickedUpLayerType_Access_Array_Access_Array is array (Natural range <>) of PickedUpLayerType_Access_Array_Access;
+   type PickedUpLayerType_Access_Array_Access_Array_Access is access all PickedUpLayerType_Access_Array_Access_Array;
+end org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References;
+
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.layer.pickup.PickedUpLayerType_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PickedUpLayerType is tagged;
-   type PickedUpLayerType_Access is access all PickedUpLayerType'Class;
-   type PickedUpLayerType_Access_Array is array (Natural range <>) of PickedUpLayerType_Access;
-   type PickedUpLayerType_Access_Array_Access is access all PickedUpLayerType_Access_Array;
-   type PickedUpLayerType_Access_Array_Access_Array is array (Natural range <>) of PickedUpLayerType_Access_Array_Access;
-   type PickedUpLayerType_Access_Array_Access_Array_Access is access all PickedUpLayerType_Access_Array_Access_Array;
+
+   subtype PickedUpLayerType_Access is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access;
+   function "=" (Left, Right : PickedUpLayerType_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
+   subtype PickedUpLayerType_Access_Array is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access_Array;
+   function "=" (Left, Right : PickedUpLayerType_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
+   subtype PickedUpLayerType_Access_Array_Access is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access_Array_Access;
+   function "=" (Left, Right : PickedUpLayerType_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
+   subtype PickedUpLayerType_Access_Array_Access_Array is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access_Array_Access_Array;
+   function "=" (Left, Right : PickedUpLayerType_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
+   subtype PickedUpLayerType_Access_Array_Access_Array_Access is org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References.PickedUpLayerType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PickedUpLayerType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References."=";
 
    type PickedUpLayerType is new Java_Object with record
       name : Unbounded_String;

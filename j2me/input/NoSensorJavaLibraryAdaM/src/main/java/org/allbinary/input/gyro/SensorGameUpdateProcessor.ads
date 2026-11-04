@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;
+package org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References is
+   type SensorGameUpdateProcessor_Access is access all org.allbinary.input.gyro.SensorGameUpdateProcessor_Package.SensorGameUpdateProcessor'Class;
+   type SensorGameUpdateProcessor_Access_Array is array (Natural range <>) of SensorGameUpdateProcessor_Access;
+   type SensorGameUpdateProcessor_Access_Array_Access is access all SensorGameUpdateProcessor_Access_Array;
+   type SensorGameUpdateProcessor_Access_Array_Access_Array is array (Natural range <>) of SensorGameUpdateProcessor_Access_Array_Access;
+   type SensorGameUpdateProcessor_Access_Array_Access_Array_Access is access all SensorGameUpdateProcessor_Access_Array_Access_Array;
+end org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References;
+
+with org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.AllBinarySensor_Package; use org.allbinary.input.AllBinarySensor_Package;
+limited with org.allbinary.input.AllBinarySensor_Package;
+with org.allbinary.input.AllBinarySensor_Package_References;
 
 package org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
    package AllBinarySensor_Package renames Standard.org.allbinary.input.AllBinarySensor_Package;
+   package Reference_Types is
+   subtype AllBinarySensor_Access is org.allbinary.input.AllBinarySensor_Package_References.AllBinarySensor_Access;
+   use type AllBinarySensor_Access;
+   subtype AllBinarySensor_Access_Array is org.allbinary.input.AllBinarySensor_Package_References.AllBinarySensor_Access_Array;
+   use type AllBinarySensor_Access_Array;
+   subtype AllBinarySensor_Access_Array_Access is org.allbinary.input.AllBinarySensor_Package_References.AllBinarySensor_Access_Array_Access;
+   use type AllBinarySensor_Access_Array_Access;
+   subtype AllBinarySensor_Access_Array_Access_Array is org.allbinary.input.AllBinarySensor_Package_References.AllBinarySensor_Access_Array_Access_Array;
+   use type AllBinarySensor_Access_Array_Access_Array;
+   subtype AllBinarySensor_Access_Array_Access_Array_Access is org.allbinary.input.AllBinarySensor_Package_References.AllBinarySensor_Access_Array_Access_Array_Access;
+   use type AllBinarySensor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SensorGameUpdateProcessor is tagged;
-   type SensorGameUpdateProcessor_Access is access all SensorGameUpdateProcessor'Class;
-   type SensorGameUpdateProcessor_Access_Array is array (Natural range <>) of SensorGameUpdateProcessor_Access;
-   type SensorGameUpdateProcessor_Access_Array_Access is access all SensorGameUpdateProcessor_Access_Array;
-   type SensorGameUpdateProcessor_Access_Array_Access_Array is array (Natural range <>) of SensorGameUpdateProcessor_Access_Array_Access;
-   type SensorGameUpdateProcessor_Access_Array_Access_Array_Access is access all SensorGameUpdateProcessor_Access_Array_Access_Array;
+
+   subtype SensorGameUpdateProcessor_Access is org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References.SensorGameUpdateProcessor_Access;
+   function "=" (Left, Right : SensorGameUpdateProcessor_Access) return Boolean renames org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References."=";
+   subtype SensorGameUpdateProcessor_Access_Array is org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References.SensorGameUpdateProcessor_Access_Array;
+   function "=" (Left, Right : SensorGameUpdateProcessor_Access_Array) return Boolean renames org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References."=";
+   subtype SensorGameUpdateProcessor_Access_Array_Access is org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References.SensorGameUpdateProcessor_Access_Array_Access;
+   function "=" (Left, Right : SensorGameUpdateProcessor_Access_Array_Access) return Boolean renames org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References."=";
+   subtype SensorGameUpdateProcessor_Access_Array_Access_Array is org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References.SensorGameUpdateProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : SensorGameUpdateProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References."=";
+   subtype SensorGameUpdateProcessor_Access_Array_Access_Array_Access is org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References.SensorGameUpdateProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SensorGameUpdateProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.gyro.SensorGameUpdateProcessor_Package_References."=";
 
    type SensorGameUpdateProcessor is new Java_Object with record
       inputSensor : AllBinarySensor_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package;
+package org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References is
+   type CreditCardTypeFactory_Access is access all org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package.CreditCardTypeFactory'Class;
+   type CreditCardTypeFactory_Access_Array is array (Natural range <>) of CreditCardTypeFactory_Access;
+   type CreditCardTypeFactory_Access_Array_Access is access all CreditCardTypeFactory_Access_Array;
+   type CreditCardTypeFactory_Access_Array_Access_Array is array (Natural range <>) of CreditCardTypeFactory_Access_Array_Access;
+   type CreditCardTypeFactory_Access_Array_Access_Array_Access is access all CreditCardTypeFactory_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package; use org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
+limited with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References;
 
 package org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package is
 
+   package Reference_Types is
+   subtype CreditCardType_Access is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access;
+   use type CreditCardType_Access;
+   subtype CreditCardType_Access_Array is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access_Array;
+   use type CreditCardType_Access_Array;
+   subtype CreditCardType_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access_Array_Access;
+   use type CreditCardType_Access_Array_Access;
+   subtype CreditCardType_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access_Array_Access_Array;
+   use type CreditCardType_Access_Array_Access_Array;
+   subtype CreditCardType_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package_References.CreditCardType_Access_Array_Access_Array_Access;
+   use type CreditCardType_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CreditCardTypeFactory is tagged;
-   type CreditCardTypeFactory_Access is access all CreditCardTypeFactory'Class;
-   type CreditCardTypeFactory_Access_Array is array (Natural range <>) of CreditCardTypeFactory_Access;
-   type CreditCardTypeFactory_Access_Array_Access is access all CreditCardTypeFactory_Access_Array;
-   type CreditCardTypeFactory_Access_Array_Access_Array is array (Natural range <>) of CreditCardTypeFactory_Access_Array_Access;
-   type CreditCardTypeFactory_Access_Array_Access_Array_Access is access all CreditCardTypeFactory_Access_Array_Access_Array;
+
+   subtype CreditCardTypeFactory_Access is org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References.CreditCardTypeFactory_Access;
+   function "=" (Left, Right : CreditCardTypeFactory_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References."=";
+   subtype CreditCardTypeFactory_Access_Array is org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References.CreditCardTypeFactory_Access_Array;
+   function "=" (Left, Right : CreditCardTypeFactory_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References."=";
+   subtype CreditCardTypeFactory_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References.CreditCardTypeFactory_Access_Array_Access;
+   function "=" (Left, Right : CreditCardTypeFactory_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References."=";
+   subtype CreditCardTypeFactory_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References.CreditCardTypeFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : CreditCardTypeFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References."=";
+   subtype CreditCardTypeFactory_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References.CreditCardTypeFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CreditCardTypeFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeFactory_Package_References."=";
 
    type CreditCardTypeFactory is new Java_Object with record
       VISA : CreditCardType_Access;

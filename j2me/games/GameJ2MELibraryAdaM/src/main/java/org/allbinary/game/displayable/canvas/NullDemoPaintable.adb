@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;
 
 package body org.allbinary.game.displayable.canvas.NullDemoPaintable_Package is
 

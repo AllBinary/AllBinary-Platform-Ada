@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.opengles.JOGL11_Package;
+package org.allbinary.opengles.JOGL11_Package_References is
+   type JOGL11_Access is access all org.allbinary.opengles.JOGL11_Package.JOGL11'Class;
+   type JOGL11_Access_Array is array (Natural range <>) of JOGL11_Access;
+   type JOGL11_Access_Array_Access is access all JOGL11_Access_Array;
+   type JOGL11_Access_Array_Access_Array is array (Natural range <>) of JOGL11_Access_Array_Access;
+   type JOGL11_Access_Array_Access_Array_Access is access all JOGL11_Access_Array_Access_Array;
+end org.allbinary.opengles.JOGL11_Package_References;
+
+with org.allbinary.opengles.JOGL11_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,8 +30,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with com.jogamp.opengl.GL_Package; use com.jogamp.opengl.GL_Package;
-with com.jogamp.opengl.GL2_Package; use com.jogamp.opengl.GL2_Package;
+limited with com.jogamp.opengl.GL_Package;
+with com.jogamp.opengl.GL_Package_References;
+limited with com.jogamp.opengl.GL2_Package;
+with com.jogamp.opengl.GL2_Package_References;
 with org.allbinary.opengles.JOGL10_Package; use org.allbinary.opengles.JOGL10_Package;
 with org.allbinary.opengles.GL11_Package; use org.allbinary.opengles.GL11_Package;
 
@@ -29,13 +41,41 @@ package org.allbinary.opengles.JOGL11_Package is
 
    package GL_Package renames Standard.com.jogamp.opengl.GL_Package;
    package GL2_Package renames Standard.com.jogamp.opengl.GL2_Package;
+   package Reference_Types is
+   subtype GL_Access is com.jogamp.opengl.GL_Package_References.GL_Access;
+   use type GL_Access;
+   subtype GL_Access_Array is com.jogamp.opengl.GL_Package_References.GL_Access_Array;
+   use type GL_Access_Array;
+   subtype GL_Access_Array_Access is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access;
+   use type GL_Access_Array_Access;
+   subtype GL_Access_Array_Access_Array is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access_Array;
+   use type GL_Access_Array_Access_Array;
+   subtype GL_Access_Array_Access_Array_Access is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access_Array_Access;
+   use type GL_Access_Array_Access_Array_Access;
+   subtype GL2_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access;
+   use type GL2_Access;
+   subtype GL2_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array;
+   use type GL2_Access_Array;
+   subtype GL2_Access_Array_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access;
+   use type GL2_Access_Array_Access;
+   subtype GL2_Access_Array_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access_Array;
+   use type GL2_Access_Array_Access_Array;
+   subtype GL2_Access_Array_Access_Array_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access_Array_Access;
+   use type GL2_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type JOGL11 is tagged;
-   type JOGL11_Access is access all JOGL11'Class;
-   type JOGL11_Access_Array is array (Natural range <>) of JOGL11_Access;
-   type JOGL11_Access_Array_Access is access all JOGL11_Access_Array;
-   type JOGL11_Access_Array_Access_Array is array (Natural range <>) of JOGL11_Access_Array_Access;
-   type JOGL11_Access_Array_Access_Array_Access is access all JOGL11_Access_Array_Access_Array;
+
+   subtype JOGL11_Access is org.allbinary.opengles.JOGL11_Package_References.JOGL11_Access;
+   function "=" (Left, Right : JOGL11_Access) return Boolean renames org.allbinary.opengles.JOGL11_Package_References."=";
+   subtype JOGL11_Access_Array is org.allbinary.opengles.JOGL11_Package_References.JOGL11_Access_Array;
+   function "=" (Left, Right : JOGL11_Access_Array) return Boolean renames org.allbinary.opengles.JOGL11_Package_References."=";
+   subtype JOGL11_Access_Array_Access is org.allbinary.opengles.JOGL11_Package_References.JOGL11_Access_Array_Access;
+   function "=" (Left, Right : JOGL11_Access_Array_Access) return Boolean renames org.allbinary.opengles.JOGL11_Package_References."=";
+   subtype JOGL11_Access_Array_Access_Array is org.allbinary.opengles.JOGL11_Package_References.JOGL11_Access_Array_Access_Array;
+   function "=" (Left, Right : JOGL11_Access_Array_Access_Array) return Boolean renames org.allbinary.opengles.JOGL11_Package_References."=";
+   subtype JOGL11_Access_Array_Access_Array_Access is org.allbinary.opengles.JOGL11_Package_References.JOGL11_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JOGL11_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.opengles.JOGL11_Package_References."=";
 
    type JOGL11 is new JOGL10 and GL11 with record
       gl11 : GL2_Access;

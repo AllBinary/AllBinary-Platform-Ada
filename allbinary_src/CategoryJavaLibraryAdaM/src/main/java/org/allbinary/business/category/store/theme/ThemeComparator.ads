@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.category.store.theme.ThemeComparator_Package;
+package org.allbinary.business.category.store.theme.ThemeComparator_Package_References is
+   type ThemeComparator_Access is access all org.allbinary.business.category.store.theme.ThemeComparator_Package.ThemeComparator'Class;
+   type ThemeComparator_Access_Array is array (Natural range <>) of ThemeComparator_Access;
+   type ThemeComparator_Access_Array_Access is access all ThemeComparator_Access_Array;
+   type ThemeComparator_Access_Array_Access_Array is array (Natural range <>) of ThemeComparator_Access_Array_Access;
+   type ThemeComparator_Access_Array_Access_Array_Access is access all ThemeComparator_Access_Array_Access_Array;
+end org.allbinary.business.category.store.theme.ThemeComparator_Package_References;
+
+with org.allbinary.business.category.store.theme.ThemeComparator_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.category.store.theme.ThemeComparator_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ThemeComparator is tagged;
-   type ThemeComparator_Access is access all ThemeComparator'Class;
-   type ThemeComparator_Access_Array is array (Natural range <>) of ThemeComparator_Access;
-   type ThemeComparator_Access_Array_Access is access all ThemeComparator_Access_Array;
-   type ThemeComparator_Access_Array_Access_Array is array (Natural range <>) of ThemeComparator_Access_Array_Access;
-   type ThemeComparator_Access_Array_Access_Array_Access is access all ThemeComparator_Access_Array_Access_Array;
+
+   subtype ThemeComparator_Access is org.allbinary.business.category.store.theme.ThemeComparator_Package_References.ThemeComparator_Access;
+   function "=" (Left, Right : ThemeComparator_Access) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
+   subtype ThemeComparator_Access_Array is org.allbinary.business.category.store.theme.ThemeComparator_Package_References.ThemeComparator_Access_Array;
+   function "=" (Left, Right : ThemeComparator_Access_Array) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
+   subtype ThemeComparator_Access_Array_Access is org.allbinary.business.category.store.theme.ThemeComparator_Package_References.ThemeComparator_Access_Array_Access;
+   function "=" (Left, Right : ThemeComparator_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
+   subtype ThemeComparator_Access_Array_Access_Array is org.allbinary.business.category.store.theme.ThemeComparator_Package_References.ThemeComparator_Access_Array_Access_Array;
+   function "=" (Left, Right : ThemeComparator_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
+   subtype ThemeComparator_Access_Array_Access_Array_Access is org.allbinary.business.category.store.theme.ThemeComparator_Package_References.ThemeComparator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ThemeComparator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
 
    type ThemeComparator is new Java_Object with null record;
 

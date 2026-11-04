@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.physics.velocity.VelocityProperties_Package;
+package org.allbinary.game.physics.velocity.VelocityProperties_Package_References is
+   type VelocityProperties_Access is access all org.allbinary.game.physics.velocity.VelocityProperties_Package.VelocityProperties'Class;
+   type VelocityProperties_Access_Array is array (Natural range <>) of VelocityProperties_Access;
+   type VelocityProperties_Access_Array_Access is access all VelocityProperties_Access_Array;
+   type VelocityProperties_Access_Array_Access_Array is array (Natural range <>) of VelocityProperties_Access_Array_Access;
+   type VelocityProperties_Access_Array_Access_Array_Access is access all VelocityProperties_Access_Array_Access_Array;
+end org.allbinary.game.physics.velocity.VelocityProperties_Package_References;
+
+with org.allbinary.game.physics.velocity.VelocityProperties_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.physics.velocity.VelocityInterface_Package; use org.allb
 
 package org.allbinary.game.physics.velocity.VelocityProperties_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type VelocityProperties is tagged;
-   type VelocityProperties_Access is access all VelocityProperties'Class;
-   type VelocityProperties_Access_Array is array (Natural range <>) of VelocityProperties_Access;
-   type VelocityProperties_Access_Array_Access is access all VelocityProperties_Access_Array;
-   type VelocityProperties_Access_Array_Access_Array is array (Natural range <>) of VelocityProperties_Access_Array_Access;
-   type VelocityProperties_Access_Array_Access_Array_Access is access all VelocityProperties_Access_Array_Access_Array;
+
+   subtype VelocityProperties_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access;
+   function "=" (Left, Right : VelocityProperties_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array;
+   function "=" (Left, Right : VelocityProperties_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access;
+   function "=" (Left, Right : VelocityProperties_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array_Access_Array is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : VelocityProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
+   subtype VelocityProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityProperties_Package_References.VelocityProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VelocityProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityProperties_Package_References."=";
 
    type VelocityProperties is new BasicVelocityProperties and VelocityInterface with record
       maxForwardVelocity : Integer;

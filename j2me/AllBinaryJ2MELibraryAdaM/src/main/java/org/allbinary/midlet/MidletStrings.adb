@@ -37,7 +37,7 @@ package body org.allbinary.midlet.MidletStrings_Package is
 
    function getInstance return MidletStrings_Access is
    begin
-        return MidletStrings_Package.instance;
+        return MidletStrings_Access (MidletStrings_Package.instance);
    end getInstance;
 
 begin

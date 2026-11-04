@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.emulator.swt.SWTRunnableProcessor_Package;
+package org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References is
+   type SWTRunnableProcessor_Access is access all org.allbinary.emulator.swt.SWTRunnableProcessor_Package.SWTRunnableProcessor'Class;
+   type SWTRunnableProcessor_Access_Array is array (Natural range <>) of SWTRunnableProcessor_Access;
+   type SWTRunnableProcessor_Access_Array_Access is access all SWTRunnableProcessor_Access_Array;
+   type SWTRunnableProcessor_Access_Array_Access_Array is array (Natural range <>) of SWTRunnableProcessor_Access_Array_Access;
+   type SWTRunnableProcessor_Access_Array_Access_Array_Access is access all SWTRunnableProcessor_Access_Array_Access_Array;
+end org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References;
+
+with org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;
+limited with org.eclipse.swt.widgets.Display_Package;
+with org.eclipse.swt.widgets.Display_Package_References;
 with org.allbinary.emulator.swt.SWTProcessor_Package; use org.allbinary.emulator.swt.SWTProcessor_Package;
 
 package org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
 
    package Display_Package renames Standard.org.eclipse.swt.widgets.Display_Package;
+   package Reference_Types is
+   subtype Display_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access;
+   use type Display_Access;
+   subtype Display_Access_Array is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array;
+   use type Display_Access_Array;
+   subtype Display_Access_Array_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access;
+   use type Display_Access_Array_Access;
+   subtype Display_Access_Array_Access_Array is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access_Array;
+   use type Display_Access_Array_Access_Array;
+   subtype Display_Access_Array_Access_Array_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access_Array_Access;
+   use type Display_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SWTRunnableProcessor is tagged;
-   type SWTRunnableProcessor_Access is access all SWTRunnableProcessor'Class;
-   type SWTRunnableProcessor_Access_Array is array (Natural range <>) of SWTRunnableProcessor_Access;
-   type SWTRunnableProcessor_Access_Array_Access is access all SWTRunnableProcessor_Access_Array;
-   type SWTRunnableProcessor_Access_Array_Access_Array is array (Natural range <>) of SWTRunnableProcessor_Access_Array_Access;
-   type SWTRunnableProcessor_Access_Array_Access_Array_Access is access all SWTRunnableProcessor_Access_Array_Access_Array;
+
+   subtype SWTRunnableProcessor_Access is org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References.SWTRunnableProcessor_Access;
+   function "=" (Left, Right : SWTRunnableProcessor_Access) return Boolean renames org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References."=";
+   subtype SWTRunnableProcessor_Access_Array is org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References.SWTRunnableProcessor_Access_Array;
+   function "=" (Left, Right : SWTRunnableProcessor_Access_Array) return Boolean renames org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References."=";
+   subtype SWTRunnableProcessor_Access_Array_Access is org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References.SWTRunnableProcessor_Access_Array_Access;
+   function "=" (Left, Right : SWTRunnableProcessor_Access_Array_Access) return Boolean renames org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References."=";
+   subtype SWTRunnableProcessor_Access_Array_Access_Array is org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References.SWTRunnableProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : SWTRunnableProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References."=";
+   subtype SWTRunnableProcessor_Access_Array_Access_Array_Access is org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References.SWTRunnableProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SWTRunnableProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.emulator.swt.SWTRunnableProcessor_Package_References."=";
 
    type SWTRunnableProcessor is new SWTProcessor with null record;
    instanceR : SWTRunnableProcessor_Access;

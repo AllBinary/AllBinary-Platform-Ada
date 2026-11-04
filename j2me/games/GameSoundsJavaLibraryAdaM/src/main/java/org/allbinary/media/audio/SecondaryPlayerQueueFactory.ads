@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+package org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References is
+   type SecondaryPlayerQueueFactory_Access is access all org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package.SecondaryPlayerQueueFactory'Class;
+   type SecondaryPlayerQueueFactory_Access_Array is array (Natural range <>) of SecondaryPlayerQueueFactory_Access;
+   type SecondaryPlayerQueueFactory_Access_Array_Access is access all SecondaryPlayerQueueFactory_Access_Array;
+   type SecondaryPlayerQueueFactory_Access_Array_Access_Array is array (Natural range <>) of SecondaryPlayerQueueFactory_Access_Array_Access;
+   type SecondaryPlayerQueueFactory_Access_Array_Access_Array_Access is access all SecondaryPlayerQueueFactory_Access_Array_Access_Array;
+end org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References;
+
+with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.audio.PlayerQueue_Package; use org.allbinary.media.audio.PlayerQueue_Package;
+limited with org.allbinary.media.audio.PlayerQueue_Package;
+with org.allbinary.media.audio.PlayerQueue_Package_References;
 
 package org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package is
 
+   package Reference_Types is
+   subtype PlayerQueue_Access is org.allbinary.media.audio.PlayerQueue_Package_References.PlayerQueue_Access;
+   use type PlayerQueue_Access;
+   subtype PlayerQueue_Access_Array is org.allbinary.media.audio.PlayerQueue_Package_References.PlayerQueue_Access_Array;
+   use type PlayerQueue_Access_Array;
+   subtype PlayerQueue_Access_Array_Access is org.allbinary.media.audio.PlayerQueue_Package_References.PlayerQueue_Access_Array_Access;
+   use type PlayerQueue_Access_Array_Access;
+   subtype PlayerQueue_Access_Array_Access_Array is org.allbinary.media.audio.PlayerQueue_Package_References.PlayerQueue_Access_Array_Access_Array;
+   use type PlayerQueue_Access_Array_Access_Array;
+   subtype PlayerQueue_Access_Array_Access_Array_Access is org.allbinary.media.audio.PlayerQueue_Package_References.PlayerQueue_Access_Array_Access_Array_Access;
+   use type PlayerQueue_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SecondaryPlayerQueueFactory is tagged;
-   type SecondaryPlayerQueueFactory_Access is access all SecondaryPlayerQueueFactory'Class;
-   type SecondaryPlayerQueueFactory_Access_Array is array (Natural range <>) of SecondaryPlayerQueueFactory_Access;
-   type SecondaryPlayerQueueFactory_Access_Array_Access is access all SecondaryPlayerQueueFactory_Access_Array;
-   type SecondaryPlayerQueueFactory_Access_Array_Access_Array is array (Natural range <>) of SecondaryPlayerQueueFactory_Access_Array_Access;
-   type SecondaryPlayerQueueFactory_Access_Array_Access_Array_Access is access all SecondaryPlayerQueueFactory_Access_Array_Access_Array;
+
+   subtype SecondaryPlayerQueueFactory_Access is org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References.SecondaryPlayerQueueFactory_Access;
+   function "=" (Left, Right : SecondaryPlayerQueueFactory_Access) return Boolean renames org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References."=";
+   subtype SecondaryPlayerQueueFactory_Access_Array is org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References.SecondaryPlayerQueueFactory_Access_Array;
+   function "=" (Left, Right : SecondaryPlayerQueueFactory_Access_Array) return Boolean renames org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References."=";
+   subtype SecondaryPlayerQueueFactory_Access_Array_Access is org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References.SecondaryPlayerQueueFactory_Access_Array_Access;
+   function "=" (Left, Right : SecondaryPlayerQueueFactory_Access_Array_Access) return Boolean renames org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References."=";
+   subtype SecondaryPlayerQueueFactory_Access_Array_Access_Array is org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References.SecondaryPlayerQueueFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : SecondaryPlayerQueueFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References."=";
+   subtype SecondaryPlayerQueueFactory_Access_Array_Access_Array_Access is org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References.SecondaryPlayerQueueFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SecondaryPlayerQueueFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package_References."=";
 
    type SecondaryPlayerQueueFactory is new Java_Object with null record;
    SINGLETON : PlayerQueue_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with views.compound.CompoundTransform_Package;
+package views.compound.CompoundTransform_Package_References is
+   type CompoundTransform_Access is access all views.compound.CompoundTransform_Package.CompoundTransform'Class;
+   type CompoundTransform_Access_Array is array (Natural range <>) of CompoundTransform_Access;
+   type CompoundTransform_Access_Array_Access is access all CompoundTransform_Access_Array;
+   type CompoundTransform_Access_Array_Access_Array is array (Natural range <>) of CompoundTransform_Access_Array_Access;
+   type CompoundTransform_Access_Array_Access_Array_Access is access all CompoundTransform_Access_Array_Access_Array;
+end views.compound.CompoundTransform_Package_References;
+
+with views.compound.CompoundTransform_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,10 +31,13 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.visual.transform.AbTransformer_Package; use org.allbinary.logic.visual.transform.AbTransformer_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 
 package views.compound.CompoundTransform_Package is
 
@@ -32,13 +45,51 @@ package views.compound.CompoundTransform_Package is
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package AbTransformer_Package renames Standard.org.allbinary.logic.visual.transform.AbTransformer_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CompoundTransform is tagged;
-   type CompoundTransform_Access is access all CompoundTransform'Class;
-   type CompoundTransform_Access_Array is array (Natural range <>) of CompoundTransform_Access;
-   type CompoundTransform_Access_Array_Access is access all CompoundTransform_Access_Array;
-   type CompoundTransform_Access_Array_Access_Array is array (Natural range <>) of CompoundTransform_Access_Array_Access;
-   type CompoundTransform_Access_Array_Access_Array_Access is access all CompoundTransform_Access_Array_Access_Array;
+
+   subtype CompoundTransform_Access is views.compound.CompoundTransform_Package_References.CompoundTransform_Access;
+   function "=" (Left, Right : CompoundTransform_Access) return Boolean renames views.compound.CompoundTransform_Package_References."=";
+   subtype CompoundTransform_Access_Array is views.compound.CompoundTransform_Package_References.CompoundTransform_Access_Array;
+   function "=" (Left, Right : CompoundTransform_Access_Array) return Boolean renames views.compound.CompoundTransform_Package_References."=";
+   subtype CompoundTransform_Access_Array_Access is views.compound.CompoundTransform_Package_References.CompoundTransform_Access_Array_Access;
+   function "=" (Left, Right : CompoundTransform_Access_Array_Access) return Boolean renames views.compound.CompoundTransform_Package_References."=";
+   subtype CompoundTransform_Access_Array_Access_Array is views.compound.CompoundTransform_Package_References.CompoundTransform_Access_Array_Access_Array;
+   function "=" (Left, Right : CompoundTransform_Access_Array_Access_Array) return Boolean renames views.compound.CompoundTransform_Package_References."=";
+   subtype CompoundTransform_Access_Array_Access_Array_Access is views.compound.CompoundTransform_Package_References.CompoundTransform_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CompoundTransform_Access_Array_Access_Array_Access) return Boolean renames views.compound.CompoundTransform_Package_References."=";
 
    type CompoundTransform is new AbTransformer with record
       logUtil : LogUtil_Access;

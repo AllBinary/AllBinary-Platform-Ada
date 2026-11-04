@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.combat.damage.ExplosionResources_Package;
+package org.allbinary.game.combat.damage.ExplosionResources_Package_References is
+   type ExplosionResources_Access is access all org.allbinary.game.combat.damage.ExplosionResources_Package.ExplosionResources'Class;
+   type ExplosionResources_Access_Array is array (Natural range <>) of ExplosionResources_Access;
+   type ExplosionResources_Access_Array_Access is access all ExplosionResources_Access_Array;
+   type ExplosionResources_Access_Array_Access_Array is array (Natural range <>) of ExplosionResources_Access_Array_Access;
+   type ExplosionResources_Access_Array_Access_Array_Access is access all ExplosionResources_Access_Array_Access_Array;
+end org.allbinary.game.combat.damage.ExplosionResources_Package_References;
+
+with org.allbinary.game.combat.damage.ExplosionResources_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.combat.damage.ExplosionResources_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ExplosionResources is tagged;
-   type ExplosionResources_Access is access all ExplosionResources'Class;
-   type ExplosionResources_Access_Array is array (Natural range <>) of ExplosionResources_Access;
-   type ExplosionResources_Access_Array_Access is access all ExplosionResources_Access_Array;
-   type ExplosionResources_Access_Array_Access_Array is array (Natural range <>) of ExplosionResources_Access_Array_Access;
-   type ExplosionResources_Access_Array_Access_Array_Access is access all ExplosionResources_Access_Array_Access_Array;
+
+   subtype ExplosionResources_Access is org.allbinary.game.combat.damage.ExplosionResources_Package_References.ExplosionResources_Access;
+   function "=" (Left, Right : ExplosionResources_Access) return Boolean renames org.allbinary.game.combat.damage.ExplosionResources_Package_References."=";
+   subtype ExplosionResources_Access_Array is org.allbinary.game.combat.damage.ExplosionResources_Package_References.ExplosionResources_Access_Array;
+   function "=" (Left, Right : ExplosionResources_Access_Array) return Boolean renames org.allbinary.game.combat.damage.ExplosionResources_Package_References."=";
+   subtype ExplosionResources_Access_Array_Access is org.allbinary.game.combat.damage.ExplosionResources_Package_References.ExplosionResources_Access_Array_Access;
+   function "=" (Left, Right : ExplosionResources_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.ExplosionResources_Package_References."=";
+   subtype ExplosionResources_Access_Array_Access_Array is org.allbinary.game.combat.damage.ExplosionResources_Package_References.ExplosionResources_Access_Array_Access_Array;
+   function "=" (Left, Right : ExplosionResources_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.damage.ExplosionResources_Package_References."=";
+   subtype ExplosionResources_Access_Array_Access_Array_Access is org.allbinary.game.combat.damage.ExplosionResources_Package_References.ExplosionResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ExplosionResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.ExplosionResources_Package_References."=";
 
    type ExplosionResources is new Java_Object with record
       EXPLOSION_90_RESOURCE : Unbounded_String;

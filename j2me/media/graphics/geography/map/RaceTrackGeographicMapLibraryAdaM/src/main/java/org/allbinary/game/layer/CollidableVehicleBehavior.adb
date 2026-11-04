@@ -15,11 +15,18 @@
 
 with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
 with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package; use org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.game.layer.VehicleProperties_Package; use org.allbinary.game.layer.VehicleProperties_Package;
 with org.allbinary.game.layer.VehicleFrictionProperties_Package; use org.allbinary.game.layer.VehicleFrictionProperties_Package;
+with org.allbinary.game.layer.VehicleFrictionProperties_Package;
+with org.allbinary.game.layer.VehicleProperties_Package;
+with org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package;
 
 package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
 
@@ -28,6 +35,36 @@ package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
    package CollisionType_Package renames Standard.org.allbinary.game.collision.CollisionType_Package;
    package CollisionTypeFactory_Package renames Standard.org.allbinary.game.collision.CollisionTypeFactory_Package;
    package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   subtype CollidableInterfaceCompositeInterface_Access is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype CollidableInterfaceCompositeInterface_Access_Array is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype CollidableInterfaceCompositeInterface_Access_Array_Access is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array_Access;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype CollidableInterfaceCompositeInterface_Access_Array_Access_Array is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References.CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package_References."=";
+   subtype VehiclePropertiesCompositeInterface_Access is org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References.VehiclePropertiesCompositeInterface_Access;
+   function "=" (Left, Right : VehiclePropertiesCompositeInterface_Access) return Boolean renames org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References."=";
+   subtype VehiclePropertiesCompositeInterface_Access_Array is org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References.VehiclePropertiesCompositeInterface_Access_Array;
+   function "=" (Left, Right : VehiclePropertiesCompositeInterface_Access_Array) return Boolean renames org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References."=";
+   subtype VehiclePropertiesCompositeInterface_Access_Array_Access is org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References.VehiclePropertiesCompositeInterface_Access_Array_Access;
+   function "=" (Left, Right : VehiclePropertiesCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References."=";
+   subtype VehiclePropertiesCompositeInterface_Access_Array_Access_Array is org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References.VehiclePropertiesCompositeInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : VehiclePropertiesCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References."=";
+   subtype VehiclePropertiesCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References.VehiclePropertiesCompositeInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VehiclePropertiesCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package_References."=";
+   subtype CollidableCompositeLayer_Access is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access;
+   function "=" (Left, Right : CollidableCompositeLayer_Access) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
+   subtype CollidableCompositeLayer_Access_Array is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array;
+   function "=" (Left, Right : CollidableCompositeLayer_Access_Array) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
+   subtype CollidableCompositeLayer_Access_Array_Access is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array_Access;
+   function "=" (Left, Right : CollidableCompositeLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
+   subtype CollidableCompositeLayer_Access_Array_Access_Array is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : CollidableCompositeLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
+   subtype CollidableCompositeLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.CollidableCompositeLayer_Package_References.CollidableCompositeLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollidableCompositeLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.CollidableCompositeLayer_Package_References."=";
    procedure Initialize_Fields (This : in out CollidableVehicleBehavior'Class) is
    begin
       null;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package;
+package org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References is
+   type TransactionType_Access is access all org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package.TransactionType'Class;
+   type TransactionType_Access_Array is array (Natural range <>) of TransactionType_Access;
+   type TransactionType_Access_Array_Access is access all TransactionType_Access_Array;
+   type TransactionType_Access_Array_Access_Array is array (Natural range <>) of TransactionType_Access_Array_Access;
+   type TransactionType_Access_Array_Access_Array_Access is access all TransactionType_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransactionType is tagged;
-   type TransactionType_Access is access all TransactionType'Class;
-   type TransactionType_Access_Array is array (Natural range <>) of TransactionType_Access;
-   type TransactionType_Access_Array_Access is access all TransactionType_Access_Array;
-   type TransactionType_Access_Array_Access_Array is array (Natural range <>) of TransactionType_Access_Array_Access;
-   type TransactionType_Access_Array_Access_Array_Access is access all TransactionType_Access_Array_Access_Array;
+
+   subtype TransactionType_Access is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access;
+   function "=" (Left, Right : TransactionType_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
+   subtype TransactionType_Access_Array is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access_Array;
+   function "=" (Left, Right : TransactionType_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
+   subtype TransactionType_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access_Array_Access;
+   function "=" (Left, Right : TransactionType_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
+   subtype TransactionType_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access_Array_Access_Array;
+   function "=" (Left, Right : TransactionType_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
+   subtype TransactionType_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References.TransactionType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransactionType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package_References."=";
 
    type TransactionType is new Java_Object with record
       name : Unbounded_String;

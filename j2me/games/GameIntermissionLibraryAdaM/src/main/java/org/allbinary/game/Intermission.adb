@@ -13,10 +13,35 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.game.NullIntermissionEnableListener_Package; use org.allbinary.game.NullIntermissionEnableListener_Package;
+with org.allbinary.game.IntermissionEnableListenerInterface_Package; use org.allbinary.game.IntermissionEnableListenerInterface_Package;
+with org.allbinary.game.IntermissionEnableListenerInterface_Package;
+with org.allbinary.game.IntermissionInterface_Package;
+with org.allbinary.game.NullIntermissionEnableListener_Package;
 
 package body org.allbinary.game.Intermission_Package is
 
+   subtype TimeDelayHelper_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access;
+   function "=" (Left, Right : TimeDelayHelper_Access) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   subtype TimeDelayHelper_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array;
+   function "=" (Left, Right : TimeDelayHelper_Access_Array) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
+   function "=" (Left, Right : TimeDelayHelper_Access_Array_Access) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : TimeDelayHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TimeDelayHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   subtype IntermissionEnableListenerInterface_Access is org.allbinary.game.IntermissionEnableListenerInterface_Package_References.IntermissionEnableListenerInterface_Access;
+   function "=" (Left, Right : IntermissionEnableListenerInterface_Access) return Boolean renames org.allbinary.game.IntermissionEnableListenerInterface_Package_References."=";
+   subtype IntermissionEnableListenerInterface_Access_Array is org.allbinary.game.IntermissionEnableListenerInterface_Package_References.IntermissionEnableListenerInterface_Access_Array;
+   function "=" (Left, Right : IntermissionEnableListenerInterface_Access_Array) return Boolean renames org.allbinary.game.IntermissionEnableListenerInterface_Package_References."=";
+   subtype IntermissionEnableListenerInterface_Access_Array_Access is org.allbinary.game.IntermissionEnableListenerInterface_Package_References.IntermissionEnableListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : IntermissionEnableListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.game.IntermissionEnableListenerInterface_Package_References."=";
+   subtype IntermissionEnableListenerInterface_Access_Array_Access_Array is org.allbinary.game.IntermissionEnableListenerInterface_Package_References.IntermissionEnableListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : IntermissionEnableListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.IntermissionEnableListenerInterface_Package_References."=";
+   subtype IntermissionEnableListenerInterface_Access_Array_Access_Array_Access is org.allbinary.game.IntermissionEnableListenerInterface_Package_References.IntermissionEnableListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IntermissionEnableListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.IntermissionEnableListenerInterface_Package_References."=";
    procedure Initialize_Fields (This : in out Intermission'Class) is
    begin
       null;

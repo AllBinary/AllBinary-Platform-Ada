@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package;
+package org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References is
+   type CheatGameInputProcessor_Access is access all org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package.CheatGameInputProcessor'Class;
+   type CheatGameInputProcessor_Access_Array is array (Natural range <>) of CheatGameInputProcessor_Access;
+   type CheatGameInputProcessor_Access_Array_Access is access all CheatGameInputProcessor_Access_Array;
+   type CheatGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of CheatGameInputProcessor_Access_Array_Access;
+   type CheatGameInputProcessor_Access_Array_Access_Array_Access is access all CheatGameInputProcessor_Access_Array_Access_Array;
+end org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References;
+
+with org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,23 +30,64 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+limited with org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.GameKeyFactory_Package_References;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
-with org.allbinary.game.layer.special.SpecialGameInputInterface_Package; use org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
-with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+limited with org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
+with org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References;
+limited with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References;
 
 package org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package is
 
    package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
    package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
    package SpecialGameInputInterface_Package renames Standard.org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
+   package Reference_Types is
+   subtype GameKeyFactory_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access;
+   use type GameKeyFactory_Access;
+   subtype GameKeyFactory_Access_Array is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array;
+   use type GameKeyFactory_Access_Array;
+   subtype GameKeyFactory_Access_Array_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access;
+   use type GameKeyFactory_Access_Array_Access;
+   subtype GameKeyFactory_Access_Array_Access_Array is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access_Array;
+   use type GameKeyFactory_Access_Array_Access_Array;
+   subtype GameKeyFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.GameKeyFactory_Package_References.GameKeyFactory_Access_Array_Access_Array_Access;
+   use type GameKeyFactory_Access_Array_Access_Array_Access;
+   subtype SpecialGameInputInterface_Access is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access;
+   use type SpecialGameInputInterface_Access;
+   subtype SpecialGameInputInterface_Access_Array is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access_Array;
+   use type SpecialGameInputInterface_Access_Array;
+   subtype SpecialGameInputInterface_Access_Array_Access is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access_Array_Access;
+   use type SpecialGameInputInterface_Access_Array_Access;
+   subtype SpecialGameInputInterface_Access_Array_Access_Array is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access_Array_Access_Array;
+   use type SpecialGameInputInterface_Access_Array_Access_Array;
+   subtype SpecialGameInputInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.SpecialGameInputInterface_Package_References.SpecialGameInputInterface_Access_Array_Access_Array_Access;
+   use type SpecialGameInputInterface_Access_Array_Access_Array_Access;
+   subtype AllBinaryGameCanvas_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access;
+   use type AllBinaryGameCanvas_Access;
+   subtype AllBinaryGameCanvas_Access_Array is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array;
+   use type AllBinaryGameCanvas_Access_Array;
+   subtype AllBinaryGameCanvas_Access_Array_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access;
+   use type AllBinaryGameCanvas_Access_Array_Access;
+   subtype AllBinaryGameCanvas_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access_Array;
+   use type AllBinaryGameCanvas_Access_Array_Access_Array;
+   subtype AllBinaryGameCanvas_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access_Array_Access;
+   use type AllBinaryGameCanvas_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CheatGameInputProcessor is tagged;
-   type CheatGameInputProcessor_Access is access all CheatGameInputProcessor'Class;
-   type CheatGameInputProcessor_Access_Array is array (Natural range <>) of CheatGameInputProcessor_Access;
-   type CheatGameInputProcessor_Access_Array_Access is access all CheatGameInputProcessor_Access_Array;
-   type CheatGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of CheatGameInputProcessor_Access_Array_Access;
-   type CheatGameInputProcessor_Access_Array_Access_Array_Access is access all CheatGameInputProcessor_Access_Array_Access_Array;
+
+   subtype CheatGameInputProcessor_Access is org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References.CheatGameInputProcessor_Access;
+   function "=" (Left, Right : CheatGameInputProcessor_Access) return Boolean renames org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References."=";
+   subtype CheatGameInputProcessor_Access_Array is org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References.CheatGameInputProcessor_Access_Array;
+   function "=" (Left, Right : CheatGameInputProcessor_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References."=";
+   subtype CheatGameInputProcessor_Access_Array_Access is org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References.CheatGameInputProcessor_Access_Array_Access;
+   function "=" (Left, Right : CheatGameInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References."=";
+   subtype CheatGameInputProcessor_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References.CheatGameInputProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : CheatGameInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References."=";
+   subtype CheatGameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References.CheatGameInputProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CheatGameInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package_References."=";
 
    type CheatGameInputProcessor is new PlayerGameInput with record
       PROCESS_GAME : Unbounded_String;

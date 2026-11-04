@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.event.DownKeyEventHandlerBase_Package;
+package org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References is
+   type DownKeyEventHandlerBase_Access is access all org.allbinary.game.input.event.DownKeyEventHandlerBase_Package.DownKeyEventHandlerBase'Class;
+   type DownKeyEventHandlerBase_Access_Array is array (Natural range <>) of DownKeyEventHandlerBase_Access;
+   type DownKeyEventHandlerBase_Access_Array_Access is access all DownKeyEventHandlerBase_Access_Array;
+   type DownKeyEventHandlerBase_Access_Array_Access_Array is array (Natural range <>) of DownKeyEventHandlerBase_Access_Array_Access;
+   type DownKeyEventHandlerBase_Access_Array_Access_Array_Access is access all DownKeyEventHandlerBase_Access_Array_Access_Array;
+end org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References;
+
+with org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
-with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
+limited with org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.PlayerGameInput_Package_References;
+limited with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package_References;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 
 package org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
 
@@ -32,13 +46,61 @@ package org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype PlayerGameInput_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access;
+   use type PlayerGameInput_Access;
+   subtype PlayerGameInput_Access_Array is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array;
+   use type PlayerGameInput_Access_Array;
+   subtype PlayerGameInput_Access_Array_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access;
+   use type PlayerGameInput_Access_Array_Access;
+   subtype PlayerGameInput_Access_Array_Access_Array is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access_Array;
+   use type PlayerGameInput_Access_Array_Access_Array;
+   subtype PlayerGameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access_Array_Access;
+   use type PlayerGameInput_Access_Array_Access_Array_Access;
+   subtype EventListenerInterface_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access;
+   use type EventListenerInterface_Access;
+   subtype EventListenerInterface_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array;
+   use type EventListenerInterface_Access_Array;
+   subtype EventListenerInterface_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access;
+   use type EventListenerInterface_Access_Array_Access;
+   subtype EventListenerInterface_Access_Array_Access_Array is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array;
+   use type EventListenerInterface_Access_Array_Access_Array;
+   subtype EventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.EventListenerInterface_Package_References.EventListenerInterface_Access_Array_Access_Array_Access;
+   use type EventListenerInterface_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype GameKeyEvent_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access;
+   use type GameKeyEvent_Access;
+   subtype GameKeyEvent_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array;
+   use type GameKeyEvent_Access_Array;
+   subtype GameKeyEvent_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access;
+   use type GameKeyEvent_Access_Array_Access;
+   subtype GameKeyEvent_Access_Array_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array;
+   use type GameKeyEvent_Access_Array_Access_Array;
+   subtype GameKeyEvent_Access_Array_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array_Access;
+   use type GameKeyEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type DownKeyEventHandlerBase is tagged;
-   type DownKeyEventHandlerBase_Access is access all DownKeyEventHandlerBase'Class;
-   type DownKeyEventHandlerBase_Access_Array is array (Natural range <>) of DownKeyEventHandlerBase_Access;
-   type DownKeyEventHandlerBase_Access_Array_Access is access all DownKeyEventHandlerBase_Access_Array;
-   type DownKeyEventHandlerBase_Access_Array_Access_Array is array (Natural range <>) of DownKeyEventHandlerBase_Access_Array_Access;
-   type DownKeyEventHandlerBase_Access_Array_Access_Array_Access is access all DownKeyEventHandlerBase_Access_Array_Access_Array;
+
+   subtype DownKeyEventHandlerBase_Access is org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References.DownKeyEventHandlerBase_Access;
+   function "=" (Left, Right : DownKeyEventHandlerBase_Access) return Boolean renames org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References."=";
+   subtype DownKeyEventHandlerBase_Access_Array is org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References.DownKeyEventHandlerBase_Access_Array;
+   function "=" (Left, Right : DownKeyEventHandlerBase_Access_Array) return Boolean renames org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References."=";
+   subtype DownKeyEventHandlerBase_Access_Array_Access is org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References.DownKeyEventHandlerBase_Access_Array_Access;
+   function "=" (Left, Right : DownKeyEventHandlerBase_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References."=";
+   subtype DownKeyEventHandlerBase_Access_Array_Access_Array is org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References.DownKeyEventHandlerBase_Access_Array_Access_Array;
+   function "=" (Left, Right : DownKeyEventHandlerBase_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References."=";
+   subtype DownKeyEventHandlerBase_Access_Array_Access_Array_Access is org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References.DownKeyEventHandlerBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DownKeyEventHandlerBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.DownKeyEventHandlerBase_Package_References."=";
 
    type DownKeyEventHandlerBase is new BasicEventHandler with record
       list : BasicArrayList_Access;

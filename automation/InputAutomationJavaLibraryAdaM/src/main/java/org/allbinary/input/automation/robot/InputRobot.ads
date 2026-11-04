@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.robot.InputRobot_Package;
+package org.allbinary.input.automation.robot.InputRobot_Package_References is
+   type InputRobot_Access is access all org.allbinary.input.automation.robot.InputRobot_Package.InputRobot'Class;
+   type InputRobot_Access_Array is array (Natural range <>) of InputRobot_Access;
+   type InputRobot_Access_Array_Access is access all InputRobot_Access_Array;
+   type InputRobot_Access_Array_Access_Array is array (Natural range <>) of InputRobot_Access_Array_Access;
+   type InputRobot_Access_Array_Access_Array_Access is access all InputRobot_Access_Array_Access_Array;
+end org.allbinary.input.automation.robot.InputRobot_Package_References;
+
+with org.allbinary.input.automation.robot.InputRobot_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,24 +32,98 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
-with org.allbinary.input.automation.robot.Robot_Package; use org.allbinary.input.automation.robot.Robot_Package;
-with org.allbinary.input.automation.robot.GraphicsDevice_Package; use org.allbinary.input.automation.robot.GraphicsDevice_Package;
-with org.allbinary.input.automation.robot.Point_Package; use org.allbinary.input.automation.robot.Point_Package;
-with org.allbinary.input.automation.robot.Rectangle_Package; use org.allbinary.input.automation.robot.Rectangle_Package;
-with org.allbinary.input.automation.robot.Color_Package; use org.allbinary.input.automation.robot.Color_Package;
+limited with org.allbinary.input.automation.robot.Robot_Package;
+with org.allbinary.input.automation.robot.Robot_Package_References;
+limited with org.allbinary.input.automation.robot.GraphicsDevice_Package;
+with org.allbinary.input.automation.robot.GraphicsDevice_Package_References;
+limited with org.allbinary.input.automation.robot.Point_Package;
+with org.allbinary.input.automation.robot.Point_Package_References;
+limited with org.allbinary.input.automation.robot.Rectangle_Package;
+with org.allbinary.input.automation.robot.Rectangle_Package_References;
+limited with org.allbinary.input.automation.robot.Color_Package;
+with org.allbinary.input.automation.robot.Color_Package_References;
 
 package org.allbinary.input.automation.robot.InputRobot_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype Robot_Access is org.allbinary.input.automation.robot.Robot_Package_References.Robot_Access;
+   use type Robot_Access;
+   subtype Robot_Access_Array is org.allbinary.input.automation.robot.Robot_Package_References.Robot_Access_Array;
+   use type Robot_Access_Array;
+   subtype Robot_Access_Array_Access is org.allbinary.input.automation.robot.Robot_Package_References.Robot_Access_Array_Access;
+   use type Robot_Access_Array_Access;
+   subtype Robot_Access_Array_Access_Array is org.allbinary.input.automation.robot.Robot_Package_References.Robot_Access_Array_Access_Array;
+   use type Robot_Access_Array_Access_Array;
+   subtype Robot_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.Robot_Package_References.Robot_Access_Array_Access_Array_Access;
+   use type Robot_Access_Array_Access_Array_Access;
+   subtype GraphicsDevice_Access is org.allbinary.input.automation.robot.GraphicsDevice_Package_References.GraphicsDevice_Access;
+   use type GraphicsDevice_Access;
+   subtype GraphicsDevice_Access_Array is org.allbinary.input.automation.robot.GraphicsDevice_Package_References.GraphicsDevice_Access_Array;
+   use type GraphicsDevice_Access_Array;
+   subtype GraphicsDevice_Access_Array_Access is org.allbinary.input.automation.robot.GraphicsDevice_Package_References.GraphicsDevice_Access_Array_Access;
+   use type GraphicsDevice_Access_Array_Access;
+   subtype GraphicsDevice_Access_Array_Access_Array is org.allbinary.input.automation.robot.GraphicsDevice_Package_References.GraphicsDevice_Access_Array_Access_Array;
+   use type GraphicsDevice_Access_Array_Access_Array;
+   subtype GraphicsDevice_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.GraphicsDevice_Package_References.GraphicsDevice_Access_Array_Access_Array_Access;
+   use type GraphicsDevice_Access_Array_Access_Array_Access;
+   subtype Point_Access is org.allbinary.input.automation.robot.Point_Package_References.Point_Access;
+   use type Point_Access;
+   subtype Point_Access_Array is org.allbinary.input.automation.robot.Point_Package_References.Point_Access_Array;
+   use type Point_Access_Array;
+   subtype Point_Access_Array_Access is org.allbinary.input.automation.robot.Point_Package_References.Point_Access_Array_Access;
+   use type Point_Access_Array_Access;
+   subtype Point_Access_Array_Access_Array is org.allbinary.input.automation.robot.Point_Package_References.Point_Access_Array_Access_Array;
+   use type Point_Access_Array_Access_Array;
+   subtype Point_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.Point_Package_References.Point_Access_Array_Access_Array_Access;
+   use type Point_Access_Array_Access_Array_Access;
+   subtype Rectangle_Access is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access;
+   use type Rectangle_Access;
+   subtype Rectangle_Access_Array is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access_Array;
+   use type Rectangle_Access_Array;
+   subtype Rectangle_Access_Array_Access is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access_Array_Access;
+   use type Rectangle_Access_Array_Access;
+   subtype Rectangle_Access_Array_Access_Array is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access_Array_Access_Array;
+   use type Rectangle_Access_Array_Access_Array;
+   subtype Rectangle_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access_Array_Access_Array_Access;
+   use type Rectangle_Access_Array_Access_Array_Access;
+   subtype Color_Access is org.allbinary.input.automation.robot.Color_Package_References.Color_Access;
+   use type Color_Access;
+   subtype Color_Access_Array is org.allbinary.input.automation.robot.Color_Package_References.Color_Access_Array;
+   use type Color_Access_Array;
+   subtype Color_Access_Array_Access is org.allbinary.input.automation.robot.Color_Package_References.Color_Access_Array_Access;
+   use type Color_Access_Array_Access;
+   subtype Color_Access_Array_Access_Array is org.allbinary.input.automation.robot.Color_Package_References.Color_Access_Array_Access_Array;
+   use type Color_Access_Array_Access_Array;
+   subtype Color_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.Color_Package_References.Color_Access_Array_Access_Array_Access;
+   use type Color_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputRobot is tagged;
-   type InputRobot_Access is access all InputRobot'Class;
-   type InputRobot_Access_Array is array (Natural range <>) of InputRobot_Access;
-   type InputRobot_Access_Array_Access is access all InputRobot_Access_Array;
-   type InputRobot_Access_Array_Access_Array is array (Natural range <>) of InputRobot_Access_Array_Access;
-   type InputRobot_Access_Array_Access_Array_Access is access all InputRobot_Access_Array_Access_Array;
+
+   subtype InputRobot_Access is org.allbinary.input.automation.robot.InputRobot_Package_References.InputRobot_Access;
+   function "=" (Left, Right : InputRobot_Access) return Boolean renames org.allbinary.input.automation.robot.InputRobot_Package_References."=";
+   subtype InputRobot_Access_Array is org.allbinary.input.automation.robot.InputRobot_Package_References.InputRobot_Access_Array;
+   function "=" (Left, Right : InputRobot_Access_Array) return Boolean renames org.allbinary.input.automation.robot.InputRobot_Package_References."=";
+   subtype InputRobot_Access_Array_Access is org.allbinary.input.automation.robot.InputRobot_Package_References.InputRobot_Access_Array_Access;
+   function "=" (Left, Right : InputRobot_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.InputRobot_Package_References."=";
+   subtype InputRobot_Access_Array_Access_Array is org.allbinary.input.automation.robot.InputRobot_Package_References.InputRobot_Access_Array_Access_Array;
+   function "=" (Left, Right : InputRobot_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.InputRobot_Package_References."=";
+   subtype InputRobot_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.InputRobot_Package_References.InputRobot_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputRobot_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.InputRobot_Package_References."=";
 
    type InputRobot is new Java_Object and InputRobotInterface with record
       logUtil : LogUtil_Access;

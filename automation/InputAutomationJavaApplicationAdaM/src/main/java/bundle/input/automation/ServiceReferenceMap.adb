@@ -13,11 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Map_Package; use java.util.Map_Package;
+with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package body bundle.input.automation.ServiceReferenceMap_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   subtype ServiceReference_Access is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access;
+   function "=" (Left, Right : ServiceReference_Access) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
+   subtype ServiceReference_Access_Array is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access_Array;
+   function "=" (Left, Right : ServiceReference_Access_Array) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
+   subtype ServiceReference_Access_Array_Access is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access_Array_Access;
+   function "=" (Left, Right : ServiceReference_Access_Array_Access) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
+   subtype ServiceReference_Access_Array_Access_Array is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access_Array_Access_Array;
+   function "=" (Left, Right : ServiceReference_Access_Array_Access_Array) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
+   subtype ServiceReference_Access_Array_Access_Array_Access is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ServiceReference_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
    procedure Initialize_Fields (This : in out ServiceReferenceMap'Class) is
    begin
       null;
@@ -91,7 +103,7 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
         null;
    end clear;
 
-   function keySet (This : in out ServiceReferenceMap) return Set_Access is
+   function keySet (This : in out ServiceReferenceMap) return Java_Object_Access is
       keyStringArray : Unbounded_String_Array_Access;
    begin
         keyStringArray := This.serviceReference.getPropertyKeys;
@@ -103,7 +115,7 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
         return null;
    end values;
 
-   function entrySet (This : in out ServiceReferenceMap) return Set_Access is
+   function entrySet (This : in out ServiceReferenceMap) return Java_Object_Access is
    begin
         return null;
    end entrySet;

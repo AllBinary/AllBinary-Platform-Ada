@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.gui.dialog.ExitCloseListener_Package;
+package org.allbinary.gui.dialog.ExitCloseListener_Package_References is
+   type ExitCloseListener_Access is access all org.allbinary.gui.dialog.ExitCloseListener_Package.ExitCloseListener'Class;
+   type ExitCloseListener_Access_Array is array (Natural range <>) of ExitCloseListener_Access;
+   type ExitCloseListener_Access_Array_Access is access all ExitCloseListener_Access_Array;
+   type ExitCloseListener_Access_Array_Access_Array is array (Natural range <>) of ExitCloseListener_Access_Array_Access;
+   type ExitCloseListener_Access_Array_Access_Array_Access is access all ExitCloseListener_Access_Array_Access_Array;
+end org.allbinary.gui.dialog.ExitCloseListener_Package_References;
+
+with org.allbinary.gui.dialog.ExitCloseListener_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package; use org.all
 
 package org.allbinary.gui.dialog.ExitCloseListener_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ExitCloseListener is tagged;
-   type ExitCloseListener_Access is access all ExitCloseListener'Class;
-   type ExitCloseListener_Access_Array is array (Natural range <>) of ExitCloseListener_Access;
-   type ExitCloseListener_Access_Array_Access is access all ExitCloseListener_Access_Array;
-   type ExitCloseListener_Access_Array_Access_Array is array (Natural range <>) of ExitCloseListener_Access_Array_Access;
-   type ExitCloseListener_Access_Array_Access_Array_Access is access all ExitCloseListener_Access_Array_Access_Array;
+
+   subtype ExitCloseListener_Access is org.allbinary.gui.dialog.ExitCloseListener_Package_References.ExitCloseListener_Access;
+   function "=" (Left, Right : ExitCloseListener_Access) return Boolean renames org.allbinary.gui.dialog.ExitCloseListener_Package_References."=";
+   subtype ExitCloseListener_Access_Array is org.allbinary.gui.dialog.ExitCloseListener_Package_References.ExitCloseListener_Access_Array;
+   function "=" (Left, Right : ExitCloseListener_Access_Array) return Boolean renames org.allbinary.gui.dialog.ExitCloseListener_Package_References."=";
+   subtype ExitCloseListener_Access_Array_Access is org.allbinary.gui.dialog.ExitCloseListener_Package_References.ExitCloseListener_Access_Array_Access;
+   function "=" (Left, Right : ExitCloseListener_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.ExitCloseListener_Package_References."=";
+   subtype ExitCloseListener_Access_Array_Access_Array is org.allbinary.gui.dialog.ExitCloseListener_Package_References.ExitCloseListener_Access_Array_Access_Array;
+   function "=" (Left, Right : ExitCloseListener_Access_Array_Access_Array) return Boolean renames org.allbinary.gui.dialog.ExitCloseListener_Package_References."=";
+   subtype ExitCloseListener_Access_Array_Access_Array_Access is org.allbinary.gui.dialog.ExitCloseListener_Package_References.ExitCloseListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ExitCloseListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.ExitCloseListener_Package_References."=";
 
    type ExitCloseListener is new Java_Object and CloseJDialogListenerInterface with null record;
 

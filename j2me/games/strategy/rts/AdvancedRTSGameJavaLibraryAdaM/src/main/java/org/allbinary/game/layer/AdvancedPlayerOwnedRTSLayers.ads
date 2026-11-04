@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package;
+package org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References is
+   type AdvancedPlayerOwnedRTSLayers_Access is access all org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package.AdvancedPlayerOwnedRTSLayers'Class;
+   type AdvancedPlayerOwnedRTSLayers_Access_Array is array (Natural range <>) of AdvancedPlayerOwnedRTSLayers_Access;
+   type AdvancedPlayerOwnedRTSLayers_Access_Array_Access is access all AdvancedPlayerOwnedRTSLayers_Access_Array;
+   type AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array is array (Natural range <>) of AdvancedPlayerOwnedRTSLayers_Access_Array_Access;
+   type AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array_Access is access all AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array;
+end org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References;
+
+with org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,62 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package; use org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
-with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
-with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
+limited with org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.RTSLayer_Package_References;
+limited with org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
 
 package org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype RTSLayer_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access;
+   use type RTSLayer_Access;
+   subtype RTSLayer_Access_Array is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array;
+   use type RTSLayer_Access_Array;
+   subtype RTSLayer_Access_Array_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access;
+   use type RTSLayer_Access_Array_Access;
+   subtype RTSLayer_Access_Array_Access_Array is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access_Array;
+   use type RTSLayer_Access_Array_Access_Array;
+   subtype RTSLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access_Array_Access;
+   use type RTSLayer_Access_Array_Access_Array_Access;
+   subtype AllBinaryGameLayer_Access is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access;
+   use type AllBinaryGameLayer_Access;
+   subtype AllBinaryGameLayer_Access_Array is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array;
+   use type AllBinaryGameLayer_Access_Array;
+   subtype AllBinaryGameLayer_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array_Access;
+   use type AllBinaryGameLayer_Access_Array_Access;
+   subtype AllBinaryGameLayer_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array_Access_Array;
+   use type AllBinaryGameLayer_Access_Array_Access_Array;
+   subtype AllBinaryGameLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayer_Package_References.AllBinaryGameLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryGameLayer_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AdvancedPlayerOwnedRTSLayers is tagged;
-   type AdvancedPlayerOwnedRTSLayers_Access is access all AdvancedPlayerOwnedRTSLayers'Class;
-   type AdvancedPlayerOwnedRTSLayers_Access_Array is array (Natural range <>) of AdvancedPlayerOwnedRTSLayers_Access;
-   type AdvancedPlayerOwnedRTSLayers_Access_Array_Access is access all AdvancedPlayerOwnedRTSLayers_Access_Array;
-   type AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array is array (Natural range <>) of AdvancedPlayerOwnedRTSLayers_Access_Array_Access;
-   type AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array_Access is access all AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array;
+
+   subtype AdvancedPlayerOwnedRTSLayers_Access is org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References.AdvancedPlayerOwnedRTSLayers_Access;
+   function "=" (Left, Right : AdvancedPlayerOwnedRTSLayers_Access) return Boolean renames org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References."=";
+   subtype AdvancedPlayerOwnedRTSLayers_Access_Array is org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References.AdvancedPlayerOwnedRTSLayers_Access_Array;
+   function "=" (Left, Right : AdvancedPlayerOwnedRTSLayers_Access_Array) return Boolean renames org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References."=";
+   subtype AdvancedPlayerOwnedRTSLayers_Access_Array_Access is org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References.AdvancedPlayerOwnedRTSLayers_Access_Array_Access;
+   function "=" (Left, Right : AdvancedPlayerOwnedRTSLayers_Access_Array_Access) return Boolean renames org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References."=";
+   subtype AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array is org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References.AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References."=";
+   subtype AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array_Access is org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References.AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package_References."=";
 
    type AdvancedPlayerOwnedRTSLayers is new PlayerOwnedRTSLayers with record
       unitsList : BasicArrayList_Access;

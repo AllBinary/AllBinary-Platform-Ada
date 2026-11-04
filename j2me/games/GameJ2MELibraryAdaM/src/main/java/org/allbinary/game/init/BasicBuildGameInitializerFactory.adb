@@ -14,9 +14,23 @@
 
 
 with org.allbinary.game.init.BaseGameInitialization_Package; use org.allbinary.game.init.BaseGameInitialization_Package;
+with org.allbinary.game.init.GameInitializationInterface_Package; use org.allbinary.game.init.GameInitializationInterface_Package;
+with org.allbinary.game.init.BaseGameInitialization_Package;
+with org.allbinary.game.init.GameInitializationInterface_Package;
+with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
 
 package body org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
 
+   subtype GameInitializationInterface_Access is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access;
+   function "=" (Left, Right : GameInitializationInterface_Access) return Boolean renames org.allbinary.game.init.GameInitializationInterface_Package_References."=";
+   subtype GameInitializationInterface_Access_Array is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access_Array;
+   function "=" (Left, Right : GameInitializationInterface_Access_Array) return Boolean renames org.allbinary.game.init.GameInitializationInterface_Package_References."=";
+   subtype GameInitializationInterface_Access_Array_Access is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access_Array_Access;
+   function "=" (Left, Right : GameInitializationInterface_Access_Array_Access) return Boolean renames org.allbinary.game.init.GameInitializationInterface_Package_References."=";
+   subtype GameInitializationInterface_Access_Array_Access_Array is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInitializationInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.init.GameInitializationInterface_Package_References."=";
+   subtype GameInitializationInterface_Access_Array_Access_Array_Access is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInitializationInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.init.GameInitializationInterface_Package_References."=";
    procedure Initialize_Fields (This : in out BasicBuildGameInitializerFactory'Class) is
    begin
       null;

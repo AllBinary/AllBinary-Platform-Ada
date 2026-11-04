@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.thirdparty.store.ThirdPartyStore_Package;
+package org.allbinary.thirdparty.store.ThirdPartyStore_Package_References is
+   type ThirdPartyStore_Access is access all org.allbinary.thirdparty.store.ThirdPartyStore_Package.ThirdPartyStore'Class;
+   type ThirdPartyStore_Access_Array is array (Natural range <>) of ThirdPartyStore_Access;
+   type ThirdPartyStore_Access_Array_Access is access all ThirdPartyStore_Access_Array;
+   type ThirdPartyStore_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyStore_Access_Array_Access;
+   type ThirdPartyStore_Access_Array_Access_Array_Access is access all ThirdPartyStore_Access_Array_Access_Array;
+end org.allbinary.thirdparty.store.ThirdPartyStore_Package_References;
+
+with org.allbinary.thirdparty.store.ThirdPartyStore_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 
 package org.allbinary.thirdparty.store.ThirdPartyStore_Package is
 
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ThirdPartyStore is tagged;
-   type ThirdPartyStore_Access is access all ThirdPartyStore'Class;
-   type ThirdPartyStore_Access_Array is array (Natural range <>) of ThirdPartyStore_Access;
-   type ThirdPartyStore_Access_Array_Access is access all ThirdPartyStore_Access_Array;
-   type ThirdPartyStore_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyStore_Access_Array_Access;
-   type ThirdPartyStore_Access_Array_Access_Array_Access is access all ThirdPartyStore_Access_Array_Access_Array;
+
+   subtype ThirdPartyStore_Access is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access;
+   function "=" (Left, Right : ThirdPartyStore_Access) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   subtype ThirdPartyStore_Access_Array is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array;
+   function "=" (Left, Right : ThirdPartyStore_Access_Array) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   subtype ThirdPartyStore_Access_Array_Access is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array_Access;
+   function "=" (Left, Right : ThirdPartyStore_Access_Array_Access) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   subtype ThirdPartyStore_Access_Array_Access_Array is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array_Access_Array;
+   function "=" (Left, Right : ThirdPartyStore_Access_Array_Access_Array) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   subtype ThirdPartyStore_Access_Array_Access_Array_Access is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ThirdPartyStore_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
 
    type ThirdPartyStore is new Java_Object with record
       authorized : Boolean;

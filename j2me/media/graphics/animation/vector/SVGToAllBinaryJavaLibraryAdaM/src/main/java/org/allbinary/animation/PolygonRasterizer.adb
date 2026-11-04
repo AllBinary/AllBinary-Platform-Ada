@@ -3,6 +3,8 @@
 
 with org.allbinary.animation.PathParser_Package; use org.allbinary.animation.PathParser_Package;
 with org.allbinary.animation.FixedPoint_Package; use org.allbinary.animation.FixedPoint_Package;
+with org.allbinary.animation.FixedPoint_Package;
+with org.allbinary.animation.PathParser_Package;
 
 package body org.allbinary.animation.PolygonRasterizer_Package is
 
@@ -26,7 +28,7 @@ package body org.allbinary.animation.PolygonRasterizer_Package is
 
    function getInstance return PolygonRasterizer_Access is
    begin
-        return PolygonRasterizer_Package.instance;
+        return PolygonRasterizer_Access (PolygonRasterizer_Package.instance);
    end getInstance;
 
    function getPixelBuffer (This : in out PolygonRasterizer; svgPath : Unbounded_String; pathX : Integer_Array_Access; pathY : Integer_Array_Access; pixelBuffer : Integer_Array_Access; width : Integer; height : Integer) return Integer_Array_Access is

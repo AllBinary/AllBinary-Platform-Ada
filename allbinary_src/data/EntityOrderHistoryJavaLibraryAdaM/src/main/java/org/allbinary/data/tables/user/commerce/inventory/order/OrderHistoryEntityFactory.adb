@@ -15,11 +15,24 @@
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
+with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
+with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package;
 
 package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype OrderHistoryEntity_Access is org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References.OrderHistoryEntity_Access;
+   function "=" (Left, Right : OrderHistoryEntity_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References."=";
+   subtype OrderHistoryEntity_Access_Array is org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References.OrderHistoryEntity_Access_Array;
+   function "=" (Left, Right : OrderHistoryEntity_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References."=";
+   subtype OrderHistoryEntity_Access_Array_Access is org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References.OrderHistoryEntity_Access_Array_Access;
+   function "=" (Left, Right : OrderHistoryEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References."=";
+   subtype OrderHistoryEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References.OrderHistoryEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderHistoryEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References."=";
+   subtype OrderHistoryEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References.OrderHistoryEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderHistoryEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References."=";
    procedure Initialize_Fields (This : in out OrderHistoryEntityFactory'Class) is
    begin
       null;

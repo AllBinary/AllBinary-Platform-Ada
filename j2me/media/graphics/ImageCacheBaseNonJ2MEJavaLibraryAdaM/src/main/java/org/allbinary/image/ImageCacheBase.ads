@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.ImageCacheBase_Package;
+package org.allbinary.image.ImageCacheBase_Package_References is
+   type ImageCacheBase_Access is access all org.allbinary.image.ImageCacheBase_Package.ImageCacheBase'Class;
+   type ImageCacheBase_Access_Array is array (Natural range <>) of ImageCacheBase_Access;
+   type ImageCacheBase_Access_Array_Access is access all ImageCacheBase_Access_Array;
+   type ImageCacheBase_Access_Array_Access_Array is array (Natural range <>) of ImageCacheBase_Access_Array_Access;
+   type ImageCacheBase_Access_Array_Access_Array_Access is access all ImageCacheBase_Access_Array_Access_Array;
+end org.allbinary.image.ImageCacheBase_Package_References;
+
+with org.allbinary.image.ImageCacheBase_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,11 +31,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
+limited with org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.ImageFactory_Package_References;
 
 package org.allbinary.image.ImageCacheBase_Package is
 
@@ -34,13 +49,71 @@ package org.allbinary.image.ImageCacheBase_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   use type ABHashtable_Access;
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   use type ABHashtable_Access_Array;
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access;
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   use type ABHashtable_Access_Array_Access_Array;
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access_Array_Access;
+   subtype ImageFactory_Access is org.allbinary.image.ImageFactory_Package_References.ImageFactory_Access;
+   use type ImageFactory_Access;
+   subtype ImageFactory_Access_Array is org.allbinary.image.ImageFactory_Package_References.ImageFactory_Access_Array;
+   use type ImageFactory_Access_Array;
+   subtype ImageFactory_Access_Array_Access is org.allbinary.image.ImageFactory_Package_References.ImageFactory_Access_Array_Access;
+   use type ImageFactory_Access_Array_Access;
+   subtype ImageFactory_Access_Array_Access_Array is org.allbinary.image.ImageFactory_Package_References.ImageFactory_Access_Array_Access_Array;
+   use type ImageFactory_Access_Array_Access_Array;
+   subtype ImageFactory_Access_Array_Access_Array_Access is org.allbinary.image.ImageFactory_Package_References.ImageFactory_Access_Array_Access_Array_Access;
+   use type ImageFactory_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageCacheBase is tagged;
-   type ImageCacheBase_Access is access all ImageCacheBase'Class;
-   type ImageCacheBase_Access_Array is array (Natural range <>) of ImageCacheBase_Access;
-   type ImageCacheBase_Access_Array_Access is access all ImageCacheBase_Access_Array;
-   type ImageCacheBase_Access_Array_Access_Array is array (Natural range <>) of ImageCacheBase_Access_Array_Access;
-   type ImageCacheBase_Access_Array_Access_Array_Access is access all ImageCacheBase_Access_Array_Access_Array;
+
+   subtype ImageCacheBase_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access;
+   function "=" (Left, Right : ImageCacheBase_Access) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
+   subtype ImageCacheBase_Access_Array is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array;
+   function "=" (Left, Right : ImageCacheBase_Access_Array) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
+   subtype ImageCacheBase_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access;
+   function "=" (Left, Right : ImageCacheBase_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
+   subtype ImageCacheBase_Access_Array_Access_Array is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
+   subtype ImageCacheBase_Access_Array_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
 
    type ImageCacheBase is new Java_Object with record
       logUtil : LogUtil_Access;

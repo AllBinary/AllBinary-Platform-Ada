@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.apache.commons.fileupload.FileItemFactory_Package; use org.apache.commons.fileupload.FileItemFactory_Package;
+with org.apache.commons.fileupload.FileItemIterator_Package; use org.apache.commons.fileupload.FileItemIterator_Package;
+with org.apache.commons.fileupload.FileUpload_Package; use org.apache.commons.fileupload.FileUpload_Package;
 with org.apache.commons.fileupload.FileUploadException_Package; use org.apache.commons.fileupload.FileUploadException_Package;
 with org.apache.commons.fileupload.servlet.ServletRequestContext_Package; use org.apache.commons.fileupload.servlet.ServletRequestContext_Package;
 
@@ -20,6 +23,26 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUpload_Pac
 
    package FileUploadException_Package renames Standard.org.apache.commons.fileupload.FileUploadException_Package;
    package ServletRequestContext_Package renames Standard.org.apache.commons.fileupload.servlet.ServletRequestContext_Package;
+   subtype FileItemFactory_Access is org.apache.commons.fileupload.FileItemFactory_Package_References.FileItemFactory_Access;
+   function "=" (Left, Right : FileItemFactory_Access) return Boolean renames org.apache.commons.fileupload.FileItemFactory_Package_References."=";
+   subtype FileItemFactory_Access_Array is org.apache.commons.fileupload.FileItemFactory_Package_References.FileItemFactory_Access_Array;
+   function "=" (Left, Right : FileItemFactory_Access_Array) return Boolean renames org.apache.commons.fileupload.FileItemFactory_Package_References."=";
+   subtype FileItemFactory_Access_Array_Access is org.apache.commons.fileupload.FileItemFactory_Package_References.FileItemFactory_Access_Array_Access;
+   function "=" (Left, Right : FileItemFactory_Access_Array_Access) return Boolean renames org.apache.commons.fileupload.FileItemFactory_Package_References."=";
+   subtype FileItemFactory_Access_Array_Access_Array is org.apache.commons.fileupload.FileItemFactory_Package_References.FileItemFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : FileItemFactory_Access_Array_Access_Array) return Boolean renames org.apache.commons.fileupload.FileItemFactory_Package_References."=";
+   subtype FileItemFactory_Access_Array_Access_Array_Access is org.apache.commons.fileupload.FileItemFactory_Package_References.FileItemFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileItemFactory_Access_Array_Access_Array_Access) return Boolean renames org.apache.commons.fileupload.FileItemFactory_Package_References."=";
+   subtype FileItemIterator_Access is org.apache.commons.fileupload.FileItemIterator_Package_References.FileItemIterator_Access;
+   function "=" (Left, Right : FileItemIterator_Access) return Boolean renames org.apache.commons.fileupload.FileItemIterator_Package_References."=";
+   subtype FileItemIterator_Access_Array is org.apache.commons.fileupload.FileItemIterator_Package_References.FileItemIterator_Access_Array;
+   function "=" (Left, Right : FileItemIterator_Access_Array) return Boolean renames org.apache.commons.fileupload.FileItemIterator_Package_References."=";
+   subtype FileItemIterator_Access_Array_Access is org.apache.commons.fileupload.FileItemIterator_Package_References.FileItemIterator_Access_Array_Access;
+   function "=" (Left, Right : FileItemIterator_Access_Array_Access) return Boolean renames org.apache.commons.fileupload.FileItemIterator_Package_References."=";
+   subtype FileItemIterator_Access_Array_Access_Array is org.apache.commons.fileupload.FileItemIterator_Package_References.FileItemIterator_Access_Array_Access_Array;
+   function "=" (Left, Right : FileItemIterator_Access_Array_Access_Array) return Boolean renames org.apache.commons.fileupload.FileItemIterator_Package_References."=";
+   subtype FileItemIterator_Access_Array_Access_Array_Access is org.apache.commons.fileupload.FileItemIterator_Package_References.FileItemIterator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileItemIterator_Access_Array_Access_Array_Access) return Boolean renames org.apache.commons.fileupload.FileItemIterator_Package_References."=";
    procedure Initialize_Fields (This : in out AbFileUpload'Class) is
    begin
       null;

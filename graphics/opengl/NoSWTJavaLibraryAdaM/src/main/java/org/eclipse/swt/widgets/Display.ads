@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.eclipse.swt.widgets.Display_Package;
+package org.eclipse.swt.widgets.Display_Package_References is
+   type Display_Access is access all org.eclipse.swt.widgets.Display_Package.Display'Class;
+   type Display_Access_Array is array (Natural range <>) of Display_Access;
+   type Display_Access_Array_Access is access all Display_Access_Array;
+   type Display_Access_Array_Access_Array is array (Natural range <>) of Display_Access_Array_Access;
+   type Display_Access_Array_Access_Array_Access is access all Display_Access_Array_Access_Array;
+end org.eclipse.swt.widgets.Display_Package_References;
+
+with org.eclipse.swt.widgets.Display_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.eclipse.swt.widgets.Display_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Display is tagged;
-   type Display_Access is access all Display'Class;
-   type Display_Access_Array is array (Natural range <>) of Display_Access;
-   type Display_Access_Array_Access is access all Display_Access_Array;
-   type Display_Access_Array_Access_Array is array (Natural range <>) of Display_Access_Array_Access;
-   type Display_Access_Array_Access_Array_Access is access all Display_Access_Array_Access_Array;
+
+   subtype Display_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access;
+   function "=" (Left, Right : Display_Access) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array;
+   function "=" (Left, Right : Display_Access_Array) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access;
+   function "=" (Left, Right : Display_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array_Access_Array is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access_Array;
+   function "=" (Left, Right : Display_Access_Array_Access_Array) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
+   subtype Display_Access_Array_Access_Array_Access is org.eclipse.swt.widgets.Display_Package_References.Display_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Display_Access_Array_Access_Array_Access) return Boolean renames org.eclipse.swt.widgets.Display_Package_References."=";
 
    type Display is new Java_Object with null record;
 

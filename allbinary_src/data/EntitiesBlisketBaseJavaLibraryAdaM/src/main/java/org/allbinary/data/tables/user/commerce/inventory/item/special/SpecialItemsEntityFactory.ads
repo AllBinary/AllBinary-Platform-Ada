@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package;
+package org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References is
+   type SpecialItemsEntityFactory_Access is access all org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package.SpecialItemsEntityFactory'Class;
+   type SpecialItemsEntityFactory_Access_Array is array (Natural range <>) of SpecialItemsEntityFactory_Access;
+   type SpecialItemsEntityFactory_Access_Array_Access is access all SpecialItemsEntityFactory_Access_Array;
+   type SpecialItemsEntityFactory_Access_Array_Access_Array is array (Natural range <>) of SpecialItemsEntityFactory_Access_Array_Access;
+   type SpecialItemsEntityFactory_Access_Array_Access_Array_Access is access all SpecialItemsEntityFactory_Access_Array_Access_Array;
+end org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References;
+
+with org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package_References;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype SpecialItemsEntity_Access is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package_References.SpecialItemsEntity_Access;
+   use type SpecialItemsEntity_Access;
+   subtype SpecialItemsEntity_Access_Array is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package_References.SpecialItemsEntity_Access_Array;
+   use type SpecialItemsEntity_Access_Array;
+   subtype SpecialItemsEntity_Access_Array_Access is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package_References.SpecialItemsEntity_Access_Array_Access;
+   use type SpecialItemsEntity_Access_Array_Access;
+   subtype SpecialItemsEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package_References.SpecialItemsEntity_Access_Array_Access_Array;
+   use type SpecialItemsEntity_Access_Array_Access_Array;
+   subtype SpecialItemsEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package_References.SpecialItemsEntity_Access_Array_Access_Array_Access;
+   use type SpecialItemsEntity_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SpecialItemsEntityFactory is tagged;
-   type SpecialItemsEntityFactory_Access is access all SpecialItemsEntityFactory'Class;
-   type SpecialItemsEntityFactory_Access_Array is array (Natural range <>) of SpecialItemsEntityFactory_Access;
-   type SpecialItemsEntityFactory_Access_Array_Access is access all SpecialItemsEntityFactory_Access_Array;
-   type SpecialItemsEntityFactory_Access_Array_Access_Array is array (Natural range <>) of SpecialItemsEntityFactory_Access_Array_Access;
-   type SpecialItemsEntityFactory_Access_Array_Access_Array_Access is access all SpecialItemsEntityFactory_Access_Array_Access_Array;
+
+   subtype SpecialItemsEntityFactory_Access is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References.SpecialItemsEntityFactory_Access;
+   function "=" (Left, Right : SpecialItemsEntityFactory_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References."=";
+   subtype SpecialItemsEntityFactory_Access_Array is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References.SpecialItemsEntityFactory_Access_Array;
+   function "=" (Left, Right : SpecialItemsEntityFactory_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References."=";
+   subtype SpecialItemsEntityFactory_Access_Array_Access is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References.SpecialItemsEntityFactory_Access_Array_Access;
+   function "=" (Left, Right : SpecialItemsEntityFactory_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References."=";
+   subtype SpecialItemsEntityFactory_Access_Array_Access_Array is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References.SpecialItemsEntityFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : SpecialItemsEntityFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References."=";
+   subtype SpecialItemsEntityFactory_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References.SpecialItemsEntityFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SpecialItemsEntityFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package_References."=";
 
    type SpecialItemsEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

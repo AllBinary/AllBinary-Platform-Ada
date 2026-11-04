@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.generator.PaymentGatewayIdGenerator_Package;
+package org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References is
+   type PaymentGatewayIdGenerator_Access is access all org.allbinary.data.generator.PaymentGatewayIdGenerator_Package.PaymentGatewayIdGenerator'Class;
+   type PaymentGatewayIdGenerator_Access_Array is array (Natural range <>) of PaymentGatewayIdGenerator_Access;
+   type PaymentGatewayIdGenerator_Access_Array_Access is access all PaymentGatewayIdGenerator_Access_Array;
+   type PaymentGatewayIdGenerator_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayIdGenerator_Access_Array_Access;
+   type PaymentGatewayIdGenerator_Access_Array_Access_Array_Access is access all PaymentGatewayIdGenerator_Access_Array_Access_Array;
+end org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References;
+
+with org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.data.generator.UniqueIdGenerator_Package; use org.allbinary.d
 
 package org.allbinary.data.generator.PaymentGatewayIdGenerator_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PaymentGatewayIdGenerator is tagged;
-   type PaymentGatewayIdGenerator_Access is access all PaymentGatewayIdGenerator'Class;
-   type PaymentGatewayIdGenerator_Access_Array is array (Natural range <>) of PaymentGatewayIdGenerator_Access;
-   type PaymentGatewayIdGenerator_Access_Array_Access is access all PaymentGatewayIdGenerator_Access_Array;
-   type PaymentGatewayIdGenerator_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayIdGenerator_Access_Array_Access;
-   type PaymentGatewayIdGenerator_Access_Array_Access_Array_Access is access all PaymentGatewayIdGenerator_Access_Array_Access_Array;
+
+   subtype PaymentGatewayIdGenerator_Access is org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References.PaymentGatewayIdGenerator_Access;
+   function "=" (Left, Right : PaymentGatewayIdGenerator_Access) return Boolean renames org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References."=";
+   subtype PaymentGatewayIdGenerator_Access_Array is org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References.PaymentGatewayIdGenerator_Access_Array;
+   function "=" (Left, Right : PaymentGatewayIdGenerator_Access_Array) return Boolean renames org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References."=";
+   subtype PaymentGatewayIdGenerator_Access_Array_Access is org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References.PaymentGatewayIdGenerator_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayIdGenerator_Access_Array_Access) return Boolean renames org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References."=";
+   subtype PaymentGatewayIdGenerator_Access_Array_Access_Array is org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References.PaymentGatewayIdGenerator_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentGatewayIdGenerator_Access_Array_Access_Array) return Boolean renames org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References."=";
+   subtype PaymentGatewayIdGenerator_Access_Array_Access_Array_Access is org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References.PaymentGatewayIdGenerator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentGatewayIdGenerator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.generator.PaymentGatewayIdGenerator_Package_References."=";
 
    type PaymentGatewayIdGenerator is new UniqueIdGenerator with record
       IDFILE : Unbounded_String;

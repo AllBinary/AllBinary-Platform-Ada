@@ -13,12 +13,46 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
 
 package body org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package is
 
    package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
+   subtype CellPosition_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access;
+   function "=" (Left, Right : CellPosition_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array;
+   function "=" (Left, Right : CellPosition_Access_Array) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access;
+   function "=" (Left, Right : CellPosition_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array_Access_Array is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array;
+   function "=" (Left, Right : CellPosition_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CellPosition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    procedure Initialize_Fields (This : in out BasicTouchButtonCellPositionFactory'Class) is
    begin
       null;
@@ -71,17 +105,17 @@ package body org.allbinary.input.motion.button.BasicTouchButtonCellPositionFacto
             This.SECOND_FROM_TOP_LEFT := cellPositionFactory.getInstanceColRow (0, 1);
             This.SECOND_FROM_TOP_RIGHT := cellPositionFactory.getInstanceColRow ((touchButtonLocationHelper.getTotalColumns) - (1), 1);
         else
-            This.SECOND_FROM_TOP_LEFT := cellPositionFactory.NONE;
-            This.SECOND_FROM_TOP_RIGHT := cellPositionFactory.NONE;
+            This.SECOND_FROM_TOP_LEFT := CellPosition_Access (cellPositionFactory.NONE);
+            This.SECOND_FROM_TOP_RIGHT := CellPosition_Access (cellPositionFactory.NONE);
         end if;
         if (touchButtonLocationHelper.getTotalRows) >= (4) then
             This.THIRD_FROM_BOTTOM_RIGHT := cellPositionFactory.getInstanceColRow ((touchButtonLocationHelper.getTotalColumns) - (1), (touchButtonLocationHelper.getTotalRows) - (3));
             This.FOURTH_FROM_BOTTOM_RIGHT := cellPositionFactory.getInstanceColRow ((touchButtonLocationHelper.getTotalColumns) - (1), (touchButtonLocationHelper.getTotalRows) - (4));
             This.THIRD_FROM_BOTTOM_LEFT := cellPositionFactory.getInstanceColRow (0, (touchButtonLocationHelper.getTotalRows) - (3));
         else
-            This.THIRD_FROM_BOTTOM_RIGHT := cellPositionFactory.NONE;
-            This.FOURTH_FROM_BOTTOM_RIGHT := cellPositionFactory.NONE;
-            This.THIRD_FROM_BOTTOM_LEFT := cellPositionFactory.NONE;
+            This.THIRD_FROM_BOTTOM_RIGHT := CellPosition_Access (cellPositionFactory.NONE);
+            This.FOURTH_FROM_BOTTOM_RIGHT := CellPosition_Access (cellPositionFactory.NONE);
+            This.THIRD_FROM_BOTTOM_LEFT := CellPosition_Access (cellPositionFactory.NONE);
         end if;
         if (touchButtonLocationHelper.getTotalColumns) >= (4) then
             This.SECOND_FROM_BOTTOM_THIRD_FROM_RIGHT := cellPositionFactory.getInstanceColRow ((touchButtonLocationHelper.getTotalColumns) - (3), (touchButtonLocationHelper.getTotalRows) - (2));
@@ -91,12 +125,12 @@ package body org.allbinary.input.motion.button.BasicTouchButtonCellPositionFacto
             This.TOP_SECOND_FROM_LEFT := cellPositionFactory.getInstanceColRow (1, 0);
             This.TOP_SECOND_FROM_RIGHT := cellPositionFactory.getInstanceColRow ((touchButtonLocationHelper.getTotalColumns) - (2), 0);
         else
-            This.SECOND_FROM_BOTTOM_THIRD_FROM_RIGHT := cellPositionFactory.NONE;
-            This.SECOND_FROM_BOTTOM_FOURTH_FROM_RIGHT := cellPositionFactory.NONE;
-            This.BOTTOM_THIRD_FROM_RIGHT := cellPositionFactory.NONE;
-            This.BOTTOM_FOURTH_FROM_RIGHT := cellPositionFactory.NONE;
-            This.TOP_SECOND_FROM_LEFT := cellPositionFactory.NONE;
-            This.TOP_SECOND_FROM_RIGHT := cellPositionFactory.NONE;
+            This.SECOND_FROM_BOTTOM_THIRD_FROM_RIGHT := CellPosition_Access (cellPositionFactory.NONE);
+            This.SECOND_FROM_BOTTOM_FOURTH_FROM_RIGHT := CellPosition_Access (cellPositionFactory.NONE);
+            This.BOTTOM_THIRD_FROM_RIGHT := CellPosition_Access (cellPositionFactory.NONE);
+            This.BOTTOM_FOURTH_FROM_RIGHT := CellPosition_Access (cellPositionFactory.NONE);
+            This.TOP_SECOND_FROM_LEFT := CellPosition_Access (cellPositionFactory.NONE);
+            This.TOP_SECOND_FROM_RIGHT := CellPosition_Access (cellPositionFactory.NONE);
         end if;
    end Initialize;
 

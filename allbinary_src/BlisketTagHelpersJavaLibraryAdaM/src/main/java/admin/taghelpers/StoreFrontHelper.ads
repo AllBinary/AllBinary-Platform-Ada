@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.StoreFrontHelper_Package;
+package admin.taghelpers.StoreFrontHelper_Package_References is
+   type StoreFrontHelper_Access is access all admin.taghelpers.StoreFrontHelper_Package.StoreFrontHelper'Class;
+   type StoreFrontHelper_Access_Array is array (Natural range <>) of StoreFrontHelper_Access;
+   type StoreFrontHelper_Access_Array_Access is access all StoreFrontHelper_Access_Array;
+   type StoreFrontHelper_Access_Array_Access_Array is array (Natural range <>) of StoreFrontHelper_Access_Array_Access;
+   type StoreFrontHelper_Access_Array_Access_Array_Access is access all StoreFrontHelper_Access_Array_Access_Array;
+end admin.taghelpers.StoreFrontHelper_Package_References;
+
+with admin.taghelpers.StoreFrontHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,20 +32,39 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+limited with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.StoreFrontHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package Reference_Types is
+   subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
+   use type StoreFrontInterface_Access;
+   subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
+   use type StoreFrontInterface_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access;
+   subtype StoreFrontInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array;
+   use type StoreFrontInterface_Access_Array_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreFrontHelper is tagged;
-   type StoreFrontHelper_Access is access all StoreFrontHelper'Class;
-   type StoreFrontHelper_Access_Array is array (Natural range <>) of StoreFrontHelper_Access;
-   type StoreFrontHelper_Access_Array_Access is access all StoreFrontHelper_Access_Array;
-   type StoreFrontHelper_Access_Array_Access_Array is array (Natural range <>) of StoreFrontHelper_Access_Array_Access;
-   type StoreFrontHelper_Access_Array_Access_Array_Access is access all StoreFrontHelper_Access_Array_Access_Array;
+
+   subtype StoreFrontHelper_Access is admin.taghelpers.StoreFrontHelper_Package_References.StoreFrontHelper_Access;
+   function "=" (Left, Right : StoreFrontHelper_Access) return Boolean renames admin.taghelpers.StoreFrontHelper_Package_References."=";
+   subtype StoreFrontHelper_Access_Array is admin.taghelpers.StoreFrontHelper_Package_References.StoreFrontHelper_Access_Array;
+   function "=" (Left, Right : StoreFrontHelper_Access_Array) return Boolean renames admin.taghelpers.StoreFrontHelper_Package_References."=";
+   subtype StoreFrontHelper_Access_Array_Access is admin.taghelpers.StoreFrontHelper_Package_References.StoreFrontHelper_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontHelper_Access_Array_Access) return Boolean renames admin.taghelpers.StoreFrontHelper_Package_References."=";
+   subtype StoreFrontHelper_Access_Array_Access_Array is admin.taghelpers.StoreFrontHelper_Package_References.StoreFrontHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.StoreFrontHelper_Package_References."=";
+   subtype StoreFrontHelper_Access_Array_Access_Array_Access is admin.taghelpers.StoreFrontHelper_Package_References.StoreFrontHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.StoreFrontHelper_Package_References."=";
 
    type StoreFrontHelper is new TagHelper with record
       storeFrontInterface : StoreFrontInterface_Access;

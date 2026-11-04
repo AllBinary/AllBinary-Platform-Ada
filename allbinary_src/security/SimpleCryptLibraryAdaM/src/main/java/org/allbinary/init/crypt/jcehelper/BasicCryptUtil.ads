@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package;
+package org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References is
+   type BasicCryptUtil_Access is access all org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package.BasicCryptUtil'Class;
+   type BasicCryptUtil_Access_Array is array (Natural range <>) of BasicCryptUtil_Access;
+   type BasicCryptUtil_Access_Array_Access is access all BasicCryptUtil_Access_Array;
+   type BasicCryptUtil_Access_Array_Access_Array is array (Natural range <>) of BasicCryptUtil_Access_Array_Access;
+   type BasicCryptUtil_Access_Array_Access_Array_Access is access all BasicCryptUtil_Access_Array_Access_Array;
+end org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References;
+
+with org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,22 +32,63 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+limited with org.allbinary.TsUtil_Package;
+with org.allbinary.TsUtil_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+with org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References;
 
 package org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype TsUtil_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access;
+   use type TsUtil_Access;
+   subtype TsUtil_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array;
+   use type TsUtil_Access_Array;
+   subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
+   use type TsUtil_Access_Array_Access;
+   subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
+   use type TsUtil_Access_Array_Access_Array;
+   subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
+   use type TsUtil_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CryptInterface_Access is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access;
+   use type CryptInterface_Access;
+   subtype CryptInterface_Access_Array is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access_Array;
+   use type CryptInterface_Access_Array;
+   subtype CryptInterface_Access_Array_Access is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access_Array_Access;
+   use type CryptInterface_Access_Array_Access;
+   subtype CryptInterface_Access_Array_Access_Array is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access_Array_Access_Array;
+   use type CryptInterface_Access_Array_Access_Array;
+   subtype CryptInterface_Access_Array_Access_Array_Access is org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References.CryptInterface_Access_Array_Access_Array_Access;
+   use type CryptInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicCryptUtil is tagged;
-   type BasicCryptUtil_Access is access all BasicCryptUtil'Class;
-   type BasicCryptUtil_Access_Array is array (Natural range <>) of BasicCryptUtil_Access;
-   type BasicCryptUtil_Access_Array_Access is access all BasicCryptUtil_Access_Array;
-   type BasicCryptUtil_Access_Array_Access_Array is array (Natural range <>) of BasicCryptUtil_Access_Array_Access;
-   type BasicCryptUtil_Access_Array_Access_Array_Access is access all BasicCryptUtil_Access_Array_Access_Array;
+
+   subtype BasicCryptUtil_Access is org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References.BasicCryptUtil_Access;
+   function "=" (Left, Right : BasicCryptUtil_Access) return Boolean renames org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References."=";
+   subtype BasicCryptUtil_Access_Array is org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References.BasicCryptUtil_Access_Array;
+   function "=" (Left, Right : BasicCryptUtil_Access_Array) return Boolean renames org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References."=";
+   subtype BasicCryptUtil_Access_Array_Access is org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References.BasicCryptUtil_Access_Array_Access;
+   function "=" (Left, Right : BasicCryptUtil_Access_Array_Access) return Boolean renames org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References."=";
+   subtype BasicCryptUtil_Access_Array_Access_Array is org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References.BasicCryptUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicCryptUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References."=";
+   subtype BasicCryptUtil_Access_Array_Access_Array_Access is org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References.BasicCryptUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicCryptUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package_References."=";
 
    type BasicCryptUtil is new Java_Object with record
       logUtil : LogUtil_Access;

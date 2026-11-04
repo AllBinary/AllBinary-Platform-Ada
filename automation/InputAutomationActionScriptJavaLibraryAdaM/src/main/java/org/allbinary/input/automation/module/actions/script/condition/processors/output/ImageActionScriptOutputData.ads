@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package;
+package org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References is
+   type ImageActionScriptOutputData_Access is access all org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package.ImageActionScriptOutputData'Class;
+   type ImageActionScriptOutputData_Access_Array is array (Natural range <>) of ImageActionScriptOutputData_Access;
+   type ImageActionScriptOutputData_Access_Array_Access is access all ImageActionScriptOutputData_Access_Array;
+   type ImageActionScriptOutputData_Access_Array_Access_Array is array (Natural range <>) of ImageActionScriptOutputData_Access_Array_Access;
+   type ImageActionScriptOutputData_Access_Array_Access_Array_Access is access all ImageActionScriptOutputData_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References;
+
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageActionScriptOutputData is tagged;
-   type ImageActionScriptOutputData_Access is access all ImageActionScriptOutputData'Class;
-   type ImageActionScriptOutputData_Access_Array is array (Natural range <>) of ImageActionScriptOutputData_Access;
-   type ImageActionScriptOutputData_Access_Array_Access is access all ImageActionScriptOutputData_Access_Array;
-   type ImageActionScriptOutputData_Access_Array_Access_Array is array (Natural range <>) of ImageActionScriptOutputData_Access_Array_Access;
-   type ImageActionScriptOutputData_Access_Array_Access_Array_Access is access all ImageActionScriptOutputData_Access_Array_Access_Array;
+
+   subtype ImageActionScriptOutputData_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References.ImageActionScriptOutputData_Access;
+   function "=" (Left, Right : ImageActionScriptOutputData_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References."=";
+   subtype ImageActionScriptOutputData_Access_Array is org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References.ImageActionScriptOutputData_Access_Array;
+   function "=" (Left, Right : ImageActionScriptOutputData_Access_Array) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References."=";
+   subtype ImageActionScriptOutputData_Access_Array_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References.ImageActionScriptOutputData_Access_Array_Access;
+   function "=" (Left, Right : ImageActionScriptOutputData_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References."=";
+   subtype ImageActionScriptOutputData_Access_Array_Access_Array is org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References.ImageActionScriptOutputData_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageActionScriptOutputData_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References."=";
+   subtype ImageActionScriptOutputData_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References.ImageActionScriptOutputData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageActionScriptOutputData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package_References."=";
 
    type ImageActionScriptOutputData is new Java_Object with null record;
    NAME : Unbounded_String;

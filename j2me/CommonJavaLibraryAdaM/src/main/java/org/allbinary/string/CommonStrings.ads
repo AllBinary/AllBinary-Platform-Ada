@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.string_Id.CommonStrings_Package;
+package org.allbinary.string_Id.CommonStrings_Package_References is
+   type CommonStrings_Access is access all org.allbinary.string_Id.CommonStrings_Package.CommonStrings'Class;
+   type CommonStrings_Access_Array is array (Natural range <>) of CommonStrings_Access;
+   type CommonStrings_Access_Array_Access is access all CommonStrings_Access_Array;
+   type CommonStrings_Access_Array_Access_Array is array (Natural range <>) of CommonStrings_Access_Array_Access;
+   type CommonStrings_Access_Array_Access_Array_Access is access all CommonStrings_Access_Array_Access_Array;
+end org.allbinary.string_Id.CommonStrings_Package_References;
+
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.string_Id.CommonStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CommonStrings is tagged;
-   type CommonStrings_Access is access all CommonStrings'Class;
-   type CommonStrings_Access_Array is array (Natural range <>) of CommonStrings_Access;
-   type CommonStrings_Access_Array_Access is access all CommonStrings_Access_Array;
-   type CommonStrings_Access_Array_Access_Array is array (Natural range <>) of CommonStrings_Access_Array_Access;
-   type CommonStrings_Access_Array_Access_Array_Access is access all CommonStrings_Access_Array_Access_Array;
+
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
 
    type CommonStrings is new Java_Object with record
       EMPTY : Unbounded_String;

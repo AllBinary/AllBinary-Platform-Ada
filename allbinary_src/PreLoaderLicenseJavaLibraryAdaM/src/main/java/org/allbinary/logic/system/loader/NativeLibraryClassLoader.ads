@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package;
+package org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References is
+   type NativeLibraryClassLoader_Access is access all org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package.NativeLibraryClassLoader'Class;
+   type NativeLibraryClassLoader_Access_Array is array (Natural range <>) of NativeLibraryClassLoader_Access;
+   type NativeLibraryClassLoader_Access_Array_Access is access all NativeLibraryClassLoader_Access_Array;
+   type NativeLibraryClassLoader_Access_Array_Access_Array is array (Natural range <>) of NativeLibraryClassLoader_Access_Array_Access;
+   type NativeLibraryClassLoader_Access_Array_Access_Array_Access is access all NativeLibraryClassLoader_Access_Array_Access_Array;
+end org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References;
+
+with org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.lo
 
 package org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NativeLibraryClassLoader is tagged;
-   type NativeLibraryClassLoader_Access is access all NativeLibraryClassLoader'Class;
-   type NativeLibraryClassLoader_Access_Array is array (Natural range <>) of NativeLibraryClassLoader_Access;
-   type NativeLibraryClassLoader_Access_Array_Access is access all NativeLibraryClassLoader_Access_Array;
-   type NativeLibraryClassLoader_Access_Array_Access_Array is array (Natural range <>) of NativeLibraryClassLoader_Access_Array_Access;
-   type NativeLibraryClassLoader_Access_Array_Access_Array_Access is access all NativeLibraryClassLoader_Access_Array_Access_Array;
+
+   subtype NativeLibraryClassLoader_Access is org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References.NativeLibraryClassLoader_Access;
+   function "=" (Left, Right : NativeLibraryClassLoader_Access) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References."=";
+   subtype NativeLibraryClassLoader_Access_Array is org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References.NativeLibraryClassLoader_Access_Array;
+   function "=" (Left, Right : NativeLibraryClassLoader_Access_Array) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References."=";
+   subtype NativeLibraryClassLoader_Access_Array_Access is org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References.NativeLibraryClassLoader_Access_Array_Access;
+   function "=" (Left, Right : NativeLibraryClassLoader_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References."=";
+   subtype NativeLibraryClassLoader_Access_Array_Access_Array is org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References.NativeLibraryClassLoader_Access_Array_Access_Array;
+   function "=" (Left, Right : NativeLibraryClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References."=";
+   subtype NativeLibraryClassLoader_Access_Array_Access_Array_Access is org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References.NativeLibraryClassLoader_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NativeLibraryClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package_References."=";
 
    type NativeLibraryClassLoader is new ClassLoader with record
       message : Unbounded_String;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.java.proxy.InterfaceCastProxy_Package;
+package org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References is
+   type InterfaceCastProxy_Access is access all org.allbinary.logic.java.proxy.InterfaceCastProxy_Package.InterfaceCastProxy'Class;
+   type InterfaceCastProxy_Access_Array is array (Natural range <>) of InterfaceCastProxy_Access;
+   type InterfaceCastProxy_Access_Array_Access is access all InterfaceCastProxy_Access_Array;
+   type InterfaceCastProxy_Access_Array_Access_Array is array (Natural range <>) of InterfaceCastProxy_Access_Array_Access;
+   type InterfaceCastProxy_Access_Array_Access_Array_Access is access all InterfaceCastProxy_Access_Array_Access_Array;
+end org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References;
+
+with org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with org.allbinary.logic.java.proxy.InvocationHandler_Package; use org.allbinary
 
 package org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InterfaceCastProxy is tagged;
-   type InterfaceCastProxy_Access is access all InterfaceCastProxy'Class;
-   type InterfaceCastProxy_Access_Array is array (Natural range <>) of InterfaceCastProxy_Access;
-   type InterfaceCastProxy_Access_Array_Access is access all InterfaceCastProxy_Access_Array;
-   type InterfaceCastProxy_Access_Array_Access_Array is array (Natural range <>) of InterfaceCastProxy_Access_Array_Access;
-   type InterfaceCastProxy_Access_Array_Access_Array_Access is access all InterfaceCastProxy_Access_Array_Access_Array;
+
+   subtype InterfaceCastProxy_Access is org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References.InterfaceCastProxy_Access;
+   function "=" (Left, Right : InterfaceCastProxy_Access) return Boolean renames org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References."=";
+   subtype InterfaceCastProxy_Access_Array is org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References.InterfaceCastProxy_Access_Array;
+   function "=" (Left, Right : InterfaceCastProxy_Access_Array) return Boolean renames org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References."=";
+   subtype InterfaceCastProxy_Access_Array_Access is org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References.InterfaceCastProxy_Access_Array_Access;
+   function "=" (Left, Right : InterfaceCastProxy_Access_Array_Access) return Boolean renames org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References."=";
+   subtype InterfaceCastProxy_Access_Array_Access_Array is org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References.InterfaceCastProxy_Access_Array_Access_Array;
+   function "=" (Left, Right : InterfaceCastProxy_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References."=";
+   subtype InterfaceCastProxy_Access_Array_Access_Array_Access is org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References.InterfaceCastProxy_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InterfaceCastProxy_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.proxy.InterfaceCastProxy_Package_References."=";
 
    type InterfaceCastProxy is new Java_Object and InvocationHandler with record
       anyType : Java_Object_Access;

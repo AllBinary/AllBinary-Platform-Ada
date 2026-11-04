@@ -135,8 +135,8 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
       runnable : constant Runnable_Access := Runnable_Access (runnable_Param);
    begin
         begin  --  synchronized
-            if not (This.runnableList.contains (Java_Object_Access (runnable))) then
-                This.runnableList.add (Java_Object_Access (runnable));
+            if not (This.runnableList.contains (Runnable_Package.Java_Object_Access_From_Runnable (runnable))) then
+                This.runnableList.add (Runnable_Package.Java_Object_Access_From_Runnable (runnable));
                 This.displayInfoSingleton.add (This.canvasStrings.SCALED_IMAGES);
             end if;
         end;
@@ -162,14 +162,14 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
    procedure set (This : in out OpenGLUtil; gl_Param : access GL10_Package.GL10'Class) is
       gl : constant GL10_Access := GL10_Access (gl_Param);
       size : Integer;
-      image : Java_Object_Access;
+      image : OpenGLESImage_Access;
       index2 : Integer;
    begin
         size := This.list.size;
         image := null;
         for index2 in 0 .. (size) - 1 loop
-            image := This.list.get (index2);
-            OpenGLESImage_Access (image).set (gl);
+            image := OpenGLESImage_Access (This.list.get (index2));
+            image.set (gl);
         end loop;
    end set;
 

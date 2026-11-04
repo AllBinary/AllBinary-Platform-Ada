@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package;
+package org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References is
+   type NoCrypt_Access is access all org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package.NoCrypt'Class;
+   type NoCrypt_Access_Array is array (Natural range <>) of NoCrypt_Access;
+   type NoCrypt_Access_Array_Access is access all NoCrypt_Access_Array;
+   type NoCrypt_Access_Array_Access_Array is array (Natural range <>) of NoCrypt_Access_Array_Access;
+   type NoCrypt_Access_Array_Access_Array_Access is access all NoCrypt_Access_Array_Access_Array;
+end org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References;
+
+with org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinar
 package org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package is
 
    package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoCrypt is tagged;
-   type NoCrypt_Access is access all NoCrypt'Class;
-   type NoCrypt_Access_Array is array (Natural range <>) of NoCrypt_Access;
-   type NoCrypt_Access_Array_Access is access all NoCrypt_Access_Array;
-   type NoCrypt_Access_Array_Access_Array is array (Natural range <>) of NoCrypt_Access_Array_Access;
-   type NoCrypt_Access_Array_Access_Array_Access is access all NoCrypt_Access_Array_Access_Array;
+
+   subtype NoCrypt_Access is org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References.NoCrypt_Access;
+   function "=" (Left, Right : NoCrypt_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References."=";
+   subtype NoCrypt_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References.NoCrypt_Access_Array;
+   function "=" (Left, Right : NoCrypt_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References."=";
+   subtype NoCrypt_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References.NoCrypt_Access_Array_Access;
+   function "=" (Left, Right : NoCrypt_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References."=";
+   subtype NoCrypt_Access_Array_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References.NoCrypt_Access_Array_Access_Array;
+   function "=" (Left, Right : NoCrypt_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References."=";
+   subtype NoCrypt_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References.NoCrypt_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoCrypt_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package_References."=";
 
    type NoCrypt is new Java_Object and CryptInterface with null record;
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
+package org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References is
+   type GeographicMapDirectionUtil_Access is access all org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package.GeographicMapDirectionUtil'Class;
+   type GeographicMapDirectionUtil_Access_Array is array (Natural range <>) of GeographicMapDirectionUtil_Access;
+   type GeographicMapDirectionUtil_Access_Array_Access is access all GeographicMapDirectionUtil_Access_Array;
+   type GeographicMapDirectionUtil_Access_Array_Access_Array is array (Natural range <>) of GeographicMapDirectionUtil_Access_Array_Access;
+   type GeographicMapDirectionUtil_Access_Array_Access_Array_Access is access all GeographicMapDirectionUtil_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References;
+
+with org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,49 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+limited with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package is
 
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package Reference_Types is
+   subtype Direction_Access is org.allbinary.direction.Direction_Package_References.Direction_Access;
+   use type Direction_Access;
+   subtype Direction_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array;
+   use type Direction_Access_Array;
+   subtype Direction_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access;
+   use type Direction_Access_Array_Access;
+   subtype Direction_Access_Array_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array;
+   use type Direction_Access_Array_Access_Array;
+   subtype Direction_Access_Array_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array_Access;
+   use type Direction_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access;
+   use type GeographicMapCellPosition_Access;
+   subtype GeographicMapCellPosition_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array;
+   use type GeographicMapCellPosition_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
+   use type GeographicMapCellPosition_Access_Array_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GeographicMapDirectionUtil is tagged;
-   type GeographicMapDirectionUtil_Access is access all GeographicMapDirectionUtil'Class;
-   type GeographicMapDirectionUtil_Access_Array is array (Natural range <>) of GeographicMapDirectionUtil_Access;
-   type GeographicMapDirectionUtil_Access_Array_Access is access all GeographicMapDirectionUtil_Access_Array;
-   type GeographicMapDirectionUtil_Access_Array_Access_Array is array (Natural range <>) of GeographicMapDirectionUtil_Access_Array_Access;
-   type GeographicMapDirectionUtil_Access_Array_Access_Array_Access is access all GeographicMapDirectionUtil_Access_Array_Access_Array;
+
+   subtype GeographicMapDirectionUtil_Access is org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References.GeographicMapDirectionUtil_Access;
+   function "=" (Left, Right : GeographicMapDirectionUtil_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References."=";
+   subtype GeographicMapDirectionUtil_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References.GeographicMapDirectionUtil_Access_Array;
+   function "=" (Left, Right : GeographicMapDirectionUtil_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References."=";
+   subtype GeographicMapDirectionUtil_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References.GeographicMapDirectionUtil_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapDirectionUtil_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References."=";
+   subtype GeographicMapDirectionUtil_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References.GeographicMapDirectionUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : GeographicMapDirectionUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References."=";
+   subtype GeographicMapDirectionUtil_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References.GeographicMapDirectionUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapDirectionUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package_References."=";
 
    type GeographicMapDirectionUtil is new Java_Object with record
       MESSAGE : Unbounded_String;

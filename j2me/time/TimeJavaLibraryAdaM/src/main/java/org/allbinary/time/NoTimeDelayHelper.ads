@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.time.NoTimeDelayHelper_Package;
+package org.allbinary.time.NoTimeDelayHelper_Package_References is
+   type NoTimeDelayHelper_Access is access all org.allbinary.time.NoTimeDelayHelper_Package.NoTimeDelayHelper'Class;
+   type NoTimeDelayHelper_Access_Array is array (Natural range <>) of NoTimeDelayHelper_Access;
+   type NoTimeDelayHelper_Access_Array_Access is access all NoTimeDelayHelper_Access_Array;
+   type NoTimeDelayHelper_Access_Array_Access_Array is array (Natural range <>) of NoTimeDelayHelper_Access_Array_Access;
+   type NoTimeDelayHelper_Access_Array_Access_Array_Access is access all NoTimeDelayHelper_Access_Array_Access_Array;
+end org.allbinary.time.NoTimeDelayHelper_Package_References;
+
+with org.allbinary.time.NoTimeDelayHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 
 package org.allbinary.time.NoTimeDelayHelper_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoTimeDelayHelper is tagged;
-   type NoTimeDelayHelper_Access is access all NoTimeDelayHelper'Class;
-   type NoTimeDelayHelper_Access_Array is array (Natural range <>) of NoTimeDelayHelper_Access;
-   type NoTimeDelayHelper_Access_Array_Access is access all NoTimeDelayHelper_Access_Array;
-   type NoTimeDelayHelper_Access_Array_Access_Array is array (Natural range <>) of NoTimeDelayHelper_Access_Array_Access;
-   type NoTimeDelayHelper_Access_Array_Access_Array_Access is access all NoTimeDelayHelper_Access_Array_Access_Array;
+
+   subtype NoTimeDelayHelper_Access is org.allbinary.time.NoTimeDelayHelper_Package_References.NoTimeDelayHelper_Access;
+   function "=" (Left, Right : NoTimeDelayHelper_Access) return Boolean renames org.allbinary.time.NoTimeDelayHelper_Package_References."=";
+   subtype NoTimeDelayHelper_Access_Array is org.allbinary.time.NoTimeDelayHelper_Package_References.NoTimeDelayHelper_Access_Array;
+   function "=" (Left, Right : NoTimeDelayHelper_Access_Array) return Boolean renames org.allbinary.time.NoTimeDelayHelper_Package_References."=";
+   subtype NoTimeDelayHelper_Access_Array_Access is org.allbinary.time.NoTimeDelayHelper_Package_References.NoTimeDelayHelper_Access_Array_Access;
+   function "=" (Left, Right : NoTimeDelayHelper_Access_Array_Access) return Boolean renames org.allbinary.time.NoTimeDelayHelper_Package_References."=";
+   subtype NoTimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.NoTimeDelayHelper_Package_References.NoTimeDelayHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : NoTimeDelayHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.time.NoTimeDelayHelper_Package_References."=";
+   subtype NoTimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.NoTimeDelayHelper_Package_References.NoTimeDelayHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoTimeDelayHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.time.NoTimeDelayHelper_Package_References."=";
 
    type NoTimeDelayHelper is new TimeDelayHelper with null record;
    SINGLETON : NoTimeDelayHelper_Access;

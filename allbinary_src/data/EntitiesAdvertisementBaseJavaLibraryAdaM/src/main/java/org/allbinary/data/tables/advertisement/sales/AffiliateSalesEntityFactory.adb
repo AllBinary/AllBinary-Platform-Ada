@@ -16,11 +16,24 @@
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package; use org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;
+with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package; use org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package;
+with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;
+with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package;
 
 package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype AffiliateSalesEntityInterface_Access is org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References.AffiliateSalesEntityInterface_Access;
+   function "=" (Left, Right : AffiliateSalesEntityInterface_Access) return Boolean renames org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References."=";
+   subtype AffiliateSalesEntityInterface_Access_Array is org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References.AffiliateSalesEntityInterface_Access_Array;
+   function "=" (Left, Right : AffiliateSalesEntityInterface_Access_Array) return Boolean renames org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References."=";
+   subtype AffiliateSalesEntityInterface_Access_Array_Access is org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References.AffiliateSalesEntityInterface_Access_Array_Access;
+   function "=" (Left, Right : AffiliateSalesEntityInterface_Access_Array_Access) return Boolean renames org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References."=";
+   subtype AffiliateSalesEntityInterface_Access_Array_Access_Array is org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References.AffiliateSalesEntityInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AffiliateSalesEntityInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References."=";
+   subtype AffiliateSalesEntityInterface_Access_Array_Access_Array_Access is org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References.AffiliateSalesEntityInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AffiliateSalesEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package_References."=";
    procedure Initialize_Fields (This : in out AffiliateSalesEntityFactory'Class) is
    begin
       null;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package;
+package org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References is
+   type CpuInfo_Access is access all org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package.CpuInfo'Class;
+   type CpuInfo_Access_Array is array (Natural range <>) of CpuInfo_Access;
+   type CpuInfo_Access_Array_Access is access all CpuInfo_Access_Array;
+   type CpuInfo_Access_Array_Access_Array is array (Natural range <>) of CpuInfo_Access_Array_Access;
+   type CpuInfo_Access_Array_Access_Array_Access is access all CpuInfo_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References;
+
+with org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CpuInfo is tagged;
-   type CpuInfo_Access is access all CpuInfo'Class;
-   type CpuInfo_Access_Array is array (Natural range <>) of CpuInfo_Access;
-   type CpuInfo_Access_Array_Access is access all CpuInfo_Access_Array;
-   type CpuInfo_Access_Array_Access_Array is array (Natural range <>) of CpuInfo_Access_Array_Access;
-   type CpuInfo_Access_Array_Access_Array_Access is access all CpuInfo_Access_Array_Access_Array;
+
+   subtype CpuInfo_Access is org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References.CpuInfo_Access;
+   function "=" (Left, Right : CpuInfo_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References."=";
+   subtype CpuInfo_Access_Array is org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References.CpuInfo_Access_Array;
+   function "=" (Left, Right : CpuInfo_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References."=";
+   subtype CpuInfo_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References.CpuInfo_Access_Array_Access;
+   function "=" (Left, Right : CpuInfo_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References."=";
+   subtype CpuInfo_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References.CpuInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : CpuInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References."=";
+   subtype CpuInfo_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References.CpuInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CpuInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package_References."=";
 
    type CpuInfo is new Java_Object with record
       name : Unbounded_String;

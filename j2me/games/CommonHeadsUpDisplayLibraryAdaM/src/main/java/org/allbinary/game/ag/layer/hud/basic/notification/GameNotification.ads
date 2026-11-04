@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
+package org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References is
+   type GameNotification_Access is access all org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package.GameNotification'Class;
+   type GameNotification_Access_Array is array (Natural range <>) of GameNotification_Access;
+   type GameNotification_Access_Array_Access is access all GameNotification_Access_Array;
+   type GameNotification_Access_Array_Access_Array is array (Natural range <>) of GameNotification_Access_Array_Access;
+   type GameNotification_Access_Array_Access_Array_Access is access all GameNotification_Access_Array_Access_Array;
+end org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References;
+
+with org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package; use org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package is
 
    package GameNotificationEvent_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype GameNotificationEvent_Access is org.allbinary.game.layer.hud.event.GameNotificationEvent_Package_References.GameNotificationEvent_Access;
+   use type GameNotificationEvent_Access;
+   subtype GameNotificationEvent_Access_Array is org.allbinary.game.layer.hud.event.GameNotificationEvent_Package_References.GameNotificationEvent_Access_Array;
+   use type GameNotificationEvent_Access_Array;
+   subtype GameNotificationEvent_Access_Array_Access is org.allbinary.game.layer.hud.event.GameNotificationEvent_Package_References.GameNotificationEvent_Access_Array_Access;
+   use type GameNotificationEvent_Access_Array_Access;
+   subtype GameNotificationEvent_Access_Array_Access_Array is org.allbinary.game.layer.hud.event.GameNotificationEvent_Package_References.GameNotificationEvent_Access_Array_Access_Array;
+   use type GameNotificationEvent_Access_Array_Access_Array;
+   subtype GameNotificationEvent_Access_Array_Access_Array_Access is org.allbinary.game.layer.hud.event.GameNotificationEvent_Package_References.GameNotificationEvent_Access_Array_Access_Array_Access;
+   use type GameNotificationEvent_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameNotification is tagged;
-   type GameNotification_Access is access all GameNotification'Class;
-   type GameNotification_Access_Array is array (Natural range <>) of GameNotification_Access;
-   type GameNotification_Access_Array_Access is access all GameNotification_Access_Array;
-   type GameNotification_Access_Array_Access_Array is array (Natural range <>) of GameNotification_Access_Array_Access;
-   type GameNotification_Access_Array_Access_Array_Access is access all GameNotification_Access_Array_Access_Array;
+
+   subtype GameNotification_Access is org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References.GameNotification_Access;
+   function "=" (Left, Right : GameNotification_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References."=";
+   subtype GameNotification_Access_Array is org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References.GameNotification_Access_Array;
+   function "=" (Left, Right : GameNotification_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References."=";
+   subtype GameNotification_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References.GameNotification_Access_Array_Access;
+   function "=" (Left, Right : GameNotification_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References."=";
+   subtype GameNotification_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References.GameNotification_Access_Array_Access_Array;
+   function "=" (Left, Right : GameNotification_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References."=";
+   subtype GameNotification_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References.GameNotification_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameNotification_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package_References."=";
 
    type GameNotification is new Java_Object with record
       stringList : BasicArrayList_Access;

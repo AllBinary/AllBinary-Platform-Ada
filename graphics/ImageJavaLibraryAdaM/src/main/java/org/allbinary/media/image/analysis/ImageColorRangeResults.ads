@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
+package org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References is
+   type ImageColorRangeResults_Access is access all org.allbinary.media.image.analysis.ImageColorRangeResults_Package.ImageColorRangeResults'Class;
+   type ImageColorRangeResults_Access_Array is array (Natural range <>) of ImageColorRangeResults_Access;
+   type ImageColorRangeResults_Access_Array_Access is access all ImageColorRangeResults_Access_Array;
+   type ImageColorRangeResults_Access_Array_Access_Array is array (Natural range <>) of ImageColorRangeResults_Access_Array_Access;
+   type ImageColorRangeResults_Access_Array_Access_Array_Access is access all ImageColorRangeResults_Access_Array_Access_Array;
+end org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References;
+
+with org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+limited with org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.media.image.analysis.ColorRangeInterface_Package_References;
 
 package org.allbinary.media.image.analysis.ImageColorRangeResults_Package is
 
+   package Reference_Types is
+   subtype ColorRangeInterface_Access is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access;
+   use type ColorRangeInterface_Access;
+   subtype ColorRangeInterface_Access_Array is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array;
+   use type ColorRangeInterface_Access_Array;
+   subtype ColorRangeInterface_Access_Array_Access is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array_Access;
+   use type ColorRangeInterface_Access_Array_Access;
+   subtype ColorRangeInterface_Access_Array_Access_Array is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array_Access_Array;
+   use type ColorRangeInterface_Access_Array_Access_Array;
+   subtype ColorRangeInterface_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ColorRangeInterface_Package_References.ColorRangeInterface_Access_Array_Access_Array_Access;
+   use type ColorRangeInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageColorRangeResults is tagged;
-   type ImageColorRangeResults_Access is access all ImageColorRangeResults'Class;
-   type ImageColorRangeResults_Access_Array is array (Natural range <>) of ImageColorRangeResults_Access;
-   type ImageColorRangeResults_Access_Array_Access is access all ImageColorRangeResults_Access_Array;
-   type ImageColorRangeResults_Access_Array_Access_Array is array (Natural range <>) of ImageColorRangeResults_Access_Array_Access;
-   type ImageColorRangeResults_Access_Array_Access_Array_Access is access all ImageColorRangeResults_Access_Array_Access_Array;
+
+   subtype ImageColorRangeResults_Access is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access;
+   function "=" (Left, Right : ImageColorRangeResults_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   subtype ImageColorRangeResults_Access_Array is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array;
+   function "=" (Left, Right : ImageColorRangeResults_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   subtype ImageColorRangeResults_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array_Access;
+   function "=" (Left, Right : ImageColorRangeResults_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   subtype ImageColorRangeResults_Access_Array_Access_Array is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageColorRangeResults_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   subtype ImageColorRangeResults_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageColorRangeResults_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
 
    type ImageColorRangeResults is new Java_Object with record
       colorRangeInterface : ColorRangeInterface_Access;

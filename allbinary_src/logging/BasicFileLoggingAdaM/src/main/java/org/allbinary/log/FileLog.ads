@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.log.FileLog_Package;
+package org.allbinary.log.FileLog_Package_References is
+   type FileLog_Access is access all org.allbinary.log.FileLog_Package.FileLog'Class;
+   type FileLog_Access_Array is array (Natural range <>) of FileLog_Access;
+   type FileLog_Access_Array_Access is access all FileLog_Access_Array;
+   type FileLog_Access_Array_Access_Array is array (Natural range <>) of FileLog_Access_Array_Access;
+   type FileLog_Access_Array_Access_Array_Access is access all FileLog_Access_Array_Access_Array;
+end org.allbinary.log.FileLog_Package_References;
+
+with org.allbinary.log.FileLog_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,19 +36,38 @@ with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileReader_Package; use java.io.FileReader_Package;
 --  with java.io.FileWriter_Package; use java.io.FileWriter_Package;
 --  with java.io.RandomAccessFile_Package; use java.io.RandomAccessFile_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+limited with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
 
 package org.allbinary.log.FileLog_Package is
 
    package File_Package renames Standard.java.io.File_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Reference_Types is
+   subtype StringUtil_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access;
+   use type StringUtil_Access;
+   subtype StringUtil_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array;
+   use type StringUtil_Access_Array;
+   subtype StringUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access;
+   use type StringUtil_Access_Array_Access;
+   subtype StringUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array;
+   use type StringUtil_Access_Array_Access_Array;
+   subtype StringUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array_Access;
+   use type StringUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type FileLog is tagged;
-   type FileLog_Access is access all FileLog'Class;
-   type FileLog_Access_Array is array (Natural range <>) of FileLog_Access;
-   type FileLog_Access_Array_Access is access all FileLog_Access_Array;
-   type FileLog_Access_Array_Access_Array is array (Natural range <>) of FileLog_Access_Array_Access;
-   type FileLog_Access_Array_Access_Array_Access is access all FileLog_Access_Array_Access_Array;
+
+   subtype FileLog_Access is org.allbinary.log.FileLog_Package_References.FileLog_Access;
+   function "=" (Left, Right : FileLog_Access) return Boolean renames org.allbinary.log.FileLog_Package_References."=";
+   subtype FileLog_Access_Array is org.allbinary.log.FileLog_Package_References.FileLog_Access_Array;
+   function "=" (Left, Right : FileLog_Access_Array) return Boolean renames org.allbinary.log.FileLog_Package_References."=";
+   subtype FileLog_Access_Array_Access is org.allbinary.log.FileLog_Package_References.FileLog_Access_Array_Access;
+   function "=" (Left, Right : FileLog_Access_Array_Access) return Boolean renames org.allbinary.log.FileLog_Package_References."=";
+   subtype FileLog_Access_Array_Access_Array is org.allbinary.log.FileLog_Package_References.FileLog_Access_Array_Access_Array;
+   function "=" (Left, Right : FileLog_Access_Array_Access_Array) return Boolean renames org.allbinary.log.FileLog_Package_References."=";
+   subtype FileLog_Access_Array_Access_Array_Access is org.allbinary.log.FileLog_Package_References.FileLog_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileLog_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.log.FileLog_Package_References."=";
 
    type FileLog is new Java_Object with null record;
    stringUtil : StringUtil_Access;

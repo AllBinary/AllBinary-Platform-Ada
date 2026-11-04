@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.NullCloseable_Package;
+package org.allbinary.logic.io.NullCloseable_Package_References is
+   type NullCloseable_Access is access all org.allbinary.logic.io.NullCloseable_Package.NullCloseable'Class;
+   type NullCloseable_Access_Array is array (Natural range <>) of NullCloseable_Access;
+   type NullCloseable_Access_Array_Access is access all NullCloseable_Access_Array;
+   type NullCloseable_Access_Array_Access_Array is array (Natural range <>) of NullCloseable_Access_Array_Access;
+   type NullCloseable_Access_Array_Access_Array_Access is access all NullCloseable_Access_Array_Access_Array;
+end org.allbinary.logic.io.NullCloseable_Package_References;
+
+with org.allbinary.logic.io.NullCloseable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.io.NullCloseable_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullCloseable is tagged;
-   type NullCloseable_Access is access all NullCloseable'Class;
-   type NullCloseable_Access_Array is array (Natural range <>) of NullCloseable_Access;
-   type NullCloseable_Access_Array_Access is access all NullCloseable_Access_Array;
-   type NullCloseable_Access_Array_Access_Array is array (Natural range <>) of NullCloseable_Access_Array_Access;
-   type NullCloseable_Access_Array_Access_Array_Access is access all NullCloseable_Access_Array_Access_Array;
+
+   subtype NullCloseable_Access is org.allbinary.logic.io.NullCloseable_Package_References.NullCloseable_Access;
+   function "=" (Left, Right : NullCloseable_Access) return Boolean renames org.allbinary.logic.io.NullCloseable_Package_References."=";
+   subtype NullCloseable_Access_Array is org.allbinary.logic.io.NullCloseable_Package_References.NullCloseable_Access_Array;
+   function "=" (Left, Right : NullCloseable_Access_Array) return Boolean renames org.allbinary.logic.io.NullCloseable_Package_References."=";
+   subtype NullCloseable_Access_Array_Access is org.allbinary.logic.io.NullCloseable_Package_References.NullCloseable_Access_Array_Access;
+   function "=" (Left, Right : NullCloseable_Access_Array_Access) return Boolean renames org.allbinary.logic.io.NullCloseable_Package_References."=";
+   subtype NullCloseable_Access_Array_Access_Array is org.allbinary.logic.io.NullCloseable_Package_References.NullCloseable_Access_Array_Access_Array;
+   function "=" (Left, Right : NullCloseable_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.NullCloseable_Package_References."=";
+   subtype NullCloseable_Access_Array_Access_Array_Access is org.allbinary.logic.io.NullCloseable_Package_References.NullCloseable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullCloseable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.NullCloseable_Package_References."=";
 
    type NullCloseable is new Java_Object with null record;
    NULL_CLOSEABLE : NullCloseable_Access;

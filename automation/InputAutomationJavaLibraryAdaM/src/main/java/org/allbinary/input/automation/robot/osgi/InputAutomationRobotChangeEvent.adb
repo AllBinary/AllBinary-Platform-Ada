@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package is
 
+   subtype InputAutomationRobotInterfaceWrapper_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
+   subtype InputAutomationRobotInterfaceWrapper_Access_Array is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access_Array) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
+   subtype InputAutomationRobotInterfaceWrapper_Access_Array_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
+   subtype InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
+   subtype InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References.InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationRobotChangeEvent'Class) is
    begin
       null;

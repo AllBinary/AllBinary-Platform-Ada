@@ -13,13 +13,58 @@
 --  Generated Code Do Not Modify
 
 
+with org.jgrapht.GraphPath_Package; use org.jgrapht.GraphPath_Package;
+with org.jgrapht.graph.SimpleWeightedGraph_Package; use org.jgrapht.graph.SimpleWeightedGraph_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+   subtype GraphPath_Access is org.jgrapht.GraphPath_Package_References.GraphPath_Access;
+   function "=" (Left, Right : GraphPath_Access) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype GraphPath_Access_Array is org.jgrapht.GraphPath_Package_References.GraphPath_Access_Array;
+   function "=" (Left, Right : GraphPath_Access_Array) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype GraphPath_Access_Array_Access is org.jgrapht.GraphPath_Package_References.GraphPath_Access_Array_Access;
+   function "=" (Left, Right : GraphPath_Access_Array_Access) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype GraphPath_Access_Array_Access_Array is org.jgrapht.GraphPath_Package_References.GraphPath_Access_Array_Access_Array;
+   function "=" (Left, Right : GraphPath_Access_Array_Access_Array) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype GraphPath_Access_Array_Access_Array_Access is org.jgrapht.GraphPath_Package_References.GraphPath_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GraphPath_Access_Array_Access_Array_Access) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype SimpleWeightedGraph_Access is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access;
+   function "=" (Left, Right : SimpleWeightedGraph_Access) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype SimpleWeightedGraph_Access_Array is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access_Array;
+   function "=" (Left, Right : SimpleWeightedGraph_Access_Array) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype SimpleWeightedGraph_Access_Array_Access is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access_Array_Access;
+   function "=" (Left, Right : SimpleWeightedGraph_Access_Array_Access) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype SimpleWeightedGraph_Access_Array_Access_Array is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access_Array_Access_Array;
+   function "=" (Left, Right : SimpleWeightedGraph_Access_Array_Access_Array) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype SimpleWeightedGraph_Access_Array_Access_Array_Access is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SimpleWeightedGraph_Access_Array_Access_Array_Access) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype BasicGeographicMap_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access;
+   function "=" (Left, Right : BasicGeographicMap_Access) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
+   subtype BasicGeographicMap_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array;
+   function "=" (Left, Right : BasicGeographicMap_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
+   subtype BasicGeographicMap_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access;
+   function "=" (Left, Right : BasicGeographicMap_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
+   subtype BasicGeographicMap_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicGeographicMap_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
+   subtype BasicGeographicMap_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicGeographicMap_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    procedure Initialize_Fields (This : in out BasePathFinderGraphVisitor'Class) is
    begin
       null;

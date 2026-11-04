@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.PCKeyFactory_Package;
+package org.allbinary.game.input.PCKeyFactory_Package_References is
+   type PCKeyFactory_Access is access all org.allbinary.game.input.PCKeyFactory_Package.PCKeyFactory'Class;
+   type PCKeyFactory_Access_Array is array (Natural range <>) of PCKeyFactory_Access;
+   type PCKeyFactory_Access_Array_Access is access all PCKeyFactory_Access_Array;
+   type PCKeyFactory_Access_Array_Access_Array is array (Natural range <>) of PCKeyFactory_Access_Array_Access;
+   type PCKeyFactory_Access_Array_Access_Array_Access is access all PCKeyFactory_Access_Array_Access_Array;
+end org.allbinary.game.input.PCKeyFactory_Package_References;
+
+with org.allbinary.game.input.PCKeyFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,48 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.PCGameKey_Package; use org.allbinary.game.input.PCGameKey_Package;
-with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+limited with org.allbinary.game.input.PCGameKey_Package;
+with org.allbinary.game.input.PCGameKey_Package_References;
+limited with org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 
 package org.allbinary.game.input.PCKeyFactory_Package is
 
+   package Reference_Types is
+   subtype PCGameKey_Access is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access;
+   use type PCGameKey_Access;
+   subtype PCGameKey_Access_Array is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access_Array;
+   use type PCGameKey_Access_Array;
+   subtype PCGameKey_Access_Array_Access is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access_Array_Access;
+   use type PCGameKey_Access_Array_Access;
+   subtype PCGameKey_Access_Array_Access_Array is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access_Array_Access_Array;
+   use type PCGameKey_Access_Array_Access_Array;
+   subtype PCGameKey_Access_Array_Access_Array_Access is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access_Array_Access_Array_Access;
+   use type PCGameKey_Access_Array_Access_Array_Access;
+   subtype Input_Access is org.allbinary.game.input.Input_Package_References.Input_Access;
+   use type Input_Access;
+   subtype Input_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array;
+   use type Input_Access_Array;
+   subtype Input_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access;
+   use type Input_Access_Array_Access;
+   subtype Input_Access_Array_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array;
+   use type Input_Access_Array_Access_Array;
+   subtype Input_Access_Array_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array_Access;
+   use type Input_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PCKeyFactory is tagged;
-   type PCKeyFactory_Access is access all PCKeyFactory'Class;
-   type PCKeyFactory_Access_Array is array (Natural range <>) of PCKeyFactory_Access;
-   type PCKeyFactory_Access_Array_Access is access all PCKeyFactory_Access_Array;
-   type PCKeyFactory_Access_Array_Access_Array is array (Natural range <>) of PCKeyFactory_Access_Array_Access;
-   type PCKeyFactory_Access_Array_Access_Array_Access is access all PCKeyFactory_Access_Array_Access_Array;
+
+   subtype PCKeyFactory_Access is org.allbinary.game.input.PCKeyFactory_Package_References.PCKeyFactory_Access;
+   function "=" (Left, Right : PCKeyFactory_Access) return Boolean renames org.allbinary.game.input.PCKeyFactory_Package_References."=";
+   subtype PCKeyFactory_Access_Array is org.allbinary.game.input.PCKeyFactory_Package_References.PCKeyFactory_Access_Array;
+   function "=" (Left, Right : PCKeyFactory_Access_Array) return Boolean renames org.allbinary.game.input.PCKeyFactory_Package_References."=";
+   subtype PCKeyFactory_Access_Array_Access is org.allbinary.game.input.PCKeyFactory_Package_References.PCKeyFactory_Access_Array_Access;
+   function "=" (Left, Right : PCKeyFactory_Access_Array_Access) return Boolean renames org.allbinary.game.input.PCKeyFactory_Package_References."=";
+   subtype PCKeyFactory_Access_Array_Access_Array is org.allbinary.game.input.PCKeyFactory_Package_References.PCKeyFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PCKeyFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.PCKeyFactory_Package_References."=";
+   subtype PCKeyFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.PCKeyFactory_Package_References.PCKeyFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PCKeyFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.PCKeyFactory_Package_References."=";
 
    type PCKeyFactory is new Java_Object with record
       UNKNOWN : PCGameKey_Access;

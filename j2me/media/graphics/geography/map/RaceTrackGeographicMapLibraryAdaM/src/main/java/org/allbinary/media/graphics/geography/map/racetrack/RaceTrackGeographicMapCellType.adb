@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package is
 

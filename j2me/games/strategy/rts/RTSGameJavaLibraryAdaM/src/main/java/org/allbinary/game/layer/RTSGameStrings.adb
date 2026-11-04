@@ -52,7 +52,7 @@ package body org.allbinary.game.layer.RTSGameStrings_Package is
 
    function getInstance return RTSGameStrings_Access is
    begin
-        return RTSGameStrings_Package.instance;
+        return RTSGameStrings_Access (RTSGameStrings_Package.instance);
    end getInstance;
 
 begin

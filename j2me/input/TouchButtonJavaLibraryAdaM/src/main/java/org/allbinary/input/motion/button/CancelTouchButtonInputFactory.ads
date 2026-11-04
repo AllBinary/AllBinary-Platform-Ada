@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
+package org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References is
+   type CancelTouchButtonInputFactory_Access is access all org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package.CancelTouchButtonInputFactory'Class;
+   type CancelTouchButtonInputFactory_Access_Array is array (Natural range <>) of CancelTouchButtonInputFactory_Access;
+   type CancelTouchButtonInputFactory_Access_Array_Access is access all CancelTouchButtonInputFactory_Access_Array;
+   type CancelTouchButtonInputFactory_Access_Array_Access_Array is array (Natural range <>) of CancelTouchButtonInputFactory_Access_Array_Access;
+   type CancelTouchButtonInputFactory_Access_Array_Access_Array_Access is access all CancelTouchButtonInputFactory_Access_Array_Access_Array;
+end org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References;
+
+with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
+limited with org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 
 package org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package is
 
+   package Reference_Types is
+   subtype TouchButtonInput_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access;
+   use type TouchButtonInput_Access;
+   subtype TouchButtonInput_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array;
+   use type TouchButtonInput_Access_Array;
+   subtype TouchButtonInput_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access;
+   use type TouchButtonInput_Access_Array_Access;
+   subtype TouchButtonInput_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array;
+   use type TouchButtonInput_Access_Array_Access_Array;
+   subtype TouchButtonInput_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array_Access;
+   use type TouchButtonInput_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CancelTouchButtonInputFactory is tagged;
-   type CancelTouchButtonInputFactory_Access is access all CancelTouchButtonInputFactory'Class;
-   type CancelTouchButtonInputFactory_Access_Array is array (Natural range <>) of CancelTouchButtonInputFactory_Access;
-   type CancelTouchButtonInputFactory_Access_Array_Access is access all CancelTouchButtonInputFactory_Access_Array;
-   type CancelTouchButtonInputFactory_Access_Array_Access_Array is array (Natural range <>) of CancelTouchButtonInputFactory_Access_Array_Access;
-   type CancelTouchButtonInputFactory_Access_Array_Access_Array_Access is access all CancelTouchButtonInputFactory_Access_Array_Access_Array;
+
+   subtype CancelTouchButtonInputFactory_Access is org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References.CancelTouchButtonInputFactory_Access;
+   function "=" (Left, Right : CancelTouchButtonInputFactory_Access) return Boolean renames org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References."=";
+   subtype CancelTouchButtonInputFactory_Access_Array is org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References.CancelTouchButtonInputFactory_Access_Array;
+   function "=" (Left, Right : CancelTouchButtonInputFactory_Access_Array) return Boolean renames org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References."=";
+   subtype CancelTouchButtonInputFactory_Access_Array_Access is org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References.CancelTouchButtonInputFactory_Access_Array_Access;
+   function "=" (Left, Right : CancelTouchButtonInputFactory_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References."=";
+   subtype CancelTouchButtonInputFactory_Access_Array_Access_Array is org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References.CancelTouchButtonInputFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : CancelTouchButtonInputFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References."=";
+   subtype CancelTouchButtonInputFactory_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References.CancelTouchButtonInputFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CancelTouchButtonInputFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package_References."=";
 
    type CancelTouchButtonInputFactory is new Java_Object with record
       cancelInputArray : TouchButtonInput_Access_Array_Access;

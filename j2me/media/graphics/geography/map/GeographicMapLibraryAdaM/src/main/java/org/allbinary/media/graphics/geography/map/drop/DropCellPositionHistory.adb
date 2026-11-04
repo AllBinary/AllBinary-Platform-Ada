@@ -13,11 +13,55 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 
 package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype CellPosition_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access;
+   function "=" (Left, Right : CellPosition_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array;
+   function "=" (Left, Right : CellPosition_Access_Array) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access;
+   function "=" (Left, Right : CellPosition_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array_Access_Array is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array;
+   function "=" (Left, Right : CellPosition_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CellPosition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPositionFactory_Access is org.allbinary.graphics.CellPositionFactory_Package_References.CellPositionFactory_Access;
+   function "=" (Left, Right : CellPositionFactory_Access) return Boolean renames org.allbinary.graphics.CellPositionFactory_Package_References."=";
+   subtype CellPositionFactory_Access_Array is org.allbinary.graphics.CellPositionFactory_Package_References.CellPositionFactory_Access_Array;
+   function "=" (Left, Right : CellPositionFactory_Access_Array) return Boolean renames org.allbinary.graphics.CellPositionFactory_Package_References."=";
+   subtype CellPositionFactory_Access_Array_Access is org.allbinary.graphics.CellPositionFactory_Package_References.CellPositionFactory_Access_Array_Access;
+   function "=" (Left, Right : CellPositionFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPositionFactory_Package_References."=";
+   subtype CellPositionFactory_Access_Array_Access_Array is org.allbinary.graphics.CellPositionFactory_Package_References.CellPositionFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : CellPositionFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.CellPositionFactory_Package_References."=";
+   subtype CellPositionFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.CellPositionFactory_Package_References.CellPositionFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CellPositionFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPositionFactory_Package_References."=";
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   function "=" (Left, Right : AllBinaryLayer_Access) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   function "=" (Left, Right : AllBinaryLayer_Access_Array) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryLayer_Access_Array_Access) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
    procedure Initialize_Fields (This : in out DropCellPositionHistory'Class) is
    begin
       null;
@@ -41,7 +85,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
 
    function getInstance return DropCellPositionHistory_Access is
    begin
-        return DropCellPositionHistory_Package.SINGLETON;
+        return DropCellPositionHistory_Access (DropCellPositionHistory_Package.SINGLETON);
    end getInstance;
 
    procedure add (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition_Package.CellPosition'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
@@ -123,7 +167,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
                 return cellPosition;
             end if;
         end loop;
-        return This.cellPositionFactory.NONE;
+        return CellPosition_Access (This.cellPositionFactory.NONE);
    end getCellPositionWithDrop;
 
    function getLayerInterface (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition_Package.CellPosition'Class) return AllBinaryLayer_Access is
@@ -134,7 +178,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
         if (index) >= (0) then
             return AllBinaryLayer_Access (This.layerList.get (index));
         else
-            return AllBinaryLayer_Package.NULL_ALLBINARY_LAYER;
+            return AllBinaryLayer_Access (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER);
         end if;
    end getLayerInterface;
 

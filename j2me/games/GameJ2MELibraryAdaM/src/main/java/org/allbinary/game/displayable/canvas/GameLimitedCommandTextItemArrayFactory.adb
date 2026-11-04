@@ -13,11 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package; use org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
 with org.allbinary.graphics.form.item.LimitCommandsVisitor_Package; use org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
 
 package body org.allbinary.game.displayable.canvas.GameLimitedCommandTextItemArrayFactory_Package is
 
    package LimitCommandsVisitor_Package renames Standard.org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
+   subtype CommandTextItemArrayFactory_Access is org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References.CommandTextItemArrayFactory_Access;
+   function "=" (Left, Right : CommandTextItemArrayFactory_Access) return Boolean renames org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References."=";
+   subtype CommandTextItemArrayFactory_Access_Array is org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References.CommandTextItemArrayFactory_Access_Array;
+   function "=" (Left, Right : CommandTextItemArrayFactory_Access_Array) return Boolean renames org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References."=";
+   subtype CommandTextItemArrayFactory_Access_Array_Access is org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References.CommandTextItemArrayFactory_Access_Array_Access;
+   function "=" (Left, Right : CommandTextItemArrayFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References."=";
+   subtype CommandTextItemArrayFactory_Access_Array_Access_Array is org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References.CommandTextItemArrayFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : CommandTextItemArrayFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References."=";
+   subtype CommandTextItemArrayFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References.CommandTextItemArrayFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommandTextItemArrayFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package_References."=";
    procedure Initialize_Fields (This : in out GameLimitedCommandTextItemArrayFactory'Class) is
    begin
       null;
@@ -39,7 +50,7 @@ package body org.allbinary.game.displayable.canvas.GameLimitedCommandTextItemArr
 
    function getInstance return GameLimitedCommandTextItemArrayFactory_Access is
    begin
-        return GameLimitedCommandTextItemArrayFactory_Package.instance;
+        return GameLimitedCommandTextItemArrayFactory_Access (GameLimitedCommandTextItemArrayFactory_Package.instance);
    end getInstance;
 
    function getCommandTextItemArrayFactory (This : in out GameLimitedCommandTextItemArrayFactory) return CommandTextItemArrayFactory_Access is

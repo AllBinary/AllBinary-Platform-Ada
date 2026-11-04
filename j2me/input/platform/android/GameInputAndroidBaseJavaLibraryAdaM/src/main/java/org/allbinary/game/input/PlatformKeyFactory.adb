@@ -3,11 +3,36 @@
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package; use org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package;
+with org.allbinary.game.input.AndroidKeyFactory_Package; use org.allbinary.game.input.AndroidKeyFactory_Package;
 with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package;
+with org.allbinary.game.input.AndroidGameKey_Package;
+with org.allbinary.game.input.AndroidKeyFactory_Package;
 
 package body org.allbinary.game.input.PlatformKeyFactory_Package is
 
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   subtype AndroidKeyFactory_Access is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access;
+   function "=" (Left, Right : AndroidKeyFactory_Access) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
+   subtype AndroidKeyFactory_Access_Array is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access_Array;
+   function "=" (Left, Right : AndroidKeyFactory_Access_Array) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
+   subtype AndroidKeyFactory_Access_Array_Access is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access_Array_Access;
+   function "=" (Left, Right : AndroidKeyFactory_Access_Array_Access) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
+   subtype AndroidKeyFactory_Access_Array_Access_Array is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidKeyFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
+   subtype AndroidKeyFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.AndroidKeyFactory_Package_References.AndroidKeyFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidKeyFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.AndroidKeyFactory_Package_References."=";
+   subtype Input_Access is org.allbinary.game.input.Input_Package_References.Input_Access;
+   function "=" (Left, Right : Input_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array;
+   function "=" (Left, Right : Input_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array;
+   function "=" (Left, Right : Input_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
    procedure Initialize_Fields (This : in out PlatformKeyFactory'Class) is
    begin
       null;

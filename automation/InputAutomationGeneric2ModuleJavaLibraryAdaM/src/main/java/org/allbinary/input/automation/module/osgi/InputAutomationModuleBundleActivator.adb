@@ -13,11 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.osgi.framework.BundleActivator_Package; use org.osgi.framework.BundleActivator_Package;
+with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.ServiceFactory_Package; use org.osgi.framework.ServiceFactory_Package;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 with bundle.input.automation.module.InputAutomationModuleServiceInterface_Package; use bundle.input.automation.module.InputAutomationModuleServiceInterface_Package;
+with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package; use bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
+with bundle.input.automation.module.InputAutomationModuleServiceInterface_Package;
 
 package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package is
 
@@ -26,6 +35,66 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
    package InputAutomationConfigurationModuleChangeEvent_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
    package InputAutomationConfigurationUtil_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
    package OSGIActivatorUtil_Package renames Standard.org.allbinary.osgi.OSGIActivatorUtil_Package;
+   subtype BundleContext_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access;
+   function "=" (Left, Right : BundleContext_Access) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array;
+   function "=" (Left, Right : BundleContext_Access_Array) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access;
+   function "=" (Left, Right : BundleContext_Access_Array_Access) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array_Access_Array is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access_Array;
+   function "=" (Left, Right : BundleContext_Access_Array_Access_Array) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array_Access_Array_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BundleContext_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype ServiceFactory_Access is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access;
+   function "=" (Left, Right : ServiceFactory_Access) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype ServiceFactory_Access_Array is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array;
+   function "=" (Left, Right : ServiceFactory_Access_Array) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype ServiceFactory_Access_Array_Access is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array_Access;
+   function "=" (Left, Right : ServiceFactory_Access_Array_Access) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype ServiceFactory_Access_Array_Access_Array is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ServiceFactory_Access_Array_Access_Array) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype ServiceFactory_Access_Array_Access_Array_Access is org.osgi.framework.ServiceFactory_Package_References.ServiceFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ServiceFactory_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.ServiceFactory_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeListener_Access is bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References.InputAutomationConfigurationModuleChangeListener_Access;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeListener_Access) return Boolean renames bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeListener_Access_Array is bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References.InputAutomationConfigurationModuleChangeListener_Access_Array;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeListener_Access_Array) return Boolean renames bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeListener_Access_Array_Access is bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References.InputAutomationConfigurationModuleChangeListener_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeListener_Access_Array_Access) return Boolean renames bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeListener_Access_Array_Access_Array is bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References.InputAutomationConfigurationModuleChangeListener_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeListener_Access_Array_Access_Array) return Boolean renames bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References."=";
+   subtype InputAutomationConfigurationModuleChangeListener_Access_Array_Access_Array_Access is bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References.InputAutomationConfigurationModuleChangeListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationConfigurationModuleChangeListener_Access_Array_Access_Array_Access) return Boolean renames bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access_Array is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access_Array_Access_Array is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References.InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationModuleBundleActivator'Class) is
    begin
       null;

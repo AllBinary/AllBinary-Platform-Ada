@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.tags.SpecialItemsTag_Package;
+package admin.tags.SpecialItemsTag_Package_References is
+   type SpecialItemsTag_Access is access all admin.tags.SpecialItemsTag_Package.SpecialItemsTag'Class;
+   type SpecialItemsTag_Access_Array is array (Natural range <>) of SpecialItemsTag_Access;
+   type SpecialItemsTag_Access_Array_Access is access all SpecialItemsTag_Access_Array;
+   type SpecialItemsTag_Access_Array_Access_Array is array (Natural range <>) of SpecialItemsTag_Access_Array_Access;
+   type SpecialItemsTag_Access_Array_Access_Array_Access is access all SpecialItemsTag_Access_Array_Access_Array;
+end admin.tags.SpecialItemsTag_Package_References;
+
+with admin.tags.SpecialItemsTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.SpecialItemsTag_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SpecialItemsTag is tagged;
-   type SpecialItemsTag_Access is access all SpecialItemsTag'Class;
-   type SpecialItemsTag_Access_Array is array (Natural range <>) of SpecialItemsTag_Access;
-   type SpecialItemsTag_Access_Array_Access is access all SpecialItemsTag_Access_Array;
-   type SpecialItemsTag_Access_Array_Access_Array is array (Natural range <>) of SpecialItemsTag_Access_Array_Access;
-   type SpecialItemsTag_Access_Array_Access_Array_Access is access all SpecialItemsTag_Access_Array_Access_Array;
+
+   subtype SpecialItemsTag_Access is admin.tags.SpecialItemsTag_Package_References.SpecialItemsTag_Access;
+   function "=" (Left, Right : SpecialItemsTag_Access) return Boolean renames admin.tags.SpecialItemsTag_Package_References."=";
+   subtype SpecialItemsTag_Access_Array is admin.tags.SpecialItemsTag_Package_References.SpecialItemsTag_Access_Array;
+   function "=" (Left, Right : SpecialItemsTag_Access_Array) return Boolean renames admin.tags.SpecialItemsTag_Package_References."=";
+   subtype SpecialItemsTag_Access_Array_Access is admin.tags.SpecialItemsTag_Package_References.SpecialItemsTag_Access_Array_Access;
+   function "=" (Left, Right : SpecialItemsTag_Access_Array_Access) return Boolean renames admin.tags.SpecialItemsTag_Package_References."=";
+   subtype SpecialItemsTag_Access_Array_Access_Array is admin.tags.SpecialItemsTag_Package_References.SpecialItemsTag_Access_Array_Access_Array;
+   function "=" (Left, Right : SpecialItemsTag_Access_Array_Access_Array) return Boolean renames admin.tags.SpecialItemsTag_Package_References."=";
+   subtype SpecialItemsTag_Access_Array_Access_Array_Access is admin.tags.SpecialItemsTag_Package_References.SpecialItemsTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SpecialItemsTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.SpecialItemsTag_Package_References."=";
 
    type SpecialItemsTag is new TableTag with null record;
 

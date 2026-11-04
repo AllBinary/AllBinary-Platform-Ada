@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
+package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References is
+   type PaymentTransactionKeysFactory_Access is access all org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package.PaymentTransactionKeysFactory'Class;
+   type PaymentTransactionKeysFactory_Access_Array is array (Natural range <>) of PaymentTransactionKeysFactory_Access;
+   type PaymentTransactionKeysFactory_Access_Array_Access is access all PaymentTransactionKeysFactory_Access_Array;
+   type PaymentTransactionKeysFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionKeysFactory_Access_Array_Access;
+   type PaymentTransactionKeysFactory_Access_Array_Access_Array_Access is access all PaymentTransactionKeysFactory_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References;
+
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package;
+limited with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package is
 
+   package Reference_Types is
+   subtype PaymentTransactionKeys_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access;
+   use type PaymentTransactionKeys_Access;
+   subtype PaymentTransactionKeys_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access_Array;
+   use type PaymentTransactionKeys_Access_Array;
+   subtype PaymentTransactionKeys_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access_Array_Access;
+   use type PaymentTransactionKeys_Access_Array_Access;
+   subtype PaymentTransactionKeys_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access_Array_Access_Array;
+   use type PaymentTransactionKeys_Access_Array_Access_Array;
+   subtype PaymentTransactionKeys_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeys_Package_References.PaymentTransactionKeys_Access_Array_Access_Array_Access;
+   use type PaymentTransactionKeys_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type PaymentTransactionKeysFactory is tagged;
-   type PaymentTransactionKeysFactory_Access is access all PaymentTransactionKeysFactory'Class;
-   type PaymentTransactionKeysFactory_Access_Array is array (Natural range <>) of PaymentTransactionKeysFactory_Access;
-   type PaymentTransactionKeysFactory_Access_Array_Access is access all PaymentTransactionKeysFactory_Access_Array;
-   type PaymentTransactionKeysFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionKeysFactory_Access_Array_Access;
-   type PaymentTransactionKeysFactory_Access_Array_Access_Array_Access is access all PaymentTransactionKeysFactory_Access_Array_Access_Array;
+
+   subtype PaymentTransactionKeysFactory_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References.PaymentTransactionKeysFactory_Access;
+   function "=" (Left, Right : PaymentTransactionKeysFactory_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References."=";
+   subtype PaymentTransactionKeysFactory_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References.PaymentTransactionKeysFactory_Access_Array;
+   function "=" (Left, Right : PaymentTransactionKeysFactory_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References."=";
+   subtype PaymentTransactionKeysFactory_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References.PaymentTransactionKeysFactory_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionKeysFactory_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References."=";
+   subtype PaymentTransactionKeysFactory_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References.PaymentTransactionKeysFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentTransactionKeysFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References."=";
+   subtype PaymentTransactionKeysFactory_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References.PaymentTransactionKeysFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentTransactionKeysFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package_References."=";
 
    type PaymentTransactionKeysFactory is new Java_Object with record
       TRXTYPE : PaymentTransactionKeys_Access;

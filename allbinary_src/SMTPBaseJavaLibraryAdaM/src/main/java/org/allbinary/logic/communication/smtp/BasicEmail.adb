@@ -13,11 +13,70 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package; use org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
+with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.communication.smtp.AbEmail_Package; use org.allbinary.logic.communication.smtp.AbEmail_Package;
+with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.logic.communication.smtp.Email_Package;
+with org.allbinary.logic.communication.smtp.AbEmail_Package;
+with org.allbinary.logic.communication.smtp.Email_Package;
+with org.allbinary.logic.communication.smtp.EmailInterface_Package;
 
 package body org.allbinary.logic.communication.smtp.BasicEmail_Package is
 
    package BasicEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
+   subtype EmailInfo_Access is org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References.EmailInfo_Access;
+   function "=" (Left, Right : EmailInfo_Access) return Boolean renames org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References."=";
+   subtype EmailInfo_Access_Array is org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References.EmailInfo_Access_Array;
+   function "=" (Left, Right : EmailInfo_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References."=";
+   subtype EmailInfo_Access_Array_Access is org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References.EmailInfo_Access_Array_Access;
+   function "=" (Left, Right : EmailInfo_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References."=";
+   subtype EmailInfo_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References.EmailInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : EmailInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References."=";
+   subtype EmailInfo_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References.EmailInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EmailInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References."=";
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   function "=" (Left, Right : Document_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   function "=" (Left, Right : Node_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   function "=" (Left, Right : Node_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   function "=" (Left, Right : Node_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype AbEmail_Access is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access;
+   function "=" (Left, Right : AbEmail_Access) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
+   subtype AbEmail_Access_Array is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access_Array;
+   function "=" (Left, Right : AbEmail_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
+   subtype AbEmail_Access_Array_Access is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access_Array_Access;
+   function "=" (Left, Right : AbEmail_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
+   subtype AbEmail_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access_Array_Access_Array;
+   function "=" (Left, Right : AbEmail_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
+   subtype AbEmail_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.AbEmail_Package_References.AbEmail_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbEmail_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.AbEmail_Package_References."=";
+   subtype Email_Access is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access;
+   function "=" (Left, Right : Email_Access) return Boolean renames org.allbinary.logic.communication.smtp.Email_Package_References."=";
+   subtype Email_Access_Array is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access_Array;
+   function "=" (Left, Right : Email_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.Email_Package_References."=";
+   subtype Email_Access_Array_Access is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access_Array_Access;
+   function "=" (Left, Right : Email_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.Email_Package_References."=";
+   subtype Email_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access_Array_Access_Array;
+   function "=" (Left, Right : Email_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.Email_Package_References."=";
+   subtype Email_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.Email_Package_References.Email_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Email_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.Email_Package_References."=";
    procedure Initialize_Fields (This : in out BasicEmail'Class) is
    begin
       null;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
+package org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References is
+   type CapturedImageWorkerResultsEvent_Access is access all org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package.CapturedImageWorkerResultsEvent'Class;
+   type CapturedImageWorkerResultsEvent_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsEvent_Access;
+   type CapturedImageWorkerResultsEvent_Access_Array_Access is access all CapturedImageWorkerResultsEvent_Access_Array;
+   type CapturedImageWorkerResultsEvent_Access_Array_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsEvent_Access_Array_Access;
+   type CapturedImageWorkerResultsEvent_Access_Array_Access_Array_Access is access all CapturedImageWorkerResultsEvent_Access_Array_Access_Array;
+end org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References;
+
+with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 package org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CapturedImageWorkerResultsEvent is tagged;
-   type CapturedImageWorkerResultsEvent_Access is access all CapturedImageWorkerResultsEvent'Class;
-   type CapturedImageWorkerResultsEvent_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsEvent_Access;
-   type CapturedImageWorkerResultsEvent_Access_Array_Access is access all CapturedImageWorkerResultsEvent_Access_Array;
-   type CapturedImageWorkerResultsEvent_Access_Array_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsEvent_Access_Array_Access;
-   type CapturedImageWorkerResultsEvent_Access_Array_Access_Array_Access is access all CapturedImageWorkerResultsEvent_Access_Array_Access_Array;
+
+   subtype CapturedImageWorkerResultsEvent_Access is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access;
+   function "=" (Left, Right : CapturedImageWorkerResultsEvent_Access) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References."=";
+   subtype CapturedImageWorkerResultsEvent_Access_Array is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access_Array;
+   function "=" (Left, Right : CapturedImageWorkerResultsEvent_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References."=";
+   subtype CapturedImageWorkerResultsEvent_Access_Array_Access is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access_Array_Access;
+   function "=" (Left, Right : CapturedImageWorkerResultsEvent_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References."=";
+   subtype CapturedImageWorkerResultsEvent_Access_Array_Access_Array is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : CapturedImageWorkerResultsEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References."=";
+   subtype CapturedImageWorkerResultsEvent_Access_Array_Access_Array_Access is org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References.CapturedImageWorkerResultsEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CapturedImageWorkerResultsEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package_References."=";
 
    type CapturedImageWorkerResultsEvent is new AllBinaryEventObject with record
       frame : Long_Long_Integer;

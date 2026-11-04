@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.installer.InitializerDatabase_Package;
+package org.allbinary.business.installer.InitializerDatabase_Package_References is
+   type InitializerDatabase_Access is access all org.allbinary.business.installer.InitializerDatabase_Package.InitializerDatabase'Class;
+   type InitializerDatabase_Access_Array is array (Natural range <>) of InitializerDatabase_Access;
+   type InitializerDatabase_Access_Array_Access is access all InitializerDatabase_Access_Array;
+   type InitializerDatabase_Access_Array_Access_Array is array (Natural range <>) of InitializerDatabase_Access_Array_Access;
+   type InitializerDatabase_Access_Array_Access_Array_Access is access all InitializerDatabase_Access_Array_Access_Array;
+end org.allbinary.business.installer.InitializerDatabase_Package_References;
+
+with org.allbinary.business.installer.InitializerDatabase_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,9 +33,12 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.business.installer.DynamicInitDb_Package; use org.allbinary.business.installer.DynamicInitDb_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.business.installer.DynamicInitDb_Package;
+with org.allbinary.business.installer.DynamicInitDb_Package_References;
 
 package org.allbinary.business.installer.InitializerDatabase_Package is
 
@@ -33,13 +46,51 @@ package org.allbinary.business.installer.InitializerDatabase_Package is
    package Map_Package renames Standard.java.util.Map_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype DynamicInitDb_Access is org.allbinary.business.installer.DynamicInitDb_Package_References.DynamicInitDb_Access;
+   use type DynamicInitDb_Access;
+   subtype DynamicInitDb_Access_Array is org.allbinary.business.installer.DynamicInitDb_Package_References.DynamicInitDb_Access_Array;
+   use type DynamicInitDb_Access_Array;
+   subtype DynamicInitDb_Access_Array_Access is org.allbinary.business.installer.DynamicInitDb_Package_References.DynamicInitDb_Access_Array_Access;
+   use type DynamicInitDb_Access_Array_Access;
+   subtype DynamicInitDb_Access_Array_Access_Array is org.allbinary.business.installer.DynamicInitDb_Package_References.DynamicInitDb_Access_Array_Access_Array;
+   use type DynamicInitDb_Access_Array_Access_Array;
+   subtype DynamicInitDb_Access_Array_Access_Array_Access is org.allbinary.business.installer.DynamicInitDb_Package_References.DynamicInitDb_Access_Array_Access_Array_Access;
+   use type DynamicInitDb_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InitializerDatabase is tagged;
-   type InitializerDatabase_Access is access all InitializerDatabase'Class;
-   type InitializerDatabase_Access_Array is array (Natural range <>) of InitializerDatabase_Access;
-   type InitializerDatabase_Access_Array_Access is access all InitializerDatabase_Access_Array;
-   type InitializerDatabase_Access_Array_Access_Array is array (Natural range <>) of InitializerDatabase_Access_Array_Access;
-   type InitializerDatabase_Access_Array_Access_Array_Access is access all InitializerDatabase_Access_Array_Access_Array;
+
+   subtype InitializerDatabase_Access is org.allbinary.business.installer.InitializerDatabase_Package_References.InitializerDatabase_Access;
+   function "=" (Left, Right : InitializerDatabase_Access) return Boolean renames org.allbinary.business.installer.InitializerDatabase_Package_References."=";
+   subtype InitializerDatabase_Access_Array is org.allbinary.business.installer.InitializerDatabase_Package_References.InitializerDatabase_Access_Array;
+   function "=" (Left, Right : InitializerDatabase_Access_Array) return Boolean renames org.allbinary.business.installer.InitializerDatabase_Package_References."=";
+   subtype InitializerDatabase_Access_Array_Access is org.allbinary.business.installer.InitializerDatabase_Package_References.InitializerDatabase_Access_Array_Access;
+   function "=" (Left, Right : InitializerDatabase_Access_Array_Access) return Boolean renames org.allbinary.business.installer.InitializerDatabase_Package_References."=";
+   subtype InitializerDatabase_Access_Array_Access_Array is org.allbinary.business.installer.InitializerDatabase_Package_References.InitializerDatabase_Access_Array_Access_Array;
+   function "=" (Left, Right : InitializerDatabase_Access_Array_Access_Array) return Boolean renames org.allbinary.business.installer.InitializerDatabase_Package_References."=";
+   subtype InitializerDatabase_Access_Array_Access_Array_Access is org.allbinary.business.installer.InitializerDatabase_Package_References.InitializerDatabase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InitializerDatabase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.installer.InitializerDatabase_Package_References."=";
 
    type InitializerDatabase is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -13,18 +13,41 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.content.Context_Package; use org.allbinary.content.Context_Package;
+with org.allbinary.content.NotificationManager_Package; use org.allbinary.content.NotificationManager_Package;
 with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.CommandUriAction_Package;
 with org.allbinary.content.Intent_Package; use org.allbinary.content.Intent_Package;
 with org.allbinary.content.Notification_Package; use org.allbinary.content.Notification_Package;
 with org.allbinary.content.PendingIntent_Package; use org.allbinary.content.PendingIntent_Package;
+with org.allbinary.content.CommandUriAction_Package;
 
 package body org.allbinary.content.NotificationUtil_Package is
 
    package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   function "=" (Left, Right : Command_Access) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   function "=" (Left, Right : Command_Access_Array) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   function "=" (Left, Right : Command_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   function "=" (Left, Right : Command_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Command_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Command_Package_References."=";
+   subtype NotificationManager_Access is org.allbinary.content.NotificationManager_Package_References.NotificationManager_Access;
+   function "=" (Left, Right : NotificationManager_Access) return Boolean renames org.allbinary.content.NotificationManager_Package_References."=";
+   subtype NotificationManager_Access_Array is org.allbinary.content.NotificationManager_Package_References.NotificationManager_Access_Array;
+   function "=" (Left, Right : NotificationManager_Access_Array) return Boolean renames org.allbinary.content.NotificationManager_Package_References."=";
+   subtype NotificationManager_Access_Array_Access is org.allbinary.content.NotificationManager_Package_References.NotificationManager_Access_Array_Access;
+   function "=" (Left, Right : NotificationManager_Access_Array_Access) return Boolean renames org.allbinary.content.NotificationManager_Package_References."=";
+   subtype NotificationManager_Access_Array_Access_Array is org.allbinary.content.NotificationManager_Package_References.NotificationManager_Access_Array_Access_Array;
+   function "=" (Left, Right : NotificationManager_Access_Array_Access_Array) return Boolean renames org.allbinary.content.NotificationManager_Package_References."=";
+   subtype NotificationManager_Access_Array_Access_Array_Access is org.allbinary.content.NotificationManager_Package_References.NotificationManager_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NotificationManager_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.content.NotificationManager_Package_References."=";
    procedure Initialize_Fields (This : in out NotificationUtil'Class) is
    begin
       null;
@@ -46,7 +69,7 @@ package body org.allbinary.content.NotificationUtil_Package is
 
    function getInstance return NotificationUtil_Access is
    begin
-        return NotificationUtil_Package.SINGLETON;
+        return NotificationUtil_Access (NotificationUtil_Package.SINGLETON);
    end getInstance;
 
    procedure notify (This : in out NotificationUtil; command_Param : access Command_Package.Command'Class; resource : Unbounded_String; message : Unbounded_String) is

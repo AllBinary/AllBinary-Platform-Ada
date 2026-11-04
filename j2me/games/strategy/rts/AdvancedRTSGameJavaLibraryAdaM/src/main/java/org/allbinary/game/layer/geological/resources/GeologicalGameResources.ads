@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package;
+package org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References is
+   type GeologicalGameResources_Access is access all org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package.GeologicalGameResources'Class;
+   type GeologicalGameResources_Access_Array is array (Natural range <>) of GeologicalGameResources_Access;
+   type GeologicalGameResources_Access_Array_Access is access all GeologicalGameResources_Access_Array;
+   type GeologicalGameResources_Access_Array_Access_Array is array (Natural range <>) of GeologicalGameResources_Access_Array_Access;
+   type GeologicalGameResources_Access_Array_Access_Array_Access is access all GeologicalGameResources_Access_Array_Access_Array;
+end org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References;
+
+with org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,22 +35,30 @@ with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allb
 package org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package is
 
    package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GeologicalGameResources is tagged;
-   type GeologicalGameResources_Access is access all GeologicalGameResources'Class;
-   type GeologicalGameResources_Access_Array is array (Natural range <>) of GeologicalGameResources_Access;
-   type GeologicalGameResources_Access_Array_Access is access all GeologicalGameResources_Access_Array;
-   type GeologicalGameResources_Access_Array_Access_Array is array (Natural range <>) of GeologicalGameResources_Access_Array_Access;
-   type GeologicalGameResources_Access_Array_Access_Array_Access is access all GeologicalGameResources_Access_Array_Access_Array;
+
+   subtype GeologicalGameResources_Access is org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References.GeologicalGameResources_Access;
+   function "=" (Left, Right : GeologicalGameResources_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References."=";
+   subtype GeologicalGameResources_Access_Array is org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References.GeologicalGameResources_Access_Array;
+   function "=" (Left, Right : GeologicalGameResources_Access_Array) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References."=";
+   subtype GeologicalGameResources_Access_Array_Access is org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References.GeologicalGameResources_Access_Array_Access;
+   function "=" (Left, Right : GeologicalGameResources_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References."=";
+   subtype GeologicalGameResources_Access_Array_Access_Array is org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References.GeologicalGameResources_Access_Array_Access_Array;
+   function "=" (Left, Right : GeologicalGameResources_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References."=";
+   subtype GeologicalGameResources_Access_Array_Access_Array_Access is org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References.GeologicalGameResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GeologicalGameResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package_References."=";
 
    type GeologicalGameResources is new BasicGameResources with null record;
-   instance : GeologicalGameResources_Access;
+   instance : Java_Object_Access;
 
    procedure Initialize (This : in out GeologicalGameResources'Class);
    function Create return GeologicalGameResources_Access;
+   function getInstance return BasicGameResources_Access;
    procedure append (This : in out GeologicalGameResources; ROOT : Unbounded_String; sizeString : Unbounded_String);
    function getString (This : in out GeologicalGameResources) return Unbounded_String;
-   function getInstance return BasicGameResources_Access;
 
 end org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package;
 

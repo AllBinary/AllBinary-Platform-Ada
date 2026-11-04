@@ -11,6 +11,16 @@
 -- Created By: Travis Berthelot  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
+package org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References is
+   type BuildingEventListenerInterface_Access is access all org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package.BuildingEventListenerInterface'Class;
+   type BuildingEventListenerInterface_Access_Array is array (Natural range <>) of BuildingEventListenerInterface_Access;
+   type BuildingEventListenerInterface_Access_Array_Access is access all BuildingEventListenerInterface_Access_Array;
+   type BuildingEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of BuildingEventListenerInterface_Access_Array_Access;
+   type BuildingEventListenerInterface_Access_Array_Access_Array_Access is access all BuildingEventListenerInterface_Access_Array_Access_Array;
+end org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References;
+
+with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -19,20 +29,41 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.layer.RTSLayerEvent_Package;
+limited with org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.game.layer.RTSLayerEvent_Package_References;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 
 package org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package is
 
    package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package Reference_Types is
+   subtype RTSLayerEvent_Access is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access;
+   use type RTSLayerEvent_Access;
+   subtype RTSLayerEvent_Access_Array is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access_Array;
+   use type RTSLayerEvent_Access_Array;
+   subtype RTSLayerEvent_Access_Array_Access is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access_Array_Access;
+   use type RTSLayerEvent_Access_Array_Access;
+   subtype RTSLayerEvent_Access_Array_Access_Array is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access_Array_Access_Array;
+   use type RTSLayerEvent_Access_Array_Access_Array;
+   subtype RTSLayerEvent_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSLayerEvent_Package_References.RTSLayerEvent_Access_Array_Access_Array_Access;
+   use type RTSLayerEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type BuildingEventListenerInterface is interface and EventListenerInterface;
-   type BuildingEventListenerInterface_Access is access all BuildingEventListenerInterface'Class;
-   type BuildingEventListenerInterface_Access_Array is array (Natural range <>) of BuildingEventListenerInterface_Access;
-   type BuildingEventListenerInterface_Access_Array_Access is access all BuildingEventListenerInterface_Access_Array;
-   type BuildingEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of BuildingEventListenerInterface_Access_Array_Access;
-   type BuildingEventListenerInterface_Access_Array_Access_Array_Access is access all BuildingEventListenerInterface_Access_Array_Access_Array;
+   subtype BuildingEventListenerInterface_Access is org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References.BuildingEventListenerInterface_Access;
+   function "=" (Left, Right : BuildingEventListenerInterface_Access) return Boolean renames org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References."=";
+   subtype BuildingEventListenerInterface_Access_Array is org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References.BuildingEventListenerInterface_Access_Array;
+   function "=" (Left, Right : BuildingEventListenerInterface_Access_Array) return Boolean renames org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References."=";
+   subtype BuildingEventListenerInterface_Access_Array_Access is org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References.BuildingEventListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : BuildingEventListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References."=";
+   subtype BuildingEventListenerInterface_Access_Array_Access_Array is org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References.BuildingEventListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : BuildingEventListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References."=";
+   subtype BuildingEventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References.BuildingEventListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BuildingEventListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package_References."=";
+   function Java_Object_Access_From_BuildingEventListenerInterface (Value : BuildingEventListenerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure onBuildingEvent (This : in out BuildingEventListenerInterface; event_Param : access RTSLayerEvent_Package.RTSLayerEvent'Class) is abstract;
 
 end org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;

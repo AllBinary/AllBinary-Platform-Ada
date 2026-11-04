@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.system.Memory_Package;
+package org.allbinary.system.Memory_Package_References is
+   type Memory_Access is access all org.allbinary.system.Memory_Package.Memory'Class;
+   type Memory_Access_Array is array (Natural range <>) of Memory_Access;
+   type Memory_Access_Array_Access is access all Memory_Access_Array;
+   type Memory_Access_Array_Access_Array is array (Natural range <>) of Memory_Access_Array_Access;
+   type Memory_Access_Array_Access_Array_Access is access all Memory_Access_Array_Access_Array;
+end org.allbinary.system.Memory_Package_References;
+
+with org.allbinary.system.Memory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.system.Memory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Memory is tagged;
-   type Memory_Access is access all Memory'Class;
-   type Memory_Access_Array is array (Natural range <>) of Memory_Access;
-   type Memory_Access_Array_Access is access all Memory_Access_Array;
-   type Memory_Access_Array_Access_Array is array (Natural range <>) of Memory_Access_Array_Access;
-   type Memory_Access_Array_Access_Array_Access is access all Memory_Access_Array_Access_Array;
+
+   subtype Memory_Access is org.allbinary.system.Memory_Package_References.Memory_Access;
+   function "=" (Left, Right : Memory_Access) return Boolean renames org.allbinary.system.Memory_Package_References."=";
+   subtype Memory_Access_Array is org.allbinary.system.Memory_Package_References.Memory_Access_Array;
+   function "=" (Left, Right : Memory_Access_Array) return Boolean renames org.allbinary.system.Memory_Package_References."=";
+   subtype Memory_Access_Array_Access is org.allbinary.system.Memory_Package_References.Memory_Access_Array_Access;
+   function "=" (Left, Right : Memory_Access_Array_Access) return Boolean renames org.allbinary.system.Memory_Package_References."=";
+   subtype Memory_Access_Array_Access_Array is org.allbinary.system.Memory_Package_References.Memory_Access_Array_Access_Array;
+   function "=" (Left, Right : Memory_Access_Array_Access_Array) return Boolean renames org.allbinary.system.Memory_Package_References."=";
+   subtype Memory_Access_Array_Access_Array_Access is org.allbinary.system.Memory_Package_References.Memory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Memory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.system.Memory_Package_References."=";
 
    type Memory is new Java_Object with null record;
 

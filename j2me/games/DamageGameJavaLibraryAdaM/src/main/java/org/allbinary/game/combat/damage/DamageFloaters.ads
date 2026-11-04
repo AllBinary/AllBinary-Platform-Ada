@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.combat.damage.DamageFloaters_Package;
+package org.allbinary.game.combat.damage.DamageFloaters_Package_References is
+   type DamageFloaters_Access is access all org.allbinary.game.combat.damage.DamageFloaters_Package.DamageFloaters'Class;
+   type DamageFloaters_Access_Array is array (Natural range <>) of DamageFloaters_Access;
+   type DamageFloaters_Access_Array_Access is access all DamageFloaters_Access_Array;
+   type DamageFloaters_Access_Array_Access_Array is array (Natural range <>) of DamageFloaters_Access_Array_Access;
+   type DamageFloaters_Access_Array_Access_Array_Access is access all DamageFloaters_Access_Array_Access_Array;
+end org.allbinary.game.combat.damage.DamageFloaters_Package_References;
+
+with org.allbinary.game.combat.damage.DamageFloaters_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 package org.allbinary.game.combat.damage.DamageFloaters_Package is
 
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DamageFloaters is tagged;
-   type DamageFloaters_Access is access all DamageFloaters'Class;
-   type DamageFloaters_Access_Array is array (Natural range <>) of DamageFloaters_Access;
-   type DamageFloaters_Access_Array_Access is access all DamageFloaters_Access_Array;
-   type DamageFloaters_Access_Array_Access_Array is array (Natural range <>) of DamageFloaters_Access_Array_Access;
-   type DamageFloaters_Access_Array_Access_Array_Access is access all DamageFloaters_Access_Array_Access_Array;
+
+   subtype DamageFloaters_Access is org.allbinary.game.combat.damage.DamageFloaters_Package_References.DamageFloaters_Access;
+   function "=" (Left, Right : DamageFloaters_Access) return Boolean renames org.allbinary.game.combat.damage.DamageFloaters_Package_References."=";
+   subtype DamageFloaters_Access_Array is org.allbinary.game.combat.damage.DamageFloaters_Package_References.DamageFloaters_Access_Array;
+   function "=" (Left, Right : DamageFloaters_Access_Array) return Boolean renames org.allbinary.game.combat.damage.DamageFloaters_Package_References."=";
+   subtype DamageFloaters_Access_Array_Access is org.allbinary.game.combat.damage.DamageFloaters_Package_References.DamageFloaters_Access_Array_Access;
+   function "=" (Left, Right : DamageFloaters_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.DamageFloaters_Package_References."=";
+   subtype DamageFloaters_Access_Array_Access_Array is org.allbinary.game.combat.damage.DamageFloaters_Package_References.DamageFloaters_Access_Array_Access_Array;
+   function "=" (Left, Right : DamageFloaters_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.damage.DamageFloaters_Package_References."=";
+   subtype DamageFloaters_Access_Array_Access_Array_Access is org.allbinary.game.combat.damage.DamageFloaters_Package_References.DamageFloaters_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DamageFloaters_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.DamageFloaters_Package_References."=";
 
    type DamageFloaters is new Paintable with null record;
    SINGLETON : DamageFloaters_Access;

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.configuration.ContextConfigurationData_Package;
+package org.allbinary.business.context.configuration.ContextConfigurationData_Package_References is
+   type ContextConfigurationData_Access is access all org.allbinary.business.context.configuration.ContextConfigurationData_Package.ContextConfigurationData'Class;
+   type ContextConfigurationData_Access_Array is array (Natural range <>) of ContextConfigurationData_Access;
+   type ContextConfigurationData_Access_Array_Access is access all ContextConfigurationData_Access_Array;
+   type ContextConfigurationData_Access_Array_Access_Array is array (Natural range <>) of ContextConfigurationData_Access_Array_Access;
+   type ContextConfigurationData_Access_Array_Access_Array_Access is access all ContextConfigurationData_Access_Array_Access_Array;
+end org.allbinary.business.context.configuration.ContextConfigurationData_Package_References;
+
+with org.allbinary.business.context.configuration.ContextConfigurationData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.context.configuration.ContextConfigurationData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ContextConfigurationData is tagged;
-   type ContextConfigurationData_Access is access all ContextConfigurationData'Class;
-   type ContextConfigurationData_Access_Array is array (Natural range <>) of ContextConfigurationData_Access;
-   type ContextConfigurationData_Access_Array_Access is access all ContextConfigurationData_Access_Array;
-   type ContextConfigurationData_Access_Array_Access_Array is array (Natural range <>) of ContextConfigurationData_Access_Array_Access;
-   type ContextConfigurationData_Access_Array_Access_Array_Access is access all ContextConfigurationData_Access_Array_Access_Array;
+
+   subtype ContextConfigurationData_Access is org.allbinary.business.context.configuration.ContextConfigurationData_Package_References.ContextConfigurationData_Access;
+   function "=" (Left, Right : ContextConfigurationData_Access) return Boolean renames org.allbinary.business.context.configuration.ContextConfigurationData_Package_References."=";
+   subtype ContextConfigurationData_Access_Array is org.allbinary.business.context.configuration.ContextConfigurationData_Package_References.ContextConfigurationData_Access_Array;
+   function "=" (Left, Right : ContextConfigurationData_Access_Array) return Boolean renames org.allbinary.business.context.configuration.ContextConfigurationData_Package_References."=";
+   subtype ContextConfigurationData_Access_Array_Access is org.allbinary.business.context.configuration.ContextConfigurationData_Package_References.ContextConfigurationData_Access_Array_Access;
+   function "=" (Left, Right : ContextConfigurationData_Access_Array_Access) return Boolean renames org.allbinary.business.context.configuration.ContextConfigurationData_Package_References."=";
+   subtype ContextConfigurationData_Access_Array_Access_Array is org.allbinary.business.context.configuration.ContextConfigurationData_Package_References.ContextConfigurationData_Access_Array_Access_Array;
+   function "=" (Left, Right : ContextConfigurationData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.configuration.ContextConfigurationData_Package_References."=";
+   subtype ContextConfigurationData_Access_Array_Access_Array_Access is org.allbinary.business.context.configuration.ContextConfigurationData_Package_References.ContextConfigurationData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ContextConfigurationData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.configuration.ContextConfigurationData_Package_References."=";
 
    type ContextConfigurationData is new Java_Object with record
       NAME : Unbounded_String;

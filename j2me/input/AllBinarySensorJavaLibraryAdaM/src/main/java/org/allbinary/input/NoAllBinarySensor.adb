@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.AllBinarySensor_Package;
+with org.allbinary.input.AllBinarySensorListener_Package;
 
 package body org.allbinary.input.NoAllBinarySensor_Package is
 
@@ -24,7 +26,7 @@ package body org.allbinary.input.NoAllBinarySensor_Package is
 
    function getInstance return NoAllBinarySensor_Access is
    begin
-        return NoAllBinarySensor_Package.instance;
+        return NoAllBinarySensor_Access (NoAllBinarySensor_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out NoAllBinarySensor'Class) is

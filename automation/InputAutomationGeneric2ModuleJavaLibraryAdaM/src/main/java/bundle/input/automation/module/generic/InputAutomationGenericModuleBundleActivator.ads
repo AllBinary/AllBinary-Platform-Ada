@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package;
+package bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References is
+   type InputAutomationGenericModuleBundleActivator_Access is access all bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package.InputAutomationGenericModuleBundleActivator'Class;
+   type InputAutomationGenericModuleBundleActivator_Access_Array is array (Natural range <>) of InputAutomationGenericModuleBundleActivator_Access;
+   type InputAutomationGenericModuleBundleActivator_Access_Array_Access is access all InputAutomationGenericModuleBundleActivator_Access_Array;
+   type InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array is array (Natural range <>) of InputAutomationGenericModuleBundleActivator_Access_Array_Access;
+   type InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array_Access is access all InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array;
+end bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References;
+
+with bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActiv
 package bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package is
 
    package InputAutomationModuleBundleActivator_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputAutomationGenericModuleBundleActivator is tagged;
-   type InputAutomationGenericModuleBundleActivator_Access is access all InputAutomationGenericModuleBundleActivator'Class;
-   type InputAutomationGenericModuleBundleActivator_Access_Array is array (Natural range <>) of InputAutomationGenericModuleBundleActivator_Access;
-   type InputAutomationGenericModuleBundleActivator_Access_Array_Access is access all InputAutomationGenericModuleBundleActivator_Access_Array;
-   type InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array is array (Natural range <>) of InputAutomationGenericModuleBundleActivator_Access_Array_Access;
-   type InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array_Access is access all InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array;
+
+   subtype InputAutomationGenericModuleBundleActivator_Access is bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References.InputAutomationGenericModuleBundleActivator_Access;
+   function "=" (Left, Right : InputAutomationGenericModuleBundleActivator_Access) return Boolean renames bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References."=";
+   subtype InputAutomationGenericModuleBundleActivator_Access_Array is bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References.InputAutomationGenericModuleBundleActivator_Access_Array;
+   function "=" (Left, Right : InputAutomationGenericModuleBundleActivator_Access_Array) return Boolean renames bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References."=";
+   subtype InputAutomationGenericModuleBundleActivator_Access_Array_Access is bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References.InputAutomationGenericModuleBundleActivator_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationGenericModuleBundleActivator_Access_Array_Access) return Boolean renames bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References."=";
+   subtype InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array is bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References.InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array) return Boolean renames bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References."=";
+   subtype InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array_Access is bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References.InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array_Access) return Boolean renames bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package_References."=";
 
    type InputAutomationGenericModuleBundleActivator is new InputAutomationModuleBundleActivator with null record;
 

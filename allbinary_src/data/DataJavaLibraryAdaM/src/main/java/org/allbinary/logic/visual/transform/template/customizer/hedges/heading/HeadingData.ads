@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package;
+package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References is
+   type HeadingData_Access is access all org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package.HeadingData'Class;
+   type HeadingData_Access_Array is array (Natural range <>) of HeadingData_Access;
+   type HeadingData_Access_Array_Access is access all HeadingData_Access_Array;
+   type HeadingData_Access_Array_Access_Array is array (Natural range <>) of HeadingData_Access_Array_Access;
+   type HeadingData_Access_Array_Access_Array_Access is access all HeadingData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References;
+
+with org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HeadingData is tagged;
-   type HeadingData_Access is access all HeadingData'Class;
-   type HeadingData_Access_Array is array (Natural range <>) of HeadingData_Access;
-   type HeadingData_Access_Array_Access is access all HeadingData_Access_Array;
-   type HeadingData_Access_Array_Access_Array is array (Natural range <>) of HeadingData_Access_Array_Access;
-   type HeadingData_Access_Array_Access_Array_Access is access all HeadingData_Access_Array_Access_Array;
+
+   subtype HeadingData_Access is org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.HeadingData_Access;
+   function "=" (Left, Right : HeadingData_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References."=";
+   subtype HeadingData_Access_Array is org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.HeadingData_Access_Array;
+   function "=" (Left, Right : HeadingData_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References."=";
+   subtype HeadingData_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.HeadingData_Access_Array_Access;
+   function "=" (Left, Right : HeadingData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References."=";
+   subtype HeadingData_Access_Array_Access_Array is org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.HeadingData_Access_Array_Access_Array;
+   function "=" (Left, Right : HeadingData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References."=";
+   subtype HeadingData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.HeadingData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HeadingData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References."=";
 
    type HeadingData is new Java_Object with null record;
    NAME : Unbounded_String;

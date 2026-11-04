@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.opengles.OpenGLImageUtilBase_Package;
+package org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References is
+   type OpenGLImageUtilBase_Access is access all org.allbinary.image.opengles.OpenGLImageUtilBase_Package.OpenGLImageUtilBase'Class;
+   type OpenGLImageUtilBase_Access_Array is array (Natural range <>) of OpenGLImageUtilBase_Access;
+   type OpenGLImageUtilBase_Access_Array_Access is access all OpenGLImageUtilBase_Access_Array;
+   type OpenGLImageUtilBase_Access_Array_Access_Array is array (Natural range <>) of OpenGLImageUtilBase_Access_Array_Access;
+   type OpenGLImageUtilBase_Access_Array_Access_Array_Access is access all OpenGLImageUtilBase_Access_Array_Access_Array;
+end org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References;
+
+with org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,21 +32,51 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+limited with org.allbinary.graphics.OpenGLBitmap_Package;
+with org.allbinary.graphics.OpenGLBitmap_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 
 package org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package OpenGLBitmap_Package renames Standard.org.allbinary.graphics.OpenGLBitmap_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Reference_Types is
+   subtype OpenGLBitmap_Access is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access;
+   use type OpenGLBitmap_Access;
+   subtype OpenGLBitmap_Access_Array is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array;
+   use type OpenGLBitmap_Access_Array;
+   subtype OpenGLBitmap_Access_Array_Access is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array_Access;
+   use type OpenGLBitmap_Access_Array_Access;
+   subtype OpenGLBitmap_Access_Array_Access_Array is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array_Access_Array;
+   use type OpenGLBitmap_Access_Array_Access_Array;
+   subtype OpenGLBitmap_Access_Array_Access_Array_Access is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array_Access_Array_Access;
+   use type OpenGLBitmap_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLImageUtilBase is tagged;
-   type OpenGLImageUtilBase_Access is access all OpenGLImageUtilBase'Class;
-   type OpenGLImageUtilBase_Access_Array is array (Natural range <>) of OpenGLImageUtilBase_Access;
-   type OpenGLImageUtilBase_Access_Array_Access is access all OpenGLImageUtilBase_Access_Array;
-   type OpenGLImageUtilBase_Access_Array_Access_Array is array (Natural range <>) of OpenGLImageUtilBase_Access_Array_Access;
-   type OpenGLImageUtilBase_Access_Array_Access_Array_Access is access all OpenGLImageUtilBase_Access_Array_Access_Array;
+
+   subtype OpenGLImageUtilBase_Access is org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References.OpenGLImageUtilBase_Access;
+   function "=" (Left, Right : OpenGLImageUtilBase_Access) return Boolean renames org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References."=";
+   subtype OpenGLImageUtilBase_Access_Array is org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References.OpenGLImageUtilBase_Access_Array;
+   function "=" (Left, Right : OpenGLImageUtilBase_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References."=";
+   subtype OpenGLImageUtilBase_Access_Array_Access is org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References.OpenGLImageUtilBase_Access_Array_Access;
+   function "=" (Left, Right : OpenGLImageUtilBase_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References."=";
+   subtype OpenGLImageUtilBase_Access_Array_Access_Array is org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References.OpenGLImageUtilBase_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLImageUtilBase_Access_Array_Access_Array) return Boolean renames org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References."=";
+   subtype OpenGLImageUtilBase_Access_Array_Access_Array_Access is org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References.OpenGLImageUtilBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLImageUtilBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.opengles.OpenGLImageUtilBase_Package_References."=";
 
    type OpenGLImageUtilBase is new Java_Object with null record;
 

@@ -13,11 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 with org.allbinary.media.audio.SelectSound_Package; use org.allbinary.media.audio.SelectSound_Package;
 with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
+with org.allbinary.media.audio.CompositeSound_Package;
+with org.allbinary.media.audio.ErrorSound_Package;
+with org.allbinary.media.audio.SelectSound_Package;
 
 package body org.allbinary.media.audio.EarlySoundsFactory_Package is
 
+   subtype Sound_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access;
+   function "=" (Left, Right : Sound_Access) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
+   subtype Sound_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array;
+   function "=" (Left, Right : Sound_Access_Array) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
+   subtype Sound_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access;
+   function "=" (Left, Right : Sound_Access_Array_Access) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
+   subtype Sound_Access_Array_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array;
+   function "=" (Left, Right : Sound_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
+   subtype Sound_Access_Array_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Sound_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
    procedure Initialize_Fields (This : in out EarlySoundsFactory'Class) is
    begin
       null;
@@ -51,7 +65,7 @@ package body org.allbinary.media.audio.EarlySoundsFactory_Package is
 
    function getInstance return EarlySoundsFactory_Access is
    begin
-        return EarlySoundsFactory_Package.instance;
+        return EarlySoundsFactory_Access (EarlySoundsFactory_Package.instance);
    end getInstance;
 
 begin

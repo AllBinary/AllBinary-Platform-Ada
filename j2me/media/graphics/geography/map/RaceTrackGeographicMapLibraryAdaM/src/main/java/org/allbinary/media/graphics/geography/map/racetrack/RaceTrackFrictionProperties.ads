@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
+package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References is
+   type RaceTrackFrictionProperties_Access is access all org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package.RaceTrackFrictionProperties'Class;
+   type RaceTrackFrictionProperties_Access_Array is array (Natural range <>) of RaceTrackFrictionProperties_Access;
+   type RaceTrackFrictionProperties_Access_Array_Access is access all RaceTrackFrictionProperties_Access_Array;
+   type RaceTrackFrictionProperties_Access_Array_Access_Array is array (Natural range <>) of RaceTrackFrictionProperties_Access_Array_Access;
+   type RaceTrackFrictionProperties_Access_Array_Access_Array_Access is access all RaceTrackFrictionProperties_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References;
+
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type RaceTrackFrictionProperties is tagged;
-   type RaceTrackFrictionProperties_Access is access all RaceTrackFrictionProperties'Class;
-   type RaceTrackFrictionProperties_Access_Array is array (Natural range <>) of RaceTrackFrictionProperties_Access;
-   type RaceTrackFrictionProperties_Access_Array_Access is access all RaceTrackFrictionProperties_Access_Array;
-   type RaceTrackFrictionProperties_Access_Array_Access_Array is array (Natural range <>) of RaceTrackFrictionProperties_Access_Array_Access;
-   type RaceTrackFrictionProperties_Access_Array_Access_Array_Access is access all RaceTrackFrictionProperties_Access_Array_Access_Array;
+
+   subtype RaceTrackFrictionProperties_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
+   subtype RaceTrackFrictionProperties_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access_Array;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
+   subtype RaceTrackFrictionProperties_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
+   subtype RaceTrackFrictionProperties_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
+   subtype RaceTrackFrictionProperties_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
 
    type RaceTrackFrictionProperties is new Java_Object with record
       ROAD_FRICTION_NOMINATOR : Integer;

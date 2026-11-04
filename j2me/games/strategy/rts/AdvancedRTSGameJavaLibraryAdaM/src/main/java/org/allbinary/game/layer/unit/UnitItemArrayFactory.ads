@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.unit.UnitItemArrayFactory_Package;
+package org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References is
+   type UnitItemArrayFactory_Access is access all org.allbinary.game.layer.unit.UnitItemArrayFactory_Package.UnitItemArrayFactory'Class;
+   type UnitItemArrayFactory_Access_Array is array (Natural range <>) of UnitItemArrayFactory_Access;
+   type UnitItemArrayFactory_Access_Array_Access is access all UnitItemArrayFactory_Access_Array;
+   type UnitItemArrayFactory_Access_Array_Access_Array is array (Natural range <>) of UnitItemArrayFactory_Access_Array_Access;
+   type UnitItemArrayFactory_Access_Array_Access_Array_Access is access all UnitItemArrayFactory_Access_Array_Access_Array;
+end org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References;
+
+with org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
-with org.allbinary.game.layer.waypoint.FlagGameResources_Package; use org.allbinary.game.layer.waypoint.FlagGameResources_Package;
-with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+limited with org.allbinary.game.layer.resources.BasicGameResources_Package;
+with org.allbinary.game.layer.resources.BasicGameResources_Package_References;
+limited with org.allbinary.game.layer.waypoint.FlagGameResources_Package;
+with org.allbinary.game.layer.waypoint.FlagGameResources_Package_References;
+limited with org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
+limited with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
+limited with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package; use org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package;
-with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+limited with org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+with org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References;
 
 package org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
 
@@ -37,13 +53,81 @@ package org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package ItemArraySingletonFactoryInterface_Package renames Standard.org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package;
    package LayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+   package Reference_Types is
+   subtype BasicGameResources_Access is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access;
+   use type BasicGameResources_Access;
+   subtype BasicGameResources_Access_Array is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access_Array;
+   use type BasicGameResources_Access_Array;
+   subtype BasicGameResources_Access_Array_Access is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access_Array_Access;
+   use type BasicGameResources_Access_Array_Access;
+   subtype BasicGameResources_Access_Array_Access_Array is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access_Array_Access_Array;
+   use type BasicGameResources_Access_Array_Access_Array;
+   subtype BasicGameResources_Access_Array_Access_Array_Access is org.allbinary.game.layer.resources.BasicGameResources_Package_References.BasicGameResources_Access_Array_Access_Array_Access;
+   use type BasicGameResources_Access_Array_Access_Array_Access;
+   subtype FlagGameResources_Access is org.allbinary.game.layer.waypoint.FlagGameResources_Package_References.FlagGameResources_Access;
+   use type FlagGameResources_Access;
+   subtype FlagGameResources_Access_Array is org.allbinary.game.layer.waypoint.FlagGameResources_Package_References.FlagGameResources_Access_Array;
+   use type FlagGameResources_Access_Array;
+   subtype FlagGameResources_Access_Array_Access is org.allbinary.game.layer.waypoint.FlagGameResources_Package_References.FlagGameResources_Access_Array_Access;
+   use type FlagGameResources_Access_Array_Access;
+   subtype FlagGameResources_Access_Array_Access_Array is org.allbinary.game.layer.waypoint.FlagGameResources_Package_References.FlagGameResources_Access_Array_Access_Array;
+   use type FlagGameResources_Access_Array_Access_Array;
+   subtype FlagGameResources_Access_Array_Access_Array_Access is org.allbinary.game.layer.waypoint.FlagGameResources_Package_References.FlagGameResources_Access_Array_Access_Array_Access;
+   use type FlagGameResources_Access_Array_Access_Array_Access;
+   subtype ABCustomItem_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access;
+   use type ABCustomItem_Access;
+   subtype ABCustomItem_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array;
+   use type ABCustomItem_Access_Array;
+   subtype ABCustomItem_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access;
+   use type ABCustomItem_Access_Array_Access;
+   subtype ABCustomItem_Access_Array_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array;
+   use type ABCustomItem_Access_Array_Access_Array;
+   subtype ABCustomItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array_Access;
+   use type ABCustomItem_Access_Array_Access_Array_Access;
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   use type CommonSeps_Access;
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   use type CommonSeps_Access_Array;
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access;
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   use type CommonSeps_Access_Array_Access_Array;
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access_Array_Access;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   use type BasicColor_Access;
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   use type BasicColor_Access_Array;
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   use type BasicColor_Access_Array_Access;
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   use type BasicColor_Access_Array_Access_Array;
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   use type BasicColor_Access_Array_Access_Array_Access;
+   subtype LayerInterfaceFactoryInterface_Access is org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References.LayerInterfaceFactoryInterface_Access;
+   use type LayerInterfaceFactoryInterface_Access;
+   subtype LayerInterfaceFactoryInterface_Access_Array is org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References.LayerInterfaceFactoryInterface_Access_Array;
+   use type LayerInterfaceFactoryInterface_Access_Array;
+   subtype LayerInterfaceFactoryInterface_Access_Array_Access is org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References.LayerInterfaceFactoryInterface_Access_Array_Access;
+   use type LayerInterfaceFactoryInterface_Access_Array_Access;
+   subtype LayerInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References.LayerInterfaceFactoryInterface_Access_Array_Access_Array;
+   use type LayerInterfaceFactoryInterface_Access_Array_Access_Array;
+   subtype LayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References.LayerInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   use type LayerInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type UnitItemArrayFactory is tagged;
-   type UnitItemArrayFactory_Access is access all UnitItemArrayFactory'Class;
-   type UnitItemArrayFactory_Access_Array is array (Natural range <>) of UnitItemArrayFactory_Access;
-   type UnitItemArrayFactory_Access_Array_Access is access all UnitItemArrayFactory_Access_Array;
-   type UnitItemArrayFactory_Access_Array_Access_Array is array (Natural range <>) of UnitItemArrayFactory_Access_Array_Access;
-   type UnitItemArrayFactory_Access_Array_Access_Array_Access is access all UnitItemArrayFactory_Access_Array_Access_Array;
+
+   subtype UnitItemArrayFactory_Access is org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References.UnitItemArrayFactory_Access;
+   function "=" (Left, Right : UnitItemArrayFactory_Access) return Boolean renames org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References."=";
+   subtype UnitItemArrayFactory_Access_Array is org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References.UnitItemArrayFactory_Access_Array;
+   function "=" (Left, Right : UnitItemArrayFactory_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References."=";
+   subtype UnitItemArrayFactory_Access_Array_Access is org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References.UnitItemArrayFactory_Access_Array_Access;
+   function "=" (Left, Right : UnitItemArrayFactory_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References."=";
+   subtype UnitItemArrayFactory_Access_Array_Access_Array is org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References.UnitItemArrayFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : UnitItemArrayFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References."=";
+   subtype UnitItemArrayFactory_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References.UnitItemArrayFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UnitItemArrayFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitItemArrayFactory_Package_References."=";
 
    type UnitItemArrayFactory is new Java_Object and ItemArraySingletonFactoryInterface with record
       commonSeps : CommonSeps_Access;

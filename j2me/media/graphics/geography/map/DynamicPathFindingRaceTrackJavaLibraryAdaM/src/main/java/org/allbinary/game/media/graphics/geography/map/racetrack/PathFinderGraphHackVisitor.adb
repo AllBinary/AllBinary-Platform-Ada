@@ -13,14 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.jgrapht.GraphPath_Package; use org.jgrapht.GraphPath_Package;
 with org.jgrapht.graph.DefaultWeightedEdge_Package; use org.jgrapht.graph.DefaultWeightedEdge_Package;
+with org.jgrapht.graph.SimpleWeightedGraph_Package; use org.jgrapht.graph.SimpleWeightedGraph_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+with org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package;
 
 package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package is
 
@@ -32,6 +38,56 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package RaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
    package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+   subtype GraphPath_Access is org.jgrapht.GraphPath_Package_References.GraphPath_Access;
+   function "=" (Left, Right : GraphPath_Access) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype GraphPath_Access_Array is org.jgrapht.GraphPath_Package_References.GraphPath_Access_Array;
+   function "=" (Left, Right : GraphPath_Access_Array) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype GraphPath_Access_Array_Access is org.jgrapht.GraphPath_Package_References.GraphPath_Access_Array_Access;
+   function "=" (Left, Right : GraphPath_Access_Array_Access) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype GraphPath_Access_Array_Access_Array is org.jgrapht.GraphPath_Package_References.GraphPath_Access_Array_Access_Array;
+   function "=" (Left, Right : GraphPath_Access_Array_Access_Array) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype GraphPath_Access_Array_Access_Array_Access is org.jgrapht.GraphPath_Package_References.GraphPath_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GraphPath_Access_Array_Access_Array_Access) return Boolean renames org.jgrapht.GraphPath_Package_References."=";
+   subtype SimpleWeightedGraph_Access is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access;
+   function "=" (Left, Right : SimpleWeightedGraph_Access) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype SimpleWeightedGraph_Access_Array is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access_Array;
+   function "=" (Left, Right : SimpleWeightedGraph_Access_Array) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype SimpleWeightedGraph_Access_Array_Access is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access_Array_Access;
+   function "=" (Left, Right : SimpleWeightedGraph_Access_Array_Access) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype SimpleWeightedGraph_Access_Array_Access_Array is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access_Array_Access_Array;
+   function "=" (Left, Right : SimpleWeightedGraph_Access_Array_Access_Array) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype SimpleWeightedGraph_Access_Array_Access_Array_Access is org.jgrapht.graph.SimpleWeightedGraph_Package_References.SimpleWeightedGraph_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SimpleWeightedGraph_Access_Array_Access_Array_Access) return Boolean renames org.jgrapht.graph.SimpleWeightedGraph_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype BasicGeographicMap_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access;
+   function "=" (Left, Right : BasicGeographicMap_Access) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
+   subtype BasicGeographicMap_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array;
+   function "=" (Left, Right : BasicGeographicMap_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
+   subtype BasicGeographicMap_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access;
+   function "=" (Left, Right : BasicGeographicMap_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
+   subtype BasicGeographicMap_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicGeographicMap_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
+   subtype BasicGeographicMap_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References.BasicGeographicMap_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicGeographicMap_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=";
    procedure Initialize_Fields (This : in out PathFinderGraphHackVisitor'Class) is
    begin
       null;
@@ -82,7 +138,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
         tiledLayer := This.geographicMapInterface.getAllBinaryTiledLayer;
         for index in reverse 0 .. (startPathFindingNodeList.size) - (1) loop
             startPathFindingNode := PathFindingNode_Access (startPathFindingNodeList.get (index));
-            geographicMapCellPosition := startPathFindingNode.geographicMapCellPosition;
+            geographicMapCellPosition := GeographicMapCellPosition_Access (startPathFindingNode.geographicMapCellPosition);
             column := geographicMapCellPosition.getColumn;
             row := geographicMapCellPosition.getRow;
             nextRow := (row) + (1);
@@ -111,7 +167,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
         tiledLayer := This.geographicMapInterface.getAllBinaryTiledLayer;
         for index in reverse 0 .. (endPathFindingNodeList.size) - (1) loop
             endPathFindingNode := PathFindingNode_Access (endPathFindingNodeList.get (index));
-            geographicMapCellPosition := endPathFindingNode.geographicMapCellPosition;
+            geographicMapCellPosition := GeographicMapCellPosition_Access (endPathFindingNode.geographicMapCellPosition);
             graph.addVertex (geographicMapCellPosition);
             column := geographicMapCellPosition.getColumn;
             row := geographicMapCellPosition.getRow;

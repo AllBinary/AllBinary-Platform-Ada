@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;
+package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References is
+   type InputAutomationNewBundleRunnable_Access is access all org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package.InputAutomationNewBundleRunnable'Class;
+   type InputAutomationNewBundleRunnable_Access_Array is array (Natural range <>) of InputAutomationNewBundleRunnable_Access;
+   type InputAutomationNewBundleRunnable_Access_Array_Access is access all InputAutomationNewBundleRunnable_Access_Array;
+   type InputAutomationNewBundleRunnable_Access_Array_Access_Array is array (Natural range <>) of InputAutomationNewBundleRunnable_Access_Array_Access;
+   type InputAutomationNewBundleRunnable_Access_Array_Access_Array_Access is access all InputAutomationNewBundleRunnable_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References;
+
+with org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,12 +37,17 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 --  with java.util.jar.JarInputStream_Package; use java.util.jar.JarInputStream_Package;
 --  with java.util.jar.Manifest_Package; use java.util.jar.Manifest_Package;
-with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
-with bundle.input.automation.InputAutomationBundleActivator_Package; use bundle.input.automation.InputAutomationBundleActivator_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.osgi.framework.Bundle_Package;
+with org.osgi.framework.Bundle_Package_References;
+limited with bundle.input.automation.InputAutomationBundleActivator_Package;
+with bundle.input.automation.InputAutomationBundleActivator_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
@@ -45,13 +60,71 @@ package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunna
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Reference_Types is
+   subtype Bundle_Access is org.osgi.framework.Bundle_Package_References.Bundle_Access;
+   use type Bundle_Access;
+   subtype Bundle_Access_Array is org.osgi.framework.Bundle_Package_References.Bundle_Access_Array;
+   use type Bundle_Access_Array;
+   subtype Bundle_Access_Array_Access is org.osgi.framework.Bundle_Package_References.Bundle_Access_Array_Access;
+   use type Bundle_Access_Array_Access;
+   subtype Bundle_Access_Array_Access_Array is org.osgi.framework.Bundle_Package_References.Bundle_Access_Array_Access_Array;
+   use type Bundle_Access_Array_Access_Array;
+   subtype Bundle_Access_Array_Access_Array_Access is org.osgi.framework.Bundle_Package_References.Bundle_Access_Array_Access_Array_Access;
+   use type Bundle_Access_Array_Access_Array_Access;
+   subtype InputAutomationBundleActivator_Access is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access;
+   use type InputAutomationBundleActivator_Access;
+   subtype InputAutomationBundleActivator_Access_Array is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access_Array;
+   use type InputAutomationBundleActivator_Access_Array;
+   subtype InputAutomationBundleActivator_Access_Array_Access is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access_Array_Access;
+   use type InputAutomationBundleActivator_Access_Array_Access;
+   subtype InputAutomationBundleActivator_Access_Array_Access_Array is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access_Array_Access_Array;
+   use type InputAutomationBundleActivator_Access_Array_Access_Array;
+   subtype InputAutomationBundleActivator_Access_Array_Access_Array_Access is bundle.input.automation.InputAutomationBundleActivator_Package_References.InputAutomationBundleActivator_Access_Array_Access_Array_Access;
+   use type InputAutomationBundleActivator_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InputAutomationNewBundleRunnable is tagged;
-   type InputAutomationNewBundleRunnable_Access is access all InputAutomationNewBundleRunnable'Class;
-   type InputAutomationNewBundleRunnable_Access_Array is array (Natural range <>) of InputAutomationNewBundleRunnable_Access;
-   type InputAutomationNewBundleRunnable_Access_Array_Access is access all InputAutomationNewBundleRunnable_Access_Array;
-   type InputAutomationNewBundleRunnable_Access_Array_Access_Array is array (Natural range <>) of InputAutomationNewBundleRunnable_Access_Array_Access;
-   type InputAutomationNewBundleRunnable_Access_Array_Access_Array_Access is access all InputAutomationNewBundleRunnable_Access_Array_Access_Array;
+
+   subtype InputAutomationNewBundleRunnable_Access is org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References.InputAutomationNewBundleRunnable_Access;
+   function "=" (Left, Right : InputAutomationNewBundleRunnable_Access) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References."=";
+   subtype InputAutomationNewBundleRunnable_Access_Array is org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References.InputAutomationNewBundleRunnable_Access_Array;
+   function "=" (Left, Right : InputAutomationNewBundleRunnable_Access_Array) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References."=";
+   subtype InputAutomationNewBundleRunnable_Access_Array_Access is org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References.InputAutomationNewBundleRunnable_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationNewBundleRunnable_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References."=";
+   subtype InputAutomationNewBundleRunnable_Access_Array_Access_Array is org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References.InputAutomationNewBundleRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationNewBundleRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References."=";
+   subtype InputAutomationNewBundleRunnable_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References.InputAutomationNewBundleRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationNewBundleRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package_References."=";
 
    type InputAutomationNewBundleRunnable is new Java_Object and RunnableInterface with record
       logUtil : LogUtil_Access;

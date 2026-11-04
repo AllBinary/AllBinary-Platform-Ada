@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;
+package org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References is
+   type AdvertisementAreaConstraints_Access is access all org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package.AdvertisementAreaConstraints'Class;
+   type AdvertisementAreaConstraints_Access_Array is array (Natural range <>) of AdvertisementAreaConstraints_Access;
+   type AdvertisementAreaConstraints_Access_Array_Access is access all AdvertisementAreaConstraints_Access_Array;
+   type AdvertisementAreaConstraints_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreaConstraints_Access_Array_Access;
+   type AdvertisementAreaConstraints_Access_Array_Access_Array_Access is access all AdvertisementAreaConstraints_Access_Array_Access_Array;
+end org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References;
+
+with org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,9 +30,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package; use org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
-with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+limited with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References;
+limited with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
 
 package org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package is
@@ -30,13 +43,51 @@ package org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_P
    package DisplayInBrowserContraintsInterface_Package renames Standard.org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
    package TwoDimensionalConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Reference_Types is
+   subtype DisplayInBrowserContraintsInterface_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access;
+   use type DisplayInBrowserContraintsInterface_Access;
+   subtype DisplayInBrowserContraintsInterface_Access_Array is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access_Array;
+   use type DisplayInBrowserContraintsInterface_Access_Array;
+   subtype DisplayInBrowserContraintsInterface_Access_Array_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access_Array_Access;
+   use type DisplayInBrowserContraintsInterface_Access_Array_Access;
+   subtype DisplayInBrowserContraintsInterface_Access_Array_Access_Array is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access_Array_Access_Array;
+   use type DisplayInBrowserContraintsInterface_Access_Array_Access_Array;
+   subtype DisplayInBrowserContraintsInterface_Access_Array_Access_Array_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package_References.DisplayInBrowserContraintsInterface_Access_Array_Access_Array_Access;
+   use type DisplayInBrowserContraintsInterface_Access_Array_Access_Array_Access;
+   subtype TwoDimensionalConstraintInterface_Access is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access;
+   use type TwoDimensionalConstraintInterface_Access;
+   subtype TwoDimensionalConstraintInterface_Access_Array is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access_Array;
+   use type TwoDimensionalConstraintInterface_Access_Array;
+   subtype TwoDimensionalConstraintInterface_Access_Array_Access is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access_Array_Access;
+   use type TwoDimensionalConstraintInterface_Access_Array_Access;
+   subtype TwoDimensionalConstraintInterface_Access_Array_Access_Array is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access_Array_Access_Array;
+   use type TwoDimensionalConstraintInterface_Access_Array_Access_Array;
+   subtype TwoDimensionalConstraintInterface_Access_Array_Access_Array_Access is org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package_References.TwoDimensionalConstraintInterface_Access_Array_Access_Array_Access;
+   use type TwoDimensionalConstraintInterface_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AdvertisementAreaConstraints is tagged;
-   type AdvertisementAreaConstraints_Access is access all AdvertisementAreaConstraints'Class;
-   type AdvertisementAreaConstraints_Access_Array is array (Natural range <>) of AdvertisementAreaConstraints_Access;
-   type AdvertisementAreaConstraints_Access_Array_Access is access all AdvertisementAreaConstraints_Access_Array;
-   type AdvertisementAreaConstraints_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreaConstraints_Access_Array_Access;
-   type AdvertisementAreaConstraints_Access_Array_Access_Array_Access is access all AdvertisementAreaConstraints_Access_Array_Access_Array;
+
+   subtype AdvertisementAreaConstraints_Access is org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References.AdvertisementAreaConstraints_Access;
+   function "=" (Left, Right : AdvertisementAreaConstraints_Access) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References."=";
+   subtype AdvertisementAreaConstraints_Access_Array is org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References.AdvertisementAreaConstraints_Access_Array;
+   function "=" (Left, Right : AdvertisementAreaConstraints_Access_Array) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References."=";
+   subtype AdvertisementAreaConstraints_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References.AdvertisementAreaConstraints_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementAreaConstraints_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References."=";
+   subtype AdvertisementAreaConstraints_Access_Array_Access_Array is org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References.AdvertisementAreaConstraints_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementAreaConstraints_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References."=";
+   subtype AdvertisementAreaConstraints_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References.AdvertisementAreaConstraints_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementAreaConstraints_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package_References."=";
 
    type AdvertisementAreaConstraints is new Java_Object and AdvertisementAreaConstraintsInterface with record
       displayInBrowserContraintsInterface : DisplayInBrowserContraintsInterface_Access;

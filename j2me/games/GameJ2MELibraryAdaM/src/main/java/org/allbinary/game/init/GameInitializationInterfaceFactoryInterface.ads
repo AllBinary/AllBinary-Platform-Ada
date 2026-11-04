@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
+package org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References is
+   type GameInitializationInterfaceFactoryInterface_Access is access all org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package.GameInitializationInterfaceFactoryInterface'Class;
+   type GameInitializationInterfaceFactoryInterface_Access_Array is array (Natural range <>) of GameInitializationInterfaceFactoryInterface_Access;
+   type GameInitializationInterfaceFactoryInterface_Access_Array_Access is access all GameInitializationInterfaceFactoryInterface_Access_Array;
+   type GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of GameInitializationInterfaceFactoryInterface_Access_Array_Access;
+   type GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array;
+end org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References;
+
+with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,38 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.init.GameInitializationInterface_Package; use org.allbinary.game.init.GameInitializationInterface_Package;
+limited with org.allbinary.game.init.GameInitializationInterface_Package;
+with org.allbinary.game.init.GameInitializationInterface_Package_References;
 
 package org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package is
 
+   package Reference_Types is
+   subtype GameInitializationInterface_Access is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access;
+   use type GameInitializationInterface_Access;
+   subtype GameInitializationInterface_Access_Array is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access_Array;
+   use type GameInitializationInterface_Access_Array;
+   subtype GameInitializationInterface_Access_Array_Access is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access_Array_Access;
+   use type GameInitializationInterface_Access_Array_Access;
+   subtype GameInitializationInterface_Access_Array_Access_Array is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access_Array_Access_Array;
+   use type GameInitializationInterface_Access_Array_Access_Array;
+   subtype GameInitializationInterface_Access_Array_Access_Array_Access is org.allbinary.game.init.GameInitializationInterface_Package_References.GameInitializationInterface_Access_Array_Access_Array_Access;
+   use type GameInitializationInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type GameInitializationInterfaceFactoryInterface is interface;
-   type GameInitializationInterfaceFactoryInterface_Access is access all GameInitializationInterfaceFactoryInterface'Class;
-   type GameInitializationInterfaceFactoryInterface_Access_Array is array (Natural range <>) of GameInitializationInterfaceFactoryInterface_Access;
-   type GameInitializationInterfaceFactoryInterface_Access_Array_Access is access all GameInitializationInterfaceFactoryInterface_Access_Array;
-   type GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of GameInitializationInterfaceFactoryInterface_Access_Array_Access;
-   type GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array;
+   subtype GameInitializationInterfaceFactoryInterface_Access is org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References.GameInitializationInterfaceFactoryInterface_Access;
+   function "=" (Left, Right : GameInitializationInterfaceFactoryInterface_Access) return Boolean renames org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References."=";
+   subtype GameInitializationInterfaceFactoryInterface_Access_Array is org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References.GameInitializationInterfaceFactoryInterface_Access_Array;
+   function "=" (Left, Right : GameInitializationInterfaceFactoryInterface_Access_Array) return Boolean renames org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References."=";
+   subtype GameInitializationInterfaceFactoryInterface_Access_Array_Access is org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References.GameInitializationInterfaceFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : GameInitializationInterfaceFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References."=";
+   subtype GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References.GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References."=";
+   subtype GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References.GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package_References."=";
+   function Java_Object_Access_From_GameInitializationInterfaceFactoryInterface (Value : GameInitializationInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out GameInitializationInterfaceFactoryInterface) return GameInitializationInterface_Access is abstract;
 
 end org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;

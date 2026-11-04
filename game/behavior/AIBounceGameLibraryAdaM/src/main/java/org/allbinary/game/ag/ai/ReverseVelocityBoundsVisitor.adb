@@ -13,11 +13,45 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.bounds.BoundsVisitorInterface_Package; use org.allbinary.bounds.BoundsVisitorInterface_Package;
+with org.allbinary.game.physics.velocity.VelocityInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterface_Package;
 with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+with org.allbinary.layer.LayerInterface_Package; use org.allbinary.layer.LayerInterface_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 
 package body org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package is
 
    package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+   subtype VelocityInterface_Access is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access;
+   function "=" (Left, Right : VelocityInterface_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   subtype VelocityInterface_Access_Array is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array;
+   function "=" (Left, Right : VelocityInterface_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   subtype VelocityInterface_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array_Access;
+   function "=" (Left, Right : VelocityInterface_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   subtype VelocityInterface_Access_Array_Access_Array is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : VelocityInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   subtype VelocityInterface_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.VelocityInterface_Package_References.VelocityInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VelocityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.VelocityInterface_Package_References."=";
+   subtype LayerInterface_Access is org.allbinary.layer.LayerInterface_Package_References.LayerInterface_Access;
+   function "=" (Left, Right : LayerInterface_Access) return Boolean renames org.allbinary.layer.LayerInterface_Package_References."=";
+   subtype LayerInterface_Access_Array is org.allbinary.layer.LayerInterface_Package_References.LayerInterface_Access_Array;
+   function "=" (Left, Right : LayerInterface_Access_Array) return Boolean renames org.allbinary.layer.LayerInterface_Package_References."=";
+   subtype LayerInterface_Access_Array_Access is org.allbinary.layer.LayerInterface_Package_References.LayerInterface_Access_Array_Access;
+   function "=" (Left, Right : LayerInterface_Access_Array_Access) return Boolean renames org.allbinary.layer.LayerInterface_Package_References."=";
+   subtype LayerInterface_Access_Array_Access_Array is org.allbinary.layer.LayerInterface_Package_References.LayerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : LayerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.LayerInterface_Package_References."=";
+   subtype LayerInterface_Access_Array_Access_Array_Access is org.allbinary.layer.LayerInterface_Package_References.LayerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LayerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.LayerInterface_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out ReverseVelocityBoundsVisitor'Class) is
    begin
       null;

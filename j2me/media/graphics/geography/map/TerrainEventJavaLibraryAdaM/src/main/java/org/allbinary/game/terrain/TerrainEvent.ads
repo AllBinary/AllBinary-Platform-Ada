@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.terrain.TerrainEvent_Package;
+package org.allbinary.game.terrain.TerrainEvent_Package_References is
+   type TerrainEvent_Access is access all org.allbinary.game.terrain.TerrainEvent_Package.TerrainEvent'Class;
+   type TerrainEvent_Access_Array is array (Natural range <>) of TerrainEvent_Access;
+   type TerrainEvent_Access_Array_Access is access all TerrainEvent_Access_Array;
+   type TerrainEvent_Access_Array_Access_Array is array (Natural range <>) of TerrainEvent_Access_Array_Access;
+   type TerrainEvent_Access_Array_Access_Array_Access is access all TerrainEvent_Access_Array_Access_Array;
+end org.allbinary.game.terrain.TerrainEvent_Package_References;
+
+with org.allbinary.game.terrain.TerrainEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,37 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.game.terrain.BasicTerrainInfo_Package; use org.allbinary.game.terrain.BasicTerrainInfo_Package;
+limited with org.allbinary.game.terrain.BasicTerrainInfo_Package;
+with org.allbinary.game.terrain.BasicTerrainInfo_Package_References;
 
 package org.allbinary.game.terrain.TerrainEvent_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   subtype BasicTerrainInfo_Access is org.allbinary.game.terrain.BasicTerrainInfo_Package_References.BasicTerrainInfo_Access;
+   use type BasicTerrainInfo_Access;
+   subtype BasicTerrainInfo_Access_Array is org.allbinary.game.terrain.BasicTerrainInfo_Package_References.BasicTerrainInfo_Access_Array;
+   use type BasicTerrainInfo_Access_Array;
+   subtype BasicTerrainInfo_Access_Array_Access is org.allbinary.game.terrain.BasicTerrainInfo_Package_References.BasicTerrainInfo_Access_Array_Access;
+   use type BasicTerrainInfo_Access_Array_Access;
+   subtype BasicTerrainInfo_Access_Array_Access_Array is org.allbinary.game.terrain.BasicTerrainInfo_Package_References.BasicTerrainInfo_Access_Array_Access_Array;
+   use type BasicTerrainInfo_Access_Array_Access_Array;
+   subtype BasicTerrainInfo_Access_Array_Access_Array_Access is org.allbinary.game.terrain.BasicTerrainInfo_Package_References.BasicTerrainInfo_Access_Array_Access_Array_Access;
+   use type BasicTerrainInfo_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TerrainEvent is tagged;
-   type TerrainEvent_Access is access all TerrainEvent'Class;
-   type TerrainEvent_Access_Array is array (Natural range <>) of TerrainEvent_Access;
-   type TerrainEvent_Access_Array_Access is access all TerrainEvent_Access_Array;
-   type TerrainEvent_Access_Array_Access_Array is array (Natural range <>) of TerrainEvent_Access_Array_Access;
-   type TerrainEvent_Access_Array_Access_Array_Access is access all TerrainEvent_Access_Array_Access_Array;
+
+   subtype TerrainEvent_Access is org.allbinary.game.terrain.TerrainEvent_Package_References.TerrainEvent_Access;
+   function "=" (Left, Right : TerrainEvent_Access) return Boolean renames org.allbinary.game.terrain.TerrainEvent_Package_References."=";
+   subtype TerrainEvent_Access_Array is org.allbinary.game.terrain.TerrainEvent_Package_References.TerrainEvent_Access_Array;
+   function "=" (Left, Right : TerrainEvent_Access_Array) return Boolean renames org.allbinary.game.terrain.TerrainEvent_Package_References."=";
+   subtype TerrainEvent_Access_Array_Access is org.allbinary.game.terrain.TerrainEvent_Package_References.TerrainEvent_Access_Array_Access;
+   function "=" (Left, Right : TerrainEvent_Access_Array_Access) return Boolean renames org.allbinary.game.terrain.TerrainEvent_Package_References."=";
+   subtype TerrainEvent_Access_Array_Access_Array is org.allbinary.game.terrain.TerrainEvent_Package_References.TerrainEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : TerrainEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.game.terrain.TerrainEvent_Package_References."=";
+   subtype TerrainEvent_Access_Array_Access_Array_Access is org.allbinary.game.terrain.TerrainEvent_Package_References.TerrainEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TerrainEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.terrain.TerrainEvent_Package_References."=";
 
    type TerrainEvent is new AllBinaryEventObject with record
       basicTerrainInfo : BasicTerrainInfo_Access;

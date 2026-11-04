@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.SpecialItemsRequestHelperFactory_Package;
+package admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References is
+   type SpecialItemsRequestHelperFactory_Access is access all admin.taghelpers.SpecialItemsRequestHelperFactory_Package.SpecialItemsRequestHelperFactory'Class;
+   type SpecialItemsRequestHelperFactory_Access_Array is array (Natural range <>) of SpecialItemsRequestHelperFactory_Access;
+   type SpecialItemsRequestHelperFactory_Access_Array_Access is access all SpecialItemsRequestHelperFactory_Access_Array;
+   type SpecialItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of SpecialItemsRequestHelperFactory_Access_Array_Access;
+   type SpecialItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all SpecialItemsRequestHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References;
+
+with admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.SpecialItemsRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SpecialItemsRequestHelperFactory is tagged;
-   type SpecialItemsRequestHelperFactory_Access is access all SpecialItemsRequestHelperFactory'Class;
-   type SpecialItemsRequestHelperFactory_Access_Array is array (Natural range <>) of SpecialItemsRequestHelperFactory_Access;
-   type SpecialItemsRequestHelperFactory_Access_Array_Access is access all SpecialItemsRequestHelperFactory_Access_Array;
-   type SpecialItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of SpecialItemsRequestHelperFactory_Access_Array_Access;
-   type SpecialItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all SpecialItemsRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype SpecialItemsRequestHelperFactory_Access is admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References.SpecialItemsRequestHelperFactory_Access;
+   function "=" (Left, Right : SpecialItemsRequestHelperFactory_Access) return Boolean renames admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References."=";
+   subtype SpecialItemsRequestHelperFactory_Access_Array is admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References.SpecialItemsRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : SpecialItemsRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References."=";
+   subtype SpecialItemsRequestHelperFactory_Access_Array_Access is admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References.SpecialItemsRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : SpecialItemsRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References."=";
+   subtype SpecialItemsRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References.SpecialItemsRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : SpecialItemsRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References."=";
+   subtype SpecialItemsRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References.SpecialItemsRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SpecialItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.SpecialItemsRequestHelperFactory_Package_References."=";
 
    type SpecialItemsRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

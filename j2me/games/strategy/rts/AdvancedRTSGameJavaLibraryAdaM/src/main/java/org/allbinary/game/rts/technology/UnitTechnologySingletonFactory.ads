@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
+package org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References is
+   type UnitTechnologySingletonFactory_Access is access all org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package.UnitTechnologySingletonFactory'Class;
+   type UnitTechnologySingletonFactory_Access_Array is array (Natural range <>) of UnitTechnologySingletonFactory_Access;
+   type UnitTechnologySingletonFactory_Access_Array_Access is access all UnitTechnologySingletonFactory_Access_Array;
+   type UnitTechnologySingletonFactory_Access_Array_Access_Array is array (Natural range <>) of UnitTechnologySingletonFactory_Access_Array_Access;
+   type UnitTechnologySingletonFactory_Access_Array_Access_Array_Access is access all UnitTechnologySingletonFactory_Access_Array_Access_Array;
+end org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References;
+
+with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type UnitTechnologySingletonFactory is tagged;
-   type UnitTechnologySingletonFactory_Access is access all UnitTechnologySingletonFactory'Class;
-   type UnitTechnologySingletonFactory_Access_Array is array (Natural range <>) of UnitTechnologySingletonFactory_Access;
-   type UnitTechnologySingletonFactory_Access_Array_Access is access all UnitTechnologySingletonFactory_Access_Array;
-   type UnitTechnologySingletonFactory_Access_Array_Access_Array is array (Natural range <>) of UnitTechnologySingletonFactory_Access_Array_Access;
-   type UnitTechnologySingletonFactory_Access_Array_Access_Array_Access is access all UnitTechnologySingletonFactory_Access_Array_Access_Array;
+
+   subtype UnitTechnologySingletonFactory_Access is org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References.UnitTechnologySingletonFactory_Access;
+   function "=" (Left, Right : UnitTechnologySingletonFactory_Access) return Boolean renames org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References."=";
+   subtype UnitTechnologySingletonFactory_Access_Array is org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References.UnitTechnologySingletonFactory_Access_Array;
+   function "=" (Left, Right : UnitTechnologySingletonFactory_Access_Array) return Boolean renames org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References."=";
+   subtype UnitTechnologySingletonFactory_Access_Array_Access is org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References.UnitTechnologySingletonFactory_Access_Array_Access;
+   function "=" (Left, Right : UnitTechnologySingletonFactory_Access_Array_Access) return Boolean renames org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References."=";
+   subtype UnitTechnologySingletonFactory_Access_Array_Access_Array is org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References.UnitTechnologySingletonFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : UnitTechnologySingletonFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References."=";
+   subtype UnitTechnologySingletonFactory_Access_Array_Access_Array_Access is org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References.UnitTechnologySingletonFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UnitTechnologySingletonFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package_References."=";
 
    type UnitTechnologySingletonFactory is new Java_Object with record
       damage : Integer;

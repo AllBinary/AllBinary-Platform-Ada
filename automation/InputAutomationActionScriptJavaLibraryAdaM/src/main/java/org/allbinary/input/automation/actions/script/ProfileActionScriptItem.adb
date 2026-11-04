@@ -13,10 +13,55 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.input.automation.actions.script.JPopupMenu_Package; use org.allbinary.input.automation.actions.script.JPopupMenu_Package;
 with org.allbinary.input.automation.actions.script.JMenuItem_Package; use org.allbinary.input.automation.actions.script.JMenuItem_Package;
+with org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;
 
 package body org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package is
 
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   function "=" (Left, Right : Node_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   function "=" (Left, Right : Node_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   function "=" (Left, Right : Node_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Node_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Node_Package_References."=";
+   subtype JPopupMenu_Access is org.allbinary.input.automation.actions.script.JPopupMenu_Package_References.JPopupMenu_Access;
+   function "=" (Left, Right : JPopupMenu_Access) return Boolean renames org.allbinary.input.automation.actions.script.JPopupMenu_Package_References."=";
+   subtype JPopupMenu_Access_Array is org.allbinary.input.automation.actions.script.JPopupMenu_Package_References.JPopupMenu_Access_Array;
+   function "=" (Left, Right : JPopupMenu_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.JPopupMenu_Package_References."=";
+   subtype JPopupMenu_Access_Array_Access is org.allbinary.input.automation.actions.script.JPopupMenu_Package_References.JPopupMenu_Access_Array_Access;
+   function "=" (Left, Right : JPopupMenu_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.JPopupMenu_Package_References."=";
+   subtype JPopupMenu_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.JPopupMenu_Package_References.JPopupMenu_Access_Array_Access_Array;
+   function "=" (Left, Right : JPopupMenu_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.JPopupMenu_Package_References."=";
+   subtype JPopupMenu_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.JPopupMenu_Package_References.JPopupMenu_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JPopupMenu_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.JPopupMenu_Package_References."=";
    procedure Initialize_Fields (This : in out ProfileActionScriptItem'Class) is
    begin
       null;
@@ -29,7 +74,7 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
    procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String; node_Param : access Node_Package.Node'Class) is
       node : constant Node_Access := Node_Access (node_Param);
    begin
-        DefaultMutableTreeNode_Package.Initialize (This, label);
+        null;
         Initialize_Fields (This);
         ProfileActionScriptItem'Class (This).init;
         This.logUtil.putF (To_Unbounded_String ("Label: ") & label, ProfileActionScriptItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
@@ -44,7 +89,7 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
 
    procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String) is
    begin
-        DefaultMutableTreeNode_Package.Initialize (This, label);
+        null;
         Initialize_Fields (This);
         ProfileActionScriptItem'Class (This).init;
         This.logUtil.putF (To_Unbounded_String ("Label: ") & label, ProfileActionScriptItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);

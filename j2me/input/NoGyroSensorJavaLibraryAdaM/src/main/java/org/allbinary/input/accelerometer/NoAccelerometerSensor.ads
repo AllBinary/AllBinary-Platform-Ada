@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.accelerometer.NoAccelerometerSensor_Package;
+package org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References is
+   type NoAccelerometerSensor_Access is access all org.allbinary.input.accelerometer.NoAccelerometerSensor_Package.NoAccelerometerSensor'Class;
+   type NoAccelerometerSensor_Access_Array is array (Natural range <>) of NoAccelerometerSensor_Access;
+   type NoAccelerometerSensor_Access_Array_Access is access all NoAccelerometerSensor_Access_Array;
+   type NoAccelerometerSensor_Access_Array_Access_Array is array (Natural range <>) of NoAccelerometerSensor_Access_Array_Access;
+   type NoAccelerometerSensor_Access_Array_Access_Array_Access is access all NoAccelerometerSensor_Access_Array_Access_Array;
+end org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References;
+
+with org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,19 +31,38 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
-with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
+limited with org.allbinary.logic.math.Orientation_Package;
+with org.allbinary.logic.math.Orientation_Package_References;
 
 package org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
 
    package AllBinaryOrientationSensor_Package renames Standard.org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
    package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
+   package Reference_Types is
+   subtype Orientation_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access;
+   use type Orientation_Access;
+   subtype Orientation_Access_Array is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array;
+   use type Orientation_Access_Array;
+   subtype Orientation_Access_Array_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access;
+   use type Orientation_Access_Array_Access;
+   subtype Orientation_Access_Array_Access_Array is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access_Array;
+   use type Orientation_Access_Array_Access_Array;
+   subtype Orientation_Access_Array_Access_Array_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access_Array_Access;
+   use type Orientation_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoAccelerometerSensor is tagged;
-   type NoAccelerometerSensor_Access is access all NoAccelerometerSensor'Class;
-   type NoAccelerometerSensor_Access_Array is array (Natural range <>) of NoAccelerometerSensor_Access;
-   type NoAccelerometerSensor_Access_Array_Access is access all NoAccelerometerSensor_Access_Array;
-   type NoAccelerometerSensor_Access_Array_Access_Array is array (Natural range <>) of NoAccelerometerSensor_Access_Array_Access;
-   type NoAccelerometerSensor_Access_Array_Access_Array_Access is access all NoAccelerometerSensor_Access_Array_Access_Array;
+
+   subtype NoAccelerometerSensor_Access is org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.NoAccelerometerSensor_Access;
+   function "=" (Left, Right : NoAccelerometerSensor_Access) return Boolean renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References."=";
+   subtype NoAccelerometerSensor_Access_Array is org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.NoAccelerometerSensor_Access_Array;
+   function "=" (Left, Right : NoAccelerometerSensor_Access_Array) return Boolean renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References."=";
+   subtype NoAccelerometerSensor_Access_Array_Access is org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.NoAccelerometerSensor_Access_Array_Access;
+   function "=" (Left, Right : NoAccelerometerSensor_Access_Array_Access) return Boolean renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References."=";
+   subtype NoAccelerometerSensor_Access_Array_Access_Array is org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.NoAccelerometerSensor_Access_Array_Access_Array;
+   function "=" (Left, Right : NoAccelerometerSensor_Access_Array_Access_Array) return Boolean renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References."=";
+   subtype NoAccelerometerSensor_Access_Array_Access_Array_Access is org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.NoAccelerometerSensor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoAccelerometerSensor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References."=";
 
    type NoAccelerometerSensor is new AllBinaryOrientationSensor with null record;
 

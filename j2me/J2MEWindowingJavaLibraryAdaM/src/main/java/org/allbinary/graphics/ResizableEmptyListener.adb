@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.ResizableListenerInterface_Package;
 
 package body org.allbinary.graphics.ResizableEmptyListener_Package is
 

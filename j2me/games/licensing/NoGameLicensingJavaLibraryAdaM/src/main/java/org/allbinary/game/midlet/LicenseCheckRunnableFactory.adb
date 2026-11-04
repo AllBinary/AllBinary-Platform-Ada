@@ -13,11 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
 with org.allbinary.thread.NullABRunnable_Package; use org.allbinary.thread.NullABRunnable_Package;
+with org.allbinary.game.midlet.SpecialDemoGameMidlet_Package; use org.allbinary.game.midlet.SpecialDemoGameMidlet_Package;
+with org.allbinary.game.midlet.DemoSetup_Package;
+with org.allbinary.game.midlet.LicenseLoadingType_Package;
+with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;
+with org.allbinary.game.midlet.SpecialDemoGameMidlet_Package;
 
 package body org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
 
    package NullABRunnable_Package renames Standard.org.allbinary.thread.NullABRunnable_Package;
+   subtype ABRunnable_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access;
+   function "=" (Left, Right : ABRunnable_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   subtype ABRunnable_Access_Array is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array;
+   function "=" (Left, Right : ABRunnable_Access_Array) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   subtype ABRunnable_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access;
+   function "=" (Left, Right : ABRunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   subtype ABRunnable_Access_Array_Access_Array is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : ABRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   subtype ABRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   subtype SpecialDemoGameMidlet_Access is org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References.SpecialDemoGameMidlet_Access;
+   function "=" (Left, Right : SpecialDemoGameMidlet_Access) return Boolean renames org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References."=";
+   subtype SpecialDemoGameMidlet_Access_Array is org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References.SpecialDemoGameMidlet_Access_Array;
+   function "=" (Left, Right : SpecialDemoGameMidlet_Access_Array) return Boolean renames org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References."=";
+   subtype SpecialDemoGameMidlet_Access_Array_Access is org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References.SpecialDemoGameMidlet_Access_Array_Access;
+   function "=" (Left, Right : SpecialDemoGameMidlet_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References."=";
+   subtype SpecialDemoGameMidlet_Access_Array_Access_Array is org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References.SpecialDemoGameMidlet_Access_Array_Access_Array;
+   function "=" (Left, Right : SpecialDemoGameMidlet_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References."=";
+   subtype SpecialDemoGameMidlet_Access_Array_Access_Array_Access is org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References.SpecialDemoGameMidlet_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SpecialDemoGameMidlet_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References."=";
    procedure Initialize_Fields (This : in out LicenseCheckRunnableFactory'Class) is
    begin
       null;

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
 
 package body org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package is
 
@@ -38,7 +39,7 @@ package body org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package i
 
    function getInstance return DestroyableBaseBehavior_Access is
    begin
-        return DestroyableBaseBehavior_Package.instance;
+        return DestroyableBaseBehavior_Access (DestroyableBaseBehavior_Package.instance);
    end getInstance;
 
    function getName (This : in out DestroyableBaseBehavior) return Unbounded_String is

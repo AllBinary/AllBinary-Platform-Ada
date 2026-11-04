@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.transition.shake.ShakeEvent_Package; use org.allbinary.animation.transition.shake.ShakeEvent_Package;
+with org.allbinary.animation.transition.shake.ShakeEvent_Package;
 
 package body org.allbinary.animation.transition.shake.ShakeEventFactory_Package is
 
+   subtype ShakeEvent_Access is org.allbinary.animation.transition.shake.ShakeEvent_Package_References.ShakeEvent_Access;
+   function "=" (Left, Right : ShakeEvent_Access) return Boolean renames org.allbinary.animation.transition.shake.ShakeEvent_Package_References."=";
+   subtype ShakeEvent_Access_Array is org.allbinary.animation.transition.shake.ShakeEvent_Package_References.ShakeEvent_Access_Array;
+   function "=" (Left, Right : ShakeEvent_Access_Array) return Boolean renames org.allbinary.animation.transition.shake.ShakeEvent_Package_References."=";
+   subtype ShakeEvent_Access_Array_Access is org.allbinary.animation.transition.shake.ShakeEvent_Package_References.ShakeEvent_Access_Array_Access;
+   function "=" (Left, Right : ShakeEvent_Access_Array_Access) return Boolean renames org.allbinary.animation.transition.shake.ShakeEvent_Package_References."=";
+   subtype ShakeEvent_Access_Array_Access_Array is org.allbinary.animation.transition.shake.ShakeEvent_Package_References.ShakeEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : ShakeEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.transition.shake.ShakeEvent_Package_References."=";
+   subtype ShakeEvent_Access_Array_Access_Array_Access is org.allbinary.animation.transition.shake.ShakeEvent_Package_References.ShakeEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShakeEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.transition.shake.ShakeEvent_Package_References."=";
    procedure Initialize_Fields (This : in out ShakeEventFactory'Class) is
    begin
       null;
@@ -40,7 +52,7 @@ package body org.allbinary.animation.transition.shake.ShakeEventFactory_Package 
 
    function getInstance return ShakeEventFactory_Access is
    begin
-        return ShakeEventFactory_Package.instance;
+        return ShakeEventFactory_Access (ShakeEventFactory_Package.instance);
    end getInstance;
 
    procedure init (This : in out ShakeEventFactory) is

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
+package org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References is
+   type NoShakeAnimationListener_Access is access all org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package.NoShakeAnimationListener'Class;
+   type NoShakeAnimationListener_Access_Array is array (Natural range <>) of NoShakeAnimationListener_Access;
+   type NoShakeAnimationListener_Access_Array_Access is access all NoShakeAnimationListener_Access_Array;
+   type NoShakeAnimationListener_Access_Array_Access_Array is array (Natural range <>) of NoShakeAnimationListener_Access_Array_Access;
+   type NoShakeAnimationListener_Access_Array_Access_Array_Access is access all NoShakeAnimationListener_Access_Array_Access_Array;
+end org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References;
+
+with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.animation.transition.shake.ShakeAnimationListener_Package; us
 
 package org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoShakeAnimationListener is tagged;
-   type NoShakeAnimationListener_Access is access all NoShakeAnimationListener'Class;
-   type NoShakeAnimationListener_Access_Array is array (Natural range <>) of NoShakeAnimationListener_Access;
-   type NoShakeAnimationListener_Access_Array_Access is access all NoShakeAnimationListener_Access_Array;
-   type NoShakeAnimationListener_Access_Array_Access_Array is array (Natural range <>) of NoShakeAnimationListener_Access_Array_Access;
-   type NoShakeAnimationListener_Access_Array_Access_Array_Access is access all NoShakeAnimationListener_Access_Array_Access_Array;
+
+   subtype NoShakeAnimationListener_Access is org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References.NoShakeAnimationListener_Access;
+   function "=" (Left, Right : NoShakeAnimationListener_Access) return Boolean renames org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References."=";
+   subtype NoShakeAnimationListener_Access_Array is org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References.NoShakeAnimationListener_Access_Array;
+   function "=" (Left, Right : NoShakeAnimationListener_Access_Array) return Boolean renames org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References."=";
+   subtype NoShakeAnimationListener_Access_Array_Access is org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References.NoShakeAnimationListener_Access_Array_Access;
+   function "=" (Left, Right : NoShakeAnimationListener_Access_Array_Access) return Boolean renames org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References."=";
+   subtype NoShakeAnimationListener_Access_Array_Access_Array is org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References.NoShakeAnimationListener_Access_Array_Access_Array;
+   function "=" (Left, Right : NoShakeAnimationListener_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References."=";
+   subtype NoShakeAnimationListener_Access_Array_Access_Array_Access is org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References.NoShakeAnimationListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoShakeAnimationListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package_References."=";
 
    type NoShakeAnimationListener is new ShakeAnimationListener with null record;
    NO_SHAKE_ANIMATION_LISTENER : ShakeAnimationListener_Access;

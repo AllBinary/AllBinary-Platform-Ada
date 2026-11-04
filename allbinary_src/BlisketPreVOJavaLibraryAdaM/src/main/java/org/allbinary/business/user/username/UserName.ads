@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.username.UserName_Package;
+package org.allbinary.business.user.username.UserName_Package_References is
+   type UserName_Access is access all org.allbinary.business.user.username.UserName_Package.UserName'Class;
+   type UserName_Access_Array is array (Natural range <>) of UserName_Access;
+   type UserName_Access_Array_Access is access all UserName_Access_Array;
+   type UserName_Access_Array_Access_Array is array (Natural range <>) of UserName_Access_Array_Access;
+   type UserName_Access_Array_Access_Array_Access is access all UserName_Access_Array_Access_Array;
+end org.allbinary.business.user.username.UserName_Package_References;
+
+with org.allbinary.business.user.username.UserName_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,19 +31,38 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 package org.allbinary.business.user.username.UserName_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type UserName is tagged;
-   type UserName_Access is access all UserName'Class;
-   type UserName_Access_Array is array (Natural range <>) of UserName_Access;
-   type UserName_Access_Array_Access is access all UserName_Access_Array;
-   type UserName_Access_Array_Access_Array is array (Natural range <>) of UserName_Access_Array_Access;
-   type UserName_Access_Array_Access_Array_Access is access all UserName_Access_Array_Access_Array;
+
+   subtype UserName_Access is org.allbinary.business.user.username.UserName_Package_References.UserName_Access;
+   function "=" (Left, Right : UserName_Access) return Boolean renames org.allbinary.business.user.username.UserName_Package_References."=";
+   subtype UserName_Access_Array is org.allbinary.business.user.username.UserName_Package_References.UserName_Access_Array;
+   function "=" (Left, Right : UserName_Access_Array) return Boolean renames org.allbinary.business.user.username.UserName_Package_References."=";
+   subtype UserName_Access_Array_Access is org.allbinary.business.user.username.UserName_Package_References.UserName_Access_Array_Access;
+   function "=" (Left, Right : UserName_Access_Array_Access) return Boolean renames org.allbinary.business.user.username.UserName_Package_References."=";
+   subtype UserName_Access_Array_Access_Array is org.allbinary.business.user.username.UserName_Package_References.UserName_Access_Array_Access_Array;
+   function "=" (Left, Right : UserName_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.username.UserName_Package_References."=";
+   subtype UserName_Access_Array_Access_Array_Access is org.allbinary.business.user.username.UserName_Package_References.UserName_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserName_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.username.UserName_Package_References."=";
 
    type UserName is new Java_Object with record
       logUtil : LogUtil_Access;

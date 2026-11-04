@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
+package taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References is
+   type TransformInfoRequestHelperFactory_Access is access all taghelpers.transform.info.TransformInfoRequestHelperFactory_Package.TransformInfoRequestHelperFactory'Class;
+   type TransformInfoRequestHelperFactory_Access_Array is array (Natural range <>) of TransformInfoRequestHelperFactory_Access;
+   type TransformInfoRequestHelperFactory_Access_Array_Access is access all TransformInfoRequestHelperFactory_Access_Array;
+   type TransformInfoRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of TransformInfoRequestHelperFactory_Access_Array_Access;
+   type TransformInfoRequestHelperFactory_Access_Array_Access_Array_Access is access all TransformInfoRequestHelperFactory_Access_Array_Access_Array;
+end taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References;
+
+with taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -28,13 +38,21 @@ package taghelpers.transform.info.TransformInfoRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransformInfoRequestHelperFactory is tagged;
-   type TransformInfoRequestHelperFactory_Access is access all TransformInfoRequestHelperFactory'Class;
-   type TransformInfoRequestHelperFactory_Access_Array is array (Natural range <>) of TransformInfoRequestHelperFactory_Access;
-   type TransformInfoRequestHelperFactory_Access_Array_Access is access all TransformInfoRequestHelperFactory_Access_Array;
-   type TransformInfoRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of TransformInfoRequestHelperFactory_Access_Array_Access;
-   type TransformInfoRequestHelperFactory_Access_Array_Access_Array_Access is access all TransformInfoRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype TransformInfoRequestHelperFactory_Access is taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References.TransformInfoRequestHelperFactory_Access;
+   function "=" (Left, Right : TransformInfoRequestHelperFactory_Access) return Boolean renames taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References."=";
+   subtype TransformInfoRequestHelperFactory_Access_Array is taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References.TransformInfoRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : TransformInfoRequestHelperFactory_Access_Array) return Boolean renames taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References."=";
+   subtype TransformInfoRequestHelperFactory_Access_Array_Access is taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References.TransformInfoRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoRequestHelperFactory_Access_Array_Access) return Boolean renames taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References."=";
+   subtype TransformInfoRequestHelperFactory_Access_Array_Access_Array is taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References.TransformInfoRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformInfoRequestHelperFactory_Access_Array_Access_Array) return Boolean renames taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References."=";
+   subtype TransformInfoRequestHelperFactory_Access_Array_Access_Array_Access is taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References.TransformInfoRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformInfoRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames taghelpers.transform.info.TransformInfoRequestHelperFactory_Package_References."=";
 
    type TransformInfoRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

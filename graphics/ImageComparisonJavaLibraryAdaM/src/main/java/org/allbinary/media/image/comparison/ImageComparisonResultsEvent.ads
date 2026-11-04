@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package;
+package org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References is
+   type ImageComparisonResultsEvent_Access is access all org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package.ImageComparisonResultsEvent'Class;
+   type ImageComparisonResultsEvent_Access_Array is array (Natural range <>) of ImageComparisonResultsEvent_Access;
+   type ImageComparisonResultsEvent_Access_Array_Access is access all ImageComparisonResultsEvent_Access_Array;
+   type ImageComparisonResultsEvent_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonResultsEvent_Access_Array_Access;
+   type ImageComparisonResultsEvent_Access_Array_Access_Array_Access is access all ImageComparisonResultsEvent_Access_Array_Access_Array;
+end org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References;
+
+with org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,37 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+limited with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 
 package org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   subtype ImageComparisonResult_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access;
+   use type ImageComparisonResult_Access;
+   subtype ImageComparisonResult_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array;
+   use type ImageComparisonResult_Access_Array;
+   subtype ImageComparisonResult_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access;
+   use type ImageComparisonResult_Access_Array_Access;
+   subtype ImageComparisonResult_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array;
+   use type ImageComparisonResult_Access_Array_Access_Array;
+   subtype ImageComparisonResult_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array_Access;
+   use type ImageComparisonResult_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageComparisonResultsEvent is tagged;
-   type ImageComparisonResultsEvent_Access is access all ImageComparisonResultsEvent'Class;
-   type ImageComparisonResultsEvent_Access_Array is array (Natural range <>) of ImageComparisonResultsEvent_Access;
-   type ImageComparisonResultsEvent_Access_Array_Access is access all ImageComparisonResultsEvent_Access_Array;
-   type ImageComparisonResultsEvent_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonResultsEvent_Access_Array_Access;
-   type ImageComparisonResultsEvent_Access_Array_Access_Array_Access is access all ImageComparisonResultsEvent_Access_Array_Access_Array;
+
+   subtype ImageComparisonResultsEvent_Access is org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References.ImageComparisonResultsEvent_Access;
+   function "=" (Left, Right : ImageComparisonResultsEvent_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References."=";
+   subtype ImageComparisonResultsEvent_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References.ImageComparisonResultsEvent_Access_Array;
+   function "=" (Left, Right : ImageComparisonResultsEvent_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References."=";
+   subtype ImageComparisonResultsEvent_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References.ImageComparisonResultsEvent_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonResultsEvent_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References."=";
+   subtype ImageComparisonResultsEvent_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References.ImageComparisonResultsEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageComparisonResultsEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References."=";
+   subtype ImageComparisonResultsEvent_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References.ImageComparisonResultsEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonResultsEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package_References."=";
 
    type ImageComparisonResultsEvent is new AllBinaryEventObject with record
       imageComparisonResult : ImageComparisonResult_Access;

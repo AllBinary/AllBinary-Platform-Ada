@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package;
+package org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References is
+   type StreetAddressesEntityInterface_Access is access all org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package.StreetAddressesEntityInterface'Class;
+   type StreetAddressesEntityInterface_Access_Array is array (Natural range <>) of StreetAddressesEntityInterface_Access;
+   type StreetAddressesEntityInterface_Access_Array_Access is access all StreetAddressesEntityInterface_Access_Array;
+   type StreetAddressesEntityInterface_Access_Array_Access_Array is array (Natural range <>) of StreetAddressesEntityInterface_Access_Array_Access;
+   type StreetAddressesEntityInterface_Access_Array_Access_Array_Access is access all StreetAddressesEntityInterface_Access_Array_Access_Array;
+end org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References;
+
+with org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,41 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+limited with org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.address.StreetAddress_Package_References;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
 package org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package is
 
    package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
+   package Reference_Types is
+   subtype StreetAddress_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access;
+   use type StreetAddress_Access;
+   subtype StreetAddress_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array;
+   use type StreetAddress_Access_Array;
+   subtype StreetAddress_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access;
+   use type StreetAddress_Access_Array_Access;
+   subtype StreetAddress_Access_Array_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array;
+   use type StreetAddress_Access_Array_Access_Array;
+   subtype StreetAddress_Access_Array_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array_Access;
+   use type StreetAddress_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type StreetAddressesEntityInterface is interface and BasicDataTableInterface;
-   type StreetAddressesEntityInterface_Access is access all StreetAddressesEntityInterface'Class;
-   type StreetAddressesEntityInterface_Access_Array is array (Natural range <>) of StreetAddressesEntityInterface_Access;
-   type StreetAddressesEntityInterface_Access_Array_Access is access all StreetAddressesEntityInterface_Access_Array;
-   type StreetAddressesEntityInterface_Access_Array_Access_Array is array (Natural range <>) of StreetAddressesEntityInterface_Access_Array_Access;
-   type StreetAddressesEntityInterface_Access_Array_Access_Array_Access is access all StreetAddressesEntityInterface_Access_Array_Access_Array;
+   subtype StreetAddressesEntityInterface_Access is org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References.StreetAddressesEntityInterface_Access;
+   function "=" (Left, Right : StreetAddressesEntityInterface_Access) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References."=";
+   subtype StreetAddressesEntityInterface_Access_Array is org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References.StreetAddressesEntityInterface_Access_Array;
+   function "=" (Left, Right : StreetAddressesEntityInterface_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References."=";
+   subtype StreetAddressesEntityInterface_Access_Array_Access is org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References.StreetAddressesEntityInterface_Access_Array_Access;
+   function "=" (Left, Right : StreetAddressesEntityInterface_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References."=";
+   subtype StreetAddressesEntityInterface_Access_Array_Access_Array is org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References.StreetAddressesEntityInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : StreetAddressesEntityInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References."=";
+   subtype StreetAddressesEntityInterface_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References.StreetAddressesEntityInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StreetAddressesEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package_References."=";
+   function Java_Object_Access_From_StreetAddressesEntityInterface (Value : StreetAddressesEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure remove (This : in out StreetAddressesEntityInterface; index : Integer) is abstract;
    procedure add (This : in out StreetAddressesEntityInterface; address_Param : access StreetAddress_Package.StreetAddress'Class) is abstract;
    procedure update (This : in out StreetAddressesEntityInterface; address_Param : access StreetAddress_Package.StreetAddress'Class) is abstract;

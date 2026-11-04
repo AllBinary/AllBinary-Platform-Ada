@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with tags.admin.payment.gateways.ViewUnusedTag_Package;
+package tags.admin.payment.gateways.ViewUnusedTag_Package_References is
+   type ViewUnusedTag_Access is access all tags.admin.payment.gateways.ViewUnusedTag_Package.ViewUnusedTag'Class;
+   type ViewUnusedTag_Access_Array is array (Natural range <>) of ViewUnusedTag_Access;
+   type ViewUnusedTag_Access_Array_Access is access all ViewUnusedTag_Access_Array;
+   type ViewUnusedTag_Access_Array_Access_Array is array (Natural range <>) of ViewUnusedTag_Access_Array_Access;
+   type ViewUnusedTag_Access_Array_Access_Array_Access is access all ViewUnusedTag_Access_Array_Access_Array;
+end tags.admin.payment.gateways.ViewUnusedTag_Package_References;
+
+with tags.admin.payment.gateways.ViewUnusedTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 package tags.admin.payment.gateways.ViewUnusedTag_Package is
 
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ViewUnusedTag is tagged;
-   type ViewUnusedTag_Access is access all ViewUnusedTag'Class;
-   type ViewUnusedTag_Access_Array is array (Natural range <>) of ViewUnusedTag_Access;
-   type ViewUnusedTag_Access_Array_Access is access all ViewUnusedTag_Access_Array;
-   type ViewUnusedTag_Access_Array_Access_Array is array (Natural range <>) of ViewUnusedTag_Access_Array_Access;
-   type ViewUnusedTag_Access_Array_Access_Array_Access is access all ViewUnusedTag_Access_Array_Access_Array;
+
+   subtype ViewUnusedTag_Access is tags.admin.payment.gateways.ViewUnusedTag_Package_References.ViewUnusedTag_Access;
+   function "=" (Left, Right : ViewUnusedTag_Access) return Boolean renames tags.admin.payment.gateways.ViewUnusedTag_Package_References."=";
+   subtype ViewUnusedTag_Access_Array is tags.admin.payment.gateways.ViewUnusedTag_Package_References.ViewUnusedTag_Access_Array;
+   function "=" (Left, Right : ViewUnusedTag_Access_Array) return Boolean renames tags.admin.payment.gateways.ViewUnusedTag_Package_References."=";
+   subtype ViewUnusedTag_Access_Array_Access is tags.admin.payment.gateways.ViewUnusedTag_Package_References.ViewUnusedTag_Access_Array_Access;
+   function "=" (Left, Right : ViewUnusedTag_Access_Array_Access) return Boolean renames tags.admin.payment.gateways.ViewUnusedTag_Package_References."=";
+   subtype ViewUnusedTag_Access_Array_Access_Array is tags.admin.payment.gateways.ViewUnusedTag_Package_References.ViewUnusedTag_Access_Array_Access_Array;
+   function "=" (Left, Right : ViewUnusedTag_Access_Array_Access_Array) return Boolean renames tags.admin.payment.gateways.ViewUnusedTag_Package_References."=";
+   subtype ViewUnusedTag_Access_Array_Access_Array_Access is tags.admin.payment.gateways.ViewUnusedTag_Package_References.ViewUnusedTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ViewUnusedTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.payment.gateways.ViewUnusedTag_Package_References."=";
 
    type ViewUnusedTag is new StoreValidationTransformTag with null record;
 

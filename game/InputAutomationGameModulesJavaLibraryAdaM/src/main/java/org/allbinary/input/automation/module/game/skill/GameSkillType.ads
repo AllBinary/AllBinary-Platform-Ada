@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.game.skill.GameSkillType_Package;
+package org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References is
+   type GameSkillType_Access is access all org.allbinary.input.automation.module.game.skill.GameSkillType_Package.GameSkillType'Class;
+   type GameSkillType_Access_Array is array (Natural range <>) of GameSkillType_Access;
+   type GameSkillType_Access_Array_Access is access all GameSkillType_Access_Array;
+   type GameSkillType_Access_Array_Access_Array is array (Natural range <>) of GameSkillType_Access_Array_Access;
+   type GameSkillType_Access_Array_Access_Array_Access is access all GameSkillType_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References;
+
+with org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.input.automation.module.game.skill.GameSkillType_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameSkillType is tagged;
-   type GameSkillType_Access is access all GameSkillType'Class;
-   type GameSkillType_Access_Array is array (Natural range <>) of GameSkillType_Access;
-   type GameSkillType_Access_Array_Access is access all GameSkillType_Access_Array;
-   type GameSkillType_Access_Array_Access_Array is array (Natural range <>) of GameSkillType_Access_Array_Access;
-   type GameSkillType_Access_Array_Access_Array_Access is access all GameSkillType_Access_Array_Access_Array;
+
+   subtype GameSkillType_Access is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access;
+   function "=" (Left, Right : GameSkillType_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
+   subtype GameSkillType_Access_Array is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access_Array;
+   function "=" (Left, Right : GameSkillType_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
+   subtype GameSkillType_Access_Array_Access is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access_Array_Access;
+   function "=" (Left, Right : GameSkillType_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
+   subtype GameSkillType_Access_Array_Access_Array is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access_Array_Access_Array;
+   function "=" (Left, Right : GameSkillType_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
+   subtype GameSkillType_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References.GameSkillType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameSkillType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkillType_Package_References."=";
 
    type GameSkillType is new Java_Object with record
       SPELL_GAME_SKILL_TYPE : Unbounded_String;

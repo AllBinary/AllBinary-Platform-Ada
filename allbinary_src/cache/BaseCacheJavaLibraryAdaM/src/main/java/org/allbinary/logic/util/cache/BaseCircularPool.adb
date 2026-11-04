@@ -15,8 +15,11 @@
 
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package; use org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
 
 package body org.allbinary.logic.util.cache.BaseCircularPool_Package is
 
@@ -24,10 +27,30 @@ package body org.allbinary.logic.util.cache.BaseCircularPool_Package is
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
    package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
+   subtype CircularIndexUtil_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access;
+   function "=" (Left, Right : CircularIndexUtil_Access) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype CircularIndexUtil_Access_Array is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array;
+   function "=" (Left, Right : CircularIndexUtil_Access_Array) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype CircularIndexUtil_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access;
+   function "=" (Left, Right : CircularIndexUtil_Access_Array_Access) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype CircularIndexUtil_Access_Array_Access_Array is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : CircularIndexUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype CircularIndexUtil_Access_Array_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CircularIndexUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype AllBinaryObjectFactoryInterface_Access is org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References.AllBinaryObjectFactoryInterface_Access;
+   function "=" (Left, Right : AllBinaryObjectFactoryInterface_Access) return Boolean renames org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References."=";
+   subtype AllBinaryObjectFactoryInterface_Access_Array is org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References.AllBinaryObjectFactoryInterface_Access_Array;
+   function "=" (Left, Right : AllBinaryObjectFactoryInterface_Access_Array) return Boolean renames org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References."=";
+   subtype AllBinaryObjectFactoryInterface_Access_Array_Access is org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References.AllBinaryObjectFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryObjectFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References."=";
+   subtype AllBinaryObjectFactoryInterface_Access_Array_Access_Array is org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References.AllBinaryObjectFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryObjectFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References."=";
+   subtype AllBinaryObjectFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References.AllBinaryObjectFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryObjectFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package_References."=";
    procedure Initialize_Fields (This : in out BaseCircularPool'Class) is
    begin
       null;
-      This.circularIndexUtil := CircularIndexUtil_Package.NULL_CIRCULAR_INDEX_UTIL;
+      This.circularIndexUtil := CircularIndexUtil_Access (CircularIndexUtil_Package.NULL_CIRCULAR_INDEX_UTIL);
       This.OBJECT_ARRAY := NullUtil_Package.getInstance.NULL_OBJECT_ARRAY;
    end Initialize_Fields;
 

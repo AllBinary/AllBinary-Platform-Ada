@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package;
+package org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References is
+   type StoreThemeCategoryFactory_Access is access all org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package.StoreThemeCategoryFactory'Class;
+   type StoreThemeCategoryFactory_Access_Array is array (Natural range <>) of StoreThemeCategoryFactory_Access;
+   type StoreThemeCategoryFactory_Access_Array_Access is access all StoreThemeCategoryFactory_Access_Array;
+   type StoreThemeCategoryFactory_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategoryFactory_Access_Array_Access;
+   type StoreThemeCategoryFactory_Access_Array_Access_Array_Access is access all StoreThemeCategoryFactory_Access_Array_Access_Array;
+end org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References;
+
+with org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -22,12 +32,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.allbinary.business.category.CategoryFactoryInterface_Package;
-with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+limited with org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.CategoryInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package is
 
@@ -39,13 +55,81 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Pa
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype CategoryInterface_Access is org.allbinary.business.category.CategoryInterface_Package_References.CategoryInterface_Access;
+   use type CategoryInterface_Access;
+   subtype CategoryInterface_Access_Array is org.allbinary.business.category.CategoryInterface_Package_References.CategoryInterface_Access_Array;
+   use type CategoryInterface_Access_Array;
+   subtype CategoryInterface_Access_Array_Access is org.allbinary.business.category.CategoryInterface_Package_References.CategoryInterface_Access_Array_Access;
+   use type CategoryInterface_Access_Array_Access;
+   subtype CategoryInterface_Access_Array_Access_Array is org.allbinary.business.category.CategoryInterface_Package_References.CategoryInterface_Access_Array_Access_Array;
+   use type CategoryInterface_Access_Array_Access_Array;
+   subtype CategoryInterface_Access_Array_Access_Array_Access is org.allbinary.business.category.CategoryInterface_Package_References.CategoryInterface_Access_Array_Access_Array_Access;
+   use type CategoryInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbPath_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access;
+   use type AbPath_Access;
+   subtype AbPath_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array;
+   use type AbPath_Access_Array;
+   subtype AbPath_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access;
+   use type AbPath_Access_Array_Access;
+   subtype AbPath_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array;
+   use type AbPath_Access_Array_Access_Array;
+   subtype AbPath_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array_Access;
+   use type AbPath_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreThemeCategoryFactory is tagged;
-   type StoreThemeCategoryFactory_Access is access all StoreThemeCategoryFactory'Class;
-   type StoreThemeCategoryFactory_Access_Array is array (Natural range <>) of StoreThemeCategoryFactory_Access;
-   type StoreThemeCategoryFactory_Access_Array_Access is access all StoreThemeCategoryFactory_Access_Array;
-   type StoreThemeCategoryFactory_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategoryFactory_Access_Array_Access;
-   type StoreThemeCategoryFactory_Access_Array_Access_Array_Access is access all StoreThemeCategoryFactory_Access_Array_Access_Array;
+
+   subtype StoreThemeCategoryFactory_Access is org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References.StoreThemeCategoryFactory_Access;
+   function "=" (Left, Right : StoreThemeCategoryFactory_Access) return Boolean renames org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References."=";
+   subtype StoreThemeCategoryFactory_Access_Array is org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References.StoreThemeCategoryFactory_Access_Array;
+   function "=" (Left, Right : StoreThemeCategoryFactory_Access_Array) return Boolean renames org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References."=";
+   subtype StoreThemeCategoryFactory_Access_Array_Access is org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References.StoreThemeCategoryFactory_Access_Array_Access;
+   function "=" (Left, Right : StoreThemeCategoryFactory_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References."=";
+   subtype StoreThemeCategoryFactory_Access_Array_Access_Array is org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References.StoreThemeCategoryFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreThemeCategoryFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References."=";
+   subtype StoreThemeCategoryFactory_Access_Array_Access_Array_Access is org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References.StoreThemeCategoryFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreThemeCategoryFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package_References."=";
 
    type StoreThemeCategoryFactory is new Java_Object and CategoryFactoryInterface with record
       logUtil : LogUtil_Access;

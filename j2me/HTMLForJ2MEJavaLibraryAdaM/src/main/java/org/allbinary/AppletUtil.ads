@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.AppletUtil_Package;
+package org.allbinary.AppletUtil_Package_References is
+   type AppletUtil_Access is access all org.allbinary.AppletUtil_Package.AppletUtil'Class;
+   type AppletUtil_Access_Array is array (Natural range <>) of AppletUtil_Access;
+   type AppletUtil_Access_Array_Access is access all AppletUtil_Access_Array;
+   type AppletUtil_Access_Array_Access_Array is array (Natural range <>) of AppletUtil_Access_Array_Access;
+   type AppletUtil_Access_Array_Access_Array_Access is access all AppletUtil_Access_Array_Access_Array;
+end org.allbinary.AppletUtil_Package_References;
+
+with org.allbinary.AppletUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.AppletUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AppletUtil is tagged;
-   type AppletUtil_Access is access all AppletUtil'Class;
-   type AppletUtil_Access_Array is array (Natural range <>) of AppletUtil_Access;
-   type AppletUtil_Access_Array_Access is access all AppletUtil_Access_Array;
-   type AppletUtil_Access_Array_Access_Array is array (Natural range <>) of AppletUtil_Access_Array_Access;
-   type AppletUtil_Access_Array_Access_Array_Access is access all AppletUtil_Access_Array_Access_Array;
+
+   subtype AppletUtil_Access is org.allbinary.AppletUtil_Package_References.AppletUtil_Access;
+   function "=" (Left, Right : AppletUtil_Access) return Boolean renames org.allbinary.AppletUtil_Package_References."=";
+   subtype AppletUtil_Access_Array is org.allbinary.AppletUtil_Package_References.AppletUtil_Access_Array;
+   function "=" (Left, Right : AppletUtil_Access_Array) return Boolean renames org.allbinary.AppletUtil_Package_References."=";
+   subtype AppletUtil_Access_Array_Access is org.allbinary.AppletUtil_Package_References.AppletUtil_Access_Array_Access;
+   function "=" (Left, Right : AppletUtil_Access_Array_Access) return Boolean renames org.allbinary.AppletUtil_Package_References."=";
+   subtype AppletUtil_Access_Array_Access_Array is org.allbinary.AppletUtil_Package_References.AppletUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : AppletUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.AppletUtil_Package_References."=";
+   subtype AppletUtil_Access_Array_Access_Array_Access is org.allbinary.AppletUtil_Package_References.AppletUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AppletUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.AppletUtil_Package_References."=";
 
    type AppletUtil is new Java_Object with null record;
 

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.file.AbFile_Package;
+package org.allbinary.logic.io.file.AbFile_Package_References is
+   type AbFile_Access is access all org.allbinary.logic.io.file.AbFile_Package.AbFile'Class;
+   type AbFile_Access_Array is array (Natural range <>) of AbFile_Access;
+   type AbFile_Access_Array_Access is access all AbFile_Access_Array;
+   type AbFile_Access_Array_Access_Array is array (Natural range <>) of AbFile_Access_Array_Access;
+   type AbFile_Access_Array_Access_Array_Access is access all AbFile_Access_Array_Access_Array;
+end org.allbinary.logic.io.file.AbFile_Package_References;
+
+with org.allbinary.logic.io.file.AbFile_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,20 +35,39 @@ with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FilenameFilter_Package; use java.io.FilenameFilter_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 --  with java.net.URI_Package; use java.net.URI_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+limited with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.logic.io.file.AbFileInterface_Package; use org.allbinary.logic.io.file.AbFileInterface_Package;
 
 package org.allbinary.logic.io.file.AbFile_Package is
 
    package File_Package renames Standard.java.io.File_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package Reference_Types is
+   subtype AbPath_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access;
+   use type AbPath_Access;
+   subtype AbPath_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array;
+   use type AbPath_Access_Array;
+   subtype AbPath_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access;
+   use type AbPath_Access_Array_Access;
+   subtype AbPath_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array;
+   use type AbPath_Access_Array_Access_Array;
+   subtype AbPath_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array_Access;
+   use type AbPath_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbFile is tagged;
-   type AbFile_Access is access all AbFile'Class;
-   type AbFile_Access_Array is array (Natural range <>) of AbFile_Access;
-   type AbFile_Access_Array_Access is access all AbFile_Access_Array;
-   type AbFile_Access_Array_Access_Array is array (Natural range <>) of AbFile_Access_Array_Access;
-   type AbFile_Access_Array_Access_Array_Access is access all AbFile_Access_Array_Access_Array;
+
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   function "=" (Left, Right : AbFile_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbFile_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.AbFile_Package_References."=";
 
    type AbFile is new Java_Object and AbFileInterface with record
       file : File_Access;

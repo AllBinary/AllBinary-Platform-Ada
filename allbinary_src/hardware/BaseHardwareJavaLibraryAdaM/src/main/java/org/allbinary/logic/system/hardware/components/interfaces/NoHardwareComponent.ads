@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package;
+package org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References is
+   type NoHardwareComponent_Access is access all org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package.NoHardwareComponent'Class;
+   type NoHardwareComponent_Access_Array is array (Natural range <>) of NoHardwareComponent_Access;
+   type NoHardwareComponent_Access_Array_Access is access all NoHardwareComponent_Access_Array;
+   type NoHardwareComponent_Access_Array_Access_Array is array (Natural range <>) of NoHardwareComponent_Access_Array_Access;
+   type NoHardwareComponent_Access_Array_Access_Array_Access is access all NoHardwareComponent_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References;
+
+with org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponent
 
 package org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoHardwareComponent is tagged;
-   type NoHardwareComponent_Access is access all NoHardwareComponent'Class;
-   type NoHardwareComponent_Access_Array is array (Natural range <>) of NoHardwareComponent_Access;
-   type NoHardwareComponent_Access_Array_Access is access all NoHardwareComponent_Access_Array;
-   type NoHardwareComponent_Access_Array_Access_Array is array (Natural range <>) of NoHardwareComponent_Access_Array_Access;
-   type NoHardwareComponent_Access_Array_Access_Array_Access is access all NoHardwareComponent_Access_Array_Access_Array;
+
+   subtype NoHardwareComponent_Access is org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References.NoHardwareComponent_Access;
+   function "=" (Left, Right : NoHardwareComponent_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References."=";
+   subtype NoHardwareComponent_Access_Array is org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References.NoHardwareComponent_Access_Array;
+   function "=" (Left, Right : NoHardwareComponent_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References."=";
+   subtype NoHardwareComponent_Access_Array_Access is org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References.NoHardwareComponent_Access_Array_Access;
+   function "=" (Left, Right : NoHardwareComponent_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References."=";
+   subtype NoHardwareComponent_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References.NoHardwareComponent_Access_Array_Access_Array;
+   function "=" (Left, Right : NoHardwareComponent_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References."=";
+   subtype NoHardwareComponent_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References.NoHardwareComponent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoHardwareComponent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package_References."=";
 
    type NoHardwareComponent is new Java_Object and HardwareComponentInterface with null record;
    instance : NoHardwareComponent_Access;

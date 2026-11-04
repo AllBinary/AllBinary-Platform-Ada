@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package; use org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
+with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
 
 package body org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package is
 
+   subtype InputAutomationClientInformation_Access is org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References.InputAutomationClientInformation_Access;
+   function "=" (Left, Right : InputAutomationClientInformation_Access) return Boolean renames org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References."=";
+   subtype InputAutomationClientInformation_Access_Array is org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References.InputAutomationClientInformation_Access_Array;
+   function "=" (Left, Right : InputAutomationClientInformation_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References."=";
+   subtype InputAutomationClientInformation_Access_Array_Access is org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References.InputAutomationClientInformation_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationClientInformation_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References."=";
+   subtype InputAutomationClientInformation_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References.InputAutomationClientInformation_Access_Array_Access_Array;
+   function "=" (Left, Right : InputAutomationClientInformation_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References."=";
+   subtype InputAutomationClientInformation_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References.InputAutomationClientInformation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InputAutomationClientInformation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationClientInformationFactory'Class) is
    begin
       null;
@@ -36,7 +48,7 @@ package body org.allbinary.logic.system.security.licensing.InputAutomationClient
 
    function getInstance return InputAutomationClientInformation_Access is
    begin
-        return InputAutomationClientInformationFactory_Package.instance;
+        return InputAutomationClientInformation_Access (InputAutomationClientInformationFactory_Package.instance);
    end getInstance;
 
 begin

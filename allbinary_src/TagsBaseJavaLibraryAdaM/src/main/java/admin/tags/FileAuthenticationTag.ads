@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.tags.FileAuthenticationTag_Package;
+package admin.tags.FileAuthenticationTag_Package_References is
+   type FileAuthenticationTag_Access is access all admin.tags.FileAuthenticationTag_Package.FileAuthenticationTag'Class;
+   type FileAuthenticationTag_Access_Array is array (Natural range <>) of FileAuthenticationTag_Access;
+   type FileAuthenticationTag_Access_Array_Access is access all FileAuthenticationTag_Access_Array;
+   type FileAuthenticationTag_Access_Array_Access_Array is array (Natural range <>) of FileAuthenticationTag_Access_Array_Access;
+   type FileAuthenticationTag_Access_Array_Access_Array_Access is access all FileAuthenticationTag_Access_Array_Access_Array;
+end admin.tags.FileAuthenticationTag_Package_References;
+
+with admin.tags.FileAuthenticationTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
 --  with javax.servlet.jsp.tagext.TagSupport_Package; use javax.servlet.jsp.tagext.TagSupport_Package;
-with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
-with org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.business.user.role.BasicUserRole_Package;
+with org.allbinary.business.user.role.BasicUserRole_Package_References;
+limited with org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package;
+with org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.FileAuthenticationTag_Package is
@@ -36,13 +50,61 @@ package admin.tags.FileAuthenticationTag_Package is
    package BasicWeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype BasicUserRole_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access;
+   use type BasicUserRole_Access;
+   subtype BasicUserRole_Access_Array is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array;
+   use type BasicUserRole_Access_Array;
+   subtype BasicUserRole_Access_Array_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array_Access;
+   use type BasicUserRole_Access_Array_Access;
+   subtype BasicUserRole_Access_Array_Access_Array is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array_Access_Array;
+   use type BasicUserRole_Access_Array_Access_Array;
+   subtype BasicUserRole_Access_Array_Access_Array_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array_Access_Array_Access;
+   use type BasicUserRole_Access_Array_Access_Array_Access;
+   subtype BasicWeblisketSession_Access is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access;
+   use type BasicWeblisketSession_Access;
+   subtype BasicWeblisketSession_Access_Array is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access_Array;
+   use type BasicWeblisketSession_Access_Array;
+   subtype BasicWeblisketSession_Access_Array_Access is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access_Array_Access;
+   use type BasicWeblisketSession_Access_Array_Access;
+   subtype BasicWeblisketSession_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access_Array_Access_Array;
+   use type BasicWeblisketSession_Access_Array_Access_Array;
+   subtype BasicWeblisketSession_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package_References.BasicWeblisketSession_Access_Array_Access_Array_Access;
+   use type BasicWeblisketSession_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type FileAuthenticationTag is tagged;
-   type FileAuthenticationTag_Access is access all FileAuthenticationTag'Class;
-   type FileAuthenticationTag_Access_Array is array (Natural range <>) of FileAuthenticationTag_Access;
-   type FileAuthenticationTag_Access_Array_Access is access all FileAuthenticationTag_Access_Array;
-   type FileAuthenticationTag_Access_Array_Access_Array is array (Natural range <>) of FileAuthenticationTag_Access_Array_Access;
-   type FileAuthenticationTag_Access_Array_Access_Array_Access is access all FileAuthenticationTag_Access_Array_Access_Array;
+
+   subtype FileAuthenticationTag_Access is admin.tags.FileAuthenticationTag_Package_References.FileAuthenticationTag_Access;
+   function "=" (Left, Right : FileAuthenticationTag_Access) return Boolean renames admin.tags.FileAuthenticationTag_Package_References."=";
+   subtype FileAuthenticationTag_Access_Array is admin.tags.FileAuthenticationTag_Package_References.FileAuthenticationTag_Access_Array;
+   function "=" (Left, Right : FileAuthenticationTag_Access_Array) return Boolean renames admin.tags.FileAuthenticationTag_Package_References."=";
+   subtype FileAuthenticationTag_Access_Array_Access is admin.tags.FileAuthenticationTag_Package_References.FileAuthenticationTag_Access_Array_Access;
+   function "=" (Left, Right : FileAuthenticationTag_Access_Array_Access) return Boolean renames admin.tags.FileAuthenticationTag_Package_References."=";
+   subtype FileAuthenticationTag_Access_Array_Access_Array is admin.tags.FileAuthenticationTag_Package_References.FileAuthenticationTag_Access_Array_Access_Array;
+   function "=" (Left, Right : FileAuthenticationTag_Access_Array_Access_Array) return Boolean renames admin.tags.FileAuthenticationTag_Package_References."=";
+   subtype FileAuthenticationTag_Access_Array_Access_Array_Access is admin.tags.FileAuthenticationTag_Package_References.FileAuthenticationTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileAuthenticationTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.FileAuthenticationTag_Package_References."=";
 
    type FileAuthenticationTag is new CustomTagSupport with record
       logUtil : LogUtil_Access;

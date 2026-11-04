@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.android.activity.MidletActivityBase_Package;
+package org.allbinary.android.activity.MidletActivityBase_Package_References is
+   type MidletActivityBase_Access is access all org.allbinary.android.activity.MidletActivityBase_Package.MidletActivityBase'Class;
+   type MidletActivityBase_Access_Array is array (Natural range <>) of MidletActivityBase_Access;
+   type MidletActivityBase_Access_Array_Access is access all MidletActivityBase_Access_Array;
+   type MidletActivityBase_Access_Array_Access_Array is array (Natural range <>) of MidletActivityBase_Access_Array_Access;
+   type MidletActivityBase_Access_Array_Access_Array_Access is access all MidletActivityBase_Access_Array_Access_Array;
+end org.allbinary.android.activity.MidletActivityBase_Package_References;
+
+with org.allbinary.android.activity.MidletActivityBase_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,14 +31,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.app.Activity_Package; use android.app.Activity_Package;
-with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
-with android.view.View_Package; use android.view.View_Package;
+limited with android.view.MotionEvent_Package;
+with android.view.MotionEvent_Package_References;
+limited with android.view.View_Package;
+with android.view.View_Package_References;
 with org.allbinary.android.GenericMotionEventVerifyInterface_Package; use org.allbinary.android.GenericMotionEventVerifyInterface_Package;
-with org.allbinary.game.configuration.event.GameFeatureEvent_Package; use org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+limited with org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package_References;
 with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package; use org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
-with org.allbinary.game.configuration.event.GameInitializedEvent_Package; use org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+limited with org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+with org.allbinary.game.configuration.event.GameInitializedEvent_Package_References;
 with org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package; use org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
-with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.android.activity.SimpleProgressActivityInterface_Package; use org.allbinary.android.activity.SimpleProgressActivityInterface_Package;
 with org.allbinary.android.activity.KeyInputViewCompositeInterface_Package; use org.allbinary.android.activity.KeyInputViewCompositeInterface_Package;
 
@@ -43,13 +58,71 @@ package org.allbinary.android.activity.MidletActivityBase_Package is
    package GameInitializedEvent_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEvent_Package;
    package GameInitializedListenerInterface_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   subtype MotionEvent_Access is android.view.MotionEvent_Package_References.MotionEvent_Access;
+   use type MotionEvent_Access;
+   subtype MotionEvent_Access_Array is android.view.MotionEvent_Package_References.MotionEvent_Access_Array;
+   use type MotionEvent_Access_Array;
+   subtype MotionEvent_Access_Array_Access is android.view.MotionEvent_Package_References.MotionEvent_Access_Array_Access;
+   use type MotionEvent_Access_Array_Access;
+   subtype MotionEvent_Access_Array_Access_Array is android.view.MotionEvent_Package_References.MotionEvent_Access_Array_Access_Array;
+   use type MotionEvent_Access_Array_Access_Array;
+   subtype MotionEvent_Access_Array_Access_Array_Access is android.view.MotionEvent_Package_References.MotionEvent_Access_Array_Access_Array_Access;
+   use type MotionEvent_Access_Array_Access_Array_Access;
+   subtype View_Access is android.view.View_Package_References.View_Access;
+   use type View_Access;
+   subtype View_Access_Array is android.view.View_Package_References.View_Access_Array;
+   use type View_Access_Array;
+   subtype View_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access;
+   use type View_Access_Array_Access;
+   subtype View_Access_Array_Access_Array is android.view.View_Package_References.View_Access_Array_Access_Array;
+   use type View_Access_Array_Access_Array;
+   subtype View_Access_Array_Access_Array_Access is android.view.View_Package_References.View_Access_Array_Access_Array_Access;
+   use type View_Access_Array_Access_Array_Access;
+   subtype GameFeatureEvent_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access;
+   use type GameFeatureEvent_Access;
+   subtype GameFeatureEvent_Access_Array is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array;
+   use type GameFeatureEvent_Access_Array;
+   subtype GameFeatureEvent_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access;
+   use type GameFeatureEvent_Access_Array_Access;
+   subtype GameFeatureEvent_Access_Array_Access_Array is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access_Array;
+   use type GameFeatureEvent_Access_Array_Access_Array;
+   subtype GameFeatureEvent_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEvent_Package_References.GameFeatureEvent_Access_Array_Access_Array_Access;
+   use type GameFeatureEvent_Access_Array_Access_Array_Access;
+   subtype GameInitializedEvent_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access;
+   use type GameInitializedEvent_Access;
+   subtype GameInitializedEvent_Access_Array is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array;
+   use type GameInitializedEvent_Access_Array;
+   subtype GameInitializedEvent_Access_Array_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access;
+   use type GameInitializedEvent_Access_Array_Access;
+   subtype GameInitializedEvent_Access_Array_Access_Array is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access_Array;
+   use type GameInitializedEvent_Access_Array_Access_Array;
+   subtype GameInitializedEvent_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.GameInitializedEvent_Package_References.GameInitializedEvent_Access_Array_Access_Array_Access;
+   use type GameInitializedEvent_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MidletActivityBase is tagged;
-   type MidletActivityBase_Access is access all MidletActivityBase'Class;
-   type MidletActivityBase_Access_Array is array (Natural range <>) of MidletActivityBase_Access;
-   type MidletActivityBase_Access_Array_Access is access all MidletActivityBase_Access_Array;
-   type MidletActivityBase_Access_Array_Access_Array is array (Natural range <>) of MidletActivityBase_Access_Array_Access;
-   type MidletActivityBase_Access_Array_Access_Array_Access is access all MidletActivityBase_Access_Array_Access_Array;
+
+   subtype MidletActivityBase_Access is org.allbinary.android.activity.MidletActivityBase_Package_References.MidletActivityBase_Access;
+   function "=" (Left, Right : MidletActivityBase_Access) return Boolean renames org.allbinary.android.activity.MidletActivityBase_Package_References."=";
+   subtype MidletActivityBase_Access_Array is org.allbinary.android.activity.MidletActivityBase_Package_References.MidletActivityBase_Access_Array;
+   function "=" (Left, Right : MidletActivityBase_Access_Array) return Boolean renames org.allbinary.android.activity.MidletActivityBase_Package_References."=";
+   subtype MidletActivityBase_Access_Array_Access is org.allbinary.android.activity.MidletActivityBase_Package_References.MidletActivityBase_Access_Array_Access;
+   function "=" (Left, Right : MidletActivityBase_Access_Array_Access) return Boolean renames org.allbinary.android.activity.MidletActivityBase_Package_References."=";
+   subtype MidletActivityBase_Access_Array_Access_Array is org.allbinary.android.activity.MidletActivityBase_Package_References.MidletActivityBase_Access_Array_Access_Array;
+   function "=" (Left, Right : MidletActivityBase_Access_Array_Access_Array) return Boolean renames org.allbinary.android.activity.MidletActivityBase_Package_References."=";
+   subtype MidletActivityBase_Access_Array_Access_Array_Access is org.allbinary.android.activity.MidletActivityBase_Package_References.MidletActivityBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MidletActivityBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.activity.MidletActivityBase_Package_References."=";
 
    type MidletActivityBase is new Activity_Package.Activity and GameFeatureListenerInterface and GameInitializedListenerInterface and SimpleProgressActivityInterface and KeyInputViewCompositeInterface and GenericMotionEventVerifyInterface with null record;
 

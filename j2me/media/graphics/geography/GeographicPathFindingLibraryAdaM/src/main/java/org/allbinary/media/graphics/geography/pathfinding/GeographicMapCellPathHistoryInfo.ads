@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package;
+package org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References is
+   type GeographicMapCellPathHistoryInfo_Access is access all org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package.GeographicMapCellPathHistoryInfo'Class;
+   type GeographicMapCellPathHistoryInfo_Access_Array is array (Natural range <>) of GeographicMapCellPathHistoryInfo_Access;
+   type GeographicMapCellPathHistoryInfo_Access_Array_Access is access all GeographicMapCellPathHistoryInfo_Access_Array;
+   type GeographicMapCellPathHistoryInfo_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPathHistoryInfo_Access_Array_Access;
+   type GeographicMapCellPathHistoryInfo_Access_Array_Access_Array_Access is access all GeographicMapCellPathHistoryInfo_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References;
+
+with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 package org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package is
 
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package Reference_Types is
+   subtype GeographicMapCellPosition_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access;
+   use type GeographicMapCellPosition_Access;
+   subtype GeographicMapCellPosition_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array;
+   use type GeographicMapCellPosition_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
+   use type GeographicMapCellPosition_Access_Array_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GeographicMapCellPathHistoryInfo is tagged;
-   type GeographicMapCellPathHistoryInfo_Access is access all GeographicMapCellPathHistoryInfo'Class;
-   type GeographicMapCellPathHistoryInfo_Access_Array is array (Natural range <>) of GeographicMapCellPathHistoryInfo_Access;
-   type GeographicMapCellPathHistoryInfo_Access_Array_Access is access all GeographicMapCellPathHistoryInfo_Access_Array;
-   type GeographicMapCellPathHistoryInfo_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPathHistoryInfo_Access_Array_Access;
-   type GeographicMapCellPathHistoryInfo_Access_Array_Access_Array_Access is access all GeographicMapCellPathHistoryInfo_Access_Array_Access_Array;
+
+   subtype GeographicMapCellPathHistoryInfo_Access is org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References.GeographicMapCellPathHistoryInfo_Access;
+   function "=" (Left, Right : GeographicMapCellPathHistoryInfo_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References."=";
+   subtype GeographicMapCellPathHistoryInfo_Access_Array is org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References.GeographicMapCellPathHistoryInfo_Access_Array;
+   function "=" (Left, Right : GeographicMapCellPathHistoryInfo_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References."=";
+   subtype GeographicMapCellPathHistoryInfo_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References.GeographicMapCellPathHistoryInfo_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapCellPathHistoryInfo_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References."=";
+   subtype GeographicMapCellPathHistoryInfo_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References.GeographicMapCellPathHistoryInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : GeographicMapCellPathHistoryInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References."=";
+   subtype GeographicMapCellPathHistoryInfo_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References.GeographicMapCellPathHistoryInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GeographicMapCellPathHistoryInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References."=";
 
    type GeographicMapCellPathHistoryInfo is new Java_Object with record
       previousGeographicMapCellPosition : GeographicMapCellPosition_Access;

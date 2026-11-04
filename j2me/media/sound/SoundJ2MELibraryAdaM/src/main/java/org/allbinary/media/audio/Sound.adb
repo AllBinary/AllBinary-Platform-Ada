@@ -13,19 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
+with org.allbinary.media.audio.SoundInterface_Package;
 
 package body org.allbinary.media.audio.Sound_Package is
 
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype Player_Access is javax.microedition.media.Player_Package_References.Player_Access;
+   function "=" (Left, Right : Player_Access) return Boolean renames javax.microedition.media.Player_Package_References."=";
+   subtype Player_Access_Array is javax.microedition.media.Player_Package_References.Player_Access_Array;
+   function "=" (Left, Right : Player_Access_Array) return Boolean renames javax.microedition.media.Player_Package_References."=";
+   subtype Player_Access_Array_Access is javax.microedition.media.Player_Package_References.Player_Access_Array_Access;
+   function "=" (Left, Right : Player_Access_Array_Access) return Boolean renames javax.microedition.media.Player_Package_References."=";
+   subtype Player_Access_Array_Access_Array is javax.microedition.media.Player_Package_References.Player_Access_Array_Access_Array;
+   function "=" (Left, Right : Player_Access_Array_Access_Array) return Boolean renames javax.microedition.media.Player_Package_References."=";
+   subtype Player_Access_Array_Access_Array_Access is javax.microedition.media.Player_Package_References.Player_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Player_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.Player_Package_References."=";
    procedure Initialize_Fields (This : in out Sound'Class) is
    begin
       null;
       
-      This.player := NoPlayer_Package.NO_PLAYER;
+      This.player := Player_Access (NoPlayer_Package.NO_PLAYER);
    end Initialize_Fields;
 
 

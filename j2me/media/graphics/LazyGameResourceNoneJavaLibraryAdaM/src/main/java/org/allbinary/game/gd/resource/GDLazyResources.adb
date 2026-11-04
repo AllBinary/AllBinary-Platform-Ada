@@ -39,7 +39,7 @@ package body org.allbinary.game.gd.resource.GDLazyResources_Package is
 
    function getInstance return GDLazyResources_Access is
    begin
-        return GDLazyResources_Package.instance;
+        return GDLazyResources_Access (GDLazyResources_Package.instance);
    end getInstance;
 
 begin

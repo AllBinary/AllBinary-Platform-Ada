@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
+package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References is
+   type AbstractInputAutomationWorker_Access is access all org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package.AbstractInputAutomationWorker'Class;
+   type AbstractInputAutomationWorker_Access_Array is array (Natural range <>) of AbstractInputAutomationWorker_Access;
+   type AbstractInputAutomationWorker_Access_Array_Access is access all AbstractInputAutomationWorker_Access_Array;
+   type AbstractInputAutomationWorker_Access_Array_Access_Array is array (Natural range <>) of AbstractInputAutomationWorker_Access_Array_Access;
+   type AbstractInputAutomationWorker_Access_Array_Access_Array_Access is access all AbstractInputAutomationWorker_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References;
+
+with org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package; use org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.media.image.comparison.ImageComparisonWorker_Package; use org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+limited with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
+with org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References;
+limited with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
-with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+limited with org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package is
@@ -38,13 +54,81 @@ package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Pack
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Reference_Types is
+   subtype CaptureWorkerInterface_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access;
+   use type CaptureWorkerInterface_Access;
+   subtype CaptureWorkerInterface_Access_Array is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array;
+   use type CaptureWorkerInterface_Access_Array;
+   subtype CaptureWorkerInterface_Access_Array_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access;
+   use type CaptureWorkerInterface_Access_Array_Access;
+   subtype CaptureWorkerInterface_Access_Array_Access_Array is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access_Array;
+   use type CaptureWorkerInterface_Access_Array_Access_Array;
+   subtype CaptureWorkerInterface_Access_Array_Access_Array_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access_Array_Access;
+   use type CaptureWorkerInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype ImageComparisonWorker_Access is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access;
+   use type ImageComparisonWorker_Access;
+   subtype ImageComparisonWorker_Access_Array is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array;
+   use type ImageComparisonWorker_Access_Array;
+   subtype ImageComparisonWorker_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array_Access;
+   use type ImageComparisonWorker_Access_Array_Access;
+   subtype ImageComparisonWorker_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array_Access_Array;
+   use type ImageComparisonWorker_Access_Array_Access_Array;
+   subtype ImageComparisonWorker_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array_Access_Array_Access;
+   use type ImageComparisonWorker_Access_Array_Access_Array_Access;
+   subtype MotionRectanglesWorker_Access is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access;
+   use type MotionRectanglesWorker_Access;
+   subtype MotionRectanglesWorker_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access_Array;
+   use type MotionRectanglesWorker_Access_Array;
+   subtype MotionRectanglesWorker_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access_Array_Access;
+   use type MotionRectanglesWorker_Access_Array_Access;
+   subtype MotionRectanglesWorker_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access_Array_Access_Array;
+   use type MotionRectanglesWorker_Access_Array_Access_Array;
+   subtype MotionRectanglesWorker_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package_References.MotionRectanglesWorker_Access_Array_Access_Array_Access;
+   use type MotionRectanglesWorker_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype InputAutomationActionInterface_Access is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access;
+   use type InputAutomationActionInterface_Access;
+   subtype InputAutomationActionInterface_Access_Array is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array;
+   use type InputAutomationActionInterface_Access_Array;
+   subtype InputAutomationActionInterface_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array_Access;
+   use type InputAutomationActionInterface_Access_Array_Access;
+   subtype InputAutomationActionInterface_Access_Array_Access_Array is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array_Access_Array;
+   use type InputAutomationActionInterface_Access_Array_Access_Array;
+   subtype InputAutomationActionInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References.InputAutomationActionInterface_Access_Array_Access_Array_Access;
+   use type InputAutomationActionInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbstractInputAutomationWorker is tagged;
-   type AbstractInputAutomationWorker_Access is access all AbstractInputAutomationWorker'Class;
-   type AbstractInputAutomationWorker_Access_Array is array (Natural range <>) of AbstractInputAutomationWorker_Access;
-   type AbstractInputAutomationWorker_Access_Array_Access is access all AbstractInputAutomationWorker_Access_Array;
-   type AbstractInputAutomationWorker_Access_Array_Access_Array is array (Natural range <>) of AbstractInputAutomationWorker_Access_Array_Access;
-   type AbstractInputAutomationWorker_Access_Array_Access_Array_Access is access all AbstractInputAutomationWorker_Access_Array_Access_Array;
+
+   subtype AbstractInputAutomationWorker_Access is org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References.AbstractInputAutomationWorker_Access;
+   function "=" (Left, Right : AbstractInputAutomationWorker_Access) return Boolean renames org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References."=";
+   subtype AbstractInputAutomationWorker_Access_Array is org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References.AbstractInputAutomationWorker_Access_Array;
+   function "=" (Left, Right : AbstractInputAutomationWorker_Access_Array) return Boolean renames org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References."=";
+   subtype AbstractInputAutomationWorker_Access_Array_Access is org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References.AbstractInputAutomationWorker_Access_Array_Access;
+   function "=" (Left, Right : AbstractInputAutomationWorker_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References."=";
+   subtype AbstractInputAutomationWorker_Access_Array_Access_Array is org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References.AbstractInputAutomationWorker_Access_Array_Access_Array;
+   function "=" (Left, Right : AbstractInputAutomationWorker_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References."=";
+   subtype AbstractInputAutomationWorker_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References.AbstractInputAutomationWorker_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbstractInputAutomationWorker_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package_References."=";
 
    type AbstractInputAutomationWorker is new Java_Object and RunnableInterface with record
       logUtil : LogUtil_Access;

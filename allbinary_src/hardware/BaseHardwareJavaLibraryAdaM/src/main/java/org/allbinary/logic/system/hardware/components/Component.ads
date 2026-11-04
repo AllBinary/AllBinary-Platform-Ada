@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.Component_Package;
+package org.allbinary.logic.system.hardware.components.Component_Package_References is
+   type Component_Access is access all org.allbinary.logic.system.hardware.components.Component_Package.Component'Class;
+   type Component_Access_Array is array (Natural range <>) of Component_Access;
+   type Component_Access_Array_Access is access all Component_Access_Array;
+   type Component_Access_Array_Access_Array is array (Natural range <>) of Component_Access_Array_Access;
+   type Component_Access_Array_Access_Array_Access is access all Component_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.Component_Package_References;
+
+with org.allbinary.logic.system.hardware.components.Component_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.system.hardware.components.Component_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Component is tagged;
-   type Component_Access is access all Component'Class;
-   type Component_Access_Array is array (Natural range <>) of Component_Access;
-   type Component_Access_Array_Access is access all Component_Access_Array;
-   type Component_Access_Array_Access_Array is array (Natural range <>) of Component_Access_Array_Access;
-   type Component_Access_Array_Access_Array_Access is access all Component_Access_Array_Access_Array;
+
+   subtype Component_Access is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access;
+   function "=" (Left, Right : Component_Access) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
+   subtype Component_Access_Array is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array;
+   function "=" (Left, Right : Component_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
+   subtype Component_Access_Array_Access is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array_Access;
+   function "=" (Left, Right : Component_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
+   subtype Component_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array_Access_Array;
+   function "=" (Left, Right : Component_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
+   subtype Component_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.Component_Package_References.Component_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Component_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.Component_Package_References."=";
 
    type Component is new Java_Object with record
       name : Unbounded_String;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.html.HtmlButton_Package;
+package org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References is
+   type HtmlButton_Access is access all org.allbinary.logic.visual.dhtml.html.HtmlButton_Package.HtmlButton'Class;
+   type HtmlButton_Access_Array is array (Natural range <>) of HtmlButton_Access;
+   type HtmlButton_Access_Array_Access is access all HtmlButton_Access_Array;
+   type HtmlButton_Access_Array_Access_Array is array (Natural range <>) of HtmlButton_Access_Array_Access;
+   type HtmlButton_Access_Array_Access_Array_Access is access all HtmlButton_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References;
+
+with org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.dhtml.html.HtmlButton_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HtmlButton is tagged;
-   type HtmlButton_Access is access all HtmlButton'Class;
-   type HtmlButton_Access_Array is array (Natural range <>) of HtmlButton_Access;
-   type HtmlButton_Access_Array_Access is access all HtmlButton_Access_Array;
-   type HtmlButton_Access_Array_Access_Array is array (Natural range <>) of HtmlButton_Access_Array_Access;
-   type HtmlButton_Access_Array_Access_Array_Access is access all HtmlButton_Access_Array_Access_Array;
+
+   subtype HtmlButton_Access is org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References.HtmlButton_Access;
+   function "=" (Left, Right : HtmlButton_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References."=";
+   subtype HtmlButton_Access_Array is org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References.HtmlButton_Access_Array;
+   function "=" (Left, Right : HtmlButton_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References."=";
+   subtype HtmlButton_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References.HtmlButton_Access_Array_Access;
+   function "=" (Left, Right : HtmlButton_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References."=";
+   subtype HtmlButton_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References.HtmlButton_Access_Array_Access_Array;
+   function "=" (Left, Right : HtmlButton_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References."=";
+   subtype HtmlButton_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References.HtmlButton_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HtmlButton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.HtmlButton_Package_References."=";
 
    type HtmlButton is new Java_Object with null record;
 

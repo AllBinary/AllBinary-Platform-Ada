@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.os.android.AndroidOS_Package;
+package org.allbinary.logic.system.os.android.AndroidOS_Package_References is
+   type AndroidOS_Access is access all org.allbinary.logic.system.os.android.AndroidOS_Package.AndroidOS'Class;
+   type AndroidOS_Access_Array is array (Natural range <>) of AndroidOS_Access;
+   type AndroidOS_Access_Array_Access is access all AndroidOS_Access_Array;
+   type AndroidOS_Access_Array_Access_Array is array (Natural range <>) of AndroidOS_Access_Array_Access;
+   type AndroidOS_Access_Array_Access_Array_Access is access all AndroidOS_Access_Array_Access_Array;
+end org.allbinary.logic.system.os.android.AndroidOS_Package_References;
+
+with org.allbinary.logic.system.os.android.AndroidOS_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+limited with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package_References;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 
 package org.allbinary.logic.system.os.android.AndroidOS_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package Reference_Types is
+   subtype StringMaker_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access;
+   use type StringMaker_Access;
+   subtype StringMaker_Access_Array is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array;
+   use type StringMaker_Access_Array;
+   subtype StringMaker_Access_Array_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access;
+   use type StringMaker_Access_Array_Access;
+   subtype StringMaker_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access_Array;
+   use type StringMaker_Access_Array_Access_Array;
+   subtype StringMaker_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringMaker_Package_References.StringMaker_Access_Array_Access_Array_Access;
+   use type StringMaker_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AndroidOS is tagged;
-   type AndroidOS_Access is access all AndroidOS'Class;
-   type AndroidOS_Access_Array is array (Natural range <>) of AndroidOS_Access;
-   type AndroidOS_Access_Array_Access is access all AndroidOS_Access_Array;
-   type AndroidOS_Access_Array_Access_Array is array (Natural range <>) of AndroidOS_Access_Array_Access;
-   type AndroidOS_Access_Array_Access_Array_Access is access all AndroidOS_Access_Array_Access_Array;
+
+   subtype AndroidOS_Access is org.allbinary.logic.system.os.android.AndroidOS_Package_References.AndroidOS_Access;
+   function "=" (Left, Right : AndroidOS_Access) return Boolean renames org.allbinary.logic.system.os.android.AndroidOS_Package_References."=";
+   subtype AndroidOS_Access_Array is org.allbinary.logic.system.os.android.AndroidOS_Package_References.AndroidOS_Access_Array;
+   function "=" (Left, Right : AndroidOS_Access_Array) return Boolean renames org.allbinary.logic.system.os.android.AndroidOS_Package_References."=";
+   subtype AndroidOS_Access_Array_Access is org.allbinary.logic.system.os.android.AndroidOS_Package_References.AndroidOS_Access_Array_Access;
+   function "=" (Left, Right : AndroidOS_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.android.AndroidOS_Package_References."=";
+   subtype AndroidOS_Access_Array_Access_Array is org.allbinary.logic.system.os.android.AndroidOS_Package_References.AndroidOS_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidOS_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.os.android.AndroidOS_Package_References."=";
+   subtype AndroidOS_Access_Array_Access_Array_Access is org.allbinary.logic.system.os.android.AndroidOS_Package_References.AndroidOS_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidOS_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.android.AndroidOS_Package_References."=";
 
    type AndroidOS is new GenericOperatingSystem with record
       stringBuffer : StringMaker_Access;

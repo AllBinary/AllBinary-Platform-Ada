@@ -37,7 +37,7 @@ package body org.allbinary.canvas.GameStatisticsFactory_Package is
 
    function getInstance return GameStatisticsFactory_Access is
    begin
-        return GameStatisticsFactory_Package.instance;
+        return GameStatisticsFactory_Access (GameStatisticsFactory_Package.instance);
    end getInstance;
 
    procedure add (This : in out GameStatisticsFactory; string_Id : Unbounded_String) is

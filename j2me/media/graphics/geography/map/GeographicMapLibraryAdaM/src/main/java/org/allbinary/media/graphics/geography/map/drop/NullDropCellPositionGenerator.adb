@@ -13,6 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.drop.DropCellPositionGeneratorInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 
 package body org.allbinary.media.graphics.geography.map.drop.NullDropCellPositionGenerator_Package is
 
@@ -37,7 +49,7 @@ package body org.allbinary.media.graphics.geography.map.drop.NullDropCellPositio
 
    function getInstance return NullDropCellPositionGenerator_Access is
    begin
-        return NullDropCellPositionGenerator_Package.instance;
+        return NullDropCellPositionGenerator_Access (NullDropCellPositionGenerator_Package.instance);
    end getInstance;
 
 begin

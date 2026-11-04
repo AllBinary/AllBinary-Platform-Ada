@@ -30,7 +30,7 @@ package body org.allbinary.logic.java.characters.CharacterSetData_Package is
 
    function getInstance return CharacterSetData_Access is
    begin
-        return CharacterSetData_Package.instance;
+        return CharacterSetData_Access (CharacterSetData_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out CharacterSetData'Class) is

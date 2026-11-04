@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.smtp.EmailData_Package;
+package org.allbinary.logic.communication.smtp.EmailData_Package_References is
+   type EmailData_Access is access all org.allbinary.logic.communication.smtp.EmailData_Package.EmailData'Class;
+   type EmailData_Access_Array is array (Natural range <>) of EmailData_Access;
+   type EmailData_Access_Array_Access is access all EmailData_Access_Array;
+   type EmailData_Access_Array_Access_Array is array (Natural range <>) of EmailData_Access_Array_Access;
+   type EmailData_Access_Array_Access_Array_Access is access all EmailData_Access_Array_Access_Array;
+end org.allbinary.logic.communication.smtp.EmailData_Package_References;
+
+with org.allbinary.logic.communication.smtp.EmailData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.communication.smtp.EmailData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type EmailData is tagged;
-   type EmailData_Access is access all EmailData'Class;
-   type EmailData_Access_Array is array (Natural range <>) of EmailData_Access;
-   type EmailData_Access_Array_Access is access all EmailData_Access_Array;
-   type EmailData_Access_Array_Access_Array is array (Natural range <>) of EmailData_Access_Array_Access;
-   type EmailData_Access_Array_Access_Array_Access is access all EmailData_Access_Array_Access_Array;
+
+   subtype EmailData_Access is org.allbinary.logic.communication.smtp.EmailData_Package_References.EmailData_Access;
+   function "=" (Left, Right : EmailData_Access) return Boolean renames org.allbinary.logic.communication.smtp.EmailData_Package_References."=";
+   subtype EmailData_Access_Array is org.allbinary.logic.communication.smtp.EmailData_Package_References.EmailData_Access_Array;
+   function "=" (Left, Right : EmailData_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.EmailData_Package_References."=";
+   subtype EmailData_Access_Array_Access is org.allbinary.logic.communication.smtp.EmailData_Package_References.EmailData_Access_Array_Access;
+   function "=" (Left, Right : EmailData_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.EmailData_Package_References."=";
+   subtype EmailData_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.EmailData_Package_References.EmailData_Access_Array_Access_Array;
+   function "=" (Left, Right : EmailData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.EmailData_Package_References."=";
+   subtype EmailData_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.EmailData_Package_References.EmailData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EmailData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.EmailData_Package_References."=";
 
    type EmailData is new Java_Object with null record;
    SERVER : Unbounded_String;

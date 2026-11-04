@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.score.HighScores_Package;
+package org.allbinary.game.score.HighScores_Package_References is
+   type HighScores_Access is access all org.allbinary.game.score.HighScores_Package.HighScores'Class;
+   type HighScores_Access_Array is array (Natural range <>) of HighScores_Access;
+   type HighScores_Access_Array_Access is access all HighScores_Access_Array;
+   type HighScores_Access_Array_Access_Array is array (Natural range <>) of HighScores_Access_Array_Access;
+   type HighScores_Access_Array_Access_Array_Access is access all HighScores_Access_Array_Access_Array;
+end org.allbinary.game.score.HighScores_Package_References;
+
+with org.allbinary.game.score.HighScores_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.score.HighScoresInterface_Package; use org.allbinary.game.score.HighScoresInterface_Package;
-with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
+limited with org.allbinary.game.score.HighScore_Package;
+with org.allbinary.game.score.HighScore_Package_References;
 
 package org.allbinary.game.score.HighScores_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype HighScore_Access is org.allbinary.game.score.HighScore_Package_References.HighScore_Access;
+   use type HighScore_Access;
+   subtype HighScore_Access_Array is org.allbinary.game.score.HighScore_Package_References.HighScore_Access_Array;
+   use type HighScore_Access_Array;
+   subtype HighScore_Access_Array_Access is org.allbinary.game.score.HighScore_Package_References.HighScore_Access_Array_Access;
+   use type HighScore_Access_Array_Access;
+   subtype HighScore_Access_Array_Access_Array is org.allbinary.game.score.HighScore_Package_References.HighScore_Access_Array_Access_Array;
+   use type HighScore_Access_Array_Access_Array;
+   subtype HighScore_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScore_Package_References.HighScore_Access_Array_Access_Array_Access;
+   use type HighScore_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type HighScores is tagged;
-   type HighScores_Access is access all HighScores'Class;
-   type HighScores_Access_Array is array (Natural range <>) of HighScores_Access;
-   type HighScores_Access_Array_Access is access all HighScores_Access_Array;
-   type HighScores_Access_Array_Access_Array is array (Natural range <>) of HighScores_Access_Array_Access;
-   type HighScores_Access_Array_Access_Array_Access is access all HighScores_Access_Array_Access_Array;
+
+   subtype HighScores_Access is org.allbinary.game.score.HighScores_Package_References.HighScores_Access;
+   function "=" (Left, Right : HighScores_Access) return Boolean renames org.allbinary.game.score.HighScores_Package_References."=";
+   subtype HighScores_Access_Array is org.allbinary.game.score.HighScores_Package_References.HighScores_Access_Array;
+   function "=" (Left, Right : HighScores_Access_Array) return Boolean renames org.allbinary.game.score.HighScores_Package_References."=";
+   subtype HighScores_Access_Array_Access is org.allbinary.game.score.HighScores_Package_References.HighScores_Access_Array_Access;
+   function "=" (Left, Right : HighScores_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScores_Package_References."=";
+   subtype HighScores_Access_Array_Access_Array is org.allbinary.game.score.HighScores_Package_References.HighScores_Access_Array_Access_Array;
+   function "=" (Left, Right : HighScores_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.HighScores_Package_References."=";
+   subtype HighScores_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScores_Package_References.HighScores_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HighScores_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScores_Package_References."=";
 
    type HighScores is new Java_Object and HighScoresInterface with record
       orderedHighScoresList : BasicArrayList_Access;

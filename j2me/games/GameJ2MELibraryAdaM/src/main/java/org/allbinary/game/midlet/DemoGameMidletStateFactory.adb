@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.midlet.DemoGameMidletState_Package; use org.allbinary.game.midlet.DemoGameMidletState_Package;
+with org.allbinary.game.midlet.DemoGameMidletState_Package;
 
 package body org.allbinary.game.midlet.DemoGameMidletStateFactory_Package is
 
+   subtype DemoGameMidletState_Access is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access;
+   function "=" (Left, Right : DemoGameMidletState_Access) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
+   subtype DemoGameMidletState_Access_Array is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access_Array;
+   function "=" (Left, Right : DemoGameMidletState_Access_Array) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
+   subtype DemoGameMidletState_Access_Array_Access is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access_Array_Access;
+   function "=" (Left, Right : DemoGameMidletState_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
+   subtype DemoGameMidletState_Access_Array_Access_Array is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access_Array_Access_Array;
+   function "=" (Left, Right : DemoGameMidletState_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
+   subtype DemoGameMidletState_Access_Array_Access_Array_Access is org.allbinary.game.midlet.DemoGameMidletState_Package_References.DemoGameMidletState_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DemoGameMidletState_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.DemoGameMidletState_Package_References."=";
    procedure Initialize_Fields (This : in out DemoGameMidletStateFactory'Class) is
    begin
       null;
@@ -41,7 +53,7 @@ package body org.allbinary.game.midlet.DemoGameMidletStateFactory_Package is
 
    function getInstance return DemoGameMidletStateFactory_Access is
    begin
-        return DemoGameMidletStateFactory_Package.STATE;
+        return DemoGameMidletStateFactory_Access (DemoGameMidletStateFactory_Package.STATE);
    end getInstance;
 
 begin

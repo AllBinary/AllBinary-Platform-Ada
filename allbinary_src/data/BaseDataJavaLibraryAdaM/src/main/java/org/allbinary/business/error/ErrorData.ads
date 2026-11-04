@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.error.ErrorData_Package;
+package org.allbinary.business.error.ErrorData_Package_References is
+   type ErrorData_Access is access all org.allbinary.business.error.ErrorData_Package.ErrorData'Class;
+   type ErrorData_Access_Array is array (Natural range <>) of ErrorData_Access;
+   type ErrorData_Access_Array_Access is access all ErrorData_Access_Array;
+   type ErrorData_Access_Array_Access_Array is array (Natural range <>) of ErrorData_Access_Array_Access;
+   type ErrorData_Access_Array_Access_Array_Access is access all ErrorData_Access_Array_Access_Array;
+end org.allbinary.business.error.ErrorData_Package_References;
+
+with org.allbinary.business.error.ErrorData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.error.ErrorData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ErrorData is tagged;
-   type ErrorData_Access is access all ErrorData'Class;
-   type ErrorData_Access_Array is array (Natural range <>) of ErrorData_Access;
-   type ErrorData_Access_Array_Access is access all ErrorData_Access_Array;
-   type ErrorData_Access_Array_Access_Array is array (Natural range <>) of ErrorData_Access_Array_Access;
-   type ErrorData_Access_Array_Access_Array_Access is access all ErrorData_Access_Array_Access_Array;
+
+   subtype ErrorData_Access is org.allbinary.business.error.ErrorData_Package_References.ErrorData_Access;
+   function "=" (Left, Right : ErrorData_Access) return Boolean renames org.allbinary.business.error.ErrorData_Package_References."=";
+   subtype ErrorData_Access_Array is org.allbinary.business.error.ErrorData_Package_References.ErrorData_Access_Array;
+   function "=" (Left, Right : ErrorData_Access_Array) return Boolean renames org.allbinary.business.error.ErrorData_Package_References."=";
+   subtype ErrorData_Access_Array_Access is org.allbinary.business.error.ErrorData_Package_References.ErrorData_Access_Array_Access;
+   function "=" (Left, Right : ErrorData_Access_Array_Access) return Boolean renames org.allbinary.business.error.ErrorData_Package_References."=";
+   subtype ErrorData_Access_Array_Access_Array is org.allbinary.business.error.ErrorData_Package_References.ErrorData_Access_Array_Access_Array;
+   function "=" (Left, Right : ErrorData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.error.ErrorData_Package_References."=";
+   subtype ErrorData_Access_Array_Access_Array_Access is org.allbinary.business.error.ErrorData_Package_References.ErrorData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ErrorData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.error.ErrorData_Package_References."=";
 
    type ErrorData is new Java_Object with record
       NAME : Unbounded_String;

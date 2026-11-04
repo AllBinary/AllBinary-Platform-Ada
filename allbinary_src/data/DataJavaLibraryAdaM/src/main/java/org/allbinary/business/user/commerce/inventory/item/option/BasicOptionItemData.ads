@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package;
+package org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References is
+   type BasicOptionItemData_Access is access all org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package.BasicOptionItemData'Class;
+   type BasicOptionItemData_Access_Array is array (Natural range <>) of BasicOptionItemData_Access;
+   type BasicOptionItemData_Access_Array_Access is access all BasicOptionItemData_Access_Array;
+   type BasicOptionItemData_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemData_Access_Array_Access;
+   type BasicOptionItemData_Access_Array_Access_Array_Access is access all BasicOptionItemData_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References;
+
+with org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicOptionItemData is tagged;
-   type BasicOptionItemData_Access is access all BasicOptionItemData'Class;
-   type BasicOptionItemData_Access_Array is array (Natural range <>) of BasicOptionItemData_Access;
-   type BasicOptionItemData_Access_Array_Access is access all BasicOptionItemData_Access_Array;
-   type BasicOptionItemData_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemData_Access_Array_Access;
-   type BasicOptionItemData_Access_Array_Access_Array_Access is access all BasicOptionItemData_Access_Array_Access_Array;
+
+   subtype BasicOptionItemData_Access is org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References.BasicOptionItemData_Access;
+   function "=" (Left, Right : BasicOptionItemData_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References."=";
+   subtype BasicOptionItemData_Access_Array is org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References.BasicOptionItemData_Access_Array;
+   function "=" (Left, Right : BasicOptionItemData_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References."=";
+   subtype BasicOptionItemData_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References.BasicOptionItemData_Access_Array_Access;
+   function "=" (Left, Right : BasicOptionItemData_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References."=";
+   subtype BasicOptionItemData_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References.BasicOptionItemData_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicOptionItemData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References."=";
+   subtype BasicOptionItemData_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References.BasicOptionItemData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicOptionItemData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package_References."=";
 
    type BasicOptionItemData is new Java_Object with null record;
    OPTION_ONE_TITLE : Unbounded_String;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package;
+package org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References is
+   type WorkFlowEntityInterface_Access is access all org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package.WorkFlowEntityInterface'Class;
+   type WorkFlowEntityInterface_Access_Array is array (Natural range <>) of WorkFlowEntityInterface_Access;
+   type WorkFlowEntityInterface_Access_Array_Access is access all WorkFlowEntityInterface_Access_Array;
+   type WorkFlowEntityInterface_Access_Array_Access_Array is array (Natural range <>) of WorkFlowEntityInterface_Access_Array_Access;
+   type WorkFlowEntityInterface_Access_Array_Access_Array_Access is access all WorkFlowEntityInterface_Access_Array_Access_Array;
+end org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References;
+
+with org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,9 +31,11 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
-with org.allbinary.logic.control.workflow.WorkFlowInterface_Package; use org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
+limited with org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
+with org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References;
 
 package org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package is
 
@@ -31,13 +43,43 @@ package org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package is
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
    package WorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype WorkFlowInterface_Access is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access;
+   use type WorkFlowInterface_Access;
+   subtype WorkFlowInterface_Access_Array is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access_Array;
+   use type WorkFlowInterface_Access_Array;
+   subtype WorkFlowInterface_Access_Array_Access is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access_Array_Access;
+   use type WorkFlowInterface_Access_Array_Access;
+   subtype WorkFlowInterface_Access_Array_Access_Array is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access_Array_Access_Array;
+   use type WorkFlowInterface_Access_Array_Access_Array;
+   subtype WorkFlowInterface_Access_Array_Access_Array_Access is org.allbinary.logic.control.workflow.WorkFlowInterface_Package_References.WorkFlowInterface_Access_Array_Access_Array_Access;
+   use type WorkFlowInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type WorkFlowEntityInterface is interface and BasicDataTableInterface;
-   type WorkFlowEntityInterface_Access is access all WorkFlowEntityInterface'Class;
-   type WorkFlowEntityInterface_Access_Array is array (Natural range <>) of WorkFlowEntityInterface_Access;
-   type WorkFlowEntityInterface_Access_Array_Access is access all WorkFlowEntityInterface_Access_Array;
-   type WorkFlowEntityInterface_Access_Array_Access_Array is array (Natural range <>) of WorkFlowEntityInterface_Access_Array_Access;
-   type WorkFlowEntityInterface_Access_Array_Access_Array_Access is access all WorkFlowEntityInterface_Access_Array_Access_Array;
+   subtype WorkFlowEntityInterface_Access is org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References.WorkFlowEntityInterface_Access;
+   function "=" (Left, Right : WorkFlowEntityInterface_Access) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References."=";
+   subtype WorkFlowEntityInterface_Access_Array is org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References.WorkFlowEntityInterface_Access_Array;
+   function "=" (Left, Right : WorkFlowEntityInterface_Access_Array) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References."=";
+   subtype WorkFlowEntityInterface_Access_Array_Access is org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References.WorkFlowEntityInterface_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowEntityInterface_Access_Array_Access) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References."=";
+   subtype WorkFlowEntityInterface_Access_Array_Access_Array is org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References.WorkFlowEntityInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : WorkFlowEntityInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References."=";
+   subtype WorkFlowEntityInterface_Access_Array_Access_Array_Access is org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References.WorkFlowEntityInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WorkFlowEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References."=";
+   function Java_Object_Access_From_WorkFlowEntityInterface (Value : WorkFlowEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function get (This : in out WorkFlowEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
    function get (This : in out WorkFlowEntityInterface; name : Unbounded_String; storeName : Unbounded_String) return WorkFlowInterface_Access is abstract;
    procedure delete (This : in out WorkFlowEntityInterface; name : Unbounded_String; storeName : Unbounded_String) is abstract;

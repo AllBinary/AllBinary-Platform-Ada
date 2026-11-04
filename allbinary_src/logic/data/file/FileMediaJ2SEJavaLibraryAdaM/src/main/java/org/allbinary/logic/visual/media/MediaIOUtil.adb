@@ -24,7 +24,7 @@ package body org.allbinary.logic.visual.media.MediaIOUtil_Package is
 
    function getInstance return MediaIOUtil_Access is
    begin
-        return MediaIOUtil_Package.instance;
+        return MediaIOUtil_Access (MediaIOUtil_Package.instance);
    end getInstance;
 
    function getReaderFormatNames (This : in out MediaIOUtil) return Unbounded_String_Array_Access is

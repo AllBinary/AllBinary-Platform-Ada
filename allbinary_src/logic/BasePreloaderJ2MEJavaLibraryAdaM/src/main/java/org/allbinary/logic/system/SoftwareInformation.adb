@@ -16,6 +16,7 @@
 with org.allbinary.KotlinUtil_Package; use org.allbinary.KotlinUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.KotlinUtil_Package;
 
 package body org.allbinary.logic.system.SoftwareInformation_Package is
 

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
+package org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References is
+   type AbeClientInformationData_Access is access all org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package.AbeClientInformationData'Class;
+   type AbeClientInformationData_Access_Array is array (Natural range <>) of AbeClientInformationData_Access;
+   type AbeClientInformationData_Access_Array_Access is access all AbeClientInformationData_Access_Array;
+   type AbeClientInformationData_Access_Array_Access_Array is array (Natural range <>) of AbeClientInformationData_Access_Array_Access;
+   type AbeClientInformationData_Access_Array_Access_Array_Access is access all AbeClientInformationData_Access_Array_Access_Array;
+end org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References;
+
+with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbeClientInformationData is tagged;
-   type AbeClientInformationData_Access is access all AbeClientInformationData'Class;
-   type AbeClientInformationData_Access_Array is array (Natural range <>) of AbeClientInformationData_Access;
-   type AbeClientInformationData_Access_Array_Access is access all AbeClientInformationData_Access_Array;
-   type AbeClientInformationData_Access_Array_Access_Array is array (Natural range <>) of AbeClientInformationData_Access_Array_Access;
-   type AbeClientInformationData_Access_Array_Access_Array_Access is access all AbeClientInformationData_Access_Array_Access_Array;
+
+   subtype AbeClientInformationData_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References.AbeClientInformationData_Access;
+   function "=" (Left, Right : AbeClientInformationData_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References."=";
+   subtype AbeClientInformationData_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References.AbeClientInformationData_Access_Array;
+   function "=" (Left, Right : AbeClientInformationData_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References."=";
+   subtype AbeClientInformationData_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References.AbeClientInformationData_Access_Array_Access;
+   function "=" (Left, Right : AbeClientInformationData_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References."=";
+   subtype AbeClientInformationData_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References.AbeClientInformationData_Access_Array_Access_Array;
+   function "=" (Left, Right : AbeClientInformationData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References."=";
+   subtype AbeClientInformationData_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References.AbeClientInformationData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbeClientInformationData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package_References."=";
 
    type AbeClientInformationData is new Java_Object with record
       KEY : Unbounded_String;

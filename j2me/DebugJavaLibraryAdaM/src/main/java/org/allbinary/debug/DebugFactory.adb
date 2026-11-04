@@ -14,9 +14,22 @@
 
 
 with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
+with org.allbinary.debug.DebugInterface_Package; use org.allbinary.debug.DebugInterface_Package;
+with org.allbinary.debug.DebugInterface_Package;
+with org.allbinary.debug.NoDebug_Package;
 
 package body org.allbinary.debug.DebugFactory_Package is
 
+   subtype DebugInterface_Access is org.allbinary.debug.DebugInterface_Package_References.DebugInterface_Access;
+   function "=" (Left, Right : DebugInterface_Access) return Boolean renames org.allbinary.debug.DebugInterface_Package_References."=";
+   subtype DebugInterface_Access_Array is org.allbinary.debug.DebugInterface_Package_References.DebugInterface_Access_Array;
+   function "=" (Left, Right : DebugInterface_Access_Array) return Boolean renames org.allbinary.debug.DebugInterface_Package_References."=";
+   subtype DebugInterface_Access_Array_Access is org.allbinary.debug.DebugInterface_Package_References.DebugInterface_Access_Array_Access;
+   function "=" (Left, Right : DebugInterface_Access_Array_Access) return Boolean renames org.allbinary.debug.DebugInterface_Package_References."=";
+   subtype DebugInterface_Access_Array_Access_Array is org.allbinary.debug.DebugInterface_Package_References.DebugInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : DebugInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.debug.DebugInterface_Package_References."=";
+   subtype DebugInterface_Access_Array_Access_Array_Access is org.allbinary.debug.DebugInterface_Package_References.DebugInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DebugInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.debug.DebugInterface_Package_References."=";
    procedure Initialize_Fields (This : in out DebugFactory'Class) is
    begin
       null;

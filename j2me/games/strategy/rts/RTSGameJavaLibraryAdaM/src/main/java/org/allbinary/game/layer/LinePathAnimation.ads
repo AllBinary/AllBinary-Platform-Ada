@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.LinePathAnimation_Package;
+package org.allbinary.game.layer.LinePathAnimation_Package_References is
+   type LinePathAnimation_Access is access all org.allbinary.game.layer.LinePathAnimation_Package.LinePathAnimation'Class;
+   type LinePathAnimation_Access_Array is array (Natural range <>) of LinePathAnimation_Access;
+   type LinePathAnimation_Access_Array_Access is access all LinePathAnimation_Access_Array;
+   type LinePathAnimation_Access_Array_Access_Array is array (Natural range <>) of LinePathAnimation_Access_Array_Access;
+   type LinePathAnimation_Access_Array_Access_Array_Access is access all LinePathAnimation_Access_Array_Access_Array;
+end org.allbinary.game.layer.LinePathAnimation_Package_References;
+
+with org.allbinary.game.layer.LinePathAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.GPoint_Package_References;
+limited with org.allbinary.layer.Layer_Package;
+with org.allbinary.layer.Layer_Package_References;
 
 package org.allbinary.game.layer.LinePathAnimation_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
+   package Reference_Types is
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   use type GPoint_Access;
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   use type GPoint_Access_Array;
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   use type GPoint_Access_Array_Access;
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   use type GPoint_Access_Array_Access_Array;
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   use type GPoint_Access_Array_Access_Array_Access;
+   subtype Layer_Access is org.allbinary.layer.Layer_Package_References.Layer_Access;
+   use type Layer_Access;
+   subtype Layer_Access_Array is org.allbinary.layer.Layer_Package_References.Layer_Access_Array;
+   use type Layer_Access_Array;
+   subtype Layer_Access_Array_Access is org.allbinary.layer.Layer_Package_References.Layer_Access_Array_Access;
+   use type Layer_Access_Array_Access;
+   subtype Layer_Access_Array_Access_Array is org.allbinary.layer.Layer_Package_References.Layer_Access_Array_Access_Array;
+   use type Layer_Access_Array_Access_Array;
+   subtype Layer_Access_Array_Access_Array_Access is org.allbinary.layer.Layer_Package_References.Layer_Access_Array_Access_Array_Access;
+   use type Layer_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type LinePathAnimation is tagged;
-   type LinePathAnimation_Access is access all LinePathAnimation'Class;
-   type LinePathAnimation_Access_Array is array (Natural range <>) of LinePathAnimation_Access;
-   type LinePathAnimation_Access_Array_Access is access all LinePathAnimation_Access_Array;
-   type LinePathAnimation_Access_Array_Access_Array is array (Natural range <>) of LinePathAnimation_Access_Array_Access;
-   type LinePathAnimation_Access_Array_Access_Array_Access is access all LinePathAnimation_Access_Array_Access_Array;
+
+   subtype LinePathAnimation_Access is org.allbinary.game.layer.LinePathAnimation_Package_References.LinePathAnimation_Access;
+   function "=" (Left, Right : LinePathAnimation_Access) return Boolean renames org.allbinary.game.layer.LinePathAnimation_Package_References."=";
+   subtype LinePathAnimation_Access_Array is org.allbinary.game.layer.LinePathAnimation_Package_References.LinePathAnimation_Access_Array;
+   function "=" (Left, Right : LinePathAnimation_Access_Array) return Boolean renames org.allbinary.game.layer.LinePathAnimation_Package_References."=";
+   subtype LinePathAnimation_Access_Array_Access is org.allbinary.game.layer.LinePathAnimation_Package_References.LinePathAnimation_Access_Array_Access;
+   function "=" (Left, Right : LinePathAnimation_Access_Array_Access) return Boolean renames org.allbinary.game.layer.LinePathAnimation_Package_References."=";
+   subtype LinePathAnimation_Access_Array_Access_Array is org.allbinary.game.layer.LinePathAnimation_Package_References.LinePathAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : LinePathAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.LinePathAnimation_Package_References."=";
+   subtype LinePathAnimation_Access_Array_Access_Array_Access is org.allbinary.game.layer.LinePathAnimation_Package_References.LinePathAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LinePathAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.LinePathAnimation_Package_References."=";
 
    type LinePathAnimation is new Java_Object with null record;
    instance : LinePathAnimation_Access;

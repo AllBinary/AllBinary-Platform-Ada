@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.CellPosition_Package;
+package org.allbinary.graphics.CellPosition_Package_References is
+   type CellPosition_Access is access all org.allbinary.graphics.CellPosition_Package.CellPosition'Class;
+   type CellPosition_Access_Array is array (Natural range <>) of CellPosition_Access;
+   type CellPosition_Access_Array_Access is access all CellPosition_Access_Array;
+   type CellPosition_Access_Array_Access_Array is array (Natural range <>) of CellPosition_Access_Array_Access;
+   type CellPosition_Access_Array_Access_Array_Access is access all CellPosition_Access_Array_Access_Array;
+end org.allbinary.graphics.CellPosition_Package_References;
+
+with org.allbinary.graphics.CellPosition_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.graph.V_Package; use org.allbinary.graph.V_Package;
 package org.allbinary.graphics.CellPosition_Package is
 
    package V_Package renames Standard.org.allbinary.graph.V_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CellPosition is tagged;
-   type CellPosition_Access is access all CellPosition'Class;
-   type CellPosition_Access_Array is array (Natural range <>) of CellPosition_Access;
-   type CellPosition_Access_Array_Access is access all CellPosition_Access_Array;
-   type CellPosition_Access_Array_Access_Array is array (Natural range <>) of CellPosition_Access_Array_Access;
-   type CellPosition_Access_Array_Access_Array_Access is access all CellPosition_Access_Array_Access_Array;
+
+   subtype CellPosition_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access;
+   function "=" (Left, Right : CellPosition_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array;
+   function "=" (Left, Right : CellPosition_Access_Array) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access;
+   function "=" (Left, Right : CellPosition_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array_Access_Array is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array;
+   function "=" (Left, Right : CellPosition_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   subtype CellPosition_Access_Array_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CellPosition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
 
    type CellPosition is new V with record
       id : Integer;

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
+package org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References is
+   type AnimationFactoryImageScaleUtil_Access is access all org.allbinary.image.AnimationFactoryImageScaleUtil_Package.AnimationFactoryImageScaleUtil'Class;
+   type AnimationFactoryImageScaleUtil_Access_Array is array (Natural range <>) of AnimationFactoryImageScaleUtil_Access;
+   type AnimationFactoryImageScaleUtil_Access_Array_Access is access all AnimationFactoryImageScaleUtil_Access_Array;
+   type AnimationFactoryImageScaleUtil_Access_Array_Access_Array is array (Natural range <>) of AnimationFactoryImageScaleUtil_Access_Array_Access;
+   type AnimationFactoryImageScaleUtil_Access_Array_Access_Array_Access is access all AnimationFactoryImageScaleUtil_Access_Array_Access_Array;
+end org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References;
+
+with org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-with org.allbinary.media.image.ImageJ2MEScaleUtil_Package; use org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.BaseImageAnimationFactory_Package_References;
+limited with org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
+with org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References;
 
 package org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package BaseImageAnimationFactory_Package renames Standard.org.allbinary.animation.image.BaseImageAnimationFactory_Package;
    package ImageJ2MEScaleUtil_Package renames Standard.org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype BaseImageAnimationFactory_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access;
+   use type BaseImageAnimationFactory_Access;
+   subtype BaseImageAnimationFactory_Access_Array is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array;
+   use type BaseImageAnimationFactory_Access_Array;
+   subtype BaseImageAnimationFactory_Access_Array_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access;
+   use type BaseImageAnimationFactory_Access_Array_Access;
+   subtype BaseImageAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access_Array;
+   use type BaseImageAnimationFactory_Access_Array_Access_Array;
+   subtype BaseImageAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access_Array_Access;
+   use type BaseImageAnimationFactory_Access_Array_Access_Array_Access;
+   subtype ImageJ2MEScaleUtil_Access is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access;
+   use type ImageJ2MEScaleUtil_Access;
+   subtype ImageJ2MEScaleUtil_Access_Array is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access_Array;
+   use type ImageJ2MEScaleUtil_Access_Array;
+   subtype ImageJ2MEScaleUtil_Access_Array_Access is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access_Array_Access;
+   use type ImageJ2MEScaleUtil_Access_Array_Access;
+   subtype ImageJ2MEScaleUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access_Array_Access_Array;
+   use type ImageJ2MEScaleUtil_Access_Array_Access_Array;
+   subtype ImageJ2MEScaleUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access_Array_Access_Array_Access;
+   use type ImageJ2MEScaleUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AnimationFactoryImageScaleUtil is tagged;
-   type AnimationFactoryImageScaleUtil_Access is access all AnimationFactoryImageScaleUtil'Class;
-   type AnimationFactoryImageScaleUtil_Access_Array is array (Natural range <>) of AnimationFactoryImageScaleUtil_Access;
-   type AnimationFactoryImageScaleUtil_Access_Array_Access is access all AnimationFactoryImageScaleUtil_Access_Array;
-   type AnimationFactoryImageScaleUtil_Access_Array_Access_Array is array (Natural range <>) of AnimationFactoryImageScaleUtil_Access_Array_Access;
-   type AnimationFactoryImageScaleUtil_Access_Array_Access_Array_Access is access all AnimationFactoryImageScaleUtil_Access_Array_Access_Array;
+
+   subtype AnimationFactoryImageScaleUtil_Access is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access;
+   function "=" (Left, Right : AnimationFactoryImageScaleUtil_Access) return Boolean renames org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References."=";
+   subtype AnimationFactoryImageScaleUtil_Access_Array is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access_Array;
+   function "=" (Left, Right : AnimationFactoryImageScaleUtil_Access_Array) return Boolean renames org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References."=";
+   subtype AnimationFactoryImageScaleUtil_Access_Array_Access is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access_Array_Access;
+   function "=" (Left, Right : AnimationFactoryImageScaleUtil_Access_Array_Access) return Boolean renames org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References."=";
+   subtype AnimationFactoryImageScaleUtil_Access_Array_Access_Array is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : AnimationFactoryImageScaleUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References."=";
+   subtype AnimationFactoryImageScaleUtil_Access_Array_Access_Array_Access is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AnimationFactoryImageScaleUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References."=";
 
    type AnimationFactoryImageScaleUtil is new Java_Object with record
       imageScaleUtil : ImageJ2MEScaleUtil_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package;
+package org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References is
+   type BasicAdvertisementWebsite_Access is access all org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package.BasicAdvertisementWebsite'Class;
+   type BasicAdvertisementWebsite_Access_Array is array (Natural range <>) of BasicAdvertisementWebsite_Access;
+   type BasicAdvertisementWebsite_Access_Array_Access is access all BasicAdvertisementWebsite_Access_Array;
+   type BasicAdvertisementWebsite_Access_Array_Access_Array is array (Natural range <>) of BasicAdvertisementWebsite_Access_Array_Access;
+   type BasicAdvertisementWebsite_Access_Array_Access_Array_Access is access all BasicAdvertisementWebsite_Access_Array_Access_Array;
+end org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References;
+
+with org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.business.advertisement.search.website.AdvertisementWebsiteInt
 
 package org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicAdvertisementWebsite is tagged;
-   type BasicAdvertisementWebsite_Access is access all BasicAdvertisementWebsite'Class;
-   type BasicAdvertisementWebsite_Access_Array is array (Natural range <>) of BasicAdvertisementWebsite_Access;
-   type BasicAdvertisementWebsite_Access_Array_Access is access all BasicAdvertisementWebsite_Access_Array;
-   type BasicAdvertisementWebsite_Access_Array_Access_Array is array (Natural range <>) of BasicAdvertisementWebsite_Access_Array_Access;
-   type BasicAdvertisementWebsite_Access_Array_Access_Array_Access is access all BasicAdvertisementWebsite_Access_Array_Access_Array;
+
+   subtype BasicAdvertisementWebsite_Access is org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References.BasicAdvertisementWebsite_Access;
+   function "=" (Left, Right : BasicAdvertisementWebsite_Access) return Boolean renames org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References."=";
+   subtype BasicAdvertisementWebsite_Access_Array is org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References.BasicAdvertisementWebsite_Access_Array;
+   function "=" (Left, Right : BasicAdvertisementWebsite_Access_Array) return Boolean renames org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References."=";
+   subtype BasicAdvertisementWebsite_Access_Array_Access is org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References.BasicAdvertisementWebsite_Access_Array_Access;
+   function "=" (Left, Right : BasicAdvertisementWebsite_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References."=";
+   subtype BasicAdvertisementWebsite_Access_Array_Access_Array is org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References.BasicAdvertisementWebsite_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicAdvertisementWebsite_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References."=";
+   subtype BasicAdvertisementWebsite_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References.BasicAdvertisementWebsite_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicAdvertisementWebsite_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.search.website.BasicAdvertisementWebsite_Package_References."=";
 
    type BasicAdvertisementWebsite is new Java_Object and AdvertisementWebsiteInterface with record
       websiteId : Unbounded_String;

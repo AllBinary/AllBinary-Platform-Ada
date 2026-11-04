@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
+package org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References is
+   type RaceTrackPickupLayer_Access is access all org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package.RaceTrackPickupLayer'Class;
+   type RaceTrackPickupLayer_Access_Array is array (Natural range <>) of RaceTrackPickupLayer_Access;
+   type RaceTrackPickupLayer_Access_Array_Access is access all RaceTrackPickupLayer_Access_Array;
+   type RaceTrackPickupLayer_Access_Array_Access_Array is array (Natural range <>) of RaceTrackPickupLayer_Access_Array_Access;
+   type RaceTrackPickupLayer_Access_Array_Access_Array_Access is access all RaceTrackPickupLayer_Access_Array_Access_Array;
+end org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References;
+
+with org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,21 +30,51 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.view.event.ViewPositionEventHandler_Package; use org.allbinary.view.event.ViewPositionEventHandler_Package;
+limited with org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
+limited with org.allbinary.view.event.ViewPositionEventHandler_Package;
+with org.allbinary.view.event.ViewPositionEventHandler_Package_References;
 with org.allbinary.game.layer.pickup.PickupLayer_Package; use org.allbinary.game.layer.pickup.PickupLayer_Package;
 
 package org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package is
 
    package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
    package ViewPositionEventHandler_Package renames Standard.org.allbinary.view.event.ViewPositionEventHandler_Package;
+   package Reference_Types is
+   subtype AllBinaryTiledLayer_Access is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access;
+   use type AllBinaryTiledLayer_Access;
+   subtype AllBinaryTiledLayer_Access_Array is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array;
+   use type AllBinaryTiledLayer_Access_Array;
+   subtype AllBinaryTiledLayer_Access_Array_Access is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array_Access;
+   use type AllBinaryTiledLayer_Access_Array_Access;
+   subtype AllBinaryTiledLayer_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array_Access_Array;
+   use type AllBinaryTiledLayer_Access_Array_Access_Array;
+   subtype AllBinaryTiledLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryTiledLayer_Access_Array_Access_Array_Access;
+   subtype ViewPositionEventHandler_Access is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access;
+   use type ViewPositionEventHandler_Access;
+   subtype ViewPositionEventHandler_Access_Array is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access_Array;
+   use type ViewPositionEventHandler_Access_Array;
+   subtype ViewPositionEventHandler_Access_Array_Access is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access_Array_Access;
+   use type ViewPositionEventHandler_Access_Array_Access;
+   subtype ViewPositionEventHandler_Access_Array_Access_Array is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access_Array_Access_Array;
+   use type ViewPositionEventHandler_Access_Array_Access_Array;
+   subtype ViewPositionEventHandler_Access_Array_Access_Array_Access is org.allbinary.view.event.ViewPositionEventHandler_Package_References.ViewPositionEventHandler_Access_Array_Access_Array_Access;
+   use type ViewPositionEventHandler_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type RaceTrackPickupLayer is tagged;
-   type RaceTrackPickupLayer_Access is access all RaceTrackPickupLayer'Class;
-   type RaceTrackPickupLayer_Access_Array is array (Natural range <>) of RaceTrackPickupLayer_Access;
-   type RaceTrackPickupLayer_Access_Array_Access is access all RaceTrackPickupLayer_Access_Array;
-   type RaceTrackPickupLayer_Access_Array_Access_Array is array (Natural range <>) of RaceTrackPickupLayer_Access_Array_Access;
-   type RaceTrackPickupLayer_Access_Array_Access_Array_Access is access all RaceTrackPickupLayer_Access_Array_Access_Array;
+
+   subtype RaceTrackPickupLayer_Access is org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References.RaceTrackPickupLayer_Access;
+   function "=" (Left, Right : RaceTrackPickupLayer_Access) return Boolean renames org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References."=";
+   subtype RaceTrackPickupLayer_Access_Array is org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References.RaceTrackPickupLayer_Access_Array;
+   function "=" (Left, Right : RaceTrackPickupLayer_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References."=";
+   subtype RaceTrackPickupLayer_Access_Array_Access is org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References.RaceTrackPickupLayer_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackPickupLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References."=";
+   subtype RaceTrackPickupLayer_Access_Array_Access_Array is org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References.RaceTrackPickupLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : RaceTrackPickupLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References."=";
+   subtype RaceTrackPickupLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References.RaceTrackPickupLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackPickupLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package_References."=";
 
    type RaceTrackPickupLayer is new PickupLayer with record
       viewPositionEventHandler : ViewPositionEventHandler_Access;

@@ -57,7 +57,7 @@ package body org.allbinary.string_Id.CommonLabels_Package is
 
    function getInstance return CommonLabels_Access is
    begin
-        return CommonLabels_Package.instance;
+        return CommonLabels_Access (CommonLabels_Package.instance);
    end getInstance;
 
 begin

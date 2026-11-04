@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.SensorAction_Package; use org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.game.layer.SensorAction_Package;
 
 package body org.allbinary.game.layer.SensorActionFactory_Package is
 
+   subtype SensorAction_Access is org.allbinary.game.layer.SensorAction_Package_References.SensorAction_Access;
+   function "=" (Left, Right : SensorAction_Access) return Boolean renames org.allbinary.game.layer.SensorAction_Package_References."=";
+   subtype SensorAction_Access_Array is org.allbinary.game.layer.SensorAction_Package_References.SensorAction_Access_Array;
+   function "=" (Left, Right : SensorAction_Access_Array) return Boolean renames org.allbinary.game.layer.SensorAction_Package_References."=";
+   subtype SensorAction_Access_Array_Access is org.allbinary.game.layer.SensorAction_Package_References.SensorAction_Access_Array_Access;
+   function "=" (Left, Right : SensorAction_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SensorAction_Package_References."=";
+   subtype SensorAction_Access_Array_Access_Array is org.allbinary.game.layer.SensorAction_Package_References.SensorAction_Access_Array_Access_Array;
+   function "=" (Left, Right : SensorAction_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.SensorAction_Package_References."=";
+   subtype SensorAction_Access_Array_Access_Array_Access is org.allbinary.game.layer.SensorAction_Package_References.SensorAction_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SensorAction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SensorAction_Package_References."=";
    procedure Initialize_Fields (This : in out SensorActionFactory'Class) is
    begin
       null;
@@ -26,7 +38,7 @@ package body org.allbinary.game.layer.SensorActionFactory_Package is
 
    function getInstance return SensorActionFactory_Access is
    begin
-        return SensorActionFactory_Package.instance;
+        return SensorActionFactory_Access (SensorActionFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out SensorActionFactory'Class) is

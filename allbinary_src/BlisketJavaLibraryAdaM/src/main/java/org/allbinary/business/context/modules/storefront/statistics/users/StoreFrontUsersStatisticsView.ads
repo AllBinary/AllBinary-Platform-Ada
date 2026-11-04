@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
+package org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References is
+   type StoreFrontUsersStatisticsView_Access is access all org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package.StoreFrontUsersStatisticsView'Class;
+   type StoreFrontUsersStatisticsView_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsView_Access;
+   type StoreFrontUsersStatisticsView_Access_Array_Access is access all StoreFrontUsersStatisticsView_Access_Array;
+   type StoreFrontUsersStatisticsView_Access_Array_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsView_Access_Array_Access;
+   type StoreFrontUsersStatisticsView_Access_Array_Access_Array_Access is access all StoreFrontUsersStatisticsView_Access_Array_Access_Array;
+end org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References;
+
+with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,22 +31,63 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
+limited with org.w3c.dom.Node_Package;
+with org.w3c.dom.Node_Package_References;
+limited with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package_References;
 
 package org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package is
 
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Reference_Types is
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   subtype Node_Access is org.w3c.dom.Node_Package_References.Node_Access;
+   use type Node_Access;
+   subtype Node_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array;
+   use type Node_Access_Array;
+   subtype Node_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access;
+   use type Node_Access_Array_Access;
+   subtype Node_Access_Array_Access_Array is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array;
+   use type Node_Access_Array_Access_Array;
+   subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
+   use type Node_Access_Array_Access_Array_Access;
+   subtype StoreFrontUsersStatisticsInterface_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package_References.StoreFrontUsersStatisticsInterface_Access;
+   use type StoreFrontUsersStatisticsInterface_Access;
+   subtype StoreFrontUsersStatisticsInterface_Access_Array is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package_References.StoreFrontUsersStatisticsInterface_Access_Array;
+   use type StoreFrontUsersStatisticsInterface_Access_Array;
+   subtype StoreFrontUsersStatisticsInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package_References.StoreFrontUsersStatisticsInterface_Access_Array_Access;
+   use type StoreFrontUsersStatisticsInterface_Access_Array_Access;
+   subtype StoreFrontUsersStatisticsInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package_References.StoreFrontUsersStatisticsInterface_Access_Array_Access_Array;
+   use type StoreFrontUsersStatisticsInterface_Access_Array_Access_Array;
+   subtype StoreFrontUsersStatisticsInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package_References.StoreFrontUsersStatisticsInterface_Access_Array_Access_Array_Access;
+   use type StoreFrontUsersStatisticsInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreFrontUsersStatisticsView is tagged;
-   type StoreFrontUsersStatisticsView_Access is access all StoreFrontUsersStatisticsView'Class;
-   type StoreFrontUsersStatisticsView_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsView_Access;
-   type StoreFrontUsersStatisticsView_Access_Array_Access is access all StoreFrontUsersStatisticsView_Access_Array;
-   type StoreFrontUsersStatisticsView_Access_Array_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsView_Access_Array_Access;
-   type StoreFrontUsersStatisticsView_Access_Array_Access_Array_Access is access all StoreFrontUsersStatisticsView_Access_Array_Access_Array;
+
+   subtype StoreFrontUsersStatisticsView_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References.StoreFrontUsersStatisticsView_Access;
+   function "=" (Left, Right : StoreFrontUsersStatisticsView_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References."=";
+   subtype StoreFrontUsersStatisticsView_Access_Array is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References.StoreFrontUsersStatisticsView_Access_Array;
+   function "=" (Left, Right : StoreFrontUsersStatisticsView_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References."=";
+   subtype StoreFrontUsersStatisticsView_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References.StoreFrontUsersStatisticsView_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontUsersStatisticsView_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References."=";
+   subtype StoreFrontUsersStatisticsView_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References.StoreFrontUsersStatisticsView_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontUsersStatisticsView_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References."=";
+   subtype StoreFrontUsersStatisticsView_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References.StoreFrontUsersStatisticsView_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontUsersStatisticsView_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package_References."=";
 
    type StoreFrontUsersStatisticsView is new Java_Object and DomNodeInterface with record
       storeFrontUsersStatisticsInterface : StoreFrontUsersStatisticsInterface_Access;

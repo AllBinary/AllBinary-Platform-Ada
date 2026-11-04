@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package;
+package org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References is
+   type NoGeographicMapCellPositionFactoryInitVisitor_Access is access all org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package.NoGeographicMapCellPositionFactoryInitVisitor'Class;
+   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array is array (Natural range <>) of NoGeographicMapCellPositionFactoryInitVisitor_Access;
+   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access is access all NoGeographicMapCellPositionFactoryInitVisitor_Access_Array;
+   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array is array (Natural range <>) of NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access;
+   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array_Access is access all NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References;
+
+with org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+limited with org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 package org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package is
 
    package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package Reference_Types is
+   subtype AllBinaryTiledLayer_Access is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access;
+   use type AllBinaryTiledLayer_Access;
+   subtype AllBinaryTiledLayer_Access_Array is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array;
+   use type AllBinaryTiledLayer_Access_Array;
+   subtype AllBinaryTiledLayer_Access_Array_Access is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array_Access;
+   use type AllBinaryTiledLayer_Access_Array_Access;
+   subtype AllBinaryTiledLayer_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array_Access_Array;
+   use type AllBinaryTiledLayer_Access_Array_Access_Array;
+   subtype AllBinaryTiledLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryTiledLayer_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access;
+   use type GeographicMapCellPosition_Access;
+   subtype GeographicMapCellPosition_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array;
+   use type GeographicMapCellPosition_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
+   use type GeographicMapCellPosition_Access_Array_Access_Array;
+   subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   use type GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoGeographicMapCellPositionFactoryInitVisitor is tagged;
-   type NoGeographicMapCellPositionFactoryInitVisitor_Access is access all NoGeographicMapCellPositionFactoryInitVisitor'Class;
-   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array is array (Natural range <>) of NoGeographicMapCellPositionFactoryInitVisitor_Access;
-   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access is access all NoGeographicMapCellPositionFactoryInitVisitor_Access_Array;
-   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array is array (Natural range <>) of NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access;
-   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array_Access is access all NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array;
+
+   subtype NoGeographicMapCellPositionFactoryInitVisitor_Access is org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References.NoGeographicMapCellPositionFactoryInitVisitor_Access;
+   function "=" (Left, Right : NoGeographicMapCellPositionFactoryInitVisitor_Access) return Boolean renames org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References."=";
+   subtype NoGeographicMapCellPositionFactoryInitVisitor_Access_Array is org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References.NoGeographicMapCellPositionFactoryInitVisitor_Access_Array;
+   function "=" (Left, Right : NoGeographicMapCellPositionFactoryInitVisitor_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References."=";
+   subtype NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access is org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References.NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access;
+   function "=" (Left, Right : NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References."=";
+   subtype NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References.NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References."=";
+   subtype NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References.NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package_References."=";
 
    type NoGeographicMapCellPositionFactoryInitVisitor is new Java_Object and GeographicMapCellPositionFactoryInitVisitorInterface with null record;
 

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
 
 package body org.allbinary.game.resource.ResourceInitialization_Package is
 

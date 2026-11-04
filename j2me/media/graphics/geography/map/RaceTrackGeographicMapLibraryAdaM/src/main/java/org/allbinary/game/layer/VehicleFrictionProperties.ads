@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.VehicleFrictionProperties_Package;
+package org.allbinary.game.layer.VehicleFrictionProperties_Package_References is
+   type VehicleFrictionProperties_Access is access all org.allbinary.game.layer.VehicleFrictionProperties_Package.VehicleFrictionProperties'Class;
+   type VehicleFrictionProperties_Access_Array is array (Natural range <>) of VehicleFrictionProperties_Access;
+   type VehicleFrictionProperties_Access_Array_Access is access all VehicleFrictionProperties_Access_Array;
+   type VehicleFrictionProperties_Access_Array_Access_Array is array (Natural range <>) of VehicleFrictionProperties_Access_Array_Access;
+   type VehicleFrictionProperties_Access_Array_Access_Array_Access is access all VehicleFrictionProperties_Access_Array_Access_Array;
+end org.allbinary.game.layer.VehicleFrictionProperties_Package_References;
+
+with org.allbinary.game.layer.VehicleFrictionProperties_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.physics.FrictionProperties_Package; use org.allbinary.ga
 package org.allbinary.game.layer.VehicleFrictionProperties_Package is
 
    package FrictionProperties_Package renames Standard.org.allbinary.game.physics.FrictionProperties_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type VehicleFrictionProperties is tagged;
-   type VehicleFrictionProperties_Access is access all VehicleFrictionProperties'Class;
-   type VehicleFrictionProperties_Access_Array is array (Natural range <>) of VehicleFrictionProperties_Access;
-   type VehicleFrictionProperties_Access_Array_Access is access all VehicleFrictionProperties_Access_Array;
-   type VehicleFrictionProperties_Access_Array_Access_Array is array (Natural range <>) of VehicleFrictionProperties_Access_Array_Access;
-   type VehicleFrictionProperties_Access_Array_Access_Array_Access is access all VehicleFrictionProperties_Access_Array_Access_Array;
+
+   subtype VehicleFrictionProperties_Access is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access;
+   function "=" (Left, Right : VehicleFrictionProperties_Access) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
+   subtype VehicleFrictionProperties_Access_Array is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access_Array;
+   function "=" (Left, Right : VehicleFrictionProperties_Access_Array) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
+   subtype VehicleFrictionProperties_Access_Array_Access is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access_Array_Access;
+   function "=" (Left, Right : VehicleFrictionProperties_Access_Array_Access) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
+   subtype VehicleFrictionProperties_Access_Array_Access_Array is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : VehicleFrictionProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
+   subtype VehicleFrictionProperties_Access_Array_Access_Array_Access is org.allbinary.game.layer.VehicleFrictionProperties_Package_References.VehicleFrictionProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VehicleFrictionProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.VehicleFrictionProperties_Package_References."=";
 
    type VehicleFrictionProperties is new FrictionProperties with record
       TIRE_FRICTION_NOMINATOR : Integer;

@@ -13,9 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.paint.StatePaintable_Package; use org.allbinary.graphics.paint.StatePaintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.graphics.displayable.StateControlledInterface_Package;
+with org.allbinary.graphics.paint.StatePaintable_Package;
 
 package body org.allbinary.graphics.paint.StatePaintableFactory_Package is
 
+   subtype StatePaintable_Access is org.allbinary.graphics.paint.StatePaintable_Package_References.StatePaintable_Access;
+   function "=" (Left, Right : StatePaintable_Access) return Boolean renames org.allbinary.graphics.paint.StatePaintable_Package_References."=";
+   subtype StatePaintable_Access_Array is org.allbinary.graphics.paint.StatePaintable_Package_References.StatePaintable_Access_Array;
+   function "=" (Left, Right : StatePaintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.StatePaintable_Package_References."=";
+   subtype StatePaintable_Access_Array_Access is org.allbinary.graphics.paint.StatePaintable_Package_References.StatePaintable_Access_Array_Access;
+   function "=" (Left, Right : StatePaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.StatePaintable_Package_References."=";
+   subtype StatePaintable_Access_Array_Access_Array is org.allbinary.graphics.paint.StatePaintable_Package_References.StatePaintable_Access_Array_Access_Array;
+   function "=" (Left, Right : StatePaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.StatePaintable_Package_References."=";
+   subtype StatePaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.StatePaintable_Package_References.StatePaintable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StatePaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.StatePaintable_Package_References."=";
    procedure Initialize_Fields (This : in out StatePaintableFactory'Class) is
    begin
       null;
@@ -36,7 +51,7 @@ package body org.allbinary.graphics.paint.StatePaintableFactory_Package is
 
    function getInstance return StatePaintable_Access is
    begin
-        return StatePaintableFactory_Package.instance;
+        return StatePaintable_Access (StatePaintableFactory_Package.instance);
    end getInstance;
 
 begin

@@ -13,9 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.input.automation.module.JPanel_Package; use org.allbinary.input.automation.module.JPanel_Package;
 
 package body org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package is
 
+   subtype RunnableInterface_Access is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access;
+   function "=" (Left, Right : RunnableInterface_Access) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array;
+   function "=" (Left, Right : RunnableInterface_Access_Array) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array_Access is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array_Access;
+   function "=" (Left, Right : RunnableInterface_Access_Array_Access) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array_Access_Array is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : RunnableInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype RunnableInterface_Access_Array_Access_Array_Access is org.allbinary.thread.RunnableInterface_Package_References.RunnableInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RunnableInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.RunnableInterface_Package_References."=";
+   subtype JPanel_Access is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access;
+   function "=" (Left, Right : JPanel_Access) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
+   subtype JPanel_Access_Array is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access_Array;
+   function "=" (Left, Right : JPanel_Access_Array) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
+   subtype JPanel_Access_Array_Access is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access_Array_Access;
+   function "=" (Left, Right : JPanel_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
+   subtype JPanel_Access_Array_Access_Array is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access_Array_Access_Array;
+   function "=" (Left, Right : JPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
+   subtype JPanel_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : JPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationModuleFactoryInterface'Class) is
    begin
       null;

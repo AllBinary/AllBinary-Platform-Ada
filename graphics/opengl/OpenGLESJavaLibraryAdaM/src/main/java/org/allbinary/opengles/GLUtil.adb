@@ -20,6 +20,7 @@ package body org.allbinary.opengles.GLUtil_Package is
    begin
       null;
       This.BYTES_PER_FLOAT := 4;
+      This.NULL_FLOAT_BUFFER := ByteBuffer_Package.allocateDirect (0).asFloatBuffer;
    end Initialize_Fields;
 
    procedure Initialize (This : in out GLUtil'Class) is
@@ -82,7 +83,7 @@ package body org.allbinary.opengles.GLUtil_Package is
         unsigned := 0;
         v := 0.0;
         while byteBuffer.hasRemaining loop
-            unsigned := Java_And (byteBuffer.get, 16#FF#);
+            unsigned := Java_And ((Integer (byteBuffer.get)), 16#FF#);
             v := ((Float (unsigned))) / (255.0);
             buffer.put (v);
         end loop;
@@ -108,7 +109,7 @@ package body org.allbinary.opengles.GLUtil_Package is
       rv : Float;
       i : Integer;
    begin
-        angleRad := Ada.Numerics.Long_Elementary_Functions.ToRadians (angleDegrees);
+        angleRad := Ada.Numerics.Long_Elementary_Functions.ToRadians (Long_Float (angleDegrees));
         cosA := Ada.Numerics.Long_Elementary_Functions.Cos (angleRad);
         sinA := Ada.Numerics.Long_Elementary_Functions.Sin (angleRad);
         i := 0;

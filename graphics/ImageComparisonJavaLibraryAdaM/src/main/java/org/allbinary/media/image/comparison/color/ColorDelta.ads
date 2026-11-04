@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+package org.allbinary.media.image.comparison.color.ColorDelta_Package_References is
+   type ColorDelta_Access is access all org.allbinary.media.image.comparison.color.ColorDelta_Package.ColorDelta'Class;
+   type ColorDelta_Access_Array is array (Natural range <>) of ColorDelta_Access;
+   type ColorDelta_Access_Array_Access is access all ColorDelta_Access_Array;
+   type ColorDelta_Access_Array_Access_Array is array (Natural range <>) of ColorDelta_Access_Array_Access;
+   type ColorDelta_Access_Array_Access_Array_Access is access all ColorDelta_Access_Array_Access_Array;
+end org.allbinary.media.image.comparison.color.ColorDelta_Package_References;
+
+with org.allbinary.media.image.comparison.color.ColorDelta_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinar
 package org.allbinary.media.image.comparison.color.ColorDelta_Package is
 
    package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ColorDelta is tagged;
-   type ColorDelta_Access is access all ColorDelta'Class;
-   type ColorDelta_Access_Array is array (Natural range <>) of ColorDelta_Access;
-   type ColorDelta_Access_Array_Access is access all ColorDelta_Access_Array;
-   type ColorDelta_Access_Array_Access_Array is array (Natural range <>) of ColorDelta_Access_Array_Access;
-   type ColorDelta_Access_Array_Access_Array_Access is access all ColorDelta_Access_Array_Access_Array;
+
+   subtype ColorDelta_Access is org.allbinary.media.image.comparison.color.ColorDelta_Package_References.ColorDelta_Access;
+   function "=" (Left, Right : ColorDelta_Access) return Boolean renames org.allbinary.media.image.comparison.color.ColorDelta_Package_References."=";
+   subtype ColorDelta_Access_Array is org.allbinary.media.image.comparison.color.ColorDelta_Package_References.ColorDelta_Access_Array;
+   function "=" (Left, Right : ColorDelta_Access_Array) return Boolean renames org.allbinary.media.image.comparison.color.ColorDelta_Package_References."=";
+   subtype ColorDelta_Access_Array_Access is org.allbinary.media.image.comparison.color.ColorDelta_Package_References.ColorDelta_Access_Array_Access;
+   function "=" (Left, Right : ColorDelta_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.color.ColorDelta_Package_References."=";
+   subtype ColorDelta_Access_Array_Access_Array is org.allbinary.media.image.comparison.color.ColorDelta_Package_References.ColorDelta_Access_Array_Access_Array;
+   function "=" (Left, Right : ColorDelta_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.color.ColorDelta_Package_References."=";
+   subtype ColorDelta_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.color.ColorDelta_Package_References.ColorDelta_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ColorDelta_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.color.ColorDelta_Package_References."=";
 
    type ColorDelta is new Java_Object and CacheableInterface with record
       rgb1 : Integer;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.Activity_Package; use android.app.Activity_Package;
 with android.content.res.Configuration_Package; use android.content.res.Configuration_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
@@ -24,6 +25,16 @@ package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
    package Configuration_Package renames Standard.android.content.res.Configuration_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   function "=" (Left, Right : Activity_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
    procedure Initialize_Fields (This : in out TouchScreenTypeFactory'Class) is
    begin
       null;
@@ -44,7 +55,7 @@ package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
    function getInstance return TouchScreenTypeFactory_Access is
    begin
-        return TouchScreenTypeFactory_Package.instance;
+        return TouchScreenTypeFactory_Access (TouchScreenTypeFactory_Package.instance);
    end getInstance;
 
    procedure update (This : in out TouchScreenTypeFactory; activity_Param : access Activity_Package.Activity'Class) is

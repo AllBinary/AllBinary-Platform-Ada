@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.view.event.ViewPositionEvent_Package;
+package org.allbinary.view.event.ViewPositionEvent_Package_References is
+   type ViewPositionEvent_Access is access all org.allbinary.view.event.ViewPositionEvent_Package.ViewPositionEvent'Class;
+   type ViewPositionEvent_Access_Array is array (Natural range <>) of ViewPositionEvent_Access;
+   type ViewPositionEvent_Access_Array_Access is access all ViewPositionEvent_Access_Array;
+   type ViewPositionEvent_Access_Array_Access_Array is array (Natural range <>) of ViewPositionEvent_Access_Array_Access;
+   type ViewPositionEvent_Access_Array_Access_Array_Access is access all ViewPositionEvent_Access_Array_Access_Array;
+end org.allbinary.view.event.ViewPositionEvent_Package_References;
+
+with org.allbinary.view.event.ViewPositionEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 package org.allbinary.view.event.ViewPositionEvent_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ViewPositionEvent is tagged;
-   type ViewPositionEvent_Access is access all ViewPositionEvent'Class;
-   type ViewPositionEvent_Access_Array is array (Natural range <>) of ViewPositionEvent_Access;
-   type ViewPositionEvent_Access_Array_Access is access all ViewPositionEvent_Access_Array;
-   type ViewPositionEvent_Access_Array_Access_Array is array (Natural range <>) of ViewPositionEvent_Access_Array_Access;
-   type ViewPositionEvent_Access_Array_Access_Array_Access is access all ViewPositionEvent_Access_Array_Access_Array;
+
+   subtype ViewPositionEvent_Access is org.allbinary.view.event.ViewPositionEvent_Package_References.ViewPositionEvent_Access;
+   function "=" (Left, Right : ViewPositionEvent_Access) return Boolean renames org.allbinary.view.event.ViewPositionEvent_Package_References."=";
+   subtype ViewPositionEvent_Access_Array is org.allbinary.view.event.ViewPositionEvent_Package_References.ViewPositionEvent_Access_Array;
+   function "=" (Left, Right : ViewPositionEvent_Access_Array) return Boolean renames org.allbinary.view.event.ViewPositionEvent_Package_References."=";
+   subtype ViewPositionEvent_Access_Array_Access is org.allbinary.view.event.ViewPositionEvent_Package_References.ViewPositionEvent_Access_Array_Access;
+   function "=" (Left, Right : ViewPositionEvent_Access_Array_Access) return Boolean renames org.allbinary.view.event.ViewPositionEvent_Package_References."=";
+   subtype ViewPositionEvent_Access_Array_Access_Array is org.allbinary.view.event.ViewPositionEvent_Package_References.ViewPositionEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : ViewPositionEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.view.event.ViewPositionEvent_Package_References."=";
+   subtype ViewPositionEvent_Access_Array_Access_Array_Access is org.allbinary.view.event.ViewPositionEvent_Package_References.ViewPositionEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ViewPositionEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.view.event.ViewPositionEvent_Package_References."=";
 
    type ViewPositionEvent is new AllBinaryEventObject with null record;
 

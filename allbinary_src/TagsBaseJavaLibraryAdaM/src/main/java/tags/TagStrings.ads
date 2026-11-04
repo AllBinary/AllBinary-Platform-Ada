@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with tags.TagStrings_Package;
+package tags.TagStrings_Package_References is
+   type TagStrings_Access is access all tags.TagStrings_Package.TagStrings'Class;
+   type TagStrings_Access_Array is array (Natural range <>) of TagStrings_Access;
+   type TagStrings_Access_Array_Access is access all TagStrings_Access_Array;
+   type TagStrings_Access_Array_Access_Array is array (Natural range <>) of TagStrings_Access_Array_Access;
+   type TagStrings_Access_Array_Access_Array_Access is access all TagStrings_Access_Array_Access_Array;
+end tags.TagStrings_Package_References;
+
+with tags.TagStrings_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package tags.TagStrings_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type TagStrings is tagged;
-   type TagStrings_Access is access all TagStrings'Class;
-   type TagStrings_Access_Array is array (Natural range <>) of TagStrings_Access;
-   type TagStrings_Access_Array_Access is access all TagStrings_Access_Array;
-   type TagStrings_Access_Array_Access_Array is array (Natural range <>) of TagStrings_Access_Array_Access;
-   type TagStrings_Access_Array_Access_Array_Access is access all TagStrings_Access_Array_Access_Array;
+
+   subtype TagStrings_Access is tags.TagStrings_Package_References.TagStrings_Access;
+   function "=" (Left, Right : TagStrings_Access) return Boolean renames tags.TagStrings_Package_References."=";
+   subtype TagStrings_Access_Array is tags.TagStrings_Package_References.TagStrings_Access_Array;
+   function "=" (Left, Right : TagStrings_Access_Array) return Boolean renames tags.TagStrings_Package_References."=";
+   subtype TagStrings_Access_Array_Access is tags.TagStrings_Package_References.TagStrings_Access_Array_Access;
+   function "=" (Left, Right : TagStrings_Access_Array_Access) return Boolean renames tags.TagStrings_Package_References."=";
+   subtype TagStrings_Access_Array_Access_Array is tags.TagStrings_Package_References.TagStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : TagStrings_Access_Array_Access_Array) return Boolean renames tags.TagStrings_Package_References."=";
+   subtype TagStrings_Access_Array_Access_Array_Access is tags.TagStrings_Package_References.TagStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TagStrings_Access_Array_Access_Array_Access) return Boolean renames tags.TagStrings_Package_References."=";
 
    type TagStrings is new Java_Object with record
       DO_START_TAG : Unbounded_String;

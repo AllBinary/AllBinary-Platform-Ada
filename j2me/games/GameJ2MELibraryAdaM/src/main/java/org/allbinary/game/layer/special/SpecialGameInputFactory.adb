@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.special.SpecialGameInput_Package; use org.allbinary.game.layer.special.SpecialGameInput_Package;
+with org.allbinary.game.layer.special.SpecialGameInput_Package;
+with org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
 
 package body org.allbinary.game.layer.special.SpecialGameInputFactory_Package is
 
+   subtype SpecialGameInput_Access is org.allbinary.game.layer.special.SpecialGameInput_Package_References.SpecialGameInput_Access;
+   function "=" (Left, Right : SpecialGameInput_Access) return Boolean renames org.allbinary.game.layer.special.SpecialGameInput_Package_References."=";
+   subtype SpecialGameInput_Access_Array is org.allbinary.game.layer.special.SpecialGameInput_Package_References.SpecialGameInput_Access_Array;
+   function "=" (Left, Right : SpecialGameInput_Access_Array) return Boolean renames org.allbinary.game.layer.special.SpecialGameInput_Package_References."=";
+   subtype SpecialGameInput_Access_Array_Access is org.allbinary.game.layer.special.SpecialGameInput_Package_References.SpecialGameInput_Access_Array_Access;
+   function "=" (Left, Right : SpecialGameInput_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.SpecialGameInput_Package_References."=";
+   subtype SpecialGameInput_Access_Array_Access_Array is org.allbinary.game.layer.special.SpecialGameInput_Package_References.SpecialGameInput_Access_Array_Access_Array;
+   function "=" (Left, Right : SpecialGameInput_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.special.SpecialGameInput_Package_References."=";
+   subtype SpecialGameInput_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.SpecialGameInput_Package_References.SpecialGameInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SpecialGameInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.SpecialGameInput_Package_References."=";
    procedure Initialize_Fields (This : in out SpecialGameInputFactory'Class) is
    begin
       null;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.AuthenticationRequestHelperFactory_Package;
+package admin.taghelpers.AuthenticationRequestHelperFactory_Package_References is
+   type AuthenticationRequestHelperFactory_Access is access all admin.taghelpers.AuthenticationRequestHelperFactory_Package.AuthenticationRequestHelperFactory'Class;
+   type AuthenticationRequestHelperFactory_Access_Array is array (Natural range <>) of AuthenticationRequestHelperFactory_Access;
+   type AuthenticationRequestHelperFactory_Access_Array_Access is access all AuthenticationRequestHelperFactory_Access_Array;
+   type AuthenticationRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of AuthenticationRequestHelperFactory_Access_Array_Access;
+   type AuthenticationRequestHelperFactory_Access_Array_Access_Array_Access is access all AuthenticationRequestHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.AuthenticationRequestHelperFactory_Package_References;
+
+with admin.taghelpers.AuthenticationRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -28,13 +38,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.AuthenticationRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AuthenticationRequestHelperFactory is tagged;
-   type AuthenticationRequestHelperFactory_Access is access all AuthenticationRequestHelperFactory'Class;
-   type AuthenticationRequestHelperFactory_Access_Array is array (Natural range <>) of AuthenticationRequestHelperFactory_Access;
-   type AuthenticationRequestHelperFactory_Access_Array_Access is access all AuthenticationRequestHelperFactory_Access_Array;
-   type AuthenticationRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of AuthenticationRequestHelperFactory_Access_Array_Access;
-   type AuthenticationRequestHelperFactory_Access_Array_Access_Array_Access is access all AuthenticationRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype AuthenticationRequestHelperFactory_Access is admin.taghelpers.AuthenticationRequestHelperFactory_Package_References.AuthenticationRequestHelperFactory_Access;
+   function "=" (Left, Right : AuthenticationRequestHelperFactory_Access) return Boolean renames admin.taghelpers.AuthenticationRequestHelperFactory_Package_References."=";
+   subtype AuthenticationRequestHelperFactory_Access_Array is admin.taghelpers.AuthenticationRequestHelperFactory_Package_References.AuthenticationRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : AuthenticationRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.AuthenticationRequestHelperFactory_Package_References."=";
+   subtype AuthenticationRequestHelperFactory_Access_Array_Access is admin.taghelpers.AuthenticationRequestHelperFactory_Package_References.AuthenticationRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : AuthenticationRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.AuthenticationRequestHelperFactory_Package_References."=";
+   subtype AuthenticationRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.AuthenticationRequestHelperFactory_Package_References.AuthenticationRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : AuthenticationRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.AuthenticationRequestHelperFactory_Package_References."=";
+   subtype AuthenticationRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.AuthenticationRequestHelperFactory_Package_References.AuthenticationRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AuthenticationRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.AuthenticationRequestHelperFactory_Package_References."=";
 
    type AuthenticationRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

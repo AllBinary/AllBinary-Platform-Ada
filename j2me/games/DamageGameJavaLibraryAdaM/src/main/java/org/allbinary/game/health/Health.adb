@@ -17,12 +17,26 @@ with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbin
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.health.NullHealthListener_Package; use org.allbinary.game.health.NullHealthListener_Package;
+with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinary.game.health.HealthListenerInterface_Package;
+with org.allbinary.game.health.HealthInterface_Package;
+with org.allbinary.game.health.HealthListenerInterface_Package;
+with org.allbinary.game.health.NullHealthListener_Package;
 
 package body org.allbinary.game.health.Health_Package is
 
    package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   subtype HealthListenerInterface_Access is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access;
+   function "=" (Left, Right : HealthListenerInterface_Access) return Boolean renames org.allbinary.game.health.HealthListenerInterface_Package_References."=";
+   subtype HealthListenerInterface_Access_Array is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access_Array;
+   function "=" (Left, Right : HealthListenerInterface_Access_Array) return Boolean renames org.allbinary.game.health.HealthListenerInterface_Package_References."=";
+   subtype HealthListenerInterface_Access_Array_Access is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : HealthListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.game.health.HealthListenerInterface_Package_References."=";
+   subtype HealthListenerInterface_Access_Array_Access_Array is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : HealthListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.health.HealthListenerInterface_Package_References."=";
+   subtype HealthListenerInterface_Access_Array_Access_Array_Access is org.allbinary.game.health.HealthListenerInterface_Package_References.HealthListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HealthListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.health.HealthListenerInterface_Package_References."=";
    procedure Initialize_Fields (This : in out Health'Class) is
    begin
       null;

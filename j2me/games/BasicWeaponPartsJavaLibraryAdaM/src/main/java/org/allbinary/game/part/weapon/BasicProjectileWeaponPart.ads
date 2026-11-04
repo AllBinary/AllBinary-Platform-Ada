@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package;
+package org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References is
+   type BasicProjectileWeaponPart_Access is access all org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package.BasicProjectileWeaponPart'Class;
+   type BasicProjectileWeaponPart_Access_Array is array (Natural range <>) of BasicProjectileWeaponPart_Access;
+   type BasicProjectileWeaponPart_Access_Array_Access is access all BasicProjectileWeaponPart_Access_Array;
+   type BasicProjectileWeaponPart_Access_Array_Access_Array is array (Natural range <>) of BasicProjectileWeaponPart_Access_Array_Access;
+   type BasicProjectileWeaponPart_Access_Array_Access_Array_Access is access all BasicProjectileWeaponPart_Access_Array_Access_Array;
+end org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References;
+
+with org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,13 +30,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.game.combat.weapon.WeaponProperties_Package; use org.allbinary.game.combat.weapon.WeaponProperties_Package;
-with org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package; use org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
-with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game.score.ScoreableInterface_Package;
-with org.allbinary.graphics.RelativeRelationship_Package; use org.allbinary.graphics.RelativeRelationship_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
+limited with org.allbinary.game.combat.weapon.WeaponProperties_Package;
+with org.allbinary.game.combat.weapon.WeaponProperties_Package_References;
+limited with org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
+with org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package_References;
+limited with org.allbinary.game.score.ScoreableInterface_Package;
+with org.allbinary.game.score.ScoreableInterface_Package_References;
+limited with org.allbinary.graphics.RelativeRelationship_Package;
+with org.allbinary.graphics.RelativeRelationship_Package_References;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
 
 package org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package is
@@ -38,13 +55,91 @@ package org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package is
    package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package Reference_Types is
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype WeaponProperties_Access is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access;
+   use type WeaponProperties_Access;
+   subtype WeaponProperties_Access_Array is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access_Array;
+   use type WeaponProperties_Access_Array;
+   subtype WeaponProperties_Access_Array_Access is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access_Array_Access;
+   use type WeaponProperties_Access_Array_Access;
+   subtype WeaponProperties_Access_Array_Access_Array is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access_Array_Access_Array;
+   use type WeaponProperties_Access_Array_Access_Array;
+   subtype WeaponProperties_Access_Array_Access_Array_Access is org.allbinary.game.combat.weapon.WeaponProperties_Package_References.WeaponProperties_Access_Array_Access_Array_Access;
+   use type WeaponProperties_Access_Array_Access_Array_Access;
+   subtype WeaponLayerCircularPool_Access is org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package_References.WeaponLayerCircularPool_Access;
+   use type WeaponLayerCircularPool_Access;
+   subtype WeaponLayerCircularPool_Access_Array is org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package_References.WeaponLayerCircularPool_Access_Array;
+   use type WeaponLayerCircularPool_Access_Array;
+   subtype WeaponLayerCircularPool_Access_Array_Access is org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package_References.WeaponLayerCircularPool_Access_Array_Access;
+   use type WeaponLayerCircularPool_Access_Array_Access;
+   subtype WeaponLayerCircularPool_Access_Array_Access_Array is org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package_References.WeaponLayerCircularPool_Access_Array_Access_Array;
+   use type WeaponLayerCircularPool_Access_Array_Access_Array;
+   subtype WeaponLayerCircularPool_Access_Array_Access_Array_Access is org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package_References.WeaponLayerCircularPool_Access_Array_Access_Array_Access;
+   use type WeaponLayerCircularPool_Access_Array_Access_Array_Access;
+   subtype ScoreableInterface_Access is org.allbinary.game.score.ScoreableInterface_Package_References.ScoreableInterface_Access;
+   use type ScoreableInterface_Access;
+   subtype ScoreableInterface_Access_Array is org.allbinary.game.score.ScoreableInterface_Package_References.ScoreableInterface_Access_Array;
+   use type ScoreableInterface_Access_Array;
+   subtype ScoreableInterface_Access_Array_Access is org.allbinary.game.score.ScoreableInterface_Package_References.ScoreableInterface_Access_Array_Access;
+   use type ScoreableInterface_Access_Array_Access;
+   subtype ScoreableInterface_Access_Array_Access_Array is org.allbinary.game.score.ScoreableInterface_Package_References.ScoreableInterface_Access_Array_Access_Array;
+   use type ScoreableInterface_Access_Array_Access_Array;
+   subtype ScoreableInterface_Access_Array_Access_Array_Access is org.allbinary.game.score.ScoreableInterface_Package_References.ScoreableInterface_Access_Array_Access_Array_Access;
+   use type ScoreableInterface_Access_Array_Access_Array_Access;
+   subtype RelativeRelationship_Access is org.allbinary.graphics.RelativeRelationship_Package_References.RelativeRelationship_Access;
+   use type RelativeRelationship_Access;
+   subtype RelativeRelationship_Access_Array is org.allbinary.graphics.RelativeRelationship_Package_References.RelativeRelationship_Access_Array;
+   use type RelativeRelationship_Access_Array;
+   subtype RelativeRelationship_Access_Array_Access is org.allbinary.graphics.RelativeRelationship_Package_References.RelativeRelationship_Access_Array_Access;
+   use type RelativeRelationship_Access_Array_Access;
+   subtype RelativeRelationship_Access_Array_Access_Array is org.allbinary.graphics.RelativeRelationship_Package_References.RelativeRelationship_Access_Array_Access_Array;
+   use type RelativeRelationship_Access_Array_Access_Array;
+   subtype RelativeRelationship_Access_Array_Access_Array_Access is org.allbinary.graphics.RelativeRelationship_Package_References.RelativeRelationship_Access_Array_Access_Array_Access;
+   use type RelativeRelationship_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicProjectileWeaponPart is tagged;
-   type BasicProjectileWeaponPart_Access is access all BasicProjectileWeaponPart'Class;
-   type BasicProjectileWeaponPart_Access_Array is array (Natural range <>) of BasicProjectileWeaponPart_Access;
-   type BasicProjectileWeaponPart_Access_Array_Access is access all BasicProjectileWeaponPart_Access_Array;
-   type BasicProjectileWeaponPart_Access_Array_Access_Array is array (Natural range <>) of BasicProjectileWeaponPart_Access_Array_Access;
-   type BasicProjectileWeaponPart_Access_Array_Access_Array_Access is access all BasicProjectileWeaponPart_Access_Array_Access_Array;
+
+   subtype BasicProjectileWeaponPart_Access is org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References.BasicProjectileWeaponPart_Access;
+   function "=" (Left, Right : BasicProjectileWeaponPart_Access) return Boolean renames org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References."=";
+   subtype BasicProjectileWeaponPart_Access_Array is org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References.BasicProjectileWeaponPart_Access_Array;
+   function "=" (Left, Right : BasicProjectileWeaponPart_Access_Array) return Boolean renames org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References."=";
+   subtype BasicProjectileWeaponPart_Access_Array_Access is org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References.BasicProjectileWeaponPart_Access_Array_Access;
+   function "=" (Left, Right : BasicProjectileWeaponPart_Access_Array_Access) return Boolean renames org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References."=";
+   subtype BasicProjectileWeaponPart_Access_Array_Access_Array is org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References.BasicProjectileWeaponPart_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicProjectileWeaponPart_Access_Array_Access_Array) return Boolean renames org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References."=";
+   subtype BasicProjectileWeaponPart_Access_Array_Access_Array_Access is org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References.BasicProjectileWeaponPart_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicProjectileWeaponPart_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package_References."=";
 
    type BasicProjectileWeaponPart is new BasicWeaponPart with record
       weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access;

@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with com.jogamp.opengl.GL_Package; use com.jogamp.opengl.GL_Package;
+with com.jogamp.opengl.GL2_Package; use com.jogamp.opengl.GL2_Package;
+with org.allbinary.opengles.JOGL10_Package;
 
 package body org.allbinary.opengles.JOGL11_Package is
 
+   subtype GL_Access is com.jogamp.opengl.GL_Package_References.GL_Access;
+   function "=" (Left, Right : GL_Access) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
+   subtype GL_Access_Array is com.jogamp.opengl.GL_Package_References.GL_Access_Array;
+   function "=" (Left, Right : GL_Access_Array) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
+   subtype GL_Access_Array_Access is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access;
+   function "=" (Left, Right : GL_Access_Array_Access) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
+   subtype GL_Access_Array_Access_Array is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access_Array;
+   function "=" (Left, Right : GL_Access_Array_Access_Array) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
+   subtype GL_Access_Array_Access_Array_Access is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GL_Access_Array_Access_Array_Access) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
+   subtype GL2_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access;
+   function "=" (Left, Right : GL2_Access) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
+   subtype GL2_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array;
+   function "=" (Left, Right : GL2_Access_Array) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
+   subtype GL2_Access_Array_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access;
+   function "=" (Left, Right : GL2_Access_Array_Access) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
+   subtype GL2_Access_Array_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access_Array;
+   function "=" (Left, Right : GL2_Access_Array_Access_Array) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
+   subtype GL2_Access_Array_Access_Array_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GL2_Access_Array_Access_Array_Access) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
    procedure Initialize_Fields (This : in out JOGL11'Class) is
    begin
       null;

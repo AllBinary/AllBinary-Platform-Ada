@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
+package org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References is
+   type StoreFrontOrdersHistoryStatisticsInterface_Access is access all org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package.StoreFrontOrdersHistoryStatisticsInterface'Class;
+   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array is array (Natural range <>) of StoreFrontOrdersHistoryStatisticsInterface_Access;
+   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access is access all StoreFrontOrdersHistoryStatisticsInterface_Access_Array;
+   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access;
+   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array_Access is access all StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array;
+end org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References;
+
+with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,41 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
+limited with org.allbinary.business.user.commerce.money.Money_Package;
+with org.allbinary.business.user.commerce.money.Money_Package_References;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package is
 
    package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
    package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package Reference_Types is
+   subtype Money_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access;
+   use type Money_Access;
+   subtype Money_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array;
+   use type Money_Access_Array;
+   subtype Money_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access;
+   use type Money_Access_Array_Access;
+   subtype Money_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array;
+   use type Money_Access_Array_Access_Array;
+   subtype Money_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access_Array_Access_Array_Access;
+   use type Money_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type StoreFrontOrdersHistoryStatisticsInterface is interface and TableMappingInterface;
-   type StoreFrontOrdersHistoryStatisticsInterface_Access is access all StoreFrontOrdersHistoryStatisticsInterface'Class;
-   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array is array (Natural range <>) of StoreFrontOrdersHistoryStatisticsInterface_Access;
-   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access is access all StoreFrontOrdersHistoryStatisticsInterface_Access_Array;
-   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access;
-   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array_Access is access all StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array;
+   subtype StoreFrontOrdersHistoryStatisticsInterface_Access is org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References.StoreFrontOrdersHistoryStatisticsInterface_Access;
+   function "=" (Left, Right : StoreFrontOrdersHistoryStatisticsInterface_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References."=";
+   subtype StoreFrontOrdersHistoryStatisticsInterface_Access_Array is org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References.StoreFrontOrdersHistoryStatisticsInterface_Access_Array;
+   function "=" (Left, Right : StoreFrontOrdersHistoryStatisticsInterface_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References."=";
+   subtype StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References.StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References."=";
+   subtype StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References.StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References."=";
+   subtype StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References.StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package_References."=";
+   function Java_Object_Access_From_StoreFrontOrdersHistoryStatisticsInterface (Value : StoreFrontOrdersHistoryStatisticsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getNumberOfOrders (This : in out StoreFrontOrdersHistoryStatisticsInterface) return Long_Long_Integer is abstract;
    function getSubTotal (This : in out StoreFrontOrdersHistoryStatisticsInterface) return Money_Access is abstract;
    function getShippingCost (This : in out StoreFrontOrdersHistoryStatisticsInterface) return Money_Access is abstract;

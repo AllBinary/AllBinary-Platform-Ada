@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.tags.UserTag_Package;
+package admin.tags.UserTag_Package_References is
+   type UserTag_Access is access all admin.tags.UserTag_Package.UserTag'Class;
+   type UserTag_Access_Array is array (Natural range <>) of UserTag_Access;
+   type UserTag_Access_Array_Access is access all UserTag_Access_Array;
+   type UserTag_Access_Array_Access_Array is array (Natural range <>) of UserTag_Access_Array_Access;
+   type UserTag_Access_Array_Access_Array_Access is access all UserTag_Access_Array_Access_Array;
+end admin.tags.UserTag_Package_References;
+
+with admin.tags.UserTag_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.UserTag_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type UserTag is tagged;
-   type UserTag_Access is access all UserTag'Class;
-   type UserTag_Access_Array is array (Natural range <>) of UserTag_Access;
-   type UserTag_Access_Array_Access is access all UserTag_Access_Array;
-   type UserTag_Access_Array_Access_Array is array (Natural range <>) of UserTag_Access_Array_Access;
-   type UserTag_Access_Array_Access_Array_Access is access all UserTag_Access_Array_Access_Array;
+
+   subtype UserTag_Access is admin.tags.UserTag_Package_References.UserTag_Access;
+   function "=" (Left, Right : UserTag_Access) return Boolean renames admin.tags.UserTag_Package_References."=";
+   subtype UserTag_Access_Array is admin.tags.UserTag_Package_References.UserTag_Access_Array;
+   function "=" (Left, Right : UserTag_Access_Array) return Boolean renames admin.tags.UserTag_Package_References."=";
+   subtype UserTag_Access_Array_Access is admin.tags.UserTag_Package_References.UserTag_Access_Array_Access;
+   function "=" (Left, Right : UserTag_Access_Array_Access) return Boolean renames admin.tags.UserTag_Package_References."=";
+   subtype UserTag_Access_Array_Access_Array is admin.tags.UserTag_Package_References.UserTag_Access_Array_Access_Array;
+   function "=" (Left, Right : UserTag_Access_Array_Access_Array) return Boolean renames admin.tags.UserTag_Package_References."=";
+   subtype UserTag_Access_Array_Access_Array_Access is admin.tags.UserTag_Package_References.UserTag_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.UserTag_Package_References."=";
 
    type UserTag is new TableTag with record
       role : Unbounded_String;

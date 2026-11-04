@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;
+package org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References is
+   type SavedCaptureGenericProfileDataWorkerType_Access is access all org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package.SavedCaptureGenericProfileDataWorkerType'Class;
+   type SavedCaptureGenericProfileDataWorkerType_Access_Array is array (Natural range <>) of SavedCaptureGenericProfileDataWorkerType_Access;
+   type SavedCaptureGenericProfileDataWorkerType_Access_Array_Access is access all SavedCaptureGenericProfileDataWorkerType_Access_Array;
+   type SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array is array (Natural range <>) of SavedCaptureGenericProfileDataWorkerType_Access_Array_Access;
+   type SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array_Access is access all SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array;
+end org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References;
+
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.Gene
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type SavedCaptureGenericProfileDataWorkerType is tagged;
-   type SavedCaptureGenericProfileDataWorkerType_Access is access all SavedCaptureGenericProfileDataWorkerType'Class;
-   type SavedCaptureGenericProfileDataWorkerType_Access_Array is array (Natural range <>) of SavedCaptureGenericProfileDataWorkerType_Access;
-   type SavedCaptureGenericProfileDataWorkerType_Access_Array_Access is access all SavedCaptureGenericProfileDataWorkerType_Access_Array;
-   type SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array is array (Natural range <>) of SavedCaptureGenericProfileDataWorkerType_Access_Array_Access;
-   type SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array_Access is access all SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array;
+
+   subtype SavedCaptureGenericProfileDataWorkerType_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References.SavedCaptureGenericProfileDataWorkerType_Access;
+   function "=" (Left, Right : SavedCaptureGenericProfileDataWorkerType_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References."=";
+   subtype SavedCaptureGenericProfileDataWorkerType_Access_Array is org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References.SavedCaptureGenericProfileDataWorkerType_Access_Array;
+   function "=" (Left, Right : SavedCaptureGenericProfileDataWorkerType_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References."=";
+   subtype SavedCaptureGenericProfileDataWorkerType_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References.SavedCaptureGenericProfileDataWorkerType_Access_Array_Access;
+   function "=" (Left, Right : SavedCaptureGenericProfileDataWorkerType_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References."=";
+   subtype SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array is org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References.SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array;
+   function "=" (Left, Right : SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References."=";
+   subtype SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References.SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package_References."=";
 
    type SavedCaptureGenericProfileDataWorkerType is new GenericProfileDataWorkerType with record
       path : Unbounded_String;

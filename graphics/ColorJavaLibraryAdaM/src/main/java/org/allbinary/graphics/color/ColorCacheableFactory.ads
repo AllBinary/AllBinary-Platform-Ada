@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.color.ColorCacheableFactory_Package;
+package org.allbinary.graphics.color.ColorCacheableFactory_Package_References is
+   type ColorCacheableFactory_Access is access all org.allbinary.graphics.color.ColorCacheableFactory_Package.ColorCacheableFactory'Class;
+   type ColorCacheableFactory_Access_Array is array (Natural range <>) of ColorCacheableFactory_Access;
+   type ColorCacheableFactory_Access_Array_Access is access all ColorCacheableFactory_Access_Array;
+   type ColorCacheableFactory_Access_Array_Access_Array is array (Natural range <>) of ColorCacheableFactory_Access_Array_Access;
+   type ColorCacheableFactory_Access_Array_Access_Array_Access is access all ColorCacheableFactory_Access_Array_Access_Array;
+end org.allbinary.graphics.color.ColorCacheableFactory_Package_References;
+
+with org.allbinary.graphics.color.ColorCacheableFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
+limited with org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 
 package org.allbinary.graphics.color.ColorCacheableFactory_Package is
 
    package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
    package CacheableInterfaceFactoryInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+   package Reference_Types is
+   subtype CacheableInterface_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access;
+   use type CacheableInterface_Access;
+   subtype CacheableInterface_Access_Array is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array;
+   use type CacheableInterface_Access_Array;
+   subtype CacheableInterface_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access;
+   use type CacheableInterface_Access_Array_Access;
+   subtype CacheableInterface_Access_Array_Access_Array is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access_Array;
+   use type CacheableInterface_Access_Array_Access_Array;
+   subtype CacheableInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterface_Package_References.CacheableInterface_Access_Array_Access_Array_Access;
+   use type CacheableInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ColorCacheableFactory is tagged;
-   type ColorCacheableFactory_Access is access all ColorCacheableFactory'Class;
-   type ColorCacheableFactory_Access_Array is array (Natural range <>) of ColorCacheableFactory_Access;
-   type ColorCacheableFactory_Access_Array_Access is access all ColorCacheableFactory_Access_Array;
-   type ColorCacheableFactory_Access_Array_Access_Array is array (Natural range <>) of ColorCacheableFactory_Access_Array_Access;
-   type ColorCacheableFactory_Access_Array_Access_Array_Access is access all ColorCacheableFactory_Access_Array_Access_Array;
+
+   subtype ColorCacheableFactory_Access is org.allbinary.graphics.color.ColorCacheableFactory_Package_References.ColorCacheableFactory_Access;
+   function "=" (Left, Right : ColorCacheableFactory_Access) return Boolean renames org.allbinary.graphics.color.ColorCacheableFactory_Package_References."=";
+   subtype ColorCacheableFactory_Access_Array is org.allbinary.graphics.color.ColorCacheableFactory_Package_References.ColorCacheableFactory_Access_Array;
+   function "=" (Left, Right : ColorCacheableFactory_Access_Array) return Boolean renames org.allbinary.graphics.color.ColorCacheableFactory_Package_References."=";
+   subtype ColorCacheableFactory_Access_Array_Access is org.allbinary.graphics.color.ColorCacheableFactory_Package_References.ColorCacheableFactory_Access_Array_Access;
+   function "=" (Left, Right : ColorCacheableFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.ColorCacheableFactory_Package_References."=";
+   subtype ColorCacheableFactory_Access_Array_Access_Array is org.allbinary.graphics.color.ColorCacheableFactory_Package_References.ColorCacheableFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ColorCacheableFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.ColorCacheableFactory_Package_References."=";
+   subtype ColorCacheableFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.color.ColorCacheableFactory_Package_References.ColorCacheableFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ColorCacheableFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.ColorCacheableFactory_Package_References."=";
 
    type ColorCacheableFactory is new Java_Object and CacheableInterfaceFactoryInterface with null record;
 

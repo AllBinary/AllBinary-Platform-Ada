@@ -12,6 +12,16 @@
 -- 
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.OptimizedGameInputLayerManager_Package;
+package org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References is
+   type OptimizedGameInputLayerManager_Access is access all org.allbinary.game.input.OptimizedGameInputLayerManager_Package.OptimizedGameInputLayerManager'Class;
+   type OptimizedGameInputLayerManager_Access_Array is array (Natural range <>) of OptimizedGameInputLayerManager_Access;
+   type OptimizedGameInputLayerManager_Access_Array_Access is access all OptimizedGameInputLayerManager_Access_Array;
+   type OptimizedGameInputLayerManager_Access_Array_Access_Array is array (Natural range <>) of OptimizedGameInputLayerManager_Access_Array_Access;
+   type OptimizedGameInputLayerManager_Access_Array_Access_Array_Access is access all OptimizedGameInputLayerManager_Access_Array_Access_Array;
+end org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References;
+
+with org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerMana
 package org.allbinary.game.input.OptimizedGameInputLayerManager_Package is
 
    package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OptimizedGameInputLayerManager is tagged;
-   type OptimizedGameInputLayerManager_Access is access all OptimizedGameInputLayerManager'Class;
-   type OptimizedGameInputLayerManager_Access_Array is array (Natural range <>) of OptimizedGameInputLayerManager_Access;
-   type OptimizedGameInputLayerManager_Access_Array_Access is access all OptimizedGameInputLayerManager_Access_Array;
-   type OptimizedGameInputLayerManager_Access_Array_Access_Array is array (Natural range <>) of OptimizedGameInputLayerManager_Access_Array_Access;
-   type OptimizedGameInputLayerManager_Access_Array_Access_Array_Access is access all OptimizedGameInputLayerManager_Access_Array_Access_Array;
+
+   subtype OptimizedGameInputLayerManager_Access is org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References.OptimizedGameInputLayerManager_Access;
+   function "=" (Left, Right : OptimizedGameInputLayerManager_Access) return Boolean renames org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References."=";
+   subtype OptimizedGameInputLayerManager_Access_Array is org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References.OptimizedGameInputLayerManager_Access_Array;
+   function "=" (Left, Right : OptimizedGameInputLayerManager_Access_Array) return Boolean renames org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References."=";
+   subtype OptimizedGameInputLayerManager_Access_Array_Access is org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References.OptimizedGameInputLayerManager_Access_Array_Access;
+   function "=" (Left, Right : OptimizedGameInputLayerManager_Access_Array_Access) return Boolean renames org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References."=";
+   subtype OptimizedGameInputLayerManager_Access_Array_Access_Array is org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References.OptimizedGameInputLayerManager_Access_Array_Access_Array;
+   function "=" (Left, Right : OptimizedGameInputLayerManager_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References."=";
+   subtype OptimizedGameInputLayerManager_Access_Array_Access_Array_Access is org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References.OptimizedGameInputLayerManager_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OptimizedGameInputLayerManager_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.OptimizedGameInputLayerManager_Package_References."=";
 
    type OptimizedGameInputLayerManager is new LayerManager with null record;
 

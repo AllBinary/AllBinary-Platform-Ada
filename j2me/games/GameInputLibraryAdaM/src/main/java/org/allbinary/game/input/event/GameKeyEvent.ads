@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.event.GameKeyEvent_Package;
+package org.allbinary.game.input.event.GameKeyEvent_Package_References is
+   type GameKeyEvent_Access is access all org.allbinary.game.input.event.GameKeyEvent_Package.GameKeyEvent'Class;
+   type GameKeyEvent_Access_Array is array (Natural range <>) of GameKeyEvent_Access;
+   type GameKeyEvent_Access_Array_Access is access all GameKeyEvent_Access_Array;
+   type GameKeyEvent_Access_Array_Access_Array is array (Natural range <>) of GameKeyEvent_Access_Array_Access;
+   type GameKeyEvent_Access_Array_Access_Array_Access is access all GameKeyEvent_Access_Array_Access_Array;
+end org.allbinary.game.input.event.GameKeyEvent_Package_References;
+
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 package org.allbinary.game.input.event.GameKeyEvent_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameKeyEvent is tagged;
-   type GameKeyEvent_Access is access all GameKeyEvent'Class;
-   type GameKeyEvent_Access_Array is array (Natural range <>) of GameKeyEvent_Access;
-   type GameKeyEvent_Access_Array_Access is access all GameKeyEvent_Access_Array;
-   type GameKeyEvent_Access_Array_Access_Array is array (Natural range <>) of GameKeyEvent_Access_Array_Access;
-   type GameKeyEvent_Access_Array_Access_Array_Access is access all GameKeyEvent_Access_Array_Access_Array;
+
+   subtype GameKeyEvent_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access;
+   function "=" (Left, Right : GameKeyEvent_Access) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array;
+   function "=" (Left, Right : GameKeyEvent_Access_Array) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEvent_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array_Access_Array is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array;
+   function "=" (Left, Right : GameKeyEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
+   subtype GameKeyEvent_Access_Array_Access_Array_Access is org.allbinary.game.input.event.GameKeyEvent_Package_References.GameKeyEvent_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameKeyEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.GameKeyEvent_Package_References."=";
 
    type GameKeyEvent is new AllBinaryEventObject with record
       sourceId : Integer;

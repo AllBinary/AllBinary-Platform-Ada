@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package;
+package org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References is
+   type BasicTopViewGeographicMapCellType_Access is access all org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package.BasicTopViewGeographicMapCellType'Class;
+   type BasicTopViewGeographicMapCellType_Access_Array is array (Natural range <>) of BasicTopViewGeographicMapCellType_Access;
+   type BasicTopViewGeographicMapCellType_Access_Array_Access is access all BasicTopViewGeographicMapCellType_Access_Array;
+   type BasicTopViewGeographicMapCellType_Access_Array_Access_Array is array (Natural range <>) of BasicTopViewGeographicMapCellType_Access_Array_Access;
+   type BasicTopViewGeographicMapCellType_Access_Array_Access_Array_Access is access all BasicTopViewGeographicMapCellType_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References;
+
+with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,22 +30,63 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype GeographicMapCellType_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access;
+   use type GeographicMapCellType_Access;
+   subtype GeographicMapCellType_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array;
+   use type GeographicMapCellType_Access_Array;
+   subtype GeographicMapCellType_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array_Access;
+   use type GeographicMapCellType_Access_Array_Access;
+   subtype GeographicMapCellType_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array_Access_Array;
+   use type GeographicMapCellType_Access_Array_Access_Array;
+   subtype GeographicMapCellType_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References.GeographicMapCellType_Access_Array_Access_Array_Access;
+   use type GeographicMapCellType_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicTopViewGeographicMapCellType is tagged;
-   type BasicTopViewGeographicMapCellType_Access is access all BasicTopViewGeographicMapCellType'Class;
-   type BasicTopViewGeographicMapCellType_Access_Array is array (Natural range <>) of BasicTopViewGeographicMapCellType_Access;
-   type BasicTopViewGeographicMapCellType_Access_Array_Access is access all BasicTopViewGeographicMapCellType_Access_Array;
-   type BasicTopViewGeographicMapCellType_Access_Array_Access_Array is array (Natural range <>) of BasicTopViewGeographicMapCellType_Access_Array_Access;
-   type BasicTopViewGeographicMapCellType_Access_Array_Access_Array_Access is access all BasicTopViewGeographicMapCellType_Access_Array_Access_Array;
+
+   subtype BasicTopViewGeographicMapCellType_Access is org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References.BasicTopViewGeographicMapCellType_Access;
+   function "=" (Left, Right : BasicTopViewGeographicMapCellType_Access) return Boolean renames org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References."=";
+   subtype BasicTopViewGeographicMapCellType_Access_Array is org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References.BasicTopViewGeographicMapCellType_Access_Array;
+   function "=" (Left, Right : BasicTopViewGeographicMapCellType_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References."=";
+   subtype BasicTopViewGeographicMapCellType_Access_Array_Access is org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References.BasicTopViewGeographicMapCellType_Access_Array_Access;
+   function "=" (Left, Right : BasicTopViewGeographicMapCellType_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References."=";
+   subtype BasicTopViewGeographicMapCellType_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References.BasicTopViewGeographicMapCellType_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicTopViewGeographicMapCellType_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References."=";
+   subtype BasicTopViewGeographicMapCellType_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References.BasicTopViewGeographicMapCellType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicTopViewGeographicMapCellType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package_References."=";
 
    type BasicTopViewGeographicMapCellType is new Java_Object with record
       logUtil : LogUtil_Access;

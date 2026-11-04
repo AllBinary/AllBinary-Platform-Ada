@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.platform.opengl.OpenGLGLU_Package;
+package org.platform.opengl.OpenGLGLU_Package_References is
+   type OpenGLGLU_Access is access all org.platform.opengl.OpenGLGLU_Package.OpenGLGLU'Class;
+   type OpenGLGLU_Access_Array is array (Natural range <>) of OpenGLGLU_Access;
+   type OpenGLGLU_Access_Array_Access is access all OpenGLGLU_Access_Array;
+   type OpenGLGLU_Access_Array_Access_Array is array (Natural range <>) of OpenGLGLU_Access_Array_Access;
+   type OpenGLGLU_Access_Array_Access_Array_Access is access all OpenGLGLU_Access_Array_Access_Array;
+end org.platform.opengl.OpenGLGLU_Package_References;
+
+with org.platform.opengl.OpenGLGLU_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,18 +18,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+limited with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.khronos.opengles.GL10_Package_References;
 
 package org.platform.opengl.OpenGLGLU_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
+   package Reference_Types is
+   subtype GL10_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access;
+   use type GL10_Access;
+   subtype GL10_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array;
+   use type GL10_Access_Array;
+   subtype GL10_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access;
+   use type GL10_Access_Array_Access;
+   subtype GL10_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array;
+   use type GL10_Access_Array_Access_Array;
+   subtype GL10_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL10_Package_References.GL10_Access_Array_Access_Array_Access;
+   use type GL10_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLGLU is tagged;
-   type OpenGLGLU_Access is access all OpenGLGLU'Class;
-   type OpenGLGLU_Access_Array is array (Natural range <>) of OpenGLGLU_Access;
-   type OpenGLGLU_Access_Array_Access is access all OpenGLGLU_Access_Array;
-   type OpenGLGLU_Access_Array_Access_Array is array (Natural range <>) of OpenGLGLU_Access_Array_Access;
-   type OpenGLGLU_Access_Array_Access_Array_Access is access all OpenGLGLU_Access_Array_Access_Array;
+
+   subtype OpenGLGLU_Access is org.platform.opengl.OpenGLGLU_Package_References.OpenGLGLU_Access;
+   function "=" (Left, Right : OpenGLGLU_Access) return Boolean renames org.platform.opengl.OpenGLGLU_Package_References."=";
+   subtype OpenGLGLU_Access_Array is org.platform.opengl.OpenGLGLU_Package_References.OpenGLGLU_Access_Array;
+   function "=" (Left, Right : OpenGLGLU_Access_Array) return Boolean renames org.platform.opengl.OpenGLGLU_Package_References."=";
+   subtype OpenGLGLU_Access_Array_Access is org.platform.opengl.OpenGLGLU_Package_References.OpenGLGLU_Access_Array_Access;
+   function "=" (Left, Right : OpenGLGLU_Access_Array_Access) return Boolean renames org.platform.opengl.OpenGLGLU_Package_References."=";
+   subtype OpenGLGLU_Access_Array_Access_Array is org.platform.opengl.OpenGLGLU_Package_References.OpenGLGLU_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLGLU_Access_Array_Access_Array) return Boolean renames org.platform.opengl.OpenGLGLU_Package_References."=";
+   subtype OpenGLGLU_Access_Array_Access_Array_Access is org.platform.opengl.OpenGLGLU_Package_References.OpenGLGLU_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLGLU_Access_Array_Access_Array_Access) return Boolean renames org.platform.opengl.OpenGLGLU_Package_References."=";
 
    type OpenGLGLU is new Java_Object with null record;
    instance : OpenGLGLU_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with taghelpers.InventoryHelperFactory_Package;
+package taghelpers.InventoryHelperFactory_Package_References is
+   type InventoryHelperFactory_Access is access all taghelpers.InventoryHelperFactory_Package.InventoryHelperFactory'Class;
+   type InventoryHelperFactory_Access_Array is array (Natural range <>) of InventoryHelperFactory_Access;
+   type InventoryHelperFactory_Access_Array_Access is access all InventoryHelperFactory_Access_Array;
+   type InventoryHelperFactory_Access_Array_Access_Array is array (Natural range <>) of InventoryHelperFactory_Access_Array_Access;
+   type InventoryHelperFactory_Access_Array_Access_Array_Access is access all InventoryHelperFactory_Access_Array_Access_Array;
+end taghelpers.InventoryHelperFactory_Package_References;
+
+with taghelpers.InventoryHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 package taghelpers.InventoryHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InventoryHelperFactory is tagged;
-   type InventoryHelperFactory_Access is access all InventoryHelperFactory'Class;
-   type InventoryHelperFactory_Access_Array is array (Natural range <>) of InventoryHelperFactory_Access;
-   type InventoryHelperFactory_Access_Array_Access is access all InventoryHelperFactory_Access_Array;
-   type InventoryHelperFactory_Access_Array_Access_Array is array (Natural range <>) of InventoryHelperFactory_Access_Array_Access;
-   type InventoryHelperFactory_Access_Array_Access_Array_Access is access all InventoryHelperFactory_Access_Array_Access_Array;
+
+   subtype InventoryHelperFactory_Access is taghelpers.InventoryHelperFactory_Package_References.InventoryHelperFactory_Access;
+   function "=" (Left, Right : InventoryHelperFactory_Access) return Boolean renames taghelpers.InventoryHelperFactory_Package_References."=";
+   subtype InventoryHelperFactory_Access_Array is taghelpers.InventoryHelperFactory_Package_References.InventoryHelperFactory_Access_Array;
+   function "=" (Left, Right : InventoryHelperFactory_Access_Array) return Boolean renames taghelpers.InventoryHelperFactory_Package_References."=";
+   subtype InventoryHelperFactory_Access_Array_Access is taghelpers.InventoryHelperFactory_Package_References.InventoryHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : InventoryHelperFactory_Access_Array_Access) return Boolean renames taghelpers.InventoryHelperFactory_Package_References."=";
+   subtype InventoryHelperFactory_Access_Array_Access_Array is taghelpers.InventoryHelperFactory_Package_References.InventoryHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : InventoryHelperFactory_Access_Array_Access_Array) return Boolean renames taghelpers.InventoryHelperFactory_Package_References."=";
+   subtype InventoryHelperFactory_Access_Array_Access_Array_Access is taghelpers.InventoryHelperFactory_Package_References.InventoryHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InventoryHelperFactory_Access_Array_Access_Array_Access) return Boolean renames taghelpers.InventoryHelperFactory_Package_References."=";
 
    type InventoryHelperFactory is new Java_Object with null record;
    CLASSNAME : Unbounded_String;

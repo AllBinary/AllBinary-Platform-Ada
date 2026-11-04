@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package;
+package org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References is
+   type NoMagneticFieldSensor_Access is access all org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package.NoMagneticFieldSensor'Class;
+   type NoMagneticFieldSensor_Access_Array is array (Natural range <>) of NoMagneticFieldSensor_Access;
+   type NoMagneticFieldSensor_Access_Array_Access is access all NoMagneticFieldSensor_Access_Array;
+   type NoMagneticFieldSensor_Access_Array_Access_Array is array (Natural range <>) of NoMagneticFieldSensor_Access_Array_Access;
+   type NoMagneticFieldSensor_Access_Array_Access_Array_Access is access all NoMagneticFieldSensor_Access_Array_Access_Array;
+end org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References;
+
+with org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,20 +31,39 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.AllBinarySensorListener_Package; use org.allbinary.input.AllBinarySensorListener_Package;
-with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
+limited with org.allbinary.logic.math.Orientation_Package;
+with org.allbinary.logic.math.Orientation_Package_References;
 with org.allbinary.input.magnetic.field.AllBinaryMagneticFieldSensor_Package; use org.allbinary.input.magnetic.field.AllBinaryMagneticFieldSensor_Package;
 
 package org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package is
 
    package AllBinarySensorListener_Package renames Standard.org.allbinary.input.AllBinarySensorListener_Package;
    package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
+   package Reference_Types is
+   subtype Orientation_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access;
+   use type Orientation_Access;
+   subtype Orientation_Access_Array is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array;
+   use type Orientation_Access_Array;
+   subtype Orientation_Access_Array_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access;
+   use type Orientation_Access_Array_Access;
+   subtype Orientation_Access_Array_Access_Array is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access_Array;
+   use type Orientation_Access_Array_Access_Array;
+   subtype Orientation_Access_Array_Access_Array_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access_Array_Access;
+   use type Orientation_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoMagneticFieldSensor is tagged;
-   type NoMagneticFieldSensor_Access is access all NoMagneticFieldSensor'Class;
-   type NoMagneticFieldSensor_Access_Array is array (Natural range <>) of NoMagneticFieldSensor_Access;
-   type NoMagneticFieldSensor_Access_Array_Access is access all NoMagneticFieldSensor_Access_Array;
-   type NoMagneticFieldSensor_Access_Array_Access_Array is array (Natural range <>) of NoMagneticFieldSensor_Access_Array_Access;
-   type NoMagneticFieldSensor_Access_Array_Access_Array_Access is access all NoMagneticFieldSensor_Access_Array_Access_Array;
+
+   subtype NoMagneticFieldSensor_Access is org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References.NoMagneticFieldSensor_Access;
+   function "=" (Left, Right : NoMagneticFieldSensor_Access) return Boolean renames org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References."=";
+   subtype NoMagneticFieldSensor_Access_Array is org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References.NoMagneticFieldSensor_Access_Array;
+   function "=" (Left, Right : NoMagneticFieldSensor_Access_Array) return Boolean renames org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References."=";
+   subtype NoMagneticFieldSensor_Access_Array_Access is org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References.NoMagneticFieldSensor_Access_Array_Access;
+   function "=" (Left, Right : NoMagneticFieldSensor_Access_Array_Access) return Boolean renames org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References."=";
+   subtype NoMagneticFieldSensor_Access_Array_Access_Array is org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References.NoMagneticFieldSensor_Access_Array_Access_Array;
+   function "=" (Left, Right : NoMagneticFieldSensor_Access_Array_Access_Array) return Boolean renames org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References."=";
+   subtype NoMagneticFieldSensor_Access_Array_Access_Array_Access is org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References.NoMagneticFieldSensor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoMagneticFieldSensor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package_References."=";
 
    type NoMagneticFieldSensor is new AllBinaryMagneticFieldSensor and AllBinarySensorListener with null record;
 

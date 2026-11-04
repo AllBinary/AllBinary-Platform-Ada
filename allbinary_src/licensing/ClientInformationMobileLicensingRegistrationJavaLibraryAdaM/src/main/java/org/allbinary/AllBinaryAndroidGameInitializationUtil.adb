@@ -51,6 +51,7 @@ package body org.allbinary.AllBinaryAndroidGameInitializationUtil_Package is
         licenseInitInfoUtil := LicenseInitInfoUtil_Package.getInstance;
         resourceUtil.addResource (licenseInitInfoUtil.INITFILENAME, To_Unbounded_String (Java_Image (androidResources.raw.licenseinitdata)));
         resourceUtil.addResource (PartnerIdentifierFileUtil_Package.getInstance.FILE_NAME, To_Unbounded_String (Java_Image (androidResources.raw.partner)));
+        resourceUtil.addResource (licenseInitInfoUtil.ABOUT, To_Unbounded_String (Java_Image (androidResources.raw.about)));
    end init;
 
 end org.allbinary.AllBinaryAndroidGameInitializationUtil_Package;

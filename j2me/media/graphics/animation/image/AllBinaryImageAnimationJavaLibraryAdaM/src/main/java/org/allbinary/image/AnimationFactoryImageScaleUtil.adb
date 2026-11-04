@@ -13,13 +13,48 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package; use org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
+with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.image.ImageJ2MEScaleUtil_Package; use org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
+with org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 
 package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
 
    package AnimationFactoryInitializationVisitor_Package renames Standard.org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype BaseImageAnimationFactory_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access;
+   function "=" (Left, Right : BaseImageAnimationFactory_Access) return Boolean renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References."=";
+   subtype BaseImageAnimationFactory_Access_Array is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array;
+   function "=" (Left, Right : BaseImageAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References."=";
+   subtype BaseImageAnimationFactory_Access_Array_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access;
+   function "=" (Left, Right : BaseImageAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References."=";
+   subtype BaseImageAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : BaseImageAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References."=";
+   subtype BaseImageAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BaseImageAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References."=";
+   subtype ImageJ2MEScaleUtil_Access is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access;
+   function "=" (Left, Right : ImageJ2MEScaleUtil_Access) return Boolean renames org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References."=";
+   subtype ImageJ2MEScaleUtil_Access_Array is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access_Array;
+   function "=" (Left, Right : ImageJ2MEScaleUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References."=";
+   subtype ImageJ2MEScaleUtil_Access_Array_Access is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageJ2MEScaleUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References."=";
+   subtype ImageJ2MEScaleUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageJ2MEScaleUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References."=";
+   subtype ImageJ2MEScaleUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References.ImageJ2MEScaleUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageJ2MEScaleUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2MEScaleUtil_Package_References."=";
    procedure Initialize_Fields (This : in out AnimationFactoryImageScaleUtil'Class) is
    begin
       null;
@@ -41,7 +76,7 @@ package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
 
    function getInstance return AnimationFactoryImageScaleUtil_Access is
    begin
-        return AnimationFactoryImageScaleUtil_Package.instance;
+        return AnimationFactoryImageScaleUtil_Access (AnimationFactoryImageScaleUtil_Package.instance);
    end getInstance;
 
    --  throws Exception

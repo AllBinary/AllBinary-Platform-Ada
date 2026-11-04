@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.math.NoDecimalTrigTable_Package;
+package org.allbinary.math.NoDecimalTrigTable_Package_References is
+   type NoDecimalTrigTable_Access is access all org.allbinary.math.NoDecimalTrigTable_Package.NoDecimalTrigTable'Class;
+   type NoDecimalTrigTable_Access_Array is array (Natural range <>) of NoDecimalTrigTable_Access;
+   type NoDecimalTrigTable_Access_Array_Access is access all NoDecimalTrigTable_Access_Array;
+   type NoDecimalTrigTable_Access_Array_Access_Array is array (Natural range <>) of NoDecimalTrigTable_Access_Array_Access;
+   type NoDecimalTrigTable_Access_Array_Access_Array_Access is access all NoDecimalTrigTable_Access_Array_Access_Array;
+end org.allbinary.math.NoDecimalTrigTable_Package_References;
+
+with org.allbinary.math.NoDecimalTrigTable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
+limited with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package_References;
 
 package org.allbinary.math.NoDecimalTrigTable_Package is
 
    package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
+   package Reference_Types is
+   subtype MathUtil_Access is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access;
+   use type MathUtil_Access;
+   subtype MathUtil_Access_Array is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array;
+   use type MathUtil_Access_Array;
+   subtype MathUtil_Access_Array_Access is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array_Access;
+   use type MathUtil_Access_Array_Access;
+   subtype MathUtil_Access_Array_Access_Array is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array_Access_Array;
+   use type MathUtil_Access_Array_Access_Array;
+   subtype MathUtil_Access_Array_Access_Array_Access is org.allbinary.logic.math.MathUtil_Package_References.MathUtil_Access_Array_Access_Array_Access;
+   use type MathUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type NoDecimalTrigTable is tagged;
-   type NoDecimalTrigTable_Access is access all NoDecimalTrigTable'Class;
-   type NoDecimalTrigTable_Access_Array is array (Natural range <>) of NoDecimalTrigTable_Access;
-   type NoDecimalTrigTable_Access_Array_Access is access all NoDecimalTrigTable_Access_Array;
-   type NoDecimalTrigTable_Access_Array_Access_Array is array (Natural range <>) of NoDecimalTrigTable_Access_Array_Access;
-   type NoDecimalTrigTable_Access_Array_Access_Array_Access is access all NoDecimalTrigTable_Access_Array_Access_Array;
+
+   subtype NoDecimalTrigTable_Access is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access;
+   function "=" (Left, Right : NoDecimalTrigTable_Access) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
+   subtype NoDecimalTrigTable_Access_Array is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access_Array;
+   function "=" (Left, Right : NoDecimalTrigTable_Access_Array) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
+   subtype NoDecimalTrigTable_Access_Array_Access is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access_Array_Access;
+   function "=" (Left, Right : NoDecimalTrigTable_Access_Array_Access) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
+   subtype NoDecimalTrigTable_Access_Array_Access_Array is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access_Array_Access_Array;
+   function "=" (Left, Right : NoDecimalTrigTable_Access_Array_Access_Array) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
+   subtype NoDecimalTrigTable_Access_Array_Access_Array_Access is org.allbinary.math.NoDecimalTrigTable_Package_References.NoDecimalTrigTable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NoDecimalTrigTable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.NoDecimalTrigTable_Package_References."=";
 
    type NoDecimalTrigTable is new Java_Object with record
       mathUtil : MathUtil_Access;

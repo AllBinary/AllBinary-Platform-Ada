@@ -34,7 +34,7 @@ package body org.allbinary.game.graphics.hud.BasicHudFactory_Package is
 
    function getInstance return BasicHudFactory_Access is
    begin
-        return BasicHudFactory_Package.instance;
+        return BasicHudFactory_Access (BasicHudFactory_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out BasicHudFactory'Class) is

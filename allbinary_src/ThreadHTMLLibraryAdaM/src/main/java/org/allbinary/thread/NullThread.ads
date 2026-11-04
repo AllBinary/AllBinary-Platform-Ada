@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.thread.NullThread_Package;
+package org.allbinary.thread.NullThread_Package_References is
+   type NullThread_Access is access all org.allbinary.thread.NullThread_Package.NullThread'Class;
+   type NullThread_Access_Array is array (Natural range <>) of NullThread_Access;
+   type NullThread_Access_Array_Access is access all NullThread_Access_Array;
+   type NullThread_Access_Array_Access_Array is array (Natural range <>) of NullThread_Access_Array_Access;
+   type NullThread_Access_Array_Access_Array_Access is access all NullThread_Access_Array_Access_Array;
+end org.allbinary.thread.NullThread_Package_References;
+
+with org.allbinary.thread.NullThread_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with java.lang.Thread_Package; use java.lang.Thread_Package;
 package org.allbinary.thread.NullThread_Package is
 
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type NullThread is tagged;
-   type NullThread_Access is access all NullThread'Class;
-   type NullThread_Access_Array is array (Natural range <>) of NullThread_Access;
-   type NullThread_Access_Array_Access is access all NullThread_Access_Array;
-   type NullThread_Access_Array_Access_Array is array (Natural range <>) of NullThread_Access_Array_Access;
-   type NullThread_Access_Array_Access_Array_Access is access all NullThread_Access_Array_Access_Array;
+
+   subtype NullThread_Access is org.allbinary.thread.NullThread_Package_References.NullThread_Access;
+   function "=" (Left, Right : NullThread_Access) return Boolean renames org.allbinary.thread.NullThread_Package_References."=";
+   subtype NullThread_Access_Array is org.allbinary.thread.NullThread_Package_References.NullThread_Access_Array;
+   function "=" (Left, Right : NullThread_Access_Array) return Boolean renames org.allbinary.thread.NullThread_Package_References."=";
+   subtype NullThread_Access_Array_Access is org.allbinary.thread.NullThread_Package_References.NullThread_Access_Array_Access;
+   function "=" (Left, Right : NullThread_Access_Array_Access) return Boolean renames org.allbinary.thread.NullThread_Package_References."=";
+   subtype NullThread_Access_Array_Access_Array is org.allbinary.thread.NullThread_Package_References.NullThread_Access_Array_Access_Array;
+   function "=" (Left, Right : NullThread_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.NullThread_Package_References."=";
+   subtype NullThread_Access_Array_Access_Array_Access is org.allbinary.thread.NullThread_Package_References.NullThread_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullThread_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.NullThread_Package_References."=";
 
    type NullThread is new Java_Object with null record;
    NULL_THREAD : Thread_Access;

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.thread.ABRunnable_Package;
+package org.allbinary.thread.ABRunnable_Package_References is
+   type ABRunnable_Access is access all org.allbinary.thread.ABRunnable_Package.ABRunnable'Class;
+   type ABRunnable_Access_Array is array (Natural range <>) of ABRunnable_Access;
+   type ABRunnable_Access_Array_Access is access all ABRunnable_Access_Array;
+   type ABRunnable_Access_Array_Access_Array is array (Natural range <>) of ABRunnable_Access_Array_Access;
+   type ABRunnable_Access_Array_Access_Array_Access is access all ABRunnable_Access_Array_Access_Array;
+end org.allbinary.thread.ABRunnable_Package_References;
+
+with org.allbinary.thread.ABRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with java.lang.Thread_Package; use java.lang.Thread_Package;
 package org.allbinary.thread.ABRunnable_Package is
 
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ABRunnable is tagged;
-   type ABRunnable_Access is access all ABRunnable'Class;
-   type ABRunnable_Access_Array is array (Natural range <>) of ABRunnable_Access;
-   type ABRunnable_Access_Array_Access is access all ABRunnable_Access_Array;
-   type ABRunnable_Access_Array_Access_Array is array (Natural range <>) of ABRunnable_Access_Array_Access;
-   type ABRunnable_Access_Array_Access_Array_Access is access all ABRunnable_Access_Array_Access_Array;
+
+   subtype ABRunnable_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access;
+   function "=" (Left, Right : ABRunnable_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   subtype ABRunnable_Access_Array is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array;
+   function "=" (Left, Right : ABRunnable_Access_Array) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   subtype ABRunnable_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access;
+   function "=" (Left, Right : ABRunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   subtype ABRunnable_Access_Array_Access_Array is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : ABRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   subtype ABRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
 
    type ABRunnable is new Java_Object and RunnableInterface with record
       running : Boolean;

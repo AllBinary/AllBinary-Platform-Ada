@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
 package body org.allbinary.logic.util.visitor.Visitor_Package is
 
+   subtype NullUtil_Access is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access;
+   function "=" (Left, Right : NullUtil_Access) return Boolean renames org.allbinary.logic.NullUtil_Package_References."=";
+   subtype NullUtil_Access_Array is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access_Array;
+   function "=" (Left, Right : NullUtil_Access_Array) return Boolean renames org.allbinary.logic.NullUtil_Package_References."=";
+   subtype NullUtil_Access_Array_Access is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access_Array_Access;
+   function "=" (Left, Right : NullUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.NullUtil_Package_References."=";
+   subtype NullUtil_Access_Array_Access_Array is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : NullUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.NullUtil_Package_References."=";
+   subtype NullUtil_Access_Array_Access_Array_Access is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.NullUtil_Package_References."=";
    procedure Initialize_Fields (This : in out Visitor'Class) is
    begin
       null;
@@ -43,7 +55,7 @@ package body org.allbinary.logic.util.visitor.Visitor_Package is
 
    function getInstance return Visitor_Access is
    begin
-        return Visitor_Package.instance;
+        return Visitor_Access (Visitor_Package.instance);
    end getInstance;
 
    procedure visit (This : in out Visitor; anyType_Param : access Java_Object'Class) is

@@ -13,13 +13,46 @@
 --  Generated Code Do Not Modify
 
 
+with android.graphics.Paint_Package; use android.graphics.Paint_Package;
 with android.graphics.PorterDuff_Package; use android.graphics.PorterDuff_Package;
 with android.graphics.PorterDuffColorFilter_Package; use android.graphics.PorterDuffColorFilter_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 
    package PorterDuff_Package renames Standard.android.graphics.PorterDuff_Package;
    package PorterDuffColorFilter_Package renames Standard.android.graphics.PorterDuffColorFilter_Package;
+   subtype Paint_Access is android.graphics.Paint_Package_References.Paint_Access;
+   function "=" (Left, Right : Paint_Access) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Paint_Access_Array is android.graphics.Paint_Package_References.Paint_Access_Array;
+   function "=" (Left, Right : Paint_Access_Array) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Paint_Access_Array_Access is android.graphics.Paint_Package_References.Paint_Access_Array_Access;
+   function "=" (Left, Right : Paint_Access_Array_Access) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Paint_Access_Array_Access_Array is android.graphics.Paint_Package_References.Paint_Access_Array_Access_Array;
+   function "=" (Left, Right : Paint_Access_Array_Access_Array) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Paint_Access_Array_Access_Array_Access is android.graphics.Paint_Package_References.Paint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Paint_Access_Array_Access_Array_Access) return Boolean renames android.graphics.Paint_Package_References."=";
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   function "=" (Left, Right : BasicColor_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
    procedure Initialize_Fields (This : in out ImageModifierUtil'Class) is
    begin
       null;

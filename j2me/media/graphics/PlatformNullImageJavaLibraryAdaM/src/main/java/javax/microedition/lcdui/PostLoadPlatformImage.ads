@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with javax.microedition.lcdui.PostLoadPlatformImage_Package;
+package javax.microedition.lcdui.PostLoadPlatformImage_Package_References is
+   type PostLoadPlatformImage_Access is access all javax.microedition.lcdui.PostLoadPlatformImage_Package.PostLoadPlatformImage'Class;
+   type PostLoadPlatformImage_Access_Array is array (Natural range <>) of PostLoadPlatformImage_Access;
+   type PostLoadPlatformImage_Access_Array_Access is access all PostLoadPlatformImage_Access_Array;
+   type PostLoadPlatformImage_Access_Array_Access_Array is array (Natural range <>) of PostLoadPlatformImage_Access_Array_Access;
+   type PostLoadPlatformImage_Access_Array_Access_Array_Access is access all PostLoadPlatformImage_Access_Array_Access_Array;
+end javax.microedition.lcdui.PostLoadPlatformImage_Package_References;
+
+with javax.microedition.lcdui.PostLoadPlatformImage_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with javax.microedition.lcdui.PlatformImage_Package; use javax.microedition.lcdu
 
 package javax.microedition.lcdui.PostLoadPlatformImage_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PostLoadPlatformImage is tagged;
-   type PostLoadPlatformImage_Access is access all PostLoadPlatformImage'Class;
-   type PostLoadPlatformImage_Access_Array is array (Natural range <>) of PostLoadPlatformImage_Access;
-   type PostLoadPlatformImage_Access_Array_Access is access all PostLoadPlatformImage_Access_Array;
-   type PostLoadPlatformImage_Access_Array_Access_Array is array (Natural range <>) of PostLoadPlatformImage_Access_Array_Access;
-   type PostLoadPlatformImage_Access_Array_Access_Array_Access is access all PostLoadPlatformImage_Access_Array_Access_Array;
+
+   subtype PostLoadPlatformImage_Access is javax.microedition.lcdui.PostLoadPlatformImage_Package_References.PostLoadPlatformImage_Access;
+   function "=" (Left, Right : PostLoadPlatformImage_Access) return Boolean renames javax.microedition.lcdui.PostLoadPlatformImage_Package_References."=";
+   subtype PostLoadPlatformImage_Access_Array is javax.microedition.lcdui.PostLoadPlatformImage_Package_References.PostLoadPlatformImage_Access_Array;
+   function "=" (Left, Right : PostLoadPlatformImage_Access_Array) return Boolean renames javax.microedition.lcdui.PostLoadPlatformImage_Package_References."=";
+   subtype PostLoadPlatformImage_Access_Array_Access is javax.microedition.lcdui.PostLoadPlatformImage_Package_References.PostLoadPlatformImage_Access_Array_Access;
+   function "=" (Left, Right : PostLoadPlatformImage_Access_Array_Access) return Boolean renames javax.microedition.lcdui.PostLoadPlatformImage_Package_References."=";
+   subtype PostLoadPlatformImage_Access_Array_Access_Array is javax.microedition.lcdui.PostLoadPlatformImage_Package_References.PostLoadPlatformImage_Access_Array_Access_Array;
+   function "=" (Left, Right : PostLoadPlatformImage_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.PostLoadPlatformImage_Package_References."=";
+   subtype PostLoadPlatformImage_Access_Array_Access_Array_Access is javax.microedition.lcdui.PostLoadPlatformImage_Package_References.PostLoadPlatformImage_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PostLoadPlatformImage_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.PostLoadPlatformImage_Package_References."=";
 
    type PostLoadPlatformImage is new PlatformImage with null record;
    instance : PostLoadPlatformImage_Access;

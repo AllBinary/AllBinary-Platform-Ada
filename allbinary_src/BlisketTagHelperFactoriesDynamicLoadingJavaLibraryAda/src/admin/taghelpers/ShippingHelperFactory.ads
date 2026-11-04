@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.ShippingHelperFactory_Package;
+package admin.taghelpers.ShippingHelperFactory_Package_References is
+   type ShippingHelperFactory_Access is access all admin.taghelpers.ShippingHelperFactory_Package.ShippingHelperFactory'Class;
+   type ShippingHelperFactory_Access_Array is array (Natural range <>) of ShippingHelperFactory_Access;
+   type ShippingHelperFactory_Access_Array_Access is access all ShippingHelperFactory_Access_Array;
+   type ShippingHelperFactory_Access_Array_Access_Array is array (Natural range <>) of ShippingHelperFactory_Access_Array_Access;
+   type ShippingHelperFactory_Access_Array_Access_Array_Access is access all ShippingHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.ShippingHelperFactory_Package_References;
+
+with admin.taghelpers.ShippingHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.ShippingHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ShippingHelperFactory is tagged;
-   type ShippingHelperFactory_Access is access all ShippingHelperFactory'Class;
-   type ShippingHelperFactory_Access_Array is array (Natural range <>) of ShippingHelperFactory_Access;
-   type ShippingHelperFactory_Access_Array_Access is access all ShippingHelperFactory_Access_Array;
-   type ShippingHelperFactory_Access_Array_Access_Array is array (Natural range <>) of ShippingHelperFactory_Access_Array_Access;
-   type ShippingHelperFactory_Access_Array_Access_Array_Access is access all ShippingHelperFactory_Access_Array_Access_Array;
+
+   subtype ShippingHelperFactory_Access is admin.taghelpers.ShippingHelperFactory_Package_References.ShippingHelperFactory_Access;
+   function "=" (Left, Right : ShippingHelperFactory_Access) return Boolean renames admin.taghelpers.ShippingHelperFactory_Package_References."=";
+   subtype ShippingHelperFactory_Access_Array is admin.taghelpers.ShippingHelperFactory_Package_References.ShippingHelperFactory_Access_Array;
+   function "=" (Left, Right : ShippingHelperFactory_Access_Array) return Boolean renames admin.taghelpers.ShippingHelperFactory_Package_References."=";
+   subtype ShippingHelperFactory_Access_Array_Access is admin.taghelpers.ShippingHelperFactory_Package_References.ShippingHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : ShippingHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.ShippingHelperFactory_Package_References."=";
+   subtype ShippingHelperFactory_Access_Array_Access_Array is admin.taghelpers.ShippingHelperFactory_Package_References.ShippingHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ShippingHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.ShippingHelperFactory_Package_References."=";
+   subtype ShippingHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.ShippingHelperFactory_Package_References.ShippingHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ShippingHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.ShippingHelperFactory_Package_References."=";
 
    type ShippingHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

@@ -13,9 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package body org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
 
+   subtype Orientation_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access;
+   function "=" (Left, Right : Orientation_Access) return Boolean renames org.allbinary.logic.math.Orientation_Package_References."=";
+   subtype Orientation_Access_Array is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array;
+   function "=" (Left, Right : Orientation_Access_Array) return Boolean renames org.allbinary.logic.math.Orientation_Package_References."=";
+   subtype Orientation_Access_Array_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access;
+   function "=" (Left, Right : Orientation_Access_Array_Access) return Boolean renames org.allbinary.logic.math.Orientation_Package_References."=";
+   subtype Orientation_Access_Array_Access_Array is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access_Array;
+   function "=" (Left, Right : Orientation_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.Orientation_Package_References."=";
+   subtype Orientation_Access_Array_Access_Array_Access is org.allbinary.logic.math.Orientation_Package_References.Orientation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Orientation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.Orientation_Package_References."=";
    procedure Initialize_Fields (This : in out NoAccelerometerSensor'Class) is
    begin
       null;
@@ -39,7 +56,7 @@ package body org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
    --  throws Exception
    function getOrientation (This : in out NoAccelerometerSensor) return Orientation_Access is
    begin
-        return Orientation_Package.NONE;
+        return Orientation_Access (Orientation_Package.NONE);
    end getOrientation;
 
    procedure onSensorChange (This : in out NoAccelerometerSensor) is

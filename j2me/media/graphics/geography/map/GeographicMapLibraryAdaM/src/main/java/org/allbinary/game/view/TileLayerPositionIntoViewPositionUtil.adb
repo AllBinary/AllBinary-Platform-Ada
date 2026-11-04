@@ -13,15 +13,48 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package; use org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 
 package body org.allbinary.game.view.TileLayerPositionIntoViewPositionUtil_Package is
 
    package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+   subtype TileLayerPositionIntoViewPosition_Access is org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References.TileLayerPositionIntoViewPosition_Access;
+   function "=" (Left, Right : TileLayerPositionIntoViewPosition_Access) return Boolean renames org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References."=";
+   subtype TileLayerPositionIntoViewPosition_Access_Array is org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References.TileLayerPositionIntoViewPosition_Access_Array;
+   function "=" (Left, Right : TileLayerPositionIntoViewPosition_Access_Array) return Boolean renames org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References."=";
+   subtype TileLayerPositionIntoViewPosition_Access_Array_Access is org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References.TileLayerPositionIntoViewPosition_Access_Array_Access;
+   function "=" (Left, Right : TileLayerPositionIntoViewPosition_Access_Array_Access) return Boolean renames org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References."=";
+   subtype TileLayerPositionIntoViewPosition_Access_Array_Access_Array is org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References.TileLayerPositionIntoViewPosition_Access_Array_Access_Array;
+   function "=" (Left, Right : TileLayerPositionIntoViewPosition_Access_Array_Access_Array) return Boolean renames org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References."=";
+   subtype TileLayerPositionIntoViewPosition_Access_Array_Access_Array_Access is org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References.TileLayerPositionIntoViewPosition_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TileLayerPositionIntoViewPosition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package_References."=";
+   subtype AllBinaryGameCanvas_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access;
+   function "=" (Left, Right : AllBinaryGameCanvas_Access) return Boolean renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References."=";
+   subtype AllBinaryGameCanvas_Access_Array is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array;
+   function "=" (Left, Right : AllBinaryGameCanvas_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References."=";
+   subtype AllBinaryGameCanvas_Access_Array_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryGameCanvas_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References."=";
+   subtype AllBinaryGameCanvas_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryGameCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References."=";
+   subtype AllBinaryGameCanvas_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References.AllBinaryGameCanvas_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryGameCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package_References."=";
    procedure Initialize_Fields (This : in out TileLayerPositionIntoViewPositionUtil'Class) is
    begin
       null;

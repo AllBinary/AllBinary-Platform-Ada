@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package;
+package org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References is
+   type TransformGeneratorUtil_Access is access all org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package.TransformGeneratorUtil'Class;
+   type TransformGeneratorUtil_Access_Array is array (Natural range <>) of TransformGeneratorUtil_Access;
+   type TransformGeneratorUtil_Access_Array_Access is access all TransformGeneratorUtil_Access_Array;
+   type TransformGeneratorUtil_Access_Array_Access_Array is array (Natural range <>) of TransformGeneratorUtil_Access_Array_Access;
+   type TransformGeneratorUtil_Access_Array_Access_Array_Access is access all TransformGeneratorUtil_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References;
+
+with org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,10 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package; use org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 
 package org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package is
 
@@ -31,13 +45,61 @@ package org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Pa
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package TransformInfoDomNode_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype TransformInfoDomNode_Access is org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.TransformInfoDomNode_Access;
+   use type TransformInfoDomNode_Access;
+   subtype TransformInfoDomNode_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.TransformInfoDomNode_Access_Array;
+   use type TransformInfoDomNode_Access_Array;
+   subtype TransformInfoDomNode_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.TransformInfoDomNode_Access_Array_Access;
+   use type TransformInfoDomNode_Access_Array_Access;
+   subtype TransformInfoDomNode_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.TransformInfoDomNode_Access_Array_Access_Array;
+   use type TransformInfoDomNode_Access_Array_Access_Array;
+   subtype TransformInfoDomNode_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.TransformInfoDomNode_Access_Array_Access_Array_Access;
+   use type TransformInfoDomNode_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TransformGeneratorUtil is tagged;
-   type TransformGeneratorUtil_Access is access all TransformGeneratorUtil'Class;
-   type TransformGeneratorUtil_Access_Array is array (Natural range <>) of TransformGeneratorUtil_Access;
-   type TransformGeneratorUtil_Access_Array_Access is access all TransformGeneratorUtil_Access_Array;
-   type TransformGeneratorUtil_Access_Array_Access_Array is array (Natural range <>) of TransformGeneratorUtil_Access_Array_Access;
-   type TransformGeneratorUtil_Access_Array_Access_Array_Access is access all TransformGeneratorUtil_Access_Array_Access_Array;
+
+   subtype TransformGeneratorUtil_Access is org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References.TransformGeneratorUtil_Access;
+   function "=" (Left, Right : TransformGeneratorUtil_Access) return Boolean renames org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References."=";
+   subtype TransformGeneratorUtil_Access_Array is org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References.TransformGeneratorUtil_Access_Array;
+   function "=" (Left, Right : TransformGeneratorUtil_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References."=";
+   subtype TransformGeneratorUtil_Access_Array_Access is org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References.TransformGeneratorUtil_Access_Array_Access;
+   function "=" (Left, Right : TransformGeneratorUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References."=";
+   subtype TransformGeneratorUtil_Access_Array_Access_Array is org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References.TransformGeneratorUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : TransformGeneratorUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References."=";
+   subtype TransformGeneratorUtil_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References.TransformGeneratorUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TransformGeneratorUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package_References."=";
 
    type TransformGeneratorUtil is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.OrderItemsHelperFactory_Package;
+package admin.taghelpers.OrderItemsHelperFactory_Package_References is
+   type OrderItemsHelperFactory_Access is access all admin.taghelpers.OrderItemsHelperFactory_Package.OrderItemsHelperFactory'Class;
+   type OrderItemsHelperFactory_Access_Array is array (Natural range <>) of OrderItemsHelperFactory_Access;
+   type OrderItemsHelperFactory_Access_Array_Access is access all OrderItemsHelperFactory_Access_Array;
+   type OrderItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of OrderItemsHelperFactory_Access_Array_Access;
+   type OrderItemsHelperFactory_Access_Array_Access_Array_Access is access all OrderItemsHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.OrderItemsHelperFactory_Package_References;
+
+with admin.taghelpers.OrderItemsHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.OrderItemsHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OrderItemsHelperFactory is tagged;
-   type OrderItemsHelperFactory_Access is access all OrderItemsHelperFactory'Class;
-   type OrderItemsHelperFactory_Access_Array is array (Natural range <>) of OrderItemsHelperFactory_Access;
-   type OrderItemsHelperFactory_Access_Array_Access is access all OrderItemsHelperFactory_Access_Array;
-   type OrderItemsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of OrderItemsHelperFactory_Access_Array_Access;
-   type OrderItemsHelperFactory_Access_Array_Access_Array_Access is access all OrderItemsHelperFactory_Access_Array_Access_Array;
+
+   subtype OrderItemsHelperFactory_Access is admin.taghelpers.OrderItemsHelperFactory_Package_References.OrderItemsHelperFactory_Access;
+   function "=" (Left, Right : OrderItemsHelperFactory_Access) return Boolean renames admin.taghelpers.OrderItemsHelperFactory_Package_References."=";
+   subtype OrderItemsHelperFactory_Access_Array is admin.taghelpers.OrderItemsHelperFactory_Package_References.OrderItemsHelperFactory_Access_Array;
+   function "=" (Left, Right : OrderItemsHelperFactory_Access_Array) return Boolean renames admin.taghelpers.OrderItemsHelperFactory_Package_References."=";
+   subtype OrderItemsHelperFactory_Access_Array_Access is admin.taghelpers.OrderItemsHelperFactory_Package_References.OrderItemsHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : OrderItemsHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.OrderItemsHelperFactory_Package_References."=";
+   subtype OrderItemsHelperFactory_Access_Array_Access_Array is admin.taghelpers.OrderItemsHelperFactory_Package_References.OrderItemsHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderItemsHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.OrderItemsHelperFactory_Package_References."=";
+   subtype OrderItemsHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.OrderItemsHelperFactory_Package_References.OrderItemsHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderItemsHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.OrderItemsHelperFactory_Package_References."=";
 
    type OrderItemsHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

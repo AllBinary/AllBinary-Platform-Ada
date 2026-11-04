@@ -14,9 +14,22 @@
 
 
 with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package; use org.allbinary.globals.UrlGlobalsInterface_Package;
+with org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package;
 
 package body org.allbinary.globals.URLGLOBALS_Package is
 
+   subtype UrlGlobalsInterface_Access is org.allbinary.globals.UrlGlobalsInterface_Package_References.UrlGlobalsInterface_Access;
+   function "=" (Left, Right : UrlGlobalsInterface_Access) return Boolean renames org.allbinary.globals.UrlGlobalsInterface_Package_References."=";
+   subtype UrlGlobalsInterface_Access_Array is org.allbinary.globals.UrlGlobalsInterface_Package_References.UrlGlobalsInterface_Access_Array;
+   function "=" (Left, Right : UrlGlobalsInterface_Access_Array) return Boolean renames org.allbinary.globals.UrlGlobalsInterface_Package_References."=";
+   subtype UrlGlobalsInterface_Access_Array_Access is org.allbinary.globals.UrlGlobalsInterface_Package_References.UrlGlobalsInterface_Access_Array_Access;
+   function "=" (Left, Right : UrlGlobalsInterface_Access_Array_Access) return Boolean renames org.allbinary.globals.UrlGlobalsInterface_Package_References."=";
+   subtype UrlGlobalsInterface_Access_Array_Access_Array is org.allbinary.globals.UrlGlobalsInterface_Package_References.UrlGlobalsInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : UrlGlobalsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.globals.UrlGlobalsInterface_Package_References."=";
+   subtype UrlGlobalsInterface_Access_Array_Access_Array_Access is org.allbinary.globals.UrlGlobalsInterface_Package_References.UrlGlobalsInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UrlGlobalsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.globals.UrlGlobalsInterface_Package_References."=";
    procedure Initialize_Fields (This : in out URLGLOBALS'Class) is
    begin
       null;

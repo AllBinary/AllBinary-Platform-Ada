@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.configuration.InGameFeatures_Package;
+package org.allbinary.game.configuration.InGameFeatures_Package_References is
+   type InGameFeatures_Access is access all org.allbinary.game.configuration.InGameFeatures_Package.InGameFeatures'Class;
+   type InGameFeatures_Access_Array is array (Natural range <>) of InGameFeatures_Access;
+   type InGameFeatures_Access_Array_Access is access all InGameFeatures_Access_Array;
+   type InGameFeatures_Access_Array_Access_Array is array (Natural range <>) of InGameFeatures_Access_Array_Access;
+   type InGameFeatures_Access_Array_Access_Array_Access is access all InGameFeatures_Access_Array_Access_Array;
+end org.allbinary.game.configuration.InGameFeatures_Package_References;
+
+with org.allbinary.game.configuration.InGameFeatures_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
 package org.allbinary.game.configuration.InGameFeatures_Package is
 
    package Init_Package renames Standard.org.allbinary.init.Init_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type InGameFeatures is tagged;
-   type InGameFeatures_Access is access all InGameFeatures'Class;
-   type InGameFeatures_Access_Array is array (Natural range <>) of InGameFeatures_Access;
-   type InGameFeatures_Access_Array_Access is access all InGameFeatures_Access_Array;
-   type InGameFeatures_Access_Array_Access_Array is array (Natural range <>) of InGameFeatures_Access_Array_Access;
-   type InGameFeatures_Access_Array_Access_Array_Access is access all InGameFeatures_Access_Array_Access_Array;
+
+   subtype InGameFeatures_Access is org.allbinary.game.configuration.InGameFeatures_Package_References.InGameFeatures_Access;
+   function "=" (Left, Right : InGameFeatures_Access) return Boolean renames org.allbinary.game.configuration.InGameFeatures_Package_References."=";
+   subtype InGameFeatures_Access_Array is org.allbinary.game.configuration.InGameFeatures_Package_References.InGameFeatures_Access_Array;
+   function "=" (Left, Right : InGameFeatures_Access_Array) return Boolean renames org.allbinary.game.configuration.InGameFeatures_Package_References."=";
+   subtype InGameFeatures_Access_Array_Access is org.allbinary.game.configuration.InGameFeatures_Package_References.InGameFeatures_Access_Array_Access;
+   function "=" (Left, Right : InGameFeatures_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.InGameFeatures_Package_References."=";
+   subtype InGameFeatures_Access_Array_Access_Array is org.allbinary.game.configuration.InGameFeatures_Package_References.InGameFeatures_Access_Array_Access_Array;
+   function "=" (Left, Right : InGameFeatures_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.InGameFeatures_Package_References."=";
+   subtype InGameFeatures_Access_Array_Access_Array_Access is org.allbinary.game.configuration.InGameFeatures_Package_References.InGameFeatures_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InGameFeatures_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.InGameFeatures_Package_References."=";
 
    type InGameFeatures is new Init with null record;
 

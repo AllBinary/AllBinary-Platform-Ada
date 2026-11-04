@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.file.FileUnamedUtil_Package;
+package org.allbinary.logic.io.file.FileUnamedUtil_Package_References is
+   type FileUnamedUtil_Access is access all org.allbinary.logic.io.file.FileUnamedUtil_Package.FileUnamedUtil'Class;
+   type FileUnamedUtil_Access_Array is array (Natural range <>) of FileUnamedUtil_Access;
+   type FileUnamedUtil_Access_Array_Access is access all FileUnamedUtil_Access_Array;
+   type FileUnamedUtil_Access_Array_Access_Array is array (Natural range <>) of FileUnamedUtil_Access_Array_Access;
+   type FileUnamedUtil_Access_Array_Access_Array_Access is access all FileUnamedUtil_Access_Array_Access_Array;
+end org.allbinary.logic.io.file.FileUnamedUtil_Package_References;
+
+with org.allbinary.logic.io.file.FileUnamedUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,37 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+limited with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
 
 package org.allbinary.logic.io.file.FileUnamedUtil_Package is
 
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package Reference_Types is
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   use type CommonSeps_Access;
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   use type CommonSeps_Access_Array;
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access;
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   use type CommonSeps_Access_Array_Access_Array;
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type FileUnamedUtil is tagged;
-   type FileUnamedUtil_Access is access all FileUnamedUtil'Class;
-   type FileUnamedUtil_Access_Array is array (Natural range <>) of FileUnamedUtil_Access;
-   type FileUnamedUtil_Access_Array_Access is access all FileUnamedUtil_Access_Array;
-   type FileUnamedUtil_Access_Array_Access_Array is array (Natural range <>) of FileUnamedUtil_Access_Array_Access;
-   type FileUnamedUtil_Access_Array_Access_Array_Access is access all FileUnamedUtil_Access_Array_Access_Array;
+
+   subtype FileUnamedUtil_Access is org.allbinary.logic.io.file.FileUnamedUtil_Package_References.FileUnamedUtil_Access;
+   function "=" (Left, Right : FileUnamedUtil_Access) return Boolean renames org.allbinary.logic.io.file.FileUnamedUtil_Package_References."=";
+   subtype FileUnamedUtil_Access_Array is org.allbinary.logic.io.file.FileUnamedUtil_Package_References.FileUnamedUtil_Access_Array;
+   function "=" (Left, Right : FileUnamedUtil_Access_Array) return Boolean renames org.allbinary.logic.io.file.FileUnamedUtil_Package_References."=";
+   subtype FileUnamedUtil_Access_Array_Access is org.allbinary.logic.io.file.FileUnamedUtil_Package_References.FileUnamedUtil_Access_Array_Access;
+   function "=" (Left, Right : FileUnamedUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.FileUnamedUtil_Package_References."=";
+   subtype FileUnamedUtil_Access_Array_Access_Array is org.allbinary.logic.io.file.FileUnamedUtil_Package_References.FileUnamedUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : FileUnamedUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.FileUnamedUtil_Package_References."=";
+   subtype FileUnamedUtil_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.FileUnamedUtil_Package_References.FileUnamedUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileUnamedUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.FileUnamedUtil_Package_References."=";
 
    type FileUnamedUtil is new Java_Object with record
       commonSeps : CommonSeps_Access;

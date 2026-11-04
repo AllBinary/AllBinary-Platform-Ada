@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.StaticPagesRequestHelper_Package;
+package admin.taghelpers.StaticPagesRequestHelper_Package_References is
+   type StaticPagesRequestHelper_Access is access all admin.taghelpers.StaticPagesRequestHelper_Package.StaticPagesRequestHelper'Class;
+   type StaticPagesRequestHelper_Access_Array is array (Natural range <>) of StaticPagesRequestHelper_Access;
+   type StaticPagesRequestHelper_Access_Array_Access is access all StaticPagesRequestHelper_Access_Array;
+   type StaticPagesRequestHelper_Access_Array_Access_Array is array (Natural range <>) of StaticPagesRequestHelper_Access_Array_Access;
+   type StaticPagesRequestHelper_Access_Array_Access_Array_Access is access all StaticPagesRequestHelper_Access_Array_Access_Array;
+end admin.taghelpers.StaticPagesRequestHelper_Package_References;
+
+with admin.taghelpers.StaticPagesRequestHelper_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,9 +34,12 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.context.AbContext_Package; use org.allbinary.business.context.AbContext_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.control.search.SearchParams_Package; use org.allbinary.logic.control.search.SearchParams_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.control.search.SearchParams_Package;
+with org.allbinary.logic.control.search.SearchParams_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with admin.taghelpers.TagHelperInterface_Package; use admin.taghelpers.TagHelperInterface_Package;
 
 package admin.taghelpers.StaticPagesRequestHelper_Package is
@@ -36,13 +49,51 @@ package admin.taghelpers.StaticPagesRequestHelper_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package SearchParams_Package renames Standard.org.allbinary.logic.control.search.SearchParams_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype SearchParams_Access is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access;
+   use type SearchParams_Access;
+   subtype SearchParams_Access_Array is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array;
+   use type SearchParams_Access_Array;
+   subtype SearchParams_Access_Array_Access is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array_Access;
+   use type SearchParams_Access_Array_Access;
+   subtype SearchParams_Access_Array_Access_Array is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array_Access_Array;
+   use type SearchParams_Access_Array_Access_Array;
+   subtype SearchParams_Access_Array_Access_Array_Access is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array_Access_Array_Access;
+   use type SearchParams_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type StaticPagesRequestHelper is tagged;
-   type StaticPagesRequestHelper_Access is access all StaticPagesRequestHelper'Class;
-   type StaticPagesRequestHelper_Access_Array is array (Natural range <>) of StaticPagesRequestHelper_Access;
-   type StaticPagesRequestHelper_Access_Array_Access is access all StaticPagesRequestHelper_Access_Array;
-   type StaticPagesRequestHelper_Access_Array_Access_Array is array (Natural range <>) of StaticPagesRequestHelper_Access_Array_Access;
-   type StaticPagesRequestHelper_Access_Array_Access_Array_Access is access all StaticPagesRequestHelper_Access_Array_Access_Array;
+
+   subtype StaticPagesRequestHelper_Access is admin.taghelpers.StaticPagesRequestHelper_Package_References.StaticPagesRequestHelper_Access;
+   function "=" (Left, Right : StaticPagesRequestHelper_Access) return Boolean renames admin.taghelpers.StaticPagesRequestHelper_Package_References."=";
+   subtype StaticPagesRequestHelper_Access_Array is admin.taghelpers.StaticPagesRequestHelper_Package_References.StaticPagesRequestHelper_Access_Array;
+   function "=" (Left, Right : StaticPagesRequestHelper_Access_Array) return Boolean renames admin.taghelpers.StaticPagesRequestHelper_Package_References."=";
+   subtype StaticPagesRequestHelper_Access_Array_Access is admin.taghelpers.StaticPagesRequestHelper_Package_References.StaticPagesRequestHelper_Access_Array_Access;
+   function "=" (Left, Right : StaticPagesRequestHelper_Access_Array_Access) return Boolean renames admin.taghelpers.StaticPagesRequestHelper_Package_References."=";
+   subtype StaticPagesRequestHelper_Access_Array_Access_Array is admin.taghelpers.StaticPagesRequestHelper_Package_References.StaticPagesRequestHelper_Access_Array_Access_Array;
+   function "=" (Left, Right : StaticPagesRequestHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.StaticPagesRequestHelper_Package_References."=";
+   subtype StaticPagesRequestHelper_Access_Array_Access_Array_Access is admin.taghelpers.StaticPagesRequestHelper_Package_References.StaticPagesRequestHelper_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StaticPagesRequestHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.StaticPagesRequestHelper_Package_References."=";
 
    type StaticPagesRequestHelper is new AbContext and TagHelperInterface with record
       logUtil : LogUtil_Access;

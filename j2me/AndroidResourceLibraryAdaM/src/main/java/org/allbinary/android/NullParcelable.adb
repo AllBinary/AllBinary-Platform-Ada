@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with android.os.Parcelable_Package; use android.os.Parcelable_Package;
+with android.os.Parcel_Package; use android.os.Parcel_Package;
 
 package body org.allbinary.android.NullParcelable_Package is
 
+   subtype Parcel_Access is android.os.Parcel_Package_References.Parcel_Access;
+   function "=" (Left, Right : Parcel_Access) return Boolean renames android.os.Parcel_Package_References."=";
+   subtype Parcel_Access_Array is android.os.Parcel_Package_References.Parcel_Access_Array;
+   function "=" (Left, Right : Parcel_Access_Array) return Boolean renames android.os.Parcel_Package_References."=";
+   subtype Parcel_Access_Array_Access is android.os.Parcel_Package_References.Parcel_Access_Array_Access;
+   function "=" (Left, Right : Parcel_Access_Array_Access) return Boolean renames android.os.Parcel_Package_References."=";
+   subtype Parcel_Access_Array_Access_Array is android.os.Parcel_Package_References.Parcel_Access_Array_Access_Array;
+   function "=" (Left, Right : Parcel_Access_Array_Access_Array) return Boolean renames android.os.Parcel_Package_References."=";
+   subtype Parcel_Access_Array_Access_Array_Access is android.os.Parcel_Package_References.Parcel_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Parcel_Access_Array_Access_Array_Access) return Boolean renames android.os.Parcel_Package_References."=";
    procedure Initialize_Fields (This : in out NullParcelable'Class) is
    begin
       null;

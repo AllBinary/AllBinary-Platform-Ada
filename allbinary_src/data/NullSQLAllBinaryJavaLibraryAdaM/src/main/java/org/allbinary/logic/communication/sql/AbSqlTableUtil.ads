@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References is
+   type AbSqlTableUtil_Access is access all org.allbinary.logic.communication.sql.AbSqlTableUtil_Package.AbSqlTableUtil'Class;
+   type AbSqlTableUtil_Access_Array is array (Natural range <>) of AbSqlTableUtil_Access;
+   type AbSqlTableUtil_Access_Array_Access is access all AbSqlTableUtil_Access_Array;
+   type AbSqlTableUtil_Access_Array_Access_Array is array (Natural range <>) of AbSqlTableUtil_Access_Array_Access;
+   type AbSqlTableUtil_Access_Array_Access_Array_Access is access all AbSqlTableUtil_Access_Array_Access_Array;
+end org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References;
+
+with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,12 +30,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
-with org.allbinary.logic.communication.sql.AbSqlTable_Package; use org.allbinary.logic.communication.sql.AbSqlTable_Package;
+limited with org.allbinary.business.installer.Portion_Package;
+with org.allbinary.business.installer.Portion_Package_References;
+limited with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package_References;
+limited with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonSeps_Package_References;
+limited with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.allbinary.logic.communication.sql.SqlStrings_Package;
+with org.allbinary.logic.communication.sql.SqlStrings_Package_References;
+limited with org.allbinary.logic.communication.sql.AbSqlTable_Package;
+with org.allbinary.logic.communication.sql.AbSqlTable_Package_References;
 
 package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
 
@@ -33,13 +49,81 @@ package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Reference_Types is
+   subtype Portion_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access;
+   use type Portion_Access;
+   subtype Portion_Access_Array is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array;
+   use type Portion_Access_Array;
+   subtype Portion_Access_Array_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access;
+   use type Portion_Access_Array_Access;
+   subtype Portion_Access_Array_Access_Array is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access_Array;
+   use type Portion_Access_Array_Access_Array;
+   subtype Portion_Access_Array_Access_Array_Access is org.allbinary.business.installer.Portion_Package_References.Portion_Access_Array_Access_Array_Access;
+   use type Portion_Access_Array_Access_Array_Access;
+   subtype StringUtil_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access;
+   use type StringUtil_Access;
+   subtype StringUtil_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array;
+   use type StringUtil_Access_Array;
+   subtype StringUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access;
+   use type StringUtil_Access_Array_Access;
+   subtype StringUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array;
+   use type StringUtil_Access_Array_Access_Array;
+   subtype StringUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringUtil_Package_References.StringUtil_Access_Array_Access_Array_Access;
+   use type StringUtil_Access_Array_Access_Array_Access;
+   subtype CommonSeps_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access;
+   use type CommonSeps_Access;
+   subtype CommonSeps_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array;
+   use type CommonSeps_Access_Array;
+   subtype CommonSeps_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access;
+   subtype CommonSeps_Access_Array_Access_Array is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array;
+   use type CommonSeps_Access_Array_Access_Array;
+   subtype CommonSeps_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonSeps_Package_References.CommonSeps_Access_Array_Access_Array_Access;
+   use type CommonSeps_Access_Array_Access_Array_Access;
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   use type CommonStrings_Access;
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   use type CommonStrings_Access_Array;
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access;
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   use type CommonStrings_Access_Array_Access_Array;
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype SqlStrings_Access is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access;
+   use type SqlStrings_Access;
+   subtype SqlStrings_Access_Array is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access_Array;
+   use type SqlStrings_Access_Array;
+   subtype SqlStrings_Access_Array_Access is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access_Array_Access;
+   use type SqlStrings_Access_Array_Access;
+   subtype SqlStrings_Access_Array_Access_Array is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access_Array_Access_Array;
+   use type SqlStrings_Access_Array_Access_Array;
+   subtype SqlStrings_Access_Array_Access_Array_Access is org.allbinary.logic.communication.sql.SqlStrings_Package_References.SqlStrings_Access_Array_Access_Array_Access;
+   use type SqlStrings_Access_Array_Access_Array_Access;
+   subtype AbSqlTable_Access is org.allbinary.logic.communication.sql.AbSqlTable_Package_References.AbSqlTable_Access;
+   use type AbSqlTable_Access;
+   subtype AbSqlTable_Access_Array is org.allbinary.logic.communication.sql.AbSqlTable_Package_References.AbSqlTable_Access_Array;
+   use type AbSqlTable_Access_Array;
+   subtype AbSqlTable_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlTable_Package_References.AbSqlTable_Access_Array_Access;
+   use type AbSqlTable_Access_Array_Access;
+   subtype AbSqlTable_Access_Array_Access_Array is org.allbinary.logic.communication.sql.AbSqlTable_Package_References.AbSqlTable_Access_Array_Access_Array;
+   use type AbSqlTable_Access_Array_Access_Array;
+   subtype AbSqlTable_Access_Array_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlTable_Package_References.AbSqlTable_Access_Array_Access_Array_Access;
+   use type AbSqlTable_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type AbSqlTableUtil is tagged;
-   type AbSqlTableUtil_Access is access all AbSqlTableUtil'Class;
-   type AbSqlTableUtil_Access_Array is array (Natural range <>) of AbSqlTableUtil_Access;
-   type AbSqlTableUtil_Access_Array_Access is access all AbSqlTableUtil_Access_Array;
-   type AbSqlTableUtil_Access_Array_Access_Array is array (Natural range <>) of AbSqlTableUtil_Access_Array_Access;
-   type AbSqlTableUtil_Access_Array_Access_Array_Access is access all AbSqlTableUtil_Access_Array_Access_Array;
+
+   subtype AbSqlTableUtil_Access is org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References.AbSqlTableUtil_Access;
+   function "=" (Left, Right : AbSqlTableUtil_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References."=";
+   subtype AbSqlTableUtil_Access_Array is org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References.AbSqlTableUtil_Access_Array;
+   function "=" (Left, Right : AbSqlTableUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References."=";
+   subtype AbSqlTableUtil_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References.AbSqlTableUtil_Access_Array_Access;
+   function "=" (Left, Right : AbSqlTableUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References."=";
+   subtype AbSqlTableUtil_Access_Array_Access_Array is org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References.AbSqlTableUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : AbSqlTableUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References."=";
+   subtype AbSqlTableUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References.AbSqlTableUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AbSqlTableUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package_References."=";
 
    type AbSqlTableUtil is new Java_Object with record
       TABLE_LABEL : Unbounded_String;

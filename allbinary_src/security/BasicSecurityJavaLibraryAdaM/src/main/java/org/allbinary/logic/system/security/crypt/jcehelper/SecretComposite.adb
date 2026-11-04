@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.byteutil.ByteUtil_Package; use org.allbinary.logic.java.byteutil.ByteUtil_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
 
 package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package is
 
+   subtype ByteUtil_Access is org.allbinary.logic.java.byteutil.ByteUtil_Package_References.ByteUtil_Access;
+   function "=" (Left, Right : ByteUtil_Access) return Boolean renames org.allbinary.logic.java.byteutil.ByteUtil_Package_References."=";
+   subtype ByteUtil_Access_Array is org.allbinary.logic.java.byteutil.ByteUtil_Package_References.ByteUtil_Access_Array;
+   function "=" (Left, Right : ByteUtil_Access_Array) return Boolean renames org.allbinary.logic.java.byteutil.ByteUtil_Package_References."=";
+   subtype ByteUtil_Access_Array_Access is org.allbinary.logic.java.byteutil.ByteUtil_Package_References.ByteUtil_Access_Array_Access;
+   function "=" (Left, Right : ByteUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.java.byteutil.ByteUtil_Package_References."=";
+   subtype ByteUtil_Access_Array_Access_Array is org.allbinary.logic.java.byteutil.ByteUtil_Package_References.ByteUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ByteUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.byteutil.ByteUtil_Package_References."=";
+   subtype ByteUtil_Access_Array_Access_Array_Access is org.allbinary.logic.java.byteutil.ByteUtil_Package_References.ByteUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ByteUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.byteutil.ByteUtil_Package_References."=";
    procedure Initialize_Fields (This : in out SecretComposite'Class) is
    begin
       null;

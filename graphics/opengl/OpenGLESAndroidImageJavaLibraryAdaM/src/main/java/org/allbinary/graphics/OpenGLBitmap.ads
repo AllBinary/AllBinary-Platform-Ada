@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.OpenGLBitmap_Package;
+package org.allbinary.graphics.OpenGLBitmap_Package_References is
+   type OpenGLBitmap_Access is access all org.allbinary.graphics.OpenGLBitmap_Package.OpenGLBitmap'Class;
+   type OpenGLBitmap_Access_Array is array (Natural range <>) of OpenGLBitmap_Access;
+   type OpenGLBitmap_Access_Array_Access is access all OpenGLBitmap_Access_Array;
+   type OpenGLBitmap_Access_Array_Access_Array is array (Natural range <>) of OpenGLBitmap_Access_Array_Access;
+   type OpenGLBitmap_Access_Array_Access_Array_Access is access all OpenGLBitmap_Access_Array_Access_Array;
+end org.allbinary.graphics.OpenGLBitmap_Package_References;
+
+with org.allbinary.graphics.OpenGLBitmap_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -8,20 +18,39 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
+limited with android.graphics.Bitmap_Package;
+with android.graphics.Bitmap_Package_References;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
 package org.allbinary.graphics.OpenGLBitmap_Package is
 
    package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
    package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+   package Reference_Types is
+   subtype Bitmap_Access is android.graphics.Bitmap_Package_References.Bitmap_Access;
+   use type Bitmap_Access;
+   subtype Bitmap_Access_Array is android.graphics.Bitmap_Package_References.Bitmap_Access_Array;
+   use type Bitmap_Access_Array;
+   subtype Bitmap_Access_Array_Access is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access;
+   use type Bitmap_Access_Array_Access;
+   subtype Bitmap_Access_Array_Access_Array is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access_Array;
+   use type Bitmap_Access_Array_Access_Array;
+   subtype Bitmap_Access_Array_Access_Array_Access is android.graphics.Bitmap_Package_References.Bitmap_Access_Array_Access_Array_Access;
+   use type Bitmap_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLBitmap is tagged;
-   type OpenGLBitmap_Access is access all OpenGLBitmap'Class;
-   type OpenGLBitmap_Access_Array is array (Natural range <>) of OpenGLBitmap_Access;
-   type OpenGLBitmap_Access_Array_Access is access all OpenGLBitmap_Access_Array;
-   type OpenGLBitmap_Access_Array_Access_Array is array (Natural range <>) of OpenGLBitmap_Access_Array_Access;
-   type OpenGLBitmap_Access_Array_Access_Array_Access is access all OpenGLBitmap_Access_Array_Access_Array;
+
+   subtype OpenGLBitmap_Access is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access;
+   function "=" (Left, Right : OpenGLBitmap_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmap_Package_References."=";
+   subtype OpenGLBitmap_Access_Array is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array;
+   function "=" (Left, Right : OpenGLBitmap_Access_Array) return Boolean renames org.allbinary.graphics.OpenGLBitmap_Package_References."=";
+   subtype OpenGLBitmap_Access_Array_Access is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array_Access;
+   function "=" (Left, Right : OpenGLBitmap_Access_Array_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmap_Package_References."=";
+   subtype OpenGLBitmap_Access_Array_Access_Array is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLBitmap_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.OpenGLBitmap_Package_References."=";
+   subtype OpenGLBitmap_Access_Array_Access_Array_Access is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLBitmap_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmap_Package_References."=";
 
    type OpenGLBitmap is new PlatformBitmapBase with record
       bitmap : Bitmap_Access;

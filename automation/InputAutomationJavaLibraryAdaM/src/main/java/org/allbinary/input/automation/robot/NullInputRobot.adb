@@ -13,11 +13,59 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.AbstractInputRobot_Package; use org.allbinary.input.automation.AbstractInputRobot_Package;
 with org.allbinary.input.automation.PointFactory_Package; use org.allbinary.input.automation.PointFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.input.automation.robot.Point_Package; use org.allbinary.input.automation.robot.Point_Package;
+with org.allbinary.input.automation.robot.Rectangle_Package; use org.allbinary.input.automation.robot.Rectangle_Package;
+with org.allbinary.input.automation.robot.Color_Package; use org.allbinary.input.automation.robot.Color_Package;
+with org.allbinary.input.automation.AbstractInputRobot_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package;
+with org.allbinary.input.automation.PointFactory_Package;
 
 package body org.allbinary.input.automation.robot.NullInputRobot_Package is
 
    package PointFactory_Package renames Standard.org.allbinary.input.automation.PointFactory_Package;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype Point_Access is org.allbinary.input.automation.robot.Point_Package_References.Point_Access;
+   function "=" (Left, Right : Point_Access) return Boolean renames org.allbinary.input.automation.robot.Point_Package_References."=";
+   subtype Point_Access_Array is org.allbinary.input.automation.robot.Point_Package_References.Point_Access_Array;
+   function "=" (Left, Right : Point_Access_Array) return Boolean renames org.allbinary.input.automation.robot.Point_Package_References."=";
+   subtype Point_Access_Array_Access is org.allbinary.input.automation.robot.Point_Package_References.Point_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array is org.allbinary.input.automation.robot.Point_Package_References.Point_Access_Array_Access_Array;
+   function "=" (Left, Right : Point_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.Point_Package_References."=";
+   subtype Point_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.Point_Package_References.Point_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Point_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.Point_Package_References."=";
+   subtype Rectangle_Access is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access;
+   function "=" (Left, Right : Rectangle_Access) return Boolean renames org.allbinary.input.automation.robot.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access_Array;
+   function "=" (Left, Right : Rectangle_Access_Array) return Boolean renames org.allbinary.input.automation.robot.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access_Array_Access;
+   function "=" (Left, Right : Rectangle_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access_Array is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access_Array_Access_Array;
+   function "=" (Left, Right : Rectangle_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.Rectangle_Package_References.Rectangle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Rectangle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.Rectangle_Package_References."=";
+   subtype Color_Access is org.allbinary.input.automation.robot.Color_Package_References.Color_Access;
+   function "=" (Left, Right : Color_Access) return Boolean renames org.allbinary.input.automation.robot.Color_Package_References."=";
+   subtype Color_Access_Array is org.allbinary.input.automation.robot.Color_Package_References.Color_Access_Array;
+   function "=" (Left, Right : Color_Access_Array) return Boolean renames org.allbinary.input.automation.robot.Color_Package_References."=";
+   subtype Color_Access_Array_Access is org.allbinary.input.automation.robot.Color_Package_References.Color_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array is org.allbinary.input.automation.robot.Color_Package_References.Color_Access_Array_Access_Array;
+   function "=" (Left, Right : Color_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.robot.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array_Access is org.allbinary.input.automation.robot.Color_Package_References.Color_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.Color_Package_References."=";
    procedure Initialize_Fields (This : in out NullInputRobot'Class) is
    begin
       null;

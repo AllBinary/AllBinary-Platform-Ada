@@ -16,12 +16,35 @@
 with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.game.input.PCGameKey_Package; use org.allbinary.game.input.PCGameKey_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.PCGameKey_Package;
 
 package body org.allbinary.game.input.PCKeyFactory_Package is
 
    package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   subtype PCGameKey_Access is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access;
+   function "=" (Left, Right : PCGameKey_Access) return Boolean renames org.allbinary.game.input.PCGameKey_Package_References."=";
+   subtype PCGameKey_Access_Array is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access_Array;
+   function "=" (Left, Right : PCGameKey_Access_Array) return Boolean renames org.allbinary.game.input.PCGameKey_Package_References."=";
+   subtype PCGameKey_Access_Array_Access is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access_Array_Access;
+   function "=" (Left, Right : PCGameKey_Access_Array_Access) return Boolean renames org.allbinary.game.input.PCGameKey_Package_References."=";
+   subtype PCGameKey_Access_Array_Access_Array is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access_Array_Access_Array;
+   function "=" (Left, Right : PCGameKey_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.PCGameKey_Package_References."=";
+   subtype PCGameKey_Access_Array_Access_Array_Access is org.allbinary.game.input.PCGameKey_Package_References.PCGameKey_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PCGameKey_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.PCGameKey_Package_References."=";
+   subtype Input_Access is org.allbinary.game.input.Input_Package_References.Input_Access;
+   function "=" (Left, Right : Input_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array;
+   function "=" (Left, Right : Input_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array;
+   function "=" (Left, Right : Input_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
+   subtype Input_Access_Array_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Input_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.Input_Package_References."=";
    procedure Initialize_Fields (This : in out PCKeyFactory'Class) is
    begin
       null;
@@ -122,7 +145,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
 
    function getInstance return PCKeyFactory_Access is
    begin
-        return PCKeyFactory_Package.SINGLETON;
+        return PCKeyFactory_Access (PCKeyFactory_Package.SINGLETON);
    end getInstance;
 
    function isSubmission (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is

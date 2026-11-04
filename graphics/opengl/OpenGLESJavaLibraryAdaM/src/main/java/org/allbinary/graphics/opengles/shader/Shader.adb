@@ -13,15 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 
 package body org.allbinary.graphics.opengles.shader.Shader_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out Shader'Class) is
    begin
       null;
-      This.shaderName := Null_Unbounded_String;
-      This.shaderStringList := null;
-      This.shaderAsString := Null_Unbounded_String;
+      This.shaderName := StringUtil_Package.getInstance.EMPTY_STRING;
+      This.shaderStringList := BasicArrayListUtil_Package.getInstance.getImmutableInstance;
+      This.shaderAsString := StringUtil_Package.getInstance.EMPTY_STRING;
       This.shaderHandle := 0;
    end Initialize_Fields;
 

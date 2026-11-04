@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.score.Scoreable_Package;
+with org.allbinary.game.score.ScoreableInterface_Package;
 
 package body org.allbinary.game.score.NoScoreable_Package is
 
@@ -24,7 +26,7 @@ package body org.allbinary.game.score.NoScoreable_Package is
 
    function getInstance return NoScoreable_Access is
    begin
-        return NoScoreable_Package.SINGLETON;
+        return NoScoreable_Access (NoScoreable_Package.SINGLETON);
    end getInstance;
 
    procedure Initialize (This : in out NoScoreable'Class) is

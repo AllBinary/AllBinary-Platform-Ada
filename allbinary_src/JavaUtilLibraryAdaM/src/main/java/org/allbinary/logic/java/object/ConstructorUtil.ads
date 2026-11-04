@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.java.anyType.ConstructorUtil_Package;
+package org.allbinary.logic.java.anyType.ConstructorUtil_Package_References is
+   type ConstructorUtil_Access is access all org.allbinary.logic.java.anyType.ConstructorUtil_Package.ConstructorUtil'Class;
+   type ConstructorUtil_Access_Array is array (Natural range <>) of ConstructorUtil_Access;
+   type ConstructorUtil_Access_Array_Access is access all ConstructorUtil_Access_Array;
+   type ConstructorUtil_Access_Array_Access_Array is array (Natural range <>) of ConstructorUtil_Access_Array_Access;
+   type ConstructorUtil_Access_Array_Access_Array_Access is access all ConstructorUtil_Access_Array_Access_Array;
+end org.allbinary.logic.java.anyType.ConstructorUtil_Package_References;
+
+with org.allbinary.logic.java.anyType.ConstructorUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.java.anyType.ConstructorUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ConstructorUtil is tagged;
-   type ConstructorUtil_Access is access all ConstructorUtil'Class;
-   type ConstructorUtil_Access_Array is array (Natural range <>) of ConstructorUtil_Access;
-   type ConstructorUtil_Access_Array_Access is access all ConstructorUtil_Access_Array;
-   type ConstructorUtil_Access_Array_Access_Array is array (Natural range <>) of ConstructorUtil_Access_Array_Access;
-   type ConstructorUtil_Access_Array_Access_Array_Access is access all ConstructorUtil_Access_Array_Access_Array;
+
+   subtype ConstructorUtil_Access is org.allbinary.logic.java.anyType.ConstructorUtil_Package_References.ConstructorUtil_Access;
+   function "=" (Left, Right : ConstructorUtil_Access) return Boolean renames org.allbinary.logic.java.anyType.ConstructorUtil_Package_References."=";
+   subtype ConstructorUtil_Access_Array is org.allbinary.logic.java.anyType.ConstructorUtil_Package_References.ConstructorUtil_Access_Array;
+   function "=" (Left, Right : ConstructorUtil_Access_Array) return Boolean renames org.allbinary.logic.java.anyType.ConstructorUtil_Package_References."=";
+   subtype ConstructorUtil_Access_Array_Access is org.allbinary.logic.java.anyType.ConstructorUtil_Package_References.ConstructorUtil_Access_Array_Access;
+   function "=" (Left, Right : ConstructorUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.java.anyType.ConstructorUtil_Package_References."=";
+   subtype ConstructorUtil_Access_Array_Access_Array is org.allbinary.logic.java.anyType.ConstructorUtil_Package_References.ConstructorUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ConstructorUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.anyType.ConstructorUtil_Package_References."=";
+   subtype ConstructorUtil_Access_Array_Access_Array_Access is org.allbinary.logic.java.anyType.ConstructorUtil_Package_References.ConstructorUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ConstructorUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.anyType.ConstructorUtil_Package_References."=";
 
    type ConstructorUtil is new Java_Object with null record;
 

@@ -13,11 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.character_Id.CharacterSet_Package; use org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
+with org.allbinary.logic.system.os.OperatingSystemInterface_Package;
 
 package body org.allbinary.logic.system.os.GenericOperatingSystem_Package is
 
@@ -25,6 +27,16 @@ package body org.allbinary.logic.system.os.GenericOperatingSystem_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   subtype CharacterSet_Access is org.allbinary.logic.java.character_Id.CharacterSet_Package_References.CharacterSet_Access;
+   function "=" (Left, Right : CharacterSet_Access) return Boolean renames org.allbinary.logic.java.character_Id.CharacterSet_Package_References."=";
+   subtype CharacterSet_Access_Array is org.allbinary.logic.java.character_Id.CharacterSet_Package_References.CharacterSet_Access_Array;
+   function "=" (Left, Right : CharacterSet_Access_Array) return Boolean renames org.allbinary.logic.java.character_Id.CharacterSet_Package_References."=";
+   subtype CharacterSet_Access_Array_Access is org.allbinary.logic.java.character_Id.CharacterSet_Package_References.CharacterSet_Access_Array_Access;
+   function "=" (Left, Right : CharacterSet_Access_Array_Access) return Boolean renames org.allbinary.logic.java.character_Id.CharacterSet_Package_References."=";
+   subtype CharacterSet_Access_Array_Access_Array is org.allbinary.logic.java.character_Id.CharacterSet_Package_References.CharacterSet_Access_Array_Access_Array;
+   function "=" (Left, Right : CharacterSet_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.character_Id.CharacterSet_Package_References."=";
+   subtype CharacterSet_Access_Array_Access_Array_Access is org.allbinary.logic.java.character_Id.CharacterSet_Package_References.CharacterSet_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CharacterSet_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.character_Id.CharacterSet_Package_References."=";
    procedure Initialize_Fields (This : in out GenericOperatingSystem'Class) is
    begin
       null;

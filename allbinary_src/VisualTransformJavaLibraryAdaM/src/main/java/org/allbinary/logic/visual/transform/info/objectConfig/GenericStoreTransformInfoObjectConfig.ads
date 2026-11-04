@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package;
+package org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References is
+   type GenericStoreTransformInfoObjectConfig_Access is access all org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package.GenericStoreTransformInfoObjectConfig'Class;
+   type GenericStoreTransformInfoObjectConfig_Access_Array is array (Natural range <>) of GenericStoreTransformInfoObjectConfig_Access;
+   type GenericStoreTransformInfoObjectConfig_Access_Array_Access is access all GenericStoreTransformInfoObjectConfig_Access_Array;
+   type GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array is array (Natural range <>) of GenericStoreTransformInfoObjectConfig_Access_Array_Access;
+   type GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access is access all GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References;
+
+with org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,11 +31,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package_References;
+limited with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
 
 package org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package is
@@ -36,13 +51,71 @@ package org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTrans
    package TransformInfoHttp_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype TransformInfoHttp_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package_References.TransformInfoHttp_Access;
+   use type TransformInfoHttp_Access;
+   subtype TransformInfoHttp_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package_References.TransformInfoHttp_Access_Array;
+   use type TransformInfoHttp_Access_Array;
+   subtype TransformInfoHttp_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package_References.TransformInfoHttp_Access_Array_Access;
+   use type TransformInfoHttp_Access_Array_Access;
+   subtype TransformInfoHttp_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package_References.TransformInfoHttp_Access_Array_Access_Array;
+   use type TransformInfoHttp_Access_Array_Access_Array;
+   subtype TransformInfoHttp_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package_References.TransformInfoHttp_Access_Array_Access_Array_Access;
+   use type TransformInfoHttp_Access_Array_Access_Array_Access;
+   subtype TransformInfoInterface_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access;
+   use type TransformInfoInterface_Access;
+   subtype TransformInfoInterface_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array;
+   use type TransformInfoInterface_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access;
+   subtype TransformInfoInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array;
+   use type TransformInfoInterface_Access_Array_Access_Array;
+   subtype TransformInfoInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References.TransformInfoInterface_Access_Array_Access_Array_Access;
+   use type TransformInfoInterface_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GenericStoreTransformInfoObjectConfig is tagged;
-   type GenericStoreTransformInfoObjectConfig_Access is access all GenericStoreTransformInfoObjectConfig'Class;
-   type GenericStoreTransformInfoObjectConfig_Access_Array is array (Natural range <>) of GenericStoreTransformInfoObjectConfig_Access;
-   type GenericStoreTransformInfoObjectConfig_Access_Array_Access is access all GenericStoreTransformInfoObjectConfig_Access_Array;
-   type GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array is array (Natural range <>) of GenericStoreTransformInfoObjectConfig_Access_Array_Access;
-   type GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access is access all GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array;
+
+   subtype GenericStoreTransformInfoObjectConfig_Access is org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.GenericStoreTransformInfoObjectConfig_Access;
+   function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
+   subtype GenericStoreTransformInfoObjectConfig_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.GenericStoreTransformInfoObjectConfig_Access_Array;
+   function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
+   subtype GenericStoreTransformInfoObjectConfig_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.GenericStoreTransformInfoObjectConfig_Access_Array_Access;
+   function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
+   subtype GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array;
+   function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
+   subtype GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
 
    type GenericStoreTransformInfoObjectConfig is new TransformInfoObjectConfig with record
       logUtil : LogUtil_Access;

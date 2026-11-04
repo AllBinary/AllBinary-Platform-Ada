@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 
 package body org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package is
 
@@ -38,7 +39,7 @@ package body org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_
 
    function getInstance return GenericTrackingLayerCircularStaticPool_Access is
    begin
-        return GenericTrackingLayerCircularStaticPool_Package.SINGLETON;
+        return GenericTrackingLayerCircularStaticPool_Access (GenericTrackingLayerCircularStaticPool_Package.SINGLETON);
    end getInstance;
 
 begin

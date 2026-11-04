@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.J2MEGameKey_Package;
+package org.allbinary.game.input.J2MEGameKey_Package_References is
+   type J2MEGameKey_Access is access all org.allbinary.game.input.J2MEGameKey_Package.J2MEGameKey'Class;
+   type J2MEGameKey_Access_Array is array (Natural range <>) of J2MEGameKey_Access;
+   type J2MEGameKey_Access_Array_Access is access all J2MEGameKey_Access_Array;
+   type J2MEGameKey_Access_Array_Access_Array is array (Natural range <>) of J2MEGameKey_Access_Array_Access;
+   type J2MEGameKey_Access_Array_Access_Array_Access is access all J2MEGameKey_Access_Array_Access_Array;
+end org.allbinary.game.input.J2MEGameKey_Package_References;
+
+with org.allbinary.game.input.J2MEGameKey_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_
 
 package org.allbinary.game.input.J2MEGameKey_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type J2MEGameKey is tagged;
-   type J2MEGameKey_Access is access all J2MEGameKey'Class;
-   type J2MEGameKey_Access_Array is array (Natural range <>) of J2MEGameKey_Access;
-   type J2MEGameKey_Access_Array_Access is access all J2MEGameKey_Access_Array;
-   type J2MEGameKey_Access_Array_Access_Array is array (Natural range <>) of J2MEGameKey_Access_Array_Access;
-   type J2MEGameKey_Access_Array_Access_Array_Access is access all J2MEGameKey_Access_Array_Access_Array;
+
+   subtype J2MEGameKey_Access is org.allbinary.game.input.J2MEGameKey_Package_References.J2MEGameKey_Access;
+   function "=" (Left, Right : J2MEGameKey_Access) return Boolean renames org.allbinary.game.input.J2MEGameKey_Package_References."=";
+   subtype J2MEGameKey_Access_Array is org.allbinary.game.input.J2MEGameKey_Package_References.J2MEGameKey_Access_Array;
+   function "=" (Left, Right : J2MEGameKey_Access_Array) return Boolean renames org.allbinary.game.input.J2MEGameKey_Package_References."=";
+   subtype J2MEGameKey_Access_Array_Access is org.allbinary.game.input.J2MEGameKey_Package_References.J2MEGameKey_Access_Array_Access;
+   function "=" (Left, Right : J2MEGameKey_Access_Array_Access) return Boolean renames org.allbinary.game.input.J2MEGameKey_Package_References."=";
+   subtype J2MEGameKey_Access_Array_Access_Array is org.allbinary.game.input.J2MEGameKey_Package_References.J2MEGameKey_Access_Array_Access_Array;
+   function "=" (Left, Right : J2MEGameKey_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.J2MEGameKey_Package_References."=";
+   subtype J2MEGameKey_Access_Array_Access_Array_Access is org.allbinary.game.input.J2MEGameKey_Package_References.J2MEGameKey_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : J2MEGameKey_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.J2MEGameKey_Package_References."=";
 
    type J2MEGameKey is new Input_Package.Input with null record;
 

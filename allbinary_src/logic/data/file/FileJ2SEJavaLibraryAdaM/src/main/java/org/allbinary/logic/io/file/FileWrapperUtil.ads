@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.io.file.FileWrapperUtil_Package;
+package org.allbinary.logic.io.file.FileWrapperUtil_Package_References is
+   type FileWrapperUtil_Access is access all org.allbinary.logic.io.file.FileWrapperUtil_Package.FileWrapperUtil'Class;
+   type FileWrapperUtil_Access_Array is array (Natural range <>) of FileWrapperUtil_Access;
+   type FileWrapperUtil_Access_Array_Access is access all FileWrapperUtil_Access_Array;
+   type FileWrapperUtil_Access_Array_Access_Array is array (Natural range <>) of FileWrapperUtil_Access_Array_Access;
+   type FileWrapperUtil_Access_Array_Access_Array_Access is access all FileWrapperUtil_Access_Array_Access_Array;
+end org.allbinary.logic.io.file.FileWrapperUtil_Package_References;
+
+with org.allbinary.logic.io.file.FileWrapperUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,37 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.File_Package; use java.io.File_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+limited with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.AbFile_Package_References;
 
 package org.allbinary.logic.io.file.FileWrapperUtil_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package Reference_Types is
+   subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
+   use type AbFile_Access;
+   subtype AbFile_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array;
+   use type AbFile_Access_Array;
+   subtype AbFile_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access;
+   use type AbFile_Access_Array_Access;
+   subtype AbFile_Access_Array_Access_Array is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array;
+   use type AbFile_Access_Array_Access_Array;
+   subtype AbFile_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access_Array_Access_Array_Access;
+   use type AbFile_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type FileWrapperUtil is tagged;
-   type FileWrapperUtil_Access is access all FileWrapperUtil'Class;
-   type FileWrapperUtil_Access_Array is array (Natural range <>) of FileWrapperUtil_Access;
-   type FileWrapperUtil_Access_Array_Access is access all FileWrapperUtil_Access_Array;
-   type FileWrapperUtil_Access_Array_Access_Array is array (Natural range <>) of FileWrapperUtil_Access_Array_Access;
-   type FileWrapperUtil_Access_Array_Access_Array_Access is access all FileWrapperUtil_Access_Array_Access_Array;
+
+   subtype FileWrapperUtil_Access is org.allbinary.logic.io.file.FileWrapperUtil_Package_References.FileWrapperUtil_Access;
+   function "=" (Left, Right : FileWrapperUtil_Access) return Boolean renames org.allbinary.logic.io.file.FileWrapperUtil_Package_References."=";
+   subtype FileWrapperUtil_Access_Array is org.allbinary.logic.io.file.FileWrapperUtil_Package_References.FileWrapperUtil_Access_Array;
+   function "=" (Left, Right : FileWrapperUtil_Access_Array) return Boolean renames org.allbinary.logic.io.file.FileWrapperUtil_Package_References."=";
+   subtype FileWrapperUtil_Access_Array_Access is org.allbinary.logic.io.file.FileWrapperUtil_Package_References.FileWrapperUtil_Access_Array_Access;
+   function "=" (Left, Right : FileWrapperUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.FileWrapperUtil_Package_References."=";
+   subtype FileWrapperUtil_Access_Array_Access_Array is org.allbinary.logic.io.file.FileWrapperUtil_Package_References.FileWrapperUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : FileWrapperUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.FileWrapperUtil_Package_References."=";
+   subtype FileWrapperUtil_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.FileWrapperUtil_Package_References.FileWrapperUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileWrapperUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.FileWrapperUtil_Package_References."=";
 
    type FileWrapperUtil is new Java_Object with null record;
 

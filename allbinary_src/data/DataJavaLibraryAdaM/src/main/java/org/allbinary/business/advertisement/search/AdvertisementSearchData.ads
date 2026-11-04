@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.advertisement.search.AdvertisementSearchData_Package;
+package org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References is
+   type AdvertisementSearchData_Access is access all org.allbinary.business.advertisement.search.AdvertisementSearchData_Package.AdvertisementSearchData'Class;
+   type AdvertisementSearchData_Access_Array is array (Natural range <>) of AdvertisementSearchData_Access;
+   type AdvertisementSearchData_Access_Array_Access is access all AdvertisementSearchData_Access_Array;
+   type AdvertisementSearchData_Access_Array_Access_Array is array (Natural range <>) of AdvertisementSearchData_Access_Array_Access;
+   type AdvertisementSearchData_Access_Array_Access_Array_Access is access all AdvertisementSearchData_Access_Array_Access_Array;
+end org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References;
+
+with org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.advertisement.search.AdvertisementSearchData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type AdvertisementSearchData is tagged;
-   type AdvertisementSearchData_Access is access all AdvertisementSearchData'Class;
-   type AdvertisementSearchData_Access_Array is array (Natural range <>) of AdvertisementSearchData_Access;
-   type AdvertisementSearchData_Access_Array_Access is access all AdvertisementSearchData_Access_Array;
-   type AdvertisementSearchData_Access_Array_Access_Array is array (Natural range <>) of AdvertisementSearchData_Access_Array_Access;
-   type AdvertisementSearchData_Access_Array_Access_Array_Access is access all AdvertisementSearchData_Access_Array_Access_Array;
+
+   subtype AdvertisementSearchData_Access is org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References.AdvertisementSearchData_Access;
+   function "=" (Left, Right : AdvertisementSearchData_Access) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References."=";
+   subtype AdvertisementSearchData_Access_Array is org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References.AdvertisementSearchData_Access_Array;
+   function "=" (Left, Right : AdvertisementSearchData_Access_Array) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References."=";
+   subtype AdvertisementSearchData_Access_Array_Access is org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References.AdvertisementSearchData_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementSearchData_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References."=";
+   subtype AdvertisementSearchData_Access_Array_Access_Array is org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References.AdvertisementSearchData_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementSearchData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References."=";
+   subtype AdvertisementSearchData_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References.AdvertisementSearchData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementSearchData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchData_Package_References."=";
 
    type AdvertisementSearchData is new Java_Object with record
       TITLE : Unbounded_String;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.entry_Id.EntryData_Package;
+package org.allbinary.business.entry_Id.EntryData_Package_References is
+   type EntryData_Access is access all org.allbinary.business.entry_Id.EntryData_Package.EntryData'Class;
+   type EntryData_Access_Array is array (Natural range <>) of EntryData_Access;
+   type EntryData_Access_Array_Access is access all EntryData_Access_Array;
+   type EntryData_Access_Array_Access_Array is array (Natural range <>) of EntryData_Access_Array_Access;
+   type EntryData_Access_Array_Access_Array_Access is access all EntryData_Access_Array_Access_Array;
+end org.allbinary.business.entry_Id.EntryData_Package_References;
+
+with org.allbinary.business.entry_Id.EntryData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.business.entry_Id.EntryData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type EntryData is tagged;
-   type EntryData_Access is access all EntryData'Class;
-   type EntryData_Access_Array is array (Natural range <>) of EntryData_Access;
-   type EntryData_Access_Array_Access is access all EntryData_Access_Array;
-   type EntryData_Access_Array_Access_Array is array (Natural range <>) of EntryData_Access_Array_Access;
-   type EntryData_Access_Array_Access_Array_Access is access all EntryData_Access_Array_Access_Array;
+
+   subtype EntryData_Access is org.allbinary.business.entry_Id.EntryData_Package_References.EntryData_Access;
+   function "=" (Left, Right : EntryData_Access) return Boolean renames org.allbinary.business.entry_Id.EntryData_Package_References."=";
+   subtype EntryData_Access_Array is org.allbinary.business.entry_Id.EntryData_Package_References.EntryData_Access_Array;
+   function "=" (Left, Right : EntryData_Access_Array) return Boolean renames org.allbinary.business.entry_Id.EntryData_Package_References."=";
+   subtype EntryData_Access_Array_Access is org.allbinary.business.entry_Id.EntryData_Package_References.EntryData_Access_Array_Access;
+   function "=" (Left, Right : EntryData_Access_Array_Access) return Boolean renames org.allbinary.business.entry_Id.EntryData_Package_References."=";
+   subtype EntryData_Access_Array_Access_Array is org.allbinary.business.entry_Id.EntryData_Package_References.EntryData_Access_Array_Access_Array;
+   function "=" (Left, Right : EntryData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.entry_Id.EntryData_Package_References."=";
+   subtype EntryData_Access_Array_Access_Array_Access is org.allbinary.business.entry_Id.EntryData_Package_References.EntryData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EntryData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.entry_Id.EntryData_Package_References."=";
 
    type EntryData is new Java_Object with record
       ID : Unbounded_String;

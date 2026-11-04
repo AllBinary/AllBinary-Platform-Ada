@@ -36,7 +36,7 @@ package body org.allbinary.media.image.ImageSwtUtil_Package is
 
    function getInstance return ImageSwtUtil_Access is
    begin
-        return ImageSwtUtil_Package.instance;
+        return ImageSwtUtil_Access (ImageSwtUtil_Package.instance);
    end getInstance;
 
 begin

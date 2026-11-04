@@ -13,9 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalResource_Package; use org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 
 package body org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package is
 
+   subtype GeologicalResource_Access is org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.GeologicalResource_Access;
+   function "=" (Left, Right : GeologicalResource_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References."=";
+   subtype GeologicalResource_Access_Array is org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.GeologicalResource_Access_Array;
+   function "=" (Left, Right : GeologicalResource_Access_Array) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References."=";
+   subtype GeologicalResource_Access_Array_Access is org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.GeologicalResource_Access_Array_Access;
+   function "=" (Left, Right : GeologicalResource_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References."=";
+   subtype GeologicalResource_Access_Array_Access_Array is org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.GeologicalResource_Access_Array_Access_Array;
+   function "=" (Left, Right : GeologicalResource_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References."=";
+   subtype GeologicalResource_Access_Array_Access_Array_Access is org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.GeologicalResource_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GeologicalResource_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References."=";
    procedure Initialize_Fields (This : in out GeologicalGeographicMapCellPosition'Class) is
    begin
       null;

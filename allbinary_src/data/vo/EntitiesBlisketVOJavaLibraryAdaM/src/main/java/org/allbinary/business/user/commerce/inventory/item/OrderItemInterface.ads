@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package;
+package org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References is
+   type OrderItemInterface_Access is access all org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package.OrderItemInterface'Class;
+   type OrderItemInterface_Access_Array is array (Natural range <>) of OrderItemInterface_Access;
+   type OrderItemInterface_Access_Array_Access is access all OrderItemInterface_Access_Array;
+   type OrderItemInterface_Access_Array_Access_Array is array (Natural range <>) of OrderItemInterface_Access_Array_Access;
+   type OrderItemInterface_Access_Array_Access_Array_Access is access all OrderItemInterface_Access_Array_Access_Array;
+end org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References;
+
+with org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,19 +30,40 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+limited with org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.address.StreetAddress_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 
 package org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package is
 
    package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
+   package Reference_Types is
+   subtype StreetAddress_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access;
+   use type StreetAddress_Access;
+   subtype StreetAddress_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array;
+   use type StreetAddress_Access_Array;
+   subtype StreetAddress_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access;
+   use type StreetAddress_Access_Array_Access;
+   subtype StreetAddress_Access_Array_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array;
+   use type StreetAddress_Access_Array_Access_Array;
+   subtype StreetAddress_Access_Array_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array_Access;
+   use type StreetAddress_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type OrderItemInterface is interface and ItemInterface;
-   type OrderItemInterface_Access is access all OrderItemInterface'Class;
-   type OrderItemInterface_Access_Array is array (Natural range <>) of OrderItemInterface_Access;
-   type OrderItemInterface_Access_Array_Access is access all OrderItemInterface_Access_Array;
-   type OrderItemInterface_Access_Array_Access_Array is array (Natural range <>) of OrderItemInterface_Access_Array_Access;
-   type OrderItemInterface_Access_Array_Access_Array_Access is access all OrderItemInterface_Access_Array_Access_Array;
+   subtype OrderItemInterface_Access is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access;
+   function "=" (Left, Right : OrderItemInterface_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References."=";
+   subtype OrderItemInterface_Access_Array is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access_Array;
+   function "=" (Left, Right : OrderItemInterface_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References."=";
+   subtype OrderItemInterface_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access_Array_Access;
+   function "=" (Left, Right : OrderItemInterface_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References."=";
+   subtype OrderItemInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderItemInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References."=";
+   subtype OrderItemInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References.OrderItemInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderItemInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package_References."=";
+   function Java_Object_Access_From_OrderItemInterface (Value : OrderItemInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setGroup (This : in out OrderItemInterface; value : Unbounded_String) is abstract;
    procedure setTax (This : in out OrderItemInterface; value : Unbounded_String) is abstract;
    procedure setShippingType (This : in out OrderItemInterface; value : Unbounded_String) is abstract;

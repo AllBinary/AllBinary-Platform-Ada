@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package;
+package org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References is
+   type CustomTransformInfo_Access is access all org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package.CustomTransformInfo'Class;
+   type CustomTransformInfo_Access_Array is array (Natural range <>) of CustomTransformInfo_Access;
+   type CustomTransformInfo_Access_Array_Access is access all CustomTransformInfo_Access_Array;
+   type CustomTransformInfo_Access_Array_Access_Array is array (Natural range <>) of CustomTransformInfo_Access_Array_Access;
+   type CustomTransformInfo_Access_Array_Access_Array_Access is access all CustomTransformInfo_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References;
+
+with org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 
 package org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type CustomTransformInfo is tagged;
-   type CustomTransformInfo_Access is access all CustomTransformInfo'Class;
-   type CustomTransformInfo_Access_Array is array (Natural range <>) of CustomTransformInfo_Access;
-   type CustomTransformInfo_Access_Array_Access is access all CustomTransformInfo_Access_Array;
-   type CustomTransformInfo_Access_Array_Access_Array is array (Natural range <>) of CustomTransformInfo_Access_Array_Access;
-   type CustomTransformInfo_Access_Array_Access_Array_Access is access all CustomTransformInfo_Access_Array_Access_Array;
+
+   subtype CustomTransformInfo_Access is org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References.CustomTransformInfo_Access;
+   function "=" (Left, Right : CustomTransformInfo_Access) return Boolean renames org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References."=";
+   subtype CustomTransformInfo_Access_Array is org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References.CustomTransformInfo_Access_Array;
+   function "=" (Left, Right : CustomTransformInfo_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References."=";
+   subtype CustomTransformInfo_Access_Array_Access is org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References.CustomTransformInfo_Access_Array_Access;
+   function "=" (Left, Right : CustomTransformInfo_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References."=";
+   subtype CustomTransformInfo_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References.CustomTransformInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : CustomTransformInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References."=";
+   subtype CustomTransformInfo_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References.CustomTransformInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CustomTransformInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package_References."=";
 
    type CustomTransformInfo is new TransformInfo and TransformInfoInterface with null record;
 

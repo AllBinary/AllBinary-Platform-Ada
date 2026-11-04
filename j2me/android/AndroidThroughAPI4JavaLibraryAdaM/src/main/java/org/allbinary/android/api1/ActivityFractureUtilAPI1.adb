@@ -13,11 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.ActivityFractureUtil_Package; use org.allbinary.android.ActivityFractureUtil_Package;
+with android.app.Activity_Package; use android.app.Activity_Package;
 with android.view.WindowManager_Package; use android.view.WindowManager_Package;
 
 package body org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
 
    package WindowManager_Package renames Standard.android.view.WindowManager_Package;
+   subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
+   function "=" (Left, Right : Activity_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array is android.app.Activity_Package_References.Activity_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array is android.app.Activity_Package_References.Activity_Access_Array_Access_Array;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array) return Boolean renames android.app.Activity_Package_References."=";
+   subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Activity_Access_Array_Access_Array_Access) return Boolean renames android.app.Activity_Package_References."=";
    procedure Initialize_Fields (This : in out ActivityFractureUtilAPI1'Class) is
    begin
       null;
@@ -39,7 +51,7 @@ package body org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
 
    function getInstance return ActivityFractureUtilAPI1_Access is
    begin
-        return ActivityFractureUtilAPI1_Package.instance;
+        return ActivityFractureUtilAPI1_Access (ActivityFractureUtilAPI1_Package.instance);
    end getInstance;
 
    --  throws Exception

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.gui.dialog.FileJDialog_Package;
+package org.allbinary.gui.dialog.FileJDialog_Package_References is
+   type FileJDialog_Access is access all org.allbinary.gui.dialog.FileJDialog_Package.FileJDialog'Class;
+   type FileJDialog_Access_Array is array (Natural range <>) of FileJDialog_Access;
+   type FileJDialog_Access_Array_Access is access all FileJDialog_Access_Array;
+   type FileJDialog_Access_Array_Access_Array is array (Natural range <>) of FileJDialog_Access_Array_Access;
+   type FileJDialog_Access_Array_Access_Array_Access is access all FileJDialog_Access_Array_Access_Array;
+end org.allbinary.gui.dialog.FileJDialog_Package_References;
+
+with org.allbinary.gui.dialog.FileJDialog_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.gui.dialog.JDialog_Package; use org.allbinary.gui.dialog.JDialog_Package;
-with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
+limited with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
+with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package_References;
 
 package org.allbinary.gui.dialog.FileJDialog_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype FileJDialogListenerInterface_Access is org.allbinary.gui.dialog.FileJDialogListenerInterface_Package_References.FileJDialogListenerInterface_Access;
+   use type FileJDialogListenerInterface_Access;
+   subtype FileJDialogListenerInterface_Access_Array is org.allbinary.gui.dialog.FileJDialogListenerInterface_Package_References.FileJDialogListenerInterface_Access_Array;
+   use type FileJDialogListenerInterface_Access_Array;
+   subtype FileJDialogListenerInterface_Access_Array_Access is org.allbinary.gui.dialog.FileJDialogListenerInterface_Package_References.FileJDialogListenerInterface_Access_Array_Access;
+   use type FileJDialogListenerInterface_Access_Array_Access;
+   subtype FileJDialogListenerInterface_Access_Array_Access_Array is org.allbinary.gui.dialog.FileJDialogListenerInterface_Package_References.FileJDialogListenerInterface_Access_Array_Access_Array;
+   use type FileJDialogListenerInterface_Access_Array_Access_Array;
+   subtype FileJDialogListenerInterface_Access_Array_Access_Array_Access is org.allbinary.gui.dialog.FileJDialogListenerInterface_Package_References.FileJDialogListenerInterface_Access_Array_Access_Array_Access;
+   use type FileJDialogListenerInterface_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type FileJDialog is tagged;
-   type FileJDialog_Access is access all FileJDialog'Class;
-   type FileJDialog_Access_Array is array (Natural range <>) of FileJDialog_Access;
-   type FileJDialog_Access_Array_Access is access all FileJDialog_Access_Array;
-   type FileJDialog_Access_Array_Access_Array is array (Natural range <>) of FileJDialog_Access_Array_Access;
-   type FileJDialog_Access_Array_Access_Array_Access is access all FileJDialog_Access_Array_Access_Array;
+
+   subtype FileJDialog_Access is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access;
+   function "=" (Left, Right : FileJDialog_Access) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
+   subtype FileJDialog_Access_Array is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access_Array;
+   function "=" (Left, Right : FileJDialog_Access_Array) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
+   subtype FileJDialog_Access_Array_Access is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access_Array_Access;
+   function "=" (Left, Right : FileJDialog_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
+   subtype FileJDialog_Access_Array_Access_Array is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access_Array_Access_Array;
+   function "=" (Left, Right : FileJDialog_Access_Array_Access_Array) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
+   subtype FileJDialog_Access_Array_Access_Array_Access is org.allbinary.gui.dialog.FileJDialog_Package_References.FileJDialog_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FileJDialog_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.gui.dialog.FileJDialog_Package_References."=";
 
    type FileJDialog is new JDialog with record
       logUtil : LogUtil_Access;

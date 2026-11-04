@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.J2MEGameInputMapping_Package;
+package org.allbinary.game.input.J2MEGameInputMapping_Package_References is
+   type J2MEGameInputMapping_Access is access all org.allbinary.game.input.J2MEGameInputMapping_Package.J2MEGameInputMapping'Class;
+   type J2MEGameInputMapping_Access_Array is array (Natural range <>) of J2MEGameInputMapping_Access;
+   type J2MEGameInputMapping_Access_Array_Access is access all J2MEGameInputMapping_Access_Array;
+   type J2MEGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of J2MEGameInputMapping_Access_Array_Access;
+   type J2MEGameInputMapping_Access_Array_Access_Array_Access is access all J2MEGameInputMapping_Access_Array_Access_Array;
+end org.allbinary.game.input.J2MEGameInputMapping_Package_References;
+
+with org.allbinary.game.input.J2MEGameInputMapping_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,20 +31,50 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+limited with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+limited with org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.Input_Package_References;
 
 package org.allbinary.game.input.J2MEGameInputMapping_Package is
 
    package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package Reference_Types is
+   subtype AbeClientInformationInterface_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access;
+   use type AbeClientInformationInterface_Access;
+   subtype AbeClientInformationInterface_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array;
+   use type AbeClientInformationInterface_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array;
+   use type AbeClientInformationInterface_Access_Array_Access_Array;
+   subtype AbeClientInformationInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References.AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   use type AbeClientInformationInterface_Access_Array_Access_Array_Access;
+   subtype Input_Access is org.allbinary.game.input.Input_Package_References.Input_Access;
+   use type Input_Access;
+   subtype Input_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array;
+   use type Input_Access_Array;
+   subtype Input_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access;
+   use type Input_Access_Array_Access;
+   subtype Input_Access_Array_Access_Array is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array;
+   use type Input_Access_Array_Access_Array;
+   subtype Input_Access_Array_Access_Array_Access is org.allbinary.game.input.Input_Package_References.Input_Access_Array_Access_Array_Access;
+   use type Input_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type J2MEGameInputMapping is tagged;
-   type J2MEGameInputMapping_Access is access all J2MEGameInputMapping'Class;
-   type J2MEGameInputMapping_Access_Array is array (Natural range <>) of J2MEGameInputMapping_Access;
-   type J2MEGameInputMapping_Access_Array_Access is access all J2MEGameInputMapping_Access_Array;
-   type J2MEGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of J2MEGameInputMapping_Access_Array_Access;
-   type J2MEGameInputMapping_Access_Array_Access_Array_Access is access all J2MEGameInputMapping_Access_Array_Access_Array;
+
+   subtype J2MEGameInputMapping_Access is org.allbinary.game.input.J2MEGameInputMapping_Package_References.J2MEGameInputMapping_Access;
+   function "=" (Left, Right : J2MEGameInputMapping_Access) return Boolean renames org.allbinary.game.input.J2MEGameInputMapping_Package_References."=";
+   subtype J2MEGameInputMapping_Access_Array is org.allbinary.game.input.J2MEGameInputMapping_Package_References.J2MEGameInputMapping_Access_Array;
+   function "=" (Left, Right : J2MEGameInputMapping_Access_Array) return Boolean renames org.allbinary.game.input.J2MEGameInputMapping_Package_References."=";
+   subtype J2MEGameInputMapping_Access_Array_Access is org.allbinary.game.input.J2MEGameInputMapping_Package_References.J2MEGameInputMapping_Access_Array_Access;
+   function "=" (Left, Right : J2MEGameInputMapping_Access_Array_Access) return Boolean renames org.allbinary.game.input.J2MEGameInputMapping_Package_References."=";
+   subtype J2MEGameInputMapping_Access_Array_Access_Array is org.allbinary.game.input.J2MEGameInputMapping_Package_References.J2MEGameInputMapping_Access_Array_Access_Array;
+   function "=" (Left, Right : J2MEGameInputMapping_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.J2MEGameInputMapping_Package_References."=";
+   subtype J2MEGameInputMapping_Access_Array_Access_Array_Access is org.allbinary.game.input.J2MEGameInputMapping_Package_References.J2MEGameInputMapping_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : J2MEGameInputMapping_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.J2MEGameInputMapping_Package_References."=";
 
    type J2MEGameInputMapping is new PersistentInputMapping with null record;
 

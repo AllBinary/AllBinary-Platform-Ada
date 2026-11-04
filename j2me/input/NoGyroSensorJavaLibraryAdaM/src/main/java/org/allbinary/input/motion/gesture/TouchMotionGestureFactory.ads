@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+package org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References is
+   type TouchMotionGestureFactory_Access is access all org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package.TouchMotionGestureFactory'Class;
+   type TouchMotionGestureFactory_Access_Array is array (Natural range <>) of TouchMotionGestureFactory_Access;
+   type TouchMotionGestureFactory_Access_Array_Access is access all TouchMotionGestureFactory_Access_Array;
+   type TouchMotionGestureFactory_Access_Array_Access_Array is array (Natural range <>) of TouchMotionGestureFactory_Access_Array_Access;
+   type TouchMotionGestureFactory_Access_Array_Access_Array_Access is access all TouchMotionGestureFactory_Access_Array_Access_Array;
+end org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References;
+
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+limited with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package_References;
 
 package org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package is
 
+   package Reference_Types is
+   subtype MotionGestureInput_Access is org.allbinary.input.motion.gesture.MotionGestureInput_Package_References.MotionGestureInput_Access;
+   use type MotionGestureInput_Access;
+   subtype MotionGestureInput_Access_Array is org.allbinary.input.motion.gesture.MotionGestureInput_Package_References.MotionGestureInput_Access_Array;
+   use type MotionGestureInput_Access_Array;
+   subtype MotionGestureInput_Access_Array_Access is org.allbinary.input.motion.gesture.MotionGestureInput_Package_References.MotionGestureInput_Access_Array_Access;
+   use type MotionGestureInput_Access_Array_Access;
+   subtype MotionGestureInput_Access_Array_Access_Array is org.allbinary.input.motion.gesture.MotionGestureInput_Package_References.MotionGestureInput_Access_Array_Access_Array;
+   use type MotionGestureInput_Access_Array_Access_Array;
+   subtype MotionGestureInput_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.MotionGestureInput_Package_References.MotionGestureInput_Access_Array_Access_Array_Access;
+   use type MotionGestureInput_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type TouchMotionGestureFactory is tagged;
-   type TouchMotionGestureFactory_Access is access all TouchMotionGestureFactory'Class;
-   type TouchMotionGestureFactory_Access_Array is array (Natural range <>) of TouchMotionGestureFactory_Access;
-   type TouchMotionGestureFactory_Access_Array_Access is access all TouchMotionGestureFactory_Access_Array;
-   type TouchMotionGestureFactory_Access_Array_Access_Array is array (Natural range <>) of TouchMotionGestureFactory_Access_Array_Access;
-   type TouchMotionGestureFactory_Access_Array_Access_Array_Access is access all TouchMotionGestureFactory_Access_Array_Access_Array;
+
+   subtype TouchMotionGestureFactory_Access is org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.TouchMotionGestureFactory_Access;
+   function "=" (Left, Right : TouchMotionGestureFactory_Access) return Boolean renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References."=";
+   subtype TouchMotionGestureFactory_Access_Array is org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.TouchMotionGestureFactory_Access_Array;
+   function "=" (Left, Right : TouchMotionGestureFactory_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References."=";
+   subtype TouchMotionGestureFactory_Access_Array_Access is org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.TouchMotionGestureFactory_Access_Array_Access;
+   function "=" (Left, Right : TouchMotionGestureFactory_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References."=";
+   subtype TouchMotionGestureFactory_Access_Array_Access_Array is org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.TouchMotionGestureFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : TouchMotionGestureFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References."=";
+   subtype TouchMotionGestureFactory_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.TouchMotionGestureFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TouchMotionGestureFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References."=";
 
    type TouchMotionGestureFactory is new Java_Object with record
       LEFT : MotionGestureInput_Access;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.java.bool.BooleanUtil_Package;
+package org.allbinary.logic.java.bool.BooleanUtil_Package_References is
+   type BooleanUtil_Access is access all org.allbinary.logic.java.bool.BooleanUtil_Package.BooleanUtil'Class;
+   type BooleanUtil_Access_Array is array (Natural range <>) of BooleanUtil_Access;
+   type BooleanUtil_Access_Array_Access is access all BooleanUtil_Access_Array;
+   type BooleanUtil_Access_Array_Access_Array is array (Natural range <>) of BooleanUtil_Access_Array_Access;
+   type BooleanUtil_Access_Array_Access_Array_Access is access all BooleanUtil_Access_Array_Access_Array;
+end org.allbinary.logic.java.bool.BooleanUtil_Package_References;
+
+with org.allbinary.logic.java.bool.BooleanUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.java.bool.BooleanUtil_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type BooleanUtil is tagged;
-   type BooleanUtil_Access is access all BooleanUtil'Class;
-   type BooleanUtil_Access_Array is array (Natural range <>) of BooleanUtil_Access;
-   type BooleanUtil_Access_Array_Access is access all BooleanUtil_Access_Array;
-   type BooleanUtil_Access_Array_Access_Array is array (Natural range <>) of BooleanUtil_Access_Array_Access;
-   type BooleanUtil_Access_Array_Access_Array_Access is access all BooleanUtil_Access_Array_Access_Array;
+
+   subtype BooleanUtil_Access is org.allbinary.logic.java.bool.BooleanUtil_Package_References.BooleanUtil_Access;
+   function "=" (Left, Right : BooleanUtil_Access) return Boolean renames org.allbinary.logic.java.bool.BooleanUtil_Package_References."=";
+   subtype BooleanUtil_Access_Array is org.allbinary.logic.java.bool.BooleanUtil_Package_References.BooleanUtil_Access_Array;
+   function "=" (Left, Right : BooleanUtil_Access_Array) return Boolean renames org.allbinary.logic.java.bool.BooleanUtil_Package_References."=";
+   subtype BooleanUtil_Access_Array_Access is org.allbinary.logic.java.bool.BooleanUtil_Package_References.BooleanUtil_Access_Array_Access;
+   function "=" (Left, Right : BooleanUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.java.bool.BooleanUtil_Package_References."=";
+   subtype BooleanUtil_Access_Array_Access_Array is org.allbinary.logic.java.bool.BooleanUtil_Package_References.BooleanUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : BooleanUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.bool.BooleanUtil_Package_References."=";
+   subtype BooleanUtil_Access_Array_Access_Array_Access is org.allbinary.logic.java.bool.BooleanUtil_Package_References.BooleanUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BooleanUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.bool.BooleanUtil_Package_References."=";
 
    type BooleanUtil is new Java_Object with null record;
    instance : BooleanUtil_Access;

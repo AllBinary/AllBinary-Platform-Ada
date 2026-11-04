@@ -36,7 +36,7 @@ package body org.allbinary.logic.math.J2SEMath_Package is
 
    function getInstance return J2SEMath_Access is
    begin
-        return J2SEMath_Package.instance;
+        return J2SEMath_Access (J2SEMath_Package.instance);
    end getInstance;
 
    function round (This : in out J2SEMath; value : Float) return Integer is

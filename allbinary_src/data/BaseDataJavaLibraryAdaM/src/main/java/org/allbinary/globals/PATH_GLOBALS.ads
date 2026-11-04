@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.globals.PATH_GLOBALS_Package;
+package org.allbinary.globals.PATH_GLOBALS_Package_References is
+   type PATH_GLOBALS_Access is access all org.allbinary.globals.PATH_GLOBALS_Package.PATH_GLOBALS'Class;
+   type PATH_GLOBALS_Access_Array is array (Natural range <>) of PATH_GLOBALS_Access;
+   type PATH_GLOBALS_Access_Array_Access is access all PATH_GLOBALS_Access_Array;
+   type PATH_GLOBALS_Access_Array_Access_Array is array (Natural range <>) of PATH_GLOBALS_Access_Array_Access;
+   type PATH_GLOBALS_Access_Array_Access_Array_Access is access all PATH_GLOBALS_Access_Array_Access_Array;
+end org.allbinary.globals.PATH_GLOBALS_Package_References;
+
+with org.allbinary.globals.PATH_GLOBALS_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.globals.PATH_GLOBALS_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type PATH_GLOBALS is tagged;
-   type PATH_GLOBALS_Access is access all PATH_GLOBALS'Class;
-   type PATH_GLOBALS_Access_Array is array (Natural range <>) of PATH_GLOBALS_Access;
-   type PATH_GLOBALS_Access_Array_Access is access all PATH_GLOBALS_Access_Array;
-   type PATH_GLOBALS_Access_Array_Access_Array is array (Natural range <>) of PATH_GLOBALS_Access_Array_Access;
-   type PATH_GLOBALS_Access_Array_Access_Array_Access is access all PATH_GLOBALS_Access_Array_Access_Array;
+
+   subtype PATH_GLOBALS_Access is org.allbinary.globals.PATH_GLOBALS_Package_References.PATH_GLOBALS_Access;
+   function "=" (Left, Right : PATH_GLOBALS_Access) return Boolean renames org.allbinary.globals.PATH_GLOBALS_Package_References."=";
+   subtype PATH_GLOBALS_Access_Array is org.allbinary.globals.PATH_GLOBALS_Package_References.PATH_GLOBALS_Access_Array;
+   function "=" (Left, Right : PATH_GLOBALS_Access_Array) return Boolean renames org.allbinary.globals.PATH_GLOBALS_Package_References."=";
+   subtype PATH_GLOBALS_Access_Array_Access is org.allbinary.globals.PATH_GLOBALS_Package_References.PATH_GLOBALS_Access_Array_Access;
+   function "=" (Left, Right : PATH_GLOBALS_Access_Array_Access) return Boolean renames org.allbinary.globals.PATH_GLOBALS_Package_References."=";
+   subtype PATH_GLOBALS_Access_Array_Access_Array is org.allbinary.globals.PATH_GLOBALS_Package_References.PATH_GLOBALS_Access_Array_Access_Array;
+   function "=" (Left, Right : PATH_GLOBALS_Access_Array_Access_Array) return Boolean renames org.allbinary.globals.PATH_GLOBALS_Package_References."=";
+   subtype PATH_GLOBALS_Access_Array_Access_Array_Access is org.allbinary.globals.PATH_GLOBALS_Package_References.PATH_GLOBALS_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PATH_GLOBALS_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.globals.PATH_GLOBALS_Package_References."=";
 
    type PATH_GLOBALS is new Java_Object with record
       DATA_PATH : Unbounded_String;

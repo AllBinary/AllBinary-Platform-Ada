@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
+package org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References is
+   type MotionRectangle_Access is access all org.allbinary.media.image.comparison.motion.MotionRectangle_Package.MotionRectangle'Class;
+   type MotionRectangle_Access_Array is array (Natural range <>) of MotionRectangle_Access;
+   type MotionRectangle_Access_Array_Access is access all MotionRectangle_Access_Array;
+   type MotionRectangle_Access_Array_Access_Array is array (Natural range <>) of MotionRectangle_Access_Array_Access;
+   type MotionRectangle_Access_Array_Access_Array_Access is access all MotionRectangle_Access_Array_Access_Array;
+end org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References;
+
+with org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,21 +31,39 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Rectangle_Package; use java.awt.Rectangle_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with java.lang.Cloneable_Package; use java.lang.Cloneable_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.media.image.comparison.motion.MotionRectangle_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MotionRectangle is tagged;
-   type MotionRectangle_Access is access all MotionRectangle'Class;
-   type MotionRectangle_Access_Array is array (Natural range <>) of MotionRectangle_Access;
-   type MotionRectangle_Access_Array_Access is access all MotionRectangle_Access_Array;
-   type MotionRectangle_Access_Array_Access_Array is array (Natural range <>) of MotionRectangle_Access_Array_Access;
-   type MotionRectangle_Access_Array_Access_Array_Access is access all MotionRectangle_Access_Array_Access_Array;
 
-   type MotionRectangle is new Java_Object and Cloneable with record
+   subtype MotionRectangle_Access is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access;
+   function "=" (Left, Right : MotionRectangle_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
+   subtype MotionRectangle_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array;
+   function "=" (Left, Right : MotionRectangle_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
+   subtype MotionRectangle_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array_Access;
+   function "=" (Left, Right : MotionRectangle_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
+   subtype MotionRectangle_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionRectangle_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
+   subtype MotionRectangle_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References.MotionRectangle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionRectangle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectangle_Package_References."=";
+
+   type MotionRectangle is new Java_Object with record
       rectangle : Rectangle_Access;
       pixelDeltaVector : BasicArrayList_Access;
    end record;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package;
+package org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References is
+   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access is access all org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package.EmptyRaceRaceTrackGeographicMapCellTypeFactory'Class;
+   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array is array (Natural range <>) of EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access;
+   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access is access all EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array;
+   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array is array (Natural range <>) of EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access;
+   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array_Access is access all EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References;
+
+with org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap
 
 package org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type EmptyRaceRaceTrackGeographicMapCellTypeFactory is tagged;
-   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access is access all EmptyRaceRaceTrackGeographicMapCellTypeFactory'Class;
-   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array is array (Natural range <>) of EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access;
-   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access is access all EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array;
-   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array is array (Natural range <>) of EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access;
-   type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array_Access is access all EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array;
+
+   subtype EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access is org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access;
+   function "=" (Left, Right : EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References."=";
+   subtype EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array;
+   function "=" (Left, Right : EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References."=";
+   subtype EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access;
+   function "=" (Left, Right : EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References."=";
+   subtype EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References."=";
+   subtype EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package_References."=";
 
    type EmptyRaceRaceTrackGeographicMapCellTypeFactory is new RaceTrackGeographicMapCellTypeFactory with null record;
    instanceC : EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access;

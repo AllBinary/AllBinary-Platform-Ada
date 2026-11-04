@@ -95,7 +95,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
    procedure getXmlData (This : in out CategoryRequestHelper) is
       map : Map_Access;
       categoryData : CategoryData_Access;
-      keys : Set_Access;
+      keys : Java_Object_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       xmlRequest : Unbounded_String;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.init.InitInfo_Package;
+package org.allbinary.business.init.InitInfo_Package_References is
+   type InitInfo_Access is access all org.allbinary.business.init.InitInfo_Package.InitInfo'Class;
+   type InitInfo_Access_Array is array (Natural range <>) of InitInfo_Access;
+   type InitInfo_Access_Array_Access is access all InitInfo_Access_Array;
+   type InitInfo_Access_Array_Access_Array is array (Natural range <>) of InitInfo_Access_Array_Access;
+   type InitInfo_Access_Array_Access_Array_Access is access all InitInfo_Access_Array_Access_Array;
+end org.allbinary.business.init.InitInfo_Package_References;
+
+with org.allbinary.business.init.InitInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,19 +31,38 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+limited with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPath_Package_References;
 
 package org.allbinary.business.init.InitInfo_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package Reference_Types is
+   subtype AbPath_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access;
+   use type AbPath_Access;
+   subtype AbPath_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array;
+   use type AbPath_Access_Array;
+   subtype AbPath_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access;
+   use type AbPath_Access_Array_Access;
+   subtype AbPath_Access_Array_Access_Array is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array;
+   use type AbPath_Access_Array_Access_Array;
+   subtype AbPath_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access_Array_Access_Array_Access;
+   use type AbPath_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InitInfo is tagged;
-   type InitInfo_Access is access all InitInfo'Class;
-   type InitInfo_Access_Array is array (Natural range <>) of InitInfo_Access;
-   type InitInfo_Access_Array_Access is access all InitInfo_Access_Array;
-   type InitInfo_Access_Array_Access_Array is array (Natural range <>) of InitInfo_Access_Array_Access;
-   type InitInfo_Access_Array_Access_Array_Access is access all InitInfo_Access_Array_Access_Array;
+
+   subtype InitInfo_Access is org.allbinary.business.init.InitInfo_Package_References.InitInfo_Access;
+   function "=" (Left, Right : InitInfo_Access) return Boolean renames org.allbinary.business.init.InitInfo_Package_References."=";
+   subtype InitInfo_Access_Array is org.allbinary.business.init.InitInfo_Package_References.InitInfo_Access_Array;
+   function "=" (Left, Right : InitInfo_Access_Array) return Boolean renames org.allbinary.business.init.InitInfo_Package_References."=";
+   subtype InitInfo_Access_Array_Access is org.allbinary.business.init.InitInfo_Package_References.InitInfo_Access_Array_Access;
+   function "=" (Left, Right : InitInfo_Access_Array_Access) return Boolean renames org.allbinary.business.init.InitInfo_Package_References."=";
+   subtype InitInfo_Access_Array_Access_Array is org.allbinary.business.init.InitInfo_Package_References.InitInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : InitInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.business.init.InitInfo_Package_References."=";
+   subtype InitInfo_Access_Array_Access_Array_Access is org.allbinary.business.init.InitInfo_Package_References.InitInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InitInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.init.InitInfo_Package_References."=";
 
    type InitInfo is new Java_Object with record
       TESTING : Unbounded_String;

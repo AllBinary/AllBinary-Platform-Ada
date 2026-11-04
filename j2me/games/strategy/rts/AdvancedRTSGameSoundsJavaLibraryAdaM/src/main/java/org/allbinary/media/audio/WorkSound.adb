@@ -12,9 +12,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 
 package body org.allbinary.media.audio.WorkSound_Package is
 
+   subtype Sound_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access;
+   function "=" (Left, Right : Sound_Access) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
+   subtype Sound_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array;
+   function "=" (Left, Right : Sound_Access_Array) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
+   subtype Sound_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access;
+   function "=" (Left, Right : Sound_Access_Array_Access) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
+   subtype Sound_Access_Array_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array;
+   function "=" (Left, Right : Sound_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
+   subtype Sound_Access_Array_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Sound_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.Sound_Package_References."=";
    procedure Initialize_Fields (This : in out WorkSound'Class) is
    begin
       null;
@@ -35,7 +46,7 @@ package body org.allbinary.media.audio.WorkSound_Package is
 
    function getInstance return Sound_Access is
    begin
-        return WorkSound_Package.soundInterface;
+        return Sound_Access (WorkSound_Package.soundInterface);
    end getInstance;
 
 begin

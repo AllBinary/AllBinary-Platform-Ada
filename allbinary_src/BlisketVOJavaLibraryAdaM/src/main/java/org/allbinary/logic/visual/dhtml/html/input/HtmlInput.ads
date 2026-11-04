@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package;
+package org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References is
+   type HtmlInput_Access is access all org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package.HtmlInput'Class;
+   type HtmlInput_Access_Array is array (Natural range <>) of HtmlInput_Access;
+   type HtmlInput_Access_Array_Access is access all HtmlInput_Access_Array;
+   type HtmlInput_Access_Array_Access_Array is array (Natural range <>) of HtmlInput_Access_Array_Access;
+   type HtmlInput_Access_Array_Access_Array_Access is access all HtmlInput_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References;
+
+with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package; use org.allbinary.lo
 package org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package is
 
    package HtmlTag_Package renames Standard.org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HtmlInput is tagged;
-   type HtmlInput_Access is access all HtmlInput'Class;
-   type HtmlInput_Access_Array is array (Natural range <>) of HtmlInput_Access;
-   type HtmlInput_Access_Array_Access is access all HtmlInput_Access_Array;
-   type HtmlInput_Access_Array_Access_Array is array (Natural range <>) of HtmlInput_Access_Array_Access;
-   type HtmlInput_Access_Array_Access_Array_Access is access all HtmlInput_Access_Array_Access_Array;
+
+   subtype HtmlInput_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access;
+   function "=" (Left, Right : HtmlInput_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References."=";
+   subtype HtmlInput_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access_Array;
+   function "=" (Left, Right : HtmlInput_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References."=";
+   subtype HtmlInput_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access_Array_Access;
+   function "=" (Left, Right : HtmlInput_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References."=";
+   subtype HtmlInput_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access_Array_Access_Array;
+   function "=" (Left, Right : HtmlInput_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References."=";
+   subtype HtmlInput_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References.HtmlInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HtmlInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package_References."=";
 
    type HtmlInput is new HtmlTag with record
       END_Id : Unbounded_String;

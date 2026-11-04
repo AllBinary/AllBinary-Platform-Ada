@@ -16,14 +16,39 @@
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.game.collision.CollisionProcessor_Package; use org.allbinary.game.collision.CollisionProcessor_Package;
 with org.allbinary.game.collision.Collision2DProcessor_Package; use org.allbinary.game.collision.Collision2DProcessor_Package;
 with org.allbinary.game.collision.CollisionThreedProcessor_Package; use org.allbinary.game.collision.CollisionThreedProcessor_Package;
+with org.allbinary.game.collision.Collision2DProcessor_Package;
+with org.allbinary.game.collision.CollisionProcessor_Package;
+with org.allbinary.game.collision.CollisionThreedProcessor_Package;
 
 package body org.allbinary.game.collision.LayerCollisionUtil_Package is
 
    package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
    package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   function "=" (Left, Right : AllBinaryLayer_Access) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   function "=" (Left, Right : AllBinaryLayer_Access_Array) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryLayer_Access_Array_Access) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   function "=" (Left, Right : AllBinaryLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AllBinaryLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
+   subtype CollisionProcessor_Access is org.allbinary.game.collision.CollisionProcessor_Package_References.CollisionProcessor_Access;
+   function "=" (Left, Right : CollisionProcessor_Access) return Boolean renames org.allbinary.game.collision.CollisionProcessor_Package_References."=";
+   subtype CollisionProcessor_Access_Array is org.allbinary.game.collision.CollisionProcessor_Package_References.CollisionProcessor_Access_Array;
+   function "=" (Left, Right : CollisionProcessor_Access_Array) return Boolean renames org.allbinary.game.collision.CollisionProcessor_Package_References."=";
+   subtype CollisionProcessor_Access_Array_Access is org.allbinary.game.collision.CollisionProcessor_Package_References.CollisionProcessor_Access_Array_Access;
+   function "=" (Left, Right : CollisionProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollisionProcessor_Package_References."=";
+   subtype CollisionProcessor_Access_Array_Access_Array is org.allbinary.game.collision.CollisionProcessor_Package_References.CollisionProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : CollisionProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.CollisionProcessor_Package_References."=";
+   subtype CollisionProcessor_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollisionProcessor_Package_References.CollisionProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CollisionProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollisionProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out LayerCollisionUtil'Class) is
    begin
       null;
@@ -33,7 +58,7 @@ package body org.allbinary.game.collision.LayerCollisionUtil_Package is
 
    function getInstance return LayerCollisionUtil_Access is
    begin
-        return LayerCollisionUtil_Package.instance;
+        return LayerCollisionUtil_Access (LayerCollisionUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out LayerCollisionUtil'Class) is

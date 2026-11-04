@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.opengles.OpenGLImageUtilBase_Package; use org.allbinary.image.opengles.OpenGLImageUtilBase_Package;
 
 package body org.platform.graphics.OpenGLImageUtil_Package is
 
@@ -25,7 +26,7 @@ package body org.platform.graphics.OpenGLImageUtil_Package is
 
    function getInstance return OpenGLImageUtil_Access is
    begin
-        return OpenGLImageUtil_Package.instance;
+        return OpenGLImageUtil_Access (OpenGLImageUtil_Package.instance);
    end getInstance;
 
 begin

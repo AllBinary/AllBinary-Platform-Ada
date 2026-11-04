@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.hardware.components.linux.Usb_Package;
+package org.allbinary.logic.system.hardware.components.linux.Usb_Package_References is
+   type Usb_Access is access all org.allbinary.logic.system.hardware.components.linux.Usb_Package.Usb'Class;
+   type Usb_Access_Array is array (Natural range <>) of Usb_Access;
+   type Usb_Access_Array_Access is access all Usb_Access_Array;
+   type Usb_Access_Array_Access_Array is array (Natural range <>) of Usb_Access_Array_Access;
+   type Usb_Access_Array_Access_Array_Access is access all Usb_Access_Array_Access_Array;
+end org.allbinary.logic.system.hardware.components.linux.Usb_Package_References;
+
+with org.allbinary.logic.system.hardware.components.linux.Usb_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ package org.allbinary.logic.system.hardware.components.linux.Usb_Package is
 
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
    package UsbInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type Usb is tagged;
-   type Usb_Access is access all Usb'Class;
-   type Usb_Access_Array is array (Natural range <>) of Usb_Access;
-   type Usb_Access_Array_Access is access all Usb_Access_Array;
-   type Usb_Access_Array_Access_Array is array (Natural range <>) of Usb_Access_Array_Access;
-   type Usb_Access_Array_Access_Array_Access is access all Usb_Access_Array_Access_Array;
+
+   subtype Usb_Access is org.allbinary.logic.system.hardware.components.linux.Usb_Package_References.Usb_Access;
+   function "=" (Left, Right : Usb_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Usb_Package_References."=";
+   subtype Usb_Access_Array is org.allbinary.logic.system.hardware.components.linux.Usb_Package_References.Usb_Access_Array;
+   function "=" (Left, Right : Usb_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Usb_Package_References."=";
+   subtype Usb_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Usb_Package_References.Usb_Access_Array_Access;
+   function "=" (Left, Right : Usb_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Usb_Package_References."=";
+   subtype Usb_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.Usb_Package_References.Usb_Access_Array_Access_Array;
+   function "=" (Left, Right : Usb_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Usb_Package_References."=";
+   subtype Usb_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Usb_Package_References.Usb_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Usb_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Usb_Package_References."=";
 
    type Usb is new Java_Object and HardwareComponentInterface and UsbInterface with record
       data : Unbounded_String;

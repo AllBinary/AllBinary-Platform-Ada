@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with views.admin.inventory.InventoryUploadMediaUtil_Package;
+package views.admin.inventory.InventoryUploadMediaUtil_Package_References is
+   type InventoryUploadMediaUtil_Access is access all views.admin.inventory.InventoryUploadMediaUtil_Package.InventoryUploadMediaUtil'Class;
+   type InventoryUploadMediaUtil_Access_Array is array (Natural range <>) of InventoryUploadMediaUtil_Access;
+   type InventoryUploadMediaUtil_Access_Array_Access is access all InventoryUploadMediaUtil_Access_Array;
+   type InventoryUploadMediaUtil_Access_Array_Access_Array is array (Natural range <>) of InventoryUploadMediaUtil_Access_Array_Access;
+   type InventoryUploadMediaUtil_Access_Array_Access_Array_Access is access all InventoryUploadMediaUtil_Access_Array_Access_Array;
+end views.admin.inventory.InventoryUploadMediaUtil_Package_References;
+
+with views.admin.inventory.InventoryUploadMediaUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,11 +31,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.visual.media.MediaData_Package; use org.allbinary.logic.visual.media.MediaData_Package;
-with org.allbinary.logic.visual.media.MediaUtil_Package; use org.allbinary.logic.visual.media.MediaUtil_Package;
+limited with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
+limited with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
+with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.logic.visual.media.MediaData_Package;
+with org.allbinary.logic.visual.media.MediaData_Package_References;
+limited with org.allbinary.logic.visual.media.MediaUtil_Package;
+with org.allbinary.logic.visual.media.MediaUtil_Package_References;
 
 package views.admin.inventory.InventoryUploadMediaUtil_Package is
 
@@ -34,13 +49,71 @@ package views.admin.inventory.InventoryUploadMediaUtil_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package MediaData_Package renames Standard.org.allbinary.logic.visual.media.MediaData_Package;
    package MediaUtil_Package renames Standard.org.allbinary.logic.visual.media.MediaUtil_Package;
+   package Reference_Types is
+   subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
+   use type StoreFrontInterface_Access;
+   subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
+   use type StoreFrontInterface_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access;
+   subtype StoreFrontInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array;
+   use type StoreFrontInterface_Access_Array_Access_Array;
+   subtype StoreFrontInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array_Access_Array_Access;
+   use type StoreFrontInterface_Access_Array_Access_Array_Access;
+   subtype ItemInterface_Access is org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package_References.ItemInterface_Access;
+   use type ItemInterface_Access;
+   subtype ItemInterface_Access_Array is org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package_References.ItemInterface_Access_Array;
+   use type ItemInterface_Access_Array;
+   subtype ItemInterface_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package_References.ItemInterface_Access_Array_Access;
+   use type ItemInterface_Access_Array_Access;
+   subtype ItemInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package_References.ItemInterface_Access_Array_Access_Array;
+   use type ItemInterface_Access_Array_Access_Array;
+   subtype ItemInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package_References.ItemInterface_Access_Array_Access_Array_Access;
+   use type ItemInterface_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype MediaData_Access is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access;
+   use type MediaData_Access;
+   subtype MediaData_Access_Array is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array;
+   use type MediaData_Access_Array;
+   subtype MediaData_Access_Array_Access is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array_Access;
+   use type MediaData_Access_Array_Access;
+   subtype MediaData_Access_Array_Access_Array is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array_Access_Array;
+   use type MediaData_Access_Array_Access_Array;
+   subtype MediaData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.media.MediaData_Package_References.MediaData_Access_Array_Access_Array_Access;
+   use type MediaData_Access_Array_Access_Array_Access;
+   subtype MediaUtil_Access is org.allbinary.logic.visual.media.MediaUtil_Package_References.MediaUtil_Access;
+   use type MediaUtil_Access;
+   subtype MediaUtil_Access_Array is org.allbinary.logic.visual.media.MediaUtil_Package_References.MediaUtil_Access_Array;
+   use type MediaUtil_Access_Array;
+   subtype MediaUtil_Access_Array_Access is org.allbinary.logic.visual.media.MediaUtil_Package_References.MediaUtil_Access_Array_Access;
+   use type MediaUtil_Access_Array_Access;
+   subtype MediaUtil_Access_Array_Access_Array is org.allbinary.logic.visual.media.MediaUtil_Package_References.MediaUtil_Access_Array_Access_Array;
+   use type MediaUtil_Access_Array_Access_Array;
+   subtype MediaUtil_Access_Array_Access_Array_Access is org.allbinary.logic.visual.media.MediaUtil_Package_References.MediaUtil_Access_Array_Access_Array_Access;
+   use type MediaUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type InventoryUploadMediaUtil is tagged;
-   type InventoryUploadMediaUtil_Access is access all InventoryUploadMediaUtil'Class;
-   type InventoryUploadMediaUtil_Access_Array is array (Natural range <>) of InventoryUploadMediaUtil_Access;
-   type InventoryUploadMediaUtil_Access_Array_Access is access all InventoryUploadMediaUtil_Access_Array;
-   type InventoryUploadMediaUtil_Access_Array_Access_Array is array (Natural range <>) of InventoryUploadMediaUtil_Access_Array_Access;
-   type InventoryUploadMediaUtil_Access_Array_Access_Array_Access is access all InventoryUploadMediaUtil_Access_Array_Access_Array;
+
+   subtype InventoryUploadMediaUtil_Access is views.admin.inventory.InventoryUploadMediaUtil_Package_References.InventoryUploadMediaUtil_Access;
+   function "=" (Left, Right : InventoryUploadMediaUtil_Access) return Boolean renames views.admin.inventory.InventoryUploadMediaUtil_Package_References."=";
+   subtype InventoryUploadMediaUtil_Access_Array is views.admin.inventory.InventoryUploadMediaUtil_Package_References.InventoryUploadMediaUtil_Access_Array;
+   function "=" (Left, Right : InventoryUploadMediaUtil_Access_Array) return Boolean renames views.admin.inventory.InventoryUploadMediaUtil_Package_References."=";
+   subtype InventoryUploadMediaUtil_Access_Array_Access is views.admin.inventory.InventoryUploadMediaUtil_Package_References.InventoryUploadMediaUtil_Access_Array_Access;
+   function "=" (Left, Right : InventoryUploadMediaUtil_Access_Array_Access) return Boolean renames views.admin.inventory.InventoryUploadMediaUtil_Package_References."=";
+   subtype InventoryUploadMediaUtil_Access_Array_Access_Array is views.admin.inventory.InventoryUploadMediaUtil_Package_References.InventoryUploadMediaUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : InventoryUploadMediaUtil_Access_Array_Access_Array) return Boolean renames views.admin.inventory.InventoryUploadMediaUtil_Package_References."=";
+   subtype InventoryUploadMediaUtil_Access_Array_Access_Array_Access is views.admin.inventory.InventoryUploadMediaUtil_Package_References.InventoryUploadMediaUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : InventoryUploadMediaUtil_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.InventoryUploadMediaUtil_Package_References."=";
 
    type InventoryUploadMediaUtil is new Java_Object with record
       logUtil : LogUtil_Access;

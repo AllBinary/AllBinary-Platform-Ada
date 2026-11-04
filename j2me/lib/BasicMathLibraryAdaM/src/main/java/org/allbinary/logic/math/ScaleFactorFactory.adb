@@ -38,7 +38,7 @@ package body org.allbinary.logic.math.ScaleFactorFactory_Package is
 
    function getInstance return ScaleFactorFactory_Access is
    begin
-        return ScaleFactorFactory_Package.instance;
+        return ScaleFactorFactory_Access (ScaleFactorFactory_Package.instance);
    end getInstance;
 
 begin

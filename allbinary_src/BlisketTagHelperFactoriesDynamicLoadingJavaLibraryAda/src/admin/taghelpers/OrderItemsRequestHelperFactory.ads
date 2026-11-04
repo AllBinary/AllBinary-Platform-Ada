@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with admin.taghelpers.OrderItemsRequestHelperFactory_Package;
+package admin.taghelpers.OrderItemsRequestHelperFactory_Package_References is
+   type OrderItemsRequestHelperFactory_Access is access all admin.taghelpers.OrderItemsRequestHelperFactory_Package.OrderItemsRequestHelperFactory'Class;
+   type OrderItemsRequestHelperFactory_Access_Array is array (Natural range <>) of OrderItemsRequestHelperFactory_Access;
+   type OrderItemsRequestHelperFactory_Access_Array_Access is access all OrderItemsRequestHelperFactory_Access_Array;
+   type OrderItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of OrderItemsRequestHelperFactory_Access_Array_Access;
+   type OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all OrderItemsRequestHelperFactory_Access_Array_Access_Array;
+end admin.taghelpers.OrderItemsRequestHelperFactory_Package_References;
+
+with admin.taghelpers.OrderItemsRequestHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,21 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 package admin.taghelpers.OrderItemsRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OrderItemsRequestHelperFactory is tagged;
-   type OrderItemsRequestHelperFactory_Access is access all OrderItemsRequestHelperFactory'Class;
-   type OrderItemsRequestHelperFactory_Access_Array is array (Natural range <>) of OrderItemsRequestHelperFactory_Access;
-   type OrderItemsRequestHelperFactory_Access_Array_Access is access all OrderItemsRequestHelperFactory_Access_Array;
-   type OrderItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of OrderItemsRequestHelperFactory_Access_Array_Access;
-   type OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all OrderItemsRequestHelperFactory_Access_Array_Access_Array;
+
+   subtype OrderItemsRequestHelperFactory_Access is admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.OrderItemsRequestHelperFactory_Access;
+   function "=" (Left, Right : OrderItemsRequestHelperFactory_Access) return Boolean renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References."=";
+   subtype OrderItemsRequestHelperFactory_Access_Array is admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.OrderItemsRequestHelperFactory_Access_Array;
+   function "=" (Left, Right : OrderItemsRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References."=";
+   subtype OrderItemsRequestHelperFactory_Access_Array_Access is admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.OrderItemsRequestHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : OrderItemsRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References."=";
+   subtype OrderItemsRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.OrderItemsRequestHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : OrderItemsRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References."=";
+   subtype OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References."=";
 
    type OrderItemsRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

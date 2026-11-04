@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.globals.MESSAGES_Package;
+package org.allbinary.globals.MESSAGES_Package_References is
+   type MESSAGES_Access is access all org.allbinary.globals.MESSAGES_Package.MESSAGES'Class;
+   type MESSAGES_Access_Array is array (Natural range <>) of MESSAGES_Access;
+   type MESSAGES_Access_Array_Access is access all MESSAGES_Access_Array;
+   type MESSAGES_Access_Array_Access_Array is array (Natural range <>) of MESSAGES_Access_Array_Access;
+   type MESSAGES_Access_Array_Access_Array_Access is access all MESSAGES_Access_Array_Access_Array;
+end org.allbinary.globals.MESSAGES_Package_References;
+
+with org.allbinary.globals.MESSAGES_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.globals.MESSAGES_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type MESSAGES is tagged;
-   type MESSAGES_Access is access all MESSAGES'Class;
-   type MESSAGES_Access_Array is array (Natural range <>) of MESSAGES_Access;
-   type MESSAGES_Access_Array_Access is access all MESSAGES_Access_Array;
-   type MESSAGES_Access_Array_Access_Array is array (Natural range <>) of MESSAGES_Access_Array_Access;
-   type MESSAGES_Access_Array_Access_Array_Access is access all MESSAGES_Access_Array_Access_Array;
+
+   subtype MESSAGES_Access is org.allbinary.globals.MESSAGES_Package_References.MESSAGES_Access;
+   function "=" (Left, Right : MESSAGES_Access) return Boolean renames org.allbinary.globals.MESSAGES_Package_References."=";
+   subtype MESSAGES_Access_Array is org.allbinary.globals.MESSAGES_Package_References.MESSAGES_Access_Array;
+   function "=" (Left, Right : MESSAGES_Access_Array) return Boolean renames org.allbinary.globals.MESSAGES_Package_References."=";
+   subtype MESSAGES_Access_Array_Access is org.allbinary.globals.MESSAGES_Package_References.MESSAGES_Access_Array_Access;
+   function "=" (Left, Right : MESSAGES_Access_Array_Access) return Boolean renames org.allbinary.globals.MESSAGES_Package_References."=";
+   subtype MESSAGES_Access_Array_Access_Array is org.allbinary.globals.MESSAGES_Package_References.MESSAGES_Access_Array_Access_Array;
+   function "=" (Left, Right : MESSAGES_Access_Array_Access_Array) return Boolean renames org.allbinary.globals.MESSAGES_Package_References."=";
+   subtype MESSAGES_Access_Array_Access_Array_Access is org.allbinary.globals.MESSAGES_Package_References.MESSAGES_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MESSAGES_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.globals.MESSAGES_Package_References."=";
 
    type MESSAGES is new Java_Object with null record;
    CONTACTADMIN : Unbounded_String;

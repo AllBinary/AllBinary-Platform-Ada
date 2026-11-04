@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.commerce.money.payment.types.TenderType_Package; use org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
+with org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.types.TenderTypeFactory_Package is
 
+   subtype TenderType_Access is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access;
+   function "=" (Left, Right : TenderType_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References."=";
+   subtype TenderType_Access_Array is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access_Array;
+   function "=" (Left, Right : TenderType_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References."=";
+   subtype TenderType_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access_Array_Access;
+   function "=" (Left, Right : TenderType_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References."=";
+   subtype TenderType_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access_Array_Access_Array;
+   function "=" (Left, Right : TenderType_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References."=";
+   subtype TenderType_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References.TenderType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TenderType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.TenderType_Package_References."=";
    procedure Initialize_Fields (This : in out TenderTypeFactory'Class) is
    begin
       null;
@@ -39,7 +51,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.TenderType
 
    function getInstance return TenderTypeFactory_Access is
    begin
-        return TenderTypeFactory_Package.instance;
+        return TenderTypeFactory_Access (TenderTypeFactory_Package.instance);
    end getInstance;
 
 begin

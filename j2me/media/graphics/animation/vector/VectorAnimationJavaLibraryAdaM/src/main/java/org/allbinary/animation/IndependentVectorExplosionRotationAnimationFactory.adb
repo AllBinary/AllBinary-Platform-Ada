@@ -13,13 +13,73 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.vector.VectorInfo_Package; use org.allbinary.vector.VectorInfo_Package;
+with org.allbinary.animation.VectorAnimationFactoryInterface_Package; use org.allbinary.animation.VectorAnimationFactoryInterface_Package;
 with org.allbinary.animation.VectorRotationGenerator_Package; use org.allbinary.animation.VectorRotationGenerator_Package;
+with org.allbinary.animation.VectorExplosionGenerator_Package; use org.allbinary.animation.VectorExplosionGenerator_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.VectorAnimationFactoryInterface_Package;
+with org.allbinary.animation.VectorAnimationUtil_Package;
+with org.allbinary.animation.VectorExplosionGenerator_Package;
+with org.allbinary.animation.VectorExplosionType_Package;
+with org.allbinary.animation.VectorRotationGenerator_Package;
 
 package body org.allbinary.animation.IndependentVectorExplosionRotationAnimationFactory_Package is
 
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   function "=" (Left, Right : BasicColor_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype VectorInfo_Access is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access;
+   function "=" (Left, Right : VectorInfo_Access) return Boolean renames org.allbinary.vector.VectorInfo_Package_References."=";
+   subtype VectorInfo_Access_Array is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access_Array;
+   function "=" (Left, Right : VectorInfo_Access_Array) return Boolean renames org.allbinary.vector.VectorInfo_Package_References."=";
+   subtype VectorInfo_Access_Array_Access is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access_Array_Access;
+   function "=" (Left, Right : VectorInfo_Access_Array_Access) return Boolean renames org.allbinary.vector.VectorInfo_Package_References."=";
+   subtype VectorInfo_Access_Array_Access_Array is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : VectorInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.vector.VectorInfo_Package_References."=";
+   subtype VectorInfo_Access_Array_Access_Array_Access is org.allbinary.vector.VectorInfo_Package_References.VectorInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VectorInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.vector.VectorInfo_Package_References."=";
+   subtype VectorAnimationFactoryInterface_Access is org.allbinary.animation.VectorAnimationFactoryInterface_Package_References.VectorAnimationFactoryInterface_Access;
+   function "=" (Left, Right : VectorAnimationFactoryInterface_Access) return Boolean renames org.allbinary.animation.VectorAnimationFactoryInterface_Package_References."=";
+   subtype VectorAnimationFactoryInterface_Access_Array is org.allbinary.animation.VectorAnimationFactoryInterface_Package_References.VectorAnimationFactoryInterface_Access_Array;
+   function "=" (Left, Right : VectorAnimationFactoryInterface_Access_Array) return Boolean renames org.allbinary.animation.VectorAnimationFactoryInterface_Package_References."=";
+   subtype VectorAnimationFactoryInterface_Access_Array_Access is org.allbinary.animation.VectorAnimationFactoryInterface_Package_References.VectorAnimationFactoryInterface_Access_Array_Access;
+   function "=" (Left, Right : VectorAnimationFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorAnimationFactoryInterface_Package_References."=";
+   subtype VectorAnimationFactoryInterface_Access_Array_Access_Array is org.allbinary.animation.VectorAnimationFactoryInterface_Package_References.VectorAnimationFactoryInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : VectorAnimationFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.VectorAnimationFactoryInterface_Package_References."=";
+   subtype VectorAnimationFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.animation.VectorAnimationFactoryInterface_Package_References.VectorAnimationFactoryInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VectorAnimationFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorAnimationFactoryInterface_Package_References."=";
+   subtype VectorExplosionGenerator_Access is org.allbinary.animation.VectorExplosionGenerator_Package_References.VectorExplosionGenerator_Access;
+   function "=" (Left, Right : VectorExplosionGenerator_Access) return Boolean renames org.allbinary.animation.VectorExplosionGenerator_Package_References."=";
+   subtype VectorExplosionGenerator_Access_Array is org.allbinary.animation.VectorExplosionGenerator_Package_References.VectorExplosionGenerator_Access_Array;
+   function "=" (Left, Right : VectorExplosionGenerator_Access_Array) return Boolean renames org.allbinary.animation.VectorExplosionGenerator_Package_References."=";
+   subtype VectorExplosionGenerator_Access_Array_Access is org.allbinary.animation.VectorExplosionGenerator_Package_References.VectorExplosionGenerator_Access_Array_Access;
+   function "=" (Left, Right : VectorExplosionGenerator_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorExplosionGenerator_Package_References."=";
+   subtype VectorExplosionGenerator_Access_Array_Access_Array is org.allbinary.animation.VectorExplosionGenerator_Package_References.VectorExplosionGenerator_Access_Array_Access_Array;
+   function "=" (Left, Right : VectorExplosionGenerator_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.VectorExplosionGenerator_Package_References."=";
+   subtype VectorExplosionGenerator_Access_Array_Access_Array_Access is org.allbinary.animation.VectorExplosionGenerator_Package_References.VectorExplosionGenerator_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : VectorExplosionGenerator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorExplosionGenerator_Package_References."=";
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   function "=" (Left, Right : Animation_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   function "=" (Left, Right : Animation_Access_Array) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   function "=" (Left, Right : Animation_Access_Array_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   function "=" (Left, Right : Animation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Animation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
    procedure Initialize_Fields (This : in out IndependentVectorExplosionRotationAnimationFactory'Class) is
    begin
       null;

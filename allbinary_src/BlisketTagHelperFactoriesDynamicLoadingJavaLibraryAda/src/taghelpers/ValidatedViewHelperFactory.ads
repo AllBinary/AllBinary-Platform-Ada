@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with taghelpers.ValidatedViewHelperFactory_Package;
+package taghelpers.ValidatedViewHelperFactory_Package_References is
+   type ValidatedViewHelperFactory_Access is access all taghelpers.ValidatedViewHelperFactory_Package.ValidatedViewHelperFactory'Class;
+   type ValidatedViewHelperFactory_Access_Array is array (Natural range <>) of ValidatedViewHelperFactory_Access;
+   type ValidatedViewHelperFactory_Access_Array_Access is access all ValidatedViewHelperFactory_Access_Array;
+   type ValidatedViewHelperFactory_Access_Array_Access_Array is array (Natural range <>) of ValidatedViewHelperFactory_Access_Array_Access;
+   type ValidatedViewHelperFactory_Access_Array_Access_Array_Access is access all ValidatedViewHelperFactory_Access_Array_Access_Array;
+end taghelpers.ValidatedViewHelperFactory_Package_References;
+
+with taghelpers.ValidatedViewHelperFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -28,13 +38,21 @@ package taghelpers.ValidatedViewHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ValidatedViewHelperFactory is tagged;
-   type ValidatedViewHelperFactory_Access is access all ValidatedViewHelperFactory'Class;
-   type ValidatedViewHelperFactory_Access_Array is array (Natural range <>) of ValidatedViewHelperFactory_Access;
-   type ValidatedViewHelperFactory_Access_Array_Access is access all ValidatedViewHelperFactory_Access_Array;
-   type ValidatedViewHelperFactory_Access_Array_Access_Array is array (Natural range <>) of ValidatedViewHelperFactory_Access_Array_Access;
-   type ValidatedViewHelperFactory_Access_Array_Access_Array_Access is access all ValidatedViewHelperFactory_Access_Array_Access_Array;
+
+   subtype ValidatedViewHelperFactory_Access is taghelpers.ValidatedViewHelperFactory_Package_References.ValidatedViewHelperFactory_Access;
+   function "=" (Left, Right : ValidatedViewHelperFactory_Access) return Boolean renames taghelpers.ValidatedViewHelperFactory_Package_References."=";
+   subtype ValidatedViewHelperFactory_Access_Array is taghelpers.ValidatedViewHelperFactory_Package_References.ValidatedViewHelperFactory_Access_Array;
+   function "=" (Left, Right : ValidatedViewHelperFactory_Access_Array) return Boolean renames taghelpers.ValidatedViewHelperFactory_Package_References."=";
+   subtype ValidatedViewHelperFactory_Access_Array_Access is taghelpers.ValidatedViewHelperFactory_Package_References.ValidatedViewHelperFactory_Access_Array_Access;
+   function "=" (Left, Right : ValidatedViewHelperFactory_Access_Array_Access) return Boolean renames taghelpers.ValidatedViewHelperFactory_Package_References."=";
+   subtype ValidatedViewHelperFactory_Access_Array_Access_Array is taghelpers.ValidatedViewHelperFactory_Package_References.ValidatedViewHelperFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ValidatedViewHelperFactory_Access_Array_Access_Array) return Boolean renames taghelpers.ValidatedViewHelperFactory_Package_References."=";
+   subtype ValidatedViewHelperFactory_Access_Array_Access_Array_Access is taghelpers.ValidatedViewHelperFactory_Package_References.ValidatedViewHelperFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ValidatedViewHelperFactory_Access_Array_Access_Array_Access) return Boolean renames taghelpers.ValidatedViewHelperFactory_Package_References."=";
 
    type ValidatedViewHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

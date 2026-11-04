@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package;
+package org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References is
+   type StoreAppClientInformation_Access is access all org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package.StoreAppClientInformation'Class;
+   type StoreAppClientInformation_Access_Array is array (Natural range <>) of StoreAppClientInformation_Access;
+   type StoreAppClientInformation_Access_Array_Access is access all StoreAppClientInformation_Access_Array;
+   type StoreAppClientInformation_Access_Array_Access_Array is array (Natural range <>) of StoreAppClientInformation_Access_Array_Access;
+   type StoreAppClientInformation_Access_Array_Access_Array_Access is access all StoreAppClientInformation_Access_Array_Access_Array;
+end org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References;
+
+with org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -26,13 +36,21 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformation_Package;
 package org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package is
 
    package LongArrayIdentifierInterface_Package renames Standard.org.allbinary.thirdparty.store.LongArrayIdentifierInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type StoreAppClientInformation is tagged;
-   type StoreAppClientInformation_Access is access all StoreAppClientInformation'Class;
-   type StoreAppClientInformation_Access_Array is array (Natural range <>) of StoreAppClientInformation_Access;
-   type StoreAppClientInformation_Access_Array_Access is access all StoreAppClientInformation_Access_Array;
-   type StoreAppClientInformation_Access_Array_Access_Array is array (Natural range <>) of StoreAppClientInformation_Access_Array_Access;
-   type StoreAppClientInformation_Access_Array_Access_Array_Access is access all StoreAppClientInformation_Access_Array_Access_Array;
+
+   subtype StoreAppClientInformation_Access is org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References.StoreAppClientInformation_Access;
+   function "=" (Left, Right : StoreAppClientInformation_Access) return Boolean renames org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References."=";
+   subtype StoreAppClientInformation_Access_Array is org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References.StoreAppClientInformation_Access_Array;
+   function "=" (Left, Right : StoreAppClientInformation_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References."=";
+   subtype StoreAppClientInformation_Access_Array_Access is org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References.StoreAppClientInformation_Access_Array_Access;
+   function "=" (Left, Right : StoreAppClientInformation_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References."=";
+   subtype StoreAppClientInformation_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References.StoreAppClientInformation_Access_Array_Access_Array;
+   function "=" (Left, Right : StoreAppClientInformation_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References."=";
+   subtype StoreAppClientInformation_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References.StoreAppClientInformation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StoreAppClientInformation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package_References."=";
 
    type StoreAppClientInformation is new AbeClientInformation and LongArrayIdentifierInterface with record
       longArrayIdentifier : Long_Long_Integer_Array_Access;

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.opengles.GLUtil_Package;
+package org.allbinary.opengles.GLUtil_Package_References is
+   type GLUtil_Access is access all org.allbinary.opengles.GLUtil_Package.GLUtil'Class;
+   type GLUtil_Access_Array is array (Natural range <>) of GLUtil_Access;
+   type GLUtil_Access_Array_Access is access all GLUtil_Access_Array;
+   type GLUtil_Access_Array_Access_Array is array (Natural range <>) of GLUtil_Access_Array_Access;
+   type GLUtil_Access_Array_Access_Array_Access is access all GLUtil_Access_Array_Access_Array;
+end org.allbinary.opengles.GLUtil_Package_References;
+
+with org.allbinary.opengles.GLUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -30,16 +40,25 @@ package org.allbinary.opengles.GLUtil_Package is
    package Buffer_Package renames Standard.java.nio.Buffer_Package;
    package ByteBuffer_Package renames Standard.java.nio.ByteBuffer_Package;
    package FloatBuffer_Package renames Standard.java.nio.FloatBuffer_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type GLUtil is tagged;
-   type GLUtil_Access is access all GLUtil'Class;
-   type GLUtil_Access_Array is array (Natural range <>) of GLUtil_Access;
-   type GLUtil_Access_Array_Access is access all GLUtil_Access_Array;
-   type GLUtil_Access_Array_Access_Array is array (Natural range <>) of GLUtil_Access_Array_Access;
-   type GLUtil_Access_Array_Access_Array_Access is access all GLUtil_Access_Array_Access_Array;
+
+   subtype GLUtil_Access is org.allbinary.opengles.GLUtil_Package_References.GLUtil_Access;
+   function "=" (Left, Right : GLUtil_Access) return Boolean renames org.allbinary.opengles.GLUtil_Package_References."=";
+   subtype GLUtil_Access_Array is org.allbinary.opengles.GLUtil_Package_References.GLUtil_Access_Array;
+   function "=" (Left, Right : GLUtil_Access_Array) return Boolean renames org.allbinary.opengles.GLUtil_Package_References."=";
+   subtype GLUtil_Access_Array_Access is org.allbinary.opengles.GLUtil_Package_References.GLUtil_Access_Array_Access;
+   function "=" (Left, Right : GLUtil_Access_Array_Access) return Boolean renames org.allbinary.opengles.GLUtil_Package_References."=";
+   subtype GLUtil_Access_Array_Access_Array is org.allbinary.opengles.GLUtil_Package_References.GLUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : GLUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.opengles.GLUtil_Package_References."=";
+   subtype GLUtil_Access_Array_Access_Array_Access is org.allbinary.opengles.GLUtil_Package_References.GLUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GLUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.opengles.GLUtil_Package_References."=";
 
    type GLUtil is new Java_Object with record
       BYTES_PER_FLOAT : Integer;
+      NULL_FLOAT_BUFFER : FloatBuffer_Access;
    end record;
    instance : GLUtil_Access;
 

@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package;
+package org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References is
+   type LazyImageRotationAnimationFactory_Access is access all org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package.LazyImageRotationAnimationFactory'Class;
+   type LazyImageRotationAnimationFactory_Access_Array is array (Natural range <>) of LazyImageRotationAnimationFactory_Access;
+   type LazyImageRotationAnimationFactory_Access_Array_Access is access all LazyImageRotationAnimationFactory_Access_Array;
+   type LazyImageRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of LazyImageRotationAnimationFactory_Access_Array_Access;
+   type LazyImageRotationAnimationFactory_Access_Array_Access_Array_Access is access all LazyImageRotationAnimationFactory_Access_Array_Access_Array;
+end org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References;
+
+with org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,23 +30,64 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+limited with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
+limited with org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+with org.allbinary.animation.image.BaseImageAnimationFactory_Package_References;
 
 package org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package is
 
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package Reference_Types is
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype ScaleProperties_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access;
+   use type ScaleProperties_Access;
+   subtype ScaleProperties_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array;
+   use type ScaleProperties_Access_Array;
+   subtype ScaleProperties_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access;
+   subtype ScaleProperties_Access_Array_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array;
+   use type ScaleProperties_Access_Array_Access_Array;
+   subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access_Array_Access;
+   subtype BaseImageAnimationFactory_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access;
+   use type BaseImageAnimationFactory_Access;
+   subtype BaseImageAnimationFactory_Access_Array is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array;
+   use type BaseImageAnimationFactory_Access_Array;
+   subtype BaseImageAnimationFactory_Access_Array_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access;
+   use type BaseImageAnimationFactory_Access_Array_Access;
+   subtype BaseImageAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access_Array;
+   use type BaseImageAnimationFactory_Access_Array_Access_Array;
+   subtype BaseImageAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access_Array_Access;
+   use type BaseImageAnimationFactory_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type LazyImageRotationAnimationFactory is tagged;
-   type LazyImageRotationAnimationFactory_Access is access all LazyImageRotationAnimationFactory'Class;
-   type LazyImageRotationAnimationFactory_Access_Array is array (Natural range <>) of LazyImageRotationAnimationFactory_Access;
-   type LazyImageRotationAnimationFactory_Access_Array_Access is access all LazyImageRotationAnimationFactory_Access_Array;
-   type LazyImageRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of LazyImageRotationAnimationFactory_Access_Array_Access;
-   type LazyImageRotationAnimationFactory_Access_Array_Access_Array_Access is access all LazyImageRotationAnimationFactory_Access_Array_Access_Array;
+
+   subtype LazyImageRotationAnimationFactory_Access is org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References.LazyImageRotationAnimationFactory_Access;
+   function "=" (Left, Right : LazyImageRotationAnimationFactory_Access) return Boolean renames org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References."=";
+   subtype LazyImageRotationAnimationFactory_Access_Array is org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References.LazyImageRotationAnimationFactory_Access_Array;
+   function "=" (Left, Right : LazyImageRotationAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References."=";
+   subtype LazyImageRotationAnimationFactory_Access_Array_Access is org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References.LazyImageRotationAnimationFactory_Access_Array_Access;
+   function "=" (Left, Right : LazyImageRotationAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References."=";
+   subtype LazyImageRotationAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References.LazyImageRotationAnimationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : LazyImageRotationAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References."=";
+   subtype LazyImageRotationAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References.LazyImageRotationAnimationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LazyImageRotationAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package_References."=";
 
    type LazyImageRotationAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       layoutIndex : Integer;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
 
 package body org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package is
 
@@ -37,7 +38,7 @@ package body org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package
 
    function getInstance return ModifierOpenGLESImageProcessor_Access is
    begin
-        return ModifierOpenGLESImageProcessor_Package.instanceC;
+        return ModifierOpenGLESImageProcessor_Access (ModifierOpenGLESImageProcessor_Package.instanceC);
    end getInstance;
 
 begin

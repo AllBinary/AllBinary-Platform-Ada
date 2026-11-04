@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
+package org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References is
+   type UserEmailEventNameData_Access is access all org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package.UserEmailEventNameData'Class;
+   type UserEmailEventNameData_Access_Array is array (Natural range <>) of UserEmailEventNameData_Access;
+   type UserEmailEventNameData_Access_Array_Access is access all UserEmailEventNameData_Access_Array;
+   type UserEmailEventNameData_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventNameData_Access_Array_Access;
+   type UserEmailEventNameData_Access_Array_Access_Array_Access is access all UserEmailEventNameData_Access_Array_Access_Array;
+end org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References;
+
+with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 package org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type UserEmailEventNameData is tagged;
-   type UserEmailEventNameData_Access is access all UserEmailEventNameData'Class;
-   type UserEmailEventNameData_Access_Array is array (Natural range <>) of UserEmailEventNameData_Access;
-   type UserEmailEventNameData_Access_Array_Access is access all UserEmailEventNameData_Access_Array;
-   type UserEmailEventNameData_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventNameData_Access_Array_Access;
-   type UserEmailEventNameData_Access_Array_Access_Array_Access is access all UserEmailEventNameData_Access_Array_Access_Array;
+
+   subtype UserEmailEventNameData_Access is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access;
+   function "=" (Left, Right : UserEmailEventNameData_Access) return Boolean renames org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References."=";
+   subtype UserEmailEventNameData_Access_Array is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access_Array;
+   function "=" (Left, Right : UserEmailEventNameData_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References."=";
+   subtype UserEmailEventNameData_Access_Array_Access is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access_Array_Access;
+   function "=" (Left, Right : UserEmailEventNameData_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References."=";
+   subtype UserEmailEventNameData_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access_Array_Access_Array;
+   function "=" (Left, Right : UserEmailEventNameData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References."=";
+   subtype UserEmailEventNameData_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References.UserEmailEventNameData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UserEmailEventNameData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References."=";
 
    type UserEmailEventNameData is new Java_Object with record
       eventNameId : Integer;

@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package;
+package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References is
+   type RaceTrackGeographicMapCellTypes_Access is access all org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package.RaceTrackGeographicMapCellTypes'Class;
+   type RaceTrackGeographicMapCellTypes_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellTypes_Access;
+   type RaceTrackGeographicMapCellTypes_Access_Array_Access is access all RaceTrackGeographicMapCellTypes_Access_Array;
+   type RaceTrackGeographicMapCellTypes_Access_Array_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellTypes_Access_Array_Access;
+   type RaceTrackGeographicMapCellTypes_Access_Array_Access_Array_Access is access all RaceTrackGeographicMapCellTypes_Access_Array_Access_Array;
+end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References;
+
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,17 +30,36 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+limited with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package is
 
+   package Reference_Types is
+   subtype RaceTrackGeographicMapCellType_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access;
+   use type RaceTrackGeographicMapCellType_Access;
+   subtype RaceTrackGeographicMapCellType_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array;
+   use type RaceTrackGeographicMapCellType_Access_Array;
+   subtype RaceTrackGeographicMapCellType_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array_Access;
+   use type RaceTrackGeographicMapCellType_Access_Array_Access;
+   subtype RaceTrackGeographicMapCellType_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array_Access_Array;
+   use type RaceTrackGeographicMapCellType_Access_Array_Access_Array;
+   subtype RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References.RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access;
+   use type RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type RaceTrackGeographicMapCellTypes is tagged;
-   type RaceTrackGeographicMapCellTypes_Access is access all RaceTrackGeographicMapCellTypes'Class;
-   type RaceTrackGeographicMapCellTypes_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellTypes_Access;
-   type RaceTrackGeographicMapCellTypes_Access_Array_Access is access all RaceTrackGeographicMapCellTypes_Access_Array;
-   type RaceTrackGeographicMapCellTypes_Access_Array_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellTypes_Access_Array_Access;
-   type RaceTrackGeographicMapCellTypes_Access_Array_Access_Array_Access is access all RaceTrackGeographicMapCellTypes_Access_Array_Access_Array;
+
+   subtype RaceTrackGeographicMapCellTypes_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References.RaceTrackGeographicMapCellTypes_Access;
+   function "=" (Left, Right : RaceTrackGeographicMapCellTypes_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References."=";
+   subtype RaceTrackGeographicMapCellTypes_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References.RaceTrackGeographicMapCellTypes_Access_Array;
+   function "=" (Left, Right : RaceTrackGeographicMapCellTypes_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References."=";
+   subtype RaceTrackGeographicMapCellTypes_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References.RaceTrackGeographicMapCellTypes_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackGeographicMapCellTypes_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References."=";
+   subtype RaceTrackGeographicMapCellTypes_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References.RaceTrackGeographicMapCellTypes_Access_Array_Access_Array;
+   function "=" (Left, Right : RaceTrackGeographicMapCellTypes_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References."=";
+   subtype RaceTrackGeographicMapCellTypes_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References.RaceTrackGeographicMapCellTypes_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackGeographicMapCellTypes_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package_References."=";
 
    type RaceTrackGeographicMapCellTypes is new Java_Object with record
       BOTTOM_LEFT_TURN_ROAD_CELL_TYPE : RaceTrackGeographicMapCellType_Access;

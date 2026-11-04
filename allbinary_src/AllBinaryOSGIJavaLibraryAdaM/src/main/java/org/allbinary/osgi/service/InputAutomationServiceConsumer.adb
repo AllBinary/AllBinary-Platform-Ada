@@ -14,12 +14,81 @@
 
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
+with org.allbinary.osgi.OSGIServiceVisitorInterface_Package; use org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.osgi.service.OSGIServiceUtil_Package; use org.allbinary.osgi.service.OSGIServiceUtil_Package;
+with org.allbinary.osgi.OSGIServiceInterface_Package;
+with org.allbinary.osgi.service.OSGIServiceUtil_Package;
+with org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
 
 package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
+   subtype BundleContext_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access;
+   function "=" (Left, Right : BundleContext_Access) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array;
+   function "=" (Left, Right : BundleContext_Access_Array) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access;
+   function "=" (Left, Right : BundleContext_Access_Array_Access) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array_Access_Array is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access_Array;
+   function "=" (Left, Right : BundleContext_Access_Array_Access_Array) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype BundleContext_Access_Array_Access_Array_Access is org.osgi.framework.BundleContext_Package_References.BundleContext_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BundleContext_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.BundleContext_Package_References."=";
+   subtype ServiceReference_Access is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access;
+   function "=" (Left, Right : ServiceReference_Access) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
+   subtype ServiceReference_Access_Array is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access_Array;
+   function "=" (Left, Right : ServiceReference_Access_Array) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
+   subtype ServiceReference_Access_Array_Access is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access_Array_Access;
+   function "=" (Left, Right : ServiceReference_Access_Array_Access) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
+   subtype ServiceReference_Access_Array_Access_Array is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access_Array_Access_Array;
+   function "=" (Left, Right : ServiceReference_Access_Array_Access_Array) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
+   subtype ServiceReference_Access_Array_Access_Array_Access is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ServiceReference_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype OSGIServiceVisitorInterface_Access is org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References.OSGIServiceVisitorInterface_Access;
+   function "=" (Left, Right : OSGIServiceVisitorInterface_Access) return Boolean renames org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References."=";
+   subtype OSGIServiceVisitorInterface_Access_Array is org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References.OSGIServiceVisitorInterface_Access_Array;
+   function "=" (Left, Right : OSGIServiceVisitorInterface_Access_Array) return Boolean renames org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References."=";
+   subtype OSGIServiceVisitorInterface_Access_Array_Access is org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References.OSGIServiceVisitorInterface_Access_Array_Access;
+   function "=" (Left, Right : OSGIServiceVisitorInterface_Access_Array_Access) return Boolean renames org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References."=";
+   subtype OSGIServiceVisitorInterface_Access_Array_Access_Array is org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References.OSGIServiceVisitorInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : OSGIServiceVisitorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References."=";
+   subtype OSGIServiceVisitorInterface_Access_Array_Access_Array_Access is org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References.OSGIServiceVisitorInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OSGIServiceVisitorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype OSGIServiceUtil_Access is org.allbinary.osgi.service.OSGIServiceUtil_Package_References.OSGIServiceUtil_Access;
+   function "=" (Left, Right : OSGIServiceUtil_Access) return Boolean renames org.allbinary.osgi.service.OSGIServiceUtil_Package_References."=";
+   subtype OSGIServiceUtil_Access_Array is org.allbinary.osgi.service.OSGIServiceUtil_Package_References.OSGIServiceUtil_Access_Array;
+   function "=" (Left, Right : OSGIServiceUtil_Access_Array) return Boolean renames org.allbinary.osgi.service.OSGIServiceUtil_Package_References."=";
+   subtype OSGIServiceUtil_Access_Array_Access is org.allbinary.osgi.service.OSGIServiceUtil_Package_References.OSGIServiceUtil_Access_Array_Access;
+   function "=" (Left, Right : OSGIServiceUtil_Access_Array_Access) return Boolean renames org.allbinary.osgi.service.OSGIServiceUtil_Package_References."=";
+   subtype OSGIServiceUtil_Access_Array_Access_Array is org.allbinary.osgi.service.OSGIServiceUtil_Package_References.OSGIServiceUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : OSGIServiceUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.osgi.service.OSGIServiceUtil_Package_References."=";
+   subtype OSGIServiceUtil_Access_Array_Access_Array_Access is org.allbinary.osgi.service.OSGIServiceUtil_Package_References.OSGIServiceUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OSGIServiceUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.osgi.service.OSGIServiceUtil_Package_References."=";
    procedure Initialize_Fields (This : in out InputAutomationServiceConsumer'Class) is
    begin
       null;

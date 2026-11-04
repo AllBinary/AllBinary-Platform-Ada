@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.AllBinarySensor_Package; use org.allbinary.input.AllBinarySensor_Package;
 
 package body org.allbinary.input.magnetic.field.AllBinaryMagneticFieldSensor_Package is
 

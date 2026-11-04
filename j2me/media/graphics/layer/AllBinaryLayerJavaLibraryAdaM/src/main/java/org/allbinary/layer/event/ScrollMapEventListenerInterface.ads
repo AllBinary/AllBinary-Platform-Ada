@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;
+package org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References is
+   type ScrollMapEventListenerInterface_Access is access all org.allbinary.layer.event.ScrollMapEventListenerInterface_Package.ScrollMapEventListenerInterface'Class;
+   type ScrollMapEventListenerInterface_Access_Array is array (Natural range <>) of ScrollMapEventListenerInterface_Access;
+   type ScrollMapEventListenerInterface_Access_Array_Access is access all ScrollMapEventListenerInterface_Access_Array;
+   type ScrollMapEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of ScrollMapEventListenerInterface_Access_Array_Access;
+   type ScrollMapEventListenerInterface_Access_Array_Access_Array_Access is access all ScrollMapEventListenerInterface_Access_Array_Access_Array;
+end org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References;
+
+with org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,39 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
-with org.allbinary.layer.event.ScrollMapEvent_Package; use org.allbinary.layer.event.ScrollMapEvent_Package;
+limited with org.allbinary.layer.event.ScrollMapEvent_Package;
+with org.allbinary.layer.event.ScrollMapEvent_Package_References;
 
 package org.allbinary.layer.event.ScrollMapEventListenerInterface_Package is
 
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package Reference_Types is
+   subtype ScrollMapEvent_Access is org.allbinary.layer.event.ScrollMapEvent_Package_References.ScrollMapEvent_Access;
+   use type ScrollMapEvent_Access;
+   subtype ScrollMapEvent_Access_Array is org.allbinary.layer.event.ScrollMapEvent_Package_References.ScrollMapEvent_Access_Array;
+   use type ScrollMapEvent_Access_Array;
+   subtype ScrollMapEvent_Access_Array_Access is org.allbinary.layer.event.ScrollMapEvent_Package_References.ScrollMapEvent_Access_Array_Access;
+   use type ScrollMapEvent_Access_Array_Access;
+   subtype ScrollMapEvent_Access_Array_Access_Array is org.allbinary.layer.event.ScrollMapEvent_Package_References.ScrollMapEvent_Access_Array_Access_Array;
+   use type ScrollMapEvent_Access_Array_Access_Array;
+   subtype ScrollMapEvent_Access_Array_Access_Array_Access is org.allbinary.layer.event.ScrollMapEvent_Package_References.ScrollMapEvent_Access_Array_Access_Array_Access;
+   use type ScrollMapEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
 
    type ScrollMapEventListenerInterface is interface and EventListenerInterface;
-   type ScrollMapEventListenerInterface_Access is access all ScrollMapEventListenerInterface'Class;
-   type ScrollMapEventListenerInterface_Access_Array is array (Natural range <>) of ScrollMapEventListenerInterface_Access;
-   type ScrollMapEventListenerInterface_Access_Array_Access is access all ScrollMapEventListenerInterface_Access_Array;
-   type ScrollMapEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of ScrollMapEventListenerInterface_Access_Array_Access;
-   type ScrollMapEventListenerInterface_Access_Array_Access_Array_Access is access all ScrollMapEventListenerInterface_Access_Array_Access_Array;
+   subtype ScrollMapEventListenerInterface_Access is org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References.ScrollMapEventListenerInterface_Access;
+   function "=" (Left, Right : ScrollMapEventListenerInterface_Access) return Boolean renames org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References."=";
+   subtype ScrollMapEventListenerInterface_Access_Array is org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References.ScrollMapEventListenerInterface_Access_Array;
+   function "=" (Left, Right : ScrollMapEventListenerInterface_Access_Array) return Boolean renames org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References."=";
+   subtype ScrollMapEventListenerInterface_Access_Array_Access is org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References.ScrollMapEventListenerInterface_Access_Array_Access;
+   function "=" (Left, Right : ScrollMapEventListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References."=";
+   subtype ScrollMapEventListenerInterface_Access_Array_Access_Array is org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References.ScrollMapEventListenerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : ScrollMapEventListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References."=";
+   subtype ScrollMapEventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References.ScrollMapEventListenerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScrollMapEventListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.event.ScrollMapEventListenerInterface_Package_References."=";
+   function Java_Object_Access_From_ScrollMapEventListenerInterface (Value : ScrollMapEventListenerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure onMoveEvent (This : in out ScrollMapEventListenerInterface; layerManagerEvent_Param : access ScrollMapEvent_Package.ScrollMapEvent'Class) is abstract;
 
 end org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;

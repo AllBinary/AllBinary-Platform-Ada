@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References is
+   type MultipassWaypointPathRunnable_Access is access all org.allbinary.game.layer.MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class;
+   type MultipassWaypointPathRunnable_Access_Array is array (Natural range <>) of MultipassWaypointPathRunnable_Access;
+   type MultipassWaypointPathRunnable_Access_Array_Access is access all MultipassWaypointPathRunnable_Access_Array;
+   type MultipassWaypointPathRunnable_Access_Array_Access_Array is array (Natural range <>) of MultipassWaypointPathRunnable_Access_Array_Access;
+   type MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is access all MultipassWaypointPathRunnable_Access_Array_Access_Array;
+end org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
+
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,11 +30,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+limited with org.allbinary.thread.ARunnable_Package;
+with org.allbinary.thread.ARunnable_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
@@ -36,13 +51,71 @@ package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   subtype ARunnable_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access;
+   use type ARunnable_Access;
+   subtype ARunnable_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array;
+   use type ARunnable_Access_Array;
+   subtype ARunnable_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access;
+   use type ARunnable_Access_Array_Access;
+   subtype ARunnable_Access_Array_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array;
+   use type ARunnable_Access_Array_Access_Array;
+   subtype ARunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array_Access;
+   use type ARunnable_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype MultipassState_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access;
+   use type MultipassState_Access;
+   subtype MultipassState_Access_Array is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array;
+   use type MultipassState_Access_Array;
+   subtype MultipassState_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access;
+   use type MultipassState_Access_Array_Access;
+   subtype MultipassState_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access_Array;
+   use type MultipassState_Access_Array_Access_Array;
+   subtype MultipassState_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access_Array_Access;
+   use type MultipassState_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype BasicArrayListUtil_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access;
+   use type BasicArrayListUtil_Access;
+   subtype BasicArrayListUtil_Access_Array is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array;
+   use type BasicArrayListUtil_Access_Array;
+   subtype BasicArrayListUtil_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access;
+   use type BasicArrayListUtil_Access_Array_Access;
+   subtype BasicArrayListUtil_Access_Array_Access_Array is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array;
+   use type BasicArrayListUtil_Access_Array_Access_Array;
+   subtype BasicArrayListUtil_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array_Access;
+   use type BasicArrayListUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MultipassWaypointPathRunnable is tagged;
-   type MultipassWaypointPathRunnable_Access is access all MultipassWaypointPathRunnable'Class;
-   type MultipassWaypointPathRunnable_Access_Array is array (Natural range <>) of MultipassWaypointPathRunnable_Access;
-   type MultipassWaypointPathRunnable_Access_Array_Access is access all MultipassWaypointPathRunnable_Access_Array;
-   type MultipassWaypointPathRunnable_Access_Array_Access_Array is array (Natural range <>) of MultipassWaypointPathRunnable_Access_Array_Access;
-   type MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is access all MultipassWaypointPathRunnable_Access_Array_Access_Array;
+
+   subtype MultipassWaypointPathRunnable_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
 
    type MultipassWaypointPathRunnable is new WaypointPathRunnableBase with record
       logUtil : LogUtil_Access;
@@ -72,6 +145,16 @@ package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
 
 end org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
 
+limited with org.allbinary.game.layer.FirstRunnable_Package;
+package org.allbinary.game.layer.FirstRunnable_Package_References is
+   type FirstRunnable_Access is access all org.allbinary.game.layer.FirstRunnable_Package.FirstRunnable'Class;
+   type FirstRunnable_Access_Array is array (Natural range <>) of FirstRunnable_Access;
+   type FirstRunnable_Access_Array_Access is access all FirstRunnable_Access_Array;
+   type FirstRunnable_Access_Array_Access_Array is array (Natural range <>) of FirstRunnable_Access_Array_Access;
+   type FirstRunnable_Access_Array_Access_Array_Access is access all FirstRunnable_Access_Array_Access_Array;
+end org.allbinary.game.layer.FirstRunnable_Package_References;
+
+with org.allbinary.game.layer.FirstRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -80,11 +163,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+limited with org.allbinary.thread.ARunnable_Package;
+with org.allbinary.thread.ARunnable_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
@@ -96,13 +184,71 @@ package org.allbinary.game.layer.FirstRunnable_Package is
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   subtype ARunnable_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access;
+   use type ARunnable_Access;
+   subtype ARunnable_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array;
+   use type ARunnable_Access_Array;
+   subtype ARunnable_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access;
+   use type ARunnable_Access_Array_Access;
+   subtype ARunnable_Access_Array_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array;
+   use type ARunnable_Access_Array_Access_Array;
+   subtype ARunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array_Access;
+   use type ARunnable_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype MultipassState_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access;
+   use type MultipassState_Access;
+   subtype MultipassState_Access_Array is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array;
+   use type MultipassState_Access_Array;
+   subtype MultipassState_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access;
+   use type MultipassState_Access_Array_Access;
+   subtype MultipassState_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access_Array;
+   use type MultipassState_Access_Array_Access_Array;
+   subtype MultipassState_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access_Array_Access;
+   use type MultipassState_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype BasicArrayListUtil_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access;
+   use type BasicArrayListUtil_Access;
+   subtype BasicArrayListUtil_Access_Array is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array;
+   use type BasicArrayListUtil_Access_Array;
+   subtype BasicArrayListUtil_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access;
+   use type BasicArrayListUtil_Access_Array_Access;
+   subtype BasicArrayListUtil_Access_Array_Access_Array is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array;
+   use type BasicArrayListUtil_Access_Array_Access_Array;
+   subtype BasicArrayListUtil_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array_Access;
+   use type BasicArrayListUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type FirstRunnable is tagged;
-   type FirstRunnable_Access is access all FirstRunnable'Class;
-   type FirstRunnable_Access_Array is array (Natural range <>) of FirstRunnable_Access;
-   type FirstRunnable_Access_Array_Access is access all FirstRunnable_Access_Array;
-   type FirstRunnable_Access_Array_Access_Array is array (Natural range <>) of FirstRunnable_Access_Array_Access;
-   type FirstRunnable_Access_Array_Access_Array_Access is access all FirstRunnable_Access_Array_Access_Array;
+
+   subtype FirstRunnable_Access is org.allbinary.game.layer.FirstRunnable_Package_References.FirstRunnable_Access;
+   function "=" (Left, Right : FirstRunnable_Access) return Boolean renames org.allbinary.game.layer.FirstRunnable_Package_References."=";
+   subtype FirstRunnable_Access_Array is org.allbinary.game.layer.FirstRunnable_Package_References.FirstRunnable_Access_Array;
+   function "=" (Left, Right : FirstRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.FirstRunnable_Package_References."=";
+   subtype FirstRunnable_Access_Array_Access is org.allbinary.game.layer.FirstRunnable_Package_References.FirstRunnable_Access_Array_Access;
+   function "=" (Left, Right : FirstRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.FirstRunnable_Package_References."=";
+   subtype FirstRunnable_Access_Array_Access_Array is org.allbinary.game.layer.FirstRunnable_Package_References.FirstRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : FirstRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.FirstRunnable_Package_References."=";
+   subtype FirstRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.FirstRunnable_Package_References.FirstRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FirstRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.FirstRunnable_Package_References."=";
 
    type FirstRunnable is new ARunnable with record
       multipassWaypointPathRunnable_Var : MultipassWaypointPathRunnable_Access;
@@ -114,6 +260,16 @@ package org.allbinary.game.layer.FirstRunnable_Package is
 
 end org.allbinary.game.layer.FirstRunnable_Package;
 
+limited with org.allbinary.game.layer.SecondRunnable_Package;
+package org.allbinary.game.layer.SecondRunnable_Package_References is
+   type SecondRunnable_Access is access all org.allbinary.game.layer.SecondRunnable_Package.SecondRunnable'Class;
+   type SecondRunnable_Access_Array is array (Natural range <>) of SecondRunnable_Access;
+   type SecondRunnable_Access_Array_Access is access all SecondRunnable_Access_Array;
+   type SecondRunnable_Access_Array_Access_Array is array (Natural range <>) of SecondRunnable_Access_Array_Access;
+   type SecondRunnable_Access_Array_Access_Array_Access is access all SecondRunnable_Access_Array_Access_Array;
+end org.allbinary.game.layer.SecondRunnable_Package_References;
+
+with org.allbinary.game.layer.SecondRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -122,11 +278,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+limited with org.allbinary.thread.ARunnable_Package;
+with org.allbinary.thread.ARunnable_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
@@ -138,13 +299,71 @@ package org.allbinary.game.layer.SecondRunnable_Package is
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   subtype ARunnable_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access;
+   use type ARunnable_Access;
+   subtype ARunnable_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array;
+   use type ARunnable_Access_Array;
+   subtype ARunnable_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access;
+   use type ARunnable_Access_Array_Access;
+   subtype ARunnable_Access_Array_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array;
+   use type ARunnable_Access_Array_Access_Array;
+   subtype ARunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array_Access;
+   use type ARunnable_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype MultipassState_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access;
+   use type MultipassState_Access;
+   subtype MultipassState_Access_Array is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array;
+   use type MultipassState_Access_Array;
+   subtype MultipassState_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access;
+   use type MultipassState_Access_Array_Access;
+   subtype MultipassState_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access_Array;
+   use type MultipassState_Access_Array_Access_Array;
+   subtype MultipassState_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access_Array_Access;
+   use type MultipassState_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype BasicArrayListUtil_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access;
+   use type BasicArrayListUtil_Access;
+   subtype BasicArrayListUtil_Access_Array is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array;
+   use type BasicArrayListUtil_Access_Array;
+   subtype BasicArrayListUtil_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access;
+   use type BasicArrayListUtil_Access_Array_Access;
+   subtype BasicArrayListUtil_Access_Array_Access_Array is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array;
+   use type BasicArrayListUtil_Access_Array_Access_Array;
+   subtype BasicArrayListUtil_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array_Access;
+   use type BasicArrayListUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type SecondRunnable is tagged;
-   type SecondRunnable_Access is access all SecondRunnable'Class;
-   type SecondRunnable_Access_Array is array (Natural range <>) of SecondRunnable_Access;
-   type SecondRunnable_Access_Array_Access is access all SecondRunnable_Access_Array;
-   type SecondRunnable_Access_Array_Access_Array is array (Natural range <>) of SecondRunnable_Access_Array_Access;
-   type SecondRunnable_Access_Array_Access_Array_Access is access all SecondRunnable_Access_Array_Access_Array;
+
+   subtype SecondRunnable_Access is org.allbinary.game.layer.SecondRunnable_Package_References.SecondRunnable_Access;
+   function "=" (Left, Right : SecondRunnable_Access) return Boolean renames org.allbinary.game.layer.SecondRunnable_Package_References."=";
+   subtype SecondRunnable_Access_Array is org.allbinary.game.layer.SecondRunnable_Package_References.SecondRunnable_Access_Array;
+   function "=" (Left, Right : SecondRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.SecondRunnable_Package_References."=";
+   subtype SecondRunnable_Access_Array_Access is org.allbinary.game.layer.SecondRunnable_Package_References.SecondRunnable_Access_Array_Access;
+   function "=" (Left, Right : SecondRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SecondRunnable_Package_References."=";
+   subtype SecondRunnable_Access_Array_Access_Array is org.allbinary.game.layer.SecondRunnable_Package_References.SecondRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : SecondRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.SecondRunnable_Package_References."=";
+   subtype SecondRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.SecondRunnable_Package_References.SecondRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SecondRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SecondRunnable_Package_References."=";
 
    type SecondRunnable is new ARunnable with record
       multipassWaypointPathRunnable_Var : MultipassWaypointPathRunnable_Access;
@@ -156,6 +375,16 @@ package org.allbinary.game.layer.SecondRunnable_Package is
 
 end org.allbinary.game.layer.SecondRunnable_Package;
 
+limited with org.allbinary.game.layer.EndRunnable_Package;
+package org.allbinary.game.layer.EndRunnable_Package_References is
+   type EndRunnable_Access is access all org.allbinary.game.layer.EndRunnable_Package.EndRunnable'Class;
+   type EndRunnable_Access_Array is array (Natural range <>) of EndRunnable_Access;
+   type EndRunnable_Access_Array_Access is access all EndRunnable_Access_Array;
+   type EndRunnable_Access_Array_Access_Array is array (Natural range <>) of EndRunnable_Access_Array_Access;
+   type EndRunnable_Access_Array_Access_Array_Access is access all EndRunnable_Access_Array_Access_Array;
+end org.allbinary.game.layer.EndRunnable_Package_References;
+
+with org.allbinary.game.layer.EndRunnable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -164,11 +393,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+limited with org.allbinary.thread.ARunnable_Package;
+with org.allbinary.thread.ARunnable_Package_References;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
+limited with org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
@@ -180,13 +414,71 @@ package org.allbinary.game.layer.EndRunnable_Package is
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Reference_Types is
+   subtype ARunnable_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access;
+   use type ARunnable_Access;
+   subtype ARunnable_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array;
+   use type ARunnable_Access_Array;
+   subtype ARunnable_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access;
+   use type ARunnable_Access_Array_Access;
+   subtype ARunnable_Access_Array_Access_Array is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array;
+   use type ARunnable_Access_Array_Access_Array;
+   subtype ARunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ARunnable_Package_References.ARunnable_Access_Array_Access_Array_Access;
+   use type ARunnable_Access_Array_Access_Array_Access;
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype MultipassState_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access;
+   use type MultipassState_Access;
+   subtype MultipassState_Access_Array is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array;
+   use type MultipassState_Access_Array;
+   subtype MultipassState_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access;
+   use type MultipassState_Access_Array_Access;
+   subtype MultipassState_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access_Array;
+   use type MultipassState_Access_Array_Access_Array;
+   subtype MultipassState_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References.MultipassState_Access_Array_Access_Array_Access;
+   use type MultipassState_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   subtype BasicArrayListUtil_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access;
+   use type BasicArrayListUtil_Access;
+   subtype BasicArrayListUtil_Access_Array is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array;
+   use type BasicArrayListUtil_Access_Array;
+   subtype BasicArrayListUtil_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access;
+   use type BasicArrayListUtil_Access_Array_Access;
+   subtype BasicArrayListUtil_Access_Array_Access_Array is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array;
+   use type BasicArrayListUtil_Access_Array_Access_Array;
+   subtype BasicArrayListUtil_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array_Access;
+   use type BasicArrayListUtil_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type EndRunnable is tagged;
-   type EndRunnable_Access is access all EndRunnable'Class;
-   type EndRunnable_Access_Array is array (Natural range <>) of EndRunnable_Access;
-   type EndRunnable_Access_Array_Access is access all EndRunnable_Access_Array;
-   type EndRunnable_Access_Array_Access_Array is array (Natural range <>) of EndRunnable_Access_Array_Access;
-   type EndRunnable_Access_Array_Access_Array_Access is access all EndRunnable_Access_Array_Access_Array;
+
+   subtype EndRunnable_Access is org.allbinary.game.layer.EndRunnable_Package_References.EndRunnable_Access;
+   function "=" (Left, Right : EndRunnable_Access) return Boolean renames org.allbinary.game.layer.EndRunnable_Package_References."=";
+   subtype EndRunnable_Access_Array is org.allbinary.game.layer.EndRunnable_Package_References.EndRunnable_Access_Array;
+   function "=" (Left, Right : EndRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.EndRunnable_Package_References."=";
+   subtype EndRunnable_Access_Array_Access is org.allbinary.game.layer.EndRunnable_Package_References.EndRunnable_Access_Array_Access;
+   function "=" (Left, Right : EndRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.EndRunnable_Package_References."=";
+   subtype EndRunnable_Access_Array_Access_Array is org.allbinary.game.layer.EndRunnable_Package_References.EndRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : EndRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.EndRunnable_Package_References."=";
+   subtype EndRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.EndRunnable_Package_References.EndRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EndRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.EndRunnable_Package_References."=";
 
    type EndRunnable is new ARunnable with record
       multipassWaypointPathRunnable_Var : MultipassWaypointPathRunnable_Access;

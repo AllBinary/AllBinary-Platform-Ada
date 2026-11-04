@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.combat.damage.DamageableBaseBehavior_Package;
+package org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References is
+   type DamageableBaseBehavior_Access is access all org.allbinary.game.combat.damage.DamageableBaseBehavior_Package.DamageableBaseBehavior'Class;
+   type DamageableBaseBehavior_Access_Array is array (Natural range <>) of DamageableBaseBehavior_Access;
+   type DamageableBaseBehavior_Access_Array_Access is access all DamageableBaseBehavior_Access_Array;
+   type DamageableBaseBehavior_Access_Array_Access_Array is array (Natural range <>) of DamageableBaseBehavior_Access_Array_Access;
+   type DamageableBaseBehavior_Access_Array_Access_Array_Access is access all DamageableBaseBehavior_Access_Array_Access_Array;
+end org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References;
+
+with org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.game.combat.damage.DamageableInterface_Package; use org.allbi
 
 package org.allbinary.game.combat.damage.DamageableBaseBehavior_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type DamageableBaseBehavior is tagged;
-   type DamageableBaseBehavior_Access is access all DamageableBaseBehavior'Class;
-   type DamageableBaseBehavior_Access_Array is array (Natural range <>) of DamageableBaseBehavior_Access;
-   type DamageableBaseBehavior_Access_Array_Access is access all DamageableBaseBehavior_Access_Array;
-   type DamageableBaseBehavior_Access_Array_Access_Array is array (Natural range <>) of DamageableBaseBehavior_Access_Array_Access;
-   type DamageableBaseBehavior_Access_Array_Access_Array_Access is access all DamageableBaseBehavior_Access_Array_Access_Array;
+
+   subtype DamageableBaseBehavior_Access is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access;
+   function "=" (Left, Right : DamageableBaseBehavior_Access) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
+   subtype DamageableBaseBehavior_Access_Array is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access_Array;
+   function "=" (Left, Right : DamageableBaseBehavior_Access_Array) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
+   subtype DamageableBaseBehavior_Access_Array_Access is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access_Array_Access;
+   function "=" (Left, Right : DamageableBaseBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
+   subtype DamageableBaseBehavior_Access_Array_Access_Array is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access_Array_Access_Array;
+   function "=" (Left, Right : DamageableBaseBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
+   subtype DamageableBaseBehavior_Access_Array_Access_Array_Access is org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References.DamageableBaseBehavior_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : DamageableBaseBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package_References."=";
 
    type DamageableBaseBehavior is new Java_Object and DamageableInterface with null record;
    instance : DamageableBaseBehavior_Access;

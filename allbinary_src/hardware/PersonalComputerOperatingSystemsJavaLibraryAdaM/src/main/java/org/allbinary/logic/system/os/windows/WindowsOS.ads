@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.system.os.windows.WindowsOS_Package;
+package org.allbinary.logic.system.os.windows.WindowsOS_Package_References is
+   type WindowsOS_Access is access all org.allbinary.logic.system.os.windows.WindowsOS_Package.WindowsOS'Class;
+   type WindowsOS_Access_Array is array (Natural range <>) of WindowsOS_Access;
+   type WindowsOS_Access_Array_Access is access all WindowsOS_Access_Array;
+   type WindowsOS_Access_Array_Access_Array is array (Natural range <>) of WindowsOS_Access_Array_Access;
+   type WindowsOS_Access_Array_Access_Array_Access is access all WindowsOS_Access_Array_Access_Array;
+end org.allbinary.logic.system.os.windows.WindowsOS_Package_References;
+
+with org.allbinary.logic.system.os.windows.WindowsOS_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbi
 package org.allbinary.logic.system.os.windows.WindowsOS_Package is
 
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type WindowsOS is tagged;
-   type WindowsOS_Access is access all WindowsOS'Class;
-   type WindowsOS_Access_Array is array (Natural range <>) of WindowsOS_Access;
-   type WindowsOS_Access_Array_Access is access all WindowsOS_Access_Array;
-   type WindowsOS_Access_Array_Access_Array is array (Natural range <>) of WindowsOS_Access_Array_Access;
-   type WindowsOS_Access_Array_Access_Array_Access is access all WindowsOS_Access_Array_Access_Array;
+
+   subtype WindowsOS_Access is org.allbinary.logic.system.os.windows.WindowsOS_Package_References.WindowsOS_Access;
+   function "=" (Left, Right : WindowsOS_Access) return Boolean renames org.allbinary.logic.system.os.windows.WindowsOS_Package_References."=";
+   subtype WindowsOS_Access_Array is org.allbinary.logic.system.os.windows.WindowsOS_Package_References.WindowsOS_Access_Array;
+   function "=" (Left, Right : WindowsOS_Access_Array) return Boolean renames org.allbinary.logic.system.os.windows.WindowsOS_Package_References."=";
+   subtype WindowsOS_Access_Array_Access is org.allbinary.logic.system.os.windows.WindowsOS_Package_References.WindowsOS_Access_Array_Access;
+   function "=" (Left, Right : WindowsOS_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.windows.WindowsOS_Package_References."=";
+   subtype WindowsOS_Access_Array_Access_Array is org.allbinary.logic.system.os.windows.WindowsOS_Package_References.WindowsOS_Access_Array_Access_Array;
+   function "=" (Left, Right : WindowsOS_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.os.windows.WindowsOS_Package_References."=";
+   subtype WindowsOS_Access_Array_Access_Array_Access is org.allbinary.logic.system.os.windows.WindowsOS_Package_References.WindowsOS_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WindowsOS_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.os.windows.WindowsOS_Package_References."=";
 
    type WindowsOS is new GenericOperatingSystem with null record;
 

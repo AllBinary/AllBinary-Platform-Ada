@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.transform.BasicTransformerInterface_Package;
+package org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References is
+   type BasicTransformerInterface_Access is access all org.allbinary.logic.visual.transform.BasicTransformerInterface_Package.BasicTransformerInterface'Class;
+   type BasicTransformerInterface_Access_Array is array (Natural range <>) of BasicTransformerInterface_Access;
+   type BasicTransformerInterface_Access_Array_Access is access all BasicTransformerInterface_Access_Array;
+   type BasicTransformerInterface_Access_Array_Access_Array is array (Natural range <>) of BasicTransformerInterface_Access_Array_Access;
+   type BasicTransformerInterface_Access_Array_Access_Array_Access is access all BasicTransformerInterface_Access_Array_Access_Array;
+end org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References;
+
+with org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -29,13 +39,23 @@ package org.allbinary.logic.visual.transform.BasicTransformerInterface_Package i
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package CompositeTransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type BasicTransformerInterface is interface and CompositeTransformInfoInterface;
-   type BasicTransformerInterface_Access is access all BasicTransformerInterface'Class;
-   type BasicTransformerInterface_Access_Array is array (Natural range <>) of BasicTransformerInterface_Access;
-   type BasicTransformerInterface_Access_Array_Access is access all BasicTransformerInterface_Access_Array;
-   type BasicTransformerInterface_Access_Array_Access_Array is array (Natural range <>) of BasicTransformerInterface_Access_Array_Access;
-   type BasicTransformerInterface_Access_Array_Access_Array_Access is access all BasicTransformerInterface_Access_Array_Access_Array;
+   subtype BasicTransformerInterface_Access is org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References.BasicTransformerInterface_Access;
+   function "=" (Left, Right : BasicTransformerInterface_Access) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References."=";
+   subtype BasicTransformerInterface_Access_Array is org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References.BasicTransformerInterface_Access_Array;
+   function "=" (Left, Right : BasicTransformerInterface_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References."=";
+   subtype BasicTransformerInterface_Access_Array_Access is org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References.BasicTransformerInterface_Access_Array_Access;
+   function "=" (Left, Right : BasicTransformerInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References."=";
+   subtype BasicTransformerInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References.BasicTransformerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicTransformerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References."=";
+   subtype BasicTransformerInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References.BasicTransformerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicTransformerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformerInterface_Package_References."=";
+   function Java_Object_Access_From_BasicTransformerInterface (Value : BasicTransformerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setInputStream (This : in out BasicTransformerInterface; inputStream_Param : access InputStream_Package.InputStream'Class) is abstract;
    procedure setURIResolver (This : in out BasicTransformerInterface; uriResolver_Param : access URIResolver_Package.URIResolver'Class) is abstract;
    function getStreamSource (This : in out BasicTransformerInterface) return StreamSource_Access is abstract;

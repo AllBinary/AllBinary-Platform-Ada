@@ -38,7 +38,7 @@ package body org.allbinary.graphics.opengles.shader.ModelViewProjection_Package 
 
    function getInstance return ModelViewProjection_Access is
    begin
-        return ModelViewProjection_Package.instance;
+        return ModelViewProjection_Access (ModelViewProjection_Package.instance);
    end getInstance;
 
    function get (This : in out ModelViewProjection) return Float_Array_Access is

@@ -13,9 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.ImageUnifierCell_Package; use org.allbinary.media.image.ImageUnifierCell_Package;
+with org.allbinary.media.image.ImageUnifierCell_Package;
 
 package body org.allbinary.media.image.ImageUnifierProperties_Package is
 
+   subtype ImageUnifierCell_Access is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access;
+   function "=" (Left, Right : ImageUnifierCell_Access) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
+   subtype ImageUnifierCell_Access_Array is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access_Array;
+   function "=" (Left, Right : ImageUnifierCell_Access_Array) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
+   subtype ImageUnifierCell_Access_Array_Access is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access_Array_Access;
+   function "=" (Left, Right : ImageUnifierCell_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
+   subtype ImageUnifierCell_Access_Array_Access_Array is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageUnifierCell_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
+   subtype ImageUnifierCell_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageUnifierCell_Package_References.ImageUnifierCell_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageUnifierCell_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUnifierCell_Package_References."=";
    procedure Initialize_Fields (This : in out ImageUnifierProperties'Class) is
    begin
       null;

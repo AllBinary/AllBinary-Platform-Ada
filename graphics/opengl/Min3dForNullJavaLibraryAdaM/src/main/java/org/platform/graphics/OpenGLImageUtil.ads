@@ -1,5 +1,15 @@
 --  Generated Code Do Not Modify
 
+limited with org.platform.graphics.OpenGLImageUtil_Package;
+package org.platform.graphics.OpenGLImageUtil_Package_References is
+   type OpenGLImageUtil_Access is access all org.platform.graphics.OpenGLImageUtil_Package.OpenGLImageUtil'Class;
+   type OpenGLImageUtil_Access_Array is array (Natural range <>) of OpenGLImageUtil_Access;
+   type OpenGLImageUtil_Access_Array_Access is access all OpenGLImageUtil_Access_Array;
+   type OpenGLImageUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLImageUtil_Access_Array_Access;
+   type OpenGLImageUtil_Access_Array_Access_Array_Access is access all OpenGLImageUtil_Access_Array_Access_Array;
+end org.platform.graphics.OpenGLImageUtil_Package_References;
+
+with org.platform.graphics.OpenGLImageUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -13,13 +23,21 @@ with org.allbinary.image.opengles.OpenGLImageUtilBase_Package; use org.allbinary
 package org.platform.graphics.OpenGLImageUtil_Package is
 
    package OpenGLImageUtilBase_Package renames Standard.org.allbinary.image.opengles.OpenGLImageUtilBase_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type OpenGLImageUtil is tagged;
-   type OpenGLImageUtil_Access is access all OpenGLImageUtil'Class;
-   type OpenGLImageUtil_Access_Array is array (Natural range <>) of OpenGLImageUtil_Access;
-   type OpenGLImageUtil_Access_Array_Access is access all OpenGLImageUtil_Access_Array;
-   type OpenGLImageUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLImageUtil_Access_Array_Access;
-   type OpenGLImageUtil_Access_Array_Access_Array_Access is access all OpenGLImageUtil_Access_Array_Access_Array;
+
+   subtype OpenGLImageUtil_Access is org.platform.graphics.OpenGLImageUtil_Package_References.OpenGLImageUtil_Access;
+   function "=" (Left, Right : OpenGLImageUtil_Access) return Boolean renames org.platform.graphics.OpenGLImageUtil_Package_References."=";
+   subtype OpenGLImageUtil_Access_Array is org.platform.graphics.OpenGLImageUtil_Package_References.OpenGLImageUtil_Access_Array;
+   function "=" (Left, Right : OpenGLImageUtil_Access_Array) return Boolean renames org.platform.graphics.OpenGLImageUtil_Package_References."=";
+   subtype OpenGLImageUtil_Access_Array_Access is org.platform.graphics.OpenGLImageUtil_Package_References.OpenGLImageUtil_Access_Array_Access;
+   function "=" (Left, Right : OpenGLImageUtil_Access_Array_Access) return Boolean renames org.platform.graphics.OpenGLImageUtil_Package_References."=";
+   subtype OpenGLImageUtil_Access_Array_Access_Array is org.platform.graphics.OpenGLImageUtil_Package_References.OpenGLImageUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLImageUtil_Access_Array_Access_Array) return Boolean renames org.platform.graphics.OpenGLImageUtil_Package_References."=";
+   subtype OpenGLImageUtil_Access_Array_Access_Array_Access is org.platform.graphics.OpenGLImageUtil_Package_References.OpenGLImageUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLImageUtil_Access_Array_Access_Array_Access) return Boolean renames org.platform.graphics.OpenGLImageUtil_Package_References."=";
 
    type OpenGLImageUtil is new OpenGLImageUtilBase with null record;
    instance : OpenGLImageUtil_Access;

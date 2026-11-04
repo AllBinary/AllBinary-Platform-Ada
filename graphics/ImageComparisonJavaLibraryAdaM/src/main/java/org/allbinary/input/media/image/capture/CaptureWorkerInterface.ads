@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+package org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References is
+   type CaptureWorkerInterface_Access is access all org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package.CaptureWorkerInterface'Class;
+   type CaptureWorkerInterface_Access_Array is array (Natural range <>) of CaptureWorkerInterface_Access;
+   type CaptureWorkerInterface_Access_Array_Access is access all CaptureWorkerInterface_Access_Array;
+   type CaptureWorkerInterface_Access_Array_Access_Array is array (Natural range <>) of CaptureWorkerInterface_Access_Array_Access;
+   type CaptureWorkerInterface_Access_Array_Access_Array_Access is access all CaptureWorkerInterface_Access_Array_Access_Array;
+end org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References;
+
+with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -27,13 +37,23 @@ package org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package i
 
    package BasicEventHandlerInterface_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandlerInterface_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
+
 
    type CaptureWorkerInterface is interface and RunnableInterface and BasicEventHandlerInterface;
-   type CaptureWorkerInterface_Access is access all CaptureWorkerInterface'Class;
-   type CaptureWorkerInterface_Access_Array is array (Natural range <>) of CaptureWorkerInterface_Access;
-   type CaptureWorkerInterface_Access_Array_Access is access all CaptureWorkerInterface_Access_Array;
-   type CaptureWorkerInterface_Access_Array_Access_Array is array (Natural range <>) of CaptureWorkerInterface_Access_Array_Access;
-   type CaptureWorkerInterface_Access_Array_Access_Array_Access is access all CaptureWorkerInterface_Access_Array_Access_Array;
+   subtype CaptureWorkerInterface_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access;
+   function "=" (Left, Right : CaptureWorkerInterface_Access) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array_Access_Array is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   subtype CaptureWorkerInterface_Access_Array_Access_Array_Access is org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References.CaptureWorkerInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CaptureWorkerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_References."=";
+   function Java_Object_Access_From_CaptureWorkerInterface (Value : CaptureWorkerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
 
 end org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
 

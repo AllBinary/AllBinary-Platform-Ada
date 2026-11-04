@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package;
+package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References is
+   type HtmlMetaAttributeValuesData_Access is access all org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package.HtmlMetaAttributeValuesData'Class;
+   type HtmlMetaAttributeValuesData_Access_Array is array (Natural range <>) of HtmlMetaAttributeValuesData_Access;
+   type HtmlMetaAttributeValuesData_Access_Array_Access is access all HtmlMetaAttributeValuesData_Access_Array;
+   type HtmlMetaAttributeValuesData_Access_Array_Access_Array is array (Natural range <>) of HtmlMetaAttributeValuesData_Access_Array_Access;
+   type HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access is access all HtmlMetaAttributeValuesData_Access_Array_Access_Array;
+end org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References;
+
+with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type HtmlMetaAttributeValuesData is tagged;
-   type HtmlMetaAttributeValuesData_Access is access all HtmlMetaAttributeValuesData'Class;
-   type HtmlMetaAttributeValuesData_Access_Array is array (Natural range <>) of HtmlMetaAttributeValuesData_Access;
-   type HtmlMetaAttributeValuesData_Access_Array_Access is access all HtmlMetaAttributeValuesData_Access_Array;
-   type HtmlMetaAttributeValuesData_Access_Array_Access_Array is array (Natural range <>) of HtmlMetaAttributeValuesData_Access_Array_Access;
-   type HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access is access all HtmlMetaAttributeValuesData_Access_Array_Access_Array;
+
+   subtype HtmlMetaAttributeValuesData_Access is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.HtmlMetaAttributeValuesData_Access;
+   function "=" (Left, Right : HtmlMetaAttributeValuesData_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References."=";
+   subtype HtmlMetaAttributeValuesData_Access_Array is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.HtmlMetaAttributeValuesData_Access_Array;
+   function "=" (Left, Right : HtmlMetaAttributeValuesData_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References."=";
+   subtype HtmlMetaAttributeValuesData_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.HtmlMetaAttributeValuesData_Access_Array_Access;
+   function "=" (Left, Right : HtmlMetaAttributeValuesData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References."=";
+   subtype HtmlMetaAttributeValuesData_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.HtmlMetaAttributeValuesData_Access_Array_Access_Array;
+   function "=" (Left, Right : HtmlMetaAttributeValuesData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References."=";
+   subtype HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References."=";
 
    type HtmlMetaAttributeValuesData is new Java_Object with record
       ABSTRACT_Id : Unbounded_String;

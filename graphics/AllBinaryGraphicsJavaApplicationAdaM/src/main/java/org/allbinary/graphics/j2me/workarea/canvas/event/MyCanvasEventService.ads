@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References is
+   type MyCanvasEventService_Access is access all org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package.MyCanvasEventService'Class;
+   type MyCanvasEventService_Access_Array is array (Natural range <>) of MyCanvasEventService_Access;
+   type MyCanvasEventService_Access_Array_Access is access all MyCanvasEventService_Access_Array;
+   type MyCanvasEventService_Access_Array_Access_Array is array (Natural range <>) of MyCanvasEventService_Access_Array_Access;
+   type MyCanvasEventService_Access_Array_Access_Array_Access is access all MyCanvasEventService_Access_Array_Access_Array;
+end org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References;
+
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,18 +30,48 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+limited with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References;
+limited with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References;
 
 package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package is
 
+   package Reference_Types is
+   subtype MyCanvasEventListener_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access;
+   use type MyCanvasEventListener_Access;
+   subtype MyCanvasEventListener_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access_Array;
+   use type MyCanvasEventListener_Access_Array;
+   subtype MyCanvasEventListener_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access_Array_Access;
+   use type MyCanvasEventListener_Access_Array_Access;
+   subtype MyCanvasEventListener_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access_Array_Access_Array;
+   use type MyCanvasEventListener_Access_Array_Access_Array;
+   subtype MyCanvasEventListener_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References.MyCanvasEventListener_Access_Array_Access_Array_Access;
+   use type MyCanvasEventListener_Access_Array_Access_Array_Access;
+   subtype MyCanvasEvent_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access;
+   use type MyCanvasEvent_Access;
+   subtype MyCanvasEvent_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array;
+   use type MyCanvasEvent_Access_Array;
+   subtype MyCanvasEvent_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array_Access;
+   use type MyCanvasEvent_Access_Array_Access;
+   subtype MyCanvasEvent_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array_Access_Array;
+   use type MyCanvasEvent_Access_Array_Access_Array;
+   subtype MyCanvasEvent_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package_References.MyCanvasEvent_Access_Array_Access_Array_Access;
+   use type MyCanvasEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MyCanvasEventService is tagged;
-   type MyCanvasEventService_Access is access all MyCanvasEventService'Class;
-   type MyCanvasEventService_Access_Array is array (Natural range <>) of MyCanvasEventService_Access;
-   type MyCanvasEventService_Access_Array_Access is access all MyCanvasEventService_Access_Array;
-   type MyCanvasEventService_Access_Array_Access_Array is array (Natural range <>) of MyCanvasEventService_Access_Array_Access;
-   type MyCanvasEventService_Access_Array_Access_Array_Access is access all MyCanvasEventService_Access_Array_Access_Array;
+
+   subtype MyCanvasEventService_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.MyCanvasEventService_Access;
+   function "=" (Left, Right : MyCanvasEventService_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References."=";
+   subtype MyCanvasEventService_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.MyCanvasEventService_Access_Array;
+   function "=" (Left, Right : MyCanvasEventService_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References."=";
+   subtype MyCanvasEventService_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.MyCanvasEventService_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEventService_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References."=";
+   subtype MyCanvasEventService_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.MyCanvasEventService_Access_Array_Access_Array;
+   function "=" (Left, Right : MyCanvasEventService_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References."=";
+   subtype MyCanvasEventService_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.MyCanvasEventService_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyCanvasEventService_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References."=";
 
    type MyCanvasEventService is new Java_Object with null record;
    listenerList : EventListenerList_Access;

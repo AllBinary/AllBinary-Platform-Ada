@@ -13,9 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package is
 
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   function "=" (Left, Right : BasicColor_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype RaceTrackFrictionProperties_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
+   subtype RaceTrackFrictionProperties_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access_Array;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
+   subtype RaceTrackFrictionProperties_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
+   subtype RaceTrackFrictionProperties_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access_Array_Access_Array;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
+   subtype RaceTrackFrictionProperties_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References.RaceTrackFrictionProperties_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RaceTrackFrictionProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package_References."=";
    procedure Initialize_Fields (This : in out RaceTrackInfo'Class) is
    begin
       null;

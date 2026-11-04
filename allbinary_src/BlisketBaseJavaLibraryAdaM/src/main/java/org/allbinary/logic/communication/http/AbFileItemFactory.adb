@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.apache.commons.fileupload.DefaultFileItemFactory_Package; use org.apache.commons.fileupload.DefaultFileItemFactory_Package;
 
 package body org.allbinary.logic.communication.http.AbFileItemFactory_Package is
 

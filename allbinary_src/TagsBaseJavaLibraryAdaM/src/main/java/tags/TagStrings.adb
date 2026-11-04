@@ -37,7 +37,7 @@ package body tags.TagStrings_Package is
 
    function getInstance return TagStrings_Access is
    begin
-        return TagStrings_Package.instance;
+        return TagStrings_Access (TagStrings_Package.instance);
    end getInstance;
 
 begin

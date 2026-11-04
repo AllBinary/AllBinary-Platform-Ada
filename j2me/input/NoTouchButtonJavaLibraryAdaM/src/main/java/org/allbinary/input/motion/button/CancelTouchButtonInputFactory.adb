@@ -15,12 +15,24 @@
 
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 
 package body org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package is
 
    package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   subtype TouchButtonInput_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access;
+   function "=" (Left, Right : TouchButtonInput_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonInput_Package_References."=";
+   subtype TouchButtonInput_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array;
+   function "=" (Left, Right : TouchButtonInput_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonInput_Package_References."=";
+   subtype TouchButtonInput_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access;
+   function "=" (Left, Right : TouchButtonInput_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonInput_Package_References."=";
+   subtype TouchButtonInput_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array;
+   function "=" (Left, Right : TouchButtonInput_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonInput_Package_References."=";
+   subtype TouchButtonInput_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonInput_Package_References.TouchButtonInput_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TouchButtonInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonInput_Package_References."=";
    procedure Initialize_Fields (This : in out CancelTouchButtonInputFactory'Class) is
    begin
       null;
@@ -43,12 +55,12 @@ package body org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Pac
       Initialize_Fields (This);
         basicTouchInputFactory := BasicTouchInputFactory_Package.getInstance;
         for index in reverse 0 .. (This.cancelInputArray'Length) - (1) loop
-            This.cancelInputArray (index) := basicTouchInputFactory.NONE;
+            This.cancelInputArray (index) := TouchButtonInput_Access (basicTouchInputFactory.NONE);
         end loop;
-        This.cancelInputArray (basicTouchInputFactory.UP.getId) := basicTouchInputFactory.DOWN;
-        This.cancelInputArray (basicTouchInputFactory.DOWN.getId) := basicTouchInputFactory.UP;
-        This.cancelInputArray (basicTouchInputFactory.LEFT.getId) := basicTouchInputFactory.RIGHT;
-        This.cancelInputArray (basicTouchInputFactory.RIGHT.getId) := basicTouchInputFactory.LEFT;
+        This.cancelInputArray (basicTouchInputFactory.UP.getId) := TouchButtonInput_Access (basicTouchInputFactory.DOWN);
+        This.cancelInputArray (basicTouchInputFactory.DOWN.getId) := TouchButtonInput_Access (basicTouchInputFactory.UP);
+        This.cancelInputArray (basicTouchInputFactory.LEFT.getId) := TouchButtonInput_Access (basicTouchInputFactory.RIGHT);
+        This.cancelInputArray (basicTouchInputFactory.RIGHT.getId) := TouchButtonInput_Access (basicTouchInputFactory.LEFT);
    end Initialize;
 
    function Create return CancelTouchButtonInputFactory_Access is

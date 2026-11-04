@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.java.number.LongData_Package;
+package org.allbinary.logic.java.number.LongData_Package_References is
+   type LongData_Access is access all org.allbinary.logic.java.number.LongData_Package.LongData'Class;
+   type LongData_Access_Array is array (Natural range <>) of LongData_Access;
+   type LongData_Access_Array_Access is access all LongData_Access_Array;
+   type LongData_Access_Array_Access_Array is array (Natural range <>) of LongData_Access_Array_Access;
+   type LongData_Access_Array_Access_Array_Access is access all LongData_Access_Array_Access_Array;
+end org.allbinary.logic.java.number.LongData_Package_References;
+
+with org.allbinary.logic.java.number.LongData_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -23,13 +33,21 @@ with AllBinary_Java; use AllBinary_Java;
 
 package org.allbinary.logic.java.number.LongData_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type LongData is tagged;
-   type LongData_Access is access all LongData'Class;
-   type LongData_Access_Array is array (Natural range <>) of LongData_Access;
-   type LongData_Access_Array_Access is access all LongData_Access_Array;
-   type LongData_Access_Array_Access_Array is array (Natural range <>) of LongData_Access_Array_Access;
-   type LongData_Access_Array_Access_Array_Access is access all LongData_Access_Array_Access_Array;
+
+   subtype LongData_Access is org.allbinary.logic.java.number.LongData_Package_References.LongData_Access;
+   function "=" (Left, Right : LongData_Access) return Boolean renames org.allbinary.logic.java.number.LongData_Package_References."=";
+   subtype LongData_Access_Array is org.allbinary.logic.java.number.LongData_Package_References.LongData_Access_Array;
+   function "=" (Left, Right : LongData_Access_Array) return Boolean renames org.allbinary.logic.java.number.LongData_Package_References."=";
+   subtype LongData_Access_Array_Access is org.allbinary.logic.java.number.LongData_Package_References.LongData_Access_Array_Access;
+   function "=" (Left, Right : LongData_Access_Array_Access) return Boolean renames org.allbinary.logic.java.number.LongData_Package_References."=";
+   subtype LongData_Access_Array_Access_Array is org.allbinary.logic.java.number.LongData_Package_References.LongData_Access_Array_Access_Array;
+   function "=" (Left, Right : LongData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.number.LongData_Package_References."=";
+   subtype LongData_Access_Array_Access_Array_Access is org.allbinary.logic.java.number.LongData_Package_References.LongData_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LongData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.number.LongData_Package_References."=";
 
    type LongData is new Java_Object with null record;
    MAX_LONG_LENGTH : Integer;

@@ -14,12 +14,26 @@
 
 
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.File_Package; use java.io.File_Package;
+with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 
 package body org.allbinary.data.tree.dom.XslHelper_Package is
 
    package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
    package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   function "=" (Left, Right : Document_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
    procedure Initialize_Fields (This : in out XslHelper'Class) is
    begin
       null;
@@ -28,7 +42,7 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
 
    function getInstance return XslHelper_Access is
    begin
-        return XslHelper_Package.instance;
+        return XslHelper_Access (XslHelper_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out XslHelper'Class) is
@@ -91,6 +105,28 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
                 end;
         end;
    end translate;
+
+   --  throws Exception
+   function translateTemplate (This : in out XslHelper; templates_Param : access Templates_Package.Templates'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class) return Unbounded_String is
+      templates : constant Templates_Access := Templates_Access (templates_Param);
+      xmlStreamSource : constant StreamSource_Access := StreamSource_Access (xmlStreamSource_Param);
+      outputStream : ByteArrayOutputStream_Access;
+      streamResult : StreamResult_Access;
+   begin
+        begin
+            outputStream := ByteArrayOutputStream_Package.Create;
+            streamResult := StreamResult_Package.Create (outputStream);
+            templates.newTransformer.transform (xmlStreamSource, streamResult);
+            return streamResult.getOutputStream.toString;
+        exception
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
+            Java_Throw (e);
+                end;
+        end;
+   end translateTemplate;
 
    --  throws Exception
    function translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlDocument_Param : access Document_Package.Document'Class) return Unbounded_String is
@@ -181,6 +217,13 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
    begin
       null;
    end translate;
+
+   procedure translateTemplate (This : in out XslHelper; templates_Param : access Templates_Package.Templates'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class) is
+      Java_Result : constant Unbounded_String := XslHelper'Class (This).translateTemplate (templates_Param => templates_Param, xmlStreamSource_Param => xmlStreamSource_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end translateTemplate;
 
    procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlDocument_Param : access Document_Package.Document'Class) is
       Java_Result : constant Unbounded_String := XslHelper'Class (This).translate (xsltStreamSource_Param => xsltStreamSource_Param, xmlDocument_Param => xmlDocument_Param);

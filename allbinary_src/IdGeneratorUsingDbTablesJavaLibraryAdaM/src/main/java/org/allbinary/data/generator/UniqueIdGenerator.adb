@@ -15,8 +15,14 @@
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tables.generator.IdGeneratorEntity_Package; use org.allbinary.data.tables.generator.IdGeneratorEntity_Package;
 with org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package; use org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.data.tables.generator.IdGeneratorEntity_Package;
+with org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package;
+with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package;
+with org.allbinary.data.generator.IdGeneratorInterface_Package;
 
 package body org.allbinary.data.generator.UniqueIdGenerator_Package is
 
@@ -24,6 +30,26 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package IdGeneratorEntityFactory_Package renames Standard.org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype IdGeneratorEntity_Access is org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References.IdGeneratorEntity_Access;
+   function "=" (Left, Right : IdGeneratorEntity_Access) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References."=";
+   subtype IdGeneratorEntity_Access_Array is org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References.IdGeneratorEntity_Access_Array;
+   function "=" (Left, Right : IdGeneratorEntity_Access_Array) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References."=";
+   subtype IdGeneratorEntity_Access_Array_Access is org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References.IdGeneratorEntity_Access_Array_Access;
+   function "=" (Left, Right : IdGeneratorEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References."=";
+   subtype IdGeneratorEntity_Access_Array_Access_Array is org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References.IdGeneratorEntity_Access_Array_Access_Array;
+   function "=" (Left, Right : IdGeneratorEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References."=";
+   subtype IdGeneratorEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References.IdGeneratorEntity_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : IdGeneratorEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    procedure Initialize_Fields (This : in out UniqueIdGenerator'Class) is
    begin
       null;

@@ -15,11 +15,23 @@
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package; use org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
+with org.allbinary.business.user.commerce.money.payment.Payment_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.PaymentFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   subtype PaymentInterface_Access is org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References.PaymentInterface_Access;
+   function "=" (Left, Right : PaymentInterface_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References."=";
+   subtype PaymentInterface_Access_Array is org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References.PaymentInterface_Access_Array;
+   function "=" (Left, Right : PaymentInterface_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References."=";
+   subtype PaymentInterface_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References.PaymentInterface_Access_Array_Access;
+   function "=" (Left, Right : PaymentInterface_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References."=";
+   subtype PaymentInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References.PaymentInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : PaymentInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References."=";
+   subtype PaymentInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References.PaymentInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PaymentInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package_References."=";
    procedure Initialize_Fields (This : in out PaymentFactory'Class) is
    begin
       null;

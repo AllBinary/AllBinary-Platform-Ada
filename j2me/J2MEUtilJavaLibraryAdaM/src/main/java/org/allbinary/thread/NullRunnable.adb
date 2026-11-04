@@ -16,6 +16,7 @@
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with org.allbinary.thread.ARunnable_Package;
 
 package body org.allbinary.thread.NullRunnable_Package is
 
@@ -30,7 +31,7 @@ package body org.allbinary.thread.NullRunnable_Package is
 
    function getInstance return NullRunnable_Access is
    begin
-        return NullRunnable_Package.instance;
+        return NullRunnable_Access (NullRunnable_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out NullRunnable'Class) is

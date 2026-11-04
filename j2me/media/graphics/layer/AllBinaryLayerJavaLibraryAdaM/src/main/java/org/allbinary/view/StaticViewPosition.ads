@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.view.StaticViewPosition_Package;
+package org.allbinary.view.StaticViewPosition_Package_References is
+   type StaticViewPosition_Access is access all org.allbinary.view.StaticViewPosition_Package.StaticViewPosition'Class;
+   type StaticViewPosition_Access_Array is array (Natural range <>) of StaticViewPosition_Access;
+   type StaticViewPosition_Access_Array_Access is access all StaticViewPosition_Access_Array;
+   type StaticViewPosition_Access_Array_Access_Array is array (Natural range <>) of StaticViewPosition_Access_Array_Access;
+   type StaticViewPosition_Access_Array_Access_Array_Access is access all StaticViewPosition_Access_Array_Access_Array;
+end org.allbinary.view.StaticViewPosition_Package_References;
+
+with org.allbinary.view.StaticViewPosition_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPositio
 
 package org.allbinary.view.StaticViewPosition_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type StaticViewPosition is tagged;
-   type StaticViewPosition_Access is access all StaticViewPosition'Class;
-   type StaticViewPosition_Access_Array is array (Natural range <>) of StaticViewPosition_Access;
-   type StaticViewPosition_Access_Array_Access is access all StaticViewPosition_Access_Array;
-   type StaticViewPosition_Access_Array_Access_Array is array (Natural range <>) of StaticViewPosition_Access_Array_Access;
-   type StaticViewPosition_Access_Array_Access_Array_Access is access all StaticViewPosition_Access_Array_Access_Array;
+
+   subtype StaticViewPosition_Access is org.allbinary.view.StaticViewPosition_Package_References.StaticViewPosition_Access;
+   function "=" (Left, Right : StaticViewPosition_Access) return Boolean renames org.allbinary.view.StaticViewPosition_Package_References."=";
+   subtype StaticViewPosition_Access_Array is org.allbinary.view.StaticViewPosition_Package_References.StaticViewPosition_Access_Array;
+   function "=" (Left, Right : StaticViewPosition_Access_Array) return Boolean renames org.allbinary.view.StaticViewPosition_Package_References."=";
+   subtype StaticViewPosition_Access_Array_Access is org.allbinary.view.StaticViewPosition_Package_References.StaticViewPosition_Access_Array_Access;
+   function "=" (Left, Right : StaticViewPosition_Access_Array_Access) return Boolean renames org.allbinary.view.StaticViewPosition_Package_References."=";
+   subtype StaticViewPosition_Access_Array_Access_Array is org.allbinary.view.StaticViewPosition_Package_References.StaticViewPosition_Access_Array_Access_Array;
+   function "=" (Left, Right : StaticViewPosition_Access_Array_Access_Array) return Boolean renames org.allbinary.view.StaticViewPosition_Package_References."=";
+   subtype StaticViewPosition_Access_Array_Access_Array_Access is org.allbinary.view.StaticViewPosition_Package_References.StaticViewPosition_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : StaticViewPosition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.view.StaticViewPosition_Package_References."=";
 
    type StaticViewPosition is new ViewPosition with null record;
 

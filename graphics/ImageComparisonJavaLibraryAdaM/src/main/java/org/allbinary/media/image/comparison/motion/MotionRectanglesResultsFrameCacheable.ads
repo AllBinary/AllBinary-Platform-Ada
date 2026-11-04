@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package;
+package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References is
+   type MotionRectanglesResultsFrameCacheable_Access is access all org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package.MotionRectanglesResultsFrameCacheable'Class;
+   type MotionRectanglesResultsFrameCacheable_Access_Array is array (Natural range <>) of MotionRectanglesResultsFrameCacheable_Access;
+   type MotionRectanglesResultsFrameCacheable_Access_Array_Access is access all MotionRectanglesResultsFrameCacheable_Access_Array;
+   type MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array is array (Natural range <>) of MotionRectanglesResultsFrameCacheable_Access_Array_Access;
+   type MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array_Access is access all MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array;
+end org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References;
+
+with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,18 +31,37 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+limited with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References;
 
 package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package is
 
    package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package Reference_Types is
+   subtype MotionRectangles_Access is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access;
+   use type MotionRectangles_Access;
+   subtype MotionRectangles_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access_Array;
+   use type MotionRectangles_Access_Array;
+   subtype MotionRectangles_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access_Array_Access;
+   use type MotionRectangles_Access_Array_Access;
+   subtype MotionRectangles_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access_Array_Access_Array;
+   use type MotionRectangles_Access_Array_Access_Array;
+   subtype MotionRectangles_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectangles_Package_References.MotionRectangles_Access_Array_Access_Array_Access;
+   use type MotionRectangles_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MotionRectanglesResultsFrameCacheable is tagged;
-   type MotionRectanglesResultsFrameCacheable_Access is access all MotionRectanglesResultsFrameCacheable'Class;
-   type MotionRectanglesResultsFrameCacheable_Access_Array is array (Natural range <>) of MotionRectanglesResultsFrameCacheable_Access;
-   type MotionRectanglesResultsFrameCacheable_Access_Array_Access is access all MotionRectanglesResultsFrameCacheable_Access_Array;
-   type MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array is array (Natural range <>) of MotionRectanglesResultsFrameCacheable_Access_Array_Access;
-   type MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array_Access is access all MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array;
+
+   subtype MotionRectanglesResultsFrameCacheable_Access is org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References.MotionRectanglesResultsFrameCacheable_Access;
+   function "=" (Left, Right : MotionRectanglesResultsFrameCacheable_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References."=";
+   subtype MotionRectanglesResultsFrameCacheable_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References.MotionRectanglesResultsFrameCacheable_Access_Array;
+   function "=" (Left, Right : MotionRectanglesResultsFrameCacheable_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References."=";
+   subtype MotionRectanglesResultsFrameCacheable_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References.MotionRectanglesResultsFrameCacheable_Access_Array_Access;
+   function "=" (Left, Right : MotionRectanglesResultsFrameCacheable_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References."=";
+   subtype MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References.MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array;
+   function "=" (Left, Right : MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References."=";
+   subtype MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References.MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MotionRectanglesResultsFrameCacheable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References."=";
 
    type MotionRectanglesResultsFrameCacheable is new Java_Object and CacheableInterface with record
       motionRectangles : MotionRectangles_Access;

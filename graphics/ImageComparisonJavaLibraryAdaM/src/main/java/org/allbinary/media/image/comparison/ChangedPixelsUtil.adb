@@ -15,10 +15,15 @@
 
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
+with org.allbinary.media.image.cache.BufferedImageCacheable_Package; use org.allbinary.media.image.cache.BufferedImageCacheable_Package;
 with org.allbinary.media.image.cache.BufferedImageInfo_Package; use org.allbinary.media.image.cache.BufferedImageInfo_Package;
 with org.allbinary.media.image.cache.BufferedImageInfoFactory_Package; use org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
 with org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package; use org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
 package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
 
@@ -28,6 +33,26 @@ package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
    package BufferedImageInfoFactory_Package renames Standard.org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
    package BufferedImagePoolSingleton_Package renames Standard.org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
    package PixelDelta_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+   subtype BufferedImageCacheable_Access is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access;
+   function "=" (Left, Right : BufferedImageCacheable_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
+   subtype BufferedImageCacheable_Access_Array is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array;
+   function "=" (Left, Right : BufferedImageCacheable_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
+   subtype BufferedImageCacheable_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageCacheable_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
+   subtype BufferedImageCacheable_Access_Array_Access_Array is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array_Access_Array;
+   function "=" (Left, Right : BufferedImageCacheable_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
+   subtype BufferedImageCacheable_Access_Array_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageCacheable_Package_References.BufferedImageCacheable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BufferedImageCacheable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheable_Package_References."=";
+   subtype ImageComparisonResult_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access;
+   function "=" (Left, Right : ImageComparisonResult_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   subtype ImageComparisonResult_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array;
+   function "=" (Left, Right : ImageComparisonResult_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   subtype ImageComparisonResult_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonResult_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   subtype ImageComparisonResult_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageComparisonResult_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   subtype ImageComparisonResult_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageComparisonResult_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
    procedure Initialize_Fields (This : in out ChangedPixelsUtil'Class) is
    begin
       null;

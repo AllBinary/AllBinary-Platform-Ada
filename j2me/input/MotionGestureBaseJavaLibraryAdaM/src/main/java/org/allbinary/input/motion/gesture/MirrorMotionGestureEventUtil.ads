@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package;
+package org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References is
+   type MirrorMotionGestureEventUtil_Access is access all org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package.MirrorMotionGestureEventUtil'Class;
+   type MirrorMotionGestureEventUtil_Access_Array is array (Natural range <>) of MirrorMotionGestureEventUtil_Access;
+   type MirrorMotionGestureEventUtil_Access_Array_Access is access all MirrorMotionGestureEventUtil_Access_Array;
+   type MirrorMotionGestureEventUtil_Access_Array_Access_Array is array (Natural range <>) of MirrorMotionGestureEventUtil_Access_Array_Access;
+   type MirrorMotionGestureEventUtil_Access_Array_Access_Array_Access is access all MirrorMotionGestureEventUtil_Access_Array_Access_Array;
+end org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References;
+
+with org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,20 +30,50 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package; use org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
-with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+limited with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
+with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References;
+limited with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References;
 
 package org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package is
 
    package MotionEventCircularPool_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
    package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+   package Reference_Types is
+   subtype MotionEventCircularPool_Access is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access;
+   use type MotionEventCircularPool_Access;
+   subtype MotionEventCircularPool_Access_Array is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array;
+   use type MotionEventCircularPool_Access_Array;
+   subtype MotionEventCircularPool_Access_Array_Access is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array_Access;
+   use type MotionEventCircularPool_Access_Array_Access;
+   subtype MotionEventCircularPool_Access_Array_Access_Array is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array_Access_Array;
+   use type MotionEventCircularPool_Access_Array_Access_Array;
+   subtype MotionEventCircularPool_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References.MotionEventCircularPool_Access_Array_Access_Array_Access;
+   use type MotionEventCircularPool_Access_Array_Access_Array_Access;
+   subtype MotionGestureEvent_Access is org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References.MotionGestureEvent_Access;
+   use type MotionGestureEvent_Access;
+   subtype MotionGestureEvent_Access_Array is org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References.MotionGestureEvent_Access_Array;
+   use type MotionGestureEvent_Access_Array;
+   subtype MotionGestureEvent_Access_Array_Access is org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References.MotionGestureEvent_Access_Array_Access;
+   use type MotionGestureEvent_Access_Array_Access;
+   subtype MotionGestureEvent_Access_Array_Access_Array is org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References.MotionGestureEvent_Access_Array_Access_Array;
+   use type MotionGestureEvent_Access_Array_Access_Array;
+   subtype MotionGestureEvent_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References.MotionGestureEvent_Access_Array_Access_Array_Access;
+   use type MotionGestureEvent_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type MirrorMotionGestureEventUtil is tagged;
-   type MirrorMotionGestureEventUtil_Access is access all MirrorMotionGestureEventUtil'Class;
-   type MirrorMotionGestureEventUtil_Access_Array is array (Natural range <>) of MirrorMotionGestureEventUtil_Access;
-   type MirrorMotionGestureEventUtil_Access_Array_Access is access all MirrorMotionGestureEventUtil_Access_Array;
-   type MirrorMotionGestureEventUtil_Access_Array_Access_Array is array (Natural range <>) of MirrorMotionGestureEventUtil_Access_Array_Access;
-   type MirrorMotionGestureEventUtil_Access_Array_Access_Array_Access is access all MirrorMotionGestureEventUtil_Access_Array_Access_Array;
+
+   subtype MirrorMotionGestureEventUtil_Access is org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References.MirrorMotionGestureEventUtil_Access;
+   function "=" (Left, Right : MirrorMotionGestureEventUtil_Access) return Boolean renames org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References."=";
+   subtype MirrorMotionGestureEventUtil_Access_Array is org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References.MirrorMotionGestureEventUtil_Access_Array;
+   function "=" (Left, Right : MirrorMotionGestureEventUtil_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References."=";
+   subtype MirrorMotionGestureEventUtil_Access_Array_Access is org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References.MirrorMotionGestureEventUtil_Access_Array_Access;
+   function "=" (Left, Right : MirrorMotionGestureEventUtil_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References."=";
+   subtype MirrorMotionGestureEventUtil_Access_Array_Access_Array is org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References.MirrorMotionGestureEventUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : MirrorMotionGestureEventUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References."=";
+   subtype MirrorMotionGestureEventUtil_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References.MirrorMotionGestureEventUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MirrorMotionGestureEventUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package_References."=";
 
    type MirrorMotionGestureEventUtil is new Java_Object with record
       motionEventCircularPool : MotionEventCircularPool_Access;

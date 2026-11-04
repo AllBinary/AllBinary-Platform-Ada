@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.layer.unit.UnitGameResources_Package;
+package org.allbinary.game.layer.unit.UnitGameResources_Package_References is
+   type UnitGameResources_Access is access all org.allbinary.game.layer.unit.UnitGameResources_Package.UnitGameResources'Class;
+   type UnitGameResources_Access_Array is array (Natural range <>) of UnitGameResources_Access;
+   type UnitGameResources_Access_Array_Access is access all UnitGameResources_Access_Array;
+   type UnitGameResources_Access_Array_Access_Array is array (Natural range <>) of UnitGameResources_Access_Array_Access;
+   type UnitGameResources_Access_Array_Access_Array_Access is access all UnitGameResources_Access_Array_Access_Array;
+end org.allbinary.game.layer.unit.UnitGameResources_Package_References;
+
+with org.allbinary.game.layer.unit.UnitGameResources_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -25,13 +35,21 @@ with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allb
 package org.allbinary.game.layer.unit.UnitGameResources_Package is
 
    package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type UnitGameResources is tagged;
-   type UnitGameResources_Access is access all UnitGameResources'Class;
-   type UnitGameResources_Access_Array is array (Natural range <>) of UnitGameResources_Access;
-   type UnitGameResources_Access_Array_Access is access all UnitGameResources_Access_Array;
-   type UnitGameResources_Access_Array_Access_Array is array (Natural range <>) of UnitGameResources_Access_Array_Access;
-   type UnitGameResources_Access_Array_Access_Array_Access is access all UnitGameResources_Access_Array_Access_Array;
+
+   subtype UnitGameResources_Access is org.allbinary.game.layer.unit.UnitGameResources_Package_References.UnitGameResources_Access;
+   function "=" (Left, Right : UnitGameResources_Access) return Boolean renames org.allbinary.game.layer.unit.UnitGameResources_Package_References."=";
+   subtype UnitGameResources_Access_Array is org.allbinary.game.layer.unit.UnitGameResources_Package_References.UnitGameResources_Access_Array;
+   function "=" (Left, Right : UnitGameResources_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitGameResources_Package_References."=";
+   subtype UnitGameResources_Access_Array_Access is org.allbinary.game.layer.unit.UnitGameResources_Package_References.UnitGameResources_Access_Array_Access;
+   function "=" (Left, Right : UnitGameResources_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitGameResources_Package_References."=";
+   subtype UnitGameResources_Access_Array_Access_Array is org.allbinary.game.layer.unit.UnitGameResources_Package_References.UnitGameResources_Access_Array_Access_Array;
+   function "=" (Left, Right : UnitGameResources_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitGameResources_Package_References."=";
+   subtype UnitGameResources_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.UnitGameResources_Package_References.UnitGameResources_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : UnitGameResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitGameResources_Package_References."=";
 
    type UnitGameResources is new BasicGameResources with record
       NAME : Unbounded_String;

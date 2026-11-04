@@ -13,9 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.Color_Package; use org.allbinary.graphics.color.Color_Package;
 
 package body org.allbinary.graphics.color.ColorUtil_Package is
 
+   subtype Color_Access is org.allbinary.graphics.color.Color_Package_References.Color_Access;
+   function "=" (Left, Right : Color_Access) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
+   subtype Color_Access_Array is org.allbinary.graphics.color.Color_Package_References.Color_Access_Array;
+   function "=" (Left, Right : Color_Access_Array) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
+   subtype Color_Access_Array_Access is org.allbinary.graphics.color.Color_Package_References.Color_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array is org.allbinary.graphics.color.Color_Package_References.Color_Access_Array_Access_Array;
+   function "=" (Left, Right : Color_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
+   subtype Color_Access_Array_Access_Array_Access is org.allbinary.graphics.color.Color_Package_References.Color_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Color_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.Color_Package_References."=";
    procedure Initialize_Fields (This : in out ColorUtil'Class) is
    begin
       null;
@@ -36,7 +47,7 @@ package body org.allbinary.graphics.color.ColorUtil_Package is
 
    function getInstance return ColorUtil_Access is
    begin
-        return ColorUtil_Package.instance;
+        return ColorUtil_Access (ColorUtil_Package.instance);
    end getInstance;
 
    function isGreyishOrWhiteLike (This : in out ColorUtil; color_Param : access Color_Package.Color'Class) return Boolean is

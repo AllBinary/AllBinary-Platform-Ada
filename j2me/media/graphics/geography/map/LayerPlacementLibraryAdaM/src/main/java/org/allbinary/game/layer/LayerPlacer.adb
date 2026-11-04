@@ -14,12 +14,20 @@
 
 
 with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.LayerInterfaceFactory_Package; use org.allbinary.layer.LayerInterfaceFactory_Package;
+with org.allbinary.layer.LayerInterfaceVisitor_Package; use org.allbinary.layer.LayerInterfaceVisitor_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.game.layer.LayerPlacementInterface_Package; use org.allbinary.game.layer.LayerPlacementInterface_Package;
 with org.allbinary.game.layer.LayerPlacementType_Package; use org.allbinary.game.layer.LayerPlacementType_Package;
 with org.allbinary.game.layer.LayerPlacementTypeFactory_Package; use org.allbinary.game.layer.LayerPlacementTypeFactory_Package;
+with org.allbinary.game.layer.LayerPlacementInterface_Package;
+with org.allbinary.game.layer.LayerPlacementType_Package;
+with org.allbinary.game.layer.LayerPlacementTypeFactory_Package;
 
 package body org.allbinary.game.layer.LayerPlacer_Package is
 
@@ -28,6 +36,56 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package LayerInterfaceFactory_Package renames Standard.org.allbinary.layer.LayerInterfaceFactory_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
+   function "=" (Left, Right : GPoint_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype GPoint_Access_Array_Access_Array_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GPoint_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
+   subtype LayerInterfaceVisitor_Access is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access;
+   function "=" (Left, Right : LayerInterfaceVisitor_Access) return Boolean renames org.allbinary.layer.LayerInterfaceVisitor_Package_References."=";
+   subtype LayerInterfaceVisitor_Access_Array is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access_Array;
+   function "=" (Left, Right : LayerInterfaceVisitor_Access_Array) return Boolean renames org.allbinary.layer.LayerInterfaceVisitor_Package_References."=";
+   subtype LayerInterfaceVisitor_Access_Array_Access is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access_Array_Access;
+   function "=" (Left, Right : LayerInterfaceVisitor_Access_Array_Access) return Boolean renames org.allbinary.layer.LayerInterfaceVisitor_Package_References."=";
+   subtype LayerInterfaceVisitor_Access_Array_Access_Array is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access_Array_Access_Array;
+   function "=" (Left, Right : LayerInterfaceVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.LayerInterfaceVisitor_Package_References."=";
+   subtype LayerInterfaceVisitor_Access_Array_Access_Array_Access is org.allbinary.layer.LayerInterfaceVisitor_Package_References.LayerInterfaceVisitor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LayerInterfaceVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.LayerInterfaceVisitor_Package_References."=";
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype EnumerationUtil_Access is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access;
+   function "=" (Left, Right : EnumerationUtil_Access) return Boolean renames org.allbinary.util.EnumerationUtil_Package_References."=";
+   subtype EnumerationUtil_Access_Array is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array;
+   function "=" (Left, Right : EnumerationUtil_Access_Array) return Boolean renames org.allbinary.util.EnumerationUtil_Package_References."=";
+   subtype EnumerationUtil_Access_Array_Access is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array_Access;
+   function "=" (Left, Right : EnumerationUtil_Access_Array_Access) return Boolean renames org.allbinary.util.EnumerationUtil_Package_References."=";
+   subtype EnumerationUtil_Access_Array_Access_Array is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : EnumerationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.EnumerationUtil_Package_References."=";
+   subtype EnumerationUtil_Access_Array_Access_Array_Access is org.allbinary.util.EnumerationUtil_Package_References.EnumerationUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : EnumerationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.EnumerationUtil_Package_References."=";
+   subtype LayerPlacementInterface_Access is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access;
+   function "=" (Left, Right : LayerPlacementInterface_Access) return Boolean renames org.allbinary.game.layer.LayerPlacementInterface_Package_References."=";
+   subtype LayerPlacementInterface_Access_Array is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access_Array;
+   function "=" (Left, Right : LayerPlacementInterface_Access_Array) return Boolean renames org.allbinary.game.layer.LayerPlacementInterface_Package_References."=";
+   subtype LayerPlacementInterface_Access_Array_Access is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access_Array_Access;
+   function "=" (Left, Right : LayerPlacementInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.LayerPlacementInterface_Package_References."=";
+   subtype LayerPlacementInterface_Access_Array_Access_Array is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : LayerPlacementInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.LayerPlacementInterface_Package_References."=";
+   subtype LayerPlacementInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.LayerPlacementInterface_Package_References.LayerPlacementInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LayerPlacementInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.LayerPlacementInterface_Package_References."=";
    procedure Initialize_Fields (This : in out LayerPlacer'Class) is
    begin
       null;

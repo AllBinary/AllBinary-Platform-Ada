@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.GameInfo_Package;
+package org.allbinary.game.GameInfo_Package_References is
+   type GameInfo_Access is access all org.allbinary.game.GameInfo_Package.GameInfo'Class;
+   type GameInfo_Access_Array is array (Natural range <>) of GameInfo_Access;
+   type GameInfo_Access_Array_Access is access all GameInfo_Access_Array;
+   type GameInfo_Access_Array_Access_Array is array (Natural range <>) of GameInfo_Access_Array_Access;
+   type GameInfo_Access_Array_Access_Array_Access is access all GameInfo_Access_Array_Access_Array;
+end org.allbinary.game.GameInfo_Package_References;
+
+with org.allbinary.game.GameInfo_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,24 +30,98 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.GameMode_Package; use org.allbinary.game.GameMode_Package;
-with org.allbinary.game.GameInfoData_Package; use org.allbinary.game.GameInfoData_Package;
-with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
-with org.allbinary.game.PlayerType_Package; use org.allbinary.game.PlayerType_Package;
+limited with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package_References;
+limited with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABHashtable_Package_References;
+limited with org.allbinary.game.GameMode_Package;
+with org.allbinary.game.GameMode_Package_References;
+limited with org.allbinary.game.GameInfoData_Package;
+with org.allbinary.game.GameInfoData_Package_References;
+limited with org.allbinary.game.GameType_Package;
+with org.allbinary.game.GameType_Package_References;
+limited with org.allbinary.game.PlayerType_Package;
+with org.allbinary.game.PlayerType_Package_References;
 
 package org.allbinary.game.GameInfo_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Reference_Types is
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   use type LogUtil_Access;
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   use type LogUtil_Access_Array;
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   use type LogUtil_Access_Array_Access;
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   use type LogUtil_Access_Array_Access_Array;
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   use type LogUtil_Access_Array_Access_Array_Access;
+   subtype ABHashtable_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access;
+   use type ABHashtable_Access;
+   subtype ABHashtable_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array;
+   use type ABHashtable_Access_Array;
+   subtype ABHashtable_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access;
+   subtype ABHashtable_Access_Array_Access_Array is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array;
+   use type ABHashtable_Access_Array_Access_Array;
+   subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
+   use type ABHashtable_Access_Array_Access_Array_Access;
+   subtype GameMode_Access is org.allbinary.game.GameMode_Package_References.GameMode_Access;
+   use type GameMode_Access;
+   subtype GameMode_Access_Array is org.allbinary.game.GameMode_Package_References.GameMode_Access_Array;
+   use type GameMode_Access_Array;
+   subtype GameMode_Access_Array_Access is org.allbinary.game.GameMode_Package_References.GameMode_Access_Array_Access;
+   use type GameMode_Access_Array_Access;
+   subtype GameMode_Access_Array_Access_Array is org.allbinary.game.GameMode_Package_References.GameMode_Access_Array_Access_Array;
+   use type GameMode_Access_Array_Access_Array;
+   subtype GameMode_Access_Array_Access_Array_Access is org.allbinary.game.GameMode_Package_References.GameMode_Access_Array_Access_Array_Access;
+   use type GameMode_Access_Array_Access_Array_Access;
+   subtype GameInfoData_Access is org.allbinary.game.GameInfoData_Package_References.GameInfoData_Access;
+   use type GameInfoData_Access;
+   subtype GameInfoData_Access_Array is org.allbinary.game.GameInfoData_Package_References.GameInfoData_Access_Array;
+   use type GameInfoData_Access_Array;
+   subtype GameInfoData_Access_Array_Access is org.allbinary.game.GameInfoData_Package_References.GameInfoData_Access_Array_Access;
+   use type GameInfoData_Access_Array_Access;
+   subtype GameInfoData_Access_Array_Access_Array is org.allbinary.game.GameInfoData_Package_References.GameInfoData_Access_Array_Access_Array;
+   use type GameInfoData_Access_Array_Access_Array;
+   subtype GameInfoData_Access_Array_Access_Array_Access is org.allbinary.game.GameInfoData_Package_References.GameInfoData_Access_Array_Access_Array_Access;
+   use type GameInfoData_Access_Array_Access_Array_Access;
+   subtype GameType_Access is org.allbinary.game.GameType_Package_References.GameType_Access;
+   use type GameType_Access;
+   subtype GameType_Access_Array is org.allbinary.game.GameType_Package_References.GameType_Access_Array;
+   use type GameType_Access_Array;
+   subtype GameType_Access_Array_Access is org.allbinary.game.GameType_Package_References.GameType_Access_Array_Access;
+   use type GameType_Access_Array_Access;
+   subtype GameType_Access_Array_Access_Array is org.allbinary.game.GameType_Package_References.GameType_Access_Array_Access_Array;
+   use type GameType_Access_Array_Access_Array;
+   subtype GameType_Access_Array_Access_Array_Access is org.allbinary.game.GameType_Package_References.GameType_Access_Array_Access_Array_Access;
+   use type GameType_Access_Array_Access_Array_Access;
+   subtype PlayerType_Access is org.allbinary.game.PlayerType_Package_References.PlayerType_Access;
+   use type PlayerType_Access;
+   subtype PlayerType_Access_Array is org.allbinary.game.PlayerType_Package_References.PlayerType_Access_Array;
+   use type PlayerType_Access_Array;
+   subtype PlayerType_Access_Array_Access is org.allbinary.game.PlayerType_Package_References.PlayerType_Access_Array_Access;
+   use type PlayerType_Access_Array_Access;
+   subtype PlayerType_Access_Array_Access_Array is org.allbinary.game.PlayerType_Package_References.PlayerType_Access_Array_Access_Array;
+   use type PlayerType_Access_Array_Access_Array;
+   subtype PlayerType_Access_Array_Access_Array_Access is org.allbinary.game.PlayerType_Package_References.PlayerType_Access_Array_Access_Array_Access;
+   use type PlayerType_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameInfo is tagged;
-   type GameInfo_Access is access all GameInfo'Class;
-   type GameInfo_Access_Array is array (Natural range <>) of GameInfo_Access;
-   type GameInfo_Access_Array_Access is access all GameInfo_Access_Array;
-   type GameInfo_Access_Array_Access_Array is array (Natural range <>) of GameInfo_Access_Array_Access;
-   type GameInfo_Access_Array_Access_Array_Access is access all GameInfo_Access_Array_Access_Array;
+
+   subtype GameInfo_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access;
+   function "=" (Left, Right : GameInfo_Access) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
+   subtype GameInfo_Access_Array is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array;
+   function "=" (Left, Right : GameInfo_Access_Array) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
+   subtype GameInfo_Access_Array_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access;
+   function "=" (Left, Right : GameInfo_Access_Array_Access) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
+   subtype GameInfo_Access_Array_Access_Array is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
+   subtype GameInfo_Access_Array_Access_Array_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.GameInfo_Package_References."=";
 
    type GameInfo is new Java_Object with record
       logUtil : LogUtil_Access;

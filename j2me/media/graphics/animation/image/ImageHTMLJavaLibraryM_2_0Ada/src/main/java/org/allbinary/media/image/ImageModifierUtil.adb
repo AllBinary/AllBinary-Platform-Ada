@@ -14,20 +14,108 @@
 
 
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
+with org.microemu.device.ResourceCallbackStrings_Package; use org.microemu.device.ResourceCallbackStrings_Package;
 with playn.core.Callback_Package; use playn.core.Callback_Package;
 with playn.core.Canvas_Package; use playn.core.Canvas_Package;
+with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
 with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
+with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
-   package Callback_Package renames Standard.playn.core.Callback_Package;
    package Canvas_Package renames Standard.playn.core.Canvas_Package;
    package ImageImpl_Package renames Standard.playn.core.ImageImpl_Package;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   function "=" (Left, Right : BasicColor_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype ResourceCallbackStrings_Access is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access;
+   function "=" (Left, Right : ResourceCallbackStrings_Access) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype ResourceCallbackStrings_Access_Array is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array;
+   function "=" (Left, Right : ResourceCallbackStrings_Access_Array) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype ResourceCallbackStrings_Access_Array_Access is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array_Access;
+   function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype ResourceCallbackStrings_Access_Array_Access_Array is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access_Array) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype ResourceCallbackStrings_Access_Array_Access_Array_Access is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access_Array_Access) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype Callback_Access is playn.core.Callback_Package_References.Callback_Access;
+   function "=" (Left, Right : Callback_Access) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype Callback_Access_Array is playn.core.Callback_Package_References.Callback_Access_Array;
+   function "=" (Left, Right : Callback_Access_Array) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype Callback_Access_Array_Access is playn.core.Callback_Package_References.Callback_Access_Array_Access;
+   function "=" (Left, Right : Callback_Access_Array_Access) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype Callback_Access_Array_Access_Array is playn.core.Callback_Package_References.Callback_Access_Array_Access_Array;
+   function "=" (Left, Right : Callback_Access_Array_Access_Array) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype Callback_Access_Array_Access_Array_Access is playn.core.Callback_Package_References.Callback_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Callback_Access_Array_Access_Array_Access) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype CoreImage_Access is playn.core.CoreImage_Package_References.CoreImage_Access;
+   function "=" (Left, Right : CoreImage_Access) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype CoreImage_Access_Array is playn.core.CoreImage_Package_References.CoreImage_Access_Array;
+   function "=" (Left, Right : CoreImage_Access_Array) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype CoreImage_Access_Array_Access is playn.core.CoreImage_Package_References.CoreImage_Access_Array_Access;
+   function "=" (Left, Right : CoreImage_Access_Array_Access) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype CoreImage_Access_Array_Access_Array is playn.core.CoreImage_Package_References.CoreImage_Access_Array_Access_Array;
+   function "=" (Left, Right : CoreImage_Access_Array_Access_Array) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype CoreImage_Access_Array_Access_Array_Access is playn.core.CoreImage_Package_References.CoreImage_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CoreImage_Access_Array_Access_Array_Access) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype HTMLPlaynUtil_Access is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access;
+   function "=" (Left, Right : HTMLPlaynUtil_Access) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   subtype HTMLPlaynUtil_Access_Array is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array;
+   function "=" (Left, Right : HTMLPlaynUtil_Access_Array) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   subtype HTMLPlaynUtil_Access_Array_Access is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array_Access;
+   function "=" (Left, Right : HTMLPlaynUtil_Access_Array_Access) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   subtype HTMLPlaynUtil_Access_Array_Access_Array is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : HTMLPlaynUtil_Access_Array_Access_Array) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   subtype HTMLPlaynUtil_Access_Array_Access_Array_Access is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HTMLPlaynUtil_Access_Array_Access_Array_Access) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
    procedure Initialize_Fields (This : in out ImageModifierUtil'Class) is
    begin
       null;
@@ -151,25 +239,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
             if ((image3.isReady) or else (((image3.width) + (image3.height)) <= (0))) or else ((image.getName) = (This.resourceCallbackStrings.FROM_DATA)) then
                 ImageModifierUtil'Class (This).copy (imageArray, index, image, image3);
             else
-                callback := Callback_Package.Create  --  Java anonymous class body: implement it as a named type
---                      
---     procedure onSuccess (This : in out ; resource_Param : access Java_Object'Class) is
---        resource : constant Java_Object_Access := Java_Object_Access (resource_Param);
---        logUtil : LogUtil_Access;
---     begin
---                          logUtil := LogUtil_Package.getInstance;
---                          logUtil.putF (Java_Image (This.resourceCallbackStrings.DONE) & image.getName, ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
---                          ImageModifierUtil'Class (This).copy (imageArray, index, image, image3);
---     end onSuccess;
---                      
---     procedure onFailure (This : in out ; e_Param : access Java_Throwable_Object'Class) is
---        e : constant Java_Throwable := Java_Throwable (e_Param);
---        logUtil : LogUtil_Access;
---     begin
---                          logUtil := LogUtil_Package.getInstance;
---                          logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (This.resourceCallbackStrings.ERROR).append (image.getName).toString, ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE, e);
---     end onFailure;
-;
+                callback := Callback_Access (ImageCopyCallback_Package.Create (ImageModifierUtil_Access'(This'Unchecked_Access), imageArray, index, image, image3));
                 image3.addCallback (callback);
             end if;
         else
@@ -216,5 +286,169 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
    end getImageArray;
 
 end org.allbinary.media.image.ImageModifierUtil_Package;
+
+
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
+with org.microemu.device.ResourceCallbackStrings_Package; use org.microemu.device.ResourceCallbackStrings_Package;
+with playn.core.Callback_Package; use playn.core.Callback_Package;
+with playn.core.Canvas_Package; use playn.core.Canvas_Package;
+with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
+with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
+with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
+with org.allbinary.media.image.ImageModifierUtil_Package;
+
+package body org.allbinary.media.image.ImageCopyCallback_Package is
+
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
+   package Canvas_Package renames Standard.playn.core.Canvas_Package;
+   package ImageImpl_Package renames Standard.playn.core.ImageImpl_Package;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   function "=" (Left, Right : BasicColor_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype CommonStrings_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access;
+   function "=" (Left, Right : CommonStrings_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
+   function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   subtype ResourceCallbackStrings_Access is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access;
+   function "=" (Left, Right : ResourceCallbackStrings_Access) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype ResourceCallbackStrings_Access_Array is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array;
+   function "=" (Left, Right : ResourceCallbackStrings_Access_Array) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype ResourceCallbackStrings_Access_Array_Access is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array_Access;
+   function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype ResourceCallbackStrings_Access_Array_Access_Array is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array_Access_Array;
+   function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access_Array) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype ResourceCallbackStrings_Access_Array_Access_Array_Access is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access_Array_Access) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
+   subtype Callback_Access is playn.core.Callback_Package_References.Callback_Access;
+   function "=" (Left, Right : Callback_Access) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype Callback_Access_Array is playn.core.Callback_Package_References.Callback_Access_Array;
+   function "=" (Left, Right : Callback_Access_Array) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype Callback_Access_Array_Access is playn.core.Callback_Package_References.Callback_Access_Array_Access;
+   function "=" (Left, Right : Callback_Access_Array_Access) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype Callback_Access_Array_Access_Array is playn.core.Callback_Package_References.Callback_Access_Array_Access_Array;
+   function "=" (Left, Right : Callback_Access_Array_Access_Array) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype Callback_Access_Array_Access_Array_Access is playn.core.Callback_Package_References.Callback_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Callback_Access_Array_Access_Array_Access) return Boolean renames playn.core.Callback_Package_References."=";
+   subtype CoreImage_Access is playn.core.CoreImage_Package_References.CoreImage_Access;
+   function "=" (Left, Right : CoreImage_Access) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype CoreImage_Access_Array is playn.core.CoreImage_Package_References.CoreImage_Access_Array;
+   function "=" (Left, Right : CoreImage_Access_Array) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype CoreImage_Access_Array_Access is playn.core.CoreImage_Package_References.CoreImage_Access_Array_Access;
+   function "=" (Left, Right : CoreImage_Access_Array_Access) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype CoreImage_Access_Array_Access_Array is playn.core.CoreImage_Package_References.CoreImage_Access_Array_Access_Array;
+   function "=" (Left, Right : CoreImage_Access_Array_Access_Array) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype CoreImage_Access_Array_Access_Array_Access is playn.core.CoreImage_Package_References.CoreImage_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CoreImage_Access_Array_Access_Array_Access) return Boolean renames playn.core.CoreImage_Package_References."=";
+   subtype HTMLPlaynUtil_Access is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access;
+   function "=" (Left, Right : HTMLPlaynUtil_Access) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   subtype HTMLPlaynUtil_Access_Array is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array;
+   function "=" (Left, Right : HTMLPlaynUtil_Access_Array) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   subtype HTMLPlaynUtil_Access_Array_Access is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array_Access;
+   function "=" (Left, Right : HTMLPlaynUtil_Access_Array_Access) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   subtype HTMLPlaynUtil_Access_Array_Access_Array is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : HTMLPlaynUtil_Access_Array_Access_Array) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   subtype HTMLPlaynUtil_Access_Array_Access_Array_Access is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HTMLPlaynUtil_Access_Array_Access_Array_Access) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   procedure Initialize_Fields (This : in out ImageCopyCallback'Class) is
+   begin
+      null;
+      
+      
+      
+      
+      
+   end Initialize_Fields;
+
+    
+   procedure Initialize (This : in out ImageCopyCallback'Class; imageModifierUtil_Var_Param : access ImageModifierUtil_Package.ImageModifierUtil'Class; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image_Package.Image'Class; image3_Param : access CoreImage_Package.CoreImage'Class) is
+      imageModifierUtil_Var : constant ImageModifierUtil_Access := ImageModifierUtil_Access (imageModifierUtil_Var_Param);
+      image : constant Image_Access := Image_Access (image_Param);
+      image3 : constant CoreImage_Access := CoreImage_Access (image3_Param);
+   begin
+      Initialize_Fields (This);
+            This.imageModifierUtil_Var := imageModifierUtil_Var;
+            This.imageArray := imageArray;
+            This.index := index;
+            This.image := image;
+            This.image3 := image3;
+   end Initialize;
+
+   function Create (imageModifierUtil_Var_Param : access ImageModifierUtil_Package.ImageModifierUtil'Class; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image_Package.Image'Class; image3_Param : access CoreImage_Package.CoreImage'Class) return ImageCopyCallback_Access is
+      This : constant ImageCopyCallback_Access := new ImageCopyCallback;
+   begin
+      ImageCopyCallback_Package.Initialize (This.all, imageModifierUtil_Var_Param, imageArray, index, image_Param, image3_Param);
+      return This;
+   end Create;
+    
+   procedure onSuccess (This : in out ImageCopyCallback; resource_Param : access Java_Object'Class) is
+      resource : constant Java_Object_Access := Java_Object_Access (resource_Param);
+      logUtil : LogUtil_Access;
+      resourceCallbackStrings : ResourceCallbackStrings_Access;
+   begin
+            logUtil := LogUtil_Package.getInstance;
+            resourceCallbackStrings := ResourceCallbackStrings_Access (This.imageModifierUtil_Var.resourceCallbackStrings);
+            logUtil.putF (Java_Image (resourceCallbackStrings.DONE) & This.image.getName, ImageModifierUtil_Access'(This'Unchecked_Access), resourceCallbackStrings.HANDLE_IMAGE);
+            This.imageModifierUtil_Var.copy (This.imageArray, This.index, This.image, This.image3);
+   end onSuccess;
+    
+   procedure onFailure (This : in out ImageCopyCallback; e_Param : access Java_Throwable_Object'Class) is
+      e : constant Java_Throwable := Java_Throwable (e_Param);
+      logUtil : LogUtil_Access;
+      resourceCallbackStrings : ResourceCallbackStrings_Access;
+   begin
+            logUtil := LogUtil_Package.getInstance;
+            resourceCallbackStrings := ResourceCallbackStrings_Access (This.imageModifierUtil_Var.resourceCallbackStrings);
+            logUtil.put (StringMaker_Package.Create.append (This.imageModifierUtil_Var.commonStrings.EXCEPTION_LABEL).append (resourceCallbackStrings.ERROR).append (This.image.getName).toString, ImageModifierUtil_Access'(This'Unchecked_Access), resourceCallbackStrings.HANDLE_IMAGE, e);
+   end onFailure;
+
+   procedure onSuccess (This : in out ImageCopyCallback; Value : Unbounded_String) is
+   begin
+      ImageCopyCallback'Class (This).onSuccess (Java_Box (Value));
+   end onSuccess;
+
+end org.allbinary.media.image.ImageCopyCallback_Package;
 
 

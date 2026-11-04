@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.button.TouchButtonResource_Package; use org.allbinary.input.motion.button.TouchButtonResource_Package;
 
 package body org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package is
 
@@ -24,7 +25,7 @@ package body org.allbinary.game.input.resource.TouchButtonUpgradeResource_Packag
 
    function getInstance return TouchButtonResource_Access is
    begin
-        return TouchButtonUpgradeResource_Package.instance;
+        return TouchButtonResource_Access (TouchButtonUpgradeResource_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out TouchButtonUpgradeResource'Class) is

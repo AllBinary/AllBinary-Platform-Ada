@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package;
+package org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References is
+   type BasicStoreFront_Access is access all org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package.BasicStoreFront'Class;
+   type BasicStoreFront_Access_Array is array (Natural range <>) of BasicStoreFront_Access;
+   type BasicStoreFront_Access_Array_Access is access all BasicStoreFront_Access_Array;
+   type BasicStoreFront_Access_Array_Access_Array is array (Natural range <>) of BasicStoreFront_Access_Array_Access;
+   type BasicStoreFront_Access_Array_Access_Array_Access is access all BasicStoreFront_Access_Array_Access_Array;
+end org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References;
+
+with org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -21,20 +31,39 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
 
 package org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type BasicStoreFront is tagged;
-   type BasicStoreFront_Access is access all BasicStoreFront'Class;
-   type BasicStoreFront_Access_Array is array (Natural range <>) of BasicStoreFront_Access;
-   type BasicStoreFront_Access_Array_Access is access all BasicStoreFront_Access_Array;
-   type BasicStoreFront_Access_Array_Access_Array is array (Natural range <>) of BasicStoreFront_Access_Array_Access;
-   type BasicStoreFront_Access_Array_Access_Array_Access is access all BasicStoreFront_Access_Array_Access_Array;
+
+   subtype BasicStoreFront_Access is org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References.BasicStoreFront_Access;
+   function "=" (Left, Right : BasicStoreFront_Access) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References."=";
+   subtype BasicStoreFront_Access_Array is org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References.BasicStoreFront_Access_Array;
+   function "=" (Left, Right : BasicStoreFront_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References."=";
+   subtype BasicStoreFront_Access_Array_Access is org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References.BasicStoreFront_Access_Array_Access;
+   function "=" (Left, Right : BasicStoreFront_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References."=";
+   subtype BasicStoreFront_Access_Array_Access_Array is org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References.BasicStoreFront_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicStoreFront_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References."=";
+   subtype BasicStoreFront_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References.BasicStoreFront_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicStoreFront_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package_References."=";
 
    type BasicStoreFront is new Java_Object and BasicStoreFrontInterface with record
       name : Unbounded_String;

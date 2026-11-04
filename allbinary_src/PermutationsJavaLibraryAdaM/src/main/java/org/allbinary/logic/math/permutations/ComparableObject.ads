@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.logic.math.permutations.ComparableObject_Package;
+package org.allbinary.logic.math.permutations.ComparableObject_Package_References is
+   type ComparableObject_Access is access all org.allbinary.logic.math.permutations.ComparableObject_Package.ComparableObject'Class;
+   type ComparableObject_Access_Array is array (Natural range <>) of ComparableObject_Access;
+   type ComparableObject_Access_Array_Access is access all ComparableObject_Access_Array;
+   type ComparableObject_Access_Array_Access_Array is array (Natural range <>) of ComparableObject_Access_Array_Access;
+   type ComparableObject_Access_Array_Access_Array_Access is access all ComparableObject_Access_Array_Access_Array;
+end org.allbinary.logic.math.permutations.ComparableObject_Package_References;
+
+with org.allbinary.logic.math.permutations.ComparableObject_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -24,13 +34,21 @@ with java.lang.Comparable_Package; use java.lang.Comparable_Package;
 
 package org.allbinary.logic.math.permutations.ComparableObject_Package is
 
+   package Reference_Types is
+   end Reference_Types;
+   use Reference_Types;
 
-   type ComparableObject is tagged;
-   type ComparableObject_Access is access all ComparableObject'Class;
-   type ComparableObject_Access_Array is array (Natural range <>) of ComparableObject_Access;
-   type ComparableObject_Access_Array_Access is access all ComparableObject_Access_Array;
-   type ComparableObject_Access_Array_Access_Array is array (Natural range <>) of ComparableObject_Access_Array_Access;
-   type ComparableObject_Access_Array_Access_Array_Access is access all ComparableObject_Access_Array_Access_Array;
+
+   subtype ComparableObject_Access is org.allbinary.logic.math.permutations.ComparableObject_Package_References.ComparableObject_Access;
+   function "=" (Left, Right : ComparableObject_Access) return Boolean renames org.allbinary.logic.math.permutations.ComparableObject_Package_References."=";
+   subtype ComparableObject_Access_Array is org.allbinary.logic.math.permutations.ComparableObject_Package_References.ComparableObject_Access_Array;
+   function "=" (Left, Right : ComparableObject_Access_Array) return Boolean renames org.allbinary.logic.math.permutations.ComparableObject_Package_References."=";
+   subtype ComparableObject_Access_Array_Access is org.allbinary.logic.math.permutations.ComparableObject_Package_References.ComparableObject_Access_Array_Access;
+   function "=" (Left, Right : ComparableObject_Access_Array_Access) return Boolean renames org.allbinary.logic.math.permutations.ComparableObject_Package_References."=";
+   subtype ComparableObject_Access_Array_Access_Array is org.allbinary.logic.math.permutations.ComparableObject_Package_References.ComparableObject_Access_Array_Access_Array;
+   function "=" (Left, Right : ComparableObject_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.permutations.ComparableObject_Package_References."=";
+   subtype ComparableObject_Access_Array_Access_Array_Access is org.allbinary.logic.math.permutations.ComparableObject_Package_References.ComparableObject_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ComparableObject_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.permutations.ComparableObject_Package_References."=";
 
    type ComparableObject is new Java_Object and Comparable with null record;
 

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
+with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 
 package body org.allbinary.logic.io.AbDataOutputStream_Package is
 

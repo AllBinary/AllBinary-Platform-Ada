@@ -1,10 +1,45 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
+with org.allbinary.logic.system.SoftwareInformation_Package; use org.allbinary.logic.system.SoftwareInformation_Package;
 with org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package; use org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package;
+with org.allbinary.business.advertisement.GameAdStateBase_Package; use org.allbinary.business.advertisement.GameAdStateBase_Package;
+with org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package;
+with org.allbinary.game.GameAdState_Package;
 
 package body org.allbinary.business.advertisement.GameAdStateFactory_Package is
 
+   subtype GameAdState_Access is org.allbinary.game.GameAdState_Package_References.GameAdState_Access;
+   function "=" (Left, Right : GameAdState_Access) return Boolean renames org.allbinary.game.GameAdState_Package_References."=";
+   subtype GameAdState_Access_Array is org.allbinary.game.GameAdState_Package_References.GameAdState_Access_Array;
+   function "=" (Left, Right : GameAdState_Access_Array) return Boolean renames org.allbinary.game.GameAdState_Package_References."=";
+   subtype GameAdState_Access_Array_Access is org.allbinary.game.GameAdState_Package_References.GameAdState_Access_Array_Access;
+   function "=" (Left, Right : GameAdState_Access_Array_Access) return Boolean renames org.allbinary.game.GameAdState_Package_References."=";
+   subtype GameAdState_Access_Array_Access_Array is org.allbinary.game.GameAdState_Package_References.GameAdState_Access_Array_Access_Array;
+   function "=" (Left, Right : GameAdState_Access_Array_Access_Array) return Boolean renames org.allbinary.game.GameAdState_Package_References."=";
+   subtype GameAdState_Access_Array_Access_Array_Access is org.allbinary.game.GameAdState_Package_References.GameAdState_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameAdState_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.GameAdState_Package_References."=";
+   subtype SoftwareInformation_Access is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access;
+   function "=" (Left, Right : SoftwareInformation_Access) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
+   subtype SoftwareInformation_Access_Array is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array;
+   function "=" (Left, Right : SoftwareInformation_Access_Array) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
+   subtype SoftwareInformation_Access_Array_Access is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array_Access;
+   function "=" (Left, Right : SoftwareInformation_Access_Array_Access) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
+   subtype SoftwareInformation_Access_Array_Access_Array is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array_Access_Array;
+   function "=" (Left, Right : SoftwareInformation_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
+   subtype SoftwareInformation_Access_Array_Access_Array_Access is org.allbinary.logic.system.SoftwareInformation_Package_References.SoftwareInformation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : SoftwareInformation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.SoftwareInformation_Package_References."=";
+   subtype GameAdStateBase_Access is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access;
+   function "=" (Left, Right : GameAdStateBase_Access) return Boolean renames org.allbinary.business.advertisement.GameAdStateBase_Package_References."=";
+   subtype GameAdStateBase_Access_Array is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access_Array;
+   function "=" (Left, Right : GameAdStateBase_Access_Array) return Boolean renames org.allbinary.business.advertisement.GameAdStateBase_Package_References."=";
+   subtype GameAdStateBase_Access_Array_Access is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access_Array_Access;
+   function "=" (Left, Right : GameAdStateBase_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.GameAdStateBase_Package_References."=";
+   subtype GameAdStateBase_Access_Array_Access_Array is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access_Array_Access_Array;
+   function "=" (Left, Right : GameAdStateBase_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.GameAdStateBase_Package_References."=";
+   subtype GameAdStateBase_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.GameAdStateBase_Package_References.GameAdStateBase_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameAdStateBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.GameAdStateBase_Package_References."=";
    procedure Initialize_Fields (This : in out GameAdStateFactory'Class) is
    begin
       null;
@@ -27,7 +62,7 @@ package body org.allbinary.business.advertisement.GameAdStateFactory_Package is
 
    function getInstance return GameAdStateFactory_Access is
    begin
-        return GameAdStateFactory_Package.instance;
+        return GameAdStateFactory_Access (GameAdStateFactory_Package.instance);
    end getInstance;
 
    function getCurrentInstance (This : in out GameAdStateFactory) return GameAdState_Access is
@@ -40,7 +75,7 @@ package body org.allbinary.business.advertisement.GameAdStateFactory_Package is
       softwareInformation : constant SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
    begin
         This.gameAdState := This.gameAdStateArray (0);
-        return This.gameAdStateArray (0);
+        return GameAdStateBase_Access (This.gameAdStateArray (0));
    end getInstanceForApp;
 
    function isEnabled (This : in out GameAdStateFactory) return Boolean is

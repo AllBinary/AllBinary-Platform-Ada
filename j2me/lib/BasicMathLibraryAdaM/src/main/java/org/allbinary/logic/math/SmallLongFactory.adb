@@ -31,7 +31,7 @@ package body org.allbinary.logic.math.SmallLongFactory_Package is
 
    function getInstance return SmallLongFactory_Access is
    begin
-        return SmallLongFactory_Package.instance;
+        return SmallLongFactory_Access (SmallLongFactory_Package.instance);
    end getInstance;
 
    procedure initWithRange (This : in out SmallLongFactory; value : Integer; negativeValue : Integer) is

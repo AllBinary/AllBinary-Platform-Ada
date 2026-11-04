@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.game.input.GameInputLayerProcessor_Package;
+package org.allbinary.game.input.GameInputLayerProcessor_Package_References is
+   type GameInputLayerProcessor_Access is access all org.allbinary.game.input.GameInputLayerProcessor_Package.GameInputLayerProcessor'Class;
+   type GameInputLayerProcessor_Access_Array is array (Natural range <>) of GameInputLayerProcessor_Access;
+   type GameInputLayerProcessor_Access_Array_Access is access all GameInputLayerProcessor_Access_Array;
+   type GameInputLayerProcessor_Access_Array_Access_Array is array (Natural range <>) of GameInputLayerProcessor_Access_Array_Access;
+   type GameInputLayerProcessor_Access_Array_Access_Array_Access is access all GameInputLayerProcessor_Access_Array_Access_Array;
+end org.allbinary.game.input.GameInputLayerProcessor_Package_References;
+
+with org.allbinary.game.input.GameInputLayerProcessor_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,8 +30,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+limited with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
+limited with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
 
 package org.allbinary.game.input.GameInputLayerProcessor_Package is
@@ -29,13 +41,41 @@ package org.allbinary.game.input.GameInputLayerProcessor_Package is
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
+   package Reference_Types is
+   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
+   use type AllBinaryLayer_Access;
+   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
+   use type AllBinaryLayer_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access;
+   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
+   use type AllBinaryLayer_Access_Array_Access_Array;
+   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
+   use type AllBinaryLayer_Access_Array_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
+   use type AllBinaryLayerManager_Access;
+   subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
+   use type AllBinaryLayerManager_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array;
+   use type AllBinaryLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryLayerManager_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryLayerManager_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type GameInputLayerProcessor is tagged;
-   type GameInputLayerProcessor_Access is access all GameInputLayerProcessor'Class;
-   type GameInputLayerProcessor_Access_Array is array (Natural range <>) of GameInputLayerProcessor_Access;
-   type GameInputLayerProcessor_Access_Array_Access is access all GameInputLayerProcessor_Access_Array;
-   type GameInputLayerProcessor_Access_Array_Access_Array is array (Natural range <>) of GameInputLayerProcessor_Access_Array_Access;
-   type GameInputLayerProcessor_Access_Array_Access_Array_Access is access all GameInputLayerProcessor_Access_Array_Access_Array;
+
+   subtype GameInputLayerProcessor_Access is org.allbinary.game.input.GameInputLayerProcessor_Package_References.GameInputLayerProcessor_Access;
+   function "=" (Left, Right : GameInputLayerProcessor_Access) return Boolean renames org.allbinary.game.input.GameInputLayerProcessor_Package_References."=";
+   subtype GameInputLayerProcessor_Access_Array is org.allbinary.game.input.GameInputLayerProcessor_Package_References.GameInputLayerProcessor_Access_Array;
+   function "=" (Left, Right : GameInputLayerProcessor_Access_Array) return Boolean renames org.allbinary.game.input.GameInputLayerProcessor_Package_References."=";
+   subtype GameInputLayerProcessor_Access_Array_Access is org.allbinary.game.input.GameInputLayerProcessor_Package_References.GameInputLayerProcessor_Access_Array_Access;
+   function "=" (Left, Right : GameInputLayerProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputLayerProcessor_Package_References."=";
+   subtype GameInputLayerProcessor_Access_Array_Access_Array is org.allbinary.game.input.GameInputLayerProcessor_Package_References.GameInputLayerProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : GameInputLayerProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameInputLayerProcessor_Package_References."=";
+   subtype GameInputLayerProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInputLayerProcessor_Package_References.GameInputLayerProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GameInputLayerProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputLayerProcessor_Package_References."=";
 
    type GameInputLayerProcessor is new LayerProcessor with null record;
 

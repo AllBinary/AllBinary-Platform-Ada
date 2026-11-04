@@ -12,6 +12,16 @@
 --   
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package;
+package org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References is
+   type ImageCaptionIndexedAnimationFactory_Access is access all org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package.ImageCaptionIndexedAnimationFactory'Class;
+   type ImageCaptionIndexedAnimationFactory_Access_Array is array (Natural range <>) of ImageCaptionIndexedAnimationFactory_Access;
+   type ImageCaptionIndexedAnimationFactory_Access_Array_Access is access all ImageCaptionIndexedAnimationFactory_Access_Array;
+   type ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of ImageCaptionIndexedAnimationFactory_Access_Array_Access;
+   type ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array_Access is access all ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array;
+end org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References;
+
+with org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,14 +30,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+limited with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Image_Package_References;
+limited with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.Animation_Package_References;
+limited with org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.image.AnimationFactoryImageScaleUtil_Package; use org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
-with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package; use org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
-with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+limited with org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
+with org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References;
+limited with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
+with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References;
+limited with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.media.ScaleProperties_Package_References;
+limited with org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.Sound_Package_References;
 
 package org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package is
 
@@ -39,13 +56,91 @@ package org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory
    package AnimationFactorySpriteScaleUtil_Package renames Standard.org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
    package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
+   package Reference_Types is
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
+   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
+   use type Animation_Access;
+   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
+   use type Animation_Access_Array;
+   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
+   use type Animation_Access_Array_Access;
+   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
+   use type Animation_Access_Array_Access_Array;
+   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
+   use type Animation_Access_Array_Access_Array_Access;
+   subtype AnimationBehaviorFactory_Access is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access;
+   use type AnimationBehaviorFactory_Access;
+   subtype AnimationBehaviorFactory_Access_Array is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access_Array;
+   use type AnimationBehaviorFactory_Access_Array;
+   subtype AnimationBehaviorFactory_Access_Array_Access is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access_Array_Access;
+   use type AnimationBehaviorFactory_Access_Array_Access;
+   subtype AnimationBehaviorFactory_Access_Array_Access_Array is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access_Array_Access_Array;
+   use type AnimationBehaviorFactory_Access_Array_Access_Array;
+   subtype AnimationBehaviorFactory_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access_Array_Access_Array_Access;
+   use type AnimationBehaviorFactory_Access_Array_Access_Array_Access;
+   subtype AnimationFactoryImageScaleUtil_Access is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access;
+   use type AnimationFactoryImageScaleUtil_Access;
+   subtype AnimationFactoryImageScaleUtil_Access_Array is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access_Array;
+   use type AnimationFactoryImageScaleUtil_Access_Array;
+   subtype AnimationFactoryImageScaleUtil_Access_Array_Access is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access_Array_Access;
+   use type AnimationFactoryImageScaleUtil_Access_Array_Access;
+   subtype AnimationFactoryImageScaleUtil_Access_Array_Access_Array is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access_Array_Access_Array;
+   use type AnimationFactoryImageScaleUtil_Access_Array_Access_Array;
+   subtype AnimationFactoryImageScaleUtil_Access_Array_Access_Array_Access is org.allbinary.image.AnimationFactoryImageScaleUtil_Package_References.AnimationFactoryImageScaleUtil_Access_Array_Access_Array_Access;
+   use type AnimationFactoryImageScaleUtil_Access_Array_Access_Array_Access;
+   subtype AnimationFactorySpriteScaleUtil_Access is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access;
+   use type AnimationFactorySpriteScaleUtil_Access;
+   subtype AnimationFactorySpriteScaleUtil_Access_Array is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access_Array;
+   use type AnimationFactorySpriteScaleUtil_Access_Array;
+   subtype AnimationFactorySpriteScaleUtil_Access_Array_Access is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access_Array_Access;
+   use type AnimationFactorySpriteScaleUtil_Access_Array_Access;
+   subtype AnimationFactorySpriteScaleUtil_Access_Array_Access_Array is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access_Array_Access_Array;
+   use type AnimationFactorySpriteScaleUtil_Access_Array_Access_Array;
+   subtype AnimationFactorySpriteScaleUtil_Access_Array_Access_Array_Access is org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References.AnimationFactorySpriteScaleUtil_Access_Array_Access_Array_Access;
+   use type AnimationFactorySpriteScaleUtil_Access_Array_Access_Array_Access;
+   subtype ScaleProperties_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access;
+   use type ScaleProperties_Access;
+   subtype ScaleProperties_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array;
+   use type ScaleProperties_Access_Array;
+   subtype ScaleProperties_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access;
+   subtype ScaleProperties_Access_Array_Access_Array is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array;
+   use type ScaleProperties_Access_Array_Access_Array;
+   subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
+   use type ScaleProperties_Access_Array_Access_Array_Access;
+   subtype Sound_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access;
+   use type Sound_Access;
+   subtype Sound_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array;
+   use type Sound_Access_Array;
+   subtype Sound_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access;
+   use type Sound_Access_Array_Access;
+   subtype Sound_Access_Array_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array;
+   use type Sound_Access_Array_Access_Array;
+   subtype Sound_Access_Array_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array_Access;
+   use type Sound_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type ImageCaptionIndexedAnimationFactory is tagged;
-   type ImageCaptionIndexedAnimationFactory_Access is access all ImageCaptionIndexedAnimationFactory'Class;
-   type ImageCaptionIndexedAnimationFactory_Access_Array is array (Natural range <>) of ImageCaptionIndexedAnimationFactory_Access;
-   type ImageCaptionIndexedAnimationFactory_Access_Array_Access is access all ImageCaptionIndexedAnimationFactory_Access_Array;
-   type ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of ImageCaptionIndexedAnimationFactory_Access_Array_Access;
-   type ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array_Access is access all ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array;
+
+   subtype ImageCaptionIndexedAnimationFactory_Access is org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References.ImageCaptionIndexedAnimationFactory_Access;
+   function "=" (Left, Right : ImageCaptionIndexedAnimationFactory_Access) return Boolean renames org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References."=";
+   subtype ImageCaptionIndexedAnimationFactory_Access_Array is org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References.ImageCaptionIndexedAnimationFactory_Access_Array;
+   function "=" (Left, Right : ImageCaptionIndexedAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References."=";
+   subtype ImageCaptionIndexedAnimationFactory_Access_Array_Access is org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References.ImageCaptionIndexedAnimationFactory_Access_Array_Access;
+   function "=" (Left, Right : ImageCaptionIndexedAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References."=";
+   subtype ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References.ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References."=";
+   subtype ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References.ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package_References."=";
 
    type ImageCaptionIndexedAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       animationFactoryImageScaleUtil : AnimationFactoryImageScaleUtil_Access;

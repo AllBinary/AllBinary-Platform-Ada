@@ -13,11 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
+with org.allbinary.media.image.ImageSwtRotationUtil_Package; use org.allbinary.media.image.ImageSwtRotationUtil_Package;
+with org.allbinary.media.image.ImageSwtRotationUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package;
 
 package body org.allbinary.media.image.ImageRotationUtil_Package is
 
@@ -26,6 +31,36 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package GC_Package renames Standard.org.eclipse.swt.graphics.GC_Package;
    package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
+   subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
+   subtype Features_Access is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access;
+   function "=" (Left, Right : Features_Access) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype Features_Access_Array is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access_Array;
+   function "=" (Left, Right : Features_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype Features_Access_Array_Access is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access_Array_Access;
+   function "=" (Left, Right : Features_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype Features_Access_Array_Access_Array is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access_Array_Access_Array;
+   function "=" (Left, Right : Features_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype Features_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Features_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.Features_Package_References."=";
+   subtype ImageSwtRotationUtil_Access is org.allbinary.media.image.ImageSwtRotationUtil_Package_References.ImageSwtRotationUtil_Access;
+   function "=" (Left, Right : ImageSwtRotationUtil_Access) return Boolean renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References."=";
+   subtype ImageSwtRotationUtil_Access_Array is org.allbinary.media.image.ImageSwtRotationUtil_Package_References.ImageSwtRotationUtil_Access_Array;
+   function "=" (Left, Right : ImageSwtRotationUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References."=";
+   subtype ImageSwtRotationUtil_Access_Array_Access is org.allbinary.media.image.ImageSwtRotationUtil_Package_References.ImageSwtRotationUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageSwtRotationUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References."=";
+   subtype ImageSwtRotationUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageSwtRotationUtil_Package_References.ImageSwtRotationUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageSwtRotationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References."=";
+   subtype ImageSwtRotationUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageSwtRotationUtil_Package_References.ImageSwtRotationUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageSwtRotationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References."=";
    procedure Initialize_Fields (This : in out ImageRotationUtil'Class) is
    begin
       null;
@@ -36,7 +71,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
 
    function getInstance return ImageRotationUtil_Access is
    begin
-        return ImageRotationUtil_Package.instance;
+        return ImageRotationUtil_Access (ImageRotationUtil_Package.instance);
    end getInstance;
 
    procedure Initialize (This : in out ImageRotationUtil'Class) is

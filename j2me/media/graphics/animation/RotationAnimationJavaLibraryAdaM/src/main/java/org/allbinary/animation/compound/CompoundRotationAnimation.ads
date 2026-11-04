@@ -12,6 +12,16 @@
 --  
 --  Generated Code Do Not Modify
 
+limited with org.allbinary.animation.compound.CompoundRotationAnimation_Package;
+package org.allbinary.animation.compound.CompoundRotationAnimation_Package_References is
+   type CompoundRotationAnimation_Access is access all org.allbinary.animation.compound.CompoundRotationAnimation_Package.CompoundRotationAnimation'Class;
+   type CompoundRotationAnimation_Access_Array is array (Natural range <>) of CompoundRotationAnimation_Access;
+   type CompoundRotationAnimation_Access_Array_Access is access all CompoundRotationAnimation_Access_Array;
+   type CompoundRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of CompoundRotationAnimation_Access_Array_Access;
+   type CompoundRotationAnimation_Access_Array_Access_Array_Access is access all CompoundRotationAnimation_Access_Array_Access_Array;
+end org.allbinary.animation.compound.CompoundRotationAnimation_Package_References;
+
+with org.allbinary.animation.compound.CompoundRotationAnimation_Package_References;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Strings.Maps.Constants;
 with Ada.Characters.Handling;
@@ -20,14 +30,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+limited with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL_Package_References;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehavior_Package_References;
+limited with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimation_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
-with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
-with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+limited with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.Direction_Package_References;
+limited with org.allbinary.math.Angle_Package;
+with org.allbinary.math.Angle_Package_References;
+limited with org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.animation.compound.CompoundAnimationInterface_Package; use org.allbinary.animation.compound.CompoundAnimationInterface_Package;
 
 package org.allbinary.animation.compound.CompoundRotationAnimation_Package is
@@ -40,13 +57,91 @@ package org.allbinary.animation.compound.CompoundRotationAnimation_Package is
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package Reference_Types is
+   subtype GL_Access is javax.microedition.khronos.opengles.GL_Package_References.GL_Access;
+   use type GL_Access;
+   subtype GL_Access_Array is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array;
+   use type GL_Access_Array;
+   subtype GL_Access_Array_Access is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array_Access;
+   use type GL_Access_Array_Access;
+   subtype GL_Access_Array_Access_Array is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array_Access_Array;
+   use type GL_Access_Array_Access_Array;
+   subtype GL_Access_Array_Access_Array_Access is javax.microedition.khronos.opengles.GL_Package_References.GL_Access_Array_Access_Array_Access;
+   use type GL_Access_Array_Access_Array_Access;
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype AnimationBehavior_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access;
+   use type AnimationBehavior_Access;
+   subtype AnimationBehavior_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array;
+   use type AnimationBehavior_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access;
+   subtype AnimationBehavior_Access_Array_Access_Array is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array;
+   use type AnimationBehavior_Access_Array_Access_Array;
+   subtype AnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array_Access;
+   use type AnimationBehavior_Access_Array_Access_Array_Access;
+   subtype IndexedAnimation_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access;
+   use type IndexedAnimation_Access;
+   subtype IndexedAnimation_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array;
+   use type IndexedAnimation_Access_Array;
+   subtype IndexedAnimation_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access;
+   use type IndexedAnimation_Access_Array_Access;
+   subtype IndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array;
+   use type IndexedAnimation_Access_Array_Access_Array;
+   subtype IndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array_Access;
+   use type IndexedAnimation_Access_Array_Access_Array_Access;
+   subtype Direction_Access is org.allbinary.direction.Direction_Package_References.Direction_Access;
+   use type Direction_Access;
+   subtype Direction_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array;
+   use type Direction_Access_Array;
+   subtype Direction_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access;
+   use type Direction_Access_Array_Access;
+   subtype Direction_Access_Array_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array;
+   use type Direction_Access_Array_Access_Array;
+   subtype Direction_Access_Array_Access_Array_Access is org.allbinary.direction.Direction_Package_References.Direction_Access_Array_Access_Array_Access;
+   use type Direction_Access_Array_Access_Array_Access;
+   subtype Angle_Access is org.allbinary.math.Angle_Package_References.Angle_Access;
+   use type Angle_Access;
+   subtype Angle_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array;
+   use type Angle_Access_Array;
+   subtype Angle_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access;
+   use type Angle_Access_Array_Access;
+   subtype Angle_Access_Array_Access_Array is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array;
+   use type Angle_Access_Array_Access_Array;
+   subtype Angle_Access_Array_Access_Array_Access is org.allbinary.math.Angle_Package_References.Angle_Access_Array_Access_Array_Access;
+   use type Angle_Access_Array_Access_Array_Access;
+   subtype AngleInfo_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access;
+   use type AngleInfo_Access;
+   subtype AngleInfo_Access_Array is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array;
+   use type AngleInfo_Access_Array;
+   subtype AngleInfo_Access_Array_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access;
+   use type AngleInfo_Access_Array_Access;
+   subtype AngleInfo_Access_Array_Access_Array is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access_Array;
+   use type AngleInfo_Access_Array_Access_Array;
+   subtype AngleInfo_Access_Array_Access_Array_Access is org.allbinary.math.AngleInfo_Package_References.AngleInfo_Access_Array_Access_Array_Access;
+   use type AngleInfo_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
 
-   type CompoundRotationAnimation is tagged;
-   type CompoundRotationAnimation_Access is access all CompoundRotationAnimation'Class;
-   type CompoundRotationAnimation_Access_Array is array (Natural range <>) of CompoundRotationAnimation_Access;
-   type CompoundRotationAnimation_Access_Array_Access is access all CompoundRotationAnimation_Access_Array;
-   type CompoundRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of CompoundRotationAnimation_Access_Array_Access;
-   type CompoundRotationAnimation_Access_Array_Access_Array_Access is access all CompoundRotationAnimation_Access_Array_Access_Array;
+
+   subtype CompoundRotationAnimation_Access is org.allbinary.animation.compound.CompoundRotationAnimation_Package_References.CompoundRotationAnimation_Access;
+   function "=" (Left, Right : CompoundRotationAnimation_Access) return Boolean renames org.allbinary.animation.compound.CompoundRotationAnimation_Package_References."=";
+   subtype CompoundRotationAnimation_Access_Array is org.allbinary.animation.compound.CompoundRotationAnimation_Package_References.CompoundRotationAnimation_Access_Array;
+   function "=" (Left, Right : CompoundRotationAnimation_Access_Array) return Boolean renames org.allbinary.animation.compound.CompoundRotationAnimation_Package_References."=";
+   subtype CompoundRotationAnimation_Access_Array_Access is org.allbinary.animation.compound.CompoundRotationAnimation_Package_References.CompoundRotationAnimation_Access_Array_Access;
+   function "=" (Left, Right : CompoundRotationAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.compound.CompoundRotationAnimation_Package_References."=";
+   subtype CompoundRotationAnimation_Access_Array_Access_Array is org.allbinary.animation.compound.CompoundRotationAnimation_Package_References.CompoundRotationAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : CompoundRotationAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.compound.CompoundRotationAnimation_Package_References."=";
+   subtype CompoundRotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.compound.CompoundRotationAnimation_Package_References.CompoundRotationAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : CompoundRotationAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.compound.CompoundRotationAnimation_Package_References."=";
 
    type CompoundRotationAnimation is new RotationAnimation and CompoundAnimationInterface with record
       animationInterfaceArray : RotationAnimation_Access_Array_Access;

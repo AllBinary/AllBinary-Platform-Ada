@@ -13,12 +13,50 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.DynamicObjectData_Package; use org.allbinary.business.DynamicObjectData_Package;
+with org.allbinary.business.advertisement.AdvertisementsInterface_Package; use org.allbinary.business.advertisement.AdvertisementsInterface_Package;
+with org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package; use org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
+with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
+with org.allbinary.business.advertisement.search.category.AdvertisementCategoryInterface_Package;
+with org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
+with org.allbinary.business.advertisement.AdvertisementInterface_Package;
+with org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package;
+with org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
+with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
+with org.allbinary.business.advertisement.search.website.AdvertisementWebsiteInterface_Package;
+with org.allbinary.business.advertisement.AdvertisementsInterface_Package;
+with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+with org.allbinary.logic.control.contraints.MinMaxDoubleConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.price.PriceConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
+with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
 package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package is
 
    package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
+   subtype AdvertisementsInterface_Access is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access;
+   function "=" (Left, Right : AdvertisementsInterface_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   subtype AdvertisementsInterface_Access_Array is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access_Array;
+   function "=" (Left, Right : AdvertisementsInterface_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   subtype AdvertisementsInterface_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementsInterface_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   subtype AdvertisementsInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   subtype AdvertisementsInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementsInterface_Package_References.AdvertisementsInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementsInterface_Package_References."=";
+   subtype AdvertisementSearchInterface_Access is org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References.AdvertisementSearchInterface_Access;
+   function "=" (Left, Right : AdvertisementSearchInterface_Access) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References."=";
+   subtype AdvertisementSearchInterface_Access_Array is org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References.AdvertisementSearchInterface_Access_Array;
+   function "=" (Left, Right : AdvertisementSearchInterface_Access_Array) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References."=";
+   subtype AdvertisementSearchInterface_Access_Array_Access is org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References.AdvertisementSearchInterface_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementSearchInterface_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References."=";
+   subtype AdvertisementSearchInterface_Access_Array_Access_Array is org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References.AdvertisementSearchInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : AdvertisementSearchInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References."=";
+   subtype AdvertisementSearchInterface_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References.AdvertisementSearchInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AdvertisementSearchInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package_References."=";
    procedure Initialize_Fields (This : in out AdvertisementCampaign'Class) is
    begin
       null;

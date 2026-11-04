@@ -47,7 +47,7 @@ package body org.allbinary.canvas.SpecialMessageUtil_Package is
 
    function getInstance return SpecialMessageUtil_Access is
    begin
-        return SpecialMessageUtil_Package.SINGLETON;
+        return SpecialMessageUtil_Access (SpecialMessageUtil_Package.SINGLETON);
    end getInstance;
 
    function get (This : in out SpecialMessageUtil) return Unbounded_String is

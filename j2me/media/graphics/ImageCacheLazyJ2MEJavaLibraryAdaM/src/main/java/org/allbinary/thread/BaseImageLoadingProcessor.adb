@@ -36,7 +36,7 @@ package body org.allbinary.thread.BaseImageLoadingProcessor_Package is
 
    function getInstance return BaseImageLoadingProcessor_Access is
    begin
-        return BaseImageLoadingProcessor_Package.instance;
+        return BaseImageLoadingProcessor_Access (BaseImageLoadingProcessor_Package.instance);
    end getInstance;
 
    procedure runTask (This : in out BaseImageLoadingProcessor) is
