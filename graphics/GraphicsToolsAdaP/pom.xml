@@ -33,14 +33,15 @@
         -->
         
         
-        <module>../AllBinaryGraphicsUserInterfaceJavaLibraryAdaM</module>
+<!--        <module>../AllBinaryGraphicsUserInterfaceJavaLibraryAdaM</module>-->
         
         <module>../../allbinary_src/logging/LogConfigTypeThickClientJavaLibraryAdaM</module>
+<!--        
         <module>../../allbinary_src/logging/GUILoggingAdaM</module>
                 
         <module>../AllBinaryGraphicsJavaApplicationAdaM</module>
         
-        <module>../ImageToolJavaApplicationAdaM</module>
+        <module>../ImageToolJavaApplicationAdaM</module>-->
     </modules>
 
 </project>
