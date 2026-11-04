@@ -45,7 +45,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
    procedure Initialize_Fields (This : in out PageView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.PageView_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -55,7 +55,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, PageView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.PageView_Field_logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, PageView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -77,7 +77,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PageView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.PageView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, PageView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

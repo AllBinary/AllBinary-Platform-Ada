@@ -44,6 +44,7 @@ with org.allbinary.game.input.PlayerGameInput_Package_References;
 with org.allbinary.game.input.PreGameSelectionRunnable_Package; use org.allbinary.game.input.PreGameSelectionRunnable_Package;
 with org.allbinary.game.input.GameInputProcessorComposite_Package; use org.allbinary.game.input.GameInputProcessorComposite_Package;
 with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package;
+with org.allbinary.game.input.PreGameSelectionRunnable_Package;
 
 package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package is
 

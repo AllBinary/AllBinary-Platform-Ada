@@ -44,7 +44,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
    procedure Initialize_Fields (This : in out AbSqlTable'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.AbSqlTable_Field_logUtil := LogUtil_Package.getInstance;
       This.tableName := Null_Unbounded_String;
       This.METHOD_CREATED_TABLE := To_Unbounded_String ("createTable()");
       This.METHOD_DROP_TABLE := To_Unbounded_String ("dropTable()");
@@ -82,7 +82,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
         begin
             AbSqlTable'Class (This).executeSQLStatement (data);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.TABLE_CREATION_SUCCESS & This.tableName & To_Unbounded_String (" with statement: ") & data, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_CREATED_TABLE);
+                This.AbSqlTable_Field_logUtil.putF (This.TABLE_CREATION_SUCCESS & This.tableName & To_Unbounded_String (" with statement: ") & data, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_CREATED_TABLE);
             end if;
             return This.tableName & Java_Image (This.sqlStrings.CREATE_RETURN);
         exception
@@ -91,7 +91,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (To_Unbounded_String ("Table Creation Failed: ") & This.tableName & To_Unbounded_String (" with statement: ") & data, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_CREATED_TABLE, e);
+                This.AbSqlTable_Field_logUtil.put (To_Unbounded_String ("Table Creation Failed: ") & This.tableName & To_Unbounded_String (" with statement: ") & data, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_CREATED_TABLE, e);
             end if;
             return To_Unbounded_String ("Failed to Create ") & This.tableName & To_Unbounded_String (" table.");
                 end;
@@ -105,7 +105,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
         begin
             AbSqlTable'Class (This).executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_DROP_TABLE);
+                This.AbSqlTable_Field_logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_DROP_TABLE);
             end if;
             return This.tableName & This.DROPPED_SUCCESS;
         exception
@@ -114,7 +114,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_DROP_TABLE, e);
+                This.AbSqlTable_Field_logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_DROP_TABLE, e);
             end if;
             return To_Unbounded_String ("Failed to Drop ") & This.tableName & To_Unbounded_String (" table.");
                 end;

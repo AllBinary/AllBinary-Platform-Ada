@@ -11,6 +11,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.android.MakeToast_Package; use org.allbinary.android.MakeToast_Package;
+with org.allbinary.android.MakeToast_Package;
 
 package body org.allbinary.android.ToastUtil_Package is
 

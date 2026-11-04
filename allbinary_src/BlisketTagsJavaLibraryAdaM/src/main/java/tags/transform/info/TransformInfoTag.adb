@@ -54,7 +54,7 @@ package body tags.transform.info.TransformInfoTag_Package is
    procedure Initialize_Fields (This : in out TransformInfoTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TransformInfoTag_Field_logUtil := LogUtil_Package.getInstance;
       This.name := Null_Unbounded_String;
       This.storeName := Null_Unbounded_String;
       This.objectFile := Null_Unbounded_String;
@@ -161,7 +161,7 @@ package body tags.transform.info.TransformInfoTag_Package is
         This.type_Id := value;
         TransformInfoTag'Class (This).getPropertiesHashMap.put (OutputTypeData_Package.getInstance.NAME, This.type_Id);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (To_Unbounded_String ("TransformInfoTag type set: ") & This.type_Id, TransformInfoTag_Access'(This'Unchecked_Access), To_Unbounded_String ("setType"));
+            This.TransformInfoTag_Field_logUtil.putF (To_Unbounded_String ("TransformInfoTag type set: ") & This.type_Id, TransformInfoTag_Access'(This'Unchecked_Access), To_Unbounded_String ("setType"));
         end if;
    end setType;
 

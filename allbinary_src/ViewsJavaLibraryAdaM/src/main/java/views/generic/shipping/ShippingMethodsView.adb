@@ -121,7 +121,7 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
    procedure Initialize_Fields (This : in out ShippingMethodsView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.ShippingMethodsView_Field_logUtil := LogUtil_Package.getInstance;
       
       
    end Initialize_Fields;
@@ -201,7 +201,7 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, ShippingMethodsView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
+                This.ShippingMethodsView_Field_logUtil.put (This.commonStrings.FAILURE, ShippingMethodsView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -226,7 +226,7 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
                 begin
             error := To_Unbounded_String ("Failed to view ShippingMethods");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingMethodsView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.ShippingMethodsView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingMethodsView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             return error;
                 end;

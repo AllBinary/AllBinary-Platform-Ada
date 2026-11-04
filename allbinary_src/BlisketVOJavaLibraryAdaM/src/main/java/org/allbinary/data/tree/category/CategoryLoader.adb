@@ -99,7 +99,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    procedure Initialize_Fields (This : in out CategoryLoader'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.CategoryLoader_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -109,7 +109,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         CategoryModifierTree_Package.Initialize (This, categoryFactoryInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (This.commonStrings.START, CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryLoader(CategoryFactoryInterface categoryFactoryInterface)"));
+            This.CategoryLoader_Field_logUtil.putF (This.commonStrings.START, CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryLoader(CategoryFactoryInterface categoryFactoryInterface)"));
         end if;
    end Initialize;
 
@@ -159,10 +159,10 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                         declare
                             e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
-                    This.logUtil.put (To_Unbounded_String ("Could Not Log Category"), CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("getDoc"), e);
+                    This.CategoryLoader_Field_logUtil.put (To_Unbounded_String ("Could Not Log Category"), CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("getDoc"), e);
                         end;
                 end;
-                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("getDoc"), e);
+                This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("getDoc"), e);
             end if;
             return null;
                 end;
@@ -184,7 +184,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
+                This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
@@ -206,7 +206,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
+                This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
@@ -226,7 +226,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
+                This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
@@ -248,7 +248,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
+                This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
@@ -279,7 +279,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
+                This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
@@ -310,7 +310,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
+                This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;

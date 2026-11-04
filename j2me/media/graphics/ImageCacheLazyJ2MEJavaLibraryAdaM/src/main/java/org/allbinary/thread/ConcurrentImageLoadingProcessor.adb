@@ -24,6 +24,7 @@ with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnabl
 with org.allbinary.thread.ABRunnable_Package_References;
 with org.allbinary.thread.ImageCacheRunnable_Package; use org.allbinary.thread.ImageCacheRunnable_Package;
 with org.allbinary.thread.ImageThreadPool_Package; use org.allbinary.thread.ImageThreadPool_Package;
+with org.allbinary.thread.ImageCacheRunnable_Package;
 with org.allbinary.thread.ImageThreadPool_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package;
 

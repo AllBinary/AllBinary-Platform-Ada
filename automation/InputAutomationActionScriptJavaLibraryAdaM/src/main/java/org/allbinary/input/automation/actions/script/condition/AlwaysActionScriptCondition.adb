@@ -87,7 +87,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    procedure Initialize_Fields (This : in out AlwaysActionScriptCondition'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.AlwaysActionScriptCondition_Field_logUtil := LogUtil_Package.getInstance;
       This.alwaysActionScriptConditionJPanel := null;
       This.isOn := False;
    end Initialize_Fields;
@@ -167,7 +167,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (AlwaysActionScriptConditionData_Package.IS_ON, Java_Box (To_Unbounded_String (Java_Image (AlwaysActionScriptCondition'Class (This).isIsOn))));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, AlwaysActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
+        This.AlwaysActionScriptCondition_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, AlwaysActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
@@ -192,7 +192,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
 
    procedure log (This : in out AlwaysActionScriptCondition) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Is On: ") & Java_Image (AlwaysActionScriptCondition'Class (This).isIsOn), AlwaysActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+        This.AlwaysActionScriptCondition_Field_logUtil.putF (To_Unbounded_String ("Is On: ") & Java_Image (AlwaysActionScriptCondition'Class (This).isIsOn), AlwaysActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    procedure toXmlNode (This : in out AlwaysActionScriptCondition; document_Param : access Document_Package.Document'Class) is

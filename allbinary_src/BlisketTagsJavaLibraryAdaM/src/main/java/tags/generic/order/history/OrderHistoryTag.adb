@@ -44,7 +44,7 @@ package body tags.generic_Id.order.history.OrderHistoryTag_Package is
    procedure Initialize_Fields (This : in out OrderHistoryTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.OrderHistoryTag_Field_logUtil := LogUtil_Package.getInstance;
       This.status := Null_Unbounded_String;
    end Initialize_Fields;
 

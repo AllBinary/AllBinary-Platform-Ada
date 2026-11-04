@@ -29,6 +29,7 @@ with org.allbinary.animation.NullRotationAnimation2_Package; use org.allbinary.a
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.NullRotationAnimation_Package;
+with org.allbinary.animation.NullRotationAnimation2_Package;
 with org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.RotationAnimationInterface_Package;
 

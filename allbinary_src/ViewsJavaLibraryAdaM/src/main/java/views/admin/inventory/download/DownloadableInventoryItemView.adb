@@ -122,7 +122,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    procedure Initialize_Fields (This : in out DownloadableInventoryItemView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.DownloadableInventoryItemView_Field_logUtil := LogUtil_Package.getInstance;
       This.basicItemData := BasicItemData_Package.getInstance;
       
       This.id := Null_Unbounded_String;
@@ -197,7 +197,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.DownloadableInventoryItemView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -221,9 +221,9 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (fullPath);
         stringBuffer.append (fileName);
-        This.logUtil.putF (To_Unbounded_String ("FileName: ") & fileName, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("processFile()"));
+        This.DownloadableInventoryItemView_Field_logUtil.putF (To_Unbounded_String ("FileName: ") & fileName, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("processFile()"));
         file := AbFile_Package.createAbFile (stringBuffer.toString);
-        This.logUtil.putF (file.getPath, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("processFiles()"));
+        This.DownloadableInventoryItemView_Field_logUtil.putF (file.getPath, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("processFiles()"));
         file.createNewFile;
         byteArray := fileItem.get;
         FileUtil_Package.getInstance.write (ByteArrayInputStream_Package.Create (byteArray), file);
@@ -242,9 +242,9 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (fullPath);
         stringBuffer.append (fileName);
-        This.logUtil.putF (To_Unbounded_String ("FileName: ") & fileName, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("unzip()"));
+        This.DownloadableInventoryItemView_Field_logUtil.putF (To_Unbounded_String ("FileName: ") & fileName, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("unzip()"));
         file := AbFile_Package.createAbFile (stringBuffer.toString);
-        This.logUtil.putF (file.getPath, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("unzip()"));
+        This.DownloadableInventoryItemView_Field_logUtil.putF (file.getPath, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("unzip()"));
         ZipFileUtil_Package.getInstance.unzip (fullPath, file, fileName);
    end unzip;
 

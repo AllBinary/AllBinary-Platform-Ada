@@ -92,8 +92,8 @@ package body views.admin.workflow.NewView_Package is
    procedure Initialize_Fields (This : in out NewView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
+      This.NewView_Field_logUtil := LogUtil_Package.getInstance;
+      This.NewView_Field_abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
    end Initialize_Fields;
 
 
@@ -104,7 +104,7 @@ package body views.admin.workflow.NewView_Package is
         WorkFlowView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         httpTransformInfoInterface := TransformInfoHttpInterface_Access (NewView'Class (This).getTransformInfoInterface);
-        This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, Java_Unbox (httpTransformInfoInterface.getPropertiesHashMap.get (DynamicObjectData_Package.NAME)));
+        This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.NewView_Field_abeClientInformation, Java_Unbox (httpTransformInfoInterface.getPropertiesHashMap.get (DynamicObjectData_Package.NAME)));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return NewView_Access is
@@ -124,7 +124,7 @@ package body views.admin.workflow.NewView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), NewView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.NewView_Field_logUtil.put (To_Unbounded_String ("Failed to validate"), NewView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -144,7 +144,7 @@ package body views.admin.workflow.NewView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), NewView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.NewView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), NewView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;

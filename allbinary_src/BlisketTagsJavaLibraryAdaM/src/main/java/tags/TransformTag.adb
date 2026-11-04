@@ -53,7 +53,7 @@ package body tags.TransformTag_Package is
    procedure Initialize_Fields (This : in out TransformTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TransformTag_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -62,7 +62,7 @@ package body tags.TransformTag_Package is
         TransformInfoTag_Package.Initialize (This, ViewHelperFactory_Package.Create);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (This.commonStrings.START, TransformTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.TransformTag_Field_logUtil.putF (This.commonStrings.START, TransformTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -79,7 +79,7 @@ package body tags.TransformTag_Package is
         TransformInfoTag_Package.Initialize (This, tagHelperFactoryInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (This.commonStrings.START, TransformTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.TransformTag_Field_logUtil.putF (This.commonStrings.START, TransformTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -103,7 +103,7 @@ package body tags.TransformTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformTag_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.TransformTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TransformTag_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -116,7 +116,7 @@ package body tags.TransformTag_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("Creating with: " & ASCII.LF & "") & TransformTag'Class (This).getPropertiesHashMap.toString, TransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                This.TransformTag_Field_logUtil.putF (To_Unbounded_String ("Creating with: " & ASCII.LF & "") & TransformTag'Class (This).getPropertiesHashMap.toString, TransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                 stringBuffer := StringMaker_Package.Create;
@@ -124,12 +124,12 @@ package body tags.TransformTag_Package is
                 stringBuffer.append (TransformTag'Class (This).getName);
                 stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "ViewFile: "));
                 stringBuffer.append (TransformTag'Class (This).getObjectFile);
-                This.logUtil.putF (stringBuffer.toString, TransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                This.TransformTag_Field_logUtil.putF (stringBuffer.toString, TransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             TransformTag'Class (This).setHelper;
             This.pageContext.getOut.print (TransformTag'Class (This).view);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("Tag End"), TransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                This.TransformTag_Field_logUtil.putF (To_Unbounded_String ("Tag End"), TransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             return SKIP_BODY;
         exception

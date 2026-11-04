@@ -101,7 +101,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    procedure Initialize_Fields (This : in out KeyboardActionScriptInput'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.KeyboardActionScriptInput_Field_logUtil := LogUtil_Package.getInstance;
       This.keyArray := new Integer_Array'(0 => KeySingletonFactory_Package.getInstance (KeyEvent_Package.VK_0));
       
       This.press := False;
@@ -123,7 +123,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         BasicProfileActionScriptInput_Package.Initialize (This, NAME, node);
         Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, KeyboardActionScriptInput_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.KeyboardActionScriptInput_Field_logUtil.putF (This.commonStrings.START, KeyboardActionScriptInput_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         actionNode := DomSearchHelper_Package.getNode (KeyboardActionScriptInputData_Package.NAME, node.getChildNodes);
         if (actionNode) /= (null) then
             nodeList := actionNode.getChildNodes;
@@ -232,7 +232,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    procedure setKeyArray (This : in out KeyboardActionScriptInput; keyArray : Integer_Array_Access) is
    begin
         if (keyArray) /= (null) then
-            This.logUtil.putF ((CommonLabels_Package.getInstance.START) + (keyArray'Length), KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setKeyArray"));
+            This.KeyboardActionScriptInput_Field_logUtil.putF ((CommonLabels_Package.getInstance.START) + (keyArray'Length), KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setKeyArray"));
         end if;
         This.keyArray := keyArray;
    end setKeyArray;
@@ -250,7 +250,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    procedure setText (This : in out KeyboardActionScriptInput; text : Unbounded_String) is
       integerArray : Integer_Array_Access;
    begin
-        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & text, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setText"));
+        This.KeyboardActionScriptInput_Field_logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & text, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setText"));
         integerArray := KeyboardActionScriptInput'Class (This).integerArrayValue (text);
         KeyboardActionScriptInput'Class (This).setKeyArray (integerArray);
    end setText;
@@ -282,7 +282,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       nextCharString : Unbounded_String;
       integerArray : Integer_Array_Access;
    begin
-        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & text, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
+        This.KeyboardActionScriptInput_Field_logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & text, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         index := 0;
         while (index) < (Length (text)) loop
@@ -292,16 +292,16 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                     endIndex := Java_Index_Of (text, Java_Image (';'), (index) + (1));
                     if (endIndex) /= (-(1)) then
                         nextCharString := Unbounded_Slice (text, ((index) + (2)) + 1, endIndex);
-                        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Char String: ") & nextCharString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
+                        This.KeyboardActionScriptInput_Field_logUtil.putF (Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Char String: ") & nextCharString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
                         vector.add (To_Unbounded_String (Java_Image (Unbounded_Slice (nextCharString, (index) + 1, Length (nextCharString)))));
                         index := ((index) + (Length (nextCharString))) + (3);
-                        goto Continue_N69468;
+                        goto Continue_N69473;
                     end if;
                 end if;
             end if;
             vector.add (KeySingletonFactory_Package.getHashtable.get (To_Unbounded_String (Java_Image (aChar))));
             index := index + 1;
-            <<Continue_N69468>> null;
+            <<Continue_N69473>> null;
         end loop;
         integerArray := Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => 0)));
         return integerArray;
@@ -318,7 +318,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         hashMap.put (KeyboardActionScriptInputData_Package.DELAY_BETWEEN_KEYS, Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).getDelayBetweenKeys))));
         hashMap.put (KeyboardActionScriptInputData_Package.PRESS, Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).isPress))));
         hashMap.put (KeyboardActionScriptInputData_Package.RELEASE, Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).isRelease))));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
+        This.KeyboardActionScriptInput_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
@@ -340,7 +340,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
 
    procedure log (This : in out KeyboardActionScriptInput) is
    begin
-        This.logUtil.putF (KeyboardActionScriptInput'Class (This).toString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+        This.KeyboardActionScriptInput_Field_logUtil.putF (KeyboardActionScriptInput'Class (This).toString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    function toString (This : in out KeyboardActionScriptInput) return Unbounded_String is

@@ -64,7 +64,7 @@ package body org.allbinary.animation.image.BottomToTopImageAnimation_Package is
       null;
       This.startHeight := 0;
       This.currentHeight := 0;
-      This.anchor := Anchor_Package.TOP_LEFT;
+      This.BottomToTopImageAnimation_Field_anchor := Anchor_Package.TOP_LEFT;
    end Initialize_Fields;
 
 
@@ -111,7 +111,7 @@ package body org.allbinary.animation.image.BottomToTopImageAnimation_Package is
    procedure paintXY (This : in out BottomToTopImageAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        graphics.drawRegion (BottomToTopImageAnimation'Class (This).getImage, BottomToTopImageAnimation'Class (This).getStartX, This.startHeight, BottomToTopImageAnimation'Class (This).getDrawWidth, This.currentHeight, Sprite_Package.TRANS_NONE, x, (y) + (This.startHeight), This.anchor);
+        graphics.drawRegion (BottomToTopImageAnimation'Class (This).getImage, BottomToTopImageAnimation'Class (This).getStartX, This.startHeight, BottomToTopImageAnimation'Class (This).getDrawWidth, This.currentHeight, Sprite_Package.TRANS_NONE, x, (y) + (This.startHeight), This.BottomToTopImageAnimation_Field_anchor);
    end paintXY;
 
 end org.allbinary.animation.image.BottomToTopImageAnimation_Package;

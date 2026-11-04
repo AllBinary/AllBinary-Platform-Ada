@@ -80,7 +80,7 @@ package body views.admin.user.EditValidationUserView_Package is
    procedure Initialize_Fields (This : in out EditValidationUserView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.EditValidationUserView_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -122,7 +122,7 @@ package body views.admin.user.EditValidationUserView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), EditValidationUserView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.EditValidationUserView_Field_logUtil.put (To_Unbounded_String ("Failed to validate form"), EditValidationUserView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -136,7 +136,7 @@ package body views.admin.user.EditValidationUserView_Package is
             stringBuffer := StringMaker_Package.Create;
             if (UserName_Package.getInstance.isValid (This.userName)) = (True) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User Name is valid"), EditValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                    This.EditValidationUserView_Field_logUtil.putF (To_Unbounded_String ("User Name is valid"), EditValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 This.user := UserEntityFactory_Package.getInstance.getUser (This.userName);
                 if (This.user) = (null) then
@@ -149,7 +149,7 @@ package body views.admin.user.EditValidationUserView_Package is
             end if;
             if (This.user.isValid) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User exists but is invalid - Probably manually modified"), EditValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                    This.EditValidationUserView_Field_logUtil.putF (To_Unbounded_String ("User exists but is invalid - Probably manually modified"), EditValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 stringBuffer.append (To_Unbounded_String ("User data is not valid - Please call administrator.<br />"));
                 stringBuffer.append (This.user.validationInfo);
@@ -161,7 +161,7 @@ package body views.admin.user.EditValidationUserView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), EditValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.EditValidationUserView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), EditValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;

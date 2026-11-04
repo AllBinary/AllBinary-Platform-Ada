@@ -40,6 +40,7 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package_References;
 with org.allbinary.animation.image.ActualRotationAnimation_Package; use org.allbinary.animation.image.ActualRotationAnimation_Package;
+with org.allbinary.animation.image.ActualRotationAnimation_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package;
 
 package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is

@@ -104,7 +104,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    procedure Initialize_Fields (This : in out ImageActionScriptOutput'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.ImageActionScriptOutput_Field_logUtil := LogUtil_Package.getInstance;
       This.saved := False;
       This.display := False;
       This.imageTypes := null;
@@ -122,7 +122,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    begin
         BasicProfileActionScriptOutput_Package.Initialize (This, NAME, node);
         Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, ImageActionScriptOutput_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.ImageActionScriptOutput_Field_logUtil.putF (This.commonStrings.START, ImageActionScriptOutput_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         actionNode := DomSearchHelper_Package.getNode (ImageActionScriptOutputData_Package.NAME, node.getChildNodes);
         if (actionNode) /= (null) then
             nodeList := actionNode.getChildNodes;
@@ -181,7 +181,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (ImageActionScriptOutputData_Package.DISPLAY, Java_Box (To_Unbounded_String (Java_Image (ImageActionScriptOutput'Class (This).isDisplay))));
         hashMap.put (ImageActionScriptOutputData_Package.SAVE, Java_Box (To_Unbounded_String (Java_Image (ImageActionScriptOutput'Class (This).isSaved))));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
+        This.ImageActionScriptOutput_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
@@ -244,7 +244,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
 
    procedure log (This : in out ImageActionScriptOutput) is
    begin
-        This.logUtil.putF (ImageActionScriptOutput'Class (This).future_toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+        This.ImageActionScriptOutput_Field_logUtil.putF (ImageActionScriptOutput'Class (This).future_toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    function getImageTypes (This : in out ImageActionScriptOutput) return ImageTypes_Access is

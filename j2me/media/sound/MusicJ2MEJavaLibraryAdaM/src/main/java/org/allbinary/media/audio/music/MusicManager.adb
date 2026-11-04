@@ -31,6 +31,7 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.media.audio.music.MusicManagerPlayerListener_Package; use org.allbinary.media.audio.music.MusicManagerPlayerListener_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.media.audio.music.MusicManagerPlayerListener_Package;
 
 package body org.allbinary.media.audio.music.MusicManager_Package is
 

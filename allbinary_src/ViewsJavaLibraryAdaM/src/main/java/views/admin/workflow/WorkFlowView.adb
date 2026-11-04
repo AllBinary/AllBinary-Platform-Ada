@@ -82,7 +82,7 @@ package body views.admin.workflow.WorkFlowView_Package is
    procedure Initialize_Fields (This : in out WorkFlowView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.WorkFlowView_Field_logUtil := LogUtil_Package.getInstance;
       This.workFlowInterface := null;
    end Initialize_Fields;
 
@@ -112,7 +112,7 @@ package body views.admin.workflow.WorkFlowView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"), e);
+                This.WorkFlowView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"), e);
             end if;
             return null;
                 end;
@@ -136,7 +136,7 @@ package body views.admin.workflow.WorkFlowView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.WorkFlowView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

@@ -58,6 +58,10 @@ with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHT
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.FirstProcessor_Package;
+with org.allbinary.image.HTMLEndProcessor_Package;
+with org.allbinary.image.NotHTMLEndProcessor_Package;
+with org.allbinary.image.NotHTMLProcessor_Package;
 
 package body org.allbinary.image.ImageCache_Package is
 
@@ -785,7 +789,10 @@ with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstPr
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.FirstProcessor_Package;
+with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.NotHTMLEndProcessor_Package;
 
 package body org.allbinary.image.NotHTMLProcessor_Package is
 
@@ -995,7 +1002,10 @@ with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHT
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.FirstProcessor_Package;
+with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.NotHTMLProcessor_Package;
 
 package body org.allbinary.image.NotHTMLEndProcessor_Package is
 
@@ -1207,7 +1217,10 @@ with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstPr
 with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHTMLProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.NotHTMLEndProcessor_Package;
+with org.allbinary.image.NotHTMLProcessor_Package;
 
 package body org.allbinary.image.HTMLEndProcessor_Package is
 
@@ -1427,7 +1440,10 @@ with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHT
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.NotHTMLEndProcessor_Package;
+with org.allbinary.image.NotHTMLProcessor_Package;
 
 package body org.allbinary.image.FirstProcessor_Package is
 

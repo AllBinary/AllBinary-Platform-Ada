@@ -46,7 +46,7 @@ package body tags.HelperTag_Package is
    procedure Initialize_Fields (This : in out HelperTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.HelperTag_Field_logUtil := LogUtil_Package.getInstance;
       
       This.anyType := null;
    end Initialize_Fields;
@@ -58,7 +58,7 @@ package body tags.HelperTag_Package is
       PropertiesTag_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (This.commonStrings.START, HelperTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.HelperTag_Field_logUtil.putF (This.commonStrings.START, HelperTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.tagHelperFactoryInterface := tagHelperFactoryInterface;
    end Initialize;
@@ -75,7 +75,7 @@ package body tags.HelperTag_Package is
    begin
         if (This.anyType) = (null) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("Creating TagHelper with: " & ASCII.LF & "") & HelperTag'Class (This).getPropertiesHashMap.toString, HelperTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doStartTag"));
+                This.HelperTag_Field_logUtil.putF (To_Unbounded_String ("Creating TagHelper with: " & ASCII.LF & "") & HelperTag'Class (This).getPropertiesHashMap.toString, HelperTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doStartTag"));
             end if;
             This.anyType := This.tagHelperFactoryInterface.getInstance (HelperTag'Class (This).getPropertiesHashMap, This.pageContext);
         end if;
@@ -89,7 +89,7 @@ package body tags.HelperTag_Package is
    function doEndTag (This : in out HelperTag) return Integer is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (To_Unbounded_String ("Tag Ended"), HelperTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doEndTag"));
+            This.HelperTag_Field_logUtil.putF (To_Unbounded_String ("Tag Ended"), HelperTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doEndTag"));
         end if;
         This.anyType := null;
         return PropertiesTag_Package.PropertiesTag (This).doEndTag;

@@ -47,7 +47,7 @@ package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
    procedure Initialize_Fields (This : in out AlwaysRepaintBehavior'Class) is
    begin
       null;
-      This.NAME := To_Unbounded_String ("AlwaysRepaintBehavior");
+      This.AlwaysRepaintBehavior_Field_NAME := To_Unbounded_String ("AlwaysRepaintBehavior");
    end Initialize_Fields;
 
    procedure Initialize (This : in out AlwaysRepaintBehavior'Class) is
@@ -100,7 +100,7 @@ package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
 --                              end;
 --                      end;
 --     end run;
-, This.NAME);
+, This.AlwaysRepaintBehavior_Field_NAME);
             thread.start;
         end if;
    end repaint;

@@ -75,7 +75,7 @@ package body org.allbinary.input.automation.module.TestInputAutomationActionWork
    procedure Initialize_Fields (This : in out TestInputAutomationActionWorker'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TestInputAutomationActionWorker_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -87,7 +87,7 @@ package body org.allbinary.input.automation.module.TestInputAutomationActionWork
    begin
         AbstractInputAutomationWorker_Package.Initialize (This, inputAutomationActionInterface);
         Initialize_Fields (This);
-        This.logUtil.putF (To_Unbounded_String ("BasicTestAttackWorder"), TestInputAutomationActionWorker_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.TestInputAutomationActionWorker_Field_logUtil.putF (To_Unbounded_String ("BasicTestAttackWorder"), TestInputAutomationActionWorker_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.sleep := sleep;
    end Initialize;
 
@@ -114,7 +114,7 @@ package body org.allbinary.input.automation.module.TestInputAutomationActionWork
       robot : InputRobotInterface_Access;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, TestInputAutomationActionWorker_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
+        This.TestInputAutomationActionWorker_Field_logUtil.putF (This.commonStrings.START, TestInputAutomationActionWorker_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         hashtable := InputRobotFactory_Package.getInstance.get;
         set := hashtable.keySet;
         inputTypeNameArray := set.toArray;

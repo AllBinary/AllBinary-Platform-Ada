@@ -126,8 +126,8 @@ package body views.admin.inventory.AddFileValidationView_Package is
    procedure Initialize_Fields (This : in out AddFileValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.basicItemData := BasicItemData_Package.getInstance;
+      This.AddFileValidationView_Field_logUtil := LogUtil_Package.getInstance;
+      This.AddFileValidationView_Field_basicItemData := BasicItemData_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -168,14 +168,14 @@ package body views.admin.inventory.AddFileValidationView_Package is
                     stringBuffer.append (AddFileValidationView_Package.ADDPRODUCT);
                     stringBuffer.append (To_Unbounded_String (" or "));
                     stringBuffer.append (AddFileValidationView_Package.NEXTSTEP);
-                    This.logUtil.putF (stringBuffer.toString, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.AddFileValidationView_Field_logUtil.putF (stringBuffer.toString, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
             basicItemValidation := BasicItemValidation_Package.Create (This.itemInterface);
             if (basicItemValidation.isValid) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (basicItemValidation.validationInfo, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.AddFileValidationView_Field_logUtil.putF (basicItemValidation.validationInfo, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -185,17 +185,17 @@ package body views.admin.inventory.AddFileValidationView_Package is
             categoryFile := AbFile_Package.createAbFile (fullCategory);
             if not (categoryFile.isDirectory) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Category Does Not Exist: ") & fullCategory, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.AddFileValidationView_Field_logUtil.putF (To_Unbounded_String ("Category Does Not Exist: ") & fullCategory, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
             if (InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance.getItem (This.itemInterface.getId)) /= (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Item Already Exists"), AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.AddFileValidationView_Field_logUtil.putF (To_Unbounded_String ("Item Already Exists"), AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
-            imageFileItemObject := AddFileValidationView'Class (This).getRequestHashMap.get (This.basicItemData.IMAGE);
+            imageFileItemObject := AddFileValidationView'Class (This).getRequestHashMap.get (This.AddFileValidationView_Field_basicItemData.IMAGE);
             if HttpFileUploadUtil_Package.getInstance.isValid (imageFileItemObject) then
                 fileItem := FileItem_Access (imageFileItemObject);
                 fileName := fileItem.getName;
@@ -212,7 +212,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Exception in validation"), AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.AddFileValidationView_Field_logUtil.put (To_Unbounded_String ("Exception in validation"), AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -257,7 +257,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
             storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (AddFileValidationView'Class (This).getWeblisketSession.getStoreName));
             fullCategory := StringMaker_Package.Create.append (URLGLOBALS_Package.getWebappPath).append (storeFrontInterface.getCurrentHostNamePath).append (This.itemInterface.getCategory).toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Category: ") & fullCategory, AddFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                This.AddFileValidationView_Field_logUtil.putF (To_Unbounded_String ("Category: ") & fullCategory, AddFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
             end if;
             categoryFile := AbFile_Package.createAbFile (fullCategory);
             if not (categoryFile.isDirectory) then
@@ -275,11 +275,11 @@ package body views.admin.inventory.AddFileValidationView_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Existing Item With MoneyException"), AddFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                    This.AddFileValidationView_Field_logUtil.putF (To_Unbounded_String ("Existing Item With MoneyException"), AddFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                     end;
             end;
-            anyType := AddFileValidationView'Class (This).getRequestHashMap.get (This.basicItemData.IMAGE);
+            anyType := AddFileValidationView'Class (This).getRequestHashMap.get (This.AddFileValidationView_Field_basicItemData.IMAGE);
             if HttpFileUploadUtil_Package.getInstance.isValid (anyType) then
                 fileItem := FileItem_Access (anyType);
                 fileName := fileItem.getName;
@@ -294,7 +294,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), AddFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.AddFileValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), AddFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;
@@ -329,7 +329,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
                     stringBuffer.appendlong (size);
                     stringBuffer.append (To_Unbounded_String (">"));
                     stringBuffer.appendint (Integer (fileData.MAXIMAGEFILESIZE));
-                    This.logUtil.putF (stringBuffer.toString, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.AddFileValidationView_Field_logUtil.putF (stringBuffer.toString, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -341,7 +341,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
                 stringBuffer.appendlong (size);
                 stringBuffer.append (To_Unbounded_String (">"));
                 stringBuffer.appendint (Integer (fileData.MINIMAGEFILESIZE));
-                This.logUtil.putF (stringBuffer.toString, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.AddFileValidationView_Field_logUtil.putF (stringBuffer.toString, AddFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return False;
         end if;
@@ -357,7 +357,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
    begin
         fileData := FileData_Package.getInstance;
         if (size) > (fileData.MINIMAGEFILESIZE) then
-            if (Java_Compare_To (fileItemFieldName, This.basicItemData.IMAGE)) = (0) then
+            if (Java_Compare_To (fileItemFieldName, This.AddFileValidationView_Field_basicItemData.IMAGE)) = (0) then
                 if (size) < (fileData.MAXIMAGEFILESIZE) then
                     if not (StringValidationUtil_Package.getInstance.isValidRequired (fileName, fileData.MINLEN, fileData.MAXLEN)) then
                         stringBuffer.append (To_Unbounded_String ("FileName must be >"));

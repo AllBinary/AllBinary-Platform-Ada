@@ -108,7 +108,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    procedure Initialize_Fields (This : in out GenericStoreTransformInfoObjectConfig'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.GenericStoreTransformInfoObjectConfig_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -180,7 +180,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
             else
                 stringBuffer.append (To_Unbounded_String ("No Owner!?#@"));
             end if;
-            This.logUtil.putF (stringBuffer.toString, GenericStoreTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
+            This.GenericStoreTransformInfoObjectConfig_Field_logUtil.putF (stringBuffer.toString, GenericStoreTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
         end if;
         transformInfoHttpStoreInterface := TransformInfoHttp_Access (GenericStoreTransformInfoObjectConfig'Class (This).getTransformInfoInterface);
         objectConfigDocumentString := XmlDocumentHelper_Package.toString (objectConfigDocument);
@@ -222,7 +222,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         propertiesHashMap := transformInfoHttpStoreInterface.getPropertiesHashMap;
         templateNameOverride := StringUtil_Package.getInstance.getNonNull (Java_Unbox (propertiesHashMap.get (TransformInfoData_Package.getInstance.PARTIAL)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("TemplateNameOverride: ") & templateNameOverride, GenericStoreTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
+            This.GenericStoreTransformInfoObjectConfig_Field_logUtil.putF (To_Unbounded_String ("TemplateNameOverride: ") & templateNameOverride, GenericStoreTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
         end if;
         templateNameStringBuffer := StringMaker_Package.Create;
         templateNameStringBuffer.append (storeName);
@@ -247,7 +247,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         replace := Replace_Package.Create (hashMap);
         newObjectConfigDocument := DomDocumentHelper_Package.create (replace.all_Id (objectConfigDocumentString));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Final ObjectConfig: ") & XmlDocumentHelper_Package.toString (newObjectConfigDocument), GenericStoreTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
+            This.GenericStoreTransformInfoObjectConfig_Field_logUtil.putF (To_Unbounded_String ("Final ObjectConfig: ") & XmlDocumentHelper_Package.toString (newObjectConfigDocument), GenericStoreTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
         end if;
         return newObjectConfigDocument;
    end generate;

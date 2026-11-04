@@ -32,7 +32,7 @@ package body tags.CommandTag_Package is
    procedure Initialize_Fields (This : in out CommandTag'Class) is
    begin
       null;
-      This.tagStrings := TagStrings_Package.getInstance;
+      This.CommandTag_Field_tagStrings := TagStrings_Package.getInstance;
       This.command := Null_Unbounded_String;
    end Initialize_Fields;
 

@@ -53,7 +53,7 @@ package body views.admin.payment.PaymentProcessorComponent_Package is
    procedure Initialize_Fields (This : in out PaymentProcessorComponent'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.PaymentProcessorComponent_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -95,7 +95,7 @@ package body views.admin.payment.PaymentProcessorComponent_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentProcessorComponent_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.PaymentProcessorComponent_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentProcessorComponent_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

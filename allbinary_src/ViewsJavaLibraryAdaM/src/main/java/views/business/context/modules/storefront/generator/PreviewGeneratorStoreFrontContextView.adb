@@ -53,7 +53,7 @@ package body views.business.context.modules.storefront.generator.PreviewGenerato
    procedure Initialize_Fields (This : in out PreviewGeneratorStoreFrontContextView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.PreviewGeneratorStoreFrontContextView_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -85,7 +85,7 @@ package body views.business.context.modules.storefront.generator.PreviewGenerato
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PreviewGeneratorStoreFrontContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.PreviewGeneratorStoreFrontContextView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, PreviewGeneratorStoreFrontContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

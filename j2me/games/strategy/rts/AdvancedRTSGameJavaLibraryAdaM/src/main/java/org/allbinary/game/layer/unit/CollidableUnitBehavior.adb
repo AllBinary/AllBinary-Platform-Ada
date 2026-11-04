@@ -44,6 +44,7 @@ with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;

@@ -40,6 +40,10 @@ with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.game.layer.building.EfficiencyNumberStringHud_Package;
+with org.allbinary.game.layer.building.HealthNumberStringHud_Package;
+with org.allbinary.game.layer.building.MaxHealthNumberStringHud_Package;
+with org.allbinary.game.layer.building.ProductivityNumberStringHud_Package;
 
 package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package is
 

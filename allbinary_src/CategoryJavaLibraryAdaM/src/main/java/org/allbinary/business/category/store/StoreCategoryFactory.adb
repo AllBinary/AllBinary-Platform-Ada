@@ -91,7 +91,7 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
    procedure Initialize_Fields (This : in out StoreCategoryFactory'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.StoreCategoryFactory_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -102,7 +102,7 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
       CategoryAbstractFactory_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (This.commonStrings.START, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreCategoryFactory(TransformInfoInterface transformInfoInterface)"));
+            This.StoreCategoryFactory_Field_logUtil.putF (This.commonStrings.START, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreCategoryFactory(TransformInfoInterface transformInfoInterface)"));
         end if;
         This.transformInfoInterface := transformInfoInterface;
    end Initialize;
@@ -126,7 +126,7 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
+                This.StoreCategoryFactory_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
             end if;
             return null;
                 end;
@@ -148,7 +148,7 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
+                This.StoreCategoryFactory_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
             end if;
             return null;
                 end;
@@ -172,7 +172,7 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
+                This.StoreCategoryFactory_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
             end if;
             return null;
                 end;

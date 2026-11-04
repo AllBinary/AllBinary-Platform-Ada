@@ -99,7 +99,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    procedure Initialize_Fields (This : in out TimeIntervalActionScriptCondition'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TimeIntervalActionScriptCondition_Field_logUtil := LogUtil_Package.getInstance;
       This.timeIntervalActionScriptConditionJPanel := null;
       This.timeHelper := null;
    end Initialize_Fields;
@@ -170,7 +170,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (TimeIntervalActionScriptConditionData_Package.TIME, Java_Box (To_Unbounded_String (Java_Image (This.timeHelper.delay_Id))));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, TimeIntervalActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
+        This.TimeIntervalActionScriptCondition_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, TimeIntervalActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
@@ -186,7 +186,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
 
    procedure log (This : in out TimeIntervalActionScriptCondition) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Time Interval: ") & Java_Image (This.timeHelper.delay_Id), TimeIntervalActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+        This.TimeIntervalActionScriptCondition_Field_logUtil.putF (To_Unbounded_String ("Time Interval: ") & Java_Image (This.timeHelper.delay_Id), TimeIntervalActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    function getTimeDelayHelper (This : in out TimeIntervalActionScriptCondition) return TimeDelayHelper_Access is

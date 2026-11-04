@@ -44,7 +44,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
       null;
       This.NAME := To_Unbounded_String ("InitInfoEntity");
       This.NOTHING := To_Unbounded_String ("NOTHING");
-      This.tableName := To_Unbounded_String ("initdata");
+      This.InitInfoEntity_Field_tableName := To_Unbounded_String ("initdata");
       
       This.NOT_IN_DB := To_Unbounded_String ("Not In DB");
       This.METHOD_GET := To_Unbounded_String ("get()");
@@ -62,7 +62,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
         Initialize_Fields (This);
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (This.sqlStrings.CREATE_TABLE);
-        stringBuffer.append (This.tableName);
+        stringBuffer.append (This.InitInfoEntity_Field_tableName);
         stringBuffer.append (This.sqlStrings.START);
         stringBuffer.append (This.NOTHING);
         stringBuffer.append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL);
@@ -76,7 +76,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
         stringBuffer.append (This.NOTHING);
         stringBuffer.append (This.sqlStrings.END_Id);
         This.tableData := stringBuffer.toString;
-        InitInfoEntity'Class (This).setTable (This.tableName);
+        InitInfoEntity'Class (This).setTable (This.InitInfoEntity_Field_tableName);
    end Initialize;
 
    function Create return InitInfoEntity_Access is
@@ -176,7 +176,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
       stringBuffer : StringMaker_Access;
    begin
         if InitSql_Package.InitSql (This).createTable (This.tableData) then
-            return This.tableName & This.CREATED_SUCCESS;
+            return This.InitInfoEntity_Field_tableName & This.CREATED_SUCCESS;
         else
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.FAILED_TO_CREATE);

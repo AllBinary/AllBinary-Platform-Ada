@@ -93,7 +93,7 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
    procedure Initialize_Fields (This : in out BillingAddressesView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.BillingAddressesView_Field_logUtil := LogUtil_Package.getInstance;
       
       This.streetAddresses := null;
    end Initialize_Fields;
@@ -143,7 +143,7 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, BillingAddressesView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
+                This.BillingAddressesView_Field_logUtil.put (This.commonStrings.FAILURE, BillingAddressesView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             return null;
                 end;
@@ -167,7 +167,7 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressesView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.BillingAddressesView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressesView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

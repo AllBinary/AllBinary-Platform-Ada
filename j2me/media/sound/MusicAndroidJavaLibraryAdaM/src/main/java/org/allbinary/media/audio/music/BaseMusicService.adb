@@ -21,6 +21,7 @@ with org.allbinary.media.audio.music.MusicStrings_Package; use org.allbinary.med
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.media.audio.music.MusicRunnable_Package; use org.allbinary.media.audio.music.MusicRunnable_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+with org.allbinary.media.audio.music.MusicRunnable_Package;
 with org.allbinary.media.audio.music.MusicStrings_Package;
 
 package body org.allbinary.media.audio.music.BaseMusicService_Package is

@@ -40,6 +40,8 @@ with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.in
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
+with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package;
+with org.allbinary.input.motion.button.ReleaseHelper_Package;
 with org.allbinary.input.motion.button.TouchButton_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
@@ -271,6 +273,7 @@ with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.in
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
+with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package;
 with org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
 

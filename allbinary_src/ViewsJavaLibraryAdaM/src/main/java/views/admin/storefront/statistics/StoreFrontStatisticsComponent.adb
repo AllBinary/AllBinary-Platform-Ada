@@ -75,7 +75,7 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
    procedure Initialize_Fields (This : in out StoreFrontStatisticsComponent'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.StoreFrontStatisticsComponent_Field_logUtil := LogUtil_Package.getInstance;
       
       
    end Initialize_Fields;
@@ -114,7 +114,7 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontStatisticsComponent_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.StoreFrontStatisticsComponent_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontStatisticsComponent_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

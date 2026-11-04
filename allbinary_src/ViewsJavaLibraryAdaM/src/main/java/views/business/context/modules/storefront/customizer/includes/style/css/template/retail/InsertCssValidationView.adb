@@ -85,7 +85,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    procedure Initialize_Fields (This : in out InsertCssValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InsertCssValidationView_Field_logUtil_Hidden := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -118,7 +118,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
         begin
             isValid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Started Validation"), InsertCssValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.InsertCssValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("Started Validation"), InsertCssValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if (isValid) = (True) then
                 CustomizerUtil_Package.getInstance.insert (InsertCssValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.styleValidationInterface));
@@ -130,7 +130,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), InsertCssValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.InsertCssValidationView_Field_logUtil_Hidden.put (To_Unbounded_String ("Failed to validate"), InsertCssValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -149,7 +149,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), InsertCssValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.InsertCssValidationView_Field_logUtil_Hidden.put (To_Unbounded_String ("Failed to generate validation error info"), InsertCssValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;
@@ -178,7 +178,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InsertCssValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.InsertCssValidationView_Field_logUtil_Hidden.put (This.commonStrings.EXCEPTION_Id, InsertCssValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

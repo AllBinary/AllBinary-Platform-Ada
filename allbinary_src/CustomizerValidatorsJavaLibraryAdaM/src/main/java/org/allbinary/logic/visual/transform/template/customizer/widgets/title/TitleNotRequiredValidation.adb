@@ -62,7 +62,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    procedure Initialize_Fields (This : in out TitleNotRequiredValidation'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TitleNotRequiredValidation_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -113,7 +113,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (This.commonStrings.START, TitleNotRequiredValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.TitleNotRequiredValidation_Field_logUtil.putF (This.commonStrings.START, TitleNotRequiredValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             valid := True;
             if not (StringValidationUtil_Package.getInstance.isValidNotRequired (TitleNotRequiredValidation'Class (This).getTitle, 0, TitleData_Package.getInstance.MAXLEN)) then
@@ -125,7 +125,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
                 stringBuffer.append (TitleNotRequiredValidation'Class (This).getTitle);
                 stringBuffer.append (To_Unbounded_String ("End: "));
                 stringBuffer.appendboolean (valid);
-                This.logUtil.putF (stringBuffer.toString, TitleNotRequiredValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.TitleNotRequiredValidation_Field_logUtil.putF (stringBuffer.toString, TitleNotRequiredValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return valid;
         exception
@@ -134,7 +134,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), TitleNotRequiredValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.TitleNotRequiredValidation_Field_logUtil.put (To_Unbounded_String ("Failed to validate form"), TitleNotRequiredValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -154,7 +154,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), TitleNotRequiredValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.TitleNotRequiredValidation_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), TitleNotRequiredValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;

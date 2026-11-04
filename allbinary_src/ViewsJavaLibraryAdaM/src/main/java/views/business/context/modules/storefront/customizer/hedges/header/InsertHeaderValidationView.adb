@@ -90,7 +90,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    procedure Initialize_Fields (This : in out InsertHeaderValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InsertHeaderValidationView_Field_logUtil := LogUtil_Package.getInstance;
       This.LOGOPATH := To_Unbounded_String ("logo/");
    end Initialize_Fields;
 
@@ -128,7 +128,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("topbarValidation"), InsertHeaderValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.InsertHeaderValidationView_Field_logUtil.putF (To_Unbounded_String ("topbarValidation"), InsertHeaderValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             isValid := This.heading.isValid;
             if (isValid) = (True) then
@@ -141,7 +141,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), InsertHeaderValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.InsertHeaderValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to validate"), InsertHeaderValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -161,7 +161,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), InsertHeaderValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.InsertHeaderValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), InsertHeaderValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;

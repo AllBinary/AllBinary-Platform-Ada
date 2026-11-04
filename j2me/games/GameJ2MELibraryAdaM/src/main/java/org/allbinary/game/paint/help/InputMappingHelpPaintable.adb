@@ -45,6 +45,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.paint.help.UpdateMyFontProperties_Package; use org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
 with org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References;
+with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
 
 package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
 

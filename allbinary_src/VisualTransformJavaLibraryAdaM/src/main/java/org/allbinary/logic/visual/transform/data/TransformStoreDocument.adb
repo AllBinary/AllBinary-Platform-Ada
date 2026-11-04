@@ -59,7 +59,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
    procedure Initialize_Fields (This : in out TransformStoreDocument'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TransformStoreDocument_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -73,7 +73,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
         begin
             storeName := weblisketSession.getStoreName;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Using Session StoreName: ") & storeName, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+                This.TransformStoreDocument_Field_logUtil.putF (To_Unbounded_String ("Using Session StoreName: ") & storeName, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
             TransformStoreDocument'Class (This).getBaseNode.appendChild (StoreFrontViewFactory_Package.getInstance (storeName).toXmlNode (TransformStoreDocument'Class (This).getDoc));
             TransformStoreDocument'Class (This).getBaseNode.appendChild (RequestParams_Package.Create (HttpServletRequest_Access (pageContext.getRequest)).toXmlNode (TransformStoreDocument'Class (This).getDoc));
@@ -83,7 +83,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
+                This.TransformStoreDocument_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
@@ -111,7 +111,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
+                This.TransformStoreDocument_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;

@@ -101,7 +101,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
    procedure Initialize_Fields (This : in out BasicTransformer'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.BasicTransformer_Field_logUtil := LogUtil_Package.getInstance;
       This.streamUtil := StreamUtil_Package.getInstance;
       
    end Initialize_Fields;
@@ -142,7 +142,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
             abCrypt := AbCrypt_Package.Create (KeySpecFactory_Package.DESEDE, AbKeys_Package.getInstance.getKey (This.abeClientInformation, file.getAbsolutePath));
             decrypted := abCrypt.decrypt (outputStream.toByteArray);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                This.logUtil.putF (To_Unbounded_String ("Decrypted Template: " & ASCII.LF & "") & Java_Image (Java_New_String (decrypted)), BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setEncryptedTemplateFileAsInputStream(file)"));
+                This.BasicTransformer_Field_logUtil.putF (To_Unbounded_String ("Decrypted Template: " & ASCII.LF & "") & Java_Image (Java_New_String (decrypted)), BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setEncryptedTemplateFileAsInputStream(file)"));
             end if;
             BasicTransformer'Class (This).setInputStream (InputStream_Access (ByteArrayInputStream_Package.Create (decrypted)));
             BasicTransformer'Class (This).setURIResolver (URIResolver_Access (BasicUriResolver_Package.Create (TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION)));
@@ -157,7 +157,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                 stringBuffer.append (file.getPath);
                 stringBuffer.append (To_Unbounded_String (" " & ASCII.LF & "Name:"));
                 stringBuffer.append (file.getName);
-                This.logUtil.put (stringBuffer.toString, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setEncryptedTemplateFileAsInputStream()"), e);
+                This.BasicTransformer_Field_logUtil.put (stringBuffer.toString, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setEncryptedTemplateFileAsInputStream()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -185,7 +185,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
             abCrypt := AbCrypt_Package.Create (KeySpecFactory_Package.DESEDE, AbKeys_Package.getInstance.getKey (This.abeClientInformation, BasicTransformer'Class (This).getTransformInfoInterface.getName));
             decrypted := abCrypt.decrypt (outputStream.toByteArray);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                This.logUtil.putF (To_Unbounded_String ("Decrypted Template: " & ASCII.LF & "") & decrypted.toString, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setEncryptedTemplateAsInputStream()"));
+                This.BasicTransformer_Field_logUtil.putF (To_Unbounded_String ("Decrypted Template: " & ASCII.LF & "") & decrypted.toString, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setEncryptedTemplateAsInputStream()"));
             end if;
             BasicTransformer'Class (This).setInputStream (InputStream_Access (ByteArrayInputStream_Package.Create (decrypted)));
             BasicTransformer'Class (This).setURIResolver (URIResolver_Access (BasicUriResolver_Package.Create (TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION)));
@@ -195,7 +195,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to set with template: ") & Java_Image (BasicTransformer'Class (This).getTransformInfoInterface.getTemplateFilePath), BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setEncryptedTemplateFileAsInputStream()"), e);
+                This.BasicTransformer_Field_logUtil.put (To_Unbounded_String ("Failed to set with template: ") & Java_Image (BasicTransformer'Class (This).getTransformInfoInterface.getTemplateFilePath), BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setEncryptedTemplateFileAsInputStream()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -223,7 +223,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
         outputStream := null;
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                This.logUtil.putF (BasicTransformer'Class (This).getTransformInfoInterface.log, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
+                This.BasicTransformer_Field_logUtil.putF (BasicTransformer'Class (This).getTransformInfoInterface.log, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
             end if;
             transformInfoTemplateData := TransformInfoTemplateData_Package.getInstance;
             pathUtil := PathUtil_Package.getInstance;
@@ -231,7 +231,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                 extension := pathUtil.getExtensionWithAbPath (BasicTransformer'Class (This).getTransformInfoInterface.getTemplateFilePath);
                 filePath := pathUtil.getWithoutExtensionWithAbPath (BasicTransformer'Class (This).getTransformInfoInterface.getTemplateFilePath);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                    This.logUtil.putF (BasicTransformer'Class (This).getTransformInfoInterface.log, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
+                    This.BasicTransformer_Field_logUtil.putF (BasicTransformer'Class (This).getTransformInfoInterface.log, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
                 end if;
                 if (Java_Compare_To (extension, transformInfoTemplateData.UNCRYPTED_EXTENSION)) = (0) then
                     stringBuffer := StringMaker_Package.Create;
@@ -240,7 +240,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                     stringBuffer.append (transformInfoTemplateData.ENCRYPTED_EXTENSION);
                     encFile := AbFile_Package.createAbFile (stringBuffer.toString);
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                        This.logUtil.putF (BasicTransformer'Class (This).getTransformInfoInterface.log, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
+                        This.BasicTransformer_Field_logUtil.putF (BasicTransformer'Class (This).getTransformInfoInterface.log, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
                     end if;
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
                         stringBuffer := StringMaker_Package.Create;
@@ -248,7 +248,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                         stringBuffer.appendboolean (encFile.isFile);
                         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "EncTemplateFilePath: "));
                         stringBuffer.append (encFile.getPath);
-                        This.logUtil.putF (stringBuffer.toString, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
+                        This.BasicTransformer_Field_logUtil.putF (stringBuffer.toString, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
                     end if;
                     if encFile.isFile then
                         BasicTransformer'Class (This).setEncryptedTemplateFileAsInputStream (encFile);
@@ -256,17 +256,17 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                     else
                         file := AbFile_Package.createAbFileFromAbPath (BasicTransformer'Class (This).getTransformInfoInterface.getTemplateFilePath);
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                            This.logUtil.putF (BasicTransformer'Class (This).getTransformInfoInterface.log, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
+                            This.BasicTransformer_Field_logUtil.putF (BasicTransformer'Class (This).getTransformInfoInterface.log, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
                         end if;
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                            This.logUtil.putF (To_Unbounded_String ("Template File isFile=") & Java_Image (file.isFile), BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
+                            This.BasicTransformer_Field_logUtil.putF (To_Unbounded_String ("Template File isFile=") & Java_Image (file.isFile), BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"));
                         end if;
                         if file.isFile then
                             inputStream := AbFileInputStream_Package.Create (file);
                             outputStream := ByteArrayOutputStream_Package.Create;
                             outputStream := ByteArrayOutputStream_Access (This.streamUtil.get (inputStream, outputStream, new Short_Short_Integer_Array'(0 .. (16384) - 1 => 0)));
                             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                                This.logUtil.putF (To_Unbounded_String ("Template: ") & outputStream.toString, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("getTemplateAsInputStream()"));
+                                This.BasicTransformer_Field_logUtil.putF (To_Unbounded_String ("Template: ") & outputStream.toString, BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("getTemplateAsInputStream()"));
                             end if;
                             BasicTransformer'Class (This).setInputStream (InputStream_Access (ByteArrayInputStream_Package.Create (outputStream.toByteArray)));
                             BasicTransformer'Class (This).setURIResolver (URIResolver_Access (BasicUriResolver_Package.Create (transformInfoTemplateData.UNCRYPTED_EXTENSION)));
@@ -294,7 +294,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to get Template Data"), BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"), e);
+                This.BasicTransformer_Field_logUtil.put (To_Unbounded_String ("Failed to get Template Data"), BasicTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("setTemplateAsInputStream()"), e);
             end if;
             Java_Throw (e);
                 end;

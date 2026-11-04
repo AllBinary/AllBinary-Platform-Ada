@@ -107,7 +107,7 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
    begin
       null;
       This.inputProcessorArray := new GameInputProcessor_Access_Array'(0 .. (InputFactory_Package.getInstance.MAX) - 1 => null);
-      This.paintable := PaintableInterface_Access (NullPaintable_Package.getInstance);
+      This.TestingInputSingleton_Field_paintable := PaintableInterface_Access (NullPaintable_Package.getInstance);
    end Initialize_Fields;
 
 
@@ -140,7 +140,7 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
       testInputInterface : TestInputInterface_Access;
    begin
         testInputInterface := aTestInputInterface;
-        This.paintable := PaintableInterface_Access (testInputInterface);
+        This.TestingInputSingleton_Field_paintable := PaintableInterface_Access (testInputInterface);
         This.inputProcessorArray (Canvas_Package.UP) := GameInputProcessor_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     --  throws Exception
@@ -234,7 +234,7 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
    procedure paint (This : in out TestingInputSingleton; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        This.paintable.paint (graphics);
+        This.TestingInputSingleton_Field_paintable.paint (graphics);
    end paint;
 
    function implmentsGameInputInterface (This : in out TestingInputSingleton) return Boolean is

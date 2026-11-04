@@ -84,7 +84,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    procedure Initialize_Fields (This : in out InsertGenericBodyValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InsertGenericBodyValidationView_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -116,7 +116,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Started Validation"), InsertGenericBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.InsertGenericBodyValidationView_Field_logUtil.putF (To_Unbounded_String ("Started Validation"), InsertGenericBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             isValid := This.body_Id.isValid;
             if (isValid) = (True) then
@@ -129,7 +129,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), InsertGenericBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.InsertGenericBodyValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to validate"), InsertGenericBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -149,7 +149,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), InsertGenericBodyValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.InsertGenericBodyValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), InsertGenericBodyValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;
@@ -178,7 +178,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InsertGenericBodyValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.InsertGenericBodyValidationView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, InsertGenericBodyValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

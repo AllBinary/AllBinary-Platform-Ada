@@ -83,7 +83,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    procedure Initialize_Fields (This : in out TransformInfoHttp'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TransformInfoHttp_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -96,7 +96,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext, boolean)"));
+            This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext, boolean)"));
         end if;
         TransformInfoHttp'Class (This).override (propertiesHashMap);
    end Initialize;
@@ -117,7 +117,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HttpServletRequest, HashMap, PageContext)"));
+            This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HttpServletRequest, HashMap, PageContext)"));
         end if;
         TransformInfoHttp'Class (This).set (RequestParams_Package.Create (HttpServletRequest_Access (request)).toHashMap);
         TransformInfoHttp'Class (This).override (propertiesHashMap);
@@ -139,7 +139,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, HashMap, PageContext)"));
+            This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, HashMap, PageContext)"));
         end if;
         TransformInfoHttp'Class (This).set (databaseHashMap);
    end Initialize;
@@ -159,7 +159,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext)"));
+            This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext)"));
         end if;
         TransformInfoHttp'Class (This).set (propertiesHashMap);
    end Initialize;
@@ -194,7 +194,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
       objectConfigString : Unbounded_String;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & hashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
+            This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & hashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
         transformInfoData := TransformInfoData_Package.getInstance;
         TransformInfoHttp'Class (This).setName (Java_Unbox (hashMap.get (transformInfoData.NAME)));
@@ -216,7 +216,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         TransformInfoHttp'Class (This).setDataFile (Java_Unbox (hashMap.get (transformInfoData.DATAFILENAME)));
         TransformInfoHttp'Class (This).setData (Java_Unbox (hashMap.get (transformInfoData.DATA)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-            This.logUtil.putF (TransformInfoHttp'Class (This).log, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
+            This.TransformInfoHttp_Field_logUtil.putF (TransformInfoHttp'Class (This).log, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
    end set;
 

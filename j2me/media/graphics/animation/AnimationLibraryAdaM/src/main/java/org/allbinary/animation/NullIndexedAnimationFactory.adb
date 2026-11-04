@@ -33,6 +33,7 @@ with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package;
 with org.allbinary.animation.NullIndexedAnimation_Package;
+with org.allbinary.animation.NullIndexedAnimationInner_Package;
 with org.allbinary.animation.SequenceInterface_Package;
 with org.allbinary.animation.SequentialAnimationInterface_Package;
 

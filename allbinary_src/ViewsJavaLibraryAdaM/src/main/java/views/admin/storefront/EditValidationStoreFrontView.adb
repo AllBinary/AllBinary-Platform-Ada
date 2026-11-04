@@ -74,7 +74,7 @@ package body views.admin.storefront.EditValidationStoreFrontView_Package is
    procedure Initialize_Fields (This : in out EditValidationStoreFrontView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.EditValidationStoreFrontView_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -111,7 +111,7 @@ package body views.admin.storefront.EditValidationStoreFrontView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), EditValidationStoreFrontView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.EditValidationStoreFrontView_Field_logUtil.put (To_Unbounded_String ("Failed to validate form"), EditValidationStoreFrontView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -136,7 +136,7 @@ package body views.admin.storefront.EditValidationStoreFrontView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), EditValidationStoreFrontView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.EditValidationStoreFrontView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), EditValidationStoreFrontView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;

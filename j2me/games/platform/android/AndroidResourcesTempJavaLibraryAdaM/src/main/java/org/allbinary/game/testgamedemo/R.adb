@@ -6,6 +6,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.testgamedemo.attr_Package;
+with org.allbinary.game.testgamedemo.drawable_Package;
+with org.allbinary.game.testgamedemo.id_Package;
+with org.allbinary.game.testgamedemo.layout_Package;
+with org.allbinary.game.testgamedemo.raw_Package;
+with org.allbinary.game.testgamedemo.string_Package;
 
 package body org.allbinary.game.testgamedemo.R_Package is
 
@@ -31,6 +37,11 @@ end org.allbinary.game.testgamedemo.R_Package;
 
 
 with org.allbinary.game.testgamedemo.R_Package;
+with org.allbinary.game.testgamedemo.drawable_Package;
+with org.allbinary.game.testgamedemo.id_Package;
+with org.allbinary.game.testgamedemo.layout_Package;
+with org.allbinary.game.testgamedemo.raw_Package;
+with org.allbinary.game.testgamedemo.string_Package;
 
 package body org.allbinary.game.testgamedemo.attr_Package is
 
@@ -56,6 +67,11 @@ end org.allbinary.game.testgamedemo.attr_Package;
 
 
 with org.allbinary.game.testgamedemo.R_Package;
+with org.allbinary.game.testgamedemo.attr_Package;
+with org.allbinary.game.testgamedemo.id_Package;
+with org.allbinary.game.testgamedemo.layout_Package;
+with org.allbinary.game.testgamedemo.raw_Package;
+with org.allbinary.game.testgamedemo.string_Package;
 
 package body org.allbinary.game.testgamedemo.drawable_Package is
 
@@ -81,6 +97,11 @@ end org.allbinary.game.testgamedemo.drawable_Package;
 
 
 with org.allbinary.game.testgamedemo.R_Package;
+with org.allbinary.game.testgamedemo.attr_Package;
+with org.allbinary.game.testgamedemo.drawable_Package;
+with org.allbinary.game.testgamedemo.layout_Package;
+with org.allbinary.game.testgamedemo.raw_Package;
+with org.allbinary.game.testgamedemo.string_Package;
 
 package body org.allbinary.game.testgamedemo.id_Package is
 
@@ -114,6 +135,11 @@ end org.allbinary.game.testgamedemo.id_Package;
 
 
 with org.allbinary.game.testgamedemo.R_Package;
+with org.allbinary.game.testgamedemo.attr_Package;
+with org.allbinary.game.testgamedemo.drawable_Package;
+with org.allbinary.game.testgamedemo.id_Package;
+with org.allbinary.game.testgamedemo.raw_Package;
+with org.allbinary.game.testgamedemo.string_Package;
 
 package body org.allbinary.game.testgamedemo.layout_Package is
 
@@ -143,6 +169,11 @@ end org.allbinary.game.testgamedemo.layout_Package;
 
 
 with org.allbinary.game.testgamedemo.R_Package;
+with org.allbinary.game.testgamedemo.attr_Package;
+with org.allbinary.game.testgamedemo.drawable_Package;
+with org.allbinary.game.testgamedemo.id_Package;
+with org.allbinary.game.testgamedemo.layout_Package;
+with org.allbinary.game.testgamedemo.string_Package;
 
 package body org.allbinary.game.testgamedemo.raw_Package is
 
@@ -203,6 +234,11 @@ end org.allbinary.game.testgamedemo.raw_Package;
 
 
 with org.allbinary.game.testgamedemo.R_Package;
+with org.allbinary.game.testgamedemo.attr_Package;
+with org.allbinary.game.testgamedemo.drawable_Package;
+with org.allbinary.game.testgamedemo.id_Package;
+with org.allbinary.game.testgamedemo.layout_Package;
+with org.allbinary.game.testgamedemo.raw_Package;
 
 package body org.allbinary.game.testgamedemo.string_Package is
 

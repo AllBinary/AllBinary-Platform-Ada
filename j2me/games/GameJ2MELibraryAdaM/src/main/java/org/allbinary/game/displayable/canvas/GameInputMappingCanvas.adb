@@ -49,6 +49,7 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
 with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
+with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
 
 package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package is
 

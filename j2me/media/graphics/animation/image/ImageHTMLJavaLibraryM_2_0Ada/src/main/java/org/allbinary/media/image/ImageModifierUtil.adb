@@ -36,6 +36,7 @@ with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
 with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
 with playn.html.HTMLPlaynUtil_Package_References;
 with org.allbinary.media.image.ImageCopyCallback_Package; use org.allbinary.media.image.ImageCopyCallback_Package;
+with org.allbinary.media.image.ImageCopyCallback_Package;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 

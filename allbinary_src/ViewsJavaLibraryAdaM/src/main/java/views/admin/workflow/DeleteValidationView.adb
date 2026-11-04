@@ -76,7 +76,7 @@ package body views.admin.workflow.DeleteValidationView_Package is
    procedure Initialize_Fields (This : in out DeleteValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.DeleteValidationView_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -88,7 +88,7 @@ package body views.admin.workflow.DeleteValidationView_Package is
         Initialize_Fields (This);
         This.workFlowName := DeleteValidationView'Class (This).getPageContext.getRequest.getParameter (WorkFlowData_Package.getInstance.NAME);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Name: ") & This.workFlowName, DeleteValidationView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.DeleteValidationView_Field_logUtil.putF (To_Unbounded_String ("Name: ") & This.workFlowName, DeleteValidationView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -107,7 +107,7 @@ package body views.admin.workflow.DeleteValidationView_Package is
             end if;
             if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowName, DeleteValidationView'Class (This).getWeblisketSession.getStoreName)) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("WorkFlow does not exist."), DeleteValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.DeleteValidationView_Field_logUtil.putF (To_Unbounded_String ("WorkFlow does not exist."), DeleteValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -118,7 +118,7 @@ package body views.admin.workflow.DeleteValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), DeleteValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.DeleteValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to validate form"), DeleteValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -135,7 +135,7 @@ package body views.admin.workflow.DeleteValidationView_Package is
             end if;
             if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowName, DeleteValidationView'Class (This).getWeblisketSession.getStoreName)) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("WorkFlow does not exist."), DeleteValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                    This.DeleteValidationView_Field_logUtil.putF (To_Unbounded_String ("WorkFlow does not exist."), DeleteValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 stringBuffer.append (To_Unbounded_String ("WorkFlow does not exist<br />"));
             end if;
@@ -146,7 +146,7 @@ package body views.admin.workflow.DeleteValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), DeleteValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.DeleteValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), DeleteValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;

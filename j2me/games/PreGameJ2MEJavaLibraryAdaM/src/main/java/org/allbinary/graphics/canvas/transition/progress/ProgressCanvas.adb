@@ -49,6 +49,7 @@ with org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package
 with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package;
 
 package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package is
 

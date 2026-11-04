@@ -126,7 +126,7 @@ package body views.admin.inventory.InventoryItemView_Package is
    procedure Initialize_Fields (This : in out InventoryItemView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InventoryItemView_Field_logUtil := LogUtil_Package.getInstance;
       This.basicItemData := BasicItemData_Package.getInstance;
       
       This.imageFileName := Null_Unbounded_String;
@@ -197,7 +197,7 @@ package body views.admin.inventory.InventoryItemView_Package is
                     stringBuffer.append (This.imageFileName);
                     stringBuffer.append (To_Unbounded_String (" Extension: "));
                     stringBuffer.append (This.mediaData.getName);
-                    This.logUtil.putF (stringBuffer.toString, InventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"));
+                    This.InventoryItemView_Field_logUtil.putF (stringBuffer.toString, InventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"));
                 end if;
             end if;
         end if;
@@ -237,7 +237,7 @@ package body views.admin.inventory.InventoryItemView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.InventoryItemView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

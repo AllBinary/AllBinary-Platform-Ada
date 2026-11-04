@@ -179,7 +179,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
         Initialize_Fields (This);
         This.geographicMapCellPositionFactoryInterface := geographicMapCellPositionFactoryInterface;
         This.geographicMapCellPositionFactory := geographicMapCellPositionBaseFactory.getInstance (BasicGeographicMap_Access'(This'Unchecked_Access));
-        This.geographicMapCellTypeFactory := geographicMapCellTypeFactory;
+        This.BasicGeographicMap_Field_geographicMapCellTypeFactory := geographicMapCellTypeFactory;
    end Initialize;
 
    function Create (id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface_Package.GeographicMapCellPositionFactoryInterface'Class; geographicMapCellPositionBaseFactory_Param : access GeographicMapCellPositionBaseFactory_Package.GeographicMapCellPositionBaseFactory'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory_Package.GeographicMapCellTypeFactory'Class) return BasicGeographicMap_Access is
@@ -386,7 +386,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
 
    function getGeographicMapCellTypeFactory (This : in out BasicGeographicMap) return GeographicMapCellTypeFactory_Access is
    begin
-        return This.geographicMapCellTypeFactory;
+        return This.BasicGeographicMap_Field_geographicMapCellTypeFactory;
    end getGeographicMapCellTypeFactory;
 
    procedure getCellPosition (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is

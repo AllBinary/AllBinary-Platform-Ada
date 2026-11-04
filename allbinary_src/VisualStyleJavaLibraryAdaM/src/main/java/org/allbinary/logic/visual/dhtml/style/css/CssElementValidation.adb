@@ -58,7 +58,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
    procedure Initialize_Fields (This : in out CssElementValidation'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.CssElementValidation_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -95,10 +95,10 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
         begin
             valid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("CssElementValidation"), CssElementValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.CssElementValidation_Field_logUtil.putF (To_Unbounded_String ("CssElementValidation"), CssElementValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("CssElementValidation: ") & Java_Image (valid), CssElementValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.CssElementValidation_Field_logUtil.putF (To_Unbounded_String ("CssElementValidation: ") & Java_Image (valid), CssElementValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return valid;
         exception
@@ -107,7 +107,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate data"), CssElementValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.CssElementValidation_Field_logUtil.put (To_Unbounded_String ("Failed to validate data"), CssElementValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -128,7 +128,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation info error"), CssElementValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.CssElementValidation_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation info error"), CssElementValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Data");
                 end;

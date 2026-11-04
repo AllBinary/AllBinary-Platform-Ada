@@ -85,7 +85,7 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
    procedure Initialize_Fields (This : in out OrderHistoryView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.OrderHistoryView_Field_logUtil := LogUtil_Package.getInstance;
       
       
       
@@ -139,7 +139,7 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
                 node.appendChild (orderHistory.toXmlNode (document));
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Attempt to View a users order history"), OrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
+                This.OrderHistoryView_Field_logUtil.putF (To_Unbounded_String ("Attempt to View a users order history"), OrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
             end if;
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, OrderHistoryData_Package.PREPROCESSINGNAME, OrderHistoryData_Package.PREPROCESSING));
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, OrderHistoryData_Package.PROCESSINGNAME, OrderHistoryData_Package.PROCESSING));
@@ -154,7 +154,7 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, OrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
+                This.OrderHistoryView_Field_logUtil.put (This.commonStrings.FAILURE, OrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -178,7 +178,7 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, OrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.OrderHistoryView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, OrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

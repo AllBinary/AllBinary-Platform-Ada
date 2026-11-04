@@ -93,7 +93,7 @@ package body views.generic_Id.basket.BasketView_Package is
    procedure Initialize_Fields (This : in out BasketView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.BasketView_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -162,7 +162,7 @@ package body views.generic_Id.basket.BasketView_Package is
                     node.appendChild (ModDomHelper_Package.createNameValueNodes (document, BasketData_Package.ITEMTOTAL, itemTotal.toString));
                     basketNode.appendChild (node);
                 else
-                    This.logUtil.putF (To_Unbounded_String ("Product Failed: ") & product, BasketView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
+                    This.BasketView_Field_logUtil.putF (To_Unbounded_String ("Product Failed: ") & product, BasketView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
                 end if;
                 numberOfResults := numberOfResults + 1;
             end loop;
@@ -185,7 +185,7 @@ package body views.generic_Id.basket.BasketView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, BasketView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
+                This.BasketView_Field_logUtil.put (This.commonStrings.FAILURE, BasketView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -209,7 +209,7 @@ package body views.generic_Id.basket.BasketView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasketView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.BasketView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, BasketView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

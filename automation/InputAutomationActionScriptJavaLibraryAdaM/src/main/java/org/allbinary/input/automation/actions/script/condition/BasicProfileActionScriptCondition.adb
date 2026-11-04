@@ -158,7 +158,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    procedure Initialize_Fields (This : in out BasicProfileActionScriptCondition'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.BasicProfileActionScriptCondition_Field_logUtil := LogUtil_Package.getInstance;
       This.profileActionProcessorInterfaceVector := null;
       This.profileActionConditionInterfaceVector := null;
    end Initialize_Fields;
@@ -288,7 +288,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    procedure addProcessor (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface_Package.ProfileActionScriptProcessorInterface'Class) is
       profileActionProcessorInterface : constant ProfileActionScriptProcessorInterface_Access := ProfileActionScriptProcessorInterface_Access (profileActionProcessorInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("addInput"));
+        This.BasicProfileActionScriptCondition_Field_logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("addInput"));
         BasicProfileActionScriptCondition'Class (This).getProfileActionProcessorInterfaceVector.add (profileActionProcessorInterface);
         BasicProfileActionScriptCondition'Class (This).add (profileActionProcessorInterface);
    end addProcessor;
@@ -296,7 +296,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    procedure removeProcessor (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface_Package.ProfileActionScriptProcessorInterface'Class) is
       profileActionProcessorInterface : constant ProfileActionScriptProcessorInterface_Access := ProfileActionScriptProcessorInterface_Access (profileActionProcessorInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("removeInput"));
+        This.BasicProfileActionScriptCondition_Field_logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("removeInput"));
         BasicProfileActionScriptCondition'Class (This).getProfileActionProcessorInterfaceVector.remove (profileActionProcessorInterface);
         BasicProfileActionScriptCondition'Class (This).remove (profileActionProcessorInterface);
    end removeProcessor;
@@ -304,7 +304,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    procedure removeCondition (This : in out BasicProfileActionScriptCondition; profileActionScriptNodeInterface_Param : access ProfileActionScriptNodeInterface_Package.ProfileActionScriptNodeInterface'Class) is
       profileActionScriptNodeInterface : constant ProfileActionScriptNodeInterface_Access := ProfileActionScriptNodeInterface_Access (profileActionScriptNodeInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("removeCondition"));
+        This.BasicProfileActionScriptCondition_Field_logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("removeCondition"));
         BasicProfileActionScriptCondition'Class (This).getProfileActionConditionInterfaceVector.remove (profileActionScriptNodeInterface);
         BasicProfileActionScriptCondition'Class (This).remove (profileActionScriptNodeInterface);
    end removeCondition;
@@ -312,7 +312,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    procedure addCondition (This : in out BasicProfileActionScriptCondition; profileActionScriptNodeInterface_Param : access ProfileActionScriptNodeInterface_Package.ProfileActionScriptNodeInterface'Class) is
       profileActionScriptNodeInterface : constant ProfileActionScriptNodeInterface_Access := ProfileActionScriptNodeInterface_Access (profileActionScriptNodeInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("addCondition"));
+        This.BasicProfileActionScriptCondition_Field_logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("addCondition"));
         BasicProfileActionScriptCondition'Class (This).getProfileActionConditionInterfaceVector.add (profileActionScriptNodeInterface);
         BasicProfileActionScriptCondition'Class (This).add (profileActionScriptNodeInterface);
    end addCondition;
@@ -392,7 +392,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Error"), BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("actionPerformed"), e);
+            This.BasicProfileActionScriptCondition_Field_logUtil.put (To_Unbounded_String ("Error"), BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("actionPerformed"), e);
                 end;
         end;
    end actionPerformed;
@@ -441,7 +441,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
       profileActionScriptProcessorInterface : ProfileActionScriptProcessorInterface_Access;
       index : Integer;
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start - Processing ")).appendint (BasicProfileActionScriptCondition'Class (This).getProfileActionProcessorInterfaceVector.size).append (To_Unbounded_String (" inputs")).toString, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
+        This.BasicProfileActionScriptCondition_Field_logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start - Processing ")).appendint (BasicProfileActionScriptCondition'Class (This).getProfileActionProcessorInterfaceVector.size).append (To_Unbounded_String (" inputs")).toString, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         profileActionProcessorInterfaceVector := BasicProfileActionScriptCondition'Class (This).getProfileActionProcessorInterfaceVector;
         size := profileActionProcessorInterfaceVector.size;
         for index in 0 .. (size) - 1 loop

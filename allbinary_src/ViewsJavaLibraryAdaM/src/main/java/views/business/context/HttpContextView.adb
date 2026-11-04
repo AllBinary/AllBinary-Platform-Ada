@@ -62,7 +62,7 @@ package body views.business.context.HttpContextView_Package is
    procedure Initialize_Fields (This : in out HttpContextView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.HttpContextView_Field_logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
    end Initialize_Fields;
 
@@ -73,7 +73,7 @@ package body views.business.context.HttpContextView_Package is
         HttpComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, HttpContextView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.HttpContextView_Field_logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, HttpContextView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         HttpContextView'Class (This).setTransformDocumentInterface (TransformHttpRequestDocumentFactory_Package.getInstance (HttpContextView'Class (This).getPageContext, HttpContextView'Class (This).getWeblisketSession));
    end Initialize;
@@ -101,7 +101,7 @@ package body views.business.context.HttpContextView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, HttpContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"), e);
+                This.HttpContextView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, HttpContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"), e);
             end if;
             Java_Throw (e);
                 end;

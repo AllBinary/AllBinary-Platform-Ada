@@ -31,7 +31,7 @@
         NoGyroSensorLibrary
 
         -->
-        <module>../../android/AndroidUtilJavaLibraryAdaM</module>
+<!--        <module>../../android/AndroidUtilJavaLibraryAdaM</module>-->
 
         <module>../../../allbinary_src/security/SimpleCryptLibraryAdaM</module>
         <!--
@@ -50,8 +50,8 @@
         <module>../../DebugJavaLibraryAdaM</module>             
         <module>../../ResourceLibraryAdaM</module>
         <module>../../ResourceJ2MEJavaLibraryAdaM</module>
-        <module>../../AndroidResourceLibraryAdaM</module>
-        <module>../../../allbinary_src/hardware/AndroidSystemJavaLibraryAdaM</module>
+<!--        <module>../../AndroidResourceLibraryAdaM</module>-->
+<!--        <module>../../../allbinary_src/hardware/AndroidSystemJavaLibraryAdaM</module>-->
 
         <module>../../../game/behavior/ArtificialIntelligenceLibraryAdaM</module>
 

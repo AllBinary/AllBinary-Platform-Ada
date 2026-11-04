@@ -77,7 +77,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    procedure Initialize_Fields (This : in out EditCssValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.EditCssValidationView_Field_logUtil_Hidden := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -110,7 +110,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), EditCssValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.EditCssValidationView_Field_logUtil_Hidden.put (To_Unbounded_String ("Failed to validate"), EditCssValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -130,7 +130,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), EditCssValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.EditCssValidationView_Field_logUtil_Hidden.put (To_Unbounded_String ("Failed to generate validation error info"), EditCssValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;

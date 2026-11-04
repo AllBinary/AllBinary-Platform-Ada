@@ -83,7 +83,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
    procedure Initialize_Fields (This : in out InsertThemeValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InsertThemeValidationView_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -94,11 +94,11 @@ package body views.business.context.modules.storefront.customizer.includes.style
         ThemeCustomizerView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("started"));
+            This.InsertThemeValidationView_Field_logUtil.putF (This.commonStrings.CONSTRUCTOR, InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("started"));
         end if;
         This.requestHashMap := NameSpaceRequestParams_Package.Create (InsertThemeValidationView'Class (This).getPageContext).toHashMap;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("begin loading theme"));
+            This.InsertThemeValidationView_Field_logUtil.putF (This.commonStrings.CONSTRUCTOR, InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("begin loading theme"));
         end if;
    end Initialize;
 
@@ -122,7 +122,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
         begin
             isValid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Started Validation"), InsertThemeValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.InsertThemeValidationView_Field_logUtil.putF (To_Unbounded_String ("Started Validation"), InsertThemeValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             themeValidation := ThemeValidation_Package.Create (InsertThemeValidationView'Class (This).getTransformInfoInterface, This.requestHashMap);
             if (themeValidation.isValid) = (False) then
@@ -140,7 +140,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), InsertThemeValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.InsertThemeValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to validate"), InsertThemeValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -159,7 +159,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.InsertThemeValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;
@@ -188,7 +188,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.InsertThemeValidationView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, InsertThemeValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

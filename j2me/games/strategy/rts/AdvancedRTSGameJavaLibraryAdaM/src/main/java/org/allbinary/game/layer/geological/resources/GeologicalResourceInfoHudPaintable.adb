@@ -62,7 +62,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
    begin
       WaypointInfoHudPaintable_Package.Initialize (This);
       Initialize_Fields (This);
-        This.keyvalueDrawString := KeyValueDrawCharArray_Package.Create (GeologicalResourceInfoHudPaintable_Package.RESOURCES, This.textX);
+        This.GeologicalResourceInfoHudPaintable_Field_keyvalueDrawString := KeyValueDrawCharArray_Package.Create (GeologicalResourceInfoHudPaintable_Package.RESOURCES, This.textX);
    end Initialize;
 
    function Create return GeologicalResourceInfoHudPaintable_Access is
@@ -97,14 +97,14 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
             geographicMapCellPosition := GeologicalGeographicMapCellPosition_Access (list.get (index));
             total := (total) + (geographicMapCellPosition.getGeologicalResource.getTotal);
         end loop;
-        This.keyvalueDrawString.update (GeologicalResourceInfoHudPaintable'Class (This).getPrimitiveLongUtil.getCharArray (total), GeologicalResourceInfoHudPaintable'Class (This).getPrimitiveLongUtil.getCurrentTotalDigits);
+        This.GeologicalResourceInfoHudPaintable_Field_keyvalueDrawString.update (GeologicalResourceInfoHudPaintable'Class (This).getPrimitiveLongUtil.getCharArray (total), GeologicalResourceInfoHudPaintable'Class (This).getPrimitiveLongUtil.getCurrentTotalDigits);
    end updateSelectionInfo;
 
    procedure paint (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         WaypointInfoHudPaintable_Package.WaypointInfoHudPaintable (This).paint (graphics);
-        This.keyvalueDrawString.paint (graphics, ((This.y) + (This.fontHeight)));
+        This.GeologicalResourceInfoHudPaintable_Field_keyvalueDrawString.paint (graphics, ((This.y) + (This.fontHeight)));
    end paint;
 
 begin

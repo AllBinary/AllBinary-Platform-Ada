@@ -36,7 +36,7 @@ package body tags.generic_Id.GenericViewTag_Package is
    procedure Initialize_Fields (This : in out GenericViewTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.GenericViewTag_Field_logUtil := LogUtil_Package.getInstance;
       This.output := Null_Unbounded_String;
       This.file := Null_Unbounded_String;
    end Initialize_Fields;
@@ -47,7 +47,7 @@ package body tags.generic_Id.GenericViewTag_Package is
       TransformTag_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (This.commonStrings.START, GenericViewTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.GenericViewTag_Field_logUtil.putF (This.commonStrings.START, GenericViewTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 

@@ -101,7 +101,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
    procedure Initialize_Fields (This : in out InsertCustomizerValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InsertCustomizerValidationView_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -113,7 +113,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.InsertCustomizerValidationView_Field_logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         requestHashMap := RequestParams_Package.Create (InsertCustomizerValidationView'Class (This).getPageContext).toHashMap;
         This.viewName := Java_Unbox (requestHashMap.get (TransformInfoData_Package.getInstance.NAME));
@@ -149,7 +149,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Started Validation"), InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.InsertCustomizerValidationView_Field_logUtil.putF (To_Unbounded_String ("Started Validation"), InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             isValid := True;
             if StringValidationUtil_Package.getInstance.isEmpty (This.viewName) then
@@ -163,13 +163,13 @@ package body views.business.context.modules.storefront.customizer.template.Inser
                     stringBuffer.append (To_Unbounded_String ("Pointing "));
                     stringBuffer.appendint (componentVector.size);
                     stringBuffer.append (To_Unbounded_String (" Components"));
-                    This.logUtil.putF (stringBuffer.toString, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.InsertCustomizerValidationView_Field_logUtil.putF (stringBuffer.toString, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 for index in 0 .. (size) - 1 loop
                     transformInfo := TransformInfo_Access (componentVector.get (index));
                     transformInfoName := transformInfo.getName;
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                        This.logUtil.putF (To_Unbounded_String ("Setting Template Component with ViewName: ") & transformInfoName, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                        This.InsertCustomizerValidationView_Field_logUtil.putF (To_Unbounded_String ("Setting Template Component with ViewName: ") & transformInfoName, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                     end if;
                     componentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, transformInfoName, InsertCustomizerValidationView'Class (This).getTransformInfoInterface));
                     templateViewObjectConfig := InsertTemplateCustomizerTransformInfoObjectConfig_Package.Create (componentInterface.getTransformInfoInterface, componentInterface.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
@@ -201,7 +201,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
                         stringBuffer.append (transformInfoName);
                         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & " Now Pointing To View Name: "));
                         stringBuffer.append (newViewName);
-                        This.logUtil.putF (stringBuffer.toString, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                        This.InsertCustomizerValidationView_Field_logUtil.putF (stringBuffer.toString, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                     end if;
                     templateViewObjectConfig.set (newViewName);
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -210,7 +210,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
                         stringBuffer.append (transformInfoName);
                         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & " with ObjectConfig: "));
                         stringBuffer.append (templateViewObjectConfig.toString);
-                        This.logUtil.putF (stringBuffer.toString, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                        This.InsertCustomizerValidationView_Field_logUtil.putF (stringBuffer.toString, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                     end if;
                     componentInterface.getTransformInfoInterface.setObjectConfigInterface (templateViewObjectConfig);
                     updatedTransformInfoHashMap := componentInterface.getTransformInfoInterface.toHashMap;
@@ -224,7 +224,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.InsertCustomizerValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to validate"), InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -244,7 +244,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), InsertCustomizerValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.InsertCustomizerValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), InsertCustomizerValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;

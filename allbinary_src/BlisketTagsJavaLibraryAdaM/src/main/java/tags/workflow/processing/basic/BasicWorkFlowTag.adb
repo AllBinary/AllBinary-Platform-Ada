@@ -36,7 +36,7 @@ package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
    procedure Initialize_Fields (This : in out BasicWorkFlowTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.BasicWorkFlowTag_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -45,7 +45,7 @@ package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
       StoreWorkFlowTag_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (This.commonStrings.START, BasicWorkFlowTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.BasicWorkFlowTag_Field_logUtil.putF (This.commonStrings.START, BasicWorkFlowTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -61,7 +61,7 @@ package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (This.commonStrings.START, BasicWorkFlowTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                This.BasicWorkFlowTag_Field_logUtil.putF (This.commonStrings.START, BasicWorkFlowTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             BasicWorkFlowTag'Class (This).getPropertiesHashMap.put (DynamicObjectData_Package.NAME, To_Unbounded_String ("workflows.template.data.BasicStoreWorkFlow"));
             return StoreWorkFlowTag_Package.StoreWorkFlowTag (This).doStartTag;

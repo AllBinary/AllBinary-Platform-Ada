@@ -43,6 +43,7 @@ with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.in
 with org.allbinary.game.input.PlayerGameInput_Package_References;
 with org.allbinary.game.input.MapSelectionRunnable_Package; use org.allbinary.game.input.MapSelectionRunnable_Package;
 with org.allbinary.game.input.GameInputProcessorComposite_Package; use org.allbinary.game.input.GameInputProcessorComposite_Package;
+with org.allbinary.game.input.MapSelectionRunnable_Package;
 
 package body org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
 

@@ -55,7 +55,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
    procedure Initialize_Fields (This : in out TransformInfoHttpContext'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TransformInfoHttpContext_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -73,7 +73,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
             stringBuffer.append (databaseHashMap.toString);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Properties HashMap: "));
             stringBuffer.append (propertiesHashMap.toString);
-            This.logUtil.putF (stringBuffer.toString, TransformInfoHttpContext_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.TransformInfoHttpContext_Field_logUtil.putF (stringBuffer.toString, TransformInfoHttpContext_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         TransformInfoHttpContext'Class (This).setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
@@ -92,7 +92,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
         TransformInfoHttp_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttpContext_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.TransformInfoHttpContext_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttpContext_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         TransformInfoHttpContext'Class (This).setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;

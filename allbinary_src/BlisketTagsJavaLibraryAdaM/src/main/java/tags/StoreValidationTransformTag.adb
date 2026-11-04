@@ -38,8 +38,8 @@ package body tags.StoreValidationTransformTag_Package is
    procedure Initialize_Fields (This : in out StoreValidationTransformTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.storeName := Null_Unbounded_String;
+      This.StoreValidationTransformTag_Field_logUtil := LogUtil_Package.getInstance;
+      This.StoreValidationTransformTag_Field_storeName := Null_Unbounded_String;
    end Initialize_Fields;
 
 
@@ -58,8 +58,8 @@ package body tags.StoreValidationTransformTag_Package is
 
    procedure setStoreName (This : in out StoreValidationTransformTag; value : Unbounded_String) is
    begin
-        This.storeName := value;
-        StoreValidationTransformTag'Class (This).getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
+        This.StoreValidationTransformTag_Field_storeName := value;
+        StoreValidationTransformTag'Class (This).getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.StoreValidationTransformTag_Field_storeName);
    end setStoreName;
 
    --  throws JspTagException
@@ -67,7 +67,7 @@ package body tags.StoreValidationTransformTag_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("Tag Start"), StoreValidationTransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                This.StoreValidationTransformTag_Field_logUtil.putF (To_Unbounded_String ("Tag Start"), StoreValidationTransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             return ValidationTransformTag_Package.ValidationTransformTag (This).doStartTag;
         exception

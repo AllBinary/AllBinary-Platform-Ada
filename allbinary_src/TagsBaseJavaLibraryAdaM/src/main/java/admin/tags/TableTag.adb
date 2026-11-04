@@ -59,7 +59,7 @@ package body admin.tags.TableTag_Package is
    procedure Initialize_Fields (This : in out TableTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TableTag_Field_logUtil := LogUtil_Package.getInstance;
       This.enabled := Null_Unbounded_String;
       This.tagHelperFactoryInterface := null;
       This.tagRequestHelperFactoryInterface := null;
@@ -74,7 +74,7 @@ package body admin.tags.TableTag_Package is
       PropertiesTag_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (This.commonStrings.START, TableTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.TableTag_Field_logUtil.putF (This.commonStrings.START, TableTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -164,7 +164,7 @@ package body admin.tags.TableTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to drop table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), This.commonStrings.DROP, e);
+                This.TableTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), This.commonStrings.DROP, e);
             end if;
             return error;
                 end;
@@ -192,7 +192,7 @@ package body admin.tags.TableTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to create table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"), e);
+                This.TableTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"), e);
             end if;
             return error;
                 end;
@@ -220,7 +220,7 @@ package body admin.tags.TableTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to restore backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"), e);
+                This.TableTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"), e);
             end if;
             return error;
                 end;
@@ -248,7 +248,7 @@ package body admin.tags.TableTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to make backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
+                This.TableTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
             end if;
             return error;
                 end;
@@ -274,7 +274,7 @@ package body admin.tags.TableTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to insert");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"), e);
+                This.TableTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"), e);
             end if;
             return error;
                 end;
@@ -300,7 +300,7 @@ package body admin.tags.TableTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to delete");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
+                This.TableTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
             end if;
             return error;
                 end;
@@ -326,7 +326,7 @@ package body admin.tags.TableTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to update");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
+                This.TableTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TableTag_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;
@@ -347,19 +347,19 @@ package body admin.tags.TableTag_Package is
                 stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (TableTag'Class (This).getTagHelperFactoryInterface.all'Tag)));
                 stringBuffer.append (To_Unbounded_String (" Request URI: "));
                 stringBuffer.append (request.getRequestURI);
-                This.logUtil.putF (stringBuffer.toString, TableTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                This.TableTag_Field_logUtil.putF (stringBuffer.toString, TableTag_Access'(This'Unchecked_Access), This.CommandTag_Field_tagStrings.DO_START_TAG);
             end if;
             if (TableTag'Class (This).getTagRequestHelperFactoryInterface) /= (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                    This.logUtil.putF (To_Unbounded_String ("TableTag RequestHelper: ") & To_Unbounded_String (Ada.Tags.Expanded_Name (TableTag'Class (This).getTagRequestHelperFactoryInterface.all'Tag)), TableTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                    This.TableTag_Field_logUtil.putF (To_Unbounded_String ("TableTag RequestHelper: ") & To_Unbounded_String (Ada.Tags.Expanded_Name (TableTag'Class (This).getTagRequestHelperFactoryInterface.all'Tag)), TableTag_Access'(This'Unchecked_Access), This.CommandTag_Field_tagStrings.DO_START_TAG);
                 end if;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                    This.logUtil.putF (To_Unbounded_String ("TableTag RequestHelper: null"), TableTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                    This.TableTag_Field_logUtil.putF (To_Unbounded_String ("TableTag RequestHelper: null"), TableTag_Access'(This'Unchecked_Access), This.CommandTag_Field_tagStrings.DO_START_TAG);
                 end if;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("TableTag this.getCommand(): ") & Java_Image (TableTag'Class (This).getCommand), TableTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                This.TableTag_Field_logUtil.putF (To_Unbounded_String ("TableTag this.getCommand(): ") & Java_Image (TableTag'Class (This).getCommand), TableTag_Access'(This'Unchecked_Access), This.CommandTag_Field_tagStrings.DO_START_TAG);
             end if;
             if TableTag'Class (This).isEnabled then
                 if (TableTag'Class (This).getCommand) /= (null) then

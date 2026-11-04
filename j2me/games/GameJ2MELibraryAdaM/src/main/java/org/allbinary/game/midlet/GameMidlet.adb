@@ -151,6 +151,7 @@ with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
+with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
 
 package body org.allbinary.game.midlet.GameMidlet_Package is
 

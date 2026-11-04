@@ -187,6 +187,7 @@ with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 with org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
+with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
 
 package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 

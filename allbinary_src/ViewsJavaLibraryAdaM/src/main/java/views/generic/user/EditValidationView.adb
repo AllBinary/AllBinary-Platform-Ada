@@ -76,7 +76,7 @@ package body views.generic_Id.user.EditValidationView_Package is
    procedure Initialize_Fields (This : in out EditValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.EditValidationView_Field_logUtil_Hidden := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -99,20 +99,20 @@ package body views.generic_Id.user.EditValidationView_Package is
         begin
             if (UserName_Package.getInstance.isValid (EditValidationView'Class (This).getWeblisketSession.getUserName)) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Failed to validate username"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.EditValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("Failed to validate username"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
             This.user := UserEntityFactory_Package.getInstance.getUser (EditValidationView'Class (This).getWeblisketSession.getUserName);
             if (This.user) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User does not exist"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.EditValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("User does not exist"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
             if (This.user.isValid) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User exists but is invalid - Probably manually modified"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.EditValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("User exists but is invalid - Probably manually modified"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -123,7 +123,7 @@ package body views.generic_Id.user.EditValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.EditValidationView_Field_logUtil_Hidden.put (To_Unbounded_String ("Failed to validate"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -137,19 +137,19 @@ package body views.generic_Id.user.EditValidationView_Package is
             stringBuffer := StringMaker_Package.Create;
             if (UserName_Package.getInstance.isValid (EditValidationView'Class (This).getWeblisketSession.getUserName)) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Failed to validate username"), EditValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                    This.EditValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("Failed to validate username"), EditValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 stringBuffer.append (To_Unbounded_String ("Session User Name is not valid - Your session data has been logged!"));
             end if;
             if (This.user) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User does not exist"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.EditValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("User does not exist"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 stringBuffer.append (To_Unbounded_String ("User profile does not exist - Your session data has been logged!"));
             end if;
             if (This.user.isValid) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User exists but is invalid - Probably manually modified"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.EditValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("User exists but is invalid - Probably manually modified"), EditValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 stringBuffer.append (This.user.validationInfo);
             end if;
@@ -160,7 +160,7 @@ package body views.generic_Id.user.EditValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), EditValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.EditValidationView_Field_logUtil_Hidden.put (To_Unbounded_String ("Failed to generate validation error info"), EditValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;

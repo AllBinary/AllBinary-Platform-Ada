@@ -46,6 +46,8 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
 with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
+with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
+with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package is
 
@@ -370,6 +372,7 @@ with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
+with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
@@ -558,6 +561,7 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package is
 

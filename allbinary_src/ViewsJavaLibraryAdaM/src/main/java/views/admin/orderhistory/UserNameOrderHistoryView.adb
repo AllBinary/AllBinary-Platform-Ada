@@ -90,7 +90,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
    procedure Initialize_Fields (This : in out UserNameOrderHistoryView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.UserNameOrderHistoryView_Field_logUtil := LogUtil_Package.getInstance;
       
       
       
@@ -140,7 +140,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, UserNameOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.UserNameOrderHistoryView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, UserNameOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -170,7 +170,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
                 node.appendChild (orderHistory.toXmlNode (document));
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Attempt to View a users order history"), UserNameOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
+                This.UserNameOrderHistoryView_Field_logUtil.putF (To_Unbounded_String ("Attempt to View a users order history"), UserNameOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
             end if;
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, OrderHistoryData_Package.PREPROCESSINGNAME, OrderHistoryData_Package.PREPROCESSING));
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, OrderHistoryData_Package.PROCESSINGNAME, OrderHistoryData_Package.PROCESSING));
@@ -185,7 +185,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, UserNameOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
+                This.UserNameOrderHistoryView_Field_logUtil.put (This.commonStrings.FAILURE, UserNameOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             return null;
                 end;
@@ -195,7 +195,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
    function isValid (This : in out UserNameOrderHistoryView) return Boolean is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Started"), UserNameOrderHistoryView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+            This.UserNameOrderHistoryView_Field_logUtil.putF (To_Unbounded_String ("Started"), UserNameOrderHistoryView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
         end if;
         if (UserName_Package.getInstance.isValid (This.userName)) = (True) then
             return True;

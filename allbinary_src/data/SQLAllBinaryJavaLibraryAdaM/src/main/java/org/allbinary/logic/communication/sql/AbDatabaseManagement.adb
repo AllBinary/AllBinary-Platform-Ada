@@ -76,8 +76,8 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
    procedure Initialize_Fields (This : in out AbDatabaseManagement'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.commonStrings := CommonStrings_Package.getInstance;
+      This.AbDatabaseManagement_Field_logUtil := LogUtil_Package.getInstance;
+      This.AbDatabaseManagement_Field_commonStrings := CommonStrings_Package.getInstance;
       This.sqlCommandLog := StringMaker_Package.Create;
       This.GRANT_ALL := To_Unbounded_String ("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON ");
       This.DOT_STAR := To_Unbounded_String (".*");
@@ -138,7 +138,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.FAILED, AbDatabaseManagement_Access'(This'Unchecked_Access), This.GET_HOST_NAME, e);
+            This.AbDatabaseManagement_Field_logUtil.put (This.FAILED, AbDatabaseManagement_Access'(This'Unchecked_Access), This.GET_HOST_NAME, e);
             return Null_Unbounded_String;
                 end;
         end;
@@ -181,7 +181,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.UNABLE_TO_CREATE_USER & userName, AbDatabaseManagement_Access'(This'Unchecked_Access), This.METHOD_ADD_USER, e);
+            This.AbDatabaseManagement_Field_logUtil.put (This.UNABLE_TO_CREATE_USER & userName, AbDatabaseManagement_Access'(This'Unchecked_Access), This.METHOD_ADD_USER, e);
             return False;
                 end;
         end;
@@ -201,7 +201,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.UNABLE_TO_CREATE_DATABASE & db, AbDatabaseManagement_Access'(This'Unchecked_Access), This.METHOD_ADD_DB, e);
+            This.AbDatabaseManagement_Field_logUtil.put (This.UNABLE_TO_CREATE_DATABASE & db, AbDatabaseManagement_Access'(This'Unchecked_Access), This.METHOD_ADD_DB, e);
             return False;
                 end;
         end;

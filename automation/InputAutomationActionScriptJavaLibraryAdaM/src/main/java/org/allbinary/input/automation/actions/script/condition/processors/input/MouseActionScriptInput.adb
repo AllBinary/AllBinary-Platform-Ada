@@ -105,7 +105,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    procedure Initialize_Fields (This : in out MouseActionScriptInput'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.MouseActionScriptInput_Field_logUtil := LogUtil_Package.getInstance;
       
       This.buttons := 0;
       
@@ -129,7 +129,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         BasicProfileActionScriptInput_Package.Initialize (This, NAME, node);
         Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, MouseActionScriptInput_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.MouseActionScriptInput_Field_logUtil.putF (This.commonStrings.START, MouseActionScriptInput_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.point := Point_Package.Create;
         actionNode := DomSearchHelper_Package.getNode (MouseActionScriptInputData_Package.NAME, node.getChildNodes);
         if (actionNode) /= (null) then
@@ -213,7 +213,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (MouseActionScriptInputData_Package.BUTTONS, Java_Box (To_Unbounded_String (Java_Image (MouseActionScriptInput'Class (This).getButtonClicks))));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, MouseActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
+        This.MouseActionScriptInput_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, MouseActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
@@ -264,7 +264,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         else
             buttonStringBuffer.append (booleanFactory.FALSE_STRING);
         end if;
-        This.logUtil.putF (To_Unbounded_String ("Input Type: ") & MouseActionScriptInput'Class (This).getInputRobotInterface.getName & To_Unbounded_String (" Point: ") & Java_Image (MouseActionScriptInput'Class (This).getPoint) & To_Unbounded_String (" Buttons Clicked: ") & buttonStringBuffer.toString, MouseActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+        This.MouseActionScriptInput_Field_logUtil.putF (To_Unbounded_String ("Input Type: ") & MouseActionScriptInput'Class (This).getInputRobotInterface.getName & To_Unbounded_String (" Point: ") & Java_Image (MouseActionScriptInput'Class (This).getPoint) & To_Unbounded_String (" Buttons Clicked: ") & buttonStringBuffer.toString, MouseActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    procedure toXmlNode (This : in out MouseActionScriptInput; document_Param : access Document_Package.Document'Class) is

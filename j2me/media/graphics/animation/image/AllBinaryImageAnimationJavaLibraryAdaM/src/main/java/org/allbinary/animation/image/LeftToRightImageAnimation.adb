@@ -61,7 +61,7 @@ package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
    begin
       null;
       
-      This.anchor := Anchor_Package.TOP_LEFT;
+      This.LeftToRightImageAnimation_Field_anchor := Anchor_Package.TOP_LEFT;
    end Initialize_Fields;
 
 
@@ -118,7 +118,7 @@ package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
    procedure paintXY (This : in out LeftToRightImageAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        graphics.drawRegion (LeftToRightImageAnimation'Class (This).getImage, LeftToRightImageAnimation'Class (This).getStartX, LeftToRightImageAnimation'Class (This).getStartY, This.currentWidth, LeftToRightImageAnimation'Class (This).getDrawHeight, Sprite_Package.TRANS_NONE, x, y, This.anchor);
+        graphics.drawRegion (LeftToRightImageAnimation'Class (This).getImage, LeftToRightImageAnimation'Class (This).getStartX, LeftToRightImageAnimation'Class (This).getStartY, This.currentWidth, LeftToRightImageAnimation'Class (This).getDrawHeight, Sprite_Package.TRANS_NONE, x, y, This.LeftToRightImageAnimation_Field_anchor);
    end paintXY;
 
 end org.allbinary.animation.image.LeftToRightImageAnimation_Package;

@@ -57,7 +57,7 @@ package body taghelpers.ValidationViewHelper_Package is
    procedure Initialize_Fields (This : in out ValidationViewHelper'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.ValidationViewHelper_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -70,7 +70,7 @@ package body taghelpers.ValidationViewHelper_Package is
         Initialize_Fields (This);
         This.viewInterface := ValidationComponentInterface_Access (ValidationViewHelper'Class (This).getViewObject);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-            This.logUtil.putF (This.commonStrings.START, ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.ValidationViewHelper_Field_logUtil.putF (This.commonStrings.START, ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -85,7 +85,7 @@ package body taghelpers.ValidationViewHelper_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                This.logUtil.putF (To_Unbounded_String ("Started"), ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.ValidationViewHelper_Field_logUtil.putF (To_Unbounded_String ("Started"), ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return This.viewInterface.isValid;
         exception
@@ -94,7 +94,7 @@ package body taghelpers.ValidationViewHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.ValidationViewHelper_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -111,7 +111,7 @@ package body taghelpers.ValidationViewHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.ValidationViewHelper_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Unknown Validation Error");
                 end;
@@ -128,7 +128,7 @@ package body taghelpers.ValidationViewHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("toValidationInfoDoc()"), e);
+                This.ValidationViewHelper_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("toValidationInfoDoc()"), e);
             end if;
             return null;
                 end;
@@ -146,7 +146,7 @@ package body taghelpers.ValidationViewHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("toValidationInfoNode()"), e);
+                This.ValidationViewHelper_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("toValidationInfoNode()"), e);
             end if;
             return null;
                 end;

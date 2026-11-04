@@ -64,6 +64,7 @@ with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 with org.allbinary.thread.ThreadFactoryUtil_Package;
+with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
 
 package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
 

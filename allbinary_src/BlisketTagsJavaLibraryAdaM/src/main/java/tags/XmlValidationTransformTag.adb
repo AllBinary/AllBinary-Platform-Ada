@@ -37,7 +37,7 @@ package body tags.XmlValidationTransformTag_Package is
    procedure Initialize_Fields (This : in out XmlValidationTransformTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.XmlValidationTransformTag_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -72,7 +72,7 @@ package body tags.XmlValidationTransformTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, XmlValidationTransformTag_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.XmlValidationTransformTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, XmlValidationTransformTag_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             Java_Throw (e);
                 end;

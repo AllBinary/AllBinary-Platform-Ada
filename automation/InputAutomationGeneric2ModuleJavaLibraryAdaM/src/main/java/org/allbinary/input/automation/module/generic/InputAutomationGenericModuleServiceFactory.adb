@@ -36,7 +36,7 @@ package body org.allbinary.input.automation.module.generic_Id.InputAutomationGen
    procedure Initialize_Fields (This : in out InputAutomationGenericModuleServiceFactory'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InputAutomationGenericModuleServiceFactory_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -54,7 +54,7 @@ package body org.allbinary.input.automation.module.generic_Id.InputAutomationGen
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationGenericModuleServiceFactory_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
+            This.InputAutomationGenericModuleServiceFactory_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationGenericModuleServiceFactory_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
                 end;
         end;
    end Initialize;

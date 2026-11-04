@@ -131,8 +131,8 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
    procedure Initialize_Fields (This : in out UpdateFileValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.commonStrings := CommonStrings_Package.getInstance;
+      This.UpdateFileValidationView_Field_logUtil_Hidden := LogUtil_Package.getInstance;
+      This.UpdateFileValidationView_Field_commonStrings := CommonStrings_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -169,9 +169,9 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
    begin
         begin
             command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2_Package.ADMINCOMMAND));
-            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((Java_Compare_To (command, This.commonStrings.UPDATE)) /= (0)) then
+            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((Java_Compare_To (command, This.UpdateFileValidationView_Field_commonStrings.UPDATE)) /= (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Invalid AdminCommand=") & command, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.UpdateFileValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("Invalid AdminCommand=") & command, UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -184,19 +184,19 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.put (To_Unbounded_String ("Existing Item With MoneyException"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                    This.UpdateFileValidationView_Field_logUtil_Hidden.put (To_Unbounded_String ("Existing Item With MoneyException"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID, e);
                 end if;
                     end;
             end;
             if (This.itemInterface) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Item Does Not Exist"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.UpdateFileValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("Item Does Not Exist"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
             if (BasicItemValidation_Package.Create (This.itemInterface).isValid) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("BasicItem is not valid"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.UpdateFileValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("BasicItem is not valid"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -205,7 +205,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
             categoryFile := AbFile_Package.createAbFile (fullCategory);
             if not (categoryFile.isDirectory) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Category Does Not Exist: ") & fullCategory, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.UpdateFileValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("Category Does Not Exist: ") & fullCategory, UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -271,7 +271,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
             downloadableItemValidation := DownloadableItemValidation_Package.Create (This.downloadableItem);
             if (downloadableItemValidation.isValid) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("DownloadableItem is not valid"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.UpdateFileValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("DownloadableItem is not valid"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -282,7 +282,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Exception in validation"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.UpdateFileValidationView_Field_logUtil_Hidden.put (To_Unbounded_String ("Exception in validation"), UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -320,13 +320,13 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
         begin
             stringBuffer := StringMaker_Package.Create;
             command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2_Package.ADMINCOMMAND));
-            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((Java_Compare_To (command, This.commonStrings.UPDATE)) /= (0)) then
+            if (StringValidationUtil_Package.getInstance.isEmpty (command)) or else ((Java_Compare_To (command, This.UpdateFileValidationView_Field_commonStrings.UPDATE)) /= (0)) then
                 return StringUtil_Package.getInstance.EMPTY_STRING;
             end if;
             if (This.itemInterface) = (null) then
                 ITEM_NOT_FOUND := To_Unbounded_String ("Item Does Not Exist");
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (ITEM_NOT_FOUND, UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                    This.UpdateFileValidationView_Field_logUtil_Hidden.putF (ITEM_NOT_FOUND, UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 return ITEM_NOT_FOUND;
             end if;
@@ -338,7 +338,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
             storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName));
             fullCategory := StringMaker_Package.Create.append (URLGLOBALS_Package.getWebappPath).append (storeFrontInterface.getCurrentHostNamePath).append (This.itemInterface.getCategory).toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Category: ") & fullCategory, UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                This.UpdateFileValidationView_Field_logUtil_Hidden.putF (To_Unbounded_String ("Category: ") & fullCategory, UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
             end if;
             categoryFile := AbFile_Package.createAbFile (fullCategory);
             if not (categoryFile.isDirectory) then
@@ -380,7 +380,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                 if (downloadableItemValidation.isValid) = (False) then
                     log := downloadableItemValidation.validationInfo;
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                        This.logUtil.putF (log, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                        This.UpdateFileValidationView_Field_logUtil_Hidden.putF (log, UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID);
                     end if;
                     stringBuffer.append (log);
                     stringBuffer.append (To_Unbounded_String ("<br/>"));
@@ -393,7 +393,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.UpdateFileValidationView_Field_logUtil_Hidden.put (To_Unbounded_String ("Failed to generate validation error info"), UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;
@@ -413,7 +413,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                         stringBuffer := StringMaker_Package.Create;
                         stringBuffer.append (To_Unbounded_String ("File name is not valid: "));
                         stringBuffer.append (fileName);
-                        This.logUtil.putF (stringBuffer.toString, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                        This.UpdateFileValidationView_Field_logUtil_Hidden.putF (stringBuffer.toString, UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID);
                     end if;
                     return False;
                 else
@@ -426,7 +426,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                     stringBuffer.appendlong (size);
                     stringBuffer.append (To_Unbounded_String (">"));
                     stringBuffer.appendint (Integer (fileData.MAXDOWNLOADABLEFILESIZE));
-                    This.logUtil.putF (stringBuffer.toString, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.UpdateFileValidationView_Field_logUtil_Hidden.putF (stringBuffer.toString, UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -437,7 +437,7 @@ package body views.admin.inventory.download.UpdateFileValidationView_Package is
                 stringBuffer.appendlong (size);
                 stringBuffer.append (To_Unbounded_String (">"));
                 stringBuffer.appendint (Integer (fileData.MINDOWNLOADABLEFILESIZE));
-                This.logUtil.putF (stringBuffer.toString, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.UpdateFileValidationView_Field_logUtil_Hidden.putF (stringBuffer.toString, UpdateFileValidationView_Access'(This'Unchecked_Access), This.UpdateFileValidationView_Field_commonStrings.IS_VALID);
             end if;
             return False;
         end if;

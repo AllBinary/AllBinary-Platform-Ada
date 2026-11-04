@@ -245,6 +245,7 @@ with org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package;
 with org.allbinary.game.displayable.canvas.NullDemoPaintable_Package;
 with org.allbinary.game.displayable.canvas.PopupCommandFormInputProcessor_Package;
 with org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.SaveHighScoreRunnable_Package;
 with org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
 with org.allbinary.game.displayable.canvas.StartIntermissionProcessor_Package;
 

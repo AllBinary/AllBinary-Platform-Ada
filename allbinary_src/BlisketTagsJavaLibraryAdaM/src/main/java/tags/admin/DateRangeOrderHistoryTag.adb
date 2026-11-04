@@ -38,7 +38,7 @@ package body tags.admin.DateRangeOrderHistoryTag_Package is
    procedure Initialize_Fields (This : in out DateRangeOrderHistoryTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.DateRangeOrderHistoryTag_Field_logUtil := LogUtil_Package.getInstance;
       This.status := Null_Unbounded_String;
    end Initialize_Fields;
 
@@ -66,7 +66,7 @@ package body tags.admin.DateRangeOrderHistoryTag_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("Tag Start"), DateRangeOrderHistoryTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
+                This.DateRangeOrderHistoryTag_Field_logUtil.putF (To_Unbounded_String ("Tag Start"), DateRangeOrderHistoryTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             DateRangeOrderHistoryTag'Class (This).setName (To_Unbounded_String ("Range Order History View"));
             DateRangeOrderHistoryTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.orderhistory.DateRangeOrderHistoryView"));

@@ -98,7 +98,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
    procedure Initialize_Fields (This : in out PageValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.PageValidationView_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -108,7 +108,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
         PageView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("PageViewValidation()"));
+            This.PageValidationView_Field_logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("PageViewValidation()"));
         end if;
    end Initialize;
 
@@ -140,13 +140,13 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
         begin
             isValid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (This.commonStrings.START, PageValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.PageValidationView_Field_logUtil.putF (This.commonStrings.START, PageValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
             pageObjectConfigInterface := TransformInfoObjectConfigInterface_Access (PageValidationView'Class (This).getTransformInfoInterface.getObjectConfigInterface);
             allViewsToBeModifiedVector := pageObjectConfigInterface.getGroupTransforms;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Views To Be Modified: ") & Java_Image (allViewsToBeModifiedVector.size), PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("get(transformInfoInterface)"));
+                This.PageValidationView_Field_logUtil.putF (To_Unbounded_String ("Views To Be Modified: ") & Java_Image (allViewsToBeModifiedVector.size), PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("get(transformInfoInterface)"));
             end if;
             size := allViewsToBeModifiedVector.size;
             for index in 0 .. (size) - 1 loop
@@ -157,7 +157,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                     stringBuffer.append (PageValidationView'Class (This).getTransformInfoInterface.getName);
                     stringBuffer.append (To_Unbounded_String (" is modifying view: "));
                     stringBuffer.append (viewNameOfViewToBeModified);
-                    This.logUtil.putF (stringBuffer.toString, PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
+                    This.PageValidationView_Field_logUtil.putF (stringBuffer.toString, PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
                 httpTransformInfoInterface := TransformInfoHttpInterface_Access (PageValidationView'Class (This).getTransformInfoInterface);
                 specifiedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
@@ -166,7 +166,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                     stringBuffer.append (PageValidationView'Class (This).getTransformInfoInterface.getName);
                     stringBuffer.append (To_Unbounded_String (" is adding data to view: "));
                     stringBuffer.append (viewNameOfViewToBeModified);
-                    This.logUtil.putF (stringBuffer.toString, PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
+                    This.PageValidationView_Field_logUtil.putF (stringBuffer.toString, PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
                 hashMap := StdUtil_Package.getInstance.createHashMap;
                 title := Unbounded_Slice (specifiedTransformInfoInterface.getName, (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length) + 1, Length (specifiedTransformInfoInterface.getName));
@@ -190,7 +190,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                         stringBuffer.append (specifiedTransformInfoInterface.getDataFilePath.toString);
                         stringBuffer.append (To_Unbounded_String (" to the following data:" & ASCII.LF & ""));
                         stringBuffer.append (documentString);
-                        This.logUtil.putF (stringBuffer.toString, PageValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                        This.PageValidationView_Field_logUtil.putF (stringBuffer.toString, PageValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                     end if;
                     CustomizerUtil_Package.getInstance.write (specifiedTransformInfoInterface, documentString);
                 end if;
@@ -202,7 +202,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), PageValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.PageValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to validate"), PageValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -256,7 +256,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.PageValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("An auto generated page name was invalid.");
                 end;

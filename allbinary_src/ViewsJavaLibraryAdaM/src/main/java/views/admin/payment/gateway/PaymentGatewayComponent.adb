@@ -65,7 +65,7 @@ package body views.admin.payment.gateway.PaymentGatewayComponent_Package is
    procedure Initialize_Fields (This : in out PaymentGatewayComponent'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.PaymentGatewayComponent_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -111,7 +111,7 @@ package body views.admin.payment.gateway.PaymentGatewayComponent_Package is
                 begin
             error := To_Unbounded_String ("Failed to view payment gateway");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayComponent_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.PaymentGatewayComponent_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayComponent_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             return error;
                 end;

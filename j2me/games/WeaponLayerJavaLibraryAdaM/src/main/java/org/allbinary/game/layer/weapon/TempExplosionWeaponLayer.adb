@@ -97,7 +97,7 @@ package body org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is
    procedure Initialize_Fields (This : in out TempExplosionWeaponLayer'Class) is
    begin
       null;
-      This.weaponProperties := WeaponProperties_Package.Create (-(1), -(1), 0, 1000, Short_Integer (0));
+      This.TempExplosionWeaponLayer_Field_weaponProperties := WeaponProperties_Package.Create (-(1), -(1), 0, 1000, Short_Integer (0));
       This.timeDelayHelper := TimeDelayHelper_Package.Create (0);
    end Initialize_Fields;
 

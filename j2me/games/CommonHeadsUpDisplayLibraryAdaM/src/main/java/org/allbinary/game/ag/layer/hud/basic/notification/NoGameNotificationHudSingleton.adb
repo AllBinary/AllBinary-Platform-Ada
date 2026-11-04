@@ -22,6 +22,7 @@ with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Pack
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.notification.NoGameGameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.NoGameGameNotificationHud_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.notification.NoGameGameNotificationHud_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificationHudSingleton_Package is
 

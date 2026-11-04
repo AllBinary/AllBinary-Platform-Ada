@@ -115,7 +115,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    procedure Initialize_Fields (This : in out ColorAtActionScriptCondition'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.ColorAtActionScriptCondition_Field_logUtil := LogUtil_Package.getInstance;
       This.colorAtActionScriptConditionJPanel := null;
       
       This.colorRangeInterface := ColorRangeInterface_Access (ColorRange_Package.Create);
@@ -227,7 +227,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         hashMap.put (ColorAtActionScriptConditionData_Package.MAX_GREEN, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxGreen))));
         hashMap.put (ColorAtActionScriptConditionData_Package.MIN_BLUE, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinBlue))));
         hashMap.put (ColorAtActionScriptConditionData_Package.MAX_BLUE, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxBlue))));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ColorAtActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
+        This.ColorAtActionScriptCondition_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ColorAtActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
@@ -266,7 +266,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       message : Unbounded_String;
    begin
         message := StringMaker_Package.Create.append (To_Unbounded_String ("getPoint(): ")).append (ColorAtActionScriptCondition'Class (This).getPoint.toString).append (CommonSeps_Package.getInstance.NEW_LINE).append (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.toString).toString;
-        This.logUtil.putF (message, ColorAtActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
+        This.ColorAtActionScriptCondition_Field_logUtil.putF (message, ColorAtActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    function getColorRangeInterface (This : in out ColorAtActionScriptCondition) return ColorRangeInterface_Access is

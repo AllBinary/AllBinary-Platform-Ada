@@ -59,7 +59,7 @@ package body views.business.context.RootContextView_Package is
    procedure Initialize_Fields (This : in out RootContextView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.RootContextView_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -69,7 +69,7 @@ package body views.business.context.RootContextView_Package is
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("RootContextView()"));
+            This.RootContextView_Field_logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("RootContextView()"));
         end if;
    end Initialize;
 
@@ -87,7 +87,7 @@ package body views.business.context.RootContextView_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("View Name: ") & RootContextView'Class (This).getTransformInfoInterface.getName, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
+                This.RootContextView_Field_logUtil.putF (To_Unbounded_String ("View Name: ") & RootContextView'Class (This).getTransformInfoInterface.getName, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
             viewName := RootContextView'Class (This).getName;
             componentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, viewName, RootContextView'Class (This).getTransformInfoInterface));
@@ -98,7 +98,7 @@ package body views.business.context.RootContextView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.RootContextView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -124,7 +124,7 @@ package body views.business.context.RootContextView_Package is
             transformInfoInterface := TransformInfo_Access (componentsVector.get (0));
             viewName := transformInfoInterface.getName;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Root Template With View Name: ") & viewName, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("getName()"));
+                This.RootContextView_Field_logUtil.putF (To_Unbounded_String ("Root Template With View Name: ") & viewName, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("getName()"));
             end if;
             if StringValidationUtil_Package.getInstance.isEmpty (viewName) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Template View Not Set - No View Name")));
@@ -136,7 +136,7 @@ package body views.business.context.RootContextView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("getName()"), e);
+                This.RootContextView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("getName()"), e);
             end if;
             Java_Throw (e);
                 end;

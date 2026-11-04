@@ -90,7 +90,7 @@ package body views.generic_Id.inventory.InventoryView_Package is
    procedure Initialize_Fields (This : in out InventoryView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InventoryView_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -121,7 +121,7 @@ package body views.generic_Id.inventory.InventoryView_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Starting"), InventoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
+                This.InventoryView_Field_logUtil.putF (To_Unbounded_String ("Starting"), InventoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
             end if;
             inventoryEntityInterface := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance;
             inventoryNode := document.createElement (InventoryData_Package.INVENTORY);
@@ -134,7 +134,7 @@ package body views.generic_Id.inventory.InventoryView_Package is
                     node := BasicItemView_Package.Create (itemInterface, BasicArrayListD_Package.Create).toXmlNode (document);
                     inventoryNode.appendChild (node);
                 else
-                    This.logUtil.putF (To_Unbounded_String ("Inventory"), InventoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
+                    This.InventoryView_Field_logUtil.putF (To_Unbounded_String ("Inventory"), InventoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
                 end if;
             end loop;
             return inventoryNode;
@@ -144,7 +144,7 @@ package body views.generic_Id.inventory.InventoryView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, InventoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
+                This.InventoryView_Field_logUtil.put (This.commonStrings.FAILURE, InventoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -169,7 +169,7 @@ package body views.generic_Id.inventory.InventoryView_Package is
                 begin
             error := To_Unbounded_String ("Failed to view Inventory");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
+                This.InventoryView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             return error;
                 end;

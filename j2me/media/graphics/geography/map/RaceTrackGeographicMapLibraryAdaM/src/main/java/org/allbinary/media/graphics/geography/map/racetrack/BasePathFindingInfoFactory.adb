@@ -30,6 +30,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellPositionFactoryInitVisitor_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellPositionFactoryInitVisitor_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellPositionFactoryInitVisitor_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.BasePathFindingInfoFactory_Package is

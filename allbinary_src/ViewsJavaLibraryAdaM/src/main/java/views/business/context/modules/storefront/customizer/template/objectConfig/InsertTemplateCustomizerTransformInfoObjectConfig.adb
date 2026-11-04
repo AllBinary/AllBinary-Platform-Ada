@@ -65,7 +65,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
    procedure Initialize_Fields (This : in out InsertTemplateCustomizerTransformInfoObjectConfig'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InsertTemplateCustomizerTransformInfoObjectConfig_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -124,13 +124,13 @@ package body views.business.context.modules.storefront.customizer.template.objec
       componentNode : Node_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Setting: ") & aParentViewName, InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
+            This.InsertTemplateCustomizerTransformInfoObjectConfig_Field_logUtil.putF (To_Unbounded_String ("Setting: ") & aParentViewName, InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
         document := InsertTemplateCustomizerTransformInfoObjectConfig'Class (This).toXmlDoc;
         parentComponentsNodeList := document.getElementsByTagName (TransformInfosData_Package.getInstance.NAME);
         if ((parentComponentsNodeList) /= (null)) and then ((parentComponentsNodeList.getLength) > (0)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Replacing"), InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
+                This.InsertTemplateCustomizerTransformInfoObjectConfig_Field_logUtil.putF (To_Unbounded_String ("Replacing"), InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
             end if;
             componentNode := parentComponentsNodeList.item (0).getChildNodes.item (0);
             if (componentNode) /= (null) then
@@ -139,7 +139,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
             parentComponentsNodeList.item (0).appendChild (TransformInfoDomNodeView_Package.Create (aParentViewName).toXmlNode (document));
         else
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Setting"), InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
+                This.InsertTemplateCustomizerTransformInfoObjectConfig_Field_logUtil.putF (To_Unbounded_String ("Setting"), InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
             end if;
             objectConfigNode := document.getElementsByTagName (TransformInfoObjectConfigData_Package.getInstance.NAME).item (0);
             parentComponentsNode := document.createElement (TransformInfosData_Package.getInstance.NAME);

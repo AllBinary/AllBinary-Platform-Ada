@@ -88,7 +88,7 @@ package body views.admin.user.AddValidationUserView_Package is
    procedure Initialize_Fields (This : in out AddValidationUserView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.AddValidationUserView_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -113,7 +113,7 @@ package body views.admin.user.AddValidationUserView_Package is
         begin
             if (UserEntityFactory_Package.getInstance.getUser (This.user.getUserName)) /= (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User already in existance."), AddValidationUserView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                    This.AddValidationUserView_Field_logUtil.putF (To_Unbounded_String ("User already in existance."), AddValidationUserView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -127,7 +127,7 @@ package body views.admin.user.AddValidationUserView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), AddValidationUserView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.AddValidationUserView_Field_logUtil.put (To_Unbounded_String ("Failed to validate"), AddValidationUserView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -141,7 +141,7 @@ package body views.admin.user.AddValidationUserView_Package is
             stringBuffer := StringMaker_Package.Create;
             if (UserEntityFactory_Package.getInstance.getUser (This.user.getUserName)) /= (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User already exists"), AddValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                    This.AddValidationUserView_Field_logUtil.putF (To_Unbounded_String ("User already exists"), AddValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 stringBuffer.append (To_Unbounded_String ("The User Name you selected is already in use.<br/>  Please select another User Name.<br />"));
             end if;
@@ -155,7 +155,7 @@ package body views.admin.user.AddValidationUserView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), AddValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.AddValidationUserView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), AddValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;

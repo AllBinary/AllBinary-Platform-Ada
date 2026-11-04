@@ -78,7 +78,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    procedure Initialize_Fields (This : in out NewTitleBodyValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.NewTitleBodyValidationView_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -88,7 +88,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
         TitleBodyCustomizerView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, NewTitleBodyValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("NewTitleBodyValidationView()"));
+            This.NewTitleBodyValidationView_Field_logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, NewTitleBodyValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("NewTitleBodyValidationView()"));
         end if;
         This.titleBody := TitleBodyValidation_Package.Create;
    end Initialize;
@@ -110,7 +110,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("View Name: ") & NewTitleBodyValidationView'Class (This).getTransformInfoInterface.getName, NewTitleBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
+                This.NewTitleBodyValidationView_Field_logUtil.putF (To_Unbounded_String ("View Name: ") & NewTitleBodyValidationView'Class (This).getTransformInfoInterface.getName, NewTitleBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             begin
                 CustomizerUtil_Package.getInstance.insert (NewTitleBodyValidationView'Class (This).getTransformInfoInterface, DomNodeInterface_Access (This.titleBody));
@@ -122,7 +122,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), NewTitleBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.NewTitleBodyValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to validate"), NewTitleBodyValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -142,7 +142,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), NewTitleBodyValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.NewTitleBodyValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), NewTitleBodyValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;

@@ -67,7 +67,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
    procedure Initialize_Fields (This : in out TransformInfoHttpStore'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.TransformInfoHttpStore_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
@@ -78,7 +78,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
         TransformInfoHttp_Package.Initialize (This, propertiesHashMap, pageContext, True);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttpStore_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.TransformInfoHttpStore_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttpStore_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -103,7 +103,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
             stringBuffer.append (databaseHashMap.toString);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Properties HashMap: "));
             stringBuffer.append (propertiesHashMap.toString);
-            This.logUtil.putF (stringBuffer.toString, TransformInfoHttpStore_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, HashMap , PageContext)"));
+            This.TransformInfoHttpStore_Field_logUtil.putF (stringBuffer.toString, TransformInfoHttpStore_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, HashMap , PageContext)"));
         end if;
         TransformInfoHttpStore'Class (This).setStoreName (Java_Unbox (databaseHashMap.get (StoreFrontData_Package.getInstance.NAME)));
    end Initialize;
@@ -123,7 +123,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
         TransformInfoHttp_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttpStore_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.TransformInfoHttpStore_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttpStore_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         TransformInfoHttpStore'Class (This).setStoreName (storeFrontInterface.getName);
    end Initialize;

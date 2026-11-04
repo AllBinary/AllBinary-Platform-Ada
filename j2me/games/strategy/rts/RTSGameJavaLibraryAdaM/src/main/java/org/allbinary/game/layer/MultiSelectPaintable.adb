@@ -80,7 +80,7 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
       This.totalCharArray := NullUtil_Package.getInstance.NULL_CHAR_ARRAY;
       This.rootNamesString := StringUtil_Package.getInstance.EMPTY_STRING;
       This.TOTAL := To_Unbounded_String ("Total Selected: ");
-      This.backgroundColor := BasicColorFactory_Package.getInstance.GREY.intValue;
+      This.MultiSelectPaintable_Field_backgroundColor := BasicColorFactory_Package.getInstance.GREY.intValue;
       This.totalWidth := 0;
       This.textLine2Y := 0;
    end Initialize_Fields;
@@ -148,7 +148,7 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
    procedure paint (This : in out MultiSelectPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
-        graphics.setColor (This.backgroundColor);
+        graphics.setColor (This.MultiSelectPaintable_Field_backgroundColor);
         graphics.drawRect (MultiSelectPaintable'Class (This).getX, This.y, MultiSelectPaintable'Class (This).getWidth, MultiSelectPaintable'Class (This).getHeight);
         graphics.setColor (MultiSelectPaintable'Class (This).getColor);
         graphics.drawString (This.TOTAL, This.textX, This.y, 0);

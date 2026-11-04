@@ -90,8 +90,8 @@ package body views.admin.workflow.AddValidationView_Package is
    procedure Initialize_Fields (This : in out AddValidationView'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
+      This.AddValidationView_Field_logUtil := LogUtil_Package.getInstance;
+      This.AddValidationView_Field_abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
    end Initialize_Fields;
 
 
@@ -100,7 +100,7 @@ package body views.admin.workflow.AddValidationView_Package is
    begin
         WorkFlowView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, AddValidationView'Class (This).getPropertiesHashMap, AddValidationView'Class (This).getPageContext);
+        This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.AddValidationView_Field_abeClientInformation, AddValidationView'Class (This).getPropertiesHashMap, AddValidationView'Class (This).getPageContext);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AddValidationView_Access is
@@ -120,7 +120,7 @@ package body views.admin.workflow.AddValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), AddValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
+                This.AddValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to validate"), AddValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -134,7 +134,7 @@ package body views.admin.workflow.AddValidationView_Package is
             stringBuffer := StringMaker_Package.Create;
             if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowInterface.getName, AddValidationView'Class (This).getTransformInfoInterface.getStoreName)) /= (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Workflow already exist"), AddValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
+                    This.AddValidationView_Field_logUtil.putF (To_Unbounded_String ("Workflow already exist"), AddValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 stringBuffer.append (To_Unbounded_String ("The WorkFlow name you selected is already in use.<br/>  Please select another Name.<br />"));
             end if;
@@ -145,7 +145,7 @@ package body views.admin.workflow.AddValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), AddValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
+                This.AddValidationView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), AddValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;

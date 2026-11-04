@@ -60,6 +60,7 @@ with org.allbinary.thread.SecondaryThreadPool_Package; use org.allbinary.thread.
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.game.score.displayable.HighScoreRunnable_Package; use org.allbinary.game.score.displayable.HighScoreRunnable_Package;
 with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
+with org.allbinary.game.score.displayable.HighScoreRunnable_Package;
 
 package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
 

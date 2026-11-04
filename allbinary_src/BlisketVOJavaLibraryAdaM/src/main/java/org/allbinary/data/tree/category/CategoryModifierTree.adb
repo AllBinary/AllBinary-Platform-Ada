@@ -83,7 +83,7 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
    procedure Initialize_Fields (This : in out CategoryModifierTree'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.CategoryModifierTree_Field_logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
       This.directory := Directory_Package.getInstance;
    end Initialize_Fields;
@@ -95,7 +95,7 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
         CategoryPrivateTree_Package.Initialize (This, categoryFactoryInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (This.commonStrings.START, CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryModifierTree(CategoryFactoryInterface categoryFactoryInterface)"));
+            This.CategoryModifierTree_Field_logUtil.putF (This.commonStrings.START, CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryModifierTree(CategoryFactoryInterface categoryFactoryInterface)"));
         end if;
    end Initialize;
 
@@ -113,14 +113,14 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-                This.logUtil.putF (To_Unbounded_String ("Inserting"), CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
+                This.CategoryModifierTree_Field_logUtil.putF (To_Unbounded_String ("Inserting"), CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             if parentCategoryInterface.isValid.booleanValue then
                 parentCategoryInterface.addChild (newChildCategoryInterface);
                 directoryToBeCreatedAbPath := AbPath_Package.Create (newChildCategoryInterface.getRootFilePath.toString & newChildCategoryInterface.getPath.toString, StringUtil_Package.getInstance.EMPTY_STRING);
                 This.directory.create (directoryToBeCreatedAbPath);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-                    This.logUtil.putF (To_Unbounded_String ("Saving"), CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
+                    This.CategoryModifierTree_Field_logUtil.putF (To_Unbounded_String ("Saving"), CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
                 CategoryModifierTree'Class (This).save (parentCategoryInterface);
                 CategoryModifierTree'Class (This).save (newChildCategoryInterface);
@@ -133,7 +133,7 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert"), e);
+                This.CategoryModifierTree_Field_logUtil.put (This.commonStrings.FAILURE, CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert"), e);
             end if;
                 end;
         end;
@@ -161,7 +161,7 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, CategoryModifierTree_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
+                This.CategoryModifierTree_Field_logUtil.put (This.commonStrings.FAILURE, CategoryModifierTree_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
             end if;
                 end;
         end;

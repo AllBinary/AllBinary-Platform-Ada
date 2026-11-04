@@ -171,8 +171,10 @@ with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package; use org.allbin
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;
 with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package;
 with org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;

@@ -42,7 +42,7 @@ package body tags.generic_Id.inventory.InventoryTag_Package is
    procedure Initialize_Fields (This : in out InventoryTag'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.InventoryTag_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
