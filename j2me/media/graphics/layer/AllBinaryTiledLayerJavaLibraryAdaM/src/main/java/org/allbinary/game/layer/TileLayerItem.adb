@@ -140,6 +140,11 @@ package body org.allbinary.game.layer.TileLayerItem_Package is
         null;
    end paintUnselected;
 
+   function getLabel (This : in out TileLayerItem) return Unbounded_String is
+   begin
+        return ABCustomItem_Package.ABCustomItem (This).getLabel;
+   end getLabel;
+
    procedure getPrefContentHeight (This : in out TileLayerItem; width : Integer) is
       Java_Result : constant Integer := TileLayerItem'Class (This).getPrefContentHeight (width => width);
       pragma Unreferenced (Java_Result);

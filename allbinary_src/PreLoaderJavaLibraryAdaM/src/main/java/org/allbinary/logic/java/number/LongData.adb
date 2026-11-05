@@ -37,7 +37,7 @@ package body org.allbinary.logic.java.number.LongData_Package is
 
 begin
    null;
-   MAX_LONG_LENGTH := Length (Long_Long_Integer'Last.toString);
+   MAX_LONG_LENGTH := Ada.Strings.Unbounded.Length (Long_Long_Integer'Last.toString);
 
 end org.allbinary.logic.java.number.LongData_Package;
 

@@ -151,6 +151,7 @@ package org.allbinary.data.tables.user.UserEntity_Package is
    function dropTables (This : in out UserEntity) return Unbounded_String;
    function createTableStatement (This : in out UserEntity) return Unbounded_String;
    function createTable (This : in out UserEntity) return Unbounded_String;
+   function dropTable (This : in out UserEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.user.UserEntity_Package;
 

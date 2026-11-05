@@ -75,7 +75,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
-        Initialize (This, hashMap, HttpServletRequest_Access (pageContext.getRequest));
+        WeblisketSession_Package.Initialize (This, hashMap, HttpServletRequest_Access (pageContext.getRequest));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return WeblisketSession_Access is
@@ -95,7 +95,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
         propertiesHashMap := hashMap;
         request := httpServletRequest;
         This.session := request.getSession (True);
-        if (WeblisketSession'Class (This).getStoreName) = (null) then
+        if (WeblisketSession'Class (This).getStoreName) = (Null_Unbounded_String) then
             WeblisketSession'Class (This).setStoreName (Java_Unbox (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME)));
         end if;
    end Initialize;

@@ -66,7 +66,7 @@ package tags.admin.DateRangeOrderHistoryTag_Package is
    function "=" (Left, Right : DateRangeOrderHistoryTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.DateRangeOrderHistoryTag_Package_References."=";
 
    type DateRangeOrderHistoryTag is new StoreValidationTransformTag with record
-      logUtil : LogUtil_Access;
+      DateRangeOrderHistoryTag_Field_logUtil : LogUtil_Access;
       status : Unbounded_String;
    end record;
 

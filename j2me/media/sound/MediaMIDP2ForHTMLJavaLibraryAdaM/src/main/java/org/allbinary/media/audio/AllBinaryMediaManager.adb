@@ -121,7 +121,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
             if (TsUtil_Package.getInstance.compareTo (resource, Manager_Package.TONE_DEVICE_LOCATOR)) = (0) then
                 return Manager_Package.createPlayer (resource);
             else
-                return Manager_Package.createPlayer (Unbounded_Slice (resource, (0) + 1, (Length (resource)) - (4)));
+                return Manager_Package.createPlayer (Unbounded_Slice (resource, (0) + 1, (Ada.Strings.Unbounded.Length (resource)) - (4)));
             end if;
         else
             return Player_Access (NoPlayer_Package.NO_PLAYER);

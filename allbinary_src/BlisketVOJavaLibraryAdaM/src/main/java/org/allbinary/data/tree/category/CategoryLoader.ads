@@ -117,7 +117,7 @@ package org.allbinary.data.tree.category.CategoryLoader_Package is
    function "=" (Left, Right : CategoryLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tree.category.CategoryLoader_Package_References."=";
 
    type CategoryLoader is new CategoryModifierTree and CategoryLoaderInterface with record
-      logUtil : LogUtil_Access;
+      CategoryLoader_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out CategoryLoader'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class);

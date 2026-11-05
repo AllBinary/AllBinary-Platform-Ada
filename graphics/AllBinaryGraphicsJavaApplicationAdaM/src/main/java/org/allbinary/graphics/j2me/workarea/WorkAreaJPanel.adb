@@ -55,6 +55,7 @@ with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References;
 
 package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
@@ -374,7 +375,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    procedure initDuplicate (This : in out WorkAreaJPanel; newCanvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) is
       newCanvasJPanel : constant CanvasJPanel_Access := CanvasJPanel_Access (newCanvasJPanel_Param);
    begin
-        if (newCanvasJPanel) /= (null) then
+        if (not org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=" (newCanvasJPanel, null)) then
             This.canvasJPanelList.add (newCanvasJPanel);
             WorkAreaJPanel'Class (This).select_Id ((This.canvasJPanelList.size) - (1));
         end if;
@@ -448,7 +449,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    begin
         if (index) < (This.canvasJPanelList.size) then
             canvasJPanel := CanvasJPanel_Access (This.canvasJPanelList.get (index));
-            if (canvasJPanel) /= (null) then
+            if (not org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=" (canvasJPanel, null)) then
                 This.canvasHolderJPanel.removeAll;
                 This.canvasHolderJPanel.add (canvasJPanel);
                 This.selectedFrame := index;
@@ -605,7 +606,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
         treeNode := evt.getTreeNode;
         frameInt := Java_Unbox_Integer (canvasJPanelHashMap.get (evt.getTreeNode));
         canvasJPanel := CanvasJPanel_Access (This.canvasJPanelList.get (Integer (frameInt)));
-        if (canvasJPanel) /= (null) then
+        if (not org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=" (canvasJPanel, null)) then
             canvasJPanel.addAngle (evt.getAngle);
             WorkAreaJPanel'Class (This).select_Id (Integer (frameInt));
         end if;

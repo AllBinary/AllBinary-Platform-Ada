@@ -187,6 +187,8 @@ limited with org.allbinary.input.motion.button.TouchButtonInput_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 limited with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
+limited with org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
+with org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References;
 
 package org.allbinary.input.motion.button.ReleaseHelper_Package is
 
@@ -255,6 +257,16 @@ package org.allbinary.input.motion.button.ReleaseHelper_Package is
    use type CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array;
    subtype CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
    use type CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
+   subtype TouchButtonRecognizer_Access is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access;
+   use type TouchButtonRecognizer_Access;
+   subtype TouchButtonRecognizer_Access_Array is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array;
+   use type TouchButtonRecognizer_Access_Array;
+   subtype TouchButtonRecognizer_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array_Access;
+   use type TouchButtonRecognizer_Access_Array_Access;
+   subtype TouchButtonRecognizer_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array_Access_Array;
+   use type TouchButtonRecognizer_Access_Array_Access_Array;
+   subtype TouchButtonRecognizer_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array_Access_Array_Access;
+   use type TouchButtonRecognizer_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -311,6 +323,8 @@ limited with org.allbinary.input.motion.button.TouchButtonInput_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 limited with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
+limited with org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
+with org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References;
 
 package org.allbinary.input.motion.button.MultitouchReleaseHelper_Package is
 
@@ -379,6 +393,16 @@ package org.allbinary.input.motion.button.MultitouchReleaseHelper_Package is
    use type CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array;
    subtype CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
    use type CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
+   subtype TouchButtonRecognizer_Access is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access;
+   use type TouchButtonRecognizer_Access;
+   subtype TouchButtonRecognizer_Access_Array is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array;
+   use type TouchButtonRecognizer_Access_Array;
+   subtype TouchButtonRecognizer_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array_Access;
+   use type TouchButtonRecognizer_Access_Array_Access;
+   subtype TouchButtonRecognizer_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array_Access_Array;
+   use type TouchButtonRecognizer_Access_Array_Access_Array;
+   subtype TouchButtonRecognizer_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array_Access_Array_Access;
+   use type TouchButtonRecognizer_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

@@ -73,10 +73,10 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (FtpConfigurationData_Package.SERVER, This.ftpConfigurationInterface.getServer);
-        hashMap.put (FtpConfigurationData_Package.USERNAME, This.ftpConfigurationInterface.getUserName);
-        hashMap.put (FtpConfigurationData_Package.PASSWORD, This.ftpConfigurationInterface.getPassword);
-        hashMap.put (FtpConfigurationData_Package.PATH, This.ftpConfigurationInterface.getPath);
+        hashMap.put (FtpConfigurationData_Package.SERVER, Java_Box (This.ftpConfigurationInterface.getServer));
+        hashMap.put (FtpConfigurationData_Package.USERNAME, Java_Box (This.ftpConfigurationInterface.getUserName));
+        hashMap.put (FtpConfigurationData_Package.PASSWORD, Java_Box (This.ftpConfigurationInterface.getPassword));
+        hashMap.put (FtpConfigurationData_Package.PATH, Java_Box (This.ftpConfigurationInterface.getPath));
         return hashMap;
    end toHashMap;
 

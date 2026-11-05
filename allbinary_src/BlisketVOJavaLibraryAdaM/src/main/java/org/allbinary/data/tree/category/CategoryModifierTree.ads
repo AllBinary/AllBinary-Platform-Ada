@@ -117,7 +117,7 @@ package org.allbinary.data.tree.category.CategoryModifierTree_Package is
    function "=" (Left, Right : CategoryModifierTree_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tree.category.CategoryModifierTree_Package_References."=";
 
    type CategoryModifierTree is new CategoryPrivateTree and CategoryModifierTreeInterface with record
-      logUtil : LogUtil_Access;
+      CategoryModifierTree_Field_logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       directory : Directory_Access;
    end record;

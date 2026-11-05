@@ -76,6 +76,7 @@ package org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package i
    function "=" (Left, Right : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References."=";
    function Java_Object_Access_From_SelectRTSLayerVisitorFactoryInterface (Value : SelectRTSLayerVisitorFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function create (This : in out SelectRTSLayerVisitorFactoryInterface; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) return Visitor_Access is abstract;
+   procedure create (This : in out SelectRTSLayerVisitorFactoryInterface; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) is abstract;
 
 end org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
 

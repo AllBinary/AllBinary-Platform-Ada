@@ -31,6 +31,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Pac
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Package is
 
@@ -90,7 +91,7 @@ package body org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Packa
         color := This.YELLOW;
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (gameCanvasInterface.getLayerManager);
         geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
-        if (geographicMapInterface) /= (null) then
+        if (not org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References."=" (geographicMapInterface, null)) then
             foregroundBasicColor := geographicMapInterface.getForegroundBasicColor;
             color := foregroundBasicColor;
         end if;

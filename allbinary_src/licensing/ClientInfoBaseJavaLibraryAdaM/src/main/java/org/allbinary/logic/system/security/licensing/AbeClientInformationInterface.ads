@@ -97,10 +97,13 @@ package org.allbinary.logic.system.security.licensing.AbeClientInformationInterf
    function getLicenseId (This : in out AbeClientInformationInterface) return Unbounded_String is abstract;
    function getLicenseServers (This : in out AbeClientInformationInterface) return BasicArrayList_Access is abstract;
    function getLicenseServer (This : in out AbeClientInformationInterface; index : Integer) return Unbounded_String is abstract;
+   procedure getLicenseServer (This : in out AbeClientInformationInterface; index : Integer) is abstract;
    function getNumberOfLicenseServers (This : in out AbeClientInformationInterface) return Integer is abstract;
    function toHashtable (This : in out AbeClientInformationInterface) return ABHashtable_Access is abstract;
    function isSameId (This : in out AbeClientInformationInterface; alicenseId : Unbounded_String) return Boolean is abstract;
+   procedure isSameId (This : in out AbeClientInformationInterface; alicenseId : Unbounded_String) is abstract;
    function isLargerOrDifferentServerList (This : in out AbeClientInformationInterface; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean is abstract;
+   procedure isLargerOrDifferentServerList (This : in out AbeClientInformationInterface; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    function isHardSale (This : in out AbeClientInformationInterface) return Boolean is abstract;
    function toShortString (This : in out AbeClientInformationInterface) return Unbounded_String is abstract;
 

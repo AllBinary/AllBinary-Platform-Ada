@@ -285,6 +285,8 @@ with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package_References;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.PlayerGameInput_Package_References;
+with org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package; use org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package;
+with org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References;
 with org.allbinary.game.input.GameInputProcessorComposite_Package; use org.allbinary.game.input.GameInputProcessorComposite_Package;
 with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package;
 with org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package;
@@ -410,6 +412,16 @@ package body org.allbinary.game.input.PreGameSelectionRunnable_Package is
    function "=" (Left, Right : PlayerGameInput_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.PlayerGameInput_Package_References."=";
    subtype PlayerGameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PlayerGameInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.PlayerGameInput_Package_References."=";
+   subtype PreGameSelectionGameInputProcessor_Access is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access;
+   function "=" (Left, Right : PreGameSelectionGameInputProcessor_Access) return Boolean renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References."=";
+   subtype PreGameSelectionGameInputProcessor_Access_Array is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array;
+   function "=" (Left, Right : PreGameSelectionGameInputProcessor_Access_Array) return Boolean renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References."=";
+   subtype PreGameSelectionGameInputProcessor_Access_Array_Access is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array_Access;
+   function "=" (Left, Right : PreGameSelectionGameInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References."=";
+   subtype PreGameSelectionGameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : PreGameSelectionGameInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References."=";
+   subtype PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out PreGameSelectionRunnable'Class) is
    begin
       null;
@@ -437,20 +449,20 @@ package body org.allbinary.game.input.PreGameSelectionRunnable_Package is
       commonStrings : CommonStrings_Access;
    begin
             begin
-                PreGameSelectionGameInputProcessor'Class (This).setRunning (True);
+                PreGameSelectionRunnable'Class (This).setRunning (True);
                 SecondaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
                 This.inputProcessor.gameCanvas.setGameState (This.inputProcessor.nextGameState);
                 GameKeyEventHandler_Package.getInstance.removeListener (This.inputProcessor.getPlayerGameInput);
-                PreGameSelectionGameInputProcessor'Class (This).setRunning (False);
+                PreGameSelectionRunnable'Class (This).setRunning (False);
             exception
                 when Java_Occurrence : others =>
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                PreGameSelectionGameInputProcessor'Class (This).setRunning (False);
+                PreGameSelectionRunnable'Class (This).setRunning (False);
                 logUtil := LogUtil_Package.getInstance;
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.put (commonStrings.EXCEPTION_Id, PreGameSelectionGameInputProcessor_Access'(This'Unchecked_Access), commonStrings.RUN, e);
+                logUtil.put (commonStrings.EXCEPTION_Id, PreGameSelectionRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                     end;
             end;
    end run;

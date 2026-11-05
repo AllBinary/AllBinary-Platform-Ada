@@ -54,6 +54,7 @@ package org.allbinary.animation.VectorAnimationInterface_Package is
    function "=" (Left, Right : VectorAnimationInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorAnimationInterface_Package_References."=";
    function Java_Object_Access_From_VectorAnimationInterface (Value : VectorAnimationInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getPoints (This : in out VectorAnimationInterface; frame : Integer) return Integer_Array_Access_Array_Access is abstract;
+   procedure getPoints (This : in out VectorAnimationInterface; frame : Integer) is abstract;
 
 end org.allbinary.animation.VectorAnimationInterface_Package;
 

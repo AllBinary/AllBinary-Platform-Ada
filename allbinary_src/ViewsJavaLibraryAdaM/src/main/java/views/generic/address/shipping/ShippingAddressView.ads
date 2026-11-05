@@ -120,7 +120,7 @@ package views.generic_Id.address.shipping.ShippingAddressView_Package is
    function "=" (Left, Right : ShippingAddressView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.address.shipping.ShippingAddressView_Package_References."=";
 
    type ShippingAddressView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      ShippingAddressView_Field_logUtil : LogUtil_Access;
       request : HttpServletRequest_Access;
       streetAddress : StreetAddress_Access;
    end record;

@@ -65,6 +65,7 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    function "=" (Left, Right : PaymentGatewayInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_PaymentGatewayInterfaceFactoryInterface (Value : PaymentGatewayInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out PaymentGatewayInterfaceFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class) return PaymentGatewayInterface_Access is abstract;
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactoryInterface_Package;
 

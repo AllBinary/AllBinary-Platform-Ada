@@ -232,6 +232,8 @@ limited with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package_References;
 limited with org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.PlayerGameInput_Package_References;
+limited with org.allbinary.game.input.MapSelectionGameInputProcessor_Package;
+with org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References;
 
 package org.allbinary.game.input.MapSelectionRunnable_Package is
 
@@ -355,6 +357,16 @@ package org.allbinary.game.input.MapSelectionRunnable_Package is
    use type PlayerGameInput_Access_Array_Access_Array;
    subtype PlayerGameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access_Array_Access;
    use type PlayerGameInput_Access_Array_Access_Array_Access;
+   subtype MapSelectionGameInputProcessor_Access is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access;
+   use type MapSelectionGameInputProcessor_Access;
+   subtype MapSelectionGameInputProcessor_Access_Array is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array;
+   use type MapSelectionGameInputProcessor_Access_Array;
+   subtype MapSelectionGameInputProcessor_Access_Array_Access is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array_Access;
+   use type MapSelectionGameInputProcessor_Access_Array_Access;
+   subtype MapSelectionGameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array_Access_Array;
+   use type MapSelectionGameInputProcessor_Access_Array_Access_Array;
+   subtype MapSelectionGameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array_Access_Array_Access;
+   use type MapSelectionGameInputProcessor_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

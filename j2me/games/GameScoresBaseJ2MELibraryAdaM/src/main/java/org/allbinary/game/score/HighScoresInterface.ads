@@ -79,6 +79,7 @@ package org.allbinary.game.score.HighScoresInterface_Package is
    procedure addHighScore (This : in out HighScoresInterface; newHighScore_Param : access HighScore_Package.HighScore'Class) is abstract;
    function getTotal (This : in out HighScoresInterface) return Integer is abstract;
    function isBestScore (This : in out HighScoresInterface; newHighScore_Param : access HighScore_Package.HighScore'Class) return Boolean is abstract;
+   procedure isBestScore (This : in out HighScoresInterface; newHighScore_Param : access HighScore_Package.HighScore'Class) is abstract;
 
 end org.allbinary.game.score.HighScoresInterface_Package;
 

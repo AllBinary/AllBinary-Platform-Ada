@@ -174,6 +174,8 @@ limited with org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 limited with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
+limited with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.FirstRunnable_Package is
@@ -235,6 +237,16 @@ package org.allbinary.game.layer.FirstRunnable_Package is
    use type WaypointPathRunnableBase_Access_Array_Access_Array;
    subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
    use type WaypointPathRunnableBase_Access_Array_Access_Array_Access;
+   subtype MultipassWaypointPathRunnable_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access;
+   use type MultipassWaypointPathRunnable_Access;
+   subtype MultipassWaypointPathRunnable_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array;
+   use type MultipassWaypointPathRunnable_Access_Array;
+   subtype MultipassWaypointPathRunnable_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access;
+   use type MultipassWaypointPathRunnable_Access_Array_Access;
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   use type MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
+   use type MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -289,6 +301,8 @@ limited with org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 limited with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
+limited with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.SecondRunnable_Package is
@@ -350,6 +364,16 @@ package org.allbinary.game.layer.SecondRunnable_Package is
    use type WaypointPathRunnableBase_Access_Array_Access_Array;
    subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
    use type WaypointPathRunnableBase_Access_Array_Access_Array_Access;
+   subtype MultipassWaypointPathRunnable_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access;
+   use type MultipassWaypointPathRunnable_Access;
+   subtype MultipassWaypointPathRunnable_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array;
+   use type MultipassWaypointPathRunnable_Access_Array;
+   subtype MultipassWaypointPathRunnable_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access;
+   use type MultipassWaypointPathRunnable_Access_Array_Access;
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   use type MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
+   use type MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -404,6 +428,8 @@ limited with org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 limited with org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
+limited with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.EndRunnable_Package is
@@ -465,6 +491,16 @@ package org.allbinary.game.layer.EndRunnable_Package is
    use type WaypointPathRunnableBase_Access_Array_Access_Array;
    subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
    use type WaypointPathRunnableBase_Access_Array_Access_Array_Access;
+   subtype MultipassWaypointPathRunnable_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access;
+   use type MultipassWaypointPathRunnable_Access;
+   subtype MultipassWaypointPathRunnable_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array;
+   use type MultipassWaypointPathRunnable_Access_Array;
+   subtype MultipassWaypointPathRunnable_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access;
+   use type MultipassWaypointPathRunnable_Access_Array_Access;
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   use type MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
+   use type MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

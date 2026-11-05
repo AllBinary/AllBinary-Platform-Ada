@@ -16,6 +16,7 @@
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References;
 
 package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package is
 
@@ -60,7 +61,7 @@ package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData
       userEmailEventNameData_Var : UserEmailEventNameData_Access;
    begin
         userEmailEventNameData_Var := UserEmailEventNameData_Access (UserEmailEventNameData_Package.userNameEvenNameHashMap.get (Java_Box (userEmailEventNameString)));
-        if (userEmailEventNameData_Var) = (null) then
+        if org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References."=" (userEmailEventNameData_Var, null) then
             Java_Throw (Java_New_Exception ("Exception"));
         else
             return userEmailEventNameData_Var;

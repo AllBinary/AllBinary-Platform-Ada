@@ -105,7 +105,7 @@ package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
         decryptedString := Java_New_String (decrypted);
         index := Java_Index_Of (decryptedString, Java_Image (This.XML_START));
         if (index) > (0) then
-            decryptedString := Unbounded_Slice (decryptedString, (index) + 1, Length (decryptedString));
+            decryptedString := Unbounded_Slice (decryptedString, (index) + 1, Ada.Strings.Unbounded.Length (decryptedString));
         end if;
         return InputStream_Access (ByteArrayInputStream_Package.Create (This.tsUtil.getByteArray (decryptedString)));
    end getDecryptedInputStream;

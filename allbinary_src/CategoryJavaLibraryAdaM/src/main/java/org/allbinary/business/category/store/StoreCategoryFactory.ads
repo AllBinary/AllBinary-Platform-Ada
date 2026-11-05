@@ -119,7 +119,7 @@ package org.allbinary.business.category.store.StoreCategoryFactory_Package is
    function "=" (Left, Right : StoreCategoryFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.StoreCategoryFactory_Package_References."=";
 
    type StoreCategoryFactory is new CategoryAbstractFactory and CategoryFactoryInterface with record
-      logUtil : LogUtil_Access;
+      StoreCategoryFactory_Field_logUtil : LogUtil_Access;
       transformInfoInterface : TransformInfoInterface_Access;
    end record;
 

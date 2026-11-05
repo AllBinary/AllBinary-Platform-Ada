@@ -279,6 +279,8 @@ with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package_References;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.PlayerGameInput_Package_References;
+with org.allbinary.game.input.MapSelectionGameInputProcessor_Package; use org.allbinary.game.input.MapSelectionGameInputProcessor_Package;
+with org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References;
 with org.allbinary.game.input.GameInputProcessorComposite_Package; use org.allbinary.game.input.GameInputProcessorComposite_Package;
 with org.allbinary.game.input.MapSelectionGameInputProcessor_Package;
 
@@ -403,6 +405,16 @@ package body org.allbinary.game.input.MapSelectionRunnable_Package is
    function "=" (Left, Right : PlayerGameInput_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.PlayerGameInput_Package_References."=";
    subtype PlayerGameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PlayerGameInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.PlayerGameInput_Package_References."=";
+   subtype MapSelectionGameInputProcessor_Access is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access;
+   function "=" (Left, Right : MapSelectionGameInputProcessor_Access) return Boolean renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References."=";
+   subtype MapSelectionGameInputProcessor_Access_Array is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array;
+   function "=" (Left, Right : MapSelectionGameInputProcessor_Access_Array) return Boolean renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References."=";
+   subtype MapSelectionGameInputProcessor_Access_Array_Access is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array_Access;
+   function "=" (Left, Right : MapSelectionGameInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References."=";
+   subtype MapSelectionGameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : MapSelectionGameInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References."=";
+   subtype MapSelectionGameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MapSelectionGameInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out MapSelectionRunnable'Class) is
    begin
       null;
@@ -432,23 +444,23 @@ package body org.allbinary.game.input.MapSelectionRunnable_Package is
       commonStrings : CommonStrings_Access;
    begin
             begin
-                MapSelectionGameInputProcessor'Class (This).setRunning (True);
+                MapSelectionRunnable'Class (This).setRunning (True);
                 SecondaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
                 track := (This.inputProcessor.preGameSelectorPaintable.getPreGameSelectionForm.getSelectedIndex) + (1);
                 wave := This.inputProcessor.raceTrackGeographicMapInterfaceFactoryInterface.getFirstWaveWithTrack (track);
                 This.inputProcessor.gameCanvas.getLayerManager.getGameInfo.setCurrentLevel (wave);
                 This.inputProcessor.gameCanvas.buildGameInit (False);
                 GameKeyEventHandler_Package.getInstance.removeListener (This.inputProcessor.getPlayerGameInput);
-                MapSelectionGameInputProcessor'Class (This).setRunning (False);
+                MapSelectionRunnable'Class (This).setRunning (False);
             exception
                 when Java_Occurrence : others =>
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                MapSelectionGameInputProcessor'Class (This).setRunning (False);
+                MapSelectionRunnable'Class (This).setRunning (False);
                 logUtil := LogUtil_Package.getInstance;
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.put (commonStrings.EXCEPTION_Id, MapSelectionGameInputProcessor_Access'(This'Unchecked_Access), commonStrings.RUN, e);
+                logUtil.put (commonStrings.EXCEPTION_Id, MapSelectionRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                     end;
             end;
    end run;

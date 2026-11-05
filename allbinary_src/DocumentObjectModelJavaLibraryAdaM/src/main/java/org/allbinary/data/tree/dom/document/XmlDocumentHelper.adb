@@ -18,7 +18,6 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.java.characters.CharacterSetData_Package; use org.allbinary.logic.java.characters.CharacterSetData_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.xml.sax.InputSource_Package; use org.xml.sax.InputSource_Package;
@@ -28,7 +27,6 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
    package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
    package CharacterSetData_Package renames Standard.org.allbinary.logic.java.characters.CharacterSetData_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package InputSource_Package renames Standard.org.xml.sax.InputSource_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
@@ -55,7 +53,8 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.INDENT_NUMBER := To_Unbounded_String ("indent-number");
-      This.transformer := null;
+      This.indent := 0;
+      This.ignoreDeclaration := False;
    end Initialize_Fields;
 
 
@@ -78,31 +77,50 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    end Create;
 
    procedure init (This : in out XmlDocumentHelper; indent : Integer; ignoreDeclaration : Boolean) is
+   begin
+        This.indent := indent;
+        This.ignoreDeclaration := ignoreDeclaration;
+   end init;
+
+   --  throws TransformerConfigurationException
+   function createTransformer (This : in out XmlDocumentHelper; indent : Integer; ignoreDeclaration : Boolean) return Transformer_Access is
       booleanFactory : BooleanFactory_Access;
       transformerFactory : TransformerFactory_Access;
-      commonStrings : CommonStrings_Access;
+      transformer : Transformer_Access;
    begin
-        begin
-            booleanFactory := BooleanFactory_Package.getInstance;
-            transformerFactory := TransformerFactory_Package.newInstance;
-            transformerFactory.setAttribute (This.INDENT_NUMBER, indent);
-            This.transformer := transformerFactory.newTransformer;
-            This.transformer.setOutputProperty (OutputKeys_Package.ENCODING, CharacterSetData_Package.getInstance.UTF_8);
-            This.transformer.setOutputProperty (OutputKeys_Package.OMIT_XML_DECLARATION, (if ignoreDeclaration then booleanFactory.YES else booleanFactory.NO));
-            This.transformer.setOutputProperty (OutputKeys_Package.INDENT, booleanFactory.YES);
-        exception
-            when Java_Occurrence : others =>
-                declare
-                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
-                begin
-            commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, XmlDocumentHelper_Access'(This'Unchecked_Access), commonStrings.INIT, e);
-                end;
+        booleanFactory := BooleanFactory_Package.getInstance;
+        transformerFactory := TransformerFactory_Package.newInstance;
+        transformerFactory.setAttribute (This.INDENT_NUMBER, indent);
+        transformer := transformerFactory.newTransformer;
+        transformer.setOutputProperty (OutputKeys_Package.ENCODING, CharacterSetData_Package.getInstance.UTF_8);
+        transformer.setOutputProperty (OutputKeys_Package.OMIT_XML_DECLARATION, (if ignoreDeclaration then booleanFactory.YES else booleanFactory.NO));
+        transformer.setOutputProperty (OutputKeys_Package.INDENT, booleanFactory.YES);
+        return transformer;
+   end createTransformer;
+
+   --  throws TransformerConfigurationException
+   function createTransformer (This : in out XmlDocumentHelper) return Transformer_Access is
+      currentIndent : Integer;
+      currentIgnoreDeclaration : Boolean;
+   begin
+        currentIndent := 0;
+        currentIgnoreDeclaration := False;
+        begin  --  synchronized
+            currentIndent := This.indent;
+            currentIgnoreDeclaration := This.ignoreDeclaration;
         end;
-   end init;
+        return XmlDocumentHelper'Class (This).createTransformer (currentIndent, currentIgnoreDeclaration);
+   end createTransformer;
 
    --  throws Exception
    function format (This : in out XmlDocumentHelper; xmlString : Unbounded_String) return Unbounded_String is
+   begin
+        return XmlDocumentHelper'Class (This).formatWithTransformer (xmlString, XmlDocumentHelper'Class (This).createTransformer);
+   end format;
+
+   --  throws Exception
+   function formatWithTransformer (This : in out XmlDocumentHelper; xmlString : Unbounded_String; transformer_Param : access Transformer_Package.Transformer'Class) return Unbounded_String is
+      transformer : constant Transformer_Access := Transformer_Access (transformer_Param);
       src : InputSource_Access;
       document : Document_Access;
       out_Id : Writer_Access;
@@ -110,9 +128,9 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
         src := InputSource_Package.Create (StringReader_Package.Create (xmlString));
         document := DocumentBuilderFactory_Package.newInstance.newDocumentBuilder.parse (src);
         out_Id := Writer_Access (StringWriter_Package.Create);
-        This.transformer.transform (DOMSource_Package.Create (document), StreamResult_Package.Create (out_Id));
+        transformer.transform (DOMSource_Package.Create (document), StreamResult_Package.Create (out_Id));
         return out_Id.toString;
-   end format;
+   end formatWithTransformer;
 
    --  throws Exception
    function toString (document_Param : access Document_Package.Document'Class) return Unbounded_String is
@@ -141,12 +159,26 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
         end;
    end toString;
 
+   procedure createTransformer (This : in out XmlDocumentHelper; indent : Integer; ignoreDeclaration : Boolean) is
+      Java_Result : constant Transformer_Access := XmlDocumentHelper'Class (This).createTransformer (indent => indent, ignoreDeclaration => ignoreDeclaration);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end createTransformer;
+
    procedure format (This : in out XmlDocumentHelper; xmlString : Unbounded_String) is
       Java_Result : constant Unbounded_String := XmlDocumentHelper'Class (This).format (xmlString => xmlString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end format;
+
+   procedure formatWithTransformer (This : in out XmlDocumentHelper; xmlString : Unbounded_String; transformer_Param : access Transformer_Package.Transformer'Class) is
+      Java_Result : constant Unbounded_String := XmlDocumentHelper'Class (This).formatWithTransformer (xmlString => xmlString, transformer_Param => transformer_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end formatWithTransformer;
 
    procedure toString (document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Unbounded_String := toString (document_Param => document_Param);

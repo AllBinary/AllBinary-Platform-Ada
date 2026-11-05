@@ -94,8 +94,11 @@ package org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityIn
    function "=" (Left, Right : InventoryEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package_References."=";
    function Java_Object_Access_From_InventoryEntityInterface (Value : InventoryEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getItem (This : in out InventoryEntityInterface; id : Unbounded_String) return ItemInterface_Access is abstract;
+   procedure getItem (This : in out InventoryEntityInterface; id : Unbounded_String) is abstract;
    function getItems (This : in out InventoryEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
+   procedure getItems (This : in out InventoryEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is abstract;
    function getWeight (This : in out InventoryEntityInterface; id : Unbounded_String) return Unbounded_String is abstract;
+   procedure getWeight (This : in out InventoryEntityInterface; id : Unbounded_String) is abstract;
    procedure deleteWhere (This : in out InventoryEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
    procedure insert (This : in out InventoryEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure update (This : in out InventoryEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;

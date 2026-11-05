@@ -77,7 +77,7 @@ package tags.HelperTag_Package is
    function "=" (Left, Right : HelperTag_Access_Array_Access_Array_Access) return Boolean renames tags.HelperTag_Package_References."=";
 
    type HelperTag is new PropertiesTag with record
-      logUtil : LogUtil_Access;
+      HelperTag_Field_logUtil : LogUtil_Access;
       tagHelperFactoryInterface : TagHelperFactoryInterface_Access;
       anyType : Java_Object_Access;
    end record;

@@ -169,7 +169,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                     This.PageValidationView_Field_logUtil.putF (stringBuffer.toString, PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
                 hashMap := StdUtil_Package.getInstance.createHashMap;
-                title := Unbounded_Slice (specifiedTransformInfoInterface.getName, (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length) + 1, Length (specifiedTransformInfoInterface.getName));
+                title := Unbounded_Slice (specifiedTransformInfoInterface.getName, (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length) + 1, Ada.Strings.Unbounded.Length (specifiedTransformInfoInterface.getName));
                 if (Java_Compare_To (title, To_Unbounded_String ("index"))) = (0) then
                     hashMap.put (TitleData_Package.getInstance.TEXT, Java_Box (Java_Image (PageValidationView'Class (This).getTransformInfoInterface.getStoreName) & To_Unbounded_String (" - Home Page")));
                 else
@@ -236,7 +236,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                 viewNameOfViewToBeModified := transformInfoInterface.getName;
                 specifiedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
                 hashMap := StdUtil_Package.getInstance.createHashMap;
-                title := Unbounded_Slice (specifiedTransformInfoInterface.getName, (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length) + 1, Length (specifiedTransformInfoInterface.getName));
+                title := Unbounded_Slice (specifiedTransformInfoInterface.getName, (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length) + 1, Ada.Strings.Unbounded.Length (specifiedTransformInfoInterface.getName));
                 if (Java_Compare_To (title, To_Unbounded_String ("index"))) = (0) then
                     hashMap.put (TitleData_Package.getInstance.TEXT, Java_Box (Java_Image (PageValidationView'Class (This).getTransformInfoInterface.getStoreName) & To_Unbounded_String (" - Home Page")));
                 else
@@ -273,6 +273,12 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
    begin
         return null;
    end toValidationInfoNode;
+
+   --  throws Exception
+   function getTransformInfoInterface (This : in out PageValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (PageView_Package.PageView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
 
    procedure toValidationInfoNode (This : in out PageValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := PageValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);

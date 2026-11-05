@@ -165,6 +165,16 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
         return AbPath_Package.Create (TransformInfoHttpStore'Class (This).getPath, TransformInfoHttpStore'Class (This).getDataFile);
    end getDataFilePath;
 
+   procedure setStoreName (This : in out TransformInfoHttpStore; value : Unbounded_String) is
+   begin
+        TransformInfoHttp_Package.TransformInfoHttp (This).setStoreName (value);
+   end setStoreName;
+
+   function getStoreName (This : in out TransformInfoHttpStore) return Unbounded_String is
+   begin
+        return TransformInfoHttp_Package.TransformInfoHttp (This).getStoreName;
+   end getStoreName;
+
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package;
 
 

@@ -63,6 +63,7 @@ package org.allbinary.ai.ArtificialIntelligenceFactoryInterface_Package is
    function "=" (Left, Right : ArtificialIntelligenceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.ai.ArtificialIntelligenceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_ArtificialIntelligenceFactoryInterface (Value : ArtificialIntelligenceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out ArtificialIntelligenceFactoryInterface; anyType_Param : access Java_Object'Class) return ArtificialIntelligence_Access is abstract;
+   procedure getInstance (This : in out ArtificialIntelligenceFactoryInterface; anyType_Param : access Java_Object'Class) is abstract;
 
 end org.allbinary.ai.ArtificialIntelligenceFactoryInterface_Package;
 

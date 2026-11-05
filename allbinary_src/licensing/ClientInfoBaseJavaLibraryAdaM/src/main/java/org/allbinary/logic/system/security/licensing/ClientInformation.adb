@@ -159,7 +159,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
         clientInfoHashtable.put (abeClientInformationData.NAME, Java_Box (This.name));
         clientInfoHashtable.put (abeClientInformationData.VERSION, Java_Box (This.version));
         clientInfoHashtable.put (abeClientInformationData.SPECIALNAME, Java_Box (This.specialName));
-        clientInfoHashtable.put (abeClientInformationData.LICENSEID, ClientInformation'Class (This).getLicenseId);
+        clientInfoHashtable.put (abeClientInformationData.LICENSEID, Java_Box (ClientInformation'Class (This).getLicenseId));
         clientInfoHashtable.put (abeClientInformationData.OSNAME, Java_Box (genericOperatingSystem.getName));
         clientInfoHashtable.put (abeClientInformationData.OSARCH, genericOperatingSystem.getArch);
         clientInfoHashtable.put (abeClientInformationData.OSVERSION, genericOperatingSystem.getVersion);

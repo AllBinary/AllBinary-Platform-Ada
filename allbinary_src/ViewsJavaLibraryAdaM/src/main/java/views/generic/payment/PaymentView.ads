@@ -106,7 +106,7 @@ package views.generic_Id.payment.PaymentView_Package is
    function "=" (Left, Right : PaymentView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.payment.PaymentView_Package_References."=";
 
    type PaymentView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      PaymentView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out PaymentView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);

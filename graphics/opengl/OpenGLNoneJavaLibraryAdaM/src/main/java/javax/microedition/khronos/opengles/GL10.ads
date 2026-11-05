@@ -323,6 +323,7 @@ package javax.microedition.khronos.opengles.GL10_Package is
    procedure glGetIntegerv (This : in out GL10; pname : Integer; params : Integer_Array_Access; offset : Integer) is abstract;
    procedure glGetIntegerv (This : in out GL10; pname : Integer; params_Param : access IntBuffer_Package.IntBuffer'Class) is abstract;
    function glGetString (This : in out GL10; name : Integer) return Unbounded_String is abstract;
+   procedure glGetString (This : in out GL10; name : Integer) is abstract;
    procedure glHint (This : in out GL10; target : Integer; mode : Integer) is abstract;
    procedure glLightModelf (This : in out GL10; pname : Integer; param : Float) is abstract;
    procedure glLightModelfv (This : in out GL10; pname : Integer; params : Float_Array_Access; offset : Integer) is abstract;

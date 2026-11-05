@@ -108,7 +108,7 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
         abFile := AbFile_Package.createAbFile (path);
         if abFile.exists then
             This.logUtil.putF (This.REMOVING_OLD & path, BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
-            abFile.delete;
+            declare Java_Result renames abFile.delete; pragma Unreferenced (Java_Result); begin null; end;
         else
             name := AbPathData_Package.getInstance.removeNameFromPath (path);
             abFileDirectory := AbFile_Package.createAbFile (name);
@@ -134,8 +134,8 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
       result : Boolean;
    begin
         if abFile.exists then
-            This.logUtil.putF (This.REMOVING_OLD & Java_Image (abFile.getPath), BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
-            abFile.delete;
+            This.logUtil.putF (This.REMOVING_OLD & abFile.getPath, BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
+            declare Java_Result renames abFile.delete; pragma Unreferenced (Java_Result); begin null; end;
         else
             name := AbPathData_Package.getInstance.removeNameFromPath (abFile.getAbsolutePath);
             abFileDirectory := AbFile_Package.createAbFile (name);
@@ -158,7 +158,7 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
       fileOut : BufferedWriter_Access;
    begin
         fileOut := BufferedWriter_Package.Create (FileWriter_Package.Create (AbFileNativeUtil_Package.get (abFile)));
-        fileOut.write (data, 0, Length (data));
+        fileOut.write (data, 0, Ada.Strings.Unbounded.Length (data));
         fileOut.newLine;
         fileOut.flush;
    end write;

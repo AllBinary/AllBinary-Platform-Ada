@@ -31,6 +31,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.business.category.Category_Package;
 with org.allbinary.business.category.Category_Package_References;
 limited with org.allbinary.business.category.CategoryFactoryInterface_Package;
@@ -43,11 +45,22 @@ with org.allbinary.data.tables.category.CategoryEntityInterface_Package; use org
 package org.allbinary.data.tables.category.CategoryEntity_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package Category_Package renames Standard.org.allbinary.business.category.Category_Package;
    package CategoryFactoryInterface_Package renames Standard.org.allbinary.business.category.CategoryFactoryInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
    package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
    subtype Category_Access is org.allbinary.business.category.Category_Package_References.Category_Access;
    use type Category_Access;
    subtype Category_Access_Array is org.allbinary.business.category.Category_Package_References.Category_Access_Array;
@@ -108,6 +121,7 @@ package org.allbinary.data.tables.category.CategoryEntity_Package is
    function createTable (This : in out CategoryEntity) return Unbounded_String;
    procedure update (This : in out CategoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out CategoryEntity) return Unbounded_String;
+   procedure insert (This : in out CategoryEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.data.tables.category.CategoryEntity_Package;
 

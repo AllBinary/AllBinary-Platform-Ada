@@ -31,6 +31,7 @@ with org.allbinary.layer.LayerManager_Package;
 with org.allbinary.layer.NamedInterface_Package;
 with org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEvent_Package;
+with org.allbinary.layer.AllBinaryLayer_Package_References;
 
 package body org.allbinary.layer.LayerManagerLogging_Package is
 
@@ -129,7 +130,7 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
    procedure remove (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
-        if (layerInterface) = (null) then
+        if org.allbinary.layer.AllBinaryLayer_Package_References."=" (layerInterface, null) then
             This.stringBuilder.delete (0, This.stringBuilder.length);
             This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.ATTEMPT_REMOVE_U).append (StringUtil_Package.getInstance.toString (layerInterface)).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
         else
@@ -142,7 +143,7 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
       layerManager : constant LayerManager_Access := LayerManager_Access (layerManager_Param);
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
-        if (layerInterface) = (null) then
+        if org.allbinary.layer.AllBinaryLayer_Package_References."=" (layerInterface, null) then
             This.stringBuilder.delete (0, This.stringBuilder.length);
             This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.REMOVE_U).append (StringUtil_Package.getInstance.toString (layerInterface)).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
         elsif result then

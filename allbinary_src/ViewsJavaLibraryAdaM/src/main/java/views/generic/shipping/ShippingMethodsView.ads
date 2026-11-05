@@ -132,7 +132,7 @@ package views.generic_Id.shipping.ShippingMethodsView_Package is
    function "=" (Left, Right : ShippingMethodsView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.shipping.ShippingMethodsView_Package_References."=";
 
    type ShippingMethodsView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      ShippingMethodsView_Field_logUtil : LogUtil_Access;
       shippingMethods : ShippingMethods_Access;
       storeFrontInterface : StoreFrontInterface_Access;
    end record;

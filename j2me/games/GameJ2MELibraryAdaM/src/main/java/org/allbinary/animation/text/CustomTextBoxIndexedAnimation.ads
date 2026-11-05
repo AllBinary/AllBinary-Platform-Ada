@@ -126,6 +126,7 @@ package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package is
    function getFontHeight (This : in out CustomTextBoxIndexedAnimation) return Integer;
    procedure paintXY (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure paintThreedXYZ (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer);
+   function getWidth (This : in out CustomTextBoxIndexedAnimation) return Integer;
 
 end org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package;
 

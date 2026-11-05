@@ -250,7 +250,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             totalImages := (This.imageUnifierProperties.getRows) * (This.imageUnifierProperties.getColumns);
             averageRatio := This.imagesRatioUtil.getAverage (tempBufferedImageArray, totalImages);
             averageRatioString := averageRatio.toString;
-            if (Length (averageRatioString)) > (4) then
+            if (Ada.Strings.Unbounded.Length (averageRatioString)) > (4) then
                 averageRatioString := Unbounded_Slice (averageRatioString, (0) + 1, 4);
             end if;
             This.avgRatioJTextField.setText (averageRatioString);
@@ -327,7 +327,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             This.imageUnifierProperties.setImageUnifierCell (imageUnifierCell);
             cellRatio := ((Long_Float (imageUnifierCell.getWidth)) / (imageUnifierCell.getHeight));
             cellRatioString := cellRatio.toString;
-            if (Length (cellRatioString)) > (4) then
+            if (Ada.Strings.Unbounded.Length (cellRatioString)) > (4) then
                 cellRatioString := Unbounded_Slice (cellRatioString, (0) + 1, 4);
             end if;
             This.cellRatioJTextField.setText (cellRatioString);

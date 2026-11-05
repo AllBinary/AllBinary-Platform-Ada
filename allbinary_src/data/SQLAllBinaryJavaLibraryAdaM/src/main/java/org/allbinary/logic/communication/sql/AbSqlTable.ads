@@ -77,7 +77,7 @@ package org.allbinary.logic.communication.sql.AbSqlTable_Package is
    function "=" (Left, Right : AbSqlTable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlTable_Package_References."=";
 
    type AbSqlTable is new AbSqlBasic with record
-      logUtil : LogUtil_Access;
+      AbSqlTable_Field_logUtil : LogUtil_Access;
       tableName : Unbounded_String;
       METHOD_CREATED_TABLE : Unbounded_String;
       METHOD_DROP_TABLE : Unbounded_String;

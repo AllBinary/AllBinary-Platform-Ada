@@ -92,7 +92,7 @@ package org.allbinary.animation.image.BottomToTopImageAnimation_Package is
    type BottomToTopImageAnimation is new ImageSegmentAnimation with record
       startHeight : Integer;
       currentHeight : Integer;
-      anchor : Integer;
+      BottomToTopImageAnimation_Field_anchor : Integer;
    end record;
 
    procedure Initialize (This : in out BottomToTopImageAnimation'Class; image_Param : access Image_Package.Image'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);

@@ -67,7 +67,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
       index : Integer;
    begin
         numberOfDecimalPoints := 0;
-        for index in 0 .. (Length (value)) - 1 loop
+        for index in 0 .. (Ada.Strings.Unbounded.Length (value)) - 1 loop
             digit := Element (value, (index) + 1);
             if (not (StringValidationUtil'Class (This).isNumberFromChar (digit))) and then ((Integer (Character'Pos (digit))) /= (Integer (Character'Pos ('.')))) then
                 return False;
@@ -92,7 +92,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function isValidRequired (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) return Boolean is
    begin
-        if (((value) = (Null_Unbounded_String)) or else ((Length (value)) < (min))) or else ((Length (value)) > (max)) then
+        if (((value) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (value)) < (min))) or else ((Ada.Strings.Unbounded.Length (value)) > (max)) then
             return False;
         end if;
         return True;
@@ -100,7 +100,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function isValidRequiredNumber (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) return Boolean is
    begin
-        if ((StringValidationUtil'Class (This).isEmpty (value)) or else ((Length (value)) < (min))) or else ((Length (value)) > (max)) then
+        if ((StringValidationUtil'Class (This).isEmpty (value)) or else ((Ada.Strings.Unbounded.Length (value)) < (min))) or else ((Ada.Strings.Unbounded.Length (value)) > (max)) then
             return False;
         end if;
         if not (StringValidationUtil'Class (This).isNumber (value)) then
@@ -112,7 +112,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
    function isValidNotRequired (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) return Boolean is
    begin
         if (value) /= (Null_Unbounded_String) then
-            if ((Length (value)) < (min)) or else ((Length (value)) > (max)) then
+            if ((Ada.Strings.Unbounded.Length (value)) < (min)) or else ((Ada.Strings.Unbounded.Length (value)) > (max)) then
                 return False;
             end if;
         end if;
@@ -122,7 +122,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
    function isValidNotRequiredNumber (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) return Boolean is
    begin
         if (value) /= (Null_Unbounded_String) then
-            if (((Java_Compare_To (value, This.stringUtil.NULL_STRING)) = (0)) or else ((Length (value)) < (min))) or else ((Length (value)) > (max)) then
+            if (((Java_Compare_To (value, This.stringUtil.NULL_STRING)) = (0)) or else ((Ada.Strings.Unbounded.Length (value)) < (min))) or else ((Ada.Strings.Unbounded.Length (value)) > (max)) then
                 return False;
             end if;
             if not (StringValidationUtil'Class (This).isNumber (value)) then

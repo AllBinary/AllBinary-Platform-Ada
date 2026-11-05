@@ -80,6 +80,7 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    procedure setName (This : in out GenericProfileDataWorkerTypeInterface; name : Unbounded_String) is abstract;
    function toString (This : in out GenericProfileDataWorkerTypeInterface) return Unbounded_String is abstract;
    function toXmlNode (This : in out GenericProfileDataWorkerTypeInterface; document_Param : access Document_Package.Document'Class) return Node_Access is abstract;
+   procedure toXmlNode (This : in out GenericProfileDataWorkerTypeInterface; document_Param : access Document_Package.Document'Class) is abstract;
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package;
 

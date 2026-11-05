@@ -195,6 +195,12 @@ package body views.business.context.modules.storefront.customizer.includes.style
         end;
    end view;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out InsertThemeValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (ThemeCustomizerView_Package.ThemeCustomizerView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out InsertThemeValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := InsertThemeValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

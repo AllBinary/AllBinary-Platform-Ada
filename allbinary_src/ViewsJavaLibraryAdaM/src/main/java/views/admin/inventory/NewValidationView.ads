@@ -100,6 +100,7 @@ package views.admin.inventory.NewValidationView_Package is
    function toValidationInfoNode (This : in out NewValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out NewValidationView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out NewValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out NewValidationView) return TransformInfoInterface_Access;
 
 end views.admin.inventory.NewValidationView_Package;
 

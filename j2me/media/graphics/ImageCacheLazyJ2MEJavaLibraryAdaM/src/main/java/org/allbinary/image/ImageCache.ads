@@ -318,6 +318,8 @@ limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
+limited with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 
 package org.allbinary.image.NotHTMLProcessor_Package is
 
@@ -455,6 +457,16 @@ package org.allbinary.image.NotHTMLProcessor_Package is
    use type ImageCacheBase_Access_Array_Access_Array;
    subtype ImageCacheBase_Access_Array_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array_Access;
    use type ImageCacheBase_Access_Array_Access_Array_Access;
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   use type ImageCache_Access;
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   use type ImageCache_Access_Array;
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   use type ImageCache_Access_Array_Access;
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   use type ImageCache_Access_Array_Access_Array;
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   use type ImageCache_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -522,6 +534,8 @@ limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
+limited with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 
 package org.allbinary.image.NotHTMLEndProcessor_Package is
 
@@ -659,6 +673,16 @@ package org.allbinary.image.NotHTMLEndProcessor_Package is
    use type ImageCacheBase_Access_Array_Access_Array;
    subtype ImageCacheBase_Access_Array_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array_Access;
    use type ImageCacheBase_Access_Array_Access_Array_Access;
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   use type ImageCache_Access;
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   use type ImageCache_Access_Array;
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   use type ImageCache_Access_Array_Access;
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   use type ImageCache_Access_Array_Access_Array;
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   use type ImageCache_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -726,6 +750,8 @@ limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
+limited with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 
 package org.allbinary.image.HTMLEndProcessor_Package is
 
@@ -863,6 +889,16 @@ package org.allbinary.image.HTMLEndProcessor_Package is
    use type ImageCacheBase_Access_Array_Access_Array;
    subtype ImageCacheBase_Access_Array_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array_Access;
    use type ImageCacheBase_Access_Array_Access_Array_Access;
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   use type ImageCache_Access;
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   use type ImageCache_Access_Array;
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   use type ImageCache_Access_Array_Access;
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   use type ImageCache_Access_Array_Access_Array;
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   use type ImageCache_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -930,6 +966,8 @@ limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
+limited with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 
 package org.allbinary.image.FirstProcessor_Package is
 
@@ -1067,6 +1105,16 @@ package org.allbinary.image.FirstProcessor_Package is
    use type ImageCacheBase_Access_Array_Access_Array;
    subtype ImageCacheBase_Access_Array_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array_Access;
    use type ImageCacheBase_Access_Array_Access_Array_Access;
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   use type ImageCache_Access;
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   use type ImageCache_Access_Array;
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   use type ImageCache_Access_Array_Access;
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   use type ImageCache_Access_Array_Access_Array;
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   use type ImageCache_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

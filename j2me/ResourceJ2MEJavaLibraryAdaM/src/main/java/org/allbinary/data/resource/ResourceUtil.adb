@@ -83,36 +83,36 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
                 if (inputStream) = (null) then
                     stringMaker := StringMaker_Package.Create;
                     index := Java_Last_Index_Of (resource, Java_Image ('/'));
-                    resourcePath := Unbounded_Slice (resource, ((index) + (1)) + 1, Length (resource));
+                    resourcePath := Unbounded_Slice (resource, ((index) + (1)) + 1, Ada.Strings.Unbounded.Length (resource));
                     inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
                     if (inputStream) = (null) then
-                        resourcePath := Unbounded_Slice (resource, (index) + 1, Length (resource));
+                        resourcePath := Unbounded_Slice (resource, (index) + 1, Ada.Strings.Unbounded.Length (resource));
                         inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
                         if (inputStream) = (null) then
                             RES := To_Unbounded_String ("res");
-                            resourcePath := stringMaker.append (RES).append (Unbounded_Slice (resource, (index) + 1, Length (resource))).toString;
+                            resourcePath := stringMaker.append (RES).append (Unbounded_Slice (resource, (index) + 1, Ada.Strings.Unbounded.Length (resource))).toString;
                             inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
                             if (inputStream) = (null) then
                                 stringMaker.delete (0, stringMaker.length);
-                                resourcePath := stringMaker.append (To_Unbounded_String ("/")).append (RES).append (Unbounded_Slice (resource, (index) + 1, Length (resource))).toString;
+                                resourcePath := stringMaker.append (To_Unbounded_String ("/")).append (RES).append (Unbounded_Slice (resource, (index) + 1, Ada.Strings.Unbounded.Length (resource))).toString;
                                 inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
                                 COLON := CommonSeps_Package.getInstance.COLON;
                                 if (inputStream) = (null) then
                                     stringMaker.delete (0, stringMaker.length);
-                                    resourcePath := stringMaker.append (RES).append (COLON).append (Unbounded_Slice (resource, (index) + 1, Length (resource))).toString;
+                                    resourcePath := stringMaker.append (RES).append (COLON).append (Unbounded_Slice (resource, (index) + 1, Ada.Strings.Unbounded.Length (resource))).toString;
                                     inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
                                     if (inputStream) = (null) then
                                         stringMaker.delete (0, stringMaker.length);
-                                        resourcePath := stringMaker.append (RES).append (COLON).append (Unbounded_Slice (resource, ((index) + (1)) + 1, Length (resource))).toString;
+                                        resourcePath := stringMaker.append (RES).append (COLON).append (Unbounded_Slice (resource, ((index) + (1)) + 1, Ada.Strings.Unbounded.Length (resource))).toString;
                                         inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
                                         if (inputStream) = (null) then
                                             RESOURCE_STRING := To_Unbounded_String ("resource");
                                             stringMaker.delete (0, stringMaker.length);
-                                            resourcePath := stringMaker.append (RESOURCE_STRING).append (COLON).append (Unbounded_Slice (resource, (index) + 1, Length (resource))).toString;
+                                            resourcePath := stringMaker.append (RESOURCE_STRING).append (COLON).append (Unbounded_Slice (resource, (index) + 1, Ada.Strings.Unbounded.Length (resource))).toString;
                                             inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
                                             if (inputStream) = (null) then
                                                 stringMaker.delete (0, stringMaker.length);
-                                                resourcePath := stringMaker.append (RESOURCE_STRING).append (COLON).append (Unbounded_Slice (resource, ((index) + (1)) + 1, Length (resource))).toString;
+                                                resourcePath := stringMaker.append (RESOURCE_STRING).append (COLON).append (Unbounded_Slice (resource, ((index) + (1)) + 1, Ada.Strings.Unbounded.Length (resource))).toString;
                                                 inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
                                                 if (inputStream) = (null) then
                                                     stringMaker.delete (0, stringMaker.length);
@@ -140,7 +140,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    begin
         stringMaker := StringMaker_Package.Create;
         index := Java_Index_Of (resource, Java_Image (CommonSeps_Package.getInstance.COLON));
-        resourcePath := Unbounded_Slice (resource, ((index) + (startIndex)) + 1, Length (resource));
+        resourcePath := Unbounded_Slice (resource, ((index) + (startIndex)) + 1, Ada.Strings.Unbounded.Length (resource));
         inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
         if (inputStream) /= (null) then
             return inputStream;

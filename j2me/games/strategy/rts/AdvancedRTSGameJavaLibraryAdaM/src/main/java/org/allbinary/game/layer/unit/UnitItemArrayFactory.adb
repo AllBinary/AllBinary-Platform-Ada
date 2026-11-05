@@ -141,7 +141,7 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
         name := flagResources.NAME;
         index := Java_Index_Of (name, Java_Image (This.commonSeps.SPACE));
         if (index) >= (0) then
-            name := Unbounded_Slice (name, (index) + 1, Length (name));
+            name := Unbounded_Slice (name, (index) + 1, Ada.Strings.Unbounded.Length (name));
         end if;
         return UnitItemArrayFactory'Class (This).createNamedFlagItem (flagResources, name, layerInterfaceFactoryInterface);
    end createFlagItem;

@@ -62,6 +62,7 @@ with org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package;
+with org.allbinary.animation.image.LazyImageRotationAnimation_Package_References;
 
 package body org.allbinary.image.ImageCache_Package is
 
@@ -378,7 +379,7 @@ package body org.allbinary.image.ImageCache_Package is
                     lazyImageRotationAnimation := LazyImageRotationAnimation_Access (This.loadAfterList.removeAt (0));
                 end if;
             end;
-            if (lazyImageRotationAnimation) /= (null) then
+            if (not org.allbinary.animation.image.LazyImageRotationAnimation_Package_References."=" (lazyImageRotationAnimation, null)) then
                 ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation);
             end if;
         end loop;
@@ -784,6 +785,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.NotHTMLEndProcessor_Package; use org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
@@ -930,6 +933,16 @@ package body org.allbinary.image.NotHTMLProcessor_Package is
    function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
    subtype ImageCacheBase_Access_Array_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   function "=" (Left, Right : ImageCache_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
    procedure Initialize_Fields (This : in out NotHTMLProcessor'Class) is
    begin
       null;
@@ -997,6 +1010,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHTMLProcessor_Package;
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
@@ -1143,6 +1158,16 @@ package body org.allbinary.image.NotHTMLEndProcessor_Package is
    function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
    subtype ImageCacheBase_Access_Array_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   function "=" (Left, Right : ImageCache_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
    procedure Initialize_Fields (This : in out NotHTMLEndProcessor'Class) is
    begin
       null;
@@ -1212,6 +1237,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.NotHTMLEndProcessor_Package; use org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHTMLProcessor_Package;
@@ -1358,6 +1385,16 @@ package body org.allbinary.image.HTMLEndProcessor_Package is
    function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
    subtype ImageCacheBase_Access_Array_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   function "=" (Left, Right : ImageCache_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
    procedure Initialize_Fields (This : in out HTMLEndProcessor'Class) is
    begin
       null;
@@ -1435,6 +1472,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.NotHTMLEndProcessor_Package; use org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHTMLProcessor_Package;
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
@@ -1581,6 +1620,16 @@ package body org.allbinary.image.FirstProcessor_Package is
    function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
    subtype ImageCacheBase_Access_Array_Access_Array_Access is org.allbinary.image.ImageCacheBase_Package_References.ImageCacheBase_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageCacheBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCacheBase_Package_References."=";
+   subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   function "=" (Left, Right : ImageCache_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
+   subtype ImageCache_Access_Array_Access_Array_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageCache_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
    procedure Initialize_Fields (This : in out FirstProcessor'Class) is
    begin
       null;
@@ -1602,7 +1651,7 @@ package body org.allbinary.image.FirstProcessor_Package is
     
    procedure process (This : in out FirstProcessor) is
    begin
-            ImageCache'Class (This).firstProcess;
+            FirstProcessor'Class (This).firstProcess;
    end process;
 
 end org.allbinary.image.FirstProcessor_Package;

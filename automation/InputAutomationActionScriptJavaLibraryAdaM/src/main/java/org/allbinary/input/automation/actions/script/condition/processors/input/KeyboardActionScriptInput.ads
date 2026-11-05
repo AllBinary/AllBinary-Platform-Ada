@@ -106,7 +106,7 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    function "=" (Left, Right : KeyboardActionScriptInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package_References."=";
 
    type KeyboardActionScriptInput is new BasicProfileActionScriptInput and KeyboardActionScriptInputInterface with record
-      logUtil : LogUtil_Access;
+      KeyboardActionScriptInput_Field_logUtil : LogUtil_Access;
       keyArray : Integer_Array_Access;
       keyboardActionScriptInputJPanel : KeyboardActionScriptInputJPanel_Access;
       press : Boolean;

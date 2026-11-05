@@ -44,6 +44,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is
 
@@ -248,7 +249,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
       index : Integer;
    begin
         for index in 0 .. (4) - 1 loop
-            if (newGeographicMapCellPosition) = (BasicGeographicMap'Class (This).getCellPositionNoThrow (index, oldGeographicMapCellPosition)) then
+            if org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (newGeographicMapCellPosition, BasicGeographicMap'Class (This).getCellPositionNoThrow (index, oldGeographicMapCellPosition)) then
                 return True;
             end if;
         end loop;
@@ -389,6 +390,48 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
         return This.BasicGeographicMap_Field_geographicMapCellTypeFactory;
    end getGeographicMapCellTypeFactory;
 
+   function getId (This : in out BasicGeographicMap) return Integer is
+   begin
+        return SimpleGeographicMap_Package.SimpleGeographicMap (This).getId;
+   end getId;
+
+   function getName (This : in out BasicGeographicMap) return Unbounded_String is
+   begin
+        return SimpleGeographicMap_Package.SimpleGeographicMap (This).getName;
+   end getName;
+
+   procedure reset (This : in out BasicGeographicMap) is
+   begin
+        SimpleGeographicMap_Package.SimpleGeographicMap (This).reset;
+   end reset;
+
+   function getAllBinaryTiledLayer (This : in out BasicGeographicMap) return AllBinaryTiledLayer_Access is
+   begin
+        return SimpleGeographicMap_Package.SimpleGeographicMap (This).getAllBinaryTiledLayer;
+   end getAllBinaryTiledLayer;
+
+   function getCellTypeFromMapCellTypeInt (This : in out BasicGeographicMap; cellTypeId : Integer) return Integer is
+   begin
+        return SimpleGeographicMap_Package.SimpleGeographicMap (This).getCellTypeFromMapCellTypeInt (cellTypeId);
+   end getCellTypeFromMapCellTypeInt;
+
+   --  throws Exception
+   function getCellTypeAt (This : in out BasicGeographicMap; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return GeographicMapCellType_Access is
+      cellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
+   begin
+        return SimpleGeographicMap_Package.SimpleGeographicMap (This).getCellTypeAt (cellPosition);
+   end getCellTypeAt;
+
+   function getForegroundBasicColor (This : in out BasicGeographicMap) return BasicColor_Access is
+   begin
+        return SimpleGeographicMap_Package.SimpleGeographicMap (This).getForegroundBasicColor;
+   end getForegroundBasicColor;
+
+   function getBackgroundBasicColor (This : in out BasicGeographicMap) return BasicColor_Access is
+   begin
+        return SimpleGeographicMap_Package.SimpleGeographicMap (This).getBackgroundBasicColor;
+   end getBackgroundBasicColor;
+
    procedure getCellPosition (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPosition (direction => direction, oldGeographicMapCellPosition_Param => oldGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
@@ -451,6 +494,20 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    begin
       null;
    end getCellTypeAtXY;
+
+   procedure getCellTypeFromMapCellTypeInt (This : in out BasicGeographicMap; cellTypeId : Integer) is
+      Java_Result : constant Integer := BasicGeographicMap'Class (This).getCellTypeFromMapCellTypeInt (cellTypeId => cellTypeId);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getCellTypeFromMapCellTypeInt;
+
+   procedure getCellTypeAt (This : in out BasicGeographicMap; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      Java_Result : constant GeographicMapCellType_Access := BasicGeographicMap'Class (This).getCellTypeAt (cellPosition_Param => cellPosition_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getCellTypeAt;
 
 begin
    null;

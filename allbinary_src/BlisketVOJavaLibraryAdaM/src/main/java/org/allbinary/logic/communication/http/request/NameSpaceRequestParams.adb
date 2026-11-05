@@ -197,7 +197,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       indexNode : Node_Access;
    begin
         beginIndex := Java_Index_Of (packageName, Java_Image ('['));
-        indexValue := Unbounded_Slice (packageName, ((beginIndex) + (1)) + 1, (Length (packageName)) - (1));
+        indexValue := Unbounded_Slice (packageName, ((beginIndex) + (1)) + 1, (Ada.Strings.Unbounded.Length (packageName)) - (1));
         multiElementPackage := Unbounded_Slice (packageName, (0) + 1, beginIndex);
         selectedValue := nameSpaceRequestParam.getValue;
         propertyValue := Java_Unbox (packagePropertiesHashMap.get (DomData_Package.VALUE));

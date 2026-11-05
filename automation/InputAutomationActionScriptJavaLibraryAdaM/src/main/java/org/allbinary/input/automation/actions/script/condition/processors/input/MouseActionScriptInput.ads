@@ -118,7 +118,7 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    function "=" (Left, Right : MouseActionScriptInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package_References."=";
 
    type MouseActionScriptInput is new BasicProfileActionScriptInput and MouseActionScriptInputInterface with record
-      logUtil : LogUtil_Access;
+      MouseActionScriptInput_Field_logUtil : LogUtil_Access;
       point : Point_Access;
       buttons : Integer;
       mouseActionScriptInputJPanel : MouseActionScriptInputJPanel_Access;

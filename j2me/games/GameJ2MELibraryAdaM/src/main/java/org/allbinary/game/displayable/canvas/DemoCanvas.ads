@@ -674,6 +674,8 @@ package org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    function isRunningInAnotherThread (This : in out DemoCanvas) return Boolean;
    function getGameInitializationInterfaceFactoryInterface (This : in out DemoCanvas) return BasicBuildGameInitializerFactory_Access;
    function getType (This : in out DemoCanvas) return Integer;
+   function getTitle (This : in out DemoCanvas) return Unbounded_String;
+   function isPaused (This : in out DemoCanvas) return Boolean;
 
 end org.allbinary.game.displayable.canvas.DemoCanvas_Package;
 

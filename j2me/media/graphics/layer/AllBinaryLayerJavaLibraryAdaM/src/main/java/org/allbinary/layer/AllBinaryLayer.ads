@@ -141,6 +141,16 @@ package org.allbinary.layer.AllBinaryLayer_Package is
 
    procedure Initialize (This : in out AllBinaryLayer'Class; name : Unbounded_String; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class);
    function Create (name : Unbounded_String; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return AllBinaryLayer_Access;
+   procedure setPosition (This : in out AllBinaryLayer; x : Integer; y : Integer; z : Integer);
+   procedure moveDXYZ (This : in out AllBinaryLayer; dx : Integer; dy : Integer; dz : Integer);
+   function getXP (This : in out AllBinaryLayer) return Integer;
+   function getYP (This : in out AllBinaryLayer) return Integer;
+   function getZP (This : in out AllBinaryLayer) return Integer;
+   function getWidth (This : in out AllBinaryLayer) return Integer;
+   function getHeight (This : in out AllBinaryLayer) return Integer;
+   procedure setVisible (This : in out AllBinaryLayer; visible : Boolean);
+   function isVisible (This : in out AllBinaryLayer) return Boolean;
+   procedure paint (This : in out AllBinaryLayer; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure onChangeEvent (This : in out AllBinaryLayer; layerManagerEvent_Param : access ViewPositionEvent_Package.ViewPositionEvent'Class);
    procedure paintThreed (This : in out AllBinaryLayer; graphics_Param : access Graphics_Package.Graphics'Class);
    function getX2 (This : in out AllBinaryLayer) return Integer;

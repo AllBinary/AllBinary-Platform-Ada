@@ -110,6 +110,8 @@ package org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Pack
    function createTableStatement (This : in out PaymentEntity) return Unbounded_String;
    function createTable (This : in out PaymentEntity) return Unbounded_String;
    function drop (This : in out PaymentEntity) return Unbounded_String;
+   procedure insert (This : in out PaymentEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function dropTable (This : in out PaymentEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
 

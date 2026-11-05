@@ -586,7 +586,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
 
    function getTestHtmlPath (This : in out StoreFront) return Unbounded_String is
    begin
-        return (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) + (StoreFront'Class (This).getCurrentHostNamePath);
+        return Java_Image (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) & StoreFront'Class (This).getCurrentHostNamePath;
    end getTestHtmlPath;
 
    function getCurrentHostName (This : in out StoreFront) return Unbounded_String is
@@ -934,14 +934,14 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    function createDirectories (This : in out StoreFront) return Boolean is
       storeAbPath : AbPath_Access;
    begin
-        storeAbPath := AbPath_Package.Create ((URLGLOBALS_Package.getWebappPath) + (StoreFront'Class (This).getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
+        storeAbPath := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & StoreFront'Class (This).getCurrentHomeHostNamePath, StringUtil_Package.getInstance.EMPTY_STRING);
         if not (This.directory.create (storeAbPath)) then
             return False;
         end if;
-        if not (This.directory.create (AbPath_Package.Create ((storeAbPath) + (StoreFront'Class (This).getCategoryPath), StringUtil_Package.getInstance.EMPTY_STRING))) then
+        if not (This.directory.create (AbPath_Package.Create (Java_Image (storeAbPath) & StoreFront'Class (This).getCategoryPath, StringUtil_Package.getInstance.EMPTY_STRING))) then
             return False;
         end if;
-        if not (This.directory.create (AbPath_Package.Create ((storeAbPath) + (StoreFront'Class (This).getStaticPath), StringUtil_Package.getInstance.EMPTY_STRING))) then
+        if not (This.directory.create (AbPath_Package.Create (Java_Image (storeAbPath) & StoreFront'Class (This).getStaticPath, StringUtil_Package.getInstance.EMPTY_STRING))) then
             return False;
         end if;
         return True;
@@ -1063,7 +1063,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         stringBuffer.append (To_Unbounded_String ("images"));
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         viewStoreImagesDirectoryAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
-        storeAbPath := AbPath_Package.Create ((URLGLOBALS_Package.getWebappPath) + (StoreFront'Class (This).getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
+        storeAbPath := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & StoreFront'Class (This).getCurrentHomeHostNamePath, StringUtil_Package.getInstance.EMPTY_STRING);
         FileUtil_Package.getInstance.copyDirectoryPortion (viewStoreImagesDirectoryAbPath, storeAbPath, True, False, current, total);
    end installMedia;
 

@@ -78,8 +78,11 @@ package org.allbinary.data.tree.category.CategoryLoaderInterface_Package is
    function "=" (Left, Right : CategoryLoaderInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tree.category.CategoryLoaderInterface_Package_References."=";
    function Java_Object_Access_From_CategoryLoaderInterface (Value : CategoryLoaderInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getDoc (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return Document_Access is abstract;
+   procedure getDoc (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is abstract;
    function get (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryInterface_Access is abstract;
+   procedure get (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is abstract;
    function getAll (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryInterface_Access is abstract;
+   procedure getAll (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is abstract;
 
 end org.allbinary.data.tree.category.CategoryLoaderInterface_Package;
 

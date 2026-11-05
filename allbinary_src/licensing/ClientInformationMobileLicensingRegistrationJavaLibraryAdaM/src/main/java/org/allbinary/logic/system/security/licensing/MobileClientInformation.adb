@@ -50,7 +50,7 @@ package body org.allbinary.logic.system.security.licensing.MobileClientInformati
    begin
         AbeClientInformation_Package.Initialize (This, name, version, StringMaker_Package.Create.append (specialName).append (CommonSeps_Package.getInstance.SPACE).append (PartnerIdentifierFileUtil_Package.getInstance.get).toString, shortName);
         string_Id := MobileClientInformation'Class (This).getSpecialName;
-        number := Unbounded_Slice (string_Id, ((Length (string_Id)) - (1)) + 1, Length (string_Id));
+        number := Unbounded_Slice (string_Id, ((Ada.Strings.Unbounded.Length (string_Id)) - (1)) + 1, Ada.Strings.Unbounded.Length (string_Id));
         if (Integer_Package.getInteger (number)) = (null) then
             MobileClientInformation'Class (This).setHardSale (False);
         end if;

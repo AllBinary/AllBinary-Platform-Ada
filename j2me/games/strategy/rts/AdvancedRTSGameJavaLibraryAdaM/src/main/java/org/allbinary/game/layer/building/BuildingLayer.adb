@@ -78,6 +78,8 @@ with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
+with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.RotationAnimation_Package_References;
 with org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package; use org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package; use org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package_References;
@@ -305,6 +307,16 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
    function "=" (Left, Right : ABHashtable_Access_Array_Access_Array) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
    subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABHashtable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.ABHashtable_Package_References."=";
+   subtype RotationAnimation_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access;
+   function "=" (Left, Right : RotationAnimation_Access) return Boolean renames org.allbinary.animation.RotationAnimation_Package_References."=";
+   subtype RotationAnimation_Access_Array is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array;
+   function "=" (Left, Right : RotationAnimation_Access_Array) return Boolean renames org.allbinary.animation.RotationAnimation_Package_References."=";
+   subtype RotationAnimation_Access_Array_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access;
+   function "=" (Left, Right : RotationAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.RotationAnimation_Package_References."=";
+   subtype RotationAnimation_Access_Array_Access_Array is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access_Array;
+   function "=" (Left, Right : RotationAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.RotationAnimation_Package_References."=";
+   subtype RotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : RotationAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.RotationAnimation_Package_References."=";
    subtype BuildingPropertiesFactory_Access is org.allbinary.game.layer.building.BuildingPropertiesFactory_Package_References.BuildingPropertiesFactory_Access;
    function "=" (Left, Right : BuildingPropertiesFactory_Access) return Boolean renames org.allbinary.game.layer.building.BuildingPropertiesFactory_Package_References."=";
    subtype BuildingPropertiesFactory_Access_Array is org.allbinary.game.layer.building.BuildingPropertiesFactory_Package_References.BuildingPropertiesFactory_Access_Array;
@@ -685,6 +697,16 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
    begin
         return 2;
    end getStaticType;
+
+   function getRotationAnimationInterface (This : in out BuildingLayer) return RotationAnimation_Access is
+   begin
+        return AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer (This).getRotationAnimationInterface;
+   end getRotationAnimationInterface;
+
+   procedure setFrame (This : in out BuildingLayer; index : Integer) is
+   begin
+        AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer (This).setFrame (index);
+   end setFrame;
 
    procedure getMoveOutOfBuildAreaPath (This : in out BuildingLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant BasicArrayList_Access := BuildingLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition_Param => geographicMapCellPosition_Param);

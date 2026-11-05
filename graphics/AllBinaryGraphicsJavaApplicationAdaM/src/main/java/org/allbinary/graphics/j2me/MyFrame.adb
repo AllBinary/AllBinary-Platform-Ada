@@ -62,6 +62,7 @@ with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References;
 
 package body org.allbinary.graphics.j2me.MyFrame_Package is
 
@@ -858,7 +859,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             workAreaJPanel.deselect;
         end loop;
         workAreaJPanel := WorkAreaJPanelInterface_Access (This.jTabbedPane.getSelectedComponent);
-        if (workAreaJPanel) /= (null) then
+        if (not org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References."=" (workAreaJPanel, null)) then
             workAreaJPanel.select_Id;
         end if;
    end updateSelectedWorkArea;

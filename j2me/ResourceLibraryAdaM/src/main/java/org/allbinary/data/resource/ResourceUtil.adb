@@ -112,7 +112,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    begin
         commonSeps := CommonSeps_Package.getInstance;
         index := Java_Index_Of (resource, Java_Image (commonSeps.COLON));
-        resourcePath := Unbounded_Slice (resource, ((index) + (startIndex)) + 1, Length (resource));
+        resourcePath := Unbounded_Slice (resource, ((index) + (startIndex)) + 1, Ada.Strings.Unbounded.Length (resource));
         inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
         if (inputStream) /= (null) then
             return inputStream;

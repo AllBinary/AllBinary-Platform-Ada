@@ -26,6 +26,8 @@ with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectC
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References;
 
 package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
 
@@ -79,6 +81,16 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
    function "=" (Left, Right : Document_Access_Array_Access_Array) return Boolean renames org.w3c.dom.Document_Package_References."=";
    subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Document_Access_Array_Access_Array_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
+   subtype WeblisketSessionInterface_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access;
+   function "=" (Left, Right : WeblisketSessionInterface_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
+   subtype WeblisketSessionInterface_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array;
+   function "=" (Left, Right : WeblisketSessionInterface_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
+   subtype WeblisketSessionInterface_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access;
+   function "=" (Left, Right : WeblisketSessionInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
+   subtype WeblisketSessionInterface_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array;
+   function "=" (Left, Right : WeblisketSessionInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
+   subtype WeblisketSessionInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : WeblisketSessionInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References."=";
    procedure Initialize_Fields (This : in out TransformInfoBasic'Class) is
    begin
       null;
@@ -260,6 +272,21 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
    begin
         return null;
    end toHashMap;
+
+   function getWeblisketSession (This : in out TransformInfoBasic) return WeblisketSessionInterface_Access is
+   begin
+        return WeblisketSessionInterface_Access (AbContext_Package.AbContext (This).getWeblisketSession);
+   end getWeblisketSession;
+
+   function getPageContext (This : in out TransformInfoBasic) return PageContext_Access is
+   begin
+        return AbContext_Package.AbContext (This).getPageContext;
+   end getPageContext;
+
+   function getPropertiesHashMap (This : in out TransformInfoBasic) return HashMap_Access is
+   begin
+        return AbContext_Package.AbContext (This).getPropertiesHashMap;
+   end getPropertiesHashMap;
 
    procedure setObject (This : in out TransformInfoBasic; Value : Unbounded_String) is
    begin

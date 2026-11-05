@@ -144,7 +144,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
 
    function toString (This : in out EmailServerConfiguration) return Unbounded_String is
    begin
-        return To_Unbounded_String ("Email Server Configuration:" & ASCII.LF & "") & To_Unbounded_String ("Smtp Server: " & ASCII.LF & "") & Java_Image (EmailServerConfiguration'Class (This).getSmtpServer) & To_Unbounded_String ("" & ASCII.LF & "Account Name: ") & Java_Image (EmailServerConfiguration'Class (This).getAccountName) & To_Unbounded_String ("" & ASCII.LF & "Password: ") & Java_Image (EmailServerConfiguration'Class (This).getPassword);
+        return To_Unbounded_String ("Email Server Configuration:" & ASCII.LF & "") & To_Unbounded_String ("Smtp Server: " & ASCII.LF & "") & EmailServerConfiguration'Class (This).getSmtpServer & To_Unbounded_String ("" & ASCII.LF & "Account Name: ") & EmailServerConfiguration'Class (This).getAccountName & To_Unbounded_String ("" & ASCII.LF & "Password: ") & EmailServerConfiguration'Class (This).getPassword;
    end toString;
 
 end org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;

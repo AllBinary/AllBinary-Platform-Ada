@@ -1508,6 +1508,16 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return DemoCanvas_Package.TYPE_Id;
    end getType;
 
+   function getTitle (This : in out DemoCanvas) return Unbounded_String is
+   begin
+        return RunnableCanvas_Package.RunnableCanvas (This).getTitle;
+   end getTitle;
+
+   function isPaused (This : in out DemoCanvas) return Boolean is
+   begin
+        return RunnableCanvas_Package.RunnableCanvas (This).isPaused;
+   end isPaused;
+
    procedure createGameLayerManager (This : in out DemoCanvas; randomValue : Integer) is
       Java_Result : constant AllBinaryGameLayerManager_Access := DemoCanvas'Class (This).createGameLayerManager (randomValue => randomValue);
       pragma Unreferenced (Java_Result);

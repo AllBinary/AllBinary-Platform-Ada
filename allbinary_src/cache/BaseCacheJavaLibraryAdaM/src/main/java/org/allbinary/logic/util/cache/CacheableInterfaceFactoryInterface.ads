@@ -63,6 +63,7 @@ package org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Packag
    function "=" (Left, Right : CacheableInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_CacheableInterfaceFactoryInterface (Value : CacheableInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out CacheableInterfaceFactoryInterface; key_Param : access Java_Object'Class) return CacheableInterface_Access is abstract;
+   procedure getInstance (This : in out CacheableInterfaceFactoryInterface; key_Param : access Java_Object'Class) is abstract;
 
 end org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 

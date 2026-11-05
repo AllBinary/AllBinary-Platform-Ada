@@ -49,6 +49,7 @@ with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package_References;
 
 package body org.allbinary.game.layer.PathAnimation_Package is
 
@@ -181,7 +182,7 @@ package body org.allbinary.game.layer.PathAnimation_Package is
    begin
         begin
             waypointBehaviorBase := This.pathFindingLayer.getWaypointBehavior;
-            if (waypointBehaviorBase) /= (null) then
+            if (not org.allbinary.game.layer.WaypointBehaviorBase_Package_References."=" (waypointBehaviorBase, null)) then
                 geographicMapCellHistory := waypointBehaviorBase.getCurrentGeographicMapCellHistory;
                 list := geographicMapCellHistory.getTracked;
                 size := list.size;

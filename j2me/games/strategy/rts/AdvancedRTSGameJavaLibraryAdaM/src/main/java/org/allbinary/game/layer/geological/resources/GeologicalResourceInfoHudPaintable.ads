@@ -78,7 +78,7 @@ package org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudP
    function "=" (Left, Right : GeologicalResourceInfoHudPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package_References."=";
 
    type GeologicalResourceInfoHudPaintable is new WaypointInfoHudPaintable with record
-      keyvalueDrawString : KeyValueDrawCharArray_Access;
+      GeologicalResourceInfoHudPaintable_Field_keyvalueDrawString : KeyValueDrawCharArray_Access;
       fontHeight : Integer;
    end record;
    RESOURCES : Unbounded_String;

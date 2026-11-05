@@ -140,7 +140,7 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
    function numberOnly (This : in out UniqueTokens; subCleaningString : Unbounded_String) return Boolean is
    begin
         begin
-            Integer'Value (To_String (subCleaningString));
+            declare Java_Result renames Integer'Value (To_String (subCleaningString)); pragma Unreferenced (Java_Result); begin null; end;
             return True;
         exception
             when Java_Occurrence : others =>

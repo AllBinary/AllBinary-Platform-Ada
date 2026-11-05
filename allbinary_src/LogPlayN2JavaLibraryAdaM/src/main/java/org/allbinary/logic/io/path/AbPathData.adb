@@ -73,7 +73,7 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
         indexOfFileExtensionDelmiter := AbPathData'Class (This).getExtensionIndex (filePath);
         extension := StringUtil_Package.getInstance.EMPTY_STRING;
         if (indexOfFileExtensionDelmiter) >= (0) then
-            extension := Unbounded_Slice (filePath, (indexOfFileExtensionDelmiter) + 1, Length (filePath));
+            extension := Unbounded_Slice (filePath, (indexOfFileExtensionDelmiter) + 1, Ada.Strings.Unbounded.Length (filePath));
         end if;
         return extension;
    end getExtensionWithDot;
@@ -85,7 +85,7 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
         indexOfFileExtensionDelmiter := AbPathData'Class (This).getExtensionIndex (filePath);
         extension := StringUtil_Package.getInstance.EMPTY_STRING;
         if (indexOfFileExtensionDelmiter) >= (0) then
-            extension := Unbounded_Slice (filePath, ((indexOfFileExtensionDelmiter) + (1)) + 1, Length (filePath));
+            extension := Unbounded_Slice (filePath, ((indexOfFileExtensionDelmiter) + (1)) + 1, Ada.Strings.Unbounded.Length (filePath));
         end if;
         return extension;
    end getExtension;
@@ -101,11 +101,11 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
         if (endIndex) < (0) then
             return path;
         end if;
-        if (Length (path)) = ((endIndex) + (1)) then
+        if (Ada.Strings.Unbounded.Length (path)) = ((endIndex) + (1)) then
             categoryName := Unbounded_Slice (path, (0) + 1, endIndex);
             return AbPathData'Class (This).getNameFromPath (categoryName);
         else
-            categoryName := Unbounded_Slice (path, ((endIndex) + (1)) + 1, Length (path));
+            categoryName := Unbounded_Slice (path, ((endIndex) + (1)) + 1, Ada.Strings.Unbounded.Length (path));
             return categoryName;
         end if;
    end getNameFromPath;
@@ -121,7 +121,7 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
         if (endIndex) < (0) then
             return StringUtil_Package.getInstance.EMPTY_STRING;
         end if;
-        if (Length (path)) = ((endIndex) + (1)) then
+        if (Ada.Strings.Unbounded.Length (path)) = ((endIndex) + (1)) then
             return AbPathData'Class (This).removeNameFromPath (Unbounded_Slice (path, (0) + 1, (endIndex) - (1)));
         else
             pathWithoutName := Unbounded_Slice (path, (0) + 1, endIndex);

@@ -179,6 +179,7 @@ package org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package is
    function Java_Object_Access_From_WaypointLayerInterface (Value : WaypointLayerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure init (This : in out WaypointLayerInterface; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    function getMoveOutOfBuildAreaPath (This : in out WaypointLayerInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return BasicArrayList_Access is abstract;
+   procedure getMoveOutOfBuildAreaPath (This : in out WaypointLayerInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is abstract;
    procedure setClosestGeographicMapCellHistory (This : in out WaypointLayerInterface; pathsList_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure teleportTo (This : in out WaypointLayerInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is abstract;
    procedure setLoad (This : in out WaypointLayerInterface; resource : Integer) is abstract;
@@ -189,6 +190,7 @@ package org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package is
    procedure trackTo (This : in out WaypointLayerInterface; reason : Unbounded_String) is abstract;
    procedure trackToDXY (This : in out WaypointLayerInterface; dx : Integer; dy : Integer) is abstract;
    function buildingChase (This : in out WaypointLayerInterface; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Boolean is abstract;
+   procedure buildingChase (This : in out WaypointLayerInterface; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is abstract;
    function getTrackingEvent (This : in out WaypointLayerInterface) return TrackingEvent_Access is abstract;
    procedure allStop (This : in out WaypointLayerInterface) is abstract;
    function isWaypointListEmptyOrOnlyTargets (This : in out WaypointLayerInterface) return Boolean is abstract;

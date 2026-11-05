@@ -357,6 +357,11 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         return AbSqlBean_Package.AbSqlBean (This).createTable (UserEntity'Class (This).createTableStatement);
    end createTable;
 
+   function dropTable (This : in out UserEntity) return Unbounded_String is
+   begin
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
+   end dropTable;
+
    procedure getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getStoreManagers (storeFrontInterface_Param => storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);

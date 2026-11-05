@@ -76,6 +76,7 @@ package org.allbinary.layer.LayerInterfaceFactoryInterface_Package is
    function "=" (Left, Right : LayerInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_LayerInterfaceFactoryInterface (Value : LayerInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getNextInstance (This : in out LayerInterfaceFactoryInterface; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is abstract;
+   procedure getNextInstance (This : in out LayerInterfaceFactoryInterface; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) is abstract;
 
 end org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 

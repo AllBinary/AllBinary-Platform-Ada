@@ -94,10 +94,10 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
    begin
         result := BooleanFactory_Package.getInstance.TRUE;
         string_Id := This.textFieldItem.getString;
-        textLength := Length (string_Id);
+        textLength := Ada.Strings.Unbounded.Length (string_Id);
         if ((textLength) > (0)) and then ((textLength) < (This.maxChars)) then
             begin
-                Integer'Value (To_String (This.textFieldItem.getString));
+                declare Java_Result renames Integer'Value (To_String (This.textFieldItem.getString)); pragma Unreferenced (Java_Result); begin null; end;
             exception
                 when Java_Occurrence : others =>
                     declare
@@ -128,9 +128,9 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
    begin
         list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         string_Id := This.textFieldItem.getString;
-        textLength := Length (string_Id);
+        textLength := Ada.Strings.Unbounded.Length (string_Id);
         label := This.textFieldItem.getLabel;
-        name := Unbounded_Slice (label, (0) + 1, (Length (label)) - (2));
+        name := Unbounded_Slice (label, (0) + 1, (Ada.Strings.Unbounded.Length (label)) - (2));
         smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
         stringMaker := StringMaker_Package.Create;
         if ((textLength) > (0)) and then ((textLength) < (This.maxChars)) then

@@ -2473,6 +2473,16 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         return AllBinaryGameCanvas_Package.TYPE_Id;
    end getType;
 
+   function getTitle (This : in out AllBinaryGameCanvas) return Unbounded_String is
+   begin
+        return RunnableCanvas_Package.RunnableCanvas (This).getTitle;
+   end getTitle;
+
+   function isPaused (This : in out AllBinaryGameCanvas) return Boolean is
+   begin
+        return RunnableCanvas_Package.RunnableCanvas (This).isPaused;
+   end isPaused;
+
    procedure endProgress (This : in out AllBinaryGameCanvas; isProgress : Boolean) is
       Java_Result : constant Integer := AllBinaryGameCanvas'Class (This).endProgress (isProgress => isProgress);
       pragma Unreferenced (Java_Result);

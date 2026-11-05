@@ -115,7 +115,7 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
             beginIndex := Java_Index_Of (requestPath, Java_Image (This.DOWNLOAD));
             filePath := StringUtil_Package.getInstance.EMPTY_STRING;
             if (beginIndex) >= (0) then
-                filePath := Unbounded_Slice (requestPath, ((beginIndex) + (Length (This.DOWNLOAD))) + 1, Length (requestPath));
+                filePath := Unbounded_Slice (requestPath, ((beginIndex) + (Ada.Strings.Unbounded.Length (This.DOWNLOAD))) + 1, Ada.Strings.Unbounded.Length (requestPath));
             else
                 response.sendError (HttpServletResponse_Package.SC_NOT_FOUND);
             end if;

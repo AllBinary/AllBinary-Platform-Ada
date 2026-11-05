@@ -36,6 +36,8 @@ with org.allbinary.business.advertisement.AdConfiguration_Package_References;
 limited with org.allbinary.input.event.VirtualKeyboardEvent_Package;
 with org.allbinary.input.event.VirtualKeyboardEvent_Package_References;
 with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; use org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 
 package org.allbinary.game.GameAdState_Package is
 
@@ -43,6 +45,7 @@ package org.allbinary.game.GameAdState_Package is
    package AdConfiguration_Package renames Standard.org.allbinary.business.advertisement.AdConfiguration_Package;
    package VirtualKeyboardEvent_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEvent_Package;
    package VirtualKeyboardEventListenerInterface_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package Reference_Types is
    subtype AdConfiguration_Access is org.allbinary.business.advertisement.AdConfiguration_Package_References.AdConfiguration_Access;
    use type AdConfiguration_Access;
@@ -64,6 +67,16 @@ package org.allbinary.game.GameAdState_Package is
    use type VirtualKeyboardEvent_Access_Array_Access_Array;
    subtype VirtualKeyboardEvent_Access_Array_Access_Array_Access is org.allbinary.input.event.VirtualKeyboardEvent_Package_References.VirtualKeyboardEvent_Access_Array_Access_Array_Access;
    use type VirtualKeyboardEvent_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -84,6 +97,7 @@ package org.allbinary.game.GameAdState_Package is
    procedure Initialize (This : in out GameAdState'Class; adConfiguration_Param : access AdConfiguration_Package.AdConfiguration'Class);
    function Create (adConfiguration_Param : access AdConfiguration_Package.AdConfiguration'Class) return GameAdState_Access;
    procedure onVirtualKeyboardEvent (This : in out GameAdState; virtualKeyboardEvent_Param : access VirtualKeyboardEvent_Package.VirtualKeyboardEvent'Class);
+   procedure onEvent (This : in out GameAdState; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
 
 end org.allbinary.game.GameAdState_Package;
 

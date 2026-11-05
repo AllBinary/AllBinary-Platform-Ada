@@ -91,7 +91,7 @@ package org.allbinary.logic.communication.sql.AbSqlColumn_Package is
    function "=" (Left, Right : AbSqlColumn_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlColumn_Package_References."=";
 
    type AbSqlColumn is new AbSqlTable with record
-      logUtil : LogUtil_Access;
+      AbSqlColumn_Field_logUtil : LogUtil_Access;
       LARGEST_INT_VALUE_IN_COLUMN : Unbounded_String;
       METHOD_GET_LARGETS_INTEGER_IN_COLUMN : Unbounded_String;
       METHOD_GET_COLUMN : Unbounded_String;

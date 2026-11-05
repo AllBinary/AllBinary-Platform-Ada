@@ -1262,6 +1262,21 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
         return This.gameInitializationInterfaceFactoryInterface;
    end getGameInitializationInterfaceFactoryInterface;
 
+   function getTitle (This : in out StartCanvas) return Unbounded_String is
+   begin
+        return RunnableCanvas_Package.RunnableCanvas (This).getTitle;
+   end getTitle;
+
+   function isPaused (This : in out StartCanvas) return Boolean is
+   begin
+        return RunnableCanvas_Package.RunnableCanvas (This).isPaused;
+   end isPaused;
+
+   function getType (This : in out StartCanvas) return Integer is
+   begin
+        return RunnableCanvas_Package.RunnableCanvas (This).getType;
+   end getType;
+
    procedure createGameLayerManager (This : in out StartCanvas; randomValue : Integer) is
       Java_Result : constant AllBinaryGameLayerManager_Access := StartCanvas'Class (This).createGameLayerManager (randomValue => randomValue);
       pragma Unreferenced (Java_Result);

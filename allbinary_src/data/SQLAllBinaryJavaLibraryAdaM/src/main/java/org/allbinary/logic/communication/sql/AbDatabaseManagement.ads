@@ -109,8 +109,8 @@ package org.allbinary.logic.communication.sql.AbDatabaseManagement_Package is
    function "=" (Left, Right : AbDatabaseManagement_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbDatabaseManagement_Package_References."=";
 
    type AbDatabaseManagement is new AbSqlBean with record
-      logUtil : LogUtil_Access;
-      commonStrings : CommonStrings_Access;
+      AbDatabaseManagement_Field_logUtil : LogUtil_Access;
+      AbDatabaseManagement_Field_commonStrings : CommonStrings_Access;
       sqlCommandLog : StringMaker_Access;
       GRANT_ALL : Unbounded_String;
       DOT_STAR : Unbounded_String;

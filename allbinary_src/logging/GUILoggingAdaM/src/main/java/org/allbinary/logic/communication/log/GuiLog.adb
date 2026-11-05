@@ -76,7 +76,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
       y : Integer;
    begin
         error := JDialog_Package.Create;
-        size := (Length (msg)) * (9);
+        size := (Ada.Strings.Unbounded.Length (msg)) * (9);
         x := size;
         if (x) > (550) then
             x := 550;

@@ -81,7 +81,7 @@ package admin.tags.TableTag_Package is
    function "=" (Left, Right : TableTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.TableTag_Package_References."=";
 
    type TableTag is new PropertiesTag with record
-      logUtil : LogUtil_Access;
+      TableTag_Field_logUtil : LogUtil_Access;
       enabled : Unbounded_String;
       tagHelperFactoryInterface : TagHelperFactoryInterface_Access;
       tagRequestHelperFactoryInterface : TagHelperFactoryInterface_Access;

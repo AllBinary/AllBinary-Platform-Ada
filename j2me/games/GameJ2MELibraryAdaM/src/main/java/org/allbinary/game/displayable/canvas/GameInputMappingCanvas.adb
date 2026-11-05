@@ -50,6 +50,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
 with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
 with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
+with org.allbinary.game.paint.help.HelpPaintable_Package_References;
 
 package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package is
 
@@ -214,7 +215,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         GameCommandCanvas_Package.Initialize (This, commandListener, GameInputMappingCanvas_Package.NAME, allBinaryGameLayerManager.getBackgroundBasicColor, allBinaryGameLayerManager.getForegroundBasicColor);
         Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, GameInputMappingCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        if (helpPaintable) = (null) then
+        if org.allbinary.game.paint.help.HelpPaintable_Package_References."=" (helpPaintable, null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Help Paintable Exception")));
         end if;
         This.abeClientInformation := abeClientInformation;

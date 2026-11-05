@@ -153,6 +153,12 @@ package body views.admin.storefront.statistics.ValidationStoreFrontStatisticsVie
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out ValidationStoreFrontStatisticsView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (StoreFrontStatisticsComponent_Package.StoreFrontStatisticsComponent (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out ValidationStoreFrontStatisticsView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := ValidationStoreFrontStatisticsView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

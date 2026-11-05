@@ -51,6 +51,7 @@ package org.allbinary.logic.util.visitor.VisitorInterface_Package is
    function "=" (Left, Right : VisitorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.visitor.VisitorInterface_Package_References."=";
    function Java_Object_Access_From_VisitorInterface (Value : VisitorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function visit (This : in out VisitorInterface; anyType_Param : access Java_Object'Class) return Java_Object_Access is abstract;
+   procedure visit (This : in out VisitorInterface; anyType_Param : access Java_Object'Class) is abstract;
 
 end org.allbinary.logic.util.visitor.VisitorInterface_Package;
 

@@ -104,6 +104,17 @@ package body org.allbinary.animation.vector.RectangleAdjustedAnimation_Package i
         This.offsetY := offsetY;
    end setOffsetY;
 
+   function getBasicColorP (This : in out RectangleAdjustedAnimation) return BasicColor_Access is
+   begin
+        return Animation_Package.Animation (This).getBasicColorP;
+   end getBasicColorP;
+
+   procedure setBasicColorP (This : in out RectangleAdjustedAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
+   begin
+        Animation_Package.Animation (This).setBasicColorP (basicColor);
+   end setBasicColorP;
+
 end org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
 
 

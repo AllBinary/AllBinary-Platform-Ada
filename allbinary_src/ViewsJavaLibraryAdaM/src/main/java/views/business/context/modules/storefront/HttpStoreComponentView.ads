@@ -91,7 +91,7 @@ package views.business.context.modules.storefront.HttpStoreComponentView_Package
    function "=" (Left, Right : HttpStoreComponentView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.HttpStoreComponentView_Package_References."=";
 
    type HttpStoreComponentView is new HttpComponentView with record
-      logUtil : LogUtil_Access;
+      HttpStoreComponentView_Field_logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;
 

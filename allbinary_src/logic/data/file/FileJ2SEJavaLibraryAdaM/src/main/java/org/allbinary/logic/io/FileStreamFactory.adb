@@ -93,8 +93,8 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
         FILEABPATH := AbPath_Package.Create (path, fileName);
         file := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
         if file.exists then
-            file.delete;
-            file.createNewFile;
+            declare Java_Result renames file.delete; pragma Unreferenced (Java_Result); begin null; end;
+            declare Java_Result renames file.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         end if;
         return AbFileOutputStream_Package.createFromAbFile (file);
    end getFileOutputStreamInstance;
@@ -106,7 +106,7 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
    begin
         FILEABPATH := AbPath_Package.Create (path, fileName);
         file := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
-        file.delete;
+        declare Java_Result renames file.delete; pragma Unreferenced (Java_Result); begin null; end;
    end delete;
 
    procedure getFileInputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String) is

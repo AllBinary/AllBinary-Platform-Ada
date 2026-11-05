@@ -38,6 +38,7 @@ with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Packag
 with org.allbinary.animation.SequenceInterface_Package;
 with org.allbinary.animation.SequentialAnimationInterface_Package;
 with org.allbinary.animation.text.TextChangeListener_Package;
+with org.allbinary.animation.Animation_Package_References;
 
 package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is
 
@@ -122,7 +123,7 @@ package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is
 
    function isShowing (This : in out CaptionAnimationHelper) return Boolean is
    begin
-        if (This.animation) = (This.captionAnimation) then
+        if org.allbinary.animation.Animation_Package_References."=" (This.animation, This.captionAnimation) then
             return True;
         else
             return False;

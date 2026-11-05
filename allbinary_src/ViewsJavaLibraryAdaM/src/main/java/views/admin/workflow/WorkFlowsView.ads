@@ -119,7 +119,7 @@ package views.admin.workflow.WorkFlowsView_Package is
    function "=" (Left, Right : WorkFlowsView_Access_Array_Access_Array_Access) return Boolean renames views.admin.workflow.WorkFlowsView_Package_References."=";
 
    type WorkFlowsView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      WorkFlowsView_Field_logUtil : LogUtil_Access;
       workFlowsVector : BasicArrayList_Access;
    end record;
 

@@ -79,9 +79,12 @@ package org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityInter
    function "=" (Left, Right : PaymentEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityInterface_Package_References."=";
    function Java_Object_Access_From_PaymentEntityInterface (Value : PaymentEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getLastId (This : in out PaymentEntityInterface; userName : Unbounded_String) return Unbounded_String is abstract;
+   procedure getLastId (This : in out PaymentEntityInterface; userName : Unbounded_String) is abstract;
    procedure setDefault (This : in out PaymentEntityInterface; userName : Unbounded_String; index : Integer) is abstract;
    function getDefault (This : in out PaymentEntityInterface; userName : Unbounded_String) return PaymentInterface_Access is abstract;
+   procedure getDefault (This : in out PaymentEntityInterface; userName : Unbounded_String) is abstract;
    function get (This : in out PaymentEntityInterface; userName : Unbounded_String) return BasicArrayList_Access is abstract;
+   procedure get (This : in out PaymentEntityInterface; userName : Unbounded_String) is abstract;
    procedure add (This : in out PaymentEntityInterface; userName : Unbounded_String; paymentInterface_Param : access PaymentInterface_Package.PaymentInterface'Class) is abstract;
    procedure remove (This : in out PaymentEntityInterface; userName : Unbounded_String; index : Integer) is abstract;
    procedure insert (This : in out PaymentEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;

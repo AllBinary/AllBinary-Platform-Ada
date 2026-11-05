@@ -40,6 +40,8 @@ limited with org.allbinary.graphics.font.FontDebugFactory_Package;
 with org.allbinary.graphics.font.FontDebugFactory_Package_References;
 with org.allbinary.animation.text.TextAnimation_Package; use org.allbinary.animation.text.TextAnimation_Package;
 with org.allbinary.animation.text.TextInterface_Package; use org.allbinary.animation.text.TextInterface_Package;
+limited with org.allbinary.animation.text.TextChangeListener_Package;
+with org.allbinary.animation.text.TextChangeListener_Package_References;
 
 package org.allbinary.animation.text.CustomTextAnimation_Package is
 
@@ -88,6 +90,16 @@ package org.allbinary.animation.text.CustomTextAnimation_Package is
    use type FontDebugFactory_Access_Array_Access_Array;
    subtype FontDebugFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.font.FontDebugFactory_Package_References.FontDebugFactory_Access_Array_Access_Array_Access;
    use type FontDebugFactory_Access_Array_Access_Array_Access;
+   subtype TextChangeListener_Access is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access;
+   use type TextChangeListener_Access;
+   subtype TextChangeListener_Access_Array is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access_Array;
+   use type TextChangeListener_Access_Array;
+   subtype TextChangeListener_Access_Array_Access is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access_Array_Access;
+   use type TextChangeListener_Access_Array_Access;
+   subtype TextChangeListener_Access_Array_Access_Array is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access_Array_Access_Array;
+   use type TextChangeListener_Access_Array_Access_Array;
+   subtype TextChangeListener_Access_Array_Access_Array_Access is org.allbinary.animation.text.TextChangeListener_Package_References.TextChangeListener_Access_Array_Access_Array_Access;
+   use type TextChangeListener_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -116,6 +128,7 @@ package org.allbinary.animation.text.CustomTextAnimation_Package is
    function Create (text : Unbounded_String; fontSize : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return CustomTextAnimation_Access;
    procedure paintXY (This : in out CustomTextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure setScale (This : in out CustomTextAnimation; scaleX : Float; scaleY : Float);
+   procedure setTextWithOnMeasure (This : in out CustomTextAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener_Package.TextChangeListener'Class);
    procedure setText (This : in out CustomTextAnimation; text : Unbounded_String);
    function getText (This : in out CustomTextAnimation) return Unbounded_String;
    function getWidth (This : in out CustomTextAnimation) return Integer;

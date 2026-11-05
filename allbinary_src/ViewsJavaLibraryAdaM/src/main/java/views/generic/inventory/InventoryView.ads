@@ -106,7 +106,7 @@ package views.generic_Id.inventory.InventoryView_Package is
    function "=" (Left, Right : InventoryView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.inventory.InventoryView_Package_References."=";
 
    type InventoryView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      InventoryView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out InventoryView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);

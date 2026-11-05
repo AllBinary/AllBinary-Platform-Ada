@@ -120,7 +120,7 @@ package views.admin.storefront.AddValidationStoreFrontView_Package is
    function "=" (Left, Right : AddValidationStoreFrontView_Access_Array_Access_Array_Access) return Boolean renames views.admin.storefront.AddValidationStoreFrontView_Package_References."=";
 
    type AddValidationStoreFrontView is new HttpContextView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      AddValidationStoreFrontView_Field_logUtil : LogUtil_Access;
       newStoreFrontInterface : StoreFrontInterface_Access;
    end record;
 
@@ -133,6 +133,7 @@ package views.admin.storefront.AddValidationStoreFrontView_Package is
    function toValidationInfoNode (This : in out AddValidationStoreFrontView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out AddValidationStoreFrontView; document_Param : access Document_Package.Document'Class);
    function view (This : in out AddValidationStoreFrontView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out AddValidationStoreFrontView) return TransformInfoInterface_Access;
 
 end views.admin.storefront.AddValidationStoreFrontView_Package;
 

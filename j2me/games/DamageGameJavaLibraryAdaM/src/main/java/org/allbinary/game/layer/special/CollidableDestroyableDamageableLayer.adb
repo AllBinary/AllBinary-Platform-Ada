@@ -50,6 +50,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
+with org.allbinary.game.layer.pickup.PickupBehavior_Package_References;
 
 package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package is
 
@@ -495,7 +496,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
             stringBuffer.append (commonSeps.COMMA);
         end loop;
         pickupBehavior := CollidableDestroyableDamageableLayer'Class (This).getPickupBehavior;
-        if (pickupBehavior) /= (null) then
+        if (not org.allbinary.game.layer.pickup.PickupBehavior_Package_References."=" (pickupBehavior, null)) then
             stringBuffer.append (commonSeps.NEW_LINE);
             stringBuffer.append (pickupBehavior.toString);
         end if;

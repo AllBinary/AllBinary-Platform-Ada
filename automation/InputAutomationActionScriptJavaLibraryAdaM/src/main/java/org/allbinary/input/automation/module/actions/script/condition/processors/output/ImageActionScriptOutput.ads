@@ -117,7 +117,7 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    function "=" (Left, Right : ImageActionScriptOutput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References."=";
 
    type ImageActionScriptOutput is new BasicProfileActionScriptOutput and ImageActionScriptOutputInterface with record
-      logUtil : LogUtil_Access;
+      ImageActionScriptOutput_Field_logUtil : LogUtil_Access;
       saved : Boolean;
       display : Boolean;
       imageTypes : ImageTypes_Access;

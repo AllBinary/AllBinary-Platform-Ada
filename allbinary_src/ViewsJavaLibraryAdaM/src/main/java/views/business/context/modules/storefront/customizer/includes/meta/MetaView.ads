@@ -119,7 +119,7 @@ package views.business.context.modules.storefront.customizer.includes.meta.MetaV
    function "=" (Left, Right : MetaView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.meta.MetaView_Package_References."=";
 
    type MetaView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      MetaView_Field_logUtil : LogUtil_Access;
       metasValidation : MetasValidation_Access;
    end record;
 

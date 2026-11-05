@@ -136,7 +136,7 @@ package views.admin.inventory.download.DownloadableInventoryItemView_Package is
    function "=" (Left, Right : DownloadableInventoryItemView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.download.DownloadableInventoryItemView_Package_References."=";
 
    type DownloadableInventoryItemView is new HttpStoreComponentView and RequestMapInterface with record
-      logUtil : LogUtil_Access;
+      DownloadableInventoryItemView_Field_logUtil : LogUtil_Access;
       basicItemData : BasicItemData_Access;
       request : HttpServletRequest_Access;
       id : Unbounded_String;

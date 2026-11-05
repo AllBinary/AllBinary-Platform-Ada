@@ -121,7 +121,7 @@ package org.allbinary.input.automation.actions.script.condition.ColorAtActionScr
    function "=" (Left, Right : ColorAtActionScriptCondition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package_References."=";
 
    type ColorAtActionScriptCondition is new BasicProfileActionScriptCondition and ColorAtActionScriptConditionInterface with record
-      logUtil : LogUtil_Access;
+      ColorAtActionScriptCondition_Field_logUtil : LogUtil_Access;
       colorAtActionScriptConditionJPanel : ColorAtActionScriptConditionJPanel_Access;
       point : Point_Access;
       colorRangeInterface : ColorRangeInterface_Access;

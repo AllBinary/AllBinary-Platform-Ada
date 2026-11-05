@@ -855,6 +855,7 @@ with org.allbinary.game.layer.unit.UnitWaypointStrings_Package; use org.allbinar
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
@@ -1074,12 +1075,12 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    begin
             logUtil := LogUtil_Package.getInstance;
             begin
-                if (UnitWaypointBehavior2'Class (This).getList.size) > (0) then
-                    allbinaryLayer := AllBinaryLayer_Access (UnitWaypointBehavior2'Class (This).getList.get (0));
-                    cellPosition := GeographicMapCellPosition_Access (UnitWaypointBehavior2'Class (This).getPositionList.get (0));
-                    clear := UnitWaypointBehavior2'Class (This).buildingChase (allbinaryLayer, cellPosition);
+                if (BuildingSteeringVisitor'Class (This).getList.size) > (0) then
+                    allbinaryLayer := AllBinaryLayer_Access (BuildingSteeringVisitor'Class (This).getList.get (0));
+                    cellPosition := GeographicMapCellPosition_Access (BuildingSteeringVisitor'Class (This).getPositionList.get (0));
+                    clear := BuildingSteeringVisitor'Class (This).buildingChase (allbinaryLayer, cellPosition);
                     if clear then
-                        UnitWaypointBehavior2'Class (This).getList.clear;
+                        BuildingSteeringVisitor'Class (This).getList.clear;
                         This.positionList.clear;
                         return NullUtil_Package.getInstance.NULL_OBJECT;
                     end if;
@@ -1092,7 +1093,7 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.put (commonStrings.EXCEPTION_Id, UnitWaypointBehavior2_Access'(This'Unchecked_Access), To_Unbounded_String ("visit"), e);
+                logUtil.put (commonStrings.EXCEPTION_Id, BuildingSteeringVisitor_Access'(This'Unchecked_Access), To_Unbounded_String ("visit"), e);
                 return NullUtil_Package.getInstance.NULL_OBJECT;
                     end;
             end;

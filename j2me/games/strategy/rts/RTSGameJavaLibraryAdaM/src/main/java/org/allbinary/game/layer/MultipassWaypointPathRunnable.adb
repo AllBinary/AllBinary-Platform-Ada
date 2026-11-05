@@ -291,6 +291,8 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package; use org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
 with org.allbinary.game.layer.SecondRunnable_Package; use org.allbinary.game.layer.SecondRunnable_Package;
 with org.allbinary.game.layer.EndRunnable_Package; use org.allbinary.game.layer.EndRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -366,6 +368,16 @@ package body org.allbinary.game.layer.FirstRunnable_Package is
    function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
    subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
    function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out FirstRunnable'Class) is
    begin
       null;
@@ -411,6 +423,8 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package; use org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
 with org.allbinary.game.layer.FirstRunnable_Package; use org.allbinary.game.layer.FirstRunnable_Package;
 with org.allbinary.game.layer.EndRunnable_Package; use org.allbinary.game.layer.EndRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -486,6 +500,16 @@ package body org.allbinary.game.layer.SecondRunnable_Package is
    function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
    subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
    function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out SecondRunnable'Class) is
    begin
       null;
@@ -531,6 +555,8 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package_References;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package; use org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
 with org.allbinary.game.layer.FirstRunnable_Package; use org.allbinary.game.layer.FirstRunnable_Package;
 with org.allbinary.game.layer.SecondRunnable_Package; use org.allbinary.game.layer.SecondRunnable_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -606,6 +632,16 @@ package body org.allbinary.game.layer.EndRunnable_Package is
    function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
    subtype WaypointPathRunnableBase_Access_Array_Access_Array_Access is org.allbinary.game.layer.WaypointPathRunnableBase_Package_References.WaypointPathRunnableBase_Access_Array_Access_Array_Access;
    function "=" (Left, Right : WaypointPathRunnableBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.WaypointPathRunnableBase_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   subtype MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out EndRunnable'Class) is
    begin
       null;

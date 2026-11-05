@@ -39,6 +39,7 @@ with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 
 package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Package is
 
@@ -417,7 +418,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.append (associatedAdvancedRTSGameLayer.getName);
         stringBuffer.append (To_Unbounded_String (" Adding Waypoint to Selected: "));
         stringBuffer.append (advancedRTSGameLayer.getName);
-        if (advancedRTSGameLayer.getParentLayer) /= (null) then
+        if (not org.allbinary.game.layer.PathFindingLayerInterface_Package_References."=" (advancedRTSGameLayer.getParentLayer, null)) then
             stringBuffer.append (To_Unbounded_String (" With Parent: "));
             stringBuffer.append (advancedRTSGameLayer.getParentLayer.getName);
         end if;

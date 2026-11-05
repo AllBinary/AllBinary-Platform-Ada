@@ -96,7 +96,7 @@ package body org.allbinary.graphics.draw.CanvasDrawLineString_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
-        This.drawStringUtil.drawCenterString (graphics, string_Id, 0, Length (string_Id), This.x, (This.y) + (((line) * (This.fontHeight))));
+        This.drawStringUtil.drawCenterString (graphics, string_Id, 0, Ada.Strings.Unbounded.Length (string_Id), This.x, (This.y) + (((line) * (This.fontHeight))));
    end paint;
 
 begin

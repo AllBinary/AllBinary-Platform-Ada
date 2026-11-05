@@ -234,6 +234,12 @@ package body views.HttpComponentView_Package is
         end;
    end view;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out HttpComponentView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (TransformInfoHttpComposite_Package.TransformInfoHttpComposite (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
 end views.HttpComponentView_Package;
 
 

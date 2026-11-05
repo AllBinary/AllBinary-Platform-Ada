@@ -130,7 +130,7 @@ package org.allbinary.game.input.TestingInputSingleton_Package is
 
    type TestingInputSingleton is new AllBinaryGameLayer and GameInputInterface with record
       inputProcessorArray : GameInputProcessor_Access_Array_Access;
-      paintable : PaintableInterface_Access;
+      TestingInputSingleton_Field_paintable : PaintableInterface_Access;
    end record;
    instance : TestingInputSingleton_Access;
 

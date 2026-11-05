@@ -105,7 +105,7 @@ package views.business.context.modules.storefront.customizer.includes.meta.EditM
    function "=" (Left, Right : EditMetaValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.meta.EditMetaValidationView_Package_References."=";
 
    type EditMetaValidationView is new MetaView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      EditMetaValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out EditMetaValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -115,6 +115,7 @@ package views.business.context.modules.storefront.customizer.includes.meta.EditM
    function toValidationInfoDoc (This : in out EditMetaValidationView) return Document_Access;
    function toValidationInfoNode (This : in out EditMetaValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out EditMetaValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out EditMetaValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.meta.EditMetaValidationView_Package;
 

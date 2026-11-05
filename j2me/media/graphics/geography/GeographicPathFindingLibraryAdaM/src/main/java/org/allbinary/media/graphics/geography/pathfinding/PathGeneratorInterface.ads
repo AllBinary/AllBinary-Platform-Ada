@@ -102,6 +102,7 @@ package org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterfac
    function "=" (Left, Right : PathGeneratorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References."=";
    function Java_Object_Access_From_PathGeneratorInterface (Value : PathGeneratorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function createList (This : in out PathGeneratorInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer) return BasicArrayList_Access is abstract;
+   procedure createList (This : in out PathGeneratorInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer) is abstract;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package;
 

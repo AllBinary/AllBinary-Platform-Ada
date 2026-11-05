@@ -119,7 +119,7 @@ package views.generic_Id.user.UsersView_Package is
    function "=" (Left, Right : UsersView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.user.UsersView_Package_References."=";
 
    type UsersView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      UsersView_Field_logUtil_Hidden : LogUtil_Access;
       userVector : BasicArrayList_Access;
    end record;
 

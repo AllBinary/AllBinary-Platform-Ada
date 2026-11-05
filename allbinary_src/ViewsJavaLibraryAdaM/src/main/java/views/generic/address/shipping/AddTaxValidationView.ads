@@ -105,7 +105,7 @@ package views.generic_Id.address.shipping.AddTaxValidationView_Package is
    function "=" (Left, Right : AddTaxValidationView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.address.shipping.AddTaxValidationView_Package_References."=";
 
    type AddTaxValidationView is new ShippingAddressView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      AddTaxValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out AddTaxValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -115,6 +115,7 @@ package views.generic_Id.address.shipping.AddTaxValidationView_Package is
    function toValidationInfoDoc (This : in out AddTaxValidationView) return Document_Access;
    function toValidationInfoNode (This : in out AddTaxValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out AddTaxValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out AddTaxValidationView) return TransformInfoInterface_Access;
 
 end views.generic_Id.address.shipping.AddTaxValidationView_Package;
 

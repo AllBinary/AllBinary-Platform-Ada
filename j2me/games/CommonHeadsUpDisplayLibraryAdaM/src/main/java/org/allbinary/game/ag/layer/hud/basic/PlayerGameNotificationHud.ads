@@ -258,6 +258,8 @@ limited with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeDelayHelper_Package_References;
 limited with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package_References;
+limited with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References;
 
 package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
 
@@ -384,6 +386,16 @@ package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
    use type CircularIndexUtil_Access_Array_Access_Array;
    subtype CircularIndexUtil_Access_Array_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array_Access;
    use type CircularIndexUtil_Access_Array_Access_Array_Access;
+   subtype PlayerGameNotificationHud_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access;
+   use type PlayerGameNotificationHud_Access;
+   subtype PlayerGameNotificationHud_Access_Array is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array;
+   use type PlayerGameNotificationHud_Access_Array;
+   subtype PlayerGameNotificationHud_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access;
+   use type PlayerGameNotificationHud_Access_Array_Access;
+   subtype PlayerGameNotificationHud_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array;
+   use type PlayerGameNotificationHud_Access_Array_Access_Array;
+   subtype PlayerGameNotificationHud_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array_Access;
+   use type PlayerGameNotificationHud_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -450,6 +462,8 @@ limited with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeDelayHelper_Package_References;
 limited with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package_References;
+limited with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References;
 
 package org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package is
 
@@ -576,6 +590,16 @@ package org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package 
    use type CircularIndexUtil_Access_Array_Access_Array;
    subtype CircularIndexUtil_Access_Array_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array_Access;
    use type CircularIndexUtil_Access_Array_Access_Array_Access;
+   subtype PlayerGameNotificationHud_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access;
+   use type PlayerGameNotificationHud_Access;
+   subtype PlayerGameNotificationHud_Access_Array is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array;
+   use type PlayerGameNotificationHud_Access_Array;
+   subtype PlayerGameNotificationHud_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access;
+   use type PlayerGameNotificationHud_Access_Array_Access;
+   subtype PlayerGameNotificationHud_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array;
+   use type PlayerGameNotificationHud_Access_Array_Access_Array;
+   subtype PlayerGameNotificationHud_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array_Access;
+   use type PlayerGameNotificationHud_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

@@ -51,7 +51,9 @@ package org.allbinary.init.crypt.jcehelper.CryptInterface_Package is
    function "=" (Left, Right : CryptInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References."=";
    function Java_Object_Access_From_CryptInterface (Value : CryptInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function encrypt (This : in out CryptInterface; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is abstract;
+   procedure encrypt (This : in out CryptInterface; array_Id : Short_Short_Integer_Array_Access) is abstract;
    function decrypt (This : in out CryptInterface; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is abstract;
+   procedure decrypt (This : in out CryptInterface; array_Id : Short_Short_Integer_Array_Access) is abstract;
 
 end org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 

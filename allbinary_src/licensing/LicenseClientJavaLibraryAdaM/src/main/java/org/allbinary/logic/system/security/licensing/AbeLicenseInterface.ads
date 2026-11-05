@@ -77,6 +77,7 @@ package org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Packag
    function Java_Object_Access_From_AbeLicenseInterface (Value : AbeLicenseInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function hasKey (This : in out AbeLicenseInterface) return Boolean is abstract;
    function getKey (This : in out AbeLicenseInterface; keyName : Unbounded_String) return Unbounded_String is abstract;
+   procedure getKey (This : in out AbeLicenseInterface; keyName : Unbounded_String) is abstract;
    function getLicenseId (This : in out AbeLicenseInterface) return Unbounded_String is abstract;
    function getServers (This : in out AbeLicenseInterface) return BasicArrayList_Access is abstract;
    function getSpecial (This : in out AbeLicenseInterface) return Unbounded_String is abstract;

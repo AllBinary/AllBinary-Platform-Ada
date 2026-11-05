@@ -264,6 +264,8 @@ limited with org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package_References;
 limited with org.allbinary.midlet.AllBinaryMidlet_Package;
 with org.allbinary.midlet.AllBinaryMidlet_Package_References;
+limited with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
 limited with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References;
 
@@ -381,6 +383,16 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Pack
    use type AllBinaryMidlet_Access_Array_Access_Array;
    subtype AllBinaryMidlet_Access_Array_Access_Array_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array_Access_Array_Access;
    use type AllBinaryMidlet_Access_Array_Access_Array_Access;
+   subtype ProgressCanvas_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access;
+   use type ProgressCanvas_Access;
+   subtype ProgressCanvas_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array;
+   use type ProgressCanvas_Access_Array;
+   subtype ProgressCanvas_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access;
+   use type ProgressCanvas_Access_Array_Access;
+   subtype ProgressCanvas_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array;
+   use type ProgressCanvas_Access_Array_Access_Array;
+   subtype ProgressCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array_Access;
+   use type ProgressCanvas_Access_Array_Access_Array_Access;
    subtype ProgressEndListener_Access is org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References.ProgressEndListener_Access;
    use type ProgressEndListener_Access;
    subtype ProgressEndListener_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References.ProgressEndListener_Access_Array;

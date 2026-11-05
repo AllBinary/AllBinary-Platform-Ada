@@ -93,6 +93,8 @@ package org.allbinary.animation.vector.LineAnimation_Package is
    procedure setPosition (This : in out LineAnimation; x : Integer; y : Integer; z : Integer);
    procedure paintXY (This : in out LineAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure nextFrame (This : in out LineAnimation);
+   function getBasicColorP (This : in out LineAnimation) return BasicColor_Access;
+   procedure setBasicColorP (This : in out LineAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.animation.vector.LineAnimation_Package;
 

@@ -110,6 +110,7 @@ package org.allbinary.data.tables.advertisement.AdvertisementsEntity_Package is
    function createTable (This : in out AdvertisementsEntity) return Unbounded_String;
    procedure update (This : in out AdvertisementsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out AdvertisementsEntity) return Unbounded_String;
+   procedure insert (This : in out AdvertisementsEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.data.tables.advertisement.AdvertisementsEntity_Package;
 

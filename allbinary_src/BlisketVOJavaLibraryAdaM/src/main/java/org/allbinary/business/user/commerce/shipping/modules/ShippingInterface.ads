@@ -77,6 +77,7 @@ package org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_
    function "=" (Left, Right : ShippingInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package_References."=";
    function Java_Object_Access_From_ShippingInterface (Value : ShippingInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getCost (This : in out ShippingInterface; order_Param : access OrderInterface_Package.OrderInterface'Class) return Money_Access is abstract;
+   procedure getCost (This : in out ShippingInterface; order_Param : access OrderInterface_Package.OrderInterface'Class) is abstract;
    function getName (This : in out ShippingInterface) return Unbounded_String is abstract;
    function getDescription (This : in out ShippingInterface) return Unbounded_String is abstract;
 

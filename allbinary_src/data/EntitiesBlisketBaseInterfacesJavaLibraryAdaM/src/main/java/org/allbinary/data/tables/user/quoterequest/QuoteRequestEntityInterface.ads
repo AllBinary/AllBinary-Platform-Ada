@@ -81,7 +81,9 @@ package org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityInterface_
    function "=" (Left, Right : QuoteRequestEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityInterface_Package_References."=";
    function Java_Object_Access_From_QuoteRequestEntityInterface (Value : QuoteRequestEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function get (This : in out QuoteRequestEntityInterface; userName : Unbounded_String; id : Integer) return QuoteRequest_Access is abstract;
+   procedure get (This : in out QuoteRequestEntityInterface; userName : Unbounded_String; id : Integer) is abstract;
    function getIds (This : in out QuoteRequestEntityInterface; userName : Unbounded_String) return BasicArrayList_Access is abstract;
+   procedure getIds (This : in out QuoteRequestEntityInterface; userName : Unbounded_String) is abstract;
    procedure deleteWhere (This : in out QuoteRequestEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
    procedure insert (This : in out QuoteRequestEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure update (This : in out QuoteRequestEntityInterface; userName : Unbounded_String; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;

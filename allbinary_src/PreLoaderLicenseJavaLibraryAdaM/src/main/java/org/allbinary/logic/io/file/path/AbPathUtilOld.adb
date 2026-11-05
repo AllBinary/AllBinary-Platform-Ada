@@ -126,11 +126,11 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
       beginIndex : Integer;
       extension : Unbounded_String;
    begin
-        if (Length (filePath)) < (AbPathUtilOld_Package.MIN) then
+        if (Ada.Strings.Unbounded.Length (filePath)) < (AbPathUtilOld_Package.MIN) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could not be a file path since its less that 4 characters")));
         end if;
-        beginIndex := (Length (filePath)) - (AbPathUtilOld_Package.MIN);
-        extension := Unbounded_Slice (filePath, ((beginIndex) + (1)) + 1, Length (filePath));
+        beginIndex := (Ada.Strings.Unbounded.Length (filePath)) - (AbPathUtilOld_Package.MIN);
+        extension := Unbounded_Slice (filePath, ((beginIndex) + (1)) + 1, Ada.Strings.Unbounded.Length (filePath));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("FileExtension: ") & extension, AbPathUtilOld_Access'(This'Unchecked_Access), To_Unbounded_String ("getExtension()"));
         end if;
@@ -156,10 +156,10 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
       endIndex : Integer;
       pathWithoutExtension : Unbounded_String;
    begin
-        if (Length (filePath)) < (AbPathUtilOld_Package.MIN) then
+        if (Ada.Strings.Unbounded.Length (filePath)) < (AbPathUtilOld_Package.MIN) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could not be a file path since its less that 4 characters")));
         end if;
-        endIndex := (Length (filePath)) - (AbPathUtilOld_Package.MIN);
+        endIndex := (Ada.Strings.Unbounded.Length (filePath)) - (AbPathUtilOld_Package.MIN);
         pathWithoutExtension := Unbounded_Slice (filePath, (0) + 1, endIndex);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("FileWithoutExtension: ") & pathWithoutExtension, AbPathUtilOld_Access'(This'Unchecked_Access), To_Unbounded_String ("getWithoutExtension()"));
@@ -191,7 +191,7 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
         if StringValidationUtil_Package.getInstance.isEmpty (path) then
             return False;
         end if;
-        if (Element (path, ((Length (path)) - (1)) + 1)) = (This.abPathData.SEPARATORCHAR) then
+        if (Element (path, ((Ada.Strings.Unbounded.Length (path)) - (1)) + 1)) = (This.abPathData.SEPARATORCHAR) then
             return True;
         else
             return False;
@@ -239,11 +239,11 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
         if (endIndex) < (0) then
             return categoryPath;
         end if;
-        if (Length (categoryPath)) = ((endIndex) + (1)) then
+        if (Ada.Strings.Unbounded.Length (categoryPath)) = ((endIndex) + (1)) then
             categoryName := Unbounded_Slice (categoryPath, (0) + 1, endIndex);
             return AbPathUtilOld'Class (This).getNameFromPath (categoryName);
         else
-            categoryName := Unbounded_Slice (categoryPath, ((endIndex) + (1)) + 1, Length (categoryPath));
+            categoryName := Unbounded_Slice (categoryPath, ((endIndex) + (1)) + 1, Ada.Strings.Unbounded.Length (categoryPath));
             return categoryName;
         end if;
    end getNameFromPath;
@@ -260,7 +260,7 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
         if (endIndex) < (0) then
             return AbPath_Package.createAbPath;
         end if;
-        if (Length (categoryPath)) = ((endIndex) + (1)) then
+        if (Ada.Strings.Unbounded.Length (categoryPath)) = ((endIndex) + (1)) then
             return AbPathUtilOld'Class (This).removeNameFromPath (Unbounded_Slice (categoryPath, (0) + 1, (endIndex) - (1)));
         else
             categoryName := Unbounded_Slice (categoryPath, (0) + 1, endIndex);

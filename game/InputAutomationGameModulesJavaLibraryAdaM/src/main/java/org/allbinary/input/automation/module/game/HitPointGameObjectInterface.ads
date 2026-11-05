@@ -52,6 +52,7 @@ package org.allbinary.input.automation.module.game.HitPointGameObjectInterface_P
    function "=" (Left, Right : HitPointGameObjectInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.HitPointGameObjectInterface_Package_References."=";
    function Java_Object_Access_From_HitPointGameObjectInterface (Value : HitPointGameObjectInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function isMoreThan (This : in out HitPointGameObjectInterface; aFloat : Float) return Boolean is abstract;
+   procedure isMoreThan (This : in out HitPointGameObjectInterface; aFloat : Float) is abstract;
    function isCloseDeath (This : in out HitPointGameObjectInterface) return Boolean is abstract;
    function isDamaged (This : in out HitPointGameObjectInterface) return Boolean is abstract;
 

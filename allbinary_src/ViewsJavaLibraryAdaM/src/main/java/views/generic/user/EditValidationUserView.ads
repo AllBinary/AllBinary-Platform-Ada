@@ -105,7 +105,7 @@ package views.generic_Id.user.EditValidationUserView_Package is
    function "=" (Left, Right : EditValidationUserView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.user.EditValidationUserView_Package_References."=";
 
    type EditValidationUserView is new UserView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      EditValidationUserView_Field_logUtil_Hidden : LogUtil_Access;
       userName : Unbounded_String;
    end record;
 
@@ -116,6 +116,7 @@ package views.generic_Id.user.EditValidationUserView_Package is
    function toValidationInfoDoc (This : in out EditValidationUserView) return Document_Access;
    function toValidationInfoNode (This : in out EditValidationUserView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out EditValidationUserView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out EditValidationUserView) return TransformInfoInterface_Access;
 
 end views.generic_Id.user.EditValidationUserView_Package;
 

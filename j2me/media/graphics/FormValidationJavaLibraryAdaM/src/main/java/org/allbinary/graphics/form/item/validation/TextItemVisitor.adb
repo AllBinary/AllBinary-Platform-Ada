@@ -44,7 +44,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemVisitor_Package
       value : Unbounded_String;
    begin
         value := Java_Unbox (anyType);
-        if (Length (value)) < (2) then
+        if (Ada.Strings.Unbounded.Length (value)) < (2) then
             return BooleanFactory_Package.getInstance.TRUE;
         else
             return BooleanFactory_Package.getInstance.FALSE;

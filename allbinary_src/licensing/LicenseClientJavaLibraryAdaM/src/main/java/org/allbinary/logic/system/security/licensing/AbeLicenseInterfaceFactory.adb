@@ -29,6 +29,7 @@ with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References;
 
 package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package is
 
@@ -125,8 +126,8 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
             This.abeLicenseInterface := AbeLicenseInterface_Access (AbeNoLicense_Package.getInstance);
             licenseClient := AbeLicenseClient_Package.Create;
             This.abeLicenseInterface := AbeLicenseInterface_Access (licenseClient.get (abeClientInformation));
-            if (This.abeLicenseInterface) /= (null) then
-                This.logUtil.putF (To_Unbounded_String ("Default Key: ") & Java_Image (This.abeLicenseInterface.getKey (AbeClientInformationData_Package.getInstance.KEY)), AbeLicenseInterfaceFactory_Access'(This'Unchecked_Access), This.commonStrings.GET);
+            if (not org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=" (This.abeLicenseInterface, null)) then
+                This.logUtil.putF (To_Unbounded_String ("Default Key: ") & This.abeLicenseInterface.getKey (AbeClientInformationData_Package.getInstance.KEY), AbeLicenseInterfaceFactory_Access'(This'Unchecked_Access), This.commonStrings.GET);
             end if;
             return This.abeLicenseInterface;
         exception
@@ -146,7 +147,7 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
    begin
         calendar := Calendar_Package.getInstance;
         currentTime := calendar.getTimeInMillis;
-        if (((((This.abeLicenseInterface) = (null)) or else ((Java_Object_Access (This.abeLicenseInterface)) = (Java_Object_Access (AbeNoLicense_Package.getInstance)))) or else (not (This.abeLicenseInterface.hasKey))) or else (AbeLicenseInterfaceFactory'Class (This).isCheck)) or else (((currentTime) - (Long_Long_Integer (This.checkPeriod))) > (This.time)) then
+        if ((((org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=" (This.abeLicenseInterface, null)) or else ((Java_Object_Access (This.abeLicenseInterface)) = (Java_Object_Access (AbeNoLicense_Package.getInstance)))) or else (not (This.abeLicenseInterface.hasKey))) or else (AbeLicenseInterfaceFactory'Class (This).isCheck)) or else (((currentTime) - (Long_Long_Integer (This.checkPeriod))) > (This.time)) then
             This.abeLicenseInterface := null;
             This.time := currentTime;
             return True;

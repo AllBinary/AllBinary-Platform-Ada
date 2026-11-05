@@ -225,6 +225,12 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
         return To_Unbounded_String ("Unknown Error<br />");
    end validationInfo;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out UserNameOrderHistoryView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (HttpStoreComponentView_Package.HttpStoreComponentView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

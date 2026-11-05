@@ -100,6 +100,7 @@ package views.generic_Id.inventory.AutoValidationInventoryView_Package is
    function toValidationInfoNode (This : in out AutoValidationInventoryView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out AutoValidationInventoryView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out AutoValidationInventoryView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out AutoValidationInventoryView) return TransformInfoInterface_Access;
 
 end views.generic_Id.inventory.AutoValidationInventoryView_Package;
 

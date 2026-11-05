@@ -179,6 +179,12 @@ package body views.admin.user.EditValidationUserView_Package is
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out EditValidationUserView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (UserView_Package.UserView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out EditValidationUserView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := EditValidationUserView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

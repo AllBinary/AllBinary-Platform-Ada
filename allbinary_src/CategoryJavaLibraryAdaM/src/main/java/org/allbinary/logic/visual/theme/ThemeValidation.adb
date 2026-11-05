@@ -417,9 +417,9 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         themeData := ThemeData_Package.getInstance;
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (themeData.NAME, Java_Box (ThemeValidation'Class (This).getName));
-        hashMap.put (themeData.PATH, ThemeValidation'Class (This).getPath);
-        hashMap.put (themeData.PREVIEW_IMAGE_NAME, ThemeValidation'Class (This).getPreviewImageName);
-        hashMap.put (themeData.PREVIEW_IMAGE_PATH, ThemeValidation'Class (This).getPreviewImagePath);
+        hashMap.put (themeData.PATH, Java_Box (ThemeValidation'Class (This).getPath));
+        hashMap.put (themeData.PREVIEW_IMAGE_NAME, Java_Box (ThemeValidation'Class (This).getPreviewImageName));
+        hashMap.put (themeData.PREVIEW_IMAGE_PATH, Java_Box (ThemeValidation'Class (This).getPreviewImagePath));
         return hashMap;
    end toHashMap;
 

@@ -20,6 +20,7 @@ with org.allbinary.game.input.GameInputProcessor_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.GameInputProcessor_Package_References;
 
 package body org.allbinary.game.input.GameInputProcessorUtil_Package is
 
@@ -61,7 +62,7 @@ package body org.allbinary.game.input.GameInputProcessorUtil_Package is
         total := InputFactory_Package.getInstance.MAX;
         for index in 0 .. (total) - 1 loop
             inputProcessorCanBeNull := inputProcessorArray (index);
-            if (inputProcessorCanBeNull) = (null) then
+            if org.allbinary.game.input.GameInputProcessor_Package_References."=" (inputProcessorCanBeNull, null) then
                 inputProcessorArray (index) := noInputProcessor;
             end if;
         end loop;

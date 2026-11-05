@@ -65,8 +65,8 @@ package tags.StoreValidationTransformTag_Package is
    function "=" (Left, Right : StoreValidationTransformTag_Access_Array_Access_Array_Access) return Boolean renames tags.StoreValidationTransformTag_Package_References."=";
 
    type StoreValidationTransformTag is new ValidationTransformTag with record
-      logUtil : LogUtil_Access;
-      storeName : Unbounded_String;
+      StoreValidationTransformTag_Field_logUtil : LogUtil_Access;
+      StoreValidationTransformTag_Field_storeName : Unbounded_String;
    end record;
 
    procedure Initialize (This : in out StoreValidationTransformTag'Class);

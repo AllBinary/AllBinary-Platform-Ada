@@ -120,6 +120,8 @@ package org.allbinary.animation.VectorBaseRotationAnimation_Package is
    function getPoints (This : in out VectorBaseRotationAnimation; frame : Integer) return Integer_Array_Access_Array_Access;
    procedure getPoints (This : in out VectorBaseRotationAnimation; frame : Integer);
    procedure setPoints (This : in out VectorBaseRotationAnimation; currentPoints : Integer_Array_Access_Array_Access_Array_Access);
+   function getBasicColorP (This : in out VectorBaseRotationAnimation) return BasicColor_Access;
+   procedure setBasicColorP (This : in out VectorBaseRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.animation.VectorBaseRotationAnimation_Package;
 

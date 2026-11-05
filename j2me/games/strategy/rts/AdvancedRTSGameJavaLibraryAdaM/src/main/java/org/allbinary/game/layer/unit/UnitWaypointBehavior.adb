@@ -415,7 +415,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
             return True;
         end if;
         if This.repeatedToLong.isTimeTNT then
-            message := To_Unbounded_String ("Repeating too long: ") & Java_Image (UnitWaypointBehavior'Class (This).getMovementLogicAsString);
+            message := To_Unbounded_String ("Repeating too long: ") & UnitWaypointBehavior'Class (This).getMovementLogicAsString;
             ForcedLogUtil_Package.log (message, This.associatedAdvancedRTSGameLayer);
         end if;
         return False;

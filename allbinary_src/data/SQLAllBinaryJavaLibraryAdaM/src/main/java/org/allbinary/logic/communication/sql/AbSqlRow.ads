@@ -95,7 +95,7 @@ package org.allbinary.logic.communication.sql.AbSqlRow_Package is
    function "=" (Left, Right : AbSqlRow_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlRow_Package_References."=";
 
    type AbSqlRow is new AbSqlColumn with record
-      logUtil : LogUtil_Access;
+      AbSqlRow_Field_logUtil : LogUtil_Access;
       EQUAL_QUOTE : Unbounded_String;
       ESCAPE_QUOTES : Unbounded_String;
       GET_ROW : Unbounded_String;

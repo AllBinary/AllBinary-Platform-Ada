@@ -157,6 +157,7 @@ package org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package 
    function getAngle (This : in out GraphicItemInterface) return Long_Float is abstract;
    procedure paint (This : in out GraphicItemInterface; g_Param : access Graphics_Package.Graphics'Class; canvasAngle : Long_Float; dimension_Param : access IntegerDimension_Package.IntegerDimension'Class; x : Integer; y : Integer) is abstract;
    function toDom (This : in out GraphicItemInterface; canvasDom_Param : access CanvasDom_Package.CanvasDom'Class) return Node_Access is abstract;
+   procedure toDom (This : in out GraphicItemInterface; canvasDom_Param : access CanvasDom_Package.CanvasDom'Class) is abstract;
    function removePoint (This : in out GraphicItemInterface) return GPoint_Access is abstract;
    procedure addPoint (This : in out GraphicItemInterface; point_Param : access GPoint_Package.GPoint'Class) is abstract;
    procedure mouseClicked (This : in out GraphicItemInterface; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is abstract;

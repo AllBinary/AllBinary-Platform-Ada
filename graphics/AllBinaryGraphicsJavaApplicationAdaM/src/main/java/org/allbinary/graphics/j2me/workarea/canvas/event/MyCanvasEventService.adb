@@ -83,19 +83,19 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventServ
         i := 0;
         while (i) < (listeners'Length) loop
             if (listeners (i)) = (listeners ((i) + (1)).all'Tag) then
-                if (evt.getCommand.compareTo (MyCanvasEventService_Package.DELETE)) = (0) then
+                if (Java_Compare_To (evt.getCommand, MyCanvasEventService_Package.DELETE)) = (0) then
                     MyCanvasEventListener_Access (listeners ((i) + (1))).delete (evt);
-                elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.DUPLICATE)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyCanvasEventService_Package.DUPLICATE)) = (0) then
                     MyCanvasEventListener_Access (listeners ((i) + (1))).duplicate (evt);
-                elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.SELECT_Id)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyCanvasEventService_Package.SELECT_Id)) = (0) then
                     MyCanvasEventListener_Access (listeners ((i) + (1))).select_Id (evt);
-                elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.ROTATE)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyCanvasEventService_Package.ROTATE)) = (0) then
                     MyCanvasEventListener_Access (listeners ((i) + (1))).rotate (evt);
-                elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.EXPLODE)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyCanvasEventService_Package.EXPLODE)) = (0) then
                     MyCanvasEventListener_Access (listeners ((i) + (1))).explode (evt);
-                elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.AUTOEXPLODE)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyCanvasEventService_Package.AUTOEXPLODE)) = (0) then
                     MyCanvasEventListener_Access (listeners ((i) + (1))).autoExplode (evt);
-                elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.CENTER)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyCanvasEventService_Package.CENTER)) = (0) then
                     MyCanvasEventListener_Access (listeners ((i) + (1))).center (evt);
                 end if;
             end if;

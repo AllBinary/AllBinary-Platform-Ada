@@ -179,6 +179,12 @@ package body views.admin.user.UpdateValidationUserView_Package is
         return This.views.ValidationOnlyTempUtil.getInstance.view (UpdateValidationUserView_Access'(This'Unchecked_Access));
    end view;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out UpdateValidationUserView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (HttpContextView_Package.HttpContextView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out UpdateValidationUserView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := UpdateValidationUserView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

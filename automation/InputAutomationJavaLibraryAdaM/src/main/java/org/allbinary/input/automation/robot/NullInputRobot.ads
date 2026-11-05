@@ -104,7 +104,7 @@ package org.allbinary.input.automation.robot.NullInputRobot_Package is
    function "=" (Left, Right : NullInputRobot_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.robot.NullInputRobot_Package_References."=";
 
    type NullInputRobot is new AbstractInputRobot and InputRobotInterface with record
-      logUtil : LogUtil_Access;
+      NullInputRobot_Field_logUtil : LogUtil_Access;
    end record;
    LIBRARY_NAME : Unbounded_String;
    NAME : Unbounded_String;
@@ -131,6 +131,9 @@ package org.allbinary.input.automation.robot.NullInputRobot_Package is
    procedure setAutoWaitForIdle (This : in out NullInputRobot; isOn : Boolean);
    function toString (This : in out NullInputRobot) return Unbounded_String;
    procedure waitForIdle (This : in out NullInputRobot);
+   procedure mouseMove (This : in out NullInputRobot; point_Param : access Point_Package.Point'Class);
+   procedure mouseMoveToTarget (This : in out NullInputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class);
+   procedure mouseMoveToTarget (This : in out NullInputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer);
 
 end org.allbinary.input.automation.robot.NullInputRobot_Package;
 

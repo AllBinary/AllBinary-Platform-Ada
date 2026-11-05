@@ -183,6 +183,7 @@ package org.allbinary.business.user.commerce.inventory.order.OrderHistory_Packag
    function toHashMap (This : in out OrderHistory) return HashMap_Access;
    function toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class);
+   function getPaymentMethod (This : in out OrderHistory) return Unbounded_String;
 
 end org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
 

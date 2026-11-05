@@ -34,7 +34,7 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
    function append (This : in out StringMaker; string_Id : Unbounded_String) return StringMaker_Access is
       stringLength : Integer;
    begin
-        stringLength := Length (string_Id);
+        stringLength := Ada.Strings.Unbounded.Length (string_Id);
         StringMaker'Class (This).ensureCapacity ((This.currentLength) + (stringLength));
         Java_Get_Chars (string_Id, 0, stringLength, This.charArray, This.currentLength);
         This.currentLength := (This.currentLength) + (stringLength);

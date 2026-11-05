@@ -176,6 +176,12 @@ package body views.admin.inventory.download.EditValidationView_Package is
         return stringBuffer.toString;
    end validationInfo;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out EditValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (DownloadableInventoryItemView_Package.DownloadableInventoryItemView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out EditValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := EditValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

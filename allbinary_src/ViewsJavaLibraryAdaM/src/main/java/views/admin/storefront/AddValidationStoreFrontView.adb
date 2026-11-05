@@ -205,6 +205,12 @@ package body views.admin.storefront.AddValidationStoreFrontView_Package is
         return This.views.ValidationOnlyTempUtil.getInstance.view (AddValidationStoreFrontView_Access'(This'Unchecked_Access));
    end view;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out AddValidationStoreFrontView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (HttpContextView_Package.HttpContextView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out AddValidationStoreFrontView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := AddValidationStoreFrontView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

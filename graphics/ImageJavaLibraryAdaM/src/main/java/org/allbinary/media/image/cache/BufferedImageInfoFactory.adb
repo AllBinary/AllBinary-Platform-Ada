@@ -19,6 +19,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.media.image.cache.BufferedImageInfo_Package; use org.allbinary.media.image.cache.BufferedImageInfo_Package;
 with org.allbinary.media.image.cache.BufferedImageInfo_Package_References;
 with org.allbinary.media.image.cache.BufferedImageInfo_Package;
+with org.allbinary.media.image.cache.BufferedImageInfo_Package_References;
 
 package body org.allbinary.media.image.cache.BufferedImageInfoFactory_Package is
 
@@ -64,7 +65,7 @@ package body org.allbinary.media.image.cache.BufferedImageInfoFactory_Package is
         stringbuffer.appendint (type_Id);
         key := stringbuffer.toString;
         bufferedImageInfo := BufferedImageInfo_Access (BufferedImageInfoFactory_Package.hashMap.get (Java_Box (key)));
-        if (bufferedImageInfo) = (null) then
+        if org.allbinary.media.image.cache.BufferedImageInfo_Package_References."=" (bufferedImageInfo, null) then
             bufferedImageInfo := BufferedImageInfo_Package.Create (width, height, type_Id);
             BufferedImageInfoFactory_Package.hashMap.put (Java_Box (key), bufferedImageInfo);
         end if;

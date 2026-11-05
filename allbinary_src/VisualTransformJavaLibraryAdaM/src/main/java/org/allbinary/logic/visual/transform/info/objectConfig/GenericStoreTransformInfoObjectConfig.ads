@@ -118,7 +118,7 @@ package org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTrans
    function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
 
    type GenericStoreTransformInfoObjectConfig is new TransformInfoObjectConfig with record
-      logUtil : LogUtil_Access;
+      GenericStoreTransformInfoObjectConfig_Field_logUtil : LogUtil_Access;
       abeClientInformation : AbeClientInformationInterface_Access;
    end record;
 

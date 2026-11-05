@@ -363,6 +363,11 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
         return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end drop;
 
+   function dropTable (This : in out StreetAddressesEntity) return Unbounded_String is
+   begin
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
+   end dropTable;
+
    procedure get (This : in out StreetAddressesEntity; index : Integer) is
       Java_Result : constant StreetAddress_Access := StreetAddressesEntity'Class (This).get (index => index);
       pragma Unreferenced (Java_Result);

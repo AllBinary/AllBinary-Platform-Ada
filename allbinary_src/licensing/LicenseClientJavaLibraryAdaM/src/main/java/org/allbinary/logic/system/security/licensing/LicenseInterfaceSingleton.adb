@@ -19,6 +19,7 @@ with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_R
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References;
 
 package body org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_Package is
 
@@ -58,7 +59,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseInterfaceSingl
    procedure init (licenseInterface_Param : access AbeLicenseInterface_Package.AbeLicenseInterface'Class) is
       licenseInterface : constant AbeLicenseInterface_Access := AbeLicenseInterface_Access (licenseInterface_Param);
    begin
-        if (licenseInterface) /= (null) then
+        if (not org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=" (licenseInterface, null)) then
             LicenseInterfaceSingleton_Package.licenseInterface := licenseInterface;
         end if;
    end init;

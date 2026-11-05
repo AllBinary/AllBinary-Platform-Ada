@@ -143,22 +143,22 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    begin
         begin
             valid := True;
-            if (((This.userName) = (Null_Unbounded_String)) or else ((Length (This.userName)) < (4))) or else ((Length (This.userName)) > (250)) then
+            if (((This.userName) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.userName)) < (4))) or else ((Ada.Strings.Unbounded.Length (This.userName)) > (250)) then
                 valid := False;
             end if;
-            if (((This.projectInfo) = (Null_Unbounded_String)) or else ((Length (This.projectInfo)) < (0))) or else ((Length (This.projectInfo)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.projectInfo) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.projectInfo)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.projectInfo)) > (AbSqlData_Package.MAXBLOB)) then
                 valid := False;
             end if;
-            if (((This.userComments) = (Null_Unbounded_String)) or else ((Length (This.userComments)) < (0))) or else ((Length (This.userComments)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.userComments) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.userComments)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.userComments)) > (AbSqlData_Package.MAXBLOB)) then
                 valid := False;
             end if;
-            if (((This.budget) = (Null_Unbounded_String)) or else ((Length (This.budget)) < (0))) or else ((Length (This.budget)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.budget) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.budget)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.budget)) > (AbSqlData_Package.MAXBLOB)) then
                 valid := False;
             end if;
-            if (((This.timeFrame) = (Null_Unbounded_String)) or else ((Length (This.timeFrame)) < (0))) or else ((Length (This.timeFrame)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.timeFrame) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.timeFrame)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.timeFrame)) > (AbSqlData_Package.MAXBLOB)) then
                 valid := False;
             end if;
-            if (((This.comments) = (Null_Unbounded_String)) or else ((Length (This.comments)) < (0))) or else ((Length (This.comments)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.comments) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.comments)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.comments)) > (AbSqlData_Package.MAXBLOB)) then
                 valid := False;
             end if;
             return valid;
@@ -180,22 +180,22 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            if (((This.userName) = (Null_Unbounded_String)) or else ((Length (This.userName)) < (4))) or else ((Length (This.userName)) > (250)) then
+            if (((This.userName) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.userName)) < (4))) or else ((Ada.Strings.Unbounded.Length (This.userName)) > (250)) then
                 stringBuffer.append (To_Unbounded_String ("Please enter a User Name with more than 4 characters.<br>"));
             end if;
-            if (((This.projectInfo) = (Null_Unbounded_String)) or else ((Length (This.projectInfo)) < (0))) or else ((Length (This.projectInfo)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.projectInfo) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.projectInfo)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.projectInfo)) > (AbSqlData_Package.MAXBLOB)) then
                 stringBuffer.append (To_Unbounded_String ("Please enter Project Info with less than ") & Java_Image (AbSqlData_Package.MAXBLOB) & To_Unbounded_String (" characters.<br>"));
             end if;
-            if (((This.userComments) = (Null_Unbounded_String)) or else ((Length (This.userComments)) < (0))) or else ((Length (This.userComments)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.userComments) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.userComments)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.userComments)) > (AbSqlData_Package.MAXBLOB)) then
                 stringBuffer.append (To_Unbounded_String ("Please enter User Comments with less than ") & Java_Image (AbSqlData_Package.MAXBLOB) & To_Unbounded_String (" characters.<br>"));
             end if;
-            if (((This.budget) = (Null_Unbounded_String)) or else ((Length (This.budget)) < (0))) or else ((Length (This.budget)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.budget) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.budget)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.budget)) > (AbSqlData_Package.MAXBLOB)) then
                 stringBuffer.append (To_Unbounded_String ("Please enter Budget with less than ") & Java_Image (AbSqlData_Package.MAXBLOB) & To_Unbounded_String (" characters.<br>"));
             end if;
-            if (((This.timeFrame) = (Null_Unbounded_String)) or else ((Length (This.timeFrame)) < (0))) or else ((Length (This.timeFrame)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.timeFrame) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.timeFrame)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.timeFrame)) > (AbSqlData_Package.MAXBLOB)) then
                 stringBuffer.append (To_Unbounded_String ("Please enter time frame with less than ") & Java_Image (AbSqlData_Package.MAXBLOB) & To_Unbounded_String (" characters.<br>"));
             end if;
-            if (((This.comments) = (Null_Unbounded_String)) or else ((Length (This.comments)) < (0))) or else ((Length (This.comments)) > (AbSqlData_Package.MAXBLOB)) then
+            if (((This.comments) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (This.comments)) < (0))) or else ((Ada.Strings.Unbounded.Length (This.comments)) > (AbSqlData_Package.MAXBLOB)) then
                 stringBuffer.append (To_Unbounded_String ("Please enter comments with less than ") & Java_Image (AbSqlData_Package.MAXBLOB) & To_Unbounded_String (" characters.<br>"));
             end if;
             return stringBuffer.toString;

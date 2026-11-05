@@ -53,6 +53,7 @@ package org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package 
    procedure load (This : in out SecuredNativeLibraryInterface) is abstract;
    procedure unload (This : in out SecuredNativeLibraryInterface) is abstract;
    function unlock (This : in out SecuredNativeLibraryInterface; key : Unbounded_String) return Boolean is abstract;
+   procedure unlock (This : in out SecuredNativeLibraryInterface; key : Unbounded_String) is abstract;
    function getLibraryName (This : in out SecuredNativeLibraryInterface) return Unbounded_String is abstract;
    function getName (This : in out SecuredNativeLibraryInterface) return Unbounded_String is abstract;
 

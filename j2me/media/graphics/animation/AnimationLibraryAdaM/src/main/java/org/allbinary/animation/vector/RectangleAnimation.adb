@@ -90,6 +90,17 @@ package body org.allbinary.animation.vector.RectangleAnimation_Package is
         This.height := height;
    end setHeight;
 
+   function getBasicColorP (This : in out RectangleAnimation) return BasicColor_Access is
+   begin
+        return Animation_Package.Animation (This).getBasicColorP;
+   end getBasicColorP;
+
+   procedure setBasicColorP (This : in out RectangleAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
+   begin
+        Animation_Package.Animation (This).setBasicColorP (basicColor);
+   end setBasicColorP;
+
 end org.allbinary.animation.vector.RectangleAnimation_Package;
 
 

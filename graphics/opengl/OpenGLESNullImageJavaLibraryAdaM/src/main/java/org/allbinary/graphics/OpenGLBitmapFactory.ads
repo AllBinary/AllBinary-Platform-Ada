@@ -135,6 +135,8 @@ limited with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package_References;
 limited with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References;
+limited with org.allbinary.graphics.OpenGLBitmapFactory_Package;
+with org.allbinary.graphics.OpenGLBitmapFactory_Package_References;
 limited with org.allbinary.graphics.OpenGLBitmap_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package_References;
 
@@ -175,6 +177,16 @@ package org.allbinary.graphics.Config_Package is
    use type PlatformBitmapBaseFactory_Access_Array_Access_Array;
    subtype PlatformBitmapBaseFactory_Access_Array_Access_Array_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access_Array_Access;
    use type PlatformBitmapBaseFactory_Access_Array_Access_Array_Access;
+   subtype OpenGLBitmapFactory_Access is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access;
+   use type OpenGLBitmapFactory_Access;
+   subtype OpenGLBitmapFactory_Access_Array is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array;
+   use type OpenGLBitmapFactory_Access_Array;
+   subtype OpenGLBitmapFactory_Access_Array_Access is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array_Access;
+   use type OpenGLBitmapFactory_Access_Array_Access;
+   subtype OpenGLBitmapFactory_Access_Array_Access_Array is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array_Access_Array;
+   use type OpenGLBitmapFactory_Access_Array_Access_Array;
+   subtype OpenGLBitmapFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array_Access_Array_Access;
+   use type OpenGLBitmapFactory_Access_Array_Access_Array_Access;
    subtype OpenGLBitmap_Access is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access;
    use type OpenGLBitmap_Access;
    subtype OpenGLBitmap_Access_Array is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array;

@@ -252,7 +252,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    function createUsers (This : in out InitializerDatabase) return Boolean is
    begin
         begin
-            This.initDb.addUsers;
+            declare Java_Result renames This.initDb.addUsers; pragma Unreferenced (Java_Result); begin null; end;
             return True;
         exception
             when Java_Occurrence : others =>
@@ -268,7 +268,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    function createDatabases (This : in out InitializerDatabase) return Boolean is
    begin
         begin
-            This.initDb.addDatabases;
+            declare Java_Result renames This.initDb.addDatabases; pragma Unreferenced (Java_Result); begin null; end;
             return True;
         exception
             when Java_Occurrence : others =>
@@ -284,7 +284,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    function createTables (This : in out InitializerDatabase) return Boolean is
    begin
         begin
-            This.initDb.addTables;
+            declare Java_Result renames This.initDb.addTables; pragma Unreferenced (Java_Result); begin null; end;
             return True;
         exception
             when Java_Occurrence : others =>

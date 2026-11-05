@@ -80,9 +80,13 @@ package org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsIn
    function getMinArea (This : in out MotionRectangleConstraintsInterface) return Integer is abstract;
    function getMaxDimension (This : in out MotionRectangleConstraintsInterface) return Dimension_Access is abstract;
    function isTooSmall (This : in out MotionRectangleConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is abstract;
+   procedure isTooSmall (This : in out MotionRectangleConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) is abstract;
    function isAreaTooSmall (This : in out MotionRectangleConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is abstract;
+   procedure isAreaTooSmall (This : in out MotionRectangleConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) is abstract;
    function isTooBig (This : in out MotionRectangleConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is abstract;
+   procedure isTooBig (This : in out MotionRectangleConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) is abstract;
    function isValid (This : in out MotionRectangleConstraintsInterface; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is abstract;
+   procedure isValid (This : in out MotionRectangleConstraintsInterface; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) is abstract;
 
 end org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
 

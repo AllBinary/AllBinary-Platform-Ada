@@ -155,6 +155,12 @@ package body views.admin.inventory.DeleteFileValidationView_Package is
         end;
    end validationInfo;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out DeleteFileValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (InventoryItemView_Package.InventoryItemView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out DeleteFileValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := DeleteFileValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

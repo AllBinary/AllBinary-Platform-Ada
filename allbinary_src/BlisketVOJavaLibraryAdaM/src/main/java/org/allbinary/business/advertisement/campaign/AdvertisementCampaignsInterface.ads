@@ -65,6 +65,7 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInte
    function Java_Object_Access_From_AdvertisementCampaignsInterface (Value : AdvertisementCampaignsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure add (This : in out AdvertisementCampaignsInterface; advertisementInterface_Param : access AdvertisementInterface_Package.AdvertisementInterface'Class) is abstract;
    function get (This : in out AdvertisementCampaignsInterface; index : Integer) return AdvertisementInterface_Access is abstract;
+   procedure get (This : in out AdvertisementCampaignsInterface; index : Integer) is abstract;
    function size (This : in out AdvertisementCampaignsInterface) return Integer is abstract;
    function isEnabled (This : in out AdvertisementCampaignsInterface) return Boolean is abstract;
 

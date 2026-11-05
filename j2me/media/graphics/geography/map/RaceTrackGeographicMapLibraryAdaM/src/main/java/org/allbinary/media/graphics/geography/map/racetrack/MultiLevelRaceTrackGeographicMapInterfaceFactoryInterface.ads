@@ -52,6 +52,7 @@ package org.allbinary.media.graphics.geography.map.racetrack.MultiLevelRaceTrack
    function "=" (Left, Right : MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface (Value : MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getFirstWaveWithTrack (This : in out MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface; track : Integer) return Integer is abstract;
+   procedure getFirstWaveWithTrack (This : in out MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface; track : Integer) is abstract;
    function getTotalTracks (This : in out MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface) return Integer is abstract;
    function getTotalLevels (This : in out MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface) return Integer is abstract;
 

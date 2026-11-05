@@ -103,6 +103,7 @@ package views.admin.inventory.EditValidationView_Package is
    function toValidationInfoNode (This : in out EditValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out EditValidationView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out EditValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out EditValidationView) return TransformInfoInterface_Access;
 
 end views.admin.inventory.EditValidationView_Package;
 

@@ -136,7 +136,7 @@ package views.admin.inventory.InventoryItemView_Package is
    function "=" (Left, Right : InventoryItemView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
 
    type InventoryItemView is new HttpStoreComponentView and RequestMapInterface with record
-      logUtil : LogUtil_Access;
+      InventoryItemView_Field_logUtil : LogUtil_Access;
       basicItemData : BasicItemData_Access;
       request : HttpServletRequest_Access;
       imageFileName : Unbounded_String;

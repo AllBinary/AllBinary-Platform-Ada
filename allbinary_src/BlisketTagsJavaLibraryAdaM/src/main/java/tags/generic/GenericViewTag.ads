@@ -65,7 +65,7 @@ package tags.generic_Id.GenericViewTag_Package is
    function "=" (Left, Right : GenericViewTag_Access_Array_Access_Array_Access) return Boolean renames tags.generic_Id.GenericViewTag_Package_References."=";
 
    type GenericViewTag is new TransformTag with record
-      logUtil : LogUtil_Access;
+      GenericViewTag_Field_logUtil : LogUtil_Access;
       output : Unbounded_String;
       file : Unbounded_String;
    end record;

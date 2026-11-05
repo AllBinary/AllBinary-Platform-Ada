@@ -166,6 +166,12 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
         return This.views.ValidationOnlyTempUtil.getInstance.view (NewTitleBodyValidationView_Access'(This'Unchecked_Access));
    end view;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out NewTitleBodyValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (TitleBodyCustomizerView_Package.TitleBodyCustomizerView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out NewTitleBodyValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := NewTitleBodyValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

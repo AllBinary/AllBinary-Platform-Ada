@@ -92,7 +92,7 @@ package org.allbinary.animation.image.RightToLeftImageAnimation_Package is
    type RightToLeftImageAnimation is new ImageSegmentAnimation with record
       startWidth : Integer;
       currentWidth : Integer;
-      anchor : Integer;
+      RightToLeftImageAnimation_Field_anchor : Integer;
    end record;
 
    procedure Initialize (This : in out RightToLeftImageAnimation'Class; image_Param : access Image_Package.Image'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);

@@ -71,6 +71,7 @@ package org.allbinary.input.automation.actions.script.condition.ProfileActionScr
    procedure addProcessor (This : in out ProfileActionScriptConditionInterface; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface_Package.ProfileActionScriptProcessorInterface'Class) is abstract;
    procedure removeProcessor (This : in out ProfileActionScriptConditionInterface; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface_Package.ProfileActionScriptProcessorInterface'Class) is abstract;
    function shouldProcess (This : in out ProfileActionScriptConditionInterface; frame : Long_Long_Integer) return Boolean is abstract;
+   procedure shouldProcess (This : in out ProfileActionScriptConditionInterface; frame : Long_Long_Integer) is abstract;
 
 end org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
 

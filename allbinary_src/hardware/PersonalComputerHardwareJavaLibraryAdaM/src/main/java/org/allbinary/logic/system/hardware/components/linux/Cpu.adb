@@ -154,7 +154,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
                     if (index) >= (0) then
                         key := Unbounded_Slice (nextLine, (0) + 1, index);
                         valueIndex := (index) + (1);
-                        value := Unbounded_Slice (nextLine, (valueIndex) + 1, Length (nextLine));
+                        value := Unbounded_Slice (nextLine, (valueIndex) + 1, Ada.Strings.Unbounded.Length (nextLine));
                         if (Java_Index_Of (key, Java_Image (CpuInfo_Package.PROCESSOR.toString))) >= (0) then
                             This.cpuHashMap.put (CpuInfo_Package.PROCESSOR, Java_Box (value));
                         end if;

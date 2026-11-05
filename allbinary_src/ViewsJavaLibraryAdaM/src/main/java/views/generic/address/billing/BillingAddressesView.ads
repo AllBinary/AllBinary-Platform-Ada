@@ -120,7 +120,7 @@ package views.generic_Id.address.billing.BillingAddressesView_Package is
    function "=" (Left, Right : BillingAddressesView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.address.billing.BillingAddressesView_Package_References."=";
 
    type BillingAddressesView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      BillingAddressesView_Field_logUtil : LogUtil_Access;
       request : HttpServletRequest_Access;
       streetAddresses : BasicArrayList_Access;
    end record;

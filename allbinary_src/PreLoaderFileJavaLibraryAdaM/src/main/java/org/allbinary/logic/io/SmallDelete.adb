@@ -81,7 +81,7 @@ package body org.allbinary.logic.io.SmallDelete_Package is
             beginIndex := Java_Index_Of (This.string_Id, Java_Image (start));
             endIndex := Java_Index_Of (This.string_Id, Java_Image (end_Id));
             if (((((endIndex) > (beginIndex)) and then ((beginIndex) >= (0))) and then ((endIndex) >= (0))) and then ((beginIndex) < (10))) and then ((endIndex) < (525)) then
-                text := Unbounded_Slice (This.string_Id, (endIndex) + 1, Length (This.string_Id));
+                text := Unbounded_Slice (This.string_Id, (endIndex) + 1, Ada.Strings.Unbounded.Length (This.string_Id));
                 idFile := FileOutputStream_Package.Create (This.fileName);
                 idOutData := DataOutputStream_Package.Create (idFile);
                 idOutData.writeBytes (text);
@@ -116,7 +116,7 @@ package body org.allbinary.logic.io.SmallDelete_Package is
             endIndex := Java_Index_Of (This.string_Id, Java_Image (end_Id));
             if (((((endIndex) > (beginIndex)) and then ((beginIndex) >= (0))) and then ((endIndex) >= (0))) and then ((beginIndex) < (50))) and then ((endIndex) < (425)) then
                 newStart := Unbounded_Slice (This.string_Id, (0) + 1, beginIndex);
-                text := Unbounded_Slice (This.string_Id, ((endIndex) + (Length (end_Id))) + 1, Length (This.string_Id));
+                text := Unbounded_Slice (This.string_Id, ((endIndex) + (Ada.Strings.Unbounded.Length (end_Id))) + 1, Ada.Strings.Unbounded.Length (This.string_Id));
                 idFile := FileOutputStream_Package.Create (This.fileName);
                 idOutData := DataOutputStream_Package.Create (idFile);
                 idOutData.writeBytes (newStart & newText & text);

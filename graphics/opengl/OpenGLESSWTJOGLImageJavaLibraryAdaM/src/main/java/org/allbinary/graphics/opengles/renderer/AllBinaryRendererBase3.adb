@@ -23,6 +23,7 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
 with org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
+with org.allbinary.image.opengles.OpenGLESImage_Package_References;
 
 package body org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package is
 
@@ -84,7 +85,7 @@ package body org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Pac
    begin
         while (This.list.size) > (0) loop
             openGLESImage := OpenGLESImage_Access (This.list.removeAt (0));
-            if (openGLESImage) /= (null) then
+            if (not org.allbinary.image.opengles.OpenGLESImage_Package_References."=" (openGLESImage, null)) then
                 openGLESImage.set (gl);
             end if;
         end loop;

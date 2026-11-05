@@ -138,6 +138,12 @@ package body views.admin.workflow.WorkflowsValidationView_Package is
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out WorkflowsValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (WorkFlowsView_Package.WorkFlowsView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out WorkflowsValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := WorkflowsValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

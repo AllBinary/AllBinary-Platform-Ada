@@ -109,7 +109,7 @@ package views.admin.orderhistory.UserNameOrderHistoryView_Package is
    function "=" (Left, Right : UserNameOrderHistoryView_Access_Array_Access_Array_Access) return Boolean renames views.admin.orderhistory.UserNameOrderHistoryView_Package_References."=";
 
    type UserNameOrderHistoryView is new HttpStoreComponentView and ValidationComponentInterface and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      UserNameOrderHistoryView_Field_logUtil : LogUtil_Access;
       request : HttpServletRequest_Access;
       userName : Unbounded_String;
       shipped : Unbounded_String;
@@ -131,6 +131,7 @@ package views.admin.orderhistory.UserNameOrderHistoryView_Package is
    function toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out UserNameOrderHistoryView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out UserNameOrderHistoryView) return TransformInfoInterface_Access;
 
 end views.admin.orderhistory.UserNameOrderHistoryView_Package;
 

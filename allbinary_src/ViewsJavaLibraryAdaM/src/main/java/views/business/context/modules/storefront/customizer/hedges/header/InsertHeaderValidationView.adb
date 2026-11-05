@@ -179,6 +179,12 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out InsertHeaderValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (TopBarView_Package.TopBarView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := InsertHeaderValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

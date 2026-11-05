@@ -102,6 +102,7 @@ package views.generic_Id.address.shipping.EditValidationView_Package is
    function toValidationInfoDoc (This : in out EditValidationView) return Document_Access;
    function toValidationInfoNode (This : in out EditValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out EditValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out EditValidationView) return TransformInfoInterface_Access;
 
 end views.generic_Id.address.shipping.EditValidationView_Package;
 

@@ -33,6 +33,7 @@ with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.C
 with org.allbinary.content.CommandUriAction_Package;
 with org.allbinary.content.NotificationBuilder_Package;
 with org.allbinary.content.NotificationBuilderAPI23_Package;
+with org.allbinary.content.NotificationBuilder_Package_References;
 
 package body org.allbinary.content.NotificationUtil_Package is
 
@@ -131,7 +132,7 @@ package body org.allbinary.content.NotificationUtil_Package is
         FLAG_IMMUTABLE := Java_Shift_Left (1, 26);
         SDK_VERSION := AndroidInfoFactory_Package.getInstance.getVersion;
         pendingIntent := PendingIntent_Package.getActivity (context, 0, intent, (if (SDK_VERSION) > (22) then FLAG_IMMUTABLE else 0));
-        if (This.notificationBuilder) = (null) then
+        if org.allbinary.content.NotificationBuilder_Package_References."=" (This.notificationBuilder, null) then
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.EXCEPTION_Id, NotificationUtil_Access'(This'Unchecked_Access), commonStrings.NOT_IMPLEMENTED);
             return;

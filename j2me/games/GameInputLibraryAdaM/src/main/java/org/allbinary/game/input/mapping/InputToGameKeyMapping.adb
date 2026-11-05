@@ -31,6 +31,8 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.GameKey_Package_References;
+with org.allbinary.game.input.Input_Package_References;
 
 package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
 
@@ -208,7 +210,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         for index in 0 .. (This.platformToGameKeyMapping'Length) - 1 loop
             if (This.platformToGameKeyMapping (index).getId) = (id) then
                 input := inputFactory.getInstanceById (index);
-                if (input) /= (null) then
+                if (not org.allbinary.game.input.Input_Package_References."=" (input, null)) then
                     list.add (Java_Object_Access (input));
                 end if;
             end if;
@@ -226,7 +228,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         if ((key) < (0)) and then ((-(key)) < (This.negativePlatformToGameKeyMapping'Length)) then
             This.negativePlatformToGameKeyMapping (-(key)) := gameKey;
         elsif (key) > (0) then
-            if (This.platformToGameKeyMapping (key)) = (This.gameKeyFactory.NONE) then
+            if org.allbinary.game.input.GameKey_Package_References."=" (This.platformToGameKeyMapping (key), This.gameKeyFactory.NONE) then
                 This.platformToGameKeyMapping (key) := gameKey;
             end if;
         else

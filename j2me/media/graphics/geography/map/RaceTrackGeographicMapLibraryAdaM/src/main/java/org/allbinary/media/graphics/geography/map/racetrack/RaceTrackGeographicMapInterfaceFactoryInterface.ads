@@ -63,7 +63,9 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    function "=" (Left, Right : RaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_RaceTrackGeographicMapInterfaceFactoryInterface (Value : RaceTrackGeographicMapInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getLevelInstance (This : in out RaceTrackGeographicMapInterfaceFactoryInterface; id : Integer) return RaceTrackGeographicMap_Access is abstract;
+   procedure getLevelInstance (This : in out RaceTrackGeographicMapInterfaceFactoryInterface; id : Integer) is abstract;
    function getTrackInstance (This : in out RaceTrackGeographicMapInterfaceFactoryInterface; id : Integer) return RaceTrackGeographicMap_Access is abstract;
+   procedure getTrackInstance (This : in out RaceTrackGeographicMapInterfaceFactoryInterface; id : Integer) is abstract;
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapInterfaceFactoryInterface_Package;
 

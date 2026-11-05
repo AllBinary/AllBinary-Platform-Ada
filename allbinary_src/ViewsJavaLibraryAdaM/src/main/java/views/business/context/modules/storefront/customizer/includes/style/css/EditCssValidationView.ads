@@ -105,7 +105,7 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    function "=" (Left, Right : EditCssValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.css.EditCssValidationView_Package_References."=";
 
    type EditCssValidationView is new CssCustomizerView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      EditCssValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out EditCssValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -115,6 +115,7 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    function toValidationInfoDoc (This : in out EditCssValidationView) return Document_Access;
    function toValidationInfoNode (This : in out EditCssValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out EditCssValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out EditCssValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.style.css.EditCssValidationView_Package;
 

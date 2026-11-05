@@ -86,7 +86,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         if (beginIndex) < (0) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not a NameSpaceRequest")));
         end if;
-        packages := Unbounded_Slice (nameSpace, (((beginIndex) + (NameSpaceRequestParamData_Package.NAME.length)) + (NameSpaceRequestParamData_Package.SEP.length)) + 1, Length (nameSpace));
+        packages := Unbounded_Slice (nameSpace, (((beginIndex) + (NameSpaceRequestParamData_Package.NAME.length)) + (NameSpaceRequestParamData_Package.SEP.length)) + 1, Ada.Strings.Unbounded.Length (nameSpace));
         sepTokenizer := Tokenizer_Package.Create (NameSpaceRequestParamData_Package.SEP);
         nameSpaceWithPropertiesVector := sepTokenizer.getTokensFromString (packages, BasicArrayListD_Package.Create);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then

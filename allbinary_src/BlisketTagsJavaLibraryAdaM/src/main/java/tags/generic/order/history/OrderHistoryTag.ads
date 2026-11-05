@@ -67,7 +67,7 @@ package tags.generic_Id.order.history.OrderHistoryTag_Package is
    function "=" (Left, Right : OrderHistoryTag_Access_Array_Access_Array_Access) return Boolean renames tags.generic_Id.order.history.OrderHistoryTag_Package_References."=";
 
    type OrderHistoryTag is new StoreValidationTransformTag with record
-      logUtil : LogUtil_Access;
+      OrderHistoryTag_Field_logUtil : LogUtil_Access;
       status : Unbounded_String;
    end record;
 

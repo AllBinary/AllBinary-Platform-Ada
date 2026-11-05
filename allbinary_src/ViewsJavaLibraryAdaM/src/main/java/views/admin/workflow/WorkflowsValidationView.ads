@@ -105,7 +105,7 @@ package views.admin.workflow.WorkflowsValidationView_Package is
    function "=" (Left, Right : WorkflowsValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.workflow.WorkflowsValidationView_Package_References."=";
 
    type WorkflowsValidationView is new WorkFlowsView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      WorkflowsValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out WorkflowsValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -115,6 +115,7 @@ package views.admin.workflow.WorkflowsValidationView_Package is
    function toValidationInfoDoc (This : in out WorkflowsValidationView) return Document_Access;
    function toValidationInfoNode (This : in out WorkflowsValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out WorkflowsValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out WorkflowsValidationView) return TransformInfoInterface_Access;
 
 end views.admin.workflow.WorkflowsValidationView_Package;
 

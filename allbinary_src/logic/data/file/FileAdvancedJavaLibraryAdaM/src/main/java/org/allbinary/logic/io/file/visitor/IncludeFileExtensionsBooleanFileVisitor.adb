@@ -75,9 +75,9 @@ package body org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFil
       fileName : Unbounded_String;
    begin
         fileNameAndExtension := file.getPath;
-        if (Length (fileNameAndExtension)) > (Length (fileNameString)) then
-            startIndex := (Length (fileNameAndExtension)) - (Length (fileNameString));
-            fileName := Unbounded_Slice (fileNameAndExtension, (startIndex) + 1, Length (fileNameAndExtension));
+        if (Ada.Strings.Unbounded.Length (fileNameAndExtension)) > (Ada.Strings.Unbounded.Length (fileNameString)) then
+            startIndex := (Ada.Strings.Unbounded.Length (fileNameAndExtension)) - (Ada.Strings.Unbounded.Length (fileNameString));
+            fileName := Unbounded_Slice (fileNameAndExtension, (startIndex) + 1, Ada.Strings.Unbounded.Length (fileNameAndExtension));
             if (Java_Compare_To (fileName, fileNameString)) = (0) then
                 return True;
             end if;

@@ -66,6 +66,7 @@ package org.allbinary.data.tables.user.commerce.money.payment.transaction.Transa
    function "=" (Left, Right : TransactionResultEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityInterface_Package_References."=";
    function Java_Object_Access_From_TransactionResultEntityInterface (Value : TransactionResultEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getTransactionResultInterface (This : in out TransactionResultEntityInterface; orderNumber : Unbounded_String) return TransactionResultInterface_Access is abstract;
+   procedure getTransactionResultInterface (This : in out TransactionResultEntityInterface; orderNumber : Unbounded_String) is abstract;
    procedure remove (This : in out TransactionResultEntityInterface; userName : Unbounded_String; orderNumber : Unbounded_String) is abstract;
    procedure add (This : in out TransactionResultEntityInterface; userName : Unbounded_String; orderNumber : Unbounded_String; resultInterface_Param : access TransactionResultInterface_Package.TransactionResultInterface'Class) is abstract;
 

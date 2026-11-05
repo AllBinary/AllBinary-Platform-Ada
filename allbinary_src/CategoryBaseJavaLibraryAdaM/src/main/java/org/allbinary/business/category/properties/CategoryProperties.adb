@@ -37,6 +37,7 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.control.validate.ValidationInterface_Package;
+with org.allbinary.business.category.CategoryInterface_Package_References;
 
 package body org.allbinary.business.category.properties.CategoryProperties_Package is
 
@@ -171,7 +172,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
 
    function getKey (This : in out CategoryProperties) return Java_Object_Access is
    begin
-        return Java_Object_Access (CategoryProperties'Class (This).getValue);
+        return Java_Box (CategoryProperties'Class (This).getValue);
    end getKey;
 
    function getValue (This : in out CategoryProperties) return Unbounded_String is
@@ -196,7 +197,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
         nextParentCategoryInterface := CategoryInterface_Access (categoryHierarchyInterface.getParent);
         if (CategoryProperties_Access'(This'Unchecked_Access)) /= (nextParentCategoryInterface.getProperties) then
             depthIndex := 0;
-            while (nextParentCategoryInterface) /= (null) loop
+            while (not org.allbinary.business.category.CategoryInterface_Package_References."=" (nextParentCategoryInterface, null)) loop
                 if nextParentCategoryInterface.getProperties.isRealRoot then
                     exit;
                 end if;
@@ -231,7 +232,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
 
    function getFileName (This : in out CategoryProperties) return Unbounded_String is
    begin
-        return ((CategoryProperties'Class (This).getValue) + (AbPathData_Package.getInstance.EXTENSION_SEP)) + (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
+        return CategoryProperties'Class (This).getValue & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
    end getFileName;
 
    --  throws Exception

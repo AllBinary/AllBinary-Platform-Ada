@@ -66,7 +66,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
       commonStrings : CommonStrings_Access;
    begin
         value := Java_Unbox (anyType);
-        if (Length (value)) < (2) then
+        if (Ada.Strings.Unbounded.Length (value)) < (2) then
             charValue := Element (value, (0) + 1);
             stringValidationUtil := StringValidationUtil_Package.getInstance;
             if stringValidationUtil.isNumber (value) then

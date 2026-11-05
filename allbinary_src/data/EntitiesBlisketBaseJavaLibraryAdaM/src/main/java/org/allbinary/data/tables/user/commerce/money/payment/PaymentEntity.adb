@@ -290,6 +290,17 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
         return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end drop;
 
+   procedure insert (This : in out PaymentEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   begin
+        AbSqlBean_Package.AbSqlBean (This).insert (values);
+   end insert;
+
+   function dropTable (This : in out PaymentEntity) return Unbounded_String is
+   begin
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
+   end dropTable;
+
    procedure getLastId (This : in out PaymentEntity; userName : Unbounded_String) is
       Java_Result : constant Unbounded_String := PaymentEntity'Class (This).getLastId (userName => userName);
       pragma Unreferenced (Java_Result);

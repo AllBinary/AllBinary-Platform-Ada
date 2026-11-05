@@ -106,7 +106,7 @@ package views.business.context.modules.storefront.customizer.includes.style.them
    function "=" (Left, Right : NewThemeValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.theme.NewThemeValidationView_Package_References."=";
 
    type NewThemeValidationView is new CssCustomizerView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      NewThemeValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out NewThemeValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -118,6 +118,7 @@ package views.business.context.modules.storefront.customizer.includes.style.them
    function toValidationInfoNode (This : in out NewThemeValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out NewThemeValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out NewThemeValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out NewThemeValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.style.theme.NewThemeValidationView_Package;
 

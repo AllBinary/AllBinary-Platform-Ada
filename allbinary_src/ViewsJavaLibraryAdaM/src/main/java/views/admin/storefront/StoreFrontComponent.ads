@@ -92,7 +92,7 @@ package views.admin.storefront.StoreFrontComponent_Package is
    function "=" (Left, Right : StoreFrontComponent_Access_Array_Access_Array_Access) return Boolean renames views.admin.storefront.StoreFrontComponent_Package_References."=";
 
    type StoreFrontComponent is new HttpStoreComponentView with record
-      logUtil : LogUtil_Access;
+      StoreFrontComponent_Field_logUtil : LogUtil_Access;
       newStoreFrontInterface : StoreFrontInterface_Access;
    end record;
 

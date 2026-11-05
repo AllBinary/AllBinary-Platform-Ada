@@ -64,6 +64,7 @@ package org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package i
    function "=" (Left, Right : DomDocumentQueueInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package_References."=";
    function Java_Object_Access_From_DomDocumentQueueInterface (Value : DomDocumentQueueInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function offer (This : in out DomDocumentQueueInterface; domDocumentMappingInterface_Param : access DomDocumentMappingInterface_Package.DomDocumentMappingInterface'Class) return Boolean is abstract;
+   procedure offer (This : in out DomDocumentQueueInterface; domDocumentMappingInterface_Param : access DomDocumentMappingInterface_Package.DomDocumentMappingInterface'Class) is abstract;
    function remove (This : in out DomDocumentQueueInterface) return DomDocumentMappingInterface_Access is abstract;
 
 end org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package;

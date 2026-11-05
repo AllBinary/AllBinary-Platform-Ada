@@ -78,6 +78,7 @@ package org.allbinary.logic.control.validate.ValidationInterface_Package is
    function Java_Object_Access_From_ValidationInterface (Value : ValidationInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function isValid (This : in out ValidationInterface) return Boolean is abstract;
    function toValidationInfoNode (This : in out ValidationInterface; document_Param : access Document_Package.Document'Class) return Node_Access is abstract;
+   procedure toValidationInfoNode (This : in out ValidationInterface; document_Param : access Document_Package.Document'Class) is abstract;
    function toValidationInfoDoc (This : in out ValidationInterface) return Document_Access is abstract;
    function validationInfo (This : in out ValidationInterface) return Unbounded_String is abstract;
 

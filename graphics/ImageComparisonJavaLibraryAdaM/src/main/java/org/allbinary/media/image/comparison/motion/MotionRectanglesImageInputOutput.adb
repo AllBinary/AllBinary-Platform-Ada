@@ -49,6 +49,7 @@ with org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References;
 
 package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package is
 
@@ -115,7 +116,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageIn
    begin
         commonStrings := CommonStrings_Package.getInstance;
         motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access (AutomaticCacheInterface_Access (AllMotionRectanglesResultsCacheSingleton_Package.getInstance).get (frame));
-        if (motionRectanglesResultsFrameCacheable) /= (null) then
+        if (not org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References."=" (motionRectanglesResultsFrameCacheable, null)) then
             motionRectangles := motionRectanglesResultsFrameCacheable.getMotionRectangles;
             MotionRectanglesImageInputOutput'Class (This).save (motionRectangles, frame);
             motionRectanglesResultsFrameCacheable := MotionRectanglesResultsFrameCacheable_Access (AutomaticCacheInterface_Access (ConsolidatedMotionRectanglesResultsCacheSingleton_Package.getInstance).get (frame));

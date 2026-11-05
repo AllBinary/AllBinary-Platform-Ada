@@ -189,7 +189,7 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
             BORDER := (MyFontProcessor_Package.defaultCharWidth (font)) * (2);
         end if;
         This.BORDER := BORDER;
-        This.heightOffset := (This.rectangle.getHeight) - (((font.getHeight) * (Length (BasicPopupMenuPaintable_Package.NAME))));
+        This.heightOffset := (This.rectangle.getHeight) - (((font.getHeight) * (Ada.Strings.Unbounded.Length (BasicPopupMenuPaintable_Package.NAME))));
         if OpenGLFeatureUtil_Package.getInstance.isAnyThreed then
             This.heightOffset := (This.heightOffset) - ((font.getHeight) + (2));
             if AndroidUtil_Package.isAndroid then

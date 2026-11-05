@@ -18,6 +18,8 @@ with org.allbinary.business.init.db.LogDbInitInfo_Package; use org.allbinary.bus
 with org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package; use org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 
 package body org.allbinary.data.tables.log.LogTableEntity_Package is
 
@@ -25,6 +27,16 @@ package body org.allbinary.data.tables.log.LogTableEntity_Package is
    package LogDbInitInfo_Package renames Standard.org.allbinary.business.init.db.LogDbInitInfo_Package;
    package AbeHttpRequestInfoData_Package renames Standard.org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    procedure Initialize_Fields (This : in out LogTableEntity'Class) is
    begin
       null;
@@ -60,6 +72,22 @@ package body org.allbinary.data.tables.log.LogTableEntity_Package is
    begin
         return AbSqlBean_Package.AbSqlBean (This).createTable (LogTableEntity'Class (This).createTableStatement);
    end createTable;
+
+   procedure deleteWhere (This : in out LogTableEntity; key : Unbounded_String; value : Unbounded_String) is
+   begin
+        AbSqlBean_Package.AbSqlBean (This).deleteWhere (key, value);
+   end deleteWhere;
+
+   procedure insert (This : in out LogTableEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   begin
+        AbSqlBean_Package.AbSqlBean (This).insert (values);
+   end insert;
+
+   function dropTable (This : in out LogTableEntity) return Unbounded_String is
+   begin
+        return AbSqlBean_Package.AbSqlBean (This).dropTable;
+   end dropTable;
 
 end org.allbinary.data.tables.log.LogTableEntity_Package;
 

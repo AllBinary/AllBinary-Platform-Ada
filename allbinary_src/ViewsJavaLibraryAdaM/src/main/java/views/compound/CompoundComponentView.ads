@@ -78,7 +78,7 @@ package views.compound.CompoundComponentView_Package is
    function "=" (Left, Right : CompoundComponentView_Access_Array_Access_Array_Access) return Boolean renames views.compound.CompoundComponentView_Package_References."=";
 
    type CompoundComponentView is new HttpStoreComponentView with record
-      logUtil : LogUtil_Access;
+      CompoundComponentView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out CompoundComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);

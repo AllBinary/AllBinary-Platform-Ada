@@ -34,6 +34,8 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package; use org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package;
 
 package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package is
@@ -41,6 +43,7 @@ package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Packa
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package Reference_Types is
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    use type LogUtil_Access;
@@ -52,6 +55,16 @@ package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Packa
    use type LogUtil_Access_Array_Access_Array;
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    use type LogUtil_Access_Array_Access_Array_Access;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -79,6 +92,7 @@ package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Packa
    function createTable (This : in out AffiliateSalesEntity) return Unbounded_String;
    procedure update (This : in out AffiliateSalesEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out AffiliateSalesEntity) return Unbounded_String;
+   procedure insert (This : in out AffiliateSalesEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;
 

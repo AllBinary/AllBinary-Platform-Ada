@@ -122,7 +122,7 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         begin
             CommandFormInputProcessor_Package.CommandFormInputProcessor (This).onPressGameKeyEvent (gameKeyEvent);
             if This.timeHelper.isTimeTNT then
-                ImmediateCommandFormInputProcessor'Class (This).processInputList;
+                declare Java_Result renames ImmediateCommandFormInputProcessor'Class (This).processInputList; pragma Unreferenced (Java_Result); begin null; end;
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
             end if;
         exception
@@ -141,7 +141,7 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         begin
             CommandFormInputProcessor_Package.CommandFormInputProcessor (This).onDownGameKeyEvent (gameKeyEvent);
             if This.timeHelper.isTimeTNT then
-                ImmediateCommandFormInputProcessor'Class (This).processInputList;
+                declare Java_Result renames ImmediateCommandFormInputProcessor'Class (This).processInputList; pragma Unreferenced (Java_Result); begin null; end;
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
             end if;
         exception
@@ -160,7 +160,7 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         begin
             CommandFormInputProcessor_Package.CommandFormInputProcessor (This).onUpGameKeyEvent (gameKeyEvent);
             if This.timeHelper.isTimeTNT then
-                ImmediateCommandFormInputProcessor'Class (This).processInputList;
+                declare Java_Result renames ImmediateCommandFormInputProcessor'Class (This).processInputList; pragma Unreferenced (Java_Result); begin null; end;
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
             end if;
         exception
@@ -179,7 +179,7 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         begin
             CommandFormInputProcessor_Package.CommandFormInputProcessor (This).onMotionGestureEvent (motionGestureEvent);
             if This.timeHelper.isTimeTNT then
-                ImmediateCommandFormInputProcessor'Class (This).processInputList;
+                declare Java_Result renames ImmediateCommandFormInputProcessor'Class (This).processInputList; pragma Unreferenced (Java_Result); begin null; end;
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (ImmediateCommandFormInputProcessor'Class (This).getCanvas);
             end if;
         exception

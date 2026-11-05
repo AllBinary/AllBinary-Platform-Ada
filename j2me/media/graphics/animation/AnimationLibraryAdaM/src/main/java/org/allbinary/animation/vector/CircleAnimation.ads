@@ -89,6 +89,8 @@ package org.allbinary.animation.vector.CircleAnimation_Package is
    function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return CircleAnimation_Access;
    procedure nextFrame (This : in out CircleAnimation);
    procedure paintXY (This : in out CircleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   function getBasicColorP (This : in out CircleAnimation) return BasicColor_Access;
+   procedure setBasicColorP (This : in out CircleAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.animation.vector.CircleAnimation_Package;
 

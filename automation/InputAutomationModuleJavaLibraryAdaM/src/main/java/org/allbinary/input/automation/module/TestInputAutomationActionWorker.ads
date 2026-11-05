@@ -103,7 +103,7 @@ package org.allbinary.input.automation.module.TestInputAutomationActionWorker_Pa
    function "=" (Left, Right : TestInputAutomationActionWorker_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.TestInputAutomationActionWorker_Package_References."=";
 
    type TestInputAutomationActionWorker is new AbstractInputAutomationWorker with record
-      logUtil : LogUtil_Access;
+      TestInputAutomationActionWorker_Field_logUtil : LogUtil_Access;
       sleep : Integer;
    end record;
 

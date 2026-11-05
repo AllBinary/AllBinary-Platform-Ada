@@ -79,8 +79,10 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
    function "=" (Left, Right : TransformInfoObjectConfigInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package_References."=";
    function Java_Object_Access_From_TransformInfoObjectConfigInterface (Value : TransformInfoObjectConfigInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function containsView (This : in out TransformInfoObjectConfigInterface; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return Boolean is abstract;
+   procedure containsView (This : in out TransformInfoObjectConfigInterface; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is abstract;
    function getName (This : in out TransformInfoObjectConfigInterface) return Unbounded_String is abstract;
    function getTransformsGroup (This : in out TransformInfoObjectConfigInterface; group : Unbounded_String) return BasicArrayList_Access is abstract;
+   procedure getTransformsGroup (This : in out TransformInfoObjectConfigInterface; group : Unbounded_String) is abstract;
    function getTransforms (This : in out TransformInfoObjectConfigInterface) return BasicArrayList_Access is abstract;
    function getParentTransforms (This : in out TransformInfoObjectConfigInterface) return BasicArrayList_Access is abstract;
    function getGroupTransforms (This : in out TransformInfoObjectConfigInterface) return BasicArrayList_Access is abstract;

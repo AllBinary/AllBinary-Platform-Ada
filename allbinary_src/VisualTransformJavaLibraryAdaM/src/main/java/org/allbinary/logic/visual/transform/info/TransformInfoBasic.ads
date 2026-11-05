@@ -43,6 +43,8 @@ limited with org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package_References;
 limited with org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
+limited with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
@@ -54,6 +56,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package TransformInfoObjectConfigInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
    package Reference_Types is
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    use type BasicArrayList_Access;
@@ -105,6 +108,16 @@ package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
    use type Document_Access_Array_Access_Array;
    subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
    use type Document_Access_Array_Access_Array_Access;
+   subtype WeblisketSessionInterface_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access;
+   use type WeblisketSessionInterface_Access;
+   subtype WeblisketSessionInterface_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array;
+   use type WeblisketSessionInterface_Access_Array;
+   subtype WeblisketSessionInterface_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access;
+   use type WeblisketSessionInterface_Access_Array_Access;
+   subtype WeblisketSessionInterface_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array;
+   use type WeblisketSessionInterface_Access_Array_Access_Array;
+   subtype WeblisketSessionInterface_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References.WeblisketSessionInterface_Access_Array_Access_Array_Access;
+   use type WeblisketSessionInterface_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -156,6 +169,9 @@ package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
    function getKey (This : in out TransformInfoBasic) return Java_Object_Access;
    function toVector (This : in out TransformInfoBasic) return BasicArrayList_Access;
    function toHashMap (This : in out TransformInfoBasic) return HashMap_Access;
+   function getWeblisketSession (This : in out TransformInfoBasic) return WeblisketSessionInterface_Access;
+   function getPageContext (This : in out TransformInfoBasic) return PageContext_Access;
+   function getPropertiesHashMap (This : in out TransformInfoBasic) return HashMap_Access;
    procedure setObject (This : in out TransformInfoBasic; Value : Unbounded_String);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package;

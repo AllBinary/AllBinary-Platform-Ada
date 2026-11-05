@@ -130,6 +130,7 @@ package org.allbinary.animation.VectorAnimation_Package is
    function getPoints (This : in out VectorAnimation; frame : Integer) return Integer_Array_Access_Array_Access;
    procedure getPoints (This : in out VectorAnimation; frame : Integer);
    procedure setPoints (This : in out VectorAnimation; currentPoints : Integer_Array_Access_Array_Access_Array_Access);
+   function getBasicColorP (This : in out VectorAnimation) return BasicColor_Access;
 
 end org.allbinary.animation.VectorAnimation_Package;
 

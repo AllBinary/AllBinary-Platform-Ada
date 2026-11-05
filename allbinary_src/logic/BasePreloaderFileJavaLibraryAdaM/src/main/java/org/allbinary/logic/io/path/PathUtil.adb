@@ -161,7 +161,7 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
         if stringValidationUtil.isEmpty (path) then
             return False;
         end if;
-        if (Element (path, ((Length (path)) - (1)) + 1)) = (This.abPathData.SEPARATORCHAR) then
+        if (Element (path, ((Ada.Strings.Unbounded.Length (path)) - (1)) + 1)) = (This.abPathData.SEPARATORCHAR) then
             return True;
         else
             return False;
@@ -212,7 +212,7 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
         if (endIndex) < (0) then
             return AbPath_Package.createAbPath;
         end if;
-        if (Length (path)) = ((endIndex) + (1)) then
+        if (Ada.Strings.Unbounded.Length (path)) = ((endIndex) + (1)) then
             return PathUtil'Class (This).removeNameFromPath (Unbounded_Slice (path, (0) + 1, (endIndex) - (1)));
         else
             pathWithoutName := Unbounded_Slice (path, (0) + 1, endIndex);

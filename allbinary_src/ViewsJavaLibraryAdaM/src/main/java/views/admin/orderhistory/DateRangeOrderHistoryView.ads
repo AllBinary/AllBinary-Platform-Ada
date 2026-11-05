@@ -109,7 +109,7 @@ package views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    function "=" (Left, Right : DateRangeOrderHistoryView_Access_Array_Access_Array_Access) return Boolean renames views.admin.orderhistory.DateRangeOrderHistoryView_Package_References."=";
 
    type DateRangeOrderHistoryView is new HttpStoreComponentView and ValidationComponentInterface and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      DateRangeOrderHistoryView_Field_logUtil : LogUtil_Access;
       VIEWALLORDERS : Unbounded_String;
       VIEWORDERSINLASTHOUR : Unbounded_String;
       VIEWORDERSINLASTDAY : Unbounded_String;
@@ -149,6 +149,7 @@ package views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    function toValidationInfoNode (This : in out DateRangeOrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out DateRangeOrderHistoryView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out DateRangeOrderHistoryView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out DateRangeOrderHistoryView) return TransformInfoInterface_Access;
 
 end views.admin.orderhistory.DateRangeOrderHistoryView_Package;
 

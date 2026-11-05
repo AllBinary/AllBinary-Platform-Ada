@@ -34,12 +34,18 @@ with org.allbinary.android.input.VirtualKeyboard_Package; use org.allbinary.andr
 with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; use org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 limited with android.app.Activity_Package;
 with android.app.Activity_Package_References;
+limited with org.allbinary.input.event.VirtualKeyboardEvent_Package;
+with org.allbinary.input.event.VirtualKeyboardEvent_Package_References;
+limited with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 
 package org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
 
    package VirtualKeyboard_Package renames Standard.org.allbinary.android.input.VirtualKeyboard_Package;
    package VirtualKeyboardEventListenerInterface_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
    package Activity_Package renames Standard.android.app.Activity_Package;
+   package VirtualKeyboardEvent_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEvent_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package Reference_Types is
    subtype Activity_Access is android.app.Activity_Package_References.Activity_Access;
    use type Activity_Access;
@@ -51,6 +57,26 @@ package org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
    use type Activity_Access_Array_Access_Array;
    subtype Activity_Access_Array_Access_Array_Access is android.app.Activity_Package_References.Activity_Access_Array_Access_Array_Access;
    use type Activity_Access_Array_Access_Array_Access;
+   subtype VirtualKeyboardEvent_Access is org.allbinary.input.event.VirtualKeyboardEvent_Package_References.VirtualKeyboardEvent_Access;
+   use type VirtualKeyboardEvent_Access;
+   subtype VirtualKeyboardEvent_Access_Array is org.allbinary.input.event.VirtualKeyboardEvent_Package_References.VirtualKeyboardEvent_Access_Array;
+   use type VirtualKeyboardEvent_Access_Array;
+   subtype VirtualKeyboardEvent_Access_Array_Access is org.allbinary.input.event.VirtualKeyboardEvent_Package_References.VirtualKeyboardEvent_Access_Array_Access;
+   use type VirtualKeyboardEvent_Access_Array_Access;
+   subtype VirtualKeyboardEvent_Access_Array_Access_Array is org.allbinary.input.event.VirtualKeyboardEvent_Package_References.VirtualKeyboardEvent_Access_Array_Access_Array;
+   use type VirtualKeyboardEvent_Access_Array_Access_Array;
+   subtype VirtualKeyboardEvent_Access_Array_Access_Array_Access is org.allbinary.input.event.VirtualKeyboardEvent_Package_References.VirtualKeyboardEvent_Access_Array_Access_Array_Access;
+   use type VirtualKeyboardEvent_Access_Array_Access_Array_Access;
+   subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
+   use type AllBinaryEventObject_Access;
+   subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;
+   use type AllBinaryEventObject_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access;
+   subtype AllBinaryEventObject_Access_Array_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array;
+   use type AllBinaryEventObject_Access_Array_Access_Array;
+   subtype AllBinaryEventObject_Access_Array_Access_Array_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array_Access_Array_Access;
+   use type AllBinaryEventObject_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -72,6 +98,8 @@ package org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
 
    procedure Initialize (This : in out VirtualKeyboardAPI1'Class; activity_Param : access Activity_Package.Activity'Class);
    function Create (activity_Param : access Activity_Package.Activity'Class) return VirtualKeyboardAPI1_Access;
+   procedure onVirtualKeyboardEvent (This : in out VirtualKeyboardAPI1; virtualKeyboardEvent_Param : access VirtualKeyboardEvent_Package.VirtualKeyboardEvent'Class);
+   procedure onEvent (This : in out VirtualKeyboardAPI1; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
 
 end org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package;
 

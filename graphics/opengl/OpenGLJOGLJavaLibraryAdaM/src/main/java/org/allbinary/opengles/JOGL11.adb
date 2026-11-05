@@ -50,7 +50,7 @@ package body org.allbinary.opengles.JOGL11_Package is
    procedure Initialize (This : in out JOGL11'Class; gl_Param : access GL_Package.GL'Class) is
       gl : constant GL_Access := GL_Access (gl_Param);
    begin
-        Initialize (This, gl, GL2_Access (gl));
+        JOGL11_Package.Initialize (This, gl, GL2_Access (gl));
    end Initialize;
 
    function Create (gl_Param : access GL_Package.GL'Class) return JOGL11_Access is

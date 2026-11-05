@@ -36,6 +36,7 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.xml.parsers.DocumentBuilderFactory_Package; use javax.xml.parsers.DocumentBuilderFactory_Package;
 --  with javax.xml.transform.OutputKeys_Package; use javax.xml.transform.OutputKeys_Package;
 --  with javax.xml.transform.Transformer_Package; use javax.xml.transform.Transformer_Package;
+--  with javax.xml.transform.TransformerConfigurationException_Package; use javax.xml.transform.TransformerConfigurationException_Package;
 --  with javax.xml.transform.TransformerFactory_Package; use javax.xml.transform.TransformerFactory_Package;
 --  with javax.xml.transform.dom.DOMSource_Package; use javax.xml.transform.dom.DOMSource_Package;
 --  with javax.xml.transform.stream.StreamResult_Package; use javax.xml.transform.stream.StreamResult_Package;
@@ -87,7 +88,8 @@ package org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    type XmlDocumentHelper is new Java_Object with record
       logUtil : LogUtil_Access;
       INDENT_NUMBER : Unbounded_String;
-      transformer : Transformer_Access;
+      indent : Integer;
+      ignoreDeclaration : Boolean;
    end record;
    instance : XmlDocumentHelper_Access;
 
@@ -95,8 +97,13 @@ package org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    function Create return XmlDocumentHelper_Access;
    function getInstance return XmlDocumentHelper_Access;
    procedure init (This : in out XmlDocumentHelper; indent : Integer; ignoreDeclaration : Boolean);
+   function createTransformer (This : in out XmlDocumentHelper; indent : Integer; ignoreDeclaration : Boolean) return Transformer_Access;
+   procedure createTransformer (This : in out XmlDocumentHelper; indent : Integer; ignoreDeclaration : Boolean);
+   function createTransformer (This : in out XmlDocumentHelper) return Transformer_Access;
    function format (This : in out XmlDocumentHelper; xmlString : Unbounded_String) return Unbounded_String;
    procedure format (This : in out XmlDocumentHelper; xmlString : Unbounded_String);
+   function formatWithTransformer (This : in out XmlDocumentHelper; xmlString : Unbounded_String; transformer_Param : access Transformer_Package.Transformer'Class) return Unbounded_String;
+   procedure formatWithTransformer (This : in out XmlDocumentHelper; xmlString : Unbounded_String; transformer_Param : access Transformer_Package.Transformer'Class);
    function toString (document_Param : access Document_Package.Document'Class) return Unbounded_String;
    procedure toString (document_Param : access Document_Package.Document'Class);
 

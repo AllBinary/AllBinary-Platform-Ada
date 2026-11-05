@@ -18,6 +18,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package is
 
@@ -49,7 +50,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellType_Pa
         if (type_Id) /= (Integer'First) then
             geographicMapCellTypeFactory := GeographicMapCellTypeFactory_Package.getInstance;
             geographicMapCellTypeArray := geographicMapCellTypeFactory.getGeographicMapCellTypeArray;
-            if ((geographicMapCellTypeArray (type_Id)) = (null)) or else ((reset) = (1)) then
+            if (org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References."=" (geographicMapCellTypeArray (type_Id), null)) or else ((reset) = (1)) then
                 geographicMapCellTypeArray (type_Id) := GeographicMapCellType_Access'(This'Unchecked_Access);
             else
                 if (reset) /= (-(1)) then

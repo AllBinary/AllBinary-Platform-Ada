@@ -172,6 +172,12 @@ package body org.allbinary.data.tables.advertisement.AdvertisementsEntity_Packag
         return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
+   procedure insert (This : in out AdvertisementsEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   begin
+        AbSqlBean_Package.AbSqlBean (This).insert (values);
+   end insert;
+
    procedure get (This : in out AdvertisementsEntity; storeName : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := AdvertisementsEntity'Class (This).get (storeName => storeName);
       pragma Unreferenced (Java_Result);

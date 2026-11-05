@@ -137,6 +137,12 @@ package body views.admin.customizers.CustomizersValidationView_Package is
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out CustomizersValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (CustomizersView_Package.CustomizersView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out CustomizersValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := CustomizersValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

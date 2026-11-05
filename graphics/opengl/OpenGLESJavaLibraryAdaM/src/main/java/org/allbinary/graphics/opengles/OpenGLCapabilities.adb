@@ -184,7 +184,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                 if ((This.glShaderVersionString) /= (Null_Unbounded_String)) and then ((Java_Index_Of (This.glShaderVersionString, Java_Image ('.'))) >= (0)) then
                     startIndex := Java_Last_Index_Of (This.glShaderVersionString, Java_Image (' '));
                     if (startIndex) >= (0) then
-                        This.glShaderVersionString := Unbounded_Slice (This.glShaderVersionString, ((startIndex) + (1)) + 1, Length (This.glShaderVersionString));
+                        This.glShaderVersionString := Unbounded_Slice (This.glShaderVersionString, ((startIndex) + (1)) + 1, Ada.Strings.Unbounded.Length (This.glShaderVersionString));
                     end if;
                     This.shaderVersion := Integer'Value (To_String (Java_Replace (This.glShaderVersionString, Java_Image (CommonSeps_Package.getInstance.PERIOD), Java_Image (StringUtil_Package.getInstance.EMPTY_STRING))));
                 end if;

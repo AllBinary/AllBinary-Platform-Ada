@@ -162,6 +162,11 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package 
         null;
    end paintThreedXYZ;
 
+   function getWidth (This : in out CustomTextBoxIndexedAnimation) return Integer is
+   begin
+        return IndexedAnimation_Package.IndexedAnimation (This).getWidth;
+   end getWidth;
+
 end org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package;
 
 

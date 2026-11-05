@@ -108,11 +108,16 @@ package org.allbinary.data.tables.user.UserEntityInterface_Package is
    function Java_Object_Access_From_UserEntityInterface (Value : UserEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getAdministrators (This : in out UserEntityInterface) return BasicArrayList_Access is abstract;
    function getStoreManagers (This : in out UserEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
+   procedure getStoreManagers (This : in out UserEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is abstract;
    function getCustomers (This : in out UserEntityInterface) return BasicArrayList_Access is abstract;
    function getUsersWithRole (This : in out UserEntityInterface; userRole_Param : access UserRole_Package.UserRole'Class) return BasicArrayList_Access is abstract;
+   procedure getUsersWithRole (This : in out UserEntityInterface; userRole_Param : access UserRole_Package.UserRole'Class) is abstract;
    function getUsers (This : in out UserEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
+   procedure getUsers (This : in out UserEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is abstract;
    function getUser (This : in out UserEntityInterface; userName : Unbounded_String) return UserInterface_Access is abstract;
+   procedure getUser (This : in out UserEntityInterface; userName : Unbounded_String) is abstract;
    function login (This : in out UserEntityInterface; userName : Unbounded_String; password : Unbounded_String) return Unbounded_String is abstract;
+   procedure login (This : in out UserEntityInterface; userName : Unbounded_String; password : Unbounded_String) is abstract;
    procedure deleteWhere (This : in out UserEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
    procedure insert (This : in out UserEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure update (This : in out UserEntityInterface; userName : Unbounded_String; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;

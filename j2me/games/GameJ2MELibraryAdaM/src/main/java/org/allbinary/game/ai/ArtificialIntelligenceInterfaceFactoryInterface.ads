@@ -103,6 +103,7 @@ package org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Pa
    function "=" (Left, Right : ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_ArtificialIntelligenceInterfaceFactoryInterface (Value : ArtificialIntelligenceInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out ArtificialIntelligenceInterfaceFactoryInterface; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ArtificialIntelligenceInterface_Access is abstract;
+   procedure getInstance (This : in out ArtificialIntelligenceInterfaceFactoryInterface; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is abstract;
 
 end org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
 

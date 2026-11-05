@@ -108,7 +108,7 @@ package views.generic_Id.basket.BasketView_Package is
    function "=" (Left, Right : BasketView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.basket.BasketView_Package_References."=";
 
    type BasketView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      BasketView_Field_logUtil : LogUtil_Access;
       request : HttpServletRequest_Access;
    end record;
 

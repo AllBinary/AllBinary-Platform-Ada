@@ -270,7 +270,7 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
 
    type UnitWaypointBehavior2 is new UnitWaypointBehavior with record
       logUtil : LogUtil_Access;
-      unitWaypointStrings : UnitWaypointStrings_Access;
+      UnitWaypointBehavior2_Field_unitWaypointStrings : UnitWaypointStrings_Access;
       basicColorFactory : BasicColorFactory_Access;
       layerDistanceUtil : LayerDistanceUtil_Access;
       pathFindingThreadPool : ThreadPool_Access;

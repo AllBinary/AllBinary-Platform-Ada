@@ -91,9 +91,11 @@ package org.allbinary.input.automation.robot.InputRobotInterface_Package is
    function getName (This : in out InputRobotInterface) return Unbounded_String is abstract;
    function getHelpSet (This : in out InputRobotInterface) return HelpSet_Access is abstract;
    function createScreenCapture (This : in out InputRobotInterface; screenRect_Param : access Rectangle_Package.Rectangle'Class) return BufferedImage_Access is abstract;
+   procedure createScreenCapture (This : in out InputRobotInterface; screenRect_Param : access Rectangle_Package.Rectangle'Class) is abstract;
    procedure delay_Id (This : in out InputRobotInterface; ms : Integer) is abstract;
    function getAutoDelay (This : in out InputRobotInterface) return Integer is abstract;
    function getPixelColor (This : in out InputRobotInterface; x : Integer; y : Integer) return Color_Access is abstract;
+   procedure getPixelColor (This : in out InputRobotInterface; x : Integer; y : Integer) is abstract;
    function isAutoWaitForIdle (This : in out InputRobotInterface) return Boolean is abstract;
    procedure keyPress (This : in out InputRobotInterface; keycode : Integer) is abstract;
    procedure keyRelease (This : in out InputRobotInterface; keycode : Integer) is abstract;

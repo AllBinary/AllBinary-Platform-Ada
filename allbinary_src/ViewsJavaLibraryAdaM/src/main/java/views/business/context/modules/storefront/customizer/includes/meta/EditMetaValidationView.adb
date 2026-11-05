@@ -139,6 +139,12 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out EditMetaValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (MetaView_Package.MetaView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out EditMetaValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := EditMetaValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

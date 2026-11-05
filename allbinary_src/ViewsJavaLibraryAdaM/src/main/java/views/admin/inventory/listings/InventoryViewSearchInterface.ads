@@ -54,6 +54,7 @@ package views.admin.inventory.listings.InventoryViewSearchInterface_Package is
    function searchSingleDynamicPage (This : in out InventoryViewSearchInterface) return Unbounded_String is abstract;
    function search (This : in out InventoryViewSearchInterface) return Unbounded_String_Array_Access is abstract;
    function getProduct (This : in out InventoryViewSearchInterface; product : Unbounded_String) return Unbounded_String is abstract;
+   procedure getProduct (This : in out InventoryViewSearchInterface; product : Unbounded_String) is abstract;
 
 end views.admin.inventory.listings.InventoryViewSearchInterface_Package;
 

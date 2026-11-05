@@ -105,7 +105,7 @@ package views.business.context.modules.storefront.customizer.includes.meta.NewMe
    function "=" (Left, Right : NewMetaValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References."=";
 
    type NewMetaValidationView is new MetaView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      NewMetaValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out NewMetaValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -117,6 +117,7 @@ package views.business.context.modules.storefront.customizer.includes.meta.NewMe
    function toValidationInfoNode (This : in out NewMetaValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out NewMetaValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out NewMetaValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out NewMetaValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package;
 

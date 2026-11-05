@@ -167,10 +167,10 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         This.shippingCost := orderHistory_Var.getShippingCost;
         This.taxes := orderHistory_Var.getTaxes;
         This.total := orderHistory_Var.getTotal;
-        Order_Package.Order (This).setUserComments (Java_Unbox (orderHistory_Var.getUserComments));
-        Order_Package.Order (This).setUserCancelComments (Java_Unbox (orderHistory_Var.getUserCancelComments));
-        Order_Package.Order (This).setStoreComments (Java_Unbox (orderHistory_Var.getStoreComments));
-        Order_Package.Order (This).setStoreCancelComments (Java_Unbox (orderHistory_Var.getStoreCancelComments));
+        Order_Package.Order (This).setUserComments (orderHistory_Var.getUserComments);
+        Order_Package.Order (This).setUserCancelComments (orderHistory_Var.getUserCancelComments);
+        Order_Package.Order (This).setStoreComments (orderHistory_Var.getStoreComments);
+        Order_Package.Order (This).setStoreCancelComments (orderHistory_Var.getStoreCancelComments);
    end Initialize;
 
    function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Var_Param : access OrderHistory_Package.OrderHistory'Class) return OrderHistory_Access is
@@ -405,6 +405,11 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         end loop;
         return node;
    end toXmlNode;
+
+   function getPaymentMethod (This : in out OrderHistory) return Unbounded_String is
+   begin
+        return Order_Package.Order (This).getPaymentMethod;
+   end getPaymentMethod;
 
    procedure toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := OrderHistory'Class (This).toXmlNode (document_Param => document_Param);

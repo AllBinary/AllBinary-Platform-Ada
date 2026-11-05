@@ -139,7 +139,7 @@ package body tags.ValidationTransformTag_Package is
             end if;
             ValidationTransformTag'Class (This).setHelper;
             if ValidationTransformTag'Class (This).isValid then
-                TransformTag_Package.TransformTag (This).doStartTag;
+                declare Java_Result renames TransformTag_Package.TransformTag (This).doStartTag; pragma Unreferenced (Java_Result); begin null; end;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("View File: "));

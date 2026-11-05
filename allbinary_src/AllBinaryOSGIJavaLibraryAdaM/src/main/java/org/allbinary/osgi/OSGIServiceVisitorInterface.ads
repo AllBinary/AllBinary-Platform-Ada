@@ -65,6 +65,7 @@ package org.allbinary.osgi.OSGIServiceVisitorInterface_Package is
    function "=" (Left, Right : OSGIServiceVisitorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.osgi.OSGIServiceVisitorInterface_Package_References."=";
    function Java_Object_Access_From_OSGIServiceVisitorInterface (Value : OSGIServiceVisitorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function visit (This : in out OSGIServiceVisitorInterface; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class) return Boolean is abstract;
+   procedure visit (This : in out OSGIServiceVisitorInterface; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class) is abstract;
 
 end org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
 

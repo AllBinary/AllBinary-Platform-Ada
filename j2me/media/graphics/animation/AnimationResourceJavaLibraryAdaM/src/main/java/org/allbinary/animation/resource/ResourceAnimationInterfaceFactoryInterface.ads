@@ -64,6 +64,7 @@ package org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterf
    function "=" (Left, Right : ResourceAnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_ResourceAnimationInterfaceFactoryInterface (Value : ResourceAnimationInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getBasicAnimationInterfaceFactoryInstance (This : in out ResourceAnimationInterfaceFactoryInterface; resource : Unbounded_String) return BasicAnimationInterfaceFactoryInterface_Access is abstract;
+   procedure getBasicAnimationInterfaceFactoryInstance (This : in out ResourceAnimationInterfaceFactoryInterface; resource : Unbounded_String) is abstract;
 
 end org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterface_Package;
 

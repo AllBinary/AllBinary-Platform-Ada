@@ -74,6 +74,7 @@ package org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Pa
    function getIds (This : in out BasketInterface) return Java_Object_Access is abstract;
    function getItems (This : in out BasketInterface) return HashMap_Access is abstract;
    function getNumberOf (This : in out BasketInterface; product : Unbounded_String) return Integer is abstract;
+   procedure getNumberOf (This : in out BasketInterface; product : Unbounded_String) is abstract;
    function getSubTotal (This : in out BasketInterface) return Money_Access is abstract;
 
 end org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;

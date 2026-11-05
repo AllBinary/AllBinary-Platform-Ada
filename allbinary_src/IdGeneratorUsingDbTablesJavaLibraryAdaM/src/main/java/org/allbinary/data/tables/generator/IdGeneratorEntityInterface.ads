@@ -68,6 +68,7 @@ package org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package i
    function "=" (Left, Right : IdGeneratorEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package_References."=";
    function Java_Object_Access_From_IdGeneratorEntityInterface (Value : IdGeneratorEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function get (This : in out IdGeneratorEntityInterface; name : Unbounded_String) return Long_Long_Integer is abstract;
+   procedure get (This : in out IdGeneratorEntityInterface; name : Unbounded_String) is abstract;
    procedure deleteWhere (This : in out IdGeneratorEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
    procedure insert (This : in out IdGeneratorEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure update (This : in out IdGeneratorEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;

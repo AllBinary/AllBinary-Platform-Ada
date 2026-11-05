@@ -76,6 +76,27 @@ package body org.allbinary.graphics.form.item.ABTextItem_Package is
         return ABStringComponent_Access (ABStringComponent_Package.NULL_STRING_COMPONENT);
    end getLabelStringComponent;
 
+   function getMinimumWidth (This : in out ABTextItem) return Integer is
+   begin
+        return CustomCustomItem_Package.CustomCustomItem (This).getMinimumWidth;
+   end getMinimumWidth;
+
+   function getMinimumHeight (This : in out ABTextItem) return Integer is
+   begin
+        return CustomCustomItem_Package.CustomCustomItem (This).getMinimumHeight;
+   end getMinimumHeight;
+
+   function getLabel (This : in out ABTextItem) return Unbounded_String is
+   begin
+        return CustomCustomItem_Package.CustomCustomItem (This).getLabel;
+   end getLabel;
+
+   procedure paintXY (This : in out ABTextItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+   begin
+        CustomCustomItem_Package.CustomCustomItem (This).paintXY (graphics, x, y);
+   end paintXY;
+
 end org.allbinary.graphics.form.item.ABTextItem_Package;
 
 

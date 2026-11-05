@@ -118,8 +118,8 @@ package views.admin.storefront.statistics.ValidationStoreFrontStatisticsView_Pac
    function "=" (Left, Right : ValidationStoreFrontStatisticsView_Access_Array_Access_Array_Access) return Boolean renames views.admin.storefront.statistics.ValidationStoreFrontStatisticsView_Package_References."=";
 
    type ValidationStoreFrontStatisticsView is new StoreFrontStatisticsComponent and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
-      newStoreFrontInterface : StoreFrontInterface_Access;
+      ValidationStoreFrontStatisticsView_Field_logUtil : LogUtil_Access;
+      ValidationStoreFrontStatisticsView_Field_newStoreFrontInterface : StoreFrontInterface_Access;
    end record;
 
    procedure Initialize (This : in out ValidationStoreFrontStatisticsView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -129,6 +129,7 @@ package views.admin.storefront.statistics.ValidationStoreFrontStatisticsView_Pac
    function toValidationInfoDoc (This : in out ValidationStoreFrontStatisticsView) return Document_Access;
    function toValidationInfoNode (This : in out ValidationStoreFrontStatisticsView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out ValidationStoreFrontStatisticsView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out ValidationStoreFrontStatisticsView) return TransformInfoInterface_Access;
 
 end views.admin.storefront.statistics.ValidationStoreFrontStatisticsView_Package;
 

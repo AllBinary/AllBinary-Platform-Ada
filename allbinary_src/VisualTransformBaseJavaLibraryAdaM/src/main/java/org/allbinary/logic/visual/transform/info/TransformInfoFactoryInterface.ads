@@ -66,6 +66,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_
    function "=" (Left, Right : TransformInfoFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package_References."=";
    function Java_Object_Access_From_TransformInfoFactoryInterface (Value : TransformInfoFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out TransformInfoFactoryInterface; databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoInterface_Access is abstract;
+   procedure getInstance (This : in out TransformInfoFactoryInterface; databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is abstract;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package;
 

@@ -164,7 +164,7 @@ package body org.allbinary.logic.io.path.AbPath_Package is
                         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Should Not Have More Than Two Seps")));
                     end if;
                 end loop;
-                tempPath := Unbounded_Slice (tempPath, (beginIndex) + 1, Length (tempPath));
+                tempPath := Unbounded_Slice (tempPath, (beginIndex) + 1, Ada.Strings.Unbounded.Length (tempPath));
             end if;
         end if;
         return tempPath;

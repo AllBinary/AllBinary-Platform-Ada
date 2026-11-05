@@ -31,7 +31,7 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
 
    procedure Initialize (This : in out BasicUserRole'Class; aRole : Unbounded_String; a_int_RoleId : Integer; aSessionTimeout : Long_Long_Integer; aSessionInactivityTimeout : Long_Long_Integer) is
    begin
-        Initialize (This, aRole, aRole, a_int_RoleId, aSessionTimeout, aSessionInactivityTimeout);
+        BasicUserRole_Package.Initialize (This, aRole, aRole, a_int_RoleId, aSessionTimeout, aSessionInactivityTimeout);
    end Initialize;
 
    function Create (aRole : Unbounded_String; a_int_RoleId : Integer; aSessionTimeout : Long_Long_Integer; aSessionInactivityTimeout : Long_Long_Integer) return BasicUserRole_Access is

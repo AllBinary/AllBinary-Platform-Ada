@@ -105,7 +105,7 @@ package views.admin.customizers.CustomizersValidationView_Package is
    function "=" (Left, Right : CustomizersValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.customizers.CustomizersValidationView_Package_References."=";
 
    type CustomizersValidationView is new CustomizersView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      CustomizersValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out CustomizersValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -115,6 +115,7 @@ package views.admin.customizers.CustomizersValidationView_Package is
    function toValidationInfoDoc (This : in out CustomizersValidationView) return Document_Access;
    function toValidationInfoNode (This : in out CustomizersValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out CustomizersValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out CustomizersValidationView) return TransformInfoInterface_Access;
 
 end views.admin.customizers.CustomizersValidationView_Package;
 

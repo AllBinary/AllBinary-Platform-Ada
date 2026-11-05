@@ -20,6 +20,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.graphics.CellPosition_Package_References;
 with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.graphics.CellPosition_Package_References;
 
 package body org.allbinary.graphics.CellPositionFactory_Package is
 
@@ -118,7 +119,7 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
       cellPositionCanBeNull : CellPosition_Access;
    begin
         cellPositionCanBeNull := This.cellPositionArray (i_column) (i_row);
-        if (cellPositionCanBeNull) = (null) then
+        if org.allbinary.graphics.CellPosition_Package_References."=" (cellPositionCanBeNull, null) then
             cellPositionCanBeNull := CellPosition_Package.Create (i_column, i_row, This.columns, This.rows);
             This.cellPositionArray (i_column) (i_row) := cellPositionCanBeNull;
         end if;

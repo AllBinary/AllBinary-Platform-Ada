@@ -92,7 +92,7 @@ package org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package
    function "=" (Left, Right : TransformStoreDocument_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package_References."=";
 
    type TransformStoreDocument is new TransformHttpRequestDocument with record
-      logUtil : LogUtil_Access;
+      TransformStoreDocument_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out TransformStoreDocument'Class; pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class);

@@ -90,6 +90,8 @@ package org.allbinary.animation.vector.RectangleAnimation_Package is
    procedure paintXY (This : in out RectangleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure setWidth (This : in out RectangleAnimation; width : Integer);
    procedure setHeight (This : in out RectangleAnimation; height : Integer);
+   function getBasicColorP (This : in out RectangleAnimation) return BasicColor_Access;
+   procedure setBasicColorP (This : in out RectangleAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.animation.vector.RectangleAnimation_Package;
 

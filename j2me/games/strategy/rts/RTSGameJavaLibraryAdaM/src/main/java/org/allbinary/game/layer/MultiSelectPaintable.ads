@@ -81,7 +81,7 @@ package org.allbinary.game.layer.MultiSelectPaintable_Package is
       totalCharArray : Character_Array_Access;
       rootNamesString : Unbounded_String;
       TOTAL : Unbounded_String;
-      backgroundColor : Integer;
+      MultiSelectPaintable_Field_backgroundColor : Integer;
       totalWidth : Integer;
       textLine2Y : Integer;
    end record;

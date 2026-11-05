@@ -95,6 +95,12 @@ package body views.generic_Id.inventory.AutoValidationInventoryView_Package is
         return Null_Unbounded_String;
    end validationInfo;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out AutoValidationInventoryView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (InventoryView_Package.InventoryView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out AutoValidationInventoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := AutoValidationInventoryView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

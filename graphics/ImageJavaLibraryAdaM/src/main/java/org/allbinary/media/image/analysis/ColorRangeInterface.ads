@@ -75,6 +75,7 @@ package org.allbinary.media.image.analysis.ColorRangeInterface_Package is
    function getMaxBlue (This : in out ColorRangeInterface) return Integer is abstract;
    procedure setMaxBlue (This : in out ColorRangeInterface; maxBlue : Integer) is abstract;
    function isInRange (This : in out ColorRangeInterface; color_Param : access Color_Package.Color'Class) return Boolean is abstract;
+   procedure isInRange (This : in out ColorRangeInterface; color_Param : access Color_Package.Color'Class) is abstract;
 
 end org.allbinary.media.image.analysis.ColorRangeInterface_Package;
 

@@ -171,7 +171,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       userEmailEventConfigurationInterface : constant UserEmailEventConfigurationInterface_Access := UserEmailEventConfigurationInterface_Access (userEmailEventConfigurationInterface_Param);
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Adding: ") & Java_Image (userEmailEventConfigurationInterface.log), UserEmailEventsConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("addUserEmailEventConfiguration"));
+            This.logUtil.putF (To_Unbounded_String ("Adding: ") & userEmailEventConfigurationInterface.log, UserEmailEventsConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("addUserEmailEventConfiguration"));
         end if;
         This.emailEventHashMap.put (Java_Box (userEmailEventConfigurationInterface.getName), userEmailEventConfigurationInterface);
    end addUserEmailEventConfiguration;

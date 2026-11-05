@@ -76,7 +76,9 @@ package org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayer
    function "=" (Left, Right : AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References."=";
    function Java_Object_Access_From_AllBinaryTiledLayerFactoryInterface (Value : AllBinaryTiledLayerFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) return AllBinaryTiledLayer_Access is abstract;
+   procedure getInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is abstract;
    function getMiniInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) return AllBinaryTiledLayer_Access is abstract;
+   procedure getMiniInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is abstract;
 
 end org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
 

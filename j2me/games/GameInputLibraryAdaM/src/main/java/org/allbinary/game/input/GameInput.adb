@@ -23,6 +23,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 
 package body org.allbinary.game.input.GameInput_Package is
 
@@ -102,7 +103,7 @@ package body org.allbinary.game.input.GameInput_Package is
         if (This.isRemoveDuplicateKeyPresses) and then (This.gameKeyEventList.contains (Java_Object_Access (gameKeyEvent))) then
             return;
         end if;
-        if (gameKeyEvent) /= (null) then
+        if (not org.allbinary.game.input.event.GameKeyEvent_Package_References."=" (gameKeyEvent, null)) then
             This.gameKeyEventList.add (Java_Object_Access (gameKeyEvent));
         else
             This.logUtil.putF (To_Unbounded_String ("Danger Passed Null GameKeyEvent"), GameInput_Access'(This'Unchecked_Access), This.commonStrings.ADD);

@@ -91,7 +91,7 @@ package body admin.tags.PaymentProcessTag_Package is
    begin
         begin
             if (((PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0)) or else ((PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY)) = (0))) or else ((PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
-                This.pageContext.getOut.print (Java_Image (PaymentProcessTag'Class (This).process) & To_Unbounded_String ("<br />"));
+                This.pageContext.getOut.print (PaymentProcessTag'Class (This).process & To_Unbounded_String ("<br />"));
                 if (PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0) then
                     return This.SKIP_BODY;
                 else

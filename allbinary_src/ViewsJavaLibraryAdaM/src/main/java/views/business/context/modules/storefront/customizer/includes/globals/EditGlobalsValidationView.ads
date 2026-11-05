@@ -105,7 +105,7 @@ package views.business.context.modules.storefront.customizer.includes.globals.Ed
    function "=" (Left, Right : EditGlobalsValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References."=";
 
    type EditGlobalsValidationView is new GlobalsView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      EditGlobalsValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out EditGlobalsValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -115,6 +115,7 @@ package views.business.context.modules.storefront.customizer.includes.globals.Ed
    function toValidationInfoDoc (This : in out EditGlobalsValidationView) return Document_Access;
    function toValidationInfoNode (This : in out EditGlobalsValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out EditGlobalsValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out EditGlobalsValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package;
 

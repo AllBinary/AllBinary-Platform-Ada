@@ -40,7 +40,7 @@ package body org.allbinary.logic.string_Id.StringValidationJSEUtil_Package is
       c : Character;
       i : Integer;
    begin
-        len := Length (string_Id);
+        len := Ada.Strings.Unbounded.Length (string_Id);
         for i in 0 .. (len) - 1 loop
             c := Element (string_Id, (i) + 1);
             if (Character_Package.isWhitespace (c)) = (False) then

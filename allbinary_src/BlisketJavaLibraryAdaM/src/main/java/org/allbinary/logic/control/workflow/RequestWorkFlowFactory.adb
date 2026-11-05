@@ -73,7 +73,7 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
         requestCommand := httpRequest.getPathInfo;
         index := Java_Index_Of (requestCommand, Java_Image (AbPathData_Package.getInstance.SEPARATOR));
         storeName := Unbounded_Slice (requestCommand, (0) + 1, index);
-        requestName := Unbounded_Slice (requestCommand, (index) + 1, Length (requestCommand));
+        requestName := Unbounded_Slice (requestCommand, (index) + 1, Ada.Strings.Unbounded.Length (requestCommand));
         return WorkFlowInterface_Access (WorkFlowEntityFactory_Package.getInstance.create2.get (requestName, storeName));
    end getInstance;
 

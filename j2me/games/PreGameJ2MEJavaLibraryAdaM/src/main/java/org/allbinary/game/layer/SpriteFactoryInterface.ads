@@ -77,6 +77,7 @@ package org.allbinary.game.layer.SpriteFactoryInterface_Package is
    function "=" (Left, Right : SpriteFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SpriteFactoryInterface_Package_References."=";
    function Java_Object_Access_From_SpriteFactoryInterface (Value : SpriteFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function createSprite (This : in out SpriteFactoryInterface; image_Param : access Image_Package.Image'Class; frameWidth : Integer; frameHeight : Integer) return Sprite_Access is abstract;
+   procedure createSprite (This : in out SpriteFactoryInterface; image_Param : access Image_Package.Image'Class; frameWidth : Integer; frameHeight : Integer) is abstract;
 
 end org.allbinary.game.layer.SpriteFactoryInterface_Package;
 

@@ -477,6 +477,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game.paint.help.HelpPaintable_Package;
 with org.allbinary.game.paint.help.HelpPaintable_Package_References;
+with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package; use org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 with org.allbinary.game.paint.help.HelpPaintable_Package;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 

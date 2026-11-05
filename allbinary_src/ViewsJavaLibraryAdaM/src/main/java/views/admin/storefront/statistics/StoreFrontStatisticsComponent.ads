@@ -104,7 +104,7 @@ package views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package 
    function "=" (Left, Right : StoreFrontStatisticsComponent_Access_Array_Access_Array_Access) return Boolean renames views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References."=";
 
    type StoreFrontStatisticsComponent is new HttpStoreComponentView with record
-      logUtil : LogUtil_Access;
+      StoreFrontStatisticsComponent_Field_logUtil : LogUtil_Access;
       newStoreFrontInterface : StoreFrontInterface_Access;
       domNodeInterface : DomNodeInterface_Access;
    end record;

@@ -89,6 +89,7 @@ package org.allbinary.business.user.commerce.money.payment.gateway.processor.Pay
    function "=" (Left, Right : PaymentProcessorInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_PaymentProcessorInterfaceFactoryInterface (Value : PaymentProcessorInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out PaymentProcessorInterfaceFactoryInterface; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; paymentTransactionInterface_Param : access PaymentTransactionInterface_Package.PaymentTransactionInterface'Class) return PaymentProcessorInterface_Access is abstract;
+   procedure getInstance (This : in out PaymentProcessorInterfaceFactoryInterface; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; paymentTransactionInterface_Param : access PaymentTransactionInterface_Package.PaymentTransactionInterface'Class) is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactoryInterface_Package;
 

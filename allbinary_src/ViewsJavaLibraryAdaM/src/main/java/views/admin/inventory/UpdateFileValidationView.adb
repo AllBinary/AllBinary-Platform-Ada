@@ -310,6 +310,12 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
         end if;
    end validationInfo;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out UpdateFileValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (InventoryItemView_Package.InventoryItemView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out UpdateFileValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := UpdateFileValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

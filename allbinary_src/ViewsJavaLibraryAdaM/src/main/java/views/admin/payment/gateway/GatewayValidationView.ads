@@ -105,6 +105,7 @@ package views.admin.payment.gateway.GatewayValidationView_Package is
    function toXmlNode (This : in out GatewayValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toXmlNode (This : in out GatewayValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out GatewayValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out GatewayValidationView) return TransformInfoInterface_Access;
 
 end views.admin.payment.gateway.GatewayValidationView_Package;
 

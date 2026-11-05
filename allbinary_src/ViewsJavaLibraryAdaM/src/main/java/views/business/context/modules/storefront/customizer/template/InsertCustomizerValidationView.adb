@@ -174,9 +174,9 @@ package body views.business.context.modules.storefront.customizer.template.Inser
                     componentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, transformInfoName, InsertCustomizerValidationView'Class (This).getTransformInfoInterface));
                     templateViewObjectConfig := InsertTemplateCustomizerTransformInfoObjectConfig_Package.Create (componentInterface.getTransformInfoInterface, componentInterface.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
                     storeName := InsertCustomizerValidationView'Class (This).getTransformInfoInterface.getStoreName;
-                    endIndex := (Java_Index_Of (This.viewName, Java_Image (storeName))) + (Length (storeName));
+                    endIndex := (Java_Index_Of (This.viewName, Java_Image (storeName))) + (Ada.Strings.Unbounded.Length (storeName));
                     storePrepend := Unbounded_Slice (This.viewName, (0) + 1, endIndex);
-                    viewNamePostfix := Unbounded_Slice (This.viewName, (endIndex) + 1, Length (This.viewName));
+                    viewNamePostfix := Unbounded_Slice (This.viewName, (endIndex) + 1, Ada.Strings.Unbounded.Length (This.viewName));
                     newViewNameStringBuffer := StringMaker_Package.Create;
                     newViewNameStringBuffer.append (storePrepend);
                     commonSeps := CommonSeps_Package.getInstance;
@@ -267,6 +267,12 @@ package body views.business.context.modules.storefront.customizer.template.Inser
    begin
         return This.views.ValidationOnlyTempUtil.getInstance.view (InsertCustomizerValidationView_Access'(This'Unchecked_Access));
    end view;
+
+   --  throws Exception
+   function getTransformInfoInterface (This : in out InsertCustomizerValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (HttpStoreComponentView_Package.HttpStoreComponentView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
 
    procedure toValidationInfoNode (This : in out InsertCustomizerValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := InsertCustomizerValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);

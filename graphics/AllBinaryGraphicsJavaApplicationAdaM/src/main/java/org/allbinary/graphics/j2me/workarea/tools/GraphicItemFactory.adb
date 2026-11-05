@@ -42,6 +42,7 @@ with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 with org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package_References;
 
 package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package is
 
@@ -99,7 +100,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
       graphicsItemInterfaceFactoryInterface : GraphicsItemInterfaceFactoryInterface_Access;
    begin
         graphicsItemInterfaceFactoryInterface := GraphicsItemInterfaceFactoryInterface_Access (This.graphicItems.get (Java_Box (itemName)));
-        if (graphicsItemInterfaceFactoryInterface) = (null) then
+        if org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package_References."=" (graphicsItemInterfaceFactoryInterface, null) then
             graphicsItemInterfaceFactoryInterface := This.DEFAULT;
         end if;
         return graphicsItemInterfaceFactoryInterface;

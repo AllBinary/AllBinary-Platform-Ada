@@ -64,6 +64,7 @@ package org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package
    function "=" (Left, Right : EmailQueueInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package_References."=";
    function Java_Object_Access_From_EmailQueueInterface (Value : EmailQueueInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function offer (This : in out EmailQueueInterface; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) return Boolean is abstract;
+   procedure offer (This : in out EmailQueueInterface; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) is abstract;
    function remove (This : in out EmailQueueInterface) return EmailInterface_Access is abstract;
 
 end org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package;

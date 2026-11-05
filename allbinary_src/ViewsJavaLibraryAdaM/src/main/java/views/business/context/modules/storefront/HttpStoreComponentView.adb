@@ -94,7 +94,7 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.HttpStoreComponentView_Field_logUtil.putF (This.commonStrings.START, HttpStoreComponentView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
             end if;
-            HttpStoreComponentView'Class (This).toXmlDoc;
+            declare Java_Result renames HttpStoreComponentView'Class (This).toXmlDoc; pragma Unreferenced (Java_Result); begin null; end;
             success := XmlDocumentHelper_Package.toString (HttpStoreComponentView'Class (This).getDoc);
             result := StoreTransformer_Package.Create (This.abeClientInformation, HttpStoreComponentView'Class (This).getTransformInfoInterface).translate (success);
             return result;

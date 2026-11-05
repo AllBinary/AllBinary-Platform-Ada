@@ -108,7 +108,7 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
 
    function getKey (This : in out RootCategoryPropertiesAbstract) return Java_Object_Access is
    begin
-        return Java_Object_Access (RootCategoryPropertiesAbstract'Class (This).getValue);
+        return Java_Box (RootCategoryPropertiesAbstract'Class (This).getValue);
    end getKey;
 
    function getValue (This : in out RootCategoryPropertiesAbstract) return Unbounded_String is

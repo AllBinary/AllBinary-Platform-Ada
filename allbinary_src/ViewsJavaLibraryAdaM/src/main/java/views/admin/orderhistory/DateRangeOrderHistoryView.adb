@@ -328,10 +328,10 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                     TimeUtil_Package.getInstance.setCalendar (calendar, This.toYear, This.toMonth, This.toDay, This.toHour);
                     This.toDate := calendar.getTimeInMillis.toString;
                 end if;
-                if (StringValidationUtil_Package.getInstance.isEmpty (This.toDate)) or else ((Length (This.toDate)) > (This.MAXLEN)) then
+                if (StringValidationUtil_Package.getInstance.isEmpty (This.toDate)) or else ((Ada.Strings.Unbounded.Length (This.toDate)) > (This.MAXLEN)) then
                     isValid := False;
                 end if;
-                if (StringValidationUtil_Package.getInstance.isEmpty (This.fromDate)) or else ((Length (This.fromDate)) > (This.MAXLEN)) then
+                if (StringValidationUtil_Package.getInstance.isEmpty (This.fromDate)) or else ((Ada.Strings.Unbounded.Length (This.fromDate)) > (This.MAXLEN)) then
                     isValid := False;
                 end if;
             end if;
@@ -378,10 +378,10 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
             if ((This.dateType) = (Null_Unbounded_String)) or else ((((Java_Compare_To (This.dateType, OrderHistoryData_Package.TYPELONG)) /= (0)) and then ((Java_Compare_To (This.dateType, OrderHistoryData_Package.TYPECAESAR)) /= (0)))) then
                 result.append (To_Unbounded_String ("DATETYPE not recognized"));
             end if;
-            if (StringValidationUtil_Package.getInstance.isEmpty (This.toDate)) or else ((Length (This.toDate)) > (This.MAXLEN)) then
+            if (StringValidationUtil_Package.getInstance.isEmpty (This.toDate)) or else ((Ada.Strings.Unbounded.Length (This.toDate)) > (This.MAXLEN)) then
                 result.append (To_Unbounded_String ("Invalid To Date"));
             end if;
-            if (StringValidationUtil_Package.getInstance.isEmpty (This.fromDate)) or else ((Length (This.fromDate)) > (This.MAXLEN)) then
+            if (StringValidationUtil_Package.getInstance.isEmpty (This.fromDate)) or else ((Ada.Strings.Unbounded.Length (This.fromDate)) > (This.MAXLEN)) then
                 result.append (To_Unbounded_String ("Invalid From Date"));
             end if;
             return result.toString;
@@ -397,6 +397,12 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 end;
         end;
    end validationInfo;
+
+   --  throws Exception
+   function getTransformInfoInterface (This : in out DateRangeOrderHistoryView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (HttpStoreComponentView_Package.HttpStoreComponentView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
 
    procedure toXmlNode (This : in out DateRangeOrderHistoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := DateRangeOrderHistoryView'Class (This).toXmlNode (document_Param => document_Param);

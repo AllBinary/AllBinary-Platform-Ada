@@ -84,6 +84,10 @@ package org.allbinary.graphics.form.item.ABTextItem_Package is
    procedure keyPressed (This : in out ABTextItem; keyCode : Integer);
    procedure paintUnselected (This : in out ABTextItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    function getLabelStringComponent (This : in out ABTextItem) return ABStringComponent_Access;
+   function getMinimumWidth (This : in out ABTextItem) return Integer;
+   function getMinimumHeight (This : in out ABTextItem) return Integer;
+   function getLabel (This : in out ABTextItem) return Unbounded_String;
+   procedure paintXY (This : in out ABTextItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.graphics.form.item.ABTextItem_Package;
 

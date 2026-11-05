@@ -211,6 +211,8 @@ limited with playn.core.CoreImage_Package;
 with playn.core.CoreImage_Package_References;
 limited with playn.html.HTMLPlaynUtil_Package;
 with playn.html.HTMLPlaynUtil_Package_References;
+limited with org.allbinary.media.image.ImageModifierUtil_Package;
+with org.allbinary.media.image.ImageModifierUtil_Package_References;
 
 package org.allbinary.media.image.ImageCopyCallback_Package is
 
@@ -293,6 +295,16 @@ package org.allbinary.media.image.ImageCopyCallback_Package is
    use type HTMLPlaynUtil_Access_Array_Access_Array;
    subtype HTMLPlaynUtil_Access_Array_Access_Array_Access is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array_Access_Array_Access;
    use type HTMLPlaynUtil_Access_Array_Access_Array_Access;
+   subtype ImageModifierUtil_Access is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access;
+   use type ImageModifierUtil_Access;
+   subtype ImageModifierUtil_Access_Array is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array;
+   use type ImageModifierUtil_Access_Array;
+   subtype ImageModifierUtil_Access_Array_Access is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array_Access;
+   use type ImageModifierUtil_Access_Array_Access;
+   subtype ImageModifierUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array_Access_Array;
+   use type ImageModifierUtil_Access_Array_Access_Array;
+   subtype ImageModifierUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array_Access_Array_Access;
+   use type ImageModifierUtil_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

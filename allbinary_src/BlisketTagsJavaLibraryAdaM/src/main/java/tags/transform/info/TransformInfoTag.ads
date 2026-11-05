@@ -79,7 +79,7 @@ package tags.transform.info.TransformInfoTag_Package is
    function "=" (Left, Right : TransformInfoTag_Access_Array_Access_Array_Access) return Boolean renames tags.transform.info.TransformInfoTag_Package_References."=";
 
    type TransformInfoTag is new ModifyTag with record
-      logUtil : LogUtil_Access;
+      TransformInfoTag_Field_logUtil : LogUtil_Access;
       name : Unbounded_String;
       storeName : Unbounded_String;
       objectFile : Unbounded_String;

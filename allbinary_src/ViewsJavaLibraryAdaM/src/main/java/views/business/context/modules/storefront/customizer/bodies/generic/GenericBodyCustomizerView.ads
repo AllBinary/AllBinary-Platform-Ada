@@ -119,7 +119,7 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.G
    function "=" (Left, Right : GenericBodyCustomizerView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.bodies.generic_Id.GenericBodyCustomizerView_Package_References."=";
 
    type GenericBodyCustomizerView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      GenericBodyCustomizerView_Field_logUtil : LogUtil_Access;
       body_Id : GenericBodyValidation_Access;
    end record;
    NAME : Unbounded_String;

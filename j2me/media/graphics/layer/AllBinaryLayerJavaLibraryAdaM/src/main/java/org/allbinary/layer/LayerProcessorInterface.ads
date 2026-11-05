@@ -90,6 +90,7 @@ package org.allbinary.layer.LayerProcessorInterface_Package is
    function getLayerManager (This : in out LayerProcessorInterface) return LayerManager_Access is abstract;
    procedure processAt (This : in out LayerProcessorInterface; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer) is abstract;
    function isProcessorLayer (This : in out LayerProcessorInterface; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean is abstract;
+   procedure isProcessorLayer (This : in out LayerProcessorInterface; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is abstract;
 
 end org.allbinary.layer.LayerProcessorInterface_Package;
 

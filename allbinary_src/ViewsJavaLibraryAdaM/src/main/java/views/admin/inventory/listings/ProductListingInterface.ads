@@ -52,6 +52,7 @@ package views.admin.inventory.listings.ProductListingInterface_Package is
    function Java_Object_Access_From_ProductListingInterface (Value : ProductListingInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function generateAll (This : in out ProductListingInterface) return Unbounded_String is abstract;
    function generateAll (This : in out ProductListingInterface; storeName : Unbounded_String) return Unbounded_String is abstract;
+   procedure generateAll (This : in out ProductListingInterface; storeName : Unbounded_String) is abstract;
 
 end views.admin.inventory.listings.ProductListingInterface_Package;
 

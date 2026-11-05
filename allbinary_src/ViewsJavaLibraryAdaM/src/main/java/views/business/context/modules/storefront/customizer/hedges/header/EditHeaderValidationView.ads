@@ -105,7 +105,7 @@ package views.business.context.modules.storefront.customizer.hedges.header.EditH
    function "=" (Left, Right : EditHeaderValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.hedges.header.EditHeaderValidationView_Package_References."=";
 
    type EditHeaderValidationView is new TopBarView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      EditHeaderValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out EditHeaderValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -115,6 +115,7 @@ package views.business.context.modules.storefront.customizer.hedges.header.EditH
    function toValidationInfoDoc (This : in out EditHeaderValidationView) return Document_Access;
    function toValidationInfoNode (This : in out EditHeaderValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out EditHeaderValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out EditHeaderValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.hedges.header.EditHeaderValidationView_Package;
 

@@ -26,6 +26,7 @@ with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.color.ColorDelta_Package_References;
 
 package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
 
@@ -101,7 +102,7 @@ package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             pixelDelta := PixelDelta_Access (vector.get (index));
-            if (pixelDelta.getColorDelta) = (null) then
+            if org.allbinary.media.image.comparison.color.ColorDelta_Package_References."=" (pixelDelta.getColorDelta, null) then
                 Ada.Text_IO.Put (Java_Image (To_Unbounded_String ("ColorDelta")));
                 System_Package.exit_Id (0);
             end if;

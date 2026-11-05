@@ -53,6 +53,7 @@ package org.allbinary.game.configuration.feature.GameFeatureControlledInterface_
    procedure init (This : in out GameFeatureControlledInterface; level : Integer) is abstract;
    function isFeature (This : in out GameFeatureControlledInterface) return Boolean is abstract;
    function isLoadingLevel (This : in out GameFeatureControlledInterface; level : Integer) return Boolean is abstract;
+   procedure isLoadingLevel (This : in out GameFeatureControlledInterface; level : Integer) is abstract;
 
 end org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
 

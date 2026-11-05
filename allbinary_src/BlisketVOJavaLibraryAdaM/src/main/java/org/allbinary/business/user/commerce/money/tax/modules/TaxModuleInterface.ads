@@ -77,7 +77,9 @@ package org.allbinary.business.user.commerce.money.tax.modules.TaxModuleInterfac
    function "=" (Left, Right : TaxModuleInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.TaxModuleInterface_Package_References."=";
    function Java_Object_Access_From_TaxModuleInterface (Value : TaxModuleInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getTaxRate (This : in out TaxModuleInterface; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return Float is abstract;
+   procedure getTaxRate (This : in out TaxModuleInterface; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is abstract;
    function isValid (This : in out TaxModuleInterface; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return Boolean is abstract;
+   procedure isValid (This : in out TaxModuleInterface; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is abstract;
 
 end org.allbinary.business.user.commerce.money.tax.modules.TaxModuleInterface_Package;
 

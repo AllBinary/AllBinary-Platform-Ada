@@ -37,6 +37,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package is
 
@@ -119,7 +120,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
         geographicMapCellPosition := This.currentGeographicMapCellPosition;
-        if (geographicMapCellPosition) /= (This.previousGeographicMapCellPosition) then
+        if (not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (geographicMapCellPosition, This.previousGeographicMapCellPosition)) then
             This.currentCellType := geographicMap.getCellTypeAt (geographicMapCellPosition);
         end if;
         return This.currentCellType;
@@ -136,7 +137,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
             geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (gameCanvasInterface.getLayerManager);
             geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
             This.newGeographicMapCellPosition := geographicMapInterface.getCellPositionAtXY ((layer.getXP) + (layer.getHalfWidth), (layer.getYP) + (layer.getHalfHeight));
-            if (This.newGeographicMapCellPosition) /= (This.currentGeographicMapCellPosition) then
+            if (not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (This.newGeographicMapCellPosition, This.currentGeographicMapCellPosition)) then
                 This.currentGeographicMapCellPosition := This.newGeographicMapCellPosition;
                 return True;
             end if;
@@ -146,7 +147,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
 
    function updateEnd (This : in out GeographicMapCellPositionTracking) return Boolean is
    begin
-        if (This.currentGeographicMapCellPosition) /= (This.previousGeographicMapCellPosition) then
+        if (not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (This.currentGeographicMapCellPosition, This.previousGeographicMapCellPosition)) then
             This.previousGeographicMapCellPosition := This.currentGeographicMapCellPosition;
             return True;
         end if;

@@ -108,7 +108,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package is
    function "=" (Left, Right : TransformInfoHttp_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package_References."=";
 
    type TransformInfoHttp is new TransformInfo and TransformInfoHttpInterface with record
-      logUtil : LogUtil_Access;
+      TransformInfoHttp_Field_logUtil : LogUtil_Access;
       abContext : AbContext_Access;
    end record;
 

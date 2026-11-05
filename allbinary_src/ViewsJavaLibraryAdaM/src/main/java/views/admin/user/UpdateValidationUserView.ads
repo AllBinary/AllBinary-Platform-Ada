@@ -119,7 +119,7 @@ package views.admin.user.UpdateValidationUserView_Package is
    function "=" (Left, Right : UpdateValidationUserView_Access_Array_Access_Array_Access) return Boolean renames views.admin.user.UpdateValidationUserView_Package_References."=";
 
    type UpdateValidationUserView is new HttpContextView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      UpdateValidationUserView_Field_logUtil : LogUtil_Access;
       user : UserInterface_Access;
    end record;
 
@@ -131,6 +131,7 @@ package views.admin.user.UpdateValidationUserView_Package is
    function toValidationInfoNode (This : in out UpdateValidationUserView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out UpdateValidationUserView; document_Param : access Document_Package.Document'Class);
    function view (This : in out UpdateValidationUserView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out UpdateValidationUserView) return TransformInfoInterface_Access;
 
 end views.admin.user.UpdateValidationUserView_Package;
 

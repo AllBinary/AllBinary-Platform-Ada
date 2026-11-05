@@ -216,7 +216,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
       completeTemplateViewBytes : Short_Short_Integer_Array_Access;
       bais : ByteArrayInputStream_Access;
    begin
-        completeTemplateViewBytes := CompoundContextTransformInfoObjectConfig'Class (This).get.getBytes;
+        completeTemplateViewBytes := Java_Get_Bytes (CompoundContextTransformInfoObjectConfig'Class (This).get);
         bais := ByteArrayInputStream_Package.Create (completeTemplateViewBytes);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Template: ") & Java_New_String (completeTemplateViewBytes).toString, CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("createInputStream()"));

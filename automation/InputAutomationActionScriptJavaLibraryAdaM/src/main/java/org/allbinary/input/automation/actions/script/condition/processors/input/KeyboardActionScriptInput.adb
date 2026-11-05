@@ -285,7 +285,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.KeyboardActionScriptInput_Field_logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & text, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         index := 0;
-        while (index) < (Length (text)) loop
+        while (index) < (Ada.Strings.Unbounded.Length (text)) loop
             aChar := Element (text, (index) + 1);
             if (Integer (Character'Pos (aChar))) = (Integer (Character'Pos ('&'))) then
                 if (Element (text, ((index) + (1)) + 1)) = ('#') then
@@ -293,15 +293,15 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                     if (endIndex) /= (-(1)) then
                         nextCharString := Unbounded_Slice (text, ((index) + (2)) + 1, endIndex);
                         This.KeyboardActionScriptInput_Field_logUtil.putF (Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Char String: ") & nextCharString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
-                        vector.add (To_Unbounded_String (Java_Image (Unbounded_Slice (nextCharString, (index) + 1, Length (nextCharString)))));
-                        index := ((index) + (Length (nextCharString))) + (3);
-                        goto Continue_N69473;
+                        vector.add (To_Unbounded_String (Java_Image (Unbounded_Slice (nextCharString, (index) + 1, Ada.Strings.Unbounded.Length (nextCharString)))));
+                        index := ((index) + (Ada.Strings.Unbounded.Length (nextCharString))) + (3);
+                        goto Continue_N69484;
                     end if;
                 end if;
             end if;
             vector.add (KeySingletonFactory_Package.getHashtable.get (To_Unbounded_String (Java_Image (aChar))));
             index := index + 1;
-            <<Continue_N69473>> null;
+            <<Continue_N69484>> null;
         end loop;
         integerArray := Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => 0)));
         return integerArray;

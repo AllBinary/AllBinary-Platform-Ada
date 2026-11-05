@@ -19,6 +19,7 @@ with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.l
 with org.allbinary.logic.visual.media.MediaDataFactory_Package; use org.allbinary.logic.visual.media.MediaDataFactory_Package;
 with org.allbinary.logic.visual.media.MediaDataFactory_Package;
 with org.allbinary.logic.visual.media.MediaTypeData_Package;
+with org.allbinary.logic.visual.media.MediaData_Package_References;
 
 package body org.allbinary.logic.visual.media.MediaData_Package is
 
@@ -82,7 +83,7 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
       mediaData_Var : MediaData_Access;
    begin
         mediaData_Var := MediaData_Access (MediaData_Package.hashMap.get (Java_Box (a_Name)));
-        if (mediaData_Var) /= (null) then
+        if (not org.allbinary.logic.visual.media.MediaData_Package_References."=" (mediaData_Var, null)) then
             return mediaData_Var;
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such MediaData")));

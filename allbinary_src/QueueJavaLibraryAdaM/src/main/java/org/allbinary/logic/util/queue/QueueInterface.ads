@@ -51,6 +51,7 @@ package org.allbinary.logic.util.queue.QueueInterface_Package is
    function "=" (Left, Right : QueueInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.queue.QueueInterface_Package_References."=";
    function Java_Object_Access_From_QueueInterface (Value : QueueInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function offer (This : in out QueueInterface; anyType_Param : access Java_Object'Class) return Boolean is abstract;
+   procedure offer (This : in out QueueInterface; anyType_Param : access Java_Object'Class) is abstract;
    procedure remove (This : in out QueueInterface; anyType_Param : access Java_Object'Class) is abstract;
    function remove (This : in out QueueInterface) return Java_Object_Access is abstract;
 

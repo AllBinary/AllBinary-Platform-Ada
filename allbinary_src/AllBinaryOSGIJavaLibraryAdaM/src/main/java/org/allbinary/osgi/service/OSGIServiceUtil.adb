@@ -24,6 +24,7 @@ with org.osgi.framework.ServiceReference_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
+with org.allbinary.osgi.OSGIServiceInterface_Package_References;
 
 package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
 
@@ -111,7 +112,7 @@ package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
                 serviceReference := serviceReferences (index);
                 if (serviceReference) /= (null) then
                     osgiServiceInterface := OSGIServiceInterface_Access (bundleContext.getService (serviceReference));
-                    if (osgiServiceInterface) = (null) then
+                    if org.allbinary.osgi.OSGIServiceInterface_Package_References."=" (osgiServiceInterface, null) then
                         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Service For Reference")));
                     end if;
                     vector.add (OSGIServiceInterface_Package.Java_Object_Access_From_OSGIServiceInterface (osgiServiceInterface));

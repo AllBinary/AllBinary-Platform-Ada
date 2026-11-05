@@ -68,6 +68,7 @@ package org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package
    function "=" (Left, Right : StaticPagesEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package_References."=";
    function Java_Object_Access_From_StaticPagesEntityInterface (Value : StaticPagesEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getFile (This : in out StaticPagesEntityInterface; store : Unbounded_String; keywords : Unbounded_String) return Unbounded_String is abstract;
+   procedure getFile (This : in out StaticPagesEntityInterface; store : Unbounded_String; keywords : Unbounded_String) is abstract;
    procedure delete (This : in out StaticPagesEntityInterface; value : Unbounded_String) is abstract;
    procedure insert (This : in out StaticPagesEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure update (This : in out StaticPagesEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;

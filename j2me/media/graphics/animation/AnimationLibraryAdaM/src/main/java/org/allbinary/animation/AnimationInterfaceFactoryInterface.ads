@@ -77,6 +77,7 @@ package org.allbinary.animation.AnimationInterfaceFactoryInterface_Package is
    function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_AnimationInterfaceFactoryInterface (Value : AnimationInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out AnimationInterfaceFactoryInterface; instanceId : Integer) return Animation_Access is abstract;
+   procedure getInstance (This : in out AnimationInterfaceFactoryInterface; instanceId : Integer) is abstract;
    procedure setInitialScale (This : in out AnimationInterfaceFactoryInterface; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is abstract;
 
 end org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;

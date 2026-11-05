@@ -64,6 +64,7 @@ package org.allbinary.logic.util.cache.AutomaticCacheInterface_Package is
    function "=" (Left, Right : AutomaticCacheInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.AutomaticCacheInterface_Package_References."=";
    function Java_Object_Access_From_AutomaticCacheInterface (Value : AutomaticCacheInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function get (This : in out AutomaticCacheInterface; key_Param : access Java_Object'Class) return CacheableInterface_Access is abstract;
+   procedure get (This : in out AutomaticCacheInterface; key_Param : access Java_Object'Class) is abstract;
 
 end org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
 

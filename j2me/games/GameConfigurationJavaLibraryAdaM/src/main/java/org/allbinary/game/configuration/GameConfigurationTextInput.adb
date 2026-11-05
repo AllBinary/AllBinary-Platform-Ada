@@ -57,7 +57,7 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
       Initialize_Fields (This);
         GameConfigurationTextInput'Class (This).setText (text);
         GameConfigurationTextInput'Class (This).setLabel (label);
-        GameConfigurationTextInput_Package.hashtable.put (GameConfigurationTextInput'Class (This).getLabel, GameConfigurationTextInput_Access'(This'Unchecked_Access));
+        GameConfigurationTextInput_Package.hashtable.put (Java_Box (GameConfigurationTextInput'Class (This).getLabel), GameConfigurationTextInput_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (label : Unbounded_String; text : Unbounded_String) return GameConfigurationTextInput_Access is

@@ -32,6 +32,7 @@ with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.Shap
 with org.allbinary.animation.ShapeType_Package_References;
 with org.allbinary.animation.ShapeType_Package;
 with org.allbinary.animation.ShapeTypeFactory_Package;
+with org.allbinary.animation.ShapeType_Package_References;
 
 package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
 
@@ -206,9 +207,9 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       shape : JSONObject_Access;
    begin
         shape := SVGAsJSONSimpleLoader'Class (This).asObject (value, shapeType.getName);
-        if (shapeType) = (This.shapeTypeFactory.LINE) then
+        if org.allbinary.animation.ShapeType_Package_References."=" (shapeType, This.shapeTypeFactory.LINE) then
             SVGAsJSONSimpleLoader'Class (This).addLine (pointVector, shape);
-        elsif (shapeType) = (This.shapeTypeFactory.CIRCLE) then
+        elsif org.allbinary.animation.ShapeType_Package_References."=" (shapeType, This.shapeTypeFactory.CIRCLE) then
             SVGAsJSONSimpleLoader'Class (This).addCircle (pointVector, shape);
         else
             SVGAsJSONSimpleLoader'Class (This).addRectangle (pointVector, shape);

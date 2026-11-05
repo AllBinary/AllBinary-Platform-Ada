@@ -139,6 +139,7 @@ package org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_P
    function createTable (This : in out InventoryEntity) return Unbounded_String;
    procedure update (This : in out InventoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out InventoryEntity) return Unbounded_String;
+   procedure deleteWhere (This : in out InventoryEntity; key : Unbounded_String; value : Unbounded_String);
 
 end org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
 

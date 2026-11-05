@@ -54,6 +54,7 @@ package admin.taghelpers.TagHelperFactoryInterface_Package is
    function "=" (Left, Right : TagHelperFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
    function Java_Object_Access_From_TagHelperFactoryInterface (Value : TagHelperFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out TagHelperFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return Java_Object_Access is abstract;
+   procedure getInstance (This : in out TagHelperFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is abstract;
 
 end admin.taghelpers.TagHelperFactoryInterface_Package;
 

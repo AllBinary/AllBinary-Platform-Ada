@@ -74,7 +74,7 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
       index : Integer;
    begin
         count := 0;
-        size := Length (string_Id);
+        size := Ada.Strings.Unbounded.Length (string_Id);
         for index in 0 .. (size) - 1 loop
             if (Element (string_Id, (index) + 1)) = (aChar) then
                 count := count + 1;

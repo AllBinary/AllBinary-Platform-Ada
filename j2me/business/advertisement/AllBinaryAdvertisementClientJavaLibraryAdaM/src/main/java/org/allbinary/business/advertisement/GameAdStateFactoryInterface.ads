@@ -76,6 +76,7 @@ package org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package
    function "=" (Left, Right : GameAdStateFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package_References."=";
    function Java_Object_Access_From_GameAdStateFactoryInterface (Value : GameAdStateFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstanceForApp (This : in out GameAdStateFactoryInterface; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class) return GameAdStateBase_Access is abstract;
+   procedure getInstanceForApp (This : in out GameAdStateFactoryInterface; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class) is abstract;
 
 end org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package;
 

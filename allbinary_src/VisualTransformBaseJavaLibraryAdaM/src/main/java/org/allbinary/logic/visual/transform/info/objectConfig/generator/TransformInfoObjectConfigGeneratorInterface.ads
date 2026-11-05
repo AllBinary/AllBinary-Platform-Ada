@@ -51,6 +51,7 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.Transfo
    function "=" (Left, Right : TransformInfoObjectConfigGeneratorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package_References."=";
    function Java_Object_Access_From_TransformInfoObjectConfigGeneratorInterface (Value : TransformInfoObjectConfigGeneratorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function process (This : in out TransformInfoObjectConfigGeneratorInterface; input : Unbounded_String) return Unbounded_String is abstract;
+   procedure process (This : in out TransformInfoObjectConfigGeneratorInterface; input : Unbounded_String) is abstract;
 
 end org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorInterface_Package;
 

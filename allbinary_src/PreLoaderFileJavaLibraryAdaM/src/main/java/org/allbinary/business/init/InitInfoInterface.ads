@@ -71,8 +71,11 @@ package org.allbinary.business.init.InitInfoInterface_Package is
    procedure setTestHtmlPath (This : in out InitInfoInterface; value_Param : access AbPath_Package.AbPath'Class) is abstract;
    procedure setMainPath (This : in out InitInfoInterface; value_Param : access AbPath_Package.AbPath'Class) is abstract;
    function isTestingValid (This : in out InitInfoInterface; testing : Unbounded_String) return Boolean is abstract;
+   procedure isTestingValid (This : in out InitInfoInterface; testing : Unbounded_String) is abstract;
    function isTestHtmlPathValid (This : in out InitInfoInterface; value_Param : access AbPath_Package.AbPath'Class) return Boolean is abstract;
+   procedure isTestHtmlPathValid (This : in out InitInfoInterface; value_Param : access AbPath_Package.AbPath'Class) is abstract;
    function isMainPathValid (This : in out InitInfoInterface; value_Param : access AbPath_Package.AbPath'Class) return Boolean is abstract;
+   procedure isMainPathValid (This : in out InitInfoInterface; value_Param : access AbPath_Package.AbPath'Class) is abstract;
 
 end org.allbinary.business.init.InitInfoInterface_Package;
 

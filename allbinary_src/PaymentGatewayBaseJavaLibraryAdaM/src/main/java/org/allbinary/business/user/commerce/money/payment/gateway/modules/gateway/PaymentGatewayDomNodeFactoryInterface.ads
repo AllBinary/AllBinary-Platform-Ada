@@ -77,6 +77,7 @@ package org.allbinary.business.user.commerce.money.payment.gateway.modules.gatew
    function "=" (Left, Right : PaymentGatewayDomNodeFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package_References."=";
    function Java_Object_Access_From_PaymentGatewayDomNodeFactoryInterface (Value : PaymentGatewayDomNodeFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out PaymentGatewayDomNodeFactoryInterface; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) return DomNodeInterface_Access is abstract;
+   procedure getInstance (This : in out PaymentGatewayDomNodeFactoryInterface; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package;
 

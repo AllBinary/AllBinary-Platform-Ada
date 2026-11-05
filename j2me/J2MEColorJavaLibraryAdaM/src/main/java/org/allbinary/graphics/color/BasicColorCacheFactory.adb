@@ -21,6 +21,7 @@ with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
 
 package body org.allbinary.graphics.color.BasicColorCacheFactory_Package is
 
@@ -80,7 +81,7 @@ package body org.allbinary.graphics.color.BasicColorCacheFactory_Package is
       basicColor : BasicColor_Access;
    begin
         basicColor := BasicColor_Access (This.hashtable.get (Java_Box (integer_Id)));
-        if (basicColor) = (null) then
+        if org.allbinary.graphics.color.BasicColor_Package_References."=" (basicColor, null) then
             basicColor := BasicColorFactory_Package.getInstance.createInstance (Integer (integer_Id));
             This.hashtable.put (Java_Box (integer_Id), basicColor);
         end if;

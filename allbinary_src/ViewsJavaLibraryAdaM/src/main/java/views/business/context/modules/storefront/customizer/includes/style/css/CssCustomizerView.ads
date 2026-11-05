@@ -91,7 +91,7 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    function "=" (Left, Right : CssCustomizerView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.css.CssCustomizerView_Package_References."=";
 
    type CssCustomizerView is new HttpStoreComponentView with record
-      logUtil : LogUtil_Access;
+      CssCustomizerView_Field_logUtil : LogUtil_Access;
       styleValidationInterface : ValidationInterface_Access;
    end record;
 

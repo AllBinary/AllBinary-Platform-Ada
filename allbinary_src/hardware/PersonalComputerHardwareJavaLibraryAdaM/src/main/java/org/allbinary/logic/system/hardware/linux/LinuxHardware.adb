@@ -58,6 +58,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package; use org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package;
 with org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package;
+with org.allbinary.logic.system.hardware.components.linux.Cpu_Package_References;
 
 package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
 
@@ -275,7 +276,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Enough Data For A Valid License On Linux")));
         end if;
         cpu := Cpu_Package.Create;
-        if (cpu) /= (null) then
+        if (not org.allbinary.logic.system.hardware.components.linux.Cpu_Package_References."=" (cpu, null)) then
             This.cpuInterfaceVector.add (Java_Object_Access (cpu));
             This.componentInterfaceVector.add (Java_Object_Access (cpu));
         end if;

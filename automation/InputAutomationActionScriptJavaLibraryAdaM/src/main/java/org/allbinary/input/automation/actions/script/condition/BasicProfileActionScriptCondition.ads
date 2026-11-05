@@ -145,7 +145,7 @@ package org.allbinary.input.automation.actions.script.condition.BasicProfileActi
    function "=" (Left, Right : BasicProfileActionScriptCondition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References."=";
 
    type BasicProfileActionScriptCondition is new ProfileActionScriptItem and ProfileActionScriptConditionInterface with record
-      logUtil : LogUtil_Access;
+      BasicProfileActionScriptCondition_Field_logUtil : LogUtil_Access;
       profileActionProcessorInterfaceVector : BasicArrayList_Access;
       profileActionConditionInterfaceVector : BasicArrayList_Access;
    end record;

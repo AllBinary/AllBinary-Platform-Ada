@@ -28,6 +28,8 @@ with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbin
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package; use org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactoryInterface_Package_References;
+with org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package_References;
 
 package body org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package is
 
@@ -136,7 +138,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    --  throws Exception
    function getPaymentGatewayInterfaceFactoryInterface (This : in out BasicPaymentType) return PaymentGatewayInterfaceFactoryInterface_Access is
    begin
-        if (This.paymentGatewayInterfaceFactoryInterface) = (null) then
+        if org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactoryInterface_Package_References."=" (This.paymentGatewayInterfaceFactoryInterface, null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("PaymentGatewayInterfaceFactoryInterface is Null")));
         end if;
         return This.paymentGatewayInterfaceFactoryInterface;
@@ -145,7 +147,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    --  throws Exception
    function getPaymentGatewayDomNodeFactoryInterface (This : in out BasicPaymentType) return PaymentGatewayDomNodeFactoryInterface_Access is
    begin
-        if (This.paymentGatewayDomNodeFactoryInterface) = (null) then
+        if org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package_References."=" (This.paymentGatewayDomNodeFactoryInterface, null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("PaymentGatewayDomNodeFactoryInterface is Null")));
         end if;
         return This.paymentGatewayDomNodeFactoryInterface;

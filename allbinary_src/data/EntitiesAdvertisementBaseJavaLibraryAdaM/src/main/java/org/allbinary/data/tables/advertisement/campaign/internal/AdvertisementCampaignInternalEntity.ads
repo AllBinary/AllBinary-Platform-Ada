@@ -31,6 +31,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References;
 limited with org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package;
@@ -43,11 +45,22 @@ with org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCamp
 package org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package AdvertisementCampaignInterface_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
    package AdvertisementCampaignsInterface_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
    package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
    subtype AdvertisementCampaignInterface_Access is org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References.AdvertisementCampaignInterface_Access;
    use type AdvertisementCampaignInterface_Access;
    subtype AdvertisementCampaignInterface_Access_Array is org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References.AdvertisementCampaignInterface_Access_Array;
@@ -109,6 +122,7 @@ package org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementC
    function createTableStatement (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String;
    function createTable (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String;
    function dropTable (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String;
+   procedure insert (This : in out AdvertisementCampaignInternalEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package;
 

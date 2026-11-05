@@ -119,7 +119,7 @@ package views.admin.payment.gateways.PaymentGatewaysView_Package is
    function "=" (Left, Right : PaymentGatewaysView_Access_Array_Access_Array_Access) return Boolean renames views.admin.payment.gateways.PaymentGatewaysView_Package_References."=";
 
    type PaymentGatewaysView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      PaymentGatewaysView_Field_logUtil : LogUtil_Access;
       paymentGatewayVector : BasicArrayList_Access;
    end record;
 

@@ -133,8 +133,8 @@ package views.admin.customizers.CustomizersView_Package is
    function "=" (Left, Right : CustomizersView_Access_Array_Access_Array_Access) return Boolean renames views.admin.customizers.CustomizersView_Package_References."=";
 
    type CustomizersView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
-      commonStrings : CommonStrings_Access;
+      CustomizersView_Field_logUtil : LogUtil_Access;
+      CustomizersView_Field_commonStrings : CommonStrings_Access;
       customizersVector : BasicArrayList_Access;
    end record;
 

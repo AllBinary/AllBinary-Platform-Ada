@@ -78,7 +78,7 @@ package views.business.context.modules.storefront.generator.GeneratorStoreFrontC
    function "=" (Left, Right : GeneratorStoreFrontContextView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.generator.GeneratorStoreFrontContextView_Package_References."=";
 
    type GeneratorStoreFrontContextView is new HttpStoreComponentView with record
-      logUtil : LogUtil_Access;
+      GeneratorStoreFrontContextView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out GeneratorStoreFrontContextView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);

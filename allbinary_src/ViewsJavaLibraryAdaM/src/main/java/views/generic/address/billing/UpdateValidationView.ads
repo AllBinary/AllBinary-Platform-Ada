@@ -100,6 +100,7 @@ package views.generic_Id.address.billing.UpdateValidationView_Package is
    function toValidationInfoDoc (This : in out UpdateValidationView) return Document_Access;
    function toValidationInfoNode (This : in out UpdateValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out UpdateValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out UpdateValidationView) return TransformInfoInterface_Access;
 
 end views.generic_Id.address.billing.UpdateValidationView_Package;
 

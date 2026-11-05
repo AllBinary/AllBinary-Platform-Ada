@@ -32,6 +32,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.ListIterator_Package; use java.util.ListIterator_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
+limited with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package;
 with org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package_References;
 limited with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
@@ -45,12 +47,23 @@ with org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntityInt
 
 package org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasketReview_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package;
    package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
    package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
    package Reference_Types is
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   use type BasicArrayList_Access;
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   use type BasicArrayList_Access_Array;
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access;
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   use type BasicArrayList_Access_Array_Access_Array;
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   use type BasicArrayList_Access_Array_Access_Array_Access;
    subtype BasketReview_Access is org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package_References.BasketReview_Access;
    use type BasketReview_Access;
    subtype BasketReview_Access_Array is org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package_References.BasketReview_Access_Array;
@@ -123,6 +136,7 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity
    function createTableStatement (This : in out OrderItemsEntity) return Unbounded_String;
    function createTable (This : in out OrderItemsEntity) return Unbounded_String;
    function dropTable (This : in out OrderItemsEntity) return Unbounded_String;
+   procedure insert (This : in out OrderItemsEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
 

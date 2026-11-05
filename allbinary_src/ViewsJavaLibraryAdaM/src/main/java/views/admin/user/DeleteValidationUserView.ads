@@ -106,7 +106,7 @@ package views.admin.user.DeleteValidationUserView_Package is
    function "=" (Left, Right : DeleteValidationUserView_Access_Array_Access_Array_Access) return Boolean renames views.admin.user.DeleteValidationUserView_Package_References."=";
 
    type DeleteValidationUserView is new UserView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      DeleteValidationUserView_Field_logUtil : LogUtil_Access;
       userName : Unbounded_String;
    end record;
 
@@ -117,6 +117,7 @@ package views.admin.user.DeleteValidationUserView_Package is
    function toValidationInfoDoc (This : in out DeleteValidationUserView) return Document_Access;
    function toValidationInfoNode (This : in out DeleteValidationUserView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out DeleteValidationUserView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out DeleteValidationUserView) return TransformInfoInterface_Access;
 
 end views.admin.user.DeleteValidationUserView_Package;
 

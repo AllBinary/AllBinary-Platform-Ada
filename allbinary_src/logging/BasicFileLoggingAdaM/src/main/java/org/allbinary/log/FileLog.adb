@@ -99,7 +99,7 @@ package body org.allbinary.log.FileLog_Package is
             tmpOut := BufferedWriter_Package.Create (FileWriter_Package.Create (logFileBak));
             tmpIn := BufferedReader_Package.Create (FileReader_Package.Create (logFile));
             while ((Java_Assign (line, tmpIn.readLine))) /= (null) loop
-                tmpOut.write (line, 0, Length (line));
+                tmpOut.write (line, 0, Ada.Strings.Unbounded.Length (line));
                 tmpOut.newLine;
             end loop;
             tmpOut.flush;
@@ -157,7 +157,7 @@ package body org.allbinary.log.FileLog_Package is
                 className := Java_New_String (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag)));
             end if;
             message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
-            FileLog_Package.fileOut.write (message, 0, Length (message));
+            FileLog_Package.fileOut.write (message, 0, Ada.Strings.Unbounded.Length (message));
             FileLog_Package.fileOut.newLine;
             FileLog_Package.fileOut.flush;
             return Java_New_String (Java_Image (FileLog_Package.ORG_ALLBINARY) & message);
@@ -203,7 +203,7 @@ package body org.allbinary.log.FileLog_Package is
                 specialMessage := Java_New_String (FileLog_Package.stringUtil.NULL_STRING);
             end if;
             message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
-            FileLog_Package.fileOut.write (message, 0, Length (message));
+            FileLog_Package.fileOut.write (message, 0, Ada.Strings.Unbounded.Length (message));
             FileLog_Package.fileOut.newLine;
             FileLog_Package.fileOut.flush;
             return Java_New_String (Java_Image (FileLog_Package.ORG_ALLBINARY) & message);

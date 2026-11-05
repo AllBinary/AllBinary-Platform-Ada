@@ -66,7 +66,7 @@ package tags.workflow.processing.basic.BasicWorkFlowTag_Package is
    function "=" (Left, Right : BasicWorkFlowTag_Access_Array_Access_Array_Access) return Boolean renames tags.workflow.processing.basic.BasicWorkFlowTag_Package_References."=";
 
    type BasicWorkFlowTag is new StoreWorkFlowTag with record
-      logUtil : LogUtil_Access;
+      BasicWorkFlowTag_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out BasicWorkFlowTag'Class);

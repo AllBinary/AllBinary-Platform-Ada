@@ -67,7 +67,7 @@ package tags.ValidationTransformTag_Package is
    function "=" (Left, Right : ValidationTransformTag_Access_Array_Access_Array_Access) return Boolean renames tags.ValidationTransformTag_Package_References."=";
 
    type ValidationTransformTag is new TransformTag with record
-      logUtil : LogUtil_Access;
+      ValidationTransformTag_Field_logUtil : LogUtil_Access;
       xslFile : Unbounded_String;
       logic : Boolean;
    end record;

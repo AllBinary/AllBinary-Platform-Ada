@@ -153,9 +153,9 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
         end if;
         This.adjustedCostLabelY := ((-(This.yOffset)) + (imageHeight)) - (((3) * (fontHeight)));
         This.adjustedCostY := ((-(This.yOffset)) + (imageHeight)) - (((2) * (fontHeight)));
-        This.adjustedCostX := (2) + (((Length (This.DOLLAR)) * (((fontHeight) - (1)))));
+        This.adjustedCostX := (2) + (((Ada.Strings.Unbounded.Length (This.DOLLAR)) * (((fontHeight) - (1)))));
         This.adjustedLevelY := ((-(This.yOffset)) + (imageHeight)) - (fontHeight);
-        This.adjustedLevelX := (2) + (((Length (This.LEVEL)) * (((fontHeight) - (1)))));
+        This.adjustedLevelX := (2) + (((Ada.Strings.Unbounded.Length (This.LEVEL)) * (((fontHeight) - (1)))));
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 

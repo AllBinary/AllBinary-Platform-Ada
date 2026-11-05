@@ -91,7 +91,7 @@ package views.business.context.modules.storefront.customizer.includes.style.them
    function "=" (Left, Right : ThemeCustomizerView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References."=";
 
    type ThemeCustomizerView is new HttpStoreComponentView with record
-      logUtil : LogUtil_Access;
+      ThemeCustomizerView_Field_logUtil : LogUtil_Access;
       validationInterface : ValidationInterface_Access;
    end record;
 

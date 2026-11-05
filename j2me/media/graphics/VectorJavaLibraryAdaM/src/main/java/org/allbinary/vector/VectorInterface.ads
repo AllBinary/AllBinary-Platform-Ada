@@ -51,6 +51,7 @@ package org.allbinary.vector.VectorInterface_Package is
    function "=" (Left, Right : VectorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.vector.VectorInterface_Package_References."=";
    function Java_Object_Access_From_VectorInterface (Value : VectorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getPoints (This : in out VectorInterface; frame : Integer) return Integer_Array_Access_Array_Access is abstract;
+   procedure getPoints (This : in out VectorInterface; frame : Integer) is abstract;
    procedure setPoints (This : in out VectorInterface; currentPoints : Integer_Array_Access_Array_Access_Array_Access) is abstract;
 
 end org.allbinary.vector.VectorInterface_Package;

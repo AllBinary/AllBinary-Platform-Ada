@@ -130,7 +130,7 @@ package org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is
    function "=" (Left, Right : TempExplosionWeaponLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package_References."=";
 
    type TempExplosionWeaponLayer is new SimpleWeaponLayer with record
-      weaponProperties : WeaponProperties_Access;
+      TempExplosionWeaponLayer_Field_weaponProperties : WeaponProperties_Access;
       timeDelayHelper : TimeDelayHelper_Access;
    end record;
 

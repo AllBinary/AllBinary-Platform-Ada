@@ -84,7 +84,7 @@ package body org.allbinary.graphics.form.item.validation.TextFieldItemValidator_
         booleanFactory := BooleanFactory_Package.getInstance;
         result := booleanFactory.TRUE;
         string_Id := This.textFieldItem.getString;
-        textLength := Length (string_Id);
+        textLength := Ada.Strings.Unbounded.Length (string_Id);
         if ((((textLength) = (0)) and then (This.allowOnEmpty))) or else (((textLength) > (This.min)) and then ((textLength) < (This.max))) then
             null;
         else
@@ -106,12 +106,12 @@ package body org.allbinary.graphics.form.item.validation.TextFieldItemValidator_
    begin
         list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         string_Id := This.textFieldItem.getString;
-        textLength := Length (string_Id);
+        textLength := Ada.Strings.Unbounded.Length (string_Id);
         if ((textLength) > (This.min)) and then ((textLength) < (This.max)) then
             null;
         else
             label := This.textFieldItem.getLabel;
-            name := Unbounded_Slice (label, (0) + 1, (Length (label)) - (2));
+            name := Unbounded_Slice (label, (0) + 1, (Ada.Strings.Unbounded.Length (label)) - (2));
             if (textLength) < (This.min) then
                 list.add (StringMaker_Package.Create.append (name).append (To_Unbounded_String (" is to short")).toString);
             elsif (textLength) > (This.max) then

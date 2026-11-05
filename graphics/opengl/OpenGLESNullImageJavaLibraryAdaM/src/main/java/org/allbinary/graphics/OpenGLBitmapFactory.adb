@@ -138,6 +138,8 @@ with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbina
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package_References;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References;
+with org.allbinary.graphics.OpenGLBitmapFactory_Package; use org.allbinary.graphics.OpenGLBitmapFactory_Package;
+with org.allbinary.graphics.OpenGLBitmapFactory_Package_References;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package_References;
 with org.allbinary.graphics.OpenGLBitmap_Package;
@@ -176,6 +178,16 @@ package body org.allbinary.graphics.Config_Package is
    function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
    subtype PlatformBitmapBaseFactory_Access_Array_Access_Array_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   subtype OpenGLBitmapFactory_Access is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access;
+   function "=" (Left, Right : OpenGLBitmapFactory_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References."=";
+   subtype OpenGLBitmapFactory_Access_Array is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array;
+   function "=" (Left, Right : OpenGLBitmapFactory_Access_Array) return Boolean renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References."=";
+   subtype OpenGLBitmapFactory_Access_Array_Access is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array_Access;
+   function "=" (Left, Right : OpenGLBitmapFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References."=";
+   subtype OpenGLBitmapFactory_Access_Array_Access_Array is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : OpenGLBitmapFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References."=";
+   subtype OpenGLBitmapFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : OpenGLBitmapFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References."=";
    subtype OpenGLBitmap_Access is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access;
    function "=" (Left, Right : OpenGLBitmap_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmap_Package_References."=";
    subtype OpenGLBitmap_Access_Array is org.allbinary.graphics.OpenGLBitmap_Package_References.OpenGLBitmap_Access_Array;

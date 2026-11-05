@@ -156,6 +156,12 @@ package body views.business.context.modules.storefront.customizer.includes.globa
         return This.views.ValidationOnlyTempUtil.getInstance.view (NewGlobalsValidationView_Access'(This'Unchecked_Access));
    end view;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out NewGlobalsValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (GlobalsView_Package.GlobalsView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out NewGlobalsValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := NewGlobalsValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

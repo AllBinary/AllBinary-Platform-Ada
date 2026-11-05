@@ -233,6 +233,8 @@ limited with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package_References;
 limited with org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.PlayerGameInput_Package_References;
+limited with org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package;
+with org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References;
 
 package org.allbinary.game.input.PreGameSelectionRunnable_Package is
 
@@ -356,6 +358,16 @@ package org.allbinary.game.input.PreGameSelectionRunnable_Package is
    use type PlayerGameInput_Access_Array_Access_Array;
    subtype PlayerGameInput_Access_Array_Access_Array_Access is org.allbinary.game.input.PlayerGameInput_Package_References.PlayerGameInput_Access_Array_Access_Array_Access;
    use type PlayerGameInput_Access_Array_Access_Array_Access;
+   subtype PreGameSelectionGameInputProcessor_Access is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access;
+   use type PreGameSelectionGameInputProcessor_Access;
+   subtype PreGameSelectionGameInputProcessor_Access_Array is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array;
+   use type PreGameSelectionGameInputProcessor_Access_Array;
+   subtype PreGameSelectionGameInputProcessor_Access_Array_Access is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array_Access;
+   use type PreGameSelectionGameInputProcessor_Access_Array_Access;
+   subtype PreGameSelectionGameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array_Access_Array;
+   use type PreGameSelectionGameInputProcessor_Access_Array_Access_Array;
+   subtype PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access;
+   use type PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

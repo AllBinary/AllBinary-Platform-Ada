@@ -105,6 +105,7 @@ package views.admin.payment.gateways.SelectExistingValidationView_Package is
    function toXmlNode (This : in out SelectExistingValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toXmlNode (This : in out SelectExistingValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out SelectExistingValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out SelectExistingValidationView) return TransformInfoInterface_Access;
 
 end views.admin.payment.gateways.SelectExistingValidationView_Package;
 

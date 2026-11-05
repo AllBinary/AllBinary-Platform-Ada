@@ -118,7 +118,7 @@ package org.allbinary.input.automation.actions.script.condition.TimeIntervalActi
    function "=" (Left, Right : TimeIntervalActionScriptCondition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package_References."=";
 
    type TimeIntervalActionScriptCondition is new BasicProfileActionScriptCondition and TimeIntervalActionScriptConditionInterface with record
-      logUtil : LogUtil_Access;
+      TimeIntervalActionScriptCondition_Field_logUtil : LogUtil_Access;
       timeIntervalActionScriptConditionJPanel : TimeIntervalActionScriptConditionJPanel_Access;
       timeHelper : TimeDelayHelper_Access;
    end record;

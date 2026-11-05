@@ -77,6 +77,7 @@ package org.allbinary.game.input.LayerPositionFinderInterface_Package is
    function "=" (Left, Right : LayerPositionFinderInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.LayerPositionFinderInterface_Package_References."=";
    function Java_Object_Access_From_LayerPositionFinderInterface (Value : LayerPositionFinderInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getLayerInterface (This : in out LayerPositionFinderInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return AllBinaryLayer_Access is abstract;
+   procedure getLayerInterface (This : in out LayerPositionFinderInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is abstract;
 
 end org.allbinary.game.input.LayerPositionFinderInterface_Package;
 

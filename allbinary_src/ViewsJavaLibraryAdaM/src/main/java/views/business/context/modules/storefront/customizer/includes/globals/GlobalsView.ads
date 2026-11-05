@@ -119,7 +119,7 @@ package views.business.context.modules.storefront.customizer.includes.globals.Gl
    function "=" (Left, Right : GlobalsView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.GlobalsView_Package_References."=";
 
    type GlobalsView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      GlobalsView_Field_logUtil : LogUtil_Access;
       globalsValidation : GlobalsValidation_Access;
    end record;
 

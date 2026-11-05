@@ -94,6 +94,8 @@ package org.allbinary.animation.vector.RectangleAdjustedAnimation_Package is
    procedure setHeight (This : in out RectangleAdjustedAnimation; height : Integer);
    procedure setOffsetX (This : in out RectangleAdjustedAnimation; offsetX : Integer);
    procedure setOffsetY (This : in out RectangleAdjustedAnimation; offsetY : Integer);
+   function getBasicColorP (This : in out RectangleAdjustedAnimation) return BasicColor_Access;
+   procedure setBasicColorP (This : in out RectangleAdjustedAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
 

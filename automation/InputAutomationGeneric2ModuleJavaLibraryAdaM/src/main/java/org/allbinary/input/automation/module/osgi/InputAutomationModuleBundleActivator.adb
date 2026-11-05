@@ -31,6 +31,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References;
 
 package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package is
 
@@ -137,7 +138,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
         serviceReference := context.getServiceReference (InputAutomationConfigurationModuleChangeListener_Package.InputAutomationConfigurationModuleChangeListener'Tag.getName);
         if (serviceReference) /= (null) then
             inputAutomationConfigurationModuleChangeListener := InputAutomationConfigurationModuleChangeListener_Access (context.getService (serviceReference));
-            if (inputAutomationConfigurationModuleChangeListener) = (null) then
+            if bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References."=" (inputAutomationConfigurationModuleChangeListener, null) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Service For ServiceReference")));
             end if;
             return inputAutomationConfigurationModuleChangeListener;
@@ -156,7 +157,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("addModules"));
             inputAutomationConfigurationModuleChangeListener := InputAutomationModuleBundleActivator'Class (This).getInputAutomationConfigurationModuleChangeListener (context);
-            if (inputAutomationConfigurationModuleChangeListener) /= (null) then
+            if (not bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References."=" (inputAutomationConfigurationModuleChangeListener, null)) then
                 for index in 0 .. (InputAutomationModuleBundleActivator'Class (This).getInputAutomationModuleInterface'Length) - 1 loop
                     inputAutomationConfigurationModuleChangeEvent := InputAutomationConfigurationUtil_Package.getChangeEvent (InputAutomationModuleBundleActivator'Class (This).getInputAutomationModuleInterface (index));
                     inputAutomationConfigurationModuleChangeListener.onAdd (inputAutomationConfigurationModuleChangeEvent);
@@ -188,7 +189,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("removeModules"));
             inputAutomationConfigurationModuleChangeListener := InputAutomationModuleBundleActivator'Class (This).getInputAutomationConfigurationModuleChangeListener (context);
-            if (inputAutomationConfigurationModuleChangeListener) /= (null) then
+            if (not bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package_References."=" (inputAutomationConfigurationModuleChangeListener, null)) then
                 for index in 0 .. (InputAutomationModuleBundleActivator'Class (This).getInputAutomationModuleInterface'Length) - 1 loop
                     inputAutomationConfigurationModuleChangeEvent := InputAutomationConfigurationUtil_Package.getChangeEvent (InputAutomationModuleBundleActivator'Class (This).getInputAutomationModuleInterface (index));
                     inputAutomationConfigurationModuleChangeListener.onRemove (inputAutomationConfigurationModuleChangeEvent);

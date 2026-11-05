@@ -92,7 +92,9 @@ package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGat
    function "=" (Left, Right : PaymentGatewayEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityInterface_Package_References."=";
    function Java_Object_Access_From_PaymentGatewayEntityInterface (Value : PaymentGatewayEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getPaymentGatewayInterface (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) return PaymentGatewayInterface_Access is abstract;
+   procedure getPaymentGatewayInterface (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is abstract;
    function findPaymentTypeVectorByStore (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
+   procedure findPaymentTypeVectorByStore (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String) is abstract;
    procedure remove (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is abstract;
    procedure add (This : in out PaymentGatewayEntityInterface; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is abstract;
    procedure update (This : in out PaymentGatewayEntityInterface; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is abstract;

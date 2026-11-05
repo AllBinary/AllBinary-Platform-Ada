@@ -153,6 +153,12 @@ package body views.admin.storefront.UpdateValidationStoreFrontView_Package is
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out UpdateValidationStoreFrontView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (StoreFrontComponent_Package.StoreFrontComponent (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out UpdateValidationStoreFrontView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := UpdateValidationStoreFrontView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

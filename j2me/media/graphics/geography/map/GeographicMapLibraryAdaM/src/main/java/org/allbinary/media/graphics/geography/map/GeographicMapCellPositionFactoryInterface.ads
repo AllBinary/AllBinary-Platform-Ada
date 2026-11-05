@@ -75,6 +75,7 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFact
    function "=" (Left, Right : GeographicMapCellPositionFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package_References."=";
    function Java_Object_Access_From_GeographicMapCellPositionFactoryInterface (Value : GeographicMapCellPositionFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out GeographicMapCellPositionFactoryInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access is abstract;
+   procedure getInstance (This : in out GeographicMapCellPositionFactoryInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) is abstract;
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
 

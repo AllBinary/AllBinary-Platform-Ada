@@ -20,6 +20,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References;
 
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package is
 
@@ -86,7 +87,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
         stringBuffer.append (To_Unbounded_String (" Path: "));
         stringBuffer.append (This.geographicMapCellPosition.toString);
         pathFindingNode_Var := PathFindingNode'Class (This).getParentP;
-        while (pathFindingNode_Var) /= (null) loop
+        while (not org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References."=" (pathFindingNode_Var, null)) loop
             stringBuffer.append (pathFindingNode_Var.geographicMapCellPosition.toString);
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
             pathFindingNode_Var := pathFindingNode_Var.getParentP;

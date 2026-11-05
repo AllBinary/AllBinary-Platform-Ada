@@ -99,7 +99,7 @@ package body org.allbinary.business.init.db.DbConnectionInfo_Package is
         stringBuffer.append (DbConnectionInfo'Class (This).getSchema);
         stringBuffer.append (This.SCHEMA_SEP);
         stringBuffer.append (DbConnectionInfo'Class (This).getServer);
-        if ((DbConnectionInfo'Class (This).getPort) /= (null)) and then ((DbConnectionInfo'Class (This).getPort.length) > (1)) then
+        if ((DbConnectionInfo'Class (This).getPort) /= (Null_Unbounded_String)) and then ((Ada.Strings.Unbounded.Length (DbConnectionInfo'Class (This).getPort)) > (1)) then
             stringBuffer.append (CommonSeps_Package.getInstance.COLON);
             stringBuffer.append (DbConnectionInfo'Class (This).getPort);
         end if;

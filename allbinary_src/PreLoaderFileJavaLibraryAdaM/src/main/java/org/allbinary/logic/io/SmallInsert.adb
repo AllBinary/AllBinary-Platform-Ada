@@ -103,9 +103,9 @@ package body org.allbinary.logic.io.SmallInsert_Package is
                 Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("No such start: ") & after & To_Unbounded_String (" in: ") & This.string_Id));
                 return False;
             end if;
-            index := (index) + (Length (after));
+            index := (index) + (Ada.Strings.Unbounded.Length (after));
             start := Unbounded_Slice (This.string_Id, (0) + 1, index);
-            end_Id := Unbounded_Slice (This.string_Id, ((index) + (1)) + 1, Length (This.string_Id));
+            end_Id := Unbounded_Slice (This.string_Id, ((index) + (1)) + 1, Ada.Strings.Unbounded.Length (This.string_Id));
             idFile := FileOutputStream_Package.Create (This.fileName);
             idOutData := DataOutputStream_Package.Create (idFile);
             idOutData.writeBytes (start & text & end_Id);

@@ -94,7 +94,7 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
    function "=" (Left, Right : TitleNotRequiredValidation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleNotRequiredValidation_Package_References."=";
 
    type TitleNotRequiredValidation is new TitleView and ValidationInterface with record
-      logUtil : LogUtil_Access;
+      TitleNotRequiredValidation_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out TitleNotRequiredValidation'Class);

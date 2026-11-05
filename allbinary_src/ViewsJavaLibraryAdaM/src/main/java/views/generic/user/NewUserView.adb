@@ -141,6 +141,12 @@ package body views.generic_Id.user.NewUserView_Package is
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out NewUserView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (UserView_Package.UserView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out NewUserView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := NewUserView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

@@ -91,7 +91,7 @@ package views.admin.user.UserView_Package is
    function "=" (Left, Right : UserView_Access_Array_Access_Array_Access) return Boolean renames views.admin.user.UserView_Package_References."=";
 
    type UserView is new HttpContextView with record
-      logUtil : LogUtil_Access;
+      UserView_Field_logUtil : LogUtil_Access;
       user : UserInterface_Access;
    end record;
 

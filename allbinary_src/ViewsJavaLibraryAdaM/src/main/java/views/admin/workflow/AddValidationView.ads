@@ -118,8 +118,8 @@ package views.admin.workflow.AddValidationView_Package is
    function "=" (Left, Right : AddValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.workflow.AddValidationView_Package_References."=";
 
    type AddValidationView is new WorkFlowView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
-      abeClientInformation : AbeClientInformationInterface_Access;
+      AddValidationView_Field_logUtil : LogUtil_Access;
+      AddValidationView_Field_abeClientInformation : AbeClientInformationInterface_Access;
    end record;
 
    procedure Initialize (This : in out AddValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -129,6 +129,7 @@ package views.admin.workflow.AddValidationView_Package is
    function toValidationInfoDoc (This : in out AddValidationView) return Document_Access;
    function toValidationInfoNode (This : in out AddValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out AddValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out AddValidationView) return TransformInfoInterface_Access;
 
 end views.admin.workflow.AddValidationView_Package;
 

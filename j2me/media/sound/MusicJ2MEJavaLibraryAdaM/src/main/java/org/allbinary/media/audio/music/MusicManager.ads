@@ -239,6 +239,8 @@ limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
+limited with org.allbinary.media.audio.music.MusicManager_Package;
+with org.allbinary.media.audio.music.MusicManager_Package_References;
 
 package org.allbinary.media.audio.music.MusicManagerPlayerListener_Package is
 
@@ -343,6 +345,16 @@ package org.allbinary.media.audio.music.MusicManagerPlayerListener_Package is
    use type BasicArrayListUtil_Access_Array_Access_Array;
    subtype BasicArrayListUtil_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array_Access;
    use type BasicArrayListUtil_Access_Array_Access_Array_Access;
+   subtype MusicManager_Access is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access;
+   use type MusicManager_Access;
+   subtype MusicManager_Access_Array is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array;
+   use type MusicManager_Access_Array;
+   subtype MusicManager_Access_Array_Access is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array_Access;
+   use type MusicManager_Access_Array_Access;
+   subtype MusicManager_Access_Array_Access_Array is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array_Access_Array;
+   use type MusicManager_Access_Array_Access_Array;
+   subtype MusicManager_Access_Array_Access_Array_Access is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array_Access_Array_Access;
+   use type MusicManager_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

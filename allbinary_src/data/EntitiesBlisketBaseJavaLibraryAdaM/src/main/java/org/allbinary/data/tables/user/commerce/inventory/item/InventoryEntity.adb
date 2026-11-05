@@ -293,6 +293,11 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
         return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
+   procedure deleteWhere (This : in out InventoryEntity; key : Unbounded_String; value : Unbounded_String) is
+   begin
+        AbSqlBean_Package.AbSqlBean (This).deleteWhere (key, value);
+   end deleteWhere;
+
    procedure getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant BasicArrayList_Access := InventoryEntity'Class (This).getItems (storeFrontInterface_Param => storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);

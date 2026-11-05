@@ -66,7 +66,7 @@ package body org.allbinary.logic.io.BufferedIOUtil_Package is
             if (line) = (Null_Unbounded_String) then
                 exit;
             end if;
-            tmpOut.write (line, 0, Length (line));
+            tmpOut.write (line, 0, Ada.Strings.Unbounded.Length (line));
             tmpOut.newLine;
         end loop;
         tmpOut.flush;

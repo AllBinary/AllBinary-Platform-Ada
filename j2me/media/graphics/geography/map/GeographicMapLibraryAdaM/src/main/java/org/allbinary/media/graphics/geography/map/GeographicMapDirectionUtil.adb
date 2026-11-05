@@ -21,6 +21,7 @@ with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.Cel
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package is
 
@@ -97,7 +98,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
             return Direction_Access (directionFactory.UP);
         elsif ((fromRow) + (1)) = (goRow) then
             return Direction_Access (directionFactory.DOWN);
-        elsif (fromGeographicMapCellPosition) = (toGeographicMapCellPosition) then
+        elsif org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (fromGeographicMapCellPosition, toGeographicMapCellPosition) then
             return Direction_Access (directionFactory.NO_DIRECTION);
         elsif ((fromRow) = (goRow)) and then ((fromColumn) = (goColumn)) then
             Java_Throw (Java_New_Exception ("Exception", This.MESSAGE));
@@ -144,7 +145,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
             elsif ((fromColumn) + (1)) = (goColumn) then
                 return Direction_Access (directionFactory.DOWN_RIGHT);
             end if;
-        elsif (fromGeographicMapCellPosition) = (toGeographicMapCellPosition) then
+        elsif org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (fromGeographicMapCellPosition, toGeographicMapCellPosition) then
             return Direction_Access (directionFactory.NO_DIRECTION);
         elsif ((fromRow) = (goRow)) and then ((fromColumn) = (goColumn)) then
             Java_Throw (Java_New_Exception ("Exception", This.MESSAGE));
@@ -200,7 +201,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
         goColumn := toGeographicMapCellPosition.getColumn;
         goRow := toGeographicMapCellPosition.getRow;
         directionFactory := DirectionFactory_Package.getInstance;
-        if (fromGeographicMapCellPosition) = (toGeographicMapCellPosition) then
+        if org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (fromGeographicMapCellPosition, toGeographicMapCellPosition) then
             return Direction_Access (directionFactory.NO_DIRECTION);
         elsif (fromRow) = (goRow) then
             if (fromColumn) > (goColumn) then

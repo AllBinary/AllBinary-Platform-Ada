@@ -78,7 +78,7 @@ package views.business.context.modules.storefront.customizer.generic_Id.page.Pag
    function "=" (Left, Right : PageView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.generic_Id.page.PageView_Package_References."=";
 
    type PageView is new HttpStoreComponentView with record
-      logUtil : LogUtil_Access;
+      PageView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out PageView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);

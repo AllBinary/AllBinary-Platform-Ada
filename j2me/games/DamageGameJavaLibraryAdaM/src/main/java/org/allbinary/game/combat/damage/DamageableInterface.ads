@@ -54,6 +54,7 @@ package org.allbinary.game.combat.damage.DamageableInterface_Package is
    function Java_Object_Access_From_DamageableInterface (Value : DamageableInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure damage (This : in out DamageableInterface; damage : Integer; damageType : Integer) is abstract;
    function getDamage (This : in out DamageableInterface; damageType : Integer) return Integer is abstract;
+   procedure getDamage (This : in out DamageableInterface; damageType : Integer) is abstract;
 
 end org.allbinary.game.combat.damage.DamageableInterface_Package;
 

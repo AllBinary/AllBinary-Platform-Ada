@@ -83,15 +83,15 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
         i := 0;
         while (i) < (listeners'Length) loop
             if (listeners (i)) = (listeners ((i) + (1)).all'Tag) then
-                if (evt.getCommand.compareTo (MyGraphicItemEventService_Package.SELECT_Id)) = (0) then
+                if (Java_Compare_To (evt.getCommand, MyGraphicItemEventService_Package.SELECT_Id)) = (0) then
                     MyGraphicItemEventListener_Access (listeners ((i) + (1))).highlight (evt);
-                elsif (evt.getCommand.compareTo (MyGraphicItemEventService_Package.DESELECT)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyGraphicItemEventService_Package.DESELECT)) = (0) then
                     MyGraphicItemEventListener_Access (listeners ((i) + (1))).deselect (evt);
-                elsif (evt.getCommand.compareTo (MyGraphicItemEventService_Package.DELETE)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyGraphicItemEventService_Package.DELETE)) = (0) then
                     MyGraphicItemEventListener_Access (listeners ((i) + (1))).delete (evt);
-                elsif (evt.getCommand.compareTo (MyGraphicItemEventService_Package.DUPLICATE)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyGraphicItemEventService_Package.DUPLICATE)) = (0) then
                     MyGraphicItemEventListener_Access (listeners ((i) + (1))).duplicate (evt);
-                elsif (evt.getCommand.compareTo (MyGraphicItemEventService_Package.ROTATE)) = (0) then
+                elsif (Java_Compare_To (evt.getCommand, MyGraphicItemEventService_Package.ROTATE)) = (0) then
                     MyGraphicItemEventListener_Access (listeners ((i) + (1))).rotate (evt);
                 end if;
             end if;

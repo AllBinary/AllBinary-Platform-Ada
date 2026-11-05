@@ -176,6 +176,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package;
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References;
@@ -241,6 +243,16 @@ package body org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Pack
    function "=" (Left, Right : AndroidMediaPlayerWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References."=";
    subtype AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References.AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access;
    function "=" (Left, Right : MediaPlayerOnPreparedListener_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access_Array is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access_Array;
@@ -311,6 +323,8 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnErrorListener_Package; use org.allbinary.media.audio.MediaPlayerOnErrorListener_Package;
@@ -384,6 +398,16 @@ package body org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package is
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
    subtype MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References.MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
    subtype MediaPlayerOnErrorListener_Access is org.allbinary.media.audio.MediaPlayerOnErrorListener_Package_References.MediaPlayerOnErrorListener_Access;
    function "=" (Left, Right : MediaPlayerOnErrorListener_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnErrorListener_Package_References."=";
    subtype MediaPlayerOnErrorListener_Access_Array is org.allbinary.media.audio.MediaPlayerOnErrorListener_Package_References.MediaPlayerOnErrorListener_Access_Array;
@@ -444,6 +468,8 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References;
@@ -517,6 +543,16 @@ package body org.allbinary.media.audio.MediaPlayerOnErrorListener_Package is
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
    subtype MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References.MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access;
    function "=" (Left, Right : MediaPlayerOnPreparedListener_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access_Array is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access_Array;
@@ -584,6 +620,8 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References;
@@ -657,6 +695,16 @@ package body org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package i
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
    subtype MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References.MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access;
    function "=" (Left, Right : MediaPlayerOnPreparedListener_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access_Array is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access_Array;
@@ -715,6 +763,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package;
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package;
@@ -778,6 +828,16 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListen
    function "=" (Left, Right : AndroidMediaPlayerWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References."=";
    subtype AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References.AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AndroidMediaPlayerWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access;
    function "=" (Left, Right : MediaPlayerOnPreparedListener_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access_Array is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access_Array;
@@ -836,7 +896,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListen
       logUtil : LogUtil_Access;
    begin
             logUtil := LogUtil_Package.getInstance;
-            logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Update buffer: ")).appendint (i).append (To_Unbounded_String ("%")).toString, AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access), This.ON_BUFFERING_UPDATE);
+            logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Update buffer: ")).appendint (i).append (To_Unbounded_String ("%")).toString, AndroidMediaPlayerOnBufferingUpdateListener_Access'(This'Unchecked_Access), This.ON_BUFFERING_UPDATE);
             This.androidMediaPlayerWrapperListener_Var.androidMediaPlayerWrapper.update (PlayerListener_Package.DEVICE_UNAVAILABLE);
    end onBufferingUpdate;
 
@@ -856,6 +916,8 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnErrorListener_Package; use org.allbinary.media.audio.MediaPlayerOnErrorListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnErrorListener_Package_References;
@@ -927,6 +989,16 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Pack
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
    subtype MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References.MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
    subtype MediaPlayerOnErrorListener_Access is org.allbinary.media.audio.MediaPlayerOnErrorListener_Package_References.MediaPlayerOnErrorListener_Access;
    function "=" (Left, Right : MediaPlayerOnErrorListener_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnErrorListener_Package_References."=";
    subtype MediaPlayerOnErrorListener_Access_Array is org.allbinary.media.audio.MediaPlayerOnErrorListener_Package_References.MediaPlayerOnErrorListener_Access_Array;
@@ -977,7 +1049,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Pack
    begin
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
-            logUtil.putF (commonStrings.START, AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access), This.ON_PREPARE);
+            logUtil.putF (commonStrings.START, AndroidMediaPlayerOnPreparedListener_Access'(This'Unchecked_Access), This.ON_PREPARE);
             This.androidMediaPlayerWrapperListener_Var.androidMediaPlayerWrapper.update (PlayerListener_Package.DEVICE_AVAILABLE);
    end onPrepared;
 
@@ -997,6 +1069,8 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References;
@@ -1068,6 +1142,16 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
    subtype MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References.MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access;
    function "=" (Left, Right : MediaPlayerOnPreparedListener_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access_Array is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access_Array;
@@ -1116,7 +1200,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package
       logUtil : LogUtil_Access;
    begin
             logUtil := LogUtil_Package.getInstance;
-            logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (To_Unbounded_String ("What: ")).appendint (what).append (To_Unbounded_String (" Extra: ")).appendint (extra).toString, AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access), This.ON_ERROR);
+            logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (To_Unbounded_String ("What: ")).appendint (what).append (To_Unbounded_String (" Extra: ")).appendint (extra).toString, AndroidMediaPlayerOnErrorListener_Access'(This'Unchecked_Access), This.ON_ERROR);
             This.androidMediaPlayerWrapperListener_Var.androidMediaPlayerWrapper.update (PlayerListener_Package.ERROR);
             return True;
    end onError;
@@ -1144,6 +1228,8 @@ with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbin
 with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package_References;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References;
 with org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package; use org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package; use org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 with org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References;
@@ -1215,6 +1301,16 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Pa
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
    subtype MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References.MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MediaPlayerOnBufferingUpdateListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
+   subtype AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References.AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : AndroidMediaPlayerWrapperListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access;
    function "=" (Left, Right : MediaPlayerOnPreparedListener_Access) return Boolean renames org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References."=";
    subtype MediaPlayerOnPreparedListener_Access_Array is org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package_References.MediaPlayerOnPreparedListener_Access_Array;
@@ -1265,7 +1361,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Pa
    begin
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
-            logUtil.putF (commonStrings.START, AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access), This.ON_COMPLETE);
+            logUtil.putF (commonStrings.START, AndroidMediaPlayerOnCompletionListener_Access'(This'Unchecked_Access), This.ON_COMPLETE);
             This.androidMediaPlayerWrapperListener_Var.androidMediaPlayerWrapper.update (PlayerListener_Package.END_OF_MEDIA);
    end onCompletion;
 

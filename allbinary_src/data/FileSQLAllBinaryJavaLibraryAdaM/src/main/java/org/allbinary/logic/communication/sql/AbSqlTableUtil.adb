@@ -270,7 +270,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         stringBuffer := StringMaker_Package.Create;
         index := 0;
         lastIndex := 0;
-        while (index) < (Length (value)) loop
+        while (index) < (Ada.Strings.Unbounded.Length (value)) loop
             index := Java_Index_Of (value, Java_Image (This.specialCharArray (0)), lastIndex);
             if (index) /= (-(1)) then
                 nextLine := Unbounded_Slice (value, (lastIndex) + 1, (index) - (1));
@@ -281,8 +281,8 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                 exit;
             end if;
         end loop;
-        if (lastIndex) < (Length (value)) then
-            stringBuffer.append (Unbounded_Slice (value, (lastIndex) + 1, Length (value)));
+        if (lastIndex) < (Ada.Strings.Unbounded.Length (value)) then
+            stringBuffer.append (Unbounded_Slice (value, (lastIndex) + 1, Ada.Strings.Unbounded.Length (value)));
         end if;
         return stringBuffer.toString;
    end convertNewLines;
@@ -398,7 +398,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             bufferedLineReader.readUpToLines (start);
             line := This.stringUtil.EMPTY_STRING;
             while ((bufferedLineReader.getCurrent) < (end_Id)) and then (((Java_Assign (line, bufferedLineReader.readLine))) /= (null)) loop
-                if (Length (line)) > (1) then
+                if (Ada.Strings.Unbounded.Length (line)) > (1) then
                     abSqlTable.executeSQLStatement (line);
                 end if;
             end loop;

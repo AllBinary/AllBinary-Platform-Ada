@@ -187,6 +187,17 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (This.currentPoints'Length);
    end setPoints;
 
+   function getBasicColorP (This : in out VectorBaseRotationAnimation) return BasicColor_Access is
+   begin
+        return RotationAnimation_Package.RotationAnimation (This).getBasicColorP;
+   end getBasicColorP;
+
+   procedure setBasicColorP (This : in out VectorBaseRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
+   begin
+        RotationAnimation_Package.RotationAnimation (This).setBasicColorP (basicColor);
+   end setBasicColorP;
+
    procedure getPoints (This : in out VectorBaseRotationAnimation; frame : Integer) is
       Java_Result : constant Integer_Array_Access_Array_Access := VectorBaseRotationAnimation'Class (This).getPoints (frame => frame);
       pragma Unreferenced (Java_Result);

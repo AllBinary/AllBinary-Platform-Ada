@@ -64,7 +64,7 @@ package org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
    function "=" (Left, Right : AlwaysRepaintBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.AlwaysRepaintBehavior_Package_References."=";
 
    type AlwaysRepaintBehavior is new RepaintBehavior with record
-      NAME : Unbounded_String;
+      AlwaysRepaintBehavior_Field_NAME : Unbounded_String;
    end record;
    instanceC : AlwaysRepaintBehavior_Access;
 

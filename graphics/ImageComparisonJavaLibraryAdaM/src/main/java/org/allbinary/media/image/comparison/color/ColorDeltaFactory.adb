@@ -24,6 +24,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.media.image.comparison.color.ColorDelta_Package; use org.allbinary.media.image.comparison.color.ColorDelta_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package_References;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.media.image.comparison.color.ColorDelta_Package_References;
 
 package body org.allbinary.media.image.comparison.color.ColorDeltaFactory_Package is
 
@@ -111,7 +112,7 @@ package body org.allbinary.media.image.comparison.color.ColorDeltaFactory_Packag
       colorDelta : ColorDelta_Access;
    begin
         colorDelta := ColorDelta_Access (ColorDeltaFactory_Package.cacheInterface.get (ColorDelta_Package.getKey (rgb1, rgb2)));
-        if (colorDelta) = (null) then
+        if org.allbinary.media.image.comparison.color.ColorDelta_Package_References."=" (colorDelta, null) then
             colorDelta := ColorDelta_Package.Create (rgb1, rgb2);
         end if;
         return colorDelta;

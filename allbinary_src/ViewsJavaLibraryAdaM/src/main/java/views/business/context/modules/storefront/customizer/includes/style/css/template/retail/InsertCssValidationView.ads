@@ -106,7 +106,7 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    function "=" (Left, Right : InsertCssValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.InsertCssValidationView_Package_References."=";
 
    type InsertCssValidationView is new CssCustomizerView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      InsertCssValidationView_Field_logUtil_Hidden : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out InsertCssValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -118,6 +118,7 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    function toValidationInfoNode (This : in out InsertCssValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out InsertCssValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out InsertCssValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out InsertCssValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.style.css.template.retail.InsertCssValidationView_Package;
 

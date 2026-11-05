@@ -136,7 +136,7 @@ package body org.allbinary.business.init.InitInfo_Package is
             This.mainPath_Case := null;
             This.testHtmlPath_Case := null;
             initInfoEntity := InitInfoEntity_Package.Create;
-            initInfoEntity.get;
+            declare Java_Result renames initInfoEntity.get; pragma Unreferenced (Java_Result); begin null; end;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -258,9 +258,9 @@ package body org.allbinary.business.init.InitInfo_Package is
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (Java_Box (This.TESTING), InitInfo'Class (This).getTesting);
-        hashMap.put (Java_Box (This.MAINPATH), InitInfo'Class (This).getMainPath);
-        hashMap.put (Java_Box (This.TESTHTMLPATH), InitInfo'Class (This).getTestHtmlPath);
+        hashMap.put (Java_Box (This.TESTING), Java_Box (InitInfo'Class (This).getTesting));
+        hashMap.put (Java_Box (This.MAINPATH), Java_Box (InitInfo'Class (This).getMainPath));
+        hashMap.put (Java_Box (This.TESTHTMLPATH), Java_Box (InitInfo'Class (This).getTestHtmlPath));
         return hashMap;
    end toHashMap;
 

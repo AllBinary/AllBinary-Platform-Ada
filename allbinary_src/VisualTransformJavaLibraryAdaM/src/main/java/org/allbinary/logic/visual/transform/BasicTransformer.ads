@@ -118,7 +118,7 @@ package org.allbinary.logic.visual.transform.BasicTransformer_Package is
    function "=" (Left, Right : BasicTransformer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformer_Package_References."=";
 
    type BasicTransformer is new AbTransformer with record
-      logUtil : LogUtil_Access;
+      BasicTransformer_Field_logUtil : LogUtil_Access;
       streamUtil : StreamUtil_Access;
       abeClientInformation : AbeClientInformationInterface_Access;
    end record;

@@ -106,7 +106,7 @@ package views.generic_Id.basket.mini.MiniBasketView_Package is
    function "=" (Left, Right : MiniBasketView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.basket.mini.MiniBasketView_Package_References."=";
 
    type MiniBasketView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      MiniBasketView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out MiniBasketView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);

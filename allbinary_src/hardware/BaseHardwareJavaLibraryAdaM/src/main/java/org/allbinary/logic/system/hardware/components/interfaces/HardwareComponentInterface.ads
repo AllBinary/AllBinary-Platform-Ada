@@ -51,6 +51,7 @@ package org.allbinary.logic.system.hardware.components.interfaces.HardwareCompon
    function "=" (Left, Right : HardwareComponentInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package_References."=";
    function Java_Object_Access_From_HardwareComponentInterface (Value : HardwareComponentInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function compareTo (This : in out HardwareComponentInterface; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) return Boolean is abstract;
+   procedure compareTo (This : in out HardwareComponentInterface; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) is abstract;
    function toString (This : in out HardwareComponentInterface) return Unbounded_String is abstract;
 
 end org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;

@@ -106,6 +106,7 @@ package org.allbinary.media.graphics.geography.map.drop.DropCellPositionGenerato
    procedure update (This : in out DropCellPositionGeneratorInterface; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is abstract;
    procedure processTick (This : in out DropCellPositionGeneratorInterface; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is abstract;
    function isDropAllowedAt (This : in out DropCellPositionGeneratorInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Boolean is abstract;
+   procedure isDropAllowedAt (This : in out DropCellPositionGeneratorInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is abstract;
 
 end org.allbinary.media.graphics.geography.map.drop.DropCellPositionGeneratorInterface_Package;
 

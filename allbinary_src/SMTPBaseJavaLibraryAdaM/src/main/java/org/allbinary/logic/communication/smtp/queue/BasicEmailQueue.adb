@@ -121,11 +121,11 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Sending: ") & Java_Image (emailInterface.log), BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"));
+                This.logUtil.putF (To_Unbounded_String ("Sending: ") & emailInterface.log, BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"));
             end if;
             Transport_Package.send (emailInterface.getMimeMessage);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Email Send Debug: ") & Java_Image (emailInterface.getDebugInfo), BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"));
+                This.logUtil.putF (To_Unbounded_String ("Email Send Debug: ") & emailInterface.getDebugInfo, BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"));
             end if;
             return True;
         exception
@@ -134,7 +134,7 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.put (To_Unbounded_String ("Failed Email Send Debug: ") & Java_Image (emailInterface.getDebugInfo), BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed Email Send Debug: ") & emailInterface.getDebugInfo, BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"), e);
             end if;
             return False;
                 end;

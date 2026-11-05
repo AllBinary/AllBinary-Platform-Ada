@@ -192,7 +192,7 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is
       mathUtil : MathUtil_Access;
       geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
       geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access;
-      geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access;
+      BasicGeographicMap_Field_geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access;
    end record;
    NULL_BASIC_GEOGRAPHIC_MAP_ARRAY : BasicGeographicMap_Access_Array_Access;
 
@@ -219,6 +219,16 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is
    function getGeographicMapCellPositionFactory (This : in out BasicGeographicMap) return BasicGeographicMapCellPositionFactory_Access;
    function getGeographicMapCellPositionFactoryInterface (This : in out BasicGeographicMap) return GeographicMapCellPositionFactoryInterface_Access;
    function getGeographicMapCellTypeFactory (This : in out BasicGeographicMap) return GeographicMapCellTypeFactory_Access;
+   function getId (This : in out BasicGeographicMap) return Integer;
+   function getName (This : in out BasicGeographicMap) return Unbounded_String;
+   procedure reset (This : in out BasicGeographicMap);
+   function getAllBinaryTiledLayer (This : in out BasicGeographicMap) return AllBinaryTiledLayer_Access;
+   function getCellTypeFromMapCellTypeInt (This : in out BasicGeographicMap; cellTypeId : Integer) return Integer;
+   procedure getCellTypeFromMapCellTypeInt (This : in out BasicGeographicMap; cellTypeId : Integer);
+   function getCellTypeAt (This : in out BasicGeographicMap; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return GeographicMapCellType_Access;
+   procedure getCellTypeAt (This : in out BasicGeographicMap; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   function getForegroundBasicColor (This : in out BasicGeographicMap) return BasicColor_Access;
+   function getBackgroundBasicColor (This : in out BasicGeographicMap) return BasicColor_Access;
 
 end org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 

@@ -98,6 +98,7 @@ package org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    procedure update (This : in out IdGeneratorEntity; hashMap_Param : access HashMap_Package.HashMap'Class);
    function createTable (This : in out IdGeneratorEntity) return Unbounded_String;
    function dropTable (This : in out IdGeneratorEntity) return Unbounded_String;
+   procedure deleteWhere (This : in out IdGeneratorEntity; key : Unbounded_String; value : Unbounded_String);
 
 end org.allbinary.data.tables.generator.IdGeneratorEntity_Package;
 

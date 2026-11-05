@@ -118,8 +118,8 @@ package views.admin.workflow.NewView_Package is
    function "=" (Left, Right : NewView_Access_Array_Access_Array_Access) return Boolean renames views.admin.workflow.NewView_Package_References."=";
 
    type NewView is new WorkFlowView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
-      abeClientInformation : AbeClientInformationInterface_Access;
+      NewView_Field_logUtil : LogUtil_Access;
+      NewView_Field_abeClientInformation : AbeClientInformationInterface_Access;
    end record;
 
    procedure Initialize (This : in out NewView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -129,6 +129,7 @@ package views.admin.workflow.NewView_Package is
    function toValidationInfoDoc (This : in out NewView) return Document_Access;
    function toValidationInfoNode (This : in out NewView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out NewView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out NewView) return TransformInfoInterface_Access;
 
 end views.admin.workflow.NewView_Package;
 

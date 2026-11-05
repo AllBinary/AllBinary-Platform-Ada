@@ -29,6 +29,7 @@ with org.allbinary.layer.LayerManagerLoggingBase_Package;
 with org.allbinary.layer.NamedInterface_Package;
 with org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEvent_Package;
+with org.allbinary.layer.Layer_Package_References;
 
 package body org.allbinary.layer.LayerManager_Package is
 
@@ -268,7 +269,7 @@ package body org.allbinary.layer.LayerManager_Package is
             index := This.list.size;
             while (Java_Pre_Decrement (index)) >= (0) loop
                 comp := Layer_Access (This.list.objectArray (index));
-                if ((comp) /= (null)) and then (comp.isVisible) then
+                if ((not org.allbinary.layer.Layer_Package_References."=" (comp, null))) and then (comp.isVisible) then
                     comp.paint (g);
                 end if;
             end loop;

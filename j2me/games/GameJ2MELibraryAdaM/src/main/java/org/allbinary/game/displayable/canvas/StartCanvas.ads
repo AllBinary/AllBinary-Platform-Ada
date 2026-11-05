@@ -633,6 +633,9 @@ package org.allbinary.game.displayable.canvas.StartCanvas_Package is
    function isSingleThread (This : in out StartCanvas) return Boolean;
    function isRunningInAnotherThread (This : in out StartCanvas) return Boolean;
    function getGameInitializationInterfaceFactoryInterface (This : in out StartCanvas) return BasicBuildGameInitializerFactory_Access;
+   function getTitle (This : in out StartCanvas) return Unbounded_String;
+   function isPaused (This : in out StartCanvas) return Boolean;
+   function getType (This : in out StartCanvas) return Integer;
 
 end org.allbinary.game.displayable.canvas.StartCanvas_Package;
 

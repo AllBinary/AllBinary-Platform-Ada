@@ -94,7 +94,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package
    function "=" (Left, Right : TransformInfoHttpStore_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package_References."=";
 
    type TransformInfoHttpStore is new TransformInfoHttp and TransformInfoHttpStoreInterface with record
-      logUtil : LogUtil_Access;
+      TransformInfoHttpStore_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out TransformInfoHttpStore'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
@@ -107,6 +107,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package
    function getTemplateFilePath (This : in out TransformInfoHttpStore) return AbPath_Access;
    function getObjectConfigFilePath (This : in out TransformInfoHttpStore) return AbPath_Access;
    function getDataFilePath (This : in out TransformInfoHttpStore) return AbPath_Access;
+   procedure setStoreName (This : in out TransformInfoHttpStore; value : Unbounded_String);
+   function getStoreName (This : in out TransformInfoHttpStore) return Unbounded_String;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package;
 

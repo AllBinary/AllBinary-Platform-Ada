@@ -48,6 +48,7 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.thread.RunnableInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
+with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References;
 
 package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 
@@ -634,7 +635,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --                      logUtil.putF (To_Unbounded_String ("Running"), InputAutomationJFrame_Access'(This'Unchecked_Access), commonStrings.RUN);
 --                      INPUTAUTOMATION_JFRAME := InputAutomationJFrame_Package.Create;
 --                      InputRobotFactory_Package.getInstance.addListener (InputAutomationJFrame_Package.getInstance);
---                      if (inputAutomationBundleActivatorListenerInterface) /= (null) then
+--                      if (not bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References."=" (inputAutomationBundleActivatorListenerInterface, null)) then
 --                          inputAutomationBundleActivatorListenerInterface.registerAsService;
 --                          inputAutomationBundleActivatorListenerInterface.useServices;
 --                      end if;

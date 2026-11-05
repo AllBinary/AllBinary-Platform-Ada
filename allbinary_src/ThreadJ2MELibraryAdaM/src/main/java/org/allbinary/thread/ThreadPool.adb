@@ -46,6 +46,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.ThreadObjectUtil_Package;
 with org.allbinary.thread.ThreadPoolStrings_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.thread.PriorityRunnable_Package_References;
 
 package body org.allbinary.thread.ThreadPool_Package is
 
@@ -189,7 +190,7 @@ package body org.allbinary.thread.ThreadPool_Package is
             if not (This.isAlive) then
                 ThreadPool'Class (This).init;
             end if;
-            if (task_Id) /= (null) then
+            if (not org.allbinary.thread.PriorityRunnable_Package_References."=" (task_Id, null)) then
                 size := This.taskQueue.size;
                 runnable := null;
                 lowerPriorityRunnable := PriorityRunnable_Access (This.threadObjectUtil.NULL_PRIORITY_RUNNABLE);
@@ -200,7 +201,7 @@ package body org.allbinary.thread.ThreadPool_Package is
                         exit;
                     end if;
                 end loop;
-                if (lowerPriorityRunnable) = (This.threadObjectUtil.NULL_PRIORITY_RUNNABLE) then
+                if org.allbinary.thread.PriorityRunnable_Package_References."=" (lowerPriorityRunnable, This.threadObjectUtil.NULL_PRIORITY_RUNNABLE) then
                     This.taskQueue.add (Java_Object_Access (task_Id));
                 else
                     index := This.taskQueue.indexOf (Java_Object_Access (lowerPriorityRunnable));

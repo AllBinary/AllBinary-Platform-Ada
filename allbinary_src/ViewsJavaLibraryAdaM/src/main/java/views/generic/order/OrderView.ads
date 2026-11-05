@@ -146,7 +146,7 @@ package views.generic_Id.order.OrderView_Package is
    function "=" (Left, Right : OrderView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.order.OrderView_Package_References."=";
 
    type OrderView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      OrderView_Field_logUtil : LogUtil_Access;
       request : HttpServletRequest_Access;
       order : Order_Access;
       orderHistory : OrderHistory_Access;

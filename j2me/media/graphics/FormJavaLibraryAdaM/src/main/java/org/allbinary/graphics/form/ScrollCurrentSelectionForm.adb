@@ -53,6 +53,7 @@ with org.allbinary.graphics.form.TempHorizontalFormProcessor_Package;
 with org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package;
 with org.allbinary.graphics.form.VerticalFormProcessor_Package;
 with org.allbinary.graphics.form.VerticalItemIndexDx_Package;
+with org.allbinary.graphics.form.FormType_Package_References;
 
 package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
 
@@ -186,16 +187,16 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
    begin
         ScrollSelectionForm_Package.ScrollSelectionForm (This).init (rectangle, formType);
         formTypeFactory := FormTypeFactory_Package.getInstance;
-        if (formType) = (formTypeFactory.TEMP_HORIZONTAL_FORM) then
+        if org.allbinary.graphics.form.FormType_Package_References."=" (formType, formTypeFactory.TEMP_HORIZONTAL_FORM) then
             This.processor := Processor_Access (TempHorizontalFormProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
             This.preItemIndexDx := ItemIndexDx_Access (TempHorizontalItemIndexDx_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
-        elsif (formType) = (formTypeFactory.HORIZONTAL_FORM) then
+        elsif org.allbinary.graphics.form.FormType_Package_References."=" (formType, formTypeFactory.HORIZONTAL_FORM) then
             This.processor := Processor_Access (HorizontalFormProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
             This.preItemIndexDx := ItemIndexDx_Access (HorizontalItemIndexDx_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
-        elsif (formType) = (formTypeFactory.VERTICAL_CENTER_FORM) then
+        elsif org.allbinary.graphics.form.FormType_Package_References."=" (formType, formTypeFactory.VERTICAL_CENTER_FORM) then
             This.processor := Processor_Access (VerticalFormProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
             This.preItemIndexDx := ItemIndexDx_Access (VerticalItemIndexDx_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
-        elsif (formType) = (formTypeFactory.NULL_FORM_TYPE) then
+        elsif org.allbinary.graphics.form.FormType_Package_References."=" (formType, formTypeFactory.NULL_FORM_TYPE) then
             null;
         else
             This.logUtil.putF (formTypeFactory.UNK, ScrollCurrentSelectionForm_Access'(This'Unchecked_Access), This.commonStrings.INIT);
@@ -333,11 +334,11 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
                     delta_Id := ScrollCurrentSelectionForm'Class (This).paintUnselectedItem (graphics, index, item, (deltaX) + (diffX), deltaY);
                     This.paintable.paint (graphics, index, (deltaX) + (diffX), deltaY);
                 end if;
-                if (This.formType) = (formTypeFactory.TEMP_HORIZONTAL_FORM) then
+                if org.allbinary.graphics.form.FormType_Package_References."=" (This.formType, formTypeFactory.TEMP_HORIZONTAL_FORM) then
                     null;
-                elsif (This.formType) = (formTypeFactory.HORIZONTAL_FORM) then
+                elsif org.allbinary.graphics.form.FormType_Package_References."=" (This.formType, formTypeFactory.HORIZONTAL_FORM) then
                     deltaX := delta_Id;
-                elsif (This.formType) = (formTypeFactory.VERTICAL_CENTER_FORM) then
+                elsif org.allbinary.graphics.form.FormType_Package_References."=" (This.formType, formTypeFactory.VERTICAL_CENTER_FORM) then
                     deltaY := delta_Id;
                 else
                     Java_Throw (Java_New_Exception ("Exception", formTypeFactory.UNK));
@@ -400,6 +401,8 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
@@ -500,6 +503,16 @@ package body org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
    subtype ItemIndexDx_Access is org.allbinary.graphics.form.ItemIndexDx_Package_References.ItemIndexDx_Access;
    function "=" (Left, Right : ItemIndexDx_Access) return Boolean renames org.allbinary.graphics.form.ItemIndexDx_Package_References."=";
    subtype ItemIndexDx_Access_Array is org.allbinary.graphics.form.ItemIndexDx_Package_References.ItemIndexDx_Access_Array;
@@ -578,6 +591,8 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
@@ -678,6 +693,16 @@ package body org.allbinary.graphics.form.HorizontalFormProcessor_Package is
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
    subtype ItemIndexDx_Access is org.allbinary.graphics.form.ItemIndexDx_Package_References.ItemIndexDx_Access;
    function "=" (Left, Right : ItemIndexDx_Access) return Boolean renames org.allbinary.graphics.form.ItemIndexDx_Package_References."=";
    subtype ItemIndexDx_Access_Array is org.allbinary.graphics.form.ItemIndexDx_Package_References.ItemIndexDx_Access_Array;
@@ -756,6 +781,8 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
@@ -856,6 +883,16 @@ package body org.allbinary.graphics.form.VerticalFormProcessor_Package is
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
    subtype ItemIndexDx_Access is org.allbinary.graphics.form.ItemIndexDx_Package_References.ItemIndexDx_Access;
    function "=" (Left, Right : ItemIndexDx_Access) return Boolean renames org.allbinary.graphics.form.ItemIndexDx_Package_References."=";
    subtype ItemIndexDx_Access_Array is org.allbinary.graphics.form.ItemIndexDx_Package_References.ItemIndexDx_Access_Array;
@@ -935,6 +972,8 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
@@ -1042,6 +1081,16 @@ package body org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
    subtype ItemPaintableFactory_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access;
    function "=" (Left, Right : ItemPaintableFactory_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
    subtype ItemPaintableFactory_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array;
@@ -1118,6 +1167,8 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
@@ -1225,6 +1276,16 @@ package body org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
    subtype ItemPaintableFactory_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access;
    function "=" (Left, Right : ItemPaintableFactory_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
    subtype ItemPaintableFactory_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array;
@@ -1301,6 +1362,8 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
@@ -1408,6 +1471,16 @@ package body org.allbinary.graphics.form.VerticalItemIndexDx_Package is
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   subtype ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
    subtype ItemPaintableFactory_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access;
    function "=" (Left, Right : ItemPaintableFactory_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
    subtype ItemPaintableFactory_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array;

@@ -77,6 +77,7 @@ package org.allbinary.game.layer.identification.GroupItemArrayFactoryInterface_P
    function "=" (Left, Right : GroupItemArrayFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.identification.GroupItemArrayFactoryInterface_Package_References."=";
    function Java_Object_Access_From_GroupItemArrayFactoryInterface (Value : GroupItemArrayFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out GroupItemArrayFactoryInterface; groupInterface_Param : access Group_Package.Group'Class) return ABCustomItem_Access_Array_Access is abstract;
+   procedure getInstance (This : in out GroupItemArrayFactoryInterface; groupInterface_Param : access Group_Package.Group'Class) is abstract;
 
 end org.allbinary.game.layer.identification.GroupItemArrayFactoryInterface_Package;
 

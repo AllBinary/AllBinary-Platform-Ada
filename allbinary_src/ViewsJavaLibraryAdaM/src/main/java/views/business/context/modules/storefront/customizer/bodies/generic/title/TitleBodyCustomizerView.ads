@@ -119,7 +119,7 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.t
    function "=" (Left, Right : TitleBodyCustomizerView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.bodies.generic_Id.title.TitleBodyCustomizerView_Package_References."=";
 
    type TitleBodyCustomizerView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      TitleBodyCustomizerView_Field_logUtil : LogUtil_Access;
       titleBody : TitleBodyValidation_Access;
    end record;
    NAME : Unbounded_String;

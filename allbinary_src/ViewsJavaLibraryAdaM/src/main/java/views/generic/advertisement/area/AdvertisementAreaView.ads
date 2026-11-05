@@ -106,7 +106,7 @@ package views.generic_Id.advertisement.area.AdvertisementAreaView_Package is
    function "=" (Left, Right : AdvertisementAreaView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.advertisement.area.AdvertisementAreaView_Package_References."=";
 
    type AdvertisementAreaView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      AdvertisementAreaView_Field_logUtil : LogUtil_Access;
       advertisementAreaName : Unbounded_String;
    end record;
 

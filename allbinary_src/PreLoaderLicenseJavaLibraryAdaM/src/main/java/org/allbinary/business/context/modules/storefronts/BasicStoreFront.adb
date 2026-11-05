@@ -133,7 +133,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
 
    function getTestHtmlPath (This : in out BasicStoreFront) return Unbounded_String is
    begin
-        return (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) + (BasicStoreFront'Class (This).getCurrentHostNamePath);
+        return Java_Image (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) & BasicStoreFront'Class (This).getCurrentHostNamePath;
    end getTestHtmlPath;
 
    function getCurrentHostName (This : in out BasicStoreFront) return Unbounded_String is

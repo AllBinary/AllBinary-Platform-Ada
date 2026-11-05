@@ -32,6 +32,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 limited with javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.Image_Package_References;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
 
 package javax.microedition.lcdui.PlatformImage_Package is
 
@@ -46,6 +48,16 @@ package javax.microedition.lcdui.PlatformImage_Package is
    use type Image_Access_Array_Access_Array;
    subtype Image_Access_Array_Access_Array_Access is javax.microedition.lcdui.Image_Package_References.Image_Access_Array_Access_Array_Access;
    use type Image_Access_Array_Access_Array_Access;
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

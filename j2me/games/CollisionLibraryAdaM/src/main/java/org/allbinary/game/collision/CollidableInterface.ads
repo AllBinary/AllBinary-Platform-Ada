@@ -91,9 +91,12 @@ package org.allbinary.game.collision.CollidableInterface_Package is
    function "=" (Left, Right : CollidableInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableInterface_Package_References."=";
    function Java_Object_Access_From_CollidableInterface (Value : CollidableInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function isCollidable (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is abstract;
+   procedure isCollidable (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is abstract;
    function isCollision (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is abstract;
+   procedure isCollision (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is abstract;
    procedure collide (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is abstract;
    function getCollisionTypeWith (This : in out CollidableInterface; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return CollisionType_Access is abstract;
+   procedure getCollisionTypeWith (This : in out CollidableInterface; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is abstract;
 
 end org.allbinary.game.collision.CollidableInterface_Package;
 

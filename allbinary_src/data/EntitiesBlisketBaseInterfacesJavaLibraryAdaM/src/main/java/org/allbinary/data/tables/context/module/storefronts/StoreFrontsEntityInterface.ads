@@ -81,6 +81,7 @@ package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityIn
    function "=" (Left, Right : StoreFrontsEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityInterface_Package_References."=";
    function Java_Object_Access_From_StoreFrontsEntityInterface (Value : StoreFrontsEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getStoreFrontInterface (This : in out StoreFrontsEntityInterface; name : Unbounded_String) return StoreFrontInterface_Access is abstract;
+   procedure getStoreFrontInterface (This : in out StoreFrontsEntityInterface; name : Unbounded_String) is abstract;
    function getStoreFrontNames (This : in out StoreFrontsEntityInterface) return BasicArrayList_Access is abstract;
    procedure delete (This : in out StoreFrontsEntityInterface; value : Unbounded_String) is abstract;
    procedure insert (This : in out StoreFrontsEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;

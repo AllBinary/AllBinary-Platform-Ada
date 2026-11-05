@@ -81,7 +81,9 @@ package org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package is
    function "=" (Left, Right : WorkFlowEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package_References."=";
    function Java_Object_Access_From_WorkFlowEntityInterface (Value : WorkFlowEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function get (This : in out WorkFlowEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
+   procedure get (This : in out WorkFlowEntityInterface; storeName : Unbounded_String) is abstract;
    function get (This : in out WorkFlowEntityInterface; name : Unbounded_String; storeName : Unbounded_String) return WorkFlowInterface_Access is abstract;
+   procedure get (This : in out WorkFlowEntityInterface; name : Unbounded_String; storeName : Unbounded_String) is abstract;
    procedure delete (This : in out WorkFlowEntityInterface; name : Unbounded_String; storeName : Unbounded_String) is abstract;
    procedure insert (This : in out WorkFlowEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure update (This : in out WorkFlowEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;

@@ -390,11 +390,11 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
             logUtil := LogUtil_Package.getInstance;
             begin
                 ownerLayer := CollidableCompositeLayer_Access (anyType);
-                if (CollidableUnitBehavior'Class (This).getList.size) > (0) then
-                    allbinaryLayer := CollidableCompositeLayer_Access (CollidableUnitBehavior'Class (This).getList.get (0));
-                    clear := CollidableUnitBehavior'Class (This).steer (ownerLayer, allbinaryLayer);
+                if (SimpleSteeringVisitor'Class (This).getList.size) > (0) then
+                    allbinaryLayer := CollidableCompositeLayer_Access (SimpleSteeringVisitor'Class (This).getList.get (0));
+                    clear := SimpleSteeringVisitor'Class (This).steer (ownerLayer, allbinaryLayer);
                     if clear then
-                        CollidableUnitBehavior'Class (This).getList.clear;
+                        SimpleSteeringVisitor'Class (This).getList.clear;
                         return NullUtil_Package.getInstance.NULL_OBJECT;
                     end if;
                     return BooleanFactory_Package.getInstance.TRUE;
@@ -406,7 +406,7 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.put (commonStrings.EXCEPTION_Id, CollidableUnitBehavior_Access'(This'Unchecked_Access), To_Unbounded_String ("visit"), e);
+                logUtil.put (commonStrings.EXCEPTION_Id, SimpleSteeringVisitor_Access'(This'Unchecked_Access), To_Unbounded_String ("visit"), e);
                 return NullUtil_Package.getInstance.NULL_OBJECT;
                     end;
             end;

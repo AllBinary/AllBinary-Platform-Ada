@@ -22,6 +22,7 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References;
 
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package is
 
@@ -76,7 +77,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         if (This.geographicMapCellPosition) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No GeographicMapCellPosition")));
         end if;
-        if (PathFindingNodeCost'Class (This).getPathFindingNodeCostInfo) = (null) then
+        if org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References."=" (PathFindingNodeCost'Class (This).getPathFindingNodeCostInfo, null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No PathFindingNodeCostInfo")));
         end if;
    end Initialize;

@@ -145,7 +145,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             end_Id := 0;
             nextSecondKey := Null_Unbounded_String;
             begin2 := 0;
-            while (index) < (Length (replace_Var)) loop
+            while (index) < (Ada.Strings.Unbounded.Length (replace_Var)) loop
                 begin_Id := Java_Index_Of (replace_Var, Java_Image (keys (0)), index);
                 if (begin_Id) /= (-(1)) then
                     foundTotal := foundTotal + 1;
@@ -153,23 +153,23 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
                         Ada.Text_IO.Put_Line (Java_Image (This.FOUND_KEY & Java_Image (foundTotal)));
                     end if;
                     nextKey := keys (0);
-                    end_Id := (begin_Id) + (Length (nextKey));
+                    end_Id := (begin_Id) + (Ada.Strings.Unbounded.Length (nextKey));
                     newStringBuffer.delete (0, newStringBuffer.length);
                     newStringBuffer.append (Unbounded_Slice (replace_Var, (0) + 1, begin_Id));
                     newStringBuffer.append (values (0));
                     index := newStringBuffer.length;
-                    newStringBuffer.append (Unbounded_Slice (replace_Var, (end_Id) + 1, Length (replace_Var)));
+                    newStringBuffer.append (Unbounded_Slice (replace_Var, (end_Id) + 1, Ada.Strings.Unbounded.Length (replace_Var)));
                     replace_Var := newStringBuffer.toString;
                     if (keys'Length) > (1) then
                         nextSecondKey := keys (1);
                         begin2 := Java_Index_Of (replace_Var, Java_Image (nextSecondKey), index);
                         if (begin2) /= (-(1)) then
-                            end2 := (begin2) + (Length (nextSecondKey));
+                            end2 := (begin2) + (Ada.Strings.Unbounded.Length (nextSecondKey));
                             newStringBuffer.delete (0, newStringBuffer.length);
                             newStringBuffer.append (Unbounded_Slice (replace_Var, (0) + 1, begin2));
                             newStringBuffer.append (values (1));
                             index := newStringBuffer.length;
-                            newStringBuffer.append (Unbounded_Slice (replace_Var, (end2) + 1, Length (replace_Var)));
+                            newStringBuffer.append (Unbounded_Slice (replace_Var, (end2) + 1, Ada.Strings.Unbounded.Length (replace_Var)));
                             replace_Var := newStringBuffer.toString;
                         end if;
                     end if;
@@ -213,16 +213,16 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             key := Java_Unbox (keyArray (index2));
             value := Java_Unbox (This.hashMap.get (Java_Box (key)));
             index := 0;
-            while (index) < (Length (replace_Var)) loop
+            while (index) < (Ada.Strings.Unbounded.Length (replace_Var)) loop
                 newStringBuffer.delete (0, newStringBuffer.length);
                 begin_Id := Java_Index_Of (replace_Var, Java_Image (key), index);
                 if (begin_Id) /= (-(1)) then
                     Ada.Text_IO.Put_Line (Java_Image (This.FOUND_KEY));
-                    end_Id := (Java_Index_Of (replace_Var, Java_Image (ASCII.LF), (begin_Id) + (Length (key)))) + (1);
+                    end_Id := (Java_Index_Of (replace_Var, Java_Image (ASCII.LF), (begin_Id) + (Ada.Strings.Unbounded.Length (key)))) + (1);
                     if (end_Id) >= (0) then
                         newStringBuffer.append (Unbounded_Slice (replace_Var, (0) + 1, begin_Id));
                         index := newStringBuffer.length;
-                        newStringBuffer.append (Unbounded_Slice (replace_Var, (end_Id) + 1, Length (replace_Var)));
+                        newStringBuffer.append (Unbounded_Slice (replace_Var, (end_Id) + 1, Ada.Strings.Unbounded.Length (replace_Var)));
                         replace_Var := newStringBuffer.toString;
                         totalNumberOfReplaces := totalNumberOfReplaces + 1;
                     end if;

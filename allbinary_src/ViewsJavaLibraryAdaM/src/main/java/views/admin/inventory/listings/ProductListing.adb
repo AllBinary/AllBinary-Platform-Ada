@@ -396,7 +396,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
             vector := inventorySearchUtil.getBasicItemIdColumn (This.searchRequest);
             for index in 0 .. (size) - 1 loop
                 keywordData := Java_Unbox (keywordArray (index));
-                if (Length (keywordData)) > (1) then
+                if (Ada.Strings.Unbounded.Length (keywordData)) > (1) then
                     ProductListing'Class (This).create (keywordData, keywordFilenameHashMap, vector, staticPath);
                 end if;
             end loop;

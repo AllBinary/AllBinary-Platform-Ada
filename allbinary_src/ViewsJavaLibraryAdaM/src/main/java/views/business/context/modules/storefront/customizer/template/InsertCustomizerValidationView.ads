@@ -106,7 +106,7 @@ package views.business.context.modules.storefront.customizer.template.InsertCust
    function "=" (Left, Right : InsertCustomizerValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.template.InsertCustomizerValidationView_Package_References."=";
 
    type InsertCustomizerValidationView is new HttpStoreComponentView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      InsertCustomizerValidationView_Field_logUtil : LogUtil_Access;
       viewName : Unbounded_String;
    end record;
 
@@ -118,6 +118,7 @@ package views.business.context.modules.storefront.customizer.template.InsertCust
    function toValidationInfoNode (This : in out InsertCustomizerValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out InsertCustomizerValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out InsertCustomizerValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out InsertCustomizerValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.template.InsertCustomizerValidationView_Package;
 

@@ -67,7 +67,7 @@ package body org.allbinary.data.tree.dom.document.DocumentToNode_Package is
                 endIndex := Java_Index_Of (documentString, Java_Image (end_Id), startIndex);
                 if (endIndex) >= (0) then
                     startString := Unbounded_Slice (documentString, (0) + 1, startIndex);
-                    resultString := Unbounded_Slice (documentString, ((endIndex) + (1)) + 1, Length (documentString));
+                    resultString := Unbounded_Slice (documentString, ((endIndex) + (1)) + 1, Ada.Strings.Unbounded.Length (documentString));
                     return startString & resultString;
                 end if;
             end if;

@@ -105,7 +105,7 @@ package views.business.context.modules.storefront.customizer.includes.globals.In
    function "=" (Left, Right : InsertGlobalsValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References."=";
 
    type InsertGlobalsValidationView is new GlobalsView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      InsertGlobalsValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out InsertGlobalsValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -116,6 +116,7 @@ package views.business.context.modules.storefront.customizer.includes.globals.In
    function toValidationInfoDoc (This : in out InsertGlobalsValidationView) return Document_Access;
    function toValidationInfoNode (This : in out InsertGlobalsValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out InsertGlobalsValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out InsertGlobalsValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package;
 

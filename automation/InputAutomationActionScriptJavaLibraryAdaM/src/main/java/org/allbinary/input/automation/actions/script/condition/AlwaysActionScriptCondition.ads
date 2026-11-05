@@ -105,7 +105,7 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
    function "=" (Left, Right : AlwaysActionScriptCondition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package_References."=";
 
    type AlwaysActionScriptCondition is new BasicProfileActionScriptCondition and AlwaysActionScriptConditionInterface with record
-      logUtil : LogUtil_Access;
+      AlwaysActionScriptCondition_Field_logUtil : LogUtil_Access;
       alwaysActionScriptConditionJPanel : AlwaysActionScriptConditionJPanel_Access;
       isOn : Boolean;
    end record;

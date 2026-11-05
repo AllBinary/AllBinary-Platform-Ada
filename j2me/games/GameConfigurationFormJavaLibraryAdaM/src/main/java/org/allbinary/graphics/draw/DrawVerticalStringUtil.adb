@@ -97,7 +97,7 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
                 This.offsetY := (2) + ((((This.charHeight) * (2)) / (3)));
             end if;
         end if;
-        size := Length (string_Id);
+        size := Ada.Strings.Unbounded.Length (string_Id);
         aChar := ASCII.NUL;
         offsetXArray := new Integer_Array'(0 .. (size) - 1 => 0);
         for index in reverse 0 .. (size) - (1) loop
@@ -115,7 +115,7 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
       aChar : Character;
       index : Integer;
    begin
-        size := Length (string_Id);
+        size := Ada.Strings.Unbounded.Length (string_Id);
         aChar := ASCII.NUL;
         for index in reverse 0 .. (size) - (1) loop
             aChar := Element (string_Id, (index) + 1);
@@ -135,7 +135,7 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Exception: stringLength: ")).appendint (Length (string_Id)).append (To_Unbounded_String (" offset: ")).appendint (offset).append (To_Unbounded_String (" currentLength: ")).appendint (length).toString, DrawVerticalStringUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("drawCenterString"));
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Exception: stringLength: ")).appendint (Ada.Strings.Unbounded.Length (string_Id)).append (To_Unbounded_String (" offset: ")).appendint (offset).append (To_Unbounded_String (" currentLength: ")).appendint (length).toString, DrawVerticalStringUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("drawCenterString"));
                 end;
         end;
    end drawCenterString;
@@ -161,10 +161,10 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
                 if (width) > (maxWidth) then
                     minTotalLines := (((width) / (maxWidth))) + (1);
                 end if;
-                linePortion := (Length (string_Id)) / (minTotalLines);
+                linePortion := (Ada.Strings.Unbounded.Length (string_Id)) / (minTotalLines);
                 offset := 0;
                 currentLength := linePortion;
-                size := Length (string_Id);
+                size := Ada.Strings.Unbounded.Length (string_Id);
                 while (offset) < (size) loop
                     if ((offset) + (currentLength)) > (size) then
                         currentLength := (size) - (offset);

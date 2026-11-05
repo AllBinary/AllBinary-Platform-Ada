@@ -78,7 +78,7 @@ package views.admin.payment.PaymentProcessorComponent_Package is
    function "=" (Left, Right : PaymentProcessorComponent_Access_Array_Access_Array_Access) return Boolean renames views.admin.payment.PaymentProcessorComponent_Package_References."=";
 
    type PaymentProcessorComponent is new HttpStoreComponentView with record
-      logUtil : LogUtil_Access;
+      PaymentProcessorComponent_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out PaymentProcessorComponent'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);

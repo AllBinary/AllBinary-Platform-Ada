@@ -35,6 +35,7 @@ with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResultCacheSingleton_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package_References;
 
 package body org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package is
 
@@ -95,7 +96,7 @@ package body org.allbinary.media.image.comparison.ComparisonImageInputOutput_Pac
         commonStrings := CommonStrings_Package.getInstance;
         if (frame) > (0) then
             imageComparisonResultFrameCacheable := ImageComparisonResultFrameCacheable_Access (AutomaticCacheInterface_Access (ImageComparisonResultCacheSingleton_Package.getInstance).get (frame));
-            if (imageComparisonResultFrameCacheable) /= (null) then
+            if (not org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package_References."=" (imageComparisonResultFrameCacheable, null)) then
                 imageComparisonResult := imageComparisonResultFrameCacheable.getImageComparisonResult;
                 ComparisonImageInputOutput'Class (This).save (imageComparisonResult, imageComparisonResultFrameCacheable.getFrame);
             else

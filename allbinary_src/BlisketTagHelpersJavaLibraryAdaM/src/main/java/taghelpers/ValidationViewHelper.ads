@@ -95,7 +95,7 @@ package taghelpers.ValidationViewHelper_Package is
    function "=" (Left, Right : ValidationViewHelper_Access_Array_Access_Array_Access) return Boolean renames taghelpers.ValidationViewHelper_Package_References."=";
 
    type ValidationViewHelper is new ViewHelper and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      ValidationViewHelper_Field_logUtil : LogUtil_Access;
       viewInterface : ValidationComponentInterface_Access;
    end record;
 

@@ -109,7 +109,7 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    function "=" (Left, Right : BasicProfileActionScriptInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package_References."=";
 
    type BasicProfileActionScriptInput is new BasicProfileActionScriptProcessor and ProfileActionScriptInputInterface with record
-      logUtil : LogUtil_Access;
+      BasicProfileActionScriptInput_Field_logUtil : LogUtil_Access;
       inputRobotInterface : InputRobotInterface_Access;
       time : Integer;
    end record;

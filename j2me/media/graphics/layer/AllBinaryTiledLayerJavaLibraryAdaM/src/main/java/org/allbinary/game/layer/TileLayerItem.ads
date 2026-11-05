@@ -121,6 +121,7 @@ package org.allbinary.game.layer.TileLayerItem_Package is
    procedure getPrefContentWidth (This : in out TileLayerItem; height : Integer);
    procedure paintXY (This : in out TileLayerItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure paintUnselected (This : in out TileLayerItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   function getLabel (This : in out TileLayerItem) return Unbounded_String;
 
 end org.allbinary.game.layer.TileLayerItem_Package;
 

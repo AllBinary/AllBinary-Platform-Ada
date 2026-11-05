@@ -147,6 +147,12 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out EditTitleBodyValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (TitleBodyCustomizerView_Package.TitleBodyCustomizerView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out EditTitleBodyValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := EditTitleBodyValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

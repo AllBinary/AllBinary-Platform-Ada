@@ -209,6 +209,12 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
         return null;
    end toValidationInfoNode;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out AddTaxValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (ShippingAddressView_Package.ShippingAddressView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out AddTaxValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := AddTaxValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

@@ -131,8 +131,8 @@ package views.admin.inventory.download.UpdateFileValidationView_Package is
    function "=" (Left, Right : UpdateFileValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.download.UpdateFileValidationView_Package_References."=";
 
    type UpdateFileValidationView is new DownloadableInventoryItemView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
-      commonStrings : CommonStrings_Access;
+      UpdateFileValidationView_Field_logUtil_Hidden : LogUtil_Access;
+      UpdateFileValidationView_Field_commonStrings : CommonStrings_Access;
    end record;
 
    procedure Initialize (This : in out UpdateFileValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -145,6 +145,7 @@ package views.admin.inventory.download.UpdateFileValidationView_Package is
    function isValid (This : in out UpdateFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer) return Boolean;
    procedure isValid (This : in out UpdateFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer);
    procedure validationInfo (This : in out UpdateFileValidationView; stringBuffer_Param : access StringMaker_Package.StringMaker'Class; fileName : Unbounded_String; size : Long_Long_Integer);
+   function getTransformInfoInterface (This : in out UpdateFileValidationView) return TransformInfoInterface_Access;
 
 end views.admin.inventory.download.UpdateFileValidationView_Package;
 

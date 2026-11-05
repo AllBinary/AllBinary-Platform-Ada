@@ -64,6 +64,7 @@ package org.allbinary.logic.system.security.licensing.LockedUtilInterface_Packag
    function Java_Object_Access_From_LockedUtilInterface (Value : LockedUtilInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function isLocked (This : in out LockedUtilInterface) return Boolean is abstract;
    function isLockedFeature (This : in out LockedUtilInterface; lockableFeatrue_Param : access LockableFeature_Package.LockableFeature'Class) return Boolean is abstract;
+   procedure isLockedFeature (This : in out LockedUtilInterface; lockableFeatrue_Param : access LockableFeature_Package.LockableFeature'Class) is abstract;
 
 end org.allbinary.logic.system.security.licensing.LockedUtilInterface_Package;
 

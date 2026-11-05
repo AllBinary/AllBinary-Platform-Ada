@@ -105,7 +105,7 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.t
    function "=" (Left, Right : EditTitleBodyValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.bodies.generic_Id.title.EditTitleBodyValidationView_Package_References."=";
 
    type EditTitleBodyValidationView is new TitleBodyCustomizerView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      EditTitleBodyValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out EditTitleBodyValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -115,6 +115,7 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.t
    function toValidationInfoDoc (This : in out EditTitleBodyValidationView) return Document_Access;
    function toValidationInfoNode (This : in out EditTitleBodyValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out EditTitleBodyValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out EditTitleBodyValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.bodies.generic_Id.title.EditTitleBodyValidationView_Package;
 

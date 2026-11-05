@@ -91,7 +91,7 @@ package body views.business.context.HttpContextView_Package is
       result : Unbounded_String;
    begin
         begin
-            HttpContextView'Class (This).toXmlDoc;
+            declare Java_Result renames HttpContextView'Class (This).toXmlDoc; pragma Unreferenced (Java_Result); begin null; end;
             success := XmlDocumentHelper_Package.toString (HttpContextView'Class (This).getDoc);
             result := ContextTransformer_Package.Create (This.abeClientInformation, HttpContextView'Class (This).getTransformInfoInterface).translate (success);
             return result;

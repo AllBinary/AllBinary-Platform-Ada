@@ -63,7 +63,7 @@ package tags.CommandTag_Package is
    function "=" (Left, Right : CommandTag_Access_Array_Access_Array_Access) return Boolean renames tags.CommandTag_Package_References."=";
 
    type CommandTag is new CustomTagSupport with record
-      tagStrings : TagStrings_Access;
+      CommandTag_Field_tagStrings : TagStrings_Access;
       command : Unbounded_String;
    end record;
 

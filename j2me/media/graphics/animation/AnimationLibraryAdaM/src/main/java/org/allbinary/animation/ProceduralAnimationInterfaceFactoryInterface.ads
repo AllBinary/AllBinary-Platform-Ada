@@ -64,6 +64,7 @@ package org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Pac
    function "=" (Left, Right : ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_ProceduralAnimationInterfaceFactoryInterface (Value : ProceduralAnimationInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstanceAnimation (This : in out ProceduralAnimationInterfaceFactoryInterface; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is abstract;
+   procedure getInstanceAnimation (This : in out ProceduralAnimationInterfaceFactoryInterface; animationInterface_Param : access Animation_Package.Animation'Class) is abstract;
 
 end org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 

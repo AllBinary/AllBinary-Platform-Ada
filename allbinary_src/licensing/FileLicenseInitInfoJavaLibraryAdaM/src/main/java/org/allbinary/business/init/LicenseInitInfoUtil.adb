@@ -189,7 +189,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
                     decodedByteArray := DatabaseEncoder_Package.decode (iData.readUTF);
                     licenseServerDecoded := Java_New_String (decodedByteArray);
                     initInfo.setServer (WeakCrypt_Package.Create (3).decrypt (licenseServerDecoded), index);
-                    This.logUtil.putF (NEXT_FILE & Java_Image (initInfo.getServer (index)), LicenseInitInfoUtil_Access'(This'Unchecked_Access), METHOD_NAME);
+                    This.logUtil.putF (NEXT_FILE & initInfo.getServer (index), LicenseInitInfoUtil_Access'(This'Unchecked_Access), METHOD_NAME);
                 end loop;
                 return initInfo;
             else

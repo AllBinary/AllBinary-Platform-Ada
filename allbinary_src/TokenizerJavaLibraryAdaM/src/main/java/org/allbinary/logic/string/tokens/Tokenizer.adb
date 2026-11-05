@@ -90,14 +90,14 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
    begin
         tokenList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         index := 0;
-        size := Length (string_Id);
+        size := Ada.Strings.Unbounded.Length (string_Id);
         while (index) < (size) loop
             index := Java_Index_Of (string_Id, Java_Image (This.sep), index);
             if (index) /= (-(1)) then
-                end_Id := Java_Index_Of (string_Id, Java_Image (This.endSep), (index) + (Length (This.sep)));
+                end_Id := Java_Index_Of (string_Id, Java_Image (This.endSep), (index) + (Ada.Strings.Unbounded.Length (This.sep)));
                 if (end_Id) /= (-(1)) then
-                    tokenList.add (Unbounded_Slice (string_Id, ((index) + (Length (This.sep))) + 1, (end_Id) - (((Length (This.endSep)) - (1)))));
-                    index := (end_Id) + (Length (This.endSep));
+                    tokenList.add (Unbounded_Slice (string_Id, ((index) + (Ada.Strings.Unbounded.Length (This.sep))) + 1, (end_Id) - (((Ada.Strings.Unbounded.Length (This.endSep)) - (1)))));
+                    index := (end_Id) + (Ada.Strings.Unbounded.Length (This.endSep));
                 else
                     null;
                 end if;
@@ -115,13 +115,13 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
    begin
         index := 0;
         end_Id := 0;
-        while (index) < (Length (string_Id)) loop
+        while (index) < (Ada.Strings.Unbounded.Length (string_Id)) loop
             end_Id := Java_Index_Of (string_Id, Java_Image (This.sep), index);
             if (end_Id) /= (-(1)) then
                 tokenVector.add (Unbounded_Slice (string_Id, (index) + 1, end_Id));
-                index := (end_Id) + (Length (This.sep));
+                index := (end_Id) + (Ada.Strings.Unbounded.Length (This.sep));
             else
-                tokenVector.add (Unbounded_Slice (string_Id, (index) + 1, Length (string_Id)));
+                tokenVector.add (Unbounded_Slice (string_Id, (index) + 1, Ada.Strings.Unbounded.Length (string_Id)));
                 exit;
             end if;
         end loop;
@@ -144,7 +144,7 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
             string_Id := Java_Unbox (stringVector.objectArray (index));
             end_Id := Java_Index_Of (string_Id, Java_Image (This.sep));
             if (end_Id) >= (0) then
-                tokenHashtable.put (Java_Box (Unbounded_Slice (string_Id, (0) + 1, end_Id)), Java_Box (Unbounded_Slice (string_Id, ((end_Id) + (1)) + 1, Length (string_Id))));
+                tokenHashtable.put (Java_Box (Unbounded_Slice (string_Id, (0) + 1, end_Id)), Java_Box (Unbounded_Slice (string_Id, ((end_Id) + (1)) + 1, Ada.Strings.Unbounded.Length (string_Id))));
             end if;
         end loop;
         return tokenHashtable;

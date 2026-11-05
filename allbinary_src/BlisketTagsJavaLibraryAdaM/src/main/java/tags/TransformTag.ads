@@ -79,7 +79,7 @@ package tags.TransformTag_Package is
    function "=" (Left, Right : TransformTag_Access_Array_Access_Array_Access) return Boolean renames tags.TransformTag_Package_References."=";
 
    type TransformTag is new TransformInfoTag with record
-      logUtil : LogUtil_Access;
+      TransformTag_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out TransformTag'Class);

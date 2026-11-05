@@ -159,6 +159,8 @@ limited with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterfac
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References;
 limited with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimation_Package_References;
+limited with org.allbinary.animation.NullIndexedAnimationFactory_Package;
+with org.allbinary.animation.NullIndexedAnimationFactory_Package_References;
 limited with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.Animation_Package_References;
 
@@ -217,6 +219,16 @@ package org.allbinary.animation.NullIndexedAnimationInner_Package is
    use type IndexedAnimation_Access_Array_Access_Array;
    subtype IndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array_Access;
    use type IndexedAnimation_Access_Array_Access_Array_Access;
+   subtype NullIndexedAnimationFactory_Access is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access;
+   use type NullIndexedAnimationFactory_Access;
+   subtype NullIndexedAnimationFactory_Access_Array is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array;
+   use type NullIndexedAnimationFactory_Access_Array;
+   subtype NullIndexedAnimationFactory_Access_Array_Access is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array_Access;
+   use type NullIndexedAnimationFactory_Access_Array_Access;
+   subtype NullIndexedAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array_Access_Array;
+   use type NullIndexedAnimationFactory_Access_Array_Access_Array;
+   subtype NullIndexedAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array_Access_Array_Access;
+   use type NullIndexedAnimationFactory_Access_Array_Access_Array_Access;
    subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
    use type Animation_Access;
    subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;

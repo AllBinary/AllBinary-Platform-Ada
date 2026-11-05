@@ -40,7 +40,7 @@ package body org.allbinary.animation.PathParser_Package is
    begin
         tokens := BasicArrayList_Access (BasicArrayListD_Package.Create);
         sb := StringBuffer_Package.Create;
-        for i in 0 .. (Length (d)) - 1 loop
+        for i in 0 .. (Ada.Strings.Unbounded.Length (d)) - 1 loop
             c := Element (d, (i) + 1);
             if (((((Integer (Character'Pos (c))) = (Integer (Character'Pos (' ')))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (','))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (ASCII.HT))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (ASCII.LF))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (ASCII.CR)))) then
                 if (sb.length) > (0) then

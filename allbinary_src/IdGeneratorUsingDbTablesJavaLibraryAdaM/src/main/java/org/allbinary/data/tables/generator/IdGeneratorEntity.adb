@@ -149,6 +149,11 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
 
+   procedure deleteWhere (This : in out IdGeneratorEntity; key : Unbounded_String; value : Unbounded_String) is
+   begin
+        AbSqlBean_Package.AbSqlBean (This).deleteWhere (key, value);
+   end deleteWhere;
+
    procedure get (This : in out IdGeneratorEntity; name : Unbounded_String) is
       Java_Result : constant Long_Long_Integer := IdGeneratorEntity'Class (This).get (name => name);
       pragma Unreferenced (Java_Result);

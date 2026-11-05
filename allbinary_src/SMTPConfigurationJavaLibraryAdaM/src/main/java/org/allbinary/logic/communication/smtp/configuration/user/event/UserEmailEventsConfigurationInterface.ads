@@ -119,6 +119,7 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
    function getEventConfigurationHashMap (This : in out UserEmailEventsConfigurationInterface) return HashMap_Access is abstract;
    procedure addUserEmailEventConfiguration (This : in out UserEmailEventsConfigurationInterface; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface_Package.UserEmailEventConfigurationInterface'Class) is abstract;
    function getEventListener (This : in out UserEmailEventsConfigurationInterface; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) return UserEmailEventListenerInterface_Access is abstract;
+   procedure getEventListener (This : in out UserEmailEventsConfigurationInterface; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) is abstract;
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
 

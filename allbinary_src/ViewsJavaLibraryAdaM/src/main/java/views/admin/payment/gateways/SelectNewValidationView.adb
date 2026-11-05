@@ -117,6 +117,12 @@ package body views.admin.payment.gateways.SelectNewValidationView_Package is
         return SelectNewView_Package.Create (SelectNewValidationView'Class (This).getTransformInfoInterface).view;
    end view;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out SelectNewValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (HttpStoreComponentView_Package.HttpStoreComponentView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out SelectNewValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := SelectNewValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

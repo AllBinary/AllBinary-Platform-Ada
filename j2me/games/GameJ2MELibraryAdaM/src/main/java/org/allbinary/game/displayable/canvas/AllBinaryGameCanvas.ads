@@ -1016,6 +1016,8 @@ package org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package is
    function isSingleThread (This : in out AllBinaryGameCanvas) return Boolean;
    function isRunningInAnotherThread (This : in out AllBinaryGameCanvas) return Boolean;
    function getType (This : in out AllBinaryGameCanvas) return Integer;
+   function getTitle (This : in out AllBinaryGameCanvas) return Unbounded_String;
+   function isPaused (This : in out AllBinaryGameCanvas) return Boolean;
 
 end org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 

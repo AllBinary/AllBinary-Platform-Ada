@@ -319,6 +319,8 @@ with playn.core.CoreImage_Package_References;
 with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
 with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
 with playn.html.HTMLPlaynUtil_Package_References;
+with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
+with org.allbinary.media.image.ImageModifierUtil_Package_References;
 with org.allbinary.media.image.ImageModifierUtil_Package;
 
 package body org.allbinary.media.image.ImageCopyCallback_Package is
@@ -399,6 +401,16 @@ package body org.allbinary.media.image.ImageCopyCallback_Package is
    function "=" (Left, Right : HTMLPlaynUtil_Access_Array_Access_Array) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
    subtype HTMLPlaynUtil_Access_Array_Access_Array_Access is playn.html.HTMLPlaynUtil_Package_References.HTMLPlaynUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HTMLPlaynUtil_Access_Array_Access_Array_Access) return Boolean renames playn.html.HTMLPlaynUtil_Package_References."=";
+   subtype ImageModifierUtil_Access is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access;
+   function "=" (Left, Right : ImageModifierUtil_Access) return Boolean renames org.allbinary.media.image.ImageModifierUtil_Package_References."=";
+   subtype ImageModifierUtil_Access_Array is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array;
+   function "=" (Left, Right : ImageModifierUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageModifierUtil_Package_References."=";
+   subtype ImageModifierUtil_Access_Array_Access is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array_Access;
+   function "=" (Left, Right : ImageModifierUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageModifierUtil_Package_References."=";
+   subtype ImageModifierUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : ImageModifierUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageModifierUtil_Package_References."=";
+   subtype ImageModifierUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ImageModifierUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageModifierUtil_Package_References."=";
    procedure Initialize_Fields (This : in out ImageCopyCallback'Class) is
    begin
       null;
@@ -437,7 +449,7 @@ package body org.allbinary.media.image.ImageCopyCallback_Package is
    begin
             logUtil := LogUtil_Package.getInstance;
             resourceCallbackStrings := ResourceCallbackStrings_Access (This.imageModifierUtil_Var.resourceCallbackStrings);
-            logUtil.putF (Java_Image (resourceCallbackStrings.DONE) & This.image.getName, ImageModifierUtil_Access'(This'Unchecked_Access), resourceCallbackStrings.HANDLE_IMAGE);
+            logUtil.putF (Java_Image (resourceCallbackStrings.DONE) & This.image.getName, ImageCopyCallback_Access'(This'Unchecked_Access), resourceCallbackStrings.HANDLE_IMAGE);
             This.imageModifierUtil_Var.copy (This.imageArray, This.index, This.image, This.image3);
    end onSuccess;
     
@@ -448,7 +460,7 @@ package body org.allbinary.media.image.ImageCopyCallback_Package is
    begin
             logUtil := LogUtil_Package.getInstance;
             resourceCallbackStrings := ResourceCallbackStrings_Access (This.imageModifierUtil_Var.resourceCallbackStrings);
-            logUtil.put (StringMaker_Package.Create.append (This.imageModifierUtil_Var.commonStrings.EXCEPTION_LABEL).append (resourceCallbackStrings.ERROR).append (This.image.getName).toString, ImageModifierUtil_Access'(This'Unchecked_Access), resourceCallbackStrings.HANDLE_IMAGE, e);
+            logUtil.put (StringMaker_Package.Create.append (This.imageModifierUtil_Var.commonStrings.EXCEPTION_LABEL).append (resourceCallbackStrings.ERROR).append (This.image.getName).toString, ImageCopyCallback_Access'(This'Unchecked_Access), resourceCallbackStrings.HANDLE_IMAGE, e);
    end onFailure;
 
    procedure onSuccess (This : in out ImageCopyCallback; Value : Unbounded_String) is

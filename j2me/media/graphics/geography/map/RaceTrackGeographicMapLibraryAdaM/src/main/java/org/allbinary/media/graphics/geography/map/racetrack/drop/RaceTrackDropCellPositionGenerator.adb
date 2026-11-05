@@ -44,6 +44,7 @@ with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCellPositionGenerator_Package is
 
@@ -185,7 +186,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    begin
         raceTrackGeographicMapCellType := RaceTrackGeographicMapCellType_Access (This.raceTrackGeographicMap.getCellTypeAt (geographicMapCellPosition));
         raceTrackGeographicMapCellTypeFactory := RaceTrackGeographicMapCellTypeFactory_Access (This.raceTrackGeographicMapCellTypeFactory);
-        if ((raceTrackGeographicMapCellType) = (raceTrackGeographicMapCellTypeFactory.HORIZONTAL_STRAIGHT_ROAD_CELL_TYPE)) or else ((raceTrackGeographicMapCellType) = (raceTrackGeographicMapCellTypeFactory.VERTICAL_STRAIGHT_ROAD_CELL_TYPE)) then
+        if (org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=" (raceTrackGeographicMapCellType, raceTrackGeographicMapCellTypeFactory.HORIZONTAL_STRAIGHT_ROAD_CELL_TYPE)) or else (org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References."=" (raceTrackGeographicMapCellType, raceTrackGeographicMapCellTypeFactory.VERTICAL_STRAIGHT_ROAD_CELL_TYPE)) then
             return True;
         end if;
         return False;

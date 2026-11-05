@@ -67,7 +67,7 @@ package tags.generic_Id.inventory.InventoryTag_Package is
    function "=" (Left, Right : InventoryTag_Access_Array_Access_Array_Access) return Boolean renames tags.generic_Id.inventory.InventoryTag_Package_References."=";
 
    type InventoryTag is new StoreValidationTransformTag with record
-      logUtil : LogUtil_Access;
+      InventoryTag_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out InventoryTag'Class);

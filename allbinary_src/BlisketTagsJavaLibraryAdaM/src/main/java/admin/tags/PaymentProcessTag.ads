@@ -67,7 +67,7 @@ package admin.tags.PaymentProcessTag_Package is
    function "=" (Left, Right : PaymentProcessTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.PaymentProcessTag_Package_References."=";
 
    type PaymentProcessTag is new StoreValidationTransformTag with record
-      logUtil : LogUtil_Access;
+      PaymentProcessTag_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out PaymentProcessTag'Class);

@@ -81,7 +81,7 @@ package org.allbinary.logic.communication.sql.AbSqlBean_Package is
    function "=" (Left, Right : AbSqlBean_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
 
    type AbSqlBean is new AbSqlRow with record
-      logUtil : LogUtil_Access;
+      AbSqlBean_Field_logUtil : LogUtil_Access;
       METHOD_GET_FIELD : Unbounded_String;
       METHOD_IS_SUBSET_OF_ENTRY : Unbounded_String;
    end record;

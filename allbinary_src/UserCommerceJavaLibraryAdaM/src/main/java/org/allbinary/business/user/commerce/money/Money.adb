@@ -160,7 +160,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
             centsStr := To_Unbounded_String ("00");
         else
             dollarStr := Java_New_String (Unbounded_Slice (usDollarStr, (0) + 1, index));
-            centsStr := Java_New_String (Unbounded_Slice (usDollarStr, ((index) + (1)) + 1, Length (usDollarStr)));
+            centsStr := Java_New_String (Unbounded_Slice (usDollarStr, ((index) + (1)) + 1, Ada.Strings.Unbounded.Length (usDollarStr)));
         end if;
         localUnit := (dollarStr.longValue) * (100).longValue;
         localUnit := (localUnit) + (centsStr.longValue);

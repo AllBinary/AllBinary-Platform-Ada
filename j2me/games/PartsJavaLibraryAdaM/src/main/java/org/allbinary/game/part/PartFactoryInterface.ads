@@ -89,6 +89,7 @@ package org.allbinary.game.part.PartFactoryInterface_Package is
    function "=" (Left, Right : PartFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.part.PartFactoryInterface_Package_References."=";
    function Java_Object_Access_From_PartFactoryInterface (Value : PartFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out PartFactoryInterface; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class) return PartInterface_Access is abstract;
+   procedure getInstance (This : in out PartFactoryInterface; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class) is abstract;
 
 end org.allbinary.game.part.PartFactoryInterface_Package;
 

@@ -503,7 +503,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                    This.logUtil.put (To_Unbounded_String ("Could Not Load Data from: ") & Java_Image (TransformInfo'Class (This).getDataFile), TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"), e);
+                    This.logUtil.put (To_Unbounded_String ("Could Not Load Data from: ") & TransformInfo'Class (This).getDataFile, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"), e);
                 end if;
                     end;
             end;
@@ -576,7 +576,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         hashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
         hashMap.put (transformInfoData.OBJECTFILENAME, Java_Box (This.objectFileName));
         hashMap.put (transformInfoData.OBJECT, This.anyType);
-        hashMap.put (transformInfoData.OBJECTCONFIGFILENAME, TransformInfo'Class (This).getObjectConfigFile);
+        hashMap.put (transformInfoData.OBJECTCONFIGFILENAME, Java_Box (TransformInfo'Class (This).getObjectConfigFile));
         hashMap.put (transformInfoData.OBJECTCONFIG, Encoder_Package.encode (Java_Get_Bytes (TransformInfo'Class (This).getObjectConfigInterface.toString)));
         hashMap.put (transformInfoData.TEMPLATEFILENAME, Java_Box (This.templateFileName));
         hashMap.put (transformInfoData.TEMPLATE, Java_Box (This.template));

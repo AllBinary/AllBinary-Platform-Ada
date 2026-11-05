@@ -66,7 +66,7 @@ package tags.XmlValidationTransformTag_Package is
    function "=" (Left, Right : XmlValidationTransformTag_Access_Array_Access_Array_Access) return Boolean renames tags.XmlValidationTransformTag_Package_References."=";
 
    type XmlValidationTransformTag is new TransformTag with record
-      logUtil : LogUtil_Access;
+      XmlValidationTransformTag_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out XmlValidationTransformTag'Class);

@@ -28,6 +28,7 @@ with org.allbinary.animation.VectorAnimationUtil_Package; use org.allbinary.anim
 with org.allbinary.animation.VectorAnimationUtil_Package_References;
 with org.allbinary.animation.VectorAnimationUtil_Package;
 with org.allbinary.animation.VectorExplosionType_Package;
+with org.allbinary.animation.VectorExplosionType_Package_References;
 
 package body org.allbinary.animation.VectorExplosionGenerator_Package is
 
@@ -194,7 +195,7 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
                 end if;
             end loop;
             sectionBasicArrayList := RandomTranslation_Package.getInstance (sectionBasicArrayList, howMuch);
-            if (type_Id) = (This.ROTATION) then
+            if org.allbinary.animation.VectorExplosionType_Package_References."=" (type_Id, This.ROTATION) then
                 sectionBasicArrayList := This.randomRotationFactory.getInstanceList (sectionBasicArrayList, howMuch);
             end if;
             size := sectionBasicArrayList.size;

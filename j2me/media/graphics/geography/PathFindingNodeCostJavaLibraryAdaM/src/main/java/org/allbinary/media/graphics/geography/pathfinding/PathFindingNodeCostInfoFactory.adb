@@ -20,6 +20,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References;
 
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package is
 
@@ -90,7 +91,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
       pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access;
    begin
         pathFindingNodeCostInfo := PathFindingNodeCostInfoFactory'Class (This).getInstance (goingToGeographicMapCellPosition, geographicMapCellPosition);
-        if (pathFindingNodeCostInfo) = (null) then
+        if org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package_References."=" (pathFindingNodeCostInfo, null) then
             pathFindingNodeCostInfo := PathFindingNodeCostInfo_Package.Create (costFromStart, costToEnd);
             pathFindingNodeCostInfo.setCalculatedTotalCost;
             This.pathFindingNodeCostInfoAdjacencyList (geographicMapCellPosition.getId) (goingToGeographicMapCellPosition.getId) := pathFindingNodeCostInfo;

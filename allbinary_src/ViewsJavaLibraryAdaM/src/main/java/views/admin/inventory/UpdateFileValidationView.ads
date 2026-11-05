@@ -118,7 +118,7 @@ package views.admin.inventory.UpdateFileValidationView_Package is
    function "=" (Left, Right : UpdateFileValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.UpdateFileValidationView_Package_References."=";
 
    type UpdateFileValidationView is new InventoryItemView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      UpdateFileValidationView_Field_logUtil : LogUtil_Access;
    end record;
    UPDATEPRODUCT : Unbounded_String;
 
@@ -132,6 +132,7 @@ package views.admin.inventory.UpdateFileValidationView_Package is
    function isValid (This : in out UpdateFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer) return Boolean;
    procedure isValid (This : in out UpdateFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer);
    procedure validationInfo (This : in out UpdateFileValidationView; stringBuffer_Param : access StringMaker_Package.StringMaker'Class; fileName : Unbounded_String; fileItemFieldName : Unbounded_String; size : Long_Long_Integer);
+   function getTransformInfoInterface (This : in out UpdateFileValidationView) return TransformInfoInterface_Access;
 
 end views.admin.inventory.UpdateFileValidationView_Package;
 

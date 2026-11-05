@@ -92,7 +92,7 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package 
    function "=" (Left, Right : CssElementValidation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package_References."=";
 
    type CssElementValidation is new CssElementView and ValidationInterface with record
-      logUtil : LogUtil_Access;
+      CssElementValidation_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out CssElementValidation'Class);

@@ -92,10 +92,15 @@ package org.allbinary.business.category.CategoryFactoryInterface_Package is
    function Java_Object_Access_From_CategoryFactoryInterface (Value : CategoryFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getRootInstance (This : in out CategoryFactoryInterface) return CategoryInterface_Access is abstract;
    function getRootInstance (This : in out CategoryFactoryInterface; categoryPath_Param : access AbPath_Package.AbPath'Class) return CategoryInterface_Access is abstract;
+   procedure getRootInstance (This : in out CategoryFactoryInterface; categoryPath_Param : access AbPath_Package.AbPath'Class) is abstract;
    function getRootInstanceFromNode (This : in out CategoryFactoryInterface; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access is abstract;
+   procedure getRootInstanceFromNode (This : in out CategoryFactoryInterface; node_Param : access Node_Package.Node'Class) is abstract;
    function getInstance (This : in out CategoryFactoryInterface; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; name : Unbounded_String) return CategoryInterface_Access is abstract;
+   procedure getInstance (This : in out CategoryFactoryInterface; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; name : Unbounded_String) is abstract;
    function getInstance (This : in out CategoryFactoryInterface; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access is abstract;
+   procedure getInstance (This : in out CategoryFactoryInterface; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; node_Param : access Node_Package.Node'Class) is abstract;
    function getInstance (This : in out CategoryFactoryInterface; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return CategoryInterface_Access is abstract;
+   procedure getInstance (This : in out CategoryFactoryInterface; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.business.category.CategoryFactoryInterface_Package;
 

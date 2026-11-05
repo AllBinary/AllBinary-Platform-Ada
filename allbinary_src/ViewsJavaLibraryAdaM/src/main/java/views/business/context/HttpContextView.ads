@@ -91,7 +91,7 @@ package views.business.context.HttpContextView_Package is
    function "=" (Left, Right : HttpContextView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.HttpContextView_Package_References."=";
 
    type HttpContextView is new HttpComponentView with record
-      logUtil : LogUtil_Access;
+      HttpContextView_Field_logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;
 

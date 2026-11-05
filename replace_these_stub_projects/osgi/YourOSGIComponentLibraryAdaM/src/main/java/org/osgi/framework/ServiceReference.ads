@@ -40,6 +40,7 @@ package org.osgi.framework.ServiceReference_Package is
    function "=" (Left, Right : ServiceReference_Access_Array_Access_Array_Access) return Boolean renames org.osgi.framework.ServiceReference_Package_References."=";
    function Java_Object_Access_From_ServiceReference (Value : ServiceReference_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getProperty (This : in out ServiceReference; key : Unbounded_String) return Java_Object_Access is abstract;
+   procedure getProperty (This : in out ServiceReference; key : Unbounded_String) is abstract;
    function getPropertyKeys (This : in out ServiceReference) return Unbounded_String_Array_Access is abstract;
 
 end org.osgi.framework.ServiceReference_Package;

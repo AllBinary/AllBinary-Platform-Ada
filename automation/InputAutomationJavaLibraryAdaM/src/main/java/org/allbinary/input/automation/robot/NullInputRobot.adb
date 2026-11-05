@@ -178,6 +178,26 @@ package body org.allbinary.input.automation.robot.NullInputRobot_Package is
         null;
    end waitForIdle;
 
+   procedure mouseMove (This : in out NullInputRobot; point_Param : access Point_Package.Point'Class) is
+      point : constant Point_Access := Point_Access (point_Param);
+   begin
+        AbstractInputRobot_Package.AbstractInputRobot (This).mouseMove (point);
+   end mouseMove;
+
+   --  throws Exception
+   procedure mouseMoveToTarget (This : in out NullInputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
+   begin
+        AbstractInputRobot_Package.AbstractInputRobot (This).mouseMoveToTarget (rectangle);
+   end mouseMoveToTarget;
+
+   --  throws Exception
+   procedure mouseMoveToTarget (This : in out NullInputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
+   begin
+        AbstractInputRobot_Package.AbstractInputRobot (This).mouseMoveToTarget (rectangle, x, y);
+   end mouseMoveToTarget;
+
    procedure createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle_Package.Rectangle'Class) is
       Java_Result : constant BufferedImage_Access := NullInputRobot'Class (This).createScreenCapture (screenRect_Param => screenRect_Param);
       pragma Unreferenced (Java_Result);

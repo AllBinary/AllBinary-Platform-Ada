@@ -74,7 +74,7 @@ package body org.allbinary.graphics.draw.KeyValueDrawString_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       labelWidth : Integer;
    begin
-        labelWidth := (graphics.getFont.stringWidth (This.LABEL)) - (Length (This.LABEL));
+        labelWidth := (graphics.getFont.stringWidth (This.LABEL)) - (Ada.Strings.Unbounded.Length (This.LABEL));
         This.valueX := (labelWidth) + (This.labelX);
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;

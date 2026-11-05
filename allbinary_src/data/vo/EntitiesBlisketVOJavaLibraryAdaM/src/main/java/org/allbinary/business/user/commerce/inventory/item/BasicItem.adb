@@ -575,7 +575,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         hashMap.put (This.basicItemData.PRICE, Java_Box (This.price.toString));
         hashMap.put (This.basicItemData.COMMENT, Java_Box (This.comment));
         hashMap.put (This.basicItemData.CUSTOMS, Java_Box (This.customs));
-        hashMap.put (This.basicItemData.DOWNLOADS, BasicItem'Class (This).getDownloads);
+        hashMap.put (This.basicItemData.DOWNLOADS, Java_Box (BasicItem'Class (This).getDownloads));
         hashMap.put (This.basicItemData.GROUPS, Java_Box (This.groups));
         hashMap.put (This.basicItemData.OPTIONS, Java_Box (This.options));
         hashMap.put (This.basicItemData.PERMISSIONS, Java_Box (This.permissions));
@@ -629,7 +629,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
    --  throws Exception
    function getKey (This : in out BasicItem) return Java_Object_Access is
    begin
-        return Java_Object_Access (BasicItem'Class (This).getId);
+        return Java_Box (BasicItem'Class (This).getId);
    end getKey;
 
 end org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;

@@ -29,6 +29,7 @@ with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References;
 with org.allbinary.input.automation.module.DefaultListModelHelper_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References;
 
 package body org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package is
 
@@ -152,7 +153,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
         commonStrings := CommonStrings_Package.getInstance;
         This.logUtil.putF (To_Unbounded_String ("Getting Module: ") & moduleName, InputAutomationModuleFactoryFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         inputAutomationModuleFactoryInterface := InputAutomationModuleFactoryInterface_Access (This.hashMap.get (Java_Box (moduleName)));
-        if (inputAutomationModuleFactoryInterface) = (null) then
+        if org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References."=" (inputAutomationModuleFactoryInterface, null) then
             This.logUtil.putF (To_Unbounded_String ("Module: ") & moduleName & To_Unbounded_String (" was null"), InputAutomationModuleFactoryFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;
         return inputAutomationModuleFactoryInterface;

@@ -170,7 +170,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         if ((This.number) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.number, stringUtil.EMPTY_STRING)) = (0)) then
             return aFalse;
         end if;
-        if (Length (This.number)) > (org_Package.allbinary.business.user.commerce.money.payment_Var.types.CreditCardType.MAXLEN) then
+        if (Ada.Strings.Unbounded.Length (This.number)) > (org_Package.allbinary.business.user.commerce.money.payment_Var.types.CreditCardType.MAXLEN) then
             return aFalse;
         end if;
         return True;
@@ -323,8 +323,8 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
 
    function getLastFour (This : in out Payment) return Unbounded_String is
    begin
-        if ((Length (This.number)) > (PaymentData_Package.MIN)) and then ((Length (This.number)) <= (PaymentData_Package.MAX)) then
-            return Unbounded_Slice (This.number, ((Length (This.number)) - (4)) + 1, Length (This.number));
+        if ((Ada.Strings.Unbounded.Length (This.number)) > (PaymentData_Package.MIN)) and then ((Ada.Strings.Unbounded.Length (This.number)) <= (PaymentData_Package.MAX)) then
+            return Unbounded_Slice (This.number, ((Ada.Strings.Unbounded.Length (This.number)) - (4)) + 1, Ada.Strings.Unbounded.Length (This.number));
         else
             return To_Unbounded_String ("Invalid #");
         end if;
@@ -342,7 +342,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         hashMap.put (PaymentData_Package.NAME, Java_Box (This.name));
         hashMap.put (PaymentData_Package.TYPE_Id, Java_Box (This.type_Id));
         hashMap.put (PaymentData_Package.EXPIRATION, Java_Box (This.expiration));
-        hashMap.put (PaymentData_Package.NUMBER, Payment'Class (This).getLastFour);
+        hashMap.put (PaymentData_Package.NUMBER, Java_Box (Payment'Class (This).getLastFour));
         hashMap.put (PaymentData_Package.TENDERTYPE, Java_Box (This.tenderType));
         hashMap.put (PaymentData_Package.TRANSACTIONTYPE, Java_Box (This.transactionType));
         hashMap.put (PaymentData_Package.ABA, Java_Box (This.aba));

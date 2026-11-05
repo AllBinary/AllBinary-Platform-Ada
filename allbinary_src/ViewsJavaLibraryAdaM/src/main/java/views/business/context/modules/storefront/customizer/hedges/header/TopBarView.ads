@@ -119,7 +119,7 @@ package views.business.context.modules.storefront.customizer.hedges.header.TopBa
    function "=" (Left, Right : TopBarView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.hedges.header.TopBarView_Package_References."=";
 
    type TopBarView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      TopBarView_Field_logUtil : LogUtil_Access;
       heading : HeadingValidation_Access;
    end record;
 

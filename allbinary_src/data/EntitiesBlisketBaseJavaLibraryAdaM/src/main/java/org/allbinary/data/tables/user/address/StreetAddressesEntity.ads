@@ -114,6 +114,7 @@ package org.allbinary.data.tables.user.address.StreetAddressesEntity_Package is
    function createTableStatement (This : in out StreetAddressesEntity) return Unbounded_String;
    function createTable (This : in out StreetAddressesEntity) return Unbounded_String;
    function drop (This : in out StreetAddressesEntity) return Unbounded_String;
+   function dropTable (This : in out StreetAddressesEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
 

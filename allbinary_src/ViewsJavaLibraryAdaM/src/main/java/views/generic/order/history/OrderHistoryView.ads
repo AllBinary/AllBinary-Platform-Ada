@@ -107,7 +107,7 @@ package views.generic_Id.order.history.OrderHistoryView_Package is
    function "=" (Left, Right : OrderHistoryView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.order.history.OrderHistoryView_Package_References."=";
 
    type OrderHistoryView is new HttpStoreComponentView and DomNodeInterface with record
-      logUtil : LogUtil_Access;
+      OrderHistoryView_Field_logUtil : LogUtil_Access;
       request : HttpServletRequest_Access;
       shipped : Unbounded_String;
       partiallyShipped : Unbounded_String;

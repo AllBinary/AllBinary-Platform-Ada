@@ -106,7 +106,7 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    function "=" (Left, Right : NewCssValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References."=";
 
    type NewCssValidationView is new CssCustomizerView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      NewCssValidationView_Field_logUtil_Hidden : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out NewCssValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -118,6 +118,7 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    function toValidationInfoNode (This : in out NewCssValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out NewCssValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out NewCssValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out NewCssValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package;
 

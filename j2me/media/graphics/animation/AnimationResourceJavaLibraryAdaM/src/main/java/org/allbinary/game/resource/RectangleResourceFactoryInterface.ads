@@ -64,7 +64,9 @@ package org.allbinary.game.resource.RectangleResourceFactoryInterface_Package is
    function "=" (Left, Right : RectangleResourceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.resource.RectangleResourceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_RectangleResourceFactoryInterface (Value : RectangleResourceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getRectangle (This : in out RectangleResourceFactoryInterface; resource : Unbounded_String) return Rectangle_Access is abstract;
+   procedure getRectangle (This : in out RectangleResourceFactoryInterface; resource : Unbounded_String) is abstract;
    function getRectangleArrayOfArrays (This : in out RectangleResourceFactoryInterface; resource : Unbounded_String) return Rectangle_Access_Array_Access_Array_Access is abstract;
+   procedure getRectangleArrayOfArrays (This : in out RectangleResourceFactoryInterface; resource : Unbounded_String) is abstract;
 
 end org.allbinary.game.resource.RectangleResourceFactoryInterface_Package;
 

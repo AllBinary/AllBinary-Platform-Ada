@@ -93,7 +93,9 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity
    function Java_Object_Access_From_OrderItemsEntityInterface (Value : OrderItemsEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setStatus (This : in out OrderItemsEntityInterface; orderId : Unbounded_String; groupId : Unbounded_String; status : Unbounded_String) is abstract;
    function isEverythingShipped (This : in out OrderItemsEntityInterface; orderId : Unbounded_String) return Boolean is abstract;
+   procedure isEverythingShipped (This : in out OrderItemsEntityInterface; orderId : Unbounded_String) is abstract;
    function getBasketReview (This : in out OrderItemsEntityInterface; orderId : Unbounded_String) return BasketReview_Access is abstract;
+   procedure getBasketReview (This : in out OrderItemsEntityInterface; orderId : Unbounded_String) is abstract;
    procedure insert (This : in out OrderItemsEntityInterface; userName : Unbounded_String; order_Param : access OrderInterface_Package.OrderInterface'Class) is abstract;
    procedure insert (This : in out OrderItemsEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
 

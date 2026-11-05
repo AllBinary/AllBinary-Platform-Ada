@@ -161,6 +161,7 @@ package views.HttpComponentView_Package is
    function toXmlDoc (This : in out HttpComponentView) return Document_Access;
    function getDoc (This : in out HttpComponentView) return Document_Access;
    function view (This : in out HttpComponentView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out HttpComponentView) return TransformInfoInterface_Access;
 
 end views.HttpComponentView_Package;
 

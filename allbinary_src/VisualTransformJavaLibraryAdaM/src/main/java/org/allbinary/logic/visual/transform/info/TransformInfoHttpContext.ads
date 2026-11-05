@@ -80,7 +80,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_Packa
    function "=" (Left, Right : TransformInfoHttpContext_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_Package_References."=";
 
    type TransformInfoHttpContext is new TransformInfoHttp with record
-      logUtil : LogUtil_Access;
+      TransformInfoHttpContext_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out TransformInfoHttpContext'Class; databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);

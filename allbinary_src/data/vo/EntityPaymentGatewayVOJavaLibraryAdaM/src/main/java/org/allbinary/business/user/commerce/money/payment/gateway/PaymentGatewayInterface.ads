@@ -136,7 +136,9 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    procedure setLastModified (This : in out PaymentGatewayInterface; value : Unbounded_String) is abstract;
    procedure setTimeEntered (This : in out PaymentGatewayInterface; value : Unbounded_String) is abstract;
    function toHashMap (This : in out PaymentGatewayInterface; isEncrypted : Boolean) return HashMap_Access is abstract;
+   procedure toHashMap (This : in out PaymentGatewayInterface; isEncrypted : Boolean) is abstract;
    function toVector (This : in out PaymentGatewayInterface; isEncrypted : Boolean) return BasicArrayList_Access is abstract;
+   procedure toVector (This : in out PaymentGatewayInterface; isEncrypted : Boolean) is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
 

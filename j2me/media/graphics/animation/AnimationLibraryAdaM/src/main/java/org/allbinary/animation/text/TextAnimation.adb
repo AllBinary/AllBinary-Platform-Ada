@@ -170,7 +170,7 @@ package body org.allbinary.animation.text.TextAnimation_Package is
       size : Integer;
    begin
         list := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        if ((text) /= (Null_Unbounded_String)) and then ((Length (text)) > (0)) then
+        if ((text) /= (Null_Unbounded_String)) and then ((Ada.Strings.Unbounded.Length (text)) > (0)) then
             index := 0;
             startIndex := 0;
             endIndex := 0;
@@ -179,7 +179,7 @@ package body org.allbinary.animation.text.TextAnimation_Package is
                 index := Java_Index_Of (text, Java_Image (ASCII.LF), startIndex);
                 endIndex := index;
                 if (index) < (0) then
-                    endIndex := Length (text);
+                    endIndex := Ada.Strings.Unbounded.Length (text);
                 end if;
                 list.add (Unbounded_Slice (text, (startIndex) + 1, endIndex));
                 if (index) < (0) then

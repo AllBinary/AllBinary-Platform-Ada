@@ -54,6 +54,7 @@ package org.allbinary.business.context.modules.storefront.statistics.users.Store
    function Java_Object_Access_From_StoreFrontUsersStatisticsInterface (Value : StoreFrontUsersStatisticsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getNumberOfUsers (This : in out StoreFrontUsersStatisticsInterface) return Long_Long_Integer is abstract;
    function getNumberOfUsersByRole (This : in out StoreFrontUsersStatisticsInterface; role : Unbounded_String) return Long_Long_Integer is abstract;
+   procedure getNumberOfUsersByRole (This : in out StoreFrontUsersStatisticsInterface; role : Unbounded_String) is abstract;
 
 end org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
 

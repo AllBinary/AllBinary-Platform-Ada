@@ -123,7 +123,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
                 return False;
             else
                 size := This.downloadableItem.getSize.toString;
-                if ((Length (size)) < (1)) or else ((Length (size)) > (AbSqlData_Package.MAXNUM)) then
+                if ((Ada.Strings.Unbounded.Length (size)) < (1)) or else ((Ada.Strings.Unbounded.Length (size)) > (AbSqlData_Package.MAXNUM)) then
                     return False;
                 end if;
             end if;
@@ -131,7 +131,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
                 return False;
             else
                 size := This.downloadableItem.getValidTime.toString;
-                if ((Length (size)) < (1)) or else ((Length (size)) > (AbSqlData_Package.MAXNUM)) then
+                if ((Ada.Strings.Unbounded.Length (size)) < (1)) or else ((Ada.Strings.Unbounded.Length (size)) > (AbSqlData_Package.MAXNUM)) then
                     return False;
                 end if;
             end if;
@@ -139,7 +139,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
                 return False;
             else
                 size := This.downloadableItem.getRetries.toString;
-                if ((Length (size)) < (1)) or else ((Length (size)) > (AbSqlData_Package.MAXNUM)) then
+                if ((Ada.Strings.Unbounded.Length (size)) < (1)) or else ((Ada.Strings.Unbounded.Length (size)) > (AbSqlData_Package.MAXNUM)) then
                     return False;
                 end if;
             end if;
@@ -200,7 +200,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
                 stringBuffer.append (To_Unbounded_String ("File Size is null"));
             else
                 size := This.downloadableItem.getSize.toString;
-                if ((Length (size)) < (1)) or else ((Length (size)) > (AbSqlData_Package.MAXNUM)) then
+                if ((Ada.Strings.Unbounded.Length (size)) < (1)) or else ((Ada.Strings.Unbounded.Length (size)) > (AbSqlData_Package.MAXNUM)) then
                     stringBuffer.append (To_Unbounded_String ("File Size is invalid. Must be number < "));
                     stringBuffer.appendint (Integer (AbSqlData_Package.MAXNUM));
                     stringBuffer.append (To_Unbounded_String (" and > 0 digits.<br/>"));
@@ -210,7 +210,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
                 stringBuffer.append (To_Unbounded_String ("Valid Time is null"));
             else
                 size := This.downloadableItem.getValidTime.toString;
-                if ((Length (size)) < (1)) or else ((Length (size)) > (AbSqlData_Package.MAXNUM)) then
+                if ((Ada.Strings.Unbounded.Length (size)) < (1)) or else ((Ada.Strings.Unbounded.Length (size)) > (AbSqlData_Package.MAXNUM)) then
                     stringBuffer.append (To_Unbounded_String ("Valid Time is invalid. Must be number < "));
                     stringBuffer.appendint (Integer (AbSqlData_Package.MAXNUM));
                     stringBuffer.append (To_Unbounded_String (" and > 0 digits.<br/>"));
@@ -220,7 +220,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
                 stringBuffer.append (To_Unbounded_String ("Retries is null"));
             else
                 size := This.downloadableItem.getRetries.toString;
-                if ((Length (size)) < (1)) or else ((Length (size)) > (AbSqlData_Package.MAXNUM)) then
+                if ((Ada.Strings.Unbounded.Length (size)) < (1)) or else ((Ada.Strings.Unbounded.Length (size)) > (AbSqlData_Package.MAXNUM)) then
                     stringBuffer.append (To_Unbounded_String ("Retries is invalid. Must be number < "));
                     stringBuffer.appendint (Integer (AbSqlData_Package.MAXNUM));
                     stringBuffer.append (To_Unbounded_String (" and > 0 digits.<br/>"));

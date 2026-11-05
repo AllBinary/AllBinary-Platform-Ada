@@ -64,6 +64,7 @@ package org.allbinary.business.advertisement.AdvertisementsInterface_Package is
    function Java_Object_Access_From_AdvertisementsInterface (Value : AdvertisementsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure add (This : in out AdvertisementsInterface; advertisementInterface_Param : access AdvertisementInterface_Package.AdvertisementInterface'Class) is abstract;
    function get (This : in out AdvertisementsInterface; index : Integer) return AdvertisementInterface_Access is abstract;
+   procedure get (This : in out AdvertisementsInterface; index : Integer) is abstract;
    function getCurrentPageNum (This : in out AdvertisementsInterface) return Integer is abstract;
    function getErrorDescription (This : in out AdvertisementsInterface) return Unbounded_String is abstract;
    function getErrorNum (This : in out AdvertisementsInterface) return Unbounded_String is abstract;

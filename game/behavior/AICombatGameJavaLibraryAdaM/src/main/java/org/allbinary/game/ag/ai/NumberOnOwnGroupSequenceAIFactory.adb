@@ -123,7 +123,7 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package 
         integerArray := NumberInSameGroupSequence_Package.getInstance.NUMBER_ON_SAME_TEAM_SEQUENCE;
         list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         for index in 0 .. (integerArray'Length) - 1 loop
-            integerCanBeNull := hashtable.get (Java_Object_Access (integerArray (index)));
+            integerCanBeNull := hashtable.get (Java_Box (integerArray (index)));
             if (integerCanBeNull) = (null) then
                 exit;
             end if;

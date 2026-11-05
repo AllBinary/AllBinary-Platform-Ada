@@ -97,6 +97,12 @@ package body views.generic_Id.basket.ValidationView_Package is
         return MESSAGES_Package.CONTACTADMIN;
    end validationInfo;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out ValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (BasketView_Package.BasketView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out ValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := ValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

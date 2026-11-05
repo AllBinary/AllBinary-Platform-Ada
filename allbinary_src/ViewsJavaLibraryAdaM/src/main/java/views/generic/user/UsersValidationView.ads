@@ -105,7 +105,7 @@ package views.generic_Id.user.UsersValidationView_Package is
    function "=" (Left, Right : UsersValidationView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.user.UsersValidationView_Package_References."=";
 
    type UsersValidationView is new UsersView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      UsersValidationView_Field_logUtil_Hidden : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out UsersValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -115,6 +115,7 @@ package views.generic_Id.user.UsersValidationView_Package is
    function toValidationInfoDoc (This : in out UsersValidationView) return Document_Access;
    function toValidationInfoNode (This : in out UsersValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out UsersValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out UsersValidationView) return TransformInfoInterface_Access;
 
 end views.generic_Id.user.UsersValidationView_Package;
 

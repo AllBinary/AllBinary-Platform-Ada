@@ -108,8 +108,11 @@ package org.allbinary.business.category.CategoryInterface_Package is
    function Java_Object_Access_From_CategoryInterface (Value : CategoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getChildNodes (This : in out CategoryInterface) return BasicArrayList_Access is abstract;
    function addChildProperty (This : in out CategoryInterface; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) return Boolean is abstract;
+   procedure addChildProperty (This : in out CategoryInterface; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) is abstract;
    function addChild (This : in out CategoryInterface; categoryInterface_Var_Param : access CategoryInterface_Package.CategoryInterface'Class) return Boolean is abstract;
+   procedure addChild (This : in out CategoryInterface; categoryInterface_Var_Param : access CategoryInterface_Package.CategoryInterface'Class) is abstract;
    function removeChild (This : in out CategoryInterface; categoryInterface_Var_Param : access CategoryInterface_Package.CategoryInterface'Class) return Boolean is abstract;
+   procedure removeChild (This : in out CategoryInterface; categoryInterface_Var_Param : access CategoryInterface_Package.CategoryInterface'Class) is abstract;
    function isLeaf (This : in out CategoryInterface) return Boolean is abstract;
    function getProperties (This : in out CategoryInterface) return CategoryPropertiesInterface_Access is abstract;
    procedure setProperties (This : in out CategoryInterface; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) is abstract;

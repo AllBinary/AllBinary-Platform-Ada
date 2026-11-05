@@ -109,6 +109,7 @@ package org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_P
    function createTable (This : in out AdvertisementAreasEntity) return Unbounded_String;
    procedure update (This : in out AdvertisementAreasEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out AdvertisementAreasEntity) return Unbounded_String;
+   procedure insert (This : in out AdvertisementAreasEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;
 

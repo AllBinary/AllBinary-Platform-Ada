@@ -65,7 +65,7 @@ package org.allbinary.input.automation.module.generic_Id.InputAutomationGenericM
    function "=" (Left, Right : InputAutomationGenericModuleServiceFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package_References."=";
 
    type InputAutomationGenericModuleServiceFactory is new InputAutomationModuleServiceFactory with record
-      logUtil : LogUtil_Access;
+      InputAutomationGenericModuleServiceFactory_Field_logUtil : LogUtil_Access;
    end record;
    inputAutomationGenericModuleServiceFactory_Var : InputAutomationGenericModuleServiceFactory_Access;
 

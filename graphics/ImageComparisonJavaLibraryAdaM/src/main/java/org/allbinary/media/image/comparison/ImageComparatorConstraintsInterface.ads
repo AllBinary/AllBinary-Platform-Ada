@@ -90,10 +90,15 @@ package org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface
    function Java_Object_Access_From_ImageComparatorConstraintsInterface (Value : ImageComparatorConstraintsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getMaxNonMatchingPixelDeltas (This : in out ImageComparatorConstraintsInterface) return Integer is abstract;
    function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is abstract;
+   procedure isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) is abstract;
    function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraintsInterface; point_Param : access GPoint_Package.GPoint'Class) return Boolean is abstract;
+   procedure isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraintsInterface; point_Param : access GPoint_Package.GPoint'Class) is abstract;
    function isColorAllowed (This : in out ImageComparatorConstraintsInterface; frame : Integer; point_Param : access GPoint_Package.GPoint'Class; color_Param : access Color_Package.Color'Class) return Boolean is abstract;
+   procedure isColorAllowed (This : in out ImageComparatorConstraintsInterface; frame : Integer; point_Param : access GPoint_Package.GPoint'Class; color_Param : access Color_Package.Color'Class) is abstract;
    function isImageValid (This : in out ImageComparatorConstraintsInterface; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) return Boolean is abstract;
+   procedure isImageValid (This : in out ImageComparatorConstraintsInterface; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is abstract;
    function isFrameAllowed (This : in out ImageComparatorConstraintsInterface; frame : Integer) return Boolean is abstract;
+   procedure isFrameAllowed (This : in out ImageComparatorConstraintsInterface; frame : Integer) is abstract;
 
 end org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
 

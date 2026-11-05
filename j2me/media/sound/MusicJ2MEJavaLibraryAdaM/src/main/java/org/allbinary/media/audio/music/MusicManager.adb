@@ -353,6 +353,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.media.audio.music.MusicManager_Package; use org.allbinary.media.audio.music.MusicManager_Package;
+with org.allbinary.media.audio.music.MusicManager_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.media.audio.music.MusicManager_Package;
 
@@ -456,6 +458,16 @@ package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package 
    function "=" (Left, Right : BasicArrayListUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayListUtil_Package_References."=";
    subtype BasicArrayListUtil_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayListUtil_Package_References.BasicArrayListUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicArrayListUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayListUtil_Package_References."=";
+   subtype MusicManager_Access is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access;
+   function "=" (Left, Right : MusicManager_Access) return Boolean renames org.allbinary.media.audio.music.MusicManager_Package_References."=";
+   subtype MusicManager_Access_Array is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array;
+   function "=" (Left, Right : MusicManager_Access_Array) return Boolean renames org.allbinary.media.audio.music.MusicManager_Package_References."=";
+   subtype MusicManager_Access_Array_Access is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array_Access;
+   function "=" (Left, Right : MusicManager_Access_Array_Access) return Boolean renames org.allbinary.media.audio.music.MusicManager_Package_References."=";
+   subtype MusicManager_Access_Array_Access_Array is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array_Access_Array;
+   function "=" (Left, Right : MusicManager_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.music.MusicManager_Package_References."=";
+   subtype MusicManager_Access_Array_Access_Array_Access is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MusicManager_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.music.MusicManager_Package_References."=";
    procedure Initialize_Fields (This : in out MusicManagerPlayerListener'Class) is
    begin
       null;
@@ -481,7 +493,7 @@ package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package 
       player : constant Player_Access := Player_Access (player_Param);
       eventData : constant Java_Object_Access := Java_Object_Access (eventData_Param);
    begin
-            PreLogUtil_Package.put (event, MusicManager_Access'(This'Unchecked_Access), This.musicManager_Var.commonStrings.PROCESS);
+            PreLogUtil_Package.put (event, MusicManagerPlayerListener_Access'(This'Unchecked_Access), This.musicManager_Var.commonStrings.PROCESS);
             if (((event) = (PlayerListener_Package.END_OF_MEDIA)) or else ((event) = (PlayerListener_Package.STOPPED))) or else ((event) = (PlayerListener_Package.CLOSED)) then
                 This.musicManager_Var.reset;
             end if;

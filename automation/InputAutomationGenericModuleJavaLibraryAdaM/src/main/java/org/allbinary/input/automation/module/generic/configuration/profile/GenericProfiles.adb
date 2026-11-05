@@ -47,6 +47,7 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.Gene
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfilesData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References;
 
 package body org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package is
 
@@ -189,7 +190,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       commonStrings : CommonStrings_Access;
    begin
         genericProfile := GenericProfile_Access (This.hashMap.get (Java_Box (name)));
-        if (genericProfile) = (null) then
+        if org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package_References."=" (genericProfile, null) then
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (To_Unbounded_String ("No Generic Profile Named: ") & name & To_Unbounded_String (" availability was: ") & Java_Image (This.hashMap), GenericProfiles_Access'(This'Unchecked_Access), commonStrings.GET);
         end if;

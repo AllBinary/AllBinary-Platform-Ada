@@ -35,6 +35,7 @@ with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_Refe
 with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
 with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package_References;
 
 package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotionGestureListener_Package is
 
@@ -241,7 +242,7 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
         elsif (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.RELEASED) then
             ReleaseControlledMotionGestureListener'Class (This).released (ev);
         else
-            if (This.currentMotionGesture) /= (motionGestureInput) then
+            if (not org.allbinary.input.motion.gesture.MotionGestureInput_Package_References."=" (This.currentMotionGesture, motionGestureInput)) then
                 This.currentMotionGesture := motionGestureInput;
                 This.motionGestureCollection.add (ev.getMotionGesture);
             end if;

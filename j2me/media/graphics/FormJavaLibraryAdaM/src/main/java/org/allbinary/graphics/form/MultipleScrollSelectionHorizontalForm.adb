@@ -41,6 +41,7 @@ with org.allbinary.graphics.form.MPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.form.FormType_Package_References;
 
 package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package is
 
@@ -203,11 +204,11 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
    begin
         ScrollSelectionForm_Package.ScrollSelectionForm (This).init (rectangle, formType);
         formTypeFactory := FormTypeFactory_Package.getInstance;
-        if (formType) = (formTypeFactory.HORIZONTAL_FORM) then
+        if org.allbinary.graphics.form.FormType_Package_References."=" (formType, formTypeFactory.HORIZONTAL_FORM) then
             This.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable := ItemIndexPaintable_Access (MultipleScrollSelectionFormHorizontalPaintable_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access)));
-        elsif (formType) = (formTypeFactory.VERTICAL_CENTER_FORM) then
+        elsif org.allbinary.graphics.form.FormType_Package_References."=" (formType, formTypeFactory.VERTICAL_CENTER_FORM) then
             This.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable := ItemIndexPaintable_Access (MultipleScrollSelectionFormVerticalPaintable_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access)));
-        elsif (formType) = (formTypeFactory.NULL_FORM_TYPE) then
+        elsif org.allbinary.graphics.form.FormType_Package_References."=" (formType, formTypeFactory.NULL_FORM_TYPE) then
             null;
         else
             Java_Throw (Java_New_Exception ("Exception", formTypeFactory.UNK));
@@ -338,6 +339,8 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
+with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package; use org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
@@ -445,6 +448,16 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPa
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
    subtype ItemPaintableFactory_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access;
    function "=" (Left, Right : ItemPaintableFactory_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
    subtype ItemPaintableFactory_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array;
@@ -528,6 +541,8 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
+with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package; use org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
@@ -635,6 +650,16 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPain
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
    subtype ItemPaintableFactory_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access;
    function "=" (Left, Right : ItemPaintableFactory_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
    subtype ItemPaintableFactory_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array;

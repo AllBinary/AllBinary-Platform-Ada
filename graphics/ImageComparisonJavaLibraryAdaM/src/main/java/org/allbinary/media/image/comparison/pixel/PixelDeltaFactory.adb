@@ -28,6 +28,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References;
 
 package body org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package is
 
@@ -123,7 +124,7 @@ package body org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Packag
         point := PointFactory_Package.getInstance.createXY (x, y);
         colorDelta := ColorDeltaFactory_Package.getInstance (rgb1, rgb2);
         pixelDelta := PixelDelta_Access (PixelDeltaFactory_Package.cacheInterface.get (PixelDelta_Package.getKey (point, colorDelta)));
-        if (pixelDelta) = (null) then
+        if org.allbinary.media.image.comparison.pixel.PixelDelta_Package_References."=" (pixelDelta, null) then
             pixelDelta := PixelDelta_Package.Create (point, colorDelta);
         end if;
         return pixelDelta;

@@ -22,6 +22,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package_References;
 
 package body org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.RemoveActionScriptItemJPanel_Package is
 
@@ -105,7 +106,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       genericProfileAction : GenericProfileAction_Access;
    begin
         genericProfileAction := This.genericProfileActionJPanel.getGenericProfileAction;
-        if (genericProfileAction) = (null) then
+        if org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package_References."=" (genericProfileAction, null) then
             This.logUtil.putF (To_Unbounded_String ("GenericProfileAction was null"), RemoveActionScriptItemJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("removeJButtonActionPerformed"));
             return;
         end if;

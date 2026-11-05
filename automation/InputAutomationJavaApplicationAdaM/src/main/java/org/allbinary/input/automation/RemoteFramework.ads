@@ -66,8 +66,10 @@ package org.allbinary.input.automation.RemoteFramework_Package is
    function "=" (Left, Right : RemoteFramework_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.RemoteFramework_Package_References."=";
    function Java_Object_Access_From_RemoteFramework (Value : RemoteFramework_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function connect (This : in out RemoteFramework; host : Unbounded_String) return BundleContext_Access is abstract;
+   procedure connect (This : in out RemoteFramework; host : Unbounded_String) is abstract;
    procedure disconnect (This : in out RemoteFramework; bc_Param : access BundleContext_Package.BundleContext'Class) is abstract;
    function getSystemProperties (This : in out RemoteFramework; bc_Param : access BundleContext_Package.BundleContext'Class) return Map_Access is abstract;
+   procedure getSystemProperties (This : in out RemoteFramework; bc_Param : access BundleContext_Package.BundleContext'Class) is abstract;
 
 end org.allbinary.input.automation.RemoteFramework_Package;
 

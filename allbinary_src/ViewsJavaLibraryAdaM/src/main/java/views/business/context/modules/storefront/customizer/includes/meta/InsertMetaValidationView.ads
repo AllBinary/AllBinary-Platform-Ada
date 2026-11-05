@@ -105,7 +105,7 @@ package views.business.context.modules.storefront.customizer.includes.meta.Inser
    function "=" (Left, Right : InsertMetaValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.meta.InsertMetaValidationView_Package_References."=";
 
    type InsertMetaValidationView is new MetaView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      InsertMetaValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out InsertMetaValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -116,6 +116,7 @@ package views.business.context.modules.storefront.customizer.includes.meta.Inser
    function toValidationInfoDoc (This : in out InsertMetaValidationView) return Document_Access;
    function toValidationInfoNode (This : in out InsertMetaValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out InsertMetaValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out InsertMetaValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.meta.InsertMetaValidationView_Package;
 

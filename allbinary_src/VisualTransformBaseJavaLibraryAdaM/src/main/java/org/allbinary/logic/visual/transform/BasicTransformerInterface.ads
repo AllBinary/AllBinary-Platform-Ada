@@ -62,6 +62,7 @@ package org.allbinary.logic.visual.transform.BasicTransformerInterface_Package i
    function getInputStream (This : in out BasicTransformerInterface) return InputStream_Access is abstract;
    function getURIResolver (This : in out BasicTransformerInterface) return URIResolver_Access is abstract;
    function translate (This : in out BasicTransformerInterface; xmlDocumentStr : Unbounded_String) return Unbounded_String is abstract;
+   procedure translate (This : in out BasicTransformerInterface; xmlDocumentStr : Unbounded_String) is abstract;
 
 end org.allbinary.logic.visual.transform.BasicTransformerInterface_Package;
 

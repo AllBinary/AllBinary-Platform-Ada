@@ -165,6 +165,8 @@ with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Packag
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimation_Package_References;
+with org.allbinary.animation.NullIndexedAnimationFactory_Package; use org.allbinary.animation.NullIndexedAnimationFactory_Package;
+with org.allbinary.animation.NullIndexedAnimationFactory_Package_References;
 with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.Animation_Package_References;
@@ -233,6 +235,16 @@ package body org.allbinary.animation.NullIndexedAnimationInner_Package is
    function "=" (Left, Right : IndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
    subtype IndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : IndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
+   subtype NullIndexedAnimationFactory_Access is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access;
+   function "=" (Left, Right : NullIndexedAnimationFactory_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References."=";
+   subtype NullIndexedAnimationFactory_Access_Array is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array;
+   function "=" (Left, Right : NullIndexedAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References."=";
+   subtype NullIndexedAnimationFactory_Access_Array_Access is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array_Access;
+   function "=" (Left, Right : NullIndexedAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References."=";
+   subtype NullIndexedAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : NullIndexedAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References."=";
+   subtype NullIndexedAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullIndexedAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References."=";
    subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
    function "=" (Left, Right : Animation_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
    subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
@@ -251,7 +263,7 @@ package body org.allbinary.animation.NullIndexedAnimationInner_Package is
     
    procedure Initialize (This : in out NullIndexedAnimationInner'Class) is
    begin
-            null;
+            NullIndexedAnimation_Package.Initialize (This, IndexedAnimationBehavior_Package.Create (1, 250));
    end Initialize;
 
    function Create return NullIndexedAnimationInner_Access is

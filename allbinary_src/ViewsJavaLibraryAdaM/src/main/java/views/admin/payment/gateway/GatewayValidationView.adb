@@ -117,6 +117,12 @@ package body views.admin.payment.gateway.GatewayValidationView_Package is
         return GatewayView_Package.Create (GatewayValidationView'Class (This).getTransformInfoInterface).view;
    end view;
 
+   --  throws Exception
+   function getTransformInfoInterface (This : in out GatewayValidationView) return TransformInfoInterface_Access is
+   begin
+        return TransformInfoInterface_Access (HttpStoreComponentView_Package.HttpStoreComponentView (This).getTransformInfoInterface);
+   end getTransformInfoInterface;
+
    procedure toValidationInfoNode (This : in out GatewayValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := GatewayValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);

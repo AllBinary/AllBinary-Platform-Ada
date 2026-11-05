@@ -270,7 +270,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
 
    function getKey (This : in out RootStoreCategoryProperties) return Java_Object_Access is
    begin
-        return Java_Object_Access (RootStoreCategoryProperties'Class (This).getValue);
+        return Java_Box (RootStoreCategoryProperties'Class (This).getValue);
    end getKey;
 
    procedure setPath (This : in out RootStoreCategoryProperties; path_Param : access AbPath_Package.AbPath'Class) is
@@ -309,7 +309,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
 
    function getFileName (This : in out RootStoreCategoryProperties) return Unbounded_String is
    begin
-        return ((RootStoreCategoryProperties'Class (This).getValue) + (AbPathData_Package.getInstance.EXTENSION_SEP)) + (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
+        return RootStoreCategoryProperties'Class (This).getValue & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
    end getFileName;
 
    procedure setValue (This : in out RootStoreCategoryProperties; value : Unbounded_String) is
@@ -326,7 +326,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
       categoryHashMap : HashMap_Access;
    begin
         categoryHashMap := StdUtil_Package.getInstance.createHashMap;
-        categoryHashMap.put (CategoryData_Package.getInstance.NAME, RootStoreCategoryProperties'Class (This).getValue);
+        categoryHashMap.put (CategoryData_Package.getInstance.NAME, Java_Box (RootStoreCategoryProperties'Class (This).getValue));
         return categoryHashMap;
    end toHashMap;
 

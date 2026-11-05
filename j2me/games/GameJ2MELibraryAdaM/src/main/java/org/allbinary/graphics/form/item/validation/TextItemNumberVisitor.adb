@@ -65,7 +65,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
       commonStrings : CommonStrings_Access;
    begin
         value := Java_Unbox (anyType);
-        if (Length (value)) < (2) then
+        if (Ada.Strings.Unbounded.Length (value)) < (2) then
             stringValidationUtil := StringValidationUtil_Package.getInstance;
             if stringValidationUtil.isNumber (value) then
                 return BooleanFactory_Package.getInstance.TRUE;

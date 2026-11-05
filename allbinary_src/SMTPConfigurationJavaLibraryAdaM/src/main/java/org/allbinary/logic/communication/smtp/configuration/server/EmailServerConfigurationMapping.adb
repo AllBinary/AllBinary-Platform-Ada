@@ -73,9 +73,9 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (EmailServerConfigurationData_Package.SERVER, This.emailServerConfigurationInterface.getSmtpServer);
-        hashMap.put (EmailServerConfigurationData_Package.ACCOUNT, This.emailServerConfigurationInterface.getAccountName);
-        hashMap.put (EmailServerConfigurationData_Package.PASSWORD, This.emailServerConfigurationInterface.getPassword);
+        hashMap.put (EmailServerConfigurationData_Package.SERVER, Java_Box (This.emailServerConfigurationInterface.getSmtpServer));
+        hashMap.put (EmailServerConfigurationData_Package.ACCOUNT, Java_Box (This.emailServerConfigurationInterface.getAccountName));
+        hashMap.put (EmailServerConfigurationData_Package.PASSWORD, Java_Box (This.emailServerConfigurationInterface.getPassword));
         return hashMap;
    end toHashMap;
 

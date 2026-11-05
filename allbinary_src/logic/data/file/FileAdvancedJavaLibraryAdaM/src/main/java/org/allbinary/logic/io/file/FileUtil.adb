@@ -263,7 +263,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
       string_Id : Unbounded_String;
       outPath : AbPath_Access;
    begin
-        beginIndex := (file.getPath.indexOf (cloud)) + (Length (cloud));
+        beginIndex := (file.getPath.indexOf (cloud)) + (Ada.Strings.Unbounded.Length (cloud));
         endIndex := file.getPath.indexOf (file.getName);
         fixedPathString := Java_Image (realPath.toFileSystemString) & file.getPath.substring (beginIndex, endIndex);
         fixedPath := AbPath_Package.Create (fixedPathString, StringUtil_Package.getInstance.EMPTY_STRING);
@@ -496,11 +496,11 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             separatorChar := AbPathData_Package.getInstance.SEPARATOR;
         end if;
         lastIndex := Java_Last_Index_Of (newDirectory, Java_Image (separatorChar));
-        if (lastIndex) >= (Length (newDirectory)) then
-            newDirectory := Unbounded_Slice (newDirectory, (0) + 1, (Length (newDirectory)) - (1));
+        if (lastIndex) >= (Ada.Strings.Unbounded.Length (newDirectory)) then
+            newDirectory := Unbounded_Slice (newDirectory, (0) + 1, (Ada.Strings.Unbounded.Length (newDirectory)) - (1));
             lastIndex := Java_Last_Index_Of (newDirectory, Java_Image (separatorChar));
         end if;
-        return Unbounded_Slice (newDirectory, (lastIndex) + 1, Length (newDirectory));
+        return Unbounded_Slice (newDirectory, (lastIndex) + 1, Ada.Strings.Unbounded.Length (newDirectory));
    end getNewDirectory;
 
    --  throws Exception
@@ -765,7 +765,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             fileInputStreamFactory := FileStreamFactory_Package.getInstance;
             fileOutputStream := fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, filePath);
             dataOutputStream := AbDataOutputStream_Package.Create (fileOutputStream);
-            dataOutputStream.write (Java_Get_Bytes (string_Id), 0, Length (string_Id));
+            dataOutputStream.write (Java_Get_Bytes (string_Id), 0, Ada.Strings.Unbounded.Length (string_Id));
             dataOutputStream.flush;
         end;
         --  finally

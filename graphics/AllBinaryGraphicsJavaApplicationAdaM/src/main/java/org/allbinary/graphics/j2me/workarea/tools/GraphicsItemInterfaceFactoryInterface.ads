@@ -76,6 +76,7 @@ package org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryI
    function "=" (Left, Right : GraphicsItemInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_GraphicsItemInterfaceFactoryInterface (Value : GraphicsItemInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out GraphicsItemInterfaceFactoryInterface; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) return GraphicItemInterface_Access is abstract;
+   procedure getInstance (This : in out GraphicsItemInterfaceFactoryInterface; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) is abstract;
 
 end org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
 

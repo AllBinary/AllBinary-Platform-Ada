@@ -34,6 +34,7 @@ with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_P
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package;
+with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References;
 
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package is
 
@@ -145,7 +146,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
         serviceReference := context.getServiceReference (InputAutomationRobotChangeListener_Package.InputAutomationRobotChangeListener'Tag.getName);
         if (serviceReference) /= (null) then
             inputAutomationRobotChangeListener := InputAutomationRobotChangeListener_Access (context.getService (serviceReference));
-            if (inputAutomationRobotChangeListener) = (null) then
+            if bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References."=" (inputAutomationRobotChangeListener, null) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Service For ServiceReference")));
             end if;
             return inputAutomationRobotChangeListener;
@@ -164,7 +165,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("addRobots"));
             inputAutomationRobotChangeListener := InputAutomationRobotBundleActivator'Class (This).getInputAutomationRobotChangeListener (context);
-            if (inputAutomationRobotChangeListener) /= (null) then
+            if (not bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References."=" (inputAutomationRobotChangeListener, null)) then
                 for index in 0 .. (InputAutomationRobotBundleActivator'Class (This).getInputRobotInterface'Length) - 1 loop
                     inputAutomationRobotChangeEvent := InputAutomationRobotUtil_Package.getChangeEvent (InputAutomationRobotBundleActivator'Class (This).getInputRobotInterface (index));
                     inputAutomationRobotChangeListener.onAdd (inputAutomationRobotChangeEvent);
@@ -189,7 +190,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("removeRobots"));
             inputAutomationRobotChangeListener := InputAutomationRobotBundleActivator'Class (This).getInputAutomationRobotChangeListener (context);
-            if (inputAutomationRobotChangeListener) /= (null) then
+            if (not bundle.input.automation.robot.InputAutomationRobotChangeListener_Package_References."=" (inputAutomationRobotChangeListener, null)) then
                 for index in 0 .. (InputAutomationRobotBundleActivator'Class (This).getInputRobotInterface'Length) - 1 loop
                     inputAutomationRobotChangeEvent := InputAutomationRobotUtil_Package.getChangeEvent (InputAutomationRobotBundleActivator'Class (This).getInputRobotInterface (index));
                     inputAutomationRobotChangeListener.onRemove (inputAutomationRobotChangeEvent);

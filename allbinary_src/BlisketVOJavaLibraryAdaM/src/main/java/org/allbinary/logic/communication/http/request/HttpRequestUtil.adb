@@ -60,7 +60,7 @@ package body org.allbinary.logic.communication.http.request.HttpRequestUtil_Pack
         if (beginIndex) < (0) then
             return requestPath;
         else
-            return Unbounded_Slice (requestPath, ((beginIndex) + (1)) + 1, Length (requestPath));
+            return Unbounded_Slice (requestPath, ((beginIndex) + (1)) + 1, Ada.Strings.Unbounded.Length (requestPath));
         end if;
    end generateFileName;
 

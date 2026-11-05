@@ -52,6 +52,7 @@ package org.apache.xmlrpc.XmlRpcHandler_Package is
    function "=" (Left, Right : XmlRpcHandler_Access_Array_Access_Array_Access) return Boolean renames org.apache.xmlrpc.XmlRpcHandler_Package_References."=";
    function Java_Object_Access_From_XmlRpcHandler (Value : XmlRpcHandler_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function execute (This : in out XmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) return Java_Object_Access is abstract;
+   procedure execute (This : in out XmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
 
 end org.apache.xmlrpc.XmlRpcHandler_Package;
 

@@ -190,8 +190,11 @@ package javax.microedition.khronos.opengles.GL11_Package is
    procedure glGetTexParameteriv (This : in out GL11; target : Integer; pname : Integer; params : Integer_Array_Access; offset : Integer) is abstract;
    procedure glGetTexParameteriv (This : in out GL11; target : Integer; pname : Integer; params_Param : access IntBuffer_Package.IntBuffer'Class) is abstract;
    function glIsBuffer (This : in out GL11; buffer : Integer) return Boolean is abstract;
+   procedure glIsBuffer (This : in out GL11; buffer : Integer) is abstract;
    function glIsEnabled (This : in out GL11; cap : Integer) return Boolean is abstract;
+   procedure glIsEnabled (This : in out GL11; cap : Integer) is abstract;
    function glIsTexture (This : in out GL11; texture : Integer) return Boolean is abstract;
+   procedure glIsTexture (This : in out GL11; texture : Integer) is abstract;
    procedure glNormalPointer (This : in out GL11; type_Id : Integer; stride : Integer; offset : Integer) is abstract;
    procedure glPointParameterf (This : in out GL11; pname : Integer; param : Float) is abstract;
    procedure glPointParameterfv (This : in out GL11; pname : Integer; params : Float_Array_Access; offset : Integer) is abstract;

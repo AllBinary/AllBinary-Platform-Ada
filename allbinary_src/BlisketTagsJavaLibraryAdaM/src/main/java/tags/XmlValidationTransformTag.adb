@@ -85,10 +85,10 @@ package body tags.XmlValidationTransformTag_Package is
         begin
             XmlValidationTransformTag'Class (This).setHelper;
             if XmlValidationTransformTag'Class (This).isValid then
-                TransformTag_Package.TransformTag (This).doStartTag;
+                declare Java_Result renames TransformTag_Package.TransformTag (This).doStartTag; pragma Unreferenced (Java_Result); begin null; end;
                 return This.EVAL_BODY_INCLUDE;
             else
-                TransformTag_Package.TransformTag (This).doStartTag;
+                declare Java_Result renames TransformTag_Package.TransformTag (This).doStartTag; pragma Unreferenced (Java_Result); begin null; end;
                 return This.SKIP_BODY;
             end if;
         exception

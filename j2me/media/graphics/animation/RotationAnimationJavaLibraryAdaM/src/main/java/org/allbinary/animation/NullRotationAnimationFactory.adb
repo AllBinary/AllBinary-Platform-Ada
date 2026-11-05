@@ -164,6 +164,8 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References;
+with org.allbinary.animation.NullRotationAnimationFactory_Package; use org.allbinary.animation.NullRotationAnimationFactory_Package;
+with org.allbinary.animation.NullRotationAnimationFactory_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.RotationAnimation_Package_References;
 with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
@@ -218,6 +220,16 @@ package body org.allbinary.animation.NullRotationAnimation2_Package is
    function "=" (Left, Right : ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References."=";
    subtype ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References.ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package_References."=";
+   subtype NullRotationAnimationFactory_Access is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
+   subtype NullRotationAnimationFactory_Access_Array is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access_Array;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
+   subtype NullRotationAnimationFactory_Access_Array_Access is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access_Array_Access;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
+   subtype NullRotationAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
+   subtype NullRotationAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : NullRotationAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.NullRotationAnimationFactory_Package_References."=";
    subtype RotationAnimation_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access;
    function "=" (Left, Right : RotationAnimation_Access) return Boolean renames org.allbinary.animation.RotationAnimation_Package_References."=";
    subtype RotationAnimation_Access_Array is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array;
@@ -246,7 +258,7 @@ package body org.allbinary.animation.NullRotationAnimation2_Package is
     
    procedure Initialize (This : in out NullRotationAnimation2'Class) is
    begin
-            null;
+            NullRotationAnimation_Package.Initialize (This, AngleInfo_Package.getInstance (AngleFactory_Package.getInstance.QUARTER_TOTAL_ANGLE), CircularIndexUtil_Package.createInstance (4), IndexedAnimationBehavior_Package.Create (1, 250));
    end Initialize;
 
    function Create return NullRotationAnimation2_Access is

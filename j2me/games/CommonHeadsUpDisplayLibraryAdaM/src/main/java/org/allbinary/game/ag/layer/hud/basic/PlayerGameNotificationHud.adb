@@ -371,6 +371,8 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package_References;
+with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
 with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
@@ -496,6 +498,16 @@ package body org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package
    function "=" (Left, Right : CircularIndexUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
    subtype CircularIndexUtil_Access_Array_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CircularIndexUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype PlayerGameNotificationHud_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   subtype PlayerGameNotificationHud_Access_Array is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   subtype PlayerGameNotificationHud_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   subtype PlayerGameNotificationHud_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   subtype PlayerGameNotificationHud_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
    procedure Initialize_Fields (This : in out SetAndRemoveProcessor'Class) is
    begin
       null;
@@ -559,6 +571,8 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package_References;
+with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
+with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
 with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
@@ -684,6 +698,16 @@ package body org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Pac
    function "=" (Left, Right : CircularIndexUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
    subtype CircularIndexUtil_Access_Array_Access_Array_Access is org.allbinary.util.CircularIndexUtil_Package_References.CircularIndexUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CircularIndexUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.CircularIndexUtil_Package_References."=";
+   subtype PlayerGameNotificationHud_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   subtype PlayerGameNotificationHud_Access_Array is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   subtype PlayerGameNotificationHud_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   subtype PlayerGameNotificationHud_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   subtype PlayerGameNotificationHud_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : PlayerGameNotificationHud_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
    procedure Initialize_Fields (This : in out NextUnremoveableProcessor'Class) is
    begin
       null;

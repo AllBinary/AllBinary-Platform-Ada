@@ -89,12 +89,19 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    function "=" (Left, Right : PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package_References."=";
    function Java_Object_Access_From_PaymentTransactionInterfaceFactoryInterface (Value : PaymentTransactionInterfaceFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out PaymentTransactionInterfaceFactoryInterface; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return PaymentTransactionInterface_Access is abstract;
+   procedure getInstance (This : in out PaymentTransactionInterfaceFactoryInterface; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) is abstract;
    function getSaleTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;
+   procedure getSaleTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) is abstract;
    function getCreditTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;
+   procedure getCreditTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) is abstract;
    function getAuthorizationTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;
+   procedure getAuthorizationTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) is abstract;
    function getCaptureDelayedTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;
+   procedure getCaptureDelayedTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) is abstract;
    function getVoidTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;
+   procedure getVoidTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) is abstract;
    function getInquiryTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;
+   procedure getInquiryTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package;
 

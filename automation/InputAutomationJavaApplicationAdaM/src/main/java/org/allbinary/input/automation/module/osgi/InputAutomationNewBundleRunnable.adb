@@ -207,7 +207,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
         This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
         baseJarPath := Java_Get_Property (JAR_DIR_PROP);
         if Java_Starts_With (baseJarPath, InputAutomationNewBundleRunnable_Package.FILE) then
-            baseJarPath := Unbounded_Slice (baseJarPath, (Length (InputAutomationNewBundleRunnable_Package.FILE)) + 1, Length (baseJarPath));
+            baseJarPath := Unbounded_Slice (baseJarPath, (Ada.Strings.Unbounded.Length (InputAutomationNewBundleRunnable_Package.FILE)) + 1, Ada.Strings.Unbounded.Length (baseJarPath));
         end if;
         jarFileFilter := BasicFileFilterUtil_Package.getInstance (To_Unbounded_String (".jar"));
         path := baseJarPath & Java_Image (InputAutomationNewBundleRunnable_Package.INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH);

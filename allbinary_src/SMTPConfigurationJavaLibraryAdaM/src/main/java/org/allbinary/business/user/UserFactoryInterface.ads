@@ -66,6 +66,7 @@ package org.allbinary.business.user.UserFactoryInterface_Package is
    function "=" (Left, Right : UserFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.UserFactoryInterface_Package_References."=";
    function Java_Object_Access_From_UserFactoryInterface (Value : UserFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out UserFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is abstract;
+   procedure getInstance (This : in out UserFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.business.user.UserFactoryInterface_Package;
 

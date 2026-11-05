@@ -107,7 +107,7 @@ package views.business.context.modules.storefront.customizer.includes.style.them
    function "=" (Left, Right : InsertThemeValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.theme.InsertThemeValidationView_Package_References."=";
 
    type InsertThemeValidationView is new ThemeCustomizerView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      InsertThemeValidationView_Field_logUtil : LogUtil_Access;
       requestHashMap : HashMap_Access;
    end record;
 
@@ -120,6 +120,7 @@ package views.business.context.modules.storefront.customizer.includes.style.them
    function toValidationInfoNode (This : in out InsertThemeValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out InsertThemeValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out InsertThemeValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out InsertThemeValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.includes.style.theme.InsertThemeValidationView_Package;
 

@@ -76,6 +76,7 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.Transfo
    function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References."=";
    function Java_Object_Access_From_TransformInfoObjectConfigGeneratorFactoryInterface (Value : TransformInfoObjectConfigGeneratorFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out TransformInfoObjectConfigGeneratorFactoryInterface; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInfoObjectConfigGenerator_Access is abstract;
+   procedure getInstance (This : in out TransformInfoObjectConfigGeneratorFactoryInterface; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is abstract;
 
 end org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package;
 

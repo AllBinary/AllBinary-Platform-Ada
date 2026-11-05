@@ -79,6 +79,7 @@ package org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface
    function "=" (Left, Right : ResourceRelativeRelationshipFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package_References."=";
    function Java_Object_Access_From_ResourceRelativeRelationshipFactoryInterface (Value : ResourceRelativeRelationshipFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getResourceRelativeRelationshipList (This : in out ResourceRelativeRelationshipFactoryInterface; resource : Unbounded_String) return BasicArrayList_Access is abstract;
+   procedure getResourceRelativeRelationshipList (This : in out ResourceRelativeRelationshipFactoryInterface; resource : Unbounded_String) is abstract;
    procedure addResourceRelativeRelationship (This : in out ResourceRelativeRelationshipFactoryInterface; resource : Unbounded_String; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class) is abstract;
 
 end org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package;

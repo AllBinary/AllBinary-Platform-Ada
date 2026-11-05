@@ -119,7 +119,7 @@ package views.generic_Id.user.AddValidationUserView_Package is
    function "=" (Left, Right : AddValidationUserView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.user.AddValidationUserView_Package_References."=";
 
    type AddValidationUserView is new HttpStoreComponentView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      AddValidationUserView_Field_logUtil_Hidden : LogUtil_Access;
       user : UserInterface_Access;
    end record;
 
@@ -131,6 +131,7 @@ package views.generic_Id.user.AddValidationUserView_Package is
    function toValidationInfoNode (This : in out AddValidationUserView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out AddValidationUserView; document_Param : access Document_Package.Document'Class);
    function view (This : in out AddValidationUserView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out AddValidationUserView) return TransformInfoInterface_Access;
 
 end views.generic_Id.user.AddValidationUserView_Package;
 

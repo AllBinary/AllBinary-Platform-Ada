@@ -21,6 +21,7 @@ with org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.FrameUtil_Package;
 with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.math.AngleIncrementInfo_Package_References;
 
 package body org.allbinary.math.AngleIncrementInfoFactory_Package is
 
@@ -66,7 +67,7 @@ package body org.allbinary.math.AngleIncrementInfoFactory_Package is
         halfAngleIncrement := (Java_Shift_Right_Arithmetic (Integer (angleIncrement), 1));
         angleIncrementInfo := null;
         angleIncrementInfoCanBeNull := This.angleIncrementInfo (halfAngleIncrement);
-        if (angleIncrementInfoCanBeNull) = (null) then
+        if org.allbinary.math.AngleIncrementInfo_Package_References."=" (angleIncrementInfoCanBeNull, null) then
             angleIncrementInfo := AngleIncrementInfo_Package.Create (angleIncrement);
             This.angleIncrementInfo (halfAngleIncrement) := angleIncrementInfo;
             return angleIncrementInfo;

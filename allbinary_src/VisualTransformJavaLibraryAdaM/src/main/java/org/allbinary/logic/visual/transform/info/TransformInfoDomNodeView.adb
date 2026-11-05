@@ -129,7 +129,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
         viewNameAttr.setValue (TransformInfoDomNodeView'Class (This).getTransformInfoInterface.getName);
         componentNodeAttributes := subViewNode.getAttributes;
         componentNodeAttributes.setNamedItem (viewNameAttr);
-        if (TransformInfoDomNodeView'Class (This).getMappedName) /= (null) then
+        if (TransformInfoDomNodeView'Class (This).getMappedName) /= (Null_Unbounded_String) then
             mappedNameAttr := document.createAttribute (transformInfoData.MAPPED);
             mappedNameAttr.setValue (TransformInfoDomNodeView'Class (This).getMappedName);
             componentNodeAttributes.setNamedItem (mappedNameAttr);

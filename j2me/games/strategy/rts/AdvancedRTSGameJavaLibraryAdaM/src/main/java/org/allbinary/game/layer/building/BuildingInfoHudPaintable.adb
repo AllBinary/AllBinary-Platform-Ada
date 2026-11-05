@@ -166,7 +166,7 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
             HEALTH := This.HEALTH;
             thirdIndex := index;
             --  Java nested class HealthNumberStringHud: move it to its own package
-            totalLength := (Length (HEALTH)) + (1);
+            totalLength := (Ada.Strings.Unbounded.Length (HEALTH)) + (1);
             healthHud := NumberStringHud_Access (HealthNumberStringHud_Package.Create);
             fourthIndex := index;
             --  Java nested class MaxHealthNumberStringHud: move it to its own package
@@ -199,7 +199,7 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
       totalLength : Integer;
    begin
         font := graphics.getFont;
-        totalLength := (Length (This.HEALTH)) + (MathUtil_Package.getInstance.getTotalDigits (This.currentHealth));
+        totalLength := (Ada.Strings.Unbounded.Length (This.HEALTH)) + (MathUtil_Package.getInstance.getTotalDigits (This.currentHealth));
         This.maxHealthHud.setX ((This.textX) + (MyFontProcessor_Package.defaultStringWidth (font, totalLength)));
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;

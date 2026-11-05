@@ -81,6 +81,7 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaignInter
    procedure setName (This : in out AdvertisementCampaignInterface; name : Unbounded_String) is abstract;
    procedure setComponentName (This : in out AdvertisementCampaignInterface; name : Unbounded_String) is abstract;
    function search (This : in out AdvertisementCampaignInterface; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) return AdvertisementsInterface_Access is abstract;
+   procedure search (This : in out AdvertisementCampaignInterface; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) is abstract;
 
 end org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
 

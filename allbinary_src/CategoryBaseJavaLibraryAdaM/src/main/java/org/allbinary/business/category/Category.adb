@@ -289,7 +289,7 @@ package body org.allbinary.business.category.Category_Package is
             if (This.CATEGORY_Var) = (This.typeVector.get (index)) then
                 anyType := This.childCategoryVector.get (index);
                 currentCategoryInterface := CategoryInterface_Access (anyType);
-                if (currentCategoryInterface.getProperties.getValue.compareTo (categoryInterface.getProperties.getValue)) = (0) then
+                if (Java_Compare_To (currentCategoryInterface.getProperties.getValue, categoryInterface.getProperties.getValue)) = (0) then
                     removalVector.add (CategoryInterface_Package.Java_Object_Access_From_CategoryInterface (currentCategoryInterface));
                     bool_return := True;
                 end if;
@@ -332,7 +332,7 @@ package body org.allbinary.business.category.Category_Package is
             anyType := This.childCategoryVector.get (index);
             if (This.PROPERTIES) = (This.typeVector.get (index)) then
                 categoryPropertiesInterface := CategoryPropertiesInterface_Access (anyType);
-                if (categoryInterface.getProperties.getValue.compareTo (categoryPropertiesInterface.getValue)) = (0) then
+                if (Java_Compare_To (categoryInterface.getProperties.getValue, categoryPropertiesInterface.getValue)) = (0) then
                     removalVector.add (CategoryPropertiesInterface_Package.Java_Object_Access_From_CategoryPropertiesInterface (categoryPropertiesInterface));
                     bool_return := True;
                     exit;
@@ -340,7 +340,7 @@ package body org.allbinary.business.category.Category_Package is
             elsif (This.CATEGORY_Var) = (This.typeVector.get (index)) then
                 existingCategoryInterface := CategoryInterface_Access (anyType);
                 categoryPropertiesInterface := CategoryPropertiesInterface_Access (existingCategoryInterface.getProperties);
-                if (categoryInterface.getProperties.getValue.compareTo (categoryPropertiesInterface.getValue)) = (0) then
+                if (Java_Compare_To (categoryInterface.getProperties.getValue, categoryPropertiesInterface.getValue)) = (0) then
                     removalVector.add (CategoryInterface_Package.Java_Object_Access_From_CategoryInterface (existingCategoryInterface));
                     bool_return := True;
                     exit;

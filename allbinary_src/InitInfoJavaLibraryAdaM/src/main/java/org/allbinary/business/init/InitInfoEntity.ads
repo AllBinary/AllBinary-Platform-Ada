@@ -53,7 +53,7 @@ package org.allbinary.business.init.InitInfoEntity_Package is
    type InitInfoEntity is new InitSql with record
       NAME : Unbounded_String;
       NOTHING : Unbounded_String;
-      tableName : Unbounded_String;
+      InitInfoEntity_Field_tableName : Unbounded_String;
       tableData : Unbounded_String;
       NOT_IN_DB : Unbounded_String;
       METHOD_GET : Unbounded_String;

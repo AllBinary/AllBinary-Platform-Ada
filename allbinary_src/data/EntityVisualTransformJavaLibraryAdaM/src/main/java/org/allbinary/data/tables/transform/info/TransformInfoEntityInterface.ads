@@ -82,8 +82,11 @@ package org.allbinary.data.tables.transform.info.TransformInfoEntityInterface_Pa
    function "=" (Left, Right : TransformInfoEntityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.transform.info.TransformInfoEntityInterface_Package_References."=";
    function Java_Object_Access_From_TransformInfoEntityInterface (Value : TransformInfoEntityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function get (This : in out TransformInfoEntityInterface; name : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoInterface_Access is abstract;
+   procedure get (This : in out TransformInfoEntityInterface; name : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is abstract;
    function getObjectConfigs (This : in out TransformInfoEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
+   procedure getObjectConfigs (This : in out TransformInfoEntityInterface; storeName : Unbounded_String) is abstract;
    function getNames (This : in out TransformInfoEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
+   procedure getNames (This : in out TransformInfoEntityInterface; storeName : Unbounded_String) is abstract;
    procedure delete (This : in out TransformInfoEntityInterface; name : Unbounded_String) is abstract;
    procedure insert (This : in out TransformInfoEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure update (This : in out TransformInfoEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;

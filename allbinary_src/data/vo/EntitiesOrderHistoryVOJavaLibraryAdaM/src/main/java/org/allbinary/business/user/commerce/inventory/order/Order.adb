@@ -136,7 +136,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
 
    function isIdValid (This : in out Order) return Boolean is
    begin
-        if ((((Order'Class (This).getId) = (null)) or else ((Order'Class (This).getId.compareTo (StringUtil_Package.getInstance.EMPTY_STRING)) = (0))) or else ((Order'Class (This).getId.length) > (OrderHistoryData_Package.MAXIDLEN))) or else (not (StringValidationUtil_Package.getInstance.isNumber (Order'Class (This).getId))) then
+        if ((((Order'Class (This).getId) = (Null_Unbounded_String)) or else ((Java_Compare_To (Order'Class (This).getId, StringUtil_Package.getInstance.EMPTY_STRING)) = (0))) or else ((Ada.Strings.Unbounded.Length (Order'Class (This).getId)) > (OrderHistoryData_Package.MAXIDLEN))) or else (not (StringValidationUtil_Package.getInstance.isNumber (Order'Class (This).getId))) then
             return False;
         end if;
         return True;
@@ -151,7 +151,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
       EMPTY_STRING : Unbounded_String;
    begin
         EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
-        if ((((Order'Class (This).getId) = (null)) or else ((Order'Class (This).getId.compareTo (EMPTY_STRING)) = (0))) or else ((Order'Class (This).getId.length) > (OrderHistoryData_Package.MAXIDLEN))) or else (not (StringValidationUtil_Package.getInstance.isNumber (Order'Class (This).getId))) then
+        if ((((Order'Class (This).getId) = (Null_Unbounded_String)) or else ((Java_Compare_To (Order'Class (This).getId, EMPTY_STRING)) = (0))) or else ((Ada.Strings.Unbounded.Length (Order'Class (This).getId)) > (OrderHistoryData_Package.MAXIDLEN))) or else (not (StringValidationUtil_Package.getInstance.isNumber (Order'Class (This).getId))) then
             return To_Unbounded_String ("Please enter a valid order Id < ") & Java_Image (OrderHistoryData_Package.MAXIDLEN) & To_Unbounded_String (" digits in length.<br>");
         end if;
         return EMPTY_STRING;

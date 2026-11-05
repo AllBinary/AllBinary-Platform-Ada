@@ -131,8 +131,8 @@ package views.admin.inventory.download.AddFileValidationView_Package is
    function "=" (Left, Right : AddFileValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.download.AddFileValidationView_Package_References."=";
 
    type AddFileValidationView is new DownloadableInventoryItemView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
-      basicItemData : BasicItemData_Access;
+      AddFileValidationView_Field_logUtil_Hidden : LogUtil_Access;
+      AddFileValidationView_Field_basicItemData_Hidden : BasicItemData_Access;
    end record;
    ADDPRODUCT : Unbounded_String;
    ADDANOTHERDOWNLOADABLE : Unbounded_String;
@@ -147,6 +147,7 @@ package views.admin.inventory.download.AddFileValidationView_Package is
    function isValid (This : in out AddFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer) return Boolean;
    procedure isValid (This : in out AddFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer);
    procedure validationInfo (This : in out AddFileValidationView; stringBuffer_Param : access StringMaker_Package.StringMaker'Class; fileName : Unbounded_String; size : Long_Long_Integer);
+   function getTransformInfoInterface (This : in out AddFileValidationView) return TransformInfoInterface_Access;
 
 end views.admin.inventory.download.AddFileValidationView_Package;
 

@@ -100,6 +100,7 @@ package views.generic_Id.address.shipping.TaxValidationView_Package is
    function toValidationInfoDoc (This : in out TaxValidationView) return Document_Access;
    function toValidationInfoNode (This : in out TaxValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out TaxValidationView; document_Param : access Document_Package.Document'Class);
+   function getTransformInfoInterface (This : in out TaxValidationView) return TransformInfoInterface_Access;
 
 end views.generic_Id.address.shipping.TaxValidationView_Package;
 

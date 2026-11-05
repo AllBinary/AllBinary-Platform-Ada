@@ -21,6 +21,7 @@ with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinar
 with org.allbinary.game.health.HealthListenerInterface_Package_References;
 with org.allbinary.game.health.HealthListenerInterface_Package;
 with org.allbinary.game.health.NullHealthListener_Package;
+with org.allbinary.game.health.HealthListenerInterface_Package_References;
 
 package body org.allbinary.game.health.Health_Package is
 
@@ -130,7 +131,7 @@ package body org.allbinary.game.health.Health_Package is
         else
             This.health_Var := health_Var;
         end if;
-        if (This.healthListenerInterface) /= (null) then
+        if (not org.allbinary.game.health.HealthListenerInterface_Package_References."=" (This.healthListenerInterface, null)) then
             This.healthListenerInterface.onHealthChange;
         end if;
    end setHealth;

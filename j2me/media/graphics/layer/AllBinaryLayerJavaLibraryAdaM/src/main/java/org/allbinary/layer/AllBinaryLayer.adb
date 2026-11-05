@@ -148,6 +148,57 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
       return This;
    end Create;
 
+   procedure setPosition (This : in out AllBinaryLayer; x : Integer; y : Integer; z : Integer) is
+   begin
+        Layer_Package.Layer (This).setPosition (x, y, z);
+   end setPosition;
+
+   procedure moveDXYZ (This : in out AllBinaryLayer; dx : Integer; dy : Integer; dz : Integer) is
+   begin
+        Layer_Package.Layer (This).moveDXYZ (dx, dy, dz);
+   end moveDXYZ;
+
+   function getXP (This : in out AllBinaryLayer) return Integer is
+   begin
+        return Layer_Package.Layer (This).getXP;
+   end getXP;
+
+   function getYP (This : in out AllBinaryLayer) return Integer is
+   begin
+        return Layer_Package.Layer (This).getYP;
+   end getYP;
+
+   function getZP (This : in out AllBinaryLayer) return Integer is
+   begin
+        return Layer_Package.Layer (This).getZP;
+   end getZP;
+
+   function getWidth (This : in out AllBinaryLayer) return Integer is
+   begin
+        return Layer_Package.Layer (This).getWidth;
+   end getWidth;
+
+   function getHeight (This : in out AllBinaryLayer) return Integer is
+   begin
+        return Layer_Package.Layer (This).getHeight;
+   end getHeight;
+
+   procedure setVisible (This : in out AllBinaryLayer; visible : Boolean) is
+   begin
+        Layer_Package.Layer (This).setVisible (visible);
+   end setVisible;
+
+   function isVisible (This : in out AllBinaryLayer) return Boolean is
+   begin
+        return Layer_Package.Layer (This).isVisible;
+   end isVisible;
+
+   procedure paint (This : in out AllBinaryLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+   begin
+        Layer_Package.Layer (This).paint (graphics);
+   end paint;
+
    --  throws Exception
    procedure onChangeEvent (This : in out AllBinaryLayer; layerManagerEvent_Param : access ViewPositionEvent_Package.ViewPositionEvent'Class) is
       layerManagerEvent : constant ViewPositionEvent_Access := ViewPositionEvent_Access (layerManagerEvent_Param);
@@ -272,19 +323,19 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         stringBuffer.appendint (AllBinaryLayer'Class (This).getType);
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (positionStrings.X_LABEL);
-        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getXP));
+        stringBuffer.appendint (AllBinaryLayer'Class (This).getXP);
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (positionStrings.Y_LABEL);
-        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getYP));
+        stringBuffer.appendint (AllBinaryLayer'Class (This).getYP);
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (positionStrings.Z_LABEL);
-        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getZP));
+        stringBuffer.appendint (AllBinaryLayer'Class (This).getZP);
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (commonLabels.WIDTH_LABEL);
-        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getWidth));
+        stringBuffer.appendint (AllBinaryLayer'Class (This).getWidth);
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (commonLabels.HEIGHT_LABEL);
-        stringBuffer.appendint (Integer (AllBinaryLayer'Class (This).getHeight));
+        stringBuffer.appendint (AllBinaryLayer'Class (This).getHeight);
    end toStringAppend;
 
    function toString (This : in out AllBinaryLayer) return Unbounded_String is

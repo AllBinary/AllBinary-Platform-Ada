@@ -105,7 +105,7 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.N
    function "=" (Left, Right : NewGenericBodyValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.bodies.generic_Id.NewGenericBodyValidationView_Package_References."=";
 
    type NewGenericBodyValidationView is new GenericBodyCustomizerView and ValidationComponentInterface with record
-      logUtil : LogUtil_Access;
+      NewGenericBodyValidationView_Field_logUtil : LogUtil_Access;
    end record;
 
    procedure Initialize (This : in out NewGenericBodyValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
@@ -117,6 +117,7 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.N
    function toValidationInfoNode (This : in out NewGenericBodyValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
    procedure toValidationInfoNode (This : in out NewGenericBodyValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out NewGenericBodyValidationView) return Unbounded_String;
+   function getTransformInfoInterface (This : in out NewGenericBodyValidationView) return TransformInfoInterface_Access;
 
 end views.business.context.modules.storefront.customizer.bodies.generic_Id.NewGenericBodyValidationView_Package;
 

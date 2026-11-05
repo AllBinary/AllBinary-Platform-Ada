@@ -89,6 +89,8 @@ package org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package 
    procedure paintXY (This : in out RectangleFilledAdjustedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure setOffsetX (This : in out RectangleFilledAdjustedAnimation; offsetX : Integer);
    procedure setOffsetY (This : in out RectangleFilledAdjustedAnimation; offsetY : Integer);
+   function getBasicColorP (This : in out RectangleFilledAdjustedAnimation) return BasicColor_Access;
+   procedure setBasicColorP (This : in out RectangleFilledAdjustedAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package;
 

@@ -71,6 +71,8 @@ limited with org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References;
 limited with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
+limited with org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.RotationAnimation_Package_References;
 limited with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package_References;
 
@@ -98,6 +100,7 @@ package org.allbinary.game.layer.building.BuildingLayer_Package is
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
    package Reference_Types is
    subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
    use type Graphics_Access;
@@ -289,6 +292,16 @@ package org.allbinary.game.layer.building.BuildingLayer_Package is
    use type ABHashtable_Access_Array_Access_Array;
    subtype ABHashtable_Access_Array_Access_Array_Access is org.allbinary.util.ABHashtable_Package_References.ABHashtable_Access_Array_Access_Array_Access;
    use type ABHashtable_Access_Array_Access_Array_Access;
+   subtype RotationAnimation_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access;
+   use type RotationAnimation_Access;
+   subtype RotationAnimation_Access_Array is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array;
+   use type RotationAnimation_Access_Array;
+   subtype RotationAnimation_Access_Array_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access;
+   use type RotationAnimation_Access_Array_Access;
+   subtype RotationAnimation_Access_Array_Access_Array is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access_Array;
+   use type RotationAnimation_Access_Array_Access_Array;
+   subtype RotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.RotationAnimation_Package_References.RotationAnimation_Access_Array_Access_Array_Access;
+   use type RotationAnimation_Access_Array_Access_Array_Access;
    subtype BuildingPropertiesFactory_Access is org.allbinary.game.layer.building.BuildingPropertiesFactory_Package_References.BuildingPropertiesFactory_Access;
    use type BuildingPropertiesFactory_Access;
    subtype BuildingPropertiesFactory_Access_Array is org.allbinary.game.layer.building.BuildingPropertiesFactory_Package_References.BuildingPropertiesFactory_Access_Array;
@@ -363,6 +376,8 @@ package org.allbinary.game.layer.building.BuildingLayer_Package is
    function getHudPaintable (This : in out BuildingLayer) return SelectionHudPaintable_Access;
    function getType (This : in out BuildingLayer) return Integer;
    function getStaticType return Integer;
+   function getRotationAnimationInterface (This : in out BuildingLayer) return RotationAnimation_Access;
+   procedure setFrame (This : in out BuildingLayer; index : Integer);
 
 end org.allbinary.game.layer.building.BuildingLayer_Package;
 

@@ -15,7 +15,6 @@
 
 with org.allbinary.logic.util.cache.BaseCircularPool_Package; use org.allbinary.logic.util.cache.BaseCircularPool_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package;
@@ -65,9 +64,9 @@ package body org.allbinary.layer.AllBinaryLayerCircularPool_Package is
       localIndex : Integer;
    begin
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (total);
-        This.OBJECT_ARRAY := new AllBinaryLayer_Access_Array'(0 .. (total) - 1 => null);
+        This.OBJECT_ARRAY := new Java_Object_Access_Array'(0 .. (total) - 1 => null);
         for localIndex in 0 .. (total) - 1 loop
-            This.OBJECT_ARRAY (localIndex) := allbinaryLayerFactoryInterface.getInstance;
+            This.OBJECT_ARRAY (localIndex) := Java_Object_Access (allbinaryLayerFactoryInterface.getInstance);
         end loop;
    end initAllBinaryLayerCircularPool;
 

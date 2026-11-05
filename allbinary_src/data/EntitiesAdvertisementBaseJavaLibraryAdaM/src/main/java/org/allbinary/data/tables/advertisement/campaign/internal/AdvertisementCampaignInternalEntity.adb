@@ -15,6 +15,7 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
@@ -35,7 +36,6 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package body org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package is
 
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package AdvertisementCampaign_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package;
    package AdvertisementCampaignData_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
@@ -46,6 +46,16 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    package TimeData_Package renames Standard.org.allbinary.business.time.TimeData_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
+   function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
+   subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype AdvertisementCampaignInterface_Access is org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References.AdvertisementCampaignInterface_Access;
    function "=" (Left, Right : AdvertisementCampaignInterface_Access) return Boolean renames org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References."=";
    subtype AdvertisementCampaignInterface_Access_Array is org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package_References.AdvertisementCampaignInterface_Access_Array;
@@ -186,6 +196,12 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    begin
         return AbSqlBean_Package.AbSqlBean (This).dropTable;
    end dropTable;
+
+   procedure insert (This : in out AdvertisementCampaignInternalEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   begin
+        AbSqlBean_Package.AbSqlBean (This).insert (values);
+   end insert;
 
    procedure getCampaignsInStore (This : in out AdvertisementCampaignInternalEntity; storeName : Unbounded_String) is
       Java_Result : constant AdvertisementCampaignsInterface_Access := AdvertisementCampaignInternalEntity'Class (This).getCampaignsInStore (storeName => storeName);

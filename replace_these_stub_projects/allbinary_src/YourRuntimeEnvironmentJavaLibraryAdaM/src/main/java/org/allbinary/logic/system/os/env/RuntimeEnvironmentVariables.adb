@@ -110,7 +110,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
             while ((Java_Assign (keyValuePair, bufferedReader.readLine))) /= (null) loop
                 index := Java_Index_Of (keyValuePair, Java_Image ('='));
                 key := Unbounded_Slice (keyValuePair, (0) + 1, index);
-                value := Unbounded_Slice (keyValuePair, ((index) + (1)) + 1, Length (keyValuePair));
+                value := Unbounded_Slice (keyValuePair, ((index) + (1)) + 1, Ada.Strings.Unbounded.Length (keyValuePair));
                 environmentVariables.put (key, value);
             end loop;
             return environmentVariables;

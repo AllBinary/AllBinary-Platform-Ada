@@ -114,7 +114,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
             This.title := TitleView_Package.NAME;
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Title: ") & Java_Image (TitleView'Class (This).getTitle), TitleView_Access'(This'Unchecked_Access), To_Unbounded_String ("Consructor()"));
+            This.logUtil.putF (To_Unbounded_String ("Title: ") & TitleView'Class (This).getTitle, TitleView_Access'(This'Unchecked_Access), To_Unbounded_String ("Consructor()"));
         end if;
    end Initialize;
 
@@ -160,7 +160,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (TitleData_Package.getInstance.TEXT, TitleView'Class (This).getTitle);
+        hashMap.put (TitleData_Package.getInstance.TEXT, Java_Box (TitleView'Class (This).getTitle));
         return hashMap;
    end toHashMap;
 

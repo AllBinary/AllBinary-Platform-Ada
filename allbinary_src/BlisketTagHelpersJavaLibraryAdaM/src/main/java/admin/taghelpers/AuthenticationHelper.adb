@@ -105,7 +105,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
-        Initialize (This, hashMap, HttpServletRequest_Access (pageContext.getRequest));
+        AuthenticationHelper_Package.Initialize (This, hashMap, HttpServletRequest_Access (pageContext.getRequest));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return AuthenticationHelper_Access is

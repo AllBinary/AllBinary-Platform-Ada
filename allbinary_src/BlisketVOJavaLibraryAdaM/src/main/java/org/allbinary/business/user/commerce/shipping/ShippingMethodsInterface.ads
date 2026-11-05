@@ -78,6 +78,7 @@ package org.allbinary.business.user.commerce.shipping.ShippingMethodsInterface_P
    function Java_Object_Access_From_ShippingMethodsInterface (Value : ShippingMethodsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function get (This : in out ShippingMethodsInterface) return BasicArrayList_Access is abstract;
    function getShippingInterface (This : in out ShippingMethodsInterface; name : Unbounded_String) return ShippingInterface_Access is abstract;
+   procedure getShippingInterface (This : in out ShippingMethodsInterface; name : Unbounded_String) is abstract;
    function getDefault (This : in out ShippingMethodsInterface) return ShippingInterface_Access is abstract;
 
 end org.allbinary.business.user.commerce.shipping.ShippingMethodsInterface_Package;
