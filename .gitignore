@@ -1,3 +1,4 @@
+GNAT-*
 *.xml
 !assembly.xml
 !pom.xml
@@ -12,7 +13,6 @@
 target/
 bin/
 gen/
-GNAT-*
 j2me/games/platform/AllBinaryGameClientNoPlatformJavaDocApplicationM/src
 
 /allbinary_src/PreLoaderJavaLibrary/nbproject/private
