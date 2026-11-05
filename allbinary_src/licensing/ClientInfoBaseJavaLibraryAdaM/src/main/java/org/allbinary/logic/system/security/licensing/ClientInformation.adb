@@ -28,7 +28,12 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 
 package body org.allbinary.logic.system.security.licensing.ClientInformation_Package is
 
@@ -156,17 +161,17 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
         abeClientInformationData := AbeClientInformationData_Package.getInstance;
         genericOperatingSystem := ClientInformation'Class (This).getOperatingSystemInterface;
         clientInfoHashtable := StdUtil_Package.getInstance.createHashtable;
-        clientInfoHashtable.put (abeClientInformationData.NAME, Java_Box (This.name));
-        clientInfoHashtable.put (abeClientInformationData.VERSION, Java_Box (This.version));
-        clientInfoHashtable.put (abeClientInformationData.SPECIALNAME, Java_Box (This.specialName));
-        clientInfoHashtable.put (abeClientInformationData.LICENSEID, Java_Box (ClientInformation'Class (This).getLicenseId));
-        clientInfoHashtable.put (abeClientInformationData.OSNAME, Java_Box (genericOperatingSystem.getName));
-        clientInfoHashtable.put (abeClientInformationData.OSARCH, genericOperatingSystem.getArch);
-        clientInfoHashtable.put (abeClientInformationData.OSVERSION, genericOperatingSystem.getVersion);
-        clientInfoHashtable.put (abeClientInformationData.OS, Java_Box (genericOperatingSystem.toString));
+        clientInfoHashtable.put (Java_Box (abeClientInformationData.NAME), Java_Box (This.name));
+        clientInfoHashtable.put (Java_Box (abeClientInformationData.VERSION), Java_Box (This.version));
+        clientInfoHashtable.put (Java_Box (abeClientInformationData.SPECIALNAME), Java_Box (This.specialName));
+        clientInfoHashtable.put (Java_Box (abeClientInformationData.LICENSEID), Java_Box (ClientInformation'Class (This).getLicenseId));
+        clientInfoHashtable.put (Java_Box (abeClientInformationData.OSNAME), Java_Box (genericOperatingSystem.getName));
+        clientInfoHashtable.put (Java_Box (abeClientInformationData.OSARCH), Java_Box (genericOperatingSystem.getArch));
+        clientInfoHashtable.put (Java_Box (abeClientInformationData.OSVERSION), Java_Box (genericOperatingSystem.getVersion));
+        clientInfoHashtable.put (Java_Box (abeClientInformationData.OS), Java_Box (genericOperatingSystem.toString));
         hardwareInterface := HardwareInterface_Access (SystemHardwareFactory_Package.getInstance.getInstance (genericOperatingSystem));
         hardwareString := Java_Object'Class (hardwareInterface.all).toString;
-        clientInfoHashtable.put (abeClientInformationData.HARDWARE, Java_Box (hardwareString));
+        clientInfoHashtable.put (Java_Box (abeClientInformationData.HARDWARE), Java_Box (hardwareString));
         return clientInfoHashtable;
    end toHashtable;
 

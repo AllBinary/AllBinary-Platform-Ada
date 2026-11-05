@@ -87,7 +87,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
-        inventoryTag := HelperTag_Access (propertiesHashMap.get (AbTagData_Package.PARENT));
+        inventoryTag := HelperTag_Access (propertiesHashMap.get (Java_Box (AbTagData_Package.PARENT)));
         itemView := InventoryItemViewParentTagHelper_Package.getInstance.getInventoryItemView (inventoryTag);
         This.itemInterface := ItemInterface_Access (itemView.getItemInterface);
    end Initialize;

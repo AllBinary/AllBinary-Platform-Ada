@@ -295,13 +295,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                         This.KeyboardActionScriptInput_Field_logUtil.putF (Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Char String: ") & nextCharString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
                         vector.add (To_Unbounded_String (Java_Image (Unbounded_Slice (nextCharString, (index) + 1, Ada.Strings.Unbounded.Length (nextCharString)))));
                         index := ((index) + (Ada.Strings.Unbounded.Length (nextCharString))) + (3);
-                        goto Continue_N69484;
+                        goto Continue_N69498;
                     end if;
                 end if;
             end if;
             vector.add (KeySingletonFactory_Package.getHashtable.get (To_Unbounded_String (Java_Image (aChar))));
             index := index + 1;
-            <<Continue_N69484>> null;
+            <<Continue_N69498>> null;
         end loop;
         integerArray := Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => 0)));
         return integerArray;
@@ -313,11 +313,11 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         for index in 0 .. (KeyboardActionScriptInput'Class (This).getKeyArray'Length) - 1 loop
-            hashMap.put ((KeyboardActionScriptInputData_Package.KEY) + (index), Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).getKeyArray (index)))));
+            hashMap.put (Java_Box (KeyboardActionScriptInputData_Package.KEY & Java_Image (index)), Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).getKeyArray (index)))));
         end loop;
-        hashMap.put (KeyboardActionScriptInputData_Package.DELAY_BETWEEN_KEYS, Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).getDelayBetweenKeys))));
-        hashMap.put (KeyboardActionScriptInputData_Package.PRESS, Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).isPress))));
-        hashMap.put (KeyboardActionScriptInputData_Package.RELEASE, Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).isRelease))));
+        hashMap.put (Java_Box (KeyboardActionScriptInputData_Package.DELAY_BETWEEN_KEYS), Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).getDelayBetweenKeys))));
+        hashMap.put (Java_Box (KeyboardActionScriptInputData_Package.PRESS), Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).isPress))));
+        hashMap.put (Java_Box (KeyboardActionScriptInputData_Package.RELEASE), Java_Box (To_Unbounded_String (Java_Image (KeyboardActionScriptInput'Class (This).isRelease))));
         This.KeyboardActionScriptInput_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;

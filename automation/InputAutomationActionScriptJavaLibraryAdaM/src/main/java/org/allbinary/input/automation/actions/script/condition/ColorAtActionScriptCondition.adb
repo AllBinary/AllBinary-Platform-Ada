@@ -219,14 +219,14 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (ColorAtActionScriptConditionData_Package.LOCATION_X, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getPoint.x))));
-        hashMap.put (ColorAtActionScriptConditionData_Package.LOCATION_Y, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getPoint.y))));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MIN_RED, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinRed))));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MAX_RED, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxRed))));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MIN_GREEN, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinGreen))));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MAX_GREEN, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxGreen))));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MIN_BLUE, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinBlue))));
-        hashMap.put (ColorAtActionScriptConditionData_Package.MAX_BLUE, Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxBlue))));
+        hashMap.put (Java_Box (ColorAtActionScriptConditionData_Package.LOCATION_X), Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getPoint.x))));
+        hashMap.put (Java_Box (ColorAtActionScriptConditionData_Package.LOCATION_Y), Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getPoint.y))));
+        hashMap.put (Java_Box (ColorAtActionScriptConditionData_Package.MIN_RED), Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinRed))));
+        hashMap.put (Java_Box (ColorAtActionScriptConditionData_Package.MAX_RED), Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxRed))));
+        hashMap.put (Java_Box (ColorAtActionScriptConditionData_Package.MIN_GREEN), Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinGreen))));
+        hashMap.put (Java_Box (ColorAtActionScriptConditionData_Package.MAX_GREEN), Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxGreen))));
+        hashMap.put (Java_Box (ColorAtActionScriptConditionData_Package.MIN_BLUE), Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMinBlue))));
+        hashMap.put (Java_Box (ColorAtActionScriptConditionData_Package.MAX_BLUE), Java_Box (To_Unbounded_String (Java_Image (ColorAtActionScriptCondition'Class (This).getColorRangeInterface.getMaxBlue))));
         This.ColorAtActionScriptCondition_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ColorAtActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;

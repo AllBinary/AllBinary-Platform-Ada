@@ -69,7 +69,7 @@ package body org.allbinary.business.user.username.UserName_Package is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
-        This.userName_Var := Java_Unbox (hashMap.get (UserData_Package.USERNAME_Var));
+        This.userName_Var := Java_Unbox (hashMap.get (UserData_Package.USERNAME));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserName_Access is

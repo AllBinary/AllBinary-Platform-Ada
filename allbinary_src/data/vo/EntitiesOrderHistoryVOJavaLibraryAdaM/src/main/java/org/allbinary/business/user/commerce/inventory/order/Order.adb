@@ -300,7 +300,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
         keySet := hashMap.keySet;
         keyArray := keySet.toArray;
         size := keyArray'Length;
-        node := document.createElement (OrderData_Package.ORDER_Var);
+        node := document.createElement (OrderData_Package.ORDER);
         for i in 0 .. (size) - 1 loop
             name := Java_Unbox (keyArray (i));
             value := Java_Unbox (hashMap.get (Java_Box (name)));

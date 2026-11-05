@@ -38,7 +38,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
       Initialize_Fields (This);
         begin
             This.algorithm := algorithm;
-            This.key := key.getBytes;
+            This.key := Java_Get_Bytes (key);
             AbBasicCrypt'Class (This).init;
         exception
             when Java_Occurrence : others =>

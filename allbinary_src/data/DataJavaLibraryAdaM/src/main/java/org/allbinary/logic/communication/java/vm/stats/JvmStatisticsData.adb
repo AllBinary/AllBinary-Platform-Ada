@@ -37,17 +37,17 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_P
 begin
    null;
    JVM_STATISTICS := To_Unbounded_String ("JVM_STATISTICS_");
-   NAME := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("NAME");
-   TOTAL_MEMORY_BYTES := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("TOTAL_MEMORY_BYTES");
-   TOTAL_MEMORY_KILOBYTES := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("TOTAL_MEMORY_KILOBYTES");
-   TOTAL_MEMORY_MEGABYTES := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("TOTAL_MEMORY_MEGABYTES");
-   FREE_MEMORY_BYTES := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("FREE_MEMORY_BYTES");
-   FREE_MEMORY_KILOBYTES := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("FREE_MEMORY_KILOBYTES");
-   FREE_MEMORY_MEGABYTES := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("FREE_MEMORY_MEGABYTES");
-   MAX_MEMORY_BYTES := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("MAX_MEMORY_BYTES");
-   MAX_MEMORY_KILOBYTES := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("MAX_MEMORY_KILOBYTES");
-   MAX_MEMORY_MEGABYTES := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("MAX_MEMORY_MEGABYTES");
-   NUMBER_OF_THREADS := Java_Image (JvmStatisticsData_Package.JVM_STATISTICS) & To_Unbounded_String ("NUMBER_OF_THREADS");
+   NAME := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("NAME");
+   TOTAL_MEMORY_BYTES := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("TOTAL_MEMORY_BYTES");
+   TOTAL_MEMORY_KILOBYTES := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("TOTAL_MEMORY_KILOBYTES");
+   TOTAL_MEMORY_MEGABYTES := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("TOTAL_MEMORY_MEGABYTES");
+   FREE_MEMORY_BYTES := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("FREE_MEMORY_BYTES");
+   FREE_MEMORY_KILOBYTES := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("FREE_MEMORY_KILOBYTES");
+   FREE_MEMORY_MEGABYTES := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("FREE_MEMORY_MEGABYTES");
+   MAX_MEMORY_BYTES := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("MAX_MEMORY_BYTES");
+   MAX_MEMORY_KILOBYTES := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("MAX_MEMORY_KILOBYTES");
+   MAX_MEMORY_MEGABYTES := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("MAX_MEMORY_MEGABYTES");
+   NUMBER_OF_THREADS := JvmStatisticsData_Package.JVM_STATISTICS & To_Unbounded_String ("NUMBER_OF_THREADS");
 
 end org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package;
 

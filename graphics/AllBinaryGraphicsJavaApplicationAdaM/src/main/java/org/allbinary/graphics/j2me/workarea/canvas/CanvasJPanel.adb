@@ -722,7 +722,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
-        StatusFactory_Package.getInstance.setStatusNoLog (Java_Image (MouseStrings_Package.getInstance.MOUSE_CLICKED_LABEL) & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
+        StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_CLICKED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
         if ((not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (CanvasJPanel'Class (This).getSelectedTool, null))) and then (CanvasJPanel'Class (This).getSelectedTool.isActive) then
             graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
             graphicItem.mouseClicked (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
@@ -756,7 +756,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
-        StatusFactory_Package.getInstance.setStatusNoLog (Java_Image (MouseStrings_Package.getInstance.MOUSE_PRESSED_LABEL) & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
+        StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_PRESSED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
         if (not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (CanvasJPanel'Class (This).getSelectedTool, null)) then
             graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
             graphicItem.mousePressed (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
@@ -770,7 +770,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
-        StatusFactory_Package.getInstance.setStatusNoLog (Java_Image (MouseStrings_Package.getInstance.MOUSE_RELEASED_LABEL) & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
+        StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_RELEASED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
         graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
         if (not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (graphicItem, null)) then
             graphicItem.mouseReleased (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
@@ -784,7 +784,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
-        StatusFactory_Package.getInstance.setStatusNoLog (Java_Image (MouseStrings_Package.getInstance.MOUSE_DRAGGED_LABEL) & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
+        StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_DRAGGED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
         graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
         if (not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (graphicItem, null)) then
             graphicItem.mouseDragged (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
@@ -798,7 +798,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
-        StatusFactory_Package.getInstance.setStatusNoLog (Java_Image (MouseStrings_Package.getInstance.MOUSE_MOVED_LABEL) & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
+        StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_MOVED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
         if ((not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (CanvasJPanel'Class (This).getSelectedTool, null))) and then (CanvasJPanel'Class (This).getSelectedTool.isActive) then
             graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
             graphicItem.mouseMoved (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);

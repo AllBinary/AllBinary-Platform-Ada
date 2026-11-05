@@ -95,7 +95,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    begin
         logUtil := LogUtil_Package.getInstance;
         commonString := CommonStrings_Package.getInstance;
-        logUtil.putF (commonString.START, AllBinaryMediaManager_Package.THIS_Id, commonString.INIT);
+        logUtil.putF (commonString.START, Java_Box (AllBinaryMediaManager_Package.THIS_Id), commonString.INIT);
         ProgressCanvasFactory_Package.getInstance.addNormalPortion (50, To_Unbounded_String ("Media Manager"));
         Sounds_Package.Create (soundsFactoryInterface).init;
    end init;
@@ -116,7 +116,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    begin
         logUtil := LogUtil_Package.getInstance;
         commonString := CommonStrings_Package.getInstance;
-        logUtil.putF (commonString.START, AllBinaryMediaManager_Package.THIS_Id, To_Unbounded_String ("creatPlayer(InputStream)"));
+        logUtil.putF (commonString.START, Java_Box (AllBinaryMediaManager_Package.THIS_Id), To_Unbounded_String ("creatPlayer(InputStream)"));
         return Player_Access (NoPlayer_Package.NO_PLAYER);
    end createPlayerFromInputStream;
 
@@ -126,7 +126,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    begin
         logUtil := LogUtil_Package.getInstance;
         commonString := CommonStrings_Package.getInstance;
-        logUtil.putF (commonString.START, AllBinaryMediaManager_Package.THIS_Id, To_Unbounded_String ("creatPlayer(locator)"));
+        logUtil.putF (commonString.START, Java_Box (AllBinaryMediaManager_Package.THIS_Id), To_Unbounded_String ("creatPlayer(locator)"));
         return Player_Access (NoPlayer_Package.NO_PLAYER);
    end createPlayer;
 

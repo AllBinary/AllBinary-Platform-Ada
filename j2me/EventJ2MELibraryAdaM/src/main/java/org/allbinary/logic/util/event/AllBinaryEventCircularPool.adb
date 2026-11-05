@@ -19,6 +19,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
 
 package body org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package is
 

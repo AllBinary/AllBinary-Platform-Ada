@@ -135,7 +135,7 @@ package body org.allbinary.log.FileLog_Package is
    begin
         begin
             if (FileLog_Package.firstTime) = (True) then
-                FileLog_Package.createLogFileBackup;
+                declare Java_Result renames FileLog_Package.createLogFileBackup; pragma Unreferenced (Java_Result); begin null; end;
                 if (createLogFile) = (False) then
                     return Java_New_String (To_Unbounded_String ("Log File Creation Error"));
                 end if;
@@ -160,7 +160,7 @@ package body org.allbinary.log.FileLog_Package is
             FileLog_Package.fileOut.write (message, 0, Ada.Strings.Unbounded.Length (message));
             FileLog_Package.fileOut.newLine;
             FileLog_Package.fileOut.flush;
-            return Java_New_String (Java_Image (FileLog_Package.ORG_ALLBINARY) & message);
+            return Java_New_String (FileLog_Package.ORG_ALLBINARY & message);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -185,7 +185,7 @@ package body org.allbinary.log.FileLog_Package is
    begin
         begin
             if (FileLog_Package.firstTime) = (True) then
-                FileLog_Package.createLogFileBackup;
+                declare Java_Result renames FileLog_Package.createLogFileBackup; pragma Unreferenced (Java_Result); begin null; end;
                 if (createLogFile) = (False) then
                     return Java_New_String (To_Unbounded_String ("Log File Creation Error"));
                 end if;
@@ -206,7 +206,7 @@ package body org.allbinary.log.FileLog_Package is
             FileLog_Package.fileOut.write (message, 0, Ada.Strings.Unbounded.Length (message));
             FileLog_Package.fileOut.newLine;
             FileLog_Package.fileOut.flush;
-            return Java_New_String (Java_Image (FileLog_Package.ORG_ALLBINARY) & message);
+            return Java_New_String (FileLog_Package.ORG_ALLBINARY & message);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -219,7 +219,7 @@ package body org.allbinary.log.FileLog_Package is
 
    function getFilePath return Unbounded_String is
    begin
-        return (FileLog_Package.logPath) + (FileLog_Package.fileName);
+        return FileLog_Package.logPath & FileLog_Package.fileName;
    end getFilePath;
 
    procedure put (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
@@ -256,7 +256,7 @@ begin
    
    logPath := To_Unbounded_String ("g:\log\");
    extension := Java_New_String (To_Unbounded_String ("dat"));
-   fileName := Java_New_String (To_Unbounded_String ("log.") & Java_Image (FileLog_Package.extension));
+   fileName := Java_New_String (To_Unbounded_String ("log.") & FileLog_Package.extension);
    backupFileName := (FileLog_Package.fileName & To_Unbounded_String (".bak"));
    ORG_ALLBINARY := To_Unbounded_String ("org.allbinary: ");
    firstTime := True;

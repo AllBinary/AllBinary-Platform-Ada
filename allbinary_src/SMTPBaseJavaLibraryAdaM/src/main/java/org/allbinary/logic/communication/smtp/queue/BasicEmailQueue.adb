@@ -18,6 +18,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package_References;
 with org.allbinary.logic.util.queue.BasicQueue_Package; use org.allbinary.logic.util.queue.BasicQueue_Package;
+with org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package_References;
 
 package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package is
 
@@ -64,7 +65,7 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
 
    function getInstance return BasicEmailQueue_Access is
    begin
-        if (BasicEmailQueue_Package.basicEmailQueue_Var) = (null) then
+        if org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package_References."=" (BasicEmailQueue_Package.basicEmailQueue_Var, null) then
             BasicEmailQueue_Package.basicEmailQueue_Var := BasicEmailQueue_Package.Create;
         end if;
         return BasicEmailQueue_Access (BasicEmailQueue_Package.basicEmailQueue_Var);

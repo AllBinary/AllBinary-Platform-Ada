@@ -166,7 +166,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (AlwaysActionScriptConditionData_Package.IS_ON, Java_Box (To_Unbounded_String (Java_Image (AlwaysActionScriptCondition'Class (This).isIsOn))));
+        hashMap.put (Java_Box (AlwaysActionScriptConditionData_Package.IS_ON), Java_Box (To_Unbounded_String (Java_Image (AlwaysActionScriptCondition'Class (This).isIsOn))));
         This.AlwaysActionScriptCondition_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, AlwaysActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;

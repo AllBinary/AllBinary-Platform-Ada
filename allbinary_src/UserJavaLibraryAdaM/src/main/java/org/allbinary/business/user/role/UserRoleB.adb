@@ -87,7 +87,7 @@ package body org.allbinary.business.user.role.UserRoleB_Package is
       userRole : UserRole_Access;
       index : Integer;
    begin
-        UserRoleFactory_Package.getInstance;
+        declare Java_Result renames UserRoleFactory_Package.getInstance; pragma Unreferenced (Java_Result); begin null; end;
         if not (StringValidationUtil_Package.getInstance.isEmpty (role)) then
             roleVector := UserRoleB_Package.getAll;
             size := roleVector.size;
@@ -103,7 +103,7 @@ package body org.allbinary.business.user.role.UserRoleB_Package is
 
    function getAll return BasicArrayList_Access is
    begin
-        UserRoleFactory_Package.getInstance;
+        declare Java_Result renames UserRoleFactory_Package.getInstance; pragma Unreferenced (Java_Result); begin null; end;
         return BasicArrayList_Access (UserRoleB_Package.roleVector);
    end getAll;
 

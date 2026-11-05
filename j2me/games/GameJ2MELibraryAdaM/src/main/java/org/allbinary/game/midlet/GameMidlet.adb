@@ -699,6 +699,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
       inGameOptionsForm : InGameOptionsForm_Access;
       progressCanvas : ProgressCanvas_Access;
       inGameOptionsFormFactory : InGameOptionsFormFactory_Access;
+      inGameOptionsForm_2 : CommandForm_Access;
       tempDisplayable : Displayable_Access;
       gameInputMappingCanvas : GameInputMappingCanvas_Access;
       highScoresCanvas : HighScoresCanvas_Access;
@@ -838,9 +839,9 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 layerManager := GameMidlet'Class (This).createGameLayerManager;
                 inGameOptionsFormFactory := InGameOptionsFormFactory_Package.getInstance;
                 inGameOptionsFormFactory.init (GameMidlet_Access'(This'Unchecked_Access), InGameFeatures_Package.Create, To_Unbounded_String ("Options In Game"), layerManager.getBackgroundBasicColor, layerManager.getForegroundBasicColor);
-                inGameOptionsForm := inGameOptionsFormFactory.get;
-                inGameOptionsForm.setItemStateListener (allbinaryGameCanvasRunnableInterface);
-                GameMidlet'Class (This).commandAction (gameCommandsFactory.SET_MENU_DISPLAYABLE, inGameOptionsForm);
+                inGameOptionsForm_2 := inGameOptionsFormFactory.get;
+                inGameOptionsForm_2.setItemStateListener (allbinaryGameCanvasRunnableInterface);
+                GameMidlet'Class (This).commandAction (gameCommandsFactory.SET_MENU_DISPLAYABLE, inGameOptionsForm_2);
             elsif (command) = (InGameOptionsForm_Package.DEFAULT) then
                 inGameOptionsForm := InGameOptionsForm_Access (InGameOptionsFormFactory_Package.getInstance.get);
                 GameFeatureFormUtil_Package.getInstance.setDefault (inGameOptionsForm);

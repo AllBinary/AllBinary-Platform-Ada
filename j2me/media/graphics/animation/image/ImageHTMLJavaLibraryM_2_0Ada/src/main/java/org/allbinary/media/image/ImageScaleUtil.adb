@@ -123,6 +123,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
       image : Image_Access;
       originalPlayNImage : CoreImage_Access;
       originalHTMLImage : PlaynImmutableImage_Access;
+      originalHTMLImage_2 : PlaynMutableImage_Access;
       htmlImage : PlaynMutableImage_Access;
       canvasImage : ImageImpl_Access;
       canvas : Canvas_Access;
@@ -131,8 +132,8 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         if image.isMutable then
             originalPlayNImage := null;
             if originalImage.isMutable then
-                originalHTMLImage := PlaynMutableImage_Access (originalImage);
-                originalPlayNImage := CoreImage_Access (originalHTMLImage.getImage);
+                originalHTMLImage_2 := PlaynMutableImage_Access (originalImage);
+                originalPlayNImage := CoreImage_Access (originalHTMLImage_2.getImage);
             else
                 originalHTMLImage := PlaynImmutableImage_Access (originalImage);
                 originalPlayNImage := CoreImage_Access (originalHTMLImage.getImage);

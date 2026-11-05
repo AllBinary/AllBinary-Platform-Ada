@@ -111,7 +111,7 @@ package body org.allbinary.business.installer.Initializer_Package is
         size := keyArray'Length;
         for index in 0 .. (size) - 1 loop
             key := Java_Unbox (keyArray (index));
-            values := Unbounded_String_Array_Access (map.get (Java_Box (key)));
+            values := Java_Unbox_Unbounded_String_Array (map.get (Java_Box (key)));
             hashMap.put (Java_New_String (key), Java_New_String (values (0)));
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (To_Unbounded_String ("key: "));
@@ -150,41 +150,41 @@ package body org.allbinary.business.installer.Initializer_Package is
    begin
         begin
             initializerData := InitializerData_Package.getInstance;
-            This.userJdbcDriver := Java_Unbox (hashMap.get (initializerData.CUSTOMERJDBCDRIVER));
-            This.userName := Java_Unbox (hashMap.get (initializerData.CUSTOMERNAME));
-            This.userUserName := Java_Unbox (hashMap.get (initializerData.CUSTOMERUSERNAME));
-            This.userPassword := Java_Unbox (hashMap.get (initializerData.CUSTOMERPASSWORD));
-            This.userSchema := Java_Unbox (hashMap.get (initializerData.CUSTOMERSCHEMA));
-            This.userServer := Java_Unbox (hashMap.get (initializerData.CUSTOMERSERVER));
-            This.userPort := Java_Unbox (hashMap.get (initializerData.CUSTOMERPORT));
-            This.historyJdbcDriver := Java_Unbox (hashMap.get (initializerData.HISTORYJDBCDRIVER));
-            This.historyName := Java_Unbox (hashMap.get (initializerData.HISTORYNAME));
-            This.historyUserName := Java_Unbox (hashMap.get (initializerData.HISTORYUSERNAME));
-            This.historyPassword := Java_Unbox (hashMap.get (initializerData.HISTORYPASSWORD));
-            This.historySchema := Java_Unbox (hashMap.get (initializerData.HISTORYSCHEMA));
-            This.historyServer := Java_Unbox (hashMap.get (initializerData.HISTORYSERVER));
-            This.historyPort := Java_Unbox (hashMap.get (initializerData.HISTORYPORT));
-            This.logJdbcDriver := Java_Unbox (hashMap.get (initializerData.LOGJDBCDRIVER));
-            This.logName := Java_Unbox (hashMap.get (initializerData.LOGNAME));
-            This.logUserName := Java_Unbox (hashMap.get (initializerData.LOGUSERNAME));
-            This.logPassword := Java_Unbox (hashMap.get (initializerData.LOGPASSWORD));
-            This.logSchema := Java_Unbox (hashMap.get (initializerData.LOGSCHEMA));
-            This.logServer := Java_Unbox (hashMap.get (initializerData.LOGSERVER));
-            This.logPort := Java_Unbox (hashMap.get (initializerData.LOGPORT));
-            This.inventoryJdbcDriver := Java_Unbox (hashMap.get (initializerData.INVENTORYJDBCDRIVER));
-            This.inventoryName := Java_Unbox (hashMap.get (initializerData.INVENTORYNAME));
-            This.inventoryUserName := Java_Unbox (hashMap.get (initializerData.INVENTORYUSERNAME));
-            This.inventoryPassword := Java_Unbox (hashMap.get (initializerData.INVENTORYPASSWORD));
-            This.inventorySchema := Java_Unbox (hashMap.get (initializerData.INVENTORYSCHEMA));
-            This.inventoryServer := Java_Unbox (hashMap.get (initializerData.INVENTORYSERVER));
-            This.inventoryPort := Java_Unbox (hashMap.get (initializerData.INVENTORYPORT));
-            This.staticPagesJdbcDriver := Java_Unbox (hashMap.get (initializerData.STATICPAGESJDBCDRIVER));
-            This.staticPagesName := Java_Unbox (hashMap.get (initializerData.STATICPAGESNAME));
-            This.staticPagesUserName := Java_Unbox (hashMap.get (initializerData.STATICPAGESUSERNAME));
-            This.staticPagesPassword := Java_Unbox (hashMap.get (initializerData.STATICPAGESPASSWORD));
-            This.staticPagesSchema := Java_Unbox (hashMap.get (initializerData.STATICPAGESSCHEMA));
-            This.staticPagesServer := Java_Unbox (hashMap.get (initializerData.STATICPAGESSERVER));
-            This.staticPagesPort := Java_Unbox (hashMap.get (initializerData.STATICPAGESPORT));
+            This.userJdbcDriver := Java_Unbox (hashMap.get (Java_Box (initializerData.CUSTOMERJDBCDRIVER)));
+            This.userName := Java_Unbox (hashMap.get (Java_Box (initializerData.CUSTOMERNAME)));
+            This.userUserName := Java_Unbox (hashMap.get (Java_Box (initializerData.CUSTOMERUSERNAME)));
+            This.userPassword := Java_Unbox (hashMap.get (Java_Box (initializerData.CUSTOMERPASSWORD)));
+            This.userSchema := Java_Unbox (hashMap.get (Java_Box (initializerData.CUSTOMERSCHEMA)));
+            This.userServer := Java_Unbox (hashMap.get (Java_Box (initializerData.CUSTOMERSERVER)));
+            This.userPort := Java_Unbox (hashMap.get (Java_Box (initializerData.CUSTOMERPORT)));
+            This.historyJdbcDriver := Java_Unbox (hashMap.get (Java_Box (initializerData.HISTORYJDBCDRIVER)));
+            This.historyName := Java_Unbox (hashMap.get (Java_Box (initializerData.HISTORYNAME)));
+            This.historyUserName := Java_Unbox (hashMap.get (Java_Box (initializerData.HISTORYUSERNAME)));
+            This.historyPassword := Java_Unbox (hashMap.get (Java_Box (initializerData.HISTORYPASSWORD)));
+            This.historySchema := Java_Unbox (hashMap.get (Java_Box (initializerData.HISTORYSCHEMA)));
+            This.historyServer := Java_Unbox (hashMap.get (Java_Box (initializerData.HISTORYSERVER)));
+            This.historyPort := Java_Unbox (hashMap.get (Java_Box (initializerData.HISTORYPORT)));
+            This.logJdbcDriver := Java_Unbox (hashMap.get (Java_Box (initializerData.LOGJDBCDRIVER)));
+            This.logName := Java_Unbox (hashMap.get (Java_Box (initializerData.LOGNAME)));
+            This.logUserName := Java_Unbox (hashMap.get (Java_Box (initializerData.LOGUSERNAME)));
+            This.logPassword := Java_Unbox (hashMap.get (Java_Box (initializerData.LOGPASSWORD)));
+            This.logSchema := Java_Unbox (hashMap.get (Java_Box (initializerData.LOGSCHEMA)));
+            This.logServer := Java_Unbox (hashMap.get (Java_Box (initializerData.LOGSERVER)));
+            This.logPort := Java_Unbox (hashMap.get (Java_Box (initializerData.LOGPORT)));
+            This.inventoryJdbcDriver := Java_Unbox (hashMap.get (Java_Box (initializerData.INVENTORYJDBCDRIVER)));
+            This.inventoryName := Java_Unbox (hashMap.get (Java_Box (initializerData.INVENTORYNAME)));
+            This.inventoryUserName := Java_Unbox (hashMap.get (Java_Box (initializerData.INVENTORYUSERNAME)));
+            This.inventoryPassword := Java_Unbox (hashMap.get (Java_Box (initializerData.INVENTORYPASSWORD)));
+            This.inventorySchema := Java_Unbox (hashMap.get (Java_Box (initializerData.INVENTORYSCHEMA)));
+            This.inventoryServer := Java_Unbox (hashMap.get (Java_Box (initializerData.INVENTORYSERVER)));
+            This.inventoryPort := Java_Unbox (hashMap.get (Java_Box (initializerData.INVENTORYPORT)));
+            This.staticPagesJdbcDriver := Java_Unbox (hashMap.get (Java_Box (initializerData.STATICPAGESJDBCDRIVER)));
+            This.staticPagesName := Java_Unbox (hashMap.get (Java_Box (initializerData.STATICPAGESNAME)));
+            This.staticPagesUserName := Java_Unbox (hashMap.get (Java_Box (initializerData.STATICPAGESUSERNAME)));
+            This.staticPagesPassword := Java_Unbox (hashMap.get (Java_Box (initializerData.STATICPAGESPASSWORD)));
+            This.staticPagesSchema := Java_Unbox (hashMap.get (Java_Box (initializerData.STATICPAGESSCHEMA)));
+            This.staticPagesServer := Java_Unbox (hashMap.get (Java_Box (initializerData.STATICPAGESSERVER)));
+            This.staticPagesPort := Java_Unbox (hashMap.get (Java_Box (initializerData.STATICPAGESPORT)));
         exception
             when Java_Occurrence : others =>
                 declare

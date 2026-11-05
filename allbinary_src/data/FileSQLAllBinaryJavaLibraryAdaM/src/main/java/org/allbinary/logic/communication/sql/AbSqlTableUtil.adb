@@ -310,7 +310,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             path := (org_Package.allbinary.globals.URLGLOBALS.getMainPath) + (PATH_GLOBALS_Package.getInstance.BACKUP_PATH);
             if not (Directory_Package.create (AbPath_Package.Create (path))) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.ERROR_CREATING & Java_Image (path), AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_BACKUP_TABLE);
+                    This.logUtil.putF (This.ERROR_CREATING & path, AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_BACKUP_TABLE);
                 end if;
             end if;
             rset := abSqlTable.executeSQLStatement (sqlStatement);
@@ -372,7 +372,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             if (current) = (0) then
                 if Directory_Package.create (AbPath_Package.Create (path)) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                        This.logUtil.putF (This.ERROR_CREATING & Java_Image (path), AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_RESTORE_TABLE);
+                        This.logUtil.putF (This.ERROR_CREATING & path, AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_RESTORE_TABLE);
                     end if;
                 end if;
             end if;

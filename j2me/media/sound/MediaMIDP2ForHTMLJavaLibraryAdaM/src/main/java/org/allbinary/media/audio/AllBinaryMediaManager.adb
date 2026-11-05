@@ -100,7 +100,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    begin
         logUtil := LogUtil_Package.getInstance;
         commonString := CommonStrings_Package.getInstance;
-        logUtil.putF (commonString.START, AllBinaryMediaManager_Package.THIS_Id, commonString.INIT);
+        logUtil.putF (commonString.START, Java_Box (AllBinaryMediaManager_Package.THIS_Id), commonString.INIT);
         ProgressCanvasFactory_Package.getInstance.addNormalPortion (50, To_Unbounded_String ("Media Manager"));
         Sounds_Package.Create (soundsFactoryInterface).init;
    end init;

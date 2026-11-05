@@ -67,7 +67,7 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
    function isConvertableTo (This : in out MediaData; mediaData_Var_Param : access MediaData_Package.MediaData'Class) return Boolean is
       mediaData_Var : constant MediaData_Access := MediaData_Access (mediaData_Var_Param);
    begin
-        if ((MediaData_Access'(This'Unchecked_Access)) = (MediaDataFactory_Package.getInstance.GIF)) and then ((mediaData_Var) = (MediaDataFactory_Package.getInstance.JPG)) then
+        if (org.allbinary.logic.visual.media.MediaData_Package_References."=" (MediaData_Access'(This'Unchecked_Access), MediaDataFactory_Package.getInstance.GIF)) and then (org.allbinary.logic.visual.media.MediaData_Package_References."=" (mediaData_Var, MediaDataFactory_Package.getInstance.JPG)) then
             return True;
         end if;
         return False;

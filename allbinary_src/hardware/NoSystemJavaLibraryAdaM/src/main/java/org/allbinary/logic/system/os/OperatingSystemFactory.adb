@@ -20,6 +20,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.logic.system.os.NoOperatingSystem_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package_References;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.system.os.NoOperatingSystem_Package;
 
 package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
 

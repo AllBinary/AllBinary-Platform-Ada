@@ -59,6 +59,7 @@ with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package;
+with org.allbinary.game.layer.SensorAction_Package_References;
 
 package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
 
@@ -410,7 +411,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
       message : Unbounded_String;
    begin
         This.associatedAdvancedRTSGameLayer.waypointLogHelperP.needToMove (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior_Access'(This'Unchecked_Access));
-        if ((UnitWaypointBehavior'Class (This).isTrackingWaypoint) or else ((This.sensorAction) = (SensorActionFactory_Package.getInstance.EVADE))) or else ((((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then ((UnitWaypointBehavior'Class (This).getCurrentTargetDistance) >= ((This.longWeaponRange) + (This.currentTargetLayerInterfaceP.getHalfHeight))))) then
+        if ((UnitWaypointBehavior'Class (This).isTrackingWaypoint) or else (org.allbinary.game.layer.SensorAction_Package_References."=" (This.sensorAction, SensorActionFactory_Package.getInstance.EVADE))) or else ((((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then ((UnitWaypointBehavior'Class (This).getCurrentTargetDistance) >= ((This.longWeaponRange) + (This.currentTargetLayerInterfaceP.getHalfHeight))))) then
             This.repeatedToLong.setStartTimeTNT;
             return True;
         end if;

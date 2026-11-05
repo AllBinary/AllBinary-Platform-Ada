@@ -19,6 +19,7 @@ with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsCo
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.math.NamedAngle_Package;
 
 package body org.allbinary.math.FrameUtil_Package is

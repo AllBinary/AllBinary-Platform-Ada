@@ -121,7 +121,7 @@ package body views.admin.inventory.download.EditValidationView_Package is
       downloadItemsEntity : DownloadItemsEntity_Access;
       vector : BasicArrayList_Access;
    begin
-        if ((This.id) = (null)) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.id))) then
+        if ((This.id) = (Null_Unbounded_String)) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.id))) then
             return False;
         end if;
         This.itemInterface := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance.getItem (This.id);
@@ -159,7 +159,7 @@ package body views.admin.inventory.download.EditValidationView_Package is
       downloadable : Integer;
    begin
         stringBuffer := StringMaker_Package.Create;
-        if ((This.id) = (null)) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.id))) then
+        if ((This.id) = (Null_Unbounded_String)) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.id))) then
             stringBuffer.append (To_Unbounded_String ("Id is not valid.<br />"));
         end if;
         if (InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance.getItem (This.id)) = (null) then

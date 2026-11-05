@@ -25,6 +25,7 @@ with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.input.media.image.InputImageType_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.input.media.image.InputImageType_Package_References;
 
 package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package is
 
@@ -74,11 +75,11 @@ package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Packag
    function getInstance (imageType_Param : access InputImageType_Package.InputImageType'Class) return ImageIOInterface_Access is
       imageType : constant InputImageType_Access := InputImageType_Access (imageType_Param);
    begin
-        if (imageType) = (InputImageType_Package.CAPTURE) then
+        if org.allbinary.input.media.image.InputImageType_Package_References."=" (imageType, InputImageType_Package.CAPTURE) then
             return ImageIOInterface_Access (CapturedImageInputOutput_Package.Create);
-        elsif (imageType) = (InputImageType_Package.COMPARISON) then
+        elsif org.allbinary.input.media.image.InputImageType_Package_References."=" (imageType, InputImageType_Package.COMPARISON) then
             return ImageIOInterface_Access (ComparisonImageInputOutput_Package.Create);
-        elsif (imageType) = (InputImageType_Package.MOTION) then
+        elsif org.allbinary.input.media.image.InputImageType_Package_References."=" (imageType, InputImageType_Package.MOTION) then
             return ImageIOInterface_Access (MotionRectanglesImageInputOutput_Package.Create);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No ImageIOInterface for: ") & imageType.toString));

@@ -237,9 +237,9 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
             return;
         end if;
         motionGestureInput := ev.getMotionGesture;
-        if (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.PRESSED) then
+        if org.allbinary.input.motion.gesture.MotionGestureInput_Package_References."=" (motionGestureInput, TouchMotionGestureFactory_Package.getInstance.PRESSED) then
             ReleaseControlledMotionGestureListener'Class (This).onPressedMotionGestureEvent (ev);
-        elsif (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.RELEASED) then
+        elsif org.allbinary.input.motion.gesture.MotionGestureInput_Package_References."=" (motionGestureInput, TouchMotionGestureFactory_Package.getInstance.RELEASED) then
             ReleaseControlledMotionGestureListener'Class (This).released (ev);
         else
             if (not org.allbinary.input.motion.gesture.MotionGestureInput_Package_References."=" (This.currentMotionGesture, motionGestureInput)) then

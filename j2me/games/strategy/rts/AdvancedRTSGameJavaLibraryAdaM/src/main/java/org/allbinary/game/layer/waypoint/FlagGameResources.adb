@@ -81,7 +81,7 @@ begin
    ICON := To_Unbounded_String ("_icon");
    BUILD := To_Unbounded_String ("_build");
    DESTROY := To_Unbounded_String ("_destroy");
-   ICON_BUILD := To_Unbounded_String ("_icon") & Java_Image (FlagGameResources_Package.BUILD);
+   ICON_BUILD := To_Unbounded_String ("_icon") & FlagGameResources_Package.BUILD;
 
 end org.allbinary.game.layer.waypoint.FlagGameResources_Package;
 

@@ -156,6 +156,7 @@ limited with org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUt
 with org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Package_References;
 limited with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
+with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References;
 
 package org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
 
@@ -219,10 +220,12 @@ package org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
    subtype SimpleSteeringVisitor_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.SimpleSteeringVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SimpleSteeringVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References."=";
 
-   type SimpleSteeringVisitor is new SteeringVisitor with null record;
+   type SimpleSteeringVisitor is new SteeringVisitor with record
+      Java_Outer : org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.CollidableUnitBehavior_Access;
+   end record;
 
    procedure Initialize (This : in out SimpleSteeringVisitor'Class);
-   function Create return SimpleSteeringVisitor_Access;
+   function Create (Java_Outer_Param : org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.CollidableUnitBehavior_Access) return SimpleSteeringVisitor_Access;
    function visit (This : in out SimpleSteeringVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
    procedure visit (This : in out SimpleSteeringVisitor; anyType_Param : access Java_Object'Class);
    function visit (This : in out SimpleSteeringVisitor; Value : Unbounded_String) return Java_Object_Access;

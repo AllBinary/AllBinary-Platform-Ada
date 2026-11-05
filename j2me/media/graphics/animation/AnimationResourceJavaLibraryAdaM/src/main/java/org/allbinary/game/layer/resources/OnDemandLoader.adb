@@ -35,6 +35,7 @@ with org.allbinary.game.layer.resources.OnDemandResources_Package;
 with org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package;
 with org.allbinary.game.resource.RectangleResourceFactoryInterface_Package;
 with org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.resources.OnDemandResources_Package_References;
 
 package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
 
@@ -153,7 +154,7 @@ package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
         onDemandIndex := This.onDemandResourcesFactory.size;
         while (Java_Pre_Decrement (onDemandIndex)) >= (0) loop
             onDemandResources := This.onDemandResourcesFactory.remove (onDemandIndex);
-            if (onDemandResources) /= (OnDemandResources_Package.NULL_ON_DEMAND_RESOURCES) then
+            if (not org.allbinary.game.layer.resources.OnDemandResources_Package_References."=" (onDemandResources, OnDemandResources_Package.NULL_ON_DEMAND_RESOURCES)) then
                 index := onDemandResources.initAt (imageCache, This.resourceAnimationInterfaceFactoryInterfaceFactory, portion, loadingString, index);
             end if;
         end loop;
@@ -179,7 +180,7 @@ package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
         onDemandIndex := onDemandArray'Length;
         while (Java_Pre_Decrement (onDemandIndex)) >= (0) loop
             onDemandResources := This.onDemandResourcesFactory.remove (onDemandArray (onDemandIndex));
-            if (onDemandResources) /= (OnDemandResources_Package.NULL_ON_DEMAND_RESOURCES) then
+            if (not org.allbinary.game.layer.resources.OnDemandResources_Package_References."=" (onDemandResources, OnDemandResources_Package.NULL_ON_DEMAND_RESOURCES)) then
                 index := onDemandResources.initAt (imageCache, This.resourceAnimationInterfaceFactoryInterfaceFactory, portion, loadingString, index);
             end if;
         end loop;

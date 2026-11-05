@@ -109,9 +109,9 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.AbSqlBean_Field_logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD, e);
+                This.AbSqlBean_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD, e);
             end if;
-            return Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement;
+            return This.FAILED_SQL_STATEMENT & sqlStatement;
                 end;
         end;
    end getField;
@@ -175,9 +175,9 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 begin
             sqlStatement := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.AbSqlBean_Field_logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD, e);
+                This.AbSqlBean_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD, e);
             end if;
-            return Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement;
+            return This.FAILED_SQL_STATEMENT & sqlStatement;
                 end;
         end;
    end getField;
@@ -240,9 +240,9 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 begin
             sqlStatement := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.AbSqlBean_Field_logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_IS_SUBSET_OF_ENTRY, e);
+                This.AbSqlBean_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_IS_SUBSET_OF_ENTRY, e);
             end if;
-            return Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement;
+            return This.FAILED_SQL_STATEMENT & sqlStatement;
                 end;
         end;
    end isSubsetOfEntry;

@@ -38,6 +38,7 @@ with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.lay
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 with org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package; use org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package;
 with org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References;
+with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
@@ -120,7 +121,7 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    begin
       null;
       This.layerPartialCellPositionsUtil := LayerPartialCellPositionsUtil_Package.getInstance;
-      This.simpleSteeringVisitor_Var := SimpleSteeringVisitor_Package.Create;
+      This.simpleSteeringVisitor_Var := SimpleSteeringVisitor_Package.Create (org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.CollidableUnitBehavior_Access'(This'Unchecked_Access));
    end Initialize_Fields;
 
 
@@ -292,6 +293,7 @@ with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Pac
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
+with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
@@ -371,9 +373,10 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
       Initialize_Fields (This);
    end Initialize;
 
-   function Create return SimpleSteeringVisitor_Access is
+   function Create (Java_Outer_Param : org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.CollidableUnitBehavior_Access) return SimpleSteeringVisitor_Access is
       This : constant SimpleSteeringVisitor_Access := new SimpleSteeringVisitor;
    begin
+      This.Java_Outer := Java_Outer_Param;
       SimpleSteeringVisitor_Package.Initialize (This.all);
       return This;
    end Create;
@@ -392,7 +395,7 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
                 ownerLayer := CollidableCompositeLayer_Access (anyType);
                 if (SimpleSteeringVisitor'Class (This).getList.size) > (0) then
                     allbinaryLayer := CollidableCompositeLayer_Access (SimpleSteeringVisitor'Class (This).getList.get (0));
-                    clear := SimpleSteeringVisitor'Class (This).steer (ownerLayer, allbinaryLayer);
+                    clear := This.Java_Outer.steer (ownerLayer, allbinaryLayer);
                     if clear then
                         SimpleSteeringVisitor'Class (This).getList.clear;
                         return NullUtil_Package.getInstance.NULL_OBJECT;

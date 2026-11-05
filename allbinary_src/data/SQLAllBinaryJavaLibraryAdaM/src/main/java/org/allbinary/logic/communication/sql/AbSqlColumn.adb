@@ -128,7 +128,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.AbSqlColumn_Field_logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_LARGETS_INTEGER_IN_COLUMN, e);
+                This.AbSqlColumn_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_LARGETS_INTEGER_IN_COLUMN, e);
             end if;
             return This.INVALID_RESULT;
                 end;
@@ -170,7 +170,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.AbSqlColumn_Field_logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_COLUMN, e);
+                This.AbSqlColumn_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_COLUMN, e);
             end if;
             return column;
                 end;
@@ -219,7 +219,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.AbSqlColumn_Field_logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_COLUMN_WHERE, e);
+                This.AbSqlColumn_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_COLUMN_WHERE, e);
             end if;
             return column;
                 end;

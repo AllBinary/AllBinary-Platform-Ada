@@ -33,6 +33,7 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References;
 
 package body org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package is
 
@@ -418,16 +419,16 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         for index in 0 .. (size) - 1 loop
             genericProfileDataWorkerType := GenericProfileDataWorkerType_Access (vector.get (index));
             This.logUtil.putF (genericProfile.getName & To_Unbounded_String (" has GenericProfileDataWorkerType: ") & genericProfileDataWorkerType.toString, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
-            if (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE) then
+            if org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=" (genericProfileDataWorkerType, GenericProfileDataWorkerType_Package.SCREEN_CAPTURE) then
                 This.logUtil.putF (To_Unbounded_String ("Screen Capture Selected"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
                 This.screenCaptureJRadioButton.setSelected (True);
-            elsif (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.SAVED_CAPTURE) then
+            elsif org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=" (genericProfileDataWorkerType, GenericProfileDataWorkerType_Package.SAVED_CAPTURE) then
                 This.logUtil.putF (To_Unbounded_String ("Saved Capture Selected"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
                 This.savedCaptureJRadioButton.setSelected (True);
-            elsif (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.COMPARISON) then
+            elsif org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=" (genericProfileDataWorkerType, GenericProfileDataWorkerType_Package.COMPARISON) then
                 This.logUtil.putF (To_Unbounded_String ("Checking Comparison Box"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
                 This.captureComparisonJCheckBox.setSelected (True);
-            elsif (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.MOTION) then
+            elsif org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=" (genericProfileDataWorkerType, GenericProfileDataWorkerType_Package.MOTION) then
                 This.logUtil.putF (To_Unbounded_String ("Checking Motion Box"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
                 This.captureMotionAnalysisJCheckBox.setSelected (True);
             end if;

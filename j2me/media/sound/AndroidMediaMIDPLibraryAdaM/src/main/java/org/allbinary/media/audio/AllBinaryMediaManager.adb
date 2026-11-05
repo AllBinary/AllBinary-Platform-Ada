@@ -108,12 +108,12 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    begin
         logUtil := LogUtil_Package.getInstance;
         commonString := CommonStrings_Package.getInstance;
-        logUtil.putF (commonString.START, AllBinaryMediaManager_Package.THIS_Id, commonString.INIT);
+        logUtil.putF (commonString.START, Java_Box (AllBinaryMediaManager_Package.THIS_Id), commonString.INIT);
         AllBinaryMediaManager_Package.shutdown (soundsFactoryInterface);
         ProgressCanvasFactory_Package.getInstance.addNormalPortion (50, To_Unbounded_String ("Media Manager"));
         TsUtil_Package.getInstance.gc;
         Sounds_Package.Create (soundsFactoryInterface).init;
-        logUtil.putF (commonString.END_Id, AllBinaryMediaManager_Package.THIS_Id, commonString.INIT);
+        logUtil.putF (commonString.END_Id, Java_Box (AllBinaryMediaManager_Package.THIS_Id), commonString.INIT);
    end init;
 
    --  throws Exception
@@ -129,7 +129,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    begin
         logUtil := LogUtil_Package.getInstance;
         commonString := CommonStrings_Package.getInstance;
-        logUtil.putF (commonString.START, AllBinaryMediaManager_Package.THIS_Id, To_Unbounded_String ("shutdown"));
+        logUtil.putF (commonString.START, Java_Box (AllBinaryMediaManager_Package.THIS_Id), To_Unbounded_String ("shutdown"));
         if soundsFactoryInterface.isInitialized then
             Sounds_Package.Create (soundsFactoryInterface).stopAll;
             soundInterfaceArray := soundsFactoryInterface.getSoundInterfaceArray;
@@ -155,7 +155,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
             soundsFactoryInterface.setInitialized (False);
             AllBinaryMediaManager_Package.mostUsedTotal := 0;
         end if;
-        logUtil.putF (commonString.START, AllBinaryMediaManager_Package.THIS_Id, To_Unbounded_String ("shutdown"));
+        logUtil.putF (commonString.START, Java_Box (AllBinaryMediaManager_Package.THIS_Id), To_Unbounded_String ("shutdown"));
    end shutdown;
 
    --  throws Exception
@@ -172,7 +172,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                logUtil.put (To_Unbounded_String ("Could not create AndroidMediaPlayerWrapper using NoPlayer at ") & Java_Image (CommonLabels_Package.getInstance.TOTAL_LABEL) & Java_Image (AllBinaryMediaManager_Package.mostUsedTotal), AllBinaryMediaManager_Package.THIS_Id, To_Unbounded_String ("createPlayer"), e);
+                logUtil.put (To_Unbounded_String ("Could not create AndroidMediaPlayerWrapper using NoPlayer at ") & Java_Image (CommonLabels_Package.getInstance.TOTAL_LABEL) & Java_Image (AllBinaryMediaManager_Package.mostUsedTotal), Java_Box (AllBinaryMediaManager_Package.THIS_Id), To_Unbounded_String ("createPlayer"), e);
                 return Player_Access (NoPlayer_Package.NO_PLAYER);
                     end;
             end;

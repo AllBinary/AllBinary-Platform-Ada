@@ -83,14 +83,15 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       newBufferedImage : BufferedImage_Access;
       originalAwtImage : Image_Access;
       originalJ2SEImage : J2SEImmutableImage_Access;
+      originalJ2SEImage_2 : J2SEMutableImage_Access;
    begin
         if image.isMutable then
             j2seImage := J2SEMutableImage_Access (image);
             newBufferedImage := BufferedImage_Access (j2seImage.getImage);
             originalAwtImage := null;
             if originalImage.isMutable then
-                originalJ2SEImage := J2SEMutableImage_Access (originalImage);
-                originalAwtImage := Image_Access (originalJ2SEImage.getImage);
+                originalJ2SEImage_2 := J2SEMutableImage_Access (originalImage);
+                originalAwtImage := Image_Access (originalJ2SEImage_2.getImage);
             else
                 originalJ2SEImage := J2SEImmutableImage_Access (originalImage);
                 originalAwtImage := Image_Access (originalJ2SEImage.getImage);
@@ -107,6 +108,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       image : Image_Access;
       originalAwtImage : Image_Access;
       originalJ2SEImage : J2SEImmutableImage_Access;
+      originalJ2SEImage_2 : J2SEMutableImage_Access;
       j2seImage : J2SEMutableImage_Access;
       newBufferedImage : BufferedImage_Access;
       bufferedImage : BufferedImage_Access;
@@ -115,8 +117,8 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
         if image.isMutable then
             originalAwtImage := null;
             if originalImage.isMutable then
-                originalJ2SEImage := J2SEMutableImage_Access (originalImage);
-                originalAwtImage := Image_Access (originalJ2SEImage.getImage);
+                originalJ2SEImage_2 := J2SEMutableImage_Access (originalImage);
+                originalAwtImage := Image_Access (originalJ2SEImage_2.getImage);
             else
                 originalJ2SEImage := J2SEImmutableImage_Access (originalImage);
                 originalAwtImage := Image_Access (originalJ2SEImage.getImage);

@@ -170,7 +170,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         if ((This.number) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.number, stringUtil.EMPTY_STRING)) = (0)) then
             return aFalse;
         end if;
-        if (Ada.Strings.Unbounded.Length (This.number)) > (org_Package.allbinary.business.user.commerce.money.payment_Var.types.CreditCardType.MAXLEN) then
+        if (Ada.Strings.Unbounded.Length (This.number)) > (org_Package.allbinary.business.user.commerce.money.payment.types.CreditCardType.MAXLEN) then
             return aFalse;
         end if;
         return True;
@@ -367,7 +367,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
       node : Node_Access;
    begin
         hashMap := Payment'Class (This).toHashMap;
-        node := ModDomHelper_Package.createNameValueNodes (document, PaymentData_Package.PAYMENT_Var, hashMap);
+        node := ModDomHelper_Package.createNameValueNodes (document, PaymentData_Package.PAYMENT, hashMap);
         return node;
    end toXmlNode;
 

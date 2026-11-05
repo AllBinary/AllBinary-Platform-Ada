@@ -2,6 +2,7 @@
 
 
 with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.TimeZone_Package; use java.util.TimeZone_Package;
 
 package body org.allbinary.time.TimeTypeUtil_Package is
 

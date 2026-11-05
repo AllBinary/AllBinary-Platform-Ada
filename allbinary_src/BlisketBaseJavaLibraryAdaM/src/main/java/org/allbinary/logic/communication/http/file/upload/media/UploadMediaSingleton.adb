@@ -23,6 +23,7 @@ with org.allbinary.logic.visual.media.MediaIOUtil_Package; use org.allbinary.log
 with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.logic.visual.media.MediaTypeData_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package_References;
 
 package body org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package is
 
@@ -116,7 +117,7 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
 
    function getInstance return UploadMediaSingleton_Access is
    begin
-        if (UploadMediaSingleton_Package.uploadMedia) = (null) then
+        if org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package_References."=" (UploadMediaSingleton_Package.uploadMedia, null) then
             UploadMediaSingleton_Package.uploadMedia := UploadMediaSingleton_Package.Create;
         end if;
         return UploadMediaSingleton_Access (UploadMediaSingleton_Package.uploadMedia);

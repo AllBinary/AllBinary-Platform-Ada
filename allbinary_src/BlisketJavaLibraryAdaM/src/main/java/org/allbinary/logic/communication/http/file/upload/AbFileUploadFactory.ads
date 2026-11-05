@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.ArrayList_Package; use java.util.ArrayList_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;

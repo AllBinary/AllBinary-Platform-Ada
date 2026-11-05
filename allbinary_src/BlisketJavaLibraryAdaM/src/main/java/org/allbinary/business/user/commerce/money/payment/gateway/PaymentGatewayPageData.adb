@@ -40,7 +40,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
       stringBuffer : StringMaker_Access;
    begin
       Initialize_Fields (This);
-        paymentMethodString := Java_Image (PaymentGatewayPageData_Package.NAME) & paymentMethod;
+        paymentMethodString := PaymentGatewayPageData_Package.NAME & paymentMethod;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (location);
         stringBuffer.append (To_Unbounded_String ("MakePayment"));
@@ -100,8 +100,8 @@ begin
    EXTENSION := To_Unbounded_String (".jsp");
    NAME := StringUtil_Package.getInstance.EMPTY_STRING;
    FORWARDMAKEPAYMENT := To_Unbounded_String ("MakePayment.jsp");
-   PAYMENTOPTIONS := To_Unbounded_String ("PaymentOptions") & Java_Image (PaymentGatewayPageData_Package.EXTENSION);
-   STARTCHECKOUT := To_Unbounded_String ("StartCheckout") & Java_Image (PaymentGatewayPageData_Package.EXTENSION);
+   PAYMENTOPTIONS := To_Unbounded_String ("PaymentOptions") & PaymentGatewayPageData_Package.EXTENSION;
+   STARTCHECKOUT := To_Unbounded_String ("StartCheckout") & PaymentGatewayPageData_Package.EXTENSION;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPageData_Package;
 

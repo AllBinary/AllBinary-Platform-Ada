@@ -20,6 +20,22 @@ with org.allbinary.logic.system.hardware.linux.LinuxHardware_Package; use org.al
 with org.allbinary.logic.system.hardware.windows.WindowsHardware_Package; use org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.EthernetInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.FireWireInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardDriveInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+with org.allbinary.logic.system.hardware.HardwareInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
+with org.allbinary.logic.system.os.OperatingSystemInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
 
 package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
 

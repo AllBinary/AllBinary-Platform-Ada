@@ -191,7 +191,7 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         elsif (Java_Compare_To (imageColor, openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444.getName)) = (0) then
             OpenGLConfiguration'Class (This).setImageColor (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
         else
-            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading image color: ") & Java_Image (imageColor)));
+            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading image color: ") & imageColor));
         end if;
         color := dataInputStream.readUTF;
         if (Java_Compare_To (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444.getName)) = (0) then
@@ -201,7 +201,7 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         elsif (Java_Compare_To (color, openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888.getName)) = (0) then
             OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888);
         else
-            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading color: ") & Java_Image (color)));
+            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("OpenGLConfiguration: Error reading color: ") & color));
         end if;
         PreLogUtil_Package.put (To_Unbounded_String ("Read Configuration: ") & OpenGLConfiguration'Class (This).toString, OpenGLConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
    end read;

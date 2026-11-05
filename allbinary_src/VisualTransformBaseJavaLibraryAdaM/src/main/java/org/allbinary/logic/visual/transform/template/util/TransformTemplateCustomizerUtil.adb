@@ -102,16 +102,16 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
         SPACE := CommonSeps_Package.getInstance.SPACE;
         ONE_EMPTY_STRING_ARRAY := StringUtil_Package.getInstance.ONE_EMPTY_STRING_ARRAY;
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (new Unbounded_String_Array'(0 => viewName & SPACE), ONE_EMPTY_STRING_ARRAY);
-        hashMap.put (new Unbounded_String_Array'(0 => storeName & SPACE), ONE_EMPTY_STRING_ARRAY);
-        hashMap.put (new Unbounded_String_Array'(0 => This.CUSTOMIZER_NAME), ONE_EMPTY_STRING_ARRAY);
-        hashMap.put (new Unbounded_String_Array'(0 => This.BODY_VIEWNAMEKEY), ONE_EMPTY_STRING_ARRAY);
-        hashMap.put (new Unbounded_String_Array'(0 => This.TITLE_VIEWNAMEKEY), ONE_EMPTY_STRING_ARRAY);
-        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_NEW), ONE_EMPTY_STRING_ARRAY);
-        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_INSERT), ONE_EMPTY_STRING_ARRAY);
-        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_DELETE), ONE_EMPTY_STRING_ARRAY);
-        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_EDIT), ONE_EMPTY_STRING_ARRAY);
-        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_UPDATE), ONE_EMPTY_STRING_ARRAY);
+        hashMap.put (new Unbounded_String_Array'(0 => viewName & SPACE), Java_Box (ONE_EMPTY_STRING_ARRAY));
+        hashMap.put (new Unbounded_String_Array'(0 => storeName & SPACE), Java_Box (ONE_EMPTY_STRING_ARRAY));
+        hashMap.put (new Unbounded_String_Array'(0 => This.CUSTOMIZER_NAME), Java_Box (ONE_EMPTY_STRING_ARRAY));
+        hashMap.put (new Unbounded_String_Array'(0 => This.BODY_VIEWNAMEKEY), Java_Box (ONE_EMPTY_STRING_ARRAY));
+        hashMap.put (new Unbounded_String_Array'(0 => This.TITLE_VIEWNAMEKEY), Java_Box (ONE_EMPTY_STRING_ARRAY));
+        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_NEW), Java_Box (ONE_EMPTY_STRING_ARRAY));
+        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_INSERT), Java_Box (ONE_EMPTY_STRING_ARRAY));
+        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_DELETE), Java_Box (ONE_EMPTY_STRING_ARRAY));
+        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_EDIT), Java_Box (ONE_EMPTY_STRING_ARRAY));
+        hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_UPDATE), Java_Box (ONE_EMPTY_STRING_ARRAY));
         replace := null;
         rootViewName := replace.all_Id (viewName);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then

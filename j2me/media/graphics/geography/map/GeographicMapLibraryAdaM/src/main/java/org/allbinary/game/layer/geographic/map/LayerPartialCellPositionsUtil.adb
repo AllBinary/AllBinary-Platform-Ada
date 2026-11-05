@@ -98,16 +98,16 @@ package body org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUt
         topRightGeographicMapCellPosition := geographicMapInterface.getCellPositionAtXYNoThrow ((layerInterface.getXP) + (layerInterface.getWidth), layerInterface.getYP);
         bottomLeftGeographicMapCellPosition := geographicMapInterface.getCellPositionAtXYNoThrow (layerInterface.getXP, (layerInterface.getYP) + (layerInterface.getHeight));
         bottomRightGeographicMapCellPosition := geographicMapInterface.getCellPositionAtXYNoThrow ((layerInterface.getXP) + (layerInterface.getWidth), (layerInterface.getYP) + (layerInterface.getHeight));
-        if (topLeftGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
+        if (not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (topLeftGeographicMapCellPosition, SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
             reusableList.add (Java_Object_Access (topLeftGeographicMapCellPosition));
         end if;
-        if ((topRightGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) and then ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (topLeftGeographicMapCellPosition, topRightGeographicMapCellPosition))) then
+        if ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (topRightGeographicMapCellPosition, SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION))) and then ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (topLeftGeographicMapCellPosition, topRightGeographicMapCellPosition))) then
             reusableList.add (Java_Object_Access (topRightGeographicMapCellPosition));
         end if;
-        if ((bottomLeftGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) and then (not (reusableList.contains (Java_Object_Access (bottomLeftGeographicMapCellPosition)))) then
+        if ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (bottomLeftGeographicMapCellPosition, SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION))) and then (not (reusableList.contains (Java_Object_Access (bottomLeftGeographicMapCellPosition)))) then
             reusableList.add (Java_Object_Access (bottomLeftGeographicMapCellPosition));
         end if;
-        if ((bottomRightGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) and then (not (reusableList.contains (Java_Object_Access (bottomRightGeographicMapCellPosition)))) then
+        if ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (bottomRightGeographicMapCellPosition, SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION))) and then (not (reusableList.contains (Java_Object_Access (bottomRightGeographicMapCellPosition)))) then
             reusableList.add (Java_Object_Access (bottomRightGeographicMapCellPosition));
         end if;
         return reusableList;
@@ -128,16 +128,16 @@ package body org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUt
         topRightGeographicMapCellPosition := geographicMapInterface.getCellPositionAtXYNoThrow (((layerInterface.getXP) + (layerInterface.getWidth)) + (dx), (layerInterface.getYP) + (dy));
         bottomLeftGeographicMapCellPosition := geographicMapInterface.getCellPositionAtXYNoThrow ((layerInterface.getXP) + (dx), ((layerInterface.getYP) + (layerInterface.getHeight)) + (dy));
         bottomRightGeographicMapCellPosition := geographicMapInterface.getCellPositionAtXYNoThrow (((layerInterface.getXP) + (layerInterface.getWidth)) + (dx), ((layerInterface.getYP) + (layerInterface.getHeight)) + (dy));
-        if (topLeftGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
+        if (not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (topLeftGeographicMapCellPosition, SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
             reusableList.add (Java_Object_Access (topLeftGeographicMapCellPosition));
         end if;
-        if ((topRightGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) and then ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (topLeftGeographicMapCellPosition, topRightGeographicMapCellPosition))) then
+        if ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (topRightGeographicMapCellPosition, SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION))) and then ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (topLeftGeographicMapCellPosition, topRightGeographicMapCellPosition))) then
             reusableList.add (Java_Object_Access (topRightGeographicMapCellPosition));
         end if;
-        if ((bottomLeftGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) and then (not (reusableList.contains (Java_Object_Access (bottomLeftGeographicMapCellPosition)))) then
+        if ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (bottomLeftGeographicMapCellPosition, SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION))) and then (not (reusableList.contains (Java_Object_Access (bottomLeftGeographicMapCellPosition)))) then
             reusableList.add (Java_Object_Access (bottomLeftGeographicMapCellPosition));
         end if;
-        if ((bottomRightGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) and then (not (reusableList.contains (Java_Object_Access (bottomRightGeographicMapCellPosition)))) then
+        if ((not org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=" (bottomRightGeographicMapCellPosition, SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION))) and then (not (reusableList.contains (Java_Object_Access (bottomRightGeographicMapCellPosition)))) then
             reusableList.add (Java_Object_Access (bottomRightGeographicMapCellPosition));
         end if;
         return reusableList;

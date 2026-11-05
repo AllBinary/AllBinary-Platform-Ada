@@ -801,7 +801,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             file := File_Package.Create (SAVE_PATH & To_Unbounded_String ("/") & workAreaJPanel.getName & This.JAVAEXTENSION);
             document := workAreaJPanel.toDocument;
             This.logUtil.putF (To_Unbounded_String ("Export: ") & DomHelper_Package.getInstance.toString (document), MyFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("exportJMenuItem1ActionPerformed"));
-            This.xslHelper.export (file, Java_Image (MyFrame_Package.TEMPLATE_EXPORT_PATH) & To_Unbounded_String ("/") & This.JAVA_TEMPLATE, document);
+            This.xslHelper.export (file, MyFrame_Package.TEMPLATE_EXPORT_PATH & To_Unbounded_String ("/") & This.JAVA_TEMPLATE, document);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -932,8 +932,8 @@ begin
    
    numberOfWorkAreas := 0;
    PATH := To_Unbounded_String ("G:/mnt/bc/mydev/work/graphics/AllBinaryGraphicsJavaApplication");
-   SAVE_PATH := Java_Image (MyFrame_Package.PATH) & To_Unbounded_String ("/save");
-   TEMPLATE_EXPORT_PATH := Java_Image (MyFrame_Package.PATH) & To_Unbounded_String ("/templates/export");
+   SAVE_PATH := MyFrame_Package.PATH & To_Unbounded_String ("/save");
+   TEMPLATE_EXPORT_PATH := MyFrame_Package.PATH & To_Unbounded_String ("/templates/export");
    statusJLabel := null;
 
 end org.allbinary.graphics.j2me.MyFrame_Package;

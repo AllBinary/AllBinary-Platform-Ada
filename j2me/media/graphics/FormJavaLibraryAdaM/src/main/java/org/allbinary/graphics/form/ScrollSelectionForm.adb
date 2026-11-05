@@ -64,6 +64,7 @@ with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Pack
 with org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 
 package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
 
@@ -208,7 +209,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       logUtil : LogUtil_Access;
    begin
         begin
-            if (formPaintableFactory) = (ItemPaintableFactory_Package.getInstance) then
+            if org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=" (formPaintableFactory, ItemPaintableFactory_Package.getInstance) then
                 return PaintableForm_Access (ScrollSelectionForm_Package.Create (title, items, formPaintableFactory, border, -(3), backgroundBasicColor, foregroundBasicColor));
             else
                 commonStrings := CommonStrings_Package.getInstance;

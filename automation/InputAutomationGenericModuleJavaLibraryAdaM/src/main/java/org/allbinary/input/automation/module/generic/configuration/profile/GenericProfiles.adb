@@ -144,7 +144,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             if (nodeList) /= (null) then
                 GenericProfiles'Class (This).initProfiles (nodeList.item (0));
             else
-                Java_Throw (Java_New_Exception ("Exception", Java_Image (GenericProfileActionData_Package.NAME) & To_Unbounded_String (" Name Node Node Children")));
+                Java_Throw (Java_New_Exception ("Exception", GenericProfileActionData_Package.NAME & To_Unbounded_String (" Name Node Node Children")));
             end if;
             This.logUtil.putF (To_Unbounded_String ("Loaded: ") & Java_Image (This.hashMap.size) & To_Unbounded_String (" Configuration Profile Actions"), GenericProfiles_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         else
@@ -276,8 +276,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 begin
    null;
    DEFAULT_PROFILES_PATH := To_Unbounded_String ("./modules/configs/profiles/");
-   DEFAULT_PROFILE_ACTIONS_PATH := Java_Image (GenericProfiles_Package.DEFAULT_PROFILES_PATH) & To_Unbounded_String ("actions/");
-   DEFAULT_FILE := Java_Image (GenericProfiles_Package.DEFAULT_PROFILES_PATH) & To_Unbounded_String ("profiles.xml");
+   DEFAULT_PROFILE_ACTIONS_PATH := GenericProfiles_Package.DEFAULT_PROFILES_PATH & To_Unbounded_String ("actions/");
+   DEFAULT_FILE := GenericProfiles_Package.DEFAULT_PROFILES_PATH & To_Unbounded_String ("profiles.xml");
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package;
 

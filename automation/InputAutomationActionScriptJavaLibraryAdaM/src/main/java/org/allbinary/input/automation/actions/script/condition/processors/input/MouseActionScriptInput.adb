@@ -212,7 +212,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (MouseActionScriptInputData_Package.BUTTONS, Java_Box (To_Unbounded_String (Java_Image (MouseActionScriptInput'Class (This).getButtonClicks))));
+        hashMap.put (Java_Box (MouseActionScriptInputData_Package.BUTTONS), Java_Box (To_Unbounded_String (Java_Image (MouseActionScriptInput'Class (This).getButtonClicks))));
         This.MouseActionScriptInput_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, MouseActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
@@ -228,8 +228,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         mouseNode := ModDomHelper_Package.createNodeWithValueNodes (document, MouseActionScriptInputData_Package.NAME, MouseActionScriptInput'Class (This).toHashMap);
         node.appendChild (mouseNode);
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (MouseActionScriptInputData_Package.MOVE_X, Java_Box (To_Unbounded_String (Java_Image (MouseActionScriptInput'Class (This).getPoint.x))));
-        hashMap.put (MouseActionScriptInputData_Package.MOVE_Y, Java_Box (To_Unbounded_String (Java_Image (MouseActionScriptInput'Class (This).getPoint.y))));
+        hashMap.put (Java_Box (MouseActionScriptInputData_Package.MOVE_X), Java_Box (To_Unbounded_String (Java_Image (MouseActionScriptInput'Class (This).getPoint.x))));
+        hashMap.put (Java_Box (MouseActionScriptInputData_Package.MOVE_Y), Java_Box (To_Unbounded_String (Java_Image (MouseActionScriptInput'Class (This).getPoint.y))));
         mouseNode.appendChild (ModDomHelper_Package.createNodeWithValueNodes (document, MouseActionScriptInputData_Package.MOVE, hashMap));
         return node;
    end toXmlNode;

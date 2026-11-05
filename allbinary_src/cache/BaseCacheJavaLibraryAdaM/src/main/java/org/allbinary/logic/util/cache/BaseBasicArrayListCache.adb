@@ -20,6 +20,8 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package is
 

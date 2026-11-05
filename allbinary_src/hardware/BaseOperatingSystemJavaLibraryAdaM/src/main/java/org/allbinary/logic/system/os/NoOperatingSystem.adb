@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.logic.system.os.OperatingSystemInterface_Package;
 
 package body org.allbinary.logic.system.os.NoOperatingSystem_Package is

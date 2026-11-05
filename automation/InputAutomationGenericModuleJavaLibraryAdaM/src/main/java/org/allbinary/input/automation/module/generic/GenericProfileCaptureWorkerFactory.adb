@@ -31,6 +31,7 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package;
 with org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorker_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References;
 
 package body org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package is
 
@@ -89,9 +90,9 @@ package body org.allbinary.input.automation.module.generic_Id.GenericProfileCapt
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             genericProfileDataWorkerType := GenericProfileDataWorkerType_Access (vector.get (index));
-            if (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE) then
+            if org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=" (genericProfileDataWorkerType, GenericProfileDataWorkerType_Package.SCREEN_CAPTURE) then
                 return CaptureWorkerInterface_Access (ScreenCaptureImagesWorker_Package.Create);
-            elsif (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.SAVED_CAPTURE) then
+            elsif org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=" (genericProfileDataWorkerType, GenericProfileDataWorkerType_Package.SAVED_CAPTURE) then
                 return CaptureWorkerInterface_Access (SavedCaptureImagesWorker_Package.Create (SavedCaptureGenericProfileDataWorkerType_Access (genericProfileDataWorkerType)));
             end if;
         end loop;

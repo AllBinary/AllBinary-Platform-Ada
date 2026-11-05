@@ -92,7 +92,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
       file : AbFile_Access;
       document : Document_Access;
    begin
-        path := (URLGLOBALS_Package.getWebappPath) + (LoggingInitInfo_Package.PACKAGE_Id);
+        path := Java_Image (URLGLOBALS_Package.getWebappPath) & LoggingInitInfo_Package.PACKAGE_Id;
         FILEABPATH := AbPath_Package.Create (path, INITFILENAME);
         file := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
         document := DomDocumentHelper_Package.create (AbFileLocalInputStream_Package.Create (file));

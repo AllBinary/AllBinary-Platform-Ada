@@ -144,10 +144,10 @@ package body org.allbinary.game.score.remote.RemoteHighScoresProcessor_Package i
         hashtable := abeClientInformation.toHashtable;
         HashtableUtil_Package.getInstance.putAll (gameInfo.toHashtable, hashtable);
         hashtable.put (gameInfoData.SOFTWARE_INFORMATION, Java_Box (remoteHighScores.getSoftwareInformation.toString));
-        hashtable.put (remoteHighScores.ASCENDING, Java_Box (remoteHighScores.getAscending.toString));
+        hashtable.put (Java_Box (remoteHighScores.ASCENDING), Java_Box (remoteHighScores.getAscending.toString));
         displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
         hashtable.put (displayInfoSingleton.ORIENTATION, BooleanFactory_Package.getInstance.toStringb (displayInfoSingleton.isPortrait));
-        hashtable.put (RemoteHighScoresData_Package.getInstance.GAME_CONFIGURATION, Java_Box (GameConfigurationCentral_Package.getInstance.toString));
+        hashtable.put (Java_Box (RemoteHighScoresData_Package.getInstance.GAME_CONFIGURATION), Java_Box (GameConfigurationCentral_Package.getInstance.toString));
         if XmlRpcAbeClient_Package.isOnline then
             resultHashtable := ABHashtable_Access (XmlRpcRemoteHighScoresClient_Package.Create (abeClientInformation, To_Unbounded_String ("highscoresservicessl.php"), To_Unbounded_String ("HighScoresService.process")).get (hashtable, This.noCrypt));
             remoteHighScores.update (resultHashtable);

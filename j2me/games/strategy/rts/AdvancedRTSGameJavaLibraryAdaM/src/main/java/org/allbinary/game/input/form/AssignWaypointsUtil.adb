@@ -118,6 +118,7 @@ package body org.allbinary.game.input.form.AssignWaypointsUtil_Package is
       unitWaypointBehavior : UnitWaypointBehavior_Access;
       waypointLayer : RTSLayer_Access;
       index : Integer;
+      waypointLayer_2 : PathFindingLayerInterface_Access;
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -128,9 +129,9 @@ package body org.allbinary.game.input.form.AssignWaypointsUtil_Package is
                 This.WAYPOINT_EVENT.setRtsLayer (waypointLayer);
                 unitWaypointBehavior.onWaypointEvent (This.WAYPOINT_EVENT);
             end loop;
-            waypointLayer := PathFindingLayerInterface_Access (PrimaryWaypointHelper_Package.getInstance.getWaypointLayer);
-            if (waypointLayer) /= (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER) then
-                This.WAYPOINT_EVENT.setRtsLayer (waypointLayer);
+            waypointLayer_2 := PathFindingLayerInterface_Access (PrimaryWaypointHelper_Package.getInstance.getWaypointLayer);
+            if (waypointLayer_2) /= (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER) then
+                This.WAYPOINT_EVENT.setRtsLayer (waypointLayer_2);
                 unitWaypointBehavior.onWaypointEvent (This.WAYPOINT_EVENT);
             end if;
         exception

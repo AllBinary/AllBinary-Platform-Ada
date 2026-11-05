@@ -195,7 +195,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         end if;
         ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setBasicColorP (basicColor);
         if changed then
-            This.setColorProcessor := SetColorProcessor_Package.getInstance;
+            This.setColorProcessor := ModifierBaseProcessor_Access (SetColorProcessor_Package.getInstance);
             AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
         end if;
    end setBasicColorP;
@@ -210,7 +210,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         end if;
         ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).changeBasicColor (basicColor);
         if changed then
-            This.changeColorProcessor := ChangeColorProcessor_Package.getInstance;
+            This.changeColorProcessor := ModifierBaseProcessor_Access (ChangeColorProcessor_Package.getInstance);
             AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
         end if;
    end changeBasicColor;
@@ -224,7 +224,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         end if;
         ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setAlpha (alpha);
         if changed then
-            This.alphaProcessor := AlphaProcessor_Package.getInstance;
+            This.alphaProcessor := ModifierBaseProcessor_Access (AlphaProcessor_Package.getInstance);
             AllBinaryJ2SEImageRotationAnimation'Class (This).updateImage;
         end if;
    end setAlpha;

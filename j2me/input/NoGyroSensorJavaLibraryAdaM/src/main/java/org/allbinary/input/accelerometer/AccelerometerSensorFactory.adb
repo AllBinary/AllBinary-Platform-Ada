@@ -68,7 +68,7 @@ package body org.allbinary.input.accelerometer.AccelerometerSensorFactory_Packag
         elsif features.isFeature (sensorFeatureFactory.SIMULATED_ORIENTATION_SENSORS) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Simulation Sensors")));
         elsif features.isFeature (sensorFeatureFactory.NO_ORIENTATION) then
-            AccelerometerSensorFactory_Package.allBinaryAccelerometerSensor := NoAccelerometerSensor_Package.Create;
+            AccelerometerSensorFactory_Package.allBinaryAccelerometerSensor := AllBinaryOrientationSensor_Access (NoAccelerometerSensor_Package.Create);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Such SensorFeature")));
         end if;

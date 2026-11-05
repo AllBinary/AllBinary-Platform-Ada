@@ -82,7 +82,7 @@ package body org.allbinary.logic.system.security.licensing.MobileClientInformati
 begin
    null;
    DESC := To_Unbounded_String ("Mobile");
-   ANDROID_DESC := To_Unbounded_String ("Android") & Java_Image (MobileClientInformation_Package.DESC);
+   ANDROID_DESC := To_Unbounded_String ("Android") & MobileClientInformation_Package.DESC;
 
 end org.allbinary.logic.system.security.licensing.MobileClientInformation_Package;
 

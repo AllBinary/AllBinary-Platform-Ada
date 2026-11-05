@@ -148,7 +148,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    begin
         for index in reverse 0 .. (inputToGameKeyMapping_Var.getMaxMappable) - (1) loop
             input := inputToGameKeyMapping_Var.getInstance (index);
-            if (input) /= (This.gameKeyFactory.NONE) then
+            if (Java_Object_Access (input)) /= (Java_Object_Access (This.gameKeyFactory.NONE)) then
                 InputToGameKeyMapping'Class (This).addAll (input, inputToGameKeyMapping_Var.getMappedInput (input));
             end if;
         end loop;

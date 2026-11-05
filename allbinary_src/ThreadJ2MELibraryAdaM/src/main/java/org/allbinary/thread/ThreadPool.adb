@@ -39,6 +39,7 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.thread.NullRunnable_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.PooledThread_Package;
 with org.allbinary.thread.PriorityRunnable_Package;

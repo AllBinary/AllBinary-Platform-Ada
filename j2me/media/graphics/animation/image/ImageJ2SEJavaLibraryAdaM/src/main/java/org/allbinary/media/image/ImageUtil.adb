@@ -270,11 +270,12 @@ package body org.allbinary.media.image.ImageUtil_Package is
       image : constant Image_Access := Image_Access (image_Param);
       bufferedImage : BufferedImage_Access;
       j2seImage : J2SEImmutableImage_Access;
+      j2seImage_2 : J2SEMutableImage_Access;
    begin
         bufferedImage := null;
         if image.isMutable then
-            j2seImage := J2SEMutableImage_Access (image);
-            bufferedImage := BufferedImage_Access (j2seImage.getImage);
+            j2seImage_2 := J2SEMutableImage_Access (image);
+            bufferedImage := BufferedImage_Access (j2seImage_2.getImage);
         else
             j2seImage := J2SEImmutableImage_Access (image);
             bufferedImage := BufferedImage_Access (j2seImage.getImage);

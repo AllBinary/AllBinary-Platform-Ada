@@ -73,7 +73,7 @@ package body admin.taghelpers.DownloadItemsRequestHelper_Package is
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
-        inventoryTag := HelperTag_Access (hashMap.get (AbTagData_Package.PARENT));
+        inventoryTag := HelperTag_Access (hashMap.get (Java_Box (AbTagData_Package.PARENT)));
         inventoryItemViewParentTagHelper := InventoryItemViewParentTagHelper_Package.getInstance;
         downloadableInventoryItemView := inventoryItemViewParentTagHelper.getDownloadableInventoryItemView (inventoryTag);
         This.downloadableItem := downloadableInventoryItemView.getDownloadableItem;

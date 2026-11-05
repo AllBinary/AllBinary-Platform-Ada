@@ -68,6 +68,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       image : Image_Access;
       originalPlayNImage : Image_Access;
       originalHTMLImage : PlaynImmutableImage_Access;
+      originalHTMLImage_2 : PlaynMutableImage_Access;
       htmlImage : PlaynMutableImage_Access;
       canvasImage : CanvasImage_Access;
       canvasSurface : CanvasSurface_Access;
@@ -76,8 +77,8 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
         if image.isMutable then
             originalPlayNImage := null;
             if originalImage.isMutable then
-                originalHTMLImage := PlaynMutableImage_Access (originalImage);
-                originalPlayNImage := Image_Access (originalHTMLImage.getImage);
+                originalHTMLImage_2 := PlaynMutableImage_Access (originalImage);
+                originalPlayNImage := Image_Access (originalHTMLImage_2.getImage);
             else
                 originalHTMLImage := PlaynImmutableImage_Access (originalImage);
                 originalPlayNImage := Image_Access (originalHTMLImage.getImage);

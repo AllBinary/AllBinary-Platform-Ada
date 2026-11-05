@@ -28,6 +28,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.input.automation.InputAutomationJFrame_Package_References;
 
 package body bundle.input.automation.InputAutomationBundleActivator_Package is
 
@@ -134,7 +135,7 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
       context : constant BundleContext_Access := BundleContext_Access (context_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"));
-        if (InputAutomationJFrame_Package.getInstance) /= (null) then
+        if (not org.allbinary.input.automation.InputAutomationJFrame_Package_References."=" (InputAutomationJFrame_Package.getInstance, null)) then
             InputAutomationJFrame_Package.destroy;
         else
             This.logUtil.putF (To_Unbounded_String ("Nothing to stop"), InputAutomationBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"));

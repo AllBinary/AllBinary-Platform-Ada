@@ -157,7 +157,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
             size := keyArray'Length;
             for i in 0 .. (size) - 1 loop
                 key := Java_Unbox (keyArray (i));
-                values := Unbounded_String_Array_Access (This.map.get (Java_Box (key)));
+                values := Java_Unbox_Unbounded_String_Array (This.map.get (Java_Box (key)));
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (This.KEY);
                 stringBuffer.append (key);
@@ -196,7 +196,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
         stringBuffer := StringMaker_Package.Create;
         for i in 0 .. (size) - 1 loop
             key := Java_Unbox (keyArray (i));
-            values := Unbounded_String_Array_Access (This.map.get (Java_Box (key)));
+            values := Java_Unbox_Unbounded_String_Array (This.map.get (Java_Box (key)));
             hashMap.put (Java_New_String (key), Java_New_String (values (0)));
         end loop;
         stringBuffer.delete (0, stringBuffer.length);

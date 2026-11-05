@@ -150,7 +150,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (GenericProfileActionData_Package.NAME, Java_Box (This.name));
+        hashMap.put (Java_Box (GenericProfileActionData_Package.NAME), Java_Box (This.name));
         This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, GenericProfileAction_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;

@@ -74,7 +74,7 @@ package body org.allbinary.logic.system.security.licensing.registration.LicenseR
             registrationConfiguration.setRegistrationCode (registrationId);
             registrationConfiguration.write;
             hashtable := abeClientInformation.toHashtable;
-            hashtable.put (RegistrationConfiguration_Package.getInstance.NAME, Java_Box (registrationId));
+            hashtable.put (Java_Box (RegistrationConfiguration_Package.getInstance.NAME), Java_Box (registrationId));
             hashtable.put (Java_Box (To_Unbounded_String ("message")), SpecialMessageUtil_Package.getInstance.get);
             XmlRpcRemoteLicenseRegistrationClient_Package.Create (abeClientInformation).get (hashtable);
         exception

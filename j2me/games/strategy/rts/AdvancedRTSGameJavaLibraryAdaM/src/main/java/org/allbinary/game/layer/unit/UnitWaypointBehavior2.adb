@@ -62,6 +62,7 @@ with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.lay
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package; use org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;
 with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
@@ -278,7 +279,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       This.waitingOnTargetPath := False;
       This.waitingOnWaypointPath := False;
       This.targetWithoutCachedPathLayerInterface := CollidableDestroyableDamageableLayer_Package.getNullInstance;
-      This.buildingSteeringVisitor_Var := BuildingSteeringVisitor_Package.Create;
+      This.buildingSteeringVisitor_Var := BuildingSteeringVisitor_Package.Create (org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.UnitWaypointBehavior2_Access'(This'Unchecked_Access));
    end Initialize_Fields;
 
 
@@ -856,6 +857,7 @@ with org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
@@ -1057,9 +1059,10 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
       Initialize_Fields (This);
    end Initialize;
 
-   function Create return BuildingSteeringVisitor_Access is
+   function Create (Java_Outer_Param : org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.UnitWaypointBehavior2_Access) return BuildingSteeringVisitor_Access is
       This : constant BuildingSteeringVisitor_Access := new BuildingSteeringVisitor;
    begin
+      This.Java_Outer := Java_Outer_Param;
       BuildingSteeringVisitor_Package.Initialize (This.all);
       return This;
    end Create;
@@ -1078,7 +1081,7 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
                 if (BuildingSteeringVisitor'Class (This).getList.size) > (0) then
                     allbinaryLayer := AllBinaryLayer_Access (BuildingSteeringVisitor'Class (This).getList.get (0));
                     cellPosition := GeographicMapCellPosition_Access (BuildingSteeringVisitor'Class (This).getPositionList.get (0));
-                    clear := BuildingSteeringVisitor'Class (This).buildingChase (allbinaryLayer, cellPosition);
+                    clear := This.Java_Outer.buildingChase (allbinaryLayer, cellPosition);
                     if clear then
                         BuildingSteeringVisitor'Class (This).getList.clear;
                         This.positionList.clear;

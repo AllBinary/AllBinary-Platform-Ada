@@ -215,7 +215,7 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
       index : Integer;
    begin
         RemoteHighScores'Class (This).getList.clear;
-        vector := BasicArrayList_Access (hashtable.get (Java_Object_Access (RemoteHighScoresData_Package.getInstance.HIGH_SCORES)));
+        vector := BasicArrayList_Access (hashtable.get (Java_Box (RemoteHighScoresData_Package.getInstance.HIGH_SCORES)));
         if (vector) /= (null) then
             size := vector.size;
             for index in 0 .. (size) - 1 loop

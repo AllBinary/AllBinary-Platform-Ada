@@ -74,12 +74,12 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
       line : Unbounded_String;
    begin
       Initialize_Fields (This);
-        LicenseInitInfoUtil_Package.getInstance.setFilePath ((PrintLicenseInitInfo_Package.PATH) + (PATH_GLOBALS_Package.getInstance.INIT_PATH));
+        LicenseInitInfoUtil_Package.getInstance.setFilePath (PrintLicenseInitInfo_Package.PATH & Java_Image (PATH_GLOBALS_Package.getInstance.INIT_PATH));
         for index in 1 .. (options'Length) - 1 loop
             This.vector.add (options (index));
         end loop;
         if (options'Length) < (2) then
-            file := File_Package.Create (Java_Image (PrintLicenseInitInfo_Package.PATH) & To_Unbounded_String ("testlicenseservers.txt"));
+            file := File_Package.Create (PrintLicenseInitInfo_Package.PATH & To_Unbounded_String ("testlicenseservers.txt"));
             reader := FileReader_Package.Create (file);
             lineNumberReader := LineNumberReader_Package.Create (reader);
             while True loop

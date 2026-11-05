@@ -17,6 +17,7 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.util.BasicArrayListD_Package is
 

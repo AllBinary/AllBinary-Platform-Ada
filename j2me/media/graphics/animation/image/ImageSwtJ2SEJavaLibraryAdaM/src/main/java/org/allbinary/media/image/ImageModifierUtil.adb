@@ -131,6 +131,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
       newBufferedImage : Image_Access;
       swtImage : SwtImmutableImage_Access;
+      swtImage_2 : SwtMutableImage_Access;
       r : Short_Integer;
       g : Short_Integer;
       b : Short_Integer;
@@ -146,8 +147,8 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
    begin
         newBufferedImage := null;
         if image.isMutable then
-            swtImage := SwtMutableImage_Access (image);
-            newBufferedImage := Image_Access (swtImage.getImage);
+            swtImage_2 := SwtMutableImage_Access (image);
+            newBufferedImage := Image_Access (swtImage_2.getImage);
         else
             swtImage := SwtImmutableImage_Access (image);
             newBufferedImage := Image_Access (swtImage.getImage);
@@ -186,6 +187,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
       openGLESImage : OpenGLESImage_Access;
       newBufferedImage : Image_Access;
       swtImage : SwtImmutableImage_Access;
+      swtImage_2 : SwtMutableImage_Access;
       MAX : Float;
       r : Float;
       g : Float;
@@ -209,8 +211,8 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         end if;
         newBufferedImage := null;
         if image.isMutable then
-            swtImage := SwtMutableImage_Access (image);
-            newBufferedImage := Image_Access (swtImage.getImage);
+            swtImage_2 := SwtMutableImage_Access (image);
+            newBufferedImage := Image_Access (swtImage_2.getImage);
         else
             swtImage := SwtImmutableImage_Access (image);
             newBufferedImage := Image_Access (swtImage.getImage);
@@ -262,12 +264,13 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
       alpha : Short_Short_Integer;
       newBufferedImage : Image_Access;
       swtImage : SwtImmutableImage_Access;
+      swtImage_2 : SwtMutableImage_Access;
    begin
         alpha := Short_Short_Integer (alphaInt);
         newBufferedImage := null;
         if image.isMutable then
-            swtImage := SwtMutableImage_Access (image);
-            newBufferedImage := Image_Access (swtImage.getImage);
+            swtImage_2 := SwtMutableImage_Access (image);
+            newBufferedImage := Image_Access (swtImage_2.getImage);
         else
             swtImage := SwtImmutableImage_Access (image);
             newBufferedImage := Image_Access (swtImage.getImage);

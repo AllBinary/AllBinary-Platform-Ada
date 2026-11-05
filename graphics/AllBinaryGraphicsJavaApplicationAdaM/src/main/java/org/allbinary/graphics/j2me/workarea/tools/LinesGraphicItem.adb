@@ -283,7 +283,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    --  throws Exception
    procedure init (This : in out LinesGraphicItem) is
    begin
-        This.treeNode := DefaultMutableTreeNode_Package.Create ((PointsDomUtil_Package.getInstance.LINES) + (LinesGraphicItem_Package.item));
+        This.treeNode := DefaultMutableTreeNode_Package.Create (PointsDomUtil_Package.getInstance.LINES & Java_Image (LinesGraphicItem_Package.item));
         LinesGraphicItem_Package.item := LinesGraphicItem_Package.item + 1;
         This.points.init;
         This.pointTreeNodeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);

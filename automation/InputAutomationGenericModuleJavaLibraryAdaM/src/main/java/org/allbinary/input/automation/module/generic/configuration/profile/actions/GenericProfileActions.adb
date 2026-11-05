@@ -226,7 +226,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       idFile : FileOutputStream_Access;
       idOutData : DataOutputStream_Access;
    begin
-        idFile := FileOutputStream_Package.Create (Java_Image (GenericProfileActions_Package.DEFAULT_PROFILE_ACTIONS_PATH) & GenericProfileActions'Class (This).getName & Java_Image (This.commonFileStrings.U_XML));
+        idFile := FileOutputStream_Package.Create (GenericProfileActions_Package.DEFAULT_PROFILE_ACTIONS_PATH & GenericProfileActions'Class (This).getName & Java_Image (This.commonFileStrings.U_XML));
         idOutData := DataOutputStream_Package.Create (idFile);
         idOutData.writeBytes (XmlDocumentHelper_Package.toString (GenericProfileActions'Class (This).toXmlDoc));
    end save;
@@ -278,7 +278,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             if (nodeList) /= (null) then
                 GenericProfileActions'Class (This).initActions (nodeList);
             else
-                Java_Throw (Java_New_Exception ("Exception", Java_Image (GenericProfileActionData_Package.NAME) & To_Unbounded_String (" Name Node Node Children")));
+                Java_Throw (Java_New_Exception ("Exception", GenericProfileActionData_Package.NAME & To_Unbounded_String (" Name Node Node Children")));
             end if;
         end loop;
         This.logUtil.putF (To_Unbounded_String ("Loaded: ") & Java_Image (GenericProfileActions'Class (This).getHashMap.size) & To_Unbounded_String (" Configuration Profile Action(s)"), GenericProfileActions_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
@@ -299,7 +299,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
                 GenericProfileActions'Class (This).getHashMap.put (genericConfigurationProfileAction.getName, genericConfigurationProfileAction);
                 GenericProfileActions'Class (This).getDefaultListModelHelper.add (genericConfigurationProfileAction.getName);
             else
-                Java_Throw (Java_New_Exception ("Exception", Java_Image (GenericProfileActionData_Package.NAME) & To_Unbounded_String (" Node Null")));
+                Java_Throw (Java_New_Exception ("Exception", GenericProfileActionData_Package.NAME & To_Unbounded_String (" Node Null")));
             end if;
         end loop;
    end initActions;
@@ -431,7 +431,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 
 begin
    null;
-   DEFAULT_PROFILE_ACTIONS_PATH := Java_Image (GenericProfiles_Package.DEFAULT_PROFILES_PATH) & To_Unbounded_String ("actions/");
+   DEFAULT_PROFILE_ACTIONS_PATH := GenericProfiles_Package.DEFAULT_PROFILES_PATH & To_Unbounded_String ("actions/");
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
 

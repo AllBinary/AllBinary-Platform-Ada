@@ -7,6 +7,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.game.input.analog.AnalogLocationInput_Package; use org.allbinary.game.input.analog.AnalogLocationInput_Package;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package_References;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package;
+with org.allbinary.game.input.analog.AnalogLocationInput_Package_References;
 
 package body org.allbinary.game.input.analog.AnalogLocationInputFactory_Package is
 
@@ -63,7 +64,7 @@ package body org.allbinary.game.input.analog.AnalogLocationInputFactory_Package 
         if (playerInputId) < (This.list.size) then
             analogLocationInput := AnalogLocationInput_Access (This.list.get (playerInputId));
         end if;
-        if (analogLocationInput) = (AnalogLocationInput_Package.NULL_ANALOG_LOCATION_INPUT) then
+        if org.allbinary.game.input.analog.AnalogLocationInput_Package_References."=" (analogLocationInput, AnalogLocationInput_Package.NULL_ANALOG_LOCATION_INPUT) then
             analogLocationInput := AnalogLocationInput_Package.Create (playerInputId);
             This.list.add (Java_Object_Access (analogLocationInput));
         end if;

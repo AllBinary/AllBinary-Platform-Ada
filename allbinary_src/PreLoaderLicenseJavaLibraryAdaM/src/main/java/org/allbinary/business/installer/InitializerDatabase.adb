@@ -106,7 +106,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
         size := keyArray'Length;
         for index in 0 .. (size) - 1 loop
             key := Java_Unbox (keyArray (index));
-            values := Unbounded_String_Array_Access (map.get (Java_Box (key)));
+            values := Java_Unbox_Unbounded_String_Array (map.get (Java_Box (key)));
             hashMap.put (Java_New_String (key), Java_New_String (values (0)));
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (To_Unbounded_String ("key: "));
@@ -149,12 +149,12 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    begin
         begin
             initializerData := InitializerData_Package.getInstance;
-            InitializerDatabase'Class (This).setAdminDbUserName (Java_Unbox (hashMap.get (initializerData.DBUSER)));
-            InitializerDatabase'Class (This).setAdminDbPassword (Java_Unbox (hashMap.get (initializerData.DBPASSWORD)));
-            InitializerDatabase'Class (This).setAdminJdbcDriver (Java_Unbox (hashMap.get (initializerData.ADMINJDBCDRIVER)));
-            InitializerDatabase'Class (This).setAdminSchema (Java_Unbox (hashMap.get (initializerData.ADMINSCHEMA)));
-            InitializerDatabase'Class (This).setAdminServer (Java_Unbox (hashMap.get (initializerData.ADMINSERVER)));
-            InitializerDatabase'Class (This).setAdminPort (Java_Unbox (hashMap.get (initializerData.ADMINPORT)));
+            InitializerDatabase'Class (This).setAdminDbUserName (Java_Unbox (hashMap.get (Java_Box (initializerData.DBUSER))));
+            InitializerDatabase'Class (This).setAdminDbPassword (Java_Unbox (hashMap.get (Java_Box (initializerData.DBPASSWORD))));
+            InitializerDatabase'Class (This).setAdminJdbcDriver (Java_Unbox (hashMap.get (Java_Box (initializerData.ADMINJDBCDRIVER))));
+            InitializerDatabase'Class (This).setAdminSchema (Java_Unbox (hashMap.get (Java_Box (initializerData.ADMINSCHEMA))));
+            InitializerDatabase'Class (This).setAdminServer (Java_Unbox (hashMap.get (Java_Box (initializerData.ADMINSERVER))));
+            InitializerDatabase'Class (This).setAdminPort (Java_Unbox (hashMap.get (Java_Box (initializerData.ADMINPORT))));
             dbConnectionInfo := DbConnectionInfo_Package.Create;
             adminDbName := StringUtil_Package.getInstance.EMPTY_STRING;
             dbConnectionInfo.setJdbcDriver (InitializerDatabase'Class (This).getAdminJdbcDriver);

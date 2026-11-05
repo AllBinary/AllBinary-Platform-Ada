@@ -21,7 +21,10 @@ with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsCo
 with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package is
 

@@ -15,6 +15,9 @@
 
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package_References;
+with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
 
 package body org.allbinary.canvas.GameStatisticsFactory_Package is
 

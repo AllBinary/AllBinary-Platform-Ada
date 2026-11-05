@@ -388,7 +388,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         keySet := hashMap.keySet;
         keyArray := keySet.toArray;
         size := keyArray'Length;
-        node := document.createElement (OrderHistoryData_Package.ORDERHISTORY_Var);
+        node := document.createElement (OrderHistoryData_Package.ORDERHISTORY);
         node.appendChild (Order_Package.Order (This).toXmlNode (document));
         billingAddressNode := document.createElement (BillingAddressData_Package.BILLINGADDRESS);
         billingAddressNode.appendChild (This.billingAddress.toXmlNode (document));

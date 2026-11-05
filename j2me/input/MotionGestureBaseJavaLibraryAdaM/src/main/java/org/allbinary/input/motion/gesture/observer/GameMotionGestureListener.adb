@@ -34,6 +34,7 @@ with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_Refe
 with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
 with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package_References;
 
 package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package is
 
@@ -223,9 +224,9 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
    begin
         begin
             motionGestureInput := ev.getMotionGesture;
-            if (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.PRESSED) then
+            if org.allbinary.input.motion.gesture.MotionGestureInput_Package_References."=" (motionGestureInput, TouchMotionGestureFactory_Package.getInstance.PRESSED) then
                 GameMotionGestureListener'Class (This).onPressedMotionGestureEvent (ev);
-            elsif (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.RELEASED) then
+            elsif org.allbinary.input.motion.gesture.MotionGestureInput_Package_References."=" (motionGestureInput, TouchMotionGestureFactory_Package.getInstance.RELEASED) then
                 GameMotionGestureListener'Class (This).released (ev);
             else
                 This.motionGestureCollection.add (Java_Object_Access (motionGestureInput));

@@ -99,6 +99,7 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
       image : constant Image_Access := Image_Access (image_Param);
       originalPlayNImage : CoreImage_Access;
       originalHTMLImage : PlaynImmutableImage_Access;
+      originalHTMLImage_2 : PlaynMutableImage_Access;
       scaledImage : Image_Access;
       htmlImage : PlaynMutableImage_Access;
       scaledPlayNImage : ImageImpl_Access;
@@ -106,8 +107,8 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
    begin
         originalPlayNImage := null;
         if image.isMutable then
-            originalHTMLImage := PlaynMutableImage_Access (image);
-            originalPlayNImage := CoreImage_Access (originalHTMLImage.getImage);
+            originalHTMLImage_2 := PlaynMutableImage_Access (image);
+            originalPlayNImage := CoreImage_Access (originalHTMLImage_2.getImage);
         else
             originalHTMLImage := PlaynImmutableImage_Access (image);
             originalPlayNImage := CoreImage_Access (originalHTMLImage.getImage);

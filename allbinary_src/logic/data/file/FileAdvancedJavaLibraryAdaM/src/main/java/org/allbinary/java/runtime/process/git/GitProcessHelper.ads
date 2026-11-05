@@ -32,7 +32,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 --  with java.nio.charset.StandardCharsets_Package; use java.nio.charset.StandardCharsets_Package;
---  with java.util.ArrayList_Package; use java.util.ArrayList_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 limited with org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;

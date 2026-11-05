@@ -152,7 +152,7 @@ package body org.allbinary.business.user.password.Password_Package is
         random := Random_Package.Create.nextInt (SuperCrypt_Package.KEYMAX);
         values.put (EntryData_Package.getInstance.ENCRYPTION, Java_Box (random.toString));
         values.put (UserData_Package.SECRET, Java_Box (secret));
-        values.put (UserData_Package.PASSWORD_Var, SuperCrypt_Package.Create (random).encrypt (This.password_Var));
+        values.put (UserData_Package.PASSWORD, SuperCrypt_Package.Create (random).encrypt (This.password_Var));
         return values;
    end toHashMap;
 

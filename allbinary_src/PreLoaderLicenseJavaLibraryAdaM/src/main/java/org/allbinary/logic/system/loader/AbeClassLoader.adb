@@ -156,7 +156,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
         in_Id := null;
         cname := StringUtil_Package.getInstance.EMPTY_STRING;
         begin
-            cname := Java_Image (AbeClassLoader_Package.PATH) & Java_Replace (name, Java_Image ('.'), Java_Image (AbPathData_Package.getInstance.SEPARATORCHAR)) & This.ENCRYPTED_EXTENSION;
+            cname := AbeClassLoader_Package.PATH & Java_Replace (name, Java_Image ('.'), Java_Image (AbPathData_Package.getInstance.SEPARATORCHAR)) & This.ENCRYPTED_EXTENSION;
             in_Id := FileInputStream_Package.Create (cname);
             decrypted := This.abCryptUtil.decrypt (in_Id, This.key);
             return decrypted;

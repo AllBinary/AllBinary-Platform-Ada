@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.ArrayList_Package; use java.util.ArrayList_Package;
 with org.allbinary.logic.communication.http.AbFileItemFactory_Package; use org.allbinary.logic.communication.http.AbFileItemFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
@@ -29,6 +30,7 @@ with org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Packa
 
 package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package is
 
+   package ArrayList_Package renames Standard.java.util.ArrayList_Package;
    package AbFileItemFactory_Package renames Standard.org.allbinary.logic.communication.http.AbFileItemFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package FileItemIterator_Package renames Standard.org.apache.commons.fileupload.FileItemIterator_Package;

@@ -56,7 +56,7 @@ package body org.allbinary.input.gyro.GyroSensorFactory_Package is
    --  throws Exception
    procedure init is
    begin
-        GyroSensorFactory_Package.allBinaryGyroSensor := NoGyroSensor_Package.Create;
+        GyroSensorFactory_Package.allBinaryGyroSensor := AllBinaryOrientationSensor_Access (NoGyroSensor_Package.Create);
    end init;
 
    function getInstance return AllBinaryOrientationSensor_Access is

@@ -553,10 +553,10 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             else
                 path := AbPath_Package.Create (nextFile.getPath, StringUtil_Package.getInstance.EMPTY_STRING).getPath;
                 beginIndex := fromDirectoryAbPath.getPath.length;
-                if (path.indexOf (URLGLOBALS_Package.getWebappPath)) < (0) then
+                if (Java_Index_Of (path, Java_Image (URLGLOBALS_Package.getWebappPath))) < (0) then
                     beginIndex := (beginIndex) - (AbPath_Package.Create (URLGLOBALS_Package.getWebappPath, StringUtil_Package.getInstance.EMPTY_STRING).getPath.length);
                 end if;
-                newPath := Java_Image (toDirectoryAbPath.toFileSystemString) & path.substring (beginIndex);
+                newPath := Java_Image (toDirectoryAbPath.toFileSystemString) & Unbounded_Slice (path, (beginIndex) + 1, Ada.Strings.Unbounded.Length (path));
                 toFile := AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (newPath, StringUtil_Package.getInstance.EMPTY_STRING));
                 FileUtil'Class (This).copyFile (nextFile, toFile, overwriteNewer, overwriteAll);
             end if;

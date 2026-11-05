@@ -96,6 +96,7 @@ with org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
+with org.allbinary.game.input.form.RTSFormInput_Package_References;
 
 package body org.allbinary.game.input.RTSPlayerGameInput_Package is
 
@@ -346,7 +347,7 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
       allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         This.selectedRTSLayerPlayerGameInput.setAllBinaryGameLayerManager (allBinaryGameLayerManager);
-        if (This.selectedRtsFormInput) /= (NullRTSFormInputFactory_Package.getInstance) then
+        if (not org.allbinary.game.input.form.RTSFormInput_Package_References."=" (This.selectedRtsFormInput, NullRTSFormInputFactory_Package.getInstance)) then
             This.selectedRtsFormInput.setAllBinaryGameLayerManager (allBinaryGameLayerManager);
         end if;
    end setAllBinaryGameLayerManager;

@@ -58,6 +58,9 @@ with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHT
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.ImageCache_Package_References;
+with org.allbinary.image.ImageCache_Package_References;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.NotHTMLEndProcessor_Package;
@@ -219,7 +222,7 @@ package body org.allbinary.image.ImageCache_Package is
       This.totalLoaded := 0;
       This.progressEnded_Field := False;
       This.hasAnyLazyAnimationFactories := False;
-      This.processor := Processor_Access (FirstProcessor_Package.Create);
+      This.processor := Processor_Access (FirstProcessor_Package.Create (org.allbinary.image.ImageCache_Package_References.ImageCache_Access'(This'Unchecked_Access)));
       This.endProcessor := Processor_Package.getInstance;
       This.LOAD_IMAGE_FOR_ANIMATION := To_Unbounded_String ("Load Image Animation");
    end Initialize_Fields;
@@ -247,9 +250,9 @@ package body org.allbinary.image.ImageCache_Package is
         isHTML := J2MEUtil_Package.isHTML;
         if isHTML then
             This.processor := Processor_Package.getInstance;
-            This.endProcessor := Processor_Access (HTMLEndProcessor_Package.Create);
+            This.endProcessor := Processor_Access (HTMLEndProcessor_Package.Create (org.allbinary.image.ImageCache_Package_References.ImageCache_Access'(This'Unchecked_Access)));
         else
-            This.processor := Processor_Access (NotHTMLProcessor_Package.Create);
+            This.processor := Processor_Access (NotHTMLProcessor_Package.Create (org.allbinary.image.ImageCache_Package_References.ImageCache_Access'(This'Unchecked_Access)));
             This.endProcessor := Processor_Access (NotHTMLEndProcessor_Package.Create);
             begin
                 ImageCache'Class (This).runTask;
@@ -792,6 +795,7 @@ with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstPr
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
@@ -954,9 +958,10 @@ package body org.allbinary.image.NotHTMLProcessor_Package is
       Initialize_Fields (This);
    end Initialize;
 
-   function Create return NotHTMLProcessor_Access is
+   function Create (Java_Outer_Param : org.allbinary.image.ImageCache_Package_References.ImageCache_Access) return NotHTMLProcessor_Access is
       This : constant NotHTMLProcessor_Access := new NotHTMLProcessor;
    begin
+      This.Java_Outer := Java_Outer_Param;
       NotHTMLProcessor_Package.Initialize (This.all);
       return This;
    end Create;
@@ -964,7 +969,7 @@ package body org.allbinary.image.NotHTMLProcessor_Package is
     
    procedure process (This : in out NotHTMLProcessor) is
    begin
-            This.concurrentImageLoadingProcessor.runTask;
+            This.Java_Outer.concurrentImageLoadingProcessor.runTask;
    end process;
 
 end org.allbinary.image.NotHTMLProcessor_Package;
@@ -1244,6 +1249,7 @@ with org.allbinary.image.FirstProcessor_Package; use org.allbinary.image.FirstPr
 with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHTMLProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.FirstProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.NotHTMLEndProcessor_Package;
@@ -1406,9 +1412,10 @@ package body org.allbinary.image.HTMLEndProcessor_Package is
       Initialize_Fields (This);
    end Initialize;
 
-   function Create return HTMLEndProcessor_Access is
+   function Create (Java_Outer_Param : org.allbinary.image.ImageCache_Package_References.ImageCache_Access) return HTMLEndProcessor_Access is
       This : constant HTMLEndProcessor_Access := new HTMLEndProcessor;
    begin
+      This.Java_Outer := Java_Outer_Param;
       HTMLEndProcessor_Package.Initialize (This.all);
       return This;
    end Create;
@@ -1418,14 +1425,14 @@ package body org.allbinary.image.HTMLEndProcessor_Package is
       size : Integer;
       progressCanvas : ProgressCanvas_Access;
    begin
-            size := This.gdResources.currentLayoutRequiredTotal;
+            size := This.Java_Outer.gdResources.currentLayoutRequiredTotal;
             if (size) = (0) then
                 progressCanvas := ProgressCanvasFactory_Package.getInstance;
                 progressCanvas.endIfPaintedSinceStart;
-            elsif (This.totalLoaded) > ((size) / (12)) then
+            elsif (This.Java_Outer.totalLoaded) > ((size) / (12)) then
                 progressCanvas := ProgressCanvasFactory_Package.getInstance;
                 progressCanvas.endIfPaintedSinceStart;
-                This.endProcessor := Processor_Access (NotHTMLEndProcessor_Package.Create);
+                This.Java_Outer.endProcessor := Processor_Access (NotHTMLEndProcessor_Package.Create);
             end if;
    end process;
 
@@ -1479,6 +1486,7 @@ with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHT
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.NotHTMLEndProcessor_Package;
@@ -1641,9 +1649,10 @@ package body org.allbinary.image.FirstProcessor_Package is
       Initialize_Fields (This);
    end Initialize;
 
-   function Create return FirstProcessor_Access is
+   function Create (Java_Outer_Param : org.allbinary.image.ImageCache_Package_References.ImageCache_Access) return FirstProcessor_Access is
       This : constant FirstProcessor_Access := new FirstProcessor;
    begin
+      This.Java_Outer := Java_Outer_Param;
       FirstProcessor_Package.Initialize (This.all);
       return This;
    end Create;
@@ -1651,7 +1660,7 @@ package body org.allbinary.image.FirstProcessor_Package is
     
    procedure process (This : in out FirstProcessor) is
    begin
-            FirstProcessor'Class (This).firstProcess;
+            This.Java_Outer.firstProcess;
    end process;
 
 end org.allbinary.image.FirstProcessor_Package;

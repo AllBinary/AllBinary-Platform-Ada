@@ -33,6 +33,7 @@ with org.allbinary.game.layer.LayerPlacementTypeFactory_Package; use org.allbina
 with org.allbinary.game.layer.LayerPlacementInterface_Package;
 with org.allbinary.game.layer.LayerPlacementType_Package;
 with org.allbinary.game.layer.LayerPlacementTypeFactory_Package;
+with org.allbinary.game.layer.LayerPlacementType_Package_References;
 
 package body org.allbinary.game.layer.LayerPlacer_Package is
 
@@ -178,13 +179,13 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
    begin
         pointFactory := PointFactory_Package.getInstance;
         layerPlacementType := layerPlacementInterface.getLayerType;
-        if (layerPlacementType) = (LayerPlacementTypeFactory_Package.getInstance.MAP) then
+        if org.allbinary.game.layer.LayerPlacementType_Package_References."=" (layerPlacementType, LayerPlacementTypeFactory_Package.getInstance.MAP) then
             width := layerPlacementInterface.getWidth;
             height := layerPlacementInterface.getHeight;
             x := ((((This.dimension.getX) - (width))) / (2));
             y := ((((This.dimension.getY) - (height))) / (2));
             return pointFactory.createXY (x, y);
-        elsif (layerPlacementType) = (LayerPlacementTypeFactory_Package.getInstance.UP) then
+        elsif org.allbinary.game.layer.LayerPlacementType_Package_References."=" (layerPlacementType, LayerPlacementTypeFactory_Package.getInstance.UP) then
             width := layerPlacementInterface.getWidth;
             height := layerPlacementInterface.getHeight;
             x := ((((This.dimension.getX) - (width))) / (2));

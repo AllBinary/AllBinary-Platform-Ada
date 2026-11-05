@@ -78,7 +78,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
       cryptedUserName : Short_Short_Integer_Array_Access;
       cryptedPassword : Short_Short_Integer_Array_Access;
    begin
-        FILEABPATH := AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (InstallerInfo_Package.PACKAGE_Id), InstallerInfo_Package.INITFILENAME);
+        FILEABPATH := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getMainPath) & InstallerInfo_Package.PACKAGE_Id, InstallerInfo_Package.INITFILENAME);
         begin
             newFile := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
             newFile.createNewFile;
@@ -110,7 +110,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
       decryptedUserName : Unbounded_String;
       decryptedPassword : Unbounded_String;
    begin
-        FILEABPATH := AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (InstallerInfo_Package.PACKAGE_Id), InstallerInfo_Package.INITFILENAME);
+        FILEABPATH := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getMainPath) & InstallerInfo_Package.PACKAGE_Id, InstallerInfo_Package.INITFILENAME);
         begin
             file := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
             if file.isFile then
@@ -158,7 +158,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
         if not (InstallerInfo_Package.hasRead) then
             InstallerInfo_Package.hasRead := True;
             InstallerInfo'Class (This).read;
-            if ((InstallerInfo_Package.userName) = (null)) or else ((InstallerInfo_Package.password) = (null)) then
+            if ((InstallerInfo_Package.userName) = (Null_Unbounded_String)) or else ((InstallerInfo_Package.password) = (Null_Unbounded_String)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADER) then
                     This.logUtil.putF (To_Unbounded_String ("Failed"), InstallerInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("updateIfNeeded"));
                 end if;

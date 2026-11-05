@@ -127,11 +127,12 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       canvasSurface : constant CanvasSurface_Access := CanvasSurface_Access (canvasSurface_Param);
       originalPlayNImage : Image_Access;
       originalHTMLImage : PlaynImmutableImage_Access;
+      originalHTMLImage_2 : PlaynMutableImage_Access;
    begin
         originalPlayNImage := null;
         if originalImage.isMutable then
-            originalHTMLImage := PlaynMutableImage_Access (originalImage);
-            originalPlayNImage := Image_Access (originalHTMLImage.getImage);
+            originalHTMLImage_2 := PlaynMutableImage_Access (originalImage);
+            originalPlayNImage := Image_Access (originalHTMLImage_2.getImage);
         else
             originalHTMLImage := PlaynImmutableImage_Access (originalImage);
             originalPlayNImage := Image_Access (originalHTMLImage.getImage);

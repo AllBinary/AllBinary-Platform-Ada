@@ -30,6 +30,7 @@ with org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.ThreadObjectUtil_Package;
+with org.allbinary.thread.ThreadPool_Package;
 with org.allbinary.thread.ThreadPoolStrings_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 

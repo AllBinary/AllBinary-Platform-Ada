@@ -45,7 +45,7 @@ package body org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_
    procedure Initialize (This : in out PrintLicenseInitInfo'Class; options : Unbounded_String_Array_Access) is
    begin
       Initialize_Fields (This);
-        LicenseInitInfoUtil_Package.getInstance.setFilePath ((PrintLicenseInitInfo_Package.PATH) + (PATH_GLOBALS_Package.getInstance.INIT_PATH));
+        LicenseInitInfoUtil_Package.getInstance.setFilePath (PrintLicenseInitInfo_Package.PATH & Java_Image (PATH_GLOBALS_Package.getInstance.INIT_PATH));
    end Initialize;
 
    function Create (options : Unbounded_String_Array_Access) return PrintLicenseInitInfo_Access is

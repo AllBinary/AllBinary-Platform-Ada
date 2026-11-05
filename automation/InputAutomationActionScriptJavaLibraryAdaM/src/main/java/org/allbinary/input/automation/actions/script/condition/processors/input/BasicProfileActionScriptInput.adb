@@ -164,8 +164,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (GenericProfileActionScriptInputData_Package.TYPE_Id, Java_Box (BasicProfileActionScriptInput'Class (This).getInputRobotInterface.getName));
-        hashMap.put (GenericProfileActionScriptInputData_Package.DELAY_Id, Java_Box (To_Unbounded_String (Java_Image (BasicProfileActionScriptInput'Class (This).getTime))));
+        hashMap.put (Java_Box (GenericProfileActionScriptInputData_Package.TYPE_Id), Java_Box (BasicProfileActionScriptInput'Class (This).getInputRobotInterface.getName));
+        hashMap.put (Java_Box (GenericProfileActionScriptInputData_Package.DELAY_Id), Java_Box (To_Unbounded_String (Java_Image (BasicProfileActionScriptInput'Class (This).getTime))));
         This.BasicProfileActionScriptInput_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, BasicProfileActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end BasicProfileActionScriptInput_toHashMap;

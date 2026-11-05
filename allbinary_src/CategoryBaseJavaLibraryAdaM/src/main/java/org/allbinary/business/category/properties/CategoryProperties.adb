@@ -195,7 +195,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
         pathStringBuffer := StringMaker_Package.Create;
         list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         nextParentCategoryInterface := CategoryInterface_Access (categoryHierarchyInterface.getParent);
-        if (CategoryProperties_Access'(This'Unchecked_Access)) /= (nextParentCategoryInterface.getProperties) then
+        if (Java_Object_Access (CategoryProperties_Access'(This'Unchecked_Access))) /= (Java_Object_Access (nextParentCategoryInterface.getProperties)) then
             depthIndex := 0;
             while (not org.allbinary.business.category.CategoryInterface_Package_References."=" (nextParentCategoryInterface, null)) loop
                 if nextParentCategoryInterface.getProperties.isRealRoot then

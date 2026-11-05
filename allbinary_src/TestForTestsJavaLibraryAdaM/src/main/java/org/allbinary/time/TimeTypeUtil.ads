@@ -18,7 +18,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.TimeZone_Package; use java.util.TimeZone_Package;
 
 package org.allbinary.time.TimeTypeUtil_Package is
 

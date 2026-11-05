@@ -179,8 +179,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (ImageActionScriptOutputData_Package.DISPLAY, Java_Box (To_Unbounded_String (Java_Image (ImageActionScriptOutput'Class (This).isDisplay))));
-        hashMap.put (ImageActionScriptOutputData_Package.SAVE, Java_Box (To_Unbounded_String (Java_Image (ImageActionScriptOutput'Class (This).isSaved))));
+        hashMap.put (Java_Box (ImageActionScriptOutputData_Package.DISPLAY), Java_Box (To_Unbounded_String (Java_Image (ImageActionScriptOutput'Class (This).isDisplay))));
+        hashMap.put (Java_Box (ImageActionScriptOutputData_Package.SAVE), Java_Box (To_Unbounded_String (Java_Image (ImageActionScriptOutput'Class (This).isSaved))));
         This.ImageActionScriptOutput_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;

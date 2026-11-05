@@ -191,7 +191,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
                 This.logUtil.putF (To_Unbounded_String ("Class Node Null"), InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             end if;
         else
-            This.logUtil.putF (Java_Image (InputAutomationData_Package.NAME) & To_Unbounded_String (" Node Has No Children"), InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
+            This.logUtil.putF (InputAutomationData_Package.NAME & To_Unbounded_String (" Node Has No Children"), InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         end if;
    end init;
 

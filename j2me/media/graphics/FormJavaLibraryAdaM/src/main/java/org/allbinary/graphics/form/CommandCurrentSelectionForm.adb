@@ -210,6 +210,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
       rectWidth : Integer;
       rectHeight : Integer;
       rectangleAdjustedAnimation : RectangleFilledAdjustedAnimation_Access;
+      rectangleAdjustedAnimation_2 : RectangleAdjustedAnimation_Access;
    begin
         basicColorFactory := BasicColorFactory_Package.getInstance;
         buttonColor := BasicColor_Access (basicColorFactory.TRANSPARENT_GREY);
@@ -221,12 +222,12 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         rectWidth := ((width) + (This.border)) - (adjustedBorder);
         rectHeight := ((height) + (This.border)) - (adjustedBorder);
         if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
-            rectangleAdjustedAnimation := RectangleAdjustedAnimation_Access (This.selectedAnimationArray (index));
-            rectangleAdjustedAnimation.setWidth (rectWidth);
-            rectangleAdjustedAnimation.setHeight (rectHeight);
-            rectangleAdjustedAnimation.setOffsetX (offset);
-            rectangleAdjustedAnimation.setOffsetY (offset);
-            rectangleAdjustedAnimation.setBasicColorP (selectedButtonColor);
+            rectangleAdjustedAnimation_2 := RectangleAdjustedAnimation_Access (This.selectedAnimationArray (index));
+            rectangleAdjustedAnimation_2.setWidth (rectWidth);
+            rectangleAdjustedAnimation_2.setHeight (rectHeight);
+            rectangleAdjustedAnimation_2.setOffsetX (offset);
+            rectangleAdjustedAnimation_2.setOffsetY (offset);
+            rectangleAdjustedAnimation_2.setBasicColorP (selectedButtonColor);
         else
             rectangleAdjustedAnimation := RectangleFilledAdjustedAnimation_Access (This.selectedAnimationArray (index));
             rectangleAdjustedAnimation.setWidth (rectWidth);
@@ -237,12 +238,12 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         end if;
         adjustedBorder := 4;
         if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
-            rectangleAdjustedAnimation := RectangleAdjustedAnimation_Access (This.unSelectedAnimationArray (index));
-            rectangleAdjustedAnimation.setWidth (rectWidth);
-            rectangleAdjustedAnimation.setHeight (rectHeight);
-            rectangleAdjustedAnimation.setOffsetX (offset);
-            rectangleAdjustedAnimation.setOffsetY (offset);
-            rectangleAdjustedAnimation.setBasicColorP (buttonColor);
+            rectangleAdjustedAnimation_2 := RectangleAdjustedAnimation_Access (This.unSelectedAnimationArray (index));
+            rectangleAdjustedAnimation_2.setWidth (rectWidth);
+            rectangleAdjustedAnimation_2.setHeight (rectHeight);
+            rectangleAdjustedAnimation_2.setOffsetX (offset);
+            rectangleAdjustedAnimation_2.setOffsetY (offset);
+            rectangleAdjustedAnimation_2.setBasicColorP (buttonColor);
         else
             rectangleAdjustedAnimation := RectangleFilledAdjustedAnimation_Access (This.unSelectedAnimationArray (index));
             rectangleAdjustedAnimation.setWidth (rectWidth);

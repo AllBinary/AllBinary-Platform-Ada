@@ -216,7 +216,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         end if;
         ImageBaseRotationAnimation_Package.ImageBaseRotationAnimation (This).setAlpha (alpha);
         if changed then
-            This.alphaProcessor := AlphaProcessor_Package.getInstance;
+            This.alphaProcessor := AlphaBaseProcessor_Access (AlphaProcessor_Package.getInstance);
             AllBinaryHTMLImageRotationAnimation'Class (This).updateImage;
         end if;
    end setAlpha;

@@ -119,7 +119,7 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
       vector : BasicArrayList_Access;
    begin
         begin
-            if ((This.id) = (null)) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.id))) then
+            if ((This.id) = (Null_Unbounded_String)) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.id))) then
                 return False;
             end if;
             inventoryEntity := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance;
@@ -161,7 +161,7 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            if ((This.id) = (null)) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.id))) then
+            if ((This.id) = (Null_Unbounded_String)) or else (not (StringValidationUtil_Package.getInstance.isNumber (This.id))) then
                 stringBuffer.append (To_Unbounded_String ("Id is not valid.<br />"));
             end if;
             if (InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance.getItem (This.id)) = (null) then

@@ -377,7 +377,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    begin
         if (not org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=" (newCanvasJPanel, null)) then
             This.canvasJPanelList.add (newCanvasJPanel);
-            WorkAreaJPanel'Class (This).select_Id ((This.canvasJPanelList.size) - (1));
+            WorkAreaJPanel'Class (This).select_Id (index => (This.canvasJPanelList.size) - (1));
         end if;
    end initDuplicate;
 
@@ -468,7 +468,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
         canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
         frameInteger := Java_Unbox_Integer (canvasJPanelHashMap.get (treeNode));
         if (frameInteger) /= (0) then
-            WorkAreaJPanel'Class (This).select_Id (Integer (frameInteger));
+            WorkAreaJPanel'Class (This).select_Id (index => Integer (frameInteger));
         end if;
    end select_Id;
 
@@ -577,7 +577,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
             This.canvasHolderJPanel.removeAll;
             frameInt := Java_Unbox_Integer (canvasJPanelHashMap.get (evt.getTreeNode));
             This.canvasJPanelList.remove (Integer (frameInt));
-            WorkAreaJPanel'Class (This).select_Id (Integer (frameInt));
+            WorkAreaJPanel'Class (This).select_Id (index => Integer (frameInt));
         end if;
    end delete;
 
@@ -608,7 +608,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
         canvasJPanel := CanvasJPanel_Access (This.canvasJPanelList.get (Integer (frameInt)));
         if (not org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=" (canvasJPanel, null)) then
             canvasJPanel.addAngle (evt.getAngle);
-            WorkAreaJPanel'Class (This).select_Id (Integer (frameInt));
+            WorkAreaJPanel'Class (This).select_Id (index => Integer (frameInt));
         end if;
         StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Canvas Rotated"));
    end rotate;
@@ -653,7 +653,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
                         if not (WorkAreaJPanel'Class (This).isPlaying) then
                             exit;
                         end if;
-                        WorkAreaJPanel'Class (This).select_Id (index);
+                        WorkAreaJPanel'Class (This).select_Id (index => index);
                         Java_Sleep (100);
                     end loop;
                 else

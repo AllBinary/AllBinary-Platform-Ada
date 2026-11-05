@@ -83,7 +83,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
    begin
       Initialize_Fields (This);
         This.hashMap := StdUtil_Package.getInstance.createHashMap;
-        This.hashMap.put (keys, values);
+        This.hashMap.put (Java_Box (keys), Java_Box (values));
    end Initialize;
 
    function Create (keys : Unbounded_String_Array_Access; values : Unbounded_String_Array_Access) return Replace_Access is
@@ -137,8 +137,8 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
         keyArray := This.j2seUtil.getHashMapAsArray (This.hashMap);
         size := keyArray'Length;
         for index2 in 0 .. (size) - 1 loop
-            keys := Unbounded_String_Array_Access (keyArray (index2));
-            values := Unbounded_String_Array_Access (This.hashMap.get (keys));
+            keys := Java_Unbox_Unbounded_String_Array (keyArray (index2));
+            values := Java_Unbox_Unbounded_String_Array (This.hashMap.get (Java_Box (keys)));
             foundTotal := 0;
             index := 0;
             nextKey := Null_Unbounded_String;
@@ -183,7 +183,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             end loop;
         end loop;
         if (totalNumberOfReplaces) > (0) then
-            if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE_Var) then
+            if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE) then
                 This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Field_Id);
             end if;
         end if;
@@ -231,7 +231,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
                 end if;
             end loop;
         end loop;
-        if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE_Var) then
+        if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE) then
             This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Field_Id);
         end if;
         return replace_Var;

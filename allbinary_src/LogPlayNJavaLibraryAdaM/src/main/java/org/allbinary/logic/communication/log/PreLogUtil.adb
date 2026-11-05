@@ -59,7 +59,7 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
         end if;
         className := StringMaker_Package.Create.append (className).append (CommonSeps_Package.getInstance.FORWARD_SLASH).append (StringUtil_Package.getInstance.toString (anyType)).toString;
         message := LogFormatUtil_Package.getInstance.getS (className, functionName, specialMessage);
-        PlayN_Package.log.debug (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message);
+        PlayN_Package.log.debug (PreLogUtil_Package.LOG_SUCCESS & message);
    end put;
 
    procedure putOE (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
@@ -74,14 +74,14 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
         end if;
         className := StringMaker_Package.Create.append (className).append (CommonSeps_Package.getInstance.FORWARD_SLASH).append (StringUtil_Package.getInstance.toString (anyType)).toString;
         message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
-        PlayN_Package.log.error (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message, Java_Throwable (exception_Id));
+        PlayN_Package.log.error (PreLogUtil_Package.LOG_SUCCESS & message, Java_Throwable (exception_Id));
    end putOE;
 
    procedure putS (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) is
       message : Unbounded_String;
    begin
         message := LogFormatUtil_Package.getInstance.getS (className, functionName, specialMessage);
-        PlayN_Package.log.debug (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message);
+        PlayN_Package.log.debug (PreLogUtil_Package.LOG_SUCCESS & message);
    end putS;
 
    procedure putSE (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
@@ -89,7 +89,7 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
       message : Unbounded_String;
    begin
         message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
-        PlayN_Package.log.error (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message, Java_Throwable (exception_Id));
+        PlayN_Package.log.error (PreLogUtil_Package.LOG_SUCCESS & message, Java_Throwable (exception_Id));
    end putSE;
 
 

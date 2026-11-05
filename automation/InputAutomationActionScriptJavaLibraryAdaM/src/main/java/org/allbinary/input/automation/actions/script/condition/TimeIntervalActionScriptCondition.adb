@@ -169,7 +169,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (TimeIntervalActionScriptConditionData_Package.TIME, Java_Box (To_Unbounded_String (Java_Image (This.timeHelper.delay_Id))));
+        hashMap.put (Java_Box (TimeIntervalActionScriptConditionData_Package.TIME), Java_Box (To_Unbounded_String (Java_Image (This.timeHelper.delay_Id))));
         This.TimeIntervalActionScriptCondition_Field_logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, TimeIntervalActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;

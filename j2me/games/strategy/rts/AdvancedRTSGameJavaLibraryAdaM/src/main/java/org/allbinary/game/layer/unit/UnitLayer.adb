@@ -181,6 +181,7 @@ with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package;
+with org.allbinary.game.layer.SensorAction_Package_References;
 
 package body org.allbinary.game.layer.unit.UnitLayer_Package is
 
@@ -1201,7 +1202,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         waypointBehaviorBase := WaypointBehaviorBase_Access (This.waypointBehaviorBase);
         nextUnvisitedPathGeographicMapCellPosition := waypointBehaviorBase.getNextUnvisitedPathGeographicMapCellPosition;
         evading := False;
-        if (UnitLayer'Class (This).getUnitWaypointBehavior.getSensorAction) = (SensorActionFactory_Package.getInstance.EVADE) then
+        if org.allbinary.game.layer.SensorAction_Package_References."=" (UnitLayer'Class (This).getUnitWaypointBehavior.getSensorAction, SensorActionFactory_Package.getInstance.EVADE) then
             This.rtsLogHelper.evade (UnitLayer_Access'(This'Unchecked_Access));
             evading := True;
             targetAngle := (targetAngle) + (180);

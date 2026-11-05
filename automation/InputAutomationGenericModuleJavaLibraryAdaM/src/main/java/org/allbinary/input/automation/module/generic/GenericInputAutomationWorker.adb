@@ -43,6 +43,7 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package;
 with org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References;
 
 package body org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package is
 
@@ -139,9 +140,9 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
         for index in 0 .. (size) - 1 loop
             genericProfileDataWorkerType := GenericProfileDataWorkerType_Access (vector.get (index));
             This.logUtil.putF (To_Unbounded_String ("Adding Listener: ") & Java_Image (genericProfileDataWorkerType), GenericInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-            if (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.COMPARISON) then
+            if org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=" (genericProfileDataWorkerType, GenericProfileDataWorkerType_Package.COMPARISON) then
                 GenericInputAutomationWorker'Class (This).getCaptureWorker.addListenerInterface (GenericInputAutomationWorker'Class (This).getImageComparisonWorker);
-            elsif (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.MOTION) then
+            elsif org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=" (genericProfileDataWorkerType, GenericProfileDataWorkerType_Package.MOTION) then
                 GenericInputAutomationWorker'Class (This).getImageComparisonWorker.addListenerInterface (GenericInputAutomationWorker'Class (This).getMotionRectanglesWorker);
             end if;
         end loop;

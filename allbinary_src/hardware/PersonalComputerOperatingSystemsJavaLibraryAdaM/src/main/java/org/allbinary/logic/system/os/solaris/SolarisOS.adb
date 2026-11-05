@@ -14,6 +14,7 @@
 
 
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 
 package body org.allbinary.logic.system.os.solaris.SolarisOS_Package is
 

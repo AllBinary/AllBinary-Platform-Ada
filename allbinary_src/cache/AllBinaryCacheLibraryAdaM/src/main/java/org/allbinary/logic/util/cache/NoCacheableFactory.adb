@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
 
 package body org.allbinary.logic.util.cache.NoCacheableFactory_Package is
 

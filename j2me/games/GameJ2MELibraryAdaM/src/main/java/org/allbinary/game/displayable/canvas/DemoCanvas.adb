@@ -1155,14 +1155,14 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 This.timeDelayHelper.setStartTimeTNT;
             end if;
             demoGameMidlet := DemoGameMidlet_Access (DemoCanvas'Class (This).getCustomCommandListener);
-            if ((This.gameCanvas) /= (NullGameCanvas_Package.getInstance)) and then (This.gameCanvas.isGameOver) then
+            if ((Java_Object_Access (This.gameCanvas)) /= (Java_Object_Access (NullGameCanvas_Package.getInstance))) and then (This.gameCanvas.isGameOver) then
                 DemoCanvas'Class (This).stopGameDemo;
                 randomLevel := DemoCanvas'Class (This).getNextRandom;
                 gameInfo := This.gameCanvas.getLayerManager.getGameInfo;
                 gameInfo.setCurrentLevel (randomLevel);
                 This.gameCanvas.setGameOver (False);
                 DemoCanvas'Class (This).start;
-            elsif ((This.gameCanvas) = (NullGameCanvas_Package.getInstance)) and then (demoGameMidlet.isReady) then
+            elsif ((Java_Object_Access (This.gameCanvas)) = (Java_Object_Access (NullGameCanvas_Package.getInstance))) and then (demoGameMidlet.isReady) then
                 if not (This.demoGameRunnable.isRunning) then
                     DemoCanvas'Class (This).startDemoGame;
                     This.demoGameRunnable.setRunning (True);
@@ -1183,7 +1183,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    --  throws Exception
    procedure stopGameDemo (This : in out DemoCanvas) is
    begin
-        if (This.gameCanvas) /= (NullGameCanvas_Package.getInstance) then
+        if (Java_Object_Access (This.gameCanvas)) /= (Java_Object_Access (NullGameCanvas_Package.getInstance)) then
             This.logUtil.putF (To_Unbounded_String ("Set Running False"), DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("stopGameDemo"));
             This.gameCanvas.setRunning (False);
         end if;
@@ -1197,7 +1197,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         METHOD_NAME := To_Unbounded_String ("showGamePaintable");
         PreLogUtil_Package.put (This.commonStrings.START, DemoCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
         isDefault := J2MEUtil_Package.isHTML;
-        if (((This.gameCanvas) /= (NullGameCanvas_Package.getInstance)) and then ((((This.gameCanvas.isRunning) or else (isDefault)) or else (SWTUtil_Package.isSWT)))) and then (not (((This.gameCanvas.getType) = (NullGameCanvas_Package.TYPE_Id)))) then
+        if (((Java_Object_Access (This.gameCanvas)) /= (Java_Object_Access (NullGameCanvas_Package.getInstance))) and then ((((This.gameCanvas.isRunning) or else (isDefault)) or else (SWTUtil_Package.isSWT)))) and then (not (((This.gameCanvas.getType) = (NullGameCanvas_Package.TYPE_Id)))) then
             This.gameRunnable := GameRunnable_Access (This.gameCanvas.gameRunnable);
             PreLogUtil_Package.put (To_Unbounded_String ("Showing Game"), DemoCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
             DemoCanvas'Class (This).setPaintableInterface (This.gameCanvas);
@@ -1252,7 +1252,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
             DemoCanvas'Class (This).initPostPaint;
             DemoCanvas'Class (This).updateDemoState;
             if features.isDefault (openGLFeatureFactory.OPENGL_AS_GAME_THREAD) then
-                while ((This.gameCanvas) = (NullGameCanvas_Package.getInstance)) or else (not (This.gameCanvas.isInitialized)) loop
+                while ((Java_Object_Access (This.gameCanvas)) = (Java_Object_Access (NullGameCanvas_Package.getInstance))) or else (not (This.gameCanvas.isInitialized)) loop
                     This.loopTimeHelper.setStartTimeTNT;
                     DemoCanvas'Class (This).processGame;
                     DemoCanvas'Class (This).processLoopSleep;
@@ -1359,7 +1359,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       gameCanvas : AllBinaryGameCanvas_Access;
    begin
         gameCanvas := This.gameCanvas;
-        if (gameCanvas) = (NullGameCanvas_Package.getInstance) then
+        if (Java_Object_Access (gameCanvas)) = (Java_Object_Access (NullGameCanvas_Package.getInstance)) then
             return True;
         elsif gameCanvas.isInitialized then
             return False;

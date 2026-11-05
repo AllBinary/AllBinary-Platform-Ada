@@ -131,7 +131,7 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
    begin
         AllBinaryGameLayer_Package.Initialize (This, name, layerInfo, viewPosition);
         Initialize_Fields (This);
-        if (collidableBaseBehaviorFactory) /= (CollidableNeverCollideBehaviorFactory_Package.getInstance) then
+        if (Java_Object_Access (collidableBaseBehaviorFactory)) /= (Java_Object_Access (CollidableNeverCollideBehaviorFactory_Package.getInstance)) then
             CollidableCompositeLayer'Class (This).setCollidableInferface (collidableBaseBehaviorFactory.createBehavior);
         end if;
    end Initialize;

@@ -464,7 +464,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
                     document := NameSpaceRequestParams'Class (This).addNameSpace (Java_New_String (key), Java_New_String (value), document);
                 end if;
             elsif (NameSpaceRequestParams'Class (This).getMap.get (key).all in _Package.'Class) then
-                values := Unbounded_String_Array_Access (NameSpaceRequestParams'Class (This).getMap.get (key));
+                values := Java_Unbox_Unbounded_String_Array (NameSpaceRequestParams'Class (This).getMap.get (key));
                 if (Java_Index_Of (key, Java_Image (NameSpaceRequestParamData_Package.NAME))) < (0) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
                         This.logUtil.putF (To_Unbounded_String ("Not NameSpace key: ") & key & To_Unbounded_String (" Value: ") & values (0), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));

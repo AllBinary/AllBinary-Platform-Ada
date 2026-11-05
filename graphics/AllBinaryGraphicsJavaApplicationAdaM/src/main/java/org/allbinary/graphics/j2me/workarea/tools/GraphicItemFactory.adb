@@ -86,7 +86,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
    begin
       Initialize_Fields (This);
         This.graphicItems := StdUtil_Package.getInstance.createHashMap;
-        This.graphicItems.put (LinesGraphicItem_Package.getStaticName, LinesGraphicItemFactory_Package.Create);
+        This.graphicItems.put (Java_Box (LinesGraphicItem_Package.getStaticName), LinesGraphicItemFactory_Package.Create);
    end Initialize;
 
    function Create return GraphicItemFactory_Access is

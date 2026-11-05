@@ -105,7 +105,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
         begin
             AbSqlTable'Class (This).executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.AbSqlTable_Field_logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_DROP_TABLE);
+                This.AbSqlTable_Field_logUtil.putF (This.SUCCESS_SQL_STATEMENT & sqlStatement, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_DROP_TABLE);
             end if;
             return This.tableName & This.DROPPED_SUCCESS;
         exception
@@ -114,7 +114,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.AbSqlTable_Field_logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_DROP_TABLE, e);
+                This.AbSqlTable_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlTable_Access'(This'Unchecked_Access), This.METHOD_DROP_TABLE, e);
             end if;
             return To_Unbounded_String ("Failed to Drop ") & This.tableName & To_Unbounded_String (" table.");
                 end;

@@ -39,9 +39,9 @@ begin
    null;
    RELATIVE_PATH := To_Unbounded_String ("./");
    CONFIG_PATH := To_Unbounded_String ("modules/configs/");
-   MODULE_RELATIVE_PATH := Java_Image ((GenericConfigData_Package.RELATIVE_PATH) + (GenericConfigData_Package.CONFIG_PATH)) & To_Unbounded_String ("allbinary/input/automation/module/");
-   GAME_MODULE_RELATIVE_PATH := Java_Image (GenericConfigData_Package.MODULE_RELATIVE_PATH) & To_Unbounded_String ("game/");
-   MMO_GAME_MODULE_RELATIVE_PATH := Java_Image (GenericConfigData_Package.GAME_MODULE_RELATIVE_PATH) & To_Unbounded_String ("mmog/");
+   MODULE_RELATIVE_PATH := GenericConfigData_Package.RELATIVE_PATH & GenericConfigData_Package.CONFIG_PATH & To_Unbounded_String ("allbinary/input/automation/module/");
+   GAME_MODULE_RELATIVE_PATH := GenericConfigData_Package.MODULE_RELATIVE_PATH & To_Unbounded_String ("game/");
+   MMO_GAME_MODULE_RELATIVE_PATH := GenericConfigData_Package.GAME_MODULE_RELATIVE_PATH & To_Unbounded_String ("mmog/");
    FREE_MMO_GAME_MODULE_RELATIVE_PATH := To_Unbounded_String ("free/");
 
 end org.allbinary.input.automation.module.generic_Id.GenericConfigData_Package;

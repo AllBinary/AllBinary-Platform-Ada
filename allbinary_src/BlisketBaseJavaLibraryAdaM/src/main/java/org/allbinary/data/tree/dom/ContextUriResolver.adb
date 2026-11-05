@@ -135,7 +135,7 @@ package body org.allbinary.data.tree.dom.ContextUriResolver_Package is
    function toString (This : in out ContextUriResolver) return Unbounded_String is
    begin
         begin
-            return ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.INSTALLPATH)) + (This.uriResolverStrings.IMPORT_URL);
+            return Java_Image ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.INSTALLPATH)) & This.uriResolverStrings.IMPORT_URL;
         exception
             when Java_Occurrence : others =>
                 declare

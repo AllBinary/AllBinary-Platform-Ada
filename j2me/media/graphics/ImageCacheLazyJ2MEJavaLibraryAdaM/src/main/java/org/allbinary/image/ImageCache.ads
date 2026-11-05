@@ -320,6 +320,7 @@ limited with org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
 limited with org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.ImageCache_Package_References;
+with org.allbinary.image.ImageCache_Package_References;
 
 package org.allbinary.image.NotHTMLProcessor_Package is
 
@@ -482,10 +483,12 @@ package org.allbinary.image.NotHTMLProcessor_Package is
    subtype NotHTMLProcessor_Access_Array_Access_Array_Access is org.allbinary.image.NotHTMLProcessor_Package_References.NotHTMLProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NotHTMLProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.NotHTMLProcessor_Package_References."=";
 
-   type NotHTMLProcessor is new Processor with null record;
+   type NotHTMLProcessor is new Processor with record
+      Java_Outer : org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   end record;
 
    procedure Initialize (This : in out NotHTMLProcessor'Class);
-   function Create return NotHTMLProcessor_Access;
+   function Create (Java_Outer_Param : org.allbinary.image.ImageCache_Package_References.ImageCache_Access) return NotHTMLProcessor_Access;
    procedure process (This : in out NotHTMLProcessor);
 
 end org.allbinary.image.NotHTMLProcessor_Package;
@@ -752,6 +755,7 @@ limited with org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
 limited with org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.ImageCache_Package_References;
+with org.allbinary.image.ImageCache_Package_References;
 
 package org.allbinary.image.HTMLEndProcessor_Package is
 
@@ -914,10 +918,12 @@ package org.allbinary.image.HTMLEndProcessor_Package is
    subtype HTMLEndProcessor_Access_Array_Access_Array_Access is org.allbinary.image.HTMLEndProcessor_Package_References.HTMLEndProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HTMLEndProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.HTMLEndProcessor_Package_References."=";
 
-   type HTMLEndProcessor is new Processor with null record;
+   type HTMLEndProcessor is new Processor with record
+      Java_Outer : org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   end record;
 
    procedure Initialize (This : in out HTMLEndProcessor'Class);
-   function Create return HTMLEndProcessor_Access;
+   function Create (Java_Outer_Param : org.allbinary.image.ImageCache_Package_References.ImageCache_Access) return HTMLEndProcessor_Access;
    procedure process (This : in out HTMLEndProcessor);
 
 end org.allbinary.image.HTMLEndProcessor_Package;
@@ -967,6 +973,7 @@ with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.image.ImageCacheBase_Package_References;
 limited with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.ImageCache_Package_References;
 
 package org.allbinary.image.FirstProcessor_Package is
@@ -1130,10 +1137,12 @@ package org.allbinary.image.FirstProcessor_Package is
    subtype FirstProcessor_Access_Array_Access_Array_Access is org.allbinary.image.FirstProcessor_Package_References.FirstProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FirstProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.FirstProcessor_Package_References."=";
 
-   type FirstProcessor is new Processor with null record;
+   type FirstProcessor is new Processor with record
+      Java_Outer : org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
+   end record;
 
    procedure Initialize (This : in out FirstProcessor'Class);
-   function Create return FirstProcessor_Access;
+   function Create (Java_Outer_Param : org.allbinary.image.ImageCache_Package_References.ImageCache_Access) return FirstProcessor_Access;
    procedure process (This : in out FirstProcessor);
 
 end org.allbinary.image.FirstProcessor_Package;

@@ -207,7 +207,7 @@ package body org.allbinary.logic.io.path.AbPath_Package is
             stringBuffer.append (This.nameP);
             return stringBuffer.toString;
         else
-            return Java_Image (FilePathUtil_Package.adjust (AbPath'Class (This).getPath)) & This.nameP;
+            return FilePathUtil_Package.adjust (AbPath'Class (This).getPath) & This.nameP;
         end if;
    end toFileSystemString;
 

@@ -160,11 +160,11 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
             for index in 0 .. (size) - 1 loop
                 key := Java_Unbox (objectArray (index));
                 value := svg.opt (key);
-                if This.shapeTypeFactory.KEY_LINE.equals (key) then
+                if (This.shapeTypeFactory.KEY_LINE = key) then
                     SVGAsJSONSimpleLoader'Class (This).addShapes (pointVector, value, This.shapeTypeFactory.LINE);
                 elsif This.shapeTypeFactory.equals (key) then
                     SVGAsJSONSimpleLoader'Class (This).addShapes (pointVector, value, This.shapeTypeFactory.CIRCLE);
-                elsif (This.shapeTypeFactory.KEY_RECT.equals (key)) or else (This.shapeTypeFactory.KEY_RECTANGLE.equals (key)) then
+                elsif ((This.shapeTypeFactory.KEY_RECT = key)) or else ((This.shapeTypeFactory.KEY_RECTANGLE = key)) then
                     SVGAsJSONSimpleLoader'Class (This).addShapes (pointVector, value, This.shapeTypeFactory.RECTANGLE);
                 end if;
             end loop;
@@ -347,7 +347,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
         end if;
         points := new Integer_Array_Access_Array'(0 .. (pointVector.size) - 1 => new Integer_Array'(0 .. (2) - 1 => 0));
         for index in 0 .. (pointVector.size) - 1 loop
-            point := Integer_Array_Access (pointVector.get (index));
+            point := Java_Unbox_Integer_Array (pointVector.get (index));
             points (index) := point;
         end loop;
         return points;

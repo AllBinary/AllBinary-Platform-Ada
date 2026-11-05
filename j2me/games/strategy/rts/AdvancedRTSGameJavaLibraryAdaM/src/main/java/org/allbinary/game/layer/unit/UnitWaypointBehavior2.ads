@@ -377,6 +377,7 @@ limited with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References;
 limited with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References;
 
 package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
 
@@ -571,11 +572,12 @@ package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    function "=" (Left, Right : BuildingSteeringVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References."=";
 
    type BuildingSteeringVisitor is new SteeringVisitor with record
+      Java_Outer : org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.UnitWaypointBehavior2_Access;
       positionList : BasicArrayList_Access;
    end record;
 
    procedure Initialize (This : in out BuildingSteeringVisitor'Class);
-   function Create return BuildingSteeringVisitor_Access;
+   function Create (Java_Outer_Param : org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.UnitWaypointBehavior2_Access) return BuildingSteeringVisitor_Access;
    function visit (This : in out BuildingSteeringVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
    procedure visit (This : in out BuildingSteeringVisitor; anyType_Param : access Java_Object'Class);
    function getPositionList (This : in out BuildingSteeringVisitor) return BasicArrayList_Access;

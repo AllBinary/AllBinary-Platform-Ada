@@ -104,7 +104,7 @@ package body org.allbinary.logic.io.file.directory.SubDirectory_Package is
    function search (This : in out SubDirectory; level : Integer; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
-        return This.directory.search (level, file, True);
+        return This.directory.search (level => level, file_Param => file, isRecursiveSearch => True);
    end search;
 
    function toString (files_Param : access BasicArrayList_Package.BasicArrayList'Class) return Unbounded_String is

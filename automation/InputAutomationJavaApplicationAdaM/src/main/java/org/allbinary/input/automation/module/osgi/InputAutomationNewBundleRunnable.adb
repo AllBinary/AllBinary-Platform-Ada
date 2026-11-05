@@ -190,7 +190,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
                 else
                     symbolicName := manifest.getMainAttributes.getValue (Constants_Package.BUNDLE_SYMBOLICNAME);
                     if (symbolicName) /= (Null_Unbounded_String) then
-                        hashMap.put (Java_Box (symbolicName), URL_Package.Create ((InputAutomationNewBundleRunnable_Package.FILE) + (file.getAbsolutePath)));
+                        hashMap.put (Java_Box (symbolicName), URL_Package.Create (InputAutomationNewBundleRunnable_Package.FILE & Java_Image (file.getAbsolutePath)));
                     end if;
                 end if;
             end if;
@@ -210,7 +210,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
             baseJarPath := Unbounded_Slice (baseJarPath, (Ada.Strings.Unbounded.Length (InputAutomationNewBundleRunnable_Package.FILE)) + 1, Ada.Strings.Unbounded.Length (baseJarPath));
         end if;
         jarFileFilter := BasicFileFilterUtil_Package.getInstance (To_Unbounded_String (".jar"));
-        path := baseJarPath & Java_Image (InputAutomationNewBundleRunnable_Package.INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH);
+        path := baseJarPath & InputAutomationNewBundleRunnable_Package.INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH;
         This.logUtil.putF (To_Unbounded_String ("Path: ") & path, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
         file := File_Package.Create (path);
         This.logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file.getAbsolutePath) & To_Unbounded_String (" isDirectory: ") & Java_Image (file.isDirectory), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
