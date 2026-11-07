@@ -36,6 +36,9 @@ with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
 

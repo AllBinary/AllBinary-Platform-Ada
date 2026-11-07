@@ -22,6 +22,8 @@ with org.allbinary.game.layer.hud.LapInfo_Package; use org.allbinary.game.layer.
 with org.allbinary.game.layer.hud.LapInfo_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColor_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.layer.hud.basic.LapWidget_Package is
 

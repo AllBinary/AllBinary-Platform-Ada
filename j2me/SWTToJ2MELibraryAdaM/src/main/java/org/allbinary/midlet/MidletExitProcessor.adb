@@ -54,7 +54,7 @@ package body org.allbinary.midlet.MidletExitProcessor_Package is
    --  throws Exception
    procedure process (This : in out MidletExitProcessor) is
    begin
-        System_Package.exit_Id (0);
+        Java_Exit (0);
    end process;
 
 end org.allbinary.midlet.MidletExitProcessor_Package;

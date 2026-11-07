@@ -32,7 +32,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Serializable_Package; use java.io.Serializable_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
 limited with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 limited with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;

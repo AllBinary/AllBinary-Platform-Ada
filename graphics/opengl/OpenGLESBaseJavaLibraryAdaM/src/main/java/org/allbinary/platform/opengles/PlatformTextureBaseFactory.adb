@@ -19,6 +19,8 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package is
 

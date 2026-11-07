@@ -79,7 +79,7 @@ package org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package 
    subtype AbFileUpload_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package_References.AbFileUpload_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AbFileUpload_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package_References."=";
 
-   type AbFileUpload is new FileUpload with null record;
+   type AbFileUpload is new FileUpload_Package.FileUpload with null record;
 
    procedure Initialize (This : in out AbFileUpload'Class; fileItemFactory_Param : access FileItemFactory_Package.FileItemFactory'Class);
    function Create (fileItemFactory_Param : access FileItemFactory_Package.FileItemFactory'Class) return AbFileUpload_Access;

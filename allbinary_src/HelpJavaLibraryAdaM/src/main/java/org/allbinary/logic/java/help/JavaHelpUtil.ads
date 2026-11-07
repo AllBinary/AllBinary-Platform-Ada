@@ -31,7 +31,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
---  with java.net.URI_Package; use java.net.URI_Package;
 --  with java.net.URL_Package; use java.net.URL_Package;
 --  with javax.help.CSH_Package; use javax.help.CSH_Package;
 --  with javax.help.HelpBroker_Package; use javax.help.HelpBroker_Package;

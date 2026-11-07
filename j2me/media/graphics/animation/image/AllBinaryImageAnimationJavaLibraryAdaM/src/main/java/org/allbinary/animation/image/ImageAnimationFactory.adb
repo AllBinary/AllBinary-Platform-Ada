@@ -26,7 +26,10 @@ with org.allbinary.animation.image.AdjustedImageAnimation_Package; use org.allbi
 with org.allbinary.animation.image.AdjustedImageAnimation_Package;
 with org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.image.ImageAnimation_Package;
+with org.allbinary.media.ScaleProperties_Package;
 
 package body org.allbinary.animation.image.ImageAnimationFactory_Package is
 

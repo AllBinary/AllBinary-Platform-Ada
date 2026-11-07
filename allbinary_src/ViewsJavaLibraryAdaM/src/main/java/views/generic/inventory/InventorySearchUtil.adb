@@ -54,7 +54,13 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with views.generic_Id.inventory.InventoryColumnUtil_Package; use views.generic_Id.inventory.InventoryColumnUtil_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with views.generic_Id.inventory.InventoryColumnUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body views.generic_Id.inventory.InventorySearchUtil_Package is
 
@@ -307,7 +313,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                 viewDocumentInterface := TransformDocumentInterface_Access (TransformStoreDocumentFactory_Package.getInstance (searchRequest));
                 inventoryNode := viewDocumentInterface.getDoc.createElement (InventoryData_Package.INVENTORY);
                 viewDocumentInterface.getBaseNode.appendChild (inventoryNode);
-                inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.PAGE, startPage.toString));
+                inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.PAGE, To_Unbounded_String (Java_Image (startPage))));
                 if (searchRequest.getFileBaseName) /= (null) then
                     inventoryNode.appendChild (searchRequest.getFileBaseNameNode (viewDocumentInterface.getDoc));
                 end if;
@@ -328,14 +334,14 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                         numberOfResultsOnCurrentPage := numberOfResultsOnCurrentPage + 1;
                         if (lastPage) < (currentPage) then
                             if ((currentPage) >= (startPage)) and then ((currentPage) <= (endPage)) then
-                                inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, numberOfResultsOnCurrentPage.toString));
+                                inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, To_Unbounded_String (Java_Image (numberOfResultsOnCurrentPage))));
                                 documents (currentPage) := viewDocumentInterface.getDoc;
                                 inventoryNodes (currentPage) := inventoryNode;
                                 savedPagesInRange := savedPagesInRange + 1;
                                 viewDocumentInterface := TransformDocumentInterface_Access (TransformStoreDocumentFactory_Package.getInstance (searchRequest));
                                 inventoryNode := viewDocumentInterface.getDoc.createElement (InventoryData_Package.INVENTORY);
                                 viewDocumentInterface.getBaseNode.appendChild (inventoryNode);
-                                inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.PAGE, (currentPage) + (1).toString));
+                                inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.PAGE, To_Unbounded_String (Java_Image ((currentPage) + (1)))));
                                 if (searchRequest.getFileBaseName) /= (null) then
                                     inventoryNode.appendChild (searchRequest.getFileBaseNameNode (viewDocumentInterface.getDoc));
                                 end if;
@@ -350,7 +356,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                     end if;
                 end loop;
                 if ((numberOfResultsOnCurrentPage) > (0)) and then (((((currentPage) + (1)) >= (startPage)) and then (((currentPage) + (1)) <= (endPage)))) then
-                    inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, (numberOfResultsOnCurrentPage) - (1).toString));
+                    inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, To_Unbounded_String (Java_Image ((numberOfResultsOnCurrentPage) - (1)))));
                     documents ((lastPage) + (1)) := viewDocumentInterface.getDoc;
                     inventoryNodes ((lastPage) + (1)) := inventoryNode;
                     savedPagesInRange := savedPagesInRange + 1;
@@ -364,8 +370,8 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                 for index in startPage .. endPage loop
                     if (index) <= (lastPage) then
                         tempDocument := documents (index);
-                        inventoryNodes (index).appendChild (ModDomHelper_Package.createNameValueNodes (tempDocument, SearchData_Package.TOTAL_NUMBER_PAGES, (lastPage) + (1).toString));
-                        inventoryNodes (index).appendChild (ModDomHelper_Package.createNameValueNodes (tempDocument, SearchData_Package.TOTAL_NUMBER_ITEMS, numberOfResults.toString));
+                        inventoryNodes (index).appendChild (ModDomHelper_Package.createNameValueNodes (tempDocument, SearchData_Package.TOTAL_NUMBER_PAGES, To_Unbounded_String (Java_Image ((lastPage) + (1)))));
+                        inventoryNodes (index).appendChild (ModDomHelper_Package.createNameValueNodes (tempDocument, SearchData_Package.TOTAL_NUMBER_ITEMS, To_Unbounded_String (Java_Image (numberOfResults))));
                         for pageIndex in 0 .. lastPage loop
                             stringBuffer.delete (0, stringBuffer.length);
                             stringBuffer.append (searchRequest.getFileBaseName);

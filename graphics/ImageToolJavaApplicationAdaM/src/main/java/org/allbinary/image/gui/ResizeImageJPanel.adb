@@ -25,6 +25,14 @@ with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 
@@ -131,7 +139,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
 --                      imageUtil := ImageUtil_Package.getInstance;
---                      percent := To_Unbounded_String (Java_Image (Java_Unbox (This.jComboBox1.getSelectedItem)));
+--                      percent := Integer (Java_Unbox (This.jComboBox1.getSelectedItem));
 --                      percentAsFloat := Float'Value (To_String (This.floatPercentJTextField.getText));
 --                      imageProcessorInput := ResizeImageJPanel'Class (This).getImageProcessorInput;
 --                      files := imageProcessorInput.getFiles;
@@ -141,8 +149,8 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                      elsif (Integer (percent)) /= (-(1)) then
 --                          generatedBufferedImageArray := imageUtil.createBufferedImageForResize (imageProcessorInput.getBufferedImageArray, percent, True);
 --                      else
---                          width := To_Unbounded_String (Java_Image (Java_Unbox (This.jTextField1.getText)));
---                          height := To_Unbounded_String (Java_Image (Java_Unbox (This.jTextField2.getText)));
+--                          width := Integer (Java_Unbox (This.jTextField1.getText));
+--                          height := Integer (Java_Unbox (This.jTextField2.getText));
 --                          generatedBufferedImageArray := imageUtil.createBufferedImage3 (imageProcessorInput.getBufferedImageArray, width, height, True);
 --                      end if;
 --                      araster := generatedBufferedImageArray (0).getAlphaRaster;

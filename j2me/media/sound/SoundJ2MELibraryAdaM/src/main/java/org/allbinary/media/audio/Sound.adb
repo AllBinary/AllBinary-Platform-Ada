@@ -18,6 +18,9 @@ with javax.microedition.media.Player_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
+with javax.microedition.media.Control_Package;
+with org.allbinary.media.audio.NoPlayer_Package;
+with javax.microedition.media.PlayerListener_Package;
 
 package body org.allbinary.media.audio.Sound_Package is
 

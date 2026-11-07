@@ -29,10 +29,22 @@ with org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package; use org.allbinary.
 with org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package; use org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package;
 with org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package; use org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package;
 with org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package; use org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
 with org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAIFactory_Package is
 
@@ -108,7 +120,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAIFactory_Packag
    begin
         visitorCanBeNull := hashtable.get (Java_Object_Access (BasicAI_Package.AI_VISITOR));
         if (visitorCanBeNull) = (null) then
-            visitorCanBeNull := ThrustAIVisitorFactory_Package.getInstance;
+            visitorCanBeNull := Java_Object_Access (ThrustAIVisitorFactory_Package.getInstance);
         end if;
         hashtable2 := BasicProbabilityAIDataFactory_Package.Create.getInstance;
         hashtable2.put (BasicAI_Package.AI_VISITOR, LastKeyAIVisitorFactory_Package.getInstance);

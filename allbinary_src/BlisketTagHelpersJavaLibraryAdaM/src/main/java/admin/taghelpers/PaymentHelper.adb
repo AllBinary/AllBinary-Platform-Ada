@@ -26,6 +26,14 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body admin.taghelpers.PaymentHelper_Package is
 
@@ -138,7 +146,7 @@ package body admin.taghelpers.PaymentHelper_Package is
         begin
             success := To_Unbounded_String ("Successfully Selected Payment");
             paymentEntity := PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance;
-            paymentEntity.setDefault (This.weblisketSession.getUserName, This.value);
+            paymentEntity.setDefault (This.weblisketSession.getUserName, Integer'Value (To_String (This.value)));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selectPayment()"));
             end if;
@@ -166,7 +174,7 @@ package body admin.taghelpers.PaymentHelper_Package is
         begin
             success := To_Unbounded_String ("Successfully Removed Payment");
             paymentEntity := PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance;
-            paymentEntity.remove (This.weblisketSession.getUserName, This.value);
+            paymentEntity.remove (This.weblisketSession.getUserName, Integer'Value (To_String (This.value)));
             paymentInterface := PaymentInterface_Access (paymentEntity.getDefault (This.weblisketSession.getUserName));
             if (paymentInterface) = (null) then
                 paymentEntity.setDefault (This.weblisketSession.getUserName, paymentEntity.getLastId (This.weblisketSession.getUserName));

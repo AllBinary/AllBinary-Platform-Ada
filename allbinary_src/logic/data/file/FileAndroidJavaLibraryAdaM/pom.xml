@@ -127,6 +127,12 @@
             <scope>provided</scope>
             <classifier>sources</classifier>
         </dependency>
+        <dependency>
+            <groupId>org.microemu</groupId>
+            <artifactId>microemu-midp-for-polyglotAda</artifactId>
+            <version>2.0.4</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
         
 
@@ -178,7 +184,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary</includeGroupIds>
+                            <includeGroupIds>org.allbinary,com.google.android,org.microemu</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

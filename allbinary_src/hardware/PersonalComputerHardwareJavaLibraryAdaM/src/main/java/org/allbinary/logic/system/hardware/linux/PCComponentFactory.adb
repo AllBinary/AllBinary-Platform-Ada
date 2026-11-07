@@ -30,6 +30,25 @@ with org.allbinary.logic.system.hardware.components.linux.Unknown_Package; use o
 with org.allbinary.logic.system.hardware.components.linux.Usb_Package; use org.allbinary.logic.system.hardware.components.linux.Usb_Package;
 with org.allbinary.logic.system.hardware.components.linux.Video_Package; use org.allbinary.logic.system.hardware.components.linux.Video_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.system.hardware.components.Component_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.EthernetInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
 
 package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package is
 

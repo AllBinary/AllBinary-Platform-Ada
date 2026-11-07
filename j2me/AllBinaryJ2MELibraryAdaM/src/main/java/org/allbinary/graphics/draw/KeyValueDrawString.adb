@@ -20,6 +20,8 @@ with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.graphics.draw.KeyValueDrawString_Package is
 

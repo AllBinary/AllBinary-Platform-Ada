@@ -15,6 +15,11 @@
 
 with org.allbinary.graphics.opengles.shader.ShaderManager_Package; use org.allbinary.graphics.opengles.shader.ShaderManager_Package;
 with org.allbinary.graphics.opengles.shader.ShaderManager_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.opengles.shader.ShaderManager_Package;
 
 package body org.allbinary.graphics.opengles.shader.LoadedShaderManager_Package is

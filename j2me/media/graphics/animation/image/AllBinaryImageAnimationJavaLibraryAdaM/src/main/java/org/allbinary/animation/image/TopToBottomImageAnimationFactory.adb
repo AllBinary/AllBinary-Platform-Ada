@@ -22,8 +22,12 @@ with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.image.TopToBottomImageAnimation_Package; use org.allbinary.animation.image.TopToBottomImageAnimation_Package;
 with org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.image.ImageAnimation_Package;
 with org.allbinary.animation.image.ImageSegmentAnimation_Package;
+with org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.image.TopToBottomImageAnimation_Package;
 
 package body org.allbinary.animation.image.TopToBottomImageAnimationFactory_Package is

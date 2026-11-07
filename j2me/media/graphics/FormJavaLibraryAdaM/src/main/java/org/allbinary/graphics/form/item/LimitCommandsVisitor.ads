@@ -51,7 +51,7 @@ package org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
    subtype LimitCommandsVisitor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.LimitCommandsVisitor_Package_References.LimitCommandsVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LimitCommandsVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.LimitCommandsVisitor_Package_References."=";
 
-   type LimitCommandsVisitor is new Visitor with record
+   type LimitCommandsVisitor is new Visitor_Package.Visitor with record
       isNotSmallDisplay : Boolean;
    end record;
 

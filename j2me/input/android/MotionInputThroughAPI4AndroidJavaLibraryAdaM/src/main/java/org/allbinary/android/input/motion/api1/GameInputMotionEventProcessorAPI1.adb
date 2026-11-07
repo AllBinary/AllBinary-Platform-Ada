@@ -22,6 +22,13 @@ with org.allbinary.input.motion.MotionRecognizer_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package is
 
@@ -68,7 +75,7 @@ package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcess
    function getInstance return GameInputMotionEventProcessorAPI1_Access is
    begin
         if (GameInputMotionEventProcessorAPI1_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            GameInputMotionEventProcessorAPI1_Package.instance := GameInputMotionEventProcessorAPI1_Package.Create;
+            GameInputMotionEventProcessorAPI1_Package.instance := Java_Object_Access (GameInputMotionEventProcessorAPI1_Package.Create);
         end if;
         return GameInputMotionEventProcessorAPI1_Access (GameInputMotionEventProcessorAPI1_Package.instance);
    end getInstance;

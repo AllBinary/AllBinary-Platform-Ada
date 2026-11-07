@@ -7,6 +7,8 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehavior_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.animation.FillAnimation_Package is
 

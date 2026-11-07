@@ -26,7 +26,11 @@ with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.game.paint.MainGameDemoStatePaintable_Package; use org.allbinary.game.paint.MainGameDemoStatePaintable_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.paint.MainGameDemoStatePaintable_Package;
+with org.allbinary.graphics.paint.StatePaintable_Package;
 
 package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
 

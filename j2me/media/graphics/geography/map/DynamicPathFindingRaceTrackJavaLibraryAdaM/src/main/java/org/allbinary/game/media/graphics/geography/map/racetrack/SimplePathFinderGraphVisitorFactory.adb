@@ -19,7 +19,10 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFa
 with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package_References;
 with org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package; use org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.media.graphics.geography.map.racetrack.SimplePathFinderGraphVisitorFactory_Package is
 

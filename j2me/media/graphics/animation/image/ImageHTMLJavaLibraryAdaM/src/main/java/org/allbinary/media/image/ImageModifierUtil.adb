@@ -20,6 +20,8 @@ with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
 with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
 with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 

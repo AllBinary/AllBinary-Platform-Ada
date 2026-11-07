@@ -28,6 +28,10 @@ with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPos
 with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package; use org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
 with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
 

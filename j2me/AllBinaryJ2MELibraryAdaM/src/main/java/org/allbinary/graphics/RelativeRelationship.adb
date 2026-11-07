@@ -19,6 +19,11 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.GPoint_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.graphics.PointFactory_Package;
 
 package body org.allbinary.graphics.RelativeRelationship_Package is
 

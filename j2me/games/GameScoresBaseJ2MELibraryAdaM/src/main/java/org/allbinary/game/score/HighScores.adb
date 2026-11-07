@@ -21,7 +21,9 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
 with org.allbinary.game.score.HighScore_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.score.HighScore_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.score.HighScores_Package is
 

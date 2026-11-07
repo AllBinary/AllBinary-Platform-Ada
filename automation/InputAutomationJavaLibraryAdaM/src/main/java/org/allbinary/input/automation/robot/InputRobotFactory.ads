@@ -34,7 +34,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.GraphicsEnvironment_Package; use java.awt.GraphicsEnvironment_Package;
 --  with java.util.Collection_Package; use java.util.Collection_Package;
 --  with java.util.Iterator_Package; use java.util.Iterator_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 --  with javax.help.event.HelpSetEvent_Package; use javax.help.event.HelpSetEvent_Package;
 --  with javax.help.event.HelpSetListener_Package; use javax.help.event.HelpSetListener_Package;

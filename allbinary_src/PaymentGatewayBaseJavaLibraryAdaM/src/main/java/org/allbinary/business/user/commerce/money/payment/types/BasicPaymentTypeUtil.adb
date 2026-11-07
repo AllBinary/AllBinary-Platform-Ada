@@ -19,6 +19,10 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package; use org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactoryInterface_Package;

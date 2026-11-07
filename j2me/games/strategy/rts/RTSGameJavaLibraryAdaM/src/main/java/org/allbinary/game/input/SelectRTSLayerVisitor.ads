@@ -51,7 +51,7 @@ package org.allbinary.game.input.SelectRTSLayerVisitor_Package is
    subtype SelectRTSLayerVisitor_Access_Array_Access_Array_Access is org.allbinary.game.input.SelectRTSLayerVisitor_Package_References.SelectRTSLayerVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SelectRTSLayerVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.SelectRTSLayerVisitor_Package_References."=";
 
-   type SelectRTSLayerVisitor is new Visitor with null record;
+   type SelectRTSLayerVisitor is new Visitor_Package.Visitor with null record;
 
    procedure Initialize (This : in out SelectRTSLayerVisitor'Class);
    function Create return SelectRTSLayerVisitor_Access;

@@ -23,7 +23,16 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package is
 
@@ -99,7 +108,7 @@ package body org.allbinary.input.automation.osgi.InputAutomationServiceFactory_P
       registration : constant ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationServiceFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getService"));
-        return InputAutomationJFrame_Package.getInstance;
+        return Java_Object_Access (InputAutomationJFrame_Package.getInstance);
    end getService;
 
    procedure ungetService (This : in out InputAutomationServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class; service_Param : access Java_Object'Class) is

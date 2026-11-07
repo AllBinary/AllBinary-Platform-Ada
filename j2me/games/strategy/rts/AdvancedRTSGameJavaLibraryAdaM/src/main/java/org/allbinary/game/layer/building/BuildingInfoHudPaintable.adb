@@ -36,14 +36,28 @@ with org.allbinary.game.layer.building.EfficiencyNumberStringHud_Package; use or
 with org.allbinary.game.layer.building.HealthNumberStringHud_Package; use org.allbinary.game.layer.building.HealthNumberStringHud_Package;
 with org.allbinary.game.layer.building.MaxHealthNumberStringHud_Package; use org.allbinary.game.layer.building.MaxHealthNumberStringHud_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package; use org.allbinary.game.layer.building.BuildingLayer_Package;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.layer.building.EfficiencyNumberStringHud_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.layer.building.HealthNumberStringHud_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.game.layer.building.MaxHealthNumberStringHud_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.layer.building.ProductivityNumberStringHud_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package is
 

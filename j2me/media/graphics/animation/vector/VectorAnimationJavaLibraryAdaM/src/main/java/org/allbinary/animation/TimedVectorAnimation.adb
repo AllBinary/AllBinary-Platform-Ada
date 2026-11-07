@@ -20,6 +20,7 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehavior_Package_References;
+with org.allbinary.time.GameTickTimeDelayHelper_Package;
 
 package body org.allbinary.animation.TimedVectorAnimation_Package is
 

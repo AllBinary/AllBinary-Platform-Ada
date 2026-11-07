@@ -130,10 +130,10 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
                 childNode := nodeList.item (index);
                 if (childNode.getNodeName.compareTo (ImageActionScriptOutputData_Package.SAVE)) = (0) then
                     booleanString := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    ImageActionScriptOutput'Class (This).setSaved (booleanString.booleanValue);
+                    ImageActionScriptOutput'Class (This).setSaved (Java_Equals_Ignore_Case (booleanString, To_Unbounded_String ("true")));
                 elsif (childNode.getNodeName.compareTo (ImageActionScriptOutputData_Package.DISPLAY)) = (0) then
                     booleanString := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    ImageActionScriptOutput'Class (This).setSaved (booleanString.booleanValue);
+                    ImageActionScriptOutput'Class (This).setSaved (Java_Equals_Ignore_Case (booleanString, To_Unbounded_String ("true")));
                 elsif (childNode.getNodeName.compareTo (ImageActionScriptOutputData_Package.TYPES)) = (0) then
                     ImageActionScriptOutput'Class (This).setImageTypes (ImageTypes_Package.Create (childNode));
                 else

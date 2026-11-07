@@ -26,6 +26,9 @@ with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
 
 package body org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package is
 

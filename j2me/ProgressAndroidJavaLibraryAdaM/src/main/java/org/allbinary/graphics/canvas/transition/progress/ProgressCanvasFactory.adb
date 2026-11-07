@@ -22,7 +22,11 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package; use org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
+with org.allbinary.thread.ARunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package is
 
@@ -71,7 +75,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFac
    function getInstance return ProgressCanvas_Access is
    begin
         if (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN := AndroidBasicTitleProgressBar_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE);
+            ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN := Java_Object_Access (AndroidBasicTitleProgressBar_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ProgressCanvas_Access (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN);
    end getInstance;

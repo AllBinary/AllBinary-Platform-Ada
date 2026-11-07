@@ -20,9 +20,12 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.data.resource.ClassLoader_Package; use org.allbinary.data.resource.ClassLoader_Package;
-with org.allbinary.data.resource.ClassLoader_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.data.resource.ResourceUtil_Package is
 
@@ -41,16 +44,6 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
-   subtype ClassLoader_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access;
-   function "=" (Left, Right : ClassLoader_Access) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.resource.ClassLoader_Package_References."=";
    procedure Initialize_Fields (This : in out ResourceUtil'Class) is
    begin
       null;
@@ -85,7 +78,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
       classLoader : constant ClassLoader_Access := ClassLoader_Access (classLoader_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Resource Loader: ")).append (To_Unbounded_String (Ada.Tags.Expanded_Name (classLoader.all'Tag))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setClassLoader"));
-        ResourceUtil_Package.classLoader := classLoader;
+        ResourceUtil_Package.classLoader := Java_Object_Access (classLoader);
    end setClassLoader;
 
    --  throws Exception

@@ -24,6 +24,10 @@ with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.w3c.dom.NodeList_Package_References;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package;
 
 package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package is

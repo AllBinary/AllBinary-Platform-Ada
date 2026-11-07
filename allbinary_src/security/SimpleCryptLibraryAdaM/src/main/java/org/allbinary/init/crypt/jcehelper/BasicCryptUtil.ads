@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 limited with org.allbinary.TsUtil_Package;
 with org.allbinary.TsUtil_Package_References;

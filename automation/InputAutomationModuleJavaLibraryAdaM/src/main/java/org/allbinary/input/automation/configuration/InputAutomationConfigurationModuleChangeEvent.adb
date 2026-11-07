@@ -15,6 +15,7 @@
 
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 
 package body org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package is

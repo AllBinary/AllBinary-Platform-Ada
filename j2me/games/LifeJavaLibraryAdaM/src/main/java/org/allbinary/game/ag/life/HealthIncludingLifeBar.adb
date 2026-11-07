@@ -28,6 +28,9 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
 with org.allbinary.game.ag.life.Life_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.ag.life.Life_Package;
 with org.allbinary.game.ag.life.LifeInterface_Package;
 

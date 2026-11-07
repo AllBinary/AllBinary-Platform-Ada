@@ -19,6 +19,9 @@ with org.allbinary.time.NoTimeDelayHelper_Package; use org.allbinary.time.NoTime
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.ag.ai.InputProbability_Package; use org.allbinary.game.ag.ai.InputProbability_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package is
 

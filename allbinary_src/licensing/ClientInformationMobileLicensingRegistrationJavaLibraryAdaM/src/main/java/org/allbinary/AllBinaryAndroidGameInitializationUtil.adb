@@ -49,9 +49,9 @@ package body org.allbinary.AllBinaryAndroidGameInitializationUtil_Package is
         resourceUtil := ResourceUtil_Package.getInstance;
         androidResources := AndroidResources_Package.getInstance;
         licenseInitInfoUtil := LicenseInitInfoUtil_Package.getInstance;
-        resourceUtil.addResource (licenseInitInfoUtil.INITFILENAME, To_Unbounded_String (Java_Image (androidResources.raw.licenseinitdata)));
-        resourceUtil.addResource (PartnerIdentifierFileUtil_Package.getInstance.FILE_NAME, To_Unbounded_String (Java_Image (androidResources.raw.partner)));
-        resourceUtil.addResource (licenseInitInfoUtil.ABOUT, To_Unbounded_String (Java_Image (androidResources.raw.about)));
+        resourceUtil.addResource (licenseInitInfoUtil.INITFILENAME, Integer (androidResources.raw.licenseinitdata));
+        resourceUtil.addResource (PartnerIdentifierFileUtil_Package.getInstance.FILE_NAME, Integer (androidResources.raw.partner));
+        resourceUtil.addResource (licenseInitInfoUtil.ABOUT, Integer (androidResources.raw.about));
    end init;
 
 end org.allbinary.AllBinaryAndroidGameInitializationUtil_Package;

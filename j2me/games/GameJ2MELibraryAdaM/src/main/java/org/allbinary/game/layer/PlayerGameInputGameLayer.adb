@@ -26,6 +26,19 @@ with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.view.StaticViewPosition_Package; use org.allbinary.view.StaticViewPosition_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
 
 package body org.allbinary.game.layer.PlayerGameInputGameLayer_Package is
 

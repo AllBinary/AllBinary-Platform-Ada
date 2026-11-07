@@ -18,7 +18,10 @@ with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; 
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References;
 
 package body org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_Package is

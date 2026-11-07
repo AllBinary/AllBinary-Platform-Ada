@@ -15,12 +15,23 @@
 
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package is

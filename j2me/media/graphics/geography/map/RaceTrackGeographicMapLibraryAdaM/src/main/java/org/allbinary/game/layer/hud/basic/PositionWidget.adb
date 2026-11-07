@@ -20,6 +20,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColor_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
 

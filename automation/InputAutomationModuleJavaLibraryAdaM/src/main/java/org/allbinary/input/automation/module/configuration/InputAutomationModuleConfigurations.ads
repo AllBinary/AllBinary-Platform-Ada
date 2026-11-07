@@ -31,7 +31,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.File_Package; use java.io.File_Package;
---  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;

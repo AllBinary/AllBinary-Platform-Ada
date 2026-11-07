@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Comparator_Package; use java.util.Comparator_Package;
 
 package body org.allbinary.business.category.store.theme.ThemeComparator_Package is
 

@@ -24,8 +24,22 @@ with org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package; use org
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package_References;
 
 package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
@@ -104,7 +118,7 @@ package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
             pixelDelta := PixelDelta_Access (vector.get (index));
             if org.allbinary.media.image.comparison.color.ColorDelta_Package_References."=" (pixelDelta.getColorDelta, null) then
                 Ada.Text_IO.Put (Java_Image (To_Unbounded_String ("ColorDelta")));
-                System_Package.exit_Id (0);
+                Java_Exit (0);
             end if;
             bufferedImageCacheables (0).getBufferedImage.setRGB (pixelDelta.getPoint.getX, pixelDelta.getPoint.getY, pixelDelta.getColorDelta.getRgb1);
             bufferedImageCacheables (1).getBufferedImage.setRGB (pixelDelta.getPoint.getX, pixelDelta.getPoint.getY, pixelDelta.getColorDelta.getRgb2);

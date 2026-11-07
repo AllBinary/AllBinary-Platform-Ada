@@ -29,6 +29,9 @@ with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
 
 package body org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package is
 

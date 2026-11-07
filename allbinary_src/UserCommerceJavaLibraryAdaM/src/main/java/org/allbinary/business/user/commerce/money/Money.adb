@@ -116,7 +116,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
 
    procedure multiply (This : in out Money; multiplier : Float) is
    begin
-        This.units := (Float (Long_Long_Integer (This.units))) * (Float (multiplier)).longValue;
+        This.units := Long_Long_Integer ((Float (Long_Long_Integer (This.units))) * (Float (multiplier)));
    end multiply;
 
    procedure multiply (This : in out Money; multiplier : Integer) is
@@ -133,12 +133,12 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
         if (Java_Compare_To (currency, This.DEFAULT_CURRENCY)) = (0) then
             dollar := (Long_Long_Integer (This.units)) / (100);
             cents := (Long_Long_Integer (This.units)) - (((dollar) * (100)));
-            stringBuffer.append (dollar.toString);
+            stringBuffer.append (To_Unbounded_String (Java_Image (dollar)));
             stringBuffer.append (AbPathData_Package.getInstance.EXTENSION_SEP);
             if (cents) < (10) then
                 stringBuffer.append (CommonPhoneStrings_Package.getInstance.ZERO);
             end if;
-            stringBuffer.append (cents.toString);
+            stringBuffer.append (To_Unbounded_String (Java_Image (cents)));
         end if;
         return stringBuffer.toString;
    end convertUnitsTo;
@@ -162,8 +162,8 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
             dollarStr := Java_New_String (Unbounded_Slice (usDollarStr, (0) + 1, index));
             centsStr := Java_New_String (Unbounded_Slice (usDollarStr, ((index) + (1)) + 1, Ada.Strings.Unbounded.Length (usDollarStr)));
         end if;
-        localUnit := (dollarStr.longValue) * (100).longValue;
-        localUnit := (localUnit) + (centsStr.longValue);
+        localUnit := Long_Long_Integer ((Long_Long_Integer (Long_Long_Integer'Value (To_String (dollarStr)))) * (100));
+        localUnit := (localUnit) + (Long_Long_Integer (Long_Long_Integer'Value (To_String (centsStr))));
         return localUnit;
    end convertUsdToUnits;
 

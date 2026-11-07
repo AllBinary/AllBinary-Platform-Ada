@@ -19,6 +19,7 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 with org.allbinary.graphics.color.BasicColorFactory_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayer_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
 
 package body org.allbinary.game.health.HealthBarAnimation_Package is
 

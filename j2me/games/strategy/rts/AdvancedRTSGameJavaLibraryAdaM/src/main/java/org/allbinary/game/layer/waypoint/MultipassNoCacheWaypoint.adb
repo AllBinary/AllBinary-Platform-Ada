@@ -47,11 +47,36 @@ with org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package; u
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
@@ -263,7 +288,7 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
             geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.allBinaryGameLayerManagerP);
             geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
             list := PathGenerator_Package.getInstance.createN (geographicMapInterface, pathFindingInfo, 2, multipassState);
-            if ((list) /= (null)) and then ((list) /= (BasicArrayListUtil_Package.getInstance.getImmutableInstance)) then
+            if ((list) /= (null)) and then ((Java_Object_Access (list)) /= (Java_Object_Access (BasicArrayListUtil_Package.getInstance.getImmutableInstance))) then
                 if (list.size) < (1) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Path may have been cleared by clearing caching")));
                 end if;

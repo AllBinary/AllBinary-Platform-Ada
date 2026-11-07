@@ -19,6 +19,8 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package is
 

@@ -38,6 +38,10 @@ with org.allbinary.image.opengles.OpenGLESImage_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
@@ -151,7 +155,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            if (This.fontImage) = (OpenGLESImage_Package.NULL_OPENGL_IMAGE) then
+            if (Java_Object_Access (This.fontImage)) = (Java_Object_Access (OpenGLESImage_Package.NULL_OPENGL_IMAGE)) then
                 canvasStrings := CanvasStrings_Package.getInstance;
                 openGLCapabilities := OpenGLCapabilities_Package.getInstance;
                 if (openGLCapabilities.isTextureSizeValid (1024)) and then ((This.scale) = (2)) then

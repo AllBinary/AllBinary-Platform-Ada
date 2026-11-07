@@ -30,10 +30,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Comparator_Package; use java.util.Comparator_Package;
+with java.util.Comparator_Package; use java.util.Comparator_Package;
 
 package org.allbinary.logic.control.sort.StringComparator_Package is
 
+   package Comparator_Package renames Standard.java.util.Comparator_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;
@@ -50,7 +51,7 @@ package org.allbinary.logic.control.sort.StringComparator_Package is
    subtype StringComparator_Access_Array_Access_Array_Access is org.allbinary.logic.control.sort.StringComparator_Package_References.StringComparator_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StringComparator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.sort.StringComparator_Package_References."=";
 
-   type StringComparator is new Java_Object with null record;
+   type StringComparator is new Java_Object and Comparator with null record;
 
    procedure Initialize (This : in out StringComparator'Class);
    function Create return StringComparator_Access;

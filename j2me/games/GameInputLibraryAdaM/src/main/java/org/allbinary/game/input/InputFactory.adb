@@ -22,7 +22,13 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.Input_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.input.Input_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.InputFactory_Package is
 
@@ -75,7 +81,7 @@ package body org.allbinary.game.input.InputFactory_Package is
    function getInstance return InputFactory_Access is
    begin
         if (InputFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            InputFactory_Package.instance := InputFactory_Package.Create;
+            InputFactory_Package.instance := Java_Object_Access (InputFactory_Package.Create);
         end if;
         return InputFactory_Access (InputFactory_Package.instance);
    end getInstance;

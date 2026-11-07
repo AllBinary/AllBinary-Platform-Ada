@@ -63,7 +63,7 @@ package body org.allbinary.game.identification.BasicGroupFactory_Package is
    function getInstance return BasicGroupFactory_Access is
    begin
         if (BasicGroupFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            BasicGroupFactory_Package.instance := BasicGroupFactory_Package.Create;
+            BasicGroupFactory_Package.instance := Java_Object_Access (BasicGroupFactory_Package.Create);
         end if;
         return BasicGroupFactory_Access (BasicGroupFactory_Package.instance);
    end getInstance;

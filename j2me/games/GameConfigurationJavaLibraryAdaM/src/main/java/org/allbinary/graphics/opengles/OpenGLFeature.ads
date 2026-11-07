@@ -51,7 +51,7 @@ package org.allbinary.graphics.opengles.OpenGLFeature_Package is
    subtype OpenGLFeature_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.OpenGLFeature_Package_References.OpenGLFeature_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OpenGLFeature_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.OpenGLFeature_Package_References."=";
 
-   type OpenGLFeature is new Feature with null record;
+   type OpenGLFeature is new Feature_Package.Feature with null record;
 
    procedure Initialize (This : in out OpenGLFeature'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return OpenGLFeature_Access;

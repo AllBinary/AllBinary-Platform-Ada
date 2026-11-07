@@ -19,6 +19,10 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package; use org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
 with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
 
 package body org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is

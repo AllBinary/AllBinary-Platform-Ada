@@ -25,6 +25,16 @@ with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
 with playn.core.PlayN_Package; use playn.core.PlayN_Package;
 with playn.html.HtmlGraphics_Package; use playn.html.HtmlGraphics_Package;
 with playn.html.HtmlImage_Package; use playn.html.HtmlImage_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 

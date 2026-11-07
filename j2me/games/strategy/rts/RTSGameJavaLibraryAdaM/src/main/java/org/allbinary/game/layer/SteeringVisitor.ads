@@ -64,7 +64,7 @@ package org.allbinary.game.layer.SteeringVisitor_Package is
    subtype SteeringVisitor_Access_Array_Access_Array_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SteeringVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SteeringVisitor_Package_References."=";
 
-   type SteeringVisitor is new Visitor with record
+   type SteeringVisitor is new Visitor_Package.Visitor with record
       list : BasicArrayList_Access;
    end record;
 

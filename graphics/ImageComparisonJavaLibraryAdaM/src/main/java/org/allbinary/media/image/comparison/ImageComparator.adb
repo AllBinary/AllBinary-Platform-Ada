@@ -26,10 +26,23 @@ with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Pa
 with org.allbinary.media.image.comparison.Color_Package; use org.allbinary.media.image.comparison.Color_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.comparison.ImageComparator_Package is
 
@@ -110,10 +123,10 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
             rgb1 := imageComparisonInfo.getBufferedImages (0).getRGB (point.getX, point.getY);
             rgb2 := imageComparisonInfo.getBufferedImages (1).getRGB (point.getX, point.getY);
             automaticCacheInterface := AutomaticCacheInterface_Access (ColorCacheFactory_Package.getInstance);
-            colorInteger := To_Unbounded_String (Java_Image (rgb1));
+            colorInteger := Integer (rgb1);
             colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
             color := colorCacheable.getColor;
-            colorInteger2 := To_Unbounded_String (Java_Image (rgb2));
+            colorInteger2 := Integer (rgb2);
             colorCacheable2 := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
             color2 := colorCacheable.getColor;
             if (This.imageComparatorConstraintsInterface.isColorAllowed (0, point, color)) or else (This.imageComparatorConstraintsInterface.isColorAllowed (1, point, color2)) then

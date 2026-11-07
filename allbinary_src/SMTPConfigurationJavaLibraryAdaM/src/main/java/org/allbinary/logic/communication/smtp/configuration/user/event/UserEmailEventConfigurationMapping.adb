@@ -22,6 +22,10 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package_References;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
 
 package body org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationMapping_Package is

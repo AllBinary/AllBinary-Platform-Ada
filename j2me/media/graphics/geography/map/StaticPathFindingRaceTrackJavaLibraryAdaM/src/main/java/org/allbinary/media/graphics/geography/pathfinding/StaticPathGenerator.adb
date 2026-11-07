@@ -37,6 +37,15 @@ with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory_Package; use org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenerator_Package is
 
@@ -191,7 +200,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenera
             pathCacheFactory := PathCacheFactory_Package.getInstance;
             mapIdInteger := geographicMapInterface.getAllBinaryTiledLayer.getDataId;
             list := pathCacheFactory.getOrCreate (mapIdInteger);
-            if (list) = (This.basicArrayListUtil.getImmutableInstance) then
+            if (Java_Object_Access (list)) = (Java_Object_Access (This.basicArrayListUtil.getImmutableInstance)) then
                 list := BasicArrayList_Access (BasicArrayListD_Package.Create);
                 smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
                 geographicMapCellPositionFactory := geographicMapInterface.getGeographicMapCellPositionFactory;

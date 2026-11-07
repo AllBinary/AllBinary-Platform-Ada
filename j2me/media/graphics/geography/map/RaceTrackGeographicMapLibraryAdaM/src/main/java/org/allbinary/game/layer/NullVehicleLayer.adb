@@ -29,6 +29,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.layer.VehicleProperties_Package; use org.allbinary.game.layer.VehicleProperties_Package;
 with org.allbinary.game.layer.VehicleProperties_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.layer.VehicleFrictionProperties_Package;
 with org.allbinary.game.layer.VehicleProperties_Package;
 with org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package;

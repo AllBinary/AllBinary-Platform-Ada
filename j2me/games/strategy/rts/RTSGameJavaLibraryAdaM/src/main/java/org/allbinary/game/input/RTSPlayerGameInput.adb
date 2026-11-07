@@ -72,14 +72,30 @@ with org.allbinary.game.input.RTSPlayerLeftGameInputProcessor_Package; use org.a
 with org.allbinary.game.input.RTSPlayerRightGameInputProcessor_Package; use org.allbinary.game.input.RTSPlayerRightGameInputProcessor_Package;
 with org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package; use org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package;
 with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
 with org.allbinary.game.layer.capital.Capital_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
+with org.allbinary.graphics.paint.InitUpdatePaintable_Package;
 with org.allbinary.game.input.LayerPositionFinderInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
 with org.allbinary.game.layer.NullPathFindingLayer_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package;
 with org.allbinary.game.layer.RTSInterface_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
@@ -87,9 +103,13 @@ with org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package;
 with org.allbinary.game.input.RTSPlayerGameInputProcessor_Package;
 with org.allbinary.game.input.RTSPlayerLeftGameInputProcessor_Package;
 with org.allbinary.game.input.RTSPlayerRightGameInputProcessor_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -460,10 +480,10 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
         x := (point.getX) + (allBinaryTiledLayer.getXP);
         y := (point.getY) + (allBinaryTiledLayer.getYP);
         geographicMapCellPosition := geographicMapInterface.getCellPositionAtXYNoThrow (x, y);
-        if (geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
+        if (Java_Object_Access (geographicMapCellPosition)) /= (Java_Object_Access (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
             SecondaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
             layer := This.layerPositionFinderInterface.getLayerInterface (geographicMapCellPosition);
-            if (layer) = (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER) then
+            if (Java_Object_Access (layer)) = (Java_Object_Access (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER)) then
                 layer := CollidableDestroyableDamageableLayer_Package.getNullInstance;
             else
                 geographicMapCellPosition := geographicMapInterface.getCellPositionAtXY (layer.getXP, layer.getYP);
@@ -512,7 +532,7 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
                 height := rtsLayer.getHeight;
                 graphics.drawRect ((rtsLayer.getXP) - (allBinaryTiledLayer.getXP), (rtsLayer.getYP) - (allBinaryTiledLayer.getYP), width, height);
             end loop;
-        elsif (geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
+        elsif (Java_Object_Access (geographicMapCellPosition)) /= (Java_Object_Access (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
             point := geographicMapCellPosition.getPoint;
             width := allBinaryTiledLayer.getCellWidth;
             height := allBinaryTiledLayer.getCellHeight;

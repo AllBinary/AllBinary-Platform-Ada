@@ -19,6 +19,15 @@ with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.configuration.ApplicationConfiguration_Package is
 
@@ -70,7 +79,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
    function getInstance return ApplicationConfiguration_Access is
    begin
         if (ApplicationConfiguration_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            ApplicationConfiguration_Package.instance := ApplicationConfiguration_Package.Create;
+            ApplicationConfiguration_Package.instance := Java_Object_Access (ApplicationConfiguration_Package.Create);
         end if;
         return ApplicationConfiguration_Access (ApplicationConfiguration_Package.instance);
    end getInstance;
@@ -191,7 +200,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
       features : Features_Access;
    begin
-        if (gameFeature) = (MainFeatureFactory_Package.getInstance.FULL_SCREEN) then
+        if (Java_Object_Access (gameFeature)) = (Java_Object_Access (MainFeatureFactory_Package.getInstance.FULL_SCREEN)) then
             features := Features_Package.getInstance;
             if features.isFeature (gameFeature) then
                 if not (ApplicationConfiguration'Class (This).isFullscreen) then

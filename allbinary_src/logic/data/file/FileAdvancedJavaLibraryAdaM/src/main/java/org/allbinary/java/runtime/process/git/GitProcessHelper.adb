@@ -25,6 +25,13 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.java.runtime.process.git.ProcessBuilder_Package; use org.allbinary.java.runtime.process.git.ProcessBuilder_Package;
 with org.allbinary.java.runtime.process.git.Process_Package; use org.allbinary.java.runtime.process.git.Process_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
 

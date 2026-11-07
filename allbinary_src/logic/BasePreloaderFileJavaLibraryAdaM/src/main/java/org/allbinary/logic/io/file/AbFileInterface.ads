@@ -30,12 +30,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.FilenameFilter_Package; use java.io.FilenameFilter_Package;
+with java.io.FilenameFilter_Package; use java.io.FilenameFilter_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.net.URI_Package; use java.net.URI_Package;
+with java.net.URI_Package; use java.net.URI_Package;
 
 package org.allbinary.logic.io.file.AbFileInterface_Package is
 
+   package FilenameFilter_Package renames Standard.java.io.FilenameFilter_Package;
+   package URI_Package renames Standard.java.net.URI_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;

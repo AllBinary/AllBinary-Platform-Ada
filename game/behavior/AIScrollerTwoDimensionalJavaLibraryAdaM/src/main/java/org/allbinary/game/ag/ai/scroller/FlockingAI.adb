@@ -29,7 +29,11 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package; use org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
 
@@ -139,7 +143,7 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
             end if;
         end loop;
         if (maxDistance) > (This.allowedDistance) then
-            if (farAllbinaryLayer) /= (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER) then
+            if (Java_Object_Access (farAllbinaryLayer)) /= (Java_Object_Access (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER)) then
                 ownerLayerInterface := FlockingAI'Class (This).getOwnerLayerInterface;
                 if (farAllbinaryLayer.getXP) < (ownerLayerInterface.getXP) then
                     FlockingAI'Class (This).processKeyAI (Canvas_Package.LEFT);

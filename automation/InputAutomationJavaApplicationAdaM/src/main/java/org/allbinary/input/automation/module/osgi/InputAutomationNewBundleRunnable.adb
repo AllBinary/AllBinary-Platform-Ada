@@ -14,7 +14,9 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
 with org.osgi.framework.Bundle_Package_References;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
@@ -35,11 +37,27 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FileInputStream_Package renames Standard.java.io.FileInputStream_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
    package Constants_Package renames Standard.org.osgi.framework.Constants_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
@@ -263,7 +281,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    function findNewModules (This : in out InputAutomationNewBundleRunnable) return BasicArrayList_Access is
       vector : BasicArrayList_Access;
       hashMap : HashMap_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       symbolicNameArray : Java_Object_Access_Array_Access;
       size : Integer;
       symbolicName : Unbounded_String;

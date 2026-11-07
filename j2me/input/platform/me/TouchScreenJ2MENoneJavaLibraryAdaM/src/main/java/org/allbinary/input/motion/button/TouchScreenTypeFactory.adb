@@ -40,12 +40,12 @@ package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
         return TouchScreenTypeFactory_Access (TouchScreenTypeFactory_Package.instance);
    end getInstance;
 
-   procedure TouchScreenTypeFactory (This : in out TouchScreenTypeFactory) is
+   procedure TouchScreenTypeFactory_Method (This : in out TouchScreenTypeFactory) is
       touchScreenFactory : TouchScreenFactory_Access;
    begin
         touchScreenFactory := TouchScreenFactory_Package.getInstance;
         touchScreenFactory.setTouch (False);
-   end TouchScreenTypeFactory;
+   end TouchScreenTypeFactory_Method;
 
 begin
    null;

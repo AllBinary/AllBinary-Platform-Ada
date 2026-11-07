@@ -33,13 +33,13 @@ with AllBinary_Java; use AllBinary_Java;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
-limited with org.allbinary.data.resource.ClassLoader_Package;
-with org.allbinary.data.resource.ClassLoader_Package_References;
+with java.lang.ClassLoader_Package; use java.lang.ClassLoader_Package;
 
 package org.allbinary.data.resource.ResourceUtil_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ClassLoader_Package renames Standard.java.lang.ClassLoader_Package;
    package Reference_Types is
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    use type LogUtil_Access;
@@ -51,16 +51,6 @@ package org.allbinary.data.resource.ResourceUtil_Package is
    use type LogUtil_Access_Array_Access_Array;
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    use type LogUtil_Access_Array_Access_Array_Access;
-   subtype ClassLoader_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access;
-   use type ClassLoader_Access;
-   subtype ClassLoader_Access_Array is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array;
-   use type ClassLoader_Access_Array;
-   subtype ClassLoader_Access_Array_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
-   use type ClassLoader_Access_Array_Access;
-   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
-   use type ClassLoader_Access_Array_Access_Array;
-   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.data.resource.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
-   use type ClassLoader_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

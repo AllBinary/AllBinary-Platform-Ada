@@ -19,6 +19,9 @@ with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game
 with org.allbinary.game.input.event.GameKeyEvent_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
 
 package body org.allbinary.game.layer.special.SpecialGameInput_Package is
 

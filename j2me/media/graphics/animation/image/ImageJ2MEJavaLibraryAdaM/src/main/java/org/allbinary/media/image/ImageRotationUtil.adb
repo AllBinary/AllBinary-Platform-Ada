@@ -16,6 +16,8 @@
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.media.image.ImageRotationUtil_Package is
 

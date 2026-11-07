@@ -34,9 +34,9 @@ package body org.allbinary.game.layer.geological.resources.GeologicalGameResourc
    function getInstance return BasicGameResources_Access is
    begin
         if (GeologicalGameResources_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            GeologicalGameResources_Package.instance := GeologicalGameResources_Package.Create;
+            GeologicalGameResources_Package.instance := Java_Object_Access (GeologicalGameResources_Package.Create);
         end if;
-        return GeologicalGameResources_Access (GeologicalGameResources_Package.instance);
+        return BasicGameResources_Access (GeologicalGameResources_Access (GeologicalGameResources_Package.instance));
    end getInstance;
 
    procedure Initialize (This : in out GeologicalGameResources'Class) is

@@ -34,11 +34,22 @@ with org.allbinary.logic.communication.sql.SqlTypeStrings_Package_References;
 with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
 with org.allbinary.logic.communication.sql.SqlStrings_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
-with org.allbinary.logic.communication.sql.ClassLoader_Package; use org.allbinary.logic.communication.sql.ClassLoader_Package;
+with java.lang.ClassLoader_Package; use java.lang.ClassLoader_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
 
    package Thread_Package renames Standard.java.lang.Thread_Package;
+   package ClassLoader_Package renames Standard.java.lang.ClassLoader_Package;
    subtype DatabaseConnectionInfoInterface_Access is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access;
    function "=" (Left, Right : DatabaseConnectionInfoInterface_Access) return Boolean renames org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References."=";
    subtype DatabaseConnectionInfoInterface_Access_Array is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access_Array;

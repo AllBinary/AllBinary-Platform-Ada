@@ -24,6 +24,15 @@ with views.admin.inventory.InventoryItemView_Package; use views.admin.inventory.
 with views.admin.inventory.InventoryItemView_Package_References;
 with views.admin.inventory.download.DownloadableInventoryItemView_Package; use views.admin.inventory.download.DownloadableInventoryItemView_Package;
 with views.admin.inventory.download.DownloadableInventoryItemView_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with taghelpers.ViewHelper_Package;
 
 package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is

@@ -39,6 +39,16 @@ with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.
 with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.data.tables.user.UserEntity_Package is
 
@@ -285,7 +295,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
             result := AbSqlBean_Package.AbSqlBean (This).getField (UserData_Package.USERNAME, userName, UserData_Package.PASSWORD);
             encryption := AbSqlBean_Package.AbSqlBean (This).getField (UserData_Package.USERNAME, userName, EntryData_Package.getInstance.ENCRYPTION);
             if ((encryption) /= (Null_Unbounded_String)) and then ((Java_Compare_To (encryption, This.stringUtil.EMPTY_STRING)) /= (0)) then
-                isUserNameAndPasswordCorrect := Java_Compare_To (result, SuperCrypt_Package.Create (encryption.intValue).encrypt (password));
+                isUserNameAndPasswordCorrect := Java_Compare_To (result, SuperCrypt_Package.Create (Integer (Integer'Value (To_String (encryption)))).encrypt (password));
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (To_Unbounded_String ("Command Success but login failed for user: ") & userName & To_Unbounded_String (" because user did not exist"), UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"));
@@ -310,7 +320,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                     stringBuffer.append (This.COMMAND_SUCCESS_BUT_LOGIN_FAILED);
                     stringBuffer.append (userName);
                     stringBuffer.append (This.INVALID_PASSWORD_LABEL);
-                    stringBuffer.append (SuperCrypt_Package.Create (encryption.intValue).encrypt (password));
+                    stringBuffer.append (SuperCrypt_Package.Create (Integer (Integer'Value (To_String (encryption)))).encrypt (password));
                     stringBuffer.append (This.NOT_EQUAL);
                     stringBuffer.append (result);
                     stringBuffer.append (This.END_QUOTES);

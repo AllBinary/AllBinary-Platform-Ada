@@ -19,6 +19,8 @@ with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animati
 with org.allbinary.animation.IndexedAnimation_Package_References;
 with org.allbinary.image.AnimationFrameToImageUtil_Package; use org.allbinary.image.AnimationFrameToImageUtil_Package;
 with org.allbinary.image.AnimationFrameToImageUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
 

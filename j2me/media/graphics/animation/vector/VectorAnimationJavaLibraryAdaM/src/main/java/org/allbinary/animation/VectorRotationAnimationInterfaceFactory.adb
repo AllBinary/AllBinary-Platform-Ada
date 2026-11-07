@@ -24,6 +24,7 @@ with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.VectorRotationAnimation_Package; use org.allbinary.animation.VectorRotationAnimation_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.Animation_Package_References;
+with org.allbinary.math.Angle_Package;
 with org.allbinary.animation.VectorRotationAnimation_Package;
 
 package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Package is

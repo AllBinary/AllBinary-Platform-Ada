@@ -43,7 +43,21 @@ with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.in
 with org.allbinary.game.input.PlayerGameInput_Package_References;
 with org.allbinary.game.input.MapSelectionRunnable_Package; use org.allbinary.game.input.MapSelectionRunnable_Package;
 with org.allbinary.game.input.GameInputProcessorComposite_Package; use org.allbinary.game.input.GameInputProcessorComposite_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.game.input.MapSelectionRunnable_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.thread.PriorityRunnable_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
 
@@ -282,7 +296,21 @@ with org.allbinary.game.input.PlayerGameInput_Package_References;
 with org.allbinary.game.input.MapSelectionGameInputProcessor_Package; use org.allbinary.game.input.MapSelectionGameInputProcessor_Package;
 with org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References;
 with org.allbinary.game.input.GameInputProcessorComposite_Package; use org.allbinary.game.input.GameInputProcessorComposite_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.game.input.MapSelectionGameInputProcessor_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.thread.PriorityRunnable_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.MapSelectionRunnable_Package is
 

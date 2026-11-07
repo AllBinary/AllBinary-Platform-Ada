@@ -30,6 +30,10 @@ with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package;
 

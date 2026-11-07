@@ -41,7 +41,81 @@ with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.displayable.canvas.CommandRunnable_Package; use org.allbinary.game.displayable.canvas.CommandRunnable_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.graphics.displayable.BaseScalable_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with javax.microedition.lcdui.CommandListener_Package;
 with org.allbinary.game.displayable.canvas.CommandRunnable_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.microemu.DisplayAccess_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with javax.microedition.lcdui.Displayable_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with javax.microedition.lcdui.Form_Package;
+with org.microemu.device.ui.FormUI_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.allbinary.game.configuration.feature.InputFeature_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with javax.microedition.midlet.MIDlet_Package;
+with org.microemu.MIDletAccess_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.microemu.device.MutableImage_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.graphics.displayable.ScalableListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with org.allbinary.media.audio.Sound_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.input.TouchJ2ME_Package;
+with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package is
 
@@ -170,12 +244,12 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
         This.logUtil.putF (command.toString, CommandFormInputProcessor_Access'(This'Unchecked_Access), This.PROCESS_COMMAND);
         features := Features_Package.getInstance;
         openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
-        if ((SWTUtil_Package.isSWT) and then (features.isFeature (openGLFeatureFactory.OPENGL))) and then ((command) /= (GameCommandsFactory_Package.getInstance.EXIT_COMMAND)) then
+        if ((SWTUtil_Package.isSWT) and then (features.isFeature (openGLFeatureFactory.OPENGL))) and then ((Java_Object_Access (command)) /= (Java_Object_Access (GameCommandsFactory_Package.getInstance.EXIT_COMMAND))) then
             CommandRunnable_Package.Create (CommandFormInputProcessor_Access'(This'Unchecked_Access), command).run;
         else
             PrimaryThreadPool_Package.getInstance.runTask (CommandRunnable_Package.Create (CommandFormInputProcessor_Access'(This'Unchecked_Access), command));
         end if;
-        if (command) = (GameCommandsFactory_Package.getInstance.QUIT_COMMAND) then
+        if (Java_Object_Access (command)) = (Java_Object_Access (GameCommandsFactory_Package.getInstance.QUIT_COMMAND)) then
             return -(1);
         else
             return 1;
@@ -247,7 +321,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
    begin
         touchMotionGestureFactory := TouchMotionGestureFactory_Package.getInstance;
         motionGestureInput := motionGestureEvent.getMotionGesture;
-        if (motionGestureInput) = (touchMotionGestureFactory.RELEASED) then
+        if (Java_Object_Access (motionGestureInput)) = (Java_Object_Access (touchMotionGestureFactory.RELEASED)) then
             point := motionGestureEvent.getCurrentPoint;
             if This.form.isInForm (point) then
                 index := This.form.getSelectedIndexForPoint (point);
@@ -273,7 +347,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
                 This.doubleClickTimeHelper.setStartTimeTNT;
             end if;
             This.hasPressed := False;
-        elsif (motionGestureInput) = (touchMotionGestureFactory.PRESSED) then
+        elsif (Java_Object_Access (motionGestureInput)) = (Java_Object_Access (touchMotionGestureFactory.PRESSED)) then
             This.doubleClickTimeHelper.delay_Id := 0;
             This.hasPressed := True;
         end if;

@@ -18,7 +18,10 @@ with org.allbinary.business.category.CategoryData_Package; use org.allbinary.bus
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.business.category.CategoryInterface_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.control.validate.ValidationInterface_Package;
 
 package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package is
@@ -86,7 +89,7 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
    begin
       Initialize_Fields (This);
         levelString := StringUtil_Package.getInstance.getNonNull (Java_Unbox (categoryPropertiesHashMap.get (CategoryData_Package.getInstance.LEVEL)));
-        This.level := To_Unbounded_String (Java_Image (levelString)).intValue;
+        This.level := Integer (Integer'Value (To_String (levelString)));
         CategoryHierarchy'Class (This).setRoot (rootCategoryInterface);
         CategoryHierarchy'Class (This).setParent (parentCategoryInterface);
    end Initialize;

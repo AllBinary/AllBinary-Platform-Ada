@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 
 package body org.allbinary.graphics.paint.NullLocationPaintable_Package is

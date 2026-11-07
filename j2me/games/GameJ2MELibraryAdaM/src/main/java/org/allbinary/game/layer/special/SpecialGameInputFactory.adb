@@ -15,6 +15,10 @@
 
 with org.allbinary.game.layer.special.SpecialGameInput_Package; use org.allbinary.game.layer.special.SpecialGameInput_Package;
 with org.allbinary.game.layer.special.SpecialGameInput_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.game.layer.special.SpecialGameInput_Package;
 with org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
 

@@ -5,6 +5,10 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Screen_Package;
 
 package body org.allbinary.graphics.form.item.ABCustomGaugeItem_Package is
 

@@ -151,19 +151,19 @@ package body org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package is
       imageColorResults : ImageColorResults_Access;
    begin
         imageColorRangeResults := imageAnalysisResults.getImageColorRangeResults;
-        This.matchingPixelsJTextField.setText (imageColorRangeResults.getMatchingPixelsChecked.toString);
-        This.totalPixelsJTextField.setText (imageColorRangeResults.getTotalPixelsChecked.toString);
-        This.percentMatchingJTextField.setText (imageColorRangeResults.getPercent.toString);
+        This.matchingPixelsJTextField.setText (To_Unbounded_String (Java_Image (imageColorRangeResults.getMatchingPixelsChecked)));
+        This.totalPixelsJTextField.setText (To_Unbounded_String (Java_Image (imageColorRangeResults.getTotalPixelsChecked)));
+        This.percentMatchingJTextField.setText (To_Unbounded_String (Java_Image (imageColorRangeResults.getPercent)));
         imageColorResults := imageAnalysisResults.getImageColorResults;
-        This.avgRedJTextField.setText (imageColorResults.getColorAverage.getAvgRed.toString);
-        This.avgGreenJTextField.setText (imageColorResults.getColorAverage.getAvgGreen.toString);
-        This.avgBlueJTextField.setText (imageColorResults.getColorAverage.getAvgBlue.toString);
-        This.minRedJTextField.setText (imageColorResults.getColorRange.getMinRed.toString);
-        This.minGreenJTextField.setText (imageColorResults.getColorRange.getMinGreen.toString);
-        This.minBlueJTextField.setText (imageColorResults.getColorRange.getMinBlue.toString);
-        This.maxRedJTextField.setText (imageColorResults.getColorRange.getMaxRed.toString);
-        This.maxGreenJTextField.setText (imageColorResults.getColorRange.getMaxGreen.toString);
-        This.maxBlueJTextField.setText (imageColorResults.getColorRange.getMaxBlue.toString);
+        This.avgRedJTextField.setText (To_Unbounded_String (Java_Image (imageColorResults.getColorAverage.getAvgRed)));
+        This.avgGreenJTextField.setText (To_Unbounded_String (Java_Image (imageColorResults.getColorAverage.getAvgGreen)));
+        This.avgBlueJTextField.setText (To_Unbounded_String (Java_Image (imageColorResults.getColorAverage.getAvgBlue)));
+        This.minRedJTextField.setText (To_Unbounded_String (Java_Image (imageColorResults.getColorRange.getMinRed)));
+        This.minGreenJTextField.setText (To_Unbounded_String (Java_Image (imageColorResults.getColorRange.getMinGreen)));
+        This.minBlueJTextField.setText (To_Unbounded_String (Java_Image (imageColorResults.getColorRange.getMinBlue)));
+        This.maxRedJTextField.setText (To_Unbounded_String (Java_Image (imageColorResults.getColorRange.getMaxRed)));
+        This.maxGreenJTextField.setText (To_Unbounded_String (Java_Image (imageColorResults.getColorRange.getMaxGreen)));
+        This.maxBlueJTextField.setText (To_Unbounded_String (Java_Image (imageColorResults.getColorRange.getMaxBlue)));
    end updateImageColorRangeResults;
 
 end org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;

@@ -21,7 +21,11 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package_References;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.configuration.GameConfigurationSingleton_Package is
 

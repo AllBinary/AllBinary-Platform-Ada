@@ -21,8 +21,59 @@ with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.Reco
 with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
 with javax.microedition.rms.RecordStoreNotOpenException_Package; use javax.microedition.rms.RecordStoreNotOpenException_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.ClassLoader_Package; use org.allbinary.ClassLoader_Package;
-with org.allbinary.ClassLoader_Package_References;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
+with javax.microedition.lcdui.Canvas_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.microemu.DisplayAccess_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with org.microemu.device.ui.FormUI_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with javax.microedition.midlet.MIDlet_Package;
+with org.microemu.MIDletAccess_Package;
+with org.microemu.device.MutableImage_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with javax.microedition.rms.RecordComparator_Package;
+with javax.microedition.rms.RecordEnumeration_Package;
+with javax.microedition.rms.RecordFilter_Package;
+with javax.microedition.rms.RecordListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.TsUtil_Package is
 
@@ -42,16 +93,6 @@ package body org.allbinary.TsUtil_Package is
    function "=" (Left, Right : Displayable_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Displayable_Package_References."=";
    subtype Displayable_Access_Array_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Displayable_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Displayable_Package_References."=";
-   subtype ClassLoader_Access is org.allbinary.ClassLoader_Package_References.ClassLoader_Access;
-   function "=" (Left, Right : ClassLoader_Access) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array is org.allbinary.ClassLoader_Package_References.ClassLoader_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access is org.allbinary.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
    procedure Initialize_Fields (This : in out TsUtil'Class) is
    begin
       null;
@@ -135,7 +176,7 @@ package body org.allbinary.TsUtil_Package is
    function getClassClassLoader (This : in out TsUtil; anyType_Param : access Java_Object'Class) return ClassLoader_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return anyType.all'Tag.getClassLoader;
+        return ClassLoader_Package.getSystemClassLoader;
    end getClassClassLoader;
 
    function toNumberFromChar (This : in out TsUtil; value : Character) return Integer is

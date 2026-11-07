@@ -24,6 +24,7 @@ with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPo
 with org.allbinary.game.layer.geological.resources.GeologicalResource_Package; use org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPositionFactory_Package is
 

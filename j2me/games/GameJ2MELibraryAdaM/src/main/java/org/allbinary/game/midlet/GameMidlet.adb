@@ -131,9 +131,33 @@ with org.allbinary.game.midlet.GameMidletStateFactory_Package_References;
 with org.allbinary.game.midlet.GameMidletEventHandler_Package; use org.allbinary.game.midlet.GameMidletEventHandler_Package;
 with org.allbinary.game.midlet.DemoGameMidletEvent_Package; use org.allbinary.game.midlet.DemoGameMidletEvent_Package;
 with org.allbinary.game.midlet.DemoGameMidletStateFactory_Package; use org.allbinary.game.midlet.DemoGameMidletStateFactory_Package;
+with org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.canvas.BaseGameStatistics_Package;
 with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
+with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with org.allbinary.logic.system.security.licensing.ClientInformation_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.form.item.CustomTextBox_Package;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
 with org.allbinary.game.midlet.DemoGameMidletEvent_Package;
@@ -141,16 +165,92 @@ with org.allbinary.game.midlet.DemoGameMidletState_Package;
 with org.allbinary.game.midlet.DemoGameMidletStateFactory_Package;
 with org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package;
 with org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.microemu.DisplayAccess_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.displayable.DisplayableInterface_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with javax.microedition.lcdui.Form_Package;
+with org.microemu.device.ui.FormUI_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.game.init.GameInitializationInterface_Package;
 with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
 with org.allbinary.game.midlet.GameMidletEventHandler_Package;
 with org.allbinary.game.midlet.GameMidletStateFactory_Package;
+with org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.allbinary.graphics.paint.InitUpdatePaintable_Package;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with javax.microedition.midlet.MIDlet_Package;
+with org.microemu.MIDletAccess_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.microemu.device.MutableImage_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.canvas.Processor_Package;
+with org.allbinary.graphics.ResizableListenerInterface_Package;
+with org.allbinary.game.resource.ResourceLoadingLevel_Package;
+with org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.graphics.displayable.ScalableListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+with org.allbinary.media.audio.Sound_Package;
+with org.allbinary.graphics.paint.StatePaintable_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.game.configuration.feature.TouchFeature_Package;
+with org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
+with org.allbinary.input.TouchJ2ME_Package;
+with org.microemu.device.ui.UIFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
 
 package body org.allbinary.game.midlet.GameMidlet_Package is
@@ -655,7 +755,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
             START_APP := To_Unbounded_String ("startApp");
             This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), START_APP);
             gameCanvasRunnableInterface := Java_Object_Access (This.allbinaryGameCanvasRunnableInterface);
-            if (gameCanvasRunnableInterface) = (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
+            if (Java_Object_Access (gameCanvasRunnableInterface)) = (Java_Object_Access (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE)) then
                 This.gameMidletStateFactory.setCurrentGameState (This.gameStateFactory.NO_GAME_STATE);
                 GameMidlet'Class (This).setDemo;
             else
@@ -721,27 +821,27 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
             gameCommandsFactory := GameCommandsFactory_Package.getInstance;
             allbinaryGameCanvasRunnableInterface := This.allbinaryGameCanvasRunnableInterface;
             gameCanvasRunnableInterface := Java_Object_Access (allbinaryGameCanvasRunnableInterface);
-            if (command) = (gameCommandsFactory.SHOW_GAME_CANVAS) then
+            if (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.SHOW_GAME_CANVAS)) then
                 if ((GameMidlet'Class (This).getDisplay.getCurrent) /= (gameCanvasRunnableInterface)) and then ((allbinaryGameCanvasRunnableInterface.getType) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE.getType)) then
                     GameMidlet'Class (This).setDisplay (Displayable_Access (gameCanvasRunnableInterface));
                 end if;
                 GameMidlet'Class (This).unPauseAppBackground (False);
-            elsif (command) = (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS)) then
                 menuListener := MenuListener_Access (displayable);
                 menuListener.close;
                 GameMidlet'Class (This).setDisplay (Displayable_Access (gameCanvasRunnableInterface));
                 GameMidlet'Class (This).unPauseAppBackground (False);
-            elsif (command) = (gameCommandsFactory.EXIT_COMMAND) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.EXIT_COMMAND)) then
                 if (GameMidletEventHandler_Package.getInstance.getEventListenerInterfaceListP.size) = (0) then
                     GameMidlet'Class (This).exitProgress (True);
                 end if;
                 GameMidletEventHandler_Package.getInstance.fireEvent (DemoGameMidletEvent_Package.Create (GameMidlet_Access'(This'Unchecked_Access), DemoGameMidletStateFactory_Package.getInstance.NONE));
-            elsif (command) = (gameCommandsFactory.EXIT_WITHOUT_PROGRESS_COMMAND) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.EXIT_WITHOUT_PROGRESS_COMMAND)) then
                 GameMidlet'Class (This).exitProgress (False);
-            elsif (((command) = (gameCommandsFactory.START_COMMAND)) or else ((command) = (gameCommandsFactory.RESTART_COMMAND))) or else ((command) = (gameCommandsFactory.CONTINUE_COMMAND)) then
-                if ((This.gameMidletStateFactory.getCurrentGameState) /= (This.gameStateFactory.PLAYING_GAME_STATE)) or else ((command) = (gameCommandsFactory.RESTART_COMMAND)) then
+            elsif (((Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.START_COMMAND))) or else ((Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.RESTART_COMMAND)))) or else ((Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.CONTINUE_COMMAND))) then
+                if ((Java_Object_Access (This.gameMidletStateFactory.getCurrentGameState)) /= (Java_Object_Access (This.gameStateFactory.PLAYING_GAME_STATE))) or else ((Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.RESTART_COMMAND))) then
                     if This.gameStartTimeHelper.isTimeTNT then
-                        if ((command) = (gameCommandsFactory.START_COMMAND)) and then (GameMidlet'Class (This).isDemoLoading) then
+                        if ((Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.START_COMMAND))) and then (GameMidlet'Class (This).isDemoLoading) then
                             This.logUtil.putF (To_Unbounded_String ("Trying to Start Game Before Loading Complete"), GameMidlet_Access'(This'Unchecked_Access), This.midletStrings.COMMAND_ACTION);
                         else
                             This.startedBefore := True;
@@ -754,7 +854,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 else
                     This.logUtil.putF (To_Unbounded_String ("Already in playing state"), GameMidlet_Access'(This'Unchecked_Access), This.COMMAND_ACTION);
                 end if;
-            elsif (command) = (gameCommandsFactory.BUY_COMMAND) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.BUY_COMMAND)) then
                 inApplicationPurchaseFactory := InApplicationPurchaseFactory_Package.getInstance;
                 list := LockableFeatureFactory_Package.getInstance.getList;
                 lockableFeature := LockableFeature_Access (list.get (0));
@@ -763,7 +863,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 else
                     TextNotificationUtil_Package.getInstance.fireSuccess (To_Unbounded_String ("Already Purchased"));
                 end if;
-            elsif (command) = (gameCommandsFactory.QUIT_COMMAND) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.QUIT_COMMAND)) then
                 if This.gameStartTimeHelper.isTimeTNT then
                     if (displayable.all in HighScoreTextBox_Package.HighScoreTextBox'Class) then
                         menuListener := MenuListener_Access (displayable);
@@ -773,31 +873,31 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                     This.gameMidletStateFactory.setCurrentGameState (This.gameStateFactory.NO_GAME_STATE);
                     GameMidlet'Class (This).setDemo;
                 end if;
-            elsif (command) = (This.myCommandsFactory.RESUME_COMMAND) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (This.myCommandsFactory.RESUME_COMMAND)) then
                 GameMidlet'Class (This).unPauseAppBackground (False);
-            elsif (command) = (This.myCommandsFactory.PAUSE_COMMAND) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (This.myCommandsFactory.PAUSE_COMMAND)) then
                 GameMidlet'Class (This).pauseAppBackground (False);
-            elsif (command) = (This.myCommandsFactory.SET_DISPLAYABLE) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (This.myCommandsFactory.SET_DISPLAYABLE)) then
                 GameMidlet'Class (This).pauseAppBackground (False);
                 GameMidlet'Class (This).setDisplay (displayable);
-            elsif (command) = (gameCommandsFactory.SET_MENU_DISPLAYABLE) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.SET_MENU_DISPLAYABLE)) then
                 GameMidlet'Class (This).pauseAppBackground (False);
                 menuListener := MenuListener_Access (displayable);
                 menuListener.open;
                 GameMidlet'Class (This).setDisplay (displayable);
-            elsif (command) = (gameCommandsFactory.START_TRACE) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.START_TRACE)) then
                 This.debugInterface.start;
                 gameCanvas := AllBinaryGameCanvas_Access (allbinaryGameCanvasRunnableInterface);
                 gameCanvas.addCommand (gameCommandsFactory.STOP_TRACE);
                 gameCanvas.removeCommand (gameCommandsFactory.START_TRACE);
-            elsif (command) = (gameCommandsFactory.STOP_TRACE) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.STOP_TRACE)) then
                 GameMidlet'Class (This).pauseAppBackground (False);
                 This.debugInterface.stop;
                 GameMidlet'Class (This).unPauseAppBackground (False);
                 gameCanvas := AllBinaryGameCanvas_Access (allbinaryGameCanvasRunnableInterface);
                 gameCanvas.addCommand (gameCommandsFactory.START_TRACE);
                 gameCanvas.removeCommand (gameCommandsFactory.STOP_TRACE);
-            elsif (command) = (gameCommandsFactory.DEFAULT_OPTIONS) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.DEFAULT_OPTIONS)) then
                 tempDisplayable := displayable;
                 if (tempDisplayable.all in GameOptionsForm_Package.GameOptionsForm'Class) then
                     GameFeatureFormUtil_Package.getInstance.setDefault (CommandForm_Access (tempDisplayable));
@@ -832,7 +932,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                     gameInputMappingCanvas := GameInputMappingCanvas_Access (tempDisplayable);
                     gameInputMappingCanvas.setDefault;
                 end if;
-            elsif (command) = (InGameOptionsForm_Package.DISPLAY) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (InGameOptionsForm_Package.DISPLAY)) then
                 GameMidlet'Class (This).pauseAppBackground (False);
                 progressCanvas := ProgressCanvasFactory_Package.getInstance;
                 progressCanvas.addNormalPortion (50, To_Unbounded_String ("In Game Options"));
@@ -842,10 +942,10 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 inGameOptionsForm_2 := inGameOptionsFormFactory.get;
                 inGameOptionsForm_2.setItemStateListener (allbinaryGameCanvasRunnableInterface);
                 GameMidlet'Class (This).commandAction (gameCommandsFactory.SET_MENU_DISPLAYABLE, inGameOptionsForm_2);
-            elsif (command) = (InGameOptionsForm_Package.DEFAULT) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (InGameOptionsForm_Package.DEFAULT)) then
                 inGameOptionsForm := InGameOptionsForm_Access (InGameOptionsFormFactory_Package.getInstance.get);
                 GameFeatureFormUtil_Package.getInstance.setDefault (inGameOptionsForm);
-            elsif (command) = (gameCommandsFactory.DISPLAY_OPTIONS) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.DISPLAY_OPTIONS)) then
                 AllBinaryMediaManager_Package.setMuted (True);
                 GameMidlet'Class (This).stopAll;
                 mainFeatureFactory := MainFeatureFactory_Package.getInstance;
@@ -853,7 +953,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 ResizableListenerHandler_Package.getInstance.fireEvent (True);
                 GameMidlet'Class (This).setResized (False);
                 GameMidlet'Class (This).commandAction (gameCommandsFactory.SET_MENU_DISPLAYABLE, GameMidlet'Class (This).getGameOptionsForm);
-            elsif (command) = (gameCommandsFactory.CLOSE_OPTIONS) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.CLOSE_OPTIONS)) then
                 ResizableListenerHandler_Package.getInstance.fireEvent (False);
                 GameMidlet'Class (This).commandAction (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS, displayable);
                 stringBuffer := StringMaker_Package.Create;
@@ -867,23 +967,23 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                     GameMidlet'Class (This).updateFullScreen;
                 end if;
                 AllBinaryMediaManager_Package.setMuted (False);
-            elsif (command) = (gameCommandsFactory.DISPLAY_LOAD_FORM) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.DISPLAY_LOAD_FORM)) then
                 GameMidlet'Class (This).pauseAppBackground (False);
-                keyValuePersistance := GamePersistanceSingleton_Package.getInstance;
+                keyValuePersistance := KeyValuePersistance_Access (GamePersistanceSingleton_Package.getInstance);
                 keyValuePersistance.clear;
                 keyValuePersistance.loadAll (This.abeClientInformation);
-                if (GameMidlet'Class (This).getLoadGameForm) = (CommandForm_Package.getNullCommandForm) then
+                if (Java_Object_Access (GameMidlet'Class (This).getLoadGameForm)) = (Java_Object_Access (CommandForm_Package.getNullCommandForm)) then
                     layerManager := GameMidlet'Class (This).createGameLayerManager;
                     GameMidlet'Class (This).setLoadGameForm (LoadGameForm_Package.Create (GameMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("Load Game"), layerManager.getBackgroundBasicColor, layerManager.getForegroundBasicColor));
                 else
                     GameMidlet'Class (This).getLoadGameForm.update;
                 end if;
                 GameMidlet'Class (This).commandAction (gameCommandsFactory.SET_MENU_DISPLAYABLE, GameMidlet'Class (This).getLoadGameForm);
-            elsif (command) = (gameCommandsFactory.LOAD_FILE) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.LOAD_FILE)) then
                 loadGameForm := LoadGameForm_Access (GameMidlet'Class (This).getLoadGameForm);
                 index := loadGameForm.getSelectedId;
                 if (index) /= (-(1)) then
-                    keyValuePersistance := GamePersistanceSingleton_Package.getInstance;
+                    keyValuePersistance := KeyValuePersistance_Access (GamePersistanceSingleton_Package.getInstance);
                     GameMidlet'Class (This).setStartStateHashtable (keyValuePersistance.get (index));
                     menuListener := GameMidlet'Class (This).getLoadGameForm;
                     menuListener.close;
@@ -891,18 +991,18 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                     GameMidlet'Class (This).commandAction (gameCommandsFactory.START_COMMAND, NullCanvas_Package.NULL_CANVAS);
                     PreLogUtil_Package.put (BasicMotionGesturesHandler_Package.getInstance.toString, GameMidlet_Access'(This'Unchecked_Access), This.COMMAND_ACTION);
                 end if;
-            elsif (command) = (gameCommandsFactory.DELETE_FILE) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.DELETE_FILE)) then
                 loadGameForm := LoadGameForm_Access (GameMidlet'Class (This).getLoadGameForm);
                 index := loadGameForm.getSelectedText;
                 if (index) /= (-(1)) then
-                    keyValuePersistance := GamePersistanceSingleton_Package.getInstance;
+                    keyValuePersistance := KeyValuePersistance_Access (GamePersistanceSingleton_Package.getInstance);
                     keyValuePersistance.delete (This.abeClientInformation, index);
                     keyValuePersistance.clear;
                     keyValuePersistance.loadAllSize (This.abeClientInformation, 1);
                     GameMidlet'Class (This).getLoadGameForm.update;
                 end if;
-            elsif (command) = (gameCommandsFactory.SAVE) then
-                keyValuePersistance := GamePersistanceSingleton_Package.getInstance;
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.SAVE)) then
+                keyValuePersistance := KeyValuePersistance_Access (GamePersistanceSingleton_Package.getInstance);
                 GameMidlet'Class (This).pauseAppBackground (False);
                 keyValuePersistance.save (This.abeClientInformation, GameMidlet'Class (This).getCurrentStateHashtable);
                 GameMidlet'Class (This).unPauseAppBackground (False);
@@ -914,11 +1014,11 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 end if;
                 allbinaryGameCanvasRunnableInterface.setHighScoreSubmitted (True);
                 GameMidlet'Class (This).commandAction (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS, displayable);
-            elsif (command) = (gameCommandsFactory.DISPLAY_ABOUT) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.DISPLAY_ABOUT)) then
                 This.aboutCommandProcessor.process (GameMidlet_Access'(This'Unchecked_Access), gameCommandsFactory.SET_MENU_DISPLAYABLE, GameMidlet'Class (This).getAboutCanvas);
-            elsif (command) = (gameCommandsFactory.OPEN_WEB_URL) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.OPEN_WEB_URL)) then
                 This.webCommandProcessor.process (GameMidlet_Access'(This'Unchecked_Access), gameCommandsFactory.OPEN_WEB_URL, NullCanvas_Package.NULL_CANVAS);
-            elsif (command) = (gameCommandsFactory.TOGGLE_KEYBOARD) then
+            elsif (Java_Object_Access (command)) = (Java_Object_Access (gameCommandsFactory.TOGGLE_KEYBOARD)) then
                 virtualKeyboardEventHandler := VirtualKeyboardEventHandler_Package.getInstance;
                 virtualKeyboardEventHandler.fireEvent (virtualKeyboardEventHandler.SHOW_EVENT);
             elsif (Java_Compare_To (command.getLabel, gameCommandsFactory.TOGGLE_FULLSCREEN.getLabel)) = (0) then
@@ -937,7 +1037,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             This.logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (command.getLabel).toString, GameMidlet_Access'(This'Unchecked_Access), This.midletStrings.COMMAND_ACTION, e);
-            if (command) /= (GameCommandsFactory_Package.getInstance.EXIT_COMMAND) then
+            if (Java_Object_Access (command)) /= (Java_Object_Access (GameCommandsFactory_Package.getInstance.EXIT_COMMAND)) then
                 GameMidlet'Class (This).exitProgress (False);
             end if;
                 end;

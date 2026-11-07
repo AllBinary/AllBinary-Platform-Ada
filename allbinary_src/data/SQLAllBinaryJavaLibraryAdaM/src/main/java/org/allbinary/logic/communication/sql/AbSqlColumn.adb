@@ -21,8 +21,23 @@ with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.communication.sql.AbSqlBasic_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package;
+with org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
 
@@ -112,7 +127,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                     largest := intValue;
                 end if;
             end loop;
-            largestAsString := largest.toString;
+            largestAsString := To_Unbounded_String (Java_Image (largest));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (This.sqlStrings.SQL_STATEMENT_LABEL);

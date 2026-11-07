@@ -85,11 +85,28 @@ with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package; use or
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package_References;
 with org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package; use org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package;
 with org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.building.BuildingLayer_Package is
 
@@ -566,7 +583,7 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
             occupyGeographicMapCellPosition := GeographicMapCellPosition_Access (occupyList.get (index2));
             for index in reverse 0 .. (surroundList.size) - (1) loop
                 surroundGeographicMapCellPosition := GeographicMapCellPosition_Access (surroundList.get (index));
-                if (geographicMapDirectionUtil.getEightDirectionFromCellPositionToAdjacentCellPosition (surroundGeographicMapCellPosition, occupyGeographicMapCellPosition)) /= (NO_DIRECTION) then
+                if (Java_Object_Access (geographicMapDirectionUtil.getEightDirectionFromCellPositionToAdjacentCellPosition (surroundGeographicMapCellPosition, occupyGeographicMapCellPosition))) /= (Java_Object_Access (NO_DIRECTION)) then
                     list := BasicArrayList_Access (BasicArrayListS_Package.Create (1));
                     list.add (Java_Object_Access (surroundGeographicMapCellPosition));
                     pathsList.add (Java_Object_Access (list));

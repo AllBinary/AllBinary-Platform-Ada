@@ -18,8 +18,17 @@ with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.PaintableForm_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.graphics.Rectangle_Package;
 
 package body org.allbinary.graphics.form.FormPaintable_Package is
 

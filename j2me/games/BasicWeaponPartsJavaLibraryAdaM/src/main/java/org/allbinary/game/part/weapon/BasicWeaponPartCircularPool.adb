@@ -27,6 +27,9 @@ with org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package; use
 with org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package_References;
 with org.allbinary.game.part.weapon.BasicWeaponPart_Package;
 with org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.part.weapon.SalvoInterface_Package;
 
 package body org.allbinary.game.part.weapon.BasicWeaponPartCircularPool_Package is

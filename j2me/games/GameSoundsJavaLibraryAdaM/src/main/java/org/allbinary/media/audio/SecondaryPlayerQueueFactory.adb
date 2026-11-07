@@ -15,7 +15,14 @@
 
 with org.allbinary.media.audio.PlayerQueue_Package; use org.allbinary.media.audio.PlayerQueue_Package;
 with org.allbinary.media.audio.PlayerQueue_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
 with org.allbinary.media.audio.PlayerQueue_Package;
+with org.allbinary.media.audio.Sound_Package;
 
 package body org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package is
 

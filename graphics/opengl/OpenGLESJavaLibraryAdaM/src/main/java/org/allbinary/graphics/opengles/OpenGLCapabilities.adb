@@ -35,6 +35,25 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.graphics.opengles.OpenGLFeature_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.image.opengles.OpenGLImageFactory_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 

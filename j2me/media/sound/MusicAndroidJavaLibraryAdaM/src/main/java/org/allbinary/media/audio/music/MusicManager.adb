@@ -31,7 +31,12 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.media.audio.music.MusicStrings_Package; use org.allbinary.media.audio.music.MusicStrings_Package;
 with org.allbinary.media.audio.music.MusicStrings_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.media.audio.music.MusicStrings_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
 
 package body org.allbinary.media.audio.music.MusicManager_Package is
 
@@ -176,8 +181,8 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
       This.timeDelayHelper := TimeDelayHelper_Package.Create (0);
       This.timeDelayHelper2 := TimeDelayHelper_Package.Create (1200);
       
-      This.currentSongSound := NoSound_Package.getInstance;
-      This.nextSongSound := NoSound_Package.getInstance;
+      This.currentSongSound := Sound_Access (NoSound_Package.getInstance);
+      This.nextSongSound := Sound_Access (NoSound_Package.getInstance);
       This.leftVolume := 100;
       This.rightVolume := 100;
       
@@ -206,7 +211,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
       nextSongSound : Sound_Access := Sound_Access (nextSongSound_Param);
    begin
         if (nextSongSound) = (null) then
-            nextSongSound := NoSound_Package.getInstance;
+            nextSongSound := Sound_Access (NoSound_Package.getInstance);
         end if;
         This.nextSongSound := nextSongSound;
         This.leftVolume := leftVolume;
@@ -256,11 +261,11 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    begin
         begin
             This.resourceUtil.getContext.stopService (This.currentIntent);
-            if (This.nextSongSound) = (NoSound_Package.getInstance) then
+            if (Java_Object_Access (This.nextSongSound)) = (Java_Object_Access (NoSound_Package.getInstance)) then
                 This.currentSongSound := Sound_Access (This.basicArrayListUtil.getRandom (This.songList));
             else
                 This.currentSongSound := This.nextSongSound;
-                This.nextSongSound := NoSound_Package.getInstance;
+                This.nextSongSound := Sound_Access (NoSound_Package.getInstance);
             end if;
             duration := Long_Long_Integer (This.currentSongSound.getDuration);
             PreLogUtil_Package.put (StringMaker_Package.Create.append (This.PLAY).append (This.currentSongSound.getResource).append (This.FOR_Id).appendlong (duration).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);

@@ -31,7 +31,10 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.media.audio.music.MusicManagerPlayerListener_Package; use org.allbinary.media.audio.music.MusicManagerPlayerListener_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.media.audio.music.MusicManagerPlayerListener_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 
 package body org.allbinary.media.audio.music.MusicManager_Package is
 
@@ -162,8 +165,8 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
       This.ALREADY_PLAYING := To_Unbounded_String ("Already Playing: ");
       This.ALREADY_ENDED := To_Unbounded_String ("Last Song already ended: ");
       
-      This.currentSongSound := NoSound_Package.getInstance;
-      This.nextSongSound := NoSound_Package.getInstance;
+      This.currentSongSound := Sound_Access (NoSound_Package.getInstance);
+      This.nextSongSound := Sound_Access (NoSound_Package.getInstance);
       This.reset_Field := False;
       This.noDuration := False;
       This.stopped := True;
@@ -187,7 +190,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    procedure startNewSong (This : in out MusicManager) is
       randomSongSound : Sound_Access;
    begin
-        if (This.nextSongSound) = (NoSound_Package.getInstance) then
+        if (Java_Object_Access (This.nextSongSound)) = (Java_Object_Access (NoSound_Package.getInstance)) then
             randomSongSound := Sound_Access (This.basicArrayListUtil.getRandom (This.songList));
             MusicManager'Class (This).nextSong (randomSongSound, 0, 0);
         end if;
@@ -228,8 +231,8 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
                 This.noDuration := False;
                 endingCurrentSongSound := This.currentSongSound;
                 nextSongSound := This.nextSongSound;
-                This.nextSongSound := NoSound_Package.getInstance;
-                if (nextSongSound) = (NoSound_Package.getInstance) then
+                This.nextSongSound := Sound_Access (NoSound_Package.getInstance);
+                if (Java_Object_Access (nextSongSound)) = (Java_Object_Access (NoSound_Package.getInstance)) then
                     This.currentSongSound := Sound_Access (BasicArrayListUtil_Package.getInstance.getRandom (This.songList));
                 else
                     This.currentSongSound := nextSongSound;
@@ -243,7 +246,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
                     This.currentSongSound.getPlayerP.addPlayerListener (This.playerListener);
                     This.noDuration := True;
                 end if;
-                if (endingCurrentSongSound) /= (NoSound_Package.getInstance) then
+                if (Java_Object_Access (endingCurrentSongSound)) /= (Java_Object_Access (NoSound_Package.getInstance)) then
                     if ((endingCurrentSongSound) = (startingCurrentSongSound)) and then ((endingCurrentSongSound.getPlayerP.getState) = (Player_Package.STARTED)) then
                         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.ALREADY_PLAYING).append (endingCurrentSongSound.getResource).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
                         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.STOPPING).append (endingCurrentSongSound.getResource).append (This.SONG).appendlong (duration).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
@@ -274,7 +277,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             resource := StringUtil_Package.getInstance.EMPTY_STRING;
-            if (This.currentSongSound) /= (NoSound_Package.getInstance) then
+            if (Java_Object_Access (This.currentSongSound)) /= (Java_Object_Access (NoSound_Package.getInstance)) then
                 resource := This.currentSongSound.getResource;
             end if;
             PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
@@ -302,7 +305,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    begin
         begin
             currentSongSound := This.currentSongSound;
-            if (currentSongSound) /= (NoSound_Package.getInstance) then
+            if (Java_Object_Access (currentSongSound)) /= (Java_Object_Access (NoSound_Package.getInstance)) then
                 This.stopped := True;
                 PreLogUtil_Package.put (StringMaker_Package.Create.append (This.ENDING).append (currentSongSound.getResource).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
                 currentSongSound.getPlayerP.stop;
@@ -315,7 +318,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             resource := StringUtil_Package.getInstance.EMPTY_STRING;
-            if (currentSongSound) /= (NoSound_Package.getInstance) then
+            if (Java_Object_Access (currentSongSound)) /= (Java_Object_Access (NoSound_Package.getInstance)) then
                 resource := currentSongSound.getResource;
             end if;
             PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.END_Id, e);
@@ -356,7 +359,10 @@ with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.media.audio.music.MusicManager_Package; use org.allbinary.media.audio.music.MusicManager_Package;
 with org.allbinary.media.audio.music.MusicManager_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.media.audio.music.MusicManager_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 
 package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package is
 

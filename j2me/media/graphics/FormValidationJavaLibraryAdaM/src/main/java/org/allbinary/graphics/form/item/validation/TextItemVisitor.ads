@@ -51,7 +51,7 @@ package org.allbinary.graphics.form.item.validation.TextItemVisitor_Package is
    subtype TextItemVisitor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References.TextItemVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TextItemVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References."=";
 
-   type TextItemVisitor is new Visitor with null record;
+   type TextItemVisitor is new Visitor_Package.Visitor with null record;
 
    procedure Initialize (This : in out TextItemVisitor'Class);
    function Create return TextItemVisitor_Access;

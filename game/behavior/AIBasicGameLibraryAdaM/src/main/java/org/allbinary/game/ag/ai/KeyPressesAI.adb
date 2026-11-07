@@ -23,6 +23,10 @@ with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableU
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
 

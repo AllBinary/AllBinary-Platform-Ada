@@ -31,7 +31,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.ListIterator_Package; use java.util.ListIterator_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package;

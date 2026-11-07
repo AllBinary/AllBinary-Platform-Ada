@@ -39,6 +39,18 @@ with org.allbinary.util.EnumerationUtil_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.util.HashtableUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.configuration.persistance.PersistanceStrings_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
 
@@ -156,7 +168,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    function getNullInstance return PersistentInputMapping_Access is
    begin
         if (PersistentInputMapping_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            PersistentInputMapping_Package.instance := PersistentInputMapping_Package.Create (GamePersistanceStrings_Package.getInstance.SAVED_INPUT_CONFIGURATION_RECORD_ID);
+            PersistentInputMapping_Package.instance := Java_Object_Access (PersistentInputMapping_Package.Create (GamePersistanceStrings_Package.getInstance.SAVED_INPUT_CONFIGURATION_RECORD_ID));
         end if;
         return PersistentInputMapping_Access (PersistentInputMapping_Package.instance);
    end getNullInstance;

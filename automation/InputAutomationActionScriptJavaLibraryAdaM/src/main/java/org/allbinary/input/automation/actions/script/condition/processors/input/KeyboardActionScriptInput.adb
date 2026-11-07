@@ -132,16 +132,16 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                 childNode := nodeList.item (index);
                 if childNode.getNodeName.startsWith (KeyboardActionScriptInputData_Package.KEY) then
                     keyString := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    vector.add (To_Unbounded_String (Java_Image (keyString)));
+                    vector.add (Integer'Value (To_String (keyString)));
                 elsif (childNode.getNodeName.compareTo (KeyboardActionScriptInputData_Package.DELAY_BETWEEN_KEYS)) = (0) then
                     time := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    KeyboardActionScriptInput'Class (This).setDelayBetweenKeys (To_Unbounded_String (Java_Image (time)).intValue);
+                    KeyboardActionScriptInput'Class (This).setDelayBetweenKeys (Integer (Integer'Value (To_String (time))));
                 elsif (childNode.getNodeName.compareTo (KeyboardActionScriptInputData_Package.PRESS)) = (0) then
                     value := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    KeyboardActionScriptInput'Class (This).setPress (To_Unbounded_String (Java_Image (value)));
+                    KeyboardActionScriptInput'Class (This).setPress (Java_Equals_Ignore_Case (value, To_Unbounded_String ("true")));
                 elsif (childNode.getNodeName.compareTo (KeyboardActionScriptInputData_Package.RELEASE)) = (0) then
                     value := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    KeyboardActionScriptInput'Class (This).setRelease (To_Unbounded_String (Java_Image (value)));
+                    KeyboardActionScriptInput'Class (This).setRelease (Java_Equals_Ignore_Case (value, To_Unbounded_String ("true")));
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Input Unknown Node")));
                 end if;
@@ -293,15 +293,15 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                     if (endIndex) /= (-(1)) then
                         nextCharString := Unbounded_Slice (text, ((index) + (2)) + 1, endIndex);
                         This.KeyboardActionScriptInput_Field_logUtil.putF (Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Char String: ") & nextCharString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
-                        vector.add (To_Unbounded_String (Java_Image (Unbounded_Slice (nextCharString, (index) + 1, Ada.Strings.Unbounded.Length (nextCharString)))));
+                        vector.add (Integer'Value (To_String (Unbounded_Slice (nextCharString, (index) + 1, Ada.Strings.Unbounded.Length (nextCharString)))));
                         index := ((index) + (Ada.Strings.Unbounded.Length (nextCharString))) + (3);
-                        goto Continue_N69498;
+                        goto Continue_N69509;
                     end if;
                 end if;
             end if;
             vector.add (KeySingletonFactory_Package.getHashtable.get (To_Unbounded_String (Java_Image (aChar))));
             index := index + 1;
-            <<Continue_N69498>> null;
+            <<Continue_N69509>> null;
         end loop;
         integerArray := Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => 0)));
         return integerArray;

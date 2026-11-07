@@ -32,6 +32,8 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
 

@@ -89,6 +89,24 @@ with org.allbinary.game.layer.RTSLayerUtil_Package; use org.allbinary.game.layer
 with org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package;
 with org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
 
@@ -411,7 +429,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
       advancedRTSPlayerLayerInterface : AdvancedRTSPlayerLayerInterface_Access;
    begin
         advancedRTSPlayerLayerInterface := AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface);
-        if (advancedRTSPlayerLayerInterface.isLocalPlayer) or else ((advancedRTSPlayerLayerInterface.getGameType) = (GameTypeFactory_Package.getInstance.BOT)) then
+        if (advancedRTSPlayerLayerInterface.isLocalPlayer) or else ((Java_Object_Access (advancedRTSPlayerLayerInterface.getGameType)) = (Java_Object_Access (GameTypeFactory_Package.getInstance.BOT))) then
             AdvancedRTSGameLayer'Class (This).setVisible (True);
         else
             AdvancedRTSGameLayer'Class (This).setVisible (False);
@@ -511,7 +529,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
         angleInfo := AdvancedRTSGameLayer'Class (This).getRotationAnimationInterface.getAngleInfoP;
         angle := FrameUtil_Package.getInstance.adjustAngleToFrameAngle ((angleInfo.getAngle) + (90));
         gameKeyEventFactory := GameKeyEventFactory_Package.getInstance;
-        if (buildingDirection) = (DirectionFactory_Package.getInstance.UP) then
+        if (Java_Object_Access (buildingDirection)) = (Java_Object_Access (DirectionFactory_Package.getInstance.UP)) then
             This.rtsLayer2LogHelper.buildingAbove (AdvancedRTSGameLayer_Access'(This'Unchecked_Access));
             if ((angle) > (180)) and then ((angle) < (360)) then
                 This.rtsLayer2LogHelper.buildingChaseLeft (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
@@ -526,7 +544,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
                     return True;
                 end if;
             end if;
-        elsif (buildingDirection) = (DirectionFactory_Package.getInstance.DOWN) then
+        elsif (Java_Object_Access (buildingDirection)) = (Java_Object_Access (DirectionFactory_Package.getInstance.DOWN)) then
             This.rtsLayer2LogHelper.buildingDown (AdvancedRTSGameLayer_Access'(This'Unchecked_Access));
             if ((angle) > (180)) and then ((angle) < (360)) then
                 This.rtsLayer2LogHelper.buildingChaseLeft (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
@@ -541,7 +559,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
                     return True;
                 end if;
             end if;
-        elsif (buildingDirection) = (DirectionFactory_Package.getInstance.LEFT) then
+        elsif (Java_Object_Access (buildingDirection)) = (Java_Object_Access (DirectionFactory_Package.getInstance.LEFT)) then
             This.rtsLayer2LogHelper.buildingLeft;
             if ((angle) > (90)) and then ((angle) < (270)) then
                 This.rtsLayer2LogHelper.buildingChaseDown (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
@@ -556,7 +574,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
                     return True;
                 end if;
             end if;
-        elsif (buildingDirection) = (DirectionFactory_Package.getInstance.RIGHT) then
+        elsif (Java_Object_Access (buildingDirection)) = (Java_Object_Access (DirectionFactory_Package.getInstance.RIGHT)) then
             This.rtsLayer2LogHelper.buildingRight;
             if ((angle) > (90)) and then ((angle) < (270)) then
                 This.rtsLayer2LogHelper.buildingChaseDown (AdvancedRTSGameLayer_Access'(This'Unchecked_Access), angle);
@@ -611,7 +629,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    begin
         begin
             layerInterface := destroyedEvent.getLayerInterface;
-            if (layerInterface) = (AdvancedRTSGameLayer_Access'(This'Unchecked_Access)) then
+            if (Java_Object_Access (layerInterface)) = (Java_Object_Access (AdvancedRTSGameLayer_Access'(This'Unchecked_Access))) then
                 DestroyedEventHandler_Package.getInstance.removeListener (AdvancedRTSGameLayer_Access'(This'Unchecked_Access));
                 waypoint := WaypointBase_Access (AdvancedRTSGameLayer'Class (This).getWaypointBehavior.getWaypoint);
                 waypoint.reset;

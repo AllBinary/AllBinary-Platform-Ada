@@ -31,6 +31,16 @@ with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic
 with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
 with org.allbinary.game.layer.RTSInterface_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
 
@@ -148,7 +158,7 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
         fontHeight := font.getHeight;
         imageHeight := 0;
         image := TechnologyRTSInterfaceImageItem'Class (This).getImage;
-        if (image) /= (NullImage_Package.NULL_IMAGE) then
+        if (Java_Object_Access (image)) /= (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
             imageHeight := image.getHeight;
         end if;
         This.adjustedCostLabelY := ((-(This.yOffset)) + (imageHeight)) - (((3) * (fontHeight)));

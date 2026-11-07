@@ -32,8 +32,12 @@ with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPain
 with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package body org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Package is

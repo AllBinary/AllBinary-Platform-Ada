@@ -52,7 +52,7 @@ package org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package i
    subtype ObjectPermutationVisitor_Access_Array_Access_Array_Access is org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package_References.ObjectPermutationVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ObjectPermutationVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package_References."=";
 
-   type ObjectPermutationVisitor is new Visitor with record
+   type ObjectPermutationVisitor is new Visitor_Package.Visitor with record
       data : Java_Object_Access_Array_Access;
       stringBuilder : StringMaker_Access;
    end record;

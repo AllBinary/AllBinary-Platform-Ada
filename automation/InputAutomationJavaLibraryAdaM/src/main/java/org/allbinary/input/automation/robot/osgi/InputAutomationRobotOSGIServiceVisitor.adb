@@ -23,6 +23,7 @@ with org.allbinary.osgi.OSGIServiceInterface_Package_References;
 with org.allbinary.osgi.OSGIServiceVisitorInterface_Package; use org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.util.ABHashtable_Package;
 
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package is
 

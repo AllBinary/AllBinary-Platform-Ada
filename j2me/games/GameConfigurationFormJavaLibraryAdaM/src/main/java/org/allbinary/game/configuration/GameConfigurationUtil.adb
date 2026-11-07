@@ -28,8 +28,76 @@ with org.allbinary.game.configuration.GameOptionsForm_Package_References;
 with org.allbinary.game.configuration.GameConfigurationGauge_Package; use org.allbinary.game.configuration.GameConfigurationGauge_Package;
 with org.allbinary.game.configuration.GameConfigurationGauge_Package_References;
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Canvas_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.microemu.DisplayAccess_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with javax.microedition.lcdui.Displayable_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with javax.microedition.lcdui.Form_Package;
+with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.game.configuration.GameConfigurationGauge_Package;
+with org.allbinary.game.configuration.GameConfigurationSingleton_Package;
 with org.allbinary.game.configuration.GameOptionsForm_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.MEUtil_Package;
+with javax.microedition.midlet.MIDlet_Package;
+with org.microemu.MIDletAccess_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.microemu.device.MutableImage_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
 
@@ -140,12 +208,12 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
         gameConfigurationSingleton := GameConfigurationSingleton_Package.getInstance;
         gameConfiguration := gameConfigurationSingleton.getInstanceByName (gauge.getLabel);
         smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
-        value := smallIntegerSingletonFactory.getAt ((gauge.getValue) + (gameConfiguration.getMinValue.intValue));
+        value := smallIntegerSingletonFactory.getAt ((gauge.getValue) + (Integer (gameConfiguration.getMinValue)));
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (This.GAUGE_UPDATE);
         stringBuffer.append (gameConfiguration.getName);
         stringBuffer.append (This.FROM);
-        stringBuffer.appendint (gameConfiguration.getValue.intValue);
+        stringBuffer.appendint (Integer (gameConfiguration.getValue));
         stringBuffer.append (This.TO);
         stringBuffer.appendint (Integer (value));
         This.logUtil.putF (stringBuffer.toString, GameConfigurationUtil_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
@@ -165,9 +233,9 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
         stringBuffer.append (To_Unbounded_String ("Gauge Default: "));
         stringBuffer.append (gameConfiguration.getName);
         stringBuffer.append (This.TO);
-        stringBuffer.appendint (gameConfiguration.getDefaultValue.intValue);
+        stringBuffer.appendint (Integer (gameConfiguration.getDefaultValue));
         This.logUtil.putF (stringBuffer.toString, GameConfigurationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"));
-        gauge.setValue ((gameConfiguration.getDefaultValue.intValue) - (gameConfiguration.getMinValue.intValue));
+        gauge.setValue ((Integer (gameConfiguration.getDefaultValue)) - (Integer (gameConfiguration.getMinValue)));
         gameConfiguration.setValue (gameConfiguration.getDefaultValue);
    end setDefault;
 
@@ -186,7 +254,7 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    begin
         gameConfigurationSingleton := GameConfigurationSingleton_Package.getInstance;
         gameConfigurationCentral := GameConfigurationCentral_Package.getInstance;
-        if (gameConfiguration) = (gameConfigurationCentral.CHALLENGE_LEVEL) then
+        if (Java_Object_Access (gameConfiguration)) = (Java_Object_Access (gameConfigurationCentral.CHALLENGE_LEVEL)) then
             This.logUtil.putF (This.commonStrings.START, GameConfigurationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("updateChallange"));
             gameConfigurationCentral.COLLIDE_DAMAGE.setValue (gameConfiguration.getValue);
             gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.setValue (gameConfiguration.getValue);
@@ -199,14 +267,14 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
                     gauge := GameConfigurationGauge_Access (item);
                     name := item.getLabel;
                     nextGameConfiguration := gameConfigurationSingleton.getInstanceByName (name);
-                    if (nextGameConfiguration) = (gameConfigurationCentral.COLLIDE_DAMAGE) then
-                        gauge.setValue ((gameConfigurationCentral.COLLIDE_DAMAGE.getValue.intValue) - (gameConfiguration.getMinValue.intValue));
-                    elsif (nextGameConfiguration) = (gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL) then
-                        gauge.setValue ((gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue.intValue) - (gameConfiguration.getMinValue.intValue));
-                    elsif (nextGameConfiguration) = (gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL) then
-                        gauge.setValue ((gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue.intValue) - (gameConfiguration.getMinValue.intValue));
-                    elsif (nextGameConfiguration) = (gameConfigurationCentral.SPEED_CHALLENGE_LEVEL) then
-                        gauge.setValue ((gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue.intValue) - (gameConfiguration.getMinValue.intValue));
+                    if (Java_Object_Access (nextGameConfiguration)) = (Java_Object_Access (gameConfigurationCentral.COLLIDE_DAMAGE)) then
+                        gauge.setValue ((gameConfigurationCentral.COLLIDE_DAMAGE.getValue.intValue) - (Integer (gameConfiguration.getMinValue)));
+                    elsif (Java_Object_Access (nextGameConfiguration)) = (Java_Object_Access (gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL)) then
+                        gauge.setValue ((gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue.intValue) - (Integer (gameConfiguration.getMinValue)));
+                    elsif (Java_Object_Access (nextGameConfiguration)) = (Java_Object_Access (gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL)) then
+                        gauge.setValue ((gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue.intValue) - (Integer (gameConfiguration.getMinValue)));
+                    elsif (Java_Object_Access (nextGameConfiguration)) = (Java_Object_Access (gameConfigurationCentral.SPEED_CHALLENGE_LEVEL)) then
+                        gauge.setValue ((gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue.intValue) - (Integer (gameConfiguration.getMinValue)));
                     end if;
                 end if;
             end loop;

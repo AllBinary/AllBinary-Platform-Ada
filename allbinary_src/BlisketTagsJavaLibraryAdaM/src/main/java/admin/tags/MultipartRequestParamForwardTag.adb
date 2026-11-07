@@ -25,6 +25,10 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 with tags.HelperTag_Package; use tags.HelperTag_Package;
 with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
 with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with admin.tags.ParentInventoryTagHelper_Package;
 
 package body admin.tags.MultipartRequestParamForwardTag_Package is

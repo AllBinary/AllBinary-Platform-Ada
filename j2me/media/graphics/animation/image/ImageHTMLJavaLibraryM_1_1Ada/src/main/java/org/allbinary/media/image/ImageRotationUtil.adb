@@ -21,6 +21,8 @@ with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
 with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
 with playn.core.CanvasSurface_Package_References;
 with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.media.image.ImageCreationUtil_Package;
 
 package body org.allbinary.media.image.ImageRotationUtil_Package is

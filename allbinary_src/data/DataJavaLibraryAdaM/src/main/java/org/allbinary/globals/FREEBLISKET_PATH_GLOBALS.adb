@@ -16,6 +16,7 @@
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+with org.allbinary.globals.PATH_GLOBALS_Package;
 
 package body org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
 

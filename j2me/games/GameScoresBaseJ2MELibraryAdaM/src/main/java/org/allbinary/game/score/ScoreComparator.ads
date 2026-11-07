@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 --  with java.io.EOFException_Package; use java.io.EOFException_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;

@@ -30,6 +30,8 @@ with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactor
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
 

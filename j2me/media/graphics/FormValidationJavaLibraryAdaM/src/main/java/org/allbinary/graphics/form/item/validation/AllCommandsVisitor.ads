@@ -51,7 +51,7 @@ package org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package i
    subtype AllCommandsVisitor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References.AllCommandsVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AllCommandsVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package_References."=";
 
-   type AllCommandsVisitor is new Visitor with null record;
+   type AllCommandsVisitor is new Visitor_Package.Visitor with null record;
 
    procedure Initialize (This : in out AllCommandsVisitor'Class);
    function Create return AllCommandsVisitor_Access;

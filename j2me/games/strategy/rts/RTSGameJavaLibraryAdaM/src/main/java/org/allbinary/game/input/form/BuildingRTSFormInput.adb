@@ -56,19 +56,40 @@ with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionF
 with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
+with org.allbinary.graphics.paint.InitUpdatePaintable_Package;
 with org.allbinary.game.input.LayerPositionFinderInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package;
 with org.allbinary.game.layer.RTSInterface_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.RTSLayerInfoPaintable_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -314,12 +335,12 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
             return;
         end if;
         geographicMapCellPosition := BuildingRTSFormInput'Class (This).getSelectedGeographicCellPosition;
-        if (geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
+        if (Java_Object_Access (geographicMapCellPosition)) /= (Java_Object_Access (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
             if not (BuildingRTSFormInput'Class (This).isPositionBlocked) then
                 geographicMapCellType := geographicMapInterface.getCellTypeAt (geographicMapCellPosition);
                 raceTrackGeographicMapCellTypeFactory := RaceTrackGeographicMapCellTypeFactory_Access (geographicMapInterface.getGeographicMapCellTypeFactory);
                 if not (raceTrackGeographicMapCellTypeFactory.isPath (geographicMapCellType)) then
-                    if (This.newUnconstructedRTSLayerInterfaceArray (itemIndex)) = (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
+                    if (Java_Object_Access (This.newUnconstructedRTSLayerInterfaceArray (itemIndex))) = (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
                         This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := BuildingRTSFormInput'Class (This).getInstance (layerManager, item, geographicMapCellPosition);
                     else
                         rtsLayer := RTSLayer_Access (This.newUnconstructedRTSLayerInterfaceArray (itemIndex));

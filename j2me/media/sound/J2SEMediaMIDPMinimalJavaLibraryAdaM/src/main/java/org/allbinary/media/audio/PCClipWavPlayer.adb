@@ -14,6 +14,7 @@
 
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
 with javax.microedition.media.Control_Package_References;
@@ -28,13 +29,26 @@ with org.allbinary.thread.MusicThreadPool_Package; use org.allbinary.thread.Musi
 with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
 with org.allbinary.media.audio.NullClip_Package; use org.allbinary.media.audio.NullClip_Package;
 with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.media.audio.NullAudioFormat_Package;
 with org.allbinary.media.audio.NullClip_Package;
+with org.allbinary.media.audio.NullControl_Package;
 with org.allbinary.media.audio.NullJ2SEControl_Package;
+with javax.microedition.media.Player_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package ByteArrayInputStream_Package renames Standard.java.io.ByteArrayInputStream_Package;
    package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
    package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;

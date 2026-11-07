@@ -67,7 +67,25 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap
 with org.allbinary.game.input.form.PrimaryWaypointHelper_Package; use org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
 with org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
 
 package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
@@ -297,8 +315,8 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
         RTSFormInput_Package.RTSFormInput (This).process (layerManager);
-        if (WaypointRTSFormInput'Class (This).isStickyItemSelected) or else ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
-            if (WaypointRTSFormInput'Class (This).isStickyItemSelected) and then ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
+        if (WaypointRTSFormInput'Class (This).isStickyItemSelected) or else ((Java_Object_Access (associatedRtsLayer)) = (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) then
+            if (WaypointRTSFormInput'Class (This).isStickyItemSelected) and then ((Java_Object_Access (associatedRtsLayer)) = (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) then
                 geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (layerManager);
                 geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
                 allBinaryTiledLayer := geographicMapInterface.getAllBinaryTiledLayer;

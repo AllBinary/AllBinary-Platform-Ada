@@ -71,7 +71,7 @@ package body org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
    function getInstance return PlatformFormInputMappingFactory_Access is
    begin
         if (PlatformFormInputMappingFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            PlatformFormInputMappingFactory_Package.instance := PlatformFormInputMappingFactory_Package.Create;
+            PlatformFormInputMappingFactory_Package.instance := Java_Object_Access (PlatformFormInputMappingFactory_Package.Create);
         end if;
         return PlatformFormInputMappingFactory_Access (PlatformFormInputMappingFactory_Package.instance);
    end getInstance;
@@ -84,7 +84,7 @@ package body org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            if (This.inputToGameKeyMapping) = (InputToGameKeyMapping_Package.getNullInstance) then
+            if (Java_Object_Access (This.inputToGameKeyMapping)) = (Java_Object_Access (InputToGameKeyMapping_Package.getNullInstance)) then
                 pcKeyFactory := PCKeyFactory_Package.getInstance;
                 inputToGameKeyMapping := InputToGameKeyMapping_Package.Create;
                 gameKeyFactory := GameKeyFactory_Package.getInstance;

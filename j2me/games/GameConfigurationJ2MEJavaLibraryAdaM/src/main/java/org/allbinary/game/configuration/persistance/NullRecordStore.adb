@@ -14,6 +14,10 @@
 
 
 with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
+with javax.microedition.rms.RecordComparator_Package;
+with javax.microedition.rms.RecordEnumeration_Package;
+with javax.microedition.rms.RecordFilter_Package;
+with javax.microedition.rms.RecordListener_Package;
 
 package body org.allbinary.game.configuration.persistance.NullRecordStore_Package is
 

@@ -33,6 +33,10 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.image.opengles.OpenGLESImage_Package is
 

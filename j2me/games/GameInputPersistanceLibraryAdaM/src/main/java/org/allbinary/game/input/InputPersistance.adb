@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
 with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
@@ -40,9 +41,78 @@ with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.GameKeyMappingFactory_Package; use org.allbinary.game.input.GameKeyMappingFactory_Package;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
+with javax.microedition.lcdui.Canvas_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.microemu.DisplayAccess_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with javax.microedition.lcdui.Displayable_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
+with org.allbinary.util.EnumerationUtil_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with javax.microedition.lcdui.Form_Package;
+with org.microemu.device.ui.FormUI_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with javax.microedition.midlet.MIDlet_Package;
+with org.microemu.MIDletAccess_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.microemu.device.MutableImage_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with org.allbinary.game.configuration.persistance.PersistanceStrings_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with javax.microedition.rms.RecordComparator_Package;
+with javax.microedition.rms.RecordFilter_Package;
+with javax.microedition.rms.RecordListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.input.InputPersistance_Package is
 
+   package ByteArrayInputStream_Package renames Standard.java.io.ByteArrayInputStream_Package;
    package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
    package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
    package DataOutputStream_Package renames Standard.java.io.DataOutputStream_Package;
@@ -172,14 +242,14 @@ package body org.allbinary.game.input.InputPersistance_Package is
                         gameActionInputIdAsString := inputStream.readUTF;
                         value := Integer'Value (To_String (gameActionInputIdAsString));
                         gameActionInputId := Long_Long_Integer (value);
-                        inputStream.readUTF;
+                        declare Java_Result renames inputStream.readUTF; pragma Unreferenced (Java_Result); begin null; end;
                         value := Integer'Value (To_String (inputStream.readUTF));
                         inputId := Long_Long_Integer (value);
                         gameActionInput := gameKeyFactory.getGameKey (Integer (gameActionInputId));
                         input := inputFactory.getInstanceById (Integer (inputId));
-                        if ((input) = (inputFactory.NO_INPUT)) or else ((gameActionInput) = (null)) then
+                        if ((Java_Object_Access (input)) = (Java_Object_Access (inputFactory.NO_INPUT))) or else ((gameActionInput) = (null)) then
                             stringBuffer.delete (0, stringBuffer.length);
-                            if (input) = (inputFactory.NO_INPUT) then
+                            if (Java_Object_Access (input)) = (Java_Object_Access (inputFactory.NO_INPUT)) then
                                 stringBuffer.append (This.persistanceStrings.ERROR_LOADING_ID);
                                 stringBuffer.appendlong (inputId);
                                 stringBuffer.append (This.persistanceStrings.GAME_ACTION_INPUT);
@@ -200,7 +270,7 @@ package body org.allbinary.game.input.InputPersistance_Package is
                         hashtable.put (input, gameActionInput);
                     end loop;
                     This.valueList.add (Java_Object_Access (hashtable));
-                    This.idList.add (smallIntegerSingletonFactory.getAt (id));
+                    This.idList.add (Java_Box (smallIntegerSingletonFactory.getAt (id)));
                 else
                     null;
                 end if;
@@ -262,11 +332,11 @@ package body org.allbinary.game.input.InputPersistance_Package is
                 gameActionInput := Input_Access (inputObjectArray (index));
                 list := BasicArrayList_Access (hashtable.get (Java_Object_Access (inputObjectArray (index))));
                 for index2 in 0 .. (list.size) - 1 loop
-                    gameActionInputIdAsString := smallIntegerSingletonFactory.getAt (gameActionInput.getId).toString;
+                    gameActionInputIdAsString := To_Unbounded_String (Java_Image (smallIntegerSingletonFactory.getAt (gameActionInput.getId)));
                     outputStream.writeUTF (gameActionInputIdAsString);
                     outputStream.writeUTF (commonSeps.EQUALS);
                     input := Input_Access (list.objectArray (index2));
-                    inputIdAsString := smallIntegerSingletonFactory.getAt (input.getId).toString;
+                    inputIdAsString := To_Unbounded_String (Java_Image (smallIntegerSingletonFactory.getAt (input.getId)));
                     outputStream.writeUTF (inputIdAsString);
                 end loop;
             end loop;

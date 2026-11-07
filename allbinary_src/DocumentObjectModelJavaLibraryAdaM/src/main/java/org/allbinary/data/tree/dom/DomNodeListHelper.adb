@@ -20,7 +20,12 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.w3c.dom.NodeList_Package_References;
 with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.data.tree.dom.DomNodeListHelper_Package is
 

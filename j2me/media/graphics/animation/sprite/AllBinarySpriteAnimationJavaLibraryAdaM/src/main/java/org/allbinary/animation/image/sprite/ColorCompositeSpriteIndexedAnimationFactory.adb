@@ -28,6 +28,10 @@ with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package; use org
 with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package_References;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
+with org.allbinary.graphics.color.ColorCompositeInterface_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.logic.math.J2SEMath_Package;
 with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
 
 package body org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAnimationFactory_Package is

@@ -23,6 +23,7 @@ with org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package; use org.
 with org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package;
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package;
 with org.allbinary.ai.ArtificialIntelligenceLayerManager_Package;
+with org.allbinary.graphics.IdentifierInterface_Package;
 
 package body org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package is
 

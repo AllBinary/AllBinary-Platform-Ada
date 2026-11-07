@@ -21,6 +21,8 @@ with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animat
 with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package is
 

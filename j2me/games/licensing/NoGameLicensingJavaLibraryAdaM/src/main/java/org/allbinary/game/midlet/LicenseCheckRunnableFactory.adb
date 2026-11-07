@@ -18,9 +18,17 @@ with org.allbinary.thread.ABRunnable_Package_References;
 with org.allbinary.thread.NullABRunnable_Package; use org.allbinary.thread.NullABRunnable_Package;
 with org.allbinary.game.midlet.SpecialDemoGameMidlet_Package; use org.allbinary.game.midlet.SpecialDemoGameMidlet_Package;
 with org.allbinary.game.midlet.SpecialDemoGameMidlet_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.logic.system.security.licensing.ClientInformation_Package;
+with org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
 with org.allbinary.game.midlet.DemoSetup_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.game.midlet.LicenseLoadingType_Package;
 with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.midlet.SpecialDemoGameMidlet_Package;
 
 package body org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
@@ -67,7 +75,7 @@ package body org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
    function getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet_Param : access SpecialDemoGameMidlet_Package.SpecialDemoGameMidlet'Class) return ABRunnable_Access is
       specialDemoGameMidlet : constant SpecialDemoGameMidlet_Access := SpecialDemoGameMidlet_Access (specialDemoGameMidlet_Param);
    begin
-        return NullABRunnable_Package.getInstance;
+        return ABRunnable_Access (NullABRunnable_Package.getInstance);
    end getInstance;
 
    procedure getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet_Param : access SpecialDemoGameMidlet_Package.SpecialDemoGameMidlet'Class) is

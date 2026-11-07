@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -44,10 +45,21 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
@@ -144,7 +156,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
       order : constant OrderInterface_Access := OrderInterface_Access (order_Param);
       vector : BasicArrayList_Access;
       basket : BasketInterface_Access;
-      items : Java_Object_Access;
+      items : Set_Access;
       ZERO_STRING : Unbounded_String;
       EMPTY_STRING : Unbounded_String;
       inventoryEntity : InventoryEntity_Access;

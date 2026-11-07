@@ -15,7 +15,13 @@
 
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 
 package body org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package is
 

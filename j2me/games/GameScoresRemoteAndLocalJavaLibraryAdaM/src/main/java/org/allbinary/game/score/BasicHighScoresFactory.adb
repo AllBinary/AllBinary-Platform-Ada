@@ -38,6 +38,21 @@ with org.allbinary.game.score.LastFetchHighScoresFactory_Package; use org.allbin
 with org.allbinary.game.score.HighScoresHelper2_Package; use org.allbinary.game.score.HighScoresHelper2_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.EnumerationUtil_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 
@@ -172,9 +187,9 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 --                      gameType := gameInfo.getGameType;
 --                      gameTypeFactory := GameTypeFactory_Package.getInstance;
 --                      gameInfo2 := gameInfo;
---                      if ((gameType) = (gameTypeFactory.SINGLE_PLAYER)) or else ((gameType) = (gameTypeFactory.BOT)) then
+--                      if ((Java_Object_Access (gameType)) = (Java_Object_Access (gameTypeFactory.SINGLE_PLAYER))) or else ((Java_Object_Access (gameType)) = (Java_Object_Access (gameTypeFactory.BOT))) then
 --                          gameInfo2 := GameInfo_Access (BasicHighScoresGameInfoFactory_Package.getInstance.SINGLE_PLAYER_SERVER);
---                      elsif (gameType) = (gameTypeFactory.MULTI_PLAYER) then
+--                      elsif (Java_Object_Access (gameType)) = (Java_Object_Access (gameTypeFactory.MULTI_PLAYER)) then
 --                          gameInfo2 := GameInfo_Access (BasicHighScoresGameInfoFactory_Package.getInstance.MULTI_PLAYER_SERVER);
 --                      end if;
 --                      This.highScoresArray (1) := RemoteHighScores_Package.getInstancePreload (This.abeClientInformation, This.softwareInformation, gameInfo2, This.WORLD_TOP_SCORES, This.SCORES, BooleanFactory_Package.getInstance.FALSE, preload);

@@ -30,11 +30,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Set_Package; use java.util.Set_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
 
 package org.allbinary.logic.util.cache.J2SECacheInterface_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;
@@ -52,7 +53,7 @@ package org.allbinary.logic.util.cache.J2SECacheInterface_Package is
    subtype J2SECacheInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.J2SECacheInterface_Package_References.J2SECacheInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : J2SECacheInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.J2SECacheInterface_Package_References."=";
    function Java_Object_Access_From_J2SECacheInterface (Value : J2SECacheInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
-   function keySet (This : in out J2SECacheInterface) return Java_Object_Access is abstract;
+   function keySet (This : in out J2SECacheInterface) return Set_Access is abstract;
 
 end org.allbinary.logic.util.cache.J2SECacheInterface_Package;
 

@@ -20,6 +20,11 @@ with org.allbinary.game.layer.waypoint.WaypointLayer_Package; use org.allbinary.
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package_References;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
 
 package body org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
 

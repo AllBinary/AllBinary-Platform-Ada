@@ -41,7 +41,7 @@ package body org.allbinary.logic.math.J2SEMath_Package is
 
    function round (This : in out J2SEMath; value : Float) return Integer is
    begin
-        return Long_Long_Integer (Long_Float'Rounding (value));
+        return Integer (Float'Rounding (value));
    end round;
 
    function abs_Id (This : in out J2SEMath; value : Float) return Float is

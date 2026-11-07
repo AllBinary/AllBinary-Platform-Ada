@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
 with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
@@ -40,6 +41,7 @@ with org.allbinary.input.automation.actions.script.condition.processors.ProfileA
 
 package body org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInput_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
    package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
@@ -112,7 +114,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         timeNode := DomSearchHelper_Package.getNodeNoThrow (GenericProfileActionScriptInputData_Package.DELAY_Id, node.getChildNodes);
         if (timeNode) /= (null) then
             delayString := DomNodeHelper_Package.getTextNodeValue (timeNode);
-            BasicProfileActionScriptInput'Class (This).setTime (To_Unbounded_String (Java_Image (delayString)).intValue);
+            BasicProfileActionScriptInput'Class (This).setTime (Integer (Integer'Value (To_String (delayString))));
         else
             BasicProfileActionScriptInput'Class (This).setTime (0);
         end if;
@@ -129,7 +131,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    procedure Initialize (This : in out BasicProfileActionScriptInput'Class; label : Unbounded_String) is
       inputRobotFactory : InputRobotFactory_Access;
       hashtable : ABHashtable_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       iterator : Iterator_Access;
    begin
         BasicProfileActionScriptProcessor_Package.Initialize (This, label);

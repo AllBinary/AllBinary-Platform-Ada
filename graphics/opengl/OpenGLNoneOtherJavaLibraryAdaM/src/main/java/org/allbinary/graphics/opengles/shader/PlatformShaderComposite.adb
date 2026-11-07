@@ -24,7 +24,14 @@ with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package; use org.a
 with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package_References;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package; use org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
+with javax.microedition.khronos.egl.EGLConfig_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
 with org.allbinary.graphics.opengles.renderer.RendererStrings_Package;

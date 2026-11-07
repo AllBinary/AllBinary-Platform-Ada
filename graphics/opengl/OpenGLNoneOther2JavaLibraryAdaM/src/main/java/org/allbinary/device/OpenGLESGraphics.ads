@@ -107,7 +107,7 @@ package org.allbinary.device.OpenGLESGraphics_Package is
    subtype OpenGLESGraphics_Access_Array_Access_Array_Access is org.allbinary.device.OpenGLESGraphics_Package_References.OpenGLESGraphics_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OpenGLESGraphics_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.device.OpenGLESGraphics_Package_References."=";
 
-   type OpenGLESGraphics is new Graphics and OpenGLSurfaceChangedInterface and GraphicsInterface with record
+   type OpenGLESGraphics is new Graphics_Package.Graphics and OpenGLSurfaceChangedInterface and GraphicsInterface with record
       commonStrings : CommonStrings_Access;
       gl : GL10_Access;
    end record;

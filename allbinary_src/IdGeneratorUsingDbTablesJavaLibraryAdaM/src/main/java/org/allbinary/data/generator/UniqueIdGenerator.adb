@@ -22,7 +22,19 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.data.generator.UniqueIdGenerator_Package is
 
@@ -79,7 +91,7 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
         begin
             vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             vector.add (This.name);
-            vector.add (To_Unbounded_String (Java_Image (value)).toString);
+            vector.add (To_Unbounded_String (Java_Image (Long_Long_Integer (value))));
             This.idGeneratorEntity.insert (vector);
         exception
             when Java_Occurrence : others =>
@@ -108,7 +120,7 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
    begin
         begin
             idLong := This.idGeneratorEntity.get (This.name);
-            newValue := To_Unbounded_String (Java_Image ((Long_Long_Integer (idLong)) + (1)));
+            newValue := Long_Long_Integer ((Long_Long_Integer (idLong)) + (1));
             This.idGeneratorEntity.update (This.name, newValue);
             return To_Unbounded_String (Java_Image (idLong));
         exception

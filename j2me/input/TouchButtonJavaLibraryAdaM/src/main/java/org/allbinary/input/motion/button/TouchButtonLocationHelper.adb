@@ -41,8 +41,8 @@ package body org.allbinary.input.motion.button.TouchButtonLocationHelper_Package
       Initialize_Fields (This);
         buttonSize := CommonButtons_Package.getInstance.STANDARD_BUTTON_SIZE;
         displayInfo := DisplayInfoSingleton_Package.getInstance;
-        This.totalColumns := Long_Long_Integer (Long_Float'Rounding ((Float (displayInfo.getLastWidth)) / (Float (buttonSize))));
-        This.totalRows := Long_Long_Integer (Long_Float'Rounding ((Float (displayInfo.getLastHeight)) / (Float (buttonSize))));
+        This.totalColumns := Integer (Float'Rounding ((Float (displayInfo.getLastWidth)) / (Float (buttonSize))));
+        This.totalRows := Integer (Float'Rounding ((Float (displayInfo.getLastHeight)) / (Float (buttonSize))));
         This.columnsRemainder := (displayInfo.getLastWidth) rem (buttonSize);
         This.columnsRemainderHalf := (Java_Shift_Right_Arithmetic (This.columnsRemainder, 1));
         This.rowsRemainder := (displayInfo.getLastHeight) rem (buttonSize);

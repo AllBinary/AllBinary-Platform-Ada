@@ -25,7 +25,21 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package; use org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package is
 
@@ -105,7 +119,7 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
             featureInterface := ResourceRelativeRelationshipFactoryInterface_Access (featureReleaseList.objectArray (index));
             if featureInterface.isFeature then
                 list := featureInterface.getResourceRelativeRelationshipList (resource);
-                if (list) /= (This.basicArrayListUtil.getImmutableInstance) then
+                if (Java_Object_Access (list)) /= (Java_Object_Access (This.basicArrayListUtil.getImmutableInstance)) then
                     return FeaturedResourceRelativeRelationshipFactory'Class (This).duplicate (list, layer);
                 end if;
             end if;

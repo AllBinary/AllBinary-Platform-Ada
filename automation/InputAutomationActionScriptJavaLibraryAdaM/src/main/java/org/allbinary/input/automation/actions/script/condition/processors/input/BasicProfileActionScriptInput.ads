@@ -32,7 +32,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Iterator_Package; use java.util.Iterator_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package; use org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package;
 limited with org.allbinary.input.automation.robot.InputRobotInterface_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package_References;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with java.awt.Desktop_Package; use java.awt.Desktop_Package;
+with java.net.URI_Package; use java.net.URI_Package;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with javax.microedition.lcdui.Canvas_Package_References;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
@@ -28,9 +30,21 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package; use org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package;
 with org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package_References;
 with org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
 
+   package Desktop_Package renames Standard.java.awt.Desktop_Package;
+   package URI_Package renames Standard.java.net.URI_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    subtype Canvas_Access is javax.microedition.lcdui.Canvas_Package_References.Canvas_Access;

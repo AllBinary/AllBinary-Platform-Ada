@@ -30,10 +30,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
+with java.lang.ClassLoader_Package; use java.lang.ClassLoader_Package;
 
 package org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package is
 
+   package ClassLoader_Package renames Standard.java.lang.ClassLoader_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;

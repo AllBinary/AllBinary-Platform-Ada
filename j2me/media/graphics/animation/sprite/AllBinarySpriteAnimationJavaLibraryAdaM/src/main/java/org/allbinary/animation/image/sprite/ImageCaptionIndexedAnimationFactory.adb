@@ -36,6 +36,12 @@ with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.ColorCompositeInterface_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.logic.math.J2SEMath_Package;
+with javax.microedition.media.PlayerListener_Package;
 with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
 
 package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package is
@@ -144,7 +150,7 @@ package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFa
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
       Initialize_Fields (This);
-        if (animationBehaviorFactory) = (AnimationBehaviorFactory_Package.getInstance) then
+        if (Java_Object_Access (animationBehaviorFactory)) = (Java_Object_Access (AnimationBehaviorFactory_Package.getInstance)) then
             ForcedLogUtil_Package.log (To_Unbounded_String ("Using default AnimationBehaviorFactory with IndexedAnimationFactory"), ImageCaptionIndexedAnimationFactory_Access'(This'Unchecked_Access));
         end if;
         This.captionImage := captionImage;

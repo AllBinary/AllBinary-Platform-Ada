@@ -30,9 +30,11 @@ with org.allbinary.game.layer.LayerPlacementInterface_Package; use org.allbinary
 with org.allbinary.game.layer.LayerPlacementInterface_Package_References;
 with org.allbinary.game.layer.LayerPlacementType_Package; use org.allbinary.game.layer.LayerPlacementType_Package;
 with org.allbinary.game.layer.LayerPlacementTypeFactory_Package; use org.allbinary.game.layer.LayerPlacementTypeFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.layer.LayerPlacementInterface_Package;
 with org.allbinary.game.layer.LayerPlacementType_Package;
 with org.allbinary.game.layer.LayerPlacementTypeFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.layer.LayerPlacementType_Package_References;
 
 package body org.allbinary.game.layer.LayerPlacer_Package is

@@ -24,6 +24,8 @@ with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
 with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
 with playn.html.HTMLPlaynUtil_Package_References;
 with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.media.image.ImageCreationUtil_Package;
 
 package body org.allbinary.media.image.ImageRotationUtil_Package is

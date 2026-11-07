@@ -21,6 +21,10 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package;
 
 package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package is

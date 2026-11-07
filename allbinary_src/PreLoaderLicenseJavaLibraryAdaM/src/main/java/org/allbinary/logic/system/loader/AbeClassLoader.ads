@@ -30,20 +30,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with java.util.Map_Package; use java.util.Map_Package;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 limited with org.allbinary.logic.system.security.AbCryptUtil_Package;
 with org.allbinary.logic.system.security.AbCryptUtil_Package_References;
-with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
+with java.lang.ClassLoader_Package; use java.lang.ClassLoader_Package;
 
 package org.allbinary.logic.system.loader.AbeClassLoader_Package is
 
    package Map_Package renames Standard.java.util.Map_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbCryptUtil_Package renames Standard.org.allbinary.logic.system.security.AbCryptUtil_Package;
+   package ClassLoader_Package renames Standard.java.lang.ClassLoader_Package;
    package Reference_Types is
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    use type LogUtil_Access;

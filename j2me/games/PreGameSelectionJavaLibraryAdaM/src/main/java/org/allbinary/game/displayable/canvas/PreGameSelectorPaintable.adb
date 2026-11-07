@@ -22,6 +22,8 @@ with org.allbinary.graphics.draw.CanvasDrawLineString_Package_References;
 with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary.graphics.paint.InitUpdatePaintable_Package;
 with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package; use org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package;
 with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package;
 
 package body org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package is

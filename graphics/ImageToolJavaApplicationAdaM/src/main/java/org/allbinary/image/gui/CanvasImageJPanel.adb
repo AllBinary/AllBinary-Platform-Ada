@@ -32,6 +32,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.gui.CanvasImageJPanel_Package is
 
@@ -148,10 +153,10 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
 --                  begin
 --                      canvasTrimUtil := CanvasTrimUtil_Package.getInstance;
 --                      canvasExpandUtil := CanvasExpandUtil_Package.getInstance;
---                      leftReduction := To_Unbounded_String (Java_Image (This.widthReductionTextField1.getText));
---                      topReduction := To_Unbounded_String (Java_Image (This.heightReductionTextField1.getText));
---                      widthReduction := To_Unbounded_String (Java_Image (This.widthReductionTextField.getText));
---                      heightReduction := To_Unbounded_String (Java_Image (This.heightReductionTextField.getText));
+--                      leftReduction := Integer (This.widthReductionTextField1.getText);
+--                      topReduction := Integer (This.heightReductionTextField1.getText);
+--                      widthReduction := Integer (This.widthReductionTextField.getText);
+--                      heightReduction := Integer (This.heightReductionTextField.getText);
 --                      if ((((leftReduction) <= (0)) or else ((topReduction) <= (0))) or else ((widthReduction) <= (0))) or else ((heightReduction) <= (0)) then
 --                          canvasTrimUtil.process (CanvasImageJPanel'Class (This).getImageProcessorInput, -(leftReduction), -(topReduction), -(widthReduction), -(heightReduction), CanvasImageJPanel_Access'(This'Unchecked_Access));
 --                      else

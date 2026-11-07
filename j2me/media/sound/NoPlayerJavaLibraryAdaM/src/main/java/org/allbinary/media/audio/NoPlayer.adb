@@ -17,6 +17,13 @@ with javax.microedition.media.Control_Package; use javax.microedition.media.Cont
 with javax.microedition.media.Control_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.media.audio.NullControl_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
 
 package body org.allbinary.media.audio.NoPlayer_Package is
 

@@ -24,9 +24,13 @@ with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.h
 with org.allbinary.game.health.HealthInterface_Package_References;
 with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
 with org.allbinary.game.health.Health_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.game.health.Health_Package;
 with org.allbinary.game.health.HealthBarAnimation_Package;
 with org.allbinary.game.health.HealthInterface_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.health.HealthBar_Package is
 

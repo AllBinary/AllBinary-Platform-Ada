@@ -12,6 +12,11 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
 with org.allbinary.graphics.form.item.CustomCustomItem_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 
 package body org.allbinary.graphics.form.item.ABTextFieldItem_Package is
 

@@ -31,6 +31,13 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
 with org.allbinary.logic.visual.transform.TransformInterface_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.visual.transform.TransformFactory_Package is
 
@@ -137,7 +144,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View In DB: ") & viewName));
             end if;
             transformInfoInterface.setChild;
-            anyType := TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface);
+            anyType := Java_Object_Access (TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
                 This.logUtil.putF (To_Unbounded_String ("Created Transform: ") & viewName, TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
@@ -178,7 +185,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             else
                 transformInfoInterface := TransformInfoInterface_Access (TransformInfoHttpFactory_Package.getInstance (propertiesHashMap, pageContext));
             end if;
-            anyType := TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface);
+            anyType := Java_Object_Access (TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
                 This.logUtil.putF (To_Unbounded_String ("Created Transform: ") & Java_Image (propertiesHashMap.get (transformInfoData.NAME)), TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
@@ -210,7 +217,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
                 This.logUtil.putF (To_Unbounded_String ("Creating Transform: ") & transformInfoInterface.getName, TransformFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(TransformInfoInterface)"));
             end if;
-            anyType := TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface);
+            anyType := Java_Object_Access (TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
                 This.logUtil.putF (To_Unbounded_String ("Created Transform: ") & transformInfoInterface.getName, TransformFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(TransformInfoInterface)"));
             end if;

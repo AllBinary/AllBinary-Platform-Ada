@@ -43,7 +43,12 @@ with org.allbinary.image.gui.ImageIcon_Package; use org.allbinary.image.gui.Imag
 with org.allbinary.image.gui.Icon_Package; use org.allbinary.image.gui.Icon_Package;
 with org.allbinary.image.gui.JLabel_Package; use org.allbinary.image.gui.JLabel_Package;
 with org.allbinary.image.gui.JLabel_Package_References;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.image.gui.ImageIconUnique_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
 
@@ -249,7 +254,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             end loop;
             totalImages := (This.imageUnifierProperties.getRows) * (This.imageUnifierProperties.getColumns);
             averageRatio := This.imagesRatioUtil.getAverage (tempBufferedImageArray, totalImages);
-            averageRatioString := averageRatio.toString;
+            averageRatioString := To_Unbounded_String (Java_Image (averageRatio));
             if (Ada.Strings.Unbounded.Length (averageRatioString)) > (4) then
                 averageRatioString := Unbounded_Slice (averageRatioString, (0) + 1, 4);
             end if;
@@ -326,7 +331,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             imageUnifierCell := ImageUnifierCell_Package.Create (This.cellWidthJTextField.getText, This.cellHeightJTextField.getText);
             This.imageUnifierProperties.setImageUnifierCell (imageUnifierCell);
             cellRatio := ((Long_Float (imageUnifierCell.getWidth)) / (imageUnifierCell.getHeight));
-            cellRatioString := cellRatio.toString;
+            cellRatioString := To_Unbounded_String (Java_Image (cellRatio));
             if (Ada.Strings.Unbounded.Length (cellRatioString)) > (4) then
                 cellRatioString := Unbounded_Slice (cellRatioString, (0) + 1, 4);
             end if;

@@ -28,6 +28,11 @@ with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+with org.allbinary.util.ABHashtable_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package is
 

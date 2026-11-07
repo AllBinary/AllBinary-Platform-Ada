@@ -146,7 +146,7 @@ package org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
    subtype RTSLayerCostAnimation_Access_Array_Access_Array_Access is org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References.RTSLayerCostAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RTSLayerCostAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.item.RTSLayerCostAnimation_Package_References."=";
 
-   type RTSLayerCostAnimation is new Animation and TechEventListenerInterface and UpdateMyFontInterface with record
+   type RTSLayerCostAnimation is new Animation_Package.Animation and TechEventListenerInterface and UpdateMyFontInterface with record
       logUtil : LogUtil_Access;
       primitiveLongUtil : PrimitiveLongUtil_Access;
       DOLLAR : Unbounded_String;

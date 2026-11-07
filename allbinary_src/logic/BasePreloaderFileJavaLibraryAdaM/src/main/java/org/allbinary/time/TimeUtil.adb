@@ -47,10 +47,10 @@ package body org.allbinary.time.TimeUtil_Package is
       day : Integer;
       hour : Integer;
    begin
-        year := yearString.intValue;
-        month := monthString.intValue;
-        day := dayString.intValue;
-        hour := hourString.intValue;
+        year := Integer (Integer'Value (To_String (yearString)));
+        month := Integer (Integer'Value (To_String (monthString)));
+        day := Integer (Integer'Value (To_String (dayString)));
+        hour := Integer (Integer'Value (To_String (hourString)));
         calendar.set (year, month, day, hour, 0);
    end setCalendar;
 
@@ -63,12 +63,12 @@ package body org.allbinary.time.TimeUtil_Package is
       minute : Integer;
       second : Integer;
    begin
-        year := yearString.intValue;
-        month := monthString.intValue;
-        day := dayString.intValue;
-        hour := hourString.intValue;
-        minute := minuteString.intValue;
-        second := secondString.intValue;
+        year := Integer (Integer'Value (To_String (yearString)));
+        month := Integer (Integer'Value (To_String (monthString)));
+        day := Integer (Integer'Value (To_String (dayString)));
+        hour := Integer (Integer'Value (To_String (hourString)));
+        minute := Integer (Integer'Value (To_String (minuteString)));
+        second := Integer (Integer'Value (To_String (secondString)));
         calendar.set (year, month, day, hour, minute, second);
    end setCalendar;
 
@@ -81,12 +81,12 @@ package body org.allbinary.time.TimeUtil_Package is
       minute : Integer;
       second : Integer;
    begin
-        year := (calendar.get (Calendar_Package.YEAR)) + (yearsString.intValue);
-        month := (calendar.get (Calendar_Package.MONTH)) + (monthsString.intValue);
-        day := (calendar.get (Calendar_Package.DAY_OF_MONTH)) + (daysString.intValue);
-        hour := (calendar.get (Calendar_Package.HOUR)) + (hoursString.intValue);
-        minute := (calendar.get (Calendar_Package.MINUTE)) + (minutesString.intValue);
-        second := (calendar.get (Calendar_Package.SECOND)) + (secondsString.intValue);
+        year := (calendar.get (Calendar_Package.YEAR)) + (Integer (Integer'Value (To_String (yearsString))));
+        month := (calendar.get (Calendar_Package.MONTH)) + (Integer (Integer'Value (To_String (monthsString))));
+        day := (calendar.get (Calendar_Package.DAY_OF_MONTH)) + (Integer (Integer'Value (To_String (daysString))));
+        hour := (calendar.get (Calendar_Package.HOUR)) + (Integer (Integer'Value (To_String (hoursString))));
+        minute := (calendar.get (Calendar_Package.MINUTE)) + (Integer (Integer'Value (To_String (minutesString))));
+        second := (calendar.get (Calendar_Package.SECOND)) + (Integer (Integer'Value (To_String (secondsString))));
         calendar.set (year, month, day, hour, minute, second);
    end setExpirationCalendar;
 

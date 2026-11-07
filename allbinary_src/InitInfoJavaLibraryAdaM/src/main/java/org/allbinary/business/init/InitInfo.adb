@@ -23,9 +23,18 @@ with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.logic.java.bool.BooleanUtil_Package; use org.allbinary.logic.java.bool.BooleanUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.business.init.InitInfoEntity_Package; use org.allbinary.business.init.InitInfoEntity_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.init.InitException_Package;
 with org.allbinary.business.init.InitInfoEntity_Package;
 with org.allbinary.business.init.InitSql_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.init.InitInfo_Package is
 

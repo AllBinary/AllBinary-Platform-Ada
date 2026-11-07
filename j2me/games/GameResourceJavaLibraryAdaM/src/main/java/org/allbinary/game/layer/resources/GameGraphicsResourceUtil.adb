@@ -25,6 +25,16 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package is
 
@@ -69,7 +79,7 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
    function getInstance return GameGraphicsResourceUtil_Access is
    begin
         if (GameGraphicsResourceUtil_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            GameGraphicsResourceUtil_Package.instance := GameGraphicsResourceUtil_Package.Create;
+            GameGraphicsResourceUtil_Package.instance := Java_Object_Access (GameGraphicsResourceUtil_Package.Create);
         end if;
         return GameGraphicsResourceUtil_Access (GameGraphicsResourceUtil_Package.instance);
    end getInstance;
@@ -133,11 +143,11 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
         if features.isFeature (graphicsFeatureFactory.VECTOR_GRAPHICS) then
             null;
         elsif features.isFeature (graphicsFeatureFactory.IMAGE_GRAPHICS) then
-            if ((graphicsFeature) = (graphicsFeatureFactory.IMAGE_TO_ARRAY_GRAPHICS)) or else ((graphicsFeature) = (graphicsFeatureFactory.IMAGE_ROTATION_ON_THE_FLY)) then
+            if ((Java_Object_Access (graphicsFeature)) = (Java_Object_Access (graphicsFeatureFactory.IMAGE_TO_ARRAY_GRAPHICS))) or else ((Java_Object_Access (graphicsFeature)) = (Java_Object_Access (graphicsFeatureFactory.IMAGE_ROTATION_ON_THE_FLY))) then
                 null;
-            elsif (graphicsFeature) = (graphicsFeatureFactory.SPRITE_FULL_GRAPHICS) then
+            elsif (Java_Object_Access (graphicsFeature)) = (Java_Object_Access (graphicsFeatureFactory.SPRITE_FULL_GRAPHICS)) then
                 stringBuffer.append (This.SPRITE);
-            elsif (graphicsFeature) = (graphicsFeatureFactory.SPRITE_QUARTER_ROTATION_GRAPHICS) then
+            elsif (Java_Object_Access (graphicsFeature)) = (Java_Object_Access (graphicsFeatureFactory.SPRITE_QUARTER_ROTATION_GRAPHICS)) then
                 stringBuffer.append (This.QUARTER);
                 stringBuffer.append (This.SPRITE);
             else

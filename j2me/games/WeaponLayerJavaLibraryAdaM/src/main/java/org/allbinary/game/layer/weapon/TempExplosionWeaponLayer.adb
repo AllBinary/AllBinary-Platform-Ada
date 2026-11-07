@@ -18,6 +18,11 @@ with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.layer.weapon.WeaponLayer_Package;
 
 package body org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is

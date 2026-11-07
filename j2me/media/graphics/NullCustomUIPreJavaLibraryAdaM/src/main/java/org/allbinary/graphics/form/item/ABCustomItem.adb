@@ -10,6 +10,8 @@ with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.graphics.form.item.ABCustomItem_Package is
 
@@ -55,7 +57,7 @@ package body org.allbinary.graphics.form.item.ABCustomItem_Package is
    function getNullInstance return ABCustomItem_Access is
    begin
         if (ABCustomItem_Package.NULL_CUSTOM_ITEM) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            ABCustomItem_Package.NULL_CUSTOM_ITEM := ABCustomItem_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE);
+            ABCustomItem_Package.NULL_CUSTOM_ITEM := Java_Object_Access (ABCustomItem_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ABCustomItem_Access (ABCustomItem_Package.NULL_CUSTOM_ITEM);
    end getNullInstance;

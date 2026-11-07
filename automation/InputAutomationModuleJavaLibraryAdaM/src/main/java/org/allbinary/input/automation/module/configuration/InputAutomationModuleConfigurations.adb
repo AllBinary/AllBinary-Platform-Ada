@@ -14,6 +14,7 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
@@ -28,11 +29,13 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 
 package body org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package is
 
+   package FileInputStream_Package renames Standard.java.io.FileInputStream_Package;
    package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
    package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
    package NewInputAutomationModulesData_Package renames Standard.org.allbinary.input.automation.module.NewInputAutomationModulesData_Package;

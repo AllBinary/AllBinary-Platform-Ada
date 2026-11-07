@@ -46,8 +46,19 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
 with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package is
 
@@ -374,8 +385,19 @@ with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
 
@@ -574,8 +596,19 @@ with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package; use org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
 with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package is
 

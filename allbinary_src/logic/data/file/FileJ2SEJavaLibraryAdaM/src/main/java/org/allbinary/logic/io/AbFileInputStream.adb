@@ -14,6 +14,7 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
@@ -39,7 +40,7 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
 
    procedure Initialize (This : in out AbFileInputStream'Class; name : Unbounded_String) is
    begin
-        null;
+        FileInputStream_Package.Initialize (This, name);
    end Initialize;
 
    function Create (name : Unbounded_String) return AbFileInputStream_Access is
@@ -52,7 +53,7 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
    procedure Initialize (This : in out AbFileInputStream'Class; file_Param : access AbFile_Package.AbFile'Class) is
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
-        null;
+        FileInputStream_Package.Initialize (This, AbFileNativeUtil_Package.get (file));
    end Initialize;
 
    function Create (file_Param : access AbFile_Package.AbFile'Class) return AbFileInputStream_Access is
@@ -65,7 +66,7 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
    procedure Initialize (This : in out AbFileInputStream'Class; file_Param : access File_Package.File'Class) is
       file : constant File_Access := File_Access (file_Param);
    begin
-        null;
+        FileInputStream_Package.Initialize (This, file);
    end Initialize;
 
    function Create (file_Param : access File_Package.File'Class) return AbFileInputStream_Access is

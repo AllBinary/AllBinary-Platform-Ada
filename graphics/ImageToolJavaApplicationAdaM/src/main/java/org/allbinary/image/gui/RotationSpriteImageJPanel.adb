@@ -29,6 +29,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 
@@ -134,8 +140,8 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 --                      imageProcessorInput := RotationSpriteImageJPanel'Class (This).getImageProcessorInput;
 --                      bufferedImageArray := imageProcessorInput.getBufferedImageArray;
 --                      for index in 0 .. (bufferedImageArray'Length) - 1 loop
---                          totalFrames := To_Unbounded_String (Java_Image (Java_Unbox (This.totalFramesJComboBox.getSelectedItem)));
---                          totalAngle := To_Unbounded_String (Java_Image (Java_Unbox (This.totalAngleJComboBox.getSelectedItem)));
+--                          totalFrames := Integer (Java_Unbox (This.totalFramesJComboBox.getSelectedItem));
+--                          totalAngle := Integer (Java_Unbox (This.totalAngleJComboBox.getSelectedItem));
 --                          generatedBufferedImageArray := ImageJ2SERotationUtil_Package.getInstance.getRotatedImages (bufferedImageArray (index), totalFrames, totalAngle);
 --                          This.result := ImageJ2SERotationUtil_Package.getInstance.createSpriteImage (generatedBufferedImageArray);
 --                          RotationSpriteImageJPanel'Class (This).getParent.repaint;

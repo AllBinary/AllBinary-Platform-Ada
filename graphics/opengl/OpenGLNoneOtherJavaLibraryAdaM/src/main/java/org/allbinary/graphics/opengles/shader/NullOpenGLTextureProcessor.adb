@@ -15,6 +15,8 @@
 
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package; use org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
 
 package body org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package is

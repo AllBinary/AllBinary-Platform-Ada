@@ -16,6 +16,7 @@
 with org.allbinary.business.init.InitInfo_Package; use org.allbinary.business.init.InitInfo_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.business.init.InitException_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
 
 package body org.allbinary.globals.WebAppUrlGlobals_Package is
 

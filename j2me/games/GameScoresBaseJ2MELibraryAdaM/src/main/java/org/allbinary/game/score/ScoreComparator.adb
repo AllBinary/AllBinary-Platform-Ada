@@ -13,14 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
 with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.score.ScoreComparator_Package is
 
+   package ByteArrayInputStream_Package renames Standard.java.io.ByteArrayInputStream_Package;
    package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
@@ -75,8 +85,8 @@ package body org.allbinary.game.score.ScoreComparator_Package is
         scoreOne := 0;
         scoreTwo := 0;
         begin
-            inputStreamOne.readUTF;
-            inputStreamTwo.readUTF;
+            declare Java_Result renames inputStreamOne.readUTF; pragma Unreferenced (Java_Result); begin null; end;
+            declare Java_Result renames inputStreamTwo.readUTF; pragma Unreferenced (Java_Result); begin null; end;
             scoreOne := inputStreamOne.readLong;
             scoreTwo := inputStreamTwo.readLong;
         exception

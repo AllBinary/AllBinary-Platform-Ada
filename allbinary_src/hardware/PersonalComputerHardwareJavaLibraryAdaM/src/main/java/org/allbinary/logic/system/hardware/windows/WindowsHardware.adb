@@ -48,6 +48,12 @@ with org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Pa
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.system.hardware.components.Component_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package is
 

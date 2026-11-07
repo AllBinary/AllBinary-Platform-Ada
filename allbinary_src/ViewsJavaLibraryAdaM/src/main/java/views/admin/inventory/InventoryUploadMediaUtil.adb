@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
@@ -32,9 +33,17 @@ with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.l
 with org.allbinary.logic.visual.media.MediaUtil_Package; use org.allbinary.logic.visual.media.MediaUtil_Package;
 with org.allbinary.logic.visual.media.MediaUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body views.admin.inventory.InventoryUploadMediaUtil_Package is
 
+   package ByteArrayInputStream_Package renames Standard.java.io.ByteArrayInputStream_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package UploadMediaSingleton_Package renames Standard.org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;

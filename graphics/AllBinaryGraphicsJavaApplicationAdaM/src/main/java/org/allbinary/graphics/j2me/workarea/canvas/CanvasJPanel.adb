@@ -67,12 +67,26 @@ with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allb
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.Graphics_Package; use org.allbinary.graphics.j2me.workarea.canvas.Graphics_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Graphics_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
+with org.allbinary.graphics.GraphicsStrings_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References;
 
@@ -351,7 +365,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    --  throws Exception
    procedure initMyComponents (This : in out CanvasJPanel) is
    begin
-        This.frameLabel := CanvasTreeLabel_Package.Create (To_Unbounded_String ("FrameLabel") & CanvasJPanel_Package.frame.toString);
+        This.frameLabel := CanvasTreeLabel_Package.Create (To_Unbounded_String ("FrameLabel") & To_Unbounded_String (Java_Image (CanvasJPanel_Package.frame)));
         This.canvasTreeNode := DefaultMutableTreeNode_Package.Create (This.frameLabel);
         CanvasJPanel_Package.frame := CanvasJPanel_Package.frame + 1;
         This.workAreaJTreeJPanel.add (CanvasJPanel'Class (This).getTreeNode);
@@ -686,7 +700,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                     CanvasJPanel'Class (This).drawGrid (graphics);
                 end if;
                 CanvasJPanel'Class (This).drawItems (graphics);
-                graphics.drawString (CanvasJPanel'Class (This).getAngle.toString, (CanvasJPanel'Class (This).getWidth) - (75), (CanvasJPanel'Class (This).getHeight) - (15));
+                graphics.drawString (To_Unbounded_String (Java_Image (CanvasJPanel'Class (This).getAngle)), (CanvasJPanel'Class (This).getWidth) - (75), (CanvasJPanel'Class (This).getHeight) - (15));
                 This.grid.isChanged := False;
             end if;
         exception

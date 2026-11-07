@@ -22,6 +22,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.logic.system.security.licensing.ClientInformation_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;

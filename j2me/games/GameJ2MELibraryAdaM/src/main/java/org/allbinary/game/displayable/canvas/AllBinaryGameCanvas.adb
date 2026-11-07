@@ -224,30 +224,115 @@ with org.allbinary.game.displayable.canvas.FormInputProcessor_Package; use org.a
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.game.displayable.canvas.SaveHighScoreRunnable_Package; use org.allbinary.game.displayable.canvas.SaveHighScoreRunnable_Package;
+with org.allbinary.util.ABStack_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.game.displayable.canvas.BaseGameBehavior_Package;
 with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
+with org.allbinary.graphics.displayable.BaseScalable_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Canvas_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package;
+with javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with javax.microedition.lcdui.Command_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.graphics.form.item.CustomTextBox_Package;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
 with org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.microemu.DisplayAccess_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with javax.microedition.lcdui.Displayable_Package;
+with org.allbinary.graphics.displayable.DisplayableInterface_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
 with org.allbinary.game.displayable.canvas.EndGamePaintable_Package;
 with org.allbinary.game.displayable.canvas.EndGameProcessor_Package;
+with org.allbinary.util.EnumerationUtil_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.microemu.device.FontManager_Package;
+with javax.microedition.lcdui.Form_Package;
 with org.allbinary.game.displayable.canvas.FormInputProcessor_Package;
+with org.microemu.device.ui.FormUI_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.feature.GameFeature_Package;
 with org.allbinary.game.init.GameInitializationInterface_Package;
 with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
 with org.allbinary.game.displayable.canvas.GameLimitedCommandTextItemArrayFactory_Package;
 with org.allbinary.game.displayable.canvas.GameProcessor_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.game.score.displayable.HighScoreUtil_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
 with org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package;
+with org.allbinary.game.configuration.feature.InputFeature_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with javax.microedition.midlet.MIDlet_Package;
+with org.microemu.MIDletAccess_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.microemu.device.MutableImage_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.game.displayable.canvas.NullDemoPaintable_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.allbinary.image.opengles.OpenGLImageFactory_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
+with org.microemu.device.ui.PointerEvent_Package;
 with org.allbinary.game.displayable.canvas.PopupCommandFormInputProcessor_Package;
 with org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package;
+with org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.game.displayable.canvas.SaveHighScoreRunnable_Package;
+with org.allbinary.graphics.displayable.ScalableListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with org.allbinary.game.configuration.feature.SensorFeature_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.media.audio.Sound_Package;
 with org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
 with org.allbinary.game.displayable.canvas.StartIntermissionProcessor_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.game.configuration.feature.TouchFeature_Package;
+with org.allbinary.input.TouchJ2ME_Package;
+with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package is
 
@@ -944,7 +1029,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       This.menuPaintable := NullPaintable_Package.getInstance;
       This.currentTouchInputFactory := NoButtonsTouchInputFactory_Package.getInstance;
       This.colorFillPaintable := ColorFillPaintableFactory_Package.getInstance.getInstance (This.basicColorFactory.BLACK, True);
-      This.baseGameStatistics := GameStatisticsFactory_Package.getInstance;
+      This.baseGameStatistics := BaseGameStatistics_Access (GameStatisticsFactory_Package.getInstance);
       This.primaryPlayerQueue := PrimaryPlayerQueueFactory_Package.getInstance;
       This.secondaryPlayerQueue := SecondaryPlayerQueueFactory_Package.getInstance;
       This.BUILD_GAME := To_Unbounded_String ("buildGame");
@@ -1011,7 +1096,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             popupMenuRectangle := This.myFormUtil.getPopupMenuRectangle;
             basicPopupMenuPaintable := (BasicPopupMenuPaintable_Access (AllBinaryGameCanvas'Class (This).getOpenMenuPaintable));
             basicPopupMenuPaintable.init (popupMenuRectangle);
-            if (AllBinaryGameCanvas'Class (This).getPopupMenuInputProcessor) /= (NoMenuInputProcessor_Package.getInstance) then
+            if (Java_Object_Access (AllBinaryGameCanvas'Class (This).getPopupMenuInputProcessor)) /= (Java_Object_Access (NoMenuInputProcessor_Package.getInstance)) then
                 popupMenuInputProcessor := (PopupMenuInputProcessor_Access (AllBinaryGameCanvas'Class (This).getPopupMenuInputProcessor));
                 popupMenuInputProcessor.init (popupMenuRectangle);
             end if;
@@ -1028,7 +1113,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
 
    function getInGameMenuBehavior (This : in out AllBinaryGameCanvas) return BaseMenuBehavior_Access is
    begin
-        return InGameMenuBehavior_Package.getInstance;
+        return BaseMenuBehavior_Access (InGameMenuBehavior_Package.getInstance);
    end getInGameMenuBehavior;
 
    procedure setCurrentThread (This : in out AllBinaryGameCanvas) is
@@ -1072,7 +1157,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         formType := FormTypeFactory_Package.getInstance.getFormType;
         rectangle := This.formUtil.createFormRectangle;
         This.menuForm.init (rectangle, formType);
-        if (This.currentTouchInputFactory) /= (NoButtonsTouchInputFactory_Package.getInstance) then
+        if (Java_Object_Access (This.currentTouchInputFactory)) /= (Java_Object_Access (NoButtonsTouchInputFactory_Package.getInstance)) then
             This.touchButtonFactory.toggle (AllBinaryGameCanvas'Class (This).isPaused, This.currentTouchInputFactory.getList);
         end if;
         This.myFontProcessor := This.updateMyFontProcessor;
@@ -1097,7 +1182,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       features : Features_Access;
       popupMenuRectangle : Rectangle_Access;
    begin
-        if (This.popupMenuInputProcessor) = (NoMenuInputProcessor_Package.getInstance) then
+        if (Java_Object_Access (This.popupMenuInputProcessor)) = (Java_Object_Access (NoMenuInputProcessor_Package.getInstance)) then
             features := Features_Package.getInstance;
             popupMenuRectangle := This.myFormUtil.getPopupMenuRectangle;
             if features.isFeature (This.touchFeatureFactory.TOUCH_ENABLED) then
@@ -1148,7 +1233,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             null;
         end if;
         AllBinaryGameCanvas'Class (This).setMenuInputProcessor (AllBinaryGameCanvas'Class (This).getPopupMenuInputProcessor);
-        if (scrollSelectionForm) /= (ScrollSelectionFormNoneFactory_Package.getInstance) then
+        if (Java_Object_Access (scrollSelectionForm)) /= (Java_Object_Access (ScrollSelectionFormNoneFactory_Package.getInstance)) then
             AllBinaryGameCanvas'Class (This).setFormPaintable (FormPaintable_Package.Create (scrollSelectionForm));
         else
             null;
@@ -1216,7 +1301,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
 
    function isPausable (This : in out AllBinaryGameCanvas) return Boolean is
    begin
-        if (CurrentDisplayableFactory_Package.getInstance.getUsedRunnable) = (NullWaitGameRunnable_Package.getInstance) then
+        if (Java_Object_Access (CurrentDisplayableFactory_Package.getInstance.getUsedRunnable)) = (Java_Object_Access (NullWaitGameRunnable_Package.getInstance)) then
             return True;
         else
             return False;
@@ -1600,14 +1685,14 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    begin
         gameAdState := This.gameAdStateFactory.getCurrentInstance;
         gameAdState.processAdState (This.gameState, This.gameLayerManager.getGameInfo.getGameType);
-        if (This.gameState) /= (This.gameStateFactory.PLAYING_GAME_STATE) then
+        if (Java_Object_Access (This.gameState)) /= (Java_Object_Access (This.gameStateFactory.PLAYING_GAME_STATE)) then
             gameAdState.processPageAdState;
         end if;
    end updateGameState;
 
    procedure updateGameKeyEventProcessor (This : in out AllBinaryGameCanvas) is
    begin
-        if ((AllBinaryGameCanvas'Class (This).getGameState) /= (This.gameStateFactory.PLAYING_GAME_STATE)) or else (This.isCheating) then
+        if ((Java_Object_Access (AllBinaryGameCanvas'Class (This).getGameState)) /= (Java_Object_Access (This.gameStateFactory.PLAYING_GAME_STATE))) or else (This.isCheating) then
             null;
         else
             null;
@@ -1651,7 +1736,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    --  throws Exception
    procedure updateEndGameProcessor2 (This : in out AllBinaryGameCanvas) is
    begin
-        if ((AllBinaryGameCanvas'Class (This).getGameState) = (This.gameStateFactory.SHOW_END_RESULT_GAME_STATE)) or else ((AllBinaryGameCanvas'Class (This).getGameState) = (This.gameStateFactory.SHOW_HIGH_SCORE_GAME_STATE)) then
+        if ((Java_Object_Access (AllBinaryGameCanvas'Class (This).getGameState)) = (Java_Object_Access (This.gameStateFactory.SHOW_END_RESULT_GAME_STATE))) or else ((Java_Object_Access (AllBinaryGameCanvas'Class (This).getGameState)) = (Java_Object_Access (This.gameStateFactory.SHOW_HIGH_SCORE_GAME_STATE))) then
             AllBinaryGameCanvas'Class (This).setEndGameProcessor (This.realEndGameProcessor);
         else
             AllBinaryGameCanvas'Class (This).setEndGameProcessor (Processor_Package.getInstance);
@@ -1784,7 +1869,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         hashtable := AllBinaryGameCanvas'Class (This).getLoadStateHashtable;
         if ((hashtable) /= (null)) and then ((hashtable.size) > (0)) then
             levelAsString := Java_Unbox (hashtable.get (Java_Object_Access (GameInfo_Package.LEVEL_NAME)));
-            level := To_Unbounded_String (Java_Image (levelAsString)).intValue;
+            level := Integer (Integer'Value (To_String (levelAsString)));
             gameInfo := This.gameLayerManager.getGameInfo;
             gameInfo.setCurrentLevel (level);
         end if;

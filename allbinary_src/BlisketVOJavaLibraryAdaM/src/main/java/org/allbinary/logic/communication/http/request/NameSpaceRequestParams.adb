@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -36,10 +37,20 @@ with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package;
 with org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package;
 with org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package DomData_Package renames Standard.org.allbinary.data.tree.dom.DomData_Package;
    package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
    package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
@@ -162,7 +173,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       document : constant Document_Access := Document_Access (document_Param);
       packagePropertiesHashMap : constant HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
       node : Node_Access;
-      propertyKeySet : Java_Object_Access;
+      propertyKeySet : Set_Access;
       propertyKeySetArray : Java_Object_Access_Array_Access;
       size : Integer;
       propertyName : Unbounded_String;
@@ -244,7 +255,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       document : constant Document_Access := Document_Access (document_Param);
       node : constant Node_Access := Node_Access (node_Param);
       nextPackagePropertiesHashMap : constant HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
-      propertyNameSet : Java_Object_Access;
+      propertyNameSet : Set_Access;
       propertyNameSetArray : Java_Object_Access_Array_Access;
       size : Integer;
       nextPropertyName : Unbounded_String;
@@ -428,7 +439,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function toHashMap (This : in out NameSpaceRequestParams) return HashMap_Access is
       document : Document_Access;
       hashMap : HashMap_Access;
-      keys : Java_Object_Access;
+      keys : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       keySize : Integer;
       key : Unbounded_String;

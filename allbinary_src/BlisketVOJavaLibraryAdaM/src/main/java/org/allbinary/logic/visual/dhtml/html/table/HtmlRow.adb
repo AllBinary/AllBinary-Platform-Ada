@@ -21,6 +21,10 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package; use org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
 with org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package; use org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package;
 with org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package;
 
 package body org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is

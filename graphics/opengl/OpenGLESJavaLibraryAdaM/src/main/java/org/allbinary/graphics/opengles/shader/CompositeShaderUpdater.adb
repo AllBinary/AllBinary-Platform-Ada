@@ -23,6 +23,8 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.graphics.opengles.shader.ShaderStrings_Package; use org.allbinary.graphics.opengles.shader.ShaderStrings_Package;
 with org.allbinary.graphics.opengles.shader.ShaderStrings_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
 with org.allbinary.graphics.opengles.shader.ShaderStrings_Package;
 
 package body org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package is

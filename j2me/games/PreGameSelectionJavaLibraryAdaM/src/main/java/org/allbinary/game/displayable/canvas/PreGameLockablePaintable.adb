@@ -21,6 +21,8 @@ with org.allbinary.logic.system.security.licensing.LockedUtil_Package; use org.a
 with org.allbinary.graphics.form.LockablePaintable_Package; use org.allbinary.graphics.form.LockablePaintable_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package is
 

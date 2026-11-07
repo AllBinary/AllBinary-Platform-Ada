@@ -17,6 +17,10 @@ with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file
 with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
 package body org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package is
 

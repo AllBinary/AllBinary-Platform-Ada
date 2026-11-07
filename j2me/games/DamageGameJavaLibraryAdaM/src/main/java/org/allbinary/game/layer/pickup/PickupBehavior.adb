@@ -36,13 +36,24 @@ with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterfa
 with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package_References;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.combat.damage.DamageableInterface_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.health.Health_Package;
 with org.allbinary.game.health.HealthInterface_Package;
 with org.allbinary.game.health.HealthListenerInterface_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
 
@@ -134,7 +145,7 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
    function getNullInstance return PickupBehavior_Access is
    begin
         if (PickupBehavior_Package.NULL_PICKUP_BEHAVIOR) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            PickupBehavior_Package.NULL_PICKUP_BEHAVIOR := PickupBehavior_Package.Create (CollidableCompositeLayer_Package.getNullInstance, 0);
+            PickupBehavior_Package.NULL_PICKUP_BEHAVIOR := Java_Object_Access (PickupBehavior_Package.Create (CollidableCompositeLayer_Package.getNullInstance, 0));
         end if;
         return PickupBehavior_Access (PickupBehavior_Package.NULL_PICKUP_BEHAVIOR);
    end getNullInstance;
@@ -188,12 +199,12 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
             pickedUpLayerInterfaceFactoryInterface := PickedUpLayerInterfaceFactoryInterface_Access (pickupLayerInterface.getPickedUpLayerInterfaceFactoryInterface);
             pickedUpLayerType := pickedUpLayerInterfaceFactoryInterface.getPickedUpLayerType;
             pickedUpLayerTypeFactory := PickedUpLayerTypeFactory_Package.getInstance;
-            if ((((pickedUpLayerType) = (pickedUpLayerTypeFactory.BEAM)) or else ((pickedUpLayerType) = (pickedUpLayerTypeFactory.MINE))) or else ((pickedUpLayerType) = (pickedUpLayerTypeFactory.PROJECTILE))) or else ((pickedUpLayerType) = (pickedUpLayerTypeFactory.ENHANCEMENT)) then
+            if ((((Java_Object_Access (pickedUpLayerType)) = (Java_Object_Access (pickedUpLayerTypeFactory.BEAM))) or else ((Java_Object_Access (pickedUpLayerType)) = (Java_Object_Access (pickedUpLayerTypeFactory.MINE)))) or else ((Java_Object_Access (pickedUpLayerType)) = (Java_Object_Access (pickedUpLayerTypeFactory.PROJECTILE)))) or else ((Java_Object_Access (pickedUpLayerType)) = (Java_Object_Access (pickedUpLayerTypeFactory.ENHANCEMENT))) then
                 PickupBehavior'Class (This).add (CountedPickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface));
             elsif (pickedUpLayerInterfaceFactoryInterface.getPickedUpLayerType) = (pickedUpLayerTypeFactory.PART) then
                 collidableDestroyableDamageableLayer := CollidableDestroyableDamageableLayer_Access (This.ownerLayerInterface);
                 collidableDestroyableDamageableLayer.addPart (pickedUpLayerInterfaceFactoryInterface);
-            elsif (pickedUpLayerType) = (pickedUpLayerTypeFactory.NONE) then
+            elsif (Java_Object_Access (pickedUpLayerType)) = (Java_Object_Access (pickedUpLayerTypeFactory.NONE)) then
                 null;
             else
                 pickupProcessorInterface := PickupProcessorInterface_Access (pickedUpLayerInterfaceFactoryInterface);
@@ -248,7 +259,7 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
             countedPickedUpLayerInterfaceFactory := nextCountedLayerInterfaceFactory.getCountedPickedUpLayerInterfaceFactory;
             index2 := pickedUpLayerTypeArray'Length;
             while (Java_Pre_Decrement (index2)) >= (0) loop
-                if (countedPickedUpLayerInterfaceFactory.getPickedUpLayerType) = (pickedUpLayerTypeArray (index2)) then
+                if (Java_Object_Access (countedPickedUpLayerInterfaceFactory.getPickedUpLayerType)) = (Java_Object_Access (pickedUpLayerTypeArray (index2))) then
                     if (nextCountedLayerInterfaceFactory.getTotal) > (0) then
                         return nextCountedLayerInterfaceFactory;
                     end if;

@@ -32,13 +32,14 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Collection_Package; use java.util.Collection_Package;
 with java.util.Map_Package; use java.util.Map_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 limited with org.osgi.framework.ServiceReference_Package;
 with org.osgi.framework.ServiceReference_Package_References;
 
 package bundle.input.automation.ServiceReferenceMap_Package is
 
    package Map_Package renames Standard.java.util.Map_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
    package Reference_Types is
    subtype ServiceReference_Access is org.osgi.framework.ServiceReference_Package_References.ServiceReference_Access;
@@ -86,9 +87,9 @@ package bundle.input.automation.ServiceReferenceMap_Package is
    procedure remove (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class);
    procedure putAll (This : in out ServiceReferenceMap; m_Param : access Map_Package.Map'Class);
    procedure clear (This : in out ServiceReferenceMap);
-   function keySet (This : in out ServiceReferenceMap) return Java_Object_Access;
+   function keySet (This : in out ServiceReferenceMap) return Set_Access;
    function values (This : in out ServiceReferenceMap) return Collection_Access;
-   function entrySet (This : in out ServiceReferenceMap) return Java_Object_Access;
+   function entrySet (This : in out ServiceReferenceMap) return Set_Access;
    function toString (map_Param : access Map_Package.Map'Class) return Unbounded_String;
    procedure toString (map_Param : access Map_Package.Map'Class);
    function containsKey (This : in out ServiceReferenceMap; Value : Unbounded_String) return Boolean;

@@ -78,7 +78,7 @@ package body org.allbinary.game.input.PCGameInputMapping_Package is
    function isDelete (This : in out PCGameInputMapping; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (PCKeyFactory_Package.getInstance.DEL) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (PCKeyFactory_Package.getInstance.DEL)) then
             return True;
         else
             return False;

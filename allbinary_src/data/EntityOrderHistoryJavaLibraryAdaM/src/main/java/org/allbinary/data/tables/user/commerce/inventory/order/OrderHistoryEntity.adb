@@ -58,6 +58,16 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package is
 
@@ -213,7 +223,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             vector.add (userName);
             vector.add (order.getStoreName);
             calendar := Calendar_Package.getInstance;
-            time := Java_New_String (calendar.getTimeInMillis.toString);
+            time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             vector.add (ZERO);
             vector.add (time);
             vector.add (ZERO);
@@ -226,7 +236,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                 vector.add (paymentInterface.getExpiration);
                 random := Random_Package.Create.nextInt (SuperCrypt_Package.KEYMAX);
                 vector.add (SuperCrypt_Package.Create (random).encrypt (paymentInterface.getNumber));
-                vector.add (random.toString);
+                vector.add (To_Unbounded_String (Java_Image (random)));
             else
                 vector.add (empty);
                 vector.add (empty);
@@ -317,7 +327,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
         begin
             calendar := Calendar_Package.getInstance;
-            time := Java_New_String (calendar.getTimeInMillis.toString);
+            time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             updateHashMap := StdUtil_Package.getInstance.createHashMap;
             updateHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
             if (Java_Compare_To (status, OrderHistoryData_Package.CANCELLED)) = (0) then
@@ -345,7 +355,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
         begin
             calendar := Calendar_Package.getInstance;
-            time := Java_New_String (calendar.getTimeInMillis.toString);
+            time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             updateHashMap := StdUtil_Package.getInstance.createHashMap;
             updateHashMap.put (PaymentData_Package.METHOD, Java_Box (paymentMethod));
             updateHashMap.put (OrderHistoryData_Package.TRANSDATE, Java_Box (time));

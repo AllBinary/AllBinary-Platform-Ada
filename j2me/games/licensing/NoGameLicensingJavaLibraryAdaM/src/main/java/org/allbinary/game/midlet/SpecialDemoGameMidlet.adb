@@ -22,10 +22,18 @@ with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package; use org.allbina
 with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package_References;
 with org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package; use org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package;
 with org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.logic.system.security.licensing.ClientInformation_Package;
 with org.allbinary.game.midlet.DemoSetup_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package;
 with org.allbinary.game.midlet.LicenseLoadingType_Package;
 with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.midlet.SpecialDemoGameMidlet_Package is
 

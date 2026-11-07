@@ -27,7 +27,9 @@ with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionF
 with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.behavior.topview.InitialJumpBehavior_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.behavior.topview.GeographicMapTopViewLayerBehavior_Package is
 

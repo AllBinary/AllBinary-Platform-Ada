@@ -33,6 +33,17 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Package is
 
@@ -346,7 +357,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
    begin
         This.downloads := value;
         if not (StringValidationUtil_Package.getInstance.isEmpty (This.downloads)) then
-            downloadInteger := To_Unbounded_String (Java_Image (This.downloads));
+            downloadInteger := Integer'Value (To_String (This.downloads));
             if (Integer (downloadInteger)) /= (0) then
                 BasicItem'Class (This).setDownloadable (True);
             end if;
@@ -537,7 +548,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
       itemTotal : Money_Access;
    begin
         itemTotal := Money_Package.Create (This.price);
-        itemTotal.multiply (This.number.intValue);
+        itemTotal.multiply (Integer (Integer'Value (To_String (This.number))));
         return itemTotal;
    end getTotal;
 
@@ -570,7 +581,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         hashMap.put (This.basicItemData.MEDIUMIMAGE, Java_Box (This.mediumImage));
         hashMap.put (This.basicItemData.LARGEIMAGE, Java_Box (This.largeImage));
         calendar := Calendar_Package.getInstance;
-        time := calendar.getTimeInMillis.toString;
+        time := To_Unbounded_String (Java_Image (calendar.getTimeInMillis));
         hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         hashMap.put (This.basicItemData.PRICE, Java_Box (This.price.toString));
         hashMap.put (This.basicItemData.COMMENT, Java_Box (This.comment));
@@ -612,7 +623,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         values.add (BasicItem'Class (This).getMediumImage);
         values.add (BasicItem'Class (This).getLargeImage);
         calendar := Calendar_Package.getInstance;
-        time := calendar.getTimeInMillis.toString;
+        time := To_Unbounded_String (Java_Image (calendar.getTimeInMillis));
         values.add (time);
         values.add (time);
         values.add (This.price.toString);

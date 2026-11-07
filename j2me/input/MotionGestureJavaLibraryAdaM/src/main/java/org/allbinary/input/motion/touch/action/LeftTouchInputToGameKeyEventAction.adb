@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEven
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access is
    begin
         if (LeftTouchInputToGameKeyEventAction_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            LeftTouchInputToGameKeyEventAction_Package.instance := LeftTouchInputToGameKeyEventAction_Package.Create;
+            LeftTouchInputToGameKeyEventAction_Package.instance := Java_Object_Access (LeftTouchInputToGameKeyEventAction_Package.Create);
         end if;
         return GameKeyCompleteMotionGestureInputEvent_Access (LeftTouchInputToGameKeyEventAction_Package.instance);
    end getInstance;

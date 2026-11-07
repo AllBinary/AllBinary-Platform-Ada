@@ -32,6 +32,14 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package; use org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleView_Package;
 
 package body org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingValidation_Package is
@@ -172,10 +180,10 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (This.commonStrings.START, HeadingValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
-            if not (This.title.isValid.booleanValue) then
+            if not (This.title.isValid) then
                 titleValid := False;
             end if;
-            if not (This.logo.isValid.booleanValue) then
+            if not (This.logo.isValid) then
                 logoValid := False;
             else
                 This.logo.processLogoFile;
@@ -211,10 +219,10 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
             titleValid := True;
             logoValid := True;
             stringBuffer := StringMaker_Package.Create;
-            if not (This.title.isValid.booleanValue) then
+            if not (This.title.isValid) then
                 titleValid := False;
             end if;
-            if not (This.logo.isValid.booleanValue) then
+            if not (This.logo.isValid) then
                 logoValid := False;
             end if;
             if (not (titleValid)) and then (not (logoValid)) then

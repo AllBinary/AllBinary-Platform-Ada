@@ -3,6 +3,8 @@
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.Image_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
 

@@ -54,7 +54,7 @@ package body org.allbinary.servlet.BlisketServletUtil_Package is
         urlGlobals := AppUrlGlobals_Package.Create;
         urlGlobals.setWebappPath (request.getServletContext.getRealPath (AbPathData_Package.getInstance.SEPARATOR));
         URLGLOBALS_Package.init (urlGlobals);
-        WebappClassLoaderInfo_Package.setLoader (BlisketServletUtil'Class (This).getClass.getClassLoader);
+        WebappClassLoaderInfo_Package.setLoader (ClassLoader_Package.getSystemClassLoader);
    end init;
 
 begin

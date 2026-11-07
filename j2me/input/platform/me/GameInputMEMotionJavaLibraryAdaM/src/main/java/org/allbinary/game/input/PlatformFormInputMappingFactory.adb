@@ -20,6 +20,13 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
 
@@ -68,7 +75,7 @@ package body org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
    function getInstance return PlatformFormInputMappingFactory_Access is
    begin
         if (PlatformFormInputMappingFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            PlatformFormInputMappingFactory_Package.instance := PlatformFormInputMappingFactory_Package.Create;
+            PlatformFormInputMappingFactory_Package.instance := Java_Object_Access (PlatformFormInputMappingFactory_Package.Create);
         end if;
         return PlatformFormInputMappingFactory_Access (PlatformFormInputMappingFactory_Package.instance);
    end getInstance;
@@ -79,7 +86,7 @@ package body org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            if (This.inputToGameKeyMapping) = (InputToGameKeyMapping_Package.getNullInstance) then
+            if (Java_Object_Access (This.inputToGameKeyMapping)) = (Java_Object_Access (InputToGameKeyMapping_Package.getNullInstance)) then
                 inputToGameKeyMapping := InputToGameKeyMapping_Package.Create;
                 gameKeyFactory := GameKeyFactory_Package.getInstance;
                 inputToGameKeyMapping.add (gameKeyFactory.UP, gameKeyFactory.UP);

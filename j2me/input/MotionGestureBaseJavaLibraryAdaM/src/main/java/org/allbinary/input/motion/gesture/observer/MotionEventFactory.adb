@@ -21,6 +21,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package; use org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 
 package body org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package is
@@ -69,7 +70,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventFactory_Pack
    begin
         inputFactory := InputFactory_Package.getInstance;
         input := inputFactory.getInstanceById (Java_Post_Increment (MotionEventFactory_Package.index));
-        if (input) = (inputFactory.NO_INPUT) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (inputFactory.NO_INPUT)) then
             return AllBinaryEventObject_Access (MotionGestureEvent_Package.Create (This.source, This.id, MotionGestureInput_Access (TouchMotionGestureFactory_Package.getInstance.NO_MOTION)));
         else
             return AllBinaryEventObject_Access (MotionGestureEvent_Package.Create (This.source, This.id, MotionGestureInput_Access (input)));

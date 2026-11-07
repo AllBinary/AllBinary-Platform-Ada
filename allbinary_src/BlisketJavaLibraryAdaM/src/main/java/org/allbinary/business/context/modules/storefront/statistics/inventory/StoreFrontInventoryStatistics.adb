@@ -26,6 +26,12 @@ with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFacto
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package is
 
@@ -88,7 +94,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
         size := itemVector.size;
         for index in 0 .. (size) - 1 loop
             itemInterface := ItemInterface_Access (itemVector.get (index));
-            numberInStock := To_Unbounded_String (Java_Image (itemInterface.getNumber)).intValue;
+            numberInStock := Integer (Integer (itemInterface.getNumber));
             This.totalNumberOfItems := (This.totalNumberOfItems) + (Long_Long_Integer (numberInStock));
             itemPriceMoney := itemInterface.getPrice;
             itemPriceMoney.multiply (numberInStock);

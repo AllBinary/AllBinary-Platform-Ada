@@ -15,6 +15,7 @@
 
 with org.allbinary.game.configuration.feature.TouchFeature_Package; use org.allbinary.game.configuration.feature.TouchFeature_Package;
 with org.allbinary.game.configuration.feature.TouchFeature_Package_References;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.feature.TouchFeature_Package;
 

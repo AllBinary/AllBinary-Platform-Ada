@@ -36,7 +36,15 @@ with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
 with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
 with playn.html.HTMLPlaynUtil_Package_References;
 with org.allbinary.media.image.ImageCopyCallback_Package; use org.allbinary.media.image.ImageCopyCallback_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.media.image.ImageCopyCallback_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 
@@ -321,7 +329,15 @@ with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
 with playn.html.HTMLPlaynUtil_Package_References;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.ImageCopyCallback_Package is
 

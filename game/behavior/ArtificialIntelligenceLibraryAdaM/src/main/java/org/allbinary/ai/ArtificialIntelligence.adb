@@ -15,6 +15,7 @@
 
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
+with org.allbinary.graphics.IdentifierInterface_Package;
 
 package body org.allbinary.ai.ArtificialIntelligence_Package is
 

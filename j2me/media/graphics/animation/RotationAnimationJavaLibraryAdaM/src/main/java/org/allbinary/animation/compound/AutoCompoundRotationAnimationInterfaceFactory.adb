@@ -21,7 +21,16 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package; use org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.RotationAnimationInterface_Package;
 
 package body org.allbinary.animation.compound.AutoCompoundRotationAnimationInterfaceFactory_Package is

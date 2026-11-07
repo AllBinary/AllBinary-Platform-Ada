@@ -246,7 +246,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.allbinary.logic.control.crypt,org.allbinary.logging,org.allbinary.business,org.allbinary.data.tables,javax.servlet,org.eclipse.jetty</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

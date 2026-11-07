@@ -34,6 +34,19 @@ with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input
 with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
 with org.allbinary.game.input.TestInputInterface_Package; use org.allbinary.game.input.TestInputInterface_Package;
 with org.allbinary.game.input.TestInputInterface_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.Rectangle_Package;
 
 package body org.allbinary.game.input.TestingInputSingleton_Package is
 

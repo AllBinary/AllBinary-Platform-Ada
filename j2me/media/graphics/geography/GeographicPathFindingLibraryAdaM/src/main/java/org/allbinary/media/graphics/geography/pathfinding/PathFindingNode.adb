@@ -54,7 +54,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
       Initialize_Fields (This);
         This.parent := parent;
         PathFindingNode'Class (This).setGeographicMapCellPositionP (geographicMapCellPosition);
-        if (This.geographicMapCellPosition) = (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
+        if (Java_Object_Access (This.geographicMapCellPosition)) = (Java_Object_Access (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No GeographicMapCellPosition")));
         end if;
    end Initialize;

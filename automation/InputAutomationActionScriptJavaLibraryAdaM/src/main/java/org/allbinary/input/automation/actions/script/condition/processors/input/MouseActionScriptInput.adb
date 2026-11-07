@@ -138,14 +138,14 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                 childNode := nodeList.item (index);
                 if (childNode.getNodeName.compareTo (MouseActionScriptInputData_Package.BUTTONS)) = (0) then
                     buttons := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    MouseActionScriptInput'Class (This).setButtonClicks (To_Unbounded_String (Java_Image (buttons)).intValue);
+                    MouseActionScriptInput'Class (This).setButtonClicks (Integer (Integer'Value (To_String (buttons))));
                 elsif (childNode.getNodeName.compareTo (MouseActionScriptInputData_Package.MOVE)) = (0) then
                     mouseXNode := DomSearchHelper_Package.getNode (MouseActionScriptInputData_Package.MOVE_X, childNode.getChildNodes);
                     mouseXString := DomNodeHelper_Package.getTextNodeValue (mouseXNode);
-                    mouseXInteger := To_Unbounded_String (Java_Image (mouseXString));
+                    mouseXInteger := Integer'Value (To_String (mouseXString));
                     mouseYNode := DomSearchHelper_Package.getNode (MouseActionScriptInputData_Package.MOVE_Y, childNode.getChildNodes);
                     mouseYString := DomNodeHelper_Package.getTextNodeValue (mouseYNode);
-                    mouseYInteger := To_Unbounded_String (Java_Image (mouseYString));
+                    mouseYInteger := Integer'Value (To_String (mouseYString));
                     newPoint := Point_Package.Create (Integer (mouseXInteger), Integer (mouseYInteger));
                     MouseActionScriptInput'Class (This).setPoint (newPoint);
                 else

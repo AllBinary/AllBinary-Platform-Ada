@@ -14,6 +14,7 @@
 
 
 with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 with org.osgi.framework.ServiceReference_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -104,7 +105,7 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
         null;
    end clear;
 
-   function keySet (This : in out ServiceReferenceMap) return Java_Object_Access is
+   function keySet (This : in out ServiceReferenceMap) return Set_Access is
       keyStringArray : Unbounded_String_Array_Access;
    begin
         keyStringArray := This.serviceReference.getPropertyKeys;
@@ -116,7 +117,7 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
         return null;
    end values;
 
-   function entrySet (This : in out ServiceReferenceMap) return Java_Object_Access is
+   function entrySet (This : in out ServiceReferenceMap) return Set_Access is
    begin
         return null;
    end entrySet;

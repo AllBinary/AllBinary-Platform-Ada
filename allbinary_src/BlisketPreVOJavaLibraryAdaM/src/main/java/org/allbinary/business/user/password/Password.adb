@@ -27,6 +27,17 @@ with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.log
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.business.user.password.Password_Package is
 
@@ -137,7 +148,7 @@ package body org.allbinary.business.user.password.Password_Package is
         This.password_Var := StringUtil_Package.getInstance.getNonNull (This.password_Var);
         random := Random_Package.Create.nextInt (SuperCrypt_Package.KEYMAX);
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        vector.add (random.toString);
+        vector.add (To_Unbounded_String (Java_Image (random)));
         vector.add (secret);
         vector.add (SuperCrypt_Package.Create (random).encrypt (This.password_Var));
         return vector;
@@ -150,7 +161,7 @@ package body org.allbinary.business.user.password.Password_Package is
         This.password_Var := StringUtil_Package.getInstance.getNonNull (This.password_Var);
         values := StdUtil_Package.getInstance.createHashMap;
         random := Random_Package.Create.nextInt (SuperCrypt_Package.KEYMAX);
-        values.put (EntryData_Package.getInstance.ENCRYPTION, Java_Box (random.toString));
+        values.put (EntryData_Package.getInstance.ENCRYPTION, Java_Box (To_Unbounded_String (Java_Image (random))));
         values.put (UserData_Package.SECRET, Java_Box (secret));
         values.put (UserData_Package.PASSWORD, SuperCrypt_Package.Create (random).encrypt (This.password_Var));
         return values;

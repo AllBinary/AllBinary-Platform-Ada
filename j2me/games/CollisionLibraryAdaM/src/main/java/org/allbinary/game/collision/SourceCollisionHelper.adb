@@ -24,7 +24,22 @@ with org.allbinary.game.collision.CollidableInterface_Package;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 with org.allbinary.game.collision.CollisionProcessor_Package;
 with org.allbinary.game.collision.CollisionType_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.collision.LayerCollisionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.collision.SourceCollisionHelper_Package is
 
@@ -70,7 +85,7 @@ package body org.allbinary.game.collision.SourceCollisionHelper_Package is
    function isCollidable (This : in out SourceCollisionHelper; layerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is
       layerInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (layerInterface_Param);
    begin
-        if (This.sourceLayerInterface) /= (layerInterface) then
+        if (Java_Object_Access (This.sourceLayerInterface)) /= (Java_Object_Access (layerInterface)) then
             return True;
         end if;
         return False;

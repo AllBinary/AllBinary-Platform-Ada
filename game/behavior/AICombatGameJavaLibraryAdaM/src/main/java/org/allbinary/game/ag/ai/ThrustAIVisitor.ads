@@ -64,7 +64,7 @@ package org.allbinary.game.ag.ai.ThrustAIVisitor_Package is
    subtype ThrustAIVisitor_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References.ThrustAIVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ThrustAIVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References."=";
 
-   type ThrustAIVisitor is new Visitor with record
+   type ThrustAIVisitor is new Visitor_Package.Visitor with record
       logUtil : LogUtil_Access;
       TRUE : Boolean;
    end record;

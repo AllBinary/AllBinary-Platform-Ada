@@ -26,7 +26,7 @@ package body org.allbinary.business.time.Time_Package is
    procedure Initialize (This : in out Time'Class; time_Var : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.timeLong := time_Var;
+        This.timeLong := Long_Long_Integer'Value (To_String (time_Var));
    end Initialize;
 
    function Create (time_Var : Unbounded_String) return Time_Access is
@@ -39,7 +39,7 @@ package body org.allbinary.business.time.Time_Package is
    procedure Initialize (This : in out Time'Class; time_Var : Long_Long_Integer) is
    begin
       Initialize_Fields (This);
-        This.timeLong := time_Var;
+        This.timeLong := Long_Long_Integer'Value (To_String (time_Var));
    end Initialize;
 
    function Create (time_Var : Long_Long_Integer) return Time_Access is

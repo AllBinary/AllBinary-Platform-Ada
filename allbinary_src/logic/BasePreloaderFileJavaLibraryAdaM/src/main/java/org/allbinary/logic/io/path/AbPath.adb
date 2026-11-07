@@ -25,6 +25,7 @@ with org.allbinary.logic.io.path.AbPathData_Package_References;
 with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.logic.io.path.PathUtil_Package_References;
 with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.io.path.PathUtil_Package;
 
 package body org.allbinary.logic.io.path.AbPath_Package is

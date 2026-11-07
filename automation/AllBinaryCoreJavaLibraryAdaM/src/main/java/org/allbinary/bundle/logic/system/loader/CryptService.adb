@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
@@ -31,9 +32,18 @@ with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
 
+   package ByteArrayInputStream_Package renames Standard.java.io.ByteArrayInputStream_Package;
    package Globals_Package renames Standard.org.allbinary.globals.Globals_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package BasicTextJDialog_Package renames Standard.org.allbinary.gui.dialog.BasicTextJDialog_Package;
@@ -95,7 +105,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
    procedure Initialize (This : in out CryptService'Class) is
    begin
       Initialize_Fields (This);
-        Globals_Package.getInstance.init (This.all'Tag.getClassLoader, To_Unbounded_String ("./"));
+        Globals_Package.getInstance.init (ClassLoader_Package.getSystemClassLoader, To_Unbounded_String ("./"));
         This.logUtil.putF (To_Unbounded_String ("Set Globals: ") & Java_Image (URLGLOBALS_Package.getWebappPath), CryptService_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 

@@ -48,10 +48,10 @@ package body org.allbinary.init.Init_Package is
 
 
    --  throws Exception
-   procedure init (This : in out Init) is
+   procedure init_Method (This : in out Init) is
    begin
         null;
-   end init;
+   end init_Method;
 
 end org.allbinary.init.Init_Package;
 

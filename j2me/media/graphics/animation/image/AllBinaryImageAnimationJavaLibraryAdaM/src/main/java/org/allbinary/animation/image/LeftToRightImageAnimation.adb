@@ -21,6 +21,8 @@ with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.animation.image.ImageAnimation_Package;
 
 package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is

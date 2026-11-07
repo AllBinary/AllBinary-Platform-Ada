@@ -38,6 +38,11 @@ with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
 
@@ -165,7 +170,7 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
         PacePatrolAI'Class (This).update;
         direction := PacePatrolAI'Class (This).setFiringDirectionForTargetIfInRange;
         directionFactory := DirectionFactory_Package.getInstance;
-        if (direction) = (directionFactory.LEFT) then
+        if (Java_Object_Access (direction)) = (Java_Object_Access (directionFactory.LEFT)) then
             if ((This.lastKeyDirection) /= (This.keyDirection)) or else (not (This.isFollowLimitedByTerrain)) then
                 BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (Canvas_Package.LEFT);
             end if;
@@ -173,7 +178,7 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
             This.lastKeyDirection := This.keyDirection;
             This.xTotalDistance := 0;
             BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (Canvas_Package.KEY_NUM1);
-        elsif (direction) = (directionFactory.RIGHT) then
+        elsif (Java_Object_Access (direction)) = (Java_Object_Access (directionFactory.RIGHT)) then
             if ((This.lastKeyDirection) /= (This.keyDirection)) or else (not (This.isFollowLimitedByTerrain)) then
                 BasePatrolAI_Package.BasePatrolAI (This).processKeyAI (Canvas_Package.RIGHT);
             end if;

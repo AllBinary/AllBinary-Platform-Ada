@@ -16,7 +16,16 @@
 with javax.microedition.lcdui.Gauge_Package; use javax.microedition.lcdui.Gauge_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package_References;
+with javax.microedition.lcdui.Command_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
 
 package body org.allbinary.game.configuration.GameConfigurationGauge_Package is
 
@@ -39,7 +48,7 @@ package body org.allbinary.game.configuration.GameConfigurationGauge_Package is
    procedure Initialize (This : in out GameConfigurationGauge'Class; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) is
       gameConfiguration : constant GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
    begin
-        Gauge_Package.Initialize (This, gameConfiguration.getName, gameConfiguration.isModifiable.booleanValue, (gameConfiguration.getMaxValue.intValue) - (gameConfiguration.getMinValue.intValue), (gameConfiguration.getValue.intValue) - (gameConfiguration.getMinValue.intValue));
+        Gauge_Package.Initialize (This, gameConfiguration.getName, gameConfiguration.isModifiable, (Integer (gameConfiguration.getMaxValue)) - (Integer (gameConfiguration.getMinValue)), (Integer (gameConfiguration.getValue)) - (Integer (gameConfiguration.getMinValue)));
    end Initialize;
 
    function Create (gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) return GameConfigurationGauge_Access is

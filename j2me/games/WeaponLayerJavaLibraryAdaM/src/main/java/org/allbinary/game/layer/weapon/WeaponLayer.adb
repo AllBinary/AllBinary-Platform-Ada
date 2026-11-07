@@ -49,6 +49,8 @@ with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package; use org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
 with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package_References;
 with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
 

@@ -16,7 +16,11 @@
 with android.view.View_Package; use android.view.View_Package;
 with android.view.View_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.canvas.BaseGameStatistics_Package;
 with org.allbinary.android.view.BaseViewWrapper_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
 
 package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
 

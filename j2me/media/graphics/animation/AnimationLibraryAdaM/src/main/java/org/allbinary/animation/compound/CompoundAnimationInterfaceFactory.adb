@@ -25,6 +25,13 @@ with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 
 package body org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package is

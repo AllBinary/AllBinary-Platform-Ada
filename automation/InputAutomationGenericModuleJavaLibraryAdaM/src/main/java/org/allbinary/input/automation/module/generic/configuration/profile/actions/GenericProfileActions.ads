@@ -31,10 +31,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.File_Package; use java.io.File_Package;
---  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
+with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package; use org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
 limited with org.allbinary.input.automation.module.DefaultListModelHelper_Package;
@@ -59,6 +58,7 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FileInputStream_Package renames Standard.java.io.FileInputStream_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package DomDocumentMappingInterface_Package renames Standard.org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;

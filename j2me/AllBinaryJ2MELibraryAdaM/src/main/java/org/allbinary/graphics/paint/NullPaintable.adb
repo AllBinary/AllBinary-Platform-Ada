@@ -13,6 +13,10 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package;
 
 package body org.allbinary.graphics.paint.NullPaintable_Package is

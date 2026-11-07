@@ -27,6 +27,9 @@ with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.image.ImageArrayAnimation_Package; use org.allbinary.animation.image.ImageArrayAnimation_Package;
 with org.allbinary.animation.image.AdjustedImageArrayAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayAnimation_Package;
 with org.allbinary.animation.image.AdjustedImageArrayAnimation_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.image.ImageArrayAnimation_Package;
 
 package body org.allbinary.animation.image.ImageArrayAnimationFactory_Package is

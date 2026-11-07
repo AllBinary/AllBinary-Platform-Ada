@@ -24,6 +24,10 @@ with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package
 with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package_References;
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package is
 

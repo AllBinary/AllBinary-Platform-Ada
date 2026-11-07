@@ -63,7 +63,7 @@ package org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
    subtype SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access is org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
 
-   type SelectAdvancedRTSLayerVisitor is new Visitor with record
+   type SelectAdvancedRTSLayerVisitor is new Visitor_Package.Visitor with record
       selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access;
    end record;
 

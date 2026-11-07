@@ -32,12 +32,19 @@ with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Packag
 with org.allbinary.game.GameType_Package_References;
 with org.allbinary.game.PlayerType_Package; use org.allbinary.game.PlayerType_Package;
 with org.allbinary.game.PlayerType_Package_References;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.GameInfoData_Package;
 with org.allbinary.game.GameMode_Package;
 with org.allbinary.game.GameType_Package;
 with org.allbinary.game.GameTypeFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.PlayerType_Package;
 with org.allbinary.game.PlayerTypesFactory_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.GameInfo_Package is
 

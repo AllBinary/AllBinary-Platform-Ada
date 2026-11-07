@@ -110,7 +110,7 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
                 childNode := nodeList.item (index);
                 if (childNode.getNodeName.compareTo (AlwaysActionScriptConditionData_Package.IS_ON)) = (0) then
                     booleanString := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    AlwaysActionScriptCondition'Class (This).setIsOn (booleanString.booleanValue);
+                    AlwaysActionScriptCondition'Class (This).setIsOn (Java_Equals_Ignore_Case (booleanString, To_Unbounded_String ("true")));
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Condition Unknown Node")));
                 end if;

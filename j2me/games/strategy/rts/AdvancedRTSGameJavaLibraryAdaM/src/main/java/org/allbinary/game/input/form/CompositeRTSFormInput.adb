@@ -36,7 +36,12 @@ with org.allbinary.game.input.form.WaypointRTSFormInput_Package; use org.allbina
 with org.allbinary.game.input.form.UnitRTSFormInput_Package; use org.allbinary.game.input.form.UnitRTSFormInput_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.input.form.UnitRTSFormInput_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 with org.allbinary.game.input.form.WaypointRTSFormInput_Package;
@@ -173,7 +178,7 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    begin
         scrollSelectionForm := rtsPlayerLayerInterface.getCurrentScrollSelectionForm;
         index := scrollSelectionForm.getSelectedIndexForPoint (point);
-        if (CompositeRTSFormInput'Class (This).isStickyItemSelected) and then ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
+        if (CompositeRTSFormInput'Class (This).isStickyItemSelected) and then ((Java_Object_Access (associatedRtsLayer)) = (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) then
             if (CompositeRTSFormInput'Class (This).getSelectedStickyItemIndex) <= (This.itemIndex (0)) then
                 This.rtsFormInputArray (0).processAtPoint (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, point);
             end if;
@@ -192,7 +197,7 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    begin
         commonStrings := CommonStrings_Package.getInstance;
         This.logUtil.putF (Java_Image ((CommonLabels_Package.getInstance.INDEX_LABEL) + (index)) & To_Unbounded_String (" > ") & Java_Image (This.itemIndex (0)), CompositeRTSFormInput_Access'(This'Unchecked_Access), commonStrings.PROCESS);
-        if (CompositeRTSFormInput'Class (This).isStickyItemSelected) and then ((associatedRtsLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
+        if (CompositeRTSFormInput'Class (This).isStickyItemSelected) and then ((Java_Object_Access (associatedRtsLayer)) = (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) then
             if (CompositeRTSFormInput'Class (This).getSelectedStickyItemIndex) <= (This.itemIndex (0)) then
                 This.rtsFormInputArray (0).processGameSpecific (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, item, index);
             end if;

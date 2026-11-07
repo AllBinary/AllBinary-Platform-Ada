@@ -150,9 +150,9 @@ package body org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavi
         if ((geographicMapCellPosition.getColumn) > (0)) and then ((geographicMapCellPosition.getColumn) < (maxColumns)) then
             nextTerrainGeographicMapCellPosition := GeographicMapCellPosition_Access (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION);
             geographicMapCellPositionFactory := geographicMapInterfaceArray (0).getGeographicMapCellPositionFactory;
-            if (direction) = (DirectionFactory_Package.getInstance.LEFT) then
+            if (Java_Object_Access (direction)) = (Java_Object_Access (DirectionFactory_Package.getInstance.LEFT)) then
                 nextTerrainGeographicMapCellPosition := geographicMapCellPositionFactory.getAt ((geographicMapCellPosition.getColumn) - (1), geographicMapCellPosition.getRow);
-            elsif (direction) = (DirectionFactory_Package.getInstance.RIGHT) then
+            elsif (Java_Object_Access (direction)) = (Java_Object_Access (DirectionFactory_Package.getInstance.RIGHT)) then
                 nextTerrainGeographicMapCellPosition := geographicMapCellPositionFactory.getAt ((geographicMapCellPosition.getColumn) + (1), geographicMapCellPosition.getRow);
             end if;
             This.geographicMapBehavior.getCellTypeAt (geographicMapInterfaceArray, geographicMapCellTypeArray, nextTerrainGeographicMapCellPosition);

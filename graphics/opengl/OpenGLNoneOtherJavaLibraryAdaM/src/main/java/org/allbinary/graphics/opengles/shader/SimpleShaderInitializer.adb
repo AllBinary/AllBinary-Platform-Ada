@@ -13,6 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.opengles.shader.Shader_Package;
 
 package body org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Package is

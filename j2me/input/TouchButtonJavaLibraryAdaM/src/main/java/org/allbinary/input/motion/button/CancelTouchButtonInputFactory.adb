@@ -18,7 +18,18 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package is
 
@@ -44,7 +55,7 @@ package body org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Pac
    function getInstance return CancelTouchButtonInputFactory_Access is
    begin
         if (CancelTouchButtonInputFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            CancelTouchButtonInputFactory_Package.instance := CancelTouchButtonInputFactory_Package.Create;
+            CancelTouchButtonInputFactory_Package.instance := Java_Object_Access (CancelTouchButtonInputFactory_Package.Create);
         end if;
         return CancelTouchButtonInputFactory_Access (CancelTouchButtonInputFactory_Package.instance);
    end getInstance;

@@ -30,6 +30,8 @@ with org.allbinary.animation.ShapeTypeFactory_Package; use org.allbinary.animati
 with org.allbinary.animation.ShapeTypeFactory_Package_References;
 with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.ShapeType_Package;
 with org.allbinary.animation.ShapeType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.animation.ShapeType_Package;
 with org.allbinary.animation.ShapeTypeFactory_Package;
 with org.allbinary.animation.ShapeType_Package_References;
@@ -243,8 +245,8 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
         radius := SVGAsJSONSimpleLoader'Class (This).readInt (circle, This.KEY_R);
         for index in 0 .. This.CIRCLE_SEGMENTS loop
             angle := ((((Math_Package.PI) * (2.0)) * (index))) / (This.CIRCLE_SEGMENTS);
-            x := Integer (Long_Long_Integer (Long_Float'Rounding ((cx) + (((Ada.Numerics.Long_Elementary_Functions.Cos (angle)) * (radius))))));
-            y := Integer (Long_Long_Integer (Long_Float'Rounding ((cy) + (((Ada.Numerics.Long_Elementary_Functions.Sin (angle)) * (radius))))));
+            x := Integer (Long_Long_Integer (Long_Float'Rounding (Long_Float ((cx) + (((Ada.Numerics.Long_Elementary_Functions.Cos (angle)) * (radius)))))));
+            y := Integer (Long_Long_Integer (Long_Float'Rounding (Long_Float ((cy) + (((Ada.Numerics.Long_Elementary_Functions.Sin (angle)) * (radius)))))));
             SVGAsJSONSimpleLoader'Class (This).addPoint (pointVector, x, y);
         end loop;
         SVGAsJSONSimpleLoader'Class (This).addSeparator (pointVector);
@@ -319,10 +321,10 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
         if (value.all in Number_Package.Number'Class) then
-            return Integer (Long_Long_Integer (Long_Float'Rounding (Number_Access (value).doubleValue)));
+            return Integer (Long_Long_Integer (Long_Float'Rounding (Long_Float (Number_Access (value).doubleValue))));
         end if;
         if (value.all in String_Package.String'Class) then
-            return Integer (Long_Long_Integer (Long_Float'Rounding (Long_Float'Value (To_String (Java_Unbox (value))))));
+            return Integer (Long_Long_Integer (Long_Float'Rounding (Long_Float (Long_Float'Value (To_String (Java_Unbox (value)))))));
         end if;
         Java_Throw (Java_New_Exception ("IllegalArgumentException", This.ERROR_INVALID_NUMBER_PREFIX & key));
    end toInt;

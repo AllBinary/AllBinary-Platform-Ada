@@ -37,7 +37,14 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with views.HttpComponentView_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
 
@@ -304,29 +311,29 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                     rangeDate := StringUtil_Package.getInstance.EMPTY_STRING;
                     if (Java_Compare_To (This.command, This.VIEWORDERSINLASTHOUR)) = (0) then
                         oneHour := ((60) * (60)) * (1000);
-                        rangeDate := oneHour.toString;
+                        rangeDate := To_Unbounded_String (Java_Image (oneHour));
                     elsif (Java_Compare_To (This.command, This.VIEWORDERSINLASTDAY)) = (0) then
                         oneDay := (((24) * (60)) * (60)) * (1000);
-                        rangeDate := oneDay.toString;
+                        rangeDate := To_Unbounded_String (Java_Image (oneDay));
                     elsif (Java_Compare_To (This.command, This.VIEWORDERSINLASTWEEK)) = (0) then
                         oneWeek := ((((7) * (24)) * (60)) * (60)) * (1000);
-                        rangeDate := oneWeek.toString;
+                        rangeDate := To_Unbounded_String (Java_Image (oneWeek));
                     elsif (Java_Compare_To (This.command, This.VIEWORDERSINLAST30DAYS)) = (0) then
                         thirtyDays := ((((30) * (24)) * (60)) * (60)) * (1000);
-                        rangeDate := thirtyDays.toString;
+                        rangeDate := To_Unbounded_String (Java_Image (thirtyDays));
                     elsif (Java_Compare_To (This.command, This.VIEWALLORDERS)) = (0) then
-                        rangeDate := currentTime.toString;
+                        rangeDate := To_Unbounded_String (Java_Image (currentTime));
                     end if;
-                    rangeDateLong := rangeDate.longValue;
-                    This.fromDate := (currentTime) - (rangeDateLong).toString;
-                    time := Java_New_String (currentTime.toString);
+                    rangeDateLong := Long_Long_Integer (Long_Long_Integer'Value (To_String (rangeDate)));
+                    This.fromDate := To_Unbounded_String (Java_Image ((currentTime) - (rangeDateLong)));
+                    time := Java_New_String (To_Unbounded_String (Java_Image (currentTime)));
                     This.toDate := time;
                 elsif (Java_Compare_To (This.dateType, OrderHistoryData_Package.TYPECAESAR)) = (0) then
                     calendar := Calendar_Package.getInstance;
                     TimeUtil_Package.getInstance.setCalendar (calendar, This.fromYear, This.fromMonth, This.fromDay, This.fromHour);
-                    This.fromDate := calendar.getTimeInMillis.toString;
+                    This.fromDate := To_Unbounded_String (Java_Image (calendar.getTimeInMillis));
                     TimeUtil_Package.getInstance.setCalendar (calendar, This.toYear, This.toMonth, This.toDay, This.toHour);
-                    This.toDate := calendar.getTimeInMillis.toString;
+                    This.toDate := To_Unbounded_String (Java_Image (calendar.getTimeInMillis));
                 end if;
                 if (StringValidationUtil_Package.getInstance.isEmpty (This.toDate)) or else ((Ada.Strings.Unbounded.Length (This.toDate)) > (This.MAXLEN)) then
                     isValid := False;

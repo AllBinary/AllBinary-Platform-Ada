@@ -170,11 +170,41 @@ with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package; use org.allbi
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;
+with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.thread.NullRunnable_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.game.layer.SensorAction_Package;
 with org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package;
+with org.allbinary.thread.ThreadPool_Package;
+with org.allbinary.thread.ThreadPoolStrings_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
@@ -1215,31 +1245,31 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             This.rtsLogHelper.doneMoving (UnitLayer_Access'(This'Unchecked_Access));
             return True;
         elsif ((Integer (This.movementAngle.getValue))) = (angle) then
-            if ((dx) > (0)) and then ((This.movementAngle) = (This.angleFactory.LEFT)) then
+            if ((dx) > (0)) and then ((Java_Object_Access (This.movementAngle)) = (Java_Object_Access (This.angleFactory.LEFT))) then
                 This.rtsLogHelper.movingLeft (UnitLayer_Access'(This'Unchecked_Access));
                 return False;
             end if;
-            if ((dx) < (0)) and then ((This.movementAngle) = (This.angleFactory.RIGHT)) then
+            if ((dx) < (0)) and then ((Java_Object_Access (This.movementAngle)) = (Java_Object_Access (This.angleFactory.RIGHT))) then
                 This.rtsLogHelper.movingRight (UnitLayer_Access'(This'Unchecked_Access));
                 return False;
             end if;
-            if ((dy) > (0)) and then ((This.movementAngle) = (This.angleFactory.UP)) then
+            if ((dy) > (0)) and then ((Java_Object_Access (This.movementAngle)) = (Java_Object_Access (This.angleFactory.UP))) then
                 This.rtsLogHelper.movingUp (UnitLayer_Access'(This'Unchecked_Access));
                 return False;
             end if;
-            if ((dy) < (0)) and then ((This.movementAngle) = (This.angleFactory.DOWN)) then
+            if ((dy) < (0)) and then ((Java_Object_Access (This.movementAngle)) = (Java_Object_Access (This.angleFactory.DOWN))) then
                 This.rtsLogHelper.movingDown (UnitLayer_Access'(This'Unchecked_Access));
                 return False;
             end if;
             This.rtsLogHelper.currentMoveEnded (UnitLayer_Access'(This'Unchecked_Access));
-            if ((This.movementAngle) = (This.angleFactory.LEFT)) or else ((This.movementAngle) = (This.angleFactory.RIGHT)) then
+            if ((Java_Object_Access (This.movementAngle)) = (Java_Object_Access (This.angleFactory.LEFT))) or else ((Java_Object_Access (This.movementAngle)) = (Java_Object_Access (This.angleFactory.RIGHT))) then
                 UnitLayer'Class (This).handleDeltalY (dx, dy);
-            elsif ((This.movementAngle) = (This.angleFactory.UP)) or else ((This.movementAngle) = (This.angleFactory.DOWN)) then
+            elsif ((Java_Object_Access (This.movementAngle)) = (Java_Object_Access (This.angleFactory.UP))) or else ((Java_Object_Access (This.movementAngle)) = (Java_Object_Access (This.angleFactory.DOWN))) then
                 UnitLayer'Class (This).handleDeltalX (dx, dy);
             end if;
             return True;
         else
-            if (nextUnvisitedPathGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
+            if (Java_Object_Access (nextUnvisitedPathGeographicMapCellPosition)) /= (Java_Object_Access (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
                 if (This.steeringInsideGeographicMapCellPosition) /= (nextUnvisitedPathGeographicMapCellPosition) then
                     if ((abs (dx)) > (abs (dy))) and then ((dy) /= (0)) then
                         UnitLayer'Class (This).handleDeltalY (dx, dy);
@@ -1363,7 +1393,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                 geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
                 This.layerPartialCellPositionsUtil.getAllDXY (geographicMapInterface, UnitLayer_Access'(This'Unchecked_Access), Integer (velocityXScaled), Integer (velocityYScaled), UnitLayer_Package.getPartialpositionlist);
                 cellPosition := GeographicMapCellPosition_Access (DropCellPositionHistory_Package.getInstance.getCellPositionWithDrop (UnitLayer_Package.getPartialpositionlist));
-                if (cellPosition) = (This.cellPositionFactory.NONE) then
+                if (Java_Object_Access (cellPosition)) = (Java_Object_Access (This.cellPositionFactory.NONE)) then
                     tiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
                     tiledLayerUtil := TiledLayerUtil_Package.getInstance;
                     x := (This.x) + (Integer (velocityXScaled));

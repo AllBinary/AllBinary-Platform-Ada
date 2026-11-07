@@ -64,7 +64,7 @@ package org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_Packag
    subtype TextItemNumberVisitor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_Package_References.TextItemNumberVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TextItemNumberVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_Package_References."=";
 
-   type TextItemNumberVisitor is new Visitor with record
+   type TextItemNumberVisitor is new Visitor_Package.Visitor with record
       logUtil : LogUtil_Access;
    end record;
 

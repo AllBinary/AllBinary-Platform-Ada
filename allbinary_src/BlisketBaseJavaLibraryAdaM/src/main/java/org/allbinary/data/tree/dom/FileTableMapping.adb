@@ -24,6 +24,12 @@ with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.logic.io.file.FileData_Package; use org.allbinary.logic.io.file.FileData_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.data.tree.dom.FileTableMapping_Package is
 
@@ -106,10 +112,10 @@ package body org.allbinary.data.tree.dom.FileTableMapping_Package is
         rootFileName := pathData.getNameFromPath (pathUtil.getWithoutExtension (This.file.getPath));
         fileData := FileData_Package.getInstance;
         filePropertyHashMap.put (fileData.ROOT_NAME, Java_Box (rootFileName));
-        filePropertyHashMap.put (fileData.ISFILE, Java_Box (To_Unbounded_String (Java_Image (This.file.isFile)).toString));
-        filePropertyHashMap.put (fileData.ISDIRECTORY, Java_Box (To_Unbounded_String (Java_Image (This.file.isDirectory)).toString));
-        filePropertyHashMap.put (fileData.ISHIDDEN, Java_Box (To_Unbounded_String (Java_Image (This.file.isHidden)).toString));
-        filePropertyHashMap.put (fileData.ISABSOLUTE, Java_Box (To_Unbounded_String (Java_Image (This.file.isAbsolute)).toString));
+        filePropertyHashMap.put (fileData.ISFILE, Java_Box (To_Unbounded_String (Java_Image (This.file.isFile))));
+        filePropertyHashMap.put (fileData.ISDIRECTORY, Java_Box (To_Unbounded_String (Java_Image (This.file.isDirectory))));
+        filePropertyHashMap.put (fileData.ISHIDDEN, Java_Box (To_Unbounded_String (Java_Image (This.file.isHidden))));
+        filePropertyHashMap.put (fileData.ISABSOLUTE, Java_Box (To_Unbounded_String (Java_Image (This.file.isAbsolute))));
         filePropertyHashMap.put (fileData.ABSOLUTE_PATH, This.file.getAbsolutePath);
         filePropertyHashMap.put (fileData.CANONICAL_PATH, This.file.getCanonicalPath);
         filePropertyHashMap.put (fileData.NAME, Java_Box (This.file.getName));

@@ -15,6 +15,7 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 
 package body org.allbinary.J2SEUtil_Package is
 
@@ -57,8 +58,8 @@ package body org.allbinary.J2SEUtil_Package is
         return objectArray;
    end getMapAsArray;
 
-   function getSetAsArray (This : in out J2SEUtil; set_Param : access Java_Object'Class) return Java_Object_Access_Array_Access is
-      set : constant Java_Object_Access := Java_Object_Access (set_Param);
+   function getSetAsArray (This : in out J2SEUtil; set_Param : access Set_Package.Set'Class) return Java_Object_Access_Array_Access is
+      set : constant Set_Access := Set_Access (set_Param);
       objectArray : Java_Object_Access_Array_Access;
    begin
         objectArray := set.toArray;
@@ -79,7 +80,7 @@ package body org.allbinary.J2SEUtil_Package is
       null;
    end getMapAsArray;
 
-   procedure getSetAsArray (This : in out J2SEUtil; set_Param : access Java_Object'Class) is
+   procedure getSetAsArray (This : in out J2SEUtil; set_Param : access Set_Package.Set'Class) is
       Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getSetAsArray (set_Param => set_Param);
       pragma Unreferenced (Java_Result);
    begin

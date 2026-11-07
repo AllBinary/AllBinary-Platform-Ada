@@ -22,6 +22,10 @@ with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.animation.image.AlphaBaseProcessor_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
 
 package body org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package is
 

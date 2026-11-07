@@ -14,6 +14,7 @@
 
 
 with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.game.resource.ResourceInitialization_Package is
 

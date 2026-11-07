@@ -15,6 +15,7 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.category.CategoryComponent_Package; use org.allbinary.business.category.CategoryComponent_Package;
 with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
@@ -40,10 +41,17 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_Re
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body admin.taghelpers.CategoryRequestHelper_Package is
 
    package Map_Package renames Standard.java.util.Map_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package CategoryComponent_Package renames Standard.org.allbinary.business.category.CategoryComponent_Package;
    package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
    package StoreCategoryFactory_Package renames Standard.org.allbinary.business.category.store.StoreCategoryFactory_Package;
@@ -156,7 +164,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
    procedure getXmlData (This : in out CategoryRequestHelper) is
       map : Map_Access;
       categoryData : CategoryData_Access;
-      keys : Java_Object_Access;
+      keys : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       xmlRequest : Unbounded_String;

@@ -15,6 +15,7 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -27,9 +28,21 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.communication.http.request.RequestData_Package; use org.allbinary.logic.communication.http.request.RequestData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.http.request.RequestParams_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
@@ -142,7 +155,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
       document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       stringBuffer : StringMaker_Access;
-      keys : Java_Object_Access;
+      keys : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       key : Unbounded_String;
@@ -181,7 +194,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
    --  throws Exception
    function toHashMap (This : in out RequestParams) return HashMap_Access is
       hashMap : HashMap_Access;
-      keys : Java_Object_Access;
+      keys : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       stringBuffer : StringMaker_Access;

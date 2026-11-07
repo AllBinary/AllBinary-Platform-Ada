@@ -41,9 +41,24 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeograph
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeDelayHelper_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCellPositionGenerator_Package is
@@ -209,7 +224,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
         RaceTrackDropCellPositionGenerator'Class (This).init;
         baseRaceTrackGeographicMap := BaseRaceTrackGeographicMap_Access (geographicMapInterface);
         This.raceTrackGeographicMap := RaceTrackGeographicMapInterface_Access (baseRaceTrackGeographicMap);
-        This.raceTrackGeographicMapCellTypeFactory := RaceTrackGeographicMapCellTypeFactory_Access (baseRaceTrackGeographicMap.getGeographicMapCellTypeFactory);
+        This.raceTrackGeographicMapCellTypeFactory := GeographicMapCellTypeFactory_Access (RaceTrackGeographicMapCellTypeFactory_Access (baseRaceTrackGeographicMap.getGeographicMapCellTypeFactory));
         roadGeographicMapCellHistory := RaceTrackRoadsGeographicMapCellHistoryFactory_Package.getInstance;
         trackedList := roadGeographicMapCellHistory.getTracked;
         geographicMapCellPosition := null;

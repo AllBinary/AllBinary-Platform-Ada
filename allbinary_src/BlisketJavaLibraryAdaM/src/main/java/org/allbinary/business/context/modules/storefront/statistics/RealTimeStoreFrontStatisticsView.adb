@@ -132,7 +132,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
         storeFrontOrdersHistoryStatisticsInterface := StoreFrontOrdersHistoryStatisticsInterface_Access (This.storeFrontStatisticsInterface.getOrders);
         storeFrontOrdersHistoryStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontOrdersHistoryStatisticsView_Package.Create (storeFrontOrdersHistoryStatisticsInterface));
         node.appendChild (storeFrontOrdersHistoryStatisticsDomNodeInterface.toXmlNode (document));
-        if (This.userRole) = (UserRoleFactory_Package.getInstance.ADMINISTRATOR) then
+        if (Java_Object_Access (This.userRole)) = (Java_Object_Access (UserRoleFactory_Package.getInstance.ADMINISTRATOR)) then
             storeFrontUsersStatisticsInterface := StoreFrontUsersStatisticsInterface_Access (This.storeFrontStatisticsInterface.getUsers);
             storeFrontUsersStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontUsersStatisticsView_Package.Create (storeFrontUsersStatisticsInterface));
             node.appendChild (storeFrontUsersStatisticsDomNodeInterface.toXmlNode (document));

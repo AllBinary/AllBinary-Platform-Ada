@@ -13,6 +13,8 @@ with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.device.NullGL10_Package; use org.allbinary.device.NullGL10_Package;
+with org.allbinary.device.NullGL10_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
 
 package body org.allbinary.device.OpenGLESGraphics_Package is
 

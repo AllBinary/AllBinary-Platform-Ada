@@ -14,6 +14,7 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
@@ -28,6 +29,7 @@ with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface
 package body org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FileInputStream_Package renames Standard.java.io.FileInputStream_Package;
    package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;

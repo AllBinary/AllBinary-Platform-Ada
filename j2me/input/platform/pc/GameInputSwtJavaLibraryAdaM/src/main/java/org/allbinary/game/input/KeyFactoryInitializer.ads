@@ -64,7 +64,7 @@ package org.allbinary.game.input.KeyFactoryInitializer_Package is
    subtype KeyFactoryInitializer_Access_Array_Access_Array_Access is org.allbinary.game.input.KeyFactoryInitializer_Package_References.KeyFactoryInitializer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : KeyFactoryInitializer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.KeyFactoryInitializer_Package_References."=";
 
-   type KeyFactoryInitializer is new Init with record
+   type KeyFactoryInitializer is new Init_Package.Init with record
       logUtil : LogUtil_Access;
    end record;
 

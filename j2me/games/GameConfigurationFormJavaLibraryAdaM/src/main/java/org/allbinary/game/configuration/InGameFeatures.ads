@@ -51,11 +51,11 @@ package org.allbinary.game.configuration.InGameFeatures_Package is
    subtype InGameFeatures_Access_Array_Access_Array_Access is org.allbinary.game.configuration.InGameFeatures_Package_References.InGameFeatures_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InGameFeatures_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.InGameFeatures_Package_References."=";
 
-   type InGameFeatures is new Init with null record;
+   type InGameFeatures is new Init_Package.Init with null record;
 
    procedure Initialize (This : in out InGameFeatures'Class);
    function Create return InGameFeatures_Access;
-   procedure init (This : in out InGameFeatures);
+   procedure init_Method (This : in out InGameFeatures);
    procedure addToInGameMenu (This : in out InGameFeatures);
    function isAny (This : in out InGameFeatures) return Boolean;
 

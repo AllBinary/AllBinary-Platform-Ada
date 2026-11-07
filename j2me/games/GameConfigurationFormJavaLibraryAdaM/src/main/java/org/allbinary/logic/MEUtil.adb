@@ -17,6 +17,14 @@ with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Pa
 with javax.microedition.lcdui.Item_Package_References;
 with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allbinary.graphics.displayable.screen.CommandForm_Package;
 with org.allbinary.graphics.displayable.screen.CommandForm_Package_References;
+with javax.microedition.lcdui.Command_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
 
 package body org.allbinary.logic.MEUtil_Package is
 

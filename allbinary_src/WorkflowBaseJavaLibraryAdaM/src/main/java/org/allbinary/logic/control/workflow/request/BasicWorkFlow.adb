@@ -15,6 +15,7 @@
 
 with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -37,10 +38,21 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package is
 
    package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
@@ -194,7 +206,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         values.add (This.storeName);
         values.add (XmlDocumentHelper_Package.toString (This.workFlowDoc));
         calendar := Calendar_Package.getInstance;
-        time := Java_New_String (calendar.getTimeInMillis.toString);
+        time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
         values.add (time);
         values.add (time);
         return values;
@@ -211,7 +223,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         hashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
         hashMap.put (WorkFlowData_Package.getInstance.DATA, Java_Box (XmlDocumentHelper_Package.toString (This.workFlowDoc)));
         calendar := Calendar_Package.getInstance;
-        time := Java_New_String (calendar.getTimeInMillis.toString);
+        time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
         hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return hashMap;
    end toHashMap;
@@ -219,7 +231,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
    function toXmlNode (This : in out BasicWorkFlow; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
-      keySet : Java_Object_Access;
+      keySet : Set_Access;
       node : Node_Access;
       nameArray : Java_Object_Access_Array_Access;
       size : Integer;

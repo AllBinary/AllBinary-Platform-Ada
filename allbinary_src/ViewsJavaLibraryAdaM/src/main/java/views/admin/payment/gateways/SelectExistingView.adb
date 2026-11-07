@@ -23,9 +23,18 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with views.admin.payment.gateway.PaymentGatewayViewAbstract_Package; use views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;
 with views.admin.payment.gateways.PaymentGatewaysView_Package; use views.admin.payment.gateways.PaymentGatewaysView_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with views.HttpComponentView_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with views.admin.payment.gateways.PaymentGatewaysView_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body views.admin.payment.gateways.SelectExistingView_Package is
 

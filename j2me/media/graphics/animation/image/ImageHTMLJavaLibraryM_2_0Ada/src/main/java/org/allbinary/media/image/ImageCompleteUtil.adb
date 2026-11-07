@@ -21,6 +21,8 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
 with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.media.image.ImageCompleteUtil_Package is
 

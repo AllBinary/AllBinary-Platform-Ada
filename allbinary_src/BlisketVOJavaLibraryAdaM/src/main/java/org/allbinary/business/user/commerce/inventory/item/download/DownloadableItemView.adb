@@ -15,6 +15,7 @@
 
 with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -29,11 +30,19 @@ with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package is
 
    package Calendar_Package renames Standard.java.util.Calendar_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
@@ -127,7 +136,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
       hourDelta : Integer;
       minuteDelta : Integer;
       secondDelta : Integer;
-      keySet : Java_Object_Access;
+      keySet : Set_Access;
       node : Node_Access;
       stringUtil : StringUtil_Access;
       nameArray : Java_Object_Access_Array_Access;
@@ -155,12 +164,12 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         hourDelta := calendar.get (Calendar_Package.HOUR);
         minuteDelta := calendar.get (Calendar_Package.MINUTE);
         secondDelta := calendar.get (Calendar_Package.SECOND);
-        hashMap.put (DownloadItemData_Package.VALID_TIME_YEARS, To_Unbounded_String (Java_Image ((yearDelta) - (year))));
-        hashMap.put (DownloadItemData_Package.VALID_TIME_MONTHS, To_Unbounded_String (Java_Image ((monthDelta) - (month))));
-        hashMap.put (DownloadItemData_Package.VALID_TIME_DAYS, To_Unbounded_String (Java_Image ((dayDelta) - (day))));
-        hashMap.put (DownloadItemData_Package.VALID_TIME_HOURS, To_Unbounded_String (Java_Image ((hourDelta) - (hour))));
-        hashMap.put (DownloadItemData_Package.VALID_TIME_MINUTES, To_Unbounded_String (Java_Image ((minuteDelta) - (minute))));
-        hashMap.put (DownloadItemData_Package.VALID_TIME_SECONDS, To_Unbounded_String (Java_Image ((secondDelta) - (second))));
+        hashMap.put (DownloadItemData_Package.VALID_TIME_YEARS, Integer ((yearDelta) - (year)));
+        hashMap.put (DownloadItemData_Package.VALID_TIME_MONTHS, Integer ((monthDelta) - (month)));
+        hashMap.put (DownloadItemData_Package.VALID_TIME_DAYS, Integer ((dayDelta) - (day)));
+        hashMap.put (DownloadItemData_Package.VALID_TIME_HOURS, Integer ((hourDelta) - (hour)));
+        hashMap.put (DownloadItemData_Package.VALID_TIME_MINUTES, Integer ((minuteDelta) - (minute)));
+        hashMap.put (DownloadItemData_Package.VALID_TIME_SECONDS, Integer ((secondDelta) - (second)));
         keySet := hashMap.keySet;
         node := document.createElement (DownloadItemData_Package.NAME);
         stringUtil := StringUtil_Package.getInstance;

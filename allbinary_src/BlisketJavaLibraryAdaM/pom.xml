@@ -376,7 +376,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.allbinary.logic,org.allbinary.business.category,org.allbinary.logic.communication,org.allbinary.data.tables,org.allbinary.business,org.apache.commons,commons-fileupload,javax.servlet,org.eclipse.jetty</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

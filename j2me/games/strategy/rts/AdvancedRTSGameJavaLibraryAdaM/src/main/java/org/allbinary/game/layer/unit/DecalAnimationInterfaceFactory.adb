@@ -88,7 +88,7 @@ package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Packag
       animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access;
    begin
         animationInterfaceFactoryInterface := null;
-        if (basicColor) = (BasicColorFactory_Package.getInstance.RED) then
+        if (Java_Object_Access (basicColor)) = (Java_Object_Access (BasicColorFactory_Package.getInstance.RED)) then
             animationInterfaceFactoryInterface := AnimationInterfaceFactoryInterface_Access (FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance.get (basicGameResources.RESOURCE));
         else
             animationInterfaceFactoryInterface := AnimationInterfaceFactoryInterface_Access (NullRotationAnimationFactory_Package.getFactoryInstance);

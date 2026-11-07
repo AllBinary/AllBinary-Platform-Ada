@@ -26,8 +26,13 @@ with org.allbinary.logic.system.security.licensing.LicenseType_Package; use org.
 with org.allbinary.logic.system.security.licensing.LicenseType_Package_References;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
 with org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package; use org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package;
 with org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Package is
 

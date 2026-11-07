@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventA
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access is
    begin
         if (UpTouchInputToGameKeyEventAction_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            UpTouchInputToGameKeyEventAction_Package.instance := UpTouchInputToGameKeyEventAction_Package.Create;
+            UpTouchInputToGameKeyEventAction_Package.instance := Java_Object_Access (UpTouchInputToGameKeyEventAction_Package.Create);
         end if;
         return GameKeyCompleteMotionGestureInputEvent_Access (UpTouchInputToGameKeyEventAction_Package.instance);
    end getInstance;

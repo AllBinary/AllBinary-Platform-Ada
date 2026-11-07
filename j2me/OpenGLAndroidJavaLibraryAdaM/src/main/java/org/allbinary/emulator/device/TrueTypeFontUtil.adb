@@ -37,6 +37,17 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
 with org.microemu.android.device.AndroidImmutableImage_Package; use org.microemu.android.device.AndroidImmutableImage_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
@@ -187,7 +198,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
       index : Integer;
       image : Image_Access;
    begin
-        if (This.fontImage) = (OpenGLESImage_Package.NULL_OPENGL_IMAGE) then
+        if (Java_Object_Access (This.fontImage)) = (Java_Object_Access (OpenGLESImage_Package.NULL_OPENGL_IMAGE)) then
             cellsPerRow2 := (This.CELLS_PER_ROW) * (2);
             cellsPerRow3 := (This.CELLS_PER_ROW) * (3);
             cellsPerRow4 := (This.CELLS_PER_ROW) * (4);

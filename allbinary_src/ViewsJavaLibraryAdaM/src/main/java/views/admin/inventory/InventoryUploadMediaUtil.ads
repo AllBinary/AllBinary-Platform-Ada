@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 limited with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
 limited with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;

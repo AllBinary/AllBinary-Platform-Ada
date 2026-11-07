@@ -32,7 +32,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.sql.ResultSet_Package; use java.sql.ResultSet_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
 limited with org.allbinary.business.init.db.DbConnectionInfo_Package;
 with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;

@@ -28,9 +28,15 @@ with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.me
 with org.allbinary.media.image.ImageProcessorInput_Package_References;
 with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
 with org.allbinary.media.image.ImageProcessedVisitor_Package_References;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.media.image.ImageProcessedVisitor_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package;
 with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.SpriteSplitterUtil_Package is
 
@@ -173,9 +179,9 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
                 end loop;
                 This.logUtil.putF (To_Unbounded_String ("Processing Rows from Cells"), SpriteSplitterUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 imageUnifierProperties := ImageUnifierProperties_Package.Create;
-                imageUnifierProperties.setRows (To_Unbounded_String (Java_Image (1)));
-                imageUnifierProperties.setColumns (To_Unbounded_String (Java_Image (columns)));
-                imageUnifierCell := ImageUnifierCell_Package.Create (To_Unbounded_String (Java_Image ((cellWidth) - (((2) * (widthReduction))))), To_Unbounded_String (Java_Image ((cellHeight) - (((2) * (heightReduction))))));
+                imageUnifierProperties.setRows (Integer (1));
+                imageUnifierProperties.setColumns (Integer (columns));
+                imageUnifierCell := ImageUnifierCell_Package.Create (Integer ((cellWidth) - (((2) * (widthReduction)))), Integer ((cellHeight) - (((2) * (heightReduction)))));
                 imageUnifierProperties.setImageUnifierCell (imageUnifierCell);
                 for index2 in 0 .. (rows) - 1 loop
                     y := (cellHeight) * (index2);
@@ -213,9 +219,9 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
                     end loop;
                 end loop;
                 imageUnifierProperties := ImageUnifierProperties_Package.Create;
-                imageUnifierProperties.setRows (To_Unbounded_String (Java_Image (1)));
-                imageUnifierProperties.setColumns (To_Unbounded_String (Java_Image (columns)));
-                imageUnifierCell := ImageUnifierCell_Package.Create ((To_Unbounded_String (Java_Image ((cellWidth) - (((2) * (widthReduction)))))) + (increaseWidth), To_Unbounded_String (Java_Image (((cellHeight) - (((2) * (heightReduction)))) + (increaseHeight))));
+                imageUnifierProperties.setRows (Integer (1));
+                imageUnifierProperties.setColumns (Integer (columns));
+                imageUnifierCell := ImageUnifierCell_Package.Create ((Integer ((cellWidth) - (((2) * (widthReduction))))) + (increaseWidth), Integer (((cellHeight) - (((2) * (heightReduction)))) + (increaseHeight)));
                 imageUnifierProperties.setImageUnifierCell (imageUnifierCell);
                 This.logUtil.putF (To_Unbounded_String ("Processing Rows from Cells for each Direction"), SpriteSplitterUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 for index2 in 0 .. (rows) - 1 loop

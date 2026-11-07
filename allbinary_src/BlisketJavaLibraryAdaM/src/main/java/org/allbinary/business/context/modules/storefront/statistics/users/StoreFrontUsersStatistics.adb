@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -26,9 +27,16 @@ with org.allbinary.data.tables.user.UserEntityFactory_Package; use org.allbinary
 with org.allbinary.data.tables.user.UserEntityInterface_Package; use org.allbinary.data.tables.user.UserEntityInterface_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
    package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
    package UserEntityInterface_Package renames Standard.org.allbinary.data.tables.user.UserEntityInterface_Package;
@@ -127,7 +135,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
 
    function toHashMap (This : in out StoreFrontUsersStatistics) return HashMap_Access is
       hashMap : HashMap_Access;
-      setOfUserRoles : Java_Object_Access;
+      setOfUserRoles : Set_Access;
       nextUserRole : UserRole_Access;
       userRoleArray : Java_Object_Access_Array_Access;
       size : Integer;

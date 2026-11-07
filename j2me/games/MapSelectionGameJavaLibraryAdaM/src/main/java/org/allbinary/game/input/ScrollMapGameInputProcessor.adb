@@ -15,6 +15,9 @@
 
 with org.allbinary.game.input.ScrollMapPlayerGameInput_Package; use org.allbinary.game.input.ScrollMapPlayerGameInput_Package;
 with org.allbinary.game.input.ScrollMapPlayerGameInput_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.input.ScrollMapPlayerGameInput_Package;
 
 package body org.allbinary.game.input.ScrollMapGameInputProcessor_Package is

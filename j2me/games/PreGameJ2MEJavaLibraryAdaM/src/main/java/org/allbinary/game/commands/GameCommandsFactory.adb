@@ -19,6 +19,17 @@ with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
 
 package body org.allbinary.game.commands.GameCommandsFactory_Package is
 
@@ -72,7 +83,7 @@ package body org.allbinary.game.commands.GameCommandsFactory_Package is
    function getInstance return GameCommandsFactory_Access is
    begin
         if (GameCommandsFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            GameCommandsFactory_Package.instance := GameCommandsFactory_Package.Create;
+            GameCommandsFactory_Package.instance := Java_Object_Access (GameCommandsFactory_Package.Create);
         end if;
         return GameCommandsFactory_Access (GameCommandsFactory_Package.instance);
    end getInstance;

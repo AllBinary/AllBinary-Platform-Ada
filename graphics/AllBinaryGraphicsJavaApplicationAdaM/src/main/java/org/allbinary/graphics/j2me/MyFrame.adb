@@ -49,18 +49,34 @@ with org.allbinary.graphics.j2me.JPanel_Package; use org.allbinary.graphics.j2me
 with org.allbinary.graphics.j2me.JPanel_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+with org.allbinary.graphics.GraphicsStrings_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventListener_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package_References;
 
@@ -654,7 +670,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    procedure exitJMenuItemActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
-        System_Package.exit_Id (0);
+        Java_Exit (0);
    end exitJMenuItemActionPerformed;
 
    procedure newJMenuItemActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -672,7 +688,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    procedure exitForm (This : in out MyFrame; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
       evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
    begin
-        System_Package.exit_Id (0);
+        Java_Exit (0);
    end exitForm;
 
    procedure openJButtonActionPerformed (This : in out MyFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -838,8 +854,8 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
       angleIncrementInteger : Integer;
       totalRotationInteger : Integer;
    begin
-        angleIncrementInteger := Java_Unbox_Integer (hashMap.get (To_Unbounded_String (Java_Image (0))));
-        totalRotationInteger := Java_Unbox_Integer (hashMap.get (To_Unbounded_String (Java_Image (1))));
+        angleIncrementInteger := Java_Unbox_Integer (hashMap.get (Integer (0)));
+        totalRotationInteger := Java_Unbox_Integer (hashMap.get (Integer (1)));
         MyFrame'Class (This).getSelectedWorkArea.autoRotate (Integer (angleIncrementInteger), Integer (totalRotationInteger));
    end onHashMap;
 

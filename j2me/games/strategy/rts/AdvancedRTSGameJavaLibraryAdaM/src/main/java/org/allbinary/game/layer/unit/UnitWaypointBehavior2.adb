@@ -63,13 +63,37 @@ with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package; use org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;
 with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.thread.NullRunnable_Package;
+with org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package;
+with org.allbinary.thread.ThreadPoolStrings_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
@@ -367,7 +391,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       anotherTargetDistance : Integer;
    begin
         anotherTargetDistance := This.layerDistanceUtil.getDistance (This.associatedAdvancedRTSGameLayer, layerInterface);
-        if (layerInterface) = (This.currentTargetLayerInterfaceP) then
+        if (Java_Object_Access (layerInterface)) = (Java_Object_Access (This.currentTargetLayerInterfaceP)) then
             UnitWaypointBehavior2'Class (This).setCurrentTargetDistance (anotherTargetDistance);
         else
             UnitWaypointBehavior2'Class (This).processPossibleTarget (layerInterface, anotherTargetDistance);
@@ -381,7 +405,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       isCurrentTargetDestroyed : Boolean;
    begin
         isShorterThanCurrentTargetDistance := (UnitWaypointBehavior2'Class (This).getCurrentTargetDistance) > (anotherTargetDistance);
-        isCurrentTargetDestroyed := ((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then (This.currentTargetLayerInterfaceP.isDestroyed);
+        isCurrentTargetDestroyed := ((Java_Object_Access (This.currentTargetLayerInterfaceP)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) and then (This.currentTargetLayerInterfaceP.isDestroyed);
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.processPossibleTarget (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), layerInterface, anotherTargetDistance, isShorterThanCurrentTargetDistance, isCurrentTargetDestroyed);
         if ((UnitWaypointBehavior2'Class (This).isWaypointListEmptyOrOnlyTargets) and then (UnitWaypointBehavior2'Class (This).isInSensorRange (layerInterface, anotherTargetDistance))) and then (((isShorterThanCurrentTargetDistance) or else (isCurrentTargetDestroyed))) then
             This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.processSetTarget (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), layerInterface, anotherTargetDistance);
@@ -397,7 +421,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
         if (UnitWaypointBehavior2'Class (This).isTrackingWaypoint) or else (This.associatedAdvancedRTSGameLayer.getParentLayer.isDestroyed) then
-            if (This.progressTimeDelayHelper.isTimeTNT) and then ((This.nextUnvisitedPathGeographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
+            if (This.progressTimeDelayHelper.isTimeTNT) and then ((Java_Object_Access (This.nextUnvisitedPathGeographicMapCellPosition)) /= (Java_Object_Access (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION))) then
                 This.associatedAdvancedRTSGameLayer.teleportTo (This.nextUnvisitedPathGeographicMapCellPosition);
             end if;
             if UnitWaypointBehavior2'Class (This).getCompleteTimeDelayHelper.isTimeTNT then
@@ -439,14 +463,14 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    --  throws Exception
    procedure setTargetPath (This : in out UnitWaypointBehavior2) is
    begin
-        if (This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
+        if (Java_Object_Access (This.currentTargetLayerInterfaceP)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
             if This.currentTargetLayerInterfaceP.isDestroyed then
                 This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.setTargetPath (This.associatedAdvancedRTSGameLayer);
                 This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.UnitWaypointBehavior2_Field_unitWaypointStrings.KILL, This.basicColorFactory.ORANGE);
                 UnitWaypointBehavior2'Class (This).clearTarget;
                 return;
             end if;
-            if (This.currentTargetLayerInterfaceP) = (This.waypointPathRunnable.getTargetLayer) then
+            if (Java_Object_Access (This.currentTargetLayerInterfaceP)) = (Java_Object_Access (This.waypointPathRunnable.getTargetLayer)) then
                 This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.setTargetPathIgnoreNewPath (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access));
                 UnitWaypointBehavior2'Class (This).insertWaypoint (0, This.currentTargetLayerInterfaceP);
                 UnitWaypointBehavior2'Class (This).setRandomGeographicMapCellHistory (This.waypointPathsListP);
@@ -485,7 +509,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
                     if UnitWaypointBehavior2'Class (This).visitIfAtMidPoint (geographicMapCellPosition) then
                         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.processWaypointTrackedVisit (This.associatedAdvancedRTSGameLayer, geographicMapCellPosition);
                     end if;
-                    if (This.currentGeographicMapCellHistoryP.isAllVisited2) and then ((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
+                    if (This.currentGeographicMapCellHistoryP.isAllVisited2) and then ((Java_Object_Access (This.currentTargetLayerInterfaceP)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) then
                         oldWaypointLayer := AdvancedRTSGameLayer_Access (This.currentTargetLayerInterfaceP);
                         oldWaypointLayer.getWaypointBehavior.getWaypoint.visit (This.associatedAdvancedRTSGameLayer);
                         This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.UnitWaypointBehavior2_Field_unitWaypointStrings.ALL_VISITED_SHORT, This.basicColorFactory.GREEN);
@@ -529,7 +553,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       beyondMidPoint : Boolean;
    begin
         unitLayer := This.associatedAdvancedRTSGameLayer;
-        if ((geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) and then ((This.nextUnvisitedPathGeographicMapCellPosition) = (geographicMapCellPosition)) then
+        if ((Java_Object_Access (geographicMapCellPosition)) /= (Java_Object_Access (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION))) and then ((This.nextUnvisitedPathGeographicMapCellPosition) = (geographicMapCellPosition)) then
             point := geographicMapCellPosition.getMidPoint;
             afterNextPoint := This.afterNextUnvisitedPathGeographicMapCellPosition.getMidPoint;
             beyondMidPoint := True;
@@ -576,7 +600,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
                 UnitWaypointBehavior2'Class (This).onEnemyMovement (layerInterface);
             end if;
         end loop;
-        if (This.targetWithoutCachedPathLayerInterface) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
+        if (Java_Object_Access (This.targetWithoutCachedPathLayerInterface)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
             This.waitingOnTargetPath := True;
             This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.UnitWaypointBehavior2_Field_unitWaypointStrings.THINKING_ABOUT_TARGET, This.basicColorFactory.GREEN);
             UnitWaypointBehavior2'Class (This).runWaypointPathTask (AdvancedRTSGameLayer_Access (This.currentTargetLayerInterfaceP));
@@ -590,7 +614,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       dy : Integer;
       point : GPoint_Access;
    begin
-        if ((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then (((UnitWaypointBehavior2'Class (This).isInSensorRange (This.currentTargetLayerInterfaceP, UnitWaypointBehavior2'Class (This).getCurrentTargetDistance)) or else (UnitWaypointBehavior2'Class (This).isTrackingWaypoint))) then
+        if ((Java_Object_Access (This.currentTargetLayerInterfaceP)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) and then (((UnitWaypointBehavior2'Class (This).isInSensorRange (This.currentTargetLayerInterfaceP, UnitWaypointBehavior2'Class (This).getCurrentTargetDistance)) or else (UnitWaypointBehavior2'Class (This).isTrackingWaypoint))) then
             if This.currentTargetLayerInterfaceP.isDestroyed then
                 This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.targetDestroyed (This.associatedAdvancedRTSGameLayer);
                 This.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper.update (This.UnitWaypointBehavior2_Field_unitWaypointStrings.KILL, This.basicColorFactory.ORANGE);
@@ -672,7 +696,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.removeWaypoint (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), waypointLayer, reason);
         This.targetList.remove (Java_Object_Access (waypointLayer));
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.removeWaypointList (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), This.targetList);
-        if (This.currentTargetLayerInterfaceP) = (waypointLayer) then
+        if (Java_Object_Access (This.currentTargetLayerInterfaceP)) = (Java_Object_Access (waypointLayer)) then
             This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.removeWaypointClear (This.associatedAdvancedRTSGameLayer);
             UnitWaypointBehavior2'Class (This).clearTarget;
         end if;
@@ -724,7 +748,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        if (This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
+        if (Java_Object_Access (This.currentTargetLayerInterfaceP)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
             stringBuffer.append (UnitWaypointBehavior2_Package.TARGET_LAYER);
             stringBuffer.append (This.commonSeps.SPACE);
             stringBuffer.append (This.currentTargetLayerInterfaceP.getName);
@@ -858,12 +882,36 @@ with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.lay
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.thread.NullRunnable_Package;
+with org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package;
+with org.allbinary.thread.ThreadPoolStrings_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;

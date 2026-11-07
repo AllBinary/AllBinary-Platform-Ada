@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.touch.action.DiagonalUpLeftTouchInputToG
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access is
    begin
         if (DiagonalUpLeftTouchInputToGameKeyEventAction_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            DiagonalUpLeftTouchInputToGameKeyEventAction_Package.instance := DiagonalUpLeftTouchInputToGameKeyEventAction_Package.Create;
+            DiagonalUpLeftTouchInputToGameKeyEventAction_Package.instance := Java_Object_Access (DiagonalUpLeftTouchInputToGameKeyEventAction_Package.Create);
         end if;
         return GameKeyCompleteMotionGestureInputEvent_Access (DiagonalUpLeftTouchInputToGameKeyEventAction_Package.instance);
    end getInstance;

@@ -20,6 +20,9 @@ with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.directi
 with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.math.AngleInfo_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
 
@@ -115,13 +118,13 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
         keyDirection := -(1);
         angleIncrementInfo := This.angleInfo.getAngleIncrementInfo;
         directionFactory := DirectionFactory_Package.getInstance;
-        if (geographicMapDirectionData) = (directionFactory.DOWN) then
+        if (Java_Object_Access (geographicMapDirectionData)) = (Java_Object_Access (directionFactory.DOWN)) then
             keyDirection := BasicDirectionAIHelper'Class (This).getAIKeyPressed (angleIncrementInfo.DOWN_FRAME);
-        elsif (geographicMapDirectionData) = (directionFactory.UP) then
+        elsif (Java_Object_Access (geographicMapDirectionData)) = (Java_Object_Access (directionFactory.UP)) then
             keyDirection := BasicDirectionAIHelper'Class (This).getAIKeyPressed (angleIncrementInfo.UP_FRAME);
-        elsif (geographicMapDirectionData) = (directionFactory.LEFT) then
+        elsif (Java_Object_Access (geographicMapDirectionData)) = (Java_Object_Access (directionFactory.LEFT)) then
             keyDirection := BasicDirectionAIHelper'Class (This).getAIKeyPressed (angleIncrementInfo.LEFT_FRAME);
-        elsif (geographicMapDirectionData) = (directionFactory.RIGHT) then
+        elsif (Java_Object_Access (geographicMapDirectionData)) = (Java_Object_Access (directionFactory.RIGHT)) then
             keyDirection := BasicDirectionAIHelper'Class (This).getAIKeyPressed (angleIncrementInfo.RIGHT_FRAME);
         end if;
         return keyDirection;

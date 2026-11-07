@@ -8,6 +8,9 @@ with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 with org.platform.opengl.OpenGLGLUUtils_Package; use org.platform.opengl.OpenGLGLUUtils_Package;
 with org.platform.opengl.OpenGLGLUUtils_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.platform.opengl.OpenGLGLUUtils_Package;
 
 package body org.platform.opengl.OpenGLTextureFactory_Package is

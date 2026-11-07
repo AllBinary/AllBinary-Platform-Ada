@@ -17,6 +17,7 @@ with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.Artif
 with org.allbinary.ai.ArtificialIntelligence_Package_References;
 with org.allbinary.ai.ArtificialIntelligence_Package;
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.graphics.IdentifierInterface_Package;
 
 package body org.allbinary.ai.ArtificialIntelligenceFactory_Package is
 

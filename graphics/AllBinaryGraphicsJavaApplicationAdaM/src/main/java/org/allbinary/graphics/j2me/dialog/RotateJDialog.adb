@@ -20,6 +20,18 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 
@@ -106,8 +118,8 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            This.hashMap.put (To_Unbounded_String (Java_Image (0)), To_Unbounded_String (Java_Image (This.angleIncrementJTextField.getText)));
-            This.hashMap.put (To_Unbounded_String (Java_Image (1)), To_Unbounded_String (Java_Image (This.totalRotationJTextField.getText)));
+            This.hashMap.put (Integer (0), Integer (This.angleIncrementJTextField.getText));
+            This.hashMap.put (Integer (1), Integer (This.totalRotationJTextField.getText));
             HashMapJDialogListenerInterface_Access (RotateJDialog'Class (This).getParent).onHashMap (This.hashMap);
             RotateJDialog'Class (This).setVisible (False);
         exception
@@ -134,7 +146,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 --  --     procedure windowClosing (This : in out ; e_Param : access WindowEvent_Package.WindowEvent'Class) is
 --  --        e : constant WindowEvent_Access := WindowEvent_Access (e_Param);
 --  --     begin
---  --                          System_Package.exit_Id (0);
+--  --                          Java_Exit (0);
 --  --     end windowClosing;
 --  );
 --                  dialog.setVisible (True);

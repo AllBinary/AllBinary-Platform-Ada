@@ -32,7 +32,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Serializable_Package; use java.io.Serializable_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 limited with org.allbinary.business.user.commerce.money.Money_Package;
 with org.allbinary.business.user.commerce.money.Money_Package_References;
 with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
@@ -40,6 +40,7 @@ with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Packa
 package org.allbinary.business.user.commerce.inventory.basket.Basket_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
    package Reference_Types is
    subtype Money_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access;
@@ -78,7 +79,7 @@ package org.allbinary.business.user.commerce.inventory.basket.Basket_Package is
    procedure adjustItem (This : in out Basket; id : Unbounded_String; num : Unbounded_String);
    function getTotalWeight (This : in out Basket) return Unbounded_String;
    function getNumberOfItems (This : in out Basket) return Integer;
-   function getIds (This : in out Basket) return Java_Object_Access;
+   function getIds (This : in out Basket) return Set_Access;
    function getItems (This : in out Basket) return HashMap_Access;
    function getNumberOf (This : in out Basket; product : Unbounded_String) return Integer;
    procedure getNumberOf (This : in out Basket; product : Unbounded_String);

@@ -24,8 +24,17 @@ with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.business.init.InitInfo_Package; use org.allbinary.business.init.InitInfo_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.init.InitException_Package;
 with org.allbinary.business.init.InitInfo_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
 
 package body org.allbinary.business.init.InitInfoEntity_Package is
 

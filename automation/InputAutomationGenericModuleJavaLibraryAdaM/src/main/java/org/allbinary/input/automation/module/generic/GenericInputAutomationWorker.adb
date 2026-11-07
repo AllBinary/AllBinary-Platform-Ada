@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package; use org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
@@ -36,18 +37,22 @@ with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInter
 with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
 with org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package; use org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package;
 with org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_Package; use org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package;
 with org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References;
 
 package body org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package GenericProfileDataWorkerType_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
    package GenericProfileAction_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
@@ -160,7 +165,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
       cacheInterface : J2SECacheInterface_Access;
       keyArray : Java_Object_Access_Array_Access;
       hashMap : HashMap_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       actionNameArray : Java_Object_Access_Array_Access;
       size : Integer;
       actionNameString : Unbounded_String;

@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -32,10 +33,18 @@ with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; 
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
@@ -141,7 +150,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemView_P
       hashMap : HashMap_Access;
       EMPTY_STRING : Unbounded_String;
       stringUtil : StringUtil_Access;
-      keySet : Java_Object_Access;
+      keySet : Set_Access;
       node : Node_Access;
       nameArray : Java_Object_Access_Array_Access;
       size2 : Integer;

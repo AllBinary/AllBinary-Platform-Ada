@@ -23,6 +23,10 @@ with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.l
 with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
 with org.allbinary.game.layer.weapon.WeaponLayer_Package_References;
 with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.layer.weapon.WeaponLayer_Package;
 
 package body org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package is

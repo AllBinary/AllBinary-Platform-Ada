@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 with java.util.Map_Package; use java.util.Map_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogBuffer_Package; use org.allbinary.logic.communication.log.LogBuffer_Package;
@@ -25,9 +26,21 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.system.security.AbCryptUtil_Package; use org.allbinary.logic.system.security.AbCryptUtil_Package;
 with org.allbinary.logic.system.security.AbCryptUtil_Package_References;
 with org.allbinary.logic.system.loader.NoClassDefFoundError_Package; use org.allbinary.logic.system.loader.NoClassDefFoundError_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
 
+   package FileInputStream_Package renames Standard.java.io.FileInputStream_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogBuffer_Package renames Standard.org.allbinary.logic.communication.log.LogBuffer_Package;
    package LogFactory_Package renames Standard.org.allbinary.logic.communication.log.LogFactory_Package;

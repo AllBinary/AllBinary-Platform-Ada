@@ -19,9 +19,21 @@ with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.strin
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
 with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.game.input.GameKey_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.GameKeyFactory_Package is
 
@@ -83,7 +95,7 @@ package body org.allbinary.game.input.GameKeyFactory_Package is
    function getInstance return GameKeyFactory_Access is
    begin
         if (GameKeyFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            GameKeyFactory_Package.instance := GameKeyFactory_Package.Create;
+            GameKeyFactory_Package.instance := Java_Object_Access (GameKeyFactory_Package.Create);
         end if;
         return GameKeyFactory_Access (GameKeyFactory_Package.instance);
    end getInstance;

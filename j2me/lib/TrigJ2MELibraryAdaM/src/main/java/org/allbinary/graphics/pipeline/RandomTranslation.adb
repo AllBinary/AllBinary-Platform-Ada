@@ -17,7 +17,11 @@ with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.ran
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.math.NoDecimalTrigTable_Package;
 
 package body org.allbinary.graphics.pipeline.RandomTranslation_Package is
 

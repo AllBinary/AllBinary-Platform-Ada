@@ -18,6 +18,9 @@ with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphi
 with org.allbinary.graphics.form.ItemPaintable_Package_References;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.PaintableForm_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.LockablePaintable_Package;
 
 package body org.allbinary.graphics.form.LockableFormPaintableFactory_Package is

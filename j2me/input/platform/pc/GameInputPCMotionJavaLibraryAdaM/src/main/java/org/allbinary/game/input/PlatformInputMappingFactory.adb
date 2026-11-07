@@ -74,7 +74,7 @@ package body org.allbinary.game.input.PlatformInputMappingFactory_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            if (This.inputToGameKeyMapping) = (PersistentInputMapping_Package.getNullInstance) then
+            if (Java_Object_Access (This.inputToGameKeyMapping)) = (Java_Object_Access (PersistentInputMapping_Package.getNullInstance)) then
                 This.inputToGameKeyMapping := PersistentInputMapping_Access (MotionLaptopGameInputMapping_Package.Create);
             end if;
         exception

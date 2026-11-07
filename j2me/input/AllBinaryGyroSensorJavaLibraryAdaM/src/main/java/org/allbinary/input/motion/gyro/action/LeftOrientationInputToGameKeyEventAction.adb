@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.gyro.action.LeftOrientationInputToGameKe
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access is
    begin
         if (LeftOrientationInputToGameKeyEventAction_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            LeftOrientationInputToGameKeyEventAction_Package.instance := LeftOrientationInputToGameKeyEventAction_Package.Create;
+            LeftOrientationInputToGameKeyEventAction_Package.instance := Java_Object_Access (LeftOrientationInputToGameKeyEventAction_Package.Create);
         end if;
         return GameKeyCompleteMotionGestureInputEvent_Access (LeftOrientationInputToGameKeyEventAction_Package.instance);
    end getInstance;

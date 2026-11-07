@@ -38,8 +38,15 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with views.admin.inventory.listings.InventoryViewSearchInterface_Package; use views.admin.inventory.listings.InventoryViewSearchInterface_Package;
 with views.generic_Id.inventory.InventorySearchUtil_Package; use views.generic_Id.inventory.InventorySearchUtil_Package;
 with views.generic_Id.inventory.InventorySearchProductUtil_Package; use views.generic_Id.inventory.InventorySearchProductUtil_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with views.generic_Id.inventory.InventorySearchProductUtil_Package;
 with views.generic_Id.inventory.InventorySearchUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body views.generic_Id.inventory.InventorySearch_Package is
 

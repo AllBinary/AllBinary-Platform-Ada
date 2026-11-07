@@ -21,7 +21,19 @@ with org.allbinary.logic.util.cache.CachePolicyFactory_Package; use org.allbinar
 with org.allbinary.logic.util.cache.CacheTypeFactory_Package; use org.allbinary.logic.util.cache.CacheTypeFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.color.ColorCacheableFactory_Package; use org.allbinary.graphics.color.ColorCacheableFactory_Package;
+with org.allbinary.logic.util.cache.CachePolicy_Package;
+with org.allbinary.logic.util.cache.CacheType_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 with org.allbinary.graphics.color.ColorCacheableFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.color.ColorCacheFactory_Package is
 

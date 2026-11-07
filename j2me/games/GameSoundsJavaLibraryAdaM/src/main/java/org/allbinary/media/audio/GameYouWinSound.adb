@@ -15,6 +15,9 @@
 
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 with org.allbinary.media.audio.Sound_Package_References;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
+with org.allbinary.media.audio.Sound_Package;
 
 package body org.allbinary.media.audio.GameYouWinSound_Package is
 

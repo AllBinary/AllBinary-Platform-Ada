@@ -40,6 +40,15 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package; use org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package;
 with org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package is
@@ -186,12 +195,12 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Pa
             gameKeyCompleteMotionGestureInputEvent := GameKeyCompleteMotionGestureInputEvent_Access (completeMotionGestureInputEvent);
             gameKey := gameKeyCompleteMotionGestureInputEvent.getGameKey;
             motionGestureInput := completeMotionGestureInputEvent.getMotionGestureInput;
-            if (motionGestureInput) = (touchMotionGestureFactory.RELEASED) then
+            if (Java_Object_Access (motionGestureInput)) = (Java_Object_Access (touchMotionGestureFactory.RELEASED)) then
                 This.logUtil.putF (This.RELEASE, TouchButtonsPaintableComposite_Access'(This'Unchecked_Access), This.METHOD_NAME);
                 This.released := True;
                 return;
             end if;
-            if ((motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.NO_MOTION)) and then (not (This.timeHelper.isTimeTNT)) then
+            if ((Java_Object_Access (motionGestureInput)) = (Java_Object_Access (TouchMotionGestureFactory_Package.getInstance.NO_MOTION))) and then (not (This.timeHelper.isTimeTNT)) then
                 This.logUtil.putF (This.FAST_REPEAT, TouchButtonsPaintableComposite_Access'(This'Unchecked_Access), This.METHOD_NAME);
                 return;
             end if;

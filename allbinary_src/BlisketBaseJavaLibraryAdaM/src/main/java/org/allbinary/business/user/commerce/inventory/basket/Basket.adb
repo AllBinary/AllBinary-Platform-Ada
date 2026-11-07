@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
 with org.allbinary.business.user.commerce.money.Money_Package_References;
@@ -21,6 +22,10 @@ with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.business.user.commerce.inventory.basket.Basket_Package is
 
@@ -67,8 +72,8 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
    begin
         if This.items.containsKey (Java_Box (id)) then
             oldNumStr := Java_New_String (Java_Unbox (This.items.get (Java_Box (id))));
-            oldNumInt := To_Unbounded_String (Java_Image (oldNumStr));
-            numInt := To_Unbounded_String (Java_Image (num));
+            oldNumInt := Integer'Value (To_String (oldNumStr));
+            numInt := Integer'Value (To_String (num));
             newNumInt := (Integer (oldNumInt)) + (Integer (numInt));
             This.items.put (Java_Box (id), Java_Box (To_Unbounded_String (Java_Image (newNumInt))));
         else
@@ -83,7 +88,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
 
    procedure adjustItem (This : in out Basket; id : Unbounded_String; num : Unbounded_String) is
    begin
-        if (To_Unbounded_String (Java_Image (num)).intValue) > (0) then
+        if (Integer (Integer'Value (To_String (num)))) > (0) then
             This.items.put (Java_Box (id), Java_Box (num));
         else
             This.items.remove (Java_Box (id));
@@ -93,7 +98,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
    function getTotalWeight (This : in out Basket) return Unbounded_String is
       itemsAndNumberInBasket : HashMap_Access;
       totalWeight : Money_Access;
-      items : Java_Object_Access;
+      items : Set_Access;
       product : Unbounded_String;
       weightFloat : Float;
       itemArray : Java_Object_Access_Array_Access;
@@ -111,7 +116,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
             for index in 0 .. (size) - 1 loop
                 product := Java_New_String (Java_Unbox (itemArray (index)));
                 weightFloat := InventoryEntity_Package.Create.getWeight (product);
-                weightFloat := (Basket'Class (This).getNumberOf (product).floatValue) * (Float (weightFloat));
+                weightFloat := (Float (Basket'Class (This).getNumberOf (product))) * (Float (weightFloat));
                 totalWeight.add (To_Unbounded_String (Java_Image (weightFloat)));
             end loop;
         end if;
@@ -123,8 +128,8 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
         return This.items.size;
    end getNumberOfItems;
 
-   function getIds (This : in out Basket) return Java_Object_Access is
-      set : Java_Object_Access;
+   function getIds (This : in out Basket) return Set_Access is
+      set : Set_Access;
    begin
         set := This.items.keySet;
         return set;
@@ -139,14 +144,14 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
       numStr : Unbounded_String;
    begin
         numStr := Java_Unbox (This.items.get (Java_Box (product)));
-        return To_Unbounded_String (Java_Image (numStr));
+        return Integer'Value (To_String (numStr));
    end getNumberOf;
 
    --  throws MoneyException
    function getSubTotal (This : in out Basket) return Money_Access is
       itemsAndNumberInBasket : HashMap_Access;
       subTotal : Money_Access;
-      items : Java_Object_Access;
+      items : Set_Access;
       inventoryEntityFactory : InventoryEntityFactory_Access;
       inventoryEntity : InventoryEntity_Access;
       itemArray : Java_Object_Access_Array_Access;
@@ -168,7 +173,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
                 product := Java_New_String (Java_Unbox (itemArray (index)));
                 itemInterface := ItemInterface_Access (inventoryEntity.getItem (product));
                 productTotal := itemInterface.getPrice;
-                productTotal.multiply (Basket'Class (This).getNumberOf (product).intValue);
+                productTotal.multiply (Integer (Basket'Class (This).getNumberOf (product)));
                 subTotal.add (productTotal.toString);
             end loop;
         end if;

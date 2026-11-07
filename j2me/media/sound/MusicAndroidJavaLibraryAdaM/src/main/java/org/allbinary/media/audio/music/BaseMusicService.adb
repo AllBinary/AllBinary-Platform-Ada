@@ -21,8 +21,16 @@ with org.allbinary.media.audio.music.MusicStrings_Package; use org.allbinary.med
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.media.audio.music.MusicRunnable_Package; use org.allbinary.media.audio.music.MusicRunnable_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.media.audio.music.MusicRunnable_Package;
 with org.allbinary.media.audio.music.MusicStrings_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.audio.music.BaseMusicService_Package is
 
@@ -134,7 +142,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    procedure onDestroy (This : in out BaseMusicService) is
    begin
         This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.DESTROY);
-        if (This.player) /= (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER) then
+        if (Java_Object_Access (This.player)) /= (Java_Object_Access (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER)) then
             This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.PAUSE);
             This.player.stop;
             This.player.reset;
@@ -144,7 +152,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
 
    procedure pause (This : in out BaseMusicService) is
    begin
-        if (This.player) /= (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER) then
+        if (Java_Object_Access (This.player)) /= (Java_Object_Access (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER)) then
             This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.PAUSE);
             This.player.pause;
         end if;
@@ -152,7 +160,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
 
    procedure resume (This : in out BaseMusicService) is
    begin
-        if ((This.player) /= (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER)) and then (not (This.player.isPlaying)) then
+        if ((Java_Object_Access (This.player)) /= (Java_Object_Access (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER))) and then (not (This.player.isPlaying)) then
             This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.RESUME);
             This.player.start;
         end if;
@@ -209,7 +217,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
         end if;
         if (This.songId) /= (-(1)) then
             Java_Nothing;
-            if ((This.player) /= (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER)) and then (This.player.isPlaying) then
+            if ((Java_Object_Access (This.player)) /= (Java_Object_Access (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER))) and then (This.player.isPlaying) then
                 player := This.player;
                 This.logUtil.putF (This.ALREADY_PLAYING, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.ON_START_COMMAND);
                 --  Java nested class MusicRunnable: move it to its own package

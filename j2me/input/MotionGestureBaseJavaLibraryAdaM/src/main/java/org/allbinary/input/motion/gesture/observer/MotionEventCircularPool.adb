@@ -22,6 +22,7 @@ with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package_Reference
 with org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package; use org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References;
+with org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 

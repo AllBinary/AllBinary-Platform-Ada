@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.data.tree.dom.ToDomHelper_Package; use org.allbinary.data.tree.dom.ToDomHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
@@ -22,9 +23,14 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.logic.control.search.SearchParams_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package ToDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ToDomHelper_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
@@ -146,7 +152,7 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    function getLengthInt (This : in out SearchParams) return Integer is
    begin
         if (This.listLength) /= (Null_Unbounded_String) then
-            return This.listLength;
+            return Integer'Value (To_String (This.listLength));
         else
             return 0;
         end if;
@@ -165,7 +171,7 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    function getStartPageInt (This : in out SearchParams) return Integer is
    begin
         if (This.startPage) /= (Null_Unbounded_String) then
-            return This.startPage;
+            return Integer'Value (To_String (This.startPage));
         else
             return 0;
         end if;
@@ -174,7 +180,7 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    function getEndPageInt (This : in out SearchParams) return Integer is
    begin
         if (This.endPage) /= (Null_Unbounded_String) then
-            return This.endPage;
+            return Integer'Value (To_String (This.endPage));
         else
             return 0;
         end if;
@@ -197,14 +203,14 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    function getFieldsNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
       fieldsNode : Node_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       searchValueArray : Java_Object_Access_Array_Access;
       size : Integer;
       key : Unbounded_String;
       searchValue : Unbounded_String;
       index : Integer;
    begin
-        fieldsNode := ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FIELDS, This.columnsAndSearchValues.size.toString);
+        fieldsNode := ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FIELDS, To_Unbounded_String (Java_Image (This.columnsAndSearchValues.size)));
         set := This.columnsAndSearchValues.keySet;
         searchValueArray := set.toArray;
         size := searchValueArray'Length;

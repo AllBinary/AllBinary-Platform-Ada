@@ -31,7 +31,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
 limited with org.allbinary.business.user.address.StreetAddress_Package;
 with org.allbinary.business.user.address.StreetAddress_Package_References;
 limited with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;

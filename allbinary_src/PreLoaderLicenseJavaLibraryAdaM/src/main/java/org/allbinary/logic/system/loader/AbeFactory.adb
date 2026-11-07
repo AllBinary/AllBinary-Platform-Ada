@@ -23,9 +23,15 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
-with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
+with java.lang.ClassLoader_Package; use java.lang.ClassLoader_Package;
 with org.allbinary.logic.system.loader.AbeClassLoader_Package; use org.allbinary.logic.system.loader.AbeClassLoader_Package;
 with org.allbinary.logic.system.loader.AbeClassLoader_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.system.loader.AbeFactory_Package is
 
@@ -34,6 +40,7 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
    package AbKeys_Package renames Standard.org.allbinary.logic.system.security.AbKeys_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package ClassLoader_Package renames Standard.java.lang.ClassLoader_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;

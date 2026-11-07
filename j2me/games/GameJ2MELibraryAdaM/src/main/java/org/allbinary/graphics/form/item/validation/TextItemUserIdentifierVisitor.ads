@@ -64,7 +64,7 @@ package org.allbinary.graphics.form.item.validation.TextItemUserIdentifierVisito
    subtype TextItemUserIdentifierVisitor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.validation.TextItemUserIdentifierVisitor_Package_References.TextItemUserIdentifierVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TextItemUserIdentifierVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.validation.TextItemUserIdentifierVisitor_Package_References."=";
 
-   type TextItemUserIdentifierVisitor is new Visitor with record
+   type TextItemUserIdentifierVisitor is new Visitor_Package.Visitor with record
       logUtil : LogUtil_Access;
    end record;
 

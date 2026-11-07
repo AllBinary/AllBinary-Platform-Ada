@@ -55,7 +55,7 @@ package body org.allbinary.game.state.RaceGameStateFactory_Package is
    function getInstance return RaceGameStateFactory_Access is
    begin
         if (RaceGameStateFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            RaceGameStateFactory_Package.instance := RaceGameStateFactory_Package.Create;
+            RaceGameStateFactory_Package.instance := Java_Object_Access (RaceGameStateFactory_Package.Create);
         end if;
         return RaceGameStateFactory_Access (RaceGameStateFactory_Package.instance);
    end getInstance;

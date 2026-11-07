@@ -15,7 +15,16 @@
 
 with org.allbinary.game.ag.ai.ThrustAIVisitor_Package; use org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
 with org.allbinary.game.ag.ai.ThrustAIVisitor_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
 

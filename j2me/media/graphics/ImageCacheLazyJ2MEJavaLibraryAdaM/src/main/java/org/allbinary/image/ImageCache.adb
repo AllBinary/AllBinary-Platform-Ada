@@ -61,10 +61,21 @@ with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFact
 with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.ImageCache_Package_References;
+with org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.image.FirstProcessor_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.image.HTMLEndProcessor_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package_References;
 
 package body org.allbinary.image.ImageCache_Package is
@@ -471,7 +482,7 @@ package body org.allbinary.image.ImageCache_Package is
    begin
         foundIndex := ImageCache'Class (This).getIndexWH (width, height);
         image := ImageCache'Class (This).getFromAvailable (foundIndex, width, height);
-        if (image) = (NullImage_Package.NULL_IMAGE) then
+        if (Java_Object_Access (image)) = (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
             This.volume := (This.volume) + ((width) * (height));
             if (This.volume) > (32000) then
                 This.tsUtil.gc;
@@ -498,7 +509,7 @@ package body org.allbinary.image.ImageCache_Package is
       inputStream : InputStream_Access;
    begin
         image := ImageCache'Class (This).getImage (key);
-        if (image) = (NullImage_Package.NULL_IMAGE) then
+        if (Java_Object_Access (image)) = (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
             inputStream := null;
             begin
                 image := ImageCache'Class (This).createImageFromInputStream (key, inputStream);
@@ -796,10 +807,21 @@ with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLE
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.image.FirstProcessor_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.image.NotHTMLEndProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.NotHTMLProcessor_Package is
 
@@ -1022,10 +1044,21 @@ with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHT
 with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLEndProcessor_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+with org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.image.FirstProcessor_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.image.NotHTMLProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.NotHTMLEndProcessor_Package is
 
@@ -1250,10 +1283,21 @@ with org.allbinary.image.NotHTMLProcessor_Package; use org.allbinary.image.NotHT
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.image.FirstProcessor_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.HTMLEndProcessor_Package is
 
@@ -1487,10 +1531,21 @@ with org.allbinary.image.HTMLEndProcessor_Package; use org.allbinary.image.HTMLE
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.image.HTMLEndProcessor_Package;
 with org.allbinary.image.ImageCache_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.image.NotHTMLEndProcessor_Package;
 with org.allbinary.image.NotHTMLProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.FirstProcessor_Package is
 

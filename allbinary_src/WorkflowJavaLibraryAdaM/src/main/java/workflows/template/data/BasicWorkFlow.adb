@@ -26,6 +26,14 @@ with org.allbinary.logic.system.security.licensing.ServiceClientInformationInter
 with org.allbinary.logic.visual.transform.TransformFactory_Package; use org.allbinary.logic.visual.transform.TransformFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body workflows.template.data.BasicWorkFlow_Package is
 
@@ -128,10 +136,10 @@ package body workflows.template.data.BasicWorkFlow_Package is
         end if;
         if This.validationDomNodeInterface.isValid.booleanValue then
             This.pageContext.getOut.print (This.validationDomNodeInterface.view);
-            return To_Unbounded_String (Java_Image (TagSupport_Package.EVAL_BODY_INCLUDE));
+            return Integer (TagSupport_Package.EVAL_BODY_INCLUDE);
         else
             This.pageContext.getOut.print (This.validationDomNodeInterface.validationInfo);
-            return To_Unbounded_String (Java_Image (TagSupport_Package.SKIP_BODY));
+            return Integer (TagSupport_Package.SKIP_BODY);
         end if;
    end process;
 

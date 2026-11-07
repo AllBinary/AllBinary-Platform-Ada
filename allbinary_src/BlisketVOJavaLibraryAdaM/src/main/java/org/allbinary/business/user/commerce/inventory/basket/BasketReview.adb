@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -25,6 +26,10 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.user.commerce.inventory.basket.BasketData_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package is
 
@@ -150,9 +155,9 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
         size := itemArray'Length;
         for index in 0 .. (size) - 1 loop
             item := Item_Access (itemArray (index));
-            weightFloat := (weightFloat) + (item.getWeight.floatValue);
+            weightFloat := (weightFloat) + (Float (item.getWeight));
         end loop;
-        return weightFloat.toString;
+        return To_Unbounded_String (Java_Image (weightFloat));
    end getTotalWeight;
 
    function getNumberOfItems (This : in out BasketReview) return Integer is
@@ -160,7 +165,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
         return This.items.size;
    end getNumberOfItems;
 
-   function getIds (This : in out BasketReview) return Java_Object_Access is
+   function getIds (This : in out BasketReview) return Set_Access is
       idSet : HashSet_Access;
       itemArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -174,7 +179,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
             item := Item_Access (itemArray (index));
             idSet.add (item.getId);
         end loop;
-        return Java_Object_Access (idSet);
+        return Set_Access (idSet);
    end getIds;
 
    function getNumberOf (This : in out BasketReview; id : Unbounded_String) return Integer is

@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.gyro.action.DownOrientationInputToGameKe
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access is
    begin
         if (DownOrientationInputToGameKeyEventAction_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            DownOrientationInputToGameKeyEventAction_Package.instance := DownOrientationInputToGameKeyEventAction_Package.Create;
+            DownOrientationInputToGameKeyEventAction_Package.instance := Java_Object_Access (DownOrientationInputToGameKeyEventAction_Package.Create);
         end if;
         return GameKeyCompleteMotionGestureInputEvent_Access (DownOrientationInputToGameKeyEventAction_Package.instance);
    end getInstance;

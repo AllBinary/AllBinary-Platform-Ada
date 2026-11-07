@@ -7,6 +7,12 @@ with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.canvas.BaseGameStatistics_Package; use org.allbinary.canvas.BaseGameStatistics_Package;
 with org.allbinary.canvas.BaseGameStatistics_Package_References;
 with org.allbinary.canvas.GameStatisticsFactory_Package; use org.allbinary.canvas.GameStatisticsFactory_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
 
 package body org.allbinary.game.displayable.canvas.NullDisplayable_Package is
 
@@ -34,7 +40,7 @@ package body org.allbinary.game.displayable.canvas.NullDisplayable_Package is
    procedure Initialize_Fields (This : in out NullDisplayable'Class) is
    begin
       null;
-      This.baseGameStatistics := GameStatisticsFactory_Package.getInstance;
+      This.baseGameStatistics := BaseGameStatistics_Access (GameStatisticsFactory_Package.getInstance);
    end Initialize_Fields;
 
 

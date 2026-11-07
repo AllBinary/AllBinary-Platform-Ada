@@ -52,9 +52,18 @@ with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunna
 with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
 
@@ -161,10 +170,10 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    procedure Initialize_Fields (This : in out AndroidBasicTitleProgressBar'Class) is
    begin
       null;
-      This.showTitleProgressBarRunnable := NullRunnable_Package.getInstance;
-      This.dismissTitleProgressBarRunnable := NullRunnable_Package.getInstance;
-      This.titleProgressDialogPortionSetProgressRunnable := NullRunnable_Package.getInstance;
-      This.titleProgressDialogSetProgressRunnable := NullRunnable_Package.getInstance;
+      This.showTitleProgressBarRunnable := ARunnable_Access (NullRunnable_Package.getInstance);
+      This.dismissTitleProgressBarRunnable := ARunnable_Access (NullRunnable_Package.getInstance);
+      This.titleProgressDialogPortionSetProgressRunnable := ARunnable_Access (NullRunnable_Package.getInstance);
+      This.titleProgressDialogSetProgressRunnable := ARunnable_Access (NullRunnable_Package.getInstance);
       This.midletActivity := Activity_Access (AndroidUtil_Package.NULL_ACTIVITY);
       This.portion := 0;
       This.IMAGE := new Image_Access_Array'(0 .. (4) - 1 => null);
@@ -318,7 +327,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
 
    function isInitialized (This : in out AndroidBasicTitleProgressBar) return Boolean is
    begin
-        if (This.midletActivity) /= (AndroidUtil_Package.NULL_ACTIVITY) then
+        if (Java_Object_Access (This.midletActivity)) /= (Java_Object_Access (AndroidUtil_Package.NULL_ACTIVITY)) then
             return True;
         else
             return False;
@@ -362,7 +371,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         begin
             This.portion := value;
             ProgressCanvas_Package.ProgressCanvas (This).addEarlyPortion (value, text, index);
-            if (This.midletActivity) /= (AndroidUtil_Package.NULL_ACTIVITY) then
+            if (Java_Object_Access (This.midletActivity)) /= (Java_Object_Access (AndroidUtil_Package.NULL_ACTIVITY)) then
                 This.midletActivity.runOnUiThread (This.titleProgressDialogPortionSetProgressRunnable);
             end if;
         exception
@@ -433,14 +442,14 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
       nextIndex : Integer;
    begin
         image_Case := This.image_Case;
-        if (image) /= (NullImage_Package.NULL_IMAGE) then
+        if (Java_Object_Access (image)) /= (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
             if Features_Package.getInstance.isFeature (MainFeatureFactory_Package.getInstance.FULL_SCREEN) then
-                if (This.IMAGE (index)) = (NullImage_Package.NULL_IMAGE) then
+                if (Java_Object_Access (This.IMAGE (index))) = (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
                     This.IMAGE (index) := ImageScaleUtil_Package.getInstance.createImage2 (ImageCacheFactory_Package.getInstance, image, Float (lastWidth), Float (image.getWidth), (Float (lastHeight)) - (20.0), Float (image.getHeight), False);
                 end if;
             else
                 nextIndex := (index) + (1);
-                if (This.IMAGE (nextIndex)) = (NullImage_Package.NULL_IMAGE) then
+                if (Java_Object_Access (This.IMAGE (nextIndex))) = (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
                     This.IMAGE (nextIndex) := ImageScaleUtil_Package.getInstance.createImage2 (ImageCacheFactory_Package.getInstance, image, Float (lastWidth), Float (image.getWidth), (Float (lastHeight)) - (28.0), Float (image.getHeight), False);
                 end if;
             end if;
@@ -459,7 +468,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         preResourceImageUtil := PreResourceImageUtil_Package.getInstance;
         size := This.IMAGE'Length;
         for index in 0 .. (size) - 1 loop
-            if (This.IMAGE (index)) /= (NullImage_Package.NULL_IMAGE) then
+            if (Java_Object_Access (This.IMAGE (index))) /= (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
                 This.IMAGE (index) := preResourceImageUtil.encapsulate (This.IMAGE (index));
             end if;
         end loop;
@@ -479,7 +488,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         preResourceImageUtil := PreResourceImageUtil_Package.getInstance;
         size := This.IMAGE'Length;
         for index in 0 .. (size) - 1 loop
-            if (This.IMAGE (index)) /= (NullImage_Package.NULL_IMAGE) then
+            if (Java_Object_Access (This.IMAGE (index))) /= (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
                 preResourceImageUtil.update (graphics, This.IMAGE (index));
             end if;
         end loop;

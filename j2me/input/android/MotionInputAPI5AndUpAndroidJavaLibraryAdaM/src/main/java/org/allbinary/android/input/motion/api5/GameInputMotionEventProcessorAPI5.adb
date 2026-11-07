@@ -27,7 +27,14 @@ with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbin
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package; use org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package is
 
@@ -88,7 +95,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
    function getInstance return GameInputMotionEventProcessorAPI5_Access is
    begin
         if (GameInputMotionEventProcessorAPI5_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            GameInputMotionEventProcessorAPI5_Package.instance := GameInputMotionEventProcessorAPI5_Package.Create;
+            GameInputMotionEventProcessorAPI5_Package.instance := Java_Object_Access (GameInputMotionEventProcessorAPI5_Package.Create);
         end if;
         return GameInputMotionEventProcessorAPI5_Access (GameInputMotionEventProcessorAPI5_Package.instance);
    end getInstance;

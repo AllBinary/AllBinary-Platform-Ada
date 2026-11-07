@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEven
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access is
    begin
         if (DownTouchInputToGameKeyEventAction_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            DownTouchInputToGameKeyEventAction_Package.instance := DownTouchInputToGameKeyEventAction_Package.Create;
+            DownTouchInputToGameKeyEventAction_Package.instance := Java_Object_Access (DownTouchInputToGameKeyEventAction_Package.Create);
         end if;
         return GameKeyCompleteMotionGestureInputEvent_Access (DownTouchInputToGameKeyEventAction_Package.instance);
    end getInstance;

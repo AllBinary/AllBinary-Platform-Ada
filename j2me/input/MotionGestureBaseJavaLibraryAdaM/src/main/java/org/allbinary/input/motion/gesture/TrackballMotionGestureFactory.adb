@@ -46,7 +46,7 @@ package body org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Pa
    function getInstance return TrackballMotionGestureFactory_Access is
    begin
         if (TrackballMotionGestureFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            TrackballMotionGestureFactory_Package.instance := TrackballMotionGestureFactory_Package.Create;
+            TrackballMotionGestureFactory_Package.instance := Java_Object_Access (TrackballMotionGestureFactory_Package.Create);
         end if;
         return TrackballMotionGestureFactory_Access (TrackballMotionGestureFactory_Package.instance);
    end getInstance;

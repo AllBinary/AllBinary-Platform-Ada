@@ -19,6 +19,8 @@ with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.Nu
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.graphics.CellPosition_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package is
 

@@ -27,7 +27,16 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package; use org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.business.category.properties.root.store.RootStoreCategoryPropertiesFactory_Package is
 

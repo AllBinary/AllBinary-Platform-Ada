@@ -31,16 +31,23 @@ with org.allbinary.graphics.form.MPaintable_Package; use org.allbinary.graphics.
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.MPaintable_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
 
 package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package is
@@ -178,7 +185,7 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
             null;
         else
             --  Java nested class MPaintable: move it to its own package
-            This.rectPaintable := Paintable_Access (MPaintable_Package.Create);
+            This.rectPaintable := Paintable_Access (MPaintable_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access)));
         end if;
    end Initialize;
 
@@ -348,15 +355,22 @@ with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.MPaintable_Package; use org.allbinary.graphics.form.MPaintable_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.MPaintable_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package is
@@ -550,15 +564,22 @@ with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.MPaintable_Package; use org.allbinary.graphics.form.MPaintable_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.MPaintable_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
 package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package is

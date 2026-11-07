@@ -20,6 +20,8 @@ with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbi
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.system.os.android.AndroidSystemProperties_Package; use org.allbinary.logic.system.os.android.AndroidSystemProperties_Package;
 with org.allbinary.logic.system.os.android.AndroidSystemProperties_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.logic.system.os.android.AndroidOS_Package is
 

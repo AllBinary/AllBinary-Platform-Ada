@@ -22,6 +22,15 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_Referenc
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.animation.compound.SimultaneousCompoundRotationAnimation_Package; use org.allbinary.animation.compound.SimultaneousCompoundRotationAnimation_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleInfo_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.RotationAnimationInterface_Package;
 with org.allbinary.animation.compound.SimultaneousCompoundRotationAnimation_Package;
 
@@ -69,7 +78,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         CompoundAnimationInterfaceFactory_Package.Initialize (This, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
-        if (animationBehaviorFactory) = (AnimationBehaviorFactory_Package.getInstance) then
+        if (Java_Object_Access (animationBehaviorFactory)) = (Java_Object_Access (AnimationBehaviorFactory_Package.getInstance)) then
             ForcedLogUtil_Package.log (To_Unbounded_String ("Using default AnimationBehaviorFactory with IndexedAnimationFactory"), SimultaneousCompoundRotationAnimationInterfaceFactory_Access'(This'Unchecked_Access));
         end if;
    end Initialize;

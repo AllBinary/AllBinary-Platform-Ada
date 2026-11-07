@@ -22,6 +22,10 @@ with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package; use org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package;
 with org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package;
 with org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package;
 

@@ -15,6 +15,7 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
@@ -29,12 +30,23 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.business.installer.DynamicInitDb_Package; use org.allbinary.business.installer.DynamicInitDb_Package;
 with org.allbinary.business.installer.DynamicInitDb_Package_References;
 with org.allbinary.business.installer.InitializerData_Package; use org.allbinary.business.installer.InitializerData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.business.installer.DynamicInitDb_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.business.installer.InitDb_Package;
 with org.allbinary.business.installer.InitializerData_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.business.installer.InitializerDatabase_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package DatabaseConnectionInfoInterface_Package renames Standard.org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
    package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
@@ -91,7 +103,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
       map : constant Map_Access := Map_Access (map_Param);
       stringBuffer : StringMaker_Access;
       hashMap : HashMap_Access;
-      keys : Java_Object_Access;
+      keys : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       key : Unbounded_String;

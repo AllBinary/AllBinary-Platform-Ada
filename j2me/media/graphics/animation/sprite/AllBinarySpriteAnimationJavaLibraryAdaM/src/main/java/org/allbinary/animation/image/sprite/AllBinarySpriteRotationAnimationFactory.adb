@@ -30,7 +30,14 @@ with org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Packa
 with org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package; use org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package;
 with org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package;
 with org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleInfo_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package;
+with org.allbinary.logic.math.J2SEMath_Package;
 
 package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimationFactory_Package is
 
@@ -147,7 +154,7 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, sequenceArray, width, height, dx, dy, animationBehaviorFactory);
         Initialize_Fields (This);
-        if (animationBehaviorFactory) = (AnimationBehaviorFactory_Package.getInstance) then
+        if (Java_Object_Access (animationBehaviorFactory)) = (Java_Object_Access (AnimationBehaviorFactory_Package.getInstance)) then
             ForcedLogUtil_Package.log (To_Unbounded_String ("Using default AnimationBehaviorFactory with IndexedAnimationFactory"), AllBinarySpriteRotationAnimationFactory_Access'(This'Unchecked_Access));
         end if;
    end Initialize;

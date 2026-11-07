@@ -19,6 +19,9 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.Layer_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.layer.PaintableLayerComposite_Package is
 

@@ -40,6 +40,11 @@ with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary
 with org.allbinary.logic.communication.sql.SqlStrings_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlTable_Package; use org.allbinary.logic.communication.sql.AbSqlTable_Package;
 with org.allbinary.logic.communication.sql.AbSqlTable_Package_References;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
 

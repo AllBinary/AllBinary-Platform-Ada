@@ -127,12 +127,12 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       yString : Unbounded_String;
    begin
         colorRangeInterface := ColorRangeInterface_Access (This.colorAtActionScriptConditionInterface.getColorRangeInterface);
-        colorRangeInterface.setMinRed (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMinRedJTextField.getText)).intValue);
-        colorRangeInterface.setMaxRed (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMaxRedJTextField.getText)).intValue);
-        colorRangeInterface.setMinGreen (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMinGreenJTextField.getText)).intValue);
-        colorRangeInterface.setMaxGreen (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMaxGreenJTextField.getText)).intValue);
-        colorRangeInterface.setMinBlue (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMinBlueJTextField.getText)).intValue);
-        colorRangeInterface.setMaxBlue (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMaxBlueJTextField.getText)).intValue);
+        colorRangeInterface.setMinRed (Integer (Integer (ColorAtActionScriptConditionJPanel'Class (This).getMinRedJTextField.getText)));
+        colorRangeInterface.setMaxRed (Integer (Integer (ColorAtActionScriptConditionJPanel'Class (This).getMaxRedJTextField.getText)));
+        colorRangeInterface.setMinGreen (Integer (Integer (ColorAtActionScriptConditionJPanel'Class (This).getMinGreenJTextField.getText)));
+        colorRangeInterface.setMaxGreen (Integer (Integer (ColorAtActionScriptConditionJPanel'Class (This).getMaxGreenJTextField.getText)));
+        colorRangeInterface.setMinBlue (Integer (Integer (ColorAtActionScriptConditionJPanel'Class (This).getMinBlueJTextField.getText)));
+        colorRangeInterface.setMaxBlue (Integer (Integer (ColorAtActionScriptConditionJPanel'Class (This).getMaxBlueJTextField.getText)));
         xString := ColorAtActionScriptConditionJPanel'Class (This).getColorAtXJTextField.getText;
         if (not (StringValidationUtil_Package.getInstance.isEmpty (xString))) and then (StringValidationUtil_Package.getInstance.isNumber (xString)) then
             This.colorAtActionScriptConditionInterface.getPoint.x := Integer'Value (To_String (xString));

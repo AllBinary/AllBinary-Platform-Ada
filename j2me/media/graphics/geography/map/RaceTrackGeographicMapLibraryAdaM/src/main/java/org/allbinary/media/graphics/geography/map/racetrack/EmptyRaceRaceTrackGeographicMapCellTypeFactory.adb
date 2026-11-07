@@ -39,9 +39,9 @@ package body org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceT
       RaceTrackGeographicMapCellTypeFactory_Package.Initialize (This);
       Initialize_Fields (This);
         commonStrings := CommonStrings_Package.getInstance;
-        This.EMPTY_CELL_TYPE := RaceTrackGeographicMapCellType_Package.Create (commonStrings.EMPTY, 0, PathFindingNodeCostInfoData_Package.getInstance.MAX_NODE_COST, 1);
-        This.EASY_CELL_TYPE := RaceTrackGeographicMapCellType_Package.Create (To_Unbounded_String ("Easy"), 19, 1, 0);
-        This.FINISH_LINE_ROAD_CELL_TYPE := This.DEFAULT_FINISH_LINE_ROAD_CELL_TYPE;
+        This.EMPTY_CELL_TYPE := GeographicMapCellType_Access (RaceTrackGeographicMapCellType_Package.Create (commonStrings.EMPTY, 0, PathFindingNodeCostInfoData_Package.getInstance.MAX_NODE_COST, 1));
+        This.EASY_CELL_TYPE := GeographicMapCellType_Access (RaceTrackGeographicMapCellType_Package.Create (To_Unbounded_String ("Easy"), 19, 1, 0));
+        This.FINISH_LINE_ROAD_CELL_TYPE := GeographicMapCellType_Access (This.DEFAULT_FINISH_LINE_ROAD_CELL_TYPE);
    end Initialize;
 
    function Create return EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access is

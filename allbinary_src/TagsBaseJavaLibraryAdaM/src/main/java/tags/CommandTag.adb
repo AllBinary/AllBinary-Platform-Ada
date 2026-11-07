@@ -15,6 +15,7 @@
 
 with tags.TagStrings_Package; use tags.TagStrings_Package;
 with tags.TagStrings_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package;
 with tags.TagStrings_Package;
 
 package body tags.CommandTag_Package is

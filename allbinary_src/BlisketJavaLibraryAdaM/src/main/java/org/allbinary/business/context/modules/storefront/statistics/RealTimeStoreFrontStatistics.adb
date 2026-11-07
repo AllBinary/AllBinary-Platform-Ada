@@ -27,6 +27,9 @@ with org.allbinary.business.context.modules.storefront.statistics.orders.history
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package;
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package is
 

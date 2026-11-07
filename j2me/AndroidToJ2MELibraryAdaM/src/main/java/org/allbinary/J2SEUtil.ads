@@ -32,12 +32,13 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 
 package org.allbinary.J2SEUtil_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Map_Package renames Standard.java.util.Map_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;
@@ -64,8 +65,8 @@ package org.allbinary.J2SEUtil_Package is
    procedure getHashMapAsArray (This : in out J2SEUtil; hashMap_Param : access HashMap_Package.HashMap'Class);
    function getMapAsArray (This : in out J2SEUtil; map_Param : access Map_Package.Map'Class) return Java_Object_Access_Array_Access;
    procedure getMapAsArray (This : in out J2SEUtil; map_Param : access Map_Package.Map'Class);
-   function getSetAsArray (This : in out J2SEUtil; set_Param : access Java_Object'Class) return Java_Object_Access_Array_Access;
-   procedure getSetAsArray (This : in out J2SEUtil; set_Param : access Java_Object'Class);
+   function getSetAsArray (This : in out J2SEUtil; set_Param : access Set_Package.Set'Class) return Java_Object_Access_Array_Access;
+   procedure getSetAsArray (This : in out J2SEUtil; set_Param : access Set_Package.Set'Class);
 
 end org.allbinary.J2SEUtil_Package;
 

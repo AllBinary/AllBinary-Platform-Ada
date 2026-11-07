@@ -15,7 +15,9 @@
 
 with org.allbinary.device.OpenGLESGraphicsFactory_Package; use org.allbinary.device.OpenGLESGraphicsFactory_Package;
 with org.allbinary.device.OpenGLESGraphicsFactory_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.device.OpenGLESGraphicsFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
 
 package body org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
 

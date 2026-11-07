@@ -28,6 +28,16 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
 
@@ -159,7 +169,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
         values.put (BasicOptionItemData_Package.OPTION_ONE_NINE_ITEM, This.optionItem.get (8));
         values.put (BasicOptionItemData_Package.OPTION_ONE_NINE_VALUE, This.optionValue.get (8));
         calendar := Calendar_Package.getInstance;
-        time := Java_New_String (calendar.getTimeInMillis.toString);
+        time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
         values.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return values;
    end getHashMap;
@@ -175,7 +185,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
    begin
         begin
             calendar := Calendar_Package.getInstance;
-            time := Java_New_String (calendar.getTimeInMillis.toString);
+            time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             values := BasicArrayList_Access (BasicArrayListD_Package.Create);
             values.add (Java_Box (This.id));
             size := This.optionValue.size;

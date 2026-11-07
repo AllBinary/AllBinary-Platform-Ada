@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package; use org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
@@ -31,10 +32,13 @@ with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Pa
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.input.automation.module.game.test.TestInputAutomationCaptureWorker_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package GenericProfileAction_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
    package GenericProfileActionScript_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package;
@@ -126,7 +130,7 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
       cacheInterface : J2SECacheInterface_Access;
       anyType : Java_Object_Access;
       hashMap : HashMap_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       actionNameArray : Java_Object_Access_Array_Access;
       size : Integer;
       actionNameString : Unbounded_String;

@@ -33,6 +33,12 @@ with org.eclipse.swt.events.PaintListener_Package; use org.eclipse.swt.events.Pa
 with org.eclipse.swt.graphics.Transform_Package; use org.eclipse.swt.graphics.Transform_Package;
 with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;
 with org.microemu.app.BareMain_Package; use org.microemu.app.BareMain_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.ImageUtil_Package is
 

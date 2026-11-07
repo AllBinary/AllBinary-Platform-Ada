@@ -22,6 +22,9 @@ with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.math.AngleInfo_Package_References;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 
 package body org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package is

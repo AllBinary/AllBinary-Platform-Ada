@@ -24,7 +24,12 @@ with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.game.health.HealthBarThreedAnimation_Package; use org.allbinary.game.health.HealthBarThreedAnimation_Package;
 with org.allbinary.game.health.HealthBarAnimation_Package; use org.allbinary.game.health.HealthBarAnimation_Package;
 with org.allbinary.game.health.HealthBarAnimation_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.health.HealthBarThreedAnimation_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package is
 

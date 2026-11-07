@@ -22,8 +22,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.graphics.draw.KeyValueDrawCharArray_Package; use org.allbinary.graphics.draw.KeyValueDrawCharArray_Package;
 with org.allbinary.graphics.draw.KeyValueDrawCharArray_Package_References;
 with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package; use org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
 with org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package is
 

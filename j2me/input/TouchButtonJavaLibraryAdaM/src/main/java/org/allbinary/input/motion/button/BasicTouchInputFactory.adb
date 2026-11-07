@@ -26,6 +26,14 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
 
@@ -99,7 +107,7 @@ package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
    function getInstance return BasicTouchInputFactory_Access is
    begin
         if (BasicTouchInputFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            BasicTouchInputFactory_Package.instance := BasicTouchInputFactory_Package.Create;
+            BasicTouchInputFactory_Package.instance := Java_Object_Access (BasicTouchInputFactory_Package.Create);
         end if;
         return BasicTouchInputFactory_Access (BasicTouchInputFactory_Package.instance);
    end getInstance;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
@@ -39,9 +40,19 @@ with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use o
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package is
 
+   package ByteArrayInputStream_Package renames Standard.java.io.ByteArrayInputStream_Package;
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;

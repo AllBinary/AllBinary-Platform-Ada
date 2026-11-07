@@ -31,9 +31,18 @@ with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerIn
 with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package_References;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package_References;
 
 package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package is

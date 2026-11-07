@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package
    function getInstance return MineWeaponResources_Access is
    begin
         if (MineWeaponResources_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            MineWeaponResources_Package.instance := MineWeaponResources_Package.Create;
+            MineWeaponResources_Package.instance := Java_Object_Access (MineWeaponResources_Package.Create);
         end if;
         return MineWeaponResources_Access (MineWeaponResources_Package.instance);
    end getInstance;

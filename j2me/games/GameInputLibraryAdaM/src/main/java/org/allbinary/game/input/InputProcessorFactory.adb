@@ -15,7 +15,11 @@
 
 with org.allbinary.game.input.InputProcessor_Package; use org.allbinary.game.input.InputProcessor_Package;
 with org.allbinary.game.input.InputProcessor_Package_References;
+with javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.game.input.GameInputStrings_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.input.InputProcessor_Package;
 
 package body org.allbinary.game.input.InputProcessorFactory_Package is

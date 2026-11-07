@@ -20,7 +20,10 @@ with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.w3c.dom.NodeList_Package_References;
 with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.data.tree.dom.DomNodeHelper_Package is
 

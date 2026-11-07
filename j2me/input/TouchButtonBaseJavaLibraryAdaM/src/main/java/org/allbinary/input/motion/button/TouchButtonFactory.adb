@@ -16,6 +16,9 @@
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
 
@@ -67,7 +70,7 @@ package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
    procedure toggle (This : in out TouchButtonFactory; save : Boolean; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
-        if (list) /= (BasicArrayListUtil_Package.getInstance.getImmutableInstance) then
+        if (Java_Object_Access (list)) /= (Java_Object_Access (BasicArrayListUtil_Package.getInstance.getImmutableInstance)) then
             This.savedList := list;
             if not (This.saved) then
                 This.list_Case := This.savedList;

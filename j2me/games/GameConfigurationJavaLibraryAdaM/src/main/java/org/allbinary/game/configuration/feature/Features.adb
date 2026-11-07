@@ -35,14 +35,28 @@ with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use o
 with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
 with org.allbinary.game.configuration.feature.TouchFeatureFactory_Package; use org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
 with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.feature.GameFeature_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.game.configuration.feature.InputFeature_Package;
 with org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.configuration.feature.SensorFeature_Package;
 with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.configuration.feature.TouchFeature_Package;
 with org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
 
@@ -110,7 +124,7 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    function getInstance return Features_Access is
    begin
         if (Features_Package.SINGLETON) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            Features_Package.SINGLETON := Features_Package.Create;
+            Features_Package.SINGLETON := Java_Object_Access (Features_Package.Create);
         end if;
         return Features_Access (Features_Package.SINGLETON);
    end getInstance;

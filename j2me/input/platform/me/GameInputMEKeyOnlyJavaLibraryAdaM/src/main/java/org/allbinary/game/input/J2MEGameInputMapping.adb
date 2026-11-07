@@ -79,7 +79,7 @@ package body org.allbinary.game.input.J2MEGameInputMapping_Package is
    function isDelete (This : in out J2MEGameInputMapping; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (GameKeyFactory_Package.getInstance.GAME_D) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (GameKeyFactory_Package.getInstance.GAME_D)) then
             return True;
         else
             return False;

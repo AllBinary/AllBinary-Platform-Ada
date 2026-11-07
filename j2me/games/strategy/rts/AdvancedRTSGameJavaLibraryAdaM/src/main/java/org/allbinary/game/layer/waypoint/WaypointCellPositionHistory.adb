@@ -20,6 +20,8 @@ with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.Cel
 with org.allbinary.graphics.CellPosition_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayer_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package is
 

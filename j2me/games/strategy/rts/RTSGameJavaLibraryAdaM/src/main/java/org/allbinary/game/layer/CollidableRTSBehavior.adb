@@ -59,9 +59,9 @@ package body org.allbinary.game.layer.CollidableRTSBehavior_Package is
    begin
         collisionTypeFactory := CollisionTypeFactory_Package.getInstance;
         collisionType := collidableInterfaceCompositeInterface.getCollidableInferface.getCollisionTypeWith (ownerLayer);
-        if (collisionType) = (collisionTypeFactory.PICKUP) then
+        if (Java_Object_Access (collisionType)) = (Java_Object_Access (collisionTypeFactory.PICKUP)) then
             null;
-        elsif (collisionType) = (collisionTypeFactory.COLLISION) then
+        elsif (Java_Object_Access (collisionType)) = (Java_Object_Access (collisionTypeFactory.COLLISION)) then
             return CollidableDestroyableDamageableBehavior_Package.CollidableDestroyableDamageableBehavior (This).isCollision (ownerLayer, collidableInterfaceCompositeInterface);
         else
             if ((((collidableInterfaceCompositeInterface.getX2) <= (ownerLayer.getXP)) or else ((collidableInterfaceCompositeInterface.getY2) <= (ownerLayer.getYP))) or else ((collidableInterfaceCompositeInterface.getYP) >= (ownerLayer.getY2))) or else ((collidableInterfaceCompositeInterface.getXP) >= (ownerLayer.getX2)) then
@@ -82,9 +82,9 @@ package body org.allbinary.game.layer.CollidableRTSBehavior_Package is
    begin
         collisionTypeFactory := CollisionTypeFactory_Package.getInstance;
         collisionType := collidableInterfaceCompositeInterface.getCollidableInferface.getCollisionTypeWith (ownerLayer);
-        if (collisionType) = (collisionTypeFactory.PICKUP) then
+        if (Java_Object_Access (collisionType)) = (Java_Object_Access (collisionTypeFactory.PICKUP)) then
             null;
-        elsif (collisionType) = (collisionTypeFactory.COLLISION) then
+        elsif (Java_Object_Access (collisionType)) = (Java_Object_Access (collisionTypeFactory.COLLISION)) then
             CollidableDestroyableDamageableBehavior_Package.CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collidableInterfaceCompositeInterface);
         else
             CollidableRTSBehavior'Class (This).collideNone (ownerLayer, collidableInterfaceCompositeInterface);

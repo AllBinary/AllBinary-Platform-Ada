@@ -23,8 +23,18 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with views.HttpComponentView_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body views.generic_Id.address.billing.DeleteValidationView_Package is
 
@@ -92,7 +102,7 @@ package body views.generic_Id.address.billing.DeleteValidationView_Package is
             return False;
         end if;
         billingAddressesEntity := BillingAddressesEntity_Package.Create (DeleteValidationView'Class (This).getWeblisketSession.getUserName);
-        This.streetAddress := billingAddressesEntity.get (This.value);
+        This.streetAddress := billingAddressesEntity.get (Integer'Value (To_String (This.value)));
         if (This.streetAddress) = (null) then
             return False;
         end if;

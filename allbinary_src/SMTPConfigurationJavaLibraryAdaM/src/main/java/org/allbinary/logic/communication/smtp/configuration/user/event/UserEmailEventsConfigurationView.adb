@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
@@ -36,12 +37,20 @@ with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEv
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
 with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.business.time.Time_Package;
 with org.allbinary.business.time.created.TimeCreated_Package;
 with org.allbinary.business.time.modified.TimeLastModified_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
@@ -58,6 +67,7 @@ with org.allbinary.logic.communication.http.request.session.WeblisketSessionInte
 package body org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationView_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
@@ -173,7 +183,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       userEmailConfigurationMapping : UserEmailEventsConfigurationMapping_Access;
       node : Node_Access;
       emailEventHashMap : HashMap_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       eventNameArray : Java_Object_Access_Array_Access;
       size : Integer;
       eventName : Unbounded_String;

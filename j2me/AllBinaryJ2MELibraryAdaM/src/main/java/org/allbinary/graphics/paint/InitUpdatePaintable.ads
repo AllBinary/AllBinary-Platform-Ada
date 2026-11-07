@@ -55,7 +55,7 @@ package org.allbinary.graphics.paint.InitUpdatePaintable_Package is
 
    procedure Initialize (This : in out InitUpdatePaintable'Class);
    function Create return InitUpdatePaintable_Access;
-   procedure init (This : in out InitUpdatePaintable);
+   procedure init_Method (This : in out InitUpdatePaintable);
    procedure update (This : in out InitUpdatePaintable);
 
 end org.allbinary.graphics.paint.InitUpdatePaintable_Package;

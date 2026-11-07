@@ -28,6 +28,7 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 with org.allbinary.util.CircularIndexUtil_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehavior_Package_References;
+with org.allbinary.math.AngleIncrementInfo_Package;
 
 package body org.allbinary.animation.RotationAnimation_Package is
 

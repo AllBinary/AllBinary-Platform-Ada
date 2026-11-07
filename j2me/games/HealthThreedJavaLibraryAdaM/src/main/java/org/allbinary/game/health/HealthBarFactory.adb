@@ -24,6 +24,7 @@ with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Hea
 with org.allbinary.game.health.Health_Package_References;
 with org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package; use org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package;
 with org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package;
+with org.allbinary.media.ScaleProperties_Package;
 
 package body org.allbinary.game.health.HealthBarFactory_Package is
 

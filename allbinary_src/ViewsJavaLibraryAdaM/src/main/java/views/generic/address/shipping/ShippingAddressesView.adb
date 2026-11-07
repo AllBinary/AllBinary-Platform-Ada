@@ -31,7 +31,16 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with views.HttpComponentView_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body views.generic_Id.address.shipping.ShippingAddressesView_Package is
 
@@ -136,7 +145,7 @@ package body views.generic_Id.address.shipping.ShippingAddressesView_Package is
                 streetAddress := StreetAddress_Access (This.streetAddressList.get (index));
                 billingAddressesNode.appendChild (streetAddress.toXmlNode (document));
             end loop;
-            billingAddressesNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, StreetAddressData_Package.NUMBEROFADDRESSES, This.streetAddressList.size.toString));
+            billingAddressesNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, StreetAddressData_Package.NUMBEROFADDRESSES, To_Unbounded_String (Java_Image (This.streetAddressList.size))));
             return billingAddressesNode;
         exception
             when Java_Occurrence : others =>

@@ -21,6 +21,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
 
@@ -96,7 +98,7 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
         nextFileFilterString := Null_Unbounded_String;
         for index in 0 .. (size) - 1 loop
             nextFileFilterString := Java_Unbox (list.get (index));
-            if BooleanFileVisitor'Class (This).visit (file, nextFileFilterString).booleanValue then
+            if BooleanFileVisitor'Class (This).visit (file, nextFileFilterString) then
                 return True;
             end if;
         end loop;

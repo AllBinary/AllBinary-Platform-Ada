@@ -14,6 +14,10 @@
 
 
 with org.allbinary.graphics.displayable.StateControlledInterface_Package; use org.allbinary.graphics.displayable.StateControlledInterface_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package;
 
 package body org.allbinary.graphics.paint.StatePaintable_Package is

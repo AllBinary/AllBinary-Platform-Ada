@@ -19,6 +19,7 @@ with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package_References;
 with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
+with javax.microedition.lcdui.Font_Package;
 
 package body org.allbinary.image.PaintableToImageUtil_Package is
 

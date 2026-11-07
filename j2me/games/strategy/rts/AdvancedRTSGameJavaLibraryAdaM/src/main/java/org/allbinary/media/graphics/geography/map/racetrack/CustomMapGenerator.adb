@@ -25,6 +25,11 @@ with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Pac
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package_References;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package is
 
@@ -126,7 +131,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
         cellPosition := geographicMapCellPositionFactory.getAt (column, row);
         if This.dropCellPositionHistory.isCellPositionWithDrop (cellPosition) then
             layer := This.dropCellPositionHistory.getLayerInterface (cellPosition);
-            if (layer) = (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER) then
+            if (Java_Object_Access (layer)) = (Java_Object_Access (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER)) then
                 return emptyType;
             end if;
             rtsLayer := AdvancedRTSGameLayer_Access (layer);

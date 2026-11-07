@@ -20,6 +20,7 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_Refer
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 
 package body org.allbinary.game.layer.FakeLayerManager_Package is
 

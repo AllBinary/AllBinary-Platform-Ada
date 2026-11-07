@@ -17,6 +17,9 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.logic.io.path.AbFilePath_Package;
 with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.io.path.PathUtil_Package;
 
 package body org.allbinary.logic.io.path.AbPathUtil_Package is

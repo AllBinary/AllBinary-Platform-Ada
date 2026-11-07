@@ -18,6 +18,9 @@ with org.allbinary.logic.system.os.OperatingSystemInterface_Package_References;
 with org.allbinary.logic.system.hardware.NoHardware_Package; use org.allbinary.logic.system.hardware.NoHardware_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package;
 with org.allbinary.logic.system.hardware.NoHardware_Package;
 

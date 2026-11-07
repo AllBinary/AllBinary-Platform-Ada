@@ -16,7 +16,11 @@
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.ImageCache_Package_References;
 with org.allbinary.image.opengles.OpenGLImageCache_Package; use org.allbinary.image.opengles.OpenGLImageCache_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.image.opengles.OpenGLImageCache_Package;
+with org.allbinary.thread.SynchObject_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageCacheFactory_Package is
 

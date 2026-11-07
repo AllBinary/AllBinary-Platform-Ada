@@ -22,9 +22,13 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
-with org.allbinary.globals.ClassLoader_Package; use org.allbinary.globals.ClassLoader_Package;
-with org.allbinary.globals.ClassLoader_Package_References;
 with org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.globals.UrlGlobalsInterface_Package;
 
@@ -45,16 +49,6 @@ package body org.allbinary.globals.Globals_Package is
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
-   subtype ClassLoader_Access is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access;
-   function "=" (Left, Right : ClassLoader_Access) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.globals.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.globals.ClassLoader_Package_References."=";
    procedure Initialize_Fields (This : in out Globals'Class) is
    begin
       null;
@@ -90,7 +84,7 @@ package body org.allbinary.globals.Globals_Package is
         commonStrings := CommonStrings_Package.getInstance;
         appUrlGlobals := AppUrlGlobals_Package.Create;
         appUrlGlobals.setWebappPath (pathString);
-        URLGLOBALS.init (appUrlGlobals);
+        URLGLOBALS_Package.init (appUrlGlobals);
         WebappClassLoaderInfo_Package.setLoader (classLoader);
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("Setting Up AllBinary System Configuration Args: "));
@@ -106,12 +100,12 @@ package body org.allbinary.globals.Globals_Package is
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
             stringBuffer.append (CommonSeps_Package.getInstance.EQUALS);
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
-            stringBuffer.append (URLGLOBALS.getWebappPath);
+            stringBuffer.append (URLGLOBALS_Package.getWebappPath);
             This.logUtil.putF (stringBuffer.toString, Globals_Access'(This'Unchecked_Access), commonStrings.INIT);
         end if;
         stringBuffer.delete (0, stringBuffer.length);
         stringBuffer.append (To_Unbounded_String ("Webapp Path Set To: "));
-        stringBuffer.append (URLGLOBALS.getWebappPath);
+        stringBuffer.append (URLGLOBALS_Package.getWebappPath);
         This.logUtil.putF (stringBuffer.toString, Globals_Access'(This'Unchecked_Access), commonStrings.INIT);
    end init;
 

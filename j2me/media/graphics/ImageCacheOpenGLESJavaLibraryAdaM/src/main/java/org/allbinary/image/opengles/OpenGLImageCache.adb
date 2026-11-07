@@ -32,6 +32,8 @@ with org.allbinary.image.PreResourceImageUtil_Package_References;
 with org.allbinary.thread.SynchObject_Package; use org.allbinary.thread.SynchObject_Package;
 with org.allbinary.thread.SynchObject_Package_References;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageCache_Package is
 
@@ -141,7 +143,7 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
         begin  --  synchronized
             for index in reverse 0 .. (This.list.size) - (1) loop
                 openGLESImage := (OpenGLESImage_Access (This.list.objectArray (index)));
-                if (openGLESImage) /= (OpenGLESImage_Package.NULL_OPENGL_IMAGE) then
+                if (Java_Object_Access (openGLESImage)) /= (Java_Object_Access (OpenGLESImage_Package.NULL_OPENGL_IMAGE)) then
                     openGLESImage.set (gl);
                 end if;
             end loop;
@@ -168,7 +170,7 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
         image2 := This.imageCache.get (caller, width, height);
         image := This.preResourceImageUtil.encapsulate (image2);
         begin  --  synchronized
-            if (image) /= (NullImage_Package.NULL_IMAGE) then
+            if (Java_Object_Access (image)) /= (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
                 This.list.add (Java_Object_Access (image));
             end if;
         end;
@@ -185,7 +187,7 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
         cachedImage := This.imageCache.getWithKey (key);
         image := This.preResourceImageUtil.encapsulate (cachedImage);
         begin  --  synchronized
-            if (image) /= (NullImage_Package.NULL_IMAGE) then
+            if (Java_Object_Access (image)) /= (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
                 This.list.add (Java_Object_Access (image));
             end if;
         end;

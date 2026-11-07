@@ -28,6 +28,18 @@ with org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Package; use 
 with org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package; use org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package;
 with org.allbinary.input.motion.button.TouchButtonUpResource_Package; use org.allbinary.input.motion.button.TouchButtonUpResource_Package;
 with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package is
 
@@ -64,7 +76,7 @@ package body org.allbinary.android.input.motion.button.TouchButtonAndroidResourc
    end Create;
 
 
-   procedure init (This : in out TouchButtonAndroidResources) is
+   procedure init_Method (This : in out TouchButtonAndroidResources) is
       resourceUtil : ResourceUtil_Access;
       androidResources : AndroidResources_Access;
       RESOURCE_STRING_ARRAY : TouchButtonResource_Access_Array_Access;
@@ -86,7 +98,7 @@ package body org.allbinary.android.input.motion.button.TouchButtonAndroidResourc
             RESOURCE_ARRAY (7) := androidResources.raw.touch_button_strafe_left_arrow_128_by_128;
             RESOURCE_ARRAY (8) := androidResources.raw.touch_button_strafe_right_arrow_128_by_128;
             if OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance.isOverScan then
-                resourceUtil.addResource (RESOURCE_STRING_ARRAY (2).HINT, To_Unbounded_String (Java_Image (androidResources.raw.ouya_o)));
+                resourceUtil.addResource (RESOURCE_STRING_ARRAY (2).HINT, Integer (androidResources.raw.ouya_o));
             end if;
         else
             RESOURCE_ARRAY (0) := androidResources.raw.touch_button_64_by_64;
@@ -100,9 +112,9 @@ package body org.allbinary.android.input.motion.button.TouchButtonAndroidResourc
             RESOURCE_ARRAY (8) := androidResources.raw.touch_button_strafe_right_arrow_64_by_64;
         end if;
         for index in 0 .. (RESOURCE_ARRAY'Length) - 1 loop
-            resourceUtil.addResource (RESOURCE_STRING_ARRAY (index).RESOURCE, To_Unbounded_String (Java_Image (RESOURCE_ARRAY (index))));
+            resourceUtil.addResource (RESOURCE_STRING_ARRAY (index).RESOURCE, Integer (RESOURCE_ARRAY (index)));
         end loop;
-   end init;
+   end init_Method;
 
 end org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package;
 

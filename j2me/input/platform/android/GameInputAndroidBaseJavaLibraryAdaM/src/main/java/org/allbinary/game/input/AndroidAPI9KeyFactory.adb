@@ -5,6 +5,14 @@ with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
 with org.allbinary.game.input.AndroidGameKey_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.AndroidAPI9KeyFactory_Package is
 
@@ -19,7 +27,7 @@ package body org.allbinary.game.input.AndroidAPI9KeyFactory_Package is
    function getInstance return AndroidAPI9KeyFactory_Access is
    begin
         if (AndroidAPI9KeyFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            AndroidAPI9KeyFactory_Package.instance := AndroidAPI9KeyFactory_Package.Create;
+            AndroidAPI9KeyFactory_Package.instance := Java_Object_Access (AndroidAPI9KeyFactory_Package.Create);
         end if;
         return AndroidAPI9KeyFactory_Access (AndroidAPI9KeyFactory_Package.instance);
    end getInstance;

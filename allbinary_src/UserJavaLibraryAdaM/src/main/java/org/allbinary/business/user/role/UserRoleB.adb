@@ -23,6 +23,10 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
 with org.allbinary.business.user.role.BasicUserRole_Package_References;
 with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.business.user.role.UserRoleFactory_Package;
 
 package body org.allbinary.business.user.role.UserRoleB_Package is

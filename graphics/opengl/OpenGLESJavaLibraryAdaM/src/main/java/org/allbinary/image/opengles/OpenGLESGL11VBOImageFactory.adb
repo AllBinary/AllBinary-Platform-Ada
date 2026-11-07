@@ -20,8 +20,15 @@ with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_Reference
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References;
 with org.allbinary.image.opengles.OpenGLESGL10Image_Package; use org.allbinary.image.opengles.OpenGLESGL10Image_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.image.opengles.OpenGLESGL10Image_Package;
 with org.allbinary.image.opengles.OpenGLESImageDraw_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
 package body org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package is
 

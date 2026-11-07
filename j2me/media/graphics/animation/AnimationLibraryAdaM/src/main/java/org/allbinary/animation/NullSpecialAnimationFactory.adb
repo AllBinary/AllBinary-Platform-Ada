@@ -22,11 +22,28 @@ with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package;
+with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.animation.SequenceInterface_Package;
 with org.allbinary.animation.SequentialAnimationInterface_Package;
 with org.allbinary.animation.special.SpecialAnimationInterface_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.animation.NullSpecialAnimationFactory_Package is
 
@@ -78,14 +95,14 @@ package body org.allbinary.animation.NullSpecialAnimationFactory_Package is
    --  throws Exception
    function getInstance (This : in out NullSpecialAnimationFactory; instanceId : Integer) return Animation_Access is
    begin
-        return SpecialAnimation_Package.getInstance;
+        return Animation_Access (SpecialAnimation_Package.getInstance);
    end getInstance;
 
    --  throws Exception
    function getInstanceAnimation (This : in out NullSpecialAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
       animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
-        return SpecialAnimation_Package.getInstance;
+        return Animation_Access (SpecialAnimation_Package.getInstance);
    end getInstanceAnimation;
 
    procedure setInitialScale (This : in out NullSpecialAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is

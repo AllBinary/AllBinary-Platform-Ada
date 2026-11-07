@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Comparator_Package; use java.util.Comparator_Package;
 
 package body org.allbinary.logic.control.sort.StringComparator_Package is
 

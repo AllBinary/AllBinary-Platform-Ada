@@ -23,7 +23,16 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.event.GameKeyEventFactory_Package is
 
@@ -83,7 +92,7 @@ package body org.allbinary.game.input.event.GameKeyEventFactory_Package is
    function getInstance return GameKeyEventFactory_Access is
    begin
         if (GameKeyEventFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            GameKeyEventFactory_Package.instance := GameKeyEventFactory_Package.Create;
+            GameKeyEventFactory_Package.instance := Java_Object_Access (GameKeyEventFactory_Package.Create);
         end if;
         return GameKeyEventFactory_Access (GameKeyEventFactory_Package.instance);
    end getInstance;

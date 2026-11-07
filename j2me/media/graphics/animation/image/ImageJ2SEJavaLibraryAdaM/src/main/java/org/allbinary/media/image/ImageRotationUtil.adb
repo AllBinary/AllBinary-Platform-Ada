@@ -21,6 +21,10 @@ with org.microemu.device.j2se.J2SEMutableImage_Package; use org.microemu.device.
 with org.allbinary.media.image.ImageJ2SERotationUtil_Package; use org.allbinary.media.image.ImageJ2SERotationUtil_Package;
 with org.allbinary.media.image.ImageJ2SERotationUtil_Package_References;
 with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.media.image.ImageCreationUtil_Package;
 with org.allbinary.media.image.ImageJ2SERotationUtil_Package;
 with org.allbinary.media.image.ImageJ2SEUtil_Package;

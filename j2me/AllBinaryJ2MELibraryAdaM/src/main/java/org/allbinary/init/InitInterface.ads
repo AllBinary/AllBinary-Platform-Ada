@@ -50,7 +50,7 @@ package org.allbinary.init.InitInterface_Package is
    subtype InitInterface_Access_Array_Access_Array_Access is org.allbinary.init.InitInterface_Package_References.InitInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InitInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.init.InitInterface_Package_References."=";
    function Java_Object_Access_From_InitInterface (Value : InitInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
-   procedure init (This : in out InitInterface) is abstract;
+   procedure init_Method (This : in out InitInterface) is abstract;
 
 end org.allbinary.init.InitInterface_Package;
 

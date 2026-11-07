@@ -191,7 +191,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         KeyboardActionScriptInputJPanel'Class (This).updateInputType;
         KeyboardActionScriptInputJPanel'Class (This).updateKeys;
-        This.keyActionScriptInputInterface.setTime (To_Unbounded_String (Java_Image (This.timeJTextField.getText)).intValue);
+        This.keyActionScriptInputInterface.setTime (Integer (Integer (This.timeJTextField.getText)));
         This.keyActionScriptInputInterface.log;
    end update;
 

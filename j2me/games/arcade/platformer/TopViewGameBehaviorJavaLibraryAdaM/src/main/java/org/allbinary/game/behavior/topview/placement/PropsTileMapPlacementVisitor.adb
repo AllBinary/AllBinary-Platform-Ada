@@ -21,6 +21,15 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.mapeditor.core.TileLayer_Package; use org.mapeditor.core.TileLayer_Package;
 with org.mapeditor.core.TiledMap_Package; use org.mapeditor.core.TiledMap_Package;
 with org.mapeditor.core.TiledMap_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.behavior.topview.placement.PropsTileMapPlacementVisitor_Package is
 

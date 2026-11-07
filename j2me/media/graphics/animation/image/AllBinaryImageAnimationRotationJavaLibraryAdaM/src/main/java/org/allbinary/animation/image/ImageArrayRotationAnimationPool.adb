@@ -24,6 +24,12 @@ with org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterface
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
 with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleInfo_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package;

@@ -21,8 +21,6 @@ with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.Reco
 with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
 with javax.microedition.rms.RecordStoreNotOpenException_Package; use javax.microedition.rms.RecordStoreNotOpenException_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.ClassLoader_Package; use org.allbinary.ClassLoader_Package;
-with org.allbinary.ClassLoader_Package_References;
 
 package body org.allbinary.TsUtil_Package is
 
@@ -42,16 +40,6 @@ package body org.allbinary.TsUtil_Package is
    function "=" (Left, Right : Displayable_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Displayable_Package_References."=";
    subtype Displayable_Access_Array_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Displayable_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Displayable_Package_References."=";
-   subtype ClassLoader_Access is org.allbinary.ClassLoader_Package_References.ClassLoader_Access;
-   function "=" (Left, Right : ClassLoader_Access) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array is org.allbinary.ClassLoader_Package_References.ClassLoader_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access is org.allbinary.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.ClassLoader_Package_References."=";
    procedure Initialize_Fields (This : in out TsUtil'Class) is
    begin
       null;
@@ -135,7 +123,7 @@ package body org.allbinary.TsUtil_Package is
    function getClassClassLoader (This : in out TsUtil; anyType_Param : access Java_Object'Class) return ClassLoader_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return anyType.all'Tag.getClassLoader;
+        return ClassLoader_Package.getSystemClassLoader;
    end getClassClassLoader;
 
    function toNumberFromChar (This : in out TsUtil; value : Character) return Integer is

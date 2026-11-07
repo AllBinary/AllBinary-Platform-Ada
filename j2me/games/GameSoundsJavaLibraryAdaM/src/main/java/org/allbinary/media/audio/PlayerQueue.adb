@@ -24,6 +24,12 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.media.audio.NoSound_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
+with org.allbinary.media.audio.Sound_Package;
 
 package body org.allbinary.media.audio.PlayerQueue_Package is
 
@@ -105,7 +111,7 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
       played : Boolean;
       resource : Unbounded_String;
    begin
-        sound := NoSound_Package.getInstance;
+        sound := Sound_Access (NoSound_Package.getInstance);
         begin
             played := False;
             if (This.list.size) > (0) then

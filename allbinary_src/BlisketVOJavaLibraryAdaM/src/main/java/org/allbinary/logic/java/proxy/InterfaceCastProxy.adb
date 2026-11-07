@@ -40,7 +40,7 @@ package body org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
    function newInstance (anyType_Param : access Java_Object'Class) return Java_Object_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return Proxy_Package.newProxyInstance (anyType.all'Tag.getClassLoader, anyType.all'Tag.getInterfaces, InterfaceCastProxy_Package.Create (anyType));
+        return Proxy_Package.newProxyInstance (ClassLoader_Package.getSystemClassLoader, anyType.all'Tag.getInterfaces, InterfaceCastProxy_Package.Create (anyType));
    end newInstance;
 
    --  throws Throwable

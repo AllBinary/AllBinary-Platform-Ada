@@ -21,11 +21,28 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package is
 
@@ -102,24 +119,24 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
             rectangle := motionRectangle.getRectangle;
             isTooSmall := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface.isTooSmall (rectangle);
             if isTooSmall then
-                goto Continue_N66355;
+                goto Continue_N66357;
             end if;
             isAreaTooSmall := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface.isAreaTooSmall (rectangle);
             if isAreaTooSmall then
-                goto Continue_N66355;
+                goto Continue_N66357;
             end if;
             isTooBig := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface.isTooBig (rectangle);
             if isTooBig then
-                goto Continue_N66355;
+                goto Continue_N66357;
             end if;
             isValid := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface.isValid (ConstrainedMotionRectangles'Class (This).getImageComparisonResult.getFrameTwo, bufferedImage, motionRectangle.getRectangle);
             if not (isValid) then
-                goto Continue_N66355;
+                goto Continue_N66357;
             end if;
             if (((not (isTooSmall)) and then (not (isAreaTooSmall))) and then (not (isTooBig))) and then (isValid) then
                 vector.add (Java_Object_Access (motionRectangle));
             end if;
-            <<Continue_N66355>> null;
+            <<Continue_N66357>> null;
         end loop;
         ConstrainedMotionRectangles'Class (This).setVector (vector);
    end applyMotionRectangleConstraints;

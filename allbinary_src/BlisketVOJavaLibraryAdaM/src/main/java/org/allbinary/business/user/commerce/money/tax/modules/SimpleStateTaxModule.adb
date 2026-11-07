@@ -39,6 +39,13 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package is
 
@@ -176,7 +183,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
                 if (((state) /= (Null_Unbounded_String)) and then ((taxableStreetAddress.getState) /= (null))) and then ((Java_Compare_To (state, taxableStreetAddress.getState)) = (0)) then
                     rateNode := DomSearchHelper_Package.getNode (TaxData_Package.RATE, taxNodeChildren);
                     taxRate := DomNodeHelper_Package.getTextNodeValue (rateNode);
-                    taxRateFloat := (Long_Float (taxRate.floatValue)) * (0.01);
+                    taxRateFloat := (Long_Float (Float (Float'Value (To_String (taxRate))))) * (0.01);
                     return taxRateFloat;
                 end if;
             end if;

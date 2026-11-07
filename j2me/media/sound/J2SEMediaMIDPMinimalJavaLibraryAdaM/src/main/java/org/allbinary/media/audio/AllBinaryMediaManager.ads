@@ -31,7 +31,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.BufferedInputStream_Package; use java.io.BufferedInputStream_Package;
---  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 limited with javax.microedition.media.Player_Package;

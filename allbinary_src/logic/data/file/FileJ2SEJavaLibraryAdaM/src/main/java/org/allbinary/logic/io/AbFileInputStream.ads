@@ -31,7 +31,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.File_Package; use java.io.File_Package;
---  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
+with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
 limited with org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
@@ -39,6 +39,7 @@ with org.allbinary.logic.io.file.AbFile_Package_References;
 package org.allbinary.logic.io.AbFileInputStream_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FileInputStream_Package renames Standard.java.io.FileInputStream_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package Reference_Types is
    subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
@@ -66,7 +67,7 @@ package org.allbinary.logic.io.AbFileInputStream_Package is
    subtype AbFileInputStream_Access_Array_Access_Array_Access is org.allbinary.logic.io.AbFileInputStream_Package_References.AbFileInputStream_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AbFileInputStream_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.AbFileInputStream_Package_References."=";
 
-   type AbFileInputStream is new Java_Object with null record;
+   type AbFileInputStream is new FileInputStream with null record;
 
    procedure Initialize (This : in out AbFileInputStream'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return AbFileInputStream_Access;

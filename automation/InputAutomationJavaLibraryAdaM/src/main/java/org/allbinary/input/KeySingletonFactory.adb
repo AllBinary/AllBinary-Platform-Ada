@@ -19,6 +19,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.input.KeySingletonFactory_Package is
 
@@ -97,7 +99,7 @@ package body org.allbinary.input.KeySingletonFactory_Package is
 
    function getInstance (index : Integer) return Integer is
    begin
-        return To_Unbounded_String (Java_Image (index));
+        return Integer (index);
    end getInstance;
 
    function getArray return Integer_Array_Access is

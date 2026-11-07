@@ -3,6 +3,9 @@
 
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.input.AndroidNumberKeyToJ2MECanvasNumberKey_Package is
 

@@ -21,6 +21,9 @@ with org.osgi.framework.BundleContext_Package_References;
 with org.osgi.framework.NullServiceReferenceFactory_Package; use org.osgi.framework.NullServiceReferenceFactory_Package;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 with org.osgi.framework.ServiceRegistration_Package; use org.osgi.framework.ServiceRegistration_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.osgi.OSGIActivatorUtil_Package is
 
@@ -86,7 +89,7 @@ package body org.allbinary.osgi.OSGIActivatorUtil_Package is
         serviceRegistration := bundleContext.registerService (serviceName, anyType, properties);
         serviceReference := serviceRegistration.getReference;
         serviceReference := bundleContext.getServiceReference (serviceName);
-        if (serviceReference) = (NullServiceReferenceFactory_Package.getInstance.NULL_SERVICE_REFERENCE) then
+        if (Java_Object_Access (serviceReference)) = (Java_Object_Access (NullServiceReferenceFactory_Package.getInstance.NULL_SERVICE_REFERENCE)) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such Service Reference")));
         end if;
    end registerAsService;

@@ -69,7 +69,7 @@ package org.allbinary.init.Init_Package is
 
    procedure Initialize (This : in out Init'Class);
    function Create return Init_Access;
-   procedure init (This : in out Init);
+   procedure init_Method (This : in out Init);
 
 end org.allbinary.init.Init_Package;
 

@@ -7,6 +7,10 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.form.item.ABStringComponent_Package; use org.allbinary.graphics.form.item.ABStringComponent_Package;
 with org.allbinary.graphics.form.item.ABStringComponent_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 
 package body org.allbinary.graphics.form.item.ABTextItem_Package is
 

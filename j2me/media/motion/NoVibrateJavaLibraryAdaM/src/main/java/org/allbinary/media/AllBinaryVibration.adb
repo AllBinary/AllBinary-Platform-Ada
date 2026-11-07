@@ -15,6 +15,14 @@
 
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.media.AllBinaryVibration_Package is
 
@@ -49,7 +57,7 @@ package body org.allbinary.media.AllBinaryVibration_Package is
         if (GameConfigurationCentral_Package.getInstance.VIBRATION.getValue.intValue) = (0) then
             AllBinaryVibration_Package.VIBRATION := AllBinaryNoVibration_Package.NO_VIBRATION;
         else
-            AllBinaryVibration_Package.VIBRATION := AllBinaryVibration_Package.Create;
+            AllBinaryVibration_Package.VIBRATION := AllBinaryVibrationME_Access (AllBinaryVibration_Package.Create);
         end if;
    end init;
 

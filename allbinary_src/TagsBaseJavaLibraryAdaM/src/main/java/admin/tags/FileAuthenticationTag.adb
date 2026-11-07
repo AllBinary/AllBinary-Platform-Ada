@@ -33,7 +33,16 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with tags.TagStrings_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body admin.tags.FileAuthenticationTag_Package is
 
@@ -213,7 +222,7 @@ package body admin.tags.FileAuthenticationTag_Package is
    begin
         begin
             This.weblisketSession.clear;
-            return TagSupport_Package.EVAL_BODY_INCLUDE.intValue;
+            return Integer (TagSupport_Package.EVAL_BODY_INCLUDE);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -259,7 +268,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                     This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("isSessionOld()"));
                 end if;
             end if;
-            return FileAuthenticationTag'Class (This).isRarelyUsedSession.booleanValue;
+            return FileAuthenticationTag'Class (This).isRarelyUsedSession;
         exception
             when Java_Occurrence : others =>
                 declare

@@ -24,11 +24,36 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package_References;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.math.NamedAngle_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
@@ -86,7 +111,7 @@ package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
       index : Integer;
    begin
         selectedLayer := CollidableDestroyableDamageableLayer_Access (anyType);
-        if ((selectedLayer) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then ((selectedLayer.getType) = (BuildingLayer_Package.getStaticType)) then
+        if ((Java_Object_Access (selectedLayer)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) and then ((selectedLayer.getType) = (BuildingLayer_Package.getStaticType)) then
             rtsGameLayer := AdvancedRTSGameLayer_Access (selectedLayer);
             assignWaypointsUtil := AssignWaypointsUtil_Package.getInstance;
             list := This.selectedRTSLayersPlayerGameInput.getSelectedBasicArrayList;

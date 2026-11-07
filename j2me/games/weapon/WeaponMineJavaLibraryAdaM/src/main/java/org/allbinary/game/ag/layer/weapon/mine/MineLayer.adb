@@ -27,6 +27,7 @@ with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.view.event.ViewPositionEventHandler_Package; use org.allbinary.view.event.ViewPositionEventHandler_Package;
 with org.allbinary.view.event.ViewPositionEventHandler_Package_References;
 with org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package; use org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package;
 
 package body org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is

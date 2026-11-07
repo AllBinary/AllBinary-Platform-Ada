@@ -11,6 +11,14 @@ with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package;
 with org.allbinary.game.input.AndroidGameKey_Package;
 with org.allbinary.game.input.AndroidKeyFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.PlatformKeyFactory_Package is
 
@@ -57,7 +65,7 @@ package body org.allbinary.game.input.PlatformKeyFactory_Package is
    function getInstance return PlatformKeyFactory_Access is
    begin
         if (PlatformKeyFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            PlatformKeyFactory_Package.instance := PlatformKeyFactory_Package.Create;
+            PlatformKeyFactory_Package.instance := Java_Object_Access (PlatformKeyFactory_Package.Create);
         end if;
         return PlatformKeyFactory_Access (PlatformKeyFactory_Package.instance);
    end getInstance;

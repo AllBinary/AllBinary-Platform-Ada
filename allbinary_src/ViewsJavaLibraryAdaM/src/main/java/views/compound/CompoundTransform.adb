@@ -25,6 +25,14 @@ with org.allbinary.logic.visual.transform.AbTransformer_Package; use org.allbina
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package; use views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body views.compound.CompoundTransform_Package is
 

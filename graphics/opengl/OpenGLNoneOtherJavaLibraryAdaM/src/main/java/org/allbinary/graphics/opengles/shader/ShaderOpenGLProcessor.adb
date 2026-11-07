@@ -4,6 +4,7 @@
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with javax.microedition.khronos.opengles.GL10_Package_References;
 with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package is
 

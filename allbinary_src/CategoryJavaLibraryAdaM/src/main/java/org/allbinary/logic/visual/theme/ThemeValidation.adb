@@ -55,6 +55,16 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.logic.visual.theme.ThemeData_Package; use org.allbinary.logic.visual.theme.ThemeData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
 
@@ -343,7 +353,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.themeName, AbSqlData_Package.MINSTRING, AbSqlData_Package.MAXSTRING)) then
                 isValid := False;
             end if;
-            if not (ThemeValidation'Class (This).getCssStyleValidation.isValid.booleanValue) then
+            if not (ThemeValidation'Class (This).getCssStyleValidation.isValid) then
                 isValid := False;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then

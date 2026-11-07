@@ -23,6 +23,15 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.input.AllBinarySensorManager_Package is
 
@@ -74,7 +83,7 @@ package body org.allbinary.input.AllBinarySensorManager_Package is
    function getInstance return AllBinarySensorManager_Access is
    begin
         if (AllBinarySensorManager_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            AllBinarySensorManager_Package.instance := AllBinarySensorManager_Package.Create;
+            AllBinarySensorManager_Package.instance := Java_Object_Access (AllBinarySensorManager_Package.Create);
         end if;
         return AllBinarySensorManager_Access (AllBinarySensorManager_Package.instance);
    end getInstance;

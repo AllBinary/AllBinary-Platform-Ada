@@ -31,7 +31,9 @@ with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHis
 with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References;
 with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package; use org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
 with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
 
@@ -179,7 +181,7 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
         keyDirection := -(1);
         goToGeographicMapCellPosition := This.geographicMapCellPathHistoryInfo.getNextChosenOnPathGeographicMapCellPosition;
         geographicMapDirectionData := This.geographicMapDirectionUtil.getDirectionFromCellPositionToAdjacentCellPosition (currentGeographicMapCellPosition, goToGeographicMapCellPosition);
-        if (geographicMapDirectionData) = (DirectionFactory_Package.getInstance.NOT_BORDERED_WITH) then
+        if (Java_Object_Access (geographicMapDirectionData)) = (Java_Object_Access (DirectionFactory_Package.getInstance.NOT_BORDERED_WITH)) then
             geographicMapDirectionData := This.geographicMapDirectionUtil.getDirectionFromCellPositionToCellPosition (currentGeographicMapCellPosition, goToGeographicMapCellPosition);
         end if;
         keyDirection := This.basicAI.getAIKeyPressedFromDirection (geographicMapDirectionData);

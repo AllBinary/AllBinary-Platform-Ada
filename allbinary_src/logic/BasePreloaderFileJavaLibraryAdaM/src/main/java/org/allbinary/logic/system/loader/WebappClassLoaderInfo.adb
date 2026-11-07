@@ -14,22 +14,10 @@
 
 
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
-with org.allbinary.logic.system.loader.ClassLoader_Package_References;
 
 package body org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
 
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   subtype ClassLoader_Access is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access;
-   function "=" (Left, Right : ClassLoader_Access) return Boolean renames org.allbinary.logic.system.loader.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array) return Boolean renames org.allbinary.logic.system.loader.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.loader.ClassLoader_Package_References."=";
-   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.logic.system.loader.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.ClassLoader_Package_References."=";
    procedure Initialize_Fields (This : in out WebappClassLoaderInfo'Class) is
    begin
       null;
@@ -52,7 +40,7 @@ package body org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
    procedure setLoader (classLoader_Param : access ClassLoader_Package.ClassLoader'Class) is
       classLoader : constant ClassLoader_Access := ClassLoader_Access (classLoader_Param);
    begin
-        WebappClassLoaderInfo_Package.classLoader := classLoader;
+        WebappClassLoaderInfo_Package.classLoader := Java_Object_Access (classLoader);
    end setLoader;
 
    function getLoader return ClassLoader_Access is

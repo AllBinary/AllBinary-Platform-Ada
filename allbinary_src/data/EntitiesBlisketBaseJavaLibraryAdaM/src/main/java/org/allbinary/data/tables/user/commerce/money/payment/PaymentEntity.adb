@@ -34,6 +34,16 @@ with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.
 with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package is
 
@@ -250,9 +260,9 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             vector.add (paymentInterface.getExpiration);
             random := Random_Package.Create.nextInt (SuperCrypt_Package.KEYMAX);
             vector.add (SuperCrypt_Package.Create (random).encrypt (paymentInterface.getNumber));
-            vector.add (random.toString);
+            vector.add (To_Unbounded_String (Java_Image (random)));
             calendar := Calendar_Package.getInstance;
-            time := Java_New_String (calendar.getTimeInMillis.toString);
+            time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             vector.add (time);
             AbSqlBean_Package.AbSqlBean (This).insert (vector);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then

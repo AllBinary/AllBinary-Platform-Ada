@@ -22,6 +22,7 @@ with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allb
 with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
 with org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package; use org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
 with org.allbinary.media.audio.SelectSound_Package; use org.allbinary.media.audio.SelectSound_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 
 package body org.allbinary.game.input.TextNotificationUtil_Package is
 

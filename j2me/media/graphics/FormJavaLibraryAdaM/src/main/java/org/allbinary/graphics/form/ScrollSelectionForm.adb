@@ -51,18 +51,28 @@ with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package; use org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 
@@ -196,7 +206,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       
       This.scrollSelectionFormFormTypeItemIndexPaintable := ItemIndexPaintable_Package.getInstance;
       This.formTypeItemIndexDx := ItemIndexDx_Package.getInstance;
-      This.paintable := ItemPaintableFactory_Package.getInstance;
+      This.paintable := ItemPaintable_Access (ItemPaintableFactory_Package.getInstance);
       
    end Initialize_Fields;
 
@@ -233,7 +243,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
    function getNullScrollSelectionForm return ScrollSelectionForm_Access is
    begin
         if (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_FORM) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_FORM := ScrollSelectionForm_Package.createForm (StringUtil_Package.getInstance.EMPTY_STRING, new ABCustomItem_Access_Array'(0 .. (0) - 1 => null), ItemPaintableFactory_Package.getInstance, 0, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE);
+            ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_FORM := Java_Object_Access (ScrollSelectionForm_Package.createForm (StringUtil_Package.getInstance.EMPTY_STRING, new ABCustomItem_Access_Array'(0 .. (0) - 1 => null), ItemPaintableFactory_Package.getInstance, 0, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ScrollSelectionForm_Access (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_FORM);
    end getNullScrollSelectionForm;
@@ -241,7 +251,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
    function getNullScrollSelectionFormHorizontal return ScrollSelectionForm_Access is
    begin
         if (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_HORIZONTAL_FORM) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_HORIZONTAL_FORM := ScrollSelectionForm_Package.createForm (StringUtil_Package.getInstance.EMPTY_STRING, new ABCustomItem_Access_Array'(0 .. (0) - 1 => null), ItemPaintableFactory_Package.getInstance, 0, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE);
+            ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_HORIZONTAL_FORM := Java_Object_Access (ScrollSelectionForm_Package.createForm (StringUtil_Package.getInstance.EMPTY_STRING, new ABCustomItem_Access_Array'(0 .. (0) - 1 => null), ItemPaintableFactory_Package.getInstance, 0, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ScrollSelectionForm_Access (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_HORIZONTAL_FORM);
    end getNullScrollSelectionFormHorizontal;
@@ -708,11 +718,20 @@ with org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package; use org.a
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package; use org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
@@ -720,6 +739,7 @@ with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package is
 
@@ -931,11 +951,20 @@ with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package; use org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
@@ -943,6 +972,7 @@ with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package is
 
@@ -1154,11 +1184,20 @@ with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package; use org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
@@ -1166,6 +1205,7 @@ with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package is
 
@@ -1377,11 +1417,20 @@ with org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package; use org.a
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package; use org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
@@ -1389,6 +1438,7 @@ with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package is
 
@@ -1599,11 +1649,20 @@ with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package; use org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
@@ -1611,6 +1670,7 @@ with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package is
 
@@ -1821,11 +1881,20 @@ with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package; use org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package;
@@ -1833,6 +1902,7 @@ with org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package;
 with org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package is
 

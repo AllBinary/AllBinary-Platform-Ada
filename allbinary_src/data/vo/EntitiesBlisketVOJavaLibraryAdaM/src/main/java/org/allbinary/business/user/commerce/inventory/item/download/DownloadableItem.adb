@@ -26,6 +26,10 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.time.TimeUtil_Package; use org.allbinary.time.TimeUtil_Package;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package is
 
@@ -82,8 +86,8 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         This.changes := EMPTY_STRING;
         This.licenseFile := EMPTY_STRING;
         This.file := EMPTY_STRING;
-        This.size := To_Unbounded_String (Java_Image (0));
-        This.validTime := To_Unbounded_String (Java_Image (0));
+        This.size := Long_Long_Integer (0);
+        This.validTime := Long_Long_Integer (0);
         This.retries := EMPTY_STRING;
    end Initialize;
 
@@ -119,13 +123,13 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         This.file := Java_Unbox (hashMap.get (DownloadItemData_Package.FILE));
         value := Java_Unbox (hashMap.get (DownloadItemData_Package.SIZE));
         if not (StringValidationUtil_Package.getInstance.isEmpty (value)) then
-            This.size := To_Unbounded_String (Java_Image (value));
+            This.size := Long_Long_Integer'Value (To_String (value));
         else
             This.size := 0;
         end if;
         validTime := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME));
         if not (StringValidationUtil_Package.getInstance.isEmpty (validTime)) then
-            This.validTime := To_Unbounded_String (Java_Image (validTime));
+            This.validTime := Long_Long_Integer'Value (To_String (validTime));
         else
             totalYears := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME_YEARS));
             totalMonths := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME_MONTHS));
@@ -152,7 +156,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
       values : BasicArrayList_Access;
    begin
         calendar := Calendar_Package.getInstance;
-        time := calendar.getTimeInMillis.toString;
+        time := To_Unbounded_String (Java_Image (calendar.getTimeInMillis));
         values := BasicArrayList_Access (BasicArrayListD_Package.Create);
         values.add (DownloadableItem'Class (This).getId);
         values.add (This.basicItemId);
@@ -192,7 +196,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         values.put (DownloadItemData_Package.VALID_TIME, DownloadableItem'Class (This).getValidTime.toString);
         values.put (DownloadItemData_Package.RETRIES, DownloadableItem'Class (This).getRetries);
         calendar := Calendar_Package.getInstance;
-        time := Java_New_String (calendar.getTimeInMillis.toString);
+        time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
         values.put (EntryData_Package.getInstance.LASTMODIFIED, time);
         return values;
    end toHashMap;

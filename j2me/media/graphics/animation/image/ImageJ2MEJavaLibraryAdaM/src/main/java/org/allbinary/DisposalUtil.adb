@@ -17,6 +17,8 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with javax.microedition.lcdui.Image_Package_References;
 with org.eclipse.swt.graphics.Resource_Package; use org.eclipse.swt.graphics.Resource_Package;
 with org.eclipse.swt.graphics.Resource_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.DisposalUtil_Package is
 

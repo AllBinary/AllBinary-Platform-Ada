@@ -31,13 +31,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 limited with org.allbinary.business.user.commerce.money.Money_Package;
 with org.allbinary.business.user.commerce.money.Money_Package_References;
 
 package org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
    package Reference_Types is
    subtype Money_Access is org.allbinary.business.user.commerce.money.Money_Package_References.Money_Access;
@@ -71,7 +72,7 @@ package org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Pa
    procedure adjustItem (This : in out BasketInterface; id : Unbounded_String; num : Unbounded_String) is abstract;
    function getTotalWeight (This : in out BasketInterface) return Unbounded_String is abstract;
    function getNumberOfItems (This : in out BasketInterface) return Integer is abstract;
-   function getIds (This : in out BasketInterface) return Java_Object_Access is abstract;
+   function getIds (This : in out BasketInterface) return Set_Access is abstract;
    function getItems (This : in out BasketInterface) return HashMap_Access is abstract;
    function getNumberOf (This : in out BasketInterface; product : Unbounded_String) return Integer is abstract;
    procedure getNumberOf (This : in out BasketInterface; product : Unbounded_String) is abstract;

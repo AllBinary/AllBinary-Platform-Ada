@@ -31,9 +31,17 @@ with org.allbinary.media.image.analysis.ImageColorResults_Package_References;
 with org.allbinary.media.image.analysis.ColorAverage_Package;
 with org.allbinary.media.image.analysis.ColorRange_Package;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
 with org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
 with org.allbinary.media.image.analysis.ImageColorResults_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
 
@@ -154,7 +162,7 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
         blueTotal := 0;
         for indexY in 0 .. (bufferedImage.getHeight) - 1 loop
             for indexX in 0 .. (bufferedImage.getWidth) - 1 loop
-                keyInteger := To_Unbounded_String (Java_Image (bufferedImage.getRGB (indexX, indexY)));
+                keyInteger := Integer (bufferedImage.getRGB (indexX, indexY));
                 colorCacheable := ColorCacheable_Access (ColorCacheFactory_Package.getInstance.get (keyInteger));
                 color := colorCacheable.getColor;
                 ImageAnalysis_Package.processColorRangeResults (imageAnalysisResults, colorRangeInterface, color);

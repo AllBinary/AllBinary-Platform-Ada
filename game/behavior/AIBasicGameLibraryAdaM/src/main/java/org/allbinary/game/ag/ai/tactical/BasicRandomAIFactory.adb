@@ -27,6 +27,8 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package; use org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package;
 with org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 
 package body org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
 

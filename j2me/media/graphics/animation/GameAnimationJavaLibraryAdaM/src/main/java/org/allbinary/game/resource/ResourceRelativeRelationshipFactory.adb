@@ -23,6 +23,13 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 
 package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Package is
 
@@ -112,7 +119,7 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
       list : BasicArrayList_Access;
    begin
         list := ResourceRelativeRelationshipFactory'Class (This).getResourceRelativeRelationshipList (resource);
-        if (list) = (This.basicArrayListUtil.getImmutableInstance) then
+        if (Java_Object_Access (list)) = (Java_Object_Access (This.basicArrayListUtil.getImmutableInstance)) then
             list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         end if;
         list.add (Java_Object_Access (hardPoint));

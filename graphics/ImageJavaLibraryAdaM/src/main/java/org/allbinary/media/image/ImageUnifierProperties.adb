@@ -53,12 +53,12 @@ package body org.allbinary.media.image.ImageUnifierProperties_Package is
 
    function getWidth (This : in out ImageUnifierProperties) return Integer is
    begin
-        return (ImageUnifierProperties'Class (This).getColumns.intValue) * (ImageUnifierProperties'Class (This).getImageUnifierCell.getWidth.intValue);
+        return (Integer (ImageUnifierProperties'Class (This).getColumns)) * (Integer (ImageUnifierProperties'Class (This).getImageUnifierCell.getWidth));
    end getWidth;
 
    function getHeight (This : in out ImageUnifierProperties) return Integer is
    begin
-        return (ImageUnifierProperties'Class (This).getRows.intValue) * (ImageUnifierProperties'Class (This).getImageUnifierCell.getHeight.intValue);
+        return (Integer (ImageUnifierProperties'Class (This).getRows)) * (Integer (ImageUnifierProperties'Class (This).getImageUnifierCell.getHeight));
    end getHeight;
 
    function getRows (This : in out ImageUnifierProperties) return Integer is

@@ -95,7 +95,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
 
    procedure update (This : in out TimeIntervalActionScriptConditionJPanel) is
    begin
-        This.timeIntervalActionScriptConditionInterface.getTimeDelayHelper.delay_Id := To_Unbounded_String (Java_Image (TimeIntervalActionScriptConditionJPanel'Class (This).getTimeIntervalJTextField.getText));
+        This.timeIntervalActionScriptConditionInterface.getTimeDelayHelper.delay_Id := Integer (TimeIntervalActionScriptConditionJPanel'Class (This).getTimeIntervalJTextField.getText);
         This.timeIntervalActionScriptConditionInterface.log;
    end update;
 

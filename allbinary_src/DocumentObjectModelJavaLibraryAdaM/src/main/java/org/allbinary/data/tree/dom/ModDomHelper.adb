@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -25,9 +26,13 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.data.tree.dom.DomData_Package; use org.allbinary.data.tree.dom.DomData_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.data.tree.dom.DomData_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.data.tree.dom.ModDomHelper_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package ClassUtil_Package renames Standard.org.allbinary.logic.java.anyType.clazz.ClassUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
@@ -110,7 +115,7 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    function createIndexNode (document_Param : access Document_Package.Document'Class; index : Integer) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
    begin
-        return ModDomHelper_Package.createTextNode (document, DomData_Package.INDEX, index.toString);
+        return ModDomHelper_Package.createTextNode (document, DomData_Package.INDEX, To_Unbounded_String (Java_Image (index)));
    end createIndexNode;
 
    --  throws Exception
@@ -159,7 +164,7 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
       node : constant Node_Access := Node_Access (node_Param);
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       stringUtil : StringUtil_Access;
-      keySet : Java_Object_Access;
+      keySet : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       objectKey : Java_Object_Access;
@@ -247,7 +252,7 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
       node : constant Node_Access := Node_Access (node_Param);
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       stringUtil : StringUtil_Access;
-      keySet : Java_Object_Access;
+      keySet : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       name : Unbounded_String;

@@ -31,6 +31,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 
@@ -156,12 +161,12 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --                  begin
 --                      spriteSplitterUtil := SpriteSplitterUtil_Package.getInstance;
 --                      spriteType := Java_Unbox (This.spriteTypeJComboBox.getSelectedItem);
---                      totalFrames := To_Unbounded_String (Java_Image (Java_Unbox (This.totalFramesJComboBox.getSelectedItem)));
---                      totalAnimations := To_Unbounded_String (Java_Image (Java_Unbox (This.totalAnimationsJComboBox.getSelectedItem)));
---                      widthReduction := To_Unbounded_String (Java_Image (This.widthReductionTextField.getText));
---                      heightReduction := To_Unbounded_String (Java_Image (This.heightReductionTextField.getText));
---                      increaseWidth := To_Unbounded_String (Java_Image (This.increaseWidthTextField.getText));
---                      increaseHeight := To_Unbounded_String (Java_Image (This.increaseHeightTextField.getText));
+--                      totalFrames := Integer (Java_Unbox (This.totalFramesJComboBox.getSelectedItem));
+--                      totalAnimations := Integer (Java_Unbox (This.totalAnimationsJComboBox.getSelectedItem));
+--                      widthReduction := Integer (This.widthReductionTextField.getText);
+--                      heightReduction := Integer (This.heightReductionTextField.getText);
+--                      increaseWidth := Integer (This.increaseWidthTextField.getText);
+--                      increaseHeight := Integer (This.increaseHeightTextField.getText);
 --                      spriteSplitterUtil.process (SpriteSplitterImageJPanel'Class (This).getImageProcessorInput, totalFrames, totalAnimations, widthReduction, heightReduction, increaseWidth, increaseHeight, spriteType, SpriteSplitterImageJPanel_Access'(This'Unchecked_Access));
 --                  exception
 --                      when Java_Occurrence : others =>

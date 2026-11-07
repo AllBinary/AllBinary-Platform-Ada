@@ -53,6 +53,15 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
 
@@ -583,7 +592,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         hashMap.put (transformInfoData.DATAFILENAME, Java_Box (This.dataFileName));
         hashMap.put (transformInfoData.DATA, Encoder_Package.encode (Java_Get_Bytes (This.data)));
         calendar := Calendar_Package.getInstance;
-        time := Java_New_String (calendar.getTimeInMillis.toString);
+        time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
         hashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return hashMap;
    end toHashMap;
@@ -605,7 +614,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         vector.add (This.dataFileName);
         vector.add (Encoder_Package.encode (Java_Get_Bytes (This.data)));
         calendar := Calendar_Package.getInstance;
-        time := Java_New_String (calendar.getTimeInMillis.toString);
+        time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
         vector.add (time);
         vector.add (time);
         return vector;

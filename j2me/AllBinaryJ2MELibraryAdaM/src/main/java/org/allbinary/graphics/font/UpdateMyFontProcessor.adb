@@ -17,6 +17,8 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 
 package body org.allbinary.graphics.font.UpdateMyFontProcessor_Package is

@@ -37,6 +37,9 @@ with org.allbinary.animation.image.AlphaBaseProcessor_Package_References;
 with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
 with org.allbinary.animation.image.AlphaBaseProcessor_Package;
 with org.allbinary.animation.image.AlphaProcessor_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
 
 package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package is
 

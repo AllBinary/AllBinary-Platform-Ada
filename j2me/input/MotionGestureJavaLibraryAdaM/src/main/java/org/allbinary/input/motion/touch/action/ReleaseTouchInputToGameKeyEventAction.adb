@@ -51,7 +51,7 @@ package body org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyE
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access is
    begin
         if (ReleaseTouchInputToGameKeyEventAction_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            ReleaseTouchInputToGameKeyEventAction_Package.instance := ReleaseTouchInputToGameKeyEventAction_Package.Create;
+            ReleaseTouchInputToGameKeyEventAction_Package.instance := Java_Object_Access (ReleaseTouchInputToGameKeyEventAction_Package.Create);
         end if;
         return GameKeyCompleteMotionGestureInputEvent_Access (ReleaseTouchInputToGameKeyEventAction_Package.instance);
    end getInstance;

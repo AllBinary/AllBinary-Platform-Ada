@@ -21,6 +21,10 @@ with org.allbinary.input.automation.module.DefaultListModel_Package; use org.all
 with org.allbinary.input.automation.module.DefaultListModel_Package_References;
 with org.allbinary.input.automation.module.ListModel_Package; use org.allbinary.input.automation.module.ListModel_Package;
 with org.allbinary.input.automation.module.ListModel_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.input.automation.module.DefaultListModelHelper_Package is
 

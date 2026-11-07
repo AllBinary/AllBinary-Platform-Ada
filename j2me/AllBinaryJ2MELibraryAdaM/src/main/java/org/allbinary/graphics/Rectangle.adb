@@ -18,6 +18,7 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.GPoint_Package_References;
+with org.allbinary.graphics.GPoint_Package;
 
 package body org.allbinary.graphics.Rectangle_Package is
 

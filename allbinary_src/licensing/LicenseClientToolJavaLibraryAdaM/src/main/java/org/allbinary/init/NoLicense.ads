@@ -30,22 +30,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-limited with org.allbinary.init.ClassLoader_Package;
-with org.allbinary.init.ClassLoader_Package_References;
+with java.lang.ClassLoader_Package; use java.lang.ClassLoader_Package;
 
 package org.allbinary.init.NoLicense_Package is
 
+   package ClassLoader_Package renames Standard.java.lang.ClassLoader_Package;
    package Reference_Types is
-   subtype ClassLoader_Access is org.allbinary.init.ClassLoader_Package_References.ClassLoader_Access;
-   use type ClassLoader_Access;
-   subtype ClassLoader_Access_Array is org.allbinary.init.ClassLoader_Package_References.ClassLoader_Access_Array;
-   use type ClassLoader_Access_Array;
-   subtype ClassLoader_Access_Array_Access is org.allbinary.init.ClassLoader_Package_References.ClassLoader_Access_Array_Access;
-   use type ClassLoader_Access_Array_Access;
-   subtype ClassLoader_Access_Array_Access_Array is org.allbinary.init.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array;
-   use type ClassLoader_Access_Array_Access_Array;
-   subtype ClassLoader_Access_Array_Access_Array_Access is org.allbinary.init.ClassLoader_Package_References.ClassLoader_Access_Array_Access_Array_Access;
-   use type ClassLoader_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

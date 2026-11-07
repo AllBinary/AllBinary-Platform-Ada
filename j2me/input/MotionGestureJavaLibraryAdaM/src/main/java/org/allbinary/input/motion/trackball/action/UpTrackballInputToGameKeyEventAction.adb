@@ -32,7 +32,7 @@ package body org.allbinary.input.motion.trackball.action.UpTrackballInputToGameK
    function getInstance return GameKeyCompleteMotionGestureInputEvent_Access is
    begin
         if (UpTrackballInputToGameKeyEventAction_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            UpTrackballInputToGameKeyEventAction_Package.instance := UpTrackballInputToGameKeyEventAction_Package.Create;
+            UpTrackballInputToGameKeyEventAction_Package.instance := Java_Object_Access (UpTrackballInputToGameKeyEventAction_Package.Create);
         end if;
         return GameKeyCompleteMotionGestureInputEvent_Access (UpTrackballInputToGameKeyEventAction_Package.instance);
    end getInstance;

@@ -64,7 +64,7 @@ package org.allbinary.game.ag.ai.LastKeyAIVisitor_Package is
    subtype LastKeyAIVisitor_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References.LastKeyAIVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LastKeyAIVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.LastKeyAIVisitor_Package_References."=";
 
-   type LastKeyAIVisitor is new Visitor with record
+   type LastKeyAIVisitor is new Visitor_Package.Visitor with record
       logUtil : LogUtil_Access;
       TRUE : Boolean;
    end record;

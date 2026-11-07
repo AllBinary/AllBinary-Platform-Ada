@@ -26,10 +26,29 @@ with org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package_Refere
 with org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package; use org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package;
 with org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package; use org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
 with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package; use org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandlerInterface_Package;
+with org.allbinary.logic.util.cache.CacheInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
 with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package;
+with org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package is
 

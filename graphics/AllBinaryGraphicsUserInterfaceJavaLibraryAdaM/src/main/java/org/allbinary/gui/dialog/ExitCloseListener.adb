@@ -37,7 +37,7 @@ package body org.allbinary.gui.dialog.ExitCloseListener_Package is
 
    procedure onClose (This : in out ExitCloseListener) is
    begin
-        System_Package.exit_Id (-(1));
+        Java_Exit (-(1));
    end onClose;
 
 end org.allbinary.gui.dialog.ExitCloseListener_Package;

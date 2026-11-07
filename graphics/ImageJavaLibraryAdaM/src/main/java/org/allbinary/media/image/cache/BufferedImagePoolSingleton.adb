@@ -22,6 +22,19 @@ with org.allbinary.logic.util.cache.PoolTypeFactory_Package; use org.allbinary.l
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package; use org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package;
 with org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package;
+with org.allbinary.logic.util.cache.CachePolicy_Package;
+with org.allbinary.logic.util.cache.CacheType_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.util.cache.PoolType_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package is
 

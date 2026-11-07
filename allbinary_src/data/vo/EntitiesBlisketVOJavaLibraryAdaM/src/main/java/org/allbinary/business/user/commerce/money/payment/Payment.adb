@@ -25,6 +25,10 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.business.user.commerce.money.payment.Payment_Package is
 
@@ -85,7 +89,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         This.type_Id := Java_Unbox (payment_Var.get (PaymentData_Package.TYPE_Id));
         This.expiration := Java_Unbox (payment_Var.get (PaymentData_Package.EXPIRATION));
         This.encryption := Java_Unbox (payment_Var.get (EntryData_Package.getInstance.ENCRYPTION));
-        This.number := Java_Unbox (SuperCrypt_Package.Create (This.encryption.intValue).decrypt (Java_Unbox (payment_Var.get (PaymentData_Package.NUMBER))));
+        This.number := Java_Unbox (SuperCrypt_Package.Create (Integer (Integer'Value (To_String (This.encryption)))).decrypt (Java_Unbox (payment_Var.get (PaymentData_Package.NUMBER))));
         This.id := Java_Unbox (payment_Var.get (PaymentData_Package.ID));
         def := Java_Unbox (payment_Var.get (EntryData_Package.getInstance.DEFAULT));
         if ((def) /= (Null_Unbounded_String)) and then ((Java_Compare_To (def, EntryData_Package.getInstance.DEFAULT)) = (0)) then

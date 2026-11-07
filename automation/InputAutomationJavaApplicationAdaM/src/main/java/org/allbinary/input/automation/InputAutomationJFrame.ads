@@ -30,9 +30,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.net.URI_Package; use java.net.URI_Package;
+with java.net.URI_Package; use java.net.URI_Package;
 --  with java.net.URL_Package; use java.net.URL_Package;
---  with java.awt.Desktop_Package; use java.awt.Desktop_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.swing.ImageIcon_Package; use javax.swing.ImageIcon_Package;
 --  with javax.swing.JDialog_Package; use javax.swing.JDialog_Package;
@@ -64,6 +63,7 @@ with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.input.automation.InputAutomationJFrame_Package is
 
+   package URI_Package renames Standard.java.net.URI_Package;
    package InputAutomationBundleActivatorListenerInterface_Package renames Standard.bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
    package InputAutomationConfigurationModuleChangeListener_Package renames Standard.bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
    package InputAutomationRobotChangeListener_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;

@@ -25,6 +25,7 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package_References;
+with org.allbinary.logic.string_Id.StringUtil_Package;
 
 package body org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemValidation_Package is
 

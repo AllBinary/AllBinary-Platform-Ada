@@ -100,10 +100,10 @@ package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
    begin
         collisionTypeFactory := CollisionTypeFactory_Package.getInstance;
         collisionType := collidableInterfaceCompositeInterface.getCollidableInferface.getCollisionTypeWith (ownerLayer);
-        if (collisionType) = (collisionTypeFactory.PICKUP) then
+        if (Java_Object_Access (collisionType)) = (Java_Object_Access (collisionTypeFactory.PICKUP)) then
             collidableDestroyableDamageableLayer := (CollidableDestroyableDamageableLayer_Access (ownerLayer));
             collidableDestroyableDamageableLayer.getPickupBehavior.doPickupLayer (PickedUpLayerInterface_Access (collidableInterfaceCompositeInterface));
-        elsif (collisionType) = (collisionTypeFactory.COLLISION) then
+        elsif (Java_Object_Access (collisionType)) = (Java_Object_Access (collisionTypeFactory.COLLISION)) then
             CollidableDestroyableDamageableBehavior_Package.CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collidableInterfaceCompositeInterface);
         else
             CollidableVehicleBehavior'Class (This).collideVehicle (ownerLayer, VehiclePropertiesCompositeInterface_Access (collidableInterfaceCompositeInterface));

@@ -13,16 +13,71 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Arrays_Package; use java.util.Arrays_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.logic.math.permutations.ComparableObject_Package; use org.allbinary.logic.math.permutations.ComparableObject_Package;
 with org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package; use org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
+with javax.microedition.lcdui.Canvas_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package;
+with org.microemu.device.ui.CommandUI_Package;
 with org.allbinary.logic.math.permutations.ComparableObject_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.microemu.DisplayAccess_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with javax.microedition.lcdui.Displayable_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with javax.microedition.lcdui.Form_Package;
+with org.microemu.device.ui.FormUI_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with javax.microedition.midlet.MIDlet_Package;
+with org.microemu.MIDletAccess_Package;
+with org.microemu.device.MutableImage_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutationUtil_Package is
 
+   package Arrays_Package renames Standard.java.util.Arrays_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    subtype Visitor_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access;
    function "=" (Left, Right : Visitor_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
@@ -138,7 +193,7 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
         permutationVisitor := ObjectPermutationVisitor_Package.Create (data);
         ORIGINAL_DATA_LABEL := To_Unbounded_String ("Original Data: ");
         Ada.Text_IO.Put (Java_Image (ORIGINAL_DATA_LABEL));
-        permutationVisitor.visit (data);
+        permutationVisitor.visit (Java_Box (data));
         OrderedObjectArrayPermutationUtil_Package.getInstance.generate (data, permutationVisitor);
    end main;
 

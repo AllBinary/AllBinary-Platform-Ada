@@ -34,9 +34,9 @@ package body org.allbinary.game.layer.unit.Unit2DecalGameResources_Package is
    function getInstance return BasicGameResources_Access is
    begin
         if (Unit2DecalGameResources_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            Unit2DecalGameResources_Package.instance := Unit2DecalGameResources_Package.Create;
+            Unit2DecalGameResources_Package.instance := Java_Object_Access (Unit2DecalGameResources_Package.Create);
         end if;
-        return Unit2DecalGameResources_Access (Unit2DecalGameResources_Package.instance);
+        return BasicGameResources_Access (Unit2DecalGameResources_Access (Unit2DecalGameResources_Package.instance));
    end getInstance;
 
    procedure Initialize (This : in out Unit2DecalGameResources'Class) is

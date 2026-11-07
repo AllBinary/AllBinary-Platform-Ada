@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -58,9 +59,20 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with views.generic_Id.inventory.InventoryColumnUtil_Package; use views.generic_Id.inventory.InventoryColumnUtil_Package;
 with views.generic_Id.inventory.InventorySearchUtil_Package; use views.generic_Id.inventory.InventorySearchUtil_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body views.admin.inventory.listings.ProductListing_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
@@ -314,7 +326,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
             end if;
             indexStr := StringUtil_Package.getInstance.EMPTY_STRING;
             if (index) > (0) then
-                indexStr := index.toString;
+                indexStr := To_Unbounded_String (Java_Image (index));
             end if;
             keywordFilenameHashMap.put (Java_Box (keywordData), Java_Box (pageName & indexStr));
             stringBuffer.delete (0, stringBuffer.length);
@@ -334,7 +346,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
    procedure addStaticPageInfoToDatabase (This : in out ProductListing; storeFront_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; keywordFilenameHashMap_Param : access HashMap_Package.HashMap'Class) is
       storeFront : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFront_Param);
       keywordFilenameHashMap : constant HashMap_Access := HashMap_Access (keywordFilenameHashMap_Param);
-      keywordHashSet : Java_Object_Access;
+      keywordHashSet : Set_Access;
       keywordArray : Java_Object_Access_Array_Access;
       size : Integer;
       insertVector : BasicArrayList_Access;

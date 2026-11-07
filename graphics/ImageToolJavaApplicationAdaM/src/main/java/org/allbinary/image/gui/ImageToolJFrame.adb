@@ -14,6 +14,8 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.util.Arrays_Package; use java.util.Arrays_Package;
+with java.util.Comparator_Package; use java.util.Comparator_Package;
 with org.allbinary.gui.dialog.FileJDialog_Package; use org.allbinary.gui.dialog.FileJDialog_Package;
 with org.allbinary.gui.dialog.FileJDialog_Package_References;
 with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
@@ -42,19 +44,29 @@ with org.allbinary.image.gui.CanvasImageJPanel_Package; use org.allbinary.image.
 with org.allbinary.image.gui.MirrorSpriteImageJPanel_Package; use org.allbinary.image.gui.MirrorSpriteImageJPanel_Package;
 with org.allbinary.image.gui.MirrorImageJPanel_Package; use org.allbinary.image.gui.MirrorImageJPanel_Package;
 with org.allbinary.image.gui.CanvasImageJPanel_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.image.gui.CreateIconImagesJPanel_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;
 with org.allbinary.image.gui.ImageIconUnique_Package;
 with org.allbinary.image.gui.ImageUnifierJPanel_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.image.gui.MirrorImageJPanel_Package;
 with org.allbinary.image.gui.MirrorSpriteImageJPanel_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.image.gui.ResizeImageJPanel_Package;
 with org.allbinary.image.gui.RotationImageJPanel_Package;
 with org.allbinary.image.gui.RotationSpriteImageJPanel_Package;
 with org.allbinary.image.gui.SpriteSplitterImageJPanel_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.gui.ImageToolJFrame_Package is
 
+   package Arrays_Package renames Standard.java.util.Arrays_Package;
+   package Comparator_Package renames Standard.java.util.Comparator_Package;
    package ColorRange_Package renames Standard.org.allbinary.media.image.analysis.ColorRange_Package;
    package ImageAnalysis_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysis_Package;
    package ImageAnalysisResults_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
@@ -385,7 +397,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.removeAll;
             This.jPanel1.add (imageUnifierJPanel);
             This.jPanel1.updateUI;
-            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := imageUnifierJPanel;
+            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := ImageProcessorInputCompositeInterface_Access (imageUnifierJPanel);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -538,7 +550,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.removeAll;
             This.jPanel1.add (spriteImageJPanel);
             This.jPanel1.updateUI;
-            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := spriteImageJPanel;
+            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := ImageProcessorInputCompositeInterface_Access (spriteImageJPanel);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -601,7 +613,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.removeAll;
             This.jPanel1.add (resizeImageJPanel);
             This.jPanel1.updateUI;
-            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := resizeImageJPanel;
+            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := ImageProcessorInputCompositeInterface_Access (resizeImageJPanel);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -622,7 +634,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.removeAll;
             This.jPanel1.add (createIconImagesJPanel);
             This.jPanel1.updateUI;
-            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := createIconImagesJPanel;
+            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := ImageProcessorInputCompositeInterface_Access (createIconImagesJPanel);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -664,7 +676,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.removeAll;
             This.jPanel1.add (spriteImageJPanel);
             This.jPanel1.updateUI;
-            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := spriteImageJPanel;
+            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := ImageProcessorInputCompositeInterface_Access (spriteImageJPanel);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -685,7 +697,7 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.removeAll;
             This.jPanel1.add (mirrorImageJPanel);
             This.jPanel1.updateUI;
-            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := mirrorImageJPanel;
+            ImageToolJFrame_Package.imageProcessorInputCompositeInterface := ImageProcessorInputCompositeInterface_Access (mirrorImageJPanel);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -700,12 +712,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
       colorRangeInterface : ColorRangeInterface_Access;
    begin
         colorRangeInterface := ColorRangeInterface_Access (ColorRange_Package.Create);
-        colorRangeInterface.setMinRed (ImageToolJFrame'Class (This).getMinRedJTextField.getText.intValue);
-        colorRangeInterface.setMaxRed (ImageToolJFrame'Class (This).getMaxRedJTextField.getText.intValue);
-        colorRangeInterface.setMinGreen (ImageToolJFrame'Class (This).getMinGreenJTextField.getText.intValue);
-        colorRangeInterface.setMaxGreen (ImageToolJFrame'Class (This).getMaxGreenJTextField.getText.intValue);
-        colorRangeInterface.setMinBlue (ImageToolJFrame'Class (This).getMinBlueJTextField.getText.intValue);
-        colorRangeInterface.setMaxBlue (ImageToolJFrame'Class (This).getMaxBlueJTextField.getText.intValue);
+        colorRangeInterface.setMinRed (Integer (ImageToolJFrame'Class (This).getMinRedJTextField.getText));
+        colorRangeInterface.setMaxRed (Integer (ImageToolJFrame'Class (This).getMaxRedJTextField.getText));
+        colorRangeInterface.setMinGreen (Integer (ImageToolJFrame'Class (This).getMinGreenJTextField.getText));
+        colorRangeInterface.setMaxGreen (Integer (ImageToolJFrame'Class (This).getMaxGreenJTextField.getText));
+        colorRangeInterface.setMinBlue (Integer (ImageToolJFrame'Class (This).getMinBlueJTextField.getText));
+        colorRangeInterface.setMaxBlue (Integer (ImageToolJFrame'Class (This).getMaxBlueJTextField.getText));
         return colorRangeInterface;
    end getColorRangeInterface;
 

@@ -39,11 +39,24 @@ with org.allbinary.animation.image.SetColorProcessor_Package; use org.allbinary.
 with org.allbinary.animation.image.ChangeColorProcessor_Package; use org.allbinary.animation.image.ChangeColorProcessor_Package;
 with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
 with org.allbinary.animation.image.AlphaProcessor_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.animation.image.ChangeColorProcessor_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.animation.image.ModifierBaseProcessor_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.animation.image.ScaleBaseProcessor_Package;
 with org.allbinary.animation.image.ScaleProcessor_Package;
 with org.allbinary.animation.image.SetColorProcessor_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package is
 

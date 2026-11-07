@@ -31,6 +31,12 @@ with org.allbinary.logic.ABSystemWrapper_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.ImageCache_Package is
 
@@ -122,7 +128,7 @@ package body org.allbinary.image.ImageCache_Package is
    begin
         foundIndex := ImageCache'Class (This).getIndexWH (width, height);
         image := ImageCache'Class (This).getFromAvailable (foundIndex, width, height);
-        if (image) = (NullImage_Package.NULL_IMAGE) then
+        if (Java_Object_Access (image)) = (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
             This.volume := (This.volume) + ((width) * (height));
             if (This.volume) > (32000) then
                 This.tsUtil.gc;
@@ -151,7 +157,7 @@ package body org.allbinary.image.ImageCache_Package is
         resourceUtil := ResourceUtil_Package.getInstance;
         resourceId := resourceUtil.getResourceId (Java_Unbox (key));
         image := ImageCache'Class (This).getImage (resourceId);
-        if (image) = (NullImage_Package.NULL_IMAGE) then
+        if (Java_Object_Access (image)) = (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
             inputStream := null;
             begin
                 This.logUtil.putF (Memory_Package.getInfo, ImageCache_Access'(This'Unchecked_Access), This.commonStrings.GET);

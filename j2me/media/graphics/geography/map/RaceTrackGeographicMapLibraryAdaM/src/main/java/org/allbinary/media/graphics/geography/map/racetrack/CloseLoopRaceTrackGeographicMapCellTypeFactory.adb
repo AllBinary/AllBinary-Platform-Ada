@@ -36,7 +36,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CloseLoopRaceT
       Initialize_Fields (This);
         This.EMPTY_CELL_TYPE := EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package.getInstance.EMPTY_CELL_TYPE;
         This.EASY_CELL_TYPE := This.EMPTY_CELL_TYPE;
-        This.FINISH_LINE_ROAD_CELL_TYPE := This.START_LINE_ROAD_CELL_TYPE;
+        This.FINISH_LINE_ROAD_CELL_TYPE := GeographicMapCellType_Access (This.START_LINE_ROAD_CELL_TYPE);
    end Initialize;
 
    function Create return CloseLoopRaceTrackGeographicMapCellTypeFactory_Access is

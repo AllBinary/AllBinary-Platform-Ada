@@ -32,12 +32,13 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 
 package org.allbinary.util.ABHashMap_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Map_Package renames Standard.java.util.Map_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;
@@ -72,8 +73,8 @@ package org.allbinary.util.ABHashMap_Package is
    procedure clear (This : in out ABHashMap);
    function containsValue (This : in out ABHashMap; value_Param : access Java_Object'Class) return Boolean;
    procedure containsValue (This : in out ABHashMap; value_Param : access Java_Object'Class);
-   function keySet (This : in out ABHashMap) return Java_Object_Access;
-   function entrySet (This : in out ABHashMap) return Java_Object_Access;
+   function keySet (This : in out ABHashMap) return Set_Access;
+   function entrySet (This : in out ABHashMap) return Set_Access;
    function getOrDefault (This : in out ABHashMap; key_Param : access Java_Object'Class; defaultValue_Param : access Java_Object'Class) return Java_Object_Access;
    procedure getOrDefault (This : in out ABHashMap; key_Param : access Java_Object'Class; defaultValue_Param : access Java_Object'Class);
    function putIfAbsent (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access;

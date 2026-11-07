@@ -39,6 +39,10 @@ with org.allbinary.game.input.ScrollMapDownGameInputProcessor_Package; use org.a
 with org.allbinary.game.input.ScrollMapRightGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapRightGameInputProcessor_Package;
 with org.allbinary.game.input.ScrollMapLeftGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapLeftGameInputProcessor_Package;
 with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.input.ScrollMapDownGameInputProcessor_Package;
 with org.allbinary.game.input.ScrollMapGameInputProcessor_Package;
 with org.allbinary.game.input.ScrollMapLeftGameInputProcessor_Package;

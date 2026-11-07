@@ -17,7 +17,10 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.game.layer.pickup.IconLayer_Package; use org.allbinary.game.layer.pickup.IconLayer_Package;
 with org.allbinary.game.layer.pickup.IconLayer_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.layer.pickup.IconLayer_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.layer.pickup.IconLayerFactory_Package is
 

@@ -28,7 +28,12 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package is
 

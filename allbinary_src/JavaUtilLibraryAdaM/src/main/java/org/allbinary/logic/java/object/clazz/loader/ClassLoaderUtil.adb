@@ -13,10 +13,11 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.logic.java.anyType.clazz.loader.ClassLoader_Package; use org.allbinary.logic.java.anyType.clazz.loader.ClassLoader_Package;
+with java.lang.ClassLoader_Package; use java.lang.ClassLoader_Package;
 
 package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Package is
 
+   package ClassLoader_Package renames Standard.java.lang.ClassLoader_Package;
    procedure Initialize_Fields (This : in out ClassLoaderUtil'Class) is
    begin
       null;
@@ -41,7 +42,7 @@ package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Packa
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       classLoader : ClassLoader_Access;
    begin
-        classLoader := anyType.all'Tag.getClassLoader;
+        classLoader := ClassLoader_Package.getSystemClassLoader;
         if (classLoader) /= (null) then
             return To_Unbounded_String ("ClassLoader: ") & To_Unbounded_String (Ada.Tags.Expanded_Name (classLoader.all'Tag));
         end if;

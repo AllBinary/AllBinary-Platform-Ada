@@ -22,6 +22,8 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package is
 
@@ -63,7 +65,7 @@ package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package i
             array_Id := value;
             stringBuffer := StringMaker_Package.Create;
             for index in 0 .. (array_Id'Length) - 1 loop
-                stringBuffer.append (array_Id (index).toString);
+                stringBuffer.append (To_Unbounded_String (Java_Image (array_Id (index))));
                 if (index) < ((array_Id'Length) - (1)) then
                     stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
                 end if;
@@ -101,7 +103,7 @@ package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package i
             byteOfData := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
                 byteOfData := Java_Unbox (vector.objectArray (index));
-                byteVector.add (byteOfData);
+                byteVector.add (Short_Short_Integer'Value (To_String (byteOfData)));
             end loop;
             decode := new Short_Short_Integer_Array'(0 .. (byteVector.size) - 1 => 0);
             decodeIndex := 0;

@@ -25,6 +25,7 @@ with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Pa
 with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package_References;
+with javax.microedition.lcdui.Font_Package;
 
 package body org.allbinary.animation.image.ImageArrayAnimation_Package is
 

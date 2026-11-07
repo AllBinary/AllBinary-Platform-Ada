@@ -16,7 +16,16 @@
 with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.log.TestRemoteLogUtil_Package is
 
@@ -33,7 +42,7 @@ package body org.allbinary.logic.communication.log.TestRemoteLogUtil_Package is
       commonStrings : CommonStrings_Access;
    begin
       Initialize_Fields (This);
-        Globals_Package.getInstance.init (This.all'Tag.getClassLoader, TestRemoteLogUtil_Package.PATH);
+        Globals_Package.getInstance.init (ClassLoader_Package.getSystemClassLoader, TestRemoteLogUtil_Package.PATH);
         logUtil := LogUtil_Package.getInstance;
         commonStrings := CommonStrings_Package.getInstance;
         logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("Test")), To_Unbounded_String ("TestClass"), Java_New_Exception ("Exception", To_Unbounded_String ("Pretend Exception")));

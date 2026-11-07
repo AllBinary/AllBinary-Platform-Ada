@@ -15,6 +15,7 @@
 
 with java.util.Date_Package; use java.util.Date_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
@@ -40,10 +41,15 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package is
 
    package Date_Package renames Standard.java.util.Date_Package;
+   package Set_Package renames Standard.java.util.Set_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
@@ -358,10 +364,10 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         hashMap.put (OrderHistoryData_Package.SHIPPEDDATE, Java_Box (This.shipDate));
         hashMap.put (OrderHistoryData_Package.TRANSDATE, Java_Box (This.transDate));
         hashMap.put (OrderHistoryData_Package.CANCELDATE, Java_Box (This.cancelDate));
-        hashMap.put (OrderHistoryData_Package.ORDERDATEFORMATTED, Java_Box (Date_Package.Create (This.orderDate.longValue).toString));
-        hashMap.put (OrderHistoryData_Package.SHIPPEDDATEFORMATTED, Java_Box (Date_Package.Create (This.shipDate.longValue).toString));
-        hashMap.put (OrderHistoryData_Package.TRANSDATEFORMATTED, Java_Box (Date_Package.Create (This.transDate.longValue).toString));
-        hashMap.put (OrderHistoryData_Package.CANCELDATEFORMATTED, Java_Box (Date_Package.Create (This.cancelDate.longValue).toString));
+        hashMap.put (OrderHistoryData_Package.ORDERDATEFORMATTED, Java_Box (Date_Package.Create (Long_Long_Integer (Long_Long_Integer'Value (To_String (This.orderDate)))).toString));
+        hashMap.put (OrderHistoryData_Package.SHIPPEDDATEFORMATTED, Java_Box (Date_Package.Create (Long_Long_Integer (Long_Long_Integer'Value (To_String (This.shipDate)))).toString));
+        hashMap.put (OrderHistoryData_Package.TRANSDATEFORMATTED, Java_Box (Date_Package.Create (Long_Long_Integer (Long_Long_Integer'Value (To_String (This.transDate)))).toString));
+        hashMap.put (OrderHistoryData_Package.CANCELDATEFORMATTED, Java_Box (Date_Package.Create (Long_Long_Integer (Long_Long_Integer'Value (To_String (This.cancelDate)))).toString));
         hashMap.put (OrderHistoryData_Package.STATUS, Java_Box (This.status));
         hashMap.put (OrderHistoryData_Package.SUBTOTAL, Java_Box (This.subTotal.toString));
         hashMap.put (OrderHistoryData_Package.TOTAL, Java_Box (This.total.toString));
@@ -374,7 +380,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    function toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
-      keySet : Java_Object_Access;
+      keySet : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       node : Node_Access;

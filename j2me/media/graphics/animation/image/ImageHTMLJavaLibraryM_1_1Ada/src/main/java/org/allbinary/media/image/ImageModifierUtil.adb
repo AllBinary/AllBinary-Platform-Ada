@@ -30,6 +30,14 @@ with org.microemu.device.ResourceCallbackStrings_Package_References;
 with playn.core.Canvas_Package; use playn.core.Canvas_Package;
 with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
 with playn.core.util.Callback_Package; use playn.core.util.Callback_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 

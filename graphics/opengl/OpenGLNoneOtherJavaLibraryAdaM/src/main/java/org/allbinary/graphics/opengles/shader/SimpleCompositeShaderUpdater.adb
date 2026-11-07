@@ -13,6 +13,10 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.khronos.egl.EGLConfig_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
 with org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
 with org.allbinary.graphics.opengles.shader.ShaderUpdater_Package;
 

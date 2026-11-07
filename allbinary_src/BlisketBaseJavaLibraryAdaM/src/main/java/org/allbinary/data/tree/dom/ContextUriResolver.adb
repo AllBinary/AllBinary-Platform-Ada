@@ -28,6 +28,13 @@ with org.allbinary.data.tree.dom.URIResolverStrings_Package_References;
 with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
 with org.allbinary.data.tree.dom.BasicUriResolver_Package_References;
 with org.allbinary.data.tree.dom.BasicUriResolver_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.data.tree.dom.URIResolverStrings_Package;
 
 package body org.allbinary.data.tree.dom.ContextUriResolver_Package is

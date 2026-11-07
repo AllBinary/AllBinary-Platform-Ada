@@ -122,7 +122,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
                 childNode := nodeList.item (index);
                 if (childNode.getNodeName.compareTo (TimeIntervalActionScriptConditionData_Package.TIME)) = (0) then
                     interval := DomNodeHelper_Package.getTextNodeValue (childNode);
-                    TimeIntervalActionScriptCondition'Class (This).setTimeDelayHelper (TimeDelayHelper_Package.Create (To_Unbounded_String (Java_Image (interval))));
+                    TimeIntervalActionScriptCondition'Class (This).setTimeDelayHelper (TimeDelayHelper_Package.Create (Integer'Value (To_String (interval))));
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Time Interval Action Script Condition Unknown Node")));
                 end if;

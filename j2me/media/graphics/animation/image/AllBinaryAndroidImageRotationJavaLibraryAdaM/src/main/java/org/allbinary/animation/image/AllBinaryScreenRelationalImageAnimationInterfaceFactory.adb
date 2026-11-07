@@ -80,7 +80,7 @@ package body org.allbinary.animation.image.AllBinaryScreenRelationalImageAnimati
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, 0, 0, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
-        if (This.lastImage) /= (NullImage_Package.NULL_IMAGE) then
+        if (Java_Object_Access (This.lastImage)) /= (Java_Object_Access (NullImage_Package.NULL_IMAGE)) then
             androidImageInterface := AndroidImageInterface_Access (This.lastImage);
             androidImageInterface.getBitmap.recycle;
         end if;

@@ -4,6 +4,7 @@
 with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
 with android.graphics.Bitmap_Package_References;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 
 package body org.allbinary.graphics.OpenGLBitmap_Package is
 

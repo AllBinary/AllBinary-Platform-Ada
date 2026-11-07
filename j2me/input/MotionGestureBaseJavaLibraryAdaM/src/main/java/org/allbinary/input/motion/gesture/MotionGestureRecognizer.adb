@@ -36,9 +36,21 @@ with org.allbinary.logic.util.event.handler.BasicEventHandler_Package_References
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 
 package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
@@ -148,9 +160,9 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
         movedMotionGesturesHandler := motionGesturesHandler;
         scrolledMotionGesturesHandler := motionGesturesHandler;
         begin
-            motionGesturesHandler := BasicMotionGesturesHandler_Package.getInstance;
-            movedMotionGesturesHandler := MovedMotionGesturesHandler_Package.getInstance;
-            scrolledMotionGesturesHandler := ScrolledMotionGesturesHandler_Package.getInstance;
+            motionGesturesHandler := BasicEventHandler_Access (BasicMotionGesturesHandler_Package.getInstance);
+            movedMotionGesturesHandler := BasicEventHandler_Access (MovedMotionGesturesHandler_Package.getInstance);
+            scrolledMotionGesturesHandler := BasicEventHandler_Access (ScrolledMotionGesturesHandler_Package.getInstance);
         exception
             when Java_Occurrence : others =>
                 declare

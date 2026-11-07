@@ -24,6 +24,10 @@ with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbin
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package; use org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package;
 
 package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimationInterfaceFactory_Package is

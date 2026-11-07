@@ -32,9 +32,9 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileFilter_Package; use java.io.FileFilter_Package;
---  with java.io.FilenameFilter_Package; use java.io.FilenameFilter_Package;
+with java.io.FilenameFilter_Package; use java.io.FilenameFilter_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.net.URI_Package; use java.net.URI_Package;
+with java.net.URI_Package; use java.net.URI_Package;
 limited with org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.logic.io.file.AbFileInterface_Package; use org.allbinary.logic.io.file.AbFileInterface_Package;
@@ -42,6 +42,8 @@ with org.allbinary.logic.io.file.AbFileInterface_Package; use org.allbinary.logi
 package org.allbinary.logic.io.file.AbFile_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FilenameFilter_Package renames Standard.java.io.FilenameFilter_Package;
+   package URI_Package renames Standard.java.net.URI_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package Reference_Types is
    subtype AbPath_Access is org.allbinary.logic.io.path.AbPath_Package_References.AbPath_Access;

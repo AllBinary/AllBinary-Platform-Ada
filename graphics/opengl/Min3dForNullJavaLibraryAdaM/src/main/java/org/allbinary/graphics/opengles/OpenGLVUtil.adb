@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.khronos.opengles.GL10_Package;
 
 package body org.allbinary.graphics.opengles.OpenGLVUtil_Package is
 

@@ -21,7 +21,19 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package is
 
@@ -63,7 +75,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Packag
    function getInstance return NumberStringHudFactory_Access is
    begin
         if (NumberStringHudFactory_Package.instance) = (NullUtil_Package.getInstance) then
-            NumberStringHudFactory_Package.instance := NumberStringHudFactory_Package.Create;
+            NumberStringHudFactory_Package.instance := Java_Object_Access (NumberStringHudFactory_Package.Create);
         end if;
         return NumberStringHudFactory_Access (NumberStringHudFactory_Package.instance);
    end getInstance;

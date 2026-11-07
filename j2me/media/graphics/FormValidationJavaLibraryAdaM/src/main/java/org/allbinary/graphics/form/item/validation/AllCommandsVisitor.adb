@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.logic.NullUtil_Package;
 
 package body org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package is
 

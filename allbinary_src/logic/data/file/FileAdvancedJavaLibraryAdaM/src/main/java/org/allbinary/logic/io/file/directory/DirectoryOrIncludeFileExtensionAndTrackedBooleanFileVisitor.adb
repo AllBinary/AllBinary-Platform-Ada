@@ -24,8 +24,12 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.io.file.directory.TrackedStrings_Package; use org.allbinary.logic.io.file.directory.TrackedStrings_Package;
 with org.allbinary.logic.io.file.directory.TrackedStrings_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.io.file.directory.TrackedStrings_Package;
+with org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
 package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package is
 

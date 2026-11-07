@@ -37,6 +37,68 @@ with org.allbinary.logic.io.NullCloseable_Package; use org.allbinary.logic.io.Nu
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.graphics.opengles.OpenGLFeature_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with javax.microedition.lcdui.Canvas_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.microemu.DisplayAccess_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with javax.microedition.lcdui.Displayable_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with javax.microedition.lcdui.Form_Package;
+with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with javax.microedition.midlet.MIDlet_Package;
+with org.microemu.MIDletAccess_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.microemu.device.MutableImage_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
 
@@ -112,7 +174,7 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
    function getInstance return OpenGLConfiguration_Access is
    begin
         if (OpenGLConfiguration_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            OpenGLConfiguration_Package.instance := OpenGLConfiguration_Package.Create;
+            OpenGLConfiguration_Package.instance := Java_Object_Access (OpenGLConfiguration_Package.Create);
         end if;
         return OpenGLConfiguration_Access (OpenGLConfiguration_Package.instance);
    end getInstance;
@@ -290,7 +352,7 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         features := Features_Package.getInstance;
         openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
         modified := False;
-        if (gameFeature) = (openGLFeatureFactory.OPENGL) then
+        if (Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.OPENGL)) then
             if features.isFeature (gameFeature) then
                 if not (OpenGLConfiguration'Class (This).isOpenGL) then
                     OpenGLConfiguration'Class (This).setOpenGL (True);
@@ -303,24 +365,24 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
                 end if;
             end if;
         end if;
-        if ((gameFeature) = (openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS)) or else ((gameFeature) = (openGLFeatureFactory.OPENGL_AS_GAME_THREAD)) then
+        if ((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.OPENGL_AND_GAME_HAVE_DIFFERENT_THREADS))) or else ((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.OPENGL_AS_GAME_THREAD))) then
             if features.isFeature (gameFeature) then
-                if (gameFeature) /= (OpenGLConfiguration'Class (This).getType) then
+                if (Java_Object_Access (gameFeature)) /= (Java_Object_Access (OpenGLConfiguration'Class (This).getType)) then
                     OpenGLConfiguration'Class (This).setType (OpenGLFeature_Access (gameFeature));
                     modified := True;
                 end if;
             end if;
         end if;
-        if (((gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444)) or else ((gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_565))) or else ((gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_8888)) then
+        if (((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444))) or else ((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.IMAGE_COLOR_DEPTH_565)))) or else ((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.IMAGE_COLOR_DEPTH_8888))) then
             if features.isFeature (gameFeature) then
-                if (OpenGLConfiguration'Class (This).getImageColor) /= (gameFeature) then
+                if (Java_Object_Access (OpenGLConfiguration'Class (This).getImageColor)) /= (Java_Object_Access (gameFeature)) then
                     OpenGLConfiguration'Class (This).setImageColor (OpenGLFeature_Access (gameFeature));
                     if colorLocked then
-                        if (gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444) then
+                        if (Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444)) then
                             OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444);
-                        elsif (gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_565) then
+                        elsif (Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.IMAGE_COLOR_DEPTH_565)) then
                             OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_565);
-                        elsif (gameFeature) = (openGLFeatureFactory.IMAGE_COLOR_DEPTH_8888) then
+                        elsif (Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.IMAGE_COLOR_DEPTH_8888)) then
                             OpenGLConfiguration'Class (This).setColor (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888);
                         end if;
                     end if;
@@ -328,15 +390,15 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
                 end if;
             end if;
         end if;
-        if (((gameFeature) = (openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444)) or else ((gameFeature) = (openGLFeatureFactory.OPENGL_COLOR_DEPTH_565))) or else ((gameFeature) = (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888)) then
+        if (((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.OPENGL_COLOR_DEPTH_4444))) or else ((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.OPENGL_COLOR_DEPTH_565)))) or else ((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.OPENGL_COLOR_DEPTH_8888))) then
             if features.isFeature (gameFeature) then
-                if (OpenGLConfiguration'Class (This).getColor) /= (gameFeature) then
+                if (Java_Object_Access (OpenGLConfiguration'Class (This).getColor)) /= (Java_Object_Access (gameFeature)) then
                     OpenGLConfiguration'Class (This).setColor (OpenGLFeature_Access (gameFeature));
                     modified := True;
                 end if;
             end if;
         end if;
-        if ((gameFeature) = (openGLFeatureFactory.OPENGL_AUTO_SELECT)) or else ((gameFeature) = (openGLFeatureFactory.OPENGL_MINIMUM)) then
+        if ((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.OPENGL_AUTO_SELECT))) or else ((Java_Object_Access (gameFeature)) = (Java_Object_Access (openGLFeatureFactory.OPENGL_MINIMUM))) then
             if features.isFeature (gameFeature) then
                 OpenGLConfiguration'Class (This).setVersionSelector (OpenGLFeature_Access (gameFeature));
             end if;

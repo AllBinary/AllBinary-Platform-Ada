@@ -19,6 +19,14 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.StringComponent_Package;
 
 package body org.allbinary.game.configuration.GameConfigurationTextInput_Package is
 
@@ -72,7 +80,7 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
       anyType : Java_Object_Access;
       gameConfigurationTextInput_Var : GameConfigurationTextInput_Access;
    begin
-        anyType := Java_Object_Access (textField.getLabel);
+        anyType := Java_Box (textField.getLabel);
         gameConfigurationTextInput_Var := GameConfigurationTextInput_Access (GameConfigurationTextInput_Package.hashtable.get (anyType));
         gameConfigurationTextInput_Var.setText (textField.getString);
    end update;

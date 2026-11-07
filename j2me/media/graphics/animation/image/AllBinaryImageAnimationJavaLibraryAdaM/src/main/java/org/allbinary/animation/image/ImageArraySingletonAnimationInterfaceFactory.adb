@@ -21,6 +21,9 @@ with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animati
 with org.allbinary.animation.SingletonAnimationInterfaceFactory_Package; use org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
 with org.allbinary.image.IndexedAnimationToImageArrayUtil_Package; use org.allbinary.image.IndexedAnimationToImageArrayUtil_Package;
 with org.allbinary.animation.image.ImageArrayAnimation_Package; use org.allbinary.animation.image.ImageArrayAnimation_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.image.ImageArrayAnimation_Package;
 
 package body org.allbinary.animation.image.ImageArraySingletonAnimationInterfaceFactory_Package is

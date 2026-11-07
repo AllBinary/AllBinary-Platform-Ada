@@ -32,9 +32,19 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.layer.building.BuildingLayer_Package; use org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
 
 package body org.allbinary.game.layer.building.BuildingPropertiesFactory_Package is
 

@@ -30,8 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.awt.Desktop_Package; use java.awt.Desktop_Package;
---  with java.net.URI_Package; use java.net.URI_Package;
 limited with javax.microedition.lcdui.Canvas_Package;
 with javax.microedition.lcdui.Canvas_Package_References;
 limited with javax.microedition.lcdui.Command_Package;

@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.xml.bind.JAXBContext_Package; use javax.xml.bind.JAXBContext_Package;
 --  with javax.xml.bind.JAXBElement_Package; use javax.xml.bind.JAXBElement_Package;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Arrays_Package; use java.util.Arrays_Package;
 with org.allbinary.business.category.CategoryView_Package; use org.allbinary.business.category.CategoryView_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
@@ -23,13 +24,24 @@ with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package_References;
 with org.allbinary.business.category.store.theme.ThemeComparator_Package; use org.allbinary.business.category.store.theme.ThemeComparator_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.business.category.store.theme.ThemeComparator_Package;
 with org.allbinary.logic.visual.theme.ThemeInterface_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package is
 
+   package Arrays_Package renames Standard.java.util.Arrays_Package;
    package ThemeValidation_Package renames Standard.org.allbinary.logic.visual.theme.ThemeValidation_Package;
    subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
    function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";

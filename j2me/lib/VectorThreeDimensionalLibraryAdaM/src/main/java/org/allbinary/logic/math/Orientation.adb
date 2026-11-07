@@ -16,6 +16,7 @@
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.logic.math.BasicDecimal_Package_References;
+with org.allbinary.logic.math.BasicDecimal_Package;
 
 package body org.allbinary.logic.math.Orientation_Package is
 

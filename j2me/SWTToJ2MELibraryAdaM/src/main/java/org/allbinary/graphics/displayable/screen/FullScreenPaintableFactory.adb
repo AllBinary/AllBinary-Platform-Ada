@@ -16,6 +16,24 @@
 with org.allbinary.game.paint.FullScreenPaintable_Package; use org.allbinary.game.paint.FullScreenPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.displayable.BaseScalable_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.displayable.ScalableListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package is
 
@@ -33,7 +51,7 @@ package body org.allbinary.graphics.displayable.screen.FullScreenPaintableFactor
    procedure Initialize_Fields (This : in out FullScreenPaintableFactory'Class) is
    begin
       null;
-      This.paintable := FullScreenPaintable_Package.getInstance;
+      This.paintable := Paintable_Access (FullScreenPaintable_Package.getInstance);
    end Initialize_Fields;
 
    procedure Initialize (This : in out FullScreenPaintableFactory'Class) is

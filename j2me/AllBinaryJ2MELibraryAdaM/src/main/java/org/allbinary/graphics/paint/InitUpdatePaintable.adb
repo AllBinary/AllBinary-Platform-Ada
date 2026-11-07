@@ -13,6 +13,10 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.init.InitInterface_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.init.UpdateInterface_Package;
@@ -40,10 +44,10 @@ package body org.allbinary.graphics.paint.InitUpdatePaintable_Package is
    end Create;
 
    --  throws Exception
-   procedure init (This : in out InitUpdatePaintable) is
+   procedure init_Method (This : in out InitUpdatePaintable) is
    begin
         null;
-   end init;
+   end init_Method;
 
    procedure update (This : in out InitUpdatePaintable) is
    begin

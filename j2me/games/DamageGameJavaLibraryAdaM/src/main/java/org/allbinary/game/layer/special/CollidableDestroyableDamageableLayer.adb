@@ -49,7 +49,15 @@ with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.Position
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.ViewPositionBase_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.pickup.PickupBehavior_Package_References;
 
 package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package is
@@ -204,7 +212,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    function getNullInstance return CollidableDestroyableDamageableLayer_Access is
    begin
         if (CollidableDestroyableDamageableLayer_Package.NULL_COLLIDABLE_DESTROYABLE_DAMAGE_LAYER) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            CollidableDestroyableDamageableLayer_Package.NULL_COLLIDABLE_DESTROYABLE_DAMAGE_LAYER := CollidableDestroyableDamageableLayer_Package.Create (BasicGroupFactory_Package.getInstance.NONE_ARRAY, StringUtil_Package.getInstance.EMPTY_STRING, RectangleFactory_Package.SINGLETON, ViewPositionBase_Package.NULL_VIEW_POSITION);
+            CollidableDestroyableDamageableLayer_Package.NULL_COLLIDABLE_DESTROYABLE_DAMAGE_LAYER := Java_Object_Access (CollidableDestroyableDamageableLayer_Package.Create (BasicGroupFactory_Package.getInstance.NONE_ARRAY, StringUtil_Package.getInstance.EMPTY_STRING, RectangleFactory_Package.SINGLETON, ViewPositionBase_Package.NULL_VIEW_POSITION));
         end if;
         return CollidableDestroyableDamageableLayer_Access (CollidableDestroyableDamageableLayer_Package.NULL_COLLIDABLE_DESTROYABLE_DAMAGE_LAYER);
    end getNullInstance;

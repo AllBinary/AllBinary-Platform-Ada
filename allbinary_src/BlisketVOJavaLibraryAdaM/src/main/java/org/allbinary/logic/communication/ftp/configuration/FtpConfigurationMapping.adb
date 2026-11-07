@@ -22,6 +22,10 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package;
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package_References;
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package;
 
 package body org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package is

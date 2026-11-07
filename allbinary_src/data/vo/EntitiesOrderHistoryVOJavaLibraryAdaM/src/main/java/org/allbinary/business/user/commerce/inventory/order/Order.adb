@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References;
@@ -32,9 +33,14 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.business.user.commerce.inventory.order.Order_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package PaymentData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
@@ -288,7 +294,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
    function toXmlNode (This : in out Order; document_Param : access Document_Package.Document'Class) return Node_Access is
       document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
-      keySet : Java_Object_Access;
+      keySet : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       node : Node_Access;

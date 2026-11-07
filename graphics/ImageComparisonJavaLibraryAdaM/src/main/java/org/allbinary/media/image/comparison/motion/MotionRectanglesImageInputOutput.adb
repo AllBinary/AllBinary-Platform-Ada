@@ -42,13 +42,25 @@ with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use or
 with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allbinary.media.image.comparison.motion.Rectangle_Package;
 with org.allbinary.media.image.comparison.motion.Color_Package; use org.allbinary.media.image.comparison.motion.Color_Package;
 with org.allbinary.media.image.comparison.motion.AllMotionRectanglesResultsCacheSingleton_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.util.cache.CacheInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.media.image.comparison.motion.ConsolidatedMotionRectanglesResultsCacheSingleton_Package;
 with org.allbinary.media.image.comparison.motion.ConstrainedMotionRectanglesResultsCacheSingleton_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package_References;
 
 package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package is

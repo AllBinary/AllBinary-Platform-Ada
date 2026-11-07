@@ -96,7 +96,7 @@ package body org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package is
    function getNullInstance return CollidableWeaponBehavior_Access is
    begin
         if (CollidableWeaponBehavior_Package.NULL_COLLIDABLE_WEAPON_BEHAVIOR) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            CollidableWeaponBehavior_Package.NULL_COLLIDABLE_WEAPON_BEHAVIOR := CollidableWeaponBehavior_Package.Create (False);
+            CollidableWeaponBehavior_Package.NULL_COLLIDABLE_WEAPON_BEHAVIOR := Java_Object_Access (CollidableWeaponBehavior_Package.Create (False));
         end if;
         return CollidableWeaponBehavior_Access (CollidableWeaponBehavior_Package.NULL_COLLIDABLE_WEAPON_BEHAVIOR);
    end getNullInstance;

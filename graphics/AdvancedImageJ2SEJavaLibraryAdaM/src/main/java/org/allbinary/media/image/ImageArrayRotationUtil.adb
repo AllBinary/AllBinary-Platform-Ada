@@ -22,9 +22,17 @@ with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.me
 with org.allbinary.media.image.ImageProcessorInput_Package_References;
 with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
 with org.allbinary.media.image.ImageProcessedVisitor_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.media.image.ImageProcessedVisitor_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package;
 with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
 
@@ -105,11 +113,11 @@ package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
    begin
         totalAngle := 0;
         if (input) = (This.commonStrings.UP) then
-            totalAngle := To_Unbounded_String (Java_Image (-(90)));
+            totalAngle := Integer (-(90));
         elsif (input) = (This.commonStrings.DOWN) then
-            totalAngle := To_Unbounded_String (Java_Image (90));
+            totalAngle := Integer (90);
         else
-            totalAngle := To_Unbounded_String (Java_Image (input));
+            totalAngle := Integer'Value (To_String (input));
         end if;
         generatedBufferedImage := null;
         bufferedImageArray := imageProcessorInput.getBufferedImageArray;

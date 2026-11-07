@@ -18,6 +18,7 @@ with javax.microedition.khronos.opengles.GL10_Package_References;
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Graphics_Package_References;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.graphics.opengles.OpenGLESStrings_Package is
 

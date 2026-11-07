@@ -19,8 +19,10 @@ with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.
 with org.allbinary.view.ViewPositionFactoryInterface_Package_References;
 with org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package;
 with org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package; use org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package;
 with org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
 package body org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Package is
 

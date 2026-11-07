@@ -57,6 +57,15 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.apache.commons.lang3.StringEscapeUtils_Package; use org.apache.commons.lang3.StringEscapeUtils_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.business.context.modules.storefront.StoreFront_Package is
 
@@ -1102,7 +1111,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         dataVector.add (This.testFtpUserName);
         dataVector.add (This.testFtpPassword);
         calendar := Calendar_Package.getInstance;
-        time := Java_New_String (calendar.getTimeInMillis.toString);
+        time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
         dataVector.add (time);
         dataVector.add (time);
         return dataVector;
@@ -1145,7 +1154,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         dataHashMap.put (storeFrontData.TESTFTPUSERNAME, Java_Box (This.testFtpUserName));
         dataHashMap.put (storeFrontData.TESTFTPPASSWORD, Java_Box (This.testFtpPassword));
         calendar := Calendar_Package.getInstance;
-        time := Java_New_String (calendar.getTimeInMillis.toString);
+        time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
         dataHashMap.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return dataHashMap;
    end toHashMap;

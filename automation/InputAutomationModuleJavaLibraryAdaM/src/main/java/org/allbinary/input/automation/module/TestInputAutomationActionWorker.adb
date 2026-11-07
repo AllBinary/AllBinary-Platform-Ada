@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -25,9 +26,11 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
 with org.allbinary.input.automation.module.InputAutomationActionInterface_Package_References;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.input.automation.module.TestInputAutomationActionWorker_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
    package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
@@ -107,7 +110,7 @@ package body org.allbinary.input.automation.module.TestInputAutomationActionWork
    --  throws Exception
    procedure process (This : in out TestInputAutomationActionWorker) is
       hashtable : ABHashtable_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       inputTypeNameArray : Java_Object_Access_Array_Access;
       size : Integer;
       inputTypeNameString : Unbounded_String;

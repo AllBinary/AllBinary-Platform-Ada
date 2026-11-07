@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
@@ -23,10 +24,22 @@ with org.allbinary.logic.visual.media.MediaIOUtil_Package; use org.allbinary.log
 with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.logic.visual.media.MediaTypeData_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package_References;
 
 package body org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package MediaData_Package renames Standard.org.allbinary.logic.visual.media.MediaData_Package;
@@ -64,7 +77,7 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
 
    procedure Initialize (This : in out UploadMediaSingleton'Class) is
       hashMap : HashMap_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       mediaDataNameArray : Java_Object_Access_Array_Access;
       size : Integer;
       mediaDataName : Unbounded_String;

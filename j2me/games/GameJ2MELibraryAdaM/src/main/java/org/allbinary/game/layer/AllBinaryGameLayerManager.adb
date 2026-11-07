@@ -28,6 +28,8 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
 
@@ -90,7 +92,7 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
    function getNullInstance return AllBinaryGameLayerManager_Access is
    begin
         if (AllBinaryGameLayerManager_Package.NULL_ALLBINARY_LAYER_MANAGER) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            AllBinaryGameLayerManager_Package.NULL_ALLBINARY_LAYER_MANAGER := AllBinaryGameLayerManager_Package.Create (BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE, GameInfo_Package.NONE);
+            AllBinaryGameLayerManager_Package.NULL_ALLBINARY_LAYER_MANAGER := Java_Object_Access (AllBinaryGameLayerManager_Package.Create (BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE, GameInfo_Package.NONE));
         end if;
         return AllBinaryGameLayerManager_Access (AllBinaryGameLayerManager_Package.NULL_ALLBINARY_LAYER_MANAGER);
    end getNullInstance;
@@ -120,7 +122,7 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
 
    function getLayerManager (This : in out AllBinaryGameLayerManager) return AllBinaryLayerManager_Access is
    begin
-        return AllBinaryGameLayerManager_Access'(This'Unchecked_Access);
+        return AllBinaryLayerManager_Access (AllBinaryGameLayerManager_Access'(This'Unchecked_Access));
    end getLayerManager;
 
    procedure init (This : in out AllBinaryGameLayerManager) is

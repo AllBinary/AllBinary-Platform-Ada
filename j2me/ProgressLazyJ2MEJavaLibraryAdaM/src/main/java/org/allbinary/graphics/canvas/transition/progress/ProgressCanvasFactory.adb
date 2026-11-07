@@ -69,7 +69,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFac
    function getInstance return ProgressCanvas_Access is
    begin
         if (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN := LazyProgressCanvas_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE);
+            ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN := Java_Object_Access (LazyProgressCanvas_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ProgressCanvas_Access (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN);
    end getInstance;

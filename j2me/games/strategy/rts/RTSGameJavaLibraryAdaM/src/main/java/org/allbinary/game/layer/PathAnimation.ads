@@ -126,7 +126,7 @@ package org.allbinary.game.layer.PathAnimation_Package is
    subtype PathAnimation_Access_Array_Access_Array_Access is org.allbinary.game.layer.PathAnimation_Package_References.PathAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PathAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.PathAnimation_Package_References."=";
 
-   type PathAnimation is new Animation with record
+   type PathAnimation is new Animation_Package.Animation with record
       logUtil : LogUtil_Access;
       linePathAnimation : LinePathAnimation_Access;
       pathFindingLayer : PathFindingLayerInterface_Access;

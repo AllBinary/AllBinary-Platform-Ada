@@ -25,6 +25,9 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package; use org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package;
 with org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package; use org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package;
 
 package body org.allbinary.game.ag.ai.scroller.PacePatrolAIFactory_Package is

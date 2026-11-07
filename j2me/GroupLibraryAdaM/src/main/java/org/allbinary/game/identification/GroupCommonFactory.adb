@@ -46,7 +46,7 @@ package body org.allbinary.game.identification.GroupCommonFactory_Package is
    function getInstance return GroupCommonFactory_Access is
    begin
         if (GroupCommonFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            GroupCommonFactory_Package.instance := GroupCommonFactory_Package.Create;
+            GroupCommonFactory_Package.instance := Java_Object_Access (GroupCommonFactory_Package.Create);
         end if;
         return GroupCommonFactory_Access (GroupCommonFactory_Package.instance);
    end getInstance;

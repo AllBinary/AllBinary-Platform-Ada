@@ -43,7 +43,7 @@ package body org.allbinary.logic.string_Id.StringValidationJSEUtil_Package is
         len := Ada.Strings.Unbounded.Length (string_Id);
         for i in 0 .. (len) - 1 loop
             c := Element (string_Id, (i) + 1);
-            if (Character_Package.isWhitespace (c)) = (False) then
+            if ((Character'Pos (c) in 9 .. 13 | 28 .. 32)) = (False) then
                 return False;
             end if;
         end loop;

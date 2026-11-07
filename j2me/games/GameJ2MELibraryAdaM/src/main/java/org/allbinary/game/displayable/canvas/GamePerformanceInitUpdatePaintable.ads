@@ -91,7 +91,7 @@ package org.allbinary.game.displayable.canvas.GamePerformanceInitUpdatePaintable
    procedure Initialize (This : in out GamePerformanceInitUpdatePaintable'Class);
    function Create return GamePerformanceInitUpdatePaintable_Access;
    procedure updateMeasurement (This : in out GamePerformanceInitUpdatePaintable; graphics_Param : access Graphics_Package.Graphics'Class);
-   procedure init (This : in out GamePerformanceInitUpdatePaintable);
+   procedure init_Method (This : in out GamePerformanceInitUpdatePaintable);
    procedure update (This : in out GamePerformanceInitUpdatePaintable);
    procedure paint (This : in out GamePerformanceInitUpdatePaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 

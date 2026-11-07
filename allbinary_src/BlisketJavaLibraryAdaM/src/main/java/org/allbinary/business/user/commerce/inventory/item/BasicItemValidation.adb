@@ -25,6 +25,7 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package_References;
+with org.allbinary.logic.string_Id.StringUtil_Package;
 
 package body org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_Package is
 

@@ -82,7 +82,7 @@ package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
    function isAnySensor (This : in out SensorGameUpdateProcessor) return Boolean is
    begin
-        if (This.inputSensor) = (NoAllBinarySensor_Package.getInstance) then
+        if (Java_Object_Access (This.inputSensor)) = (Java_Object_Access (NoAllBinarySensor_Package.getInstance)) then
             return False;
         else
             return True;

@@ -23,6 +23,7 @@ with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinar
 with org.allbinary.graphics.draw.DrawStringUtil_Package; use org.allbinary.graphics.draw.DrawStringUtil_Package;
 with org.allbinary.graphics.draw.DrawStringUtil_Package_References;
 with org.allbinary.graphics.draw.DrawStringUtil_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.graphics.draw.CanvasDrawLineString_Package is
 

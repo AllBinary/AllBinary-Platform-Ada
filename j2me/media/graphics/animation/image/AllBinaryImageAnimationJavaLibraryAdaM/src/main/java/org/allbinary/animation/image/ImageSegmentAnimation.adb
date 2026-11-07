@@ -21,6 +21,7 @@ with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animat
 with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package_References;
+with javax.microedition.lcdui.Font_Package;
 
 package body org.allbinary.animation.image.ImageSegmentAnimation_Package is
 

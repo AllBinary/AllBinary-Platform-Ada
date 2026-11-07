@@ -15,6 +15,7 @@
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package body org.allbinary.util.ABHashMap_Package is
@@ -91,12 +92,12 @@ package body org.allbinary.util.ABHashMap_Package is
         return HashMap_Package.HashMap (This).containsValue (value);
    end containsValue;
 
-   function keySet (This : in out ABHashMap) return Java_Object_Access is
+   function keySet (This : in out ABHashMap) return Set_Access is
    begin
         return HashMap_Package.HashMap (This).keySet;
    end keySet;
 
-   function entrySet (This : in out ABHashMap) return Java_Object_Access is
+   function entrySet (This : in out ABHashMap) return Set_Access is
    begin
         return HashMap_Package.HashMap (This).entrySet;
    end entrySet;

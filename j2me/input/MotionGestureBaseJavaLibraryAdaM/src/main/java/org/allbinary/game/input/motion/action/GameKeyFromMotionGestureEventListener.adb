@@ -28,10 +28,18 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.motion.action.GameKeyFromMotionGestureEventListener_Package is
 
@@ -117,11 +125,11 @@ package body org.allbinary.game.input.motion.action.GameKeyFromMotionGestureEven
             gameKeyCompleteMotionGestureInputEvent := GameKeyCompleteMotionGestureInputEvent_Access (completeMotionGestureInputEvent);
             gameKeyEvent := gameKeyCompleteMotionGestureInputEvent.getGameKeyEvent;
             if (gameKeyEvent) /= (This.previousGameKeyEvent) then
-                if (This.previousGameKeyEvent) /= (GameKeyEvent_Package.NONE) then
+                if (Java_Object_Access (This.previousGameKeyEvent)) /= (Java_Object_Access (GameKeyEvent_Package.NONE)) then
                     UpGameKeyEventHandler_Package.getInstance.fireEvent (This.previousGameKeyEvent);
                 end if;
                 This.previousGameKeyEvent := gameKeyEvent;
-                if ((gameKeyEvent) /= (null)) and then ((gameKeyEvent) /= (GameKeyEvent_Package.NONE)) then
+                if ((gameKeyEvent) /= (null)) and then ((Java_Object_Access (gameKeyEvent)) /= (Java_Object_Access (GameKeyEvent_Package.NONE))) then
                     DownGameKeyEventHandler_Package.getInstance.fireEvent (gameKeyEvent);
                 end if;
             end if;

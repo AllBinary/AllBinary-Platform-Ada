@@ -46,11 +46,36 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.util.BasicArrayListUtil_Package_References;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
@@ -217,7 +242,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint_Package is
             rowIndex := This.paths'Length;
             while (Java_Pre_Decrement (rowIndex)) >= (0) loop
                 pathsList := This.paths (columnIndex) (rowIndex);
-                if (pathsList) /= (This.basicArrayListUtil.getImmutableInstance) then
+                if (Java_Object_Access (pathsList)) /= (Java_Object_Access (This.basicArrayListUtil.getImmutableInstance)) then
                     BasicGeographicMapExtractedPathsCacheFactory_Package.getInstance.release (pathsList);
                 end if;
             end loop;
@@ -237,7 +262,7 @@ package body org.allbinary.game.layer.waypoint.Waypoint_Package is
       pathsList : BasicArrayList_Access;
    begin
         pathsList := This.paths (geographicMapCellPosition.getColumn) (geographicMapCellPosition.getRow);
-        if (pathsList) = (This.basicArrayListUtil.getImmutableInstance) then
+        if (Java_Object_Access (pathsList)) = (Java_Object_Access (This.basicArrayListUtil.getImmutableInstance)) then
             pathsList := Waypoint'Class (This).createPaths (geographicMapCellPosition);
             This.paths (geographicMapCellPosition.getColumn) (geographicMapCellPosition.getRow) := pathsList;
         end if;

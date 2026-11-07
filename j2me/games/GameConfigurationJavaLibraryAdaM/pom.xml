@@ -90,6 +90,17 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- The GameConfigurationJ2MEJavaLibraryAda specs use PlatformRecordIdUtil and its dependency on TempJavaLibraryAda is optional so it is not transitive -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>TempJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.allbinary</groupId>
             <artifactId>ApplicationStatisticsJ2MELibraryAda</artifactId>

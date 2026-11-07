@@ -21,6 +21,7 @@ with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.a
 with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package; use org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 

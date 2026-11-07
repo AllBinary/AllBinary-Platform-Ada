@@ -92,7 +92,7 @@ package org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
    subtype RTSLayerTextAnimation_Access_Array_Access_Array_Access is org.allbinary.game.layer.item.RTSLayerTextAnimation_Package_References.RTSLayerTextAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RTSLayerTextAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.item.RTSLayerTextAnimation_Package_References."=";
 
-   type RTSLayerTextAnimation is new Animation and UpdateMyFontInterface with record
+   type RTSLayerTextAnimation is new Animation_Package.Animation and UpdateMyFontInterface with record
       image : Image_Access;
       text : Unbounded_String;
       myFontProcessor : MyFontProcessor_Access;

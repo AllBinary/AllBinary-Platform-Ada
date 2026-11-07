@@ -20,6 +20,9 @@ with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphi
 with org.allbinary.graphics.form.PaintableForm_Package_References;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 with org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package; use org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;
 
 package body org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableFactory_Package is

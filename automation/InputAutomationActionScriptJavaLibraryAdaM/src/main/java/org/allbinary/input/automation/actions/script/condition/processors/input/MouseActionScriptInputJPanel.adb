@@ -160,7 +160,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       mouseYString : Unbounded_String;
    begin
         MouseActionScriptInputJPanel'Class (This).updateInputType;
-        This.mouseActionScriptInputInterface.setTime (To_Unbounded_String (Java_Image (This.mouseDelayJTextField.getText)));
+        This.mouseActionScriptInputInterface.setTime (Integer (This.mouseDelayJTextField.getText));
         This.logUtil.putF (To_Unbounded_String ("Button State: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
         if This.button1JCheckBox.isSelected then
             if ((Java_And (This.mouseActionScriptInputInterface.getButtonClicks, InputEvent_Package.BUTTON1_MASK))) = (0) then

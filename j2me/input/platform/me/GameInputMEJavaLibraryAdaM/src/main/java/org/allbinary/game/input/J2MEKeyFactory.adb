@@ -83,7 +83,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
    function isSubmission (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.gameKeyFactory.FIRE) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.gameKeyFactory.FIRE)) then
             return True;
         end if;
         return False;
@@ -92,7 +92,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
    function isDelete (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.gameKeyFactory.GAME_D) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.gameKeyFactory.GAME_D)) then
             return True;
         end if;
         return False;
@@ -107,7 +107,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
    function isUp (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.gameKeyFactory.UP) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.gameKeyFactory.UP)) then
             return True;
         end if;
         return False;
@@ -116,7 +116,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
    function isDown (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.gameKeyFactory.DOWN) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.gameKeyFactory.DOWN)) then
             return True;
         end if;
         return False;
@@ -125,7 +125,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
    function isLeft (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.gameKeyFactory.LEFT) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.gameKeyFactory.LEFT)) then
             return True;
         end if;
         return False;
@@ -134,7 +134,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
    function isRight (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.gameKeyFactory.RIGHT) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.gameKeyFactory.RIGHT)) then
             return True;
         end if;
         return False;
@@ -143,7 +143,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
    function isEnter (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.gameKeyFactory.FIRE) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.gameKeyFactory.FIRE)) then
             return True;
         end if;
         return False;

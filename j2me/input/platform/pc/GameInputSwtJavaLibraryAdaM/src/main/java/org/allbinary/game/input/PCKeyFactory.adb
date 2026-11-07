@@ -153,7 +153,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    function isSubmission (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.ENTER) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.ENTER)) then
             return True;
         end if;
         return False;
@@ -162,7 +162,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    function isDelete (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.DEL) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.DEL)) then
             return True;
         end if;
         return False;
@@ -171,7 +171,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    function isBackSpace (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.BACK_SPACE) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.BACK_SPACE)) then
             return True;
         end if;
         return False;
@@ -180,7 +180,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    function isUp (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if ((input) = (This.DPAD_UP)) or else ((input) = (This.DPAD_UP2)) then
+        if ((Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_UP))) or else ((Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_UP2))) then
             return True;
         end if;
         return False;
@@ -189,7 +189,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    function isDown (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if ((input) = (This.DPAD_DOWN)) or else ((input) = (This.DPAD_DOWN2)) then
+        if ((Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_DOWN))) or else ((Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_DOWN2))) then
             return True;
         end if;
         return False;
@@ -198,7 +198,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    function isLeft (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if ((input) = (This.DPAD_LEFT)) or else ((input) = (This.DPAD_LEFT2)) then
+        if ((Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_LEFT))) or else ((Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_LEFT2))) then
             return True;
         end if;
         return False;
@@ -207,7 +207,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    function isRight (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if ((input) = (This.DPAD_RIGHT)) or else ((input) = (This.DPAD_RIGHT2)) then
+        if ((Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_RIGHT))) or else ((Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_RIGHT2))) then
             return True;
         end if;
         return False;
@@ -216,7 +216,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    function isEnter (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.ENTER) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.ENTER)) then
             return True;
         end if;
         return False;

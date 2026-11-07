@@ -23,6 +23,14 @@ with android.content.Context_Package; use android.content.Context_Package;
 with android.content.Context_Package_References;
 with android.os.Parcelable_Package; use android.os.Parcelable_Package;
 with android.os.Parcelable_Package_References;
+with org.microemu.device.ui.CommandUI_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
 
 package body org.allbinary.content.NotificationBuilderAPI23_Package is
 

@@ -53,9 +53,30 @@ with org.allbinary.game.layer.unit.UnitWaypointStrings_Package; use org.allbinar
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package_References;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package;
@@ -296,7 +317,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    procedure addWaypointFromBuilding (This : in out UnitWaypointBehavior; advancedRTSGameLayer_Param : access AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer'Class) is
       advancedRTSGameLayer : constant AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (advancedRTSGameLayer_Param);
    begin
-        if ((advancedRTSGameLayer) = (PrimaryWaypointHelper_Package.getInstance.getWaypointLayer)) or else ((advancedRTSGameLayer.getParentLayer) = (This.associatedAdvancedRTSGameLayer.getParentLayer)) then
+        if ((Java_Object_Access (advancedRTSGameLayer)) = (Java_Object_Access (PrimaryWaypointHelper_Package.getInstance.getWaypointLayer))) or else ((advancedRTSGameLayer.getParentLayer) = (This.associatedAdvancedRTSGameLayer.getParentLayer)) then
             if not (This.targetList.contains (Java_Object_Access (advancedRTSGameLayer))) then
                 This.associatedAdvancedRTSGameLayer.waypointLogHelperP.addWaypointFromBuilding (This.associatedAdvancedRTSGameLayer, advancedRTSGameLayer);
                 if advancedRTSGameLayer.isDestroyed then
@@ -411,7 +432,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
       message : Unbounded_String;
    begin
         This.associatedAdvancedRTSGameLayer.waypointLogHelperP.needToMove (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior_Access'(This'Unchecked_Access));
-        if ((UnitWaypointBehavior'Class (This).isTrackingWaypoint) or else (org.allbinary.game.layer.SensorAction_Package_References."=" (This.sensorAction, SensorActionFactory_Package.getInstance.EVADE))) or else ((((This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance)) and then ((UnitWaypointBehavior'Class (This).getCurrentTargetDistance) >= ((This.longWeaponRange) + (This.currentTargetLayerInterfaceP.getHalfHeight))))) then
+        if ((UnitWaypointBehavior'Class (This).isTrackingWaypoint) or else (org.allbinary.game.layer.SensorAction_Package_References."=" (This.sensorAction, SensorActionFactory_Package.getInstance.EVADE))) or else ((((Java_Object_Access (This.currentTargetLayerInterfaceP)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) and then ((UnitWaypointBehavior'Class (This).getCurrentTargetDistance) >= ((This.longWeaponRange) + (This.currentTargetLayerInterfaceP.getHalfHeight))))) then
             This.repeatedToLong.setStartTimeTNT;
             return True;
         end if;
@@ -432,7 +453,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         stringBuffer.append (This.sensorAction.name);
         stringBuffer.append (To_Unbounded_String (" getCurrentTargetLayerInterface: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (This.currentTargetLayerInterfaceP));
-        if (This.currentTargetLayerInterfaceP) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
+        if (Java_Object_Access (This.currentTargetLayerInterfaceP)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
             stringBuffer.append (To_Unbounded_String (" Target Range: "));
             stringBuffer.appendint (UnitWaypointBehavior'Class (This).getCurrentTargetDistance);
             stringBuffer.append (To_Unbounded_String (" >= "));

@@ -18,6 +18,10 @@ with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.Ope
 with org.allbinary.graphics.OpenGLBitmap_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColor_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
 

@@ -21,6 +21,12 @@ with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 
 package body org.allbinary.animation.NullAnimationFactory_Package is
 

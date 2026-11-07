@@ -31,13 +31,29 @@ with org.allbinary.graphics.form.item.CommandTextItem_Package; use org.allbinary
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.canvas.Processor_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package;
+with javax.microedition.lcdui.Screen_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with javax.microedition.lcdui.StringComponent_Package;
 
 package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
 

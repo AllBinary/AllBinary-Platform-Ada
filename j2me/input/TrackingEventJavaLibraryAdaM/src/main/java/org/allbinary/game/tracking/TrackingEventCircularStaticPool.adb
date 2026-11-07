@@ -20,6 +20,8 @@ with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package_Reference
 with org.allbinary.game.tracking.TrackingEventFactory_Package; use org.allbinary.game.tracking.TrackingEventFactory_Package;
 with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
 with org.allbinary.game.tracking.TrackingEvent_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
 with org.allbinary.game.tracking.TrackingEvent_Package;
 with org.allbinary.game.tracking.TrackingEventFactory_Package;
 

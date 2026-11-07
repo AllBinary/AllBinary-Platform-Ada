@@ -17,6 +17,9 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
 package body org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package is

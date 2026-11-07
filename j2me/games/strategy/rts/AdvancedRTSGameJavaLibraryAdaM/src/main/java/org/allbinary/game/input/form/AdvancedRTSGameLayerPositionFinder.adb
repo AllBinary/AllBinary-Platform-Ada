@@ -20,6 +20,10 @@ with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.input.form.AdvancedRTSGameLayerPositionFinder_Package is
 
@@ -74,7 +78,7 @@ package body org.allbinary.game.input.form.AdvancedRTSGameLayerPositionFinder_Pa
       layerInterface : AllBinaryLayer_Access;
    begin
         layerInterface := DropCellPositionHistory_Package.getInstance.getLayerInterface (geographicMapCellPosition);
-        if (layerInterface) = (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER) then
+        if (Java_Object_Access (layerInterface)) = (Java_Object_Access (AllBinaryLayer_Package.NULL_ALLBINARY_LAYER)) then
             layerInterface := WaypointCellPositionHistory_Package.getInstance.getLayerInterface (geographicMapCellPosition);
         end if;
         return layerInterface;

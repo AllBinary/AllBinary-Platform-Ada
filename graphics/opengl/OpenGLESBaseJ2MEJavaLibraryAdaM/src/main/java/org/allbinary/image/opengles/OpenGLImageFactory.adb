@@ -19,6 +19,10 @@ with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageFactory_Package is

@@ -21,6 +21,8 @@ with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTS
 with org.allbinary.game.layer.RTSLayer_Package_References;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
 

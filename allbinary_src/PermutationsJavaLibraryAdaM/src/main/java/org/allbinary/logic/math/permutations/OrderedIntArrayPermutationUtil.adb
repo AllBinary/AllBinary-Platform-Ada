@@ -17,6 +17,8 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package; use org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
 with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
 
 package body org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Package is
 

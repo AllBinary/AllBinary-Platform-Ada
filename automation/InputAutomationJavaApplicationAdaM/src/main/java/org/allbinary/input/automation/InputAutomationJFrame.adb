@@ -14,6 +14,8 @@
 
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with java.net.URI_Package; use java.net.URI_Package;
+with java.awt.Desktop_Package; use java.awt.Desktop_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package; use bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References;
 with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package; use bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
@@ -47,12 +49,22 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.thread.RunnableInterface_Package_References;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References;
 
 package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package Desktop_Package renames Standard.java.awt.Desktop_Package;
    package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package BasicTextJDialog_Package renames Standard.org.allbinary.gui.dialog.BasicTextJDialog_Package;
@@ -622,7 +634,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         appUrlGlobals := AppUrlGlobals_Package.Create;
         appUrlGlobals.setWebappPath (To_Unbounded_String ("G:/mnt/bc/mydev/work_automation/automation/run/"));
         URLGLOBALS_Package.init (appUrlGlobals);
-        WebappClassLoaderInfo_Package.setLoader (appUrlGlobals.all'Tag.getClassLoader);
+        WebappClassLoaderInfo_Package.setLoader (ClassLoader_Package.getSystemClassLoader);
         java_Package.awt.EventQueue.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure run (This : in out ) is

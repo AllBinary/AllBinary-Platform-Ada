@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
@@ -26,11 +27,14 @@ with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package_References;
 with org.allbinary.input.automation.robot.InputRobot_Package; use org.allbinary.input.automation.robot.InputRobot_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.input.automation.robot.InputRobot_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
 package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package JavaHelpSetNotifier_Package renames Standard.org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
    package InterfaceUtil_Package renames Standard.org.allbinary.logic.java.anyType.InterfaceUtil_Package;
@@ -156,7 +160,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
 
    --  throws Exception
    procedure loadLibraries (This : in out InputRobotFactory) is
-      set : Java_Object_Access;
+      set : Set_Access;
       nameArray : Java_Object_Access_Array_Access;
       size : Integer;
       inputRobotInterface : InputRobotInterface_Access;
@@ -202,7 +206,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
 
    --  throws Exception
    procedure unloadLibraries (This : in out InputRobotFactory) is
-      set : Java_Object_Access;
+      set : Set_Access;
       inputRobotInterface : InputRobotInterface_Access;
       inputRobotArray : Java_Object_Access_Array_Access;
       size : Integer;

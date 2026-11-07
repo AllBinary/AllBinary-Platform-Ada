@@ -30,9 +30,26 @@ with org.allbinary.content.NotificationBuilder_Package; use org.allbinary.conten
 with org.allbinary.content.NotificationBuilder_Package_References;
 with org.allbinary.content.NotificationBuilderAPI23_Package; use org.allbinary.content.NotificationBuilderAPI23_Package;
 with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.CommandUriAction_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.microemu.device.ui.CommandUI_Package;
 with org.allbinary.content.CommandUriAction_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.content.NotificationBuilder_Package;
 with org.allbinary.content.NotificationBuilderAPI23_Package;
+with org.allbinary.logic.NullUtil_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.content.NotificationBuilder_Package_References;
 
 package body org.allbinary.content.NotificationUtil_Package is

@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
 limited with org.allbinary.logic.io.file.directory.Directory_Package;
 with org.allbinary.logic.io.file.directory.Directory_Package_References;
 limited with org.allbinary.logic.io.path.AbPath_Package;

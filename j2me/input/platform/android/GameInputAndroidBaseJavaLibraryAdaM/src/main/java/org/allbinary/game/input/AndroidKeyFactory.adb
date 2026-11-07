@@ -13,6 +13,14 @@ with org.allbinary.game.input.AndroidGameKey_Package_References;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.game.input.AndroidGameKey_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.input.AndroidKeyFactory_Package is
 
@@ -196,9 +204,9 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    function isSubmission (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.ENTER) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.ENTER)) then
             return True;
-        elsif (input) = (This.DPAD_CENTER) then
+        elsif (Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_CENTER)) then
             return True;
         end if;
         return False;
@@ -213,7 +221,7 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    function isBackSpace (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.DEL) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.DEL)) then
             return True;
         end if;
         return False;
@@ -222,7 +230,7 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    function isLeft (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.DPAD_LEFT) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_LEFT)) then
             return True;
         end if;
         return False;
@@ -231,7 +239,7 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    function isRight (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.DPAD_RIGHT) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_RIGHT)) then
             return True;
         end if;
         return False;
@@ -240,7 +248,7 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    function isUp (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.DPAD_UP) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_UP)) then
             return True;
         end if;
         return False;
@@ -249,7 +257,7 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    function isDown (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.DPAD_DOWN) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_DOWN)) then
             return True;
         end if;
         return False;
@@ -258,11 +266,11 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    function isEnter (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        if (input) = (This.DPAD_CENTER) then
+        if (Java_Object_Access (input)) = (Java_Object_Access (This.DPAD_CENTER)) then
             return True;
-        elsif (input) = (This.ENTER) then
+        elsif (Java_Object_Access (input)) = (Java_Object_Access (This.ENTER)) then
             return True;
-        elsif (input) = (This.CALL) then
+        elsif (Java_Object_Access (input)) = (Java_Object_Access (This.CALL)) then
             return True;
         end if;
         return False;

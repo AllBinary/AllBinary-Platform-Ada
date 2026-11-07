@@ -163,31 +163,131 @@ with org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactor
 with org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package; use org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;
 with org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package; use org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package;
 with org.allbinary.game.displayable.canvas.DemoGameRunnable_Package; use org.allbinary.game.displayable.canvas.DemoGameRunnable_Package;
+with org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
+with org.allbinary.graphics.displayable.BaseScalable_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with org.allbinary.logic.system.security.licensing.ClientInformation_Package;
+with org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
 with org.allbinary.game.displayable.canvas.DemoGameRunnable_Package;
 with org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package;
 with org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.microemu.DisplayAccess_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with javax.microedition.lcdui.Displayable_Package;
+with org.allbinary.graphics.displayable.DisplayableInterface_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
+with org.allbinary.util.EnumerationUtil_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with javax.microedition.lcdui.Form_Package;
+with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.feature.GameFeature_Package;
 with org.allbinary.game.init.GameInitializationInterface_Package;
 with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
+with org.allbinary.game.configuration.event.GameInitializedEvent_Package;
 with org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
 with org.allbinary.game.midlet.GameMidlet_Package;
 with org.allbinary.game.midlet.GameMidletStateFactory_Package;
 with org.allbinary.game.GameStrings_Package;
+with org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.game.paint.help.HelpPaintable_Package;
 with org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 with org.allbinary.game.score.HighScoreCommandsFactory_Package;
 with org.allbinary.game.score.displayable.HighScoresCanvas_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
+with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.allbinary.game.configuration.feature.InputFeature_Package;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with javax.microedition.midlet.MIDlet_Package;
+with org.microemu.MIDletAccess_Package;
+with javax.microedition.midlet.MIDletStateChangeException_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.midlet.MidletStrings_Package;
+with org.microemu.device.MutableImage_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.canvas.Processor_Package;
+with org.allbinary.midlet.ProgressMidlet_Package;
+with org.allbinary.graphics.ResizableListenerInterface_Package;
+with org.allbinary.game.resource.ResourceLoadingLevel_Package;
+with org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.graphics.displayable.ScalableListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+with org.allbinary.media.audio.Sound_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.game.configuration.feature.TouchFeature_Package;
+with org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
+with org.allbinary.input.TouchJ2ME_Package;
+with org.allbinary.TsUtil_Package;
+with org.microemu.device.ui.UIFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
+with org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package;
 
 package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
@@ -650,7 +750,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       This.specialAnimationInterface := SpecialAnimation_Package.getInstance;
       This.paintedSpecialAnimationInterface := SpecialAnimation_Package.getInstance;
       This.fullScreenUtil := FullScreenUtil_Package.getInstance;
-      This.gameCanvas := NullGameCanvas_Package.getInstance;
+      This.gameCanvas := AllBinaryGameCanvas_Access (NullGameCanvas_Package.getInstance);
       This.highScoresHelper := HighScoresHelperBase_Access (HighScoresHelper_Package.Create);
       This.realHighScoresPaintable := HighScoresPaintable_Package.Create;
       This.highScoresPaintable := NullPaintable_Package.getInstance;
@@ -677,7 +777,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       This.gameKeyEventFactory := GameKeyEventFactory_Package.getInstance;
       This.lastKeyNotMapped := -(1);
       This.SET_STATE := To_Unbounded_String ("setState");
-      This.baseGameStatistics := GameStatisticsFactory_Package.getInstance;
+      This.baseGameStatistics := BaseGameStatistics_Access (GameStatisticsFactory_Package.getInstance);
    end Initialize_Fields;
 
 
@@ -737,7 +837,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 rectangle := This.formUtil.createFormRectangle;
                 scrollSelectionForm.init (rectangle, formType);
             end if;
-            This.overlayPaintable.init;
+            This.overlayPaintable.init_Method;
         exception
             when Java_Occurrence : others =>
                 declare
@@ -849,7 +949,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         formType2 := FormTypeFactory_Package.getInstance.getFormType;
         rectangle2 := This.formUtil.createFormRectangle;
         scrollSelectionForm.init (rectangle2, formType2);
-        if (DemoCanvas'Class (This).getMenuForm) /= (ScrollSelectionFormNoneFactory_Package.getInstance) then
+        if (Java_Object_Access (DemoCanvas'Class (This).getMenuForm)) /= (Java_Object_Access (ScrollSelectionFormNoneFactory_Package.getInstance)) then
             DemoCanvas'Class (This).setMenuInputProcessor (CommandFormInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), DemoCanvas_Access'(This'Unchecked_Access), DemoCanvas'Class (This).getMenuForm));
         end if;
         DemoCanvas'Class (This).open;
@@ -969,7 +1069,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
    function isPausable (This : in out DemoCanvas) return Boolean is
    begin
-        if (CurrentDisplayableFactory_Package.getInstance.getUsedRunnable) = (NullWaitGameRunnable_Package.getInstance) then
+        if (Java_Object_Access (CurrentDisplayableFactory_Package.getInstance.getUsedRunnable)) = (Java_Object_Access (NullWaitGameRunnable_Package.getInstance)) then
             return True;
         else
             return False;
@@ -1044,7 +1144,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 newState := 0;
             else
                 highScores := This.highScoresHelper.getNextHighScores;
-                if (highScores) = (NullHighScoresSingletonFactory_Package.getInstance) then
+                if (Java_Object_Access (highScores)) = (Java_Object_Access (NullHighScoresSingletonFactory_Package.getInstance)) then
                     newState := 0;
                 else
                     DemoCanvas'Class (This).getRealHighScoresPaintable.setHighScores (highScores);

@@ -17,8 +17,11 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.graphics.form.PaintableForm_Package is
 
@@ -91,7 +94,7 @@ package body org.allbinary.graphics.form.PaintableForm_Package is
    function getNullPaintableForm return PaintableForm_Access is
    begin
         if (PaintableForm_Package.NULL_PAINTABLE_FORM) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            PaintableForm_Package.NULL_PAINTABLE_FORM := PaintableForm_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, new ABCustomItem_Access_Array'(0 .. (0) - 1 => null), BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE);
+            PaintableForm_Package.NULL_PAINTABLE_FORM := Java_Object_Access (PaintableForm_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, new ABCustomItem_Access_Array'(0 .. (0) - 1 => null), BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return PaintableForm_Access (PaintableForm_Package.NULL_PAINTABLE_FORM);
    end getNullPaintableForm;

@@ -17,6 +17,7 @@ with org.allbinary.graphics.color.ColorCacheFactory_Package; use org.allbinary.g
 with org.allbinary.graphics.color.ColorCacheable_Package; use org.allbinary.graphics.color.ColorCacheable_Package;
 with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
 with org.allbinary.input.automation.module.game.Color_Package; use org.allbinary.input.automation.module.game.Color_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
 
 package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package is
 
@@ -52,7 +53,7 @@ package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Pac
       index : Integer;
    begin
         for index in reverse (Integer (min_x)) + 1 .. Integer (max_x) loop
-            colorInteger := To_Unbounded_String (Java_Image (bufferedImage.getRGB (index, Integer (y))));
+            colorInteger := Integer (bufferedImage.getRGB (index, Integer (y)));
             automaticCacheInterface := AutomaticCacheInterface_Access (ColorCacheFactory_Package.getInstance);
             colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
             color := colorCacheable.getColor;

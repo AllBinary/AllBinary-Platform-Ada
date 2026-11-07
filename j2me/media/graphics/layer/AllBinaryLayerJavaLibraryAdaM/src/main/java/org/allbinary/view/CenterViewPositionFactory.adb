@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.view.ViewPositionBase_Package;
 
 package body org.allbinary.view.CenterViewPositionFactory_Package is

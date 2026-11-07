@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Set_Package; use java.util.Set_Package;
 limited with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References;
 

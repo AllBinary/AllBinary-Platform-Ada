@@ -15,6 +15,11 @@
 
 with org.allbinary.graphics.form.item.ABTextFieldItem_Package; use org.allbinary.graphics.form.item.ABTextFieldItem_Package;
 with org.allbinary.graphics.form.item.ABTextFieldItem_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.control.validate.ValidatorBase_Package;
 
 package body org.allbinary.graphics.form.item.validation.UsernameValidator_Package is
 

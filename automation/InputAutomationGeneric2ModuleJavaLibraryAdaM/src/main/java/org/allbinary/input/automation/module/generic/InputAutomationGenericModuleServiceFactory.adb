@@ -18,6 +18,7 @@ with org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFact
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package; use org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package;
 
 package body org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package is

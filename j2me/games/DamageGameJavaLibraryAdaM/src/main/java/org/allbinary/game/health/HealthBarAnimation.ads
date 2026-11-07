@@ -77,7 +77,7 @@ package org.allbinary.game.health.HealthBarAnimation_Package is
    subtype HealthBarAnimation_Access_Array_Access_Array_Access is org.allbinary.game.health.HealthBarAnimation_Package_References.HealthBarAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HealthBarAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.health.HealthBarAnimation_Package_References."=";
 
-   type HealthBarAnimation is new Animation with record
+   type HealthBarAnimation is new Animation_Package.Animation with record
       basicColorFactory : BasicColorFactory_Access;
       x2 : Integer;
       thickness : Integer;

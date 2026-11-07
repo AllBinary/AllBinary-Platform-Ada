@@ -6,7 +6,12 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.animation.FixedPoint_Package; use org.allbinary.animation.FixedPoint_Package;
 with org.allbinary.animation.PGUtil_Package; use org.allbinary.animation.PGUtil_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.animation.FixedPoint_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.animation.PGUtil_Package;
 
 package body org.allbinary.animation.PathParser_Package is

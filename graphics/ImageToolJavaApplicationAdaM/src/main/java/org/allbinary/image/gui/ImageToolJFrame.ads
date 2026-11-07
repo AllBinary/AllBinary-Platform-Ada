@@ -32,8 +32,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with java.io.File_Package; use java.io.File_Package;
---  with java.util.Arrays_Package; use java.util.Arrays_Package;
---  with java.util.Comparator_Package; use java.util.Comparator_Package;
 --  with javax.imageio.ImageIO_Package; use javax.imageio.ImageIO_Package;
 limited with org.allbinary.gui.dialog.FileJDialog_Package;
 with org.allbinary.gui.dialog.FileJDialog_Package_References;

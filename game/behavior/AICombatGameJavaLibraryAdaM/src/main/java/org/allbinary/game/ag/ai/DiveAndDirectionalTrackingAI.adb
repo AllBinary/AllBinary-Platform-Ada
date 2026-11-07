@@ -59,6 +59,10 @@ with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
 
@@ -346,13 +350,13 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
                 This.directionOfTarget := Direction_Access (directionFactory.RIGHT);
             end if;
         end if;
-        if (not (This.initialDropped)) and then ((This.directionOfTarget) /= (directionFactory.NOT_BORDERED_WITH)) then
+        if (not (This.initialDropped)) and then ((Java_Object_Access (This.directionOfTarget)) /= (Java_Object_Access (directionFactory.NOT_BORDERED_WITH))) then
             DiveAndDirectionalTrackingAI'Class (This).drop;
         end if;
         if This.initialDropped then
-            if ((This.directionOfTarget) = (directionFactory.UP)) or else ((This.directionOfTarget) = (directionFactory.DOWN)) then
+            if ((Java_Object_Access (This.directionOfTarget)) = (Java_Object_Access (directionFactory.UP))) or else ((Java_Object_Access (This.directionOfTarget)) = (Java_Object_Access (directionFactory.DOWN))) then
                 DiveAndDirectionalTrackingAI'Class (This).verticalTargeting (x);
-            elsif ((This.directionOfTarget) = (directionFactory.LEFT)) or else ((This.directionOfTarget) = (directionFactory.RIGHT)) then
+            elsif ((Java_Object_Access (This.directionOfTarget)) = (Java_Object_Access (directionFactory.LEFT))) or else ((Java_Object_Access (This.directionOfTarget)) = (Java_Object_Access (directionFactory.RIGHT))) then
                 DiveAndDirectionalTrackingAI'Class (This).horizontalTargeting (y);
             else
                 This.artificialIntelligenceInterface.processAI (allBinaryLayerManager);
@@ -455,25 +459,25 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
 
    function isBeyondTarget (This : in out DiveAndDirectionalTrackingAI) return Boolean is
    begin
-        if (This.directionOfTarget) = (This.directionFactory.DOWN) then
+        if (Java_Object_Access (This.directionOfTarget)) = (Java_Object_Access (This.directionFactory.DOWN)) then
             if (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface.getYP) > ((This.lastTrackingLayerInterface.getYP) + (This.MIN_DISTANCE)) then
                 return True;
             else
                 return False;
             end if;
-        elsif (This.directionOfTarget) = (This.directionFactory.UP) then
+        elsif (Java_Object_Access (This.directionOfTarget)) = (Java_Object_Access (This.directionFactory.UP)) then
             if (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface.getYP) < ((This.lastTrackingLayerInterface.getYP) + (This.MIN_DISTANCE)) then
                 return True;
             else
                 return False;
             end if;
-        elsif (This.directionOfTarget) = (This.directionFactory.RIGHT) then
+        elsif (Java_Object_Access (This.directionOfTarget)) = (Java_Object_Access (This.directionFactory.RIGHT)) then
             if (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface.getXP) > ((This.lastTrackingLayerInterface.getXP) + (This.MIN_DISTANCE)) then
                 return True;
             else
                 return False;
             end if;
-        elsif (This.directionOfTarget) = (This.directionFactory.LEFT) then
+        elsif (Java_Object_Access (This.directionOfTarget)) = (Java_Object_Access (This.directionFactory.LEFT)) then
             if (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface.getXP) < ((This.lastTrackingLayerInterface.getXP) + (This.MIN_DISTANCE)) then
                 return True;
             else

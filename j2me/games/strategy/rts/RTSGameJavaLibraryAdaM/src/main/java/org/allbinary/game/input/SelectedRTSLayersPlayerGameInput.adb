@@ -58,22 +58,45 @@ with org.allbinary.game.input.RTSPlayerGameInput_Package; use org.allbinary.game
 with org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package;
 with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package;
+with org.allbinary.graphics.paint.InitUpdatePaintable_Package;
 with org.allbinary.game.input.LayerPositionFinderInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
+with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+with org.allbinary.logic.math.PrimitiveLongUtil_Package;
 with org.allbinary.game.input.form.RTSFormInput_Package;
 with org.allbinary.game.layer.RTSInterface_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.RTSLayerUtil_Package;
 with org.allbinary.game.input.RTSPlayerGameInput_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInputProcessor_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package;
@@ -402,7 +425,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
       selectedLayer : constant RTSLayer_Access := RTSLayer_Access (selectedLayer_Param);
    begin
         This.paintSelectedRTSLayersList := BasicArrayListUtil_Package.getInstance.getImmutableInstance;
-        if (selectedLayer) = (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
+        if (Java_Object_Access (selectedLayer)) = (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
             SelectedRTSLayersPlayerGameInput'Class (This).deselectAll;
             This.selectedRTSLayersList.clear;
         else
@@ -434,7 +457,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
             This.selectedRTSLayersList := tempList;
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Preselected: ")).append (This.preSelectedRTSLayersList.toString).toString, SelectedRTSLayersPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedRTSLayer"));
         end if;
-        if (selectedLayer) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
+        if (Java_Object_Access (selectedLayer)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
             This.selectedRTSLayersList.add (Java_Object_Access (selectedLayer));
         end if;
         This.paintSelectedRTSLayersList := This.selectedRTSLayersList;

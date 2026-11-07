@@ -18,6 +18,9 @@ with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.input.motion.button.TouchButtonsPaintable_Package; use org.allbinary.input.motion.button.TouchButtonsPaintable_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.input.motion.button.TouchButtonsPaintable_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package is

@@ -19,7 +19,10 @@ with org.allbinary.media.audio.SelectSound_Package; use org.allbinary.media.audi
 with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
 with org.allbinary.media.audio.CompositeSound_Package;
 with org.allbinary.media.audio.ErrorSound_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
 with org.allbinary.media.audio.SelectSound_Package;
+with org.allbinary.media.audio.Sound_Package;
 
 package body org.allbinary.media.audio.EarlySoundsFactory_Package is
 

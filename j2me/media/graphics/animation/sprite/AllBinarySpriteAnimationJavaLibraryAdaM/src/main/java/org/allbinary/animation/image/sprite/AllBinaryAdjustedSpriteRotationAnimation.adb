@@ -21,6 +21,11 @@ with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.
 with javax.microedition.lcdui.game.Sprite_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehavior_Package_References;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.AngleInfo_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
 with org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package;
 
 package body org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package is

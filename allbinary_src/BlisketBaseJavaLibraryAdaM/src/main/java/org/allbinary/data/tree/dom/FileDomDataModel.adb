@@ -23,7 +23,10 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.data.tree.dom.FileTableMapping_Package; use org.allbinary.data.tree.dom.FileTableMapping_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.data.tree.dom.FileTableMapping_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.data.tree.dom.FileDomDataModel_Package is
 

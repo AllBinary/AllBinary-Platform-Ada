@@ -22,7 +22,11 @@ with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase
 with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBaseInterface_Package;

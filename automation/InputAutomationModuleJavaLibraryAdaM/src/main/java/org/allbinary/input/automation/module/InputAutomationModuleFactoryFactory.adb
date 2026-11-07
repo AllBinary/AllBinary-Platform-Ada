@@ -27,6 +27,10 @@ with org.allbinary.input.automation.module.DefaultListModelHelper_Package; use o
 with org.allbinary.input.automation.module.DefaultListModelHelper_Package_References;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.input.automation.module.DefaultListModelHelper_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package_References;

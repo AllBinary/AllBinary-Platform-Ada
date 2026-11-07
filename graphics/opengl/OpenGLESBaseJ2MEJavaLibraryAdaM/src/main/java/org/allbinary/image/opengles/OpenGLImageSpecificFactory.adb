@@ -18,6 +18,11 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.image.opengles.OpenGLImageFactory_Package; use org.allbinary.image.opengles.OpenGLImageFactory_Package;
 with org.allbinary.image.opengles.OpenGLImageFactory_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.image.opengles.OpenGLImageFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;

@@ -30,7 +30,13 @@ with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package_Referenc
 with org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package; use org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package; use org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
+with javax.microedition.khronos.egl.EGLConfig_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
 with org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;

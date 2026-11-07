@@ -21,10 +21,27 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
 with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allbinary.media.image.comparison.motion.Rectangle_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectangles_Package is
 
@@ -71,7 +88,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
             motionRectangle := MotionRectangle_Access (vector.get (index));
             vector.add (motionRectangle.clone);
         end loop;
-        ConsolidateMotionRectangles'Class (This).consolidateMotionRectangles;
+        ConsolidateMotionRectangles'Class (This).consolidateMotionRectangles_Method;
    end Initialize;
 
    function Create (motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) return ConsolidateMotionRectangles_Access is
@@ -81,7 +98,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
       return This;
    end Create;
 
-   procedure consolidateMotionRectangles (This : in out ConsolidateMotionRectangles) is
+   procedure consolidateMotionRectangles_Method (This : in out ConsolidateMotionRectangles) is
       vector : BasicArrayList_Access;
       removeVector : BasicArrayList_Access;
       size : Integer;
@@ -116,7 +133,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
             end loop;
         end loop;
         ConsolidateMotionRectangles'Class (This).remove (removeVector);
-   end consolidateMotionRectangles;
+   end consolidateMotionRectangles_Method;
 
    procedure remove (This : in out ConsolidateMotionRectangles; removeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       removeVector : constant BasicArrayList_Access := BasicArrayList_Access (removeVector_Param);

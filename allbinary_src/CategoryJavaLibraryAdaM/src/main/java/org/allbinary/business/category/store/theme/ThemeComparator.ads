@@ -30,10 +30,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Comparator_Package; use java.util.Comparator_Package;
+with java.util.Comparator_Package; use java.util.Comparator_Package;
 
 package org.allbinary.business.category.store.theme.ThemeComparator_Package is
 
+   package Comparator_Package renames Standard.java.util.Comparator_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;
@@ -50,7 +51,7 @@ package org.allbinary.business.category.store.theme.ThemeComparator_Package is
    subtype ThemeComparator_Access_Array_Access_Array_Access is org.allbinary.business.category.store.theme.ThemeComparator_Package_References.ThemeComparator_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ThemeComparator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
 
-   type ThemeComparator is new Java_Object with null record;
+   type ThemeComparator is new Java_Object and Comparator with null record;
 
    procedure Initialize (This : in out ThemeComparator'Class);
    function Create return ThemeComparator_Access;

@@ -17,7 +17,10 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 with org.allbinary.logic.util.visitor.Visitor_Package_References;
 with org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package; use org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package;
 with org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAICompositeVisitorFactory_Package is
 

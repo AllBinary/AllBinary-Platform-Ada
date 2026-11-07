@@ -20,6 +20,9 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 with org.allbinary.layer.LayerInterfaceFactoryInterface_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackAdjacentDropLayerFactory_Package is
 

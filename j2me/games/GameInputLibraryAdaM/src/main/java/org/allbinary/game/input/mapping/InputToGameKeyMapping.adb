@@ -31,6 +31,18 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.input.GameKey_Package_References;
 with org.allbinary.game.input.Input_Package_References;
 
@@ -107,7 +119,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    function getNullInstance return InputToGameKeyMapping_Access is
    begin
         if (InputToGameKeyMapping_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            InputToGameKeyMapping_Package.instance := InputToGameKeyMapping_Package.Create;
+            InputToGameKeyMapping_Package.instance := Java_Object_Access (InputToGameKeyMapping_Package.Create);
         end if;
         return InputToGameKeyMapping_Access (InputToGameKeyMapping_Package.instance);
    end getNullInstance;
@@ -147,7 +159,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
       index : Integer;
    begin
         for index in reverse 0 .. (inputToGameKeyMapping_Var.getMaxMappable) - (1) loop
-            input := inputToGameKeyMapping_Var.getInstance (index);
+            input := Input_Access (inputToGameKeyMapping_Var.getInstance (index));
             if (Java_Object_Access (input)) /= (Java_Object_Access (This.gameKeyFactory.NONE)) then
                 InputToGameKeyMapping'Class (This).addAll (input, inputToGameKeyMapping_Var.getMappedInput (input));
             end if;

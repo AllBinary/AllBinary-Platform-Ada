@@ -14,6 +14,7 @@
 
 
 with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -25,12 +26,27 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.communication.sql.AbSqlBasic_Package;
 with org.allbinary.logic.communication.sql.AbSqlTable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package;
+with org.allbinary.logic.StdUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
@@ -176,7 +192,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
       columnName : Unbounded_String;
       columnValue : Unbounded_String;
       i : Integer;
-      set : Java_Object_Access;
+      set : Set_Access;
       keyArray2 : Java_Object_Access_Array_Access;
       size2 : Integer;
       key : Unbounded_String;
@@ -279,7 +295,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
    procedure deleteWhere (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class) is
       keysAndValues : constant HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       key : Unbounded_String;
@@ -367,7 +383,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
       keysAndValues : constant HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       result : HashMap_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       key : Unbounded_String;
@@ -446,7 +462,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
       keysAndValues : constant HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       rows : BasicArrayList_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       key : Unbounded_String;
@@ -570,7 +586,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
       whereKeyValuePairs : constant HashMap_Access := HashMap_Access (whereKeyValuePairs_Param);
       stringBuffer : StringMaker_Access;
       rows : BasicArrayList_Access;
-      set : Java_Object_Access;
+      set : Set_Access;
       key : Unbounded_String;
       value : Unbounded_String;
       keyArray : Java_Object_Access_Array_Access;

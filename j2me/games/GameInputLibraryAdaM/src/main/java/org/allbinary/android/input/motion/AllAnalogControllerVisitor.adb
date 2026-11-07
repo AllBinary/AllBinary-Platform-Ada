@@ -21,6 +21,9 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package; use org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
 with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package_References;
 with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.CustomGPoint_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.android.input.motion.AllAnalogControllerVisitor_Package is
 

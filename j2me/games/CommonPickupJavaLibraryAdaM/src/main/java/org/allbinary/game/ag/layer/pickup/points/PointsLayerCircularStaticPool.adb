@@ -20,6 +20,9 @@ with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.l
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package_References;
 with org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
 
 package body org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_Package is

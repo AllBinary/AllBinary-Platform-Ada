@@ -26,6 +26,8 @@ with org.allbinary.animation.VectorExplosionType_Package; use org.allbinary.anim
 with org.allbinary.animation.VectorExplosionType_Package_References;
 with org.allbinary.animation.VectorAnimationUtil_Package; use org.allbinary.animation.VectorAnimationUtil_Package;
 with org.allbinary.animation.VectorAnimationUtil_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.animation.VectorAnimationUtil_Package;
 with org.allbinary.animation.VectorExplosionType_Package;
 with org.allbinary.animation.VectorExplosionType_Package_References;

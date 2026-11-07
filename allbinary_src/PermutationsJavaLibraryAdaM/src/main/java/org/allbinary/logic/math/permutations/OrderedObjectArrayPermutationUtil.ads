@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Arrays_Package; use java.util.Arrays_Package;
 limited with org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package_References;
 

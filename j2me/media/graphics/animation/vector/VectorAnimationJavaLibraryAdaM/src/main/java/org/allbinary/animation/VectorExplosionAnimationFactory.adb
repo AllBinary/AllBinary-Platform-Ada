@@ -24,6 +24,10 @@ with org.allbinary.animation.VectorAnimationInterface_Package; use org.allbinary
 with org.allbinary.animation.VectorRotationAnimation_Package; use org.allbinary.animation.VectorRotationAnimation_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.Animation_Package_References;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.animation.VectorAnimationUtil_Package;
 with org.allbinary.animation.VectorExplosionGenerator_Package;
 with org.allbinary.animation.VectorExplosionType_Package;

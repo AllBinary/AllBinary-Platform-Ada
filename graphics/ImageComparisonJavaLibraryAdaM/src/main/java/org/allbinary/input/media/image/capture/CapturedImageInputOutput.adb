@@ -26,7 +26,16 @@ with org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package; use or
 with org.allbinary.media.image.io.ImageIOInterface_Package; use org.allbinary.media.image.io.ImageIOInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package; use org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
+with org.allbinary.logic.util.cache.CacheInterface_Package;
+with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package is
 

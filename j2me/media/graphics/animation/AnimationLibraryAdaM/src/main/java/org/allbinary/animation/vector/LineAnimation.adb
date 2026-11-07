@@ -22,6 +22,11 @@ with org.allbinary.graphics.color.ColorCompositeInterface_Package; use org.allbi
 with org.allbinary.layer.PositionInterface_Package; use org.allbinary.layer.PositionInterface_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.animation.AnimationInterface_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 
 package body org.allbinary.animation.vector.LineAnimation_Package is
 

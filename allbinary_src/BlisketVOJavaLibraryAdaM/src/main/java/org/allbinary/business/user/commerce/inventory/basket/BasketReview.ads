@@ -31,7 +31,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashSet_Package; use java.util.HashSet_Package;
---  with java.util.Set_Package; use java.util.Set_Package;
+with java.util.Set_Package; use java.util.Set_Package;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.business.user.commerce.inventory.item.Item_Package;
@@ -43,6 +43,7 @@ with org.w3c.dom.Node_Package_References;
 
 package org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package is
 
+   package Set_Package renames Standard.java.util.Set_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package Item_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.Item_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
@@ -116,7 +117,7 @@ package org.allbinary.business.user.commerce.inventory.basket.BasketReview_Packa
    procedure adjustItem (This : in out BasketReview; id : Unbounded_String; num : Unbounded_String);
    function getTotalWeight (This : in out BasketReview) return Unbounded_String;
    function getNumberOfItems (This : in out BasketReview) return Integer;
-   function getIds (This : in out BasketReview) return Java_Object_Access;
+   function getIds (This : in out BasketReview) return Set_Access;
    function getNumberOf (This : in out BasketReview; id : Unbounded_String) return Integer;
    procedure getNumberOf (This : in out BasketReview; id : Unbounded_String);
    function toXmlNode (This : in out BasketReview; document_Param : access Document_Package.Document'Class) return Node_Access;

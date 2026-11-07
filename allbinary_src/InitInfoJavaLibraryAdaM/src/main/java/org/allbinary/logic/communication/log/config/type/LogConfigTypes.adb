@@ -26,6 +26,8 @@ with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_P
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package is
 

@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Arrays_Package; use java.util.Arrays_Package;
 with org.allbinary.business.category.CategoryView_Package; use org.allbinary.business.category.CategoryView_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 limited with org.w3c.dom.Document_Package;

@@ -38,7 +38,17 @@ with org.allbinary.game.collision.CollidableInterface_Package;
 with org.allbinary.game.collision.CollidableNeverCollideBehavior_Package;
 with org.allbinary.game.collision.CollisionProcessor_Package;
 with org.allbinary.game.collision.CollisionType_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.collision.LayerCollisionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
 
@@ -119,7 +129,7 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
    function getNullInstance return CollidableCompositeLayer_Access is
    begin
         if (CollidableCompositeLayer_Package.NULL_COLLIDABLE_COMPOSITE_LAYER) = (NullUtil_Package.getInstance.NULL_OBJECT) then
-            CollidableCompositeLayer_Package.NULL_COLLIDABLE_COMPOSITE_LAYER := CollidableCompositeLayer_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, RectangleFactory_Package.SINGLETON, ViewPositionBase_Package.NULL_VIEW_POSITION, CollidableNeverCollideBehaviorFactory_Package.getInstance);
+            CollidableCompositeLayer_Package.NULL_COLLIDABLE_COMPOSITE_LAYER := Java_Object_Access (CollidableCompositeLayer_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, RectangleFactory_Package.SINGLETON, ViewPositionBase_Package.NULL_VIEW_POSITION, CollidableNeverCollideBehaviorFactory_Package.getInstance));
         end if;
         return CollidableCompositeLayer_Access (CollidableCompositeLayer_Package.NULL_COLLIDABLE_COMPOSITE_LAYER);
    end getNullInstance;

@@ -30,7 +30,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
+with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
@@ -38,6 +38,7 @@ with java.io.InputStream_Package; use java.io.InputStream_Package;
 
 package org.allbinary.logic.io.AbFileInputStream_Package is
 
+   package FileInputStream_Package renames Standard.java.io.FileInputStream_Package;
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package Reference_Types is
    end Reference_Types;

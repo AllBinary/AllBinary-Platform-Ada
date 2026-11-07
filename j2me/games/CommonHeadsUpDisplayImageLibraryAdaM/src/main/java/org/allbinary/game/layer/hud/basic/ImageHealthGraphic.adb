@@ -23,6 +23,7 @@ with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.h
 with org.allbinary.game.health.HealthInterface_Package_References;
 with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+with javax.microedition.lcdui.Font_Package;
 
 package body org.allbinary.game.layer.hud.basic.ImageHealthGraphic_Package is
 

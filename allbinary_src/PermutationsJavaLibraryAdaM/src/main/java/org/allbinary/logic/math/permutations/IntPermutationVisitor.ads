@@ -52,7 +52,7 @@ package org.allbinary.logic.math.permutations.IntPermutationVisitor_Package is
    subtype IntPermutationVisitor_Access_Array_Access_Array_Access is org.allbinary.logic.math.permutations.IntPermutationVisitor_Package_References.IntPermutationVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : IntPermutationVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.permutations.IntPermutationVisitor_Package_References."=";
 
-   type IntPermutationVisitor is new Visitor with record
+   type IntPermutationVisitor is new Visitor_Package.Visitor with record
       data : Integer_Array_Access;
       stringBuilder : StringMaker_Access;
    end record;

@@ -91,7 +91,7 @@ package body org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Pac
    procedure setTiledLayer (tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class) is
       tiledLayer : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
    begin
-        StaticTileLayerIntoPositionViewPosition_Package.tiledLayer := tiledLayer;
+        StaticTileLayerIntoPositionViewPosition_Package.tiledLayer := Layer_Access (tiledLayer);
    end setTiledLayer;
 
 begin

@@ -15,6 +15,7 @@ with org.allbinary.graphics.Config_Package; use org.allbinary.graphics.Config_Pa
 with org.allbinary.graphics.Config_Package_References;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.Config_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package;
 
@@ -159,6 +160,7 @@ with org.allbinary.graphics.OpenGLBitmapFactory_Package; use org.allbinary.graph
 with org.allbinary.graphics.OpenGLBitmapFactory_Package_References;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package;
 with org.allbinary.graphics.OpenGLBitmapFactory_Package;
 

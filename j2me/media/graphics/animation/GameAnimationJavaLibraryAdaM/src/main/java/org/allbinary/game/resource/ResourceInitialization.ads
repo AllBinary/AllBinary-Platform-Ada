@@ -51,7 +51,7 @@ package org.allbinary.game.resource.ResourceInitialization_Package is
    subtype ResourceInitialization_Access_Array_Access_Array_Access is org.allbinary.game.resource.ResourceInitialization_Package_References.ResourceInitialization_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ResourceInitialization_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.resource.ResourceInitialization_Package_References."=";
 
-   type ResourceInitialization is new Init with null record;
+   type ResourceInitialization is new Init_Package.Init with null record;
 
    procedure Initialize (This : in out ResourceInitialization'Class);
    function Create return ResourceInitialization_Access;

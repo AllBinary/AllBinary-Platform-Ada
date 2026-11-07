@@ -51,11 +51,11 @@ package org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Pa
    subtype TouchButtonAndroidResources_Access_Array_Access_Array_Access is org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package_References.TouchButtonAndroidResources_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TouchButtonAndroidResources_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package_References."=";
 
-   type TouchButtonAndroidResources is new Init with null record;
+   type TouchButtonAndroidResources is new Init_Package.Init with null record;
 
    procedure Initialize (This : in out TouchButtonAndroidResources'Class);
    function Create return TouchButtonAndroidResources_Access;
-   procedure init (This : in out TouchButtonAndroidResources);
+   procedure init_Method (This : in out TouchButtonAndroidResources);
 
 end org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package;
 

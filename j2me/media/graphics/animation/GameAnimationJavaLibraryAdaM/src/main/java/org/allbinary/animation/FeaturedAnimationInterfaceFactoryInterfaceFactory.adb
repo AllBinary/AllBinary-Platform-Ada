@@ -32,6 +32,22 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_Referenc
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package is
 
@@ -133,7 +149,7 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
             featureInterface := FeatureResourceAnimationInterfaceFactoryInterface_Access (list.objectArray (index));
             if featureInterface.isFeature then
                 rectangle := featureInterface.getRectangle (resource);
-                if (rectangle) /= (RectangleFactory_Package.SINGLETON) then
+                if (Java_Object_Access (rectangle)) /= (Java_Object_Access (RectangleFactory_Package.SINGLETON)) then
                     return Rectangle_Package.Create (pointFactory.createXY (x, y), (Java_Shift_Right_Arithmetic (((rectangle.getWidth) * (scale)), 1)), (Java_Shift_Right_Arithmetic (((rectangle.getHeight) * (scale)), 1)));
                 end if;
             end if;
