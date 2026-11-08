@@ -45,8 +45,10 @@ with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionE
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.ViewPositionBase_Package_References;
+with org.allbinary.animation.Animation_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -54,6 +56,7 @@ with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;

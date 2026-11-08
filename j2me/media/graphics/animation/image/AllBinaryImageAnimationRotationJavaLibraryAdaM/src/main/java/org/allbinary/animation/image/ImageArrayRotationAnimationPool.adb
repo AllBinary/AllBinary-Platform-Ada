@@ -26,6 +26,7 @@ with org.allbinary.logic.util.cache.AbstractArrayListPool_Package;
 with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleInfo_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonStrings_Package;

@@ -125,7 +125,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         if not (StringValidationUtil_Package.getInstance.isEmpty (value)) then
             This.size := Long_Long_Integer'Value (To_String (value));
         else
-            This.size := 0;
+            This.size := Long_Long_Integer (0);
         end if;
         validTime := Java_Unbox (hashMap.get (DownloadItemData_Package.VALID_TIME));
         if not (StringValidationUtil_Package.getInstance.isEmpty (validTime)) then

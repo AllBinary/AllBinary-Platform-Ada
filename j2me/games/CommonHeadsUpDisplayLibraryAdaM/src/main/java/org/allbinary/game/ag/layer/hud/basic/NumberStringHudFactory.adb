@@ -30,6 +30,7 @@ with javax.microedition.lcdui.Image_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
@@ -101,7 +102,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Packag
 
 begin
    null;
-   instance := NullUtil_Package.getInstance;
+   instance := Java_Object_Access (NullUtil_Package.getInstance);
 
 end org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package;
 

@@ -19,6 +19,7 @@ with org.allbinary.animation.TimedVectorAnimation_Package; use org.allbinary.ani
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animation.VectorAnimation_Package;
 with org.allbinary.animation.VectorAnimation_Package_References;
+with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.animation.TimedVectorAnimation_Package;
 

@@ -15,6 +15,18 @@
 
 with org.allbinary.game.input.event.DownGameKeyEventHandler_Package; use org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
 with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.game.input.GameInputStrings_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.input.PlayerGameInput_Package;
+with org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package;
 
 package body org.allbinary.game.displayable.canvas.GameEventHandlerUtil_Package is
 

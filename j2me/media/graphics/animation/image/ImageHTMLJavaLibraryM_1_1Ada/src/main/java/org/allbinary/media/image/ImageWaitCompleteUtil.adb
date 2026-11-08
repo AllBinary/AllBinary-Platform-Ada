@@ -27,10 +27,13 @@ with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.EnumerationUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageFactory_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;

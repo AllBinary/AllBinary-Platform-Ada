@@ -51,7 +51,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    procedure Initialize (This : in out Money'Class) is
    begin
       Initialize_Fields (This);
-        This.units := 0;
+        This.units := Long_Long_Integer (0);
    end Initialize;
 
    function Create return Money_Access is

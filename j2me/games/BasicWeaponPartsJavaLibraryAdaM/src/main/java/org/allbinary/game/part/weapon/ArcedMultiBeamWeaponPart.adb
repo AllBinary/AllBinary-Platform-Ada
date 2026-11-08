@@ -29,10 +29,26 @@ with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.part.weapon.SalvoInterface_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.part.weapon.ArcedMultiBeamWeaponPart_Package is
 

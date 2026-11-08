@@ -19,6 +19,12 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 
 package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_Package is

@@ -38,6 +38,7 @@ with org.allbinary.util.BasicArrayListS_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package;
 
 package body org.allbinary.image.opengles.OpenGLESImage_Package is
 

@@ -14,6 +14,7 @@
 
 
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.layer.NamedInterface_Package;
 
 package body org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package is
 

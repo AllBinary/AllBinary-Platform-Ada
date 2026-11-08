@@ -30,6 +30,7 @@ with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Packag
 with org.allbinary.business.advertisement.Advertisements_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.direction.Direction_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package;
 

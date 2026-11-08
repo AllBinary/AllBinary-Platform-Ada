@@ -27,6 +27,7 @@ with javax.microedition.lcdui.Font_Package;
 with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
+with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 
 package body org.allbinary.animation.vector.LineAnimation_Package is
 

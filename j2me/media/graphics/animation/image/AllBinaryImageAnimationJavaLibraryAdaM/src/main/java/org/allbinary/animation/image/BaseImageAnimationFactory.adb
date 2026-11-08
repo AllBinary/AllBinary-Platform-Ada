@@ -31,8 +31,12 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package; use org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References;
+with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is

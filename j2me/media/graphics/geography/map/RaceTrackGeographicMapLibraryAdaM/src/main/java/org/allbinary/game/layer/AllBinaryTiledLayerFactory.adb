@@ -25,11 +25,14 @@ with org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Pack
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
 with org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package; use org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.CellPosition_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.game.Layer_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
 

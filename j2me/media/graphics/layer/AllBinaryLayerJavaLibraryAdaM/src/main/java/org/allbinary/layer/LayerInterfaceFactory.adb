@@ -38,6 +38,8 @@ with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.LayerInterface_Package;
@@ -152,7 +154,7 @@ package body org.allbinary.layer.LayerInterfaceFactory_Package is
    begin
         commonStrings := CommonStrings_Package.getInstance;
         This.logUtil.putF (StringMaker_Package.Create.append (This.HASHTABLE_LABEL).append (StringUtil_Package.getInstance.toString (hashtable)).toString, LayerInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
-        typeInteger := Java_Unbox_Integer (hashtable.get (Java_Object_Access (Layer_Package.ID)));
+        typeInteger := Java_Unbox_Integer (hashtable.get (Java_Box (Layer_Package.ID)));
         layerInterfaceFactoryInterface := LayerInterfaceFactoryInterface_Access (This.list.objectArray ((Integer (typeInteger)) - (1)));
         return layerInterfaceFactoryInterface.getNextInstance (hashtable, x, y, z);
    end getNexInstance;

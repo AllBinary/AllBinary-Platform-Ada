@@ -26,15 +26,29 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionUtil_Package;
+with org.allbinary.direction.DirectionalInterface_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimationInterface_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
@@ -105,14 +119,14 @@ package body org.allbinary.animation.RotationAnimationFactory_Package is
    --  throws Exception
    function getInstance (This : in out RotationAnimationFactory; instanceId : Integer) return Animation_Access is
    begin
-        return NullRotationAnimation_Package.createTotalAngle (AngleInfo_Package.getInstance (This.angleIncrement), This.totalAngle, AnimationBehavior_Package.getInstance);
+        return Animation_Access (NullRotationAnimation_Package.createTotalAngle (AngleInfo_Package.getInstance (This.angleIncrement), This.totalAngle, AnimationBehavior_Package.getInstance));
    end getInstance;
 
    --  throws Exception
    function getInstanceAnimation (This : in out RotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
       animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
-        return NullRotationAnimation_Package.createTotalAngle (AngleInfo_Package.getInstance (This.angleIncrement), This.totalAngle, AnimationBehavior_Package.getInstance);
+        return Animation_Access (NullRotationAnimation_Package.createTotalAngle (AngleInfo_Package.getInstance (This.angleIncrement), This.totalAngle, AnimationBehavior_Package.getInstance));
    end getInstanceAnimation;
 
    procedure setInitialScale (This : in out RotationAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is

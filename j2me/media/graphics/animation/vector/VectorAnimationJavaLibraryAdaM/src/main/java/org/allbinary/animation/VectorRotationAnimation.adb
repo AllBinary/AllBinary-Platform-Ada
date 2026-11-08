@@ -24,6 +24,7 @@ with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Pack
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.math.FrameUtil_Package;

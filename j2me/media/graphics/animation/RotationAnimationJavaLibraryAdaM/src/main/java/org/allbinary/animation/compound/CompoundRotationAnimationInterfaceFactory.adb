@@ -18,26 +18,44 @@ with org.allbinary.animation.Animation_Package_References;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.animation.compound.CompoundRotationAnimation_Package; use org.allbinary.animation.compound.CompoundRotationAnimation_Package;
-with org.allbinary.animation.compound.RotationAnimationArrayUtil_Package; use org.allbinary.animation.compound.RotationAnimationArrayUtil_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleInfo_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.animation.compound.CompoundAnimationInterface_Package;
 with org.allbinary.animation.compound.CompoundRotationAnimation_Package;
+with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionUtil_Package;
+with org.allbinary.direction.DirectionalInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
 with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
-with org.allbinary.animation.compound.RotationAnimationArrayUtil_Package;
+with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.IndexedAnimationInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.animation.RotationAnimationInterface_Package;
+with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.animation.compound.CompoundRotationAnimationInterfaceFactory_Package is
 
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
    package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
    function "=" (Left, Right : Animation_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
@@ -59,16 +77,6 @@ package body org.allbinary.animation.compound.CompoundRotationAnimationInterface
    function "=" (Left, Right : AnimationBehaviorFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.AnimationBehaviorFactory_Package_References."=";
    subtype AnimationBehaviorFactory_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehaviorFactory_Package_References.AnimationBehaviorFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AnimationBehaviorFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.AnimationBehaviorFactory_Package_References."=";
-   subtype AnimationInterfaceFactoryInterface_Access is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access;
-   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
-   subtype AnimationInterfaceFactoryInterface_Access_Array is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access_Array;
-   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access_Array) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
-   subtype AnimationInterfaceFactoryInterface_Access_Array_Access is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access_Array_Access;
-   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
-   subtype AnimationInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access_Array_Access_Array;
-   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
-   subtype AnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References.AnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : AnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_References."=";
    procedure Initialize_Fields (This : in out CompoundRotationAnimationInterfaceFactory'Class) is
    begin
       null;
@@ -98,7 +106,7 @@ package body org.allbinary.animation.compound.CompoundRotationAnimationInterface
 
    function createAnimation (This : in out CompoundRotationAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) return Animation_Access is
    begin
-        return Animation_Access (CompoundRotationAnimation_Package.Create (RotationAnimationArrayUtil_Package.getInstance.toRotationAnimationArray (animationInterfaceArray), This.animationBehaviorFactory.getOrCreateInstance));
+        return Animation_Access (CompoundRotationAnimation_Package.Create ((if animationInterfaceArray = null then null else new RotationAnimation_Access_Array'(for Java_Index in animationInterfaceArray'Range => RotationAnimation_Access (animationInterfaceArray (Java_Index)))), This.animationBehaviorFactory.getOrCreateInstance));
    end createAnimation;
 
    procedure createArray (This : in out CompoundRotationAnimationInterfaceFactory; size : Integer) is

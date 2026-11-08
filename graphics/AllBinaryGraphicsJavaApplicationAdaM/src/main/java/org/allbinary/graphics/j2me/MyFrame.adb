@@ -59,6 +59,7 @@ with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.math.FrameUtil_Package;
 with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.input.GameInputStrings_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 with org.allbinary.graphics.GraphicsStrings_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;

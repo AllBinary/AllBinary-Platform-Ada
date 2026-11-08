@@ -100,6 +100,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.GameType_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;

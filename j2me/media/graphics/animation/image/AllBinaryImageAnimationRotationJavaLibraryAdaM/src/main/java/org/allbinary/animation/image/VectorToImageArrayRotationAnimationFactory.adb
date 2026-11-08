@@ -34,18 +34,29 @@ with org.allbinary.media.image.ImageToRotationImageArrayUtil_Package; use org.al
 with org.allbinary.vector.VectorInfo_Package; use org.allbinary.vector.VectorInfo_Package;
 with org.allbinary.vector.VectorInfo_Package_References;
 with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.math.NamedAngle_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
@@ -152,7 +163,7 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
       angleFactory : AngleFactory_Access;
    begin
         angleFactory := AngleFactory_Package.getInstance;
-        This.angleIncrement := (angleFactory.TOTAL_ANGLE) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity);
+        This.angleIncrement := (Integer (angleFactory.TOTAL_ANGLE)) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity);
         This.imageArray := ImageToRotationImageArrayUtil_Package.getInstance.generate (VectorToImageArrayRotationAnimationFactory'Class (This).getImage, VectorToImageArrayRotationAnimationFactory'Class (This).getAngleIncrement, Integer (angleFactory.TOTAL_ANGLE));
    end init;
 

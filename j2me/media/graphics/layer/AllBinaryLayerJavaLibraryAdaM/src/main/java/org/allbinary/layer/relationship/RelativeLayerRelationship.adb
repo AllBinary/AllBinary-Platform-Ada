@@ -26,6 +26,8 @@ with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.LayerInterface_Package;

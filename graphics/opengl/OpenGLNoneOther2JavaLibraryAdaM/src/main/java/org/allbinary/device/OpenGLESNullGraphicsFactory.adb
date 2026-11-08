@@ -12,6 +12,7 @@ with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.device.GraphicsInterface_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.device.OpenGLESGraphics_Package;
+with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 
 package body org.allbinary.device.OpenGLESNullGraphicsFactory_Package is

@@ -26,9 +26,44 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package; use org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package;
+with org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
+with org.allbinary.layer.event.LayerManagerEvent_Package;
+with org.allbinary.layer.event.LayerManagerEventHandler_Package;
+with org.allbinary.layer.event.LayerManagerEventListener_Package;
+with org.allbinary.layer.LayerManagerLoggingBase_Package;
+with org.allbinary.layer.LayerProcessor_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.SynchObject_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
 
@@ -105,7 +140,7 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
         if (visitor) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Visitor Provided")));
         end if;
-        inputProbability := InputProbability_Access (hashtable.get (Java_Object_Access (InputProbability_Package.INPUT_PROBABILITY)));
+        inputProbability := InputProbability_Access (hashtable.get (Java_Box (InputProbability_Package.INPUT_PROBABILITY)));
         return ArtificialIntelligenceInterface_Access (BasicRandomAI_Package.Create (ownerLayerInterface, gameInput, inputProbability, visitor));
    end getInstance;
 

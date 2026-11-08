@@ -28,8 +28,35 @@ with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactor
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;
 with org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package;
 with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimationFactory_Package is
 
@@ -83,7 +110,7 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
       image : constant Image_Access := Image_Access (image_Param);
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
-        return AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, width, height, Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))), animationBehaviorFactory, False);
+        return AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, width, height, Short_Integer (((Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE)) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))), animationBehaviorFactory, False);
    end createFactory;
 
    --  throws Exception
@@ -100,7 +127,7 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       androidImageRotationAnimationFactory : AllBinaryAndroidImageRotationAnimationFactory_Access;
    begin
-        androidImageRotationAnimationFactory := AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))), animationBehaviorFactory, False);
+        androidImageRotationAnimationFactory := AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, Short_Integer (((Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE)) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))), animationBehaviorFactory, False);
         androidImageRotationAnimationFactory.init (-((Java_Shift_Right_Arithmetic (image.getWidth, 2))), -((Java_Shift_Right_Arithmetic (image.getHeight, 2))));
         return androidImageRotationAnimationFactory;
    end createFactoryU;
@@ -111,7 +138,7 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       androidImageRotationAnimationFactory : AllBinaryAndroidImageRotationAnimationFactory_Access;
    begin
-        androidImageRotationAnimationFactory := AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))), animationBehaviorFactory, False);
+        androidImageRotationAnimationFactory := AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, Short_Integer (((Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE)) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))), animationBehaviorFactory, False);
         androidImageRotationAnimationFactory.init (dx, dy);
         return androidImageRotationAnimationFactory;
    end createFactoryDXYU;

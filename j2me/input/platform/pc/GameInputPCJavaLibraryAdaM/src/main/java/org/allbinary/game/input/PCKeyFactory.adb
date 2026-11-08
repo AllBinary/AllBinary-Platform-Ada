@@ -22,6 +22,7 @@ with org.allbinary.game.input.PCGameKey_Package; use org.allbinary.game.input.PC
 with org.allbinary.game.input.PCGameKey_Package_References;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.Input_Package_References;
+with org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.PCGameKey_Package;
 
 package body org.allbinary.game.input.PCKeyFactory_Package is

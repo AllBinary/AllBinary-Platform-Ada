@@ -29,9 +29,13 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.part.weapon.SalvoInterface_Package;
 
 package body org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package is

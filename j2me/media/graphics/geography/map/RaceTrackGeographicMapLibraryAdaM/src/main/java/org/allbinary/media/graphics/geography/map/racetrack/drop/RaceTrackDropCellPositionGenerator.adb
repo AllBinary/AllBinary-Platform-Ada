@@ -43,9 +43,12 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.time.GameTickTimeDelayHelper_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -60,6 +63,7 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCellPositionGenerator_Package is

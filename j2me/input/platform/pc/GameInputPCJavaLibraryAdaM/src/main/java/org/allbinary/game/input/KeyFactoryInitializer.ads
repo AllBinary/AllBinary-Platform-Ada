@@ -70,7 +70,7 @@ package org.allbinary.game.input.KeyFactoryInitializer_Package is
 
    procedure Initialize (This : in out KeyFactoryInitializer'Class);
    function Create return KeyFactoryInitializer_Access;
-   procedure init (This : in out KeyFactoryInitializer);
+   procedure init_Method (This : in out KeyFactoryInitializer);
 
 end org.allbinary.game.input.KeyFactoryInitializer_Package;
 

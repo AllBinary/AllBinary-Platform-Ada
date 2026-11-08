@@ -24,6 +24,7 @@ with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package_References;
 with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package; use org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package;
 with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package_References;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 

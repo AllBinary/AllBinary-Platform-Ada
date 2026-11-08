@@ -40,6 +40,7 @@ with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.EnumerationUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.game.input.Input_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;

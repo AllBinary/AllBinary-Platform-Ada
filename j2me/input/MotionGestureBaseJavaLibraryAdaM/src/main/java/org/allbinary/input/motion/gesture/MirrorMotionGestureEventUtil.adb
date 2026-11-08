@@ -19,7 +19,14 @@ with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package
 with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package_References;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.BaseCircularPool_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.game.input.Input_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package is

@@ -25,7 +25,19 @@ with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.Enumerat
 with org.allbinary.util.EnumerationUtil_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.LevelLayersFinder_Package is
 
@@ -104,7 +116,7 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
         cachedIntegerCanBeNull := 0;
         while This.enumerationUtil.hasMoreElements (enumeration) loop
             layerHashtableCanBeNull := ABHashtable_Access (hashtable.get (Java_Object_Access (This.enumerationUtil.nextElement (enumeration))));
-            integerCanBeNull := Java_Unbox_Integer (layerHashtableCanBeNull.get (Java_Object_Access (Layer_Package.ID)));
+            integerCanBeNull := Java_Unbox_Integer (layerHashtableCanBeNull.get (Java_Box (Layer_Package.ID)));
             cachedIntegerCanBeNull := smallIntegerSingletonFactory.getAt (Integer (integerCanBeNull));
             if not (list.contains (Java_Box (cachedIntegerCanBeNull))) then
                 list.add (Java_Box (cachedIntegerCanBeNull));

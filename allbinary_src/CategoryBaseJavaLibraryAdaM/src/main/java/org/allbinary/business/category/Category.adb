@@ -261,7 +261,7 @@ package body org.allbinary.business.category.Category_Package is
    function addChildProperty (This : in out Category; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) return Boolean is
       categoryPropertiesInterface : constant CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
    begin
-        This.typeVector.add (This.PROPERTIES);
+        This.typeVector.add (Java_Box (This.PROPERTIES));
         return This.childCategoryVector.add (CategoryPropertiesInterface_Package.Java_Object_Access_From_CategoryPropertiesInterface (categoryPropertiesInterface));
    end addChildProperty;
 
@@ -277,7 +277,7 @@ package body org.allbinary.business.category.Category_Package is
         childCategoryHierarchyInterface.setParent (Category_Access'(This'Unchecked_Access));
         childCategoryHierarchyInterface.setRoot (Category'Class (This).getHierarchy.getRoot);
         categoryInterface.setHierarchy (childCategoryHierarchyInterface);
-        This.typeVector.add (This.CATEGORY_Var);
+        This.typeVector.add (Java_Box (This.CATEGORY_Var));
         return This.childCategoryVector.add (CategoryInterface_Package.Java_Object_Access_From_CategoryInterface (categoryInterface));
    end addChild;
 

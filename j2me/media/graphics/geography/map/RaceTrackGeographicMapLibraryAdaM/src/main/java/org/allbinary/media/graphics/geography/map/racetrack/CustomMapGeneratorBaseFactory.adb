@@ -19,6 +19,8 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -37,6 +39,7 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBaseFactory_Package is
 

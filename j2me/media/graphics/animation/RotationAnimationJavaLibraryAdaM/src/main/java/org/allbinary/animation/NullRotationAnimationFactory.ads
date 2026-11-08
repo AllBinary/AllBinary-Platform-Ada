@@ -38,8 +38,7 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
-limited with org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.Animation_Package_References;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullRotationAnimationFactory_Package is
 
@@ -66,16 +65,6 @@ package org.allbinary.animation.NullRotationAnimationFactory_Package is
    use type ScaleProperties_Access_Array_Access_Array;
    subtype ScaleProperties_Access_Array_Access_Array_Access is org.allbinary.media.ScaleProperties_Package_References.ScaleProperties_Access_Array_Access_Array_Access;
    use type ScaleProperties_Access_Array_Access_Array_Access;
-   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
-   use type Animation_Access;
-   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
-   use type Animation_Access_Array;
-   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
-   use type Animation_Access_Array_Access;
-   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
-   use type Animation_Access_Array_Access_Array;
-   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
-   use type Animation_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -136,8 +125,7 @@ with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Packag
 limited with org.allbinary.animation.NullRotationAnimationFactory_Package;
 with org.allbinary.animation.NullRotationAnimationFactory_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
-limited with org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.Animation_Package_References;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullRotationAnimation2_Package is
 
@@ -174,16 +162,6 @@ package org.allbinary.animation.NullRotationAnimation2_Package is
    use type NullRotationAnimationFactory_Access_Array_Access_Array;
    subtype NullRotationAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.NullRotationAnimationFactory_Package_References.NullRotationAnimationFactory_Access_Array_Access_Array_Access;
    use type NullRotationAnimationFactory_Access_Array_Access_Array_Access;
-   subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
-   use type Animation_Access;
-   subtype Animation_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array;
-   use type Animation_Access_Array;
-   subtype Animation_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access;
-   use type Animation_Access_Array_Access;
-   subtype Animation_Access_Array_Access_Array is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array;
-   use type Animation_Access_Array_Access_Array;
-   subtype Animation_Access_Array_Access_Array_Access is org.allbinary.animation.Animation_Package_References.Animation_Access_Array_Access_Array_Access;
-   use type Animation_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

@@ -32,8 +32,12 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
 

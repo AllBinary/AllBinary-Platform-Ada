@@ -43,8 +43,13 @@ with org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package; u
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.image.ImageFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Package is
 

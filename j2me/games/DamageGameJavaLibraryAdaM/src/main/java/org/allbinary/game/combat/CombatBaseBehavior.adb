@@ -19,6 +19,7 @@ with org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package; use org.
 with org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package_References;
 with org.allbinary.game.combat.damage.DamageableInterface_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package;
+with org.allbinary.layer.NamedInterface_Package;
 
 package body org.allbinary.game.combat.CombatBaseBehavior_Package is
 

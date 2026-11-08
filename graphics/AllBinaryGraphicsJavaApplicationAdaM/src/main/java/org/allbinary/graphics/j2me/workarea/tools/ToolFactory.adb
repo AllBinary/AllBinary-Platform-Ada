@@ -29,6 +29,7 @@ with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.input.GameInputStrings_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;

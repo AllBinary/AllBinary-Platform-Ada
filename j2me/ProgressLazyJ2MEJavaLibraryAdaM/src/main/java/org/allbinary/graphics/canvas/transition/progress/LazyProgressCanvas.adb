@@ -18,6 +18,25 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package is
 

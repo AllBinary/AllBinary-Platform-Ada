@@ -18,6 +18,9 @@ with org.allbinary.game.input.J2MEGameKey_Package; use org.allbinary.game.input.
 with org.allbinary.game.input.J2MEKeyFactory_Package; use org.allbinary.game.input.J2MEKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.Input_Package_References;
+with org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.J2MEGameKey_Package;
 with org.allbinary.game.input.J2MEKeyFactory_Package;
 

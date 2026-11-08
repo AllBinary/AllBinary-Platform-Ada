@@ -24,6 +24,7 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
+with org.allbinary.graphics.GPoint_Package;
 
 package body org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package is
 

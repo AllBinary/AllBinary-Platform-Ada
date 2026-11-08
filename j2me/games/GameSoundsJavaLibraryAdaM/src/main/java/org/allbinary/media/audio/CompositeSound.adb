@@ -15,6 +15,7 @@
 
 with org.allbinary.media.audio.PlayerComposite_Package; use org.allbinary.media.audio.PlayerComposite_Package;
 with org.allbinary.media.audio.AllBinaryMediaManager_Package; use org.allbinary.media.audio.AllBinaryMediaManager_Package;
+with org.allbinary.media.audio.AllBinaryMediaManager_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with javax.microedition.media.Control_Package;
@@ -27,6 +28,7 @@ with org.allbinary.logic.NullUtil_Package;
 with javax.microedition.media.Player_Package;
 with org.allbinary.media.audio.PlayerComposite_Package;
 with javax.microedition.media.PlayerListener_Package;
+with org.allbinary.media.audio.SoundsFactoryInterface_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeDelayHelper_Package;

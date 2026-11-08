@@ -31,9 +31,13 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.math.NoDecimalTrigTable_Package; use org.allbinary.math.NoDecimalTrigTable_Package;
 with org.allbinary.math.NoDecimalTrigTable_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.part.weapon.SalvoInterface_Package;
 
 package body org.allbinary.game.part.weapon.StraightMultiProjectileWeaponPart_Package is
@@ -189,10 +193,10 @@ package body org.allbinary.game.part.weapon.StraightMultiProjectileWeaponPart_Pa
         increment := (reducedWidth) / (((This.total) - (1)));
         next := -(halfWidth);
         for index in 0 .. (This.total) - 1 loop
-            sine := Long_Long_Integer (((next) * (This.noDecimalTrigTable.sin (Integer (angle)))));
-            beamX := Integer (((sine) / (This.noDecimalTrigTable.SCALE)));
-            cosine := Long_Long_Integer (((next) * (This.noDecimalTrigTable.cos (Integer (angle)))));
-            beamY := -(Integer (((cosine) / (This.noDecimalTrigTable.SCALE))));
+            sine := ((Long_Long_Integer (next)) * (This.noDecimalTrigTable.sin (Integer (angle))));
+            beamX := Integer (((sine) / (Long_Long_Integer (This.noDecimalTrigTable.SCALE))));
+            cosine := ((Long_Long_Integer (next)) * (This.noDecimalTrigTable.cos (Integer (angle))));
+            beamY := -(Integer (((cosine) / (Long_Long_Integer (This.noDecimalTrigTable.SCALE)))));
             weaponLayer := This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (sourceLayerInterface, (x) + (beamX), (y) + (beamY), 0, Integer (angle), Integer (otherAngle), weaponProperties, scoreableInterface);
             allbinaryLayerManager.append (weaponLayer);
             next := (next) + (increment);

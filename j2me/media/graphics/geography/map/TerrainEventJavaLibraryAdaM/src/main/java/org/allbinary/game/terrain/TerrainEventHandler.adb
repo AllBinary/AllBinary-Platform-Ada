@@ -31,6 +31,7 @@ with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.ter
 with org.allbinary.game.terrain.TerrainEventListenerInterface_Package; use org.allbinary.game.terrain.TerrainEventListenerInterface_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.math.Angle_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package;

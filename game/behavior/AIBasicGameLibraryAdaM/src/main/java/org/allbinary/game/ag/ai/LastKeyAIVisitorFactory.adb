@@ -25,6 +25,7 @@ with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package;
 
 package body org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is
 

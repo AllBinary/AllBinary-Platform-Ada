@@ -35,6 +35,7 @@ with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.math.NamedAngle_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;

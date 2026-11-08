@@ -36,6 +36,7 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package_References;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_References;
+with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
@@ -49,6 +50,7 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionPrope
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package is
 

@@ -116,7 +116,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory
    begin
         listCanBeNull := This.hashtable.get (Java_Box (pathIdInteger));
         if (listCanBeNull) = (null) then
-            listCanBeNull := This.basicArrayListUtil.getImmutableInstance;
+            listCanBeNull := Java_Object_Access (This.basicArrayListUtil.getImmutableInstance);
         end if;
         return BasicArrayList_Access (listCanBeNull);
    end getOrCreate;

@@ -19,7 +19,26 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package; use org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package is
 

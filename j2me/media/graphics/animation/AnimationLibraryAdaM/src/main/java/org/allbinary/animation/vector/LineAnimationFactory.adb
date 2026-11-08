@@ -31,6 +31,7 @@ with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.vector.LineAnimation_Package;
 with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
+with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.layer.PositionInterface_Package;
 
 package body org.allbinary.animation.vector.LineAnimationFactory_Package is

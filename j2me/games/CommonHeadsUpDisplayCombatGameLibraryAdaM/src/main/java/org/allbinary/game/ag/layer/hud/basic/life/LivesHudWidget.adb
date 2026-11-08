@@ -26,7 +26,9 @@ with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_Referen
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Image_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is

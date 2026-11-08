@@ -29,8 +29,11 @@ with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Pa
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.layer.pickup.IconLayer_Package;
 with javax.microedition.lcdui.Image_Package;

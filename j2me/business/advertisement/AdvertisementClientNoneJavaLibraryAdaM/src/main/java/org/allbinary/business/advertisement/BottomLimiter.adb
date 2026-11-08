@@ -26,7 +26,6 @@ with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
-with javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
@@ -38,7 +37,6 @@ with org.allbinary.string_Id.CommonStrings_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
-with org.microemu.DisplayAccess_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with javax.microedition.lcdui.Displayable_Package;
@@ -67,7 +65,6 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
-with org.microemu.MIDletAccess_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
@@ -86,6 +83,8 @@ with javax.microedition.lcdui.TextField_Package;
 with javax.microedition.lcdui.Ticker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.microemu.device.ui.UIFactory_Package;
+with org.allbinary.input.event.VirtualKeyboardEvent_Package;
+with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 
 package body org.allbinary.business.advertisement.BottomLimiter_Package is
 

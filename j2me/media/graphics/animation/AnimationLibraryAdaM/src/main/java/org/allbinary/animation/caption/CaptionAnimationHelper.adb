@@ -47,6 +47,7 @@ with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.SequenceInterface_Package;

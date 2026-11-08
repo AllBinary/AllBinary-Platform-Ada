@@ -36,32 +36,47 @@ with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package_References;
+with org.allbinary.logic.ABSystemWrapper_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.graphics.displayable.BaseScalable_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.microemu.device.ui.CanvasUI_Package;
-with javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package;
 with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
-with org.microemu.DisplayAccess_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with javax.microedition.lcdui.Displayable_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
 with javax.microedition.lcdui.Event_Package;
 with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.math.FrameUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
 with javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.ImageStringItem_Package;
 with org.microemu.device.InputMethod_Package;
@@ -70,22 +85,38 @@ with org.microemu.device.InputMethodListener_Package;
 with javax.microedition.lcdui.Item_Package;
 with javax.microedition.lcdui.ItemCommandListener_Package;
 with javax.microedition.lcdui.ItemStateListener_Package;
+with org.allbinary.layer.Layer_Package;
+with org.allbinary.layer.event.LayerManagerEvent_Package;
+with org.allbinary.layer.event.LayerManagerEventHandler_Package;
+with org.allbinary.layer.event.LayerManagerEventListener_Package;
+with org.allbinary.layer.LayerManagerLoggingBase_Package;
+with org.allbinary.layer.LayerProcessor_Package;
 with javax.microedition.lcdui.List_Package;
 with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
-with org.microemu.MIDletAccess_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.displayable.ScalableListener_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.SynchObject_Package;
 with javax.microedition.lcdui.TextBox_Package;
 with org.microemu.device.ui.TextBoxUI_Package;
 with javax.microedition.lcdui.TextField_Package;
 with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.microemu.device.ui.UIFactory_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
 
@@ -194,7 +225,7 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
         This.velocityInterface := VelocityInterface_Access (This.baseVelocityInterface);
         rotationAnimationInterface := RotationAnimationInterface_Access (This.rotationAnimationInterface);
         angleIncrementInfo := rotationAnimationInterface.getAngleInfoP.getAngleIncrementInfo;
-        rotationAnimationInterfaceCompositeInterface.setFrame (angleIncrementInfo.RIGHT_FRAME.intValue);
+        rotationAnimationInterfaceCompositeInterface.setFrame (Integer (angleIncrementInfo.RIGHT_FRAME));
    end Initialize;
 
    function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return HorizontaRotationManeuverAI_Access is
@@ -213,7 +244,7 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
         rotationAnimationInterface := RotationAnimationInterface_Access (This.rotationAnimationInterface);
         angleIncrementInfo := rotationAnimationInterface.getAngleInfoP.getAngleIncrementInfo;
         rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface);
-        rotationAnimationInterfaceCompositeInterface.setFrame (angleIncrementInfo.RIGHT_FRAME.intValue);
+        rotationAnimationInterfaceCompositeInterface.setFrame (Integer (angleIncrementInfo.RIGHT_FRAME));
         allbinaryLayer := HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface;
         allbinaryLayer.setPosition (allbinaryLayer.getXP, 1, allbinaryLayer.getZP);
    end transition;
@@ -232,12 +263,12 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
         angleIncrementInfo := rotationAnimationInterface.getAngleInfoP.getAngleIncrementInfo;
         frame := This.rotationAnimationInterface.getFrame;
         ownerLayerInterface := HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface;
-        if (((ownerLayerInterface.getXP) - (ownerLayerInterface.getWidth)) <= (0)) and then ((frame) = (angleIncrementInfo.LEFT_FRAME.intValue)) then
+        if (((ownerLayerInterface.getXP) - (ownerLayerInterface.getWidth)) <= (0)) and then ((frame) = (Integer (angleIncrementInfo.LEFT_FRAME))) then
             HorizontaRotationManeuverAI'Class (This).reverse_Id;
             HorizontaRotationManeuverAI'Class (This).drop;
         end if;
         displayInfo := DisplayInfoSingleton_Package.getInstance;
-        if (((ownerLayerInterface.getX2) + (ownerLayerInterface.getWidth)) > (displayInfo.getLastWidth)) and then ((frame) = (angleIncrementInfo.RIGHT_FRAME.intValue)) then
+        if (((ownerLayerInterface.getX2) + (ownerLayerInterface.getWidth)) > (displayInfo.getLastWidth)) and then ((frame) = (Integer (angleIncrementInfo.RIGHT_FRAME))) then
             HorizontaRotationManeuverAI'Class (This).reverse_Id;
             HorizontaRotationManeuverAI'Class (This).accelerate;
             HorizontaRotationManeuverAI'Class (This).drop;
@@ -248,9 +279,9 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
             This.velocityInterface.limitMaxXYVelocity ((This.velocityInterface.getMaxForwardVelocity) / (This.currentSpeedDivisor));
         end if;
         declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
-        if (frame) = (angleIncrementInfo.LEFT_FRAME.intValue) then
+        if (frame) = (Integer (angleIncrementInfo.LEFT_FRAME)) then
             BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM0);
-        elsif (frame) = (angleIncrementInfo.RIGHT_FRAME.intValue) then
+        elsif (frame) = (Integer (angleIncrementInfo.RIGHT_FRAME)) then
             BasicAI_Package.BasicAI (This).processKeyAI (Canvas_Package.KEY_POUND);
         end if;
    end processAI;
@@ -264,13 +295,13 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
         rotationAnimationInterface := RotationAnimationInterface_Access (This.rotationAnimationInterface);
         angleIncrementInfo := rotationAnimationInterface.getAngleInfoP.getAngleIncrementInfo;
         frame := This.rotationAnimationInterface.getFrame;
-        if (frame) = (angleIncrementInfo.LEFT_FRAME.intValue) then
+        if (frame) = (Integer (angleIncrementInfo.LEFT_FRAME)) then
             rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface);
-            rotationAnimationInterfaceCompositeInterface.setFrame (angleIncrementInfo.RIGHT_FRAME.intValue);
+            rotationAnimationInterfaceCompositeInterface.setFrame (Integer (angleIncrementInfo.RIGHT_FRAME));
             This.baseVelocityInterface.zero;
-        elsif (frame) = (angleIncrementInfo.RIGHT_FRAME.intValue) then
+        elsif (frame) = (Integer (angleIncrementInfo.RIGHT_FRAME)) then
             rotationAnimationInterfaceCompositeInterface := RotationAnimationInterfaceCompositeInterface_Access (HorizontaRotationManeuverAI'Class (This).getOwnerLayerInterface);
-            rotationAnimationInterfaceCompositeInterface.setFrame (angleIncrementInfo.LEFT_FRAME.intValue);
+            rotationAnimationInterfaceCompositeInterface.setFrame (Integer (angleIncrementInfo.LEFT_FRAME));
             This.baseVelocityInterface.zero;
         end if;
    end reverse_Id;

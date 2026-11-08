@@ -16,6 +16,8 @@
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.PointFactory_Package;
 
 package body org.allbinary.graphics.Line_Package is
 
@@ -64,8 +66,8 @@ package body org.allbinary.graphics.Line_Package is
 
    procedure update (This : in out Line) is
    begin
-        This.deltaX := (Long_Float (Line'Class (This).getP1.getX)) - (Line'Class (This).getP2.getX);
-        This.deltaY := (Long_Float (Line'Class (This).getP1.getY)) - (Line'Class (This).getP2.getY);
+        This.deltaX := (Long_Float (Line'Class (This).getP1.getX)) - (Long_Float (Line'Class (This).getP2.getX));
+        This.deltaY := (Long_Float (Line'Class (This).getP1.getY)) - (Long_Float (Line'Class (This).getP2.getY));
    end update;
 
    function getDeltaX (This : in out Line) return Long_Float is

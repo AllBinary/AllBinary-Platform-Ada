@@ -25,11 +25,15 @@ with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.g
 with org.allbinary.game.part.weapon.BasicWeaponPart_Package_References;
 with org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package; use org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package;
 with org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.part.weapon.BasicWeaponPart_Package;
 with org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.part.weapon.SalvoInterface_Package;
 
 package body org.allbinary.game.part.weapon.BasicWeaponPartCircularPool_Package is

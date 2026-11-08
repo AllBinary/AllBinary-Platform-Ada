@@ -29,6 +29,22 @@ with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleP
 with org.allbinary.media.ScaleProperties_Package_References;
 with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;
 with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;
+with org.allbinary.math.Angle_Package;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimationFactory_Package is
 

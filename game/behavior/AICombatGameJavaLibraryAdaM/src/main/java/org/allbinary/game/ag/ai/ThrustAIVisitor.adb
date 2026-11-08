@@ -25,7 +25,6 @@ with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.microemu.device.ui.CanvasUI_Package;
-with javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
@@ -35,7 +34,6 @@ with org.allbinary.string_Id.CommonSeps_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
-with org.microemu.DisplayAccess_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
 with javax.microedition.lcdui.Displayable_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
@@ -61,7 +59,6 @@ with org.microemu.device.ui.ListUI_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
-with org.microemu.MIDletAccess_Package;
 with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
@@ -133,7 +130,7 @@ package body org.allbinary.game.ag.ai.ThrustAIVisitor_Package is
             This.logUtil.put (commonStrings.EXCEPTION_Id, ThrustAIVisitor_Access'(This'Unchecked_Access), commonStrings.VISIT, e);
                 end;
         end;
-        return This.TRUE;
+        return Java_Box (This.TRUE);
    end visit;
 
    procedure visit (This : in out ThrustAIVisitor; anyType_Param : access Java_Object'Class) is

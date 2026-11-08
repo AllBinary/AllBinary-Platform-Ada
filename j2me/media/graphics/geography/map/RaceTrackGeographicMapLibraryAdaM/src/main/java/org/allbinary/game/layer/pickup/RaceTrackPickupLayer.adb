@@ -26,6 +26,7 @@ with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPositio
 with org.allbinary.view.event.ViewPositionEventHandler_Package; use org.allbinary.view.event.ViewPositionEventHandler_Package;
 with org.allbinary.view.event.ViewPositionEventHandler_Package_References;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+with org.allbinary.graphics.GPoint_Package;
 
 package body org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package is
 

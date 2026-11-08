@@ -20,8 +20,17 @@ with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.Layer_Package_References;
 with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.PaintableLayerComposite_Package is
 

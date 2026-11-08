@@ -27,6 +27,7 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;

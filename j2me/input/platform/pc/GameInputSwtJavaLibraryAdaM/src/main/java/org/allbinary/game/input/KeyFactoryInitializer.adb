@@ -18,6 +18,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
@@ -59,11 +60,11 @@ package body org.allbinary.game.input.KeyFactoryInitializer_Package is
    end Create;
 
 
-   procedure init (This : in out KeyFactoryInitializer) is
+   procedure init_Method (This : in out KeyFactoryInitializer) is
    begin
         This.logUtil.putF (This.commonStrings.START, KeyFactoryInitializer_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         SmallIntegerSingletonFactory_Package.getInstance.initWithRange (16#2D0#, 6);
-   end init;
+   end init_Method;
 
 end org.allbinary.game.input.KeyFactoryInitializer_Package;
 

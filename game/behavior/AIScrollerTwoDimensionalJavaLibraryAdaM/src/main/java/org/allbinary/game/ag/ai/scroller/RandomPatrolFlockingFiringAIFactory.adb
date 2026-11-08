@@ -27,6 +27,7 @@ with org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package; use org.allbinary
 with org.allbinary.game.ag.ai.scroller.TimedFireAI_Package; use org.allbinary.game.ag.ai.scroller.TimedFireAI_Package;
 with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package;
 with org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.game.ag.ai.scroller.TimedFireAI_Package;
 
 package body org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFactory_Package is

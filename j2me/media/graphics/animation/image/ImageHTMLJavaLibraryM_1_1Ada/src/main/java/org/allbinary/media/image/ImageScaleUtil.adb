@@ -22,9 +22,25 @@ with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.devic
 with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
 with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
 with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.image.ImageCacheBase_Package;
 with org.allbinary.media.image.ImageCreationUtil_Package;
+with org.allbinary.image.ImageFactory_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.image.ImageScaleUtil_Package is
 

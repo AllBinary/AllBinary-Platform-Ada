@@ -13,14 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.math.Angle_Package;
 with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
 with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityInterface_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.math.NoDecimalTrigTable_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;

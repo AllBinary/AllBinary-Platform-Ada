@@ -21,9 +21,11 @@ with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Pack
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.layer.pickup.PickupLayer_Package;
+with org.allbinary.graphics.Rectangle_Package;
 
 package body org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package is
 

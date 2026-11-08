@@ -18,6 +18,7 @@ with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
 with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
 with org.allbinary.game.collision.CollisionType_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.game.collision.CollidableBaseBehavior_Package;
 with org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
 with org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package;
@@ -33,16 +34,21 @@ with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
 with org.allbinary.game.collision.LayerCollisionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.layer.NamedInterface_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package is
 

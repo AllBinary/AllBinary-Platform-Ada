@@ -21,6 +21,7 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.animation.SequenceInterface_Package;
 with org.allbinary.animation.SequentialAnimationInterface_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;

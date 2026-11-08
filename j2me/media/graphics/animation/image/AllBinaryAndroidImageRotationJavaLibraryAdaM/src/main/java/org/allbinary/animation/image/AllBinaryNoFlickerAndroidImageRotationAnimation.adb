@@ -30,6 +30,8 @@ with org.allbinary.media.image.AndroidImageUtil_Package_References;
 with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package_References;
+with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.math.FrameUtil_Package;
 
 package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotationAnimation_Package is
 

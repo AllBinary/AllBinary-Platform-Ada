@@ -17,7 +17,12 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
+with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.animation.image.AllBinaryPlatformImageRotationAnimationFactory_Package is

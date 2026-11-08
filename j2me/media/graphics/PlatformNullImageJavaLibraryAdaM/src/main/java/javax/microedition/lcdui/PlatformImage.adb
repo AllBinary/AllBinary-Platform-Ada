@@ -68,7 +68,7 @@ package body javax.microedition.lcdui.PlatformImage_Package is
    function getImage (This : in out PlatformImage; graphicsSurface2_Param : access Java_Object'Class) return Java_Object_Access is
       graphicsSurface2 : constant Java_Object_Access := Java_Object_Access (graphicsSurface2_Param);
    begin
-        return NullImage_Package.NULL_IMAGE;
+        return Java_Object_Access (NullImage_Package.NULL_IMAGE);
    end getImage;
 
    function getSurfaceWidth (This : in out PlatformImage; graphicsSurface2_Param : access Java_Object'Class; width : Integer) return Integer is

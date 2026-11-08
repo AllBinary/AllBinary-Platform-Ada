@@ -41,6 +41,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;

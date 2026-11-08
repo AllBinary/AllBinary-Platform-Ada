@@ -82,10 +82,10 @@ package body org.allbinary.game.configuration.InGameFeatures_Package is
    begin
         LABEL := To_Unbounded_String ("Screen Buttons");
         orientationData := OrientationData_Package.getInstance;
-        exclusiveOrientationSensorVector := BasicArrayList_Access (GameFeatureChoiceGroups_Package.getExclusiveInstance.get.get (Java_Object_Access (orientationData.ORIENTATION_SENSOR_INPUT)));
+        exclusiveOrientationSensorVector := BasicArrayList_Access (GameFeatureChoiceGroups_Package.getExclusiveInstance.get.get (Java_Box (orientationData.ORIENTATION_SENSOR_INPUT)));
         inGameFeatureChoiceGroups := InGameFeatureChoiceGroups_Package.getExclusiveInstance;
         if (exclusiveOrientationSensorVector) /= (null) then
-            inGameExclusiveOrientationSensorVectorCanBeNull := inGameFeatureChoiceGroups.get.get (Java_Object_Access (orientationData.ORIENTATION_SENSOR_INPUT));
+            inGameExclusiveOrientationSensorVectorCanBeNull := inGameFeatureChoiceGroups.get.get (Java_Box (orientationData.ORIENTATION_SENSOR_INPUT));
             if (inGameExclusiveOrientationSensorVectorCanBeNull) = (null) then
                 InGameFeatures'Class (This).addToInGameMenu;
             else
@@ -127,7 +127,7 @@ package body org.allbinary.game.configuration.InGameFeatures_Package is
         if ((features.isFeature (touchFeatureFactory.SHOW_SCREEN_BUTTONS)) or else (features.isFeature (touchFeatureFactory.AUTO_HIDE_SHOW_SCREEN_BUTTONS))) or else (features.isFeature (touchFeatureFactory.HIDE_SCREEN_BUTTONS)) then
             return True;
         end if;
-        exclusiveOrientationSensorVector := BasicArrayList_Access (GameFeatureChoiceGroups_Package.getExclusiveInstance.get.get (Java_Object_Access (OrientationData_Package.getInstance.ORIENTATION_SENSOR_INPUT)));
+        exclusiveOrientationSensorVector := BasicArrayList_Access (GameFeatureChoiceGroups_Package.getExclusiveInstance.get.get (Java_Box (OrientationData_Package.getInstance.ORIENTATION_SENSOR_INPUT)));
         if (exclusiveOrientationSensorVector) /= (null) then
             return True;
         end if;

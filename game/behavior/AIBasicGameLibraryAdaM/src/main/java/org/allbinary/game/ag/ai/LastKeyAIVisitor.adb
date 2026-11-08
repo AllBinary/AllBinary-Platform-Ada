@@ -86,7 +86,7 @@ package body org.allbinary.game.ag.ai.LastKeyAIVisitor_Package is
             This.logUtil.put (commonStrings.EXCEPTION_Id, LastKeyAIVisitor_Access'(This'Unchecked_Access), commonStrings.VISIT, e);
                 end;
         end;
-        return This.TRUE;
+        return Java_Box (This.TRUE);
    end visit;
 
    procedure visit (This : in out LastKeyAIVisitor; anyType_Param : access Java_Object'Class) is
