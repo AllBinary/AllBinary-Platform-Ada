@@ -35,7 +35,6 @@ with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package; use org.allbina
 with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
@@ -48,13 +47,16 @@ with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPoo
 with org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References;
+with org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.thread.ARunnable_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
@@ -204,16 +206,6 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
    function "=" (Left, Right : ABCustomGaugeItem_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References."=";
    subtype ABCustomGaugeItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABCustomGaugeItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References."=";
-   subtype Paintable_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access;
-   function "=" (Left, Right : Paintable_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
    subtype AllBinaryMidlet_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access;
    function "=" (Left, Right : AllBinaryMidlet_Access) return Boolean renames org.allbinary.midlet.AllBinaryMidlet_Package_References."=";
    subtype AllBinaryMidlet_Access_Array is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array;
@@ -387,13 +379,13 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
 
    procedure addEarlyPortion (This : in out ProgressCanvas; value : Integer; text : Unbounded_String; index : Integer) is
    begin
-        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
+        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text).append (To_Unbounded_String (Java_Image (SmallIntegerSingletonFactory_Package.getInstance.getAt (index)))).toString);
         This.gauge.setValue ((This.gauge.getValue) + ((ProgressCanvas'Class (This).getMaxValue) / (Float (value))));
    end addEarlyPortion;
 
    procedure addPortion (This : in out ProgressCanvas; value : Integer; text : Unbounded_String; index : Integer) is
    begin
-        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
+        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text).append (To_Unbounded_String (Java_Image (SmallIntegerSingletonFactory_Package.getInstance.getAt (index)))).toString);
         PreLogUtil_Package.put (This.text_Case, ProgressCanvas_Access'(This'Unchecked_Access), This.ADD_PORTION);
         This.gauge.setValue ((This.gauge.getValue) + ((ProgressCanvas'Class (This).getMaxValue) / (Float (value))));
    end addPortion;
@@ -473,7 +465,6 @@ with javax.microedition.lcdui.NullCommandListener_Package; use javax.microeditio
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.canvas.Processor_Package_References;
 with org.allbinary.canvas.RunnableCanvas_Package; use org.allbinary.canvas.RunnableCanvas_Package;
-with org.allbinary.canvas.RunnableCanvas_Package_References;
 with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColor_Package_References;
@@ -481,14 +472,12 @@ with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package; use org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
 with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
-with org.allbinary.graphics.paint.PaintableInterface_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -501,13 +490,16 @@ with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; u
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
 with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References;
+with org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.thread.ARunnable_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
@@ -627,16 +619,6 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressPaintable
    function "=" (Left, Right : Processor_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
    subtype Processor_Access_Array_Access_Array_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Processor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.Processor_Package_References."=";
-   subtype RunnableCanvas_Access is org.allbinary.canvas.RunnableCanvas_Package_References.RunnableCanvas_Access;
-   function "=" (Left, Right : RunnableCanvas_Access) return Boolean renames org.allbinary.canvas.RunnableCanvas_Package_References."=";
-   subtype RunnableCanvas_Access_Array is org.allbinary.canvas.RunnableCanvas_Package_References.RunnableCanvas_Access_Array;
-   function "=" (Left, Right : RunnableCanvas_Access_Array) return Boolean renames org.allbinary.canvas.RunnableCanvas_Package_References."=";
-   subtype RunnableCanvas_Access_Array_Access is org.allbinary.canvas.RunnableCanvas_Package_References.RunnableCanvas_Access_Array_Access;
-   function "=" (Left, Right : RunnableCanvas_Access_Array_Access) return Boolean renames org.allbinary.canvas.RunnableCanvas_Package_References."=";
-   subtype RunnableCanvas_Access_Array_Access_Array is org.allbinary.canvas.RunnableCanvas_Package_References.RunnableCanvas_Access_Array_Access_Array;
-   function "=" (Left, Right : RunnableCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.RunnableCanvas_Package_References."=";
-   subtype RunnableCanvas_Access_Array_Access_Array_Access is org.allbinary.canvas.RunnableCanvas_Package_References.RunnableCanvas_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : RunnableCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.RunnableCanvas_Package_References."=";
    subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
    function "=" (Left, Right : BasicColor_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
    subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
@@ -657,16 +639,6 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressPaintable
    function "=" (Left, Right : MyFontProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
    subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MyFontProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
-   subtype UpdateMyFontInterface_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access;
-   function "=" (Left, Right : UpdateMyFontInterface_Access) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
    subtype ABCustomGaugeItem_Access is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access;
    function "=" (Left, Right : ABCustomGaugeItem_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References."=";
    subtype ABCustomGaugeItem_Access_Array is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array;
@@ -677,16 +649,6 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressPaintable
    function "=" (Left, Right : ABCustomGaugeItem_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References."=";
    subtype ABCustomGaugeItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABCustomGaugeItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References."=";
-   subtype PaintableInterface_Access is org.allbinary.graphics.paint.PaintableInterface_Package_References.PaintableInterface_Access;
-   function "=" (Left, Right : PaintableInterface_Access) return Boolean renames org.allbinary.graphics.paint.PaintableInterface_Package_References."=";
-   subtype PaintableInterface_Access_Array is org.allbinary.graphics.paint.PaintableInterface_Package_References.PaintableInterface_Access_Array;
-   function "=" (Left, Right : PaintableInterface_Access_Array) return Boolean renames org.allbinary.graphics.paint.PaintableInterface_Package_References."=";
-   subtype PaintableInterface_Access_Array_Access is org.allbinary.graphics.paint.PaintableInterface_Package_References.PaintableInterface_Access_Array_Access;
-   function "=" (Left, Right : PaintableInterface_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.PaintableInterface_Package_References."=";
-   subtype PaintableInterface_Access_Array_Access_Array is org.allbinary.graphics.paint.PaintableInterface_Package_References.PaintableInterface_Access_Array_Access_Array;
-   function "=" (Left, Right : PaintableInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.PaintableInterface_Package_References."=";
-   subtype PaintableInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.PaintableInterface_Package_References.PaintableInterface_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : PaintableInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.PaintableInterface_Package_References."=";
    subtype AllBinaryMidlet_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access;
    function "=" (Left, Right : AllBinaryMidlet_Access) return Boolean renames org.allbinary.midlet.AllBinaryMidlet_Package_References."=";
    subtype AllBinaryMidlet_Access_Array is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array;

@@ -30,12 +30,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.security.spec.KeySpec_Package; use java.security.spec.KeySpec_Package;
---  with javax.crypto.spec.DESKeySpec_Package; use javax.crypto.spec.DESKeySpec_Package;
---  with javax.crypto.spec.DESedeKeySpec_Package; use javax.crypto.spec.DESedeKeySpec_Package;
+with java.security.spec.KeySpec_Package; use java.security.spec.KeySpec_Package;
 
 package org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package is
 
+   package KeySpec_Package renames Standard.java.security.spec.KeySpec_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;

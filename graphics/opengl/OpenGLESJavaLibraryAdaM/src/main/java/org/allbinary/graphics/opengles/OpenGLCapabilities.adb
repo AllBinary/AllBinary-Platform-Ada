@@ -37,6 +37,7 @@ with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.gr
 with org.allbinary.graphics.opengles.OpenGLFeature_Package_References;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;

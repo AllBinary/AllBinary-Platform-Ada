@@ -37,6 +37,7 @@ with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.game.Layer_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.NullUtil_Package;

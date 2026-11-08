@@ -15,6 +15,7 @@
 
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 with org.allbinary.image.ImageCache_Package_References;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayList_Package;
@@ -32,6 +33,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.canvas.Processor_Package;
+with org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;

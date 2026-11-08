@@ -27,6 +27,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.view.event.ViewPositionEvent_Package; use org.allbinary.view.event.ViewPositionEvent_Package;
 with org.allbinary.view.event.ViewPositionEventListenerInterface_Package; use org.allbinary.view.event.ViewPositionEventListenerInterface_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;

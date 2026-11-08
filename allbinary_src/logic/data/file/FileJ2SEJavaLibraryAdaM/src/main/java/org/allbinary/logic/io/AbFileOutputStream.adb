@@ -13,9 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
+with org.allbinary.logic.io.file.AbFileInterface_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 
 package body org.allbinary.logic.io.AbFileOutputStream_Package is
 
@@ -63,7 +71,7 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
 
    procedure Initialize (This : in out AbFileOutputStream'Class; name : Unbounded_String; append : Boolean) is
    begin
-        null;
+        FileOutputStream_Package.Initialize (This, name, append);
    end Initialize;
 
    function Create (name : Unbounded_String; append : Boolean) return AbFileOutputStream_Access is

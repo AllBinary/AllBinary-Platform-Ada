@@ -200,7 +200,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
         musicStrings := MusicStrings_Package.getInstance;
         if (intent) /= (null) then
             command := intent.getIntExtra (This.commonStateStrings.ON_START_COMMAND, -(1));
-            This.logUtil.putF ((CommonLabels_Package.getInstance.COMMAND_LABEL) + (command), BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.ON_START_COMMAND);
+            This.logUtil.putF (CommonLabels_Package.getInstance.COMMAND_LABEL & Java_Image (command), BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.ON_START_COMMAND);
             if (command) = (1) then
                 BaseMusicService'Class (This).pause;
                 return;

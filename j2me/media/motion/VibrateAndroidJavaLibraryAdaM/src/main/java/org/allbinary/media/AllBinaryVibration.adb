@@ -80,7 +80,7 @@ package body org.allbinary.media.AllBinaryVibration_Package is
 
    procedure init is
    begin
-        if (GameConfigurationCentral_Package.getInstance.VIBRATION.getValue.intValue) = (0) then
+        if (Integer (GameConfigurationCentral_Package.getInstance.VIBRATION.getValue)) = (0) then
             AllBinaryVibration_Package.VIBRATION := AllBinaryNoVibration_Package.NO_VIBRATION;
         else
             AllBinaryVibration_Package.VIBRATION := AllBinaryVibrationME_Access (AllBinaryVibration_Package.Create);

@@ -182,14 +182,14 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
-        This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.APPEND_U).append (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.APPEND_Field);
+        This.logUtil.putF (This.stringBuilder.appendint (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access))).append (This.APPEND_U).append (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.APPEND_Field);
    end append;
 
    procedure appendAt (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer) is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
-        This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.APPEND_U).append (layerInterface.getName).append (This.U_AT_U).appendint (index).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.APPEND_Field);
+        This.logUtil.putF (This.stringBuilder.appendint (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access))).append (This.APPEND_U).append (layerInterface.getName).append (This.U_AT_U).appendint (index).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.APPEND_Field);
    end appendAt;
 
    procedure remove (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
@@ -197,10 +197,10 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
    begin
         if org.allbinary.layer.AllBinaryLayer_Package_References."=" (layerInterface, null) then
             This.stringBuilder.delete (0, This.stringBuilder.length);
-            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.ATTEMPT_REMOVE_U).append (StringUtil_Package.getInstance.toString (layerInterface)).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
+            This.logUtil.putF (This.stringBuilder.appendint (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access))).append (This.ATTEMPT_REMOVE_U).append (StringUtil_Package.getInstance.toString (layerInterface)).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
         else
             This.stringBuilder.delete (0, This.stringBuilder.length);
-            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.ATTEMPT_REMOVE_U).append (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
+            This.logUtil.putF (This.stringBuilder.appendint (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access))).append (This.ATTEMPT_REMOVE_U).append (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
         end if;
    end remove;
 
@@ -210,15 +210,15 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
    begin
         if org.allbinary.layer.AllBinaryLayer_Package_References."=" (layerInterface, null) then
             This.stringBuilder.delete (0, This.stringBuilder.length);
-            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.REMOVE_U).append (StringUtil_Package.getInstance.toString (layerInterface)).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
+            This.logUtil.putF (This.stringBuilder.appendint (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access))).append (This.REMOVE_U).append (StringUtil_Package.getInstance.toString (layerInterface)).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
         elsif result then
             if LayerManagerLogging_Package.removeFailed then
                 This.stringBuilder.delete (0, This.stringBuilder.length);
-                This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.REMOVE_U).append (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
+                This.logUtil.putF (This.stringBuilder.appendint (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access))).append (This.REMOVE_U).append (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
             end if;
         else
             This.stringBuilder.delete (0, This.stringBuilder.length);
-            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.DID_NOT_REMOVE).append (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
+            This.logUtil.putF (This.stringBuilder.appendint (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access))).append (This.DID_NOT_REMOVE).append (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE_Field);
             LayerManagerLogging_Package.removeFailed := True;
         end if;
    end removeResult;
@@ -246,7 +246,7 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
    procedure clear (This : in out LayerManagerLogging) is
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
-        This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append (This.CLEAR_Field).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.CLEAR_Field);
+        This.logUtil.putF (This.stringBuilder.appendint (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access))).append (This.CLEAR_Field).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.CLEAR_Field);
    end clear;
 
 begin

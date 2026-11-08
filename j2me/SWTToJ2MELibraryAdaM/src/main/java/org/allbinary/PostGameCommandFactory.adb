@@ -17,6 +17,7 @@ with org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Pack
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package_References;
 with org.allbinary.util.ABStack_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;

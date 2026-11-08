@@ -150,7 +150,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.apache.commons</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.apache.commons,org.allbinary.cache,org.graph</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

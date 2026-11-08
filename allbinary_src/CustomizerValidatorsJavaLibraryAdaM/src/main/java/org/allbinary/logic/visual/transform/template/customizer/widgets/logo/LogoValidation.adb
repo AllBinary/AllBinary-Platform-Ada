@@ -275,7 +275,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    begin
         stringUtil := StringUtil_Package.getInstance;
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (LogoData_Package.getInstance.IMAGE, stringUtil.EMPTY_STRING);
+        hashMap.put (LogoData_Package.getInstance.IMAGE, Java_Box (stringUtil.EMPTY_STRING));
         if (This.logoFile) /= (Null_Unbounded_String) then
             hashMap.put (LogoData_Package.getInstance.IMAGEPATH, Java_Box (This.logoAbPath.toString));
             hashMap.put (LogoData_Package.getInstance.IMAGEFILENAME, Java_Box (This.logoFile));

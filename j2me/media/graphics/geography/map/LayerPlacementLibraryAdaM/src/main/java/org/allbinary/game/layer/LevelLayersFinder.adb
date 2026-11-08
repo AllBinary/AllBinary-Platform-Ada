@@ -24,6 +24,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
 with org.allbinary.util.EnumerationUtil_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.layer.LevelLayersFinder_Package is
@@ -105,8 +106,8 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
             layerHashtableCanBeNull := ABHashtable_Access (hashtable.get (Java_Object_Access (This.enumerationUtil.nextElement (enumeration))));
             integerCanBeNull := Java_Unbox_Integer (layerHashtableCanBeNull.get (Java_Object_Access (Layer_Package.ID)));
             cachedIntegerCanBeNull := smallIntegerSingletonFactory.getAt (Integer (integerCanBeNull));
-            if not (list.contains (cachedIntegerCanBeNull)) then
-                list.add (cachedIntegerCanBeNull);
+            if not (list.contains (Java_Box (cachedIntegerCanBeNull))) then
+                list.add (Java_Box (cachedIntegerCanBeNull));
             end if;
         end loop;
         return list;

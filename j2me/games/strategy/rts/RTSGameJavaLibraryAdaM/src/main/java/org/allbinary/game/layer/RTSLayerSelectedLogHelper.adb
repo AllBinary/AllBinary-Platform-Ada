@@ -35,6 +35,7 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
@@ -239,7 +240,7 @@ package body org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
         stringBuffer.append (To_Unbounded_String (" movementAngle: "));
         stringBuffer.append (movementAngle.name);
         stringBuffer.append (This.commonSeps.FORWARD_SLASH);
-        stringBuffer.appendshort (Short_Integer (movementAngle.getValue));
+        stringBuffer.appendshort (movementAngle.getValue);
         if (angleInfo) /= (null) then
             angleIncrement := angleInfo.getAngleIncrementInfo.getAngleIncrement;
             stringBuffer.append (To_Unbounded_String (" angleIncrement: "));
@@ -314,7 +315,7 @@ package body org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
       associatedAdvancedRTSGameLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
       movementAngle : constant NamedAngle_Access := NamedAngle_Access (movementAngle_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - movementAngle: ")).append (movementAngle.name).append (This.commonSeps.FORWARD_SLASH).appendshort (Short_Integer (movementAngle.getValue)).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - movementAngle: ")).append (movementAngle.name).append (This.commonSeps.FORWARD_SLASH).appendshort (movementAngle.getValue).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end handle;
 
    procedure noRotation (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is

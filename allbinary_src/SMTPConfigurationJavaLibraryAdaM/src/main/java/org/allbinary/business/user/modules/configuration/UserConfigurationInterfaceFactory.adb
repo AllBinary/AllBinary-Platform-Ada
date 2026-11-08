@@ -132,7 +132,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
       documentString : Unbounded_String;
       document : Document_Access;
    begin
-        abPath := AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.USERCONFIGURATIONPATH), UserConfigurationInterfaceFactory_Package.configurationName & userRole.toString & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & Java_Image (UserConfigurationData_Package.UNCRYPTED_EXTENSION));
+        abPath := AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.USERCONFIGURATIONPATH), UserConfigurationInterfaceFactory_Package.configurationName & userRole.toString & AbPathData_Package.getInstance.EXTENSION_SEP & Java_Image (UserConfigurationData_Package.UNCRYPTED_EXTENSION));
         documentString := CryptFileReader_Package.Create (UserConfigurationData_Package.UNCRYPTED_EXTENSION, UserConfigurationData_Package.ENCRYPTED_EXTENSION).get (abPath);
         document := DomDocumentHelper_Package.create (documentString);
         return UserConfigurationInterface_Access (UserConfigurationInterfaceFactory_Package.getInstance (document));

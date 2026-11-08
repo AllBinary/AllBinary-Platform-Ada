@@ -30,17 +30,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
+with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
 --  with java.io.InputStreamReader_Package; use java.io.InputStreamReader_Package;
 limited with org.allbinary.business.init.LicenseInitInfo_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package_References;
---  with java.io.FileReader_Package; use java.io.FileReader_Package;
 --  with java.io.LineNumberReader_Package; use java.io.LineNumberReader_Package;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package is
 
+   package BufferedReader_Package renames Standard.java.io.BufferedReader_Package;
    package LicenseInitInfo_Package renames Standard.org.allbinary.business.init.LicenseInitInfo_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package Reference_Types is

@@ -28,6 +28,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -49,6 +50,7 @@ with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package is
 

@@ -31,7 +31,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
---  with java.net.URL_Package; use java.net.URL_Package;
+with java.net.URL_Package; use java.net.URL_Package;
 --  with javax.help.CSH_Package; use javax.help.CSH_Package;
 --  with javax.help.HelpBroker_Package; use javax.help.HelpBroker_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
@@ -46,6 +46,7 @@ with org.allbinary.logic.java.help.Dimension_Package_References;
 
 package org.allbinary.logic.java.help.JavaHelpUtil_Package is
 
+   package URL_Package renames Standard.java.net.URL_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Reference_Types is

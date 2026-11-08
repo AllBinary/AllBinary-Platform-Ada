@@ -20,6 +20,7 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package_
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.game.Layer_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package is

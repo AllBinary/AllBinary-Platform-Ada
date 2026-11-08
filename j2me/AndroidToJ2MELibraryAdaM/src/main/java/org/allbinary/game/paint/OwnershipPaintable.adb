@@ -29,6 +29,7 @@ with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinar
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;

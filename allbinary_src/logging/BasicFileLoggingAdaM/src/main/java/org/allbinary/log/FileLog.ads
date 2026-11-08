@@ -30,17 +30,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
---  with java.io.BufferedWriter_Package; use java.io.BufferedWriter_Package;
+with java.io.BufferedWriter_Package; use java.io.BufferedWriter_Package;
 with java.io.File_Package; use java.io.File_Package;
---  with java.io.FileReader_Package; use java.io.FileReader_Package;
---  with java.io.FileWriter_Package; use java.io.FileWriter_Package;
 --  with java.io.RandomAccessFile_Package; use java.io.RandomAccessFile_Package;
 limited with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package_References;
 
 package org.allbinary.log.FileLog_Package is
 
+   package BufferedWriter_Package renames Standard.java.io.BufferedWriter_Package;
    package File_Package renames Standard.java.io.File_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package Reference_Types is

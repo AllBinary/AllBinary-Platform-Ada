@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.net.URL_Package; use java.net.URL_Package;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;

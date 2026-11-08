@@ -15,6 +15,7 @@
 
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.thread.PriorityRunnable_Package_References;
+with org.allbinary.thread.ARunnable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;

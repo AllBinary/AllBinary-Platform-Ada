@@ -24,6 +24,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.game.input.event.RawKeyEventListener_Package; use org.allbinary.game.input.event.RawKeyEventListener_Package;
 with org.allbinary.game.input.event.RawKeyEventListener_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -195,7 +196,7 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
             begin
                 eventListenerInterface := RawKeyEventListener_Access (This.eventListenerInterfaceList.get (index));
                 stringBuffer.append (RawKeyEventHandler_Package.LISTENER_LABEL);
-                stringBuffer.append (eventListenerInterface.toString);
+                stringBuffer.append (Java_Object'Class (eventListenerInterface.all).toString);
             exception
                 when Java_Occurrence : others =>
                     declare

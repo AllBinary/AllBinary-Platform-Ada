@@ -91,7 +91,7 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
       i_random : Integer;
    begin
         i_random := BasicArrayListUtil'Class (This).getRandomIndex (list);
-        return list.objectArray (i_random);
+        return Java_Object_Access (list.objectArray (i_random));
    end getRandom;
 
    function getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Integer is

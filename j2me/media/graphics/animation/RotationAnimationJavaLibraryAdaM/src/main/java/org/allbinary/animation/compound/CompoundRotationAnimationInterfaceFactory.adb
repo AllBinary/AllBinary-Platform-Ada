@@ -22,6 +22,7 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package_Referenc
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.animation.compound.CompoundRotationAnimation_Package; use org.allbinary.animation.compound.CompoundRotationAnimation_Package;
+with org.allbinary.animation.compound.RotationAnimationArrayUtil_Package; use org.allbinary.animation.compound.RotationAnimationArrayUtil_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleInfo_Package;
@@ -32,11 +33,11 @@ with org.allbinary.math.FrameUtil_Package;
 with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.animation.compound.RotationAnimationArrayUtil_Package;
 with org.allbinary.animation.RotationAnimationInterface_Package;
 
 package body org.allbinary.animation.compound.CompoundRotationAnimationInterfaceFactory_Package is
 
-   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
    package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    subtype Animation_Access is org.allbinary.animation.Animation_Package_References.Animation_Access;
    function "=" (Left, Right : Animation_Access) return Boolean renames org.allbinary.animation.Animation_Package_References."=";
@@ -92,12 +93,12 @@ package body org.allbinary.animation.compound.CompoundRotationAnimationInterface
 
    function createArray (This : in out CompoundRotationAnimationInterfaceFactory; size : Integer) return Animation_Access_Array_Access is
    begin
-        return new RotationAnimation_Access_Array'(0 .. (size) - 1 => null);
+        return new Animation_Access_Array'(0 .. (size) - 1 => null);
    end createArray;
 
    function createAnimation (This : in out CompoundRotationAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) return Animation_Access is
    begin
-        return Animation_Access (CompoundRotationAnimation_Package.Create (RotationAnimation_Access_Array_Access (animationInterfaceArray), This.animationBehaviorFactory.getOrCreateInstance));
+        return Animation_Access (CompoundRotationAnimation_Package.Create (RotationAnimationArrayUtil_Package.getInstance.toRotationAnimationArray (animationInterfaceArray), This.animationBehaviorFactory.getOrCreateInstance));
    end createAnimation;
 
    procedure createArray (This : in out CompoundRotationAnimationInterfaceFactory; size : Integer) is

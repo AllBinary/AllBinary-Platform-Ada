@@ -11,6 +11,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
 with org.allbinary.game.terrain.TerrainEvent_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.math.MathUtil_Package;

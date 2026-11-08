@@ -160,7 +160,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
             outputMappingHashMap := StdUtil_Package.getInstance.createHashMap;
             outputMappingHashMap.put (TransformInfosData_Package.getInstance.PREVIEW, Java_Box (To_Unbounded_String ("Preview")));
             outputMappingHashMap.put (TransformInfosData_Package.getInstance.SMALL_PREVIEW, Java_Box (To_Unbounded_String ("SmallPreview")));
-            outputMappingHashMap.put (CommonSeps_Package.getInstance.SPACE, Java_Box (StringUtil_Package.getInstance.EMPTY_STRING));
+            outputMappingHashMap.put (Java_Box (CommonSeps_Package.getInstance.SPACE), Java_Box (StringUtil_Package.getInstance.EMPTY_STRING));
             replace := Replace_Package.Create (outputMappingHashMap);
             fileName := replace.all_Id (fileName);
         end if;
@@ -202,7 +202,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
             This.logUtil.putF (To_Unbounded_String ("Processing"), StoreFileGenerator_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         end if;
         if not (This.file.exists) then
-            This.file.createNewFile;
+            declare Java_Result renames This.file.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         end if;
         if This.file.exists then
             inputStream := InputStream_Access (ByteArrayInputStream_Package.Create (Java_Get_Bytes (input)));

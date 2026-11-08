@@ -19,6 +19,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package is

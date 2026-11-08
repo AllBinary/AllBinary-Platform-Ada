@@ -17,6 +17,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package is

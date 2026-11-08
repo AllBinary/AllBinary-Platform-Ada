@@ -82,7 +82,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
       pathFindingNode_Var : PathFindingNode_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
+        stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag)));
         stringBuffer.append (CommonLabels_Package.getInstance.COLON_SEP);
         stringBuffer.append (To_Unbounded_String (" Path: "));
         stringBuffer.append (This.geographicMapCellPosition.toString);

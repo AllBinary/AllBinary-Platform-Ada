@@ -141,7 +141,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                 if (categoryInterface.getHierarchy.getLevel) = (1) then
                     rootAbFile := AbFile_Package.createAbFileFromAbPath (categoryInterface.getRootFilePath);
                     if not (rootAbFile.isDirectory) then
-                        rootAbFile.mkdirs;
+                        declare Java_Result renames rootAbFile.mkdirs; pragma Unreferenced (Java_Result); begin null; end;
                         if not (rootAbFile.isDirectory) then
                             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could Not Create Directory")));
                         end if;

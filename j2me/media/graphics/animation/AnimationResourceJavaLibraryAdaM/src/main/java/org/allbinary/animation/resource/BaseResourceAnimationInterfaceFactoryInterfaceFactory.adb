@@ -239,7 +239,7 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
 
    function toString (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return Unbounded_String is
    begin
-        return StringMaker_Package.Create.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag))).append (CommonSeps_Package.getInstance.SEMICOLON).append (CommonSeps_Package.getInstance.SPACE).append (This.name).toString;
+        return StringMaker_Package.Create.append (To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag))).append (CommonSeps_Package.getInstance.SEMICOLON).append (CommonSeps_Package.getInstance.SPACE).append (This.name).toString;
    end toString;
 
    function getHashtable (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return ABHashtable_Access is

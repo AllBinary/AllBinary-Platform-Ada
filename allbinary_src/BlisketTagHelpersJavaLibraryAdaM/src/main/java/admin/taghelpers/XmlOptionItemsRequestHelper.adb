@@ -135,11 +135,11 @@ package body admin.taghelpers.XmlOptionItemsRequestHelper_Package is
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            values.add (Java_Box (This.id));
-            values.add (Java_Box (This.xmlFileStatus));
-            values.add (Java_Box (This.optionXmlFile));
-            values.add (Java_Box (time));
-            values.add (Java_Box (time));
+            values.add (This.id);
+            values.add (This.xmlFileStatus);
+            values.add (This.optionXmlFile);
+            values.add (time);
+            values.add (time);
             XmlOptionItemsEntityFactory_Package.getInstance.getXmlOptionItemsEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully inserted ") & This.id & To_Unbounded_String (" into items table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then

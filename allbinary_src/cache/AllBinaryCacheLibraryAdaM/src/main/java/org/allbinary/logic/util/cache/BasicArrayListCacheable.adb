@@ -15,6 +15,10 @@
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.util.cache.BasicArrayListCacheable_Package is
 

@@ -25,6 +25,7 @@ with org.allbinary.input.automation.module.game.skill.GameSkillType_Package_Refe
 with org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package; use org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package;
 with org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterface_Package;
 with org.allbinary.input.automation.module.game.skill.GameSkillType_Package;
 with org.allbinary.logic.math.MathUtil_Package;

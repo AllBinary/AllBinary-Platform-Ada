@@ -117,7 +117,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
       canvasImage : CanvasImage_Access;
       canvasSurface : CanvasSurface_Access;
    begin
-        image := ImageCreationUtil_Package.getInstance.getInstance (Integer (((originalImage.getWidth) * (scaleX))), Integer (((originalImage.getHeight) * (scaleY))));
+        image := ImageCreationUtil_Package.getInstance.getInstance (Integer (((Float (originalImage.getWidth)) * (scaleX))), Integer (((Float (originalImage.getHeight)) * (scaleY))));
         if image.isMutable then
             originalPlayNImage := null;
             if originalImage.isMutable then

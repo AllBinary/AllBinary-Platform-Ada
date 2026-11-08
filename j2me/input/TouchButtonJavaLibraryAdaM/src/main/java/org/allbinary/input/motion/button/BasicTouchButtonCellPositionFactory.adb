@@ -30,6 +30,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package is
 

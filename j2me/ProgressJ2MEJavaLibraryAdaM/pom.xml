@@ -93,6 +93,24 @@
             <!-- AllBinary Platform Version End -->
             <optional>true</optional>
         </dependency>
+        <!-- ProgressCanvasFactory and Sounds with ThreadObjectUtil through PreGameJ2MEJavaLibraryAda specs -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ThreadJ2MELibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <!-- org.allbinary.graphics.form such as AbCustomGaugeItem used by ProgressCanvas -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NullCustomUIPreJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
 
@@ -143,7 +161,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.microemu</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.cache,org.graph</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

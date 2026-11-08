@@ -101,7 +101,7 @@ package body org.allbinary.view.ViewPosition_Package is
 
    function getZ2 (This : in out ViewPosition) return Integer is
    begin
-        return Integer (((ViewPosition'Class (This).getZ) + (This.allbinaryLayer.getDepth)));
+        return Integer (((Long_Long_Integer (ViewPosition'Class (This).getZ)) + (This.allbinaryLayer.getDepth)));
    end getZ2;
 
    procedure setAllbinaryLayer (This : in out ViewPosition; allbinaryLayer_Param : access Java_Object'Class) is

@@ -26,6 +26,7 @@ with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 with org.allbinary.graphics.color.ColorCompositeInterface_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.game.Layer_Package;
 
 package body org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package is
 

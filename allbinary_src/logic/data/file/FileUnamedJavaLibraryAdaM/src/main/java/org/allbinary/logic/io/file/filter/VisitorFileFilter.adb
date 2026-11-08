@@ -14,6 +14,7 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;

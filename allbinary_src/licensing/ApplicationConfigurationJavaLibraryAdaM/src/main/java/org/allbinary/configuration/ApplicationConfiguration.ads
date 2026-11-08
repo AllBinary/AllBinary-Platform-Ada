@@ -18,7 +18,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.Closeable_Package; use java.io.Closeable_Package;
 limited with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.feature.Feature_Package_References;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;

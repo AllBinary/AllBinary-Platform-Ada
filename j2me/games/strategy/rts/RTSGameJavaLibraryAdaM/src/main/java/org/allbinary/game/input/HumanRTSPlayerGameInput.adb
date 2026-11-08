@@ -623,7 +623,7 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       gameCanvas : AllBinaryGameCanvas_Access;
       endLevelNoBuildingSelectedTouchButtonsBuilder : EndLevelNoBuildingSelectedTouchButtonsBuilder_Access;
-      rtsLayer : RTSLayer_Access;
+      rtsLayer_Local : RTSLayer_Access;
       endLevelTouchButtonsBuilder : EndLevelTouchButtonsBuilder_Access;
    begin
         if ((Java_Object_Access (rtSLayer)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) and then ((HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.getGroupInterface (0)) /= (rtSLayer.getGroupInterface (0))) then
@@ -634,11 +634,11 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
         gameCanvas := HumanRTSPlayerGameInput'Class (This).getGameCanvas;
         if (Java_Object_Access (rtSLayer)) /= (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance)) then
             HumanRTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface.add (SelectBuildingSound_Package.getInstance);
-            rtsLayer := RTSLayer_Access (rtSLayer);
-            rtsLayer.select_Id;
-            HumanRTSPlayerGameInput'Class (This).updateFormForLayer (rtsLayer);
+            rtsLayer_Local := RTSLayer_Access (rtSLayer);
+            rtsLayer_Local.select_Id;
+            HumanRTSPlayerGameInput'Class (This).updateFormForLayer (rtsLayer_Local);
             if (gameCanvas.getGameState) = (This.gameStateFactory.PLAYING_GAME_STATE) then
-                if rtsLayer.isSelfUpgradeable then
+                if rtsLayer_Local.isSelfUpgradeable then
                     gameCanvas.updateCurrentTouchInputFactory (RTSTouchButtonsBuilder_Package.Create);
                 else
                     gameCanvas.updateCurrentTouchInputFactory (NoBuildingSelectedTouchButtonsBuilder_Package.Create);

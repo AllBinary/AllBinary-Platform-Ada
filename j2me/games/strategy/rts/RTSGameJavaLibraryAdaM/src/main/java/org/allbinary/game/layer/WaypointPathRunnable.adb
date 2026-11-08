@@ -101,7 +101,7 @@ package body org.allbinary.game.layer.WaypointPathRunnable_Package is
             end if;
             waypointBehavior.setWaypointPathsList (This.targetPathFindingLayer.getWaypointBehavior.getWaypoint.getPathsListRunnable (geographicMapCellPosition));
             This.pathFindingLayer.getWaypointRunnableLogHelper.end_Id (This.pathFindingLayer);
-            Java_Sleep ((15) + (((This.priorityP) * (2))));
+            Java_Sleep ((15) + (Long_Long_Integer (((This.priorityP) * (2)))));
         exception
             when Java_Occurrence : others =>
                 declare

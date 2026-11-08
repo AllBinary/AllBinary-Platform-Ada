@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.net.URL_Package; use java.net.URL_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 limited with org.allbinary.input.automation.module.JPanel_Package;

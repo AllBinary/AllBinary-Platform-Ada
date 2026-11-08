@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.logic.string_Id.StringMaker_Package;

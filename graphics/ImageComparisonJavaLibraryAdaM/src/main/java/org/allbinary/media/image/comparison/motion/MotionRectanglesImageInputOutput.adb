@@ -43,6 +43,7 @@ with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allb
 with org.allbinary.media.image.comparison.motion.Color_Package; use org.allbinary.media.image.comparison.motion.Color_Package;
 with org.allbinary.media.image.comparison.motion.AllMotionRectanglesResultsCacheSingleton_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.cache.CacheInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;

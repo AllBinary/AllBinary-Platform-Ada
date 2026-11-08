@@ -145,7 +145,7 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
                 CapturedBufferedImagesCacheSingleton_Package.getInstance.add (BufferedImageFrameCacheable_Package.Create (bufferedImage, frame));
                 capturedImageEvent := CapturedImageWorkerResultsEvent_Package.Create (ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), frame, bufferedImage);
                 ScreenCaptureImagesWorker'Class (This).fireEvent (capturedImageEvent);
-                This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+                This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 ScreenCaptureImagesWorker'Class (This).setRunning (False);
             end loop;
             This.logUtil.putF (This.commonStrings.END_Id, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);

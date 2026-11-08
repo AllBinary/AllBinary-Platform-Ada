@@ -40,6 +40,7 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.game.configuration.persistance.BasicPersitance_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -49,6 +50,7 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.configuration.persistance.PersistanceStrings_Package;
+with org.allbinary.persistance.PlatformRecordIdUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 

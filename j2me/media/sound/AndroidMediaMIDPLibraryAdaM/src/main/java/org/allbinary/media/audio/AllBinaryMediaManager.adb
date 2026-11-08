@@ -93,6 +93,8 @@ with javax.microedition.media.PlayerListener_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with javax.microedition.lcdui.Screen_Package;
 with org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.SoundStrings_Package;
+with org.allbinary.media.audio.Sounds_Package;
 with org.allbinary.media.audio.SoundsFactoryInterface_Package;
 with javax.microedition.lcdui.StringComponent_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
@@ -242,7 +244,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                logUtil.put (To_Unbounded_String ("Could not create AndroidMediaPlayerWrapper using NoPlayer at ") & Java_Image (CommonLabels_Package.getInstance.TOTAL_LABEL) & Java_Image (AllBinaryMediaManager_Package.mostUsedTotal), Java_Box (AllBinaryMediaManager_Package.THIS_Id), To_Unbounded_String ("createPlayer"), e);
+                logUtil.put (To_Unbounded_String ("Could not create AndroidMediaPlayerWrapper using NoPlayer at ") & CommonLabels_Package.getInstance.TOTAL_LABEL & Java_Image (AllBinaryMediaManager_Package.mostUsedTotal), Java_Box (AllBinaryMediaManager_Package.THIS_Id), To_Unbounded_String ("createPlayer"), e);
                 return Player_Access (NoPlayer_Package.NO_PLAYER);
                     end;
             end;

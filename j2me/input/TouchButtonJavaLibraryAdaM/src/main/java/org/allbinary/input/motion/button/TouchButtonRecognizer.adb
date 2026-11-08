@@ -31,15 +31,16 @@ with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package; use org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
 with org.allbinary.input.motion.button.ReleaseHelper_Package; use org.allbinary.input.motion.button.ReleaseHelper_Package;
-with org.allbinary.input.motion.button.ReleaseHelper_Package_References;
 with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package; use org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
 with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
 with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package; use org.allbinary.input.motion.button.MultitouchReleaseHelper_Package;
 with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;
 with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
@@ -52,11 +53,13 @@ with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.input.motion.button.ReleaseHelper_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.motion.button.TouchButton_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
 
@@ -124,16 +127,6 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
    function "=" (Left, Right : CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References."=";
    subtype CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References."=";
-   subtype ReleaseHelper_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access;
-   function "=" (Left, Right : ReleaseHelper_Access) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
-   subtype ReleaseHelper_Access_Array is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array;
-   function "=" (Left, Right : ReleaseHelper_Access_Array) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
-   subtype ReleaseHelper_Access_Array_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access;
-   function "=" (Left, Right : ReleaseHelper_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
-   subtype ReleaseHelper_Access_Array_Access_Array is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access_Array;
-   function "=" (Left, Right : ReleaseHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
-   subtype ReleaseHelper_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ReleaseHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
    procedure Initialize_Fields (This : in out TouchButtonRecognizer'Class) is
    begin
       null;
@@ -287,8 +280,10 @@ with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package; use org.
 with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;
 with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
@@ -301,11 +296,13 @@ with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.input.motion.button.ReleaseHelper_Package is
 
@@ -449,8 +446,10 @@ with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbi
 with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;
 with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
@@ -462,11 +461,13 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.input.motion.button.MultitouchReleaseHelper_Package is
 

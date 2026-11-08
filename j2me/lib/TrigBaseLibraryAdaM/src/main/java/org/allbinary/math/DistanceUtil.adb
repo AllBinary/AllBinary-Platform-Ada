@@ -58,7 +58,7 @@ package body org.allbinary.math.DistanceUtil_Package is
    begin
         dx := (x1) - (x2);
         dy := (y1) - (y2);
-        return Integer (This.mathUtil.sqrt ((((dx) * (dx))) + (((dy) * (dy)))));
+        return This.mathUtil.sqrt ((((dx) * (dx))) + (((dy) * (dy))));
    end getDistance;
 
    procedure getDistance (This : in out DistanceUtil; x1 : Integer; y1 : Integer; x2 : Integer; y2 : Integer) is

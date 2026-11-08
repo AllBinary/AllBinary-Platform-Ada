@@ -26,6 +26,7 @@ with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -83,7 +84,7 @@ package body org.allbinary.logic.system.security.licensing.registration.LicenseR
    begin
         begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.put (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & To_Unbounded_String ("License Registration"), To_Unbounded_String ("LicenseRegistrationUtil"), commonStrings.PROCESS);
+            PreLogUtil_Package.put (CommonLabels_Package.getInstance.START_LABEL & To_Unbounded_String ("License Registration"), Java_Box (To_Unbounded_String ("LicenseRegistrationUtil")), commonStrings.PROCESS);
             registrationConfiguration := RegistrationConfiguration_Package.getInstance;
             registrationConfiguration.setRegistrationCode (registrationId);
             registrationConfiguration.write;
@@ -96,7 +97,7 @@ package body org.allbinary.logic.system.security.licensing.registration.LicenseR
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (To_Unbounded_String ("License Registration Exception"), To_Unbounded_String ("LicenseRegistrationUtil"), To_Unbounded_String ("License Registration"), e);
+            PreLogUtil_Package.putOE (To_Unbounded_String ("License Registration Exception"), Java_Box (To_Unbounded_String ("LicenseRegistrationUtil")), To_Unbounded_String ("License Registration"), e);
                 end;
         end;
    end process;

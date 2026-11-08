@@ -140,7 +140,7 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
             point.y := (((newHeight) - (bufferedImage.getHeight))) / (2);
         end if;
         commonLabels := CommonLabels_Package.getInstance;
-        This.logUtil.putF (Java_Image ((commonLabels.WIDTH_LABEL) + (bufferedImage.getWidth)) & To_Unbounded_String (" newWidth: ") & Java_Image (newWidth) & Java_Image (commonLabels.HEIGHT_LABEL) & Java_Image (bufferedImage.getHeight) & To_Unbounded_String (" newHeight: ") & Java_Image (newHeight) & To_Unbounded_String (" needed ratio: ") & Java_Image (((Long_Float (newWidth)) / (Long_Float (newHeight)))), ImagesRatioUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("fudge"));
+        This.logUtil.putF (commonLabels.WIDTH_LABEL & Java_Image (bufferedImage.getWidth) & To_Unbounded_String (" newWidth: ") & Java_Image (newWidth) & commonLabels.HEIGHT_LABEL & Java_Image (bufferedImage.getHeight) & To_Unbounded_String (" newHeight: ") & Java_Image (newHeight) & To_Unbounded_String (" needed ratio: ") & Java_Image (((Long_Float (newWidth)) / (Long_Float (newHeight)))), ImagesRatioUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("fudge"));
         newBufferedImage := This.imageUtil.create (newWidth, newHeight);
         g := newBufferedImage.createGraphics;
         if (point.x) > (0) then

@@ -48,6 +48,7 @@ with org.allbinary.util.ABVector_Package;
 with org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package;
 with org.allbinary.media.image.comparison.motion.AllMotionRectanglesResultsCacheSingleton_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
 with org.allbinary.logic.util.cache.CacheInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package;
@@ -217,7 +218,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
             MotionRectanglesWorker'Class (This).fireEvent (MotionRectanglesResultsEvent_Package.Create (MotionRectanglesWorker_Access'(This'Unchecked_Access), imageComparisonInfo.getFrameTwo, MotionRectangles_Access (constrainedMotionRectangles)));
             This.imageComparisonInfoVector.remove (Java_Object_Access (imageComparisonResultsEvent));
             This.index := This.index + 1;
-            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             MotionRectanglesWorker'Class (This).setRunning (False);
             This.logUtil.putF (This.commonStrings.END_Id, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception

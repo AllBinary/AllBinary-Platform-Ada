@@ -54,6 +54,7 @@ with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
@@ -77,6 +78,9 @@ with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.game.GameInfoData_Package;
+with org.allbinary.game.GameMode_Package;
+with org.allbinary.game.GameType_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with javax.microedition.lcdui.Graphics_Package;
@@ -100,6 +104,7 @@ with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
+with org.allbinary.game.PlayerType_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with javax.microedition.rms.RecordFilter_Package;
 with javax.microedition.rms.RecordListener_Package;
@@ -287,7 +292,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
    begin
         recordStore := RecordStore_Access (NullRecordStore_Package.NULL_RECORD_STORE);
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Adding HighScore: ")).appendlong (Long_Long_Integer (newHighScore.getScore)).toString, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Adding HighScore: ")).appendlong (newHighScore.getScore).toString, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD);
             if RecordStoreHighScores'Class (This).isTooManyHighScores then
                 This.logUtil.putF (To_Unbounded_String ("Removing Lowest Score"), RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD);
                 RecordStoreHighScores'Class (This).removeLowestHighScore;
@@ -359,7 +364,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                 end if;
             end loop;
             if (bestHighScore.getId) /= (-(1)) then
-                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Removing Lowest HighScore: ")).appendlong (Long_Long_Integer (bestHighScore.getScore)).toString, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.LOAD);
+                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Removing Lowest HighScore: ")).appendlong (bestHighScore.getScore).toString, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.LOAD);
                 recordStore.deleteRecord (bestHighScore.getId);
             end if;
         exception

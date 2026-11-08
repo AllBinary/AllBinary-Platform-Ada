@@ -22,7 +22,10 @@ with org.allbinary.game.terrain.BasicTerrainInfo_Package; use org.allbinary.game
 with org.allbinary.game.terrain.BasicTerrainInfo_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.BaseCircularPool_Package;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.game.terrain.TerrainEvent_Package;
 with org.allbinary.game.terrain.TerrainEventFactory_Package;
 

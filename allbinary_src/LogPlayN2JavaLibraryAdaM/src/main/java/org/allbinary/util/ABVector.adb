@@ -78,17 +78,17 @@ package body org.allbinary.util.ABVector_Package is
 
    function elementAt (This : in out ABVector; index : Integer) return Java_Object_Access is
    begin
-        return Vector_Package.Vector (This).elementAt (index);
+        return Java_Object_Access (Vector_Package.Vector (This).elementAt (index));
    end elementAt;
 
    function firstElement (This : in out ABVector) return Java_Object_Access is
    begin
-        return Vector_Package.Vector (This).firstElement;
+        return Java_Object_Access (Vector_Package.Vector (This).firstElement);
    end firstElement;
 
    function lastElement (This : in out ABVector) return Java_Object_Access is
    begin
-        return Vector_Package.Vector (This).lastElement;
+        return Java_Object_Access (Vector_Package.Vector (This).lastElement);
    end lastElement;
 
    procedure setElementAt (This : in out ABVector; obj_Param : access Java_Object'Class; index : Integer) is
@@ -127,7 +127,7 @@ package body org.allbinary.util.ABVector_Package is
 
    function clone (This : in out ABVector) return Java_Object_Access is
    begin
-        return Vector_Package.Vector (This).clone;
+        return Java_Object_Access (Vector_Package.Vector (This).clone);
    end clone;
 
    function toArray (This : in out ABVector) return Java_Object_Access_Array_Access is
@@ -138,7 +138,7 @@ package body org.allbinary.util.ABVector_Package is
    function set (This : in out ABVector; index : Integer; element_Param : access Java_Object'Class) return Java_Object_Access is
       element : constant Java_Object_Access := Java_Object_Access (element_Param);
    begin
-        return Vector_Package.Vector (This).set (index, element);
+        return Java_Object_Access (Vector_Package.Vector (This).set (index, element));
    end set;
 
    function add (This : in out ABVector; element_Param : access Java_Object'Class) return Boolean is
@@ -161,7 +161,7 @@ package body org.allbinary.util.ABVector_Package is
 
    function remove (This : in out ABVector; index : Integer) return Java_Object_Access is
    begin
-        return Vector_Package.Vector (This).remove (index);
+        return Java_Object_Access (Vector_Package.Vector (This).remove (index));
    end remove;
 
    procedure clear (This : in out ABVector) is

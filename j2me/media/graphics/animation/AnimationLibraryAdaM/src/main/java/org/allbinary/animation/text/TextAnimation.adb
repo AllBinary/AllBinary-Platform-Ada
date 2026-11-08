@@ -38,6 +38,7 @@ with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterface_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with javax.microedition.lcdui.Canvas_Package;

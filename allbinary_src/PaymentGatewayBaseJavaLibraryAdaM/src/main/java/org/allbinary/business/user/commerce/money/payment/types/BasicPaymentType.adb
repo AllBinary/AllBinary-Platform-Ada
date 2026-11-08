@@ -120,8 +120,8 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         UNDERSCORE := To_Unbounded_String ("_");
-        hashMap.put (CommonSeps_Package.getInstance.SPACE, Java_Box (UNDERSCORE));
-        hashMap.put (AbPathData_Package.getInstance.EXTENSION_SEP, Java_Box (UNDERSCORE));
+        hashMap.put (Java_Box (CommonSeps_Package.getInstance.SPACE), Java_Box (UNDERSCORE));
+        hashMap.put (Java_Box (AbPathData_Package.getInstance.EXTENSION_SEP), Java_Box (UNDERSCORE));
         hashMap.put (Java_Box (To_Unbounded_String ("-")), Java_Box (UNDERSCORE));
         replace := Replace_Package.Create (hashMap);
         This.name := replace.all_Id (paymentMethod);

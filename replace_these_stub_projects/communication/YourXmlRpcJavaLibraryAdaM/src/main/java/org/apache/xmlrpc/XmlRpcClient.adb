@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.net.URL_Package; use java.net.URL_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -8,6 +9,7 @@ with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinar
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package_References;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.apache.xmlrpc.XmlRpcException_Package;
 

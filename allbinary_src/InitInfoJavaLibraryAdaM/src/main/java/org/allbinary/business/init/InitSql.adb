@@ -44,6 +44,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.init.InitSql_Package is
@@ -205,7 +206,7 @@ package body org.allbinary.business.init.InitSql_Package is
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Creating Table: "));
             stringBuffer.append (tableData);
-            PreLogUtil_Package.put (stringBuffer.toString, This.INIT_SQL, To_Unbounded_String ("createTable()"));
+            PreLogUtil_Package.put (stringBuffer.toString, Java_Box (This.INIT_SQL), To_Unbounded_String ("createTable()"));
             InitSql'Class (This).executeSQLStatement (tableData);
             return True;
         exception
@@ -214,7 +215,7 @@ package body org.allbinary.business.init.InitSql_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
-                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("createTable()"), e);
+                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, Java_Box (This.INIT_SQL), To_Unbounded_String ("createTable()"), e);
             end if;
             return False;
                 end;
@@ -234,7 +235,7 @@ package body org.allbinary.business.init.InitSql_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
-                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("dropTables()"), e);
+                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, Java_Box (This.INIT_SQL), To_Unbounded_String ("dropTables()"), e);
             end if;
             return False;
                 end;
@@ -439,7 +440,7 @@ package body org.allbinary.business.init.InitSql_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
-                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("executeSQLStatement()"), e);
+                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, Java_Box (This.INIT_SQL), To_Unbounded_String ("executeSQLStatement()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -460,7 +461,7 @@ package body org.allbinary.business.init.InitSql_Package is
                 declare
                     se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("createConnection()"), se);
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, Java_Box (This.INIT_SQL), To_Unbounded_String ("createConnection()"), se);
             Java_Throw (se);
                 end;
         end;
@@ -496,7 +497,7 @@ package body org.allbinary.business.init.InitSql_Package is
                     se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
-                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("initialize()"), se);
+                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, Java_Box (This.INIT_SQL), To_Unbounded_String ("initialize()"), se);
             end if;
             Java_Throw (se);
                 end;

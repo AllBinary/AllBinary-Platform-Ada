@@ -30,6 +30,7 @@ with org.allbinary.business.category.CategoryInterface_Package; use org.allbinar
 with org.allbinary.business.category.CategoryInterface_Package_References;
 with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
 with org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;

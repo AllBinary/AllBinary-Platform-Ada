@@ -202,9 +202,9 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             backupFile := AbFile_Package.createAbFile (backupFilePath);
             if backupFile.exists then
                 AbSqlTableUtil'Class (This).backupFile (backupFilePath, backupPath, tableName);
-                backupFile.delete;
+                declare Java_Result renames backupFile.delete; pragma Unreferenced (Java_Result); begin null; end;
             end if;
-            backupFile.createNewFile;
+            declare Java_Result renames backupFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             outputStream := OutputStream_Access (AbFileOutputStream_Package.Create (backupFile));
             return outputStream;
         exception
@@ -250,7 +250,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             end if;
             Directory_Package.create (backupAbPath);
             backupFileBak := AbFile_Package.createAbFile (backupAbPath.toFileSystemString);
-            backupFileBak.createNewFile;
+            declare Java_Result renames backupFileBak.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             FileUtil_Package.getInstance.copy (path, backupAbPath);
             return True;
         exception
@@ -402,7 +402,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             end if;
             bufferedLineReader.readUpToLines (start);
             line := This.stringUtil.EMPTY_STRING;
-            while ((bufferedLineReader.getCurrent) < (end_Id)) and then (((Java_Assign (line, bufferedLineReader.readLine))) /= (null)) loop
+            while ((Long_Long_Integer (bufferedLineReader.getCurrent)) < (end_Id)) and then (((Java_Assign (line, bufferedLineReader.readLine))) /= (null)) loop
                 if (Ada.Strings.Unbounded.Length (line)) > (1) then
                     abSqlTable.executeSQLStatement (line);
                 end if;

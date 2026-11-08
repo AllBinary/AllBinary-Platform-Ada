@@ -194,7 +194,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
       songList : constant BasicArrayList_Access := BasicArrayList_Access (songList_Param);
    begin
       Initialize_Fields (This);
-        PreLogUtil_Package.put ((This.commonStateStrings.CONTEXT) + (This.resourceUtil.getContext), MusicManager_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        PreLogUtil_Package.put (This.commonStateStrings.CONTEXT & Java_Image (This.resourceUtil.getContext), MusicManager_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.musicServiceClass := musicServiceClass;
         This.currentIntent := Intent_Package.Create (This.resourceUtil.getContext, musicServiceClass);
         This.songList := songList;
@@ -283,7 +283,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
             if (This.currentSongSound) /= (null) then
                 resource := This.currentSongSound.getResource;
             end if;
-            PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_LABEL & resource, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end startNewSong;

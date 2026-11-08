@@ -92,7 +92,7 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         begin
-            return AbeFactory'Class (This).getClass (abeClientInformation, className).newInstance;
+            return Java_Object_Access (AbeFactory'Class (This).getClass (abeClientInformation, className).newInstance);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -122,11 +122,11 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
                 loader := ClassLoader_Access (AbeClassLoader_Package.Create (parent, AbKeys_Package.getInstance.getKey (abeClientInformation, className)));
                 myClass := loader.loadClass (className);
                 constructor := myClass.getConstructor (classes);
-                return constructor.newInstance (params);
+                return Java_Object_Access (constructor.newInstance (params));
             else
                 myClass := parent.loadClass (className);
                 constructor := myClass.getConstructor (classes);
-                return constructor.newInstance (params);
+                return Java_Object_Access (constructor.newInstance (params));
             end if;
         exception
             when Java_Occurrence : others =>

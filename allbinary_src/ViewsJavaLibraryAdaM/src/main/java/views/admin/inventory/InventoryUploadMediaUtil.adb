@@ -181,7 +181,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
             This.logUtil.putF (To_Unbounded_String ("Saving Original Image: ") & Java_Image (originalImageFile), InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
         end if;
-        originalImageFile.createNewFile;
+        declare Java_Result renames originalImageFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         fileUtil.write (ByteArrayInputStream_Package.Create (byteArray), originalImageFile);
         uploadMedia := UploadMediaSingleton_Package.getInstance;
         isMediaSupported := (uploadMedia.isWriterSupported (mediaData.getName)) or else (uploadMedia.isReaderSupported (mediaData.getName));
@@ -235,13 +235,13 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
                     This.mediaUtil.saveImageFile (originalImageFile, This.itemInterface.getLargeImage, fullPath, defaultMediaData, This.LARGEWIDTH, This.LARGEHEIGHT);
                 else
                     smallImageFile := AbFile_Package.createAbFile (This.itemInterface.getSmallImage);
-                    smallImageFile.createNewFile;
+                    declare Java_Result renames smallImageFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
                     fileUtil.write (ByteArrayInputStream_Package.Create (byteArray), smallImageFile);
                     mediumImageFile := AbFile_Package.createAbFile (This.itemInterface.getMediumImage);
-                    smallImageFile.createNewFile;
+                    declare Java_Result renames smallImageFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
                     fileUtil.write (ByteArrayInputStream_Package.Create (byteArray), mediumImageFile);
                     largeImageFile := AbFile_Package.createAbFile (This.itemInterface.getSmallImage);
-                    largeImageFile.createNewFile;
+                    declare Java_Result renames largeImageFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
                     fileUtil.write (ByteArrayInputStream_Package.Create (byteArray), largeImageFile);
                 end if;
             end if;

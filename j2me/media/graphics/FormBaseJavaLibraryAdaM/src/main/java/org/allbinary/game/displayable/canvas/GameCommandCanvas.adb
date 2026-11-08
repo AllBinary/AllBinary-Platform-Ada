@@ -95,6 +95,8 @@ with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
@@ -451,7 +453,7 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    begin
         begin
             font := graphics.getFont;
-            This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).append (This.canvasStrings.FD_WIDTH).appendint (Integer (MyFontProcessor_Package.defaultCharWidth (font))).append (This.canvasStrings.FD_HEIGHT).appendint (Integer (font.getHeight)).toString, GameCommandCanvas_Access'(This'Unchecked_Access), This.canvasStrings.UPDATE_MEASUREMENT);
+            This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).append (This.canvasStrings.FD_WIDTH).appendint (MyFontProcessor_Package.defaultCharWidth (font)).append (This.canvasStrings.FD_HEIGHT).appendint (font.getHeight).toString, GameCommandCanvas_Access'(This'Unchecked_Access), This.canvasStrings.UPDATE_MEASUREMENT);
             This.fontHeight := font.getHeight;
             rectangle := GameCommandCanvas'Class (This).createRectangle (This.menuForm.size);
             This.menuForm.init (rectangle, FormTypeFactory_Package.getInstance.VERTICAL_CENTER_FORM);

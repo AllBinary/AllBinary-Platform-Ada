@@ -67,8 +67,8 @@ package body org.allbinary.logic.communication.http.AcceptableResponse_Package i
       Initialize_Fields (This);
         This.logUtil.putF (tagName, AcceptableResponse_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         acceptableResponseUtil := AcceptableResponseUtil_Package.getInstance;
-        acceptableResponseUtil.candidateVector.addAt (index, candidate);
-        acceptableResponseUtil.tagNameVector.addAt (index, tagName);
+        acceptableResponseUtil.candidateVector.addAt (index, Java_Box (candidate));
+        acceptableResponseUtil.tagNameVector.addAt (index, Java_Box (tagName));
    end Initialize;
 
    function Create (candidate : Unbounded_String; tagName : Unbounded_String; index : Integer) return AcceptableResponse_Access is

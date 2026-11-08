@@ -319,7 +319,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
 
    function getFileName (This : in out RootStoreCategoryProperties) return Unbounded_String is
    begin
-        return RootStoreCategoryProperties'Class (This).getValue & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
+        return RootStoreCategoryProperties'Class (This).getValue & AbPathData_Package.getInstance.EXTENSION_SEP & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
    end getFileName;
 
    procedure setValue (This : in out RootStoreCategoryProperties; value : Unbounded_String) is

@@ -91,9 +91,9 @@ package body org.allbinary.game.layer.hud.basic.LapWidget_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.delete (0, stringBuffer.length);
         stringBuffer.append (This.LAP_STR);
-        stringBuffer.appendint (Integer (lapInfo.getCurrentLap));
+        stringBuffer.appendint (lapInfo.getCurrentLap);
         stringBuffer.append (This.OF_STR);
-        stringBuffer.appendint (Integer (lapInfo.getTotalLaps));
+        stringBuffer.appendint (lapInfo.getTotalLaps);
         This.string_Id := stringBuffer.toString;
    end update;
 

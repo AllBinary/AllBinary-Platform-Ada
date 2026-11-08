@@ -31,12 +31,13 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
---  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
+with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 limited with org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
 
 package org.allbinary.logic.io.AbFileOutputStream_Package is
 
+   package FileOutputStream_Package renames Standard.java.io.FileOutputStream_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package Reference_Types is
    subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;
@@ -64,7 +65,7 @@ package org.allbinary.logic.io.AbFileOutputStream_Package is
    subtype AbFileOutputStream_Access_Array_Access_Array_Access is org.allbinary.logic.io.AbFileOutputStream_Package_References.AbFileOutputStream_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AbFileOutputStream_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.AbFileOutputStream_Package_References."=";
 
-   type AbFileOutputStream is new Java_Object with null record;
+   type AbFileOutputStream is new FileOutputStream with null record;
 
    procedure Initialize (This : in out AbFileOutputStream'Class; name : Unbounded_String; append : Boolean);
    function Create (name : Unbounded_String; append : Boolean) return AbFileOutputStream_Access;

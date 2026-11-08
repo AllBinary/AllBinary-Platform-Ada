@@ -16,6 +16,13 @@
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package_References;
 with org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package; use org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package;
 
 package body org.allbinary.game.input.MotionJ2MEGameInputMapping_Package is

@@ -35,6 +35,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -45,6 +46,7 @@ with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.layer.pickup.PickupBehavior_Package;
 with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
 with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is

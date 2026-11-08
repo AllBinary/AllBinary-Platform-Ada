@@ -19,13 +19,16 @@ with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References;
 with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
-with org.allbinary.logic.util.cache.PoolInterface_Package_References;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
+with org.allbinary.logic.util.cache.AbstractArrayListPool_Package;
 with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleInfo_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
 with javax.microedition.lcdui.Graphics_Package;
@@ -34,6 +37,7 @@ with org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package is
 
@@ -57,16 +61,6 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
    function "=" (Left, Right : CacheableInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References."=";
    subtype CacheableInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References.CacheableInterfaceFactoryInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CacheableInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_References."=";
-   subtype PoolInterface_Access is org.allbinary.logic.util.cache.PoolInterface_Package_References.PoolInterface_Access;
-   function "=" (Left, Right : PoolInterface_Access) return Boolean renames org.allbinary.logic.util.cache.PoolInterface_Package_References."=";
-   subtype PoolInterface_Access_Array is org.allbinary.logic.util.cache.PoolInterface_Package_References.PoolInterface_Access_Array;
-   function "=" (Left, Right : PoolInterface_Access_Array) return Boolean renames org.allbinary.logic.util.cache.PoolInterface_Package_References."=";
-   subtype PoolInterface_Access_Array_Access is org.allbinary.logic.util.cache.PoolInterface_Package_References.PoolInterface_Access_Array_Access;
-   function "=" (Left, Right : PoolInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.PoolInterface_Package_References."=";
-   subtype PoolInterface_Access_Array_Access_Array is org.allbinary.logic.util.cache.PoolInterface_Package_References.PoolInterface_Access_Array_Access_Array;
-   function "=" (Left, Right : PoolInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.PoolInterface_Package_References."=";
-   subtype PoolInterface_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.PoolInterface_Package_References.PoolInterface_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : PoolInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.PoolInterface_Package_References."=";
    procedure Initialize_Fields (This : in out ImageArrayRotationAnimationPool'Class) is
    begin
       null;

@@ -37,6 +37,7 @@ with org.allbinary.image.opengles.OpenGLESImageProcessor_Package_References;
 with org.allbinary.image.opengles.OpenGLESImageTranslate_Package; use org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
 with org.allbinary.image.opengles.OpenGLESImageTranslate_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;

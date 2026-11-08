@@ -35,6 +35,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;

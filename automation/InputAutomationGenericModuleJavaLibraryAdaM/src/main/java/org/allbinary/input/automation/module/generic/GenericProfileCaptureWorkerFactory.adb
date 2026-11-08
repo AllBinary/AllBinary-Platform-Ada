@@ -24,6 +24,7 @@ with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package_Refe
 with org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package; use org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package;
 with org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorker_Package; use org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorker_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;

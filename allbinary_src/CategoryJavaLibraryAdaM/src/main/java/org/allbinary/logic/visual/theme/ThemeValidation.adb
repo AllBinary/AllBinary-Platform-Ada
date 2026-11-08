@@ -331,7 +331,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       document : Document_Access;
    begin
         if (This.styleValidationInterface) = (null) then
-            cssStyleFileAbPath := AbPath_Package.Create (This.fileAbPath.toString, This.themeName & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION));
+            cssStyleFileAbPath := AbPath_Package.Create (This.fileAbPath.toString, This.themeName & AbPathData_Package.getInstance.EXTENSION_SEP & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION));
             cryptFileReader := CryptFileReader_Package.Create (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION, CategoryData_Package.getInstance.ENCRYPTED_EXTENSION);
             document := DomDocumentHelper_Package.create (cryptFileReader.get (cssStyleFileAbPath));
             This.styleValidationInterface := ValidationInterface_Access (CssStyleValidation_Package.Create (document));

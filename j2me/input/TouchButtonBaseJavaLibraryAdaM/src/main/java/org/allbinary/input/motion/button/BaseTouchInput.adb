@@ -83,7 +83,7 @@ package body org.allbinary.input.motion.button.BaseTouchInput_Package is
 
    function toString (This : in out BaseTouchInput) return Unbounded_String is
    begin
-        return To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
+        return To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag));
    end toString;
 
 end org.allbinary.input.motion.button.BaseTouchInput_Package;

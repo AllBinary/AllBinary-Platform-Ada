@@ -33,6 +33,7 @@ with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;

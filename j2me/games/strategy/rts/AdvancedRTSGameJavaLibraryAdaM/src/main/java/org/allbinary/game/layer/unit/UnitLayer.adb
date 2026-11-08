@@ -173,6 +173,7 @@ with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.thread.ARunnable_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
@@ -208,6 +209,7 @@ with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package;
@@ -771,7 +773,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         Initialize_Fields (This);
         UnitLayer'Class (This).setCollidableInferface (CollidableUnitBehavior_Package.Create (True));
         This.waypointLayerInterfaceFactoryInterface := waypointLayerInterfaceFactoryInterface;
-        This.maxResourceLoad := maxResourceLoad.shortValue;
+        This.maxResourceLoad := Short_Integer (maxResourceLoad);
         This.moveSoundInterface := moveSoundInterface;
         if Features_Package.getInstance.isFeature (GameFeatureFactory_Package.getInstance.DAMAGE_FLOATERS) then
             This.damageFloaters := DamageFloaters_Access (PtsDamageFloaters_Package.Create (UnitLayer_Access'(This'Unchecked_Access)));
@@ -1238,7 +1240,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             targetAngle := (targetAngle) + (180);
         end if;
         angleInfo := This.rotationAnimationInterfaceP.getAngleInfoP;
-        angle := FrameUtil_Package.getInstance.adjustAngleToFrameAngle ((angleInfo.getAngle) - (270));
+        angle := FrameUtil_Package.getInstance.adjustAngleToFrameAngle ((Integer (angleInfo.getAngle)) - (270));
         This.rtsLogHelper.turnTo (UnitLayer_Access'(This'Unchecked_Access), dx, dy, angleInfo, angle, This.movementAngle, evading, targetAngle);
         gameKeyEventFactory := GameKeyEventFactory_Package.getInstance;
         if ((dx) = (0)) and then ((dy) = (0)) then
@@ -1279,7 +1281,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                         UnitLayer'Class (This).handleDeltalY (dx, dy);
                     end if;
                 end if;
-                deltaAngle2 := (This.movementAngle.getValue) - (angle);
+                deltaAngle2 := (Integer (This.movementAngle.getValue)) - (angle);
                 if (deltaAngle2) > (0) then
                     This.rtsLogHelper.rotateRight (UnitLayer_Access'(This'Unchecked_Access));
                     UnitLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));

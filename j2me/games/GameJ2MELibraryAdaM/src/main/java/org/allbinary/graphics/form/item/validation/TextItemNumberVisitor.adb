@@ -76,7 +76,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
         if (Ada.Strings.Unbounded.Length (value)) < (2) then
             stringValidationUtil := StringValidationUtil_Package.getInstance;
             if stringValidationUtil.isNumber (value) then
-                return BooleanFactory_Package.getInstance.TRUE;
+                return Java_Box (BooleanFactory_Package.getInstance.TRUE);
             else
                 begin
                     TextNotificationUtil_Package.getInstance.fireError (To_Unbounded_String ("Numbers Only"));
@@ -89,10 +89,10 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
                     This.logUtil.put (commonStrings.EXCEPTION_Id, TextItemNumberVisitor_Access'(This'Unchecked_Access), commonStrings.VISIT, e);
                         end;
                 end;
-                return BooleanFactory_Package.getInstance.FALSE;
+                return Java_Box (BooleanFactory_Package.getInstance.FALSE);
             end if;
         else
-            return BooleanFactory_Package.getInstance.FALSE;
+            return Java_Box (BooleanFactory_Package.getInstance.FALSE);
         end if;
    end visit;
 

@@ -231,7 +231,7 @@ package body admin.tags.AuthenticationTag_Package is
             addressHelperClass := anyType.all'Tag;
             methodParams := new Ada_Tags_Tag_Array'(This.userName.all'Tag, This.password.all'Tag, This.roles.all'Tag);
             method := addressHelperClass.getMethod (To_Unbounded_String ("isRoleValid"), methodParams);
-            methodArgs := new Java_Object_Access_Array'(This.userName, This.password, This.roles);
+            methodArgs := new Java_Object_Access_Array'(This.userName, This.password, Java_Object_Access (This.roles));
             resultBoolean := Java_Unbox_Boolean (method.invoke (anyType, methodArgs));
             return resultBoolean;
         exception
@@ -306,7 +306,7 @@ package body admin.tags.AuthenticationTag_Package is
             addressHelperClass := anyType.all'Tag;
             methodParams := new Ada_Tags_Tag_Array'(0 => This.roles.all'Tag);
             method := addressHelperClass.getMethod (To_Unbounded_String ("isAuthenticationSessionValid"), methodParams);
-            methodArgs := new Java_Object_Access_Array'(0 => This.roles);
+            methodArgs := new Java_Object_Access_Array'(0 => Java_Object_Access (This.roles));
             resultBoolean := Java_Unbox_Boolean (method.invoke (anyType, methodArgs));
             return resultBoolean;
         exception

@@ -58,6 +58,7 @@ with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleFactory_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
@@ -79,6 +80,7 @@ with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 with org.allbinary.game.layer.SensorAction_Package_References;
 

@@ -33,6 +33,7 @@ with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.
 with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;

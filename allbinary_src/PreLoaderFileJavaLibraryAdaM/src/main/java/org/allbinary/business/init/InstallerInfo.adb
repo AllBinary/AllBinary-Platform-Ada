@@ -26,6 +26,8 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package; use org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
 with org.allbinary.logic.system.security.crypt.WeakCrypt_Package; use org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -88,10 +90,10 @@ package body org.allbinary.business.init.InstallerInfo_Package is
         FILEABPATH := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getMainPath) & InstallerInfo_Package.PACKAGE_Id, InstallerInfo_Package.INITFILENAME);
         begin
             newFile := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
-            newFile.createNewFile;
+            declare Java_Result renames newFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (newFile);
-            cryptedUserName := WeakCrypt_Package.Create (1).encrypt (InstallerInfo'Class (This).getUserName).getBytes;
-            cryptedPassword := WeakCrypt_Package.Create (2).encrypt (InstallerInfo'Class (This).getPassword).getBytes;
+            cryptedUserName := Java_Get_Bytes (WeakCrypt_Package.Create (1).encrypt (InstallerInfo'Class (This).getUserName));
+            cryptedPassword := Java_Get_Bytes (WeakCrypt_Package.Create (2).encrypt (InstallerInfo'Class (This).getPassword));
             dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedUserName));
             dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedPassword));
             InstallerInfo_Package.hasRead := False;

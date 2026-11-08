@@ -29,6 +29,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.data.tree.dom.FileTableMapping_Package is
@@ -82,7 +83,7 @@ package body org.allbinary.data.tree.dom.FileTableMapping_Package is
    --  throws Exception
    function getKey (This : in out FileTableMapping) return Java_Object_Access is
    begin
-        return Java_Object_Access (This.file.getPath);
+        return Java_Box (This.file.getPath);
    end getKey;
 
    --  throws Exception
@@ -116,11 +117,11 @@ package body org.allbinary.data.tree.dom.FileTableMapping_Package is
         filePropertyHashMap.put (fileData.ISDIRECTORY, Java_Box (To_Unbounded_String (Java_Image (This.file.isDirectory))));
         filePropertyHashMap.put (fileData.ISHIDDEN, Java_Box (To_Unbounded_String (Java_Image (This.file.isHidden))));
         filePropertyHashMap.put (fileData.ISABSOLUTE, Java_Box (To_Unbounded_String (Java_Image (This.file.isAbsolute))));
-        filePropertyHashMap.put (fileData.ABSOLUTE_PATH, This.file.getAbsolutePath);
-        filePropertyHashMap.put (fileData.CANONICAL_PATH, This.file.getCanonicalPath);
+        filePropertyHashMap.put (fileData.ABSOLUTE_PATH, Java_Box (This.file.getAbsolutePath));
+        filePropertyHashMap.put (fileData.CANONICAL_PATH, Java_Box (This.file.getCanonicalPath));
         filePropertyHashMap.put (fileData.NAME, Java_Box (This.file.getName));
-        filePropertyHashMap.put (fileData.PARENT, This.file.getParent);
-        filePropertyHashMap.put (fileData.PATH, This.file.getPath);
+        filePropertyHashMap.put (fileData.PARENT, Java_Box (This.file.getParent));
+        filePropertyHashMap.put (fileData.PATH, Java_Box (This.file.getPath));
         return filePropertyHashMap;
    end toHashMap;
 

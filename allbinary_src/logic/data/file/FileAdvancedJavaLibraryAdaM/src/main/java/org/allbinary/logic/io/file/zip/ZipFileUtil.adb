@@ -28,14 +28,21 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.io.file.directory.Directory_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
@@ -129,9 +136,9 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
         begin
             zipFile := AbFile_Package.createAbFile (outFilename);
             if zipFile.exists then
-                zipFile.delete;
+                declare Java_Result renames zipFile.delete; pragma Unreferenced (Java_Result); begin null; end;
             end if;
-            zipFile.createNewFile;
+            declare Java_Result renames zipFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             outputStream := ZipOutputStream_Package.Create (AbFileOutputStream_Package.createFromAbFile (zipFile));
             streamUtil := StreamUtil_Package.getInstance;
             stringBuffer := StringMaker_Package.Create;
@@ -160,7 +167,7 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
                             declare
                                 e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                             begin
-                        This.logUtil.putF (To_Unbounded_String ("Skipping File (Probably Local): ") & Java_Image (file.getPath), ZipFileUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
+                        This.logUtil.putF (To_Unbounded_String ("Skipping File (Probably Local): ") & file.getPath, ZipFileUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
                             end;
                     end;
                 end if;

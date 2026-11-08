@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.BufferedWriter_Package; use java.io.BufferedWriter_Package;
+with java.io.FileWriter_Package; use java.io.FileWriter_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
@@ -24,16 +26,23 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonLabels_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.io.file.AbFileInterface_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.io.BufferedWriterUtil_Package is
 
+   package BufferedWriter_Package renames Standard.java.io.BufferedWriter_Package;
+   package FileWriter_Package renames Standard.java.io.FileWriter_Package;
    package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
    package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;

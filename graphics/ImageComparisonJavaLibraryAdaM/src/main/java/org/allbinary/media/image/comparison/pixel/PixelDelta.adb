@@ -133,7 +133,7 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
       point : constant GPoint_Access := GPoint_Access (point_Param);
       colorDelta : constant ColorDelta_Access := ColorDelta_Access (colorDelta_Param);
    begin
-        return Java_Box (StringMaker_Package.Create.appendint (Integer (TsUtil_Package.getInstance.hashCode (point))).append (CommonSeps_Package.getInstance.UNDERSCORE).append (colorDelta.getKey.toString).toString);
+        return Java_Box (StringMaker_Package.Create.appendint (TsUtil_Package.getInstance.hashCode (point)).append (CommonSeps_Package.getInstance.UNDERSCORE).append (colorDelta.getKey.toString).toString);
    end getKey;
 
    function getPoint (This : in out PixelDelta) return GPoint_Access is

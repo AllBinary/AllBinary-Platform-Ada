@@ -42,8 +42,7 @@ limited with org.allbinary.input.motion.button.TouchButtonInput_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package_References;
 limited with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
-limited with org.allbinary.input.motion.button.ReleaseHelper_Package;
-with org.allbinary.input.motion.button.ReleaseHelper_Package_References;
+with org.allbinary.input.motion.button.ReleaseHelper_Package; use org.allbinary.input.motion.button.ReleaseHelper_Package;
 
 package org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
 
@@ -112,16 +111,6 @@ package org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
    use type CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array;
    subtype CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
    use type CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
-   subtype ReleaseHelper_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access;
-   use type ReleaseHelper_Access;
-   subtype ReleaseHelper_Access_Array is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array;
-   use type ReleaseHelper_Access_Array;
-   subtype ReleaseHelper_Access_Array_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access;
-   use type ReleaseHelper_Access_Array_Access;
-   subtype ReleaseHelper_Access_Array_Access_Array is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access_Array;
-   use type ReleaseHelper_Access_Array_Access_Array;
-   subtype ReleaseHelper_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access_Array_Access;
-   use type ReleaseHelper_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

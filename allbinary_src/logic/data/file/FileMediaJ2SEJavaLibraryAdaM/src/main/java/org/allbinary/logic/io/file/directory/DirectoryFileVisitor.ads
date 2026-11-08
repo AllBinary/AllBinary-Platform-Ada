@@ -31,12 +31,13 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.File_Package; use java.io.File_Package;
---  with java.io.FileFilter_Package; use java.io.FileFilter_Package;
+with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 with org.allbinary.logic.util.visitor.VisitorInterface_Package; use org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
 package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FileFilter_Package renames Standard.java.io.FileFilter_Package;
    package VisitorInterface_Package renames Standard.org.allbinary.logic.util.visitor.VisitorInterface_Package;
    package Reference_Types is
    end Reference_Types;
@@ -54,7 +55,7 @@ package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package is
    subtype DirectoryFileVisitor_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.DirectoryFileVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DirectoryFileVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
 
-   type DirectoryFileVisitor is new Java_Object and VisitorInterface with null record;
+   type DirectoryFileVisitor is new Java_Object and VisitorInterface and FileFilter with null record;
 
    procedure Initialize (This : in out DirectoryFileVisitor'Class);
    function Create return DirectoryFileVisitor_Access;

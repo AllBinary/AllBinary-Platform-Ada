@@ -166,7 +166,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.allbinary.logging,org.allbinary.business,org.allbinary.logic.control.workflow</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.allbinary.logging,org.allbinary.business,org.allbinary.logic.control.workflow,org.allbinary.data.tables,org.allbinary.data,org.allbinary.data.tree.dom,org.allbinary.cache,org.graph,org.allbinary.business.context,org.allbinary.logic.communication,org.allbinary.business.category,org.allbinary.logic,org.allbinary.business.user.commerce,org.allbinary.business.user,org.allbinary.user.commerce.money.payment.gateway</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

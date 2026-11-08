@@ -165,7 +165,7 @@ package body org.allbinary.game.collision.CollidableBaseBehavior_Package is
 
    function getName (This : in out CollidableBaseBehavior) return Unbounded_String is
    begin
-        return To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
+        return To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag));
    end getName;
 
    procedure setCollidable (This : in out CollidableBaseBehavior; collidable : Boolean) is
@@ -184,7 +184,7 @@ package body org.allbinary.game.collision.CollidableBaseBehavior_Package is
       ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
       allbinaryCollidableLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (allbinaryCollidableLayer_Param);
    begin
-        Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (This.commonStrings.NOT_IMPLEMENTED).append (CommonLabels_Package.getInstance.COLON_SEP).append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag))).toString));
+        Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (This.commonStrings.NOT_IMPLEMENTED).append (CommonLabels_Package.getInstance.COLON_SEP).append (To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag))).toString));
    end collide;
 
    function isCollision (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is

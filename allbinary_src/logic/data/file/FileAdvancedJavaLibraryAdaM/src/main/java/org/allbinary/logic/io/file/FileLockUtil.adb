@@ -27,13 +27,20 @@ with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -122,7 +129,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
             file := AbFile_Access (vector.get (index));
             fileLock := FileLockUtil'Class (This).getLock (file);
             if (fileLock) /= (null) then
-                This.logUtil.putF (To_Unbounded_String ("File Lock Obtained: ") & Java_Image (file.getAbsolutePath), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getAll"));
+                This.logUtil.putF (To_Unbounded_String ("File Lock Obtained: ") & file.getAbsolutePath, FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getAll"));
                 fileLockVector.add (Java_Object_Access (fileLock));
             elsif isReturnOnFailure then
                 This.logUtil.putF (To_Unbounded_String ("Total Locks Obtained: ") & Java_Image (fileLockVector.size), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getAll"));

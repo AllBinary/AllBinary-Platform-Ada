@@ -31,22 +31,11 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.CompositeSound_Package; use org.allbinary.media.audio.CompositeSound_Package;
-limited with org.allbinary.media.audio.Sound_Package;
-with org.allbinary.media.audio.Sound_Package_References;
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 
 package org.allbinary.media.audio.SelectSound_Package is
 
    package Reference_Types is
-   subtype Sound_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access;
-   use type Sound_Access;
-   subtype Sound_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array;
-   use type Sound_Access_Array;
-   subtype Sound_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access;
-   use type Sound_Access_Array_Access;
-   subtype Sound_Access_Array_Access_Array is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array;
-   use type Sound_Access_Array_Access_Array;
-   subtype Sound_Access_Array_Access_Array_Access is org.allbinary.media.audio.Sound_Package_References.Sound_Access_Array_Access_Array_Access;
-   use type Sound_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

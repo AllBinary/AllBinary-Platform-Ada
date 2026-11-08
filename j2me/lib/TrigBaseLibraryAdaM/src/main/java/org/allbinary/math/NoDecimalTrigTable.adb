@@ -1297,7 +1297,7 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
                 angleOfTarget := NoDecimalTrigTable'Class (This).antiTan (dx (index), dy (index2));
                 angle := angleFactory.getAt (Integer (angleOfTarget));
                 stringMaker.delete (0, stringMaker.length);
-                PreLogUtil_Package.put (stringMaker.append (CommonLabels_Package.getInstance.INDEX_LABEL).appendint (index).append (To_Unbounded_String (" index2: ")).appendint (index2).append (PositionStrings_Package.getInstance.DX_LABEL).appendint (dx (index)).append (PositionStrings_Package.getInstance.DY_LABEL).appendint (dy (index2)).append (TARGET_ANGLE).appendshort (angleOfTarget).append (CommonSeps_Package.getInstance.EQUALS).appendshort (Short_Integer (angle.getValue)).toString, NoDecimalTrigTable_Access'(This'Unchecked_Access), METHOD_NAME);
+                PreLogUtil_Package.put (stringMaker.append (CommonLabels_Package.getInstance.INDEX_LABEL).appendint (index).append (To_Unbounded_String (" index2: ")).appendint (index2).append (PositionStrings_Package.getInstance.DX_LABEL).appendint (dx (index)).append (PositionStrings_Package.getInstance.DY_LABEL).appendint (dy (index2)).append (TARGET_ANGLE).appendshort (angleOfTarget).append (CommonSeps_Package.getInstance.EQUALS).appendshort (angle.getValue).toString, NoDecimalTrigTable_Access'(This'Unchecked_Access), METHOD_NAME);
             end loop;
         end loop;
         angleOfTarget := NoDecimalTrigTable'Class (This).antiTan (dx (0), dy (0));

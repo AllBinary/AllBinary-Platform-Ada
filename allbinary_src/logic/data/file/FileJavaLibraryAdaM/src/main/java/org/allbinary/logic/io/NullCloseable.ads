@@ -30,11 +30,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.Closeable_Package; use java.io.Closeable_Package;
+with java.io.Closeable_Package; use java.io.Closeable_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 
 package org.allbinary.logic.io.NullCloseable_Package is
 
+   package Closeable_Package renames Standard.java.io.Closeable_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;
@@ -51,7 +52,7 @@ package org.allbinary.logic.io.NullCloseable_Package is
    subtype NullCloseable_Access_Array_Access_Array_Access is org.allbinary.logic.io.NullCloseable_Package_References.NullCloseable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NullCloseable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.NullCloseable_Package_References."=";
 
-   type NullCloseable is new Java_Object with null record;
+   type NullCloseable is new Java_Object and Closeable with null record;
    NULL_CLOSEABLE : NullCloseable_Access;
 
    procedure Initialize (This : in out NullCloseable'Class);

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.FileReader_Package; use java.io.FileReader_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -48,6 +49,7 @@ with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
 
+   package FileReader_Package renames Standard.java.io.FileReader_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
    package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;

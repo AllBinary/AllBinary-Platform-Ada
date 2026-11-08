@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.lang.ClassLoader_Package;
 
 package body org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
 
@@ -40,7 +41,7 @@ package body org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
    function newInstance (anyType_Param : access Java_Object'Class) return Java_Object_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return Proxy_Package.newProxyInstance (ClassLoader_Package.getSystemClassLoader, anyType.all'Tag.getInterfaces, InterfaceCastProxy_Package.Create (anyType));
+        return Java_Object_Access (Proxy_Package.newProxyInstance (Standard.java.lang.ClassLoader_Package.getSystemClassLoader, anyType.all'Tag.getInterfaces, InterfaceCastProxy_Package.Create (anyType)));
    end newInstance;
 
    --  throws Throwable
@@ -55,7 +56,7 @@ package body org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
         if not (realMethod.isAccessible) then
             realMethod.setAccessible (True);
         end if;
-        return proxyMethod.invoke (This.anyType, proxyArgs);
+        return Java_Object_Access (proxyMethod.invoke (This.anyType, proxyArgs));
    end invoke;
 
    procedure newInstance (anyType_Param : access Java_Object'Class) is

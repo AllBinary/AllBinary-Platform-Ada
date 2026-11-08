@@ -186,7 +186,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
         stringBuffer.append (MotionGestureEvent_Package.PREVIOUS);
         stringBuffer.append (stringUtil.toString (This.previousPoint));
         stringBuffer.append (MotionGestureEvent_Package.HASHCODE);
-        stringBuffer.appendint (Integer (TsUtil_Package.getInstance.hashCode (MotionGestureEvent_Access'(This'Unchecked_Access))));
+        stringBuffer.appendint (TsUtil_Package.getInstance.hashCode (MotionGestureEvent_Access'(This'Unchecked_Access)));
         return stringBuffer.toString;
    end toString;
 

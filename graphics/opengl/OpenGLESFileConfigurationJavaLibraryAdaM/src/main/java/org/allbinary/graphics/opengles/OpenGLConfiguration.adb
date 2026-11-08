@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.Closeable_Package; use java.io.Closeable_Package;
 with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with java.io.OutputStream_Package; use java.io.OutputStream_Package;
@@ -38,10 +39,14 @@ with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbi
 with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.graphics.opengles.OpenGLFeature_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package_References;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with javax.microedition.lcdui.Canvas_Package;
@@ -60,6 +65,7 @@ with org.microemu.DisplayAccess_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
 with javax.microedition.lcdui.Displayable_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
+with org.allbinary.util.EnumerationUtil_Package;
 with javax.microedition.lcdui.Event_Package;
 with org.microemu.device.ui.EventDispatcher_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -68,6 +74,8 @@ with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+with org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
@@ -102,6 +110,7 @@ with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
 
+   package Closeable_Package renames Standard.java.io.Closeable_Package;
    package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package OutputStream_Package renames Standard.java.io.OutputStream_Package;

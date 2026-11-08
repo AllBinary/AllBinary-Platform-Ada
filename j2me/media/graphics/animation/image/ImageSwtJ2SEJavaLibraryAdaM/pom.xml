@@ -235,7 +235,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.microemu,org.eclipse.swt</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.microemu,org.eclipse.swt,org.allbinary.cache,org.graph</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

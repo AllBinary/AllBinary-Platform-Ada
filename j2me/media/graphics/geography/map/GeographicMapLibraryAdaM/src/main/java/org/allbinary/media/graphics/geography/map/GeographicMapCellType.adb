@@ -82,7 +82,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellType_Pa
 
    function toString (This : in out GeographicMapCellType) return Unbounded_String is
    begin
-        return SmallIntegerSingletonFactory_Package.getInstance.getAt (This.type_Id).toString;
+        return To_Unbounded_String (Java_Image (SmallIntegerSingletonFactory_Package.getInstance.getAt (This.type_Id)));
    end toString;
 
 begin

@@ -78,9 +78,9 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
             charValue := Element (value, (0) + 1);
             stringValidationUtil := StringValidationUtil_Package.getInstance;
             if stringValidationUtil.isNumber (value) then
-                return BooleanFactory_Package.getInstance.TRUE;
+                return Java_Box (BooleanFactory_Package.getInstance.TRUE);
             elsif TextItemUserIdentifierVisitor'Class (This).isLetter (charValue) then
-                return BooleanFactory_Package.getInstance.TRUE;
+                return Java_Box (BooleanFactory_Package.getInstance.TRUE);
             else
                 begin
                     TextNotificationUtil_Package.getInstance.fireError (To_Unbounded_String ("Only Letters & Numbers Allowed"));
@@ -93,10 +93,10 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
                     This.logUtil.put (commonStrings.EXCEPTION_Id, TextItemUserIdentifierVisitor_Access'(This'Unchecked_Access), commonStrings.VISIT, e);
                         end;
                 end;
-                return BooleanFactory_Package.getInstance.FALSE;
+                return Java_Box (BooleanFactory_Package.getInstance.FALSE);
             end if;
         else
-            return BooleanFactory_Package.getInstance.FALSE;
+            return Java_Box (BooleanFactory_Package.getInstance.FALSE);
         end if;
    end visit;
 

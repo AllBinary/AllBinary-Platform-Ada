@@ -34,6 +34,7 @@ with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package; use org.
 with org.allbinary.logic.system.security.crypt.WeakCrypt_Package; use org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
 
 package body org.allbinary.business.init.db.DbInitInfo_Package is
 
@@ -119,7 +120,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    begin
         url := DbConnectionInfo_Package.DbConnectionInfo (This).getUrl;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-            PreLogUtil_Package.put (Java_Image (This.httpData.URL_LABEL) & url, DbInitInfo_Access'(This'Unchecked_Access), This.GET_URL);
+            PreLogUtil_Package.put (This.httpData.URL_LABEL & url, DbInitInfo_Access'(This'Unchecked_Access), This.GET_URL);
         end if;
         return url;
    end getUrl;
@@ -143,16 +144,16 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
         FILEABPATH := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & This.PACKAGE_Id, This.initFileName);
         begin
             newFile := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
-            newFile.createNewFile;
+            declare Java_Result renames newFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (newFile);
             begin
-                cryptedJdbcDriver := WeakCrypt_Package.Create (1).encrypt (DbInitInfo'Class (This).getJdbcDriver).getBytes;
-                cryptedName := WeakCrypt_Package.Create (2).encrypt (DbInitInfo'Class (This).getName).getBytes;
-                cryptedUserName := WeakCrypt_Package.Create (3).encrypt (DbInitInfo'Class (This).getUserName).getBytes;
-                cryptedPassword := WeakCrypt_Package.Create (4).encrypt (DbInitInfo'Class (This).getPassword).getBytes;
-                cryptedSchema := WeakCrypt_Package.Create (5).encrypt (DbInitInfo'Class (This).getSchema).getBytes;
-                cryptedServer := WeakCrypt_Package.Create (6).encrypt (DbInitInfo'Class (This).getServer).getBytes;
-                cryptedPort := WeakCrypt_Package.Create (7).encrypt (DbInitInfo'Class (This).getPort).getBytes;
+                cryptedJdbcDriver := Java_Get_Bytes (WeakCrypt_Package.Create (1).encrypt (DbInitInfo'Class (This).getJdbcDriver));
+                cryptedName := Java_Get_Bytes (WeakCrypt_Package.Create (2).encrypt (DbInitInfo'Class (This).getName));
+                cryptedUserName := Java_Get_Bytes (WeakCrypt_Package.Create (3).encrypt (DbInitInfo'Class (This).getUserName));
+                cryptedPassword := Java_Get_Bytes (WeakCrypt_Package.Create (4).encrypt (DbInitInfo'Class (This).getPassword));
+                cryptedSchema := Java_Get_Bytes (WeakCrypt_Package.Create (5).encrypt (DbInitInfo'Class (This).getSchema));
+                cryptedServer := Java_Get_Bytes (WeakCrypt_Package.Create (6).encrypt (DbInitInfo'Class (This).getServer));
+                cryptedPort := Java_Get_Bytes (WeakCrypt_Package.Create (7).encrypt (DbInitInfo'Class (This).getPort));
                 dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedJdbcDriver));
                 dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedName));
                 dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (cryptedUserName));

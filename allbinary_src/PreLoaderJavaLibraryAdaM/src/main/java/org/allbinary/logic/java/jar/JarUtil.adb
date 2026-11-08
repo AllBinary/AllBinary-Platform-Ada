@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.net.URL_Package; use java.net.URL_Package;
 
 package body org.allbinary.logic.java.jar.JarUtil_Package is
 

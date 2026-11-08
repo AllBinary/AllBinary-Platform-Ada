@@ -217,7 +217,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
         begin
             storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (This.storeName));
             fromAbPath := AbPath_Package.Create ((storeFrontInterface.getTestHtmlPath) + (storeFrontInterface.getStaticPath), StringUtil_Package.getInstance.EMPTY_STRING);
-            toAbPath := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & storeFrontInterface.getName & Java_Image (AbPathData_Package.getInstance.SEPARATOR) & Java_Image (storeFrontInterface.getStaticPath), StringUtil_Package.getInstance.EMPTY_STRING);
+            toAbPath := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & storeFrontInterface.getName & AbPathData_Package.getInstance.SEPARATOR & Java_Image (storeFrontInterface.getStaticPath), StringUtil_Package.getInstance.EMPTY_STRING);
             FileUtil_Package.getInstance.copy (fromAbPath, toAbPath);
             success := To_Unbounded_String ("Made Public");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then

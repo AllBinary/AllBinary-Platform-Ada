@@ -5,7 +5,6 @@ with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with javax.microedition.media.Player_Package_References;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
-with javax.microedition.media.PlayerListener_Package_References;
 with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -56,16 +55,6 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    function "=" (Left, Right : Player_Access_Array_Access_Array) return Boolean renames javax.microedition.media.Player_Package_References."=";
    subtype Player_Access_Array_Access_Array_Access is javax.microedition.media.Player_Package_References.Player_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Player_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.Player_Package_References."=";
-   subtype PlayerListener_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access;
-   function "=" (Left, Right : PlayerListener_Access) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
-   subtype PlayerListener_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array;
-   function "=" (Left, Right : PlayerListener_Access_Array) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
-   subtype PlayerListener_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access;
-   function "=" (Left, Right : PlayerListener_Access_Array_Access) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
-   subtype PlayerListener_Access_Array_Access_Array is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array;
-   function "=" (Left, Right : PlayerListener_Access_Array_Access_Array) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
-   subtype PlayerListener_Access_Array_Access_Array_Access is javax.microedition.media.PlayerListener_Package_References.PlayerListener_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : PlayerListener_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.media.PlayerListener_Package_References."=";
    subtype PlayerStateUtil_Access is org.allbinary.media.audio.PlayerStateUtil_Package_References.PlayerStateUtil_Access;
    function "=" (Left, Right : PlayerStateUtil_Access) return Boolean renames org.allbinary.media.audio.PlayerStateUtil_Package_References."=";
    subtype PlayerStateUtil_Access_Array is org.allbinary.media.audio.PlayerStateUtil_Package_References.PlayerStateUtil_Access_Array;
@@ -158,7 +147,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
       This.playerListener := PlayerListener_Access (MusicManagerPlayerListener_Package.Create (MusicManager_Access'(This'Unchecked_Access)));
       This.PLAY := To_Unbounded_String ("Play ");
       This.SONG := To_Unbounded_String (" for: ");
-      This.NEXT_SONG := Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Song: ");
+      This.NEXT_SONG := CommonLabels_Package.getInstance.NEXT & To_Unbounded_String (" Song: ");
       This.STOPPING := To_Unbounded_String ("Stopping Current Song: ");
       This.ENDING := To_Unbounded_String ("Ending Current Song: ");
       This.WAITING_FOR_MEDIA_TO_END := To_Unbounded_String ("Waiting for media to end");
@@ -280,7 +269,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
             if (Java_Object_Access (This.currentSongSound)) /= (Java_Object_Access (NoSound_Package.getInstance)) then
                 resource := This.currentSongSound.getResource;
             end if;
-            PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_LABEL & resource, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end process;
@@ -321,7 +310,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
             if (Java_Object_Access (currentSongSound)) /= (Java_Object_Access (NoSound_Package.getInstance)) then
                 resource := currentSongSound.getResource;
             end if;
-            PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.END_Id, e);
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_LABEL & resource, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.END_Id, e);
                 end;
         end;
    end stop;

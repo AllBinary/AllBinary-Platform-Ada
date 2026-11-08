@@ -31,6 +31,7 @@ with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.game.Layer_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
@@ -105,7 +106,7 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
       image : constant Image_Access := Image_Access (image_Param);
       animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
-        HackRotationSpriteIndexedAnimation_Package.Initialize (This, sprite, image, AngleInfo_Package.getInstance (Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (sprite.getRawFrameCount)))), animationBehavior);
+        HackRotationSpriteIndexedAnimation_Package.Initialize (This, sprite, image, AngleInfo_Package.getInstance (Short_Integer (((Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE)) / (sprite.getRawFrameCount)))), animationBehavior);
         This.angleInfo.adjustAngle (This.sprite.getFrame);
    end Initialize;
 

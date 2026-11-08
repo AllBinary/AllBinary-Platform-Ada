@@ -53,7 +53,7 @@ package body org.allbinary.util.ABHashMap_Package is
    function get (This : in out ABHashMap; key_Param : access Java_Object'Class) return Java_Object_Access is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
-        return HashMap_Package.HashMap (This).get (key);
+        return Java_Object_Access (HashMap_Package.HashMap (This).get (key));
    end get;
 
    function containsKey (This : in out ABHashMap; key_Param : access Java_Object'Class) return Boolean is
@@ -66,7 +66,7 @@ package body org.allbinary.util.ABHashMap_Package is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
       value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
-        return HashMap_Package.HashMap (This).put (key, value);
+        return Java_Object_Access (HashMap_Package.HashMap (This).put (key, value));
    end put;
 
    procedure putAll (This : in out ABHashMap; map_Param : access Map_Package.Map'Class) is
@@ -78,7 +78,7 @@ package body org.allbinary.util.ABHashMap_Package is
    function remove (This : in out ABHashMap; key_Param : access Java_Object'Class) return Java_Object_Access is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
-        return HashMap_Package.HashMap (This).remove (key);
+        return Java_Object_Access (HashMap_Package.HashMap (This).remove (key));
    end remove;
 
    procedure clear (This : in out ABHashMap) is
@@ -106,19 +106,19 @@ package body org.allbinary.util.ABHashMap_Package is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
       defaultValue : constant Java_Object_Access := Java_Object_Access (defaultValue_Param);
    begin
-        return HashMap_Package.HashMap (This).getOrDefault (key, defaultValue);
+        return Java_Object_Access (HashMap_Package.HashMap (This).getOrDefault (key, defaultValue));
    end getOrDefault;
 
    function putIfAbsent (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
       value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
-        return HashMap_Package.HashMap (This).putIfAbsent (key, value);
+        return Java_Object_Access (HashMap_Package.HashMap (This).putIfAbsent (key, value));
    end putIfAbsent;
 
    function clone (This : in out ABHashMap) return Java_Object_Access is
    begin
-        return HashMap_Package.HashMap (This).clone;
+        return Java_Object_Access (HashMap_Package.HashMap (This).clone);
    end clone;
 
    procedure get (This : in out ABHashMap; key_Param : access Java_Object'Class) is

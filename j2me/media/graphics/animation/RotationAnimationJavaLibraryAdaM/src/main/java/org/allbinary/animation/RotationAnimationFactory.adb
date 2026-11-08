@@ -85,7 +85,7 @@ package body org.allbinary.animation.RotationAnimationFactory_Package is
       totalAngle : Short_Integer;
    begin
         totalAngle := AngleFactory_Package.getInstance.TOTAL_ANGLE;
-        return RotationAnimationFactory_Package.Create (totalAngle, Short_Integer (((totalAngle) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))));
+        return RotationAnimationFactory_Package.Create (totalAngle, Short_Integer (((Integer (totalAngle)) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))));
    end createFactory;
 
    procedure Initialize (This : in out RotationAnimationFactory'Class; totalAngle : Short_Integer; angleIncrement : Short_Integer) is

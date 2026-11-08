@@ -29,6 +29,7 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
@@ -122,7 +123,7 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
             stringBuffer.appendint (Integer (XmlRpcRemoteLicenseRegistrationClient'Class (This).getServer));
             stringBuffer.append (SEP_Package);
             stringBuffer.append (server);
-            This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & stringBuffer.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
+            This.logUtil.putF (CommonLabels_Package.getInstance.START_LABEL & stringBuffer.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param := BasicArrayList_Access (BasicArrayListD_Package.Create);
             serverUrl := XmlRpcRemoteLicenseRegistrationClient'Class (This).getClientInfo.getLicenseServer (XmlRpcRemoteLicenseRegistrationClient'Class (This).getServer);
             index := Java_Last_Index_Of (serverUrl, Java_Image (To_Unbounded_String ("/")));
@@ -142,9 +143,9 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
+            This.logUtil.putF (Java_Image (TRYING_OTHER_SERVERS) & ExceptionUtil_Package.getInstance.getStackTrace (e), XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             if not (Java_Starts_With (Java_Get_Message (e), HOST_NOT_RESOLVED)) then
-                return XmlRpcRemoteLicenseRegistrationClient'Class (This).tryAnother (anyType);
+                return Java_Object_Access (XmlRpcRemoteLicenseRegistrationClient'Class (This).tryAnother (anyType));
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));
             end if;

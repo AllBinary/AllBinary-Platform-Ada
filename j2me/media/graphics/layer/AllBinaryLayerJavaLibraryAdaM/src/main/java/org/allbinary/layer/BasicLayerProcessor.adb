@@ -32,6 +32,7 @@ with org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.layer.BasicLayerProcessorInterface_Package;
 with javax.microedition.lcdui.Canvas_Package;

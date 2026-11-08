@@ -35,12 +35,15 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.opengles.OpenGLCapabilities_Package; use org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
 with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+with org.allbinary.util.ABHashtable_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
 with javax.microedition.lcdui.Choice_Package;
@@ -61,6 +64,7 @@ with org.microemu.device.ui.DisplayableUI_Package;
 with javax.microedition.lcdui.Event_Package;
 with org.microemu.device.ui.EventDispatcher_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.font.FontDebugBase_Package;
 with org.microemu.device.FontManager_Package;
@@ -89,6 +93,7 @@ with org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package;
 with org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with org.allbinary.graphics.displayable.ScalableListener_Package;
 with javax.microedition.lcdui.Screen_Package;
@@ -273,7 +278,7 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         begin
             if not (This.created) then
                 This.created := True;
-                PreLogUtil_Package.put (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & OpenGLCapabilities_Package.getInstance.toString, OpenGLUtil_Access'(This'Unchecked_Access), This.renderStrings.ON_SURFACE_CREATED);
+                PreLogUtil_Package.put (CommonLabels_Package.getInstance.START_LABEL & OpenGLCapabilities_Package.getInstance.toString, OpenGLUtil_Access'(This'Unchecked_Access), This.renderStrings.ON_SURFACE_CREATED);
             end if;
         exception
             when Java_Occurrence : others =>

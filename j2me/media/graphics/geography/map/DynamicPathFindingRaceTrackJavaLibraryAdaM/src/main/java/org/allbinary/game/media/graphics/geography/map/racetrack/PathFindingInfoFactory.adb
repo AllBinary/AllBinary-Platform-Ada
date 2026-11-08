@@ -39,6 +39,9 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.game.media.graphics.geography.map.racetrack.SimplePathFinderGraphVisitorFactory_Package; use org.allbinary.game.media.graphics.geography.map.racetrack.SimplePathFinderGraphVisitorFactory_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.media.graphics.geography.map.racetrack.SimplePathFinderGraphVisitorFactory_Package;
 
 package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package is

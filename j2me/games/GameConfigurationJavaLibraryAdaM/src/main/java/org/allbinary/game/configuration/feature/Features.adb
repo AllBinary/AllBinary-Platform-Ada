@@ -38,6 +38,7 @@ with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use or
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;

@@ -13,13 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
+with java.io.BufferedWriter_Package; use java.io.BufferedWriter_Package;
+with java.io.FileReader_Package; use java.io.FileReader_Package;
+with java.io.FileWriter_Package; use java.io.FileWriter_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.io.file.AbFileInterface_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 
 package body org.allbinary.logic.io.BufferedIOUtil_Package is
 
+   package BufferedReader_Package renames Standard.java.io.BufferedReader_Package;
+   package BufferedWriter_Package renames Standard.java.io.BufferedWriter_Package;
+   package FileReader_Package renames Standard.java.io.FileReader_Package;
+   package FileWriter_Package renames Standard.java.io.FileWriter_Package;
    package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;

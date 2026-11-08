@@ -34,6 +34,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
@@ -173,7 +174,7 @@ package body org.allbinary.media.image.comparison.motion.SaveMotionRectanglesRes
             motionRectangles := motionRectanglesResultsEvent.getMotionRectangles;
             MotionRectanglesImageInputOutput_Package.Create.save (motionRectangles, motionRectanglesResultsEvent.getFrame);
             SaveMotionRectanglesResultsWorker'Class (This).getMotionRectanglesVector.remove (motionRectangles);
-            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), SaveMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), SaveMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.logUtil.putF (This.commonStrings.END_Id, SaveMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>

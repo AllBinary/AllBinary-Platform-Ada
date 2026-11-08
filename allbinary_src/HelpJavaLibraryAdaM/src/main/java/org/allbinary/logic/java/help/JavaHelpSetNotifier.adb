@@ -13,14 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with java.net.URL_Package; use java.net.URL_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
 
+   package URL_Package renames Standard.java.net.URL_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";

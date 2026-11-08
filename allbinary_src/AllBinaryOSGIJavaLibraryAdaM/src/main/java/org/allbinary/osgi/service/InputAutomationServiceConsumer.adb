@@ -29,6 +29,7 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.osgi.service.OSGIServiceUtil_Package; use org.allbinary.osgi.service.OSGIServiceUtil_Package;
 with org.allbinary.osgi.service.OSGIServiceUtil_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;

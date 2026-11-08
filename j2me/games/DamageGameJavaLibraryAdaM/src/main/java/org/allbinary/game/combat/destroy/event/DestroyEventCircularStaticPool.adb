@@ -24,6 +24,9 @@ with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.all
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.BaseCircularPool_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 

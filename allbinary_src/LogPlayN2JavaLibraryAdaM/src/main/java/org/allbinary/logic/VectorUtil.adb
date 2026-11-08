@@ -56,7 +56,7 @@ package body org.allbinary.logic.VectorUtil_Package is
       vector : Vector_Access;
    begin
         vector := Vector_Access (anyType);
-        return vector.elementAt (index);
+        return Java_Object_Access (vector.elementAt (index));
    end elementAt;
 
    procedure getSize (This : in out VectorUtil; anyType_Param : access Java_Object'Class) is

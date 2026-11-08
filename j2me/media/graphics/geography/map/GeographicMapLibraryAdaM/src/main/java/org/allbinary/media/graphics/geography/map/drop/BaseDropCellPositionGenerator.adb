@@ -45,6 +45,7 @@ with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package is
 
@@ -108,7 +109,7 @@ package body org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositio
 
    function getName (This : in out BaseDropCellPositionGenerator) return Unbounded_String is
    begin
-        return To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
+        return To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag));
    end getName;
 
    --  throws Exception

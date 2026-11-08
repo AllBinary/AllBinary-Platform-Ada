@@ -23,6 +23,9 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package_References;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package is
 

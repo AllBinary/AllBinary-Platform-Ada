@@ -26,6 +26,7 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.graphics.color.BasicColor_Package;

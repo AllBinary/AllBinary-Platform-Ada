@@ -33,6 +33,7 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.Gene
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;

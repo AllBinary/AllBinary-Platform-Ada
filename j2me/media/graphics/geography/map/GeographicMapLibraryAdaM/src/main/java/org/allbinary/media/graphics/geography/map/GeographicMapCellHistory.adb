@@ -44,6 +44,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
@@ -66,6 +67,7 @@ with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package is
 
@@ -263,7 +265,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    begin
         if not (This.list.contains (Java_Object_Access (geographicMapCellPosition))) then
             This.list.add (Java_Object_Access (geographicMapCellPosition));
-            This.visitedList.add (This.booleanFactory.FALSE);
+            This.visitedList.add (Java_Box (This.booleanFactory.FALSE));
         end if;
    end track;
 
@@ -378,7 +380,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
             value := Java_Unbox_Boolean (This.visitedList.get (index));
             TRUE := This.booleanFactory.TRUE;
             if (value) /= (TRUE) then
-                This.visitedList.set (index, TRUE);
+                This.visitedList.set (index, Java_Box (TRUE));
                 This.totalVisited := This.totalVisited + 1;
                 return True;
             end if;
@@ -436,7 +438,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         localFalseBoolean := This.booleanFactory.FALSE;
         size := localVisitedList.size;
         for index in reverse 0 .. (size) - (1) loop
-            localVisitedList.set (index, localFalseBoolean);
+            localVisitedList.set (index, Java_Box (localFalseBoolean));
         end loop;
         This.totalVisited := 0;
    end reset;

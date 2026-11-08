@@ -31,15 +31,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.security.Provider_Package; use java.security.Provider_Package;
---  with java.security.Security_Package; use java.security.Security_Package;
---  with java.security.spec.KeySpec_Package; use java.security.spec.KeySpec_Package;
---  with javax.crypto.Cipher_Package; use javax.crypto.Cipher_Package;
---  with javax.crypto.SecretKey_Package; use javax.crypto.SecretKey_Package;
---  with javax.crypto.SecretKeyFactory_Package; use javax.crypto.SecretKeyFactory_Package;
+with javax.crypto.Cipher_Package; use javax.crypto.Cipher_Package;
+with javax.crypto.SecretKey_Package; use javax.crypto.SecretKey_Package;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 
 package org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package is
 
+   package Cipher_Package renames Standard.javax.crypto.Cipher_Package;
+   package SecretKey_Package renames Standard.javax.crypto.SecretKey_Package;
    package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
    package Reference_Types is
    end Reference_Types;

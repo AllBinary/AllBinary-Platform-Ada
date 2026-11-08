@@ -31,13 +31,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
---  with java.net.URL_Package; use java.net.URL_Package;
+with java.net.URL_Package; use java.net.URL_Package;
 --  with java.net.URLConnection_Package; use java.net.URLConnection_Package;
 --  with java.util.jar.JarEntry_Package; use java.util.jar.JarEntry_Package;
 --  with java.util.jar.JarInputStream_Package; use java.util.jar.JarInputStream_Package;
 
 package org.allbinary.logic.java.jar.JarUtil_Package is
 
+   package URL_Package renames Standard.java.net.URL_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;

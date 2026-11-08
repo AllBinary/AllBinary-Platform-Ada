@@ -294,7 +294,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF ((This.commonStrings.EXCEPTION_LABEL) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
+            This.logUtil.putF (Java_Image (This.commonStrings.EXCEPTION_LABEL) & ExceptionUtil_Package.getInstance.getStackTrace (e), AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
             This.animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
                 end;
         end;
@@ -319,7 +319,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF (To_Unbounded_String ("IllegalArgumentException ") & Java_Image (ExceptionUtil_Package.getInstance.getStackTrace (e)), AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), To_Unbounded_String ("loadProgressImages"));
+            This.logUtil.putF (To_Unbounded_String ("IllegalArgumentException ") & ExceptionUtil_Package.getInstance.getStackTrace (e), AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), To_Unbounded_String ("loadProgressImages"));
             This.animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
                 end;
         end;

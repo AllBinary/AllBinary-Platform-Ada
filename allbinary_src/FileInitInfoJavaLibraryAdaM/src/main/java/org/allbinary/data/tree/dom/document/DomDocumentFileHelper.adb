@@ -100,9 +100,9 @@ package body org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package 
             copyTransformer := copyTransformerFactory.newTransformer;
             domSource := DOMSource_Package.Create (document);
             if file.isFile then
-                file.delete;
+                declare Java_Result renames file.delete; pragma Unreferenced (Java_Result); begin null; end;
             end if;
-            file.createNewFile;
+            declare Java_Result renames file.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (file);
             streamResult := StreamResult_Package.Create (dataOutputStream);
             copyTransformer.transform (domSource, streamResult);

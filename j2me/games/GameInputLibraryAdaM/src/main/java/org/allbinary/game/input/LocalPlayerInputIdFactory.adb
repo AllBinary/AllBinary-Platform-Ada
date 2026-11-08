@@ -23,6 +23,7 @@ with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.graphics.CustomGPoint_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;

@@ -22,6 +22,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package is

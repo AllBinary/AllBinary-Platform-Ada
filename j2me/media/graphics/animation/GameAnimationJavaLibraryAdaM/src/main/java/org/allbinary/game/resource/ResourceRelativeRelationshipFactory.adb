@@ -26,6 +26,7 @@ with org.allbinary.util.BasicArrayListUtil_Package_References;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
 with org.allbinary.logic.math.MathUtil_Package;

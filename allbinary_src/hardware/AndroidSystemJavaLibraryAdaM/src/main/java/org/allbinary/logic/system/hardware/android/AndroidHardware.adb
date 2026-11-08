@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.Closeable_Package; use java.io.Closeable_Package;
+with java.io.FileReader_Package; use java.io.FileReader_Package;
 with org.allbinary.logic.io.NullCloseable_Package; use org.allbinary.logic.io.NullCloseable_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -41,6 +43,8 @@ with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package is
 
+   package Closeable_Package renames Standard.java.io.Closeable_Package;
+   package FileReader_Package renames Standard.java.io.FileReader_Package;
    package NullCloseable_Package renames Standard.org.allbinary.logic.io.NullCloseable_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;

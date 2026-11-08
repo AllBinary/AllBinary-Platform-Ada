@@ -14,6 +14,7 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileReader_Package; use java.io.FileReader_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
 with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
@@ -46,6 +47,7 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body org.allbinary.logic.system.security.licensing.LicenseClientAndServerTest_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FileReader_Package renames Standard.java.io.FileReader_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package LicenseInitInfo_Package renames Standard.org.allbinary.business.init.LicenseInitInfo_Package;
    package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
@@ -98,7 +100,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
             while True loop
                 line := lineNumberReader.readLine;
                 if (line) /= (Null_Unbounded_String) then
-                    This.vector.add (line);
+                    This.vector.add (Java_Box (line));
                 else
                     exit;
                 end if;
@@ -158,7 +160,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
                         declare
                             e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
-                    list.add (serverName);
+                    list.add (Java_Box (serverName));
                     This.logUtil.put (To_Unbounded_String ("Test Error: ") & stringBuffer.toString, LicenseClientAndServerTest_Access'(This'Unchecked_Access), To_Unbounded_String ("test"), e);
                         end;
                 end;

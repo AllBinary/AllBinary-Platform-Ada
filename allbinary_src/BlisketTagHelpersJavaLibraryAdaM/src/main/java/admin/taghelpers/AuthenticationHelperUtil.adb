@@ -102,7 +102,7 @@ package body admin.taghelpers.AuthenticationHelperUtil_Package is
       basicUserRole : BasicUserRole_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-            This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & filePath, AuthenticationHelperUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("isAuthorized()"));
+            This.logUtil.putF (CommonLabels_Package.getInstance.START & filePath, AuthenticationHelperUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("isAuthorized()"));
         end if;
         endIndex := HttpRequestUtil_Package.getInstance.getLastSeparatorIndex (filePath);
         fullPath := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & Unbounded_Slice (filePath, (0) + 1, endIndex), StringUtil_Package.getInstance.EMPTY_STRING);

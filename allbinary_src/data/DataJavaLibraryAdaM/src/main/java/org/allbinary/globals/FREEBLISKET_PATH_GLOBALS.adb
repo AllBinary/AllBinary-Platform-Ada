@@ -27,11 +27,11 @@ package body org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
       null;
       
       
-      This.TEMPLATEPATH := To_Unbounded_String ("template") & Java_Image (AbPathData_Package.getInstance.SEPARATOR);
-      This.STYLEPATH := This.TEMPLATEPATH & To_Unbounded_String ("style") & Java_Image (AbPathData_Package.getInstance.SEPARATOR);
-      This.THEMEPATH := This.STYLEPATH & To_Unbounded_String ("theme") & Java_Image (AbPathData_Package.getInstance.SEPARATOR);
-      This.DBINITPATH := Java_Image (PATH_GLOBALS.getInstance.INIT_PATH) & To_Unbounded_String ("db") & Java_Image (AbPathData_Package.getInstance.SEPARATOR);
-      This.LINEDATAPATH := Java_Image (PATH_GLOBALS.getInstance.INIT_PATH) & To_Unbounded_String ("lineData") & Java_Image (AbPathData_Package.getInstance.SEPARATOR);
+      This.TEMPLATEPATH := To_Unbounded_String ("template") & AbPathData_Package.getInstance.SEPARATOR;
+      This.STYLEPATH := This.TEMPLATEPATH & To_Unbounded_String ("style") & AbPathData_Package.getInstance.SEPARATOR;
+      This.THEMEPATH := This.STYLEPATH & To_Unbounded_String ("theme") & AbPathData_Package.getInstance.SEPARATOR;
+      This.DBINITPATH := PATH_GLOBALS.getInstance.INIT_PATH & To_Unbounded_String ("db") & AbPathData_Package.getInstance.SEPARATOR;
+      This.LINEDATAPATH := PATH_GLOBALS.getInstance.INIT_PATH & To_Unbounded_String ("lineData") & AbPathData_Package.getInstance.SEPARATOR;
       
       
       

@@ -29,6 +29,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.init.InitException_Package;
@@ -108,7 +109,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
                 return True;
             else
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-                    PreLogUtil_Package.put (This.NOT_IN_DB, This.NAME, This.METHOD_GET);
+                    PreLogUtil_Package.put (This.NOT_IN_DB, Java_Box (This.NAME), This.METHOD_GET);
                 end if;
                 return False;
             end if;

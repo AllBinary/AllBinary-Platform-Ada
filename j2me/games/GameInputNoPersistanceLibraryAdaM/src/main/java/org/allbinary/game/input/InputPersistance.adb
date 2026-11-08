@@ -46,6 +46,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.configuration.persistance.PersistanceStrings_Package;
+with org.allbinary.persistance.PlatformRecordIdUtil_Package;
 with javax.microedition.rms.RecordComparator_Package;
 with javax.microedition.rms.RecordFilter_Package;
 with javax.microedition.rms.RecordListener_Package;

@@ -39,7 +39,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Pac
 
    function getSource (This : in out MyCanvasEvent) return Java_Object_Access is
    begin
-        return EventObject_Package.EventObject (This).getSource;
+        return Java_Object_Access (EventObject_Package.EventObject (This).getSource);
    end getSource;
 
    function toString (This : in out MyCanvasEvent) return Unbounded_String is

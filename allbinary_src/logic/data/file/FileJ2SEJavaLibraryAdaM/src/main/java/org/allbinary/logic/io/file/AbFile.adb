@@ -14,12 +14,15 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 with java.io.FilenameFilter_Package; use java.io.FilenameFilter_Package;
 with java.net.URI_Package; use java.net.URI_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
@@ -32,6 +35,7 @@ with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package;
 with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
@@ -41,6 +45,7 @@ with javax.microedition.lcdui.Displayable_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
 with javax.microedition.lcdui.Event_Package;
 with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
@@ -61,6 +66,7 @@ with javax.microedition.midlet.MIDlet_Package;
 with org.microemu.MIDletAccess_Package;
 with org.microemu.device.MutableImage_Package;
 with org.microemu.device.ui.PaintEvent_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
@@ -153,7 +159,7 @@ package body org.allbinary.logic.io.file.AbFile_Package is
 
    function getParentFile (This : in out AbFile) return Java_Object_Access is
    begin
-        return This.file.getParentFile;
+        return Java_Object_Access (This.file.getParentFile);
    end getParentFile;
 
    function getPath (This : in out AbFile) return Unbounded_String is
@@ -173,7 +179,7 @@ package body org.allbinary.logic.io.file.AbFile_Package is
 
    function getAbsoluteFile (This : in out AbFile) return Java_Object_Access is
    begin
-        return This.file.getAbsoluteFile;
+        return Java_Object_Access (This.file.getAbsoluteFile);
    end getAbsoluteFile;
 
    --  throws IOException
@@ -185,7 +191,7 @@ package body org.allbinary.logic.io.file.AbFile_Package is
    --  throws IOException
    function getCanonicalFile (This : in out AbFile) return Java_Object_Access is
    begin
-        return This.file.getCanonicalFile;
+        return Java_Object_Access (This.file.getCanonicalFile);
    end getCanonicalFile;
 
    function toURI (This : in out AbFile) return URI_Access is

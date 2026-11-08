@@ -18,6 +18,7 @@ with org.allbinary.graphics.GPoint_Package_References;
 with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;

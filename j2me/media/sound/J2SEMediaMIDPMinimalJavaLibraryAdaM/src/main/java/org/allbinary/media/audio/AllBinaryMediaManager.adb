@@ -92,6 +92,8 @@ with javax.microedition.media.PlayerListener_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with javax.microedition.lcdui.Screen_Package;
 with org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.SoundStrings_Package;
+with org.allbinary.media.audio.Sounds_Package;
 with org.allbinary.media.audio.SoundsFactoryInterface_Package;
 with javax.microedition.lcdui.StringComponent_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;

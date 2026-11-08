@@ -414,7 +414,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         stringBuffer.append (To_Unbounded_String (" for: $"));
         stringBuffer.appendint (cost);
         stringBuffer.append (To_Unbounded_String (" with "));
-        stringBuffer.appendint (Integer (capital.getTotalMoney));
+        stringBuffer.appendint (capital.getTotalMoney);
         This.logUtil.putF (stringBuffer.toString, BuildingRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("attemptBuild"));
         if (cost) <= (capital.getTotalMoney) then
             layerInterface.construct (rtsPlayerLayerInterface);

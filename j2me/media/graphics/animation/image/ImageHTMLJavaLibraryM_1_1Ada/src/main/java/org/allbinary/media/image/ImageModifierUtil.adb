@@ -261,7 +261,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF ((This.commonStrings.EXCEPTION_LABEL) + (This.resourceCallbackStrings.DONE), ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
+            This.logUtil.putF (This.commonStrings.EXCEPTION_LABEL & Java_Image (This.resourceCallbackStrings.DONE), ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
                 end;
         end;
    end copy;

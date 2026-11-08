@@ -30,12 +30,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.IOException_Package; use java.io.IOException_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with java.io.OutputStream_Package; use java.io.OutputStream_Package;
---  with java.io.Reader_Package; use java.io.Reader_Package;
---  with java.io.Writer_Package; use java.io.Writer_Package;
---  with java.nio.CharBuffer_Package; use java.nio.CharBuffer_Package;
+with java.io.Reader_Package; use java.io.Reader_Package;
+with java.io.Writer_Package; use java.io.Writer_Package;
 limited with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.NullUtil_Package_References;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
@@ -51,6 +49,8 @@ package org.allbinary.logic.io.file.SimpleFileUtil_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package OutputStream_Package renames Standard.java.io.OutputStream_Package;
+   package Reader_Package renames Standard.java.io.Reader_Package;
+   package Writer_Package renames Standard.java.io.Writer_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;

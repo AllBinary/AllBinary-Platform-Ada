@@ -144,14 +144,14 @@ package body admin.taghelpers.SpecialItemsRequestHelper_Package is
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            values.add (Java_Box (This.id));
-            values.add (Java_Box (This.number));
-            values.add (Java_Box (This.enabled));
-            values.add (Java_Box (This.startTime));
-            values.add (Java_Box (This.endTime));
-            values.add (Java_Box (This.price));
-            values.add (Java_Box (time));
-            values.add (Java_Box (time));
+            values.add (This.id);
+            values.add (This.number);
+            values.add (This.enabled);
+            values.add (This.startTime);
+            values.add (This.endTime);
+            values.add (This.price);
+            values.add (time);
+            values.add (time);
             SpecialItemsEntityFactory_Package.getInstance.getSpecialItemsEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully inserted ") & This.id & To_Unbounded_String (" into items table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then

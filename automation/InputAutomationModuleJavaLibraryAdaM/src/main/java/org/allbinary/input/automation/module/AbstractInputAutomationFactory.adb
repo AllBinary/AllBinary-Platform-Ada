@@ -13,12 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with java.net.URL_Package; use java.net.URL_Package;
 with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
 with org.allbinary.input.automation.module.JPanel_Package; use org.allbinary.input.automation.module.JPanel_Package;
 with org.allbinary.input.automation.module.JPanel_Package_References;
 
 package body org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package is
 
+   package URL_Package renames Standard.java.net.URL_Package;
    package JavaHelpUtil_Package renames Standard.org.allbinary.logic.java.help.JavaHelpUtil_Package;
    subtype JPanel_Access is org.allbinary.input.automation.module.JPanel_Package_References.JPanel_Access;
    function "=" (Left, Right : JPanel_Access) return Boolean renames org.allbinary.input.automation.module.JPanel_Package_References."=";
@@ -65,7 +67,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationFactor
       Initialize_Fields (This);
         This.name := name;
         This.jPanel := jPanel;
-        url := This.all'Tag.getResource (To_Unbounded_String ("/help/Help.hs"));
+        url := Java_Object'Class (This)'Tag.getResource (To_Unbounded_String ("/help/Help.hs"));
         This.helpSet := JavaHelpUtil_Package.getInstance.getHelpSet (url);
    end Initialize;
 

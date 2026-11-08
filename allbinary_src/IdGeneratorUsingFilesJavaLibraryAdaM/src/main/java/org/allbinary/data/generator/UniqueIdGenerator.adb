@@ -89,7 +89,7 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            This.newFile.createNewFile;
+            declare Java_Result renames This.newFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             idData := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (This.newFile);
             idData.writeLong (value);
         exception

@@ -14,6 +14,7 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with javax.microedition.khronos.opengles.GL10_Package_References;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
@@ -52,6 +53,7 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FileOutputStream_Package renames Standard.java.io.FileOutputStream_Package;
    package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
    package Canvas_Package renames Standard.android.graphics.Canvas_Package;
    package Paint_Package renames Standard.android.graphics.Paint_Package;
@@ -161,7 +163,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
         begin
             commonStrings := CommonStrings_Package.getInstance;
             file := ResourceUtil_Package.getInstance.getContext.getFilesDir;
-            path := (file.getAbsolutePath) + (CanvasStrings_Package.getInstance.FONT_ATLAS);
+            path := Java_Image (file.getAbsolutePath) & CanvasStrings_Package.getInstance.FONT_ATLAS;
             This.logUtil.putF (path, TrueTypeFontUtil_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
             fos := FileOutputStream_Package.Create (path);
             bitmap := AndroidImageInterface_Access (This.fontImage.openGLBitmap.getImage).getBitmap;

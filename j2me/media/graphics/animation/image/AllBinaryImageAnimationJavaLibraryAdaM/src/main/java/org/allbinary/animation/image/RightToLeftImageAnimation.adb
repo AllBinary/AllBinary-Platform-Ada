@@ -25,6 +25,7 @@ with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.
 with org.allbinary.util.CircularIndexUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.animation.image.ImageAnimation_Package;
+with javax.microedition.lcdui.game.Layer_Package;
 
 package body org.allbinary.animation.image.RightToLeftImageAnimation_Package is
 

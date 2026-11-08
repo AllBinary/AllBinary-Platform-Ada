@@ -131,7 +131,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.media.graphics.geography.pathfinding</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.media.graphics.geography.pathfinding,org.allbinary.media.graphics.geography.map,org.allbinary.cache,org.graph,org.allbinary.layer,org.allbinary.animation,org.allbinary.game.ai</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

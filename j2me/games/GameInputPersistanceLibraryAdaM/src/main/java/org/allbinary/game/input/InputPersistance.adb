@@ -96,6 +96,7 @@ with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.allbinary.game.configuration.persistance.PersistanceStrings_Package;
+with org.allbinary.persistance.PlatformRecordIdUtil_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with javax.microedition.rms.RecordComparator_Package;
 with javax.microedition.rms.RecordFilter_Package;

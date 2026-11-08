@@ -246,7 +246,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.media.image,org.allbinary.animation,org.allbinary.cache,io.playn</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.media.image,org.allbinary.animation,org.allbinary.cache,io.playn,org.graph,org.allbinary.game.ai,com.googlecode.playn,jlayer</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

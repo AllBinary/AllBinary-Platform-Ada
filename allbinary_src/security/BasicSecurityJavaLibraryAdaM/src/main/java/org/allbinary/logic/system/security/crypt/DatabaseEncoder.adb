@@ -22,7 +22,9 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package is
@@ -77,7 +79,7 @@ package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package i
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, To_Unbounded_String ("DatabaseEncoder"), To_Unbounded_String ("decode"), e);
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("DatabaseEncoder")), To_Unbounded_String ("decode"), e);
             return StringUtil_Package.getInstance.EMPTY_STRING;
                 end;
         end;
@@ -86,32 +88,21 @@ package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package i
    function decode (value : Unbounded_String) return Short_Short_Integer_Array_Access is
       tokenizer : Tokenizer_Access;
       vector : BasicArrayList_Access;
-      byteVector : BasicArrayList_Access;
       size : Integer;
+      decode : Short_Short_Integer_Array_Access;
       byteOfData : Unbounded_String;
       index : Integer;
-      decode : Short_Short_Integer_Array_Access;
-      decodeIndex : Integer;
-      aByte : Short_Short_Integer;
       commonStrings : CommonStrings_Access;
    begin
         begin
             tokenizer := Tokenizer_Package.Create (CommonSeps_Package.getInstance.SPACE);
             vector := tokenizer.getTokensFromString (value, BasicArrayListD_Package.Create);
-            byteVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             size := vector.size;
+            decode := new Short_Short_Integer_Array'(0 .. (size) - 1 => 0);
             byteOfData := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
                 byteOfData := Java_Unbox (vector.objectArray (index));
-                byteVector.add (Short_Short_Integer'Value (To_String (byteOfData)));
-            end loop;
-            decode := new Short_Short_Integer_Array'(0 .. (byteVector.size) - 1 => 0);
-            decodeIndex := 0;
-            aByte := 0;
-            for index in 0 .. (size) - 1 loop
-                aByte := Short_Short_Integer (byteVector.objectArray (index));
-                decode (decodeIndex) := Short_Short_Integer (aByte);
-                decodeIndex := decodeIndex + 1;
+                decode (index) := Short_Short_Integer'Value (To_String (byteOfData));
             end loop;
             return decode;
         exception

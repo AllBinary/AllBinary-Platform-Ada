@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with javax.crypto.Cipher_Package; use javax.crypto.Cipher_Package;
+with javax.crypto.SecretKey_Package; use javax.crypto.SecretKey_Package;
 with org.allbinary.logic.java.byteutil.ByteUtil_Package; use org.allbinary.logic.java.byteutil.ByteUtil_Package;
 with org.allbinary.logic.java.byteutil.ByteUtil_Package_References;
 

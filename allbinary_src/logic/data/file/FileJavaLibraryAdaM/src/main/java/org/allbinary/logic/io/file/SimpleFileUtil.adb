@@ -16,10 +16,15 @@
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with java.io.OutputStream_Package; use java.io.OutputStream_Package;
+with java.io.Reader_Package; use java.io.Reader_Package;
+with java.io.Writer_Package; use java.io.Writer_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.NullUtil_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.logic.io.NullOutputStream_Package; use org.allbinary.logic.io.NullOutputStream_Package;
+with org.allbinary.logic.io.NullReader_Package; use org.allbinary.logic.io.NullReader_Package;
+with org.allbinary.logic.io.NullWriter_Package; use org.allbinary.logic.io.NullWriter_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.logic.io.StreamUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
@@ -29,6 +34,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -40,6 +46,9 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 
    package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package NullOutputStream_Package renames Standard.org.allbinary.logic.io.NullOutputStream_Package;
+   package NullReader_Package renames Standard.org.allbinary.logic.io.NullReader_Package;
+   package NullWriter_Package renames Standard.org.allbinary.logic.io.NullWriter_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    subtype NullUtil_Access is org.allbinary.logic.NullUtil_Package_References.NullUtil_Access;
@@ -123,138 +132,17 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 
    function nullOutputStream return OutputStream_Access is
    begin
-        return OutputStream_Package.Create  --  Java anonymous class body: implement it as a named type
---              
---     --  throws IOException
---     procedure write (This : in out ; b : Integer) is
---     begin
---                  null;
---     end write;
---              
---     --  throws IOException
---     procedure write (This : in out ; b : Short_Short_Integer_Array_Access; off : Integer; len : Integer) is
---     begin
---                  null;
---     end write;
---              
---     procedure close (This : in out ) is
---     begin
---                  null;
---     end close;
-;
+        return OutputStream_Access (NullOutputStream_Package.NULL_OUTPUT_STREAM);
    end nullOutputStream;
 
    function nullWriter return Writer_Access is
    begin
-        return Writer_Package.Create  --  Java anonymous class body: implement it as a named type
---              This.closed := False;
---              
---     --  throws IOException
---     function append (This : in out ; c : Character) return Writer_Access is
---     begin
---                  return SimpleFileUtil_Access'(This'Unchecked_Access);
---          return null;
---     end append;
---              
---     --  throws IOException
---     function append (This : in out ; csq_Param : access CharSequence_Package.CharSequence'Class) return Writer_Access is
---        csq : constant CharSequence_Access := CharSequence_Access (csq_Param);
---     begin
---                  return SimpleFileUtil_Access'(This'Unchecked_Access);
---          return null;
---     end append;
---              
---     --  throws IOException
---     function append (This : in out ; csq_Param : access CharSequence_Package.CharSequence'Class; start : Integer; end_Id : Integer) return Writer_Access is
---        csq : constant CharSequence_Access := CharSequence_Access (csq_Param);
---     begin
---                  return SimpleFileUtil_Access'(This'Unchecked_Access);
---          return null;
---     end append;
---              
---     --  throws IOException
---     procedure write (This : in out ; c : Integer) is
---     begin
---                  null;
---     end write;
---              
---     --  throws IOException
---     procedure write (This : in out ; cbuf : Character_Array_Access; off : Integer; len : Integer) is
---     begin
---                  null;
---     end write;
---              
---     --  throws IOException
---     procedure write (This : in out ; str : Unbounded_String) is
---     begin
---                  null;
---     end write;
---              
---     --  throws IOException
---     procedure write (This : in out ; str : Unbounded_String; off : Integer; len : Integer) is
---     begin
---                  null;
---     end write;
---              
---     --  throws IOException
---     procedure flush (This : in out ) is
---     begin
---                  null;
---     end flush;
---              
---     --  throws IOException
---     procedure close (This : in out ) is
---     begin
---                  null;
---     end close;
-;
+        return Writer_Access (NullWriter_Package.NULL_WRITER);
    end nullWriter;
 
    function nullReader return Reader_Access is
    begin
-        return Reader_Package.Create  --  Java anonymous class body: implement it as a named type
---              
---     --  throws IOException
---     function read (This : in out ) return Integer is
---     begin
---                  return -(1);
---          return 0;
---     end read;
---              
---     --  throws IOException
---     function read (This : in out ; cbuf : Character_Array_Access; off : Integer; len : Integer) return Integer is
---     begin
---                  return -(1);
---          return 0;
---     end read;
---              
---     --  throws IOException
---     function read (This : in out ; target_Param : access CharBuffer_Package.CharBuffer'Class) return Integer is
---        target : constant CharBuffer_Access := CharBuffer_Access (target_Param);
---     begin
---                  return -(1);
---          return 0;
---     end read;
---              
---     --  throws IOException
---     function ready (This : in out ) return Boolean is
---     begin
---                  return False;
---          return False;
---     end ready;
---              
---     --  throws IOException
---     function skip (This : in out ; n : Long_Long_Integer) return Long_Long_Integer is
---     begin
---                  return 0;
---          return 0;
---     end skip;
---              
---     procedure close (This : in out ) is
---     begin
---                  null;
---     end close;
-;
+        return Reader_Access (NullReader_Package.NULL_READER);
    end nullReader;
 
    function loadFileAsList (This : in out SimpleFileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access is
@@ -312,7 +200,7 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
                 end if;
             end if;
             s := Java_New_String (byteArray, startIndex, ((((index) + (includeReturnLine)) - (returnLine)) - (startIndex)));
-            stringList.add (s);
+            stringList.add (Java_Box (s));
             index := index + 1;
         end loop;
         return stringList;

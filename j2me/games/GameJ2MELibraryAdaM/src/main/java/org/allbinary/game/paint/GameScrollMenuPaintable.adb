@@ -22,15 +22,30 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 with org.allbinary.graphics.form.item.ABStringComponent_Package; use org.allbinary.graphics.form.item.ABStringComponent_Package;
 with org.allbinary.graphics.form.item.ABTextItem_Package; use org.allbinary.graphics.form.item.ABTextItem_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
 with org.allbinary.game.paint.MainGameDemoStatePaintable_Package; use org.allbinary.game.paint.MainGameDemoStatePaintable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.paint.MainGameDemoStatePaintable_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.graphics.paint.StatePaintable_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
 
@@ -49,16 +64,6 @@ package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
    subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
-   subtype Paintable_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access;
-   function "=" (Left, Right : Paintable_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
    subtype AllBinaryEventObject_Access is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access;
    function "=" (Left, Right : AllBinaryEventObject_Access) return Boolean renames org.allbinary.logic.util.event.AllBinaryEventObject_Package_References."=";
    subtype AllBinaryEventObject_Access_Array is org.allbinary.logic.util.event.AllBinaryEventObject_Package_References.AllBinaryEventObject_Access_Array;

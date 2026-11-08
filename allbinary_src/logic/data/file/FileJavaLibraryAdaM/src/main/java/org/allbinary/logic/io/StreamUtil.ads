@@ -31,7 +31,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
---  with java.io.Closeable_Package; use java.io.Closeable_Package;
+with java.io.Closeable_Package; use java.io.Closeable_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
@@ -40,6 +40,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 package org.allbinary.logic.io.StreamUtil_Package is
 
    package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package Closeable_Package renames Standard.java.io.Closeable_Package;
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;

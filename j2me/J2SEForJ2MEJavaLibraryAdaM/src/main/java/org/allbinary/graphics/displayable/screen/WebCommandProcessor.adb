@@ -35,6 +35,7 @@ with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.microemu.device.ui.CanvasUI_Package;
 with javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;

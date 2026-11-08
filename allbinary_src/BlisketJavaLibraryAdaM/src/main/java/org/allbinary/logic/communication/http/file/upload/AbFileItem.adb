@@ -173,7 +173,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
 
    procedure delete (This : in out AbFileItem) is
    begin
-        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, To_Unbounded_String ("delete()"));
+        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, Java_Box (To_Unbounded_String ("delete()")));
    end delete;
 
    function getFieldName (This : in out AbFileItem) return Unbounded_String is

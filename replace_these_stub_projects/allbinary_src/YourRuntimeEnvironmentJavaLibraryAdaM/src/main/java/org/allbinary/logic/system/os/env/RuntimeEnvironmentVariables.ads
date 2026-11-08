@@ -18,7 +18,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
 --  with java.io.InputStreamReader_Package; use java.io.InputStreamReader_Package;
 --  with java.util.Properties_Package; use java.util.Properties_Package;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;

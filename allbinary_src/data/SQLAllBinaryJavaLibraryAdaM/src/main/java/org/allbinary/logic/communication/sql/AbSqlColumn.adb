@@ -27,6 +27,7 @@ with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.communication.sql.AbSqlBasic_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -168,7 +169,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
             rset := AbSqlColumn'Class (This).executeSQLStatement (sqlStatement);
             while rset.next loop
                 field := rset.getObject (columnName).toString;
-                column.add (field);
+                column.add (Java_Box (field));
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 stringBuffer.delete (0, stringBuffer.length);
@@ -217,7 +218,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
             rset := AbSqlColumn'Class (This).executeSQLStatement (sqlStatement);
             while rset.next loop
                 field := rset.getObject (columnName).toString;
-                column.add (field);
+                column.add (Java_Box (field));
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 stringBuffer.delete (0, stringBuffer.length);

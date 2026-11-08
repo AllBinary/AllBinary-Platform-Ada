@@ -128,12 +128,12 @@ package body org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
       rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         if rtsLayer.isUpgradeable then
-            RTSLayerCompositePaintable'Class (This).setUpgradeCost (StringMaker_Package.Create.append (This.UPGRADE).appendint (Integer (rtsLayer.getUpgradeCost)).toString);
+            RTSLayerCompositePaintable'Class (This).setUpgradeCost (StringMaker_Package.Create.append (This.UPGRADE).appendint (rtsLayer.getUpgradeCost).toString);
         else
             RTSLayerCompositePaintable'Class (This).setUpgradeCost (StringUtil_Package.getInstance.EMPTY_STRING);
         end if;
         if rtsLayer.isDowngradeable then
-            RTSLayerCompositePaintable'Class (This).setDownGradeCost (StringMaker_Package.Create.append (This.DOWNGRADE).appendint (Integer (rtsLayer.getDowngradeCost)).toString);
+            RTSLayerCompositePaintable'Class (This).setDownGradeCost (StringMaker_Package.Create.append (This.DOWNGRADE).appendint (rtsLayer.getDowngradeCost).toString);
         else
             RTSLayerCompositePaintable'Class (This).setDownGradeCost (StringUtil_Package.getInstance.EMPTY_STRING);
         end if;

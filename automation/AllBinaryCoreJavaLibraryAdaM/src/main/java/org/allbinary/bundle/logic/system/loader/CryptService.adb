@@ -32,6 +32,7 @@ with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with java.lang.ClassLoader_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -40,6 +41,7 @@ with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package;
 
 package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
 
@@ -105,8 +107,8 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
    procedure Initialize (This : in out CryptService'Class) is
    begin
       Initialize_Fields (This);
-        Globals_Package.getInstance.init (ClassLoader_Package.getSystemClassLoader, To_Unbounded_String ("./"));
-        This.logUtil.putF (To_Unbounded_String ("Set Globals: ") & Java_Image (URLGLOBALS_Package.getWebappPath), CryptService_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        Globals_Package.getInstance.init (Standard.java.lang.ClassLoader_Package.getSystemClassLoader, To_Unbounded_String ("./"));
+        This.logUtil.putF (To_Unbounded_String ("Set Globals: ") & URLGLOBALS_Package.getWebappPath, CryptService_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create return CryptService_Access is

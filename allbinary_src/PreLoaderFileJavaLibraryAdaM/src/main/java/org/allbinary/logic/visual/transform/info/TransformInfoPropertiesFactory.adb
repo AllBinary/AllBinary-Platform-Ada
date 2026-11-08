@@ -125,7 +125,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFa
         attrNode := Attr_Access (attributes.getNamedItem (transformInfoData.NAME));
         name := attrNode.getValue;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" View Name: ") & name, TransformInfoPropertiesFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("toTransformInfoPropertiesHashMap()"));
+            This.logUtil.putF (CommonLabels_Package.getInstance.NEXT & To_Unbounded_String (" View Name: ") & name, TransformInfoPropertiesFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("toTransformInfoPropertiesHashMap()"));
         end if;
         labelNode := DomSearchHelper_Package.getNodeNoThrow (transformInfoData.LABEL, transformInfoChildNodeList);
         label := DomNodeHelper_Package.getTextNodesValue (labelNode);

@@ -25,6 +25,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package is
@@ -88,9 +89,9 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
    procedure add (This : in out GameNotification; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
-        if not (This.stringList.contains (string_Id)) then
-            This.stringList.add (string_Id);
-            This.timeList.add (seconds);
+        if not (This.stringList.contains (Java_Box (string_Id))) then
+            This.stringList.add (Java_Box (string_Id));
+            This.timeList.add (Java_Box (seconds));
             This.colorList.add (Java_Object_Access (basicColor));
         end if;
    end add;

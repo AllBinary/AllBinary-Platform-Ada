@@ -186,7 +186,7 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         Initialize_Fields (This);
         localName := Null_Unbounded_String;
         if (name) = (Null_Unbounded_String) then
-            localName := To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
+            localName := To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag));
         else
             localName := StringMaker_Package.Create.append (name).append (CommonSeps_Package.getInstance.COLON).append (To_Unbounded_String (Java_To_Unsigned_String (TsUtil_Package.getInstance.hashCode (AllBinaryLayer_Access'(This'Unchecked_Access)), 16))).toString;
         end if;
@@ -282,7 +282,7 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
 
    function getZ2 (This : in out AllBinaryLayer) return Integer is
    begin
-        return Integer (((AllBinaryLayer'Class (This).getZP) + (AllBinaryLayer'Class (This).getDepth)));
+        return Integer (((Long_Long_Integer (AllBinaryLayer'Class (This).getZP)) + (AllBinaryLayer'Class (This).getDepth)));
    end getZ2;
 
    function getName (This : in out AllBinaryLayer) return Unbounded_String is

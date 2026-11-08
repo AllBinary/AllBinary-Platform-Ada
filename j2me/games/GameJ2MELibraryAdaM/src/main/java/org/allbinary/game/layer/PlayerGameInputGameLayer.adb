@@ -29,6 +29,7 @@ with org.allbinary.view.StaticViewPosition_Package; use org.allbinary.view.Stati
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package;

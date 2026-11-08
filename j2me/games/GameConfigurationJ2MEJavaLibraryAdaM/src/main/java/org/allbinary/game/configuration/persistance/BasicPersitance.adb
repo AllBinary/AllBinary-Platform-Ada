@@ -32,6 +32,7 @@ with org.allbinary.game.configuration.persistance.PersistanceStrings_Package_Ref
 with org.allbinary.game.configuration.persistance.NullRecordStore_Package; use org.allbinary.game.configuration.persistance.NullRecordStore_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;

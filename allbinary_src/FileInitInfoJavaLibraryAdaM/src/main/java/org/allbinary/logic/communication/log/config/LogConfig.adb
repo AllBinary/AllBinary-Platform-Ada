@@ -36,6 +36,10 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.logic.communication.log.config.LogConfigData_Package; use org.allbinary.logic.communication.log.config.LogConfigData_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.communication.log.config.LogConfig_Package is
 

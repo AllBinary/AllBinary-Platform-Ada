@@ -91,7 +91,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
+        stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag)));
         stringBuffer.append (To_Unbounded_String (" Frame: "));
         stringBuffer.append (MotionRectanglesResultsFrameCacheable'Class (This).getKey.toString);
         return stringBuffer.toString;

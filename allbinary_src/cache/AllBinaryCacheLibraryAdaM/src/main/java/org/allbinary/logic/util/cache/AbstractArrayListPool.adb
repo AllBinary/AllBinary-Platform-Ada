@@ -23,6 +23,7 @@ with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package_R
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.cache.CacheInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;

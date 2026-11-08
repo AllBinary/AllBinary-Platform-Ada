@@ -268,13 +268,13 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
                     name := item.getLabel;
                     nextGameConfiguration := gameConfigurationSingleton.getInstanceByName (name);
                     if (Java_Object_Access (nextGameConfiguration)) = (Java_Object_Access (gameConfigurationCentral.COLLIDE_DAMAGE)) then
-                        gauge.setValue ((gameConfigurationCentral.COLLIDE_DAMAGE.getValue.intValue) - (Integer (gameConfiguration.getMinValue)));
+                        gauge.setValue ((Integer (gameConfigurationCentral.COLLIDE_DAMAGE.getValue)) - (Integer (gameConfiguration.getMinValue)));
                     elsif (Java_Object_Access (nextGameConfiguration)) = (Java_Object_Access (gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL)) then
-                        gauge.setValue ((gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue.intValue) - (Integer (gameConfiguration.getMinValue)));
+                        gauge.setValue ((Integer (gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue)) - (Integer (gameConfiguration.getMinValue)));
                     elsif (Java_Object_Access (nextGameConfiguration)) = (Java_Object_Access (gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL)) then
-                        gauge.setValue ((gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue.intValue) - (Integer (gameConfiguration.getMinValue)));
+                        gauge.setValue ((Integer (gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue)) - (Integer (gameConfiguration.getMinValue)));
                     elsif (Java_Object_Access (nextGameConfiguration)) = (Java_Object_Access (gameConfigurationCentral.SPEED_CHALLENGE_LEVEL)) then
-                        gauge.setValue ((gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue.intValue) - (Integer (gameConfiguration.getMinValue)));
+                        gauge.setValue ((Integer (gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue)) - (Integer (gameConfiguration.getMinValue)));
                     end if;
                 end if;
             end loop;
@@ -286,7 +286,7 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    begin
         This.logUtil.putF (This.commonStrings.START, GameConfigurationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("updateCompetitionValue"));
         gameConfigurationCentral := GameConfigurationCentral_Package.getInstance;
-        This.COMPETITION_VALUE := (((gameConfigurationCentral.COLLIDE_DAMAGE.getValue.intValue) + (gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue.intValue)) + (gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue.intValue)) + (gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue.intValue);
+        This.COMPETITION_VALUE := (((Integer (gameConfigurationCentral.COLLIDE_DAMAGE.getValue)) + (Integer (gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue))) + (Integer (gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue))) + (Integer (gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue));
         This.COMPETITION_VALUE := (Java_Shift_Right_Arithmetic (This.COMPETITION_VALUE, 2));
    end updateCompetitionValue;
 

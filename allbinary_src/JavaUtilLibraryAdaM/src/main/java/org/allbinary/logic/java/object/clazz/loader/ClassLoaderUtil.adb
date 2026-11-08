@@ -14,6 +14,7 @@
 
 
 with java.lang.ClassLoader_Package; use java.lang.ClassLoader_Package;
+with java.lang.ClassLoader_Package;
 
 package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Package is
 
@@ -42,7 +43,7 @@ package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Packa
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       classLoader : ClassLoader_Access;
    begin
-        classLoader := ClassLoader_Package.getSystemClassLoader;
+        classLoader := Standard.java.lang.ClassLoader_Package.getSystemClassLoader;
         if (classLoader) /= (null) then
             return To_Unbounded_String ("ClassLoader: ") & To_Unbounded_String (Ada.Tags.Expanded_Name (classLoader.all'Tag));
         end if;

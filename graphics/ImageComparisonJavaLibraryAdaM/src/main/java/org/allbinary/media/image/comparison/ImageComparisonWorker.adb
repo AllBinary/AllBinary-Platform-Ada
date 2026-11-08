@@ -43,6 +43,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
 with org.allbinary.logic.util.cache.CacheInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package;
@@ -226,7 +227,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
             end if;
             This.bufferedImageVector.remove (0);
             This.index2 := This.index2 + 1;
-            message := StringMaker_Package.Create.append (To_Unbounded_String ("Frame: ")).appendint (This.index2).append (CommonLabels_Package.getInstance.ELAPSED).appendlong (Long_Long_Integer (timeHelper.getElapsedTNT)).toString;
+            message := StringMaker_Package.Create.append (To_Unbounded_String ("Frame: ")).appendint (This.index2).append (CommonLabels_Package.getInstance.ELAPSED).appendlong (timeHelper.getElapsedTNT).toString;
             This.logUtil.putF (message, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             ImageComparisonWorker'Class (This).setRunning (False);
             This.logUtil.putF (This.commonStrings.END_Id, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);

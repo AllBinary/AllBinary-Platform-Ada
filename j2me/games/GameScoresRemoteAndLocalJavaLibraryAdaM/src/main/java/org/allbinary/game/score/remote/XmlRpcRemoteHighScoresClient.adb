@@ -28,6 +28,7 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 with org.apache.xmlrpc.XmlRpcClient_Package; use org.apache.xmlrpc.XmlRpcClient_Package;
 with org.apache.xmlrpc.XmlRpcException_Package; use org.apache.xmlrpc.XmlRpcException_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
@@ -139,9 +140,9 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), XmlRpcRemoteHighScoresClient_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
+            This.logUtil.put (Java_Image (TRYING_OTHER_SERVERS) & ExceptionUtil_Package.getInstance.getStackTrace (e), XmlRpcRemoteHighScoresClient_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             if not (Java_Starts_With (Java_Get_Message (e), HOST_NOT_RESOLVED)) then
-                return XmlRpcRemoteHighScoresClient'Class (This).tryAnother (anyType);
+                return Java_Object_Access (XmlRpcRemoteHighScoresClient'Class (This).tryAnother (anyType));
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));
             end if;

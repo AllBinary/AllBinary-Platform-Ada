@@ -235,9 +235,9 @@ package body org.allbinary.game.physics.velocity.BasicVelocityProperties_Package
       yVector : Long_Long_Integer;
       zVector : Long_Long_Integer;
    begin
-        xVector := ((This.axisMathVectorUtil.calculateX (magnitude, angle)) / (This.velocityXBasicDecimal.getScaledFactorValue));
-        yVector := ((This.axisMathVectorUtil.calculateY (magnitude, angle)) / (This.velocityYBasicDecimal.getScaledFactorValue));
-        zVector := ((This.axisMathVectorUtil.calculateZ (magnitude, otherAngle)) / (This.velocityZBasicDecimal.getScaledFactorValue));
+        xVector := ((This.axisMathVectorUtil.calculateX (magnitude, angle)) / (Long_Long_Integer (This.velocityXBasicDecimal.getScaledFactorValue)));
+        yVector := ((This.axisMathVectorUtil.calculateY (magnitude, angle)) / (Long_Long_Integer (This.velocityYBasicDecimal.getScaledFactorValue)));
+        zVector := ((This.axisMathVectorUtil.calculateZ (magnitude, otherAngle)) / (Long_Long_Integer (This.velocityZBasicDecimal.getScaledFactorValue)));
         This.velocityXBasicDecimal.setlong (xVector);
         This.velocityYBasicDecimal.setlong (yVector);
         This.velocityZBasicDecimal.setlong (zVector);
@@ -248,9 +248,9 @@ package body org.allbinary.game.physics.velocity.BasicVelocityProperties_Package
       yVector : Long_Long_Integer;
       zVector : Long_Long_Integer;
    begin
-        xVector := ((This.axisMathVectorUtil.calculateX (magnitude, angle)) / (This.velocityXBasicDecimal.getScaledFactorValue));
-        yVector := ((This.axisMathVectorUtil.calculateY (magnitude, angle)) / (This.velocityYBasicDecimal.getScaledFactorValue));
-        zVector := ((This.axisMathVectorUtil.calculateZ (magnitude, otherAngle)) / (This.velocityZBasicDecimal.getScaledFactorValue));
+        xVector := ((This.axisMathVectorUtil.calculateX (magnitude, angle)) / (Long_Long_Integer (This.velocityXBasicDecimal.getScaledFactorValue)));
+        yVector := ((This.axisMathVectorUtil.calculateY (magnitude, angle)) / (Long_Long_Integer (This.velocityYBasicDecimal.getScaledFactorValue)));
+        zVector := ((This.axisMathVectorUtil.calculateZ (magnitude, otherAngle)) / (Long_Long_Integer (This.velocityZBasicDecimal.getScaledFactorValue)));
         This.velocityXBasicDecimal.addlong (xVector);
         This.velocityYBasicDecimal.addlong (yVector);
         This.velocityZBasicDecimal.addlong (zVector);

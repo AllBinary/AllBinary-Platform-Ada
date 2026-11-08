@@ -187,14 +187,14 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            values.add (Java_Box (This.id));
+            values.add (This.id);
             size := This.optionValue.size;
             for index in 0 .. (size) - 1 loop
                 values.add (This.optionValue.get (index));
                 values.add (This.optionItem.get (index));
             end loop;
-            values.add (Java_Box (time));
-            values.add (Java_Box (time));
+            values.add (time);
+            values.add (time);
             BasicOptionItemsEntityFactory_Package.getInstance.getBasicOptionItemsEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully inserted ") & This.id & To_Unbounded_String (" into items table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then

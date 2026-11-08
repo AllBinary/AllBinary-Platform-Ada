@@ -33,6 +33,7 @@ with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Pa
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.input.automation.module.game.test.TestInputAutomationCaptureWorker_Package is

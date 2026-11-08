@@ -44,6 +44,7 @@ with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbi
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package_References;
 with org.allbinary.image.opengles.OpenGLImageCacheFactory_Package; use org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -210,12 +211,12 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
 
    function getHeight (This : in out OpenGLESImage) return Integer is
    begin
-        return Integer (((This.openGLBitmap.getHeight) * (This.openGLESImageProperties.scaleY2)));
+        return Integer (((Float (This.openGLBitmap.getHeight)) * (This.openGLESImageProperties.scaleY2)));
    end getHeight;
 
    function getWidth (This : in out OpenGLESImage) return Integer is
    begin
-        return Integer (((This.openGLBitmap.getWidth) * (This.openGLESImageProperties.scaleX2)));
+        return Integer (((Float (This.openGLBitmap.getWidth)) * (This.openGLESImageProperties.scaleX2)));
    end getWidth;
 
    --  throws Exception
@@ -269,7 +270,7 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
       graphicsStrings : GraphicsStrings_Access;
    begin
         graphicsStrings := GraphicsStrings_Package.getInstance;
-        return StringMaker_Package.Create.append (OpenGLESImage'Class (This).getName).append (Image_Package.Image (This).toString).append (graphicsStrings.OPACITY).appendfloat (Float (This.openGLESImageProperties.alphaf)).toString;
+        return StringMaker_Package.Create.append (OpenGLESImage'Class (This).getName).append (Image_Package.Image (This).toString).append (graphicsStrings.OPACITY).appendfloat (This.openGLESImageProperties.alphaf).toString;
    end toString;
 
    procedure initTexture (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class) is

@@ -75,7 +75,7 @@ package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
+        stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag)));
         stringBuffer.append (To_Unbounded_String (" "));
         stringBuffer.append (BufferedImageCacheable'Class (This).getKey.toString);
         return stringBuffer.toString;

@@ -30,10 +30,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.FileFilter_Package; use java.io.FileFilter_Package;
+with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 
 package org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package is
 
+   package FileFilter_Package renames Standard.java.io.FileFilter_Package;
    package Reference_Types is
    end Reference_Types;
    use Reference_Types;

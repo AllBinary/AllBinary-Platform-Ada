@@ -19,6 +19,7 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
 with org.allbinary.string_Id.CommonSeps_Package;

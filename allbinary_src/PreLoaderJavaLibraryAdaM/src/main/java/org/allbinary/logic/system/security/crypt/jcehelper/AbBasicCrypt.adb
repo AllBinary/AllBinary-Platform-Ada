@@ -13,13 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with java.security.Security_Package; use java.security.Security_Package;
+with java.security.spec.KeySpec_Package; use java.security.spec.KeySpec_Package;
+with javax.crypto.Cipher_Package; use javax.crypto.Cipher_Package;
+with javax.crypto.SecretKey_Package; use javax.crypto.SecretKey_Package;
+with javax.crypto.SecretKeyFactory_Package; use javax.crypto.SecretKeyFactory_Package;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 
 package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package is
 
+   package Security_Package renames Standard.java.security.Security_Package;
+   package KeySpec_Package renames Standard.java.security.spec.KeySpec_Package;
+   package SecretKeyFactory_Package renames Standard.javax.crypto.SecretKeyFactory_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out AbBasicCrypt'Class) is

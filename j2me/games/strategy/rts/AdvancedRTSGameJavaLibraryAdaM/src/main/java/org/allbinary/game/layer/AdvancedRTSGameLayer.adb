@@ -527,7 +527,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
         geographicMapCellPosition := AdvancedRTSGameLayer'Class (This).getCurrentGeographicMapCellPosition;
         buildingDirection := GeographicMapDirectionUtil_Package.getInstance.getDirectionFromCellPositionToAdjacentCellPosition (geographicMapCellPosition, cellPosition);
         angleInfo := AdvancedRTSGameLayer'Class (This).getRotationAnimationInterface.getAngleInfoP;
-        angle := FrameUtil_Package.getInstance.adjustAngleToFrameAngle ((angleInfo.getAngle) + (90));
+        angle := FrameUtil_Package.getInstance.adjustAngleToFrameAngle ((Integer (angleInfo.getAngle)) + (90));
         gameKeyEventFactory := GameKeyEventFactory_Package.getInstance;
         if (Java_Object_Access (buildingDirection)) = (Java_Object_Access (DirectionFactory_Package.getInstance.UP)) then
             This.rtsLayer2LogHelper.buildingAbove (AdvancedRTSGameLayer_Access'(This'Unchecked_Access));

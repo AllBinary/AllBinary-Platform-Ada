@@ -60,7 +60,7 @@ package body org.allbinary.media.image.ImageCreationUtil_Package is
    function createImageWH (This : in out ImageCreationUtil; width : Integer; height : Integer) return Image_Access is
       image : Image_Access;
    begin
-        image := GameFeatureImageCacheFactory_Package.getInstance.get (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)), width, height);
+        image := GameFeatureImageCacheFactory_Package.getInstance.get (To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag)), width, height);
         return image;
    end createImageWH;
 
@@ -68,7 +68,7 @@ package body org.allbinary.media.image.ImageCreationUtil_Package is
    function createImage (This : in out ImageCreationUtil; width : Integer; height : Integer; maxScaleX : Float; maxScaleY : Float) return Image_Access is
       image : Image_Access;
    begin
-        image := GameFeatureImageCacheFactory_Package.getInstance.get (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)), (Integer (((Float (width)) * (maxScaleX)))) + (1), (Integer (((Float (height)) * (maxScaleY)))) + (1));
+        image := GameFeatureImageCacheFactory_Package.getInstance.get (To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag)), (Integer (((Float (width)) * (maxScaleX)))) + (1), (Integer (((Float (height)) * (maxScaleY)))) + (1));
         return image;
    end createImage;
 

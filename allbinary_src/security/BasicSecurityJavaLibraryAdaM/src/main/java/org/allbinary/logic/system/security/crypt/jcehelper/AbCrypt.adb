@@ -13,6 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with java.security.Security_Package; use java.security.Security_Package;
+with java.security.spec.KeySpec_Package; use java.security.spec.KeySpec_Package;
+with javax.crypto.Cipher_Package; use javax.crypto.Cipher_Package;
+with javax.crypto.SecretKey_Package; use javax.crypto.SecretKey_Package;
+with javax.crypto.SecretKeyFactory_Package; use javax.crypto.SecretKeyFactory_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.TsUtil_Package_References;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
@@ -29,6 +34,7 @@ with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
+with org.allbinary.logic.java.byteutil.ByteUtil_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
 with javax.microedition.lcdui.Choice_Package;
@@ -81,6 +87,11 @@ with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package is
 
+   package Security_Package renames Standard.java.security.Security_Package;
+   package KeySpec_Package renames Standard.java.security.spec.KeySpec_Package;
+   package Cipher_Package renames Standard.javax.crypto.Cipher_Package;
+   package SecretKey_Package renames Standard.javax.crypto.SecretKey_Package;
+   package SecretKeyFactory_Package renames Standard.javax.crypto.SecretKeyFactory_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;

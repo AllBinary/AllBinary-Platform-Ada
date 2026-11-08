@@ -33,6 +33,7 @@ with org.allbinary.thread.SynchObject_Package; use org.allbinary.thread.SynchObj
 with org.allbinary.thread.SynchObject_Package_References;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.image.opengles.OpenGLImageCache_Package is

@@ -255,7 +255,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         size := subStoreVector.size;
         for index in 0 .. (size) - 1 loop
             subStore := Java_Unbox (subStoreVector.get (index));
-            substoreKeywords := inventoryColumnUtil.getColumnWhereLike (This.inventory_Case, Java_Image (AbPathData_Package.getInstance.SEPARATOR) & subStore, This.basicItemData.CATEGORY);
+            substoreKeywords := inventoryColumnUtil.getColumnWhereLike (This.inventory_Case, AbPathData_Package.getInstance.SEPARATOR & subStore, This.basicItemData.CATEGORY);
             keywords.addAllList (substoreKeywords);
         end loop;
         uniqueTokens := UniqueTokens_Package.Create;
@@ -273,9 +273,9 @@ package body views.admin.inventory.listings.ProductListing_Package is
         end if;
         newFile := AbFile_Package.createAbFile (file);
         if newFile.exists then
-            newFile.delete;
+            declare Java_Result renames newFile.delete; pragma Unreferenced (Java_Result); begin null; end;
         end if;
-        newFile.createNewFile;
+        declare Java_Result renames newFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         if newFile.exists then
             idOutData := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (newFile);
             idOutData.writeBytes (data);
@@ -307,7 +307,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         hashMap := SpecialCharacterUtil_Package.getHashMap;
-        hashMap.put (CommonSeps_Package.getInstance.SPACE, Java_Box (StringUtil_Package.getInstance.EMPTY_STRING));
+        hashMap.put (Java_Box (CommonSeps_Package.getInstance.SPACE), Java_Box (StringUtil_Package.getInstance.EMPTY_STRING));
         pageName := Replace_Package.Create (hashMap).all_Id (keywordData);
         searchParams := This.searchRequest.getParams;
         searchParams.add (This.basicItemData.KEYWORDS, keywordData);

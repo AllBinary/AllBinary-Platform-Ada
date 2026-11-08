@@ -209,7 +209,7 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
       path : Unbounded_String := path_Param;
    begin
         if not (AbPathUtilOld'Class (This).isValidStart (path)) then
-            path := Java_Image (This.abPathData.SEPARATOR) & path;
+            path := This.abPathData.SEPARATOR & path;
         end if;
         return path;
    end adjustStart;
@@ -218,7 +218,7 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
       path : Unbounded_String := path_Param;
    begin
         if not (AbPathUtilOld'Class (This).isValidEnd (path)) then
-            path := path & Java_Image (This.abPathData.SEPARATOR);
+            path := path & This.abPathData.SEPARATOR;
         end if;
         return path;
    end adjustEnd;

@@ -68,8 +68,8 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
         WeaponProperties'Class (This).setDissipation (dissipation);
         WeaponProperties'Class (This).setSpeed (BasicDecimal_Package.Create (speed));
         if (Integer (dissipation)) /= (Integer (This.ZERO)) then
-            unscaledDamage := (This.speed.getUnscaled) * (damage);
-            scaledDissipation := (dissipation) * (This.speed.getScaledFactorValue);
+            unscaledDamage := (This.speed.getUnscaled) * (Long_Long_Integer (damage));
+            scaledDissipation := (Integer (dissipation)) * (This.speed.getScaledFactorValue);
             value := ((unscaledDamage) / (Long_Long_Integer (scaledDissipation)));
             WeaponProperties'Class (This).setRange ((Integer (((value) * (9)))) / (10));
         end if;
@@ -115,7 +115,7 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
 
    function getDamageI (This : in out WeaponProperties; range_Id : Integer) return Integer is
    begin
-        return (WeaponProperties'Class (This).getDamage) - (((((WeaponProperties'Class (This).getDissipation) * (range_Id))) / (This.speed.getScaled)));
+        return (WeaponProperties'Class (This).getDamage) - (((((Integer (WeaponProperties'Class (This).getDissipation)) * (range_Id))) / (This.speed.getScaled)));
    end getDamageI;
 
    function toStringArray (This : in out WeaponProperties) return Unbounded_String_Array_Access is
@@ -126,9 +126,9 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
         index := 0;
         stringArray := new Unbounded_String_Array'(0 .. (3) - 1 => Null_Unbounded_String);
         stringBuffer := StringMaker_Package.Create;
-        stringArray (Java_Post_Increment (index)) := stringBuffer.append (WeaponProperties_Package.DAMAGE).appendint (Integer (WeaponProperties'Class (This).getDamage)).toString;
+        stringArray (Java_Post_Increment (index)) := stringBuffer.append (WeaponProperties_Package.DAMAGE).appendint (WeaponProperties'Class (This).getDamage).toString;
         stringBuffer.delete (0, stringBuffer.length);
-        stringArray (Java_Post_Increment (index)) := stringBuffer.append (WeaponProperties_Package.RANGE_Id).appendint (Integer (WeaponProperties'Class (This).getRange)).toString;
+        stringArray (Java_Post_Increment (index)) := stringBuffer.append (WeaponProperties_Package.RANGE_Id).appendint (WeaponProperties'Class (This).getRange).toString;
         stringBuffer.delete (0, stringBuffer.length);
         stringArray (Java_Post_Increment (index)) := stringBuffer.append (WeaponProperties_Package.RELOAD).appendlong (WeaponProperties'Class (This).getReloadTime).toString;
         return stringArray;
@@ -138,9 +138,9 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (WeaponProperties_Package.DAMAGE).appendint (Integer (WeaponProperties'Class (This).getDamage));
+        stringBuffer.append (WeaponProperties_Package.DAMAGE).appendint (WeaponProperties'Class (This).getDamage);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
-        stringBuffer.append (WeaponProperties_Package.RANGE_Id).appendint (Integer (WeaponProperties'Class (This).getRange));
+        stringBuffer.append (WeaponProperties_Package.RANGE_Id).appendint (WeaponProperties'Class (This).getRange);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
         stringBuffer.append (WeaponProperties_Package.RELOAD).appendlong (WeaponProperties'Class (This).getReloadTime);
         return stringBuffer.toString;

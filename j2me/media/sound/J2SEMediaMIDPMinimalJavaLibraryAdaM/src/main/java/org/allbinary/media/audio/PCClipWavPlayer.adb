@@ -41,8 +41,13 @@ with org.allbinary.media.audio.NullAudioFormat_Package;
 with org.allbinary.media.audio.NullClip_Package;
 with org.allbinary.media.audio.NullControl_Package;
 with org.allbinary.media.audio.NullJ2SEControl_Package;
+with org.allbinary.thread.NullRunnable_Package;
 with javax.microedition.media.Player_Package;
+with org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.thread.ThreadObjectUtil_Package;
+with org.allbinary.thread.ThreadPool_Package;
+with org.allbinary.thread.ThreadPoolStrings_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.media.audio.PCClipWavPlayer_Package is

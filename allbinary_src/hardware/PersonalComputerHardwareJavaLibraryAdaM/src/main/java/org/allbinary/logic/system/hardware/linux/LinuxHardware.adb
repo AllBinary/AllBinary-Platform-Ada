@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.FileReader_Package; use java.io.FileReader_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -61,6 +62,7 @@ with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.system.hardware.components.Component_Package;
 with org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -76,6 +78,7 @@ with org.allbinary.logic.system.hardware.components.linux.Cpu_Package_References
 
 package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
 
+   package FileReader_Package renames Standard.java.io.FileReader_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;

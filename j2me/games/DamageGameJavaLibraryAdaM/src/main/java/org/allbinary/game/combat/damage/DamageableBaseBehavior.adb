@@ -41,7 +41,7 @@ package body org.allbinary.game.combat.damage.DamageableBaseBehavior_Package is
 
    function getName (This : in out DamageableBaseBehavior) return Unbounded_String is
    begin
-        return To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
+        return To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag));
    end getName;
 
    --  throws Exception

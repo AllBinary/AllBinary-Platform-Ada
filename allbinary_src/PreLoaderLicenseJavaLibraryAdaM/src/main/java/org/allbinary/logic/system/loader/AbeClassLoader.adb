@@ -73,7 +73,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
       This.logUtil := LogUtil_Package.getInstance;
       This.abCryptUtil := AbCryptUtil_Package.getInstance;
       This.LOAD_CLASS := To_Unbounded_String ("loadClass");
-      This.ENCRYPTED_EXTENSION := Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & To_Unbounded_String ("abc");
+      This.ENCRYPTED_EXTENSION := AbPathData_Package.getInstance.EXTENSION_SEP & To_Unbounded_String ("abc");
       
    end Initialize_Fields;
 

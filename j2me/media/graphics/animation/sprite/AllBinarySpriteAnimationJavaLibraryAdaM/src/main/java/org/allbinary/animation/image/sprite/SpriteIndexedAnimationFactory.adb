@@ -36,6 +36,7 @@ with org.allbinary.graphics.color.ColorCompositeInterface_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.logic.math.J2SEMath_Package;
+with javax.microedition.lcdui.game.Layer_Package;
 with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
 
 package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_Package is

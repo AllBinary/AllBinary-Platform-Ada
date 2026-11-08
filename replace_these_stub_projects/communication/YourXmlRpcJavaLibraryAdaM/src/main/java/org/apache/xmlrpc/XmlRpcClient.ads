@@ -20,7 +20,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 --  with java.net.MalformedURLException_Package; use java.net.MalformedURLException_Package;
---  with java.net.URL_Package; use java.net.URL_Package;
+with java.net.URL_Package; use java.net.URL_Package;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
@@ -29,6 +29,7 @@ with org.apache.xmlrpc.XmlRpcHandler_Package; use org.apache.xmlrpc.XmlRpcHandle
 
 package org.apache.xmlrpc.XmlRpcClient_Package is
 
+   package URL_Package renames Standard.java.net.URL_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
    package Reference_Types is

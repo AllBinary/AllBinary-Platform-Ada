@@ -250,15 +250,15 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    begin
         quoteRequestData := QuoteRequestData_Package.getInstance;
         values := StdUtil_Package.getInstance.createHashMap;
-        values.put (UserData_Package.USERNAME, This.userName);
-        values.put (quoteRequestData.PROJECT_INFO, This.projectInfo);
-        values.put (quoteRequestData.CUSTOMER_COMMENTS, This.userComments);
-        values.put (quoteRequestData.BUDGET, This.budget);
-        values.put (quoteRequestData.TIMEFRAME, This.timeFrame);
-        values.put (quoteRequestData.COMMENTS, This.comments);
+        values.put (UserData_Package.USERNAME, Java_Box (This.userName));
+        values.put (quoteRequestData.PROJECT_INFO, Java_Box (This.projectInfo));
+        values.put (quoteRequestData.CUSTOMER_COMMENTS, Java_Box (This.userComments));
+        values.put (quoteRequestData.BUDGET, Java_Box (This.budget));
+        values.put (quoteRequestData.TIMEFRAME, Java_Box (This.timeFrame));
+        values.put (quoteRequestData.COMMENTS, Java_Box (This.comments));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-        values.put (EntryData_Package.getInstance.LASTMODIFIED, time);
+        values.put (EntryData_Package.getInstance.LASTMODIFIED, Java_Box (time));
         return values;
    end toHashMap;
 

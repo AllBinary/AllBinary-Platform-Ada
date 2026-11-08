@@ -100,6 +100,14 @@
             <!-- AllBinary Platform Version End -->
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>MotionGestureBaseJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
 
@@ -150,7 +158,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.allbinary.cache,org.graph</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

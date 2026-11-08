@@ -60,7 +60,7 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
    begin
         file := AbFile_Package.createAbFileFromAbPath (path);
         if not (file.isFile) then
-            file.createNewFile;
+            declare Java_Result renames file.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         end if;
    end create;
 

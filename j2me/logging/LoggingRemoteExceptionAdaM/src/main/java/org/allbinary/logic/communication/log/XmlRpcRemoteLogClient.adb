@@ -26,6 +26,8 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package is
@@ -99,7 +101,7 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
             hashtable := ABHashtable_Access (anyType);
             param.add (Java_Object_Access (hashtable));
             result := xmlRpcClient.execute (XmlRpcRemoteLogClient'Class (This).getRemoteMethod, param, This.noCrypt);
-            Ada.Text_IO.Put_Line (Java_Image (Java_Image ((CommonLabels_Package.getInstance.RESULT_U) + (CommonSeps_Package.getInstance.NEW_LINE)) & result.toString));
+            Ada.Text_IO.Put_Line (Java_Image (Java_Image (CommonLabels_Package.getInstance.RESULT_U) & CommonSeps_Package.getInstance.NEW_LINE & result.toString));
             return result;
         exception
             when Java_Occurrence : others =>
@@ -108,7 +110,7 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
                 begin
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("IOException Trying Other Servers")));
             if not (Java_Starts_With (Java_Get_Message (e), HOST_NOT_RESOLVED)) then
-                return XmlRpcRemoteLogClient'Class (This).tryAnother (anyType);
+                return Java_Object_Access (XmlRpcRemoteLogClient'Class (This).tryAnother (anyType));
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));
             end if;

@@ -15,6 +15,7 @@
 
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with java.net.URI_Package; use java.net.URI_Package;
+with java.net.URL_Package; use java.net.URL_Package;
 with java.awt.Desktop_Package; use java.awt.Desktop_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package; use bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package_References;
@@ -49,6 +50,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.thread.RunnableInterface_Package_References;
+with java.lang.ClassLoader_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.system.security.licensing.InputAutomationClientInformation_Package;
@@ -64,6 +66,7 @@ with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Pac
 package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package URL_Package renames Standard.java.net.URL_Package;
    package Desktop_Package renames Standard.java.awt.Desktop_Package;
    package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
    package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
@@ -209,10 +212,10 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
       JFrame_Package.Initialize (This);
       Initialize_Fields (This);
         InputAutomationJFrame'Class (This).initComponents;
-        url := This.all'Tag.getResource (To_Unbounded_String ("/help/Help.hs"));
+        url := Java_Object'Class (This)'Tag.getResource (To_Unbounded_String ("/help/Help.hs"));
         This.logUtil.putF (To_Unbounded_String ("URL: ") & Java_Image (url), InputAutomationJFrame_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.helpSet := JavaHelpUtil_Package.getInstance.getHelpSet (url);
-        url := This.all'Tag.getResource (To_Unbounded_String ("/resources/allbinaryicon8bit.jpg"));
+        url := Java_Object'Class (This)'Tag.getResource (To_Unbounded_String ("/resources/allbinaryicon8bit.jpg"));
         imageIcon := ImageIcon_Package.Create (url);
         InputAutomationJFrame'Class (This).setIconImage (imageIcon.getImage);
         InputAutomationJFrame'Class (This).init;
@@ -630,11 +633,11 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
       inputAutomationBundleActivatorListenerInterface : constant InputAutomationBundleActivatorListenerInterface_Access := InputAutomationBundleActivatorListenerInterface_Access (inputAutomationBundleActivatorListenerInterface_Param);
       appUrlGlobals : AppUrlGlobals_Access;
    begin
-        LogConfigTypeFactory_Package.getInstance;
+        declare Java_Result renames LogConfigTypeFactory_Package.getInstance; pragma Unreferenced (Java_Result); begin null; end;
         appUrlGlobals := AppUrlGlobals_Package.Create;
         appUrlGlobals.setWebappPath (To_Unbounded_String ("G:/mnt/bc/mydev/work_automation/automation/run/"));
         URLGLOBALS_Package.init (appUrlGlobals);
-        WebappClassLoaderInfo_Package.setLoader (ClassLoader_Package.getSystemClassLoader);
+        WebappClassLoaderInfo_Package.setLoader (Standard.java.lang.ClassLoader_Package.getSystemClassLoader);
         java_Package.awt.EventQueue.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure run (This : in out ) is

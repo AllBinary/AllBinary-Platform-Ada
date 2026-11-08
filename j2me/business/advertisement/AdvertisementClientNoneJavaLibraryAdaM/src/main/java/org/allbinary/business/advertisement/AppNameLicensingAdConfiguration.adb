@@ -14,7 +14,7 @@ package body org.allbinary.business.advertisement.AppNameLicensingAdConfiguratio
 
    procedure Initialize (This : in out AppNameLicensingAdConfiguration'Class) is
    begin
-        AdConfiguration_Package.Initialize (This, new Java_Object_Access_Array'(StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING));
+        AdConfiguration_Package.Initialize (This, new Java_Object_Access_Array'(Java_Box (StringUtil_Package.getInstance.EMPTY_STRING), Java_Box (StringUtil_Package.getInstance.EMPTY_STRING), Java_Box (StringUtil_Package.getInstance.EMPTY_STRING)));
    end Initialize;
 
    function Create return AppNameLicensingAdConfiguration_Access is

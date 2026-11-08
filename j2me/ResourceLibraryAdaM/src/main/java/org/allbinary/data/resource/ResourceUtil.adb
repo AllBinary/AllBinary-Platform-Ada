@@ -21,6 +21,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with java.lang.ClassLoader_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
@@ -106,7 +107,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
         commonSeps := CommonSeps_Package.getInstance;
         index := Java_Index_Of (resource, Java_Image (commonSeps.COLON));
         resourcePath := Unbounded_Slice (resource, ((index) + (startIndex)) + 1, Ada.Strings.Unbounded.Length (resource));
-        inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
+        inputStream := Standard.java.lang.ClassLoader_Package.getSystemClassLoader.getResourceAsStream (resourcePath);
         if (inputStream) /= (null) then
             return inputStream;
         end if;

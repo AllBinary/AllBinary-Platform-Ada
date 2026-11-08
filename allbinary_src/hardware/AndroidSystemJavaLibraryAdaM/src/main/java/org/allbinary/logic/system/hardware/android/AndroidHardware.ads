@@ -30,8 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.Closeable_Package; use java.io.Closeable_Package;
---  with java.io.FileReader_Package; use java.io.FileReader_Package;
 --  with java.io.LineNumberReader_Package; use java.io.LineNumberReader_Package;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;

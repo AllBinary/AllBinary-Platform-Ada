@@ -31,7 +31,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.net.URI_Package; use java.net.URI_Package;
---  with java.net.URL_Package; use java.net.URL_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.swing.ImageIcon_Package; use javax.swing.ImageIcon_Package;
 --  with javax.swing.JDialog_Package; use javax.swing.JDialog_Package;

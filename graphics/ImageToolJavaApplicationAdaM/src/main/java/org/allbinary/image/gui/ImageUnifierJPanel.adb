@@ -43,11 +43,17 @@ with org.allbinary.image.gui.ImageIcon_Package; use org.allbinary.image.gui.Imag
 with org.allbinary.image.gui.Icon_Package; use org.allbinary.image.gui.Icon_Package;
 with org.allbinary.image.gui.JLabel_Package; use org.allbinary.image.gui.JLabel_Package;
 with org.allbinary.image.gui.JLabel_Package_References;
+with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.image.gui.ImageIconUnique_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.gui.ImageUnifierJPanel_Package is

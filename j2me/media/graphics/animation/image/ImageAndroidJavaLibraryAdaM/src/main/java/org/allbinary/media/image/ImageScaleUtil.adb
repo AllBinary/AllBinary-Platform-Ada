@@ -211,7 +211,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    begin
         image := Image_Access (NullImage_Package.NULL_IMAGE);
         if cached then
-            image := imageCache.get (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)), width, height);
+            image := imageCache.get (To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag)), width, height);
         else
             image := imageCache.get (This.commonStrings.CREATE_IMAGE, width, height);
         end if;

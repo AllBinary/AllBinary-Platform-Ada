@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.security.spec.KeySpec_Package; use java.security.spec.KeySpec_Package;
 
 package body org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package is
 

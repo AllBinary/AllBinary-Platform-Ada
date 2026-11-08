@@ -422,7 +422,7 @@ package body views.admin.inventory.AddFileValidationView_Package is
 begin
    null;
    ADDPRODUCT := To_Unbounded_String ("Add Product");
-   NEXTSTEP := Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Step");
+   NEXTSTEP := CommonLabels_Package.getInstance.NEXT & To_Unbounded_String (" Step");
 
 end views.admin.inventory.AddFileValidationView_Package;
 

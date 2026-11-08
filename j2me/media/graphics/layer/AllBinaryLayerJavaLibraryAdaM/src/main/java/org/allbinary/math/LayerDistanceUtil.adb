@@ -105,7 +105,7 @@ package body org.allbinary.math.LayerDistanceUtil_Package is
    begin
         dx := (((layerInterface.getXP) + (layerInterface.getHalfWidth))) - (((layerInterface2.getXP) + (layerInterface2.getHalfWidth)));
         dy := (((layerInterface.getYP) + (layerInterface.getHalfHeight))) - (((layerInterface2.getYP) + (layerInterface2.getHalfHeight)));
-        return Integer (This.mathUtil.sqrt ((((dx) * (dx))) + (((dy) * (dy)))));
+        return This.mathUtil.sqrt ((((dx) * (dx))) + (((dy) * (dy))));
    end getDistance;
 
    function getDistance3D (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Integer is
@@ -118,7 +118,7 @@ package body org.allbinary.math.LayerDistanceUtil_Package is
         dx := (((layerInterface.getXP) + (layerInterface.getHalfWidth))) - (((layerInterface2.getXP) + (layerInterface2.getHalfWidth)));
         dy := (((layerInterface.getYP) + (layerInterface.getHalfHeight))) - (((layerInterface2.getYP) + (layerInterface2.getHalfHeight)));
         dz := (((layerInterface.getZP) + (layerInterface.getHalfDepth))) - (((layerInterface2.getZP) + (layerInterface2.getHalfDepth)));
-        return Integer (This.mathUtil.sqrt (((((dx) * (dx))) + (((dy) * (dy)))) + (((dz) * (dz)))));
+        return This.mathUtil.sqrt (((((dx) * (dx))) + (((dy) * (dy)))) + (((dz) * (dz))));
    end getDistance3D;
 
    function getDistanceAt (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; point_Param : access GPoint_Package.GPoint'Class) return Integer is
@@ -129,7 +129,7 @@ package body org.allbinary.math.LayerDistanceUtil_Package is
    begin
         dx := (layerInterface.getXP) - (point.getX);
         dy := (layerInterface.getYP) - (point.getY);
-        return Integer (This.mathUtil.sqrt ((((dx) * (dx))) + (((dy) * (dy)))));
+        return This.mathUtil.sqrt ((((dx) * (dx))) + (((dy) * (dy))));
    end getDistanceAt;
 
    procedure getDistance (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is

@@ -31,6 +31,7 @@ with org.allbinary.animation.ShapeTypeFactory_Package_References;
 with org.allbinary.animation.ShapeType_Package; use org.allbinary.animation.ShapeType_Package;
 with org.allbinary.animation.ShapeType_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.animation.ShapeType_Package;
 with org.allbinary.animation.ShapeTypeFactory_Package;

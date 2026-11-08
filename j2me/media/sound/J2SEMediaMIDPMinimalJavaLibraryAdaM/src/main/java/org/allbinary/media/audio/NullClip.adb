@@ -160,7 +160,7 @@ package body org.allbinary.media.audio.NullClip_Package is
 
    function getLineInfo (This : in out NullClip) return Info_Access is
    begin
-        return Info_Package.Create (This.all'Tag, NullAudioFormat_Package.NULL_AUDIO_FORMAT);
+        return Info_Package.Create (Java_Object'Class (This)'Tag, NullAudioFormat_Package.NULL_AUDIO_FORMAT);
    end getLineInfo;
 
    --  throws LineUnavailableException

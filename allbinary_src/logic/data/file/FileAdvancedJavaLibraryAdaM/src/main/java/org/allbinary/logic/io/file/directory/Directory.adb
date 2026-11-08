@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
@@ -23,8 +24,14 @@ with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 
 package body org.allbinary.logic.io.file.directory.Directory_Package is
 
@@ -131,7 +138,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
             if (existingDirectoryFile.list'Length) > (0) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Did not remove category: ") & existingDirectory & To_Unbounded_String (" because files exist")));
             elsif existingDirectoryFile.delete then
-                PreLogUtil_Package.put (To_Unbounded_String ("Successfully Removed: ") & existingDirectory, To_Unbounded_String ("Directory"), To_Unbounded_String ("remove"));
+                PreLogUtil_Package.put (To_Unbounded_String ("Successfully Removed: ") & existingDirectory, Java_Box (To_Unbounded_String ("Directory")), To_Unbounded_String ("remove"));
             end if;
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Category Directory Is Missing:") & existingDirectory));
@@ -240,7 +247,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
                 return fileList;
             end if;
             for index in 0 .. (files'Length) - 1 loop
-                if (files (index).getPath.indexOf (searchValue)) >= (0) then
+                if (Java_Index_Of (files (index).getPath, Java_Image (searchValue))) >= (0) then
                     fileList.add (Java_Object_Access (files (index)));
                 end if;
                 if isRecursiveSearch then

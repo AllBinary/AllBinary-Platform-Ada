@@ -27,6 +27,7 @@ with org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package_Re
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package; use org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package;

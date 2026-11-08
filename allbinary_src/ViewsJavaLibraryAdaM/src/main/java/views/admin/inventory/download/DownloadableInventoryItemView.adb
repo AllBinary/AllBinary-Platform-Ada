@@ -231,14 +231,14 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
         fileName := fileItem.getName;
         fullPath := DownloadableInventoryItemView'Class (This).getItemFilePath;
         itemResourceFile := AbFile_Package.createAbFile (fullPath);
-        itemResourceFile.mkdir;
+        declare Java_Result renames itemResourceFile.mkdir; pragma Unreferenced (Java_Result); begin null; end;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (fullPath);
         stringBuffer.append (fileName);
         This.DownloadableInventoryItemView_Field_logUtil.putF (To_Unbounded_String ("FileName: ") & fileName, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("processFile()"));
         file := AbFile_Package.createAbFile (stringBuffer.toString);
         This.DownloadableInventoryItemView_Field_logUtil.putF (file.getPath, DownloadableInventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("processFiles()"));
-        file.createNewFile;
+        declare Java_Result renames file.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         byteArray := fileItem.get;
         FileUtil_Package.getInstance.write (ByteArrayInputStream_Package.Create (byteArray), file);
    end processFile;

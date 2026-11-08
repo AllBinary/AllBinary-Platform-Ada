@@ -194,8 +194,8 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
                 HttpFileUploadUtil_Package.log (fileItem);
                 byteArray := fileItem.get;
                 if file.isFile then
-                    file.delete;
-                    file.createNewFile;
+                    declare Java_Result renames file.delete; pragma Unreferenced (Java_Result); begin null; end;
+                    declare Java_Result renames file.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
                 end if;
                 fileOutputStream := AbFileOutputStream_Package.createFromAbFile (file);
                 fileOutputStream.write (byteArray);

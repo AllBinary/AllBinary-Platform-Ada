@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.Closeable_Package; use java.io.Closeable_Package;
 
 package body org.allbinary.logic.io.NullCloseable_Package is
 

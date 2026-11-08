@@ -178,8 +178,8 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
             This.logUtil.put (This.NO_COPY, ImageCopyUtil_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, Java_New_Exception ("Exception"));
             return originalImage;
         end if;
-        newWidth := Integer (((originalImage.getWidth) * (canvasScale)));
-        newHeight := Integer (((originalImage.getHeight) * (canvasScale)));
+        newWidth := Integer (((Float (originalImage.getWidth)) * (canvasScale)));
+        newHeight := Integer (((Float (originalImage.getHeight)) * (canvasScale)));
         if resize then
             if (newWidth) < (newHeight) then
                 newWidth := newHeight;

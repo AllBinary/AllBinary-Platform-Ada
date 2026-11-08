@@ -264,7 +264,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.game.multiplayer,org.allbinary.animation.transition,org.allbinary.game.weapon,org.allbinary.media.graphics.geography.pathfinding,org.allbinary.game.strategy.realtime</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.game.multiplayer,org.allbinary.animation.transition,org.allbinary.game.weapon,org.allbinary.media.graphics.geography.pathfinding,org.allbinary.game.strategy.realtime,org.allbinary.cache,org.graph,org.allbinary.game.ai,org.allbinary.game.combat,org.allbinary.media.graphics.geography.map,org.allbinary.layer,org.allbinary.animation,org.allbinary.physics,org.allbinary.game.parts.weapon,org.allbinary.input.tracking,org.allbinary.game</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

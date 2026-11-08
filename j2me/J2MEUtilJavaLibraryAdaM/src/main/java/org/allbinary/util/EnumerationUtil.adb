@@ -60,7 +60,7 @@ package body org.allbinary.util.EnumerationUtil_Package is
    function nextElement (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) return Java_Object_Access is
       enumeration : constant Enumeration_Access := Enumeration_Access (enumeration_Param);
    begin
-        return enumeration.nextElement;
+        return Java_Object_Access (enumeration.nextElement);
    end nextElement;
 
    function getAsArray (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) return Java_Object_Access_Array_Access is

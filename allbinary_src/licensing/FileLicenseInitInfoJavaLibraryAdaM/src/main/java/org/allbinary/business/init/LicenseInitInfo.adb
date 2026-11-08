@@ -20,6 +20,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.debug.DebugInterface_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.init.LicenseInitInfo_Package is
@@ -86,12 +88,12 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
 
    procedure setServer (This : in out LicenseInitInfo; value : Unbounded_String; index : Integer) is
    begin
-        This.serverVector.addAt (index, value);
+        This.serverVector.addAt (index, Java_Box (value));
    end setServer;
 
    procedure addServer (This : in out LicenseInitInfo; value : Unbounded_String) is
    begin
-        This.serverVector.add (value);
+        This.serverVector.add (Java_Box (value));
    end addServer;
 
    function getServerList (This : in out LicenseInitInfo) return BasicArrayList_Access is

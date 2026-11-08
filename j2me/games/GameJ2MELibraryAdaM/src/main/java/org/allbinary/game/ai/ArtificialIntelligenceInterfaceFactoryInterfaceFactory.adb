@@ -25,6 +25,7 @@ with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Packa
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
 with org.allbinary.game.ai.BasicAI_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;

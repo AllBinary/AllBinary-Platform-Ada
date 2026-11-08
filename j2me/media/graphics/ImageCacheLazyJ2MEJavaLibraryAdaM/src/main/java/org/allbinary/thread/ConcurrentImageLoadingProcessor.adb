@@ -21,10 +21,11 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
-with org.allbinary.thread.ABRunnable_Package_References;
 with org.allbinary.thread.ImageCacheRunnable_Package; use org.allbinary.thread.ImageCacheRunnable_Package;
 with org.allbinary.thread.ImageThreadPool_Package; use org.allbinary.thread.ImageThreadPool_Package;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.thread.ABRunnable_Package;
+with org.allbinary.thread.ARunnable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
@@ -42,6 +43,7 @@ with org.allbinary.thread.NullRunnable_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.canvas.Processor_Package;
+with org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -76,16 +78,6 @@ package body org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
-   subtype ABRunnable_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access;
-   function "=" (Left, Right : ABRunnable_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
-   subtype ABRunnable_Access_Array is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array;
-   function "=" (Left, Right : ABRunnable_Access_Array) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
-   subtype ABRunnable_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access;
-   function "=" (Left, Right : ABRunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
-   subtype ABRunnable_Access_Array_Access_Array is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array;
-   function "=" (Left, Right : ABRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
-   subtype ABRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ABRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
    procedure Initialize_Fields (This : in out ConcurrentImageLoadingProcessor'Class) is
    begin
       null;
@@ -127,8 +119,9 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package; use org.allbinary.thread.BaseImageLoadingProcessor_Package;
-with org.allbinary.thread.BaseImageLoadingProcessor_Package_References;
 with org.allbinary.thread.ImageThreadPool_Package; use org.allbinary.thread.ImageThreadPool_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.thread.ARunnable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayList_Package;
@@ -147,6 +140,7 @@ with org.allbinary.thread.NullRunnable_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.canvas.Processor_Package;
+with org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -181,16 +175,6 @@ package body org.allbinary.thread.ImageCacheRunnable_Package is
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
-   subtype BaseImageLoadingProcessor_Access is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access;
-   function "=" (Left, Right : BaseImageLoadingProcessor_Access) return Boolean renames org.allbinary.thread.BaseImageLoadingProcessor_Package_References."=";
-   subtype BaseImageLoadingProcessor_Access_Array is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access_Array;
-   function "=" (Left, Right : BaseImageLoadingProcessor_Access_Array) return Boolean renames org.allbinary.thread.BaseImageLoadingProcessor_Package_References."=";
-   subtype BaseImageLoadingProcessor_Access_Array_Access is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access_Array_Access;
-   function "=" (Left, Right : BaseImageLoadingProcessor_Access_Array_Access) return Boolean renames org.allbinary.thread.BaseImageLoadingProcessor_Package_References."=";
-   subtype BaseImageLoadingProcessor_Access_Array_Access_Array is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access_Array_Access_Array;
-   function "=" (Left, Right : BaseImageLoadingProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.BaseImageLoadingProcessor_Package_References."=";
-   subtype BaseImageLoadingProcessor_Access_Array_Access_Array_Access is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : BaseImageLoadingProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.BaseImageLoadingProcessor_Package_References."=";
    procedure Initialize_Fields (This : in out ImageCacheRunnable'Class) is
    begin
       null;

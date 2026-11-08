@@ -41,6 +41,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -244,7 +245,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
 
    function getFileName (This : in out CategoryProperties) return Unbounded_String is
    begin
-        return CategoryProperties'Class (This).getValue & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
+        return CategoryProperties'Class (This).getValue & AbPathData_Package.getInstance.EXTENSION_SEP & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
    end getFileName;
 
    --  throws Exception

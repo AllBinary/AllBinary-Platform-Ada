@@ -26,11 +26,11 @@ package body org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package is
       This.MOUSE_CLICKED := To_Unbounded_String ("mouseClicked");
       This.MOUSE_DRAGGED := To_Unbounded_String ("mouseDragged");
       This.MOUSE_MOVED := To_Unbounded_String ("mouseMoved");
-      This.MOUSE_PRESSED_LABEL := To_Unbounded_String ("MousePressed") & Java_Image (CommonSeps_Package.getInstance.COLON_SEP);
-      This.MOUSE_RELEASED_LABEL := To_Unbounded_String ("MouseReleased") & Java_Image (CommonSeps_Package.getInstance.COLON_SEP);
-      This.MOUSE_CLICKED_LABEL := To_Unbounded_String ("MouseClicked") & Java_Image (CommonSeps_Package.getInstance.COLON_SEP);
-      This.MOUSE_DRAGGED_LABEL := To_Unbounded_String ("MouseDragged") & Java_Image (CommonSeps_Package.getInstance.COLON_SEP);
-      This.MOUSE_MOVED_LABEL := To_Unbounded_String ("MouseMoved") & Java_Image (CommonSeps_Package.getInstance.COLON_SEP);
+      This.MOUSE_PRESSED_LABEL := To_Unbounded_String ("MousePressed") & CommonSeps_Package.getInstance.COLON_SEP;
+      This.MOUSE_RELEASED_LABEL := To_Unbounded_String ("MouseReleased") & CommonSeps_Package.getInstance.COLON_SEP;
+      This.MOUSE_CLICKED_LABEL := To_Unbounded_String ("MouseClicked") & CommonSeps_Package.getInstance.COLON_SEP;
+      This.MOUSE_DRAGGED_LABEL := To_Unbounded_String ("MouseDragged") & CommonSeps_Package.getInstance.COLON_SEP;
+      This.MOUSE_MOVED_LABEL := To_Unbounded_String ("MouseMoved") & CommonSeps_Package.getInstance.COLON_SEP;
    end Initialize_Fields;
 
    procedure Initialize (This : in out MouseStrings'Class) is

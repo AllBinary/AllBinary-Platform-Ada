@@ -124,10 +124,10 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
             rgb2 := imageComparisonInfo.getBufferedImages (1).getRGB (point.getX, point.getY);
             automaticCacheInterface := AutomaticCacheInterface_Access (ColorCacheFactory_Package.getInstance);
             colorInteger := Integer (rgb1);
-            colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
+            colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (Java_Box (colorInteger)));
             color := colorCacheable.getColor;
             colorInteger2 := Integer (rgb2);
-            colorCacheable2 := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
+            colorCacheable2 := ColorCacheable_Access (automaticCacheInterface.get (Java_Box (colorInteger)));
             color2 := colorCacheable.getColor;
             if (This.imageComparatorConstraintsInterface.isColorAllowed (0, point, color)) or else (This.imageComparatorConstraintsInterface.isColorAllowed (1, point, color2)) then
                 if (abs ((rgb1) - (rgb2))) <= (imageComparisonInfo.getTolerance) then

@@ -164,8 +164,8 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
    begin
         This.scaleProperties := scaleProperties;
         if This.scaleProperties.shouldScale then
-            This.scaleProperties.scaleWidth := Integer (((This.animationFactoryInitializationVisitor.width) * (This.scaleProperties.scaleX)));
-            This.scaleProperties.scaleHeight := Integer (((This.animationFactoryInitializationVisitor.height) * (This.scaleProperties.scaleY)));
+            This.scaleProperties.scaleWidth := Integer (((Float (This.animationFactoryInitializationVisitor.width)) * (This.scaleProperties.scaleX)));
+            This.scaleProperties.scaleHeight := Integer (((Float (This.animationFactoryInitializationVisitor.height)) * (This.scaleProperties.scaleY)));
         else
             null;
         end if;
@@ -191,7 +191,7 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (Java_Object (This).toString);
         stringBuffer.append (commonLabels.HEIGHT_LABEL);
-        stringBuffer.appendint (Integer (This.image.getHeight));
+        stringBuffer.appendint (This.image.getHeight);
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (This.animationFactoryInitializationVisitor.toString);
         return stringBuffer.toString;

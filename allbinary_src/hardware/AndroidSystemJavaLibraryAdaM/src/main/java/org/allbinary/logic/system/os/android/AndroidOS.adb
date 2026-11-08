@@ -87,11 +87,11 @@ package body org.allbinary.logic.system.os.android.AndroidOS_Package is
         This.stringBuffer.append (commonStrings.SPACE);
         This.stringBuffer.append (To_Unbounded_String ("NetworkType"));
         This.stringBuffer.append (commonStrings.EQUALS);
-        This.stringBuffer.appendint (Integer (properties.getNetworkType));
+        This.stringBuffer.appendint (properties.getNetworkType);
         This.stringBuffer.append (commonStrings.SPACE);
         This.stringBuffer.append (To_Unbounded_String ("PhoneType"));
         This.stringBuffer.append (commonStrings.EQUALS);
-        This.stringBuffer.appendint (Integer (properties.getPhoneType));
+        This.stringBuffer.appendint (properties.getPhoneType);
         This.stringBuffer.append (commonStrings.SPACE);
         This.stringBuffer.append (To_Unbounded_String ("SimCountryIso"));
         This.stringBuffer.append (commonStrings.EQUALS);

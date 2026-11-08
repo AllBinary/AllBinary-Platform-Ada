@@ -19,7 +19,6 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package; use org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
-with org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References;
 with org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package_References;
 with org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
@@ -95,16 +94,6 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
-   subtype ProfileActionScriptNodeInterface_Access is org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References.ProfileActionScriptNodeInterface_Access;
-   function "=" (Left, Right : ProfileActionScriptNodeInterface_Access) return Boolean renames org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References."=";
-   subtype ProfileActionScriptNodeInterface_Access_Array is org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References.ProfileActionScriptNodeInterface_Access_Array;
-   function "=" (Left, Right : ProfileActionScriptNodeInterface_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References."=";
-   subtype ProfileActionScriptNodeInterface_Access_Array_Access is org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References.ProfileActionScriptNodeInterface_Access_Array_Access;
-   function "=" (Left, Right : ProfileActionScriptNodeInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References."=";
-   subtype ProfileActionScriptNodeInterface_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References.ProfileActionScriptNodeInterface_Access_Array_Access_Array;
-   function "=" (Left, Right : ProfileActionScriptNodeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References."=";
-   subtype ProfileActionScriptNodeInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References.ProfileActionScriptNodeInterface_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ProfileActionScriptNodeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package_References."=";
    subtype ProfileActionScriptProcessorInterface_Access is org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package_References.ProfileActionScriptProcessorInterface_Access;
    function "=" (Left, Right : ProfileActionScriptProcessorInterface_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package_References."=";
    subtype ProfileActionScriptProcessorInterface_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package_References.ProfileActionScriptProcessorInterface_Access_Array;

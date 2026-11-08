@@ -48,6 +48,7 @@ with org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
@@ -537,11 +538,11 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game.paint.help.HelpPaintable_Package;
-with org.allbinary.game.paint.help.HelpPaintable_Package_References;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package; use org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
@@ -723,16 +724,6 @@ package body org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
    function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array_Access_Array_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicArrayList_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
-   subtype HelpPaintable_Access is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access;
-   function "=" (Left, Right : HelpPaintable_Access) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
-   subtype HelpPaintable_Access_Array is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array;
-   function "=" (Left, Right : HelpPaintable_Access_Array) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
-   subtype HelpPaintable_Access_Array_Access is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array_Access;
-   function "=" (Left, Right : HelpPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
-   subtype HelpPaintable_Access_Array_Access_Array is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array_Access_Array;
-   function "=" (Left, Right : HelpPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
-   subtype HelpPaintable_Access_Array_Access_Array_Access is org.allbinary.game.paint.help.HelpPaintable_Package_References.HelpPaintable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : HelpPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.HelpPaintable_Package_References."=";
    procedure Initialize_Fields (This : in out UpdateMyFontProperties'Class) is
    begin
       null;

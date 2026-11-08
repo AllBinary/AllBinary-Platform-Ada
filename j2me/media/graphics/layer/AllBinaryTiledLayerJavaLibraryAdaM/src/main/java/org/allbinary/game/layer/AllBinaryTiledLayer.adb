@@ -124,7 +124,7 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
 
    function getName (This : in out AllBinaryTiledLayer) return Unbounded_String is
    begin
-        return To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
+        return To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag));
    end getName;
 
    procedure paint (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics_Package.Graphics'Class) is

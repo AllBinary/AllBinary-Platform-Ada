@@ -26,6 +26,7 @@ with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package; use org.a
 with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package_References;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package; use org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package_References;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -33,6 +34,7 @@ with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
 with javax.microedition.khronos.egl.EGLConfig_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;

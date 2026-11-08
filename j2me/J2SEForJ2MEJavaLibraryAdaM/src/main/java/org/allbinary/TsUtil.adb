@@ -21,6 +21,7 @@ with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.Reco
 with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
 with javax.microedition.rms.RecordStoreNotOpenException_Package; use javax.microedition.rms.RecordStoreNotOpenException_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with java.lang.ClassLoader_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
@@ -176,7 +177,7 @@ package body org.allbinary.TsUtil_Package is
    function getClassClassLoader (This : in out TsUtil; anyType_Param : access Java_Object'Class) return ClassLoader_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return ClassLoader_Package.getSystemClassLoader;
+        return Standard.java.lang.ClassLoader_Package.getSystemClassLoader;
    end getClassClassLoader;
 
    function toNumberFromChar (This : in out TsUtil; value : Character) return Integer is

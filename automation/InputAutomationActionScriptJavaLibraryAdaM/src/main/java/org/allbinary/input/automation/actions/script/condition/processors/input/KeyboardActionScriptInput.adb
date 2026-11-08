@@ -295,13 +295,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                         This.KeyboardActionScriptInput_Field_logUtil.putF (Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Char String: ") & nextCharString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
                         vector.add (Integer'Value (To_String (Unbounded_Slice (nextCharString, (index) + 1, Ada.Strings.Unbounded.Length (nextCharString)))));
                         index := ((index) + (Ada.Strings.Unbounded.Length (nextCharString))) + (3);
-                        goto Continue_N69509;
+                        goto Continue_N69527;
                     end if;
                 end if;
             end if;
             vector.add (KeySingletonFactory_Package.getHashtable.get (To_Unbounded_String (Java_Image (aChar))));
             index := index + 1;
-            <<Continue_N69509>> null;
+            <<Continue_N69527>> null;
         end loop;
         integerArray := Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => 0)));
         return integerArray;

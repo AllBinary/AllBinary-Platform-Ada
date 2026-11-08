@@ -35,6 +35,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -127,7 +128,7 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
       This.TRYING := To_Unbounded_String ("Trying Server #");
       This.SEP := CommonLabels_Package.getInstance.COLON_SEP;
       This.CLIENT_INFO := To_Unbounded_String ("Client Info: " & ASCII.LF & "");
-      This.RESULT := (CommonLabels_Package.getInstance.RESULT_U) + (CommonSeps_Package.getInstance.NEW_LINE);
+      This.RESULT := Java_Image (CommonLabels_Package.getInstance.RESULT_U) & CommonSeps_Package.getInstance.NEW_LINE;
       This.INVALID := To_Unbounded_String ("License data is Invalid Trying Other Servers");
       This.EXCEPTION_IN_CLIENT := To_Unbounded_String ("Exception in client");
       This.SERVER_REPORTED_ERROR := To_Unbounded_String ("Server reported error");
@@ -188,7 +189,7 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
             XmlRpcAbeClient'Class (This).setServer (0);
         end if;
         if ((XmlRpcAbeClient'Class (This).getServer) /= (XmlRpcAbeClient'Class (This).getStart)) and then (not (XmlRpcAbeClient'Class (This).isIsDone)) then
-            return XmlRpcAbeClient'Class (This).get (anyType);
+            return Java_Object_Access (XmlRpcAbeClient'Class (This).get (anyType));
         else
             XmlRpcAbeClient'Class (This).setIsDone (True);
         end if;

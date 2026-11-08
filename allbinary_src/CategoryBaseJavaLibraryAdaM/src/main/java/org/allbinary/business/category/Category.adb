@@ -43,6 +43,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -219,7 +220,7 @@ package body org.allbinary.business.category.Category_Package is
    --  throws Exception
    function getKey (This : in out Category) return Java_Object_Access is
    begin
-        return This.categoryPropertiesInterface.getKey;
+        return Java_Object_Access (This.categoryPropertiesInterface.getKey);
    end getKey;
 
    --  throws Exception
@@ -322,8 +323,8 @@ package body org.allbinary.business.category.Category_Package is
         for index in 0 .. (removalSize) - 1 loop
             anyType := removalVector.get (index);
             objectIndex := This.childCategoryVector.indexOf (anyType);
-            This.typeVector.remove (objectIndex);
-            This.childCategoryVector.remove (objectIndex);
+            This.typeVector.remove (Java_Box (objectIndex));
+            This.childCategoryVector.remove (Java_Box (objectIndex));
         end loop;
    end removal;
 

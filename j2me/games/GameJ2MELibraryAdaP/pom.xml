@@ -40,7 +40,7 @@
         -->
         <module>../../../allbinary_src/TokenizerJavaLibraryAdaM</module>
         <module>../../../allbinary_src/security/BasicSecurityJavaLibraryAdaM</module>
-        <module>../../../replace_these_stub_projects/security/YourCryptFileJavaLibraryAdaM</module>
+<!--        <module>../../../replace_these_stub_projects/security/YourCryptFileJavaLibraryAdaM</module>-->
         <module>../../../replace_these_stub_projects/security/YourSecurityJavaLibraryAdaM</module>
         <module>../../../replace_these_stub_projects/communication/YourXmlRpcJavaLibraryAdaM</module>
         <module>../../../replace_these_stub_projects/allbinary_src/J2MEOnlyJavaLibraryAdaM</module>

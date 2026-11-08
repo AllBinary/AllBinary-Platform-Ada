@@ -74,7 +74,7 @@ package body org.allbinary.util.ABHashtable_Package is
    function get (This : in out ABHashtable; key_Param : access Java_Object'Class) return Java_Object_Access is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
-        return Hashtable_Package.Hashtable (This).get (key);
+        return Java_Object_Access (Hashtable_Package.Hashtable (This).get (key));
    end get;
 
    procedure clear (This : in out ABHashtable) is
@@ -84,7 +84,7 @@ package body org.allbinary.util.ABHashtable_Package is
 
    function clone (This : in out ABHashtable) return Java_Object_Access is
    begin
-        return Hashtable_Package.Hashtable (This).clone;
+        return Java_Object_Access (Hashtable_Package.Hashtable (This).clone);
    end clone;
 
    function toString (This : in out ABHashtable) return Unbounded_String is

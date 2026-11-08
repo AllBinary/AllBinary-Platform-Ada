@@ -125,14 +125,14 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
 
    procedure limitMaxPositiveYVelocity (This : in out VelocityProperties; maxVelocity : Integer) is
    begin
-        if (This.velocityYBasicDecimal.getUnscaled) > (maxVelocity) then
+        if (This.velocityYBasicDecimal.getUnscaled) > (Long_Long_Integer (maxVelocity)) then
             This.velocityYBasicDecimal.setint (maxVelocity);
         end if;
    end limitMaxPositiveYVelocity;
 
    procedure limitMaxNegativeYVelocity (This : in out VelocityProperties; maxVelocity : Integer) is
    begin
-        if (This.velocityYBasicDecimal.getUnscaled) < (-(maxVelocity)) then
+        if (This.velocityYBasicDecimal.getUnscaled) < (Long_Long_Integer (-(maxVelocity))) then
             This.velocityYBasicDecimal.setint (-(maxVelocity));
         end if;
    end limitMaxNegativeYVelocity;
@@ -145,26 +145,26 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
 
    procedure limitMaxXVelocity (This : in out VelocityProperties; maxVelocity : Integer) is
    begin
-        if (This.velocityXBasicDecimal.getUnscaled) > (maxVelocity) then
+        if (This.velocityXBasicDecimal.getUnscaled) > (Long_Long_Integer (maxVelocity)) then
             This.velocityXBasicDecimal.setint (maxVelocity);
         end if;
-        if (This.velocityXBasicDecimal.getUnscaled) < (-(maxVelocity)) then
+        if (This.velocityXBasicDecimal.getUnscaled) < (Long_Long_Integer (-(maxVelocity))) then
             This.velocityXBasicDecimal.setint (-(maxVelocity));
         end if;
    end limitMaxXVelocity;
 
    function isOverXYMaxVelocity (This : in out VelocityProperties; maxVelocity : Integer) return Boolean is
    begin
-        if (This.velocityXBasicDecimal.getUnscaled) > (maxVelocity) then
+        if (This.velocityXBasicDecimal.getUnscaled) > (Long_Long_Integer (maxVelocity)) then
             return True;
         end if;
-        if (This.velocityXBasicDecimal.getUnscaled) < (-(maxVelocity)) then
+        if (This.velocityXBasicDecimal.getUnscaled) < (Long_Long_Integer (-(maxVelocity))) then
             return True;
         end if;
-        if (This.velocityYBasicDecimal.getUnscaled) > (maxVelocity) then
+        if (This.velocityYBasicDecimal.getUnscaled) > (Long_Long_Integer (maxVelocity)) then
             return True;
         end if;
-        if (This.velocityYBasicDecimal.getUnscaled) < (-(maxVelocity)) then
+        if (This.velocityYBasicDecimal.getUnscaled) < (Long_Long_Integer (-(maxVelocity))) then
             return True;
         end if;
         return False;

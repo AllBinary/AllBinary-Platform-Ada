@@ -35,8 +35,7 @@ with org.allbinary.image.ImageCache_Package_References;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package; use org.allbinary.thread.BaseImageLoadingProcessor_Package;
-limited with org.allbinary.thread.ABRunnable_Package;
-with org.allbinary.thread.ABRunnable_Package_References;
+with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
 
 package org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
 
@@ -63,16 +62,6 @@ package org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
    use type LogUtil_Access_Array_Access_Array;
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    use type LogUtil_Access_Array_Access_Array_Access;
-   subtype ABRunnable_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access;
-   use type ABRunnable_Access;
-   subtype ABRunnable_Access_Array is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array;
-   use type ABRunnable_Access_Array;
-   subtype ABRunnable_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access;
-   use type ABRunnable_Access_Array_Access;
-   subtype ABRunnable_Access_Array_Access_Array is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array;
-   use type ABRunnable_Access_Array_Access_Array;
-   subtype ABRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array_Access;
-   use type ABRunnable_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -122,8 +111,7 @@ with org.allbinary.image.ImageCache_Package_References;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
-limited with org.allbinary.thread.BaseImageLoadingProcessor_Package;
-with org.allbinary.thread.BaseImageLoadingProcessor_Package_References;
+with org.allbinary.thread.BaseImageLoadingProcessor_Package; use org.allbinary.thread.BaseImageLoadingProcessor_Package;
 
 package org.allbinary.thread.ImageCacheRunnable_Package is
 
@@ -150,16 +138,6 @@ package org.allbinary.thread.ImageCacheRunnable_Package is
    use type LogUtil_Access_Array_Access_Array;
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    use type LogUtil_Access_Array_Access_Array_Access;
-   subtype BaseImageLoadingProcessor_Access is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access;
-   use type BaseImageLoadingProcessor_Access;
-   subtype BaseImageLoadingProcessor_Access_Array is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access_Array;
-   use type BaseImageLoadingProcessor_Access_Array;
-   subtype BaseImageLoadingProcessor_Access_Array_Access is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access_Array_Access;
-   use type BaseImageLoadingProcessor_Access_Array_Access;
-   subtype BaseImageLoadingProcessor_Access_Array_Access_Array is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access_Array_Access_Array;
-   use type BaseImageLoadingProcessor_Access_Array_Access_Array;
-   subtype BaseImageLoadingProcessor_Access_Array_Access_Array_Access is org.allbinary.thread.BaseImageLoadingProcessor_Package_References.BaseImageLoadingProcessor_Access_Array_Access_Array_Access;
-   use type BaseImageLoadingProcessor_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

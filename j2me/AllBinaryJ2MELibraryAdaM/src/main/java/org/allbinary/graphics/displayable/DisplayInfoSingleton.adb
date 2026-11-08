@@ -51,6 +51,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
@@ -415,7 +416,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         This.logUtil.putF (stringMaker.append (This.REASON).append (reason).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
         stringMaker.delete (0, stringMaker.length);
         This.logUtil.putF (DisplayInfoSingleton'Class (This).toStringAppend (stringMaker), DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
-        This.list.add (reason);
+        This.list.add (Java_Box (reason));
    end add;
 
    procedure process (This : in out DisplayInfoSingleton) is

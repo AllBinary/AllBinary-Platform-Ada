@@ -247,7 +247,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.allbinary.graphics,org.allbinary.data.tree.dom,org.allbinary.media.image,org.allbinary.data,org.allbinary.cache,org.microemu</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.allbinary.graphics,org.allbinary.data.tree.dom,org.allbinary.media.image,org.allbinary.data,org.allbinary.cache,org.microemu,org.graph</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

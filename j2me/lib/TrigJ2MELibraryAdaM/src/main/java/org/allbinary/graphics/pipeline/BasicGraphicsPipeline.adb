@@ -23,6 +23,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
@@ -152,9 +153,9 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
             if (secondPoint.getX) /= (1000) then
                 sin := This.noDecimalTrigTable.sin (angle);
                 cos := This.noDecimalTrigTable.cos (angle);
-                y := (secondPoint.getY) * (sin);
-                secondX := (((secondPoint.getX) * (cos))) - (y);
-                secondY := (((secondPoint.getX) * (sin))) + (((secondPoint.getY) * (cos)));
+                y := (Long_Long_Integer (secondPoint.getY)) * (sin);
+                secondX := (((Long_Long_Integer (secondPoint.getX)) * (cos))) - (y);
+                secondY := (((Long_Long_Integer (secondPoint.getX)) * (sin))) + (((Long_Long_Integer (secondPoint.getY)) * (cos)));
                 point := pointFactory.createXY ((Integer (secondX)) / (10000), (Integer (secondY)) / (10000));
                 newBasicArrayList.add (Java_Object_Access (point));
             else

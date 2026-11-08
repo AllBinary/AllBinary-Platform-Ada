@@ -196,7 +196,7 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
       commonStrings : CommonStrings_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (Java_Image ((CommonLabels_Package.getInstance.INDEX_LABEL) + (index)) & To_Unbounded_String (" > ") & Java_Image (This.itemIndex (0)), CompositeRTSFormInput_Access'(This'Unchecked_Access), commonStrings.PROCESS);
+        This.logUtil.putF (CommonLabels_Package.getInstance.INDEX_LABEL & Java_Image (index) & To_Unbounded_String (" > ") & Java_Image (This.itemIndex (0)), CompositeRTSFormInput_Access'(This'Unchecked_Access), commonStrings.PROCESS);
         if (CompositeRTSFormInput'Class (This).isStickyItemSelected) and then ((Java_Object_Access (associatedRtsLayer)) = (Java_Object_Access (CollidableDestroyableDamageableLayer_Package.getNullInstance))) then
             if (CompositeRTSFormInput'Class (This).getSelectedStickyItemIndex) <= (This.itemIndex (0)) then
                 This.rtsFormInputArray (0).processGameSpecific (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, item, index);

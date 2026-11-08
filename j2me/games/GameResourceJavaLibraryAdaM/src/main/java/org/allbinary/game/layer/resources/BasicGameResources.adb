@@ -28,6 +28,7 @@ with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
@@ -90,7 +91,7 @@ package body org.allbinary.game.layer.resources.BasicGameResources_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            scale := GameConfigurationCentral_Package.getInstance.SCALE.getValue.intValue;
+            scale := Integer (GameConfigurationCentral_Package.getInstance.SCALE.getValue);
             if ((scale) > (1)) and then (((scale) - (1)) < (SIZE'Length)) then
                 BasicGameResources'Class (This).append (ROOT, SIZE ((scale) - (1)));
             else

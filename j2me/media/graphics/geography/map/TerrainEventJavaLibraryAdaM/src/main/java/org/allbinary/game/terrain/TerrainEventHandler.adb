@@ -32,6 +32,7 @@ with org.allbinary.game.terrain.TerrainEventListenerInterface_Package; use org.a
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;

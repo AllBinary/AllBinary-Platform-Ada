@@ -15,6 +15,7 @@
 
 with java.io.File_Package; use java.io.File_Package;
 with java.net.URI_Package; use java.net.URI_Package;
+with java.net.URL_Package; use java.net.URL_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;

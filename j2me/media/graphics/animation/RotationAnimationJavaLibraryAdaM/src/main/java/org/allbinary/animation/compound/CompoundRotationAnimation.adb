@@ -20,7 +20,6 @@ with javax.microedition.lcdui.Graphics_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.animation.IndexedAnimation_Package_References;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 with org.allbinary.direction.Direction_Package_References;
@@ -82,16 +81,6 @@ package body org.allbinary.animation.compound.CompoundRotationAnimation_Package 
    function "=" (Left, Right : AnimationBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.AnimationBehavior_Package_References."=";
    subtype AnimationBehavior_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationBehavior_Package_References.AnimationBehavior_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AnimationBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.AnimationBehavior_Package_References."=";
-   subtype IndexedAnimation_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access;
-   function "=" (Left, Right : IndexedAnimation_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
-   subtype IndexedAnimation_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array;
-   function "=" (Left, Right : IndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
-   subtype IndexedAnimation_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access;
-   function "=" (Left, Right : IndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
-   subtype IndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array;
-   function "=" (Left, Right : IndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
-   subtype IndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.IndexedAnimation_Package_References.IndexedAnimation_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : IndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.IndexedAnimation_Package_References."=";
    subtype Direction_Access is org.allbinary.direction.Direction_Package_References.Direction_Access;
    function "=" (Left, Right : Direction_Access) return Boolean renames org.allbinary.direction.Direction_Package_References."=";
    subtype Direction_Access_Array is org.allbinary.direction.Direction_Package_References.Direction_Access_Array;
@@ -218,7 +207,7 @@ package body org.allbinary.animation.compound.CompoundRotationAnimation_Package 
       frame : Integer;
    begin
         frame := CompoundRotationAnimation'Class (This).getFrame;
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
         CompoundRotationAnimation'Class (This).setFrame (frame);
    end nextAnimation;
 
@@ -226,7 +215,7 @@ package body org.allbinary.animation.compound.CompoundRotationAnimation_Package 
       frame : Integer;
    begin
         frame := CompoundRotationAnimation'Class (This).getFrame;
-        This.circularIndexUtil.previous;
+        declare Java_Result renames This.circularIndexUtil.previous; pragma Unreferenced (Java_Result); begin null; end;
         CompoundRotationAnimation'Class (This).setFrame (frame);
    end previousAnimation;
 

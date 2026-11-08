@@ -29,6 +29,7 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 with org.allbinary.math.AngleIncrementInfo_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.lcdui.game.Layer_Package;
 
 package body org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package is
 

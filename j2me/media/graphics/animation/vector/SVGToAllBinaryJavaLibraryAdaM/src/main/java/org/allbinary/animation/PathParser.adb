@@ -10,6 +10,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.animation.FixedPoint_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.animation.PGUtil_Package;

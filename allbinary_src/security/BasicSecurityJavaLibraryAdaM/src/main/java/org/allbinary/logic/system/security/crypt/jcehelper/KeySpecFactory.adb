@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with java.security.spec.KeySpec_Package; use java.security.spec.KeySpec_Package;
+with javax.crypto.spec.DESKeySpec_Package; use javax.crypto.spec.DESKeySpec_Package;
+with javax.crypto.spec.DESedeKeySpec_Package; use javax.crypto.spec.DESedeKeySpec_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -70,6 +73,8 @@ with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package is
 
+   package DESKeySpec_Package renames Standard.javax.crypto.spec.DESKeySpec_Package;
+   package DESedeKeySpec_Package renames Standard.javax.crypto.spec.DESedeKeySpec_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;

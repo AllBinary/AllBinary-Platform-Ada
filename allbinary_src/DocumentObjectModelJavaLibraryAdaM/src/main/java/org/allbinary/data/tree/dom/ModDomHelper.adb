@@ -27,6 +27,7 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.data.tree.dom.DomData_Package; use org.allbinary.data.tree.dom.DomData_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.data.tree.dom.DomData_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 

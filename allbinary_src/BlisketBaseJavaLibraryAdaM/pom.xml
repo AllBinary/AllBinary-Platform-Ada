@@ -235,7 +235,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.allbinary.logging,org.allbinary.logic.control.crypt,org.allbinary.data.tables,org.allbinary.business.category,commons-fileupload,javax.servlet,org.eclipse.jetty,org.microemu</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.allbinary.logging,org.allbinary.logic.control.crypt,org.allbinary.data.tables,org.allbinary.business.category,commons-fileupload,javax.servlet,org.eclipse.jetty,org.microemu,org.allbinary.cache,org.graph,org.allbinary.data,org.allbinary.data.tree.dom,org.allbinary.business,org.allbinary.business.context,org.allbinary.logic.communication,org.allbinary.logic,org.allbinary.business.user.commerce,org.allbinary.business.user,org.allbinary.user.commerce.money.payment.gateway</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

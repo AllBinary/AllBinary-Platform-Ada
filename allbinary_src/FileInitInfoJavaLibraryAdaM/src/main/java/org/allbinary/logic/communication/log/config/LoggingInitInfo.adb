@@ -31,7 +31,11 @@ with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.logic.communication.log.config.LogConfigsData_Package; use org.allbinary.logic.communication.log.config.LogConfigsData_Package;
 with org.allbinary.logic.communication.log.config.LogConfigData_Package; use org.allbinary.logic.communication.log.config.LogConfigData_Package;
 with org.allbinary.logic.communication.log.config.LogConfig_Package; use org.allbinary.logic.communication.log.config.LogConfig_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.communication.log.config.LogConfig_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Package is
 

@@ -24,6 +24,7 @@ with javax.microedition.lcdui.Font_Package;
 with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.paint.LocationPaintableInterface_Package;
+with org.allbinary.graphics.paint.Paintable_Package;
 
 package body org.allbinary.graphics.paint.AnimationCompositePaintable_Package is
 

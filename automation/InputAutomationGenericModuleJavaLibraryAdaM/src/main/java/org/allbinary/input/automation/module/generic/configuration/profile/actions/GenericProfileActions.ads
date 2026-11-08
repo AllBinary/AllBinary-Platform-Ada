@@ -32,7 +32,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.File_Package; use java.io.File_Package;
 with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
---  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package; use org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;

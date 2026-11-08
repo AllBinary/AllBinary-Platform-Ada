@@ -94,7 +94,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Unable to save file to non creatable directory")));
         end if;
         originalImageFile := AbFile_Package.createAbFile (This.imageFileAbPath.toString & This.fileName);
-        originalImageFile.createNewFile;
+        declare Java_Result renames originalImageFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         FileUtil_Package.getInstance.write (ByteArrayInputStream_Package.Create (fileItem.get), originalImageFile);
    end saveFiles;
 

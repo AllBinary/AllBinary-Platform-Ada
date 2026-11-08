@@ -32,7 +32,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.StringReader_Package; use java.io.StringReader_Package;
 --  with java.io.StringWriter_Package; use java.io.StringWriter_Package;
---  with java.io.Writer_Package; use java.io.Writer_Package;
 --  with javax.xml.parsers.DocumentBuilderFactory_Package; use javax.xml.parsers.DocumentBuilderFactory_Package;
 --  with javax.xml.transform.OutputKeys_Package; use javax.xml.transform.OutputKeys_Package;
 --  with javax.xml.transform.Transformer_Package; use javax.xml.transform.Transformer_Package;

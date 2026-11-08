@@ -151,7 +151,7 @@ package body org.allbinary.math.AngleFactory_Package is
    function getAt (This : in out AngleFactory; index : Integer) return Angle_Access is
       adjustedIndex : Integer;
    begin
-        adjustedIndex := Integer (This.frameUtil.adjustAngleToFrameAngle (index));
+        adjustedIndex := This.frameUtil.adjustAngleToFrameAngle (index);
         return This.angleArray (adjustedIndex);
    end getAt;
 
@@ -182,7 +182,7 @@ package body org.allbinary.math.AngleFactory_Package is
         stringMaker := StringMaker_Package.Create;
         angleFactory_Var := AngleFactory_Package.getInstance;
         for index in 0 .. (360) - 1 loop
-            stringMaker.appendint (index).append (CommonSeps_Package.getInstance.FORWARD_SLASH).appendshort (Short_Integer (angleFactory_Var.getClosestDirection (index).getValue)).append (CommonSeps_Package.getInstance.NEW_LINE);
+            stringMaker.appendint (index).append (CommonSeps_Package.getInstance.FORWARD_SLASH).appendshort (angleFactory_Var.getClosestDirection (index).getValue).append (CommonSeps_Package.getInstance.NEW_LINE);
         end loop;
         LogUtil_Package.getInstance.putF (stringMaker.toString, Java_Box (To_Unbounded_String ("main")), To_Unbounded_String ("main"));
    end main;

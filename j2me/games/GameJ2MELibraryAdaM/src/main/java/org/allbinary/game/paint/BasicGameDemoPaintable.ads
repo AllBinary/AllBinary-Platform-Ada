@@ -32,8 +32,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 limited with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Graphics_Package_References;
-limited with org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.graphics.paint.Paintable_Package_References;
+with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.StatePaintable_Package; use org.allbinary.graphics.paint.StatePaintable_Package;
 
 package org.allbinary.game.paint.BasicGameDemoPaintable_Package is
@@ -52,16 +51,6 @@ package org.allbinary.game.paint.BasicGameDemoPaintable_Package is
    use type Graphics_Access_Array_Access_Array;
    subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
    use type Graphics_Access_Array_Access_Array_Access;
-   subtype Paintable_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access;
-   use type Paintable_Access;
-   subtype Paintable_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array;
-   use type Paintable_Access_Array;
-   subtype Paintable_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access;
-   use type Paintable_Access_Array_Access;
-   subtype Paintable_Access_Array_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array;
-   use type Paintable_Access_Array_Access_Array;
-   subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
-   use type Paintable_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

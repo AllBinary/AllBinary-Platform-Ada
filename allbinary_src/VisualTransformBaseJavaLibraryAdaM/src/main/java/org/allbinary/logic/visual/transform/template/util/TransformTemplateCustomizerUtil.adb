@@ -89,10 +89,10 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
         This.BODY_VIEWNAMEKEY := SPACE & Java_Image (BodyData_Package.getInstance.VIEWNAMEKEY);
         This.TITLE_VIEWNAMEKEY := SPACE & Java_Image (TitleData_Package.getInstance.VIEWNAMEKEY);
         This.GLOBALS_NEW := Java_Image (GLOBALS2_Package.NEW_Id) & SPACE;
-        This.GLOBALS_INSERT := Java_Image (commonStrings.INSERT) & SPACE;
-        This.GLOBALS_DELETE := Java_Image (commonStrings.DELETE) & SPACE;
+        This.GLOBALS_INSERT := commonStrings.INSERT & SPACE;
+        This.GLOBALS_DELETE := commonStrings.DELETE & SPACE;
         This.GLOBALS_EDIT := Java_Image (GLOBALS2_Package.EDIT) & SPACE;
-        This.GLOBALS_UPDATE := Java_Image (commonStrings.UPDATE) & SPACE;
+        This.GLOBALS_UPDATE := commonStrings.UPDATE & SPACE;
    end Initialize;
 
    function Create return TransformTemplateCustomizerUtil_Access is

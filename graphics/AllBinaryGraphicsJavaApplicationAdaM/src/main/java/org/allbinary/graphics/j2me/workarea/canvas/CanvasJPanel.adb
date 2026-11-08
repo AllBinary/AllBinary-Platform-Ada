@@ -72,6 +72,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;

@@ -61,6 +61,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 

@@ -25,6 +25,7 @@ with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Soun
 with org.allbinary.media.audio.Sound_Package_References;
 with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.media.audio.NoSound_Package;
 with javax.microedition.media.Player_Package;

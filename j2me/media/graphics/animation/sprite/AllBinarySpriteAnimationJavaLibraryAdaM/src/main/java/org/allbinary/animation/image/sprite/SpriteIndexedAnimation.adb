@@ -30,6 +30,7 @@ with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.game.Layer_Package;
 
 package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package is
 

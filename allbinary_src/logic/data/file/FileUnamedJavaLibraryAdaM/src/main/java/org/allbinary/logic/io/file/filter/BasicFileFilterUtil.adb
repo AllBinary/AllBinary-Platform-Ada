@@ -13,11 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 with org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package; use org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package; use org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
 with org.allbinary.logic.util.visitor.VisitorInterface_Package;
@@ -51,7 +53,7 @@ package body org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package is
       includeFileExtensionsBooleanFileVisitor : IncludeFileExtensionsBooleanFileVisitor_Access;
    begin
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        vector.add (extension);
+        vector.add (Java_Box (extension));
         includeFileExtensionsBooleanFileVisitor := IncludeFileExtensionsBooleanFileVisitor_Package.Create (vector);
         return FileFilter_Access (VisitorFileFilter_Package.Create (includeFileExtensionsBooleanFileVisitor));
    end getInstance;

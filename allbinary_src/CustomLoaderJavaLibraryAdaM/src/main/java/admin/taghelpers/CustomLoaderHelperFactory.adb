@@ -70,14 +70,14 @@ package body admin.taghelpers.CustomLoaderHelperFactory_Package is
       abeClientInformation : AbeClientInformationInterface_Access;
    begin
         abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
-        return HelperFactory_Package.getInstance (abeClientInformation, FACTORYNAME, CLASSNAME, hashMap, pageContext);
+        return Java_Object_Access (HelperFactory_Package.getInstance (abeClientInformation, FACTORYNAME, CLASSNAME, hashMap, pageContext));
    end getInstance;
 
    --  throws LicensingException
    function getInstance (This : in out CustomLoaderHelperFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return Java_Object_Access is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        return HelperFactory_Package.getInstance (abeClientInformation, FACTORYNAME, CustomLoaderHelperFactory_Package.CLASSNAME);
+        return Java_Object_Access (HelperFactory_Package.getInstance (abeClientInformation, FACTORYNAME, CustomLoaderHelperFactory_Package.CLASSNAME));
    end getInstance;
 
    procedure getInstance (This : in out CustomLoaderHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is

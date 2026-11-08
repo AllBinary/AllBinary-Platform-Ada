@@ -14,7 +14,9 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
+with java.net.URL_Package; use java.net.URL_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Set_Package; use java.util.Set_Package;
 with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
@@ -42,6 +44,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
@@ -56,6 +59,7 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FileFilter_Package renames Standard.java.io.FileFilter_Package;
    package FileInputStream_Package renames Standard.java.io.FileInputStream_Package;
    package Set_Package renames Standard.java.util.Set_Package;
    package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
@@ -264,7 +268,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       nextSymbolicName : Unbounded_String;
       index : Integer;
    begin
-        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & symbolicName, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("isInstalled"));
+        This.logUtil.putF (CommonLabels_Package.getInstance.START & symbolicName, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("isInstalled"));
         list := InputAutomationNewBundleRunnable'Class (This).getInstalledJarSymbolicNameBasicArrayList;
         size := list.size;
         nextSymbolicName := Null_Unbounded_String;
@@ -308,7 +312,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       url : constant URL_Access := URL_Access (url_Param);
       bundleContext : BundleContext_Access;
    begin
-        This.logUtil.putF ((CommonLabels_Package.getInstance.START) + (url), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("install"));
+        This.logUtil.putF (CommonLabels_Package.getInstance.START & Java_Image (url), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("install"));
         bundleContext := InputAutomationBundleActivator_Package.getBundleContext;
         return bundleContext.installBundle (url.toString);
    end install;
@@ -322,7 +326,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
             timeHelper := TimeDelayHelper_Package.Create (1000);
             while InputAutomationNewBundleRunnable'Class (This).isRunning loop
                 timeHelper.setStartTimeTNT;
-                This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+                This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 InputAutomationNewBundleRunnable'Class (This).updateModules;
                 exit;
             end loop;

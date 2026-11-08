@@ -77,8 +77,8 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
    procedure Initialize_Fields (This : in out VirtualKeyboardEventHandler'Class) is
    begin
       null;
-      This.SHOW_EVENT := VirtualKeyboardEvent_Package.Create (BooleanFactory_Package.getInstance.TRUE);
-      This.HIDE_EVENT := VirtualKeyboardEvent_Package.Create (BooleanFactory_Package.getInstance.FALSE);
+      This.SHOW_EVENT := VirtualKeyboardEvent_Package.Create (Java_Box (BooleanFactory_Package.getInstance.TRUE));
+      This.HIDE_EVENT := VirtualKeyboardEvent_Package.Create (Java_Box (BooleanFactory_Package.getInstance.FALSE));
    end Initialize_Fields;
 
 

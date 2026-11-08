@@ -22,6 +22,7 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
@@ -124,9 +125,9 @@ package body org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
         command := Command_Access (anyType);
         booleanFactory := BooleanFactory_Package.getInstance;
         if (((This.isNotSmallDisplay) or else ((command.getPriority) = (1))) or else ((Java_Object_Access (command)) = (Java_Object_Access (GameCommandsFactory_Package.getInstance.EXIT_COMMAND)))) or else ((Java_Object_Access (command)) = (Java_Object_Access (GameCommandsFactory_Package.getInstance.EXIT_WITHOUT_PROGRESS_COMMAND))) then
-            return booleanFactory.TRUE;
+            return Java_Box (booleanFactory.TRUE);
         else
-            return booleanFactory.FALSE;
+            return Java_Box (booleanFactory.FALSE);
         end if;
    end visit;
 

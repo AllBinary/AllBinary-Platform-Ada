@@ -247,27 +247,27 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
             diagonalToleranceLower := Long_Float (conf.getDiagonalTolerance);
         end if;
         if (absGradient) > (Ada.Numerics.Long_Elementary_Functions.Tan (Ada.Numerics.Long_Elementary_Functions.ToRadians (diagonalToleranceHigher))) then
-            if (This.line.getDeltaY) > (0) then
+            if (This.line.getDeltaY) > (0.0) then
                 newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.UP);
             else
                 newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DOWN);
             end if;
         else
             if (absGradient) < (Ada.Numerics.Long_Elementary_Functions.Tan (Ada.Numerics.Long_Elementary_Functions.ToRadians (diagonalToleranceLower))) then
-                if (This.line.getDeltaX) > (0) then
+                if (This.line.getDeltaX) > (0.0) then
                     newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.LEFT);
                 else
                     newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.RIGHT);
                 end if;
             else
                 if (gradient) > (0.0) then
-                    if (This.line.getDeltaX) > (0) then
+                    if (This.line.getDeltaX) > (0.0) then
                         newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DIAGONAL_UP_LEFT);
                     else
                         newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DIAGONAL_DOWN_RIGHT);
                     end if;
                 else
-                    if (This.line.getDeltaX) > (0) then
+                    if (This.line.getDeltaX) > (0.0) then
                         newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DIAGONAL_DOWN_LEFT);
                     else
                         newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DIAGONAL_UP_RIGHT);

@@ -18,6 +18,10 @@ with org.allbinary.graphics.GPointCircularPool_Package; use org.allbinary.graphi
 with org.allbinary.graphics.GPointCircularPool_Package_References;
 with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package; use org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
 with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.BaseCircularPool_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 
 package body org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package is
 

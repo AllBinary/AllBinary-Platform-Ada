@@ -28,6 +28,7 @@ with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;

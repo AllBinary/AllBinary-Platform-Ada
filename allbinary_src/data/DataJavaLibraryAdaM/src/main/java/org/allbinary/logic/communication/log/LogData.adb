@@ -23,7 +23,7 @@ package body org.allbinary.logic.communication.log.LogData_Package is
       null;
       This.MAX := 5000000;
       This.extension := To_Unbounded_String ("log");
-      This.backupFileExt := Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & To_Unbounded_String ("bak") & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & To_Unbounded_String ("txt");
+      This.backupFileExt := AbPathData_Package.getInstance.EXTENSION_SEP & To_Unbounded_String ("bak") & AbPathData_Package.getInstance.EXTENSION_SEP & To_Unbounded_String ("txt");
       This.ALLBINARY := To_Unbounded_String ("allbinary");
       This.NAME := To_Unbounded_String ("LOG_NAME");
       This.DESCRIPTION := To_Unbounded_String ("LOG_DESCRIPTION");

@@ -20,6 +20,12 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input.PCKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.Input_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.input.PCGameInputMapping_Package is
 

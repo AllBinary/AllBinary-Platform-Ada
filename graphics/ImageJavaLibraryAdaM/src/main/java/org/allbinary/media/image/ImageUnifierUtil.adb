@@ -128,7 +128,7 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
    begin
         newBufferedImage := This.imageUtil.create (imageUnifierProperties.getWidth, imageUnifierProperties.getHeight);
         commonLabels := CommonLabels_Package.getInstance;
-        This.logUtil.putF (To_Unbounded_String ("Setting Image - ") & Java_Image (commonLabels.WIDTH_LABEL) & Java_Image (newBufferedImage.getWidth) & Java_Image (commonLabels.HEIGHT_LABEL) & Java_Image (newBufferedImage.getHeight), ImageUnifierUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getImage"));
+        This.logUtil.putF (To_Unbounded_String ("Setting Image - ") & commonLabels.WIDTH_LABEL & Java_Image (newBufferedImage.getWidth) & commonLabels.HEIGHT_LABEL & Java_Image (newBufferedImage.getHeight), ImageUnifierUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getImage"));
         g := newBufferedImage.createGraphics;
         columnIndex := 0;
         rowIndex := 0;

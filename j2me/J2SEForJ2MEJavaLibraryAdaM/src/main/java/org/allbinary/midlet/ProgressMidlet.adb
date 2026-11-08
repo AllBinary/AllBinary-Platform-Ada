@@ -24,6 +24,7 @@ with org.allbinary.midlet.MidletExitProcessorFactory_Package; use org.allbinary.
 with org.allbinary.midlet.ExitRunnable_Package; use org.allbinary.midlet.ExitRunnable_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.thread.ARunnable_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;

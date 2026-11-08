@@ -17,6 +17,7 @@ with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppU
 with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
+with java.lang.ClassLoader_Package;
 
 package body org.allbinary.servlet.BlisketServletUtil_Package is
 
@@ -54,7 +55,7 @@ package body org.allbinary.servlet.BlisketServletUtil_Package is
         urlGlobals := AppUrlGlobals_Package.Create;
         urlGlobals.setWebappPath (request.getServletContext.getRealPath (AbPathData_Package.getInstance.SEPARATOR));
         URLGLOBALS_Package.init (urlGlobals);
-        WebappClassLoaderInfo_Package.setLoader (ClassLoader_Package.getSystemClassLoader);
+        WebappClassLoaderInfo_Package.setLoader (Standard.java.lang.ClassLoader_Package.getSystemClassLoader);
    end init;
 
 begin

@@ -14,6 +14,7 @@
 
 
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.Writer_Package; use java.io.Writer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
@@ -33,6 +34,7 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
 
    package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package Writer_Package renames Standard.java.io.Writer_Package;
    package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
    package CharacterSetData_Package renames Standard.org.allbinary.logic.java.characters.CharacterSetData_Package;
    package InputSource_Package renames Standard.org.xml.sax.InputSource_Package;

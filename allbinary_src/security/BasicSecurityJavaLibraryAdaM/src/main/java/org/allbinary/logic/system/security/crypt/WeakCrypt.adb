@@ -35,6 +35,7 @@ with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package;
 with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;

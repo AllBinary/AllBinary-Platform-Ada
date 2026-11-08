@@ -86,6 +86,7 @@ with org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
 with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
 
 package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is

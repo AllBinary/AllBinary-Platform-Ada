@@ -22,6 +22,9 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package; use org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
 with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package_References;
 with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.advertisement.Advertisements_Package is
 

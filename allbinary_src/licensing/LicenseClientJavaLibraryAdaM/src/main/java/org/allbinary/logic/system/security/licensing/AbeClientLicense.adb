@@ -30,6 +30,7 @@ with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package;
 with org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package;
 with org.allbinary.logic.math.MathUtil_Package;
@@ -95,22 +96,22 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
       Initialize_Fields (This);
         This.hashtable := StdUtil_Package.getInstance.createHashtable;
         abeClientInformationData := AbeClientInformationData_Package.getInstance;
-        keyValue := hashtable.get (abeClientInformationData.KEY);
+        keyValue := hashtable.get (Java_Box (abeClientInformationData.KEY));
         if (keyValue) /= (null) then
             if (keyValue.all in String_Package.String'Class) then
-                This.hashtable.put (abeClientInformationData.KEY, keyValue);
+                This.hashtable.put (Java_Box (abeClientInformationData.KEY), keyValue);
             end if;
         end if;
-        This.id := Java_Unbox (hashtable.get (abeClientInformationData.LICENSEID));
-        vector := BasicArrayList_Access (hashtable.get (abeClientInformationData.LICENSESERVERS));
+        This.id := Java_Unbox (hashtable.get (Java_Box (abeClientInformationData.LICENSEID)));
+        vector := BasicArrayList_Access (hashtable.get (Java_Box (abeClientInformationData.LICENSESERVERS)));
         This.servers := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             This.servers.add (vector.get (index));
         end loop;
         stringUtil := StringUtil_Package.getInstance;
-        AbeClientLicense'Class (This).setSpecial (stringUtil.getNonNull (Java_Unbox (hashtable.get (abeClientInformationData.SPECIAL))));
-        licenseTypeString := stringUtil.getNonNull (Java_Unbox (hashtable.get (abeClientInformationData.LICENSE_TYPE)));
+        AbeClientLicense'Class (This).setSpecial (stringUtil.getNonNull (Java_Unbox (hashtable.get (Java_Box (abeClientInformationData.SPECIAL)))));
+        licenseTypeString := stringUtil.getNonNull (Java_Unbox (hashtable.get (Java_Box (abeClientInformationData.LICENSE_TYPE))));
         This.licenseType := LicenseTypeFactory_Package.getInstance.getInstance (licenseTypeString);
    end Initialize;
 
@@ -126,7 +127,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
       abeClientInformationData : AbeClientInformationData_Access;
    begin
         abeClientInformationData := AbeClientInformationData_Package.getInstance;
-        if (((resultHashtable.containsKey (abeClientInformationData.LICENSEID)) and then (resultHashtable.containsKey (abeClientInformationData.LICENSESERVERS))) and then (resultHashtable.containsKey (abeClientInformationData.KEY))) and then (resultHashtable.containsKey (abeClientInformationData.LICENSE_TYPE)) then
+        if (((resultHashtable.containsKey (Java_Box (abeClientInformationData.LICENSEID))) and then (resultHashtable.containsKey (Java_Box (abeClientInformationData.LICENSESERVERS)))) and then (resultHashtable.containsKey (Java_Box (abeClientInformationData.KEY)))) and then (resultHashtable.containsKey (Java_Box (abeClientInformationData.LICENSE_TYPE))) then
             return True;
         else
             return False;

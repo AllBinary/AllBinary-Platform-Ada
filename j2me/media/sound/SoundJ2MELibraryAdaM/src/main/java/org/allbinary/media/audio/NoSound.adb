@@ -15,7 +15,12 @@
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.media.audio.BasicPlayer_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with javax.microedition.media.Control_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.media.audio.NoPlayer_Package;
 with javax.microedition.media.Player_Package;
 with javax.microedition.media.PlayerListener_Package;

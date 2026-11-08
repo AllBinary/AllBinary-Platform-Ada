@@ -19,7 +19,6 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References;
 with org.allbinary.game.ag.layer.hud.basic.notification.NoGameGameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.NoGameGameNotificationHud_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
@@ -52,16 +51,6 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificati
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
-   subtype GameNotificationHud_Access is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access;
-   function "=" (Left, Right : GameNotificationHud_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References."=";
-   subtype GameNotificationHud_Access_Array is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access_Array;
-   function "=" (Left, Right : GameNotificationHud_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References."=";
-   subtype GameNotificationHud_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access_Array_Access;
-   function "=" (Left, Right : GameNotificationHud_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References."=";
-   subtype GameNotificationHud_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access_Array_Access_Array;
-   function "=" (Left, Right : GameNotificationHud_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References."=";
-   subtype GameNotificationHud_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : GameNotificationHud_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References."=";
    procedure Initialize_Fields (This : in out NoGameNotificationHudSingleton'Class) is
    begin
       null;

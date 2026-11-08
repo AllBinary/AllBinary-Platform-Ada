@@ -21,7 +21,9 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.J2SEUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -32,6 +34,7 @@ with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
 
 package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
 
@@ -60,30 +63,30 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
    procedure Initialize (This : in out UniqueTokens'Class) is
    begin
       Initialize_Fields (This);
-        This.specialCharacters.add (To_Unbounded_String ("!"));
-        This.specialCharacters.add (To_Unbounded_String ("@"));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("!")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("@")));
         This.specialCharacters.add (CommonPhoneStrings_Package.getInstance.POUND);
-        This.specialCharacters.add (To_Unbounded_String ("$"));
-        This.specialCharacters.add (To_Unbounded_String ("%"));
-        This.specialCharacters.add (To_Unbounded_String ("^"));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("$")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("%")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("^")));
         This.specialCharacters.add (CommonSeps_Package.getInstance.AMPERSAND);
         This.specialCharacters.add (CommonPhoneStrings_Package.getInstance.STAR);
-        This.specialCharacters.add (To_Unbounded_String ("("));
-        This.specialCharacters.add (To_Unbounded_String (")"));
-        This.specialCharacters.add (To_Unbounded_String ("-"));
-        This.specialCharacters.add (To_Unbounded_String ("_"));
-        This.specialCharacters.add (To_Unbounded_String ("+"));
-        This.specialCharacters.add (To_Unbounded_String ("="));
-        This.specialCharacters.add (To_Unbounded_String ("\"));
-        This.specialCharacters.add (To_Unbounded_String ("|"));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("(")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String (")")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("-")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("_")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("+")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("=")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("\")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("|")));
         This.specialCharacters.add (AbPathData_Package.getInstance.EXTENSION_SEP);
-        This.specialCharacters.add (To_Unbounded_String (","));
-        This.specialCharacters.add (To_Unbounded_String ("<"));
-        This.specialCharacters.add (To_Unbounded_String (">"));
-        This.specialCharacters.add (To_Unbounded_String ("?"));
-        This.specialCharacters.add (To_Unbounded_String ("/"));
-        This.specialCharacters.add (To_Unbounded_String ("~"));
-        This.specialCharacters.add (To_Unbounded_String ("`"));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String (",")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("<")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String (">")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("?")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("/")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("~")));
+        This.specialCharacters.add (Java_Box (To_Unbounded_String ("`")));
    end Initialize;
 
    function Create return UniqueTokens_Access is

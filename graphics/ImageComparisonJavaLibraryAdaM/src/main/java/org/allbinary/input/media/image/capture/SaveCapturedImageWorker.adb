@@ -34,6 +34,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
 with org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
 with org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
@@ -165,7 +166,7 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
             screenBufferedImage := capturedImageWorkerResultsEvent.getBufferedImage;
             CapturedImageInputOutput_Package.Create.save (screenBufferedImage, capturedImageWorkerResultsEvent.getFrame);
             This.capturedImageWorkerResultsEventVector.remove (Java_Object_Access (capturedImageWorkerResultsEvent));
-            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             SaveCapturedImageWorker'Class (This).setRunning (False);
             This.logUtil.putF (This.commonStrings.END_Id, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception

@@ -379,7 +379,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    --  throws Exception
    function getTransformsGroup (This : in out TransformInfoObjectConfig; group : Unbounded_String) return BasicArrayList_Access is
       viewVector : BasicArrayList_Access;
-      GROUP : Unbounded_String;
+      GROUP_Local : Unbounded_String;
       componentsNodeList : NodeList_Access;
       componentsNode : Node_Access;
       length : Integer;
@@ -397,15 +397,15 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             This.logUtil.putF (To_Unbounded_String ("Started: ") & group, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformsGroup()"));
         end if;
         viewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        GROUP := TransformInfosData_Package.getInstance.GROUP;
-        componentsNodeList := This.document.getElementsByTagName (GROUP);
+        GROUP_Local := TransformInfosData_Package.getInstance.GROUP;
+        componentsNodeList := This.document.getElementsByTagName (GROUP_Local);
         if ((componentsNodeList) /= (null)) and then ((componentsNodeList.getLength) > (0)) then
             componentsNode := componentsNodeList.item (0);
             length := componentsNodeList.getLength;
             for index in 0 .. (length) - 1 loop
                 node := componentsNodeList.item (index);
                 attributes := node.getAttributes;
-                attrNode := Attr_Access (attributes.getNamedItem (GROUP));
+                attrNode := Attr_Access (attributes.getNamedItem (GROUP_Local));
                 value := attrNode.getValue;
                 if (Java_Compare_To (value, group)) = (0) then
                     componentsNode := node;

@@ -253,7 +253,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.media.image,org.allbinary.animation,org.allbinary.cache,com.google.android</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.media.image,org.allbinary.animation,org.allbinary.cache,com.google.android,org.graph,org.allbinary.animation.transition,org.allbinary.game.ai</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

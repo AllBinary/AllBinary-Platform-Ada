@@ -16,6 +16,7 @@
 with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
 with java.io.File_Package; use java.io.File_Package;
 with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
+with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
@@ -62,6 +63,7 @@ with org.allbinary.logic.math.MathUtil_Package;
 package body org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package is
 
    package DataOutputStream_Package renames Standard.java.io.DataOutputStream_Package;
+   package FileOutputStream_Package renames Standard.java.io.FileOutputStream_Package;
    package Set_Package renames Standard.java.util.Set_Package;
    package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
    package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;

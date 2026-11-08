@@ -16,7 +16,6 @@
 with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.layer.SteeringVisitor_Package; use org.allbinary.game.layer.SteeringVisitor_Package;
-with org.allbinary.game.layer.SteeringVisitor_Package_References;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package; use org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package_References;
 with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package; use org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
@@ -64,11 +63,13 @@ with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package; use org.allb
 with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.thread.ARunnable_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleFactory_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
@@ -96,6 +97,7 @@ with org.allbinary.thread.ThreadPoolStrings_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 
 package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
@@ -115,16 +117,6 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
    package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
    package PathFindingThreadPool_Package renames Standard.org.allbinary.thread.PathFindingThreadPool_Package;
-   subtype SteeringVisitor_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access;
-   function "=" (Left, Right : SteeringVisitor_Access) return Boolean renames org.allbinary.game.layer.SteeringVisitor_Package_References."=";
-   subtype SteeringVisitor_Access_Array is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array;
-   function "=" (Left, Right : SteeringVisitor_Access_Array) return Boolean renames org.allbinary.game.layer.SteeringVisitor_Package_References."=";
-   subtype SteeringVisitor_Access_Array_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access;
-   function "=" (Left, Right : SteeringVisitor_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SteeringVisitor_Package_References."=";
-   subtype SteeringVisitor_Access_Array_Access_Array is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access_Array;
-   function "=" (Left, Right : SteeringVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.SteeringVisitor_Package_References."=";
-   subtype SteeringVisitor_Access_Array_Access_Array_Access is org.allbinary.game.layer.SteeringVisitor_Package_References.SteeringVisitor_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : SteeringVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SteeringVisitor_Package_References."=";
    subtype AdvancedRTSGameLayer_Access is org.allbinary.game.layer.AdvancedRTSGameLayer_Package_References.AdvancedRTSGameLayer_Access;
    function "=" (Left, Right : AdvancedRTSGameLayer_Access) return Boolean renames org.allbinary.game.layer.AdvancedRTSGameLayer_Package_References."=";
    subtype AdvancedRTSGameLayer_Access_Array is org.allbinary.game.layer.AdvancedRTSGameLayer_Package_References.AdvancedRTSGameLayer_Access_Array;
@@ -755,7 +747,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
             stringBuffer.append (To_Unbounded_String (" with "));
             stringBuffer.append (UnitWaypointBehavior2_Package.TARGET_DISTANCE);
             stringBuffer.append (This.commonSeps.SPACE);
-            stringBuffer.appendint (Integer (UnitWaypointBehavior2'Class (This).getCurrentTargetDistance));
+            stringBuffer.appendint (UnitWaypointBehavior2'Class (This).getCurrentTargetDistance);
         end if;
         return stringBuffer.toString;
    end getCurrentTargetingStateString;
@@ -875,7 +867,6 @@ with org.allbinary.thread.ThreadPool_Package_References;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeDelayHelper_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
-with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package; use org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
@@ -883,11 +874,13 @@ with org.allbinary.game.layer.unit.UnitLayer_Package_References;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.thread.ARunnable_Package;
 with org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleFactory_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
@@ -916,6 +909,7 @@ with org.allbinary.game.layer.unit.UnitLayer_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 
 package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
@@ -1065,16 +1059,6 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    function "=" (Left, Right : TimeDelayHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
    subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TimeDelayHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
-   subtype UnitWaypointBehavior_Access is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access;
-   function "=" (Left, Right : UnitWaypointBehavior_Access) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References."=";
-   subtype UnitWaypointBehavior_Access_Array is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access_Array;
-   function "=" (Left, Right : UnitWaypointBehavior_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References."=";
-   subtype UnitWaypointBehavior_Access_Array_Access is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access_Array_Access;
-   function "=" (Left, Right : UnitWaypointBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References."=";
-   subtype UnitWaypointBehavior_Access_Array_Access_Array is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access_Array_Access_Array;
-   function "=" (Left, Right : UnitWaypointBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References."=";
-   subtype UnitWaypointBehavior_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References.UnitWaypointBehavior_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : UnitWaypointBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointBehavior_Package_References."=";
    subtype UnitWaypointStrings_Access is org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References.UnitWaypointStrings_Access;
    function "=" (Left, Right : UnitWaypointStrings_Access) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References."=";
    subtype UnitWaypointStrings_Access_Array is org.allbinary.game.layer.unit.UnitWaypointStrings_Package_References.UnitWaypointStrings_Access_Array;
@@ -1135,7 +1119,7 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
                         This.positionList.clear;
                         return NullUtil_Package.getInstance.NULL_OBJECT;
                     end if;
-                    return BooleanFactory_Package.getInstance.FALSE;
+                    return Java_Box (BooleanFactory_Package.getInstance.FALSE);
                 end if;
                 return NullUtil_Package.getInstance.NULL_OBJECT;
             exception

@@ -61,6 +61,7 @@ with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.game.input.BuildMenuCompositeInterface_Package;
 with org.allbinary.string_Id.CommonSeps_Package;

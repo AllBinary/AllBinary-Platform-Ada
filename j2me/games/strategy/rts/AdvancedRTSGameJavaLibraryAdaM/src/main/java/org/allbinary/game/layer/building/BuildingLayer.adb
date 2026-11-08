@@ -107,6 +107,7 @@ with org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.game.layer.building.BuildingLayer_Package is
 

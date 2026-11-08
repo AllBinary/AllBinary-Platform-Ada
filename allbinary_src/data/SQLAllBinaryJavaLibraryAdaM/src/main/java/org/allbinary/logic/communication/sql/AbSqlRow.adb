@@ -33,6 +33,7 @@ with org.allbinary.util.ABVector_Package;
 with org.allbinary.logic.communication.sql.AbSqlBasic_Package;
 with org.allbinary.logic.communication.sql.AbSqlTable_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;

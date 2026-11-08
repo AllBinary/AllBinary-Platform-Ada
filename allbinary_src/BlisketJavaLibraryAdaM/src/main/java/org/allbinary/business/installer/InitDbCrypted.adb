@@ -286,7 +286,7 @@ package body org.allbinary.business.installer.InitDbCrypted_Package is
                 return False;
             end if;
             file := FileFactory_Package.getInstance.getInstance (This.SQL_FILE);
-            file.createNewFile;
+            declare Java_Result renames file.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             idOutData := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (file);
             idOutData.writeBytes (This.sqlCommandLog.toString);
             return True;

@@ -40,8 +40,16 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
@@ -200,7 +208,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
         imageData := SwtMutableImage_Access (image).image.getImageData;
         imageData.transparentPixel := imageData.getPixel (0, 0);
         imageLoader.data := new ImageData_Access_Array'(0 => imageData);
-        imageLoader.save ((CommonSeps_Package.getInstance.PERIOD) + (CanvasStrings_Package.getInstance.FONT_ATLAS), SWT_Package.IMAGE_PNG);
+        imageLoader.save (CommonSeps_Package.getInstance.PERIOD & CanvasStrings_Package.getInstance.FONT_ATLAS, SWT_Package.IMAGE_PNG);
    end saveFontAtlasAsFile;
 
    function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return Image_Access is

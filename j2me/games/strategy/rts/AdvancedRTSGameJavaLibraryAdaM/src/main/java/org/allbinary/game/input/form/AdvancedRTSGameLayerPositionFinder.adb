@@ -24,6 +24,7 @@ with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.game.input.form.AdvancedRTSGameLayerPositionFinder_Package is
 

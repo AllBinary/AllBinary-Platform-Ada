@@ -134,7 +134,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         scaleY := (scaleNominatorY) / (scaleDenominatorY);
         image := null;
         if cached then
-            image := imageCache.get (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)), Integer (((Float (width)) * (scaleX))), Integer (((Float (height)) * (scaleY))));
+            image := imageCache.get (To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag)), Integer (((Float (width)) * (scaleX))), Integer (((Float (height)) * (scaleY))));
         else
             image := imageCache.get (To_Unbounded_String ("createImage"), Integer (((Float (width)) * (scaleX))), Integer (((Float (height)) * (scaleY))));
         end if;
@@ -146,7 +146,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    procedure scale2 (This : in out ImageScaleUtil; originalImage_Param : access Image_Package.Image'Class; originalImageArray : Image_Access_Array_Access; ximageToShowArray : Image_Access_Array_Access; unused : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is
       originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
-        if (((maxScaleX) * (originalImage.getWidth)) > (originalImageArray (0).getWidth)) or else (((maxScaleY) * (originalImage.getHeight)) > (originalImageArray (0).getHeight)) then
+        if (((maxScaleX) * (Float (originalImage.getWidth))) > (Float (originalImageArray (0).getWidth))) or else (((maxScaleY) * (Float (originalImage.getHeight))) > (Float (originalImageArray (0).getHeight))) then
             originalImageArray (0) := This.imageCreationUtil.createImage (originalImage.getWidth, originalImage.getHeight, maxScaleX, maxScaleY);
         end if;
         ImageScaleUtil'Class (This).scale (originalImage, originalImageArray (0), scaleX, scaleY, False);

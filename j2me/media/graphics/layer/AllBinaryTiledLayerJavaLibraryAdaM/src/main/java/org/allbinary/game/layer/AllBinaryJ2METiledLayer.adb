@@ -131,12 +131,12 @@ package body org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
                     tile := This.tiledLayerP.getAnimatedTile (tile);
                 end if;
                 if (tile) = (0) then
-                    goto Continue_N66931;
+                    goto Continue_N66936;
                 end if;
                 tile := tile - 1;
                 stringMaker.delete (0, stringMaker.length);
                 graphics.drawString (stringMaker.appendint (columnIndex).append (commonSeps.COMMA).appendint (rowIndex).append (commonSeps.COLON).appendint (tile).toString, (x) + (5), (y) + (10), 0);
-                <<Continue_N66931>> null;
+                <<Continue_N66936>> null;
                 columnIndex := columnIndex + 1;
                 x := (x) + (tileWidth);
             end loop;

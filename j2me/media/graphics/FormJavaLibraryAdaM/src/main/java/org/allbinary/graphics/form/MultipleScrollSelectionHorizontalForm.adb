@@ -18,7 +18,6 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
@@ -26,8 +25,7 @@ with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
-with org.allbinary.graphics.form.ItemIndexPaintable_Package_References;
-with org.allbinary.graphics.form.MPaintable_Package; use org.allbinary.graphics.form.MPaintable_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
@@ -42,9 +40,9 @@ with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.MPaintable_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.math.RectangleCollisionUtil_Package;
@@ -109,16 +107,6 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
    function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
    subtype ABCustomItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
-   subtype Paintable_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access;
-   function "=" (Left, Right : Paintable_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
    subtype ItemPaintableFactory_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access;
    function "=" (Left, Right : ItemPaintableFactory_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
    subtype ItemPaintableFactory_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array;
@@ -139,16 +127,6 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
    function "=" (Left, Right : FormType_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.FormType_Package_References."=";
    subtype FormType_Access_Array_Access_Array_Access is org.allbinary.graphics.form.FormType_Package_References.FormType_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FormType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.FormType_Package_References."=";
-   subtype ItemIndexPaintable_Access is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access;
-   function "=" (Left, Right : ItemIndexPaintable_Access) return Boolean renames org.allbinary.graphics.form.ItemIndexPaintable_Package_References."=";
-   subtype ItemIndexPaintable_Access_Array is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array;
-   function "=" (Left, Right : ItemIndexPaintable_Access_Array) return Boolean renames org.allbinary.graphics.form.ItemIndexPaintable_Package_References."=";
-   subtype ItemIndexPaintable_Access_Array_Access is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array_Access;
-   function "=" (Left, Right : ItemIndexPaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ItemIndexPaintable_Package_References."=";
-   subtype ItemIndexPaintable_Access_Array_Access_Array is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array_Access_Array;
-   function "=" (Left, Right : ItemIndexPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ItemIndexPaintable_Package_References."=";
-   subtype ItemIndexPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ItemIndexPaintable_Package_References.ItemIndexPaintable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ItemIndexPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ItemIndexPaintable_Package_References."=";
    procedure Initialize_Fields (This : in out MultipleScrollSelectionHorizontalForm'Class) is
    begin
       null;
@@ -184,8 +162,7 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
         if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
             null;
         else
-            --  Java nested class MPaintable: move it to its own package
-            This.rectPaintable := Paintable_Access (MPaintable_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access)));
+            This.rectPaintable := Paintable_Access (MultipleScrollSelectionFormRectPaintable_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access)));
         end if;
    end Initialize;
 
@@ -284,7 +261,7 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
                         null;
                     else
                         This.logged := True;
-                        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("painting beyond maxx: ")).appendint (Integer (This.rectangle.getMaxX)).toString, MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access), This.canvasStrings.PAINT);
+                        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("painting beyond maxx: ")).appendint (This.rectangle.getMaxX).toString, MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access), This.canvasStrings.PAINT);
                     end if;
                 end if;
                 dx := This.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable.paint (graphics, index, item, dx, dy);
@@ -335,24 +312,21 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
-with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package; use org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
-with org.allbinary.graphics.form.MPaintable_Package; use org.allbinary.graphics.form.MPaintable_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.util.ArrayUtil_Package;
@@ -365,8 +339,8 @@ with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.MPaintable_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
@@ -422,16 +396,6 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPa
    function "=" (Left, Right : MyFontProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
    subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MyFontProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
-   subtype UpdateMyFontInterface_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access;
-   function "=" (Left, Right : UpdateMyFontInterface_Access) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
    subtype ABCustomItem_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access;
    function "=" (Left, Right : ABCustomItem_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
    subtype ABCustomItem_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array;
@@ -442,26 +406,6 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPa
    function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
    subtype ABCustomItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
-   subtype Paintable_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access;
-   function "=" (Left, Right : Paintable_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype ScrollSelectionForm_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access;
-   function "=" (Left, Right : ScrollSelectionForm_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
-   subtype ScrollSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array;
-   function "=" (Left, Right : ScrollSelectionForm_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
-   subtype ScrollSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access;
-   function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
-   subtype ScrollSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array;
-   function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
-   subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype MultipleScrollSelectionHorizontalForm_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access;
    function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
    subtype MultipleScrollSelectionHorizontalForm_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array;
@@ -544,24 +488,21 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontInterface_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
-with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package; use org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.FormType_Package_References;
-with org.allbinary.graphics.form.MPaintable_Package; use org.allbinary.graphics.form.MPaintable_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package;
 with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
 with org.allbinary.util.ArrayUtil_Package;
@@ -574,9 +515,9 @@ with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.MPaintable_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package;
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 with org.allbinary.graphics.form.PaintableForm_Package;
 with org.allbinary.math.RectangleCollisionUtil_Package;
@@ -631,16 +572,6 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPain
    function "=" (Left, Right : MyFontProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
    subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MyFontProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
-   subtype UpdateMyFontInterface_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access;
-   function "=" (Left, Right : UpdateMyFontInterface_Access) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array_Access_Array is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
-   subtype UpdateMyFontInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.font.UpdateMyFontInterface_Package_References.UpdateMyFontInterface_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : UpdateMyFontInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.UpdateMyFontInterface_Package_References."=";
    subtype ABCustomItem_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access;
    function "=" (Left, Right : ABCustomItem_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
    subtype ABCustomItem_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array;
@@ -651,26 +582,6 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPain
    function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
    subtype ABCustomItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
-   subtype Paintable_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access;
-   function "=" (Left, Right : Paintable_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : Paintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.Paintable_Package_References."=";
-   subtype ScrollSelectionForm_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access;
-   function "=" (Left, Right : ScrollSelectionForm_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
-   subtype ScrollSelectionForm_Access_Array is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array;
-   function "=" (Left, Right : ScrollSelectionForm_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
-   subtype ScrollSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access;
-   function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
-   subtype ScrollSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array;
-   function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
-   subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ScrollSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollSelectionForm_Package_References."=";
    subtype MultipleScrollSelectionHorizontalForm_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access;
    function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
    subtype MultipleScrollSelectionHorizontalForm_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array;
@@ -739,5 +650,174 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPain
    end paint;
 
 end org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
+
+
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.Rectangle_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColor_Package_References;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package_References;
+with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package; use org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package_References;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.form.FormType_Package_References;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package; use org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.GPoint_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.form.ItemIndexDx_Package;
+with org.allbinary.graphics.form.ItemIndexPaintable_Package;
+with org.allbinary.graphics.form.ItemPaintable_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
+with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
+with org.allbinary.graphics.form.PaintableForm_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package;
+
+package body org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package is
+
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   function "=" (Left, Right : Graphics_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   function "=" (Left, Right : Graphics_Access_Array) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   function "=" (Left, Right : Graphics_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   function "=" (Left, Right : Graphics_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Graphics_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.Graphics_Package_References."=";
+   subtype Rectangle_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access;
+   function "=" (Left, Right : Rectangle_Access) return Boolean renames org.allbinary.graphics.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array;
+   function "=" (Left, Right : Rectangle_Access_Array) return Boolean renames org.allbinary.graphics.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access;
+   function "=" (Left, Right : Rectangle_Access_Array_Access) return Boolean renames org.allbinary.graphics.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access_Array is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access_Array;
+   function "=" (Left, Right : Rectangle_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.Rectangle_Package_References."=";
+   subtype Rectangle_Access_Array_Access_Array_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Rectangle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.Rectangle_Package_References."=";
+   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
+   function "=" (Left, Right : BasicColor_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : BasicColor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColor_Package_References."=";
+   subtype MyFontProcessor_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access;
+   function "=" (Left, Right : MyFontProcessor_Access) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
+   subtype MyFontProcessor_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array;
+   function "=" (Left, Right : MyFontProcessor_Access_Array) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
+   subtype MyFontProcessor_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access;
+   function "=" (Left, Right : MyFontProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
+   subtype MyFontProcessor_Access_Array_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array;
+   function "=" (Left, Right : MyFontProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
+   subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MyFontProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.font.MyFontProcessor_Package_References."=";
+   subtype ABCustomItem_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access;
+   function "=" (Left, Right : ABCustomItem_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
+   subtype ABCustomItem_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array;
+   function "=" (Left, Right : ABCustomItem_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
+   subtype ABCustomItem_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access;
+   function "=" (Left, Right : ABCustomItem_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
+   subtype ABCustomItem_Access_Array_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array;
+   function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
+   subtype ABCustomItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   subtype ItemPaintableFactory_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access;
+   function "=" (Left, Right : ItemPaintableFactory_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
+   subtype ItemPaintableFactory_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array;
+   function "=" (Left, Right : ItemPaintableFactory_Access_Array) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
+   subtype ItemPaintableFactory_Access_Array_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array_Access;
+   function "=" (Left, Right : ItemPaintableFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
+   subtype ItemPaintableFactory_Access_Array_Access_Array is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array_Access_Array;
+   function "=" (Left, Right : ItemPaintableFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
+   subtype ItemPaintableFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ItemPaintableFactory_Package_References.ItemPaintableFactory_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : ItemPaintableFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ItemPaintableFactory_Package_References."=";
+   subtype FormType_Access is org.allbinary.graphics.form.FormType_Package_References.FormType_Access;
+   function "=" (Left, Right : FormType_Access) return Boolean renames org.allbinary.graphics.form.FormType_Package_References."=";
+   subtype FormType_Access_Array is org.allbinary.graphics.form.FormType_Package_References.FormType_Access_Array;
+   function "=" (Left, Right : FormType_Access_Array) return Boolean renames org.allbinary.graphics.form.FormType_Package_References."=";
+   subtype FormType_Access_Array_Access is org.allbinary.graphics.form.FormType_Package_References.FormType_Access_Array_Access;
+   function "=" (Left, Right : FormType_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.FormType_Package_References."=";
+   subtype FormType_Access_Array_Access_Array is org.allbinary.graphics.form.FormType_Package_References.FormType_Access_Array_Access_Array;
+   function "=" (Left, Right : FormType_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.FormType_Package_References."=";
+   subtype FormType_Access_Array_Access_Array_Access is org.allbinary.graphics.form.FormType_Package_References.FormType_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : FormType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.FormType_Package_References."=";
+   procedure Initialize_Fields (This : in out MultipleScrollSelectionFormRectPaintable'Class) is
+   begin
+      null;
+      
+   end Initialize_Fields;
+
+    
+   procedure Initialize (This : in out MultipleScrollSelectionFormRectPaintable'Class; multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm_Package.MultipleScrollSelectionHorizontalForm'Class) is
+      multipleScrollSelectionForm : constant MultipleScrollSelectionHorizontalForm_Access := MultipleScrollSelectionHorizontalForm_Access (multipleScrollSelectionForm_Param);
+   begin
+      Paintable_Package.Initialize (This);
+      Initialize_Fields (This);
+            This.multipleScrollSelectionForm := multipleScrollSelectionForm;
+   end Initialize;
+
+   function Create (multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm_Package.MultipleScrollSelectionHorizontalForm'Class) return MultipleScrollSelectionFormRectPaintable_Access is
+      This : constant MultipleScrollSelectionFormRectPaintable_Access := new MultipleScrollSelectionFormRectPaintable;
+   begin
+      MultipleScrollSelectionFormRectPaintable_Package.Initialize (This.all, multipleScrollSelectionForm_Param);
+      return This;
+   end Create;
+    
+   procedure paint (This : in out MultipleScrollSelectionFormRectPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+   begin
+            This.multipleScrollSelectionForm.fillRect (graphics);
+   end paint;
+
+end org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package;
 
 

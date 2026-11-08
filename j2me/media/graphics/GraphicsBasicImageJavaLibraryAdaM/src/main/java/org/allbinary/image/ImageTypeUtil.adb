@@ -17,6 +17,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.image.ImageTypeUtil_Package is
@@ -45,9 +46,9 @@ package body org.allbinary.image.ImageTypeUtil_Package is
    procedure Initialize (This : in out ImageTypeUtil'Class) is
    begin
       Initialize_Fields (This);
-        This.list.add (This.JPG);
-        This.list.add (This.GIF);
-        This.list.add (This.PNG);
+        This.list.add (Java_Box (This.JPG));
+        This.list.add (Java_Box (This.GIF));
+        This.list.add (Java_Box (This.PNG));
    end Initialize;
 
    function Create return ImageTypeUtil_Access is

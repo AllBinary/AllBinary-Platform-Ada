@@ -24,10 +24,12 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
@@ -113,8 +115,8 @@ package body org.allbinary.business.installer.DeleteCloud_Package is
                 for index in start .. (end_Id) - 1 loop
                     nextFile := AbFile_Access (fileBasicArrayList.get (index));
                     begin
-                        if (nextFile.getPath.indexOf (FileUploadData_Package.getInstance.FILE)) < (0) then
-                            nextFile.delete;
+                        if (Java_Index_Of (nextFile.getPath, Java_Image (FileUploadData_Package.getInstance.FILE))) < (0) then
+                            declare Java_Result renames nextFile.delete; pragma Unreferenced (Java_Result); begin null; end;
                         end if;
                     exception
                         when Java_Occurrence : others =>

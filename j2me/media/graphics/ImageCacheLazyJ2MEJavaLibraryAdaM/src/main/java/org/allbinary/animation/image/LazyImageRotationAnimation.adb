@@ -40,6 +40,7 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package_References;
 with org.allbinary.animation.image.ActualRotationAnimation_Package; use org.allbinary.animation.image.ActualRotationAnimation_Package;
+with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.animation.image.ActualRotationAnimation_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
@@ -56,6 +57,7 @@ with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.math.NamedAngle_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.canvas.Processor_Package;
+with org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.SynchObject_Package;
 with org.allbinary.time.TimeStampUtil_Package;

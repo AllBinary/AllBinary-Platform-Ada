@@ -30,14 +30,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with javax.crypto.Cipher_Package; use javax.crypto.Cipher_Package;
---  with javax.crypto.SecretKey_Package; use javax.crypto.SecretKey_Package;
+with javax.crypto.Cipher_Package; use javax.crypto.Cipher_Package;
+with javax.crypto.SecretKey_Package; use javax.crypto.SecretKey_Package;
 limited with org.allbinary.logic.java.byteutil.ByteUtil_Package;
 with org.allbinary.logic.java.byteutil.ByteUtil_Package_References;
 with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package; use org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
 
 package org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package is
 
+   package Cipher_Package renames Standard.javax.crypto.Cipher_Package;
+   package SecretKey_Package renames Standard.javax.crypto.SecretKey_Package;
    package ByteUtil_Package renames Standard.org.allbinary.logic.java.byteutil.ByteUtil_Package;
    package Reference_Types is
    subtype ByteUtil_Access is org.allbinary.logic.java.byteutil.ByteUtil_Package_References.ByteUtil_Access;

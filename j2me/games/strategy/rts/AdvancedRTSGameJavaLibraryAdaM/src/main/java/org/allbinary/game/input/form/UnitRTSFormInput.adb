@@ -86,6 +86,7 @@ with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
 with org.allbinary.game.layer.unit.UnitWaypointStrings_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.game.layer.waypoint.Waypoint_Package;
 with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 

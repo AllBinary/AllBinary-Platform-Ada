@@ -8,7 +8,9 @@ with org.allbinary.game.input.analog.AnalogLocationInput_Package; use org.allbin
 with org.allbinary.game.input.analog.AnalogLocationInput_Package_References;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.CustomGPoint_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package_References;
 

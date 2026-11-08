@@ -22,6 +22,7 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.log.LOGGING_Package is
@@ -48,7 +49,7 @@ package body org.allbinary.log.LOGGING_Package is
    begin
       Initialize_Fields (This);
         This.name := value;
-        LOGGING_Package.logging_Var.add (value);
+        LOGGING_Package.logging_Var.add (Java_Box (value));
    end Initialize;
 
    function Create (value : Unbounded_String) return LOGGING_Access is

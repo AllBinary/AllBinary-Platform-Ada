@@ -92,16 +92,16 @@ package body org.allbinary.business.init.InitInfo_Package is
         begin
             initInfoEntity := InitInfoEntity_Package.Create;
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-                PreLogUtil_Package.put (To_Unbounded_String ("created entity"), To_Unbounded_String ("InitInfo"), To_Unbounded_String ("set()"));
+                PreLogUtil_Package.put (To_Unbounded_String ("created entity"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"));
             end if;
             if not (initInfoEntity.is_Id) then
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("adding"), To_Unbounded_String ("InitInfo"), To_Unbounded_String ("set()"));
+                    PreLogUtil_Package.put (To_Unbounded_String ("adding"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"));
                 end if;
                 initInfoEntity.add;
             else
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("update"), To_Unbounded_String ("InitInfo"), To_Unbounded_String ("set()"));
+                    PreLogUtil_Package.put (To_Unbounded_String ("update"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"));
                 end if;
                 initInfoEntity.update;
             end if;
@@ -112,7 +112,7 @@ package body org.allbinary.business.init.InitInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
-                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), To_Unbounded_String ("InitInfo"), To_Unbounded_String ("set()"), e);
+                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"), e);
             end if;
                 end;
         end;
@@ -131,7 +131,7 @@ package body org.allbinary.business.init.InitInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
-                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), To_Unbounded_String ("InitInfo"), To_Unbounded_String ("set()"), e);
+                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"), e);
             end if;
                 end;
         end;
@@ -152,7 +152,7 @@ package body org.allbinary.business.init.InitInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
-                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), To_Unbounded_String ("InitInfo"), To_Unbounded_String ("set()"), e);
+                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"), e);
             end if;
             return;
                 end;
@@ -177,7 +177,7 @@ package body org.allbinary.business.init.InitInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
-                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), To_Unbounded_String ("InitInfo"), To_Unbounded_String ("updateIfNeeded()"), e);
+                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("updateIfNeeded()"), e);
             end if;
             return;
                 end;
@@ -195,7 +195,7 @@ package body org.allbinary.business.init.InitInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
-                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), To_Unbounded_String ("InitInfo"), To_Unbounded_String ("updateIfNeeded()"), e);
+                PreLogUtil_Package.putOE (To_Unbounded_String ("error"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("updateIfNeeded()"), e);
             end if;
             return False;
                 end;

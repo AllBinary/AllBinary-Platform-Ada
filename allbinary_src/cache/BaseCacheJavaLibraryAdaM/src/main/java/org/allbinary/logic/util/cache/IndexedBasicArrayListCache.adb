@@ -99,7 +99,7 @@ package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package i
 
    function getAt (This : in out IndexedBasicArrayListCache; index : Integer) return Java_Object_Access is
    begin
-        return This.list.objectArray (index);
+        return Java_Object_Access (This.list.objectArray (index));
    end getAt;
 
    --  throws Exception

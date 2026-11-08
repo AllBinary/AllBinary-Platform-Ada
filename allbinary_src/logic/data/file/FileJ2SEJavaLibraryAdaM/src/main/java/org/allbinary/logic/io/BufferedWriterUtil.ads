@@ -30,8 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.BufferedWriter_Package; use java.io.BufferedWriter_Package;
---  with java.io.FileWriter_Package; use java.io.FileWriter_Package;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 limited with org.allbinary.logic.io.file.AbFile_Package;

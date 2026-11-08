@@ -52,6 +52,7 @@ with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;

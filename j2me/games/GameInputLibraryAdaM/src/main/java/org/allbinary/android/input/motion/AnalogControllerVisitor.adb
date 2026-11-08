@@ -20,6 +20,7 @@ with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package_Ref
 with org.allbinary.game.input.analog.AnalogLocationInput_Package;
 with org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
 with org.allbinary.graphics.CustomGPoint_Package;
+with org.allbinary.graphics.GPoint_Package;
 
 package body org.allbinary.android.input.motion.AnalogControllerVisitor_Package is
 

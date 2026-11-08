@@ -27,6 +27,7 @@ with org.allbinary.midlet.MidletExitProcessorFactory_Package; use org.allbinary.
 with org.allbinary.midlet.ExitRunnable_Package; use org.allbinary.midlet.ExitRunnable_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.thread.ARunnable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;

@@ -70,7 +70,7 @@ package body org.allbinary.logic.communication.log.LogFactory_Package is
    function getInstanceSE (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) return Log_Access is
       exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
    begin
-        return LogFactory_Package.getInstance (specialMessage, className, functionName, exception_Id);
+        return LogFactory_Package.getInstance (specialMessage, Java_Box (className), functionName, exception_Id);
    end getInstanceSE;
 
    procedure getInstance (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is

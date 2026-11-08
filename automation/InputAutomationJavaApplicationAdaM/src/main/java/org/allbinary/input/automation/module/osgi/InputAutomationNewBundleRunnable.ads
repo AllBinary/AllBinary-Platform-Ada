@@ -30,8 +30,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.FileFilter_Package; use java.io.FileFilter_Package;
---  with java.net.URL_Package; use java.net.URL_Package;
+with java.net.URL_Package; use java.net.URL_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.jar.JarInputStream_Package; use java.util.jar.JarInputStream_Package;
 --  with java.util.jar.Manifest_Package; use java.util.jar.Manifest_Package;
@@ -50,6 +49,7 @@ with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
 
+   package URL_Package renames Standard.java.net.URL_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Bundle_Package renames Standard.org.osgi.framework.Bundle_Package;
    package InputAutomationBundleActivator_Package renames Standard.bundle.input.automation.InputAutomationBundleActivator_Package;

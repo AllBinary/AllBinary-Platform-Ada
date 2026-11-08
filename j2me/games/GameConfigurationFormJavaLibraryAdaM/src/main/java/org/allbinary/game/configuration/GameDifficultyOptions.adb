@@ -222,20 +222,20 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
    function getChoiceGroup (This : in out GameDifficultyOptions; list_Param : access BasicArrayList_Package.BasicArrayList'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access is
       list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       METHOD_NAME : Unbounded_String;
-      NAME : Unbounded_String;
+      NAME_Local : Unbounded_String;
       choiceGroup : ChoiceGroup_Access;
       size : Integer;
       anyType : Java_Object_Access;
       index : Integer;
    begin
         METHOD_NAME := To_Unbounded_String ("addChoiceGroup");
-        NAME := To_Unbounded_String ("Adding Choice: ");
+        NAME_Local := To_Unbounded_String ("Adding Choice: ");
         choiceGroup := ChoiceGroup_Package.Create (name, option, StringUtil_Package.getInstance.getArrayInstance, NullImage_Package.NULL_IMAGE_ARRAY);
         size := list.size;
         anyType := null;
         for index in 0 .. (size) - 1 loop
             anyType := list.objectArray (index);
-            This.logUtil.putF (StringMaker_Package.Create.append (NAME).append (anyType.toString).toString, GameDifficultyOptions_Access'(This'Unchecked_Access), METHOD_NAME);
+            This.logUtil.putF (StringMaker_Package.Create.append (NAME_Local).append (anyType.toString).toString, GameDifficultyOptions_Access'(This'Unchecked_Access), METHOD_NAME);
             choiceGroup.append (anyType.toString, NullImage_Package.NULL_IMAGE);
         end loop;
         return choiceGroup;

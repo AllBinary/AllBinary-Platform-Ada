@@ -29,6 +29,7 @@ with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package is
 

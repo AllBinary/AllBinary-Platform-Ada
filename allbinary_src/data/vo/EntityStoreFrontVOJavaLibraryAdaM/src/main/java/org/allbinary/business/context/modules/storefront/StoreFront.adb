@@ -341,7 +341,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         This.testHostName := Java_Unbox (storeHashMap.get (storeFrontData.TESTHOSTNAME));
         This.testHostNamePath := StoreFront'Class (This).createPath (storeFrontData.TESTHOSTNAMEPATH, storeHashMap);
         This.imagePath := StoreFront'Class (This).createPath (StoreFront_Package.RESOURCES, storeFrontData.IMAGEPATH, storeHashMap);
-        This.staticPath := StoreFront'Class (This).createPath (To_Unbounded_String (" Products") & Java_Image (AbPathData_Package.getInstance.SEPARATOR), storeFrontData.STATICPATH, storeHashMap);
+        This.staticPath := StoreFront'Class (This).createPath (To_Unbounded_String (" Products") & AbPathData_Package.getInstance.SEPARATOR, storeFrontData.STATICPATH, storeHashMap);
         This.categoryPath := StoreFront'Class (This).createPath (StoreFront_Package.RESOURCES, storeFrontData.CATEGORYPATH, storeHashMap);
         This.inventoryControl := Java_Unbox (storeHashMap.get (storeFrontData.INVENTORYCONTROL));
         This.subStores := Java_Unbox (storeHashMap.get (storeFrontData.SUBSTORES));
@@ -1212,7 +1212,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
 
 begin
    null;
-   RESOURCES := To_Unbounded_String (" Resources") & Java_Image (AbPathData_Package.getInstance.SEPARATOR);
+   RESOURCES := To_Unbounded_String (" Resources") & AbPathData_Package.getInstance.SEPARATOR;
 
 end org.allbinary.business.context.modules.storefront.StoreFront_Package;
 

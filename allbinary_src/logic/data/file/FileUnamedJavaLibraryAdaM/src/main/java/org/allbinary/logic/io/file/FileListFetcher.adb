@@ -24,6 +24,7 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
@@ -131,7 +132,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
    begin
         begin
             includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            includeExtensionBasicArrayList.add (includeExtension);
+            includeExtensionBasicArrayList.add (Java_Box (includeExtension));
             visitorFileFilter := VisitorFileFilter_Package.Create (DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package.Create (includeExtensionBasicArrayList));
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
             return files;
@@ -154,7 +155,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
    begin
         begin
             includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            includeExtensionBasicArrayList.add (includeExtension);
+            includeExtensionBasicArrayList.add (Java_Box (includeExtension));
             visitorFileFilter := VisitorFileFilter_Package.Create (DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package.Create (includeExtensionBasicArrayList, pathIncludes));
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
             return files;
@@ -205,7 +206,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
    begin
         begin
             includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            includeExtensionBasicArrayList.add (includeExtension);
+            includeExtensionBasicArrayList.add (Java_Box (includeExtension));
             visitorFileFilter := VisitorFileFilter_Package.Create (DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package.Create (includeExtensionBasicArrayList));
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
             return files;

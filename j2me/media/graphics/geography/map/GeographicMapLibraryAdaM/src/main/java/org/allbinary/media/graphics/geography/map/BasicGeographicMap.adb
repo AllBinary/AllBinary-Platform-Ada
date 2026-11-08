@@ -57,6 +57,7 @@ with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionF
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is

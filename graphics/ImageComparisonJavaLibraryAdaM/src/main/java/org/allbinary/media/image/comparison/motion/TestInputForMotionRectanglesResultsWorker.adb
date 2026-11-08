@@ -33,6 +33,7 @@ with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Pa
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.media.image.comparison.color.ColorDelta_Package;
@@ -221,7 +222,7 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
             end if;
             This.index := This.index + 1;
             TestInputForMotionRectanglesResultsWorker'Class (This).getMotionRectanglesVector.remove (motionRectangles);
-            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.logUtil.putF (This.commonStrings.END_Id, TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>

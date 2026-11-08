@@ -13,7 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
+with java.io.BufferedWriter_Package; use java.io.BufferedWriter_Package;
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileReader_Package; use java.io.FileReader_Package;
+with java.io.FileWriter_Package; use java.io.FileWriter_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package_References;
@@ -25,6 +29,9 @@ with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.log.FileLog_Package is
 
+   package BufferedReader_Package renames Standard.java.io.BufferedReader_Package;
+   package FileReader_Package renames Standard.java.io.FileReader_Package;
+   package FileWriter_Package renames Standard.java.io.FileWriter_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package LogFormatUtil_Package renames Standard.org.allbinary.logic.communication.log.LogFormatUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;

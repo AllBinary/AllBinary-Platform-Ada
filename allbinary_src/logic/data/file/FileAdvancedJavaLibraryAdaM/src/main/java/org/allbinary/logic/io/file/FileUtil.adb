@@ -48,16 +48,23 @@ with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
 with org.allbinary.logic.io.file.FileUtil2_Package; use org.allbinary.logic.io.file.FileUtil2_Package;
+with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.io.file.FileUtil2_Package;
+with org.allbinary.logic.io.file.FileWrapperUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package;
 
 package body org.allbinary.logic.io.file.FileUtil_Package is
 
@@ -272,9 +279,9 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
       string_Id : Unbounded_String;
       outPath : AbPath_Access;
    begin
-        beginIndex := (file.getPath.indexOf (cloud)) + (Ada.Strings.Unbounded.Length (cloud));
-        endIndex := file.getPath.indexOf (file.getName);
-        fixedPathString := Java_Image (realPath.toFileSystemString) & file.getPath.substring (beginIndex, endIndex);
+        beginIndex := (Java_Index_Of (file.getPath, Java_Image (cloud))) + (Ada.Strings.Unbounded.Length (cloud));
+        endIndex := Java_Index_Of (file.getPath, Java_Image (file.getName));
+        fixedPathString := realPath.toFileSystemString & Unbounded_Slice (file.getPath, (beginIndex) + 1, endIndex);
         fixedPath := AbPath_Package.Create (fixedPathString, StringUtil_Package.getInstance.EMPTY_STRING);
         This.directory.create (fixedPath);
         string_Id := fixedPath.toFileSystemString;
@@ -407,20 +414,20 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                     stringBuffer.append (toFile.getPath);
                     This.logUtil.putF (stringBuffer.toString, getInstance, To_Unbounded_String ("copyFile"));
                 end if;
-                toFile.delete;
-                toFile.createNewFile;
+                declare Java_Result renames toFile.delete; pragma Unreferenced (Java_Result); begin null; end;
+                declare Java_Result renames toFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             elsif ((toFile.lastModified) < (fromFile.lastModified)) and then (overwriteNewer) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (To_Unbounded_String ("Newer by: "));
-                    stringBuffer.appendlong (Long_Long_Integer ((fromFile.lastModified) - (toFile.lastModified)));
+                    stringBuffer.appendlong ((fromFile.lastModified) - (toFile.lastModified));
                     stringBuffer.append (To_Unbounded_String ("ms "));
                     stringBuffer.append (To_Unbounded_String ("Copying File: "));
                     stringBuffer.append (toFile.getPath);
                     This.logUtil.putF (stringBuffer.toString, getInstance, To_Unbounded_String ("copyFile"));
                 end if;
-                toFile.delete;
-                toFile.createNewFile;
+                declare Java_Result renames toFile.delete; pragma Unreferenced (Java_Result); begin null; end;
+                declare Java_Result renames toFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                     stringBuffer.delete (0, stringBuffer.length);
@@ -437,7 +444,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 return False;
             end if;
         else
-            toFile.createNewFile;
+            declare Java_Result renames toFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         end if;
         return True;
    end copyPrepare;
@@ -462,7 +469,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Copying "));
-                stringBuffer.appendlong (Long_Long_Integer (fromFile.length));
+                stringBuffer.appendlong (fromFile.length);
                 stringBuffer.append (To_Unbounded_String (" bytes from File: "));
                 stringBuffer.append (fromFile.getPath);
                 stringBuffer.append (To_Unbounded_String (" to: "));
@@ -532,7 +539,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    begin
         file := AbFile_Package.createAbFileFromAbPath (fromDirectoryAbPath);
         if not (file.isDirectory) then
-            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not a directory: ") & Java_Image (file.getPath)));
+            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not a directory: ") & file.getPath));
         end if;
         fileList := This.directory.search (file, True);
         size := fileList.size;
@@ -561,11 +568,11 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 null;
             else
                 path := AbPath_Package.Create (nextFile.getPath, StringUtil_Package.getInstance.EMPTY_STRING).getPath;
-                beginIndex := fromDirectoryAbPath.getPath.length;
+                beginIndex := Ada.Strings.Unbounded.Length (fromDirectoryAbPath.getPath);
                 if (Java_Index_Of (path, Java_Image (URLGLOBALS_Package.getWebappPath))) < (0) then
-                    beginIndex := (beginIndex) - (AbPath_Package.Create (URLGLOBALS_Package.getWebappPath, StringUtil_Package.getInstance.EMPTY_STRING).getPath.length);
+                    beginIndex := (beginIndex) - (Ada.Strings.Unbounded.Length (AbPath_Package.Create (URLGLOBALS_Package.getWebappPath, StringUtil_Package.getInstance.EMPTY_STRING).getPath));
                 end if;
-                newPath := Java_Image (toDirectoryAbPath.toFileSystemString) & Unbounded_Slice (path, (beginIndex) + 1, Ada.Strings.Unbounded.Length (path));
+                newPath := toDirectoryAbPath.toFileSystemString & Unbounded_Slice (path, (beginIndex) + 1, Ada.Strings.Unbounded.Length (path));
                 toFile := AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (newPath, StringUtil_Package.getInstance.EMPTY_STRING));
                 FileUtil'Class (This).copyFile (nextFile, toFile, overwriteNewer, overwriteAll);
             end if;
@@ -594,7 +601,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 This.logUtil.putF (stringBuffer.toString, getInstance, To_Unbounded_String ("copyDirectory"));
             end if;
             newDirectory := FileUtil_Package.getNewDirectory (fromFile);
-            newDirectoryAbPath := AbPath_Package.Create (Java_Image ((to.getPath) + (AbPathData_Package.getInstance.SEPARATOR)) & newDirectory, StringUtil_Package.getInstance.EMPTY_STRING);
+            newDirectoryAbPath := AbPath_Package.Create (to.getPath & AbPathData_Package.getInstance.SEPARATOR & newDirectory, StringUtil_Package.getInstance.EMPTY_STRING);
             if not (This.directory.create (newDirectoryAbPath)) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Failed to create directory: ") & Java_Image (newDirectoryAbPath)));
             end if;
@@ -697,7 +704,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                     end if;
                 end if;
             elsif (fromLocationFile.isDirectory) and then (toLocationFile.isDirectory) then
-                if (fromAbPath.toFileSystemString.charAt ((fromAbPath.toFileSystemString.length) - (1))) = (java_Package.io.File.separatorChar) then
+                if (Element (fromAbPath.toFileSystemString, ((Ada.Strings.Unbounded.Length (fromAbPath.toFileSystemString)) - (1)) + 1)) = (java_Package.io.File.separatorChar) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         This.logUtil.putF (To_Unbounded_String ("Copying subdirectories"), getInstance, COPY);
                     end if;
@@ -755,7 +762,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
         skipFile := Null_Unbounded_String;
         for index in 0 .. (size) - 1 loop
             skipFile := skipFiles (index);
-            if (file.getPath.compareTo (skipFile)) = (0) then
+            if (Java_Compare_To (file.getPath, skipFile)) = (0) then
                 return True;
             end if;
         end loop;

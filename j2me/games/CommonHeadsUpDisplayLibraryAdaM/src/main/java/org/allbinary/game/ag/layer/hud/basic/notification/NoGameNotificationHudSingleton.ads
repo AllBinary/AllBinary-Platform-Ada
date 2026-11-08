@@ -32,8 +32,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
-limited with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References;
+with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificationHudSingleton_Package is
 
@@ -49,16 +48,6 @@ package org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificationHud
    use type LogUtil_Access_Array_Access_Array;
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    use type LogUtil_Access_Array_Access_Array_Access;
-   subtype GameNotificationHud_Access is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access;
-   use type GameNotificationHud_Access;
-   subtype GameNotificationHud_Access_Array is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access_Array;
-   use type GameNotificationHud_Access_Array;
-   subtype GameNotificationHud_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access_Array_Access;
-   use type GameNotificationHud_Access_Array_Access;
-   subtype GameNotificationHud_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access_Array_Access_Array;
-   use type GameNotificationHud_Access_Array_Access_Array;
-   subtype GameNotificationHud_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package_References.GameNotificationHud_Access_Array_Access_Array_Access;
-   use type GameNotificationHud_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 

@@ -21,7 +21,9 @@ with org.allbinary.graphics.CellPosition_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package is
 

@@ -35,6 +35,7 @@ with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.ani
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -143,7 +144,7 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
    begin
         pointFactory := PointFactory_Package.getInstance;
         list := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getList;
-        scale := GameConfigurationCentral_Package.getInstance.SCALE.getValue.intValue;
+        scale := Integer (GameConfigurationCentral_Package.getInstance.SCALE.getValue);
         size := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getList.size;
         for index in 0 .. (size) - 1 loop
             featureInterface := FeatureResourceAnimationInterfaceFactoryInterface_Access (list.objectArray (index));

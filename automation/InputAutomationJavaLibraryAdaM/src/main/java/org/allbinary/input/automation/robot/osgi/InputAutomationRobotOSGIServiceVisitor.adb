@@ -84,7 +84,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIS
    function visit (This : in out InputAutomationRobotOSGIServiceVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        return InputAutomationRobotOSGIServiceVisitor'Class (This).visit (OSGIServiceInterface_Access (anyType));
+        return Java_Object_Access (InputAutomationRobotOSGIServiceVisitor'Class (This).visit (OSGIServiceInterface_Access (anyType)));
    end visit;
 
    function visit (This : in out InputAutomationRobotOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class) return Boolean is

@@ -93,7 +93,7 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
    begin
       null;
       This.category := CategoryData_Package.getInstance.ROOTCATEGORY;
-      This.fileName := This.category & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
+      This.fileName := This.category & AbPathData_Package.getInstance.EXTENSION_SEP & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION);
    end Initialize_Fields;
 
 

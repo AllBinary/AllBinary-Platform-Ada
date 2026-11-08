@@ -28,7 +28,6 @@ with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn
 with org.microemu.device.ResourceCallbackStrings_Package; use org.microemu.device.ResourceCallbackStrings_Package;
 with org.microemu.device.ResourceCallbackStrings_Package_References;
 with playn.core.Callback_Package; use playn.core.Callback_Package;
-with playn.core.Callback_Package_References;
 with playn.core.Canvas_Package; use playn.core.Canvas_Package;
 with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
 with playn.core.CoreImage_Package_References;
@@ -104,16 +103,6 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
    function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access_Array) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
    subtype ResourceCallbackStrings_Access_Array_Access_Array_Access is org.microemu.device.ResourceCallbackStrings_Package_References.ResourceCallbackStrings_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ResourceCallbackStrings_Access_Array_Access_Array_Access) return Boolean renames org.microemu.device.ResourceCallbackStrings_Package_References."=";
-   subtype Callback_Access is playn.core.Callback_Package_References.Callback_Access;
-   function "=" (Left, Right : Callback_Access) return Boolean renames playn.core.Callback_Package_References."=";
-   subtype Callback_Access_Array is playn.core.Callback_Package_References.Callback_Access_Array;
-   function "=" (Left, Right : Callback_Access_Array) return Boolean renames playn.core.Callback_Package_References."=";
-   subtype Callback_Access_Array_Access is playn.core.Callback_Package_References.Callback_Access_Array_Access;
-   function "=" (Left, Right : Callback_Access_Array_Access) return Boolean renames playn.core.Callback_Package_References."=";
-   subtype Callback_Access_Array_Access_Array is playn.core.Callback_Package_References.Callback_Access_Array_Access_Array;
-   function "=" (Left, Right : Callback_Access_Array_Access_Array) return Boolean renames playn.core.Callback_Package_References."=";
-   subtype Callback_Access_Array_Access_Array_Access is playn.core.Callback_Package_References.Callback_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : Callback_Access_Array_Access_Array_Access) return Boolean renames playn.core.Callback_Package_References."=";
    subtype CoreImage_Access is playn.core.CoreImage_Package_References.CoreImage_Access;
    function "=" (Left, Right : CoreImage_Access) return Boolean renames playn.core.CoreImage_Package_References."=";
    subtype CoreImage_Access_Array is playn.core.CoreImage_Package_References.CoreImage_Access_Array;
@@ -281,7 +270,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF ((This.commonStrings.EXCEPTION_LABEL) + (This.resourceCallbackStrings.DONE), ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
+            This.logUtil.putF (This.commonStrings.EXCEPTION_LABEL & Java_Image (This.resourceCallbackStrings.DONE), ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
                 end;
         end;
    end copy;

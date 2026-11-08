@@ -38,6 +38,7 @@ with org.allbinary.math.FrameUtil_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package;
 with org.allbinary.logic.math.J2SEMath_Package;
+with javax.microedition.lcdui.game.Layer_Package;
 
 package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimationFactory_Package is
 

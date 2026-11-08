@@ -24,6 +24,7 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package_References;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Image_Package;

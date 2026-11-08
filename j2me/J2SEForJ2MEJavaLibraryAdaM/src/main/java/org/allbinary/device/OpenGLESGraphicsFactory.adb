@@ -9,6 +9,8 @@ with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.font.FontDebugBase_Package;
 with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.khronos.opengles.GL10_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.device.OpenGLESGraphics_Package;
 with org.allbinary.device.OpenGLESNullGraphicsFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;

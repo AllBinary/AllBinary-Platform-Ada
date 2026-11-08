@@ -19,12 +19,17 @@ with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.visual.media.ImageIOUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
@@ -116,7 +121,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
             This.logUtil.putF (To_Unbounded_String ("Image Properties: ") & hashMap.toString, MediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveImageFile()"));
         end if;
         imageFile := AbFile_Package.createAbFile (category & newImageFileName);
-        imageFile.createNewFile;
+        declare Java_Result renames imageFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         imageUtil := ImageUtil_Package.getInstance;
         newBufferedImage := imageUtil.createBufferedImageForSave (bufferedImage, newWidth, newHeight);
         isWritten := ImageIOUtil_Package.write (RenderedImage_Access (newBufferedImage), mediaData.getName, imageFile);
@@ -139,9 +144,9 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "New")).append (commonLabels.HEIGHT_LABEL);
             stringBuffer.appendint (newHeight);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "File Length: "));
-            stringBuffer.appendlong (Long_Long_Integer (originalImageFile.length));
+            stringBuffer.appendlong (originalImageFile.length);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "New File Length: "));
-            stringBuffer.appendlong (Long_Long_Integer (imageFile.length));
+            stringBuffer.appendlong (imageFile.length);
             This.logUtil.putF (stringBuffer.toString, MediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveImageFile()"));
         end if;
    end saveImageFile;

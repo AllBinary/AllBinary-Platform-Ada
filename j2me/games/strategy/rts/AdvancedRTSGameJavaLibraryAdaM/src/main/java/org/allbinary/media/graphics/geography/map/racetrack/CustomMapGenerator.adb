@@ -30,6 +30,7 @@ with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package is
 

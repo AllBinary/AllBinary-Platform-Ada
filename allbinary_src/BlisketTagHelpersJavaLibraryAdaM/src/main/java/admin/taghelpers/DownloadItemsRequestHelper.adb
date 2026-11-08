@@ -155,7 +155,7 @@ package body admin.taghelpers.DownloadItemsRequestHelper_Package is
             values := This.downloadableItem.toHashMap;
             DownloadItemsEntityFactory_Package.getInstance.getDownloadItemsEntityInstance.update (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (Java_Image ((This.downloadableItem.getId) + (CommonSeps_Package.getInstance.SPACE)) & success, DownloadItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
+                This.logUtil.putF (Java_Image (This.downloadableItem.getId) & CommonSeps_Package.getInstance.SPACE & success, DownloadItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception

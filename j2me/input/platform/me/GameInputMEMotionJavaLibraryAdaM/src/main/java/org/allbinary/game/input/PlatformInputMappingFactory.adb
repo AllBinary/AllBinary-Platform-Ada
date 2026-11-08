@@ -19,11 +19,18 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.input.MotionJ2MEGameInputMapping_Package; use org.allbinary.game.input.MotionJ2MEGameInputMapping_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.game.input.J2MEGameInputMapping_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.input.MotionJ2MEGameInputMapping_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;

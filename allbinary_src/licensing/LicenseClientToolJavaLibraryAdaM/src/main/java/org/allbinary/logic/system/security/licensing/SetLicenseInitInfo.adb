@@ -13,18 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package_References;
 with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
 with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
 with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileReader_Package; use java.io.FileReader_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.logic.system.security.licensing.BasicArrayListD_Package; use org.allbinary.logic.system.security.licensing.BasicArrayListD_Package;
 with org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package; use org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package;
+with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package;
 
 package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package is
@@ -33,6 +42,7 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
    package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
    package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
    package File_Package renames Standard.java.io.File_Package;
+   package FileReader_Package renames Standard.java.io.FileReader_Package;
    subtype LicenseInitInfo_Access is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access;
    function "=" (Left, Right : LicenseInitInfo_Access) return Boolean renames org.allbinary.business.init.LicenseInitInfo_Package_References."=";
    subtype LicenseInitInfo_Access_Array is org.allbinary.business.init.LicenseInitInfo_Package_References.LicenseInitInfo_Access_Array;

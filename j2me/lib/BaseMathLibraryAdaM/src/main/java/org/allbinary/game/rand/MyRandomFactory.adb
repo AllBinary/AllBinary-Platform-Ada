@@ -163,7 +163,7 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
         commonSeps := CommonSeps_Package.getInstance;
         size2 := 100;
         for index in 0 .. (size2) - 1 loop
-            stringBuilder.appendint (Integer (randomFactory.getAbsoluteNextInt (3))).append (commonSeps.COMMA);
+            stringBuilder.appendint (randomFactory.getAbsoluteNextInt (3)).append (commonSeps.COMMA);
         end loop;
         Ada.Text_IO.Put_Line (Java_Image (stringBuilder.toString));
         stringBuilder.delete (0, stringBuilder.length);

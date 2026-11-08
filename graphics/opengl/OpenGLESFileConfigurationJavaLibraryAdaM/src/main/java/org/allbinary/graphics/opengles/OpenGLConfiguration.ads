@@ -30,7 +30,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.Closeable_Package; use java.io.Closeable_Package;
 --  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 limited with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;

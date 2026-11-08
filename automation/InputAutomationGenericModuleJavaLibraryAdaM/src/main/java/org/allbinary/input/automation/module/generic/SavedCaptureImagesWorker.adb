@@ -165,7 +165,7 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
                 else
                     This.logUtil.putF (To_Unbounded_String ("Could Not Load File: ") & filePath, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 end if;
-                This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+                This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 SavedCaptureImagesWorker'Class (This).setRunning (False);
             end loop;
             This.logUtil.putF (This.commonStrings.END_Id, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);

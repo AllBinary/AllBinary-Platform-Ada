@@ -14,6 +14,7 @@
 
 
 with java.io.File_Package; use java.io.File_Package;
+with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -23,11 +24,13 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringMaker_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.input.automation.log.FrameLog_Package is
 
    package File_Package renames Standard.java.io.File_Package;
+   package FileOutputStream_Package renames Standard.java.io.FileOutputStream_Package;
    package ImageOutputData_Package renames Standard.org.allbinary.input.automation.ImageOutputData_Package;
    package LongUtil_Package renames Standard.org.allbinary.logic.java.number.LongUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;

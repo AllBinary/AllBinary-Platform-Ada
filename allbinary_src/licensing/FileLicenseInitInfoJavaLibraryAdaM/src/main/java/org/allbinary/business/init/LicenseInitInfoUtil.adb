@@ -31,11 +31,18 @@ with org.allbinary.logic.system.security.crypt.WeakCrypt_Package; use org.allbin
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package_References;
+with org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
+with org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
@@ -56,6 +63,7 @@ with org.microemu.device.ui.DisplayableUI_Package;
 with javax.microedition.lcdui.Event_Package;
 with org.microemu.device.ui.EventDispatcher_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
@@ -81,6 +89,7 @@ with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
@@ -91,6 +100,7 @@ with javax.microedition.lcdui.TextField_Package;
 with javax.microedition.lcdui.Ticker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.microemu.device.ui.UIFactory_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package;
 
 package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
 
@@ -181,7 +191,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
       index : Integer;
    begin
         if (This.filePath) = (This.stringUtil.EMPTY_STRING) then
-            This.filePath := (URLGLOBALS_Package.getMainPath) + (PATH_GLOBALS_Package.getInstance.INIT_PATH);
+            This.filePath := URLGLOBALS_Package.getMainPath & PATH_GLOBALS_Package.getInstance.INIT_PATH;
         end if;
         begin
             tsUtil := TsUtil_Package.getInstance;
@@ -229,7 +239,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
    begin
         METHOD_NAME := To_Unbounded_String ("readAgain");
         if (This.filePath) = (This.stringUtil.EMPTY_STRING) then
-            This.filePath := (URLGLOBALS_Package.getMainPath) + (PATH_GLOBALS_Package.getInstance.INIT_PATH);
+            This.filePath := URLGLOBALS_Package.getMainPath & PATH_GLOBALS_Package.getInstance.INIT_PATH;
         end if;
         begin
             This.logUtil.putF (To_Unbounded_String ("LicenseInitInfo File: ") & This.INITFILENAME, LicenseInitInfoUtil_Access'(This'Unchecked_Access), METHOD_NAME);

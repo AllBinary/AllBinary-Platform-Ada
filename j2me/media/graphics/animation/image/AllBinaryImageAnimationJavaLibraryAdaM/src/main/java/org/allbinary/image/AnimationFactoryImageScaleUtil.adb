@@ -135,8 +135,8 @@ package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
             if ((((scaleX) = (1.0)) and then ((scaleY) = (1.0)))) or else ((((scaleX) = (0.0)) or else ((scaleY) = (0.0)))) then
                 null;
             else
-                animationFactoryInitializationVisitor.dx := Integer (((animationFactoryInitializationVisitor.originalDx) * (scaleX)));
-                animationFactoryInitializationVisitor.dy := Integer (((animationFactoryInitializationVisitor.originalDy) * (scaleY)));
+                animationFactoryInitializationVisitor.dx := Integer (((Float (animationFactoryInitializationVisitor.originalDx)) * (scaleX)));
+                animationFactoryInitializationVisitor.dy := Integer (((Float (animationFactoryInitializationVisitor.originalDy)) * (scaleY)));
             end if;
         else
             null;

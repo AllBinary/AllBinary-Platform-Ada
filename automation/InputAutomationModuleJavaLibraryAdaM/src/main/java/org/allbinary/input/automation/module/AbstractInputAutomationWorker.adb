@@ -189,7 +189,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
                 timeHelper.setStartTimeTNT;
                 AbstractInputAutomationWorker'Class (This).process;
                 This.index := This.index + 1;
-                This.logUtil.putF (Java_Image ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT)) & To_Unbounded_String (" Index: ") & Java_Image (This.index), AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+                This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT) & To_Unbounded_String (" Index: ") & Java_Image (This.index), AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             end loop;
             AbstractInputAutomationWorker'Class (This).stopDataWorkers;
             AbstractInputAutomationWorker'Class (This).waitForDataWorkers;

@@ -43,7 +43,7 @@ package body org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package i
 
    function getName (This : in out DestroyableBaseBehavior) return Unbounded_String is
    begin
-        return To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
+        return To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag));
    end getName;
 
    --  throws Exception

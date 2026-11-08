@@ -30,7 +30,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.FileFilter_Package; use java.io.FileFilter_Package;
+with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 limited with org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
 limited with org.allbinary.logic.io.path.AbPath_Package;
@@ -40,6 +40,7 @@ with org.allbinary.util.BasicArrayList_Package_References;
 
 package org.allbinary.logic.io.file.directory.Directory_Package is
 
+   package FileFilter_Package renames Standard.java.io.FileFilter_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;

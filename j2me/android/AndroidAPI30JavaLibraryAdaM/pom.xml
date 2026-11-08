@@ -175,7 +175,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,com.google.android,androidx.core,androidx.tracing,androidx.lifecycle</includeGroupIds>
+                            <includeGroupIds>org.allbinary,com.google.android,androidx.core,androidx.tracing,androidx.lifecycle,org.allbinary.cache,org.graph</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

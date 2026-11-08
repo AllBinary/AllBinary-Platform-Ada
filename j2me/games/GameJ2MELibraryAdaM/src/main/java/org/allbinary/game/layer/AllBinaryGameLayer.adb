@@ -48,6 +48,7 @@ with org.allbinary.view.event.ViewPositionEventListenerInterface_Package; use or
 with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
 with org.allbinary.game.layer.GameLayerUtil_Package; use org.allbinary.game.layer.GameLayerUtil_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.layer.GameLayerUtil_Package;

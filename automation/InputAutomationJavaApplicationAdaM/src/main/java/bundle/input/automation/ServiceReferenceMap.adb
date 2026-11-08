@@ -78,7 +78,7 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
    function get (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Java_Object_Access is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
-        return This.serviceReference.getProperty (Java_Unbox (key));
+        return Java_Object_Access (This.serviceReference.getProperty (Java_Unbox (key)));
    end get;
 
    function put (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access is

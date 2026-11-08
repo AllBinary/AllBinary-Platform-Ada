@@ -30,13 +30,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
---  with java.io.FileReader_Package; use java.io.FileReader_Package;
+with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
 limited with org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
 
 package org.allbinary.logic.io.BufferedLineReader_Package is
 
+   package BufferedReader_Package renames Standard.java.io.BufferedReader_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package Reference_Types is
    subtype AbFile_Access is org.allbinary.logic.io.file.AbFile_Package_References.AbFile_Access;

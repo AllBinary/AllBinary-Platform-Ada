@@ -25,6 +25,11 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package_References;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
 
 package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package is

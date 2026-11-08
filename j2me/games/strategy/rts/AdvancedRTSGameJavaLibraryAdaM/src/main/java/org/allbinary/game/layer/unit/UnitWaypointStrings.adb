@@ -34,7 +34,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
       This.ALL_VISITED := To_Unbounded_String ("All Visited");
       This.ALREADY_THERE_SHORT := To_Unbounded_String ("Again?");
       This.ALREADY_THERE := To_Unbounded_String ("Already There");
-      This.NEXT_PATH_NODE := Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Path Node");
+      This.NEXT_PATH_NODE := CommonLabels_Package.getInstance.NEXT & To_Unbounded_String (" Path Node");
       This.U_ALL_VISITED_SHORT := To_Unbounded_String (" Arrived");
       This.U_ALREADY_THERE_SHORT := To_Unbounded_String (" Again?");
       This.VISITED_MOST_OF_THE_PATH := To_Unbounded_String (" visited most of the path");

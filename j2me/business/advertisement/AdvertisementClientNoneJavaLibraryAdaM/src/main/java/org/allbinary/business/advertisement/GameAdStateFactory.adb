@@ -8,6 +8,7 @@ with org.allbinary.logic.system.SoftwareInformation_Package_References;
 with org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package; use org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package;
 with org.allbinary.business.advertisement.GameAdStateBase_Package; use org.allbinary.business.advertisement.GameAdStateBase_Package;
 with org.allbinary.business.advertisement.GameAdStateBase_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package;
 
 package body org.allbinary.business.advertisement.GameAdStateFactory_Package is

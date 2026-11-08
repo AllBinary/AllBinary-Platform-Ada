@@ -211,7 +211,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.allbinary.logging,org.allbinary.business.category,org.allbinary.business.user.commerce,org.allbinary.data.tree.dom,org.allbinary.logic.control.crypt</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.allbinary.logging,org.allbinary.business.category,org.allbinary.business.user.commerce,org.allbinary.data.tree.dom,org.allbinary.logic.control.crypt,org.allbinary.data.tables,org.allbinary.data,org.allbinary.cache,org.graph,org.allbinary.logic</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

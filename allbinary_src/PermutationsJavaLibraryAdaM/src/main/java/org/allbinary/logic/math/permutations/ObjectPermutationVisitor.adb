@@ -120,7 +120,7 @@ package body org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Pack
         tsUtil := TsUtil_Package.getInstance;
         size := data'Length;
         for i in 0 .. (size) - 1 loop
-            stringBuilder.appendint (Integer (tsUtil.hashCode (data (i))));
+            stringBuilder.appendint (tsUtil.hashCode (data (i)));
             stringBuilder.append (CommonSeps_Package.getInstance.SPACE);
         end loop;
         Ada.Text_IO.Put_Line (Java_Image (stringBuilder.toString));

@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.Closeable_Package; use java.io.Closeable_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
@@ -20,6 +21,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -31,6 +34,7 @@ with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.configuration.ApplicationConfiguration_Package is
 
+   package Closeable_Package renames Standard.java.io.Closeable_Package;
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;

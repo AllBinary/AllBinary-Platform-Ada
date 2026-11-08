@@ -14,6 +14,7 @@
 
 
 with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
+with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.file.AbFileSystem_Package; use org.allbinary.logic.io.file.AbFileSystem_Package;
@@ -31,6 +32,7 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body org.allbinary.logic.io.SmallDelete_Package is
 
    package DataOutputStream_Package renames Standard.java.io.DataOutputStream_Package;
+   package FileOutputStream_Package renames Standard.java.io.FileOutputStream_Package;
    package AbFileSystem_Package renames Standard.org.allbinary.logic.io.file.AbFileSystem_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";

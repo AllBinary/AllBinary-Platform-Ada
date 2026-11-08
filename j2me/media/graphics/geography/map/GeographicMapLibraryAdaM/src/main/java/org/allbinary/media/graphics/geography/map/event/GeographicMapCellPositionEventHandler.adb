@@ -27,6 +27,7 @@ with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.a
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
@@ -56,6 +57,7 @@ with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package is
 

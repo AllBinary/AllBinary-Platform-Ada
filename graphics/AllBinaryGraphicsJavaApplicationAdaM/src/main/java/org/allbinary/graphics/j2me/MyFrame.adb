@@ -929,7 +929,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
       logUtil : LogUtil_Access;
    begin
         begin
-            AngleFactory_Package.getInstance;
+            declare Java_Result renames AngleFactory_Package.getInstance; pragma Unreferenced (Java_Result); begin null; end;
             SmallIntegerSingletonFactory_Package.getInstance.init;
             MyFrame_Package.Create.show;
         exception

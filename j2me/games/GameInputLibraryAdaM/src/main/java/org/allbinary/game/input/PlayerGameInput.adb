@@ -137,7 +137,7 @@ package body org.allbinary.game.input.PlayerGameInput_Package is
 
    procedure onDownKey (This : in out PlayerGameInput; gameKeyEvent : Integer) is
    begin
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (gameKeyEvent.toString).toString, PlayerGameInput_Access'(This'Unchecked_Access), This.gameInputStrings.ON_DOWN_GAME_KEY);
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (To_Unbounded_String (Java_Image (gameKeyEvent))).toString, PlayerGameInput_Access'(This'Unchecked_Access), This.gameInputStrings.ON_DOWN_GAME_KEY);
    end onDownKey;
 
    procedure onUpGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is

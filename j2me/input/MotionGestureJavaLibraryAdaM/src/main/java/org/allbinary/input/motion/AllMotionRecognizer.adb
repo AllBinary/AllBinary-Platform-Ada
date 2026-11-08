@@ -22,8 +22,12 @@ with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package; use org
 with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
+with org.allbinary.logic.util.cache.BaseCircularPool_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
